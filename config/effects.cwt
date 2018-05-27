@@ -1,0 +1,18 @@
+alias[effect:create_starbase] = {
+    ## cardinality = 1..1
+    owner = scalar
+
+    ## cardinality = 1..1
+    size = scalar
+
+    ## cardinality = 0..100
+    module = scalar
+
+    ## cardinality = 0..100
+    building = scalar
+
+    ## cardinality = 0..1
+    effect = effect
+}
+
+alias[effect:THIS] = { alias_name[effect] = alias_match_left[effect] }
