@@ -1,0 +1,12 @@
+types = {
+    type[event] = {
+        path = "game/events"
+    }
+}
+
+event = {
+    ## cardinality = 0..1
+    immediate = {
+        alias_name[effect] = alias_match_left[effect]
+    }
+}
