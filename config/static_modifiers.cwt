@@ -1,0 +1,5 @@
+types = {
+    type[static_modifier] = {
+        path = "game/common/static_modifiers"
+    }
+}

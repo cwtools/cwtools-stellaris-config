@@ -1,0 +1,14 @@
+alias[trigger:NOT] = { 
+    ## cardinality = 1..1
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:NOR] = { alias_name[trigger] = alias_match_left[trigger] }
+alias[trigger:NAND] = { alias_name[trigger] = alias_match_left[trigger] }
+alias[trigger:AND] = { alias_name[trigger] = alias_match_left[trigger] }
+alias[trigger:OR] = { alias_name[trigger] = alias_match_left[trigger] }
+
+
+
+alias[trigger:has_faction] = <pop_faction>
+alias[trigger:is_pop_faction_type] = <pop_faction>

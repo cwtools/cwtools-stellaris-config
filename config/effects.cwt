@@ -16,4 +16,119 @@ alias[effect:create_starbase] = {
 }
 
 alias[effect:THIS] = { alias_name[effect] = alias_match_left[effect] }
+alias[effect:ROOT] = { alias_name[effect] = alias_match_left[effect] }
 alias[effect:PREV] = { alias_name[effect] = alias_match_left[effect] }
+alias[effect:PREVPREV] = { alias_name[effect] = alias_match_left[effect] }
+alias[effect:PREVPREVPREV] = { alias_name[effect] = alias_match_left[effect] }
+alias[effect:PREVPREVPREVPREV] = { alias_name[effect] = alias_match_left[effect] }
+alias[effect:FROM] = { alias_name[effect] = alias_match_left[effect] }
+alias[effect:FROMFROM] = { alias_name[effect] = alias_match_left[effect] }
+alias[effect:FROMFROMFROM] = { alias_name[effect] = alias_match_left[effect] }
+alias[effect:FROMFROMFROMFROM] = { alias_name[effect] = alias_match_left[effect] }
+
+
+
+alias[effect:if] = {
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:else_if] = {
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:else] = { alias_name[effect] = alias_match_left[effect] }
+
+alias[effect:save_event_target_as] = scalar
+
+alias[effect:event] = {
+    id = scalar
+    days = int
+    ## cardinality = 0..1
+    random = int
+}
+
+alias[effect:ship_event] = {
+    id = scalar
+    days = int
+    ## cardinality = 0..1
+    random = int
+}
+
+alias[effect:country_event] = {
+    id = scalar
+    days = int
+    ## cardinality = 0..1
+    random = int
+}
+
+alias[effect:pop_faction_event] = {
+    id = scalar
+    days = int
+    ## cardinality = 0..1
+    random = int
+}
+
+alias[effect:pop_event] = {
+    id = scalar
+    days = int
+    ## cardinality = 0..1
+    random = int
+}
+
+alias[effect:fleet_event] = {
+    id = scalar
+    days = int
+    ## cardinality = 0..1
+    random = int
+}
+
+alias[effect:planet_event] = {
+    id = scalar
+    days = int
+    ## cardinality = 0..1
+    random = int
+}
+
+### Executes enclosed effects on a random leader owned by scoped country that meets the limit criteria
+alias[effect:random_owned_leader] = {
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:random_pop_faction] = {
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:every_owned_pop] = {
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:every_relation] = {
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:every_country] = {
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+
+alias[effect:add_modifier] = {
+    modifier = <static_modifier>
+    ##cardinality = 0..1
+    years = int
+    ##cardinality = 0..1
+    months = int
+    ##cardinality = 0..1
+    days = int
+}
+
+alias[effect:add_opinion_modifier] = {
+    who = scalar
+    modifier = <opinion_modifier>
+}
