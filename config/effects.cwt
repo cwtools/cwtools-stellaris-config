@@ -132,3 +132,174 @@ alias[effect:add_opinion_modifier] = {
     who = scalar
     modifier = <opinion_modifier>
 }
+
+
+alias[effect:remove_modifier] = <static_modifier>
+
+
+#flags
+alias[effect:set_country_flag] = scalar
+alias[effect:set_planet_flag] = scalar
+alias[effect:set_pop_facton_flag] = scalar
+alias[effect:set_star_flag] = scalar
+alias[effect:set_species_flag] = scalar
+alias[effect:set_pop_flag] = scalar
+alias[effect:set_fleet_flag] = scalar
+alias[effect:set_ship_flag] = scalar
+alias[effect:set_global_flag] = scalar
+alias[effect:set_leader_flag] = scalar
+alias[effect:set_ambient_object_flag] = scalar
+alias[effect:set_megastructure_flag] = scalar
+
+#Ideally should be years or months or days for all these
+alias[effect:set_timed_country_flag] = {
+    flag = scalar
+    ##cardinality = 0..1
+    years = int
+    ##cardinality = 0..1
+    months = int
+    ##cardinality = 0..1
+    days = int
+}
+alias[effect:set_timed_planet_flag] = {
+    flag = scalar
+    ##cardinality = 0..1
+    years = int
+    ##cardinality = 0..1
+    months = int
+    ##cardinality = 0..1
+    days = int
+}
+alias[effect:set_timed_pop_faction_flag] = {
+    flag = scalar
+    ##cardinality = 0..1
+    years = int
+    ##cardinality = 0..1
+    months = int
+    ##cardinality = 0..1
+    days = int
+}
+
+alias[effect:set_timed_star_flag] = {
+    flag = scalar
+    ##cardinality = 0..1
+    years = int
+    ##cardinality = 0..1
+    months = int
+    ##cardinality = 0..1
+    days = int
+}
+alias[effect:set_timed_species_flag] = {
+    flag = scalar
+    ##cardinality = 0..1
+    years = int
+    ##cardinality = 0..1
+    months = int
+    ##cardinality = 0..1
+    days = int
+}
+alias[effect:set_timed_pop_flag] = {
+    flag = scalar
+    ##cardinality = 0..1
+    years = int
+    ##cardinality = 0..1
+    months = int
+    ##cardinality = 0..1
+    days = int
+}
+alias[effect:set_timed_fleet_flag] = {
+    flag = scalar
+    ##cardinality = 0..1
+    years = int
+    ##cardinality = 0..1
+    months = int
+    ##cardinality = 0..1
+    days = int
+}
+alias[effect:set_timed_ship_flag] = {
+    flag = scalar
+    ##cardinality = 0..1
+    years = int
+    ##cardinality = 0..1
+    months = int
+    ##cardinality = 0..1
+    days = int
+}
+alias[effect:set_timed_global_flag] = {
+    flag = scalar
+    ##cardinality = 0..1
+    years = int
+    ##cardinality = 0..1
+    months = int
+    ##cardinality = 0..1
+    days = int
+}
+alias[effect:set_timed_leader_flag] = {
+    flag = scalar
+    ##cardinality = 0..1
+    years = int
+    ##cardinality = 0..1
+    months = int
+    ##cardinality = 0..1
+    days = int
+}
+alias[effect:set_timed_ambient_object_flag] = {
+    flag = scalar
+    ##cardinality = 0..1
+    years = int
+    ##cardinality = 0..1
+    months = int
+    ##cardinality = 0..1
+    days = int
+}
+alias[effect:set_timed_megastructure_flag] = {
+    flag = scalar
+    ##cardinality = 0..1
+    years = int
+    ##cardinality = 0..1
+    months = int
+    ##cardinality = 0..1
+    days = int
+}
+
+
+
+#missing who = scope
+alias[effect:set_relation_flag] = {
+    who = scalar
+    flag = scalar
+    ##cardinality = 0..1
+    years = int
+    ##cardinality = 0..1
+    months = int
+    ##cardinality = 0..1
+    days = int
+}
+
+#missing who = scope
+alias[effect:set_timed_relation_flag] = {
+    who = scalar
+    flag = scalar
+}
+
+#missing who = scope
+alias[effect:remove_relation_flag] = {
+    who = scalar
+    flag = scalar
+}
+
+#doesn't currently work
+#alias[effect:change_government] = {
+#    ##cardinality = 0..1
+#    authority = random
+#    ##cardinality = 0..1
+#    authority = <authority>
+#    ##cardinality = 0..1
+#    civics = random
+#    ##cardinality = 0..1
+#    civics = {
+#		##cardinality = 0..3
+#		<civic>
+#	}
+#}
+

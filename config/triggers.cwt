@@ -12,3 +12,75 @@ alias[trigger:OR] = { alias_name[trigger] = alias_match_left[trigger] }
 
 alias[trigger:has_faction] = <pop_faction>
 alias[trigger:is_pop_faction_type] = <pop_faction>
+
+
+
+#Relative Power - lacks who = scope and checking the >, < etc
+alias[trigger:relative_power] = {
+	who = scalar
+	## cardinality = 0..1
+	class = enum[relative_power_categories]
+	value = enum[relative_power_values]
+}
+	
+enums = {
+    enum[relative_power_categories] = {
+        all
+		fleet
+		naval_capacity
+		technology
+    }
+    enum[relative_power_values] = {
+        pathetic
+		inferior
+		equivalent
+		superior
+		overwhelming
+    }
+}
+
+
+
+alias[trigger:has_modifier] = <static_modifier>
+
+#Missing who = scope
+alias[trigger:has_opinion_modifier] = {
+	who = scalar
+	modifier = <opinion_modifier>
+}
+
+#flags
+alias[trigger:has_country_flag] = scalar
+alias[trigger:has_planet_flag] = scalar
+alias[trigger:has_pop_facton_flag] = scalar
+alias[trigger:has_star_flag] = scalar
+alias[trigger:has_species_flag] = scalar
+alias[trigger:has_pop_flag] = scalar
+alias[trigger:has_fleet_flag] = scalar
+alias[trigger:has_ship_flag] = scalar
+alias[trigger:has_global_flag] = scalar
+alias[trigger:has_leader_flag] = scalar
+alias[trigger:has_ambient_object_flag] = scalar
+alias[trigger:has_megastructure_flag] = scalar
+
+
+#missing who = scope
+alias[trigger:has_relation_flag] = {
+    who = scalar
+    flag = scalar
+	## cardinality = 0..1
+	is_reverse = bool
+}
+
+#missing who = scope
+alias[trigger:reverse_has_relation_flag] = {
+    who = scalar
+    flag = scalar
+}
+
+alias[trigger:has_government] = <government>
+alias[trigger:has_authority] = <authority>
+alias[trigger:has_valid_civic] = <civic>
+alias[trigger:has_civic] = <civic>
+alias[trigger:has_invalid_civic] = <civic>
+
