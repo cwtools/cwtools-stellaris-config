@@ -1,7 +1,7 @@
 # cwtools-stellaris-config
 .cwt config files for Stellaris
 
-To use these copy the contents of the config folder and place it in the root of the folder you open in vscode.
+To use these copy the contents of the config folder and place it in a folder called `.cwtools` in the folder you open in vscode.
 
 See https://github.com/tboby/cwtools/wiki/.cwt-config-file-guidance for guidance on the file format
 
