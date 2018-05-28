@@ -2,15 +2,9 @@ types = {
     type[authority] = {
         path = "game/common/governments/authorities"
     }
-}
-
-types = {
     type[civic] = {
         path = "game/common/governments/civics"
     }
-}
-
-types = {
     type[government] = {
         path = "game/common/governments"
     }
