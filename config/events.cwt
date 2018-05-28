@@ -1,12 +1,126 @@
 types = {
     type[event] = {
         path = "game/events"
+        subtype[hidden] = {
+            hide_window = yes
+        }
+        subtype[diplomatic] = {
+            diplomatic = yes
+        }
+        subtype[default] = {
+            ## cardinality = 0..1
+            hide_window = no
+
+            ## cardinality = 0..1
+            diplomatic = no
+        }
+        subtype[triggered] = {
+            is_triggered_only = yes
+        }
     }
 }
 
 event = {
+    id = scalar
+
+    subtype[!hidden] = {
+        title = scalar
+        desc = scalar
+    }
+
+    subtype[default] = {
+        picture = scalar
+    }
+
+    ## cardinality = 0..1
+    location = scalar
+
+    ## cardinality = 0..1
+    show_sound = scalar
+
+    ## cardinality = 0..1
+    hide_window = bool
+
+    ## cardinality = 0..1
+    diplomatic = bool
+
+    ## cardinality = 0..1
+    is_triggered_only = bool
+
+    ## cardinality = 0..1
+    fire_only_once = bool
+
+    subtype[!triggered]
+    ## cardinality = 0..1
+    mean_time_to_happen = {
+        ## cardinality = 0..1
+        years = int
+
+        ## cardinality = 0..1
+        months = int
+
+        ## cardinality = 0..1
+        days = int
+
+        ## cardinality = 0..1
+        modifier = {
+            #TODO
+        }
+    }
+
+    subtype[diplomatic] = {
+        picture_event_data = {
+            portrait = scalar
+            planet_background = scalar
+            graphical_culture = scalar
+            city_level = scalar
+            room = scalar
+        }
+    }
+
+    ## cardinality = 0..1
+    trigger = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+
     ## cardinality = 0..1
     immediate = {
+        alias_name[effect] = alias_match_left[effect]
+    }
+
+    ## cardinality = 0..100
+    option = {
+        name = scalar
+        
+        ## cardinality = 0..1
+        custom_tooltip = scalar
+
+        ## cardinality = 0..1
+        tooltip = {
+            alias_name[effect] = alias_match_left[effect]
+        }
+
+        ## cardinality = 0..1
+        trigger = {
+            alias_name[trigger] = alias_match_left[trigger]
+        }
+
+        ## cardinality = 0..1
+        allow = {
+            alias_name[trigger] = alias_match_left[trigger]
+        }
+
+        ## cardinality = 0..1
+        hidden_effect = {
+            alias_name[effect] = alias_match_left[effect]
+        }
+
+        ## cardinality = 0..1
+        alias_name[effect] = alias_match_left[effect]
+    }
+
+    ## cardinality = 0..1
+    after = {
         alias_name[effect] = alias_match_left[effect]
     }
 }

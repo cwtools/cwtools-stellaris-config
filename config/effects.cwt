@@ -16,3 +16,4 @@ alias[effect:create_starbase] = {
 }
 
 alias[effect:THIS] = { alias_name[effect] = alias_match_left[effect] }
+alias[effect:PREV] = { alias_name[effect] = alias_match_left[effect] }
