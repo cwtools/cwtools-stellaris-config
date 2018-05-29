@@ -46,6 +46,14 @@ alias[trigger:controller] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+alias[trigger:ruler] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:leader] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
 alias[trigger:any_playable_country] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }

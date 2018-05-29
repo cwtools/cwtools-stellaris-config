@@ -118,6 +118,14 @@ alias[effect:controller] = {
     alias_name[effect] = alias_match_left[effect]
 }
 
+alias[effect:ruler] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:leader] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
 ### Executes enclosed effects on a random leader owned by scoped country that meets the limit criteria
 alias[effect:every_owned_leader] = {
 	##cardinality = 0..1
