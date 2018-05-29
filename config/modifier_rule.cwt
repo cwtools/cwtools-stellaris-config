@@ -1,0 +1,11 @@
+
+#needs some "or"s
+alias[modifier_rule:modifier] = {
+	## cardinality = 0..1
+    factor = float
+	## cardinality = 0..1
+    weight = float
+	## cardinality = 0..1
+    add = float
+    alias_name[trigger] = alias_match_left[trigger]
+}

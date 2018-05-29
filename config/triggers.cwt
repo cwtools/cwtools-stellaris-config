@@ -202,7 +202,7 @@ alias[trigger:any_war_participant] = {
 alias[trigger:count_pop_factions] = {
 	count = int
 	## cardinality = 0..1
-	trigger = {
+	limit = {
         alias_name[trigger] = alias_match_left[trigger]
     }
 }
@@ -210,7 +210,7 @@ alias[trigger:count_pop_factions] = {
 alias[trigger:count_species] = {
 	count = int
 	## cardinality = 0..1
-	trigger = {
+	limit = {
         alias_name[trigger] = alias_match_left[trigger]
     }
 }
@@ -218,7 +218,7 @@ alias[trigger:count_species] = {
 alias[trigger:count_exact_species] = {
 	count = int
 	## cardinality = 0..1
-	trigger = {
+	limit = {
         alias_name[trigger] = alias_match_left[trigger]
     }
 }
@@ -226,7 +226,7 @@ alias[trigger:count_exact_species] = {
 alias[trigger:count_fleet_ships] = {
 	count = int
 	## cardinality = 0..1
-	trigger = {
+	limit = {
         alias_name[trigger] = alias_match_left[trigger]
     }
 }
@@ -234,7 +234,7 @@ alias[trigger:count_fleet_ships] = {
 alias[trigger:count_system_ships] = {
 	count = int
 	## cardinality = 0..1
-	trigger = {
+	limit = {
         alias_name[trigger] = alias_match_left[trigger]
     }
 }
@@ -242,7 +242,7 @@ alias[trigger:count_system_ships] = {
 alias[trigger:count_armies] = {
 	count = int
 	## cardinality = 0..1
-	trigger = {
+	limit = {
         alias_name[trigger] = alias_match_left[trigger]
     }
 }
@@ -250,7 +250,7 @@ alias[trigger:count_armies] = {
 alias[trigger:count_ships] = {
 	count = int
 	## cardinality = 0..1
-	trigger = {
+	limit = {
         alias_name[trigger] = alias_match_left[trigger]
     }
 }
@@ -258,7 +258,7 @@ alias[trigger:count_ships] = {
 alias[trigger:count_owned_ships] = {
 	count = int
 	## cardinality = 0..1
-	trigger = {
+	limit = {
         alias_name[trigger] = alias_match_left[trigger]
     }
 }
@@ -266,7 +266,7 @@ alias[trigger:count_owned_ships] = {
 alias[trigger:count_owned_pops] = {
 	count = int
 	## cardinality = 0..1
-	trigger = {
+	limit = {
         alias_name[trigger] = alias_match_left[trigger]
     }
 }
@@ -274,7 +274,7 @@ alias[trigger:count_owned_pops] = {
 alias[trigger:count_pops] = {
 	count = int
 	## cardinality = 0..1
-	trigger = {
+	limit = {
         alias_name[trigger] = alias_match_left[trigger]
     }
 }
@@ -282,7 +282,7 @@ alias[trigger:count_pops] = {
 alias[trigger:count_diplo_ties] = {
 	count = int
 	## cardinality = 0..1
-	trigger = {
+	limit = {
         alias_name[trigger] = alias_match_left[trigger]
     }
 }

@@ -45,6 +45,7 @@ alias[effect:save_event_target_as] = scalar
 
 alias[effect:event] = {
     id = scalar
+    ## cardinality = 0..1
     days = int
     ## cardinality = 0..1
     random = int
@@ -52,6 +53,7 @@ alias[effect:event] = {
 
 alias[effect:ship_event] = {
     id = scalar
+    ## cardinality = 0..1
     days = int
     ## cardinality = 0..1
     random = int
@@ -59,6 +61,7 @@ alias[effect:ship_event] = {
 
 alias[effect:country_event] = {
     id = scalar
+    ## cardinality = 0..1
     days = int
     ## cardinality = 0..1
     random = int
@@ -66,6 +69,7 @@ alias[effect:country_event] = {
 
 alias[effect:pop_faction_event] = {
     id = scalar
+    ## cardinality = 0..1
     days = int
     ## cardinality = 0..1
     random = int
@@ -73,6 +77,7 @@ alias[effect:pop_faction_event] = {
 
 alias[effect:pop_event] = {
     id = scalar
+    ## cardinality = 0..1
     days = int
     ## cardinality = 0..1
     random = int
@@ -80,6 +85,7 @@ alias[effect:pop_event] = {
 
 alias[effect:fleet_event] = {
     id = scalar
+    ## cardinality = 0..1
     days = int
     ## cardinality = 0..1
     random = int
@@ -87,6 +93,7 @@ alias[effect:fleet_event] = {
 
 alias[effect:planet_event] = {
     id = scalar
+    ## cardinality = 0..1
     days = int
     ## cardinality = 0..1
     random = int
@@ -665,3 +672,11 @@ alias[effect:kill_pop] = yes
 alias[effect:enslave_pop] = bool
 alias[effect:destroy_colony] = yes
 
+
+alias[effect:random_list] = {
+    int = { 
+		##cardinality = 0..100
+        alias_name[modifier_rule] = alias_match_left[modifier_rule]
+        alias_name[effect] = alias_match_left[effect]
+    }
+}
