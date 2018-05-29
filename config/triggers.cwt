@@ -9,8 +9,42 @@ alias[trigger:AND] = { alias_name[trigger] = alias_match_left[trigger] }
 alias[trigger:OR] = { alias_name[trigger] = alias_match_left[trigger] }
 alias[trigger:hidden_trigger] = { alias_name[trigger] = alias_match_left[trigger] }
 
+alias[trigger:if] = {
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:else] = { alias_name[trigger] = alias_match_left[trigger] }
+
 
 #Scopes
+
+alias[trigger:THIS] = { alias_name[trigger] = alias_match_left[trigger] }
+alias[trigger:ROOT] = { alias_name[trigger] = alias_match_left[trigger] }
+alias[trigger:PREV] = { alias_name[trigger] = alias_match_left[trigger] }
+alias[trigger:PREVPREV] = { alias_name[trigger] = alias_match_left[trigger] }
+alias[trigger:PREVPREVPREV] = { alias_name[trigger] = alias_match_left[trigger] }
+alias[trigger:PREVPREVPREVPREV] = { alias_name[trigger] = alias_match_left[trigger] }
+alias[trigger:FROM] = { alias_name[trigger] = alias_match_left[trigger] }
+alias[trigger:FROMFROM] = { alias_name[trigger] = alias_match_left[trigger] }
+alias[trigger:FROMFROMFROM] = { alias_name[trigger] = alias_match_left[trigger] }
+alias[trigger:FROMFROMFROMFROM] = { alias_name[trigger] = alias_match_left[trigger] }
+
+alias[trigger:species] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:planet] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:owner] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:controller] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 alias[trigger:any_playable_country] = {
 	alias_name[trigger] = alias_match_left[trigger]
@@ -439,6 +473,11 @@ enums = {
 		superior
 		overwhelming
     }
+    enum[research_areas] = {
+        physics
+		engineering
+		society
+    }
 }
 
 
@@ -502,7 +541,7 @@ alias[trigger:pop_percentage] = {
 }
 
 #should check for <> too
-alias[trigger:support] = [0.0..1.0]
+alias[trigger:support] = float[0.0..1.0]
 alias[trigger:used_naval_capacity_percent] = float
 
 alias[trigger:is_country_type] = <country_type>
@@ -514,9 +553,21 @@ alias[trigger:is_hostile_to] = scalar
 alias[trigger:is_rival] = scalar
 alias[trigger:is_in_federation_with] = scalar
 alias[trigger:has_defensive_pact] = scalar
+alias[trigger:has_communications] = scalar
+alias[trigger:is_at_war_with] = scalar
+#to country/species/pop
+alias[trigger:is_same_species] = scalar
+alias[trigger:is_subspecies] = scalar
+#any scope
+alias[trigger:exists] = scalar
+			
+
+
 
 alias[trigger:is_at_war] = bool
 alias[trigger:is_ai] = bool
+alias[trigger:is_being_purged] = bool
+alias[trigger:is_enslaved] = bool
 
 
 #Hopefully this can be done a lot better. "who" must be country, "side" must be country or attacker(s?) or defender(s?)
@@ -537,13 +588,29 @@ alias[trigger:happiness] = float
 
 alias[trigger:has_ring] = bool
 alias[trigger:is_moon] = bool
-
+alias[trigger:pops_have_happiness] = bool
 
 alias[trigger:leader_class] = enum[leader_classes]
 alias[trigger:pre_ruler_leader_class] = enum[leader_classes_no_ruler]
 
 alias[trigger:has_mission] = <observation_station_mission>
 
-#these two should check < and > too
+#these should check < and > too
 alias[trigger:years_passed] = int
 alias[trigger:num_owned_planets] = int
+alias[trigger:unrest] = int[0..100]
+alias[trigger:influence] = int
+alias[trigger:num_pops] = int
+
+
+alias[trigger:is_researching_area] = enum[research_areas]
+#should have < >
+alias[trigger:count_tech_options] = {
+	area = enum[research_areas]
+	count = int
+}
+alias[trigger:research_leader] = {
+	area = enum[research_areas]
+	## cardinality = 1..100
+	alias_name[trigger] = alias_match_left[trigger]
+}

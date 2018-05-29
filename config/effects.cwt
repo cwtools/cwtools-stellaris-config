@@ -25,6 +25,7 @@ alias[effect:FROM] = { alias_name[effect] = alias_match_left[effect] }
 alias[effect:FROMFROM] = { alias_name[effect] = alias_match_left[effect] }
 alias[effect:FROMFROMFROM] = { alias_name[effect] = alias_match_left[effect] }
 alias[effect:FROMFROMFROMFROM] = { alias_name[effect] = alias_match_left[effect] }
+
 alias[effect:hidden_effect] = { alias_name[effect] = alias_match_left[effect] }
 
 
@@ -100,6 +101,22 @@ alias[effect:planet_event] = {
 }
 
 #Scopes
+
+alias[effect:species] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:planet] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:owner] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:controller] = {
+    alias_name[effect] = alias_match_left[effect]
+}
 
 ### Executes enclosed effects on a random leader owned by scoped country that meets the limit criteria
 alias[effect:every_owned_leader] = {
