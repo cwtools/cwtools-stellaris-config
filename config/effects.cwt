@@ -268,18 +268,18 @@ alias[effect:set_timed_megastructure_flag] = {
 alias[effect:set_relation_flag] = {
     who = scalar
     flag = scalar
-    ##cardinality = 0..1
-    years = int
-    ##cardinality = 0..1
-    months = int
-    ##cardinality = 0..1
-    days = int
 }
 
 #missing who = scope
 alias[effect:set_timed_relation_flag] = {
     who = scalar
     flag = scalar
+    ##cardinality = 0..1
+    years = int
+    ##cardinality = 0..1
+    months = int
+    ##cardinality = 0..1
+    days = int
 }
 
 #missing who = scope
