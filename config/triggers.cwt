@@ -7,12 +7,414 @@ alias[trigger:NOR] = { alias_name[trigger] = alias_match_left[trigger] }
 alias[trigger:NAND] = { alias_name[trigger] = alias_match_left[trigger] }
 alias[trigger:AND] = { alias_name[trigger] = alias_match_left[trigger] }
 alias[trigger:OR] = { alias_name[trigger] = alias_match_left[trigger] }
+alias[trigger:hidden_trigger] = { alias_name[trigger] = alias_match_left[trigger] }
 
+
+#Scopes
+
+alias[trigger:any_playable_country] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_owned_fleet] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_orbital_station] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_planet_within_border] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_owned_ship] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_ship] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_moon] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:observation_outpost_owner] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:observation_outpost] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_war] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_defender] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_attacker] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_planet] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_owned_planet] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_controlled_planet] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_country] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_pop] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_research_station] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_mining_station] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_neighboring_tile] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_tile] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_rim_system] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_ship_in_system] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_owned_leader] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_owned_pop] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_sector] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_ambient_object] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_system_ambient_object] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_bordering_country] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_member] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_neighbor_system] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_subject] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_relation] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_owned_army] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_planet_army] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_neighbor_country] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_combatant_fleet] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_pool_leader] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_megastructure] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_owned_megastructure] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_system_megastructure] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_owned_pop_species] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_owned_starbase] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_system] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_system_within_border] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:any_war_participant] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+
+
+#Count triggers: Should all check for < > on the ints
+alias[trigger:count_pop_factions] = {
+	count = int
+	## cardinality = 0..1
+	trigger = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+}
+
+alias[trigger:count_species] = {
+	count = int
+	## cardinality = 0..1
+	trigger = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+}
+
+alias[trigger:count_exact_species] = {
+	count = int
+	## cardinality = 0..1
+	trigger = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+}
+
+alias[trigger:count_fleet_ships] = {
+	count = int
+	## cardinality = 0..1
+	trigger = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+}
+
+alias[trigger:count_system_ships] = {
+	count = int
+	## cardinality = 0..1
+	trigger = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+}
+
+alias[trigger:count_armies] = {
+	count = int
+	## cardinality = 0..1
+	trigger = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+}
+
+alias[trigger:count_ships] = {
+	count = int
+	## cardinality = 0..1
+	trigger = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+}
+
+alias[trigger:count_owned_ships] = {
+	count = int
+	## cardinality = 0..1
+	trigger = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+}
+
+alias[trigger:count_owned_pops] = {
+	count = int
+	## cardinality = 0..1
+	trigger = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+}
+
+alias[trigger:count_pops] = {
+	count = int
+	## cardinality = 0..1
+	trigger = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+}
+
+alias[trigger:count_diplo_ties] = {
+	count = int
+	## cardinality = 0..1
+	trigger = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+}
+
+
+
+#count_starbase_modules - Checks the number of starbase modules that are of the specified type
+#count_starbase_modules = { type = anchorage count < 12 }
+#Supported Scopes: starbase
+#Supported Targets: none
+
+
+#these need an "or" function
+
+#count_pool_leader - Iterate through each leader that is recruitable for the country
+#count_pool_leader = { <count=<num/all>> <triggers> }
+#Supported Scopes: country
+#Supported Targets: none
+
+#count_system_megastructure - Iterate through each megastructure in system
+#count_system_megastructure = { <count=<num/all>> <triggers> }
+#Supported Scopes: all
+#Supported Targets: none
+
+#count_owned_pop - Iterate through all owned pops
+#count_owned_pop = { <count=<num/all>> <triggers> }
+#Supported Scopes: planet country pop_faction
+#Supported Targets: none
+
+#count_owned_pop_species - Iterate through each species of a country's owned pops
+#count_owned_pop_species = { <count=<num/all>> <triggers> }
+#Supported Scopes: country
+#Supported Targets: none
+
+#count_owned_starbase - Iterate through every owned starbase
+#count_owned_starbase = { <count=<num/all>> <triggers> }
+#Supported Scopes: country
+#Supported Targets: none
+
+#count_system - Iterate through all systems
+#count_system = { <count=<num/all>> <triggers> }
+#Supported Scopes: all
+#Supported Targets: none
+
+#count_rim_system - Iterate through all rim systems
+#count_rim_system = { <count=<num/all>> <triggers> }
+#Supported Scopes: all
+#Supported Targets: none
+
+#count_system_within_border - Iterate through all systems within the country's borders
+#count_system_within_border = { <count=<num/all>> <triggers> }
+#Supported Scopes: country
+#Supported Targets: none
+
+#count_owned_army - Iterate through each army that is owned by the country
+#count_owned_army = { <count=<num/all>> <triggers> }
+#Supported Scopes: country
+#Supported Targets: none
+
+#count_war_participant - Iterate through all war participants
+#count_war_participant = { <count=<num/all>> <triggers> }
+#Supported Scopes: war
+#Supported Targets: none
+
+#count_planet_army - Iterate through each defending army on a planet
+#count_planet_army = { <count=<num/all>> <triggers> }
+#Supported Scopes: planet
+#Supported Targets: none
+
+#count_country - Iterate through all countries
+#count_country = { <count=<num/all>> <triggers> }
+#Supported Scopes: all
+#Supported Targets: none
+
+#count_relation - Iterate through all relations
+#count_relation = { <count=<num/all>> <triggers> }
+#Supported Scopes: country
+#Supported Targets: none
+
+#count_neighbor_country - Iterate through all neighbor countries
+#count_neighbor_country = { <count=<num/all>> <triggers> }
+#Supported Scopes: country
+#Supported Targets: none
+
+#count_bordering_country - Iterate through all bordering countries of a system
+#count_bordering_country = { <count=<num/all>> <triggers> }
+#Supported Scopes: galactic_object
+#Supported Targets: none
+
+#count_combatant_fleet - Iterate through each fleet this fleet is in combat with
+#count_combatant_fleet = { <count=<num/all>> <triggers> }
+#Supported Scopes: fleet
+#Supported Targets: none
+
+#count_megastructure - Iterate through each megastructure
+#count_megastructure = { <count=<num/all>> <triggers> }
+#Supported Scopes: all
+#Supported Targets: none
+
+#count_owned_megastructure - Iterate through each owned megastructure
+#count_owned_megastructure = { <count=<num/all>> <triggers> }
+#Supported Scopes: country
+#Supported Targets: none
+
+#count_tile - Iterate through each defending army on a planet
+#count_tile = { <count=<num/all>> <triggers> }
+#Supported Scopes: planet
+#Supported Targets: none
+
+
+#count_war_participants - Checks the number of participants in the war on a specific side that meet the specified criteria
+#count_war_participants = { limit = { <triggers> } side = target count < 4
+#Supported Scopes: war
+#Supported Targets: none
+
+#count_potential_war_participants - Checks the amount of potential war participants in a specific war that meet the specified criteria
+#count_potential_war_participants = { attacker = <target> defender = <target> side = <target> limit = { <triggers> } count > 2
+#Supported Scopes: all
+#Supported Targets: none
 
 
 alias[trigger:has_faction] = <pop_faction>
 alias[trigger:is_pop_faction_type] = <pop_faction>
 
+
+alias[trigger:closest_system] = {
+	##cardinality = 0..1
+	min_steps = int
+	##cardinality = 0..1
+	max_steps = int
+    alias_name[trigger] = alias_match_left[trigger]
+}
 
 
 #Relative Power - lacks who = scope and checking the >, < etc
@@ -84,3 +486,64 @@ alias[trigger:has_valid_civic] = <civic>
 alias[trigger:has_civic] = <civic>
 alias[trigger:has_invalid_civic] = <civic>
 
+
+alias[trigger:leader_of_faction] = <pop_faction>
+
+#should be scope
+alias[trigger:is_same_value] = scalar
+
+
+#should check for <> too
+alias[trigger:pop_percentage] = {
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	percentage = float[0.0..1.0]
+}
+
+#should check for <> too
+alias[trigger:support] = [0.0..1.0]
+alias[trigger:used_naval_capacity_percent] = float
+
+alias[trigger:is_country_type] = <country_type>
+alias[trigger:has_ethic] = <ethos>
+
+
+#these should all be scope
+alias[trigger:is_hostile_to] = scalar
+alias[trigger:is_rival] = scalar
+alias[trigger:is_in_federation_with] = scalar
+alias[trigger:has_defensive_pact] = scalar
+
+alias[trigger:is_at_war] = bool
+alias[trigger:is_ai] = bool
+
+
+#Hopefully this can be done a lot better. "who" must be country, "side" must be country or attacker(s?) or defender(s?)
+alias[trigger:is_war_participant] = {
+	who = scalar
+	side = scalar
+}
+
+#also needs scope check
+alias[trigger:opinion] = {
+	who = scalar
+	value = int
+}
+
+#should check <>
+alias[trigger:happiness] = float
+
+
+alias[trigger:has_ring] = bool
+alias[trigger:is_moon] = bool
+
+
+alias[trigger:leader_class] = enum[leader_classes]
+alias[trigger:pre_ruler_leader_class] = enum[leader_classes_no_ruler]
+
+alias[trigger:has_mission] = <observation_station_mission>
+
+#these two should check < and > too
+alias[trigger:years_passed] = int
+alias[trigger:num_owned_planets] = int
