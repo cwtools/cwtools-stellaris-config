@@ -421,7 +421,7 @@ alias[trigger:closest_system] = {
 alias[trigger:relative_power] = {
 	who = scalar
 	## cardinality = 0..1
-	class = enum[relative_power_categories]
+	category = enum[relative_power_categories]
 	value = enum[relative_power_values]
 }
 	
