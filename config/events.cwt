@@ -26,10 +26,19 @@ event = {
     subtype[!hidden] = {
         title = scalar
         desc = scalar
+		
+		desc = {
+			trigger = { alias_name[trigger] = alias_match_left[trigger] }
+			text = scalar
+		}
     }
 
     subtype[default] = {
         picture = scalar
+		picture = {
+			picture = scalar
+			trigger = { alias_name[trigger] = alias_match_left[trigger] }
+		}
     }
 
     ## cardinality = 0..1
@@ -62,10 +71,8 @@ event = {
         ## cardinality = 0..1
         days = int
 
-        ## cardinality = 0..1
-        modifier = {
-            #TODO
-        }
+        ## cardinality = 0..100
+        alias_name[modifier_rule] = alias_match_left[modifier_rule]
     }
 
     subtype[diplomatic] = {
@@ -93,9 +100,6 @@ event = {
         name = scalar
         
         ## cardinality = 0..1
-        custom_tooltip = scalar
-
-        ## cardinality = 0..1
         tooltip = {
             alias_name[effect] = alias_match_left[effect]
         }
@@ -108,11 +112,6 @@ event = {
         ## cardinality = 0..1
         allow = {
             alias_name[trigger] = alias_match_left[trigger]
-        }
-
-        ## cardinality = 0..1
-        hidden_effect = {
-            alias_name[effect] = alias_match_left[effect]
         }
 
         ## cardinality = 0..1

@@ -102,7 +102,66 @@ alias[effect:planet_event] = {
 
 #Scopes
 
+alias[effect:last_created_leader] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+alias[effect:last_created_country] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+alias[effect:last_created_fleet] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+alias[effect:last_created_pop] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+alias[effect:last_created_species] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+alias[effect:last_created_ambient_object] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
 alias[effect:species] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:starbase] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:capital_scope] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:orbit] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:orbital_deposit_tile] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:owner_species] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:overlord] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:solar_system] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:space_owner] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:pop_faction] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:home_planet] = {
     alias_name[effect] = alias_match_left[effect]
 }
 
@@ -139,6 +198,18 @@ alias[effect:random_owned_leader] = {
     alias_name[effect] = alias_match_left[effect]
 }
 
+alias[effect:every_owned_starbase] = {
+	##cardinality = 0..1
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+ 
+alias[effect:random_owned_starbase] = {
+	##cardinality = 0..1
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+ 
 alias[effect:every_pop_faction] = {
 	##cardinality = 0..1
     limit = { alias_name[trigger] = alias_match_left[trigger] }
@@ -233,6 +304,10 @@ alias[effect:observation_outpost_owner] = {
     alias_name[effect] = alias_match_left[effect]
 }
 
+alias[effect:observation_outpost_owner] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
 alias[effect:every_planet_within_border] = {
 	##cardinality = 0..1
     limit = { alias_name[trigger] = alias_match_left[trigger] }
@@ -284,6 +359,18 @@ alias[effect:every_owned_fleet] = {
 }
 
 alias[effect:random_owned_fleet] = {
+	##cardinality = 0..1
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:every_neighbor_country] = {
+	##cardinality = 0..1
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:random_neighbor_country] = {
 	##cardinality = 0..1
     limit = { alias_name[trigger] = alias_match_left[trigger] }
     alias_name[effect] = alias_match_left[effect]
@@ -503,7 +590,7 @@ alias[effect:add_modifier] = {
 }
 
 
-
+#localisation actually
 alias[effect:custom_tooltip] = scalar
 
 alias[effect:add_opinion_modifier] = {
@@ -528,6 +615,19 @@ alias[effect:set_global_flag] = scalar
 alias[effect:set_leader_flag] = scalar
 alias[effect:set_ambient_object_flag] = scalar
 alias[effect:set_megastructure_flag] = scalar
+
+alias[effect:remove_country_flag] = scalar
+alias[effect:remove_planet_flag] = scalar
+alias[effect:remove_pop_facton_flag] = scalar
+alias[effect:remove_star_flag] = scalar
+alias[effect:remove_species_flag] = scalar
+alias[effect:remove_pop_flag] = scalar
+alias[effect:remove_fleet_flag] = scalar
+alias[effect:remove_ship_flag] = scalar
+alias[effect:remove_global_flag] = scalar
+alias[effect:remove_leader_flag] = scalar
+alias[effect:remove_ambient_object_flag] = scalar
+alias[effect:remove_megastructure_flag] = scalar
 
 #Ideally should be years or months or days for all these
 alias[effect:set_timed_country_flag] = {
@@ -692,11 +792,14 @@ alias[effect:kill_leader] = {
 }
 
 alias[effect:shift_ethic] = <ethos>
+alias[effect:country_add_ethic] = <ethos>
+alias[effect:country_remove_ethic] = <ethos>
+						
 
 alias[effect:kill_pop] = yes
 alias[effect:enslave_pop] = bool
 alias[effect:destroy_colony] = yes
-
+alias[effect:set_ruined] = yes
 
 alias[effect:random_list] = {
     int = { 
@@ -704,4 +807,69 @@ alias[effect:random_list] = {
         alias_name[modifier_rule] = alias_match_left[modifier_rule]
         alias_name[effect] = alias_match_left[effect]
     }
+}
+
+alias[effect:random] = {
+	chance = int[1...99]
+	alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:create_fleet_from_naval_cap] = float
+
+alias[effect:exile_leader_as] = scalar
+
+#need to check whether any more of these are 
+#creator should be a scope
+###Creates a new saved leader for the scoped country with a lookup key
+#alias[effect:create_saved_leader] = {
+#	key = scalar	localisation_synced
+#	creator = scalar
+#	name = <random / string>
+#	species = <target / key>
+#	##cardinality = 0..1
+#	gender = enum[genders]
+#	type = <random / key>
+#	skill = <random / int>
+#	set_age = <int>
+#	traits = { trait = <key> trait = <key> }
+#}
+
+#who should be country
+alias[effect:add_claims] = {
+	who = scalar
+	num_of_claims = int
+	show_notification = bool
+}
+
+#should be country
+alias[effect:set_owner] = scalar
+
+#should be a location scope
+alias[effect:set_location] = scalar
+#set_location = { target = <target> distance = <int/random> angle = <int/random> }
+
+#variables
+alias[effect:set_variable] = {
+	which = scalar
+	value = float
+}
+#presumably need to check the variable exists first for these, somehow
+alias[effect:change_variable] = {
+	which = scalar
+	value = float
+}
+###Decrements a previously-set variable by a specific amount
+alias[effect:subtract_variable] = {
+	which = scalar
+	value = float
+}
+###Multiplies a previously-set variable by a specific amount
+alias[effect:multiply_variable] = {
+	which = scalar
+	value = float
+}
+###Divides a previously-set variable by a specific amount
+alias[effect:divide_variable] = {
+	which = scalar
+	value = float
 }

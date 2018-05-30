@@ -50,7 +50,43 @@ alias[trigger:ruler] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+alias[trigger:capital_scope] = {
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:orbit] = {
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:orbital_deposit_tile] = {
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:solar_system] = {
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:space_owner] = {
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:pop_faction] = {
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:home_planet] = {
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:overlord] = {
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
 alias[trigger:leader] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[trigger:starbase] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
@@ -486,6 +522,14 @@ enums = {
 		engineering
 		society
     }
+	enum[genders] = {
+		female
+		male
+	}
+	enum[hyperlane_euclidean] = {
+		hyperlane
+		euclidean
+	}
 }
 
 
@@ -551,18 +595,41 @@ alias[trigger:pop_percentage] = {
 #should check for <> too
 alias[trigger:support] = float[0.0..1.0]
 alias[trigger:used_naval_capacity_percent] = float
+alias[trigger:num_moons] = int
+alias[trigger:num_adjacent_tiles] = int
 
 alias[trigger:is_country_type] = <country_type>
 alias[trigger:has_ethic] = <ethos>
+alias[trigger:pop_has_ethic] = <ethos>
 
 
 #these should all be scope
+#country only
+alias[trigger:is_angry_to] = scalar
+alias[trigger:is_patronizing_to] = scalar
+alias[trigger:is_dismissive_to] = scalar
+alias[trigger:is_threatened_to] = scalar
+alias[trigger:is_protective_to] = scalar
+alias[trigger:is_neutral_to] = scalar
+alias[trigger:is_friendly_to] = scalar
+alias[trigger:is_loyal_to] = scalar
+alias[trigger:is_cordial_to] = scalar
+alias[trigger:is_belligerent_to] = scalar
+alias[trigger:is_imperious_to] = scalar
+alias[trigger:is_arrogant_to] = scalar
+alias[trigger:is_enigmatic_to] = scalar
+alias[trigger:is_berserker_to] = scalar
+
 alias[trigger:is_hostile_to] = scalar
+alias[trigger:is_domineering_to] = scalar
+alias[trigger:is_unfriendly_to] = scalar
+alias[trigger:is_disloyal_to] = scalar
 alias[trigger:is_rival] = scalar
 alias[trigger:is_in_federation_with] = scalar
 alias[trigger:has_defensive_pact] = scalar
 alias[trigger:has_communications] = scalar
 alias[trigger:is_at_war_with] = scalar
+alias[trigger:is_within_borders_of] = scalar
 #to country/species/pop
 alias[trigger:is_same_species] = scalar
 alias[trigger:is_subspecies] = scalar
@@ -576,6 +643,9 @@ alias[trigger:is_at_war] = bool
 alias[trigger:is_ai] = bool
 alias[trigger:is_being_purged] = bool
 alias[trigger:is_enslaved] = bool
+alias[trigger:has_orbital_bombardment] = bool
+alias[trigger:has_owner] = bool
+alias[trigger:has_ground_combat] = bool
 
 
 #Hopefully this can be done a lot better. "who" must be country, "side" must be country or attacker(s?) or defender(s?)
@@ -592,11 +662,31 @@ alias[trigger:opinion] = {
 
 #should check <>
 alias[trigger:happiness] = float
+alias[trigger:energy] = int
+alias[trigger:vassals] = int
+alias[trigger:food] = int
+alias[trigger:minerals] = int
+###Checks the number of regular empires in the galaxy
+alias[trigger:num_empires] = int
+###Checks the number of members in the alliance
+alias[trigger:members] = int
+###Checks the country's number of established communications
+alias[trigger:num_communications] = int
+alias[trigger:num_ascension_perks] = int
+alias[trigger:num_ascension_perk_slots] = int
+alias[trigger:num_owned_active_gateways] = int
+alias[trigger:num_active_gateways] = int
+alias[trigger:num_trait_points] = int
 
 
 alias[trigger:has_ring] = bool
 alias[trigger:is_moon] = bool
 alias[trigger:pops_have_happiness] = bool
+alias[trigger:is_pirate] = bool
+###Checks if the scoped ship design, ship or fleet (all ships) has a designable ship size.
+alias[trigger:is_designable] = bool
+alias[trigger:is_orbital_tile] = bool
+ 
 
 alias[trigger:leader_class] = enum[leader_classes]
 alias[trigger:pre_ruler_leader_class] = enum[leader_classes_no_ruler]
@@ -609,6 +699,10 @@ alias[trigger:num_owned_planets] = int
 alias[trigger:unrest] = int[0..100]
 alias[trigger:influence] = int
 alias[trigger:num_pops] = int
+alias[trigger:planet_size] = int
+###Checks the number of fallen empires in the galaxy
+alias[trigger:num_fallen_empires] = int
+alias[trigger:colony_age] = int
 
 
 alias[trigger:is_researching_area] = enum[research_areas]
@@ -622,3 +716,93 @@ alias[trigger:research_leader] = {
 	## cardinality = 1..100
 	alias_name[trigger] = alias_match_left[trigger]
 }
+
+
+###Checks the average ethics divergence on the planet. Not used in Vanilla, testing advised. Please inform Dayshine and Caligula on the results of the tests!
+alias[trigger:ethos] = float[0.0..1.0]
+
+alias[trigger:gender] = enum[genders]
+
+
+
+alias[trigger:is_sapient] = bool
+alias[trigger:is_preventing_anomaly] = bool
+alias[trigger:has_observation_outpost] = bool
+alias[trigger:starting_system] = bool
+###Checks if the planet is still owned by its first colonizer
+alias[trigger:original_owner] = bool
+###Checks if the pop is a robot
+alias[trigger:is_robot_pop] = bool
+###Checks if the tile has any resource
+alias[trigger:has_any_resource] = bool
+###Checks if the tile has any empire-unique building
+alias[trigger:has_empire_unique_building] = bool
+###Checks if the scoped fleet is an alliance fleet.
+alias[trigger:is_alliance_fleet] = bool
+alias[trigger:is_capital] = bool
+alias[trigger:has_blocker] = bool
+alias[trigger:has_pop] = bool
+
+
+#who should refer to a country on these two
+###Checks if the planet can be colonized by target country
+alias[trigger:can_colonize] = {
+	who = scalar
+	status = bool
+}
+###Checks the relative amount of already-researched tech between the country and target country
+alias[trigger:tech_unlocked_ratio] = {
+	who = scalar
+	ratio = float[0.0...1.0]
+}
+
+alias[trigger:has_ascension_perk] = <ascension_perk>
+
+alias[trigger:ascension_perk] = <ascension_perk>
+
+alias[trigger:has_technology] = <technology>
+
+
+alias[trigger:check_variable] = {
+	which = scalar
+	value = float
+}
+
+
+#Corrections needed:
+#	source = scope (possibly any?)
+#	min/max_distance now (very nearly exclusively) use <= for max and >= for min. Presumably there was a reason for the change and this should be enforced
+#	min should not be higher than max
+#	bypass_empire = country + only if not uses_bypass = no
+#	min/max_jumps cannot have type = euclidean
+###Checks the ship/fleet/planet/leader/pop/system's galaxy map distance to target in absolute units
+alias[trigger:distance] = {
+	source = scalar
+	## cardinality = 0..1
+	min_distance = int
+	## cardinality = 0..1
+	max_distance = int
+	## cardinality = 0..1
+	###Euclidean means the shortest distance from A to B, "as the crow flies" (hyperlane by default)
+	type = enum[hyperlane_euclidean]
+	## cardinality = 0..1
+	###Whether to use bypasses (wormholes/gateways) when evaluating distance (yes by default)
+	uses_bypass = bool
+	## cardinality = 0..1
+	###Determines what bypass can be used. This parameter is ignored if uses_bypass=false. If unset, bypasses will be ignored. Note: This needs testing, report results to Dayshine and Caligula.
+	bypass_empire = scalar
+	## cardinality = 0..1
+	min_jumps = int
+	## cardinality = 0..1
+	max_jumps = int
+}
+
+
+#could be refined to check leader or species traits depending on scope
+alias[trigger:has_trait] = <trait>
+#these two should be amended to <trait.species_trait> and <trait.ruler_trait>
+alias[trigger:pop_has_trait] = <trait>
+alias[trigger:has_ruler_trait] = <trait>
+
+
+

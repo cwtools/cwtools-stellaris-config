@@ -3,3 +3,12 @@ types = {
         path = "game/common/static_modifiers"
     }
 }
+
+static_modifier = {
+	alias_name[modifier] = alias_match_left[modifier]
+	## cardinality = 0..1
+	icon_frame = int[1..3]
+	#need to find a way to make it refer to a path
+	## cardinality = 0..1
+	icon = filepath
+}

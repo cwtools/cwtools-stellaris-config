@@ -1,0 +1,6 @@
+
+types = {
+    type[ascension_perk] = {
+        path = "game/common/ascension_perks"
+    }
+}

@@ -1,0 +1,109 @@
+#subtype[species_trait] needs a lack of leader_trait = yes. Using [!leader_trait] for now
+
+types = {
+    type[trait] = {
+        "game/common/traits"
+		
+        subtype[leader_trait] = {
+            leader_trait = yes
+        }
+        subtype[ruler_trait] = {
+			leader_class = { ruler }
+        }
+        subtype[scientist_trait] = {
+			leader_class = { scientist }
+        }
+        subtype[species_trait] = {
+            # cardinality = 0..1
+			leader_trait = no
+        }
+    }
+}
+
+trait = {
+	cost = int
+	
+	subtype[species_trait] = {	
+		## cardinality = 0..1
+		icon = "filepath"
+		
+		allowed_archetypes = { <species_archetype> }
+		
+		modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		
+		## cardinality = 0..1
+		modification = bool
+		## cardinality = 0..1
+		improves_leaders = yes
+		## cardinality = 0..1
+		advanced_trait = yes
+	}
+	
+	subtype[leader_trait] = {	
+		icon = "filepath"
+		
+		modification = no
+		
+		leader_trait = yes
+		
+		## cardinality = 0..1
+		modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		
+		## cardinality = 0..1
+		self_modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		
+		## cardinality = 0..1
+		leader_class = {
+			## cardinality = 1..5
+			enum[leader_classes]
+		}
+		
+		## cardinality = 0..1
+		leader_potential_add = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
+	
+	subtype[scientist_trait] = {
+		## cardinality = 0..1
+		ai_categories = {
+			## cardinality = 1..4
+			enum[trait_ai_classes]
+		}
+	}
+	
+	## cardinality = 0..1
+	initial = no
+	## cardinality = 0..1
+	randomized = no
+	
+	## cardinality = 0..1
+	opposites = {
+		## cardinality = 1..100
+		"<trait>"
+	}
+	
+	## cardinality = 0..1
+	custom_tooltip = localisation
+	
+	## cardinality = 0..1
+	ai_weight = {
+		weight = int
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+enums = {
+    enum[trait_ai_classes] = {
+		engineering
+		physics
+		society
+		survey
+	}
+}

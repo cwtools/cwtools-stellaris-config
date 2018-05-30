@@ -1,0 +1,12 @@
+
+types = {
+    type[species_archetype] = {
+        path = "game/common/species_archetypes"
+    }
+}
+
+#make sure trait points cannot be above max, ideally
+species_archetype = {
+	species_trait_points = int
+	species_max_traits = int
+}
