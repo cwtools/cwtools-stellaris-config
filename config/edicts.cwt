@@ -59,6 +59,7 @@ edict = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	
+	## cardinality = 0..1
 	effect = {
 		alias_name[effect] = alias_match_left[effect]
 	}

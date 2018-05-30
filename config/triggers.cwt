@@ -630,13 +630,21 @@ alias[trigger:has_communications] = scalar
 alias[trigger:is_at_war_with] = scalar
 alias[trigger:is_within_borders_of] = scalar
 alias[trigger:has_non_aggression_pact] = scalar
+alias[trigger:is_controlled_by] = scalar
+
 #to country/species/pop
 alias[trigger:is_same_species] = scalar
 alias[trigger:is_subspecies] = scalar
 #any scope
 alias[trigger:exists] = scalar
-			
 
+
+#this who should be a scope, but I think rather pop/species
+#should also check < >
+alias[trigger:habitability] = {
+	who = scalar
+	value = float[0.0..1.0]
+}
 
 
 alias[trigger:has_federation] = bool
@@ -649,6 +657,7 @@ alias[trigger:has_owner] = bool
 alias[trigger:has_ground_combat] = bool
 alias[trigger:always] = bool
 alias[trigger:is_subject] = bool
+alias[trigger:is_under_colonization] = bool
 
 
 
