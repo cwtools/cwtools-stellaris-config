@@ -2,7 +2,7 @@
 
 types = {
     type[trait] = {
-        "game/common/traits"
+        path = "game/common/traits"
 		
         subtype[leader_trait] = {
             leader_trait = yes

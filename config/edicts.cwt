@@ -3,15 +3,18 @@ types = {
         name_field = "name"
         path = "game/common/edicts"
 		
+        ## type_key_filter = planet_edict
         subtype[planet_edict] = {
-            planet_edict
         }
+		
+        ## type_key_filter = country_edict
         subtype[country_edict] = {
             country_edict
 			cost = { enum[edict_costs] = int }
         }
+		
+        ## type_key_filter = country_edict
         subtype[country_edict_ambition] = {
-            country_edict
 			is_ambition = yes
         }
     }
@@ -68,73 +71,5 @@ edict = {
 	effect = {
 		alias_name[effect] = alias_match_left[effect]
 	}
-}
-
-		section_slots = {
-        subtype[starbase] = {
-
-        }
-        subtype[ship] = {
-            "bow" = {
-                locator = scalar 
-            }
-            "mid" = {
-                locator = scalar 
-            }
-            "stern" = {
-                locator = scalar 
-            }
-        }
-        subtype[platform] = {
-            "west" = {
-                locator = scalar 
-            }
-            "east" = {
-                locator = scalar 
-            }
-        }
-    }
-    ## cardinality = 0..1    
-    combat_size_multiplier = int
-    ## cardinality = 0..1    
-    num_target_locators = int
-    ## cardinality = 0..1    
-    is_space_station = bool
-    ## cardinality = 0..1    
-    icon_frame = int
-    ## cardinality = 0..1    
-    base_buildtime = int
-    ## cardinality = 0..1    
-    can_have_federation_design = bool
-    ## cardinality = 0..1    
-    enable_default_design = bool
-    ## cardinality = 0..1
-    default_behavior = <ship_behavior>
-    ## cardinality = 0..1
-    ## cardinality = 0..1
-    upkeep_override = {
-        energy = int
-        minerals = int
-    }
-    ## cardinality = 0..1
-    has_mineral_upkeep = bool
-    class = enum[shipsize_class]
-    construction_type = scalar
-    required_component_set = scalar
-    ## cardinality = 0..1
-    valid_target_aggressive_stance = bool
-    ## cardinality = 0..1
-    auto_upgrade = bool
-    ## cardinality = 0..1
-    uses_name_prefix = bool
-    ## cardinality = 0..1
-    takes_name_from_ship_design = bool
-    subtype[starbase]  = {
-        flip_control_on_disable = bool
-    }
-    subtype[ship] = {
-        combat_disengage_chance = float
-    }
-    
 }
 
