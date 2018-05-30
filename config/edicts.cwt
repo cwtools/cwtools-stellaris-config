@@ -10,7 +10,7 @@ types = {
         ## type_key_filter = country_edict
         subtype[country_edict] = {
             country_edict
-			cost = { enum[edict_costs] = int }
+			cost = { enum[resources] = int }
         }
 		
         ## type_key_filter = country_edict
@@ -21,21 +21,12 @@ types = {
 }
 
 
-enums = {
-    enum[edict_costs] = {
-        energy
-		minerals
-		food
-		influence
-    }
-}
-
 edict = {
-	name = localisation (in "")
+	name = localisation_in_quotes
 	length = int
 	
 	subtype[!country_edict_ambition] = {
-		cost = { enum[edict_costs] = int }
+		cost = { <resource> = int }
 	}
 	
 	subtype[country_edict_ambition] = {

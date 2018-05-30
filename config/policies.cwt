@@ -1,0 +1,61 @@
+#find a way to get the subtypes working, no idea how
+
+types = {
+    type[policy] = {
+        path = "game/common/policies"
+		
+		subtype[policy_option] = {
+			
+		}
+    }
+}
+
+
+policy = {
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	
+	## cardinality = 0..1
+	allow = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## cardinality = 0..1
+	on_enabled = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+
+	## cardinality = 0..1
+	on_disabled = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+	
+	## cardinality = 2..20
+	option = {
+		name = localisation_in_quotes
+		
+		policy_flags = {
+			## cardinality = 0..1
+			localisation_in_quotes
+		}
+		
+		## cardinality = 0..1
+		valid = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		
+		## cardinality = 0..1
+		modifier = {
+			## cardinality = 0..1
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		
+		## cardinality = 0..1
+		prerequisites = { <technology> }
+		
+		AI_weight = {
+			alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		}
+	}
+}

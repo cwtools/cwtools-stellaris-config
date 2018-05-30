@@ -619,7 +619,6 @@ alias[trigger:is_imperious_to] = scalar
 alias[trigger:is_arrogant_to] = scalar
 alias[trigger:is_enigmatic_to] = scalar
 alias[trigger:is_berserker_to] = scalar
-
 alias[trigger:is_hostile_to] = scalar
 alias[trigger:is_domineering_to] = scalar
 alias[trigger:is_unfriendly_to] = scalar
@@ -630,6 +629,7 @@ alias[trigger:has_defensive_pact] = scalar
 alias[trigger:has_communications] = scalar
 alias[trigger:is_at_war_with] = scalar
 alias[trigger:is_within_borders_of] = scalar
+alias[trigger:has_non_aggression_pact] = scalar
 #to country/species/pop
 alias[trigger:is_same_species] = scalar
 alias[trigger:is_subspecies] = scalar
@@ -639,6 +639,7 @@ alias[trigger:exists] = scalar
 
 
 
+alias[trigger:has_federation] = bool
 alias[trigger:is_at_war] = bool
 alias[trigger:is_ai] = bool
 alias[trigger:is_being_purged] = bool
@@ -646,6 +647,10 @@ alias[trigger:is_enslaved] = bool
 alias[trigger:has_orbital_bombardment] = bool
 alias[trigger:has_owner] = bool
 alias[trigger:has_ground_combat] = bool
+alias[trigger:always] = bool
+alias[trigger:is_subject] = bool
+
+
 
 
 #Hopefully this can be done a lot better. "who" must be country, "side" must be country or attacker(s?) or defender(s?)
@@ -703,6 +708,7 @@ alias[trigger:planet_size] = int
 ###Checks the number of fallen empires in the galaxy
 alias[trigger:num_fallen_empires] = int
 alias[trigger:colony_age] = int
+alias[trigger:num_ethics] = int
 
 
 alias[trigger:is_researching_area] = enum[research_areas]

@@ -62,11 +62,13 @@ war_goal = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	
+	## cardinality = 0..1
 	###Run when war ends in status quo. The targeted country, THIS = The acting country
 	on_status_quo = {	
 		alias_name[effect] = alias_match_left[effect]
 	}
 	
+	## cardinality = 0..1
 	###Run when target surrenders after claims are ceded. The targeted country, THIS = The acting country
 	on_accept = {
 		alias_name[effect] = alias_match_left[effect]

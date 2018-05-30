@@ -873,3 +873,27 @@ alias[effect:divide_variable] = {
 	which = scalar
 	value = float
 }
+
+#max should not be less than min...
+alias[effect:add_monthly_resource_mult] = {
+	resource = <resource>
+	value = int
+	min = int
+	max = int
+}
+
+#should be trait.leader_trait
+alias[effect:add_trait] = <trait>
+#should be trait.ruler_trait
+alias[effect:add_ruler_trait] = <trait>
+
+
+#apparently while = variable also works
+#also, at least one of while and limit should be there
+alias[effect:while] = {
+	## cardinality = 0..1
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
