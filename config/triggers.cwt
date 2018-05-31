@@ -723,6 +723,10 @@ alias[trigger:is_planet_class] = <planet_class>
 alias[trigger:is_star_class] = <star_class>
 
 
+#ideally would check scopes and then planet/country edict
+alias[trigger:has_edict] = <edict>
+
+
 #Hopefully this can be done a lot better. "who" must be country, "side" must be country or attacker(s?) or defender(s?)
 alias[trigger:is_war_participant] = {
 	who = scalar

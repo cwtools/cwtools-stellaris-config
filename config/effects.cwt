@@ -1094,6 +1094,8 @@ alias[effect:create_country] = {
 	ship_prefix = scalar #should be string or a scope
 	
 	## cardinality = 0..1
+	authority = random
+	## cardinality = 0..1
 	authority = <authority>
 	## cardinality = 0..1
 	civics = random
@@ -1144,6 +1146,7 @@ alias[effect:create_country] = {
 ###Creates a rebellion on this planet
 alias[effect:create_rebels] = {
 	name = scalar #technically should be localisation_synced or " " in code or a scope
+	authority = random
 	authority = <authority>
 	civics = random
 	civics = {
@@ -1272,8 +1275,36 @@ alias[effect:set_age] = int
 #}
 
 
-#modify_species
+###Creates a new, modified species based on an already-extant species
+alias[effect:modify_species] = {
+	## cardinality = 0..1
+	species = scope[any] # species to modify
+	## cardinality = 0..1
+	###new base species; default: auto (uses species)
+	base = scope[any]
+	## cardinality = 0..1
+	base = auto
+	## cardinality = 0..1
+	base = none
+	## cardinality = 0..10
+	add_trait = <trait>
+	## cardinality = 0..10
+	remove_trait = <trait>
+	## cardinality = 0..1
+	ideal_planet_class = scope[any]
+	## cardinality = 0..1
+	ideal_planet_class = <planet_class>
+	## cardinality = 0..1
+	###modify scoped pops/planet/leader/country; default: yes
+	change_scoped_species = bool
+	## cardinality = 0..1
+	portrait = scalar #<target or portrait name>
+}
 
+
+alias[effect:establish_communications_no_message] = scope[any] #country
+
+alias[effect:pop_change_ethic] = <ethos>
 
 #scripted effects
 alias[effect:<scripted_effect>] = bool
