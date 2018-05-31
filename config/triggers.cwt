@@ -884,7 +884,7 @@ alias[trigger:custom_tooltip] = {
 #< >
 alias[trigger:years_of_peace] = {
 	## cardinality = 0..1
-	delay = 50
+	delay = int
 	value = int
 }
 
