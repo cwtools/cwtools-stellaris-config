@@ -680,9 +680,12 @@ alias[trigger:recently_lost_war] = bool
 alias[trigger:is_colony] = bool
 alias[trigger:is_in_combat] = bool
 alias[trigger:is_star] = bool
+alias[trigger:is_asteroid] = bool
+alias[trigger:has_any_strategic_resource] = bool
+
 
 alias[trigger:is_planet_class] = <planet_class>
-
+alias[trigger:is_star_class] = <star_class>
 
 
 #Hopefully this can be done a lot better. "who" must be country, "side" must be country or attacker(s?) or defender(s?)
