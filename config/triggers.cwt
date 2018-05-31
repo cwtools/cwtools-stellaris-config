@@ -821,3 +821,62 @@ alias[trigger:has_ruler_trait] = <trait>
 
 
 
+#these should all be country = country
+###Checks if a species/pop/leader has a particular citizenship type in their country
+alias[trigger:has_citizenship_type] = {
+	## cardinality = 0..1
+	country = scalar
+	type = enum[citizenship_types]
+}
+###Checks if a species/pop/leader has a particular military service type in their country
+alias[trigger:has_military_service_type] = {
+	## cardinality = 0..1
+	country = scalar
+	type = enum[military_service_types]
+}
+###Checks if a species/pop/leader has a particular purge type in their country
+alias[trigger:has_purge_type] = {
+	## cardinality = 0..1
+	country = scalar
+	type = enum[purge_types]
+}
+###Checks if a species/pop/leader has a particular slavery type in their country
+alias[trigger:has_slavery_type] = {
+	## cardinality = 0..1
+	country = scalar
+	type = enum[slavery_types]
+}
+###Checks if the pop is prevented from reproducing
+alias[trigger:has_population_control] = {
+	## cardinality = 0..1
+	country = scalar
+	type = enum[population_controls]
+}
+###Checks if the pop is prevented from migrating
+alias[trigger:has_migration_control] = {
+	## cardinality = 0..1
+	country = scalar
+	type = enum[migration_controls]
+}
+###Checks if a species/pop/leader has a particular living standard in their country
+alias[trigger:has_living_standard] = {
+	## cardinality = 0..1
+	country = scalar
+	type = enum[living_standards]
+}
+
+
+#all three texts should be localisation
+alias[trigger:custom_tooltip] = {
+	## cardinality = 0..1
+	text = scalar
+	## cardinality = 0..1
+	fail_text = scalar
+	## cardinality = 0..1
+	success_text = scalar
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+
+#scripted triggers
+alias[trigger:<scripted_trigger>] = bool

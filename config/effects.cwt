@@ -766,20 +766,21 @@ alias[effect:remove_relation_flag] = {
     flag = scalar
 }
 
-#doesn't currently work
-#alias[effect:change_government] = {
-#    ##cardinality = 0..1
-#    authority = random
-#    ##cardinality = 0..1
-#    authority = <authority>
-#    ##cardinality = 0..1
-#    civics = random
-#    ##cardinality = 0..1
-#    civics = {
-#		##cardinality = 0..3
-#		<civic>
-#	}
-#}
+
+
+alias[effect:change_government] = {
+    ## cardinality = 0..1
+    authority = random
+    ## cardinality = 0..1
+    authority = <authority>
+    ## cardinality = 0..1
+    civics = random
+    ## cardinality = 0..1
+    civics = {
+		## cardinality = 1..3
+		civic = <civic>
+	}
+}
 
 
 #ideally, "heir" should only be if type = ruler
@@ -905,3 +906,63 @@ alias[effect:resettle_pop] = {
 	## cardinality = 0..1
 	tile = scalar
 }
+
+#these should all be country = country
+#also, most of these are not used in Vanilla (the first is, I did the cardinality based on it)
+###Set citizenship type for scoped species/pop/leader
+alias[effect:set_citizenship_type] = {
+	## cardinality = 0..1
+	country = scalar
+	type = enum[citizenship_types]
+	cooldown = bool
+}
+###Set military service type for scoped species/pop/leader
+alias[effect:set_military_service_type] = {
+	## cardinality = 0..1
+	country = scalar
+	type = enum[military_service_types]
+	cooldown = bool
+}
+###Set purge type for scoped species/pop/leader
+alias[effect:set_purge_type] = {
+	## cardinality = 0..1
+	country = scalar
+	type = enum[purge_types]
+	cooldown = bool
+}
+###Set slavery type for scoped species/pop/leader
+alias[effect:set_slavery_type] = {
+	## cardinality = 0..1
+	country = scalar
+	type = enum[slavery_types]
+	cooldown = bool
+}
+###Set population control for scoped species/pop/leader
+alias[effect:set_population_controls] = {
+	## cardinality = 0..1
+	country = scalar
+	type = enum[population_controls]
+	cooldown = bool
+}
+###Set migration control for scoped species/pop/leader
+alias[effect:set_migration_controls] = {
+	## cardinality = 0..1
+	country = scalar
+	type = enum[migration_controls]
+	cooldown = bool
+}
+###Set living standard for scoped species/pop/leader
+alias[effect:set_living_standard] = {
+	## cardinality = 0..1
+	country = scalar
+	type = enum[living_standards]
+	cooldown = bool
+}
+
+
+#should somehow link to exile_leader_as
+###Reinstates a previously-exiled leader to the scoped country/fleet/army/pop faction
+alias[effect:set_leader] = scalar
+
+#scripted effects
+alias[effect:<scripted_effect>] = bool

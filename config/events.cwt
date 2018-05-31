@@ -77,11 +77,16 @@ event = {
 
     subtype[diplomatic] = {
         picture_event_data = {
-            portrait = scalar
-            planet_background = scalar
-            graphical_culture = scalar
-            city_level = scalar
+			#these can all be either a scope (country except for room that is ruler) or a key.
             room = scalar
+			## cardinality = 0..1
+            portrait = scalar
+			## cardinality = 0..1
+            planet_background = scalar
+			## cardinality = 0..1
+            graphical_culture = scalar
+			## cardinality = 0..1
+            city_level = scalar
         }
     }
 
@@ -121,6 +126,12 @@ event = {
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
         }
 
+		subtype[diplomatic] = {
+			#should be localisation
+			## cardinality = 0..1
+			response_text = scalar
+		}
+		
         ## cardinality = 0..1
         alias_name[effect] = alias_match_left[effect]
 
