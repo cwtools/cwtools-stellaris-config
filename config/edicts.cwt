@@ -9,9 +9,8 @@ types = {
 		
         ## type_key_filter = country_edict
         subtype[country_edict] = {
-            country_edict
-			cost = { enum[resources] = int }
-        }
+
+}
 		
         ## type_key_filter = country_edict
         subtype[country_edict_ambition] = {
