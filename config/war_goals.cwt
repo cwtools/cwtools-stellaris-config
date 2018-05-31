@@ -69,6 +69,11 @@ war_goal = {
 	}
 	
 	## cardinality = 0..1
+	on_wargoal_set = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+	
+	## cardinality = 0..1
 	###Run when target surrenders after claims are ceded. The targeted country, THIS = The acting country
 	on_accept = {
 		alias_name[effect] = alias_match_left[effect]

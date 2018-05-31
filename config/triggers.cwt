@@ -476,10 +476,19 @@ alias[trigger:count_diplo_ties] = {
 #Supported Scopes: war
 #Supported Targets: none
 
-#count_potential_war_participants - Checks the amount of potential war participants in a specific war that meet the specified criteria
-#count_potential_war_participants = { attacker = <target> defender = <target> side = <target> limit = { <triggers> } count > 2
-#Supported Scopes: all
-#Supported Targets: none
+
+#attacker, defender and side should be country scope, side should be one of the previous two
+#< >
+###Checks the amount of potential war participants in a specific war that meet the specified criteria
+alias[trigger:count_potential_war_participants] = {
+	attacker = scalar
+	defender = scalar
+	side = scalar
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	count = int
+}
 
 
 alias[trigger:has_faction] = <pop_faction>
@@ -628,12 +637,15 @@ alias[trigger:is_in_federation_with] = scalar
 alias[trigger:has_defensive_pact] = scalar
 alias[trigger:has_research_agreement] = scalar
 alias[trigger:has_communications] = scalar
+alias[trigger:is_guaranteeing] = scalar
+alias[trigger:has_truce] = scalar
 alias[trigger:is_at_war_with] = scalar
 alias[trigger:is_within_borders_of] = scalar
 alias[trigger:has_non_aggression_pact] = scalar
 alias[trigger:is_controlled_by] = scalar
 alias[trigger:is_neighbor_of] = scalar
 alias[trigger:is_original_owner] = scalar
+alias[trigger:is_same_empire] = scalar
 #to country/species/pop
 alias[trigger:is_same_species] = scalar
 alias[trigger:is_subspecies] = scalar
@@ -695,6 +707,7 @@ alias[trigger:num_ascension_perk_slots] = int
 alias[trigger:num_owned_active_gateways] = int
 alias[trigger:num_active_gateways] = int
 alias[trigger:num_trait_points] = int
+alias[trigger:has_skill] = int
 
 
 alias[trigger:has_ring] = bool
@@ -722,6 +735,9 @@ alias[trigger:planet_size] = int
 alias[trigger:num_fallen_empires] = int
 alias[trigger:colony_age] = int
 alias[trigger:num_ethics] = int
+
+
+alias[trigger:is_ship_size] = <ship_size>
 
 
 alias[trigger:is_researching_area] = enum[research_areas]
@@ -888,6 +904,7 @@ alias[trigger:years_of_peace] = {
 	value = int
 }
 
+alias[trigger:is_difficulty] = int[0..2]
 
 alias[trigger:has_building] = <building>
 
@@ -895,6 +912,18 @@ alias[trigger:has_ai_personality] = <ai_personality>
 alias[trigger:has_ai_personality_behaviour] = enum[ai_personality_behaviours]
 
 
+#check < >
+alias[trigger:has_country_resource] = {
+	type = <resource>
+	amount = int
+}
+alias[trigger:has_monthly_income] = {
+	resource = <resource>
+	value = int
+}
+
 #scripted triggers
 alias[trigger:<scripted_trigger>] = bool
 
+
+							

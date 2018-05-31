@@ -198,13 +198,13 @@ alias[effect:random_owned_leader] = {
     alias_name[effect] = alias_match_left[effect]
 }
 
-alias[every_system_within_border] = {
+alias[effect:every_system_within_border] = {
 	##cardinality = 0..1
     limit = { alias_name[trigger] = alias_match_left[trigger] }
     alias_name[effect] = alias_match_left[effect]
 }
 
-alias[random_system_within_border] = {
+alias[effect:random_system_within_border] = {
 	##cardinality = 0..1
     limit = { alias_name[trigger] = alias_match_left[trigger] }
     alias_name[effect] = alias_match_left[effect]
@@ -980,9 +980,32 @@ alias[effect:set_closed_borders] = {
 	status = bool
 }
 
+#needs scope = country
+alias[effect:declare_war] = {
+	target = scalar
+	attacker_war_goal = <war_goal>
+	## cardinality = 0..1
+	name = scalar
+}
+
+#needs scope = fleet
+alias[effect:destroy_fleet] = scalar
+
+###Adds/Removes tiles to/from the scoped planet to adjust its planet size
+alias[effect:change_planet_size] = int
+
+#see comment for what should actually be written here
+###Sets the name of the scoped country/planet/ship/fleet/leader/army/system/pop faction. Allowed entries are <random>/<string in localisation_synced>/<string written in quotes e.g. "United Nations">
+alias[effect:set_name] = scalar
+
+
 #should somehow link to exile_leader_as
 ###Reinstates a previously-exiled leader to the scoped country/fleet/army/pop faction
 alias[effect:set_leader] = scalar
+
+
+
+alias[effect:break] = yes
 
 #scripted effects
 alias[effect:<scripted_effect>] = bool
