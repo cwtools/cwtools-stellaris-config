@@ -2,8 +2,8 @@ types = {
     type[opinion_modifier] = {
         path = "game/common/opinion_modifiers"
 		
-		subtype[triggered_opinon_modifier] = {
-			trigger = { alias_name[trigger] = alias_match_left[trigger] }
+		subtype[triggered_opinion_modifier] = {
+			trigger = { }
 		}
     }
 }
@@ -17,7 +17,7 @@ opinion_modifier = {
 		alias[modifier_rule_add:modifier] = alias_match_left[modifier_rule_add]
 	}
 	
-	subtype[!triggered_opinon_modifier] = {
+	subtype[!triggered_opinion_modifier] = {
 		## cardinality = 0..1
 		decay = {
 			base = int
@@ -38,7 +38,7 @@ opinion_modifier = {
 		unique = bool
 	}
 	
-	subtype[triggered_opinon_modifier] = {
+	subtype[triggered_opinion_modifier] = {
 		###root = country with the opinion, from = country it has the opinion of
 		trigger = { alias_name[trigger] = alias_match_left[trigger] }
 	}

@@ -198,6 +198,18 @@ alias[effect:random_owned_leader] = {
     alias_name[effect] = alias_match_left[effect]
 }
 
+alias[every_system_within_border] = {
+	##cardinality = 0..1
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[random_system_within_border] = {
+	##cardinality = 0..1
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+
 alias[effect:every_owned_starbase] = {
 	##cardinality = 0..1
     limit = { alias_name[trigger] = alias_match_left[trigger] }
@@ -959,6 +971,14 @@ alias[effect:set_living_standard] = {
 	cooldown = bool
 }
 
+#needs scope = country
+alias[effect:join_war] = scalar
+
+#needs scope = country
+alias[effect:set_closed_borders] = {
+	who = scalar
+	status = bool
+}
 
 #should somehow link to exile_leader_as
 ###Reinstates a previously-exiled leader to the scoped country/fleet/army/pop faction

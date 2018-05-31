@@ -1,0 +1,86 @@
+types = {
+    type[ai_personality] = {
+        path = "game/common/personalities"
+    }
+}
+
+enums = {
+	enum[ai_personality_behaviours] = {
+		conqueror
+		subjugator
+		liberator
+		opportunist
+		slaver
+		caste_system
+		uplifter
+		purger
+		displacer
+		infiltrator
+		dominator
+		robot_exploiter
+		robot_liberator
+		propagator
+		multispecies
+		crisis_fighter
+	}
+}
+
+
+
+#needs checking
+ai_personality = {
+	aggressiveness = float
+	trade_willingness = float
+	bravery = float
+	combat_bravery = float
+
+	military_spending = float
+	colony_spending = float
+
+	federation_acceptance = int
+	nap_acceptance = int
+	defensive_pact_acceptance = int
+	migration_pact_acceptance = int
+
+	advanced_start_chance = int
+
+	#should check weapon type keys, I don't know where they are defined though
+	weapon_preferences = scalar
+	
+	armor_ratio = float
+	shields_ratio = float
+	hull_ratio = float
+
+	threat_modifier = float
+	threat_others_modifier = float
+	friction_modifier = float
+	claims_modifier = float
+
+	behaviour = {
+		conqueror = bool
+		subjugator = bool
+		liberator = bool
+		opportunist = bool
+		slaver = bool
+		caste_system = bool
+		uplifter = bool
+		purger = bool
+		displacer = bool
+		infiltrator = bool
+		dominator = bool
+		robot_exploiter = bool
+		robot_liberator = bool
+		propagator = bool
+		multispecies = bool
+		crisis_fighter = bool
+	}
+
+	allow = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	weight_modifier = {
+		weight = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}

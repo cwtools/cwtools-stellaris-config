@@ -1,5 +1,0 @@
-types = {
-    type[observation_station_mission] = {
-        path = "game/common/governments/observation_station_missions"
-    }
-}

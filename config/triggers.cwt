@@ -626,12 +626,14 @@ alias[trigger:is_disloyal_to] = scalar
 alias[trigger:is_rival] = scalar
 alias[trigger:is_in_federation_with] = scalar
 alias[trigger:has_defensive_pact] = scalar
+alias[trigger:has_research_agreement] = scalar
 alias[trigger:has_communications] = scalar
 alias[trigger:is_at_war_with] = scalar
 alias[trigger:is_within_borders_of] = scalar
 alias[trigger:has_non_aggression_pact] = scalar
 alias[trigger:is_controlled_by] = scalar
-
+alias[trigger:is_neighbor_of] = scalar
+alias[trigger:is_original_owner] = scalar
 #to country/species/pop
 alias[trigger:is_same_species] = scalar
 alias[trigger:is_subspecies] = scalar
@@ -658,6 +660,8 @@ alias[trigger:has_ground_combat] = bool
 alias[trigger:always] = bool
 alias[trigger:is_subject] = bool
 alias[trigger:is_under_colonization] = bool
+alias[trigger:recently_lost_war] = bool
+
 
 
 
@@ -877,6 +881,20 @@ alias[trigger:custom_tooltip] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+#< >
+alias[trigger:years_of_peace] = {
+	## cardinality = 0..1
+	delay = 50
+	value = int
+}
+
+
+alias[trigger:has_building] = <building>
+
+alias[trigger:has_ai_personality] = <ai_personality>
+alias[trigger:has_ai_personality_behaviour] = enum[ai_personality_behaviours]
+
 
 #scripted triggers
 alias[trigger:<scripted_trigger>] = bool
+
