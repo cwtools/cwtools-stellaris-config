@@ -679,7 +679,9 @@ alias[trigger:is_under_colonization] = bool
 alias[trigger:recently_lost_war] = bool
 alias[trigger:is_colony] = bool
 alias[trigger:is_in_combat] = bool
+alias[trigger:is_star] = bool
 
+alias[trigger:is_planet_class] = <planet_class>
 
 
 

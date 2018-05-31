@@ -56,8 +56,10 @@ anomaly_category = {
 		int = scalar #event ID
 		## cardinality = 0..100
 		int = {
+			## cardinality = 0..1
 			###Individual outcomes default to max_once = yes
 			max_once = bool
+			## cardinality = 0..1
 			###Individual outcomes default to max_once_global = no
 			max_once_global = bool
 			
