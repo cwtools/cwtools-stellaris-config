@@ -130,6 +130,9 @@ event = {
 			#should be localisation
 			## cardinality = 0..1
 			response_text = scalar
+			
+			## cardinality = 0..1
+			is_dialog_only = bool
 		}
 		
         ## cardinality = 0..1

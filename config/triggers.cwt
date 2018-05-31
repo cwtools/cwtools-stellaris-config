@@ -941,6 +941,10 @@ alias[trigger:is_subject_type] = <subject_type>
 ###Checks if the country has claims on the given country or system.
 alias[trigger:has_claim] = scalar
 
+
+alias[trigger:local_has_dlc] = enum[DLCs]
+alias[trigger:host_has_dlc] = enum[DLCs]
+
 #scripted triggers
 alias[trigger:<scripted_trigger>] = bool
 

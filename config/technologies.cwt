@@ -3,3 +3,107 @@ types = {
         path = "game/common/technology"
     }
 }
+
+
+
+technology = {
+	cost = int
+	area = enum[research_areas]
+	tier = int
+	category = { enum[research_categories] }
+	## cardinality = 0..1
+	is_rare = bool
+	
+	## cardinality = 0..1
+	is_reverse_engineerable = bool
+	
+	#usually in ""
+	prerequisites = {
+		## cardinality = 0..100
+		<technology>
+	}
+	
+	weight = int
+	
+	## cardinality = 0..1
+	feature_flags = {
+		## cardinality = 0..100
+		enum[feature_flags]
+	}
+	
+	## cardinality = 0..1
+	modifier = {
+		## cardinality = 0..1
+		description = localisation
+		## cardinality = 0..1
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	## cardinality = 0..1
+	prereqfor_desc = {
+		## cardinality = 0..4
+		hide_prereq_for_desc = enum[prereq_for_categories]
+		## cardinality = 0..4
+		enum[prereq_for_categories] = {
+			title = localisation
+			desc = localisation
+		}
+	}
+	
+	weight_modifier = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	
+	
+	ai_weight = {
+		factor = int
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+enums = {
+	enum[prereq_for_categories] = {
+		ship
+		custom
+		component
+		diplo_action
+	}
+	enum[feature_flags] = {
+		experimental_subspace_navigation
+		robot_leaders
+		megaengineering
+		assist_research
+		tech_automated_exploration
+		wormhole_stabilization
+		gateway_activation
+		gateway_construction
+		jump_method
+		planetary_ftl_inhibitor
+		build_terraform_station
+		terraform_inhabited
+		uplifting
+		modify_traits
+		pop_self_modification
+		habitability_gene_modding
+		bliss_standard
+		campaign_edicts
+		unity_ambitions
+		modify_robots
+	}
+	enum[research_categories] = {
+		statecraft
+		voidcraft
+		field_manipulation
+		biology
+		computing
+		particles
+		military_theory
+		psionics
+		new_worlds
+		materials
+		propulsion
+		industry
+	}
+}
+
+
