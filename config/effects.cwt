@@ -198,6 +198,18 @@ alias[effect:random_owned_leader] = {
     alias_name[effect] = alias_match_left[effect]
 }
 
+alias[effect:every_owned_army] = {
+	##cardinality = 0..1
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[effect:random_owned_army] = {
+	##cardinality = 0..1
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+
 alias[effect:every_system_within_border] = {
 	##cardinality = 0..1
     limit = { alias_name[trigger] = alias_match_left[trigger] }
@@ -991,6 +1003,11 @@ alias[effect:declare_war] = {
 #needs scope = fleet
 alias[effect:destroy_fleet] = scalar
 
+#needs scope = ship
+alias[effect:delete_ship] = scalar
+alias[effect:destroy_ship] = scalar
+
+
 ###Adds/Removes tiles to/from the scoped planet to adjust its planet size
 alias[effect:change_planet_size] = int
 
@@ -1004,8 +1021,32 @@ alias[effect:set_name] = scalar
 alias[effect:set_leader] = scalar
 
 
+alias[effect:set_subject_of] = {
+	who = none
+}
+#should be country scope
+alias[effect:set_subject_of] = {
+	who = scalar
+	subject_type = <subject_type>
+}
+
+#should be scope = country
+###Removes claims on target system
+alias[effect:remove_claims] = {
+	who = scalar
+	## cardinality = 0..1
+	num_of_claims = int
+}
 
 alias[effect:break] = yes
+###Destroys the scoped country
+alias[effect:destroy_country] = yes
+###Removes a building from the scoped tile
+alias[effect:remove_building] = yes
+
+alias[effect:add_minerals] = int
+alias[effect:add_energy] = int
+alias[effect:add_influence] = int
 
 #scripted effects
 alias[effect:<scripted_effect>] = bool

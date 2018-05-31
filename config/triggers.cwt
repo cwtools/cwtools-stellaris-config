@@ -465,11 +465,15 @@ alias[trigger:count_diplo_ties] = {
 #Supported Scopes: country
 #Supported Targets: none
 
-#count_tile - Iterate through each defending army on a planet
-#count_tile = { <count=<num/all>> <triggers> }
-#Supported Scopes: planet
-#Supported Targets: none
 
+alias[trigger:count_tile] = {
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+}
+alias[trigger:count_tile] = {
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	count = all
+}
 
 #count_war_participants - Checks the number of participants in the war on a specific side that meet the specified criteria
 #count_war_participants = { limit = { <triggers> } side = target count < 4
@@ -673,7 +677,8 @@ alias[trigger:always] = bool
 alias[trigger:is_subject] = bool
 alias[trigger:is_under_colonization] = bool
 alias[trigger:recently_lost_war] = bool
-
+alias[trigger:is_colony] = bool
+alias[trigger:is_in_combat] = bool
 
 
 
@@ -739,6 +744,7 @@ alias[trigger:num_ethics] = int
 
 alias[trigger:is_ship_size] = <ship_size>
 
+alias[trigger:is_ship_class] = enum[shipsize_class]
 
 alias[trigger:is_researching_area] = enum[research_areas]
 #should have < >
@@ -822,7 +828,7 @@ alias[trigger:distance] = {
 	type = enum[hyperlane_euclidean]
 	## cardinality = 0..1
 	###Whether to use bypasses (wormholes/gateways) when evaluating distance (yes by default)
-	uses_bypass = bool
+	uses_bypasses = bool
 	## cardinality = 0..1
 	###Determines what bypass can be used. This parameter is ignored if uses_bypass=false. If unset, bypasses will be ignored. Note: This needs testing, report results to Dayshine and Caligula.
 	bypass_empire = scalar
@@ -903,6 +909,7 @@ alias[trigger:years_of_peace] = {
 	delay = int
 	value = int
 }
+alias[trigger:fleet_size] = int
 
 alias[trigger:is_difficulty] = int[0..2]
 
@@ -921,6 +928,18 @@ alias[trigger:has_monthly_income] = {
 	resource = <resource>
 	value = int
 }
+
+#should be country scope
+alias[trigger:can_be_subject] = {
+	overlord = scalar
+	subject_type = <subject_type>
+}
+
+alias[trigger:is_subject_type] = <subject_type>
+
+#should be scope = country or system
+###Checks if the country has claims on the given country or system.
+alias[trigger:has_claim] = scalar
 
 #scripted triggers
 alias[trigger:<scripted_trigger>] = bool
