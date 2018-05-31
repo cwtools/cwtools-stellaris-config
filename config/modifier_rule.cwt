@@ -15,3 +15,12 @@ alias[modifier_rule_add:modifier] = {
     add = int
     alias_name[trigger] = alias_match_left[trigger]
 }
+
+#for only "factor/add" (anomalies, for example)
+alias[modifier_rule_add_factor:modifier] = {
+	## cardinality = 0..1
+    factor = float
+	## cardinality = 0..1
+    add = float
+    alias_name[trigger] = alias_match_left[trigger]
+}

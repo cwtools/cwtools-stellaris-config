@@ -843,22 +843,6 @@ alias[effect:create_fleet_from_naval_cap] = float
 
 alias[effect:exile_leader_as] = scalar
 
-#need to check whether any more of these are 
-#creator should be a scope
-###Creates a new saved leader for the scoped country with a lookup key
-#alias[effect:create_saved_leader] = {
-#	key = scalar	localisation_synced
-#	creator = scalar
-#	name = <random / string>
-#	species = <target / key>
-#	##cardinality = 0..1
-#	gender = enum[genders]
-#	type = <random / key>
-#	skill = <random / int>
-#	set_age = <int>
-#	traits = { trait = <key> trait = <key> }
-#}
-
 #who should be country
 alias[effect:add_claims] = {
 	who = scalar
@@ -1047,6 +1031,204 @@ alias[effect:remove_building] = yes
 alias[effect:add_minerals] = int
 alias[effect:add_energy] = int
 alias[effect:add_influence] = int
+
+
+
+
+###Creates a new species
+alias[effect:create_species] = {
+	name = scalar #technically should be localisation_synced or " " in code or a scope
+	## cardinality = 0..1
+	plural = scalar
+	class = scalar #random_non_machine / <species class key>
+	portrait = scalar #random/<portrait id>
+	homeworld = scalar #planet scope
+	traits = random
+	traits = {
+		## cardinality = 1..10
+		trait = <trait>
+	}
+	## cardinality = 0..1
+	sapient = bool
+	## cardinality = 0..1
+	###determines if species is a modification of another
+	is_mod = bool
+	## cardinality = 0..1
+	###determines if species leaders are immortal
+	immortal = bool
+}
+
+
+#if the country is default or anything else that uses them, it really should specify all the details of government, species, etc
+###Creates a new country
+alias[effect:create_country] = {
+	name = scalar #technically should be localisation_synced or " " in code or a scope
+	type = <country_type>
+	
+	## cardinality = 0..1
+	auto_delete = bool
+	## cardinality = 0..1
+	name_list = scalar #should be a key of name lists or a scope
+	## cardinality = 0..1
+	ship_prefix = scalar #should be string or a scope
+	
+	## cardinality = 0..1
+	authority = <authority>
+	## cardinality = 0..1
+	civics = random
+	## cardinality = 0..1
+	civics = {
+		## cardinality = 2..3
+		civic = <civic>
+	}
+	## cardinality = 0..1
+	species = scalar #scope apparently, maybe key would also work?
+	
+	ethos = random
+	## cardinality = 0..1
+	ethos = {
+		## cardinality = 1..3
+		ethic = <ethos>
+	}
+	
+	## cardinality = 0..1
+	effect = { alias_name[effect] = alias_match_left[effect] }
+	
+	## cardinality = 0..1
+	flag = random
+	## cardinality = 0..1
+	flag = {
+		icon = {
+			category = scalar #should be some sort of key
+			file = scalar #should be "filename.dds" in the correct folder
+		}
+		background = {
+			category = scalar #should be some sort of key
+			file = scalar #should be "filename.dds" in the correct folder
+		}
+		colors ={
+			##cardinality = 4..4
+			scalar #should be one of a list of colours
+		}
+	}
+	## cardinality = 0..1
+	day_zero_contact = bool
+	
+	## cardinality = 0..1
+	released_by_country = scalar #scope
+	## cardinality = 0..1
+	released_from_country = scalar #scope
+}
+
+###Creates a rebellion on this planet
+alias[effect:create_rebels] = {
+	name = scalar #technically should be localisation_synced or " " in code or a scope
+	authority = <authority>
+	civics = random
+	civics = {
+		## cardinality = 2..3
+		civic = <civic>
+	}
+	species = scalar #scope
+	ethos = random
+	ethos = {
+		## cardinality = 2..3
+		ethic = <ethos>
+		ethic = <ethos>
+	}
+	
+	## cardinality = 0..1
+	flag = random
+	## cardinality = 0..1
+	flag = {
+		icon = {
+			category = scalar #should be some sort of key
+			file = scalar #should be "filename.dds" in the correct folder
+		}
+		background = {
+			category = scalar #should be some sort of key
+			file = scalar #should be "filename.dds" in the correct folder
+		}
+		colors ={
+			##cardinality = 4..4
+			scalar #should be one of a list of colours
+		}
+	}
+	
+	## cardinality = 0..1
+	name_list = scalar #should be a key of name lists or a scope
+	## cardinality = 0..1
+	###This presumably works (report if not)
+	ship_prefix = scalar #should be string or a scope
+	
+	effect = { alias_name[effect] = alias_match_left[effect] }
+}
+
+###Creates a new army
+alias[effect:create_army] = {
+	## cardinality = 0..1
+	name = scalar #technically should be localisation_synced or " " in code
+	owner = scalar #scope
+	type = <army>
+	## cardinality = 0..1
+	species = scalar #scope
+	## cardinality = 0..1
+	leader = scalar #scope (leader) 
+}
+
+
+###Creates a colony on the scoped planet
+alias[effect:create_colony_effect] = {
+	owner = scalar #country scope
+	species = scalar #country scope or key
+	ethos = random
+	ethos = {
+		cardinality = 2..2
+		ethic = <ethos>
+	}
+}
+
+
+#need to check whether any more of these are 
+#creator should be a scope
+###Creates a new saved leader for the scoped country with a lookup key
+#alias[effect:create_saved_leader] = {
+#	key = scalar	localisation_synced
+#	creator = scalar
+#	name = <random / string>
+#	species = <target / key>
+#	##cardinality = 0..1
+#	gender = enum[genders]
+#	type = <random / key>
+#	skill = <random / int>
+#	set_age = <int>
+#	traits = { trait = <key> trait = <key> }
+#}
+
+#create_leader - Creates a new leader for the scoped country
+#create_leader = {
+#	name = scalar #technically should be localisation_synced or " " in code
+#	species = <target / key>
+#	gender = <optional / gender> #defalut = random
+#type = <random / key>
+#	skill = <random / int>
+#	set_age = <int>
+# traits = { trait = <key> trait = <key> }
+#}
+
+#create_fleet - Creates a new fleet
+#create_fleet = { name = <string> effect = { <create_ship, set_owner, set_location etc effects go here> } } 
+
+#create_ship - Creates a new ship
+#create_ship = {
+#	name = <string/random>
+#	design = <ship design key/target, or use random_existing_design>
+#	random_existing_design = <ship size key>
+#	graphical_culture = <graphical culture key>
+#	prefix = <Y/N, determines if ship name should use owner country prefix>
+#}
+
+
 
 #scripted effects
 alias[effect:<scripted_effect>] = bool

@@ -4,3 +4,28 @@ types = {
         path = "game/common/ascension_perks"
     }
 }
+
+
+
+ascension_perk = {
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	
+	possible = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	
+	on_enabled = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+	
+	modifier = {		
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	
+	ai_weight = {
+		factor = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
