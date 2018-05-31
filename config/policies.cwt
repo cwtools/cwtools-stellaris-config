@@ -33,11 +33,11 @@ policy = {
 	
 	## cardinality = 2..20
 	option = {
-		name = localisation_in_quotes
+		name = localisation
 		
 		policy_flags = {
-			## cardinality = 0..1
-			localisation_in_quotes
+			## cardinality = 0..10
+			scalar
 		}
 		
 		## cardinality = 0..1

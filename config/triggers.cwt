@@ -1,3 +1,6 @@
+
+alias[trigger:scope] = { alias_name[trigger] = alias_match_left[trigger] }
+
 alias[trigger:NOT] = { 
     ## cardinality = 1..1
     alias_name[trigger] = alias_match_left[trigger]
@@ -538,13 +541,20 @@ enums = {
 	enum[genders] = {
 		female
 		male
+		indeterminable
 	}
 	enum[hyperlane_euclidean] = {
 		hyperlane
 		euclidean
 	}
+	enum[election_types] = {
+		none
+		democratic
+		oligarchic
+	}
 }
 
+alias[trigger:has_election_type] = enum[election_types]
 
 
 alias[trigger:has_modifier] = <static_modifier>
@@ -636,6 +646,7 @@ alias[trigger:is_hostile_to] = scalar
 alias[trigger:is_domineering_to] = scalar
 alias[trigger:is_unfriendly_to] = scalar
 alias[trigger:is_disloyal_to] = scalar
+alias[trigger:is_custodial_to] = scalar
 alias[trigger:is_rival] = scalar
 alias[trigger:is_in_federation_with] = scalar
 alias[trigger:has_defensive_pact] = scalar
@@ -650,11 +661,26 @@ alias[trigger:is_controlled_by] = scalar
 alias[trigger:is_neighbor_of] = scalar
 alias[trigger:is_original_owner] = scalar
 alias[trigger:is_same_empire] = scalar
+alias[trigger:has_migration_access] = scalar
+alias[trigger:has_closed_borders] = scope[any]	#country
 #to country/species/pop
 alias[trigger:is_same_species] = scalar
 alias[trigger:is_subspecies] = scalar
 #any scope
-alias[trigger:exists] = scalar
+alias[trigger:exists] = scope[any]
+
+#various scopes (one for each of them, obviously)
+###Checks if the planet is the same as target planet
+alias[trigger:is_planet] = scope[any]
+###Checks if the pop is the same as target pop
+alias[trigger:is_pop] = scope[any]
+###Checks if the ship is the same as target ship
+alias[trigger:is_ship] = scope[any]
+###Checks if the army is the same as target army
+alias[trigger:is_army] = scope[any]
+###Checks if the country is the same as target country
+alias[trigger:is_country] = scope[any]
+
 
 
 #this who should be a scope, but I think rather pop/species
@@ -664,6 +690,14 @@ alias[trigger:habitability] = {
 	value = float[0.0..1.0]
 }
 
+#should also check < >
+alias[trigger:free_leader_slots] = int
+alias[trigger:has_hp] = int
+alias[trigger:has_hp_percentage] = float[0.0..1.0]
+
+#should also check < > and <=
+alias[trigger:end_game_years_passed] = int
+alias[trigger:mid_game_years_passed] = int
 
 alias[trigger:has_federation] = bool
 alias[trigger:is_at_war] = bool
@@ -682,6 +716,7 @@ alias[trigger:is_in_combat] = bool
 alias[trigger:is_star] = bool
 alias[trigger:is_asteroid] = bool
 alias[trigger:has_any_strategic_resource] = bool
+alias[trigger:is_war_leader] = bool
 
 
 alias[trigger:is_planet_class] = <planet_class>
@@ -718,6 +753,15 @@ alias[trigger:num_owned_active_gateways] = int
 alias[trigger:num_active_gateways] = int
 alias[trigger:num_trait_points] = int
 alias[trigger:has_skill] = int
+###Checks the war exhaustion of the war's attackers
+alias[trigger:attacker_exhaustion_score] = int
+###Checks the war exhaustion of the war's defenders
+alias[trigger:defender_war_exhaustion] = int
+###Checks the country's total war exhaustion for all offensive wars
+alias[trigger:off_war_exhaustion_sum] = int
+###Checks the country's total war exhaustion for all defemsove wars
+alias[trigger:def_war_exhaustion_sum] = int
+
 
 
 alias[trigger:has_ring] = bool
@@ -918,6 +962,9 @@ alias[trigger:fleet_size] = int
 
 alias[trigger:is_difficulty] = int[0..2]
 
+alias[trigger:is_ruined] = bool
+
+alias[trigger:has_building] = bool
 alias[trigger:has_building] = <building>
 
 alias[trigger:has_ai_personality] = <ai_personality>
@@ -949,6 +996,13 @@ alias[trigger:has_claim] = scalar
 
 alias[trigger:local_has_dlc] = enum[DLCs]
 alias[trigger:host_has_dlc] = enum[DLCs]
+
+
+###This doesn't work as of 1.8, maybe it is fixed in the meantime, tell Caligula if yes!
+alias[trigger:member_of_faction] = bool
+###This doesn't work as of 1.8, maybe it is fixed in the meantime, tell Caligula if yes!
+alias[trigger:member_of_faction] = <pop_faction>
+
 
 #scripted triggers
 alias[trigger:<scripted_trigger>] = bool
