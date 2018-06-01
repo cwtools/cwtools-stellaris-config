@@ -55,6 +55,17 @@ alias[effect:event] = {
     days = int
     ## cardinality = 0..1
     random = int
+    ## cardinality = 0..1
+    scopes = {
+        ## cardinality = 0..1
+        from = scope[any]
+        ## cardinality = 0..1
+        fromfrom = scope[any]
+        ## cardinality = 0..1
+        fromfromfrom = scope[any]
+        ## cardinality = 0..1
+        fromfromfromfrom = scope[any]
+    }
 }
 
 alias[effect:ship_event] = {
@@ -63,6 +74,18 @@ alias[effect:ship_event] = {
     days = int
     ## cardinality = 0..1
     random = int
+    ## cardinality = 0..1
+    scopes = {
+        ## cardinality = 0..1
+        from = scope[any]
+        ## cardinality = 0..1
+        fromfrom = scope[any]
+        ## cardinality = 0..1
+        fromfromfrom = scope[any]
+        ## cardinality = 0..1
+        fromfromfromfrom = scope[any]
+    }
+
 }
 
 alias[effect:country_event] = {
@@ -71,6 +94,17 @@ alias[effect:country_event] = {
     days = int
     ## cardinality = 0..1
     random = int
+    ## cardinality = 0..1
+    scopes = {
+        ## cardinality = 0..1
+        from = scope[any]
+        ## cardinality = 0..1
+        fromfrom = scope[any]
+        ## cardinality = 0..1
+        fromfromfrom = scope[any]
+        ## cardinality = 0..1
+        fromfromfromfrom = scope[any]
+    }
 }
 
 alias[effect:pop_faction_event] = {
@@ -79,6 +113,17 @@ alias[effect:pop_faction_event] = {
     days = int
     ## cardinality = 0..1
     random = int
+    ## cardinality = 0..1
+    scopes = {
+        ## cardinality = 0..1
+        from = scope[any]
+        ## cardinality = 0..1
+        fromfrom = scope[any]
+        ## cardinality = 0..1
+        fromfromfrom = scope[any]
+        ## cardinality = 0..1
+        fromfromfromfrom = scope[any]
+    }
 }
 
 alias[effect:pop_event] = {
@@ -87,6 +132,17 @@ alias[effect:pop_event] = {
     days = int
     ## cardinality = 0..1
     random = int
+    ## cardinality = 0..1
+    scopes = {
+        ## cardinality = 0..1
+        from = scope[any]
+        ## cardinality = 0..1
+        fromfrom = scope[any]
+        ## cardinality = 0..1
+        fromfromfrom = scope[any]
+        ## cardinality = 0..1
+        fromfromfromfrom = scope[any]
+    }
 }
 
 alias[effect:fleet_event] = {
@@ -95,6 +151,17 @@ alias[effect:fleet_event] = {
     days = int
     ## cardinality = 0..1
     random = int
+    ## cardinality = 0..1
+    scopes = {
+        ## cardinality = 0..1
+        from = scope[any]
+        ## cardinality = 0..1
+        fromfrom = scope[any]
+        ## cardinality = 0..1
+        fromfromfrom = scope[any]
+        ## cardinality = 0..1
+        fromfromfromfrom = scope[any]
+    }
 }
 
 alias[effect:planet_event] = {
@@ -103,6 +170,17 @@ alias[effect:planet_event] = {
     days = int
     ## cardinality = 0..1
     random = int
+    ## cardinality = 0..1
+    scopes = {
+        ## cardinality = 0..1
+        from = scope[any]
+        ## cardinality = 0..1
+        fromfrom = scope[any]
+        ## cardinality = 0..1
+        fromfromfrom = scope[any]
+        ## cardinality = 0..1
+        fromfromfromfrom = scope[any]
+    }
 }
 
 #Scopes
@@ -197,6 +275,20 @@ alias[effect:every_owned_leader] = {
     alias_name[effect] = alias_match_left[effect]
 }
 
+alias[effect:random_owned_leader] = {
+	##cardinality = 0..1
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+###Iterate through each leader that is recruitable for the country
+alias[effect:every_pool_leader] = {
+	##cardinality = 0..1
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+###Iterate through each leader that is recruitable for the country
 alias[effect:random_owned_leader] = {
 	##cardinality = 0..1
     limit = { alias_name[trigger] = alias_match_left[trigger] }
@@ -926,6 +1018,9 @@ alias[effect:add_experience] = int
 ###Sets the gender of the scoped leader
 alias[effect:set_is_female] = bool
 
+###Sets scoped leader as non/recruitable
+alias[effect:recruitable] = bool
+
 ###Assigns target leader to the scoped country/fleet/army/pop faction
 alias[effect:assign_leader] = scope[leader]
 ###Unassigns scoped leader from their post or unassigns leader from the scoped planet/ship/fleet/army/sector
@@ -942,7 +1037,8 @@ alias[effect:add_claims] = {
 alias[effect:set_owner] = scalar
 
 ###Instantly sets the planet/fleet's controller to target country
-alias[effect:set_controller] = scope[planet,fleet]
+alias[effect:set_controller] = scope[planet]
+alias[effect:set_controller] = scope[fleet]
 
 #should be a location scope
 alias[effect:set_location] = scalar
@@ -986,6 +1082,7 @@ alias[effect:add_monthly_resource_mult] = {
 alias[effect:add_trait] = <trait>
 #should be trait.ruler_trait
 alias[effect:add_ruler_trait] = <trait>
+alias[effect:remove_trait] = <trait>
 
 
 #apparently while = variable also works
@@ -1084,8 +1181,25 @@ alias[effect:add_static_war_exhaustion] = {
 
 ###Adds diplomatic threat from target country
 alias[effect:add_threat] = {
-    who = scope[planet,country,galactic_object]
+    who = scope[planet]
+    who = scope[country]
+    who = scope[galactic_object]
     amount = int
+}
+
+###Adds a Casus Belli to the scoped country against the target country.
+alias[effect:add_casus_belli] = {
+    type = <casus_belli>
+    who = scope[country]
+    days = int
+}
+
+alias[effect:set_war_goal] = {
+    type = <war_goal>
+    target = scope[country]
+    target = scope[war]
+    enemy = scope[country]
+    enemy = scope[war]
 }
 
 ###Sets the planet as un/surveyed by target country
@@ -1095,7 +1209,25 @@ alias[effect:surveyed] = {
 }
 
 #needs scope = fleet
-alias[effect:destroy_fleet] = scalar
+###Destroys the target fleet (with death graphics)
+alias[effect:destroy_fleet] = scope[fleet]
+alias[effect:destroy_fleet] = {
+    target = scope[fleet]
+    ## cardinality = 0..1
+    kill_leader = bool
+    ## cardinality = 0..1
+    destroy_template = bool
+}
+
+###Deletes the target fleet (no death graphics)
+alias[effect:delete_fleet] = scope[fleet]
+alias[effect:delete_fleet] = {
+    target = scope[fleet]
+    ## cardinality = 0..1
+    kill_leader = bool
+    ## cardinality = 0..1
+    destroy_template = bool
+}
 
 #needs scope = ship
 alias[effect:delete_ship] = scalar
@@ -1114,6 +1246,7 @@ alias[effect:set_name] = scalar
 ###Reinstates a previously-exiled leader to the scoped country/fleet/army/pop faction
 alias[effect:set_leader] = scalar
 
+alias[effect:enable_faction_of_type] = <pop_faction>
 
 alias[effect:set_subject_of] = {
 	who = none
@@ -1164,6 +1297,14 @@ alias[effect:give_technology] = {
     tech = <technology>
     ## cardinality = 0..1
     message = bool
+}
+###Copies all techs from the target country to the scoped country, except for some exceptions listed. Tech weights (and weight modifiers) are honoured, meaning that techs a country should not have will not be copied.
+alias[effect:copy_techs_from] = {
+    target = scope[count]
+    ## cardinality = 0..1
+    except = {
+        <technology>
+    }
 }
 
 ###Sets the scoped object's graphical culture
@@ -1490,6 +1631,13 @@ alias[effect:enable_special_project] = {
     location = scope[all]
 }
 
+###Aborts a specific special project for the country, removing it from the situation log
+alias[effect:abort_special_project] = {
+    type = <special_project>
+    ## cardinality = 0..1
+    location = scope[all]
+}
+
 ###Makes the scoped country remember that it has encountered the bypass type
 alias[effect:add_seen_bypass_type] = <bypass>
 
@@ -1506,6 +1654,21 @@ alias[effect:spawn_natural_wormhole] = {
 
 ###Link the wormhole from the scoped system to the wormhole in the target system.
 alias[effect:link_wormholes] = scope[galactic_object]
+
+###Executes an effect on systems with planets owned by the scoped country, starting at an origin, and until a certain percentage of owned planets matching the planet_limit has been covered.
+alias[effect:effect_on_blob] = {
+    center = scope[galactic_object]
+    owned_planets_percentage = float[0.0..1.0]
+    planet_limit = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+    effect = {
+        alias_name[effect] = alias_match_left[effect]
+    }
+}
+
+###Assign the player of the target country to play the scoped country instead
+alias[effect:set_player] = scope[country]
 
 #scripted effects
 alias[effect:<scripted_effect>] = bool

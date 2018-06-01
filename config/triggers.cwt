@@ -667,6 +667,7 @@ alias[trigger:has_non_aggression_pact] = scalar
 alias[trigger:is_controlled_by] = scalar
 alias[trigger:is_neighbor_of] = scalar
 alias[trigger:is_original_owner] = scalar
+alias[trigger:is_owned_by] = scope[country]
 alias[trigger:is_same_empire] = scalar
 alias[trigger:has_migration_access] = scalar
 alias[trigger:has_closed_borders] = scope[any]	#country
@@ -735,6 +736,10 @@ alias[trigger:is_occupied_flag] = bool
 
 alias[trigger:has_grown_pop] = bool
 alias[trigger:has_growing_pop] = bool
+###Checks if the pop is currently growing
+alias[trigger:is_growing] = bool
+###Checks if the pop is a designated colonization pop
+alias[trigger:is_colony_pop] = bool
 
 alias[trigger:is_planet_class] = <planet_class>
 alias[trigger:is_star_class] = <star_class>
@@ -801,6 +806,8 @@ alias[trigger:defender_war_exhaustion] = int
 alias[trigger:off_war_exhaustion_sum] = int
 ###Checks the country's total war exhaustion for all defemsove wars
 alias[trigger:def_war_exhaustion_sum] = int
+###Checks the scope's total fleet power
+alias[trigger:fleet_power] = int
 
 ###is_megastructure_type = <name of type>. Compares the type of scope's mega structure to a type from the database
 alias[trigger:is_megastructure_type] = <megastructure>
