@@ -727,6 +727,12 @@ alias[trigger:is_planet_class] = <planet_class>
 alias[trigger:is_star_class] = <star_class>
 alias[trigger:is_ringworld] = bool
 alias[trigger:is_homeworld] = bool
+###Checks if the planet has a moon
+alias[trigger:has_moon] = bool
+###Checks the planet's number of moons
+alias[trigger:num_moons] = int
+###Checks if the planet can theoretically be colonized
+alias[trigger:is_colonizable] = bool
 
 alias[trigger:is_ideal_planet_class] = {
 	who = scope[country]
@@ -777,8 +783,10 @@ alias[trigger:off_war_exhaustion_sum] = int
 ###Checks the country's total war exhaustion for all defemsove wars
 alias[trigger:def_war_exhaustion_sum] = int
 
-
-
+###is_megastructure_type = <name of type>. Compares the type of scope's mega structure to a type from the database
+alias[trigger:is_megastructure_type] = <megastructure>
+###is_upgrading = <yes/no>. Checks if the scope's fleet or mega structure is currently upgrading
+alias[trigger:is_upgrading] = bool
 alias[trigger:has_ring] = bool
 alias[trigger:is_moon] = bool
 alias[trigger:pops_have_happiness] = bool
@@ -1031,6 +1039,8 @@ alias[trigger:has_claim] = scalar
 
 alias[trigger:local_has_dlc] = enum[DLCs]
 alias[trigger:host_has_dlc] = enum[DLCs]
+###Checks if the game is running in multiplayer
+alias[trigger:is_multiplayer] = bool
 
 
 ###This doesn't work as of 1.8, maybe it is fixed in the meantime, tell Caligula if yes!
@@ -1038,7 +1048,14 @@ alias[trigger:member_of_faction] = bool
 ###This doesn't work as of 1.8, maybe it is fixed in the meantime, tell Caligula if yes!
 alias[trigger:member_of_faction] = <pop_faction>
 
+###Checks if the country has a specific event chain
 alias[trigger:has_event_chain] = <event_chain>
+
+###Checks if the country has completed a specific counter in an event chain
+alias[trigger:has_completed_event_chain_counter] = {
+	event_chain = <event_chain>
+	counter = enum[event_chain_counter]
+}
 
 
 #scripted triggers

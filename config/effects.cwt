@@ -617,6 +617,36 @@ alias[effect:random_war_attacker] = {
     alias_name[effect] = alias_match_left[effect]
 }
 
+alias[effect:random_megastructure] = {
+	##cardinality = 0..1
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+alias[effect:every_megastructure] = {
+	##cardinality = 0..1
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+alias[effect:random_owned_megastructure] = {
+	##cardinality = 0..1
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+alias[effect:every_owned_megastructure] = {
+	##cardinality = 0..1
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+alias[effect:random_system_megastructure] = {
+	##cardinality = 0..1
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+alias[effect:every_system_megastructure] = {
+	##cardinality = 0..1
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
 
 
 alias[effect:add_modifier] = {
@@ -855,6 +885,14 @@ alias[effect:random_list] = {
     }
 }
 
+alias[effect:random_list] = {
+    float = { 
+		##cardinality = 0..100
+        alias_name[modifier_rule] = alias_match_left[modifier_rule]
+        alias_name[effect] = alias_match_left[effect]
+    }
+}
+
 alias[effect:random] = {
 	chance = int[1...99]
 	alias_name[effect] = alias_match_left[effect]
@@ -1046,6 +1084,8 @@ alias[effect:remove_claims] = {
 alias[effect:break] = yes
 ###Destroys the scoped country
 alias[effect:destroy_country] = yes
+###Immediately adds a specific building to the scoped tile
+alias[effect:set_building] = <building>
 ###Removes a building from the scoped tile
 alias[effect:remove_building] = yes
 
@@ -1301,12 +1341,49 @@ alias[effect:modify_species] = {
 	portrait = scalar #<target or portrait name>
 }
 
+###Changes the class of the scoped planet
+alias[effect:change_pc] = <planet_class>
+alias[effect:change_pc] = {
+    class = <planet_class>
+    inherit_entity = bool
+}
+
+
 alias[effect:set_blocker] = random
 alias[effect:set_blocker] = <tile_blocker>
+###Removes the tile blocker from the scoped tile
+alias[effect:remove_blocker] = bool
+###Adds a specific deposit to the scoped tile
+alias[effect:add_deposit] = <deposit>
+###Removes all deposits from the scoped tile or planet
+alias[effect:clear_deposits] = yes
 
 alias[effect:establish_communications_no_message] = scope[any] #country
 
 alias[effect:pop_change_ethic] = <ethos>
+
+### Starts a situation log event chain for target country
+alias[effect:begin_event_chain] = {
+    event_chain = <event_chain>
+    target = scope[country]
+}
+
+### Ends a specific situation log event chain for the scoped country
+alias[effect:end_event_chain] = <event_chain>
+
+### Increments (or decrements with negative values) an event chain counter for the scoped country by a specific amount
+alias[effect:add_event_chain_counter] = {
+    event_chain = <event_chain>
+    counter = enum[event_chain_counter]
+    amount = int
+}
+
+###Enables a specific special research project for target country at a specific location (should be same as the current scope where possible)
+alias[effect:enable_special_project] = {
+    name = <special_project>
+    owner = scope[country]
+    location = scope[all]
+}
 
 #scripted effects
 alias[effect:<scripted_effect>] = bool

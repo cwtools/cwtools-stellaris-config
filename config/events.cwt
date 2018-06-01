@@ -88,6 +88,11 @@ event = {
 			## cardinality = 0..1
             city_level = scalar
         }
+        ## cardinality = 0..1
+        custom_gui = scalar
+        ## cardinality = 0..1
+        ###Force a diplomatic event to be viewed
+        force_open = bool
     }
 
     ## cardinality = 0..1
@@ -127,12 +132,14 @@ event = {
         }
 
 		subtype[diplomatic] = {
-			#should be localisation
 			## cardinality = 0..1
-			response_text = scalar
+			response_text = localisation
 			
 			## cardinality = 0..1
-			is_dialog_only = bool
+            is_dialog_only = bool
+            
+            ## cardinality = 0..1
+            custom_gui = scalar
 		}
 		
         ## cardinality = 0..1

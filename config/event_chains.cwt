@@ -3,3 +3,16 @@ types = {
         path = "game/common/event_chains"
     }
 }
+
+enums = {
+    complex_enum[event_chain_counter] = {
+        path = "game/common/event_chains"
+        name = {
+            counter = {
+                enum_name = {
+                    
+                }
+            }
+        }
+    }
+}
