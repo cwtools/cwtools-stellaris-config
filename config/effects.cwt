@@ -1300,7 +1300,7 @@ alias[effect:give_technology] = {
 }
 ###Copies all techs from the target country to the scoped country, except for some exceptions listed. Tech weights (and weight modifiers) are honoured, meaning that techs a country should not have will not be copied.
 alias[effect:copy_techs_from] = {
-    target = scope[count]
+    target = scope[country]
     ## cardinality = 0..1
     except = {
         <technology>
