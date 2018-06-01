@@ -121,7 +121,7 @@ event = {
 
         ## cardinality = 0..1
         ai_chance = {
-			factor = float0..10000
+			factor = float[0..10000]
             ##cardinality = 0..100
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
         }
