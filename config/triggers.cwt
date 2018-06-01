@@ -599,6 +599,7 @@ alias[trigger:has_authority] = <authority>
 alias[trigger:has_valid_civic] = <civic>
 alias[trigger:has_civic] = <civic>
 alias[trigger:has_invalid_civic] = <civic>
+alias[trigger:has_policy_flag] = <policy_flag>
 
 
 alias[trigger:leader_of_faction] = <pop_faction>
@@ -717,10 +718,20 @@ alias[trigger:is_star] = bool
 alias[trigger:is_asteroid] = bool
 alias[trigger:has_any_strategic_resource] = bool
 alias[trigger:is_war_leader] = bool
+alias[trigger:is_occupied_flag] = bool
 
+alias[trigger:has_grown_pop] = bool
+alias[trigger:has_growing_pop] = bool
 
 alias[trigger:is_planet_class] = <planet_class>
 alias[trigger:is_star_class] = <star_class>
+alias[trigger:is_ringworld] = bool
+alias[trigger:is_homeworld] = bool
+
+alias[trigger:is_ideal_planet_class] = {
+	who = scope[country]
+	status = bool
+}
 
 
 #ideally would check scopes and then planet/country edict
@@ -835,6 +846,7 @@ alias[trigger:has_empire_unique_building] = bool
 alias[trigger:is_alliance_fleet] = bool
 alias[trigger:is_capital] = bool
 alias[trigger:has_blocker] = bool
+alias[trigger:has_blocker] = <tile_blocker>
 alias[trigger:has_pop] = bool
 
 
@@ -891,6 +903,7 @@ alias[trigger:distance] = {
 	max_jumps = int
 }
 
+alias[trigger:is_species_class] = <species_class>
 
 #could be refined to check leader or species traits depending on scope
 alias[trigger:has_trait] = <trait>
@@ -971,6 +984,9 @@ alias[trigger:is_ruined] = bool
 alias[trigger:has_building] = bool
 alias[trigger:has_building] = <building>
 
+alias[trigger:has_building_construction] = bool
+alias[trigger:has_building_construction] = <building>
+
 alias[trigger:has_ai_personality] = <ai_personality>
 alias[trigger:has_ai_personality_behaviour] = enum[ai_personality_behaviours]
 
@@ -980,10 +996,25 @@ alias[trigger:has_country_resource] = {
 	type = <resource>
 	amount = int
 }
+alias[trigger:has_resource] = bool
+alias[trigger:has_resource] = {
+	type = <resource>
+	amount = int
+}
+
+alias[trigger:has_strategic_resource] = bool
+
+alias[trigger:has_country_strategic_resource] = {
+	type = <strategic_resource>
+	amount = int
+}
 alias[trigger:has_monthly_income] = {
 	resource = <resource>
 	value = int
 }
+
+alias[trigger:has_deposit] = bool
+alias[trigger:has_deposit] = <deposit>
 
 #should be country scope
 alias[trigger:can_be_subject] = {
@@ -1006,6 +1037,8 @@ alias[trigger:host_has_dlc] = enum[DLCs]
 alias[trigger:member_of_faction] = bool
 ###This doesn't work as of 1.8, maybe it is fixed in the meantime, tell Caligula if yes!
 alias[trigger:member_of_faction] = <pop_faction>
+
+alias[trigger:has_event_chain] = <event_chain>
 
 
 #scripted triggers

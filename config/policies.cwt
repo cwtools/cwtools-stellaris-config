@@ -10,6 +10,29 @@ types = {
     }
 }
 
+enums = {
+    complex_enum[policy_flag] = {
+        path = "game/common/policies"
+        name = {
+            option = {
+                policy_flags = {
+                    enum_name
+                }
+            }    
+        }
+    }
+}
+
+enums = {
+    complex_enum[policy_option] = {
+        path = "game/common/policies"
+        name = {
+            option = {
+                name = enum_name
+            }    
+        }
+    }
+}
 
 policy = {
 	potential = {

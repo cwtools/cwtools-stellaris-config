@@ -1,0 +1,5 @@
+types = {
+    type[event_chain] = {
+        path = "game/common/event_chains"
+    }
+}

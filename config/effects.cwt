@@ -1301,6 +1301,8 @@ alias[effect:modify_species] = {
 	portrait = scalar #<target or portrait name>
 }
 
+alias[effect:set_blocker] = random
+alias[effect:set_blocker] = <tile_blocker>
 
 alias[effect:establish_communications_no_message] = scope[any] #country
 
