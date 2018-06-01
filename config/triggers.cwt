@@ -625,6 +625,9 @@ alias[trigger:used_naval_capacity_percent] = float
 alias[trigger:num_moons] = int
 alias[trigger:num_adjacent_tiles] = int
 
+###Checks the planet's number of open tiles for pops
+alias[trigger:free_pop_tiles] = int
+
 alias[trigger:is_country_type] = <country_type>
 alias[trigger:has_ethic] = <ethos>
 alias[trigger:pop_has_ethic] = <ethos>
@@ -675,6 +678,8 @@ alias[trigger:is_subspecies] = scalar
 #any scope
 alias[trigger:exists] = scope[any]
 
+alias[trigger:is_hostile] = scope[country]
+
 #various scopes (one for each of them, obviously)
 ###Checks if the planet is the same as target planet
 alias[trigger:is_planet] = scope[any]
@@ -700,6 +705,9 @@ alias[trigger:habitability] = {
 alias[trigger:free_leader_slots] = int
 alias[trigger:has_hp] = int
 alias[trigger:has_hp_percentage] = float[0.0..1.0]
+
+###Checks if the leader has a specific experience level
+alias[trigger:has_level] = int
 
 #should also check < > and <=
 alias[trigger:end_game_years_passed] = int
@@ -746,6 +754,9 @@ alias[trigger:is_ideal_planet_class] = {
 	status = bool
 }
 
+###Returns true if the scopes system contains at least one natural wormhole
+alias[trigger:has_natural_wormhole] = bool
+
 
 #ideally would check scopes and then planet/country edict
 alias[trigger:has_edict] = <edict>
@@ -766,6 +777,7 @@ alias[trigger:opinion] = {
 #should check <>
 alias[trigger:happiness] = float
 alias[trigger:energy] = int
+alias[trigger:unity] = int
 alias[trigger:vassals] = int
 alias[trigger:food] = int
 alias[trigger:minerals] = int
@@ -1075,6 +1087,9 @@ alias[trigger:has_completed_event_chain_counter] = {
 	event_chain = <event_chain>
 	counter = enum[event_chain_counter]
 }
+
+###Checks if the country has a specific special project available
+alias[trigger:has_special_project] = <special_project>
 
 
 #scripted triggers

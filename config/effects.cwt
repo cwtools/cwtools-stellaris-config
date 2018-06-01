@@ -47,6 +47,7 @@ alias[effect:else_if] = {
 alias[effect:else] = { alias_name[effect] = alias_match_left[effect] }
 
 alias[effect:save_event_target_as] = scalar
+alias[effect:save_global_event_target_as] = scalar
 
 alias[effect:event] = {
     id = scalar
@@ -647,6 +648,17 @@ alias[effect:every_system_megastructure] = {
     limit = { alias_name[trigger] = alias_match_left[trigger] }
     alias_name[effect] = alias_match_left[effect]
 }
+alias[effect:random_system] = {
+	##cardinality = 0..1
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+alias[effect:every_system] = {
+	##cardinality = 0..1
+    limit = { alias_name[trigger] = alias_match_left[trigger] }
+    alias_name[effect] = alias_match_left[effect]
+}
+
 
 
 alias[effect:add_modifier] = {
@@ -815,7 +827,8 @@ alias[effect:set_timed_megastructure_flag] = {
     days = int
 }
 
-
+###Removes a mega structure.
+alias[effect:remove_megastructure] = scope[megastructure]
 
 #missing who = scope
 alias[effect:set_relation_flag] = {
@@ -900,7 +913,23 @@ alias[effect:random] = {
 
 alias[effect:create_fleet_from_naval_cap] = float
 
+###Reduces the hull points of the scoped ship by a specific amount
+alias[effect:reduce_hp] = int
+###Reduces the hull points of the scoped ship by a relative amount
+alias[effect:reduce_hp_percent] = float[0.0..1.0]
+
+
 alias[effect:exile_leader_as] = scalar
+###Adds a sum of experience points to the scoped leader
+alias[effect:add_experience] = int
+
+###Sets the gender of the scoped leader
+alias[effect:set_is_female] = bool
+
+###Assigns target leader to the scoped country/fleet/army/pop faction
+alias[effect:assign_leader] = scope[leader]
+###Unassigns scoped leader from their post or unassigns leader from the scoped planet/ship/fleet/army/sector
+alias[effect:unassign_leader] = scope[leader]
 
 #who should be country
 alias[effect:add_claims] = {
@@ -911,6 +940,9 @@ alias[effect:add_claims] = {
 
 #should be country
 alias[effect:set_owner] = scalar
+
+###Instantly sets the planet/fleet's controller to target country
+alias[effect:set_controller] = scope[planet,fleet]
 
 #should be a location scope
 alias[effect:set_location] = scalar
@@ -1043,6 +1075,25 @@ alias[effect:declare_war] = {
 	name = scalar
 }
 
+###Adds static war exhaustion, scaled with value_for_planet_destruction, to owner of the battle location
+alias[effect:add_static_war_exhaustion] = {
+    attacker = scope[country]
+    location = scope[planet]
+    value_for_planet_destruction = float[0.0..1.0]
+}
+
+###Adds diplomatic threat from target country
+alias[effect:add_threat] = {
+    who = scope[planet,country,galactic_object]
+    amount = int
+}
+
+###Sets the planet as un/surveyed by target country
+alias[effect:surveyed] = {
+    set_surveyed = bool
+    surveyor = scope[country]
+}
+
 #needs scope = fleet
 alias[effect:destroy_fleet] = scalar
 
@@ -1084,19 +1135,39 @@ alias[effect:remove_claims] = {
 alias[effect:break] = yes
 ###Destroys the scoped country
 alias[effect:destroy_country] = yes
+###Destroys the colony on the scoped planet
+alias[effect:destroy_colony] = yes
+###Destroys target ambient object
+alias[effect:destroy_ambient_object] = yes
+###Removes the planet from the scope 
+alias[effect:remove_planet] = yes
 ###Immediately adds a specific building to the scoped tile
 alias[effect:set_building] = <building>
 ###Removes a building from the scoped tile
 alias[effect:remove_building] = yes
 ###Begins construction of a specific building on the scoped tile
-alias[effet:add_building_construction] = <building>
+alias[effect:add_building_construction] = <building>
 
 alias[effect:add_minerals] = int
 alias[effect:add_energy] = int
+alias[effect:add_unity] = int
 alias[effect:add_influence] = int
+###Instantly gives stored physics research points to the scoped county
+alias[effect:add_physics_research] = int
+###Instantly gives stored society research points to the scoped county
+alias[effect:add_society_research] = int
+###Instantly gives stored engineering research points to the scoped county
+alias[effect:add_engineering_research] = int
 
+###Instantly gives a specific tech to the scoped country
+alias[effect:give_technology] = {
+    tech = <technology>
+    ## cardinality = 0..1
+    message = bool
+}
 
-
+###Sets the scoped object's graphical culture
+alias[effect:set_graphical_culture] = <graphical_culture>
 
 ###Creates a new species
 alias[effect:create_species] = {
@@ -1286,8 +1357,10 @@ alias[effect:create_leader] = {
 	gender = enum[genders]
 	## cardinality = 0..1
 	###Warning: This is in trigger_docs but is not used in this place in Vanilla, and likely does not work
-	set_age = int
-	skill = random
+    set_age = int
+    ## cardinality = 0..1
+    skill = random
+    ## cardinality = 0..1
 	skill = int
 	## cardinality = 0..1
 	event_leader = bool
@@ -1386,6 +1459,12 @@ alias[effect:reroll_deposits] = yes
 
 alias[effect:establish_communications_no_message] = scope[any] #country
 
+###Establishes first contact between the scoped country and target country at the set location
+alias[effect:establish_contact] = {
+    who = scope[country]
+    target = scope[any]
+}
+
 alias[effect:pop_change_ethic] = <ethos>
 
 ### Starts a situation log event chain for target country
@@ -1410,6 +1489,23 @@ alias[effect:enable_special_project] = {
     owner = scope[country]
     location = scope[all]
 }
+
+###Makes the scoped country remember that it has encountered the bypass type
+alias[effect:add_seen_bypass_type] = <bypass>
+
+###Spawns a new natural wormhole in the scoped system.
+alias[effect:spawn_natural_wormhole] = {
+    bypass_type = <bypass>
+    ## cardinality = 0..1
+    orbit_distance = int
+    ## cardinality = 0..1
+    orbit_angle = int[0..360]
+    ## cardinality = 0..1
+    random_pos = bool
+}
+
+###Link the wormhole from the scoped system to the wormhole in the target system.
+alias[effect:link_wormholes] = scope[galactic_object]
 
 #scripted effects
 alias[effect:<scripted_effect>] = bool
