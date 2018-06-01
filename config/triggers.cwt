@@ -213,7 +213,10 @@ alias[trigger:any_member] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+###Checks if any of the system's neighboring systems meet the specified criteria
 alias[trigger:any_neighbor_system] = {
+	## cardinality = 0..1
+	ignore_hyperlanes = bool
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
@@ -666,6 +669,8 @@ alias[trigger:has_migration_access] = scalar
 alias[trigger:has_closed_borders] = scope[any]	#country
 #to country/species/pop
 alias[trigger:is_same_species] = scalar
+###Checks if the scoped object is originally of the same species, or currently of the exact same species instance, as another object
+alias[trigger:is_exact_same_species] = scope[species]
 alias[trigger:is_subspecies] = scalar
 #any scope
 alias[trigger:exists] = scope[any]
@@ -727,6 +732,8 @@ alias[trigger:is_planet_class] = <planet_class>
 alias[trigger:is_star_class] = <star_class>
 alias[trigger:is_ringworld] = bool
 alias[trigger:is_homeworld] = bool
+###checks if the planet/ship/fleet/system is inside a nebula
+alias[trigger:is_inside_nebula] = bool
 ###Checks if the planet has a moon
 alias[trigger:has_moon] = bool
 ###Checks the planet's number of moons
@@ -791,6 +798,8 @@ alias[trigger:has_ring] = bool
 alias[trigger:is_moon] = bool
 alias[trigger:pops_have_happiness] = bool
 alias[trigger:is_pirate] = bool
+###Checks if the planet/fleet is controlled by a sector
+alias[trigger:sector_controlled] = bool
 ###Checks if the scoped ship design, ship or fleet (all ships) has a designable ship size.
 alias[trigger:is_designable] = bool
 alias[trigger:is_orbital_tile] = bool
@@ -836,8 +845,8 @@ alias[trigger:ethos] = float[0.0..1.0]
 
 alias[trigger:gender] = enum[genders]
 
-
-
+###Checks if the country is a primitive, pre-FTL civilization
+alias[trigger:is_primitive] = bool
 alias[trigger:is_sapient] = bool
 alias[trigger:is_preventing_anomaly] = bool
 alias[trigger:has_observation_outpost] = bool
@@ -876,6 +885,11 @@ alias[trigger:ascension_perk] = <ascension_perk>
 
 alias[trigger:has_technology] = <technology>
 
+###Checks if a country has the given tradition and it is not swapped.
+alias[trigger:has_non_swapped_tradition] = <tradition>
+
+###Checks if a country has the given swapped tradition.
+alias[trigger:has_swapped_tradition] = enum[tradition_swap]
 
 alias[trigger:check_variable] = {
 	which = scalar
@@ -991,6 +1005,8 @@ alias[trigger:is_ruined] = bool
 
 alias[trigger:has_building] = bool
 alias[trigger:has_building] = <building>
+###Checks the building that was previously on the tile
+alias[trigger:has_prev_building] = <building>
 
 alias[trigger:has_building_construction] = bool
 alias[trigger:has_building_construction] = <building>
@@ -1023,6 +1039,9 @@ alias[trigger:has_monthly_income] = {
 
 alias[trigger:has_deposit] = bool
 alias[trigger:has_deposit] = <deposit>
+
+###Checks if the planet has a deposit for a specific ship class
+alias[trigger:has_deposit_for] = enum[shipsize_class]
 
 #should be country scope
 alias[trigger:can_be_subject] = {

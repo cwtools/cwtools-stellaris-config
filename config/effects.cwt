@@ -1088,6 +1088,8 @@ alias[effect:destroy_country] = yes
 alias[effect:set_building] = <building>
 ###Removes a building from the scoped tile
 alias[effect:remove_building] = yes
+###Begins construction of a specific building on the scoped tile
+alias[effet:add_building_construction] = <building>
 
 alias[effect:add_minerals] = int
 alias[effect:add_energy] = int
@@ -1341,6 +1343,16 @@ alias[effect:modify_species] = {
 	portrait = scalar #<target or portrait name>
 }
 
+###Changes the species of the scoped object
+alias[effect:change_species] = scope[species]
+
+###Changes the dominant species of the current Country, change_all also changes all usage of that species (Pops etc) in the empire
+alias[effect:change_dominant_species] = {
+    species = scope[species]
+    ## cardinality = 0..1
+    change_all = yes
+}
+
 ###Changes the class of the scoped planet
 alias[effect:change_pc] = <planet_class>
 alias[effect:change_pc] = {
@@ -1348,6 +1360,8 @@ alias[effect:change_pc] = {
     inherit_entity = bool
 }
 
+###Adds/Removes tiles to/from the scoped planet to adjust its planet size
+alias[effect:set_planet_size] = int
 
 alias[effect:set_blocker] = random
 alias[effect:set_blocker] = <tile_blocker>
@@ -1355,8 +1369,20 @@ alias[effect:set_blocker] = <tile_blocker>
 alias[effect:remove_blocker] = bool
 ###Adds a specific deposit to the scoped tile
 alias[effect:add_deposit] = <deposit>
+###Replaces resource deposit on the scoped tile
+alias[effect:set_deposit] = <deposit>
 ###Removes all deposits from the scoped tile or planet
 alias[effect:clear_deposits] = yes
+###Clear modifiers on target planet
+alias[effect:clear_planet_modifiers] = yes
+###Clears resources of a tile or country
+alias[effect:clear_resources] = yes
+###Rebuild modifiers on target planet
+alias[effect:reroll_planet_modifiers] = yes
+###Rebuild resource blockers on target planet
+alias[effect:reroll_blockers] = yes
+###Rebuild resource deposits on target planet
+alias[effect:reroll_deposits] = yes
 
 alias[effect:establish_communications_no_message] = scope[any] #country
 

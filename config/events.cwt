@@ -59,6 +59,9 @@ event = {
     ## cardinality = 0..1
     fire_only_once = bool
 
+    ## cardinality = 0..1
+    trackable = bool
+
     subtype[!triggered]
     ## cardinality = 0..1
     mean_time_to_happen = {
