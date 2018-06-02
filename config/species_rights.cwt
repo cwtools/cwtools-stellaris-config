@@ -105,6 +105,17 @@ enums = {
 		colonization_control_yes
 		colonization_control_no
 	}
+	enum[species_rights_type] = {
+		citizenship
+		military_service
+		slavery
+		purge
+		living_standard
+		migration_control
+		population_control
+		colonization_control
+		none
+	}
 }
 
 

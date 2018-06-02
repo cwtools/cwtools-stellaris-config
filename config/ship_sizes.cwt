@@ -122,9 +122,14 @@ enums = {
     enum[shipsize_class] = {
         shipclass_military
         shipclass_military_station
+        shipclass_mining_station
+        shipclass_research_station
+        shipclass_terraform_station
+        shipclass_observation_station
         shipclass_transport
         shipclass_starbase
         shipclass_constructor
         shipclass_colonizer
+        shipclass_science_ship
     }
 }

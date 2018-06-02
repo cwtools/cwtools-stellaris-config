@@ -1,0 +1,7 @@
+enums = {
+    complex_enum[component_tag] = {
+        name = {
+            enum_name
+        }
+    }
+}
