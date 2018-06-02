@@ -1514,6 +1514,15 @@ alias[effect:create_leader] = {
 	effect = { alias_name[effect] = alias_match_left[effect] }
 }
 
+# #clone_leader = {
+# 	target = <event target>
+# 	#properties to override, see create_leader
+# 	effect = { ... }
+# }
+
+# ### Clones the last created leader for the scoped country
+# alias[effect:clone_leader] = scalar #TODO
+
 
 ###Sets the age of the scoped leader
 alias[effect:set_age] = int
@@ -1672,3 +1681,931 @@ alias[effect:set_player] = scope[country]
 
 #scripted effects
 alias[effect:<scripted_effect>] = bool
+
+#Imported
+#
+#
+#
+#
+#
+#
+#
+#
+
+### Activates the gateway associated with a megastructure.
+alias[effect:activate_gateway] = scope[megastructure]
+
+### Moves a saved leader to the active for the scoped country with a lookup key
+alias[effect:activate_saved_leader] = {
+    key = scalar
+    ## cardinality = 0..1
+    add_to_owned = bool
+    ## cardinality = 0..1
+    effect = {
+        alias_name[effect] = alias_match_left[effect]
+    }
+}
+
+### Adds a specific anomaly category to the scoped planet
+alias[effect:add_anomaly] = <anomaly_category>
+
+### Adds an asteroid belt at the distance in the scope.
+alias[effect:add_asteroid_belt] = {
+    radius = int
+    type = <asteroid_belt>
+}
+
+### Adds to ongoing colonization progress on the scoped planet
+alias[effect:add_colony_progress] = float[0.0..1.0]
+
+### Adds a sum of food to the scoped country)
+alias[effect:add_food] = int
+
+### Adds a specific global design to the game
+alias[effect:add_global_ship_design] = <global_ship_design>
+
+### Adds a hyperlane between two systems
+alias[effect:add_hyperlane] = {
+    from = scope[galactic_object]
+    to = scope[galactic_object]
+}
+
+### Adds or subtracts progress to/from the scoped observation post's current mission
+alias[effect:add_mission_progress] = float
+
+### Add a notification modifier to the country
+alias[effect:add_notification_modifier] = <notification_modifier>
+
+### Adds s random tech research option to the scoped country's tech view list, permanent until researched. if none applicable it runs fail_effects
+alias[effect:add_random_research_option] = {
+    category = <technology_category>
+    area = enum[technology_areas]
+    tier = <technology_tier>
+    add_progress = int
+    fail_effects = {
+        alias_name[effect] = alias_match_left[effect]
+    }
+    ## cardinality = 0..1
+    ###default no
+    ignore_prereqs = bool
+}
+
+### Adds a tech research option to the scoped country's tech view list, permanent until researched
+alias[effect:add_research_option] = <technology>
+
+### Makes the scoped country remember that it has encountered the bypass 
+alias[effect:add_seen_bypass] = scope[any] ##TODO bypass
+
+### Adds a specific ship design to the scoped country
+alias[effect:add_ship_design] = last_created_design #TODO check this
+
+### Adds a sum of experience points to the scoped leader
+alias[effect:add_skill] = int
+
+### Gives percentage progress (0.0-1.0) in a specific tech to the scoped country
+alias[effect:add_tech_progress] = {
+    tech = <technology>
+    progress = float[0.0..1.0]
+}
+
+### Adds the specified tradition to the scoped country. add_tradition = <tradition_key>
+alias[effect:add_tradition] = <tradition>
+
+### Adds trust on scope country towards target country
+alias[effect:add_trust] = {
+    amount = int
+    who = scope[country]
+}
+
+#
+###Scope (/context) switch
+alias[effect:alliance] = scalar
+
+#
+###Scope (/context) switch
+alias[effect:attacker] = scalar
+
+### Makes a fleet or ship auto-move to target fleet and potentially attack it
+alias[effect:auto_follow_fleet] = {
+    target = scope[fleet]
+    attack_fleet = bool
+}
+
+### Makes a fleet or ship auto-move to target planet
+alias[effect:auto_move_to_planet] = {
+    target = scope[planet]
+    clear_auto_move_on_arrival = bool
+}
+
+#
+###Scope (/context) switch
+alias[effect:best_tile_for_pop] = scalar
+
+### Creates a buildable pop on the scoped tile/planet
+alias[effect:build_pop] = { #TOOO trigger docs error
+    name = <buildable_pop>
+    grown = bool
+}
+
+### Cancels terraformation of the scoped planet
+alias[effect:cancel_terraformation] = bool
+
+#change_country_flag = random
+#change_country_flag = { icon = { category = <key> file = <filename> } background = { category = <key> file = <filename> } colors = { <key> <key> } }
+
+### Changes the scoped country's flag
+alias[effect:change_country_flag] = scalar # TODO
+
+### Changes the portrait of the leader in scope.
+###change_leader_portrait = <key or species event target>
+alias[effect:change_leader_portrait] = scope[species] #TODO add "key"
+
+### Changes the characteristics of a species
+alias[effect:change_species_characteristics] = {
+    ## cardinality = 0..1
+    ###determines if species is pre-sapient
+    sapient = bool
+    ## cardinality = 0..1
+    ###determines if species leaders are immortal
+    immortal = bool
+    ## cardinality = 0..1
+    ###determines if pops of that species can colonize
+    pops_can_be_colonizers = bool
+    ## cardinality = 0..1
+    ###determines if pops of that species can migrate
+    pops_can_migrate = bool
+    ## cardinality = 0..1
+    ###determines if pops of that species can reproduce
+    pops_can_reproduce = bool
+    ## cardinality = 0..1
+    ###determines if pops of that species can join factions
+    pops_can_join_factions = bool
+    ## cardinality = 0..1
+    ###determines if that species can generate leaders
+    can_generate_leaders = bool
+    ## cardinality = 0..1
+    ###determines if pops from that species can become slaves
+    pops_can_be_slaves = bool
+    ## cardinality = 0..1
+    ###determines if pops from that species have happiness
+    pops_have_happiness = bool
+    ## cardinality = 0..1
+    ###determines if pops from need consumer goods
+    consumer_goods = bool
+    ## cardinality = 0..1
+    ###determines if the species can be modified
+    can_be_modified = bool
+    ## cardinality = 0..1
+    ###speed at which the pops from that species grow automatically
+    pops_auto_growth = float[0.0..1.0]
+    ## cardinality = 0..1
+    ###amount of energy each pop of that species consume monthly
+    pop_maintenance = float[0.0..1.0]
+    ## cardinality = 0..1
+    new_pop_resource_requirement = {
+        type = <resource>
+        value = int
+    }
+    ## cardinality = 0..1
+    portait = scope[species] #TODO portrait key
+}
+
+### Re-evaluate the specified casus belli type with given target country
+alias[effect:check_casus_belli_valid] = {
+    ## cardinality = 0..1
+    type = scope[country]
+    ## cardinality = 0..1
+    type = <casus_belli>
+}
+
+### Clears all ethics of specified pop or country
+alias[effect:clear_ethos] = yes
+
+### Clears all queued fleet actions for target fleet
+alias[effect:clear_fleet_actions] = scope[fleet]
+
+### Deletes the specified saved global target reference
+alias[effect:clear_global_event_target] = scalar
+
+### Deletes all saved global target references
+alias[effect:clear_global_event_targets] = yes
+
+### Clears all fleet orders from the scoped fleet
+alias[effect:clear_orders] = yes
+
+### Clears uncharted space from the galaxy map for the scoped country, in a radius around target system
+alias[effect:clear_uncharted_space] = {
+    from = scope[country]
+    radius = int
+}
+### Clears uncharted space from the galaxy map for the scoped country, in a radius around target system
+alias[effect:clear_uncharted_space] = scope[country
+
+### Conquers the planet by setting its owner to target country and adding an unhappiness modifier
+alias[effect:conquer] = scope[country]
+
+### Makes the scoped country copy the ethos and government authority of the target country.
+alias[effect:copy_ethos_and_authority] = scope[country]
+
+### Copies orbital tile of source planet onto scoped planet
+alias[effect:copy_orbital_tile] = scope[planet]
+
+#
+###Scope (/context) switch
+alias[effect:core_sector] = scalar
+
+#create_ambient_object = { type = <key> location = <target> }
+For VFX use:
+create_ambient_object = {
+	type = <key>
+	scale = <float>
+	location = <target>
+	use_3d_location = <bool, use 3D entity or 2D coordinate of the location entity as base>
+	entity_offset = {
+		min = <int>
+		max = <int>
+	}
+	entity_offset_angle = {
+		min = <int>
+		max = <int>
+	}
+	entity_offset_height = {
+		min = <int>
+		max = <int>
+	}
+ entity_face_object = star/FROM/etc
+ entity_scale_to_size = yes/no
+	target = <target>
+	duration = <int, days>
+}
+
+### Creates a new ambient object
+alias[effect:create_ambient_object] = scalar
+
+#create_army_transport = {
+	ship_name = <string>
+	graphical_culture = <key>
+	army_name = <string>
+	army_type = <key>
+	species = <target>
+}
+
+### Creates a new army in a new transport ship
+alias[effect:create_army_transport] = scalar
+
+#
+### Creates a bypass in the parent SpatialObject (stored in FromFrom), of the type passed in "type".
+alias[effect:create_bypass] = scalar
+
+#
+### Creates a cluster centered around the specified spatial object
+alias[effect:create_cluster] = scalar
+
+#create_colony_effect = {
+owner = <target>
+species = <target / key>
+ ethos = <random / target / { ethic = <key> ethic = <key> }>
+}
+
+### Creates a colony on the scoped planet
+alias[effect:create_colony] = scalar
+
+#create_fleet = { name = <string> effect = { <create_ship, set_owner, set_location etc effects go here> } } 
+
+### Creates a new fleet
+alias[effect:create_fleet] = scalar
+
+#create_message = { type = BYPASS_EXPLORED localization = BYPASS_EXPLORED_MESSAGE days = 30 target = root variable = { type = name localization = SYSTEM1 scope = from } variable = { type = name localization = SYSTEM2 scope = fromfrom } }
+
+### Creates a message, can take multiple variables
+alias[effect:create_message] = scalar
+
+#
+### Creates a military fleet with the designs of a specified country.
+alias[effect:create_military_fleet] = scalar
+
+#create_mining_station = { owner = <target> }
+
+### Creates a mining station in orbit of the scoped planet
+alias[effect:create_mining_station] = scalar
+
+#create_point_of_interest = { id = <key> name = <string> desc = <string> event_chain = <key> location = <target> }
+
+### Creates a point of interest for the scoped country at a specific location, associated with an event chain
+alias[effect:create_point_of_interest] = scalar
+
+#create_pop = {
+	species = <target / key>
+ethos = <random / target / { ethic = <key> ethic = <key> }>
+}
+
+### Creates a new pop on the scoped tile/planet
+alias[effect:create_pop] = scalar
+
+#create_research_station = { owner = <target> }
+
+### Creates a research station in orbit of the scoped planet
+alias[effect:create_research_station] = scalar
+
+#create_saved_leader = {
+	key = <string>
+	creator = <target>
+	name = <random / string>
+	species = <target / key>
+	gender = <optional / gender> #defalut = random
+type = <random / key>
+	skill = <random / int>
+	set_age = <int>
+ traits = { trait = <key> trait = <key> }
+}
+
+### Creates a new saved leader for the scoped country with a lookup key
+alias[effect:create_saved_leader] = scalar
+
+#create_sector = { capital = <target> type = <string> add = <target> add = <target>}
+
+### Creates a sector with a specific capital planet, of a specific type, and with optional additional systems within the scoped country
+alias[effect:create_sector] = scalar
+
+#create_ship = {
+	name = <string/random>
+	design = <ship design key/target, or use random_existing_design>
+	random_existing_design = <ship size key>
+	graphical_culture = <graphical culture key>
+	prefix = <Y/N, determines if ship name should use owner country prefix>
+	colonizer_species = <species, default: fleet owner founder species>
+}
+
+### Creates a new ship
+alias[effect:create_ship] = scalar
+
+#create_ship_design = { design = <key> ftl = <target, optional, sets FTL drive to target country's> }
+
+### Creates a new ship design for use with last_created_design target
+alias[effect:create_ship_design] = scalar
+
+### Trigger an assertion to stop the debugger when encountering this effect; argument is ignored
+alias[effect:debug_break] = yes
+
+#
+###Scope (/context) switch
+alias[effect:defender] = scalar
+
+### Deletes the target mega structure (no death graphics)
+alias[effect:delete_megastructure] = scope[megastructure]
+
+### Dismantles the scoped orbital station (fleet)
+alias[effect:dismantle] = yes
+
+### Force-end rivalry with target country
+alias[effect:end_rivalry] = scope[country]
+
+### Send endgame telemetry event
+alias[effect:endgame_telemetry] = yes
+
+### Establish communications between scoped country and target country
+alias[effect:establish_communications] = scope[country]
+
+### Iterate through all bordering countries of a system
+alias[effect:every_bordering_country] = {
+    limit = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+### Iterate through each fleet this fleet is in combat with
+alias[effect:every_combatant_fleet] = {
+    limit = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+### Iterate through each species of a country's owned pops
+alias[effect:every_owned_pop_species] = {
+    limit = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+### Iterate through each defending army on a planet
+alias[effect:every_planet_army] = {
+    limit = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+### Finish the current upgrade of a Mega Structure.
+alias[effect:finish_upgrade] = yes
+
+#
+###Scope (/context) switch
+alias[effect:fleet] = scalar
+
+
+### Sends a fleet to research a special project
+###fleet_action_research_special_project = { special_project = test_project target = event_target:project_planet }
+alias[effect:fleet_action_research_special_project] = {
+    special_project = <special_project>
+    target = scope[planet]
+}
+
+### Forces target pop to immediately evaluate their attraction to various pop factions
+alias[effect:force_faction_evaluation] = yes
+
+
+### Copies a value from the galaxy setup into a variable, optionally scaling it by an int value
+###get_galaxy_setup_value = { which = <string> setting = <string> [ scale = <int> ] }
+alias[effect:get_galaxy_setup_value] = {
+    which = scalar
+    setting = scalar
+    ## cardinality = 0..1
+    scale = int
+    ## cardinality = 0..1
+    scale_by = int
+}
+
+### Makes a country guarantee another country
+alias[effect:guarantee_country] = scope[country]
+
+#
+###Scope (/context) switch
+alias[effect:heir] = scalar
+
+#inverted_switch = {
+	trigger = <trigger>
+	<corresponding key/bool/int> = { <effect> }
+	<corresponding key/bool/int> > (less/greater than appear 'reversed') { <effect> }
+	default = { <effect> }
+}
+
+### Executes the first appropriate effect set for a specific trigger treated as NOT.
+alias[effect:inverted_switch] = scalar #TODO
+
+### Join federation with target
+alias[effect:join_alliance] = {
+    who = scope[country]
+    override_requirements = bool
+    ## cardinality = 0..1
+    name = scalar ##TODO loc?
+}
+
+#
+###Scope (/context) switch
+alias[effect:last_created_army] = scalar
+
+#
+###Scope (/context) switch
+alias[effect:last_created_pop_faction] = scalar
+
+#
+###Scope (/context) switch
+alias[effect:last_created_ship] = scalar
+
+#
+###Scope (/context) switch
+alias[effect:last_created_system] = scalar
+
+#
+###Scope (/context) switch
+alias[effect:last_refugee_country] = scalar
+
+### Removes scoped country from any alliances it is in
+alias[effect:leave_alliance] = {
+    override_requirements = bool
+}
+
+### Prints a message to game.log for debugging purposes.
+alias[effect:log] = scalar
+
+#
+###Scope (/context) switch
+alias[effect:mining_station] = scalar
+
+### Modifies army with parameters:
+alias[effect:modify_army] = {
+    ## cardinality = 0..1
+    name = scalar
+    ## cardinality = 0..1
+    owner = scope[country]
+    ## cardinality = 0..1
+    species = scope[species]
+    ## cardinality = 0..1
+    type = <army>
+}
+
+### Moves a pop from a tile to another
+alias[effect:move_pop] = scope[planet]
+alias[effect:move_pop] = scope[tile]
+
+### Randomly mutate a species.
+alias[effect:mutate_species] = yes
+
+#
+###Scope (/context) switch
+alias[effect:no_scope] = scalar
+
+### Executes enclosed effects on every observation post in the game that meets the limit criteria
+alias[effect:observation_outpost] = {
+    limit = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+### Forces scoped fleet to retreat to friendly territory
+alias[effect:order_forced_return] = yes
+
+#
+###Scope (/context) switch
+alias[effect:planet_owner] = scalar
+
+### Play the defined sound effect
+alias[effect:play_sound] = scalar #TODO sound
+
+#
+###Scope (/context) switch
+alias[effect:pop] = scalar
+
+### Adds a specific ethic to the scoped pop regardless if pop-species allows ethic divergence or not. 
+alias[effect:pop_force_add_ethic] = <ethic>
+
+### Sets the scoped pop's migration speed
+alias[effect:pop_migration] = float
+
+### Removes a specific ethic from the scoped pop
+alias[effect:pop_remove_ethic] = <ethic>
+
+### Disables or enables anomaly generation for the scoped planet
+alias[effect:prevent_anomaly] = bool
+
+### Starts or stops purging the scoped pop/planet
+alias[effect:purge] = bool
+
+#queue_actions = { repeat = { <fleet actions> } }
+
+### Adds actions to the scoped fleet's action queue
+alias[effect:queue_actions] = scalar #TODO fleet actions.
+
+### Iterate through all bordering countries of a system
+alias[effect:random_bordering_country] = {
+    limit = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+### Iterate through each fleet this fleet is in combat with
+alias[effect:random_combatant_fleet] = {
+    limit = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+### Iterate through each species of a country's owned pops
+alias[effect:random_owned_pop_species] = {
+    limit = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+### Iterate through each defending army on a planet
+alias[effect:random_planet_army] = {
+    limit = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+### Iterate through each leader that is recruitable for the country
+alias[effect:random_pool_leader] = {
+    limit = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+    alias_name[effect] = alias_match_left[effect]
+}
+
+#randomize_flag_symbol = pirate
+
+### Randomizes a country's flag symbol within the selected category
+alias[effect:randomize_flag_symbol] = scalar #TODO pirate
+
+### Removes all armies on scoped planet
+alias[effect:remove_all_armies] = yes
+
+### Removes the scoped army
+alias[effect:remove_army] = yes
+
+### Makes a fleet or ship stop auto-moving
+alias[effect:remove_auto_move_target] = yes
+
+### Removes existing hyperlane between two systems
+alias[effect:remove_hyperlane] = {
+    from = scope[galactic_object]
+    to = scope[galactic_object]
+}
+
+### Remove a notification modifier to the country
+alias[effect:remove_notification_modifier] = <notification_modifier>
+
+### Removes the orbital deposit slot from the scoped planet
+alias[effect:remove_orbital_deposit] = yes
+
+### Removes a specific point of interest from the scoped country's situation log
+alias[effect:remove_point_of_interest] = scalar
+
+### Removes a flag from the scoped pop's faction/pop faction
+alias[effect:remove_pop_faction_flag] = scalar
+
+### Removes a specific ruler trait from the scoped leader, even if they are not currently ruler; this is relevant if they ever become ruler
+alias[effect:remove_ruler_trait] = <trait> #TODO ruler trait
+
+### Removes a saved leader for the scoped country with a lookup key
+alias[effect:remove_saved_leader] = scalar
+
+#use one of the following:
+# 	name = "an explicit name with [Bracket.Stuff]"
+# 	name = random
+# 	name_list = "key"
+# }
+
+### rename_species = { 
+alias[effect:rename_species] = scalar #TODO
+
+### Restores all hull points to the scoped ship
+alias[effect:repair_percentage] = float
+
+### Restores all hull points to the scoped ship
+alias[effect:repair_ship] = yes
+
+#
+###Scope (/context) switch
+alias[effect:research_station] = scalar
+
+### Resets years of peace for a country.
+alias[effect:reset_years_of_peace] = yes
+
+### Runs strategic data for AI
+alias[effect:run_ai_strategic_data] = yes
+
+#
+###Scope (/context) switch
+alias[effect:sector] = scalar
+
+### Enables or disables the VIR window pop-in
+alias[effect:set_advisor_active] = bool
+
+### Sets the scoped fleet/country's aggro range in intra-system units
+alias[effect:set_aggro_range] = int
+
+### Determines whether the scoped fleet/country's aggro range is measured from the fleet's current position or its spawn location
+alias[effect:set_aggro_range_measure_from] = enum[aggro_range_measure_from]
+
+enums = {
+    enum[aggro_range_measure_from] = {
+        self
+        return_point
+    }
+}
+
+### Sets an asteroid belt at the distance in the scope.
+alias[effect:set_asteroid_belt] = {
+    ## cardinality = 0..1
+    radius = float
+    ## cardinality = 0..1
+    type = <asteroid_belt>
+}
+
+### Sets the scoped planet to be the capital of its owner country
+alias[effect:set_capital] = yes
+
+### Sets the scoped country's city graphical culture
+alias[effect:set_city_graphical_culture] = <graphical_culture>
+
+### Changes the country type of the scoped country
+alias[effect:set_country_type] = <country_type>
+
+### Sets the crisis ambient loop to the current effect
+alias[effect:set_crisis_sound] = scalar #TODO sound
+
+### Sets a custom spatial object as custom country capital location.
+alias[effect:set_custom_capital_location] = scope[any]
+
+### Sets the scoped ship to become disabled at a certain hull point percentage
+alias[effect:set_disable_at_health] = float[0.0..1.0]
+
+### Enables or disables the scoped ship
+alias[effect:set_disabled] = bool
+
+### Sets the flag of the current Empire.
+alias[effect:set_empire_flag] = scalar #TODO
+
+### Sets the name of the current Empire.
+alias[effect:set_empire_name] = scalar
+
+### Silently disables the scoped fleet to prevent player action, remember to unlock at the end of the event
+alias[effect:set_event_locked] = bool
+
+#set_faction_hostility = { target = country set_hostile = yes set_neutral = no set_friendly = no }
+
+### Sets the aggro state of the scoped faction-type country
+alias[effect:set_faction_hostility] = scalar
+
+#
+### Sets a country to lead a federation
+alias[effect:set_federation_leader] = scalar
+
+#set_fleet_stance = selective
+
+### Sets the bombardment stance of the scoped fleet
+alias[effect:set_fleet_bombardment_stance] = scalar
+
+#
+### Sets a custom fleet formation on a fleet. set_fleet_formation = { position = { x = 1 y = 1 } position = { x = 2 y = 1 } }
+alias[effect:set_fleet_formation] = scalar
+
+#set_fleet_stance = <key, aggressive/passive/evasive>
+
+### Sets the stance of the scoped fleet
+alias[effect:set_fleet_stance] = scalar
+
+#set_formation_scale = <float>
+
+### Scales the scoped fleet's formation's ship spacing, above and below 1.0
+alias[effect:set_formation_scale] = scalar
+
+#set_halted = nDays
+
+### Sets the mega structure upgrade to halted status for n days
+alias[effect:set_halted] = scalar
+
+#set_heir = <target>
+
+### Sets the target leader to be the scoped country's heir
+alias[effect:set_heir] = scalar
+
+#set_home_base = event_target:cool_starbase
+
+### Set the home base of the scoped fleet to the specified starbase
+alias[effect:set_home_base] = scalar
+
+#
+### Sets the current mission of an observation station
+alias[effect:set_mission] = scalar
+
+#Example:
+set_planet_entity = {
+	entity = <name of entity>
+	graphical_culture = <target or name of culture>
+	picture = <picture override>
+	atmosphere_color = <color from 3 components>
+	atmosphere_intensity = <0.0 - 1.0>
+	atmosphere_width = <0.0 - 1.0> 
+}
+
+### Change entity of a planet.
+alias[effect:set_planet_entity] = scalar
+
+#
+### Sets the name of the current planet.
+alias[effect:set_planet_name] = scalar
+
+#set_policy = { policy = <key> option = <key> cooldown = <bool> }
+
+### Sets a policy to a specific option for the scoped country and specifies if policy cooldown should go into effect
+alias[effect:set_policy] = scalar
+
+#set_pop_faction = <target>
+
+### Sets the scoped pop to belong to a specific pop faction
+alias[effect:set_pop_faction] = scalar
+
+#set_pop_faction_flag = <key>
+
+### Sets an arbitrarily-named flag on the scoped pop's faction/pop faction
+alias[effect:set_pop_faction_flag] = scalar
+
+#set_primitive = yes
+
+### [DEPRECATED, USE SET_COUNTRY_TYPE] Sets the scoped country as primitive
+alias[effect:set_primitive] = scalar
+
+#set_primitive_age = renaissance_age
+
+### Sets a 'primitive age' for the scoped (primitive, pre-FTL) country
+alias[effect:set_primitive_age] = scalar
+
+#set_ring = no
+
+### Adds or removes a planetary ring around the scoped planet
+alias[effect:set_ring] = scalar
+
+#
+### Sets the name of the current sector.
+alias[effect:set_sector_name] = scalar
+
+#set_skill = 3
+
+### Sets the scoped leader's level
+alias[effect:set_skill] = scalar
+
+#Spawn system should be located in a block between Begin and End.
+Begin: set_spawn_system_batch = begin
+End: set_spawn_system_batch = end
+
+### Optimizes the calls for spawn_system effect.
+alias[effect:set_spawn_system_batch] = scalar
+
+#
+### Defines a homeworld for the current species.
+alias[effect:set_species_homeworld] = scalar
+
+#
+### Sets the current species scopes identity to match the target scopes making them evaluate as the same species in is_same_species trigger.
+alias[effect:set_species_identity] = scalar
+
+#set_starbase_building = { slot = <int> buiding = <starbase_buildin> }
+
+### Sets a building in a slot on a starbase
+alias[effect:set_starbase_building] = scalar
+
+#set_starbase_module = { slot = <int> module = <starbase_module> }
+
+### Sets a module in a slot on a starbase
+alias[effect:set_starbase_module] = scalar
+
+#set_starbase_size = <ship_size>
+
+### Sets the ship size of a starbase
+alias[effect:set_starbase_size] = scalar
+
+#set_tutorial_level = 0
+
+### Changes the scoped country's tutorial level (0 none, 1 limited, 2 full)
+alias[effect:set_tutorial_level] = scalar
+
+#
+### Spawns a mega structure in a system.
+alias[effect:spawn_megastructure] = scalar
+
+#
+### Spawns a planet in a system.
+alias[effect:spawn_planet] = scalar
+
+#spawn_system = { min_distance = <int 0-100> max_distance = <int 0-100> initializer = <key for pre-defined system> hyperlane=<yes/no> is_discovered=<yes/no>}
+
+### Spawns a new system at a position relative to the scoped system/planet/ship.
+alias[effect:spawn_system] = scalar
+
+#
+###Scope (/context) switch
+alias[effect:star] = scalar
+
+#start_colony = {
+	owner = <target>
+	species = <target / key>
+	ethos = <random / target / { ethic = <key> ethic = <key> }>
+}
+
+### Starts colonization of the scoped planet
+alias[effect:start_colony] = scalar
+
+#stop_crisis_sound = yes
+
+### Stops the crisis ambient loop
+alias[effect:stop_crisis_sound] = scalar
+
+#switch = {
+	trigger = <trigger>
+	<corresponding key/bool/int> = { <effect> }
+	<corresponding key/bool/int> > (less/greater than appear 'reversed') { <effect> }
+	default = { <effect> }
+}
+
+### Executes the first appropriate effect set for a specific trigger
+alias[effect:switch] = scalar
+
+#
+###Scope (/context) switch
+alias[effect:system_star] = scalar
+
+#
+###Scope (/context) switch
+alias[effect:tile] = scalar
+
+#
+### Just a tooltip
+alias[effect:tooltip] = scalar
+
+#
+### if a planet has trigger_megastructure_icon = yes then the map icon for the star will show a megastructure icon
+alias[effect:trigger_megastructure_icon] = scalar
+
+#
+### Starts an upgrade process on a mega structure. upgrade_megastructure_to = <new_type>
+alias[effect:upgrade_megastructure_to] = scalar
