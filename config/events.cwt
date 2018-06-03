@@ -163,6 +163,9 @@ event = {
 		}
 		
         ## cardinality = 0..1
+		default_hide_option = bool
+		
+        ## cardinality = 0..1
         alias_name[effect] = alias_match_left[effect]
 
 

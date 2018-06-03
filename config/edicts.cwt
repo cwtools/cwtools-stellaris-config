@@ -20,7 +20,7 @@ types = {
 
 
 edict = {
-	name = localisation
+	name = scalar
 	length = int
 	
 	subtype[!country_edict_ambition] = {

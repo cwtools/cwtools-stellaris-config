@@ -25,7 +25,7 @@ trait = {
 	
 	subtype[species_trait] = {	
 		## cardinality = 0..1
-		icon = "filepath"
+		icon = filepath
 		
 		allowed_archetypes = { <species_archetype> }
 		
