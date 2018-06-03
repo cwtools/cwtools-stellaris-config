@@ -487,13 +487,13 @@ alias[trigger:count_tile] = {
 #Supported Targets: none
 
 
-#attacker, defender and side should be country scope, side should be one of the previous two
+#side should be one of the previous two scopes
 #< >
 ###Checks the amount of potential war participants in a specific war that meet the specified criteria
 alias[trigger:count_potential_war_participants] = {
-	attacker = scalar
-	defender = scalar
-	side = scalar
+	attacker = scope[country]
+	defender = scope[country]
+	side = scope[country]
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
@@ -516,7 +516,7 @@ alias[trigger:closest_system] = {
 
 #Relative Power - lacks who = scope and checking the >, < etc
 alias[trigger:relative_power] = {
-	who = scalar
+	who = scope[country]
 	## cardinality = 0..1
 	category = enum[relative_power_categories]
 	value = enum[relative_power_values]
@@ -555,6 +555,10 @@ enums = {
 		democratic
 		oligarchic
 	}
+	enum[war_sides] = {
+		attackers
+		defenders
+	}
 }
 
 alias[trigger:has_election_type] = enum[election_types]
@@ -562,9 +566,8 @@ alias[trigger:has_election_type] = enum[election_types]
 
 alias[trigger:has_modifier] = <static_modifier>
 
-#Missing who = scope
 alias[trigger:has_opinion_modifier] = {
-	who = scalar
+	who = scope[country]
 	modifier = <opinion_modifier>
 }
 
@@ -583,17 +586,15 @@ alias[trigger:has_ambient_object_flag] = scalar
 alias[trigger:has_megastructure_flag] = scalar
 
 
-#missing who = scope
 alias[trigger:has_relation_flag] = {
-    who = scalar
+    who = scope[country]
     flag = scalar
 	## cardinality = 0..1
 	is_reverse = bool
 }
 
-#missing who = scope
 alias[trigger:reverse_has_relation_flag] = {
-    who = scalar
+    who = scope[country]
     flag = scalar
 }
 
@@ -606,9 +607,10 @@ alias[trigger:has_policy_flag] = <policy_flag>
 
 
 alias[trigger:leader_of_faction] = <pop_faction>
+alias[trigger:leader_of_faction] = bool
 
-#should be scope
-alias[trigger:is_same_value] = scalar
+
+alias[trigger:is_same_value] = scope[any]
 
 
 #should check for <> too
@@ -633,72 +635,73 @@ alias[trigger:has_ethic] = <ethos>
 alias[trigger:pop_has_ethic] = <ethos>
 
 
-#these should all be scope
 #country only
-alias[trigger:is_angry_to] = scalar
-alias[trigger:is_patronizing_to] = scalar
-alias[trigger:is_dismissive_to] = scalar
-alias[trigger:is_threatened_to] = scalar
-alias[trigger:is_protective_to] = scalar
-alias[trigger:is_neutral_to] = scalar
-alias[trigger:is_friendly_to] = scalar
-alias[trigger:is_loyal_to] = scalar
-alias[trigger:is_cordial_to] = scalar
-alias[trigger:is_belligerent_to] = scalar
-alias[trigger:is_imperious_to] = scalar
-alias[trigger:is_arrogant_to] = scalar
-alias[trigger:is_enigmatic_to] = scalar
-alias[trigger:is_berserker_to] = scalar
-alias[trigger:is_hostile_to] = scalar
-alias[trigger:is_domineering_to] = scalar
-alias[trigger:is_unfriendly_to] = scalar
-alias[trigger:is_disloyal_to] = scalar
-alias[trigger:is_custodial_to] = scalar
-alias[trigger:is_rival] = scalar
-alias[trigger:is_in_federation_with] = scalar
-alias[trigger:has_defensive_pact] = scalar
-alias[trigger:has_research_agreement] = scalar
-alias[trigger:has_communications] = scalar
-alias[trigger:is_guaranteeing] = scalar
-alias[trigger:has_truce] = scalar
-alias[trigger:is_at_war_with] = scalar
-alias[trigger:is_within_borders_of] = scalar
-alias[trigger:has_non_aggression_pact] = scalar
-alias[trigger:is_controlled_by] = scalar
-alias[trigger:is_neighbor_of] = scalar
-alias[trigger:is_original_owner] = scalar
+alias[trigger:is_angry_to] = scope[country]
+alias[trigger:is_patronizing_to] = scope[country]
+alias[trigger:is_dismissive_to] = scope[country]
+alias[trigger:is_threatened_to] = scope[country]
+alias[trigger:is_protective_to] = scope[country]
+alias[trigger:is_neutral_to] = scope[country]
+alias[trigger:is_friendly_to] = scope[country]
+alias[trigger:is_loyal_to] = scope[country]
+alias[trigger:is_cordial_to] = scope[country]
+alias[trigger:is_belligerent_to] = scope[country]
+alias[trigger:is_imperious_to] = scope[country]
+alias[trigger:is_arrogant_to] = scope[country]
+alias[trigger:is_enigmatic_to] = scope[country]
+alias[trigger:is_berserker_to] = scope[country]
+alias[trigger:is_hostile_to] = scope[country]
+alias[trigger:is_domineering_to] = scope[country]
+alias[trigger:is_unfriendly_to] = scope[country]
+alias[trigger:is_disloyal_to] = scope[country]
+alias[trigger:is_custodial_to] = scope[country]
+alias[trigger:is_rival] = scope[country]
+alias[trigger:is_in_federation_with] = scope[country]
+alias[trigger:has_defensive_pact] = scope[country]
+alias[trigger:has_research_agreement] = scope[country]
+alias[trigger:has_communications] = scope[country]
+alias[trigger:is_guaranteeing] = scope[country]
+alias[trigger:has_truce] = scope[country]
+alias[trigger:is_at_war_with] = scope[country]
+alias[trigger:is_within_borders_of] = scope[country]
+alias[trigger:has_non_aggression_pact] = scope[country]
+alias[trigger:is_controlled_by] = scope[country]
+alias[trigger:is_neighbor_of] = scope[country]
+alias[trigger:is_original_owner] = scope[country]
 alias[trigger:is_owned_by] = scope[country]
-alias[trigger:is_same_empire] = scalar
-alias[trigger:has_migration_access] = scalar
-alias[trigger:has_closed_borders] = scope[any]	#country
-#to country/species/pop
-alias[trigger:is_same_species] = scalar
+alias[trigger:is_same_empire] = scope[country]
+alias[trigger:has_migration_access] = scope[country]
+alias[trigger:has_closed_borders] = scope[country]
+
+alias[trigger:is_same_species] = scope[country]
+alias[trigger:is_same_species] = scope[pop]
+alias[trigger:is_same_species] = scope[species]
+
 ###Checks if the scoped object is originally of the same species, or currently of the exact same species instance, as another object
 alias[trigger:is_exact_same_species] = scope[species]
-alias[trigger:is_subspecies] = scalar
+alias[trigger:is_subspecies] = scope[species]
 #any scope
 alias[trigger:exists] = scope[any]
 
 alias[trigger:is_hostile] = scope[country]
 
-#various scopes (one for each of them, obviously)
 ###Checks if the planet is the same as target planet
-alias[trigger:is_planet] = scope[any]
+alias[trigger:is_planet] = scope[planet]
 ###Checks if the pop is the same as target pop
-alias[trigger:is_pop] = scope[any]
+alias[trigger:is_pop] = scope[pop]
 ###Checks if the ship is the same as target ship
-alias[trigger:is_ship] = scope[any]
+alias[trigger:is_ship] = scope[ship]
 ###Checks if the army is the same as target army
-alias[trigger:is_army] = scope[any]
+alias[trigger:is_army] = scope[army]
 ###Checks if the country is the same as target country
-alias[trigger:is_country] = scope[any]
+alias[trigger:is_country] = scope[country]
 
 
 
-#this who should be a scope, but I think rather pop/species
 #should also check < >
 alias[trigger:habitability] = {
-	who = scalar
+	who = scope[pop]
+	who = scope[species]
 	value = float[0.0..1.0]
 }
 
@@ -767,15 +770,16 @@ alias[trigger:has_natural_wormhole] = bool
 alias[trigger:has_edict] = <edict>
 
 
-#Hopefully this can be done a lot better. "who" must be country, "side" must be country or attacker(s?) or defender(s?)
 alias[trigger:is_war_participant] = {
-	who = scalar
-	side = scalar
+	who = scope[country]
+	## cardinality = 0..1
+	side = scope[country]
+	## cardinality = 0..1
+	side = enum[war_sides]
 }
 
-#also needs scope check
 alias[trigger:opinion] = {
-	who = scalar
+	who = scope[country]
 	value = int
 }
 
@@ -886,15 +890,14 @@ alias[trigger:has_blocker] = <tile_blocker>
 alias[trigger:has_pop] = bool
 
 
-#who should refer to a country on these two
 ###Checks if the planet can be colonized by target country
 alias[trigger:can_colonize] = {
-	who = scalar
+	who = scope[country]
 	status = bool
 }
 ###Checks the relative amount of already-researched tech between the country and target country
 alias[trigger:tech_unlocked_ratio] = {
-	who = scalar
+	who = scope[country]
 	ratio = float[0.0...1.0]
 }
 
@@ -954,59 +957,57 @@ alias[trigger:has_ruler_trait] = <trait>
 
 
 
-#these should all be country = country
 ###Checks if a species/pop/leader has a particular citizenship type in their country
 alias[trigger:has_citizenship_type] = {
 	## cardinality = 0..1
-	country = scalar
+	country = scope[country]
 	type = enum[citizenship_types]
 }
 ###Checks if a species/pop/leader has a particular military service type in their country
 alias[trigger:has_military_service_type] = {
 	## cardinality = 0..1
-	country = scalar
+	country = scope[country]
 	type = enum[military_service_types]
 }
 ###Checks if a species/pop/leader has a particular purge type in their country
 alias[trigger:has_purge_type] = {
 	## cardinality = 0..1
-	country = scalar
+	country = scope[country]
 	type = enum[purge_types]
 }
 ###Checks if a species/pop/leader has a particular slavery type in their country
 alias[trigger:has_slavery_type] = {
 	## cardinality = 0..1
-	country = scalar
+	country = scope[country]
 	type = enum[slavery_types]
 }
 ###Checks if the pop is prevented from reproducing
 alias[trigger:has_population_control] = {
 	## cardinality = 0..1
-	country = scalar
+	country = scope[country]
 	type = enum[population_controls]
 }
 ###Checks if the pop is prevented from migrating
 alias[trigger:has_migration_control] = {
 	## cardinality = 0..1
-	country = scalar
+	country = scope[country]
 	type = enum[migration_controls]
 }
 ###Checks if a species/pop/leader has a particular living standard in their country
 alias[trigger:has_living_standard] = {
 	## cardinality = 0..1
-	country = scalar
+	country = scope[country]
 	type = enum[living_standards]
 }
 
 
-#all three texts should be localisation
 alias[trigger:custom_tooltip] = {
 	## cardinality = 0..1
-	text = scalar
+	text = localisation
 	## cardinality = 0..1
-	fail_text = scalar
+	fail_text = localisation
 	## cardinality = 0..1
-	success_text = scalar
+	success_text = localisation
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
@@ -1062,17 +1063,18 @@ alias[trigger:has_deposit] = <deposit>
 ###Checks if the planet has a deposit for a specific ship class
 alias[trigger:has_deposit_for] = enum[shipsize_class]
 
-#should be country scope
+
 alias[trigger:can_be_subject] = {
-	overlord = scalar
+	overlord = scope[country]
 	subject_type = <subject_type>
 }
 
 alias[trigger:is_subject_type] = <subject_type>
 
-#should be scope = country or system
+
 ###Checks if the country has claims on the given country or system.
-alias[trigger:has_claim] = scalar
+alias[trigger:has_claim] = scope[country]
+alias[trigger:has_claim] = scope[system]
 
 
 alias[trigger:local_has_dlc] = enum[DLCs]
@@ -1354,7 +1356,7 @@ alias[trigger:count_war_participants] = {
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	side = scope[any]
+	side = scope[country]
 	count = int
 }
 

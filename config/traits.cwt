@@ -42,7 +42,7 @@ trait = {
 	}
 	
 	subtype[leader_trait] = {	
-		icon = "filepath"
+		icon = filepath
 		
 		modification = no
 		
