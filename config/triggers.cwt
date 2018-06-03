@@ -1316,10 +1316,10 @@ alias[trigger:count_starbase_modules] =  {
 
 #TODO ship_size
 ### Checks if the scoped country has a specified quantity of a starbase size
-# alias[trigger:count_starbase_sizes] =  {
-# 	count = int
-# 	starbase_size = <ship_size.starbase>
-# }
+alias[trigger:count_starbase_sizes] =  {
+	count = int
+	starbase_size = <ship_size> #<ship_size.starbase>
+}
 
 ### Iterate through all systems
 alias[trigger:count_system] =  {
