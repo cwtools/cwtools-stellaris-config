@@ -1510,7 +1510,7 @@ alias[trigger:has_mandate] = bool
 alias[trigger:has_mandate] = <mandate>
 
 ### Checks if a country or star has a mega structure.
-alias[trigger:has_megastructure] = bool
+alias[trigger:has_megastructure] = <megastructure>
 
 ### Checks if the planet has an orbital mining station
 alias[trigger:has_mining_station] = bool

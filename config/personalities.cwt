@@ -22,6 +22,8 @@ enums = {
 		propagator
 		multispecies
 		crisis_fighter
+		holy_planets
+		demands_clear_borders
 	}
 }
 

@@ -14,7 +14,7 @@ opinion_modifier = {
 		base = int
 		
 		###root = country with the opinion, from = country it has the opinion of
-		alias[modifier_rule_add:modifier] = alias_match_left[modifier_rule_add]
+		alias[modifier_rule_add] = alias_match_left[modifier_rule_add]
 	}
 	
 	subtype[!triggered_opinion_modifier] = {
@@ -36,6 +36,12 @@ opinion_modifier = {
 		
 		## cardinality = 0..1
 		unique = bool
+
+		##cardinality = 0..1
+		monthly = yes
+		
+		##cardinality = 0..1
+		months = int
 	}
 	
 	subtype[triggered_opinion_modifier] = {

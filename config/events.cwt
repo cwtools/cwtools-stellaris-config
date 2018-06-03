@@ -65,6 +65,10 @@ event = {
     ## cardinality = 0..1
     is_advisor_event = bool
 
+    ## cardinality = 0..1
+    ###Forces the event to pop-up even if player has supressed pop ups
+    auto_opens = bool
+
     subtype[!triggered]
     ## cardinality = 0..1
     mean_time_to_happen = {

@@ -127,6 +127,7 @@ enums = {
         shipclass_terraform_station
         shipclass_observation_station
         shipclass_outpost_station
+        shipclass_orbital_station
         shipclass_transport
         shipclass_starbase
         shipclass_constructor

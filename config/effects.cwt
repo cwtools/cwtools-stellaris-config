@@ -510,12 +510,16 @@ alias[effect:random_neighbor_country] = {
 }
 
 alias[effect:every_neighbor_system] = {
+    ##cardinality = 0..1
+    ignore_hyperlanes = bool
 	##cardinality = 0..1
     limit = { alias_name[trigger] = alias_match_left[trigger] }
     alias_name[effect] = alias_match_left[effect]
 }
 
 alias[effect:random_neighbor_system] = {
+    ##cardinality = 0..1
+    ignore_hyperlanes = bool
 	##cardinality = 0..1
     limit = { alias_name[trigger] = alias_match_left[trigger] }
     alias_name[effect] = alias_match_left[effect]
@@ -968,6 +972,8 @@ alias[effect:kill_leader] = {
     ##cardinality = 0..1
     type = enum[leader_classes]
     ##cardinality = 0..1
+    type = random
+    ##cardinality = 0..1
 	show_notification = bool
     ##cardinality = 0..1
     heir = bool
@@ -1010,6 +1016,8 @@ alias[effect:create_fleet_from_naval_cap] = float
 alias[effect:reduce_hp] = int
 ###Reduces the hull points of the scoped ship by a relative amount
 alias[effect:reduce_hp_percent] = float[0.0..1.0]
+###Reduces the hull points of the scoped ship by a relative amount
+alias[effect:reduce_hp_percent] = int[0..100]
 
 
 alias[effect:exile_leader_as] = scalar
@@ -1121,41 +1129,47 @@ alias[effect:set_military_service_type] = {
 	## cardinality = 0..1
 	country = scalar
 	type = enum[military_service_types]
+	## cardinality = 0..1
 	cooldown = bool
 }
 ###Set purge type for scoped species/pop/leader
 alias[effect:set_purge_type] = {
-	## cardinality = 0..1
+    ## cardinality = 0..1
 	country = scalar
 	type = enum[purge_types]
+    ## cardinality = 0..1
 	cooldown = bool
 }
 ###Set slavery type for scoped species/pop/leader
 alias[effect:set_slavery_type] = {
-	## cardinality = 0..1
+    ## cardinality = 0..1
 	country = scalar
 	type = enum[slavery_types]
+    ## cardinality = 0..1
 	cooldown = bool
 }
 ###Set population control for scoped species/pop/leader
 alias[effect:set_population_controls] = {
-	## cardinality = 0..1
+    ## cardinality = 0..1
 	country = scalar
 	type = enum[population_controls]
+    ## cardinality = 0..1
 	cooldown = bool
 }
 ###Set migration control for scoped species/pop/leader
 alias[effect:set_migration_controls] = {
-	## cardinality = 0..1
+    ## cardinality = 0..1
 	country = scalar
 	type = enum[migration_controls]
+    ## cardinality = 0..1
 	cooldown = bool
 }
 ###Set living standard for scoped species/pop/leader
 alias[effect:set_living_standard] = {
-	## cardinality = 0..1
+    ## cardinality = 0..1
 	country = scalar
 	type = enum[living_standards]
+	## cardinality = 0..1
 	cooldown = bool
 }
 
@@ -1165,7 +1179,9 @@ alias[effect:join_war] = scalar
 #needs scope = country
 alias[effect:set_closed_borders] = {
 	who = scalar
-	status = bool
+    status = bool
+    ## cardinality = 0..1
+    forced = int
 }
 
 #needs scope = country
@@ -1318,9 +1334,12 @@ alias[effect:set_graphical_culture] = <graphical_culture>
 alias[effect:create_species] = {
 	name = scalar #technically should be localisation_synced or " " in code or a scope
 	## cardinality = 0..1
-	plural = scalar
+    plural = scalar
+	## cardinality = 0..1
+    adjective = scalar
 	class = scalar #random_non_machine / <species class key>
 	portrait = scalar #random/<portrait id>
+    ## cardinality = 0..1
 	homeworld = scalar #planet scope
 	traits = random
 	traits = {
@@ -1334,7 +1353,49 @@ alias[effect:create_species] = {
 	is_mod = bool
 	## cardinality = 0..1
 	###determines if species leaders are immortal
-    immortal = bool
+    immortal = bools
+    ## cardinality = 0..1
+    ###determines if pops of that species can colonize
+    pops_can_be_colonizers = bool
+    ## cardinality = 0..1
+    ###determines if pops of that species can migrate
+    pops_can_migrate = bool
+    ## cardinality = 0..1
+    ###determines if pops of that species can reproduce
+    pops_can_reproduce = bool
+    ## cardinality = 0..1
+    ###determines if pops of that species can join factions
+    pops_can_join_factions = bool
+    ## cardinality = 0..1
+    ###determines if that species can generate leaders
+    can_generate_leaders = bool
+    ## cardinality = 0..1
+    ###determines if pops from that species can become slaves
+    pops_can_be_slaves = bool
+    ## cardinality = 0..1
+    ###determines if pops from that species have happiness
+    pops_have_happiness = bool
+    ## cardinality = 0..1
+    ###determines if pops from need consumer goods
+    consumer_goods = bool
+    ## cardinality = 0..1
+    ###determines if the species can be modified
+    can_be_modified = bool
+    ## cardinality = 0..1
+    ###speed at which the pops from that species grow automatically
+    pops_auto_growth = float[0.0..1.0]
+    ## cardinality = 0..1
+    ###amount of energy each pop of that species consume monthly
+    pop_maintenance = float[0.0..1.0]
+    ## cardinality = 0..1
+    new_pop_resource_requirement = {
+        type = <resource>
+        value = int
+    }
+    ## cardinality = 0..1
+    allow_negative_traits = bool
+    ## cardinality = 0..1
+    extra_trait_points = int
     
 	## cardinality = 0..1
     name_list = scalar #TODO name_list
@@ -1501,9 +1562,11 @@ alias[effect:create_colony_effect] = {
 
 ###Creates a new leader for the scoped country
 alias[effect:create_leader] = {
+	## cardinality = 0..1
 	name = scalar #technically should be localisation_synced or " " in code
 	type = enum[leader_classes]
-	species = scope[species] #<target / key>
+    species = scope[species] #<target / key>
+    species = enum[create_leader_species]
 	## cardinality = 0..1
 	leader_age_min = int
 	## cardinality = 0..1
@@ -1521,7 +1584,7 @@ alias[effect:create_leader] = {
 	## cardinality = 0..1
     event_leader = bool
 	## cardinality = 0..1
-    sub_type = survery
+    sub_type = survey
 	## cardinality = 0..1
 	traits = {
 		## cardinality = 0..5
@@ -1533,11 +1596,22 @@ alias[effect:create_leader] = {
 	effect = { alias_name[effect] = alias_match_left[effect] }
 }
 
-# ### Clones the last created leader for the scoped country
+enums = {
+    enum[create_leader_species] = {
+        owner_main_species
+        last_created
+    }
+}
+
+#Same as create, but all optional except target
+### Clones the last created leader for the scoped country
 alias[effect:clone_leader] = {
     target = scope[leader]
+	## cardinality = 0..1
     name = scalar #technically should be localisation_synced or " " in code
+	## cardinality = 0..1
 	type = enum[leader_classes]
+	## cardinality = 0..1
 	species = scope[species] #<target / key>
 	## cardinality = 0..1
 	leader_age_min = int
@@ -1555,8 +1629,9 @@ alias[effect:clone_leader] = {
 	skill = int
 	## cardinality = 0..1
     event_leader = bool
-	## cardinality = 0..1
-    sub_type = survery
+    #Not sure what other types there are
+    ## cardinality = 0..1
+    sub_type = survey
 	## cardinality = 0..1
 	traits = {
 		## cardinality = 0..5
@@ -1597,7 +1672,9 @@ alias[effect:modify_species] = {
 	## cardinality = 0..1
 	base = none
 	## cardinality = 0..10
-	add_trait = <trait>
+    add_trait = <trait>
+    ## cardinality = 0..1
+    add_traits_at_start_of_list = bool
 	## cardinality = 0..10
 	remove_trait = <trait>
 	## cardinality = 0..1
@@ -1613,10 +1690,12 @@ alias[effect:modify_species] = {
 
 ###Changes the species of the scoped object
 alias[effect:change_species] = scope[species]
+alias[effect:change_species] = enum[create_leader_species]
 
 ###Changes the dominant species of the current Country, change_all also changes all usage of that species (Pops etc) in the empire
 alias[effect:change_dominant_species] = {
     species = scope[species]
+    species = enum[create_leader_species]
     ## cardinality = 0..1
     change_all = yes
 }
@@ -1657,7 +1736,8 @@ alias[effect:establish_communications_no_message] = scope[any] #country
 ###Establishes first contact between the scoped country and target country at the set location
 alias[effect:establish_contact] = {
     who = scope[country]
-    target = scope[any]
+    ## cardinality = 0..1
+    location = scope[any]
 }
 
 alias[effect:pop_change_ethic] = <ethos>
@@ -1665,6 +1745,7 @@ alias[effect:pop_change_ethic] = <ethos>
 ### Starts a situation log event chain for target country
 alias[effect:begin_event_chain] = {
     event_chain = <event_chain>
+    ## cardinality = 0..2
     target = scope[country]
 }
 
@@ -1912,6 +1993,10 @@ alias[effect:change_species_characteristics] = {
         type = <resource>
         value = int
     }
+    ## cardinality = 0..1
+    allow_negative_traits = bool
+    ## cardinality = 0..1
+    extra_trait_points = int
     ## cardinality = 0..1
     portait = scope[species] #TODO portrait key
 }
@@ -2256,6 +2341,7 @@ alias[effect:no_scope] = scalar
 
 ### Executes enclosed effects on every observation post in the game that meets the limit criteria
 alias[effect:observation_outpost] = {
+    ## cardinality = 0..1
     limit = {
         alias_name[trigger] = alias_match_left[trigger]
     }
@@ -2639,15 +2725,20 @@ alias[effect:spawn_megastructure] = {
 ### Spawns a planet in a system.
 alias[effect:spawn_planet] = {
     class = <planet_class>
+    ## cardinality = 0..1
     location = scope[any] #TODO scope
     ## cardinality = 0..1
     orbit_location = bool
+    ## cardinality = 0..1
+    orbit_distance = float
     ## cardinality = 0..1
     orbit_distance_offset = float
     ## cardinality = 0..1
     size = int
     ## cardinality = 0..1
     has_ring = bool
+    ## cardinality = 0..1
+    orbit_angle = float
     ## cardinality = 0..1
     orbit_angle_offset = int
     ## cardinality = 0..1

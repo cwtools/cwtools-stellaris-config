@@ -6,7 +6,8 @@ types = {
 }
 
 casus_belli = {
-	casus_belli = <casus_belli>
+	#not needed?
+	#casus_belli = <casus_belli>
 	
 	## cardinality = 0..1
 	###trigger to make some CBs invalid for certain types of countries; this = attacker (CB owner); default: { always = yes }

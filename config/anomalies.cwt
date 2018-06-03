@@ -20,6 +20,7 @@ anomaly_category = {
 		trigger = { alias_name[trigger] = alias_match_left[trigger] }			
 		text = scalar #localisation
 	}
+	## cardinality = 0..1
 	###Picture displayed in category window
 	picture = scalar #spritetype
 	
