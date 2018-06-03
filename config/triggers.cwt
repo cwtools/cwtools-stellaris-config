@@ -1083,10 +1083,8 @@ alias[trigger:host_has_dlc] = enum[DLCs]
 alias[trigger:is_multiplayer] = bool
 
 
-###This doesn't work as of 1.8, maybe it is fixed in the meantime, tell Caligula if yes!
+###Appears to now work with yes/no (only)
 alias[trigger:member_of_faction] = bool
-###This doesn't work as of 1.8, maybe it is fixed in the meantime, tell Caligula if yes!
-alias[trigger:member_of_faction] = <pop_faction>
 
 ###Checks if the country has a specific event chain
 alias[trigger:has_event_chain] = <event_chain>
