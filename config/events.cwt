@@ -61,6 +61,9 @@ event = {
 
     ## cardinality = 0..1
     trackable = bool
+    
+    ## cardinality = 0..1
+    is_advisor_event = bool
 
     subtype[!triggered]
     ## cardinality = 0..1
@@ -81,6 +84,7 @@ event = {
     subtype[diplomatic] = {
         picture_event_data = {
 			#these can all be either a scope (country except for room that is ruler) or a key.
+			## cardinality = 0..1
             room = scalar
 			## cardinality = 0..1
             portrait = scalar
@@ -126,6 +130,11 @@ event = {
         allow = {
             alias_name[trigger] = alias_match_left[trigger]
         }
+        
+        ## cardinality = 0..1
+        exclusive_trigger = {
+            alias_name[trigger] = alias_match_left[trigger]
+        }
 
         ## cardinality = 0..1
         ai_chance = {
@@ -143,6 +152,10 @@ event = {
             
             ## cardinality = 0..1
             custom_gui = scalar
+
+            ## cardinality = 0..1
+            ### Binds this option to the "dismiss" action
+            default_hide_option = bool
 		}
 		
         ## cardinality = 0..1

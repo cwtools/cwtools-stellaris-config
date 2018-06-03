@@ -967,6 +967,7 @@ alias[effect:change_government] = {
 alias[effect:kill_leader] = {
     ##cardinality = 0..1
     type = enum[leader_classes]
+    ##cardinality = 0..1
 	show_notification = bool
     ##cardinality = 0..1
     heir = bool
@@ -1073,8 +1074,10 @@ alias[effect:divide_variable] = {
 #max should not be less than min...
 alias[effect:add_monthly_resource_mult] = {
 	resource = <resource>
-	value = int
+    value = int
+    ## cardinality = 0..1
 	min = int
+    ## cardinality = 0..1
 	max = int
 }
 
@@ -1110,6 +1113,7 @@ alias[effect:set_citizenship_type] = {
 	## cardinality = 0..1
 	country = scalar
 	type = enum[citizenship_types]
+	## cardinality = 0..1
 	cooldown = bool
 }
 ###Set military service type for scoped species/pop/leader
@@ -1271,7 +1275,7 @@ alias[effect:destroy_country] = yes
 ###Destroys the colony on the scoped planet
 alias[effect:destroy_colony] = yes
 ###Destroys target ambient object
-alias[effect:destroy_ambient_object] = yes
+alias[effect:destroy_ambient_object] = scope[any] #TODO check scope
 ###Removes the planet from the scope 
 alias[effect:remove_planet] = yes
 ###Immediately adds a specific building to the scoped tile
@@ -1330,7 +1334,10 @@ alias[effect:create_species] = {
 	is_mod = bool
 	## cardinality = 0..1
 	###determines if species leaders are immortal
-	immortal = bool
+    immortal = bool
+    
+	## cardinality = 0..1
+    name_list = scalar #TODO name_list
 }
 
 
@@ -1361,6 +1368,7 @@ alias[effect:create_country] = {
 	## cardinality = 0..1
 	species = scalar #scope apparently, maybe key would also work?
 	
+	## cardinality = 0..1
 	ethos = random
 	## cardinality = 0..1
 	ethos = {
@@ -1394,7 +1402,10 @@ alias[effect:create_country] = {
 	## cardinality = 0..1
 	released_by_country = scalar #scope
 	## cardinality = 0..1
-	released_from_country = scalar #scope
+    released_from_country = scalar #scope
+    
+	## cardinality = 0..1
+    ignore_initial_colony_error = bool
 }
 
 ###Creates a rebellion on this planet
@@ -1402,6 +1413,7 @@ alias[effect:create_rebels] = {
 	name = scalar #technically should be localisation_synced or " " in code or a scope
 	authority = random
 	authority = <authority>
+	authority = scope[country]
 	civics = random
 	civics = {
 		## cardinality = 2..3
@@ -1437,7 +1449,10 @@ alias[effect:create_rebels] = {
 	name_list = scalar #should be a key of name lists or a scope
 	## cardinality = 0..1
 	###This presumably works (report if not)
-	ship_prefix = scalar #should be string or a scope
+    ship_prefix = scalar #should be string or a scope
+    
+	## cardinality = 0..1
+    released_from_country = scope[country]
 	
 	effect = { alias_name[effect] = alias_match_left[effect] }
 }
@@ -1488,7 +1503,7 @@ alias[effect:create_colony_effect] = {
 alias[effect:create_leader] = {
 	name = scalar #technically should be localisation_synced or " " in code
 	type = enum[leader_classes]
-	species = scalar #<target / key>
+	species = scope[species] #<target / key>
 	## cardinality = 0..1
 	leader_age_min = int
 	## cardinality = 0..1
@@ -1504,24 +1519,54 @@ alias[effect:create_leader] = {
     ## cardinality = 0..1
 	skill = int
 	## cardinality = 0..1
-	event_leader = bool
+    event_leader = bool
+	## cardinality = 0..1
+    sub_type = survery
 	## cardinality = 0..1
 	traits = {
 		## cardinality = 0..5
 		trait = <trait>
+		## cardinality = 0..5
+		trait = random_trait
 	}
 	## cardinality = 0..1
 	effect = { alias_name[effect] = alias_match_left[effect] }
 }
 
-# #clone_leader = {
-# 	target = <event target>
-# 	#properties to override, see create_leader
-# 	effect = { ... }
-# }
-
 # ### Clones the last created leader for the scoped country
-# alias[effect:clone_leader] = scalar #TODO
+alias[effect:clone_leader] = {
+    target = scope[leader]
+    name = scalar #technically should be localisation_synced or " " in code
+	type = enum[leader_classes]
+	species = scope[species] #<target / key>
+	## cardinality = 0..1
+	leader_age_min = int
+	## cardinality = 0..1
+	leader_age_max = int	#should not be less than min...
+	## cardinality = 0..1
+	###Warning: This is in trigger_docs but is not used in this place in Vanilla, and might not work
+	gender = enum[genders]
+	## cardinality = 0..1
+	###Warning: This is in trigger_docs but is not used in this place in Vanilla, and likely does not work
+    set_age = int
+    ## cardinality = 0..1
+    skill = random
+    ## cardinality = 0..1
+	skill = int
+	## cardinality = 0..1
+    event_leader = bool
+	## cardinality = 0..1
+    sub_type = survery
+	## cardinality = 0..1
+	traits = {
+		## cardinality = 0..5
+		trait = <trait>
+		## cardinality = 0..5
+		trait = random_trait
+	}
+	## cardinality = 0..1
+	effect = { alias_name[effect] = alias_match_left[effect] }
+}
 
 
 ###Sets the age of the scoped leader
@@ -1636,6 +1681,7 @@ alias[effect:add_event_chain_counter] = {
 ###Enables a specific special research project for target country at a specific location (should be same as the current scope where possible)
 alias[effect:enable_special_project] = {
     name = <special_project>
+    ## cardinality = 0..1
     owner = scope[country]
     location = scope[all]
 }
@@ -1915,40 +1961,40 @@ alias[effect:copy_orbital_tile] = scope[planet]
 alias[effect:core_sector] = scalar
 
 #create_ambient_object = { type = <key> location = <target> }
-For VFX use:
-create_ambient_object = {
-	type = <key>
-	scale = <float>
-	location = <target>
-	use_3d_location = <bool, use 3D entity or 2D coordinate of the location entity as base>
-	entity_offset = {
-		min = <int>
-		max = <int>
-	}
-	entity_offset_angle = {
-		min = <int>
-		max = <int>
-	}
-	entity_offset_height = {
-		min = <int>
-		max = <int>
-	}
- entity_face_object = star/FROM/etc
- entity_scale_to_size = yes/no
-	target = <target>
-	duration = <int, days>
-}
+# For VFX use:
+# create_ambient_object = {
+# 	type = <key>
+# 	scale = <float>
+# 	location = <target>
+# 	use_3d_location = <bool, use 3D entity or 2D coordinate of the location entity as base>
+# 	entity_offset = {
+# 		min = <int>
+# 		max = <int>
+# 	}
+# 	entity_offset_angle = {
+# 		min = <int>
+# 		max = <int>
+# 	}
+# 	entity_offset_height = {
+# 		min = <int>
+# 		max = <int>
+# 	}
+#  entity_face_object = star/FROM/etc
+#  entity_scale_to_size = yes/no
+# 	target = <target>
+# 	duration = <int, days>
+# }
 
 ### Creates a new ambient object
 alias[effect:create_ambient_object] = scalar
 
-#create_army_transport = {
-	ship_name = <string>
-	graphical_culture = <key>
-	army_name = <string>
-	army_type = <key>
-	species = <target>
-}
+# #create_army_transport = {
+# 	ship_name = <string>
+# 	graphical_culture = <key>
+# 	army_name = <string>
+# 	army_type = <key>
+# 	species = <target>
+# }
 
 ### Creates a new army in a new transport ship
 alias[effect:create_army_transport] = scalar
@@ -1962,10 +2008,10 @@ alias[effect:create_bypass] = scalar
 alias[effect:create_cluster] = scalar
 
 #create_colony_effect = {
-owner = <target>
-species = <target / key>
- ethos = <random / target / { ethic = <key> ethic = <key> }>
-}
+# owner = <target>
+# species = <target / key>
+#  ethos = <random / target / { ethic = <key> ethic = <key> }>
+# }
 
 ### Creates a colony on the scoped planet
 alias[effect:create_colony] = scalar
@@ -1995,9 +2041,9 @@ alias[effect:create_mining_station] = scalar
 alias[effect:create_point_of_interest] = scalar
 
 #create_pop = {
-	species = <target / key>
-ethos = <random / target / { ethic = <key> ethic = <key> }>
-}
+# 	species = <target / key>
+# ethos = <random / target / { ethic = <key> ethic = <key> }>
+# }
 
 ### Creates a new pop on the scoped tile/planet
 alias[effect:create_pop] = scalar
@@ -2008,16 +2054,16 @@ alias[effect:create_pop] = scalar
 alias[effect:create_research_station] = scalar
 
 #create_saved_leader = {
-	key = <string>
-	creator = <target>
-	name = <random / string>
-	species = <target / key>
-	gender = <optional / gender> #defalut = random
-type = <random / key>
-	skill = <random / int>
-	set_age = <int>
- traits = { trait = <key> trait = <key> }
-}
+# 	key = <string>
+# 	creator = <target>
+# 	name = <random / string>
+# 	species = <target / key>
+# 	gender = <optional / gender> #defalut = random
+# type = <random / key>
+# 	skill = <random / int>
+# 	set_age = <int>
+#  traits = { trait = <key> trait = <key> }
+# }
 
 ### Creates a new saved leader for the scoped country with a lookup key
 alias[effect:create_saved_leader] = scalar
@@ -2028,13 +2074,13 @@ alias[effect:create_saved_leader] = scalar
 alias[effect:create_sector] = scalar
 
 #create_ship = {
-	name = <string/random>
-	design = <ship design key/target, or use random_existing_design>
-	random_existing_design = <ship size key>
-	graphical_culture = <graphical culture key>
-	prefix = <Y/N, determines if ship name should use owner country prefix>
-	colonizer_species = <species, default: fleet owner founder species>
-}
+# 	name = <string/random>
+# 	design = <ship design key/target, or use random_existing_design>
+# 	random_existing_design = <ship size key>
+# 	graphical_culture = <graphical culture key>
+# 	prefix = <Y/N, determines if ship name should use owner country prefix>
+# 	colonizer_species = <species, default: fleet owner founder species>
+# }
 
 ### Creates a new ship
 alias[effect:create_ship] = scalar
@@ -2136,11 +2182,11 @@ alias[effect:guarantee_country] = scope[country]
 alias[effect:heir] = scalar
 
 #inverted_switch = {
-	trigger = <trigger>
-	<corresponding key/bool/int> = { <effect> }
-	<corresponding key/bool/int> > (less/greater than appear 'reversed') { <effect> }
-	default = { <effect> }
-}
+# 	trigger = <trigger>
+# 	<corresponding key/bool/int> = { <effect> }
+# 	<corresponding key/bool/int> > (less/greater than appear 'reversed') { <effect> }
+# 	default = { <effect> }
+# }
 
 ### Executes the first appropriate effect set for a specific trigger treated as NOT.
 alias[effect:inverted_switch] = scalar #TODO
@@ -2252,6 +2298,7 @@ alias[effect:queue_actions] = scalar #TODO fleet actions.
 
 ### Iterate through all bordering countries of a system
 alias[effect:random_bordering_country] = {
+    ## cardinality = 0..1
     limit = {
         alias_name[trigger] = alias_match_left[trigger]
     }
@@ -2260,6 +2307,7 @@ alias[effect:random_bordering_country] = {
 
 ### Iterate through each fleet this fleet is in combat with
 alias[effect:random_combatant_fleet] = {
+    ## cardinality = 0..1
     limit = {
         alias_name[trigger] = alias_match_left[trigger]
     }
@@ -2268,6 +2316,7 @@ alias[effect:random_combatant_fleet] = {
 
 ### Iterate through each species of a country's owned pops
 alias[effect:random_owned_pop_species] = {
+    ## cardinality = 0..1
     limit = {
         alias_name[trigger] = alias_match_left[trigger]
     }
@@ -2276,6 +2325,7 @@ alias[effect:random_owned_pop_species] = {
 
 ### Iterate through each defending army on a planet
 alias[effect:random_planet_army] = {
+    ## cardinality = 0..1
     limit = {
         alias_name[trigger] = alias_match_left[trigger]
     }
@@ -2284,6 +2334,7 @@ alias[effect:random_planet_army] = {
 
 ### Iterate through each leader that is recruitable for the country
 alias[effect:random_pool_leader] = {
+    ## cardinality = 0..1
     limit = {
         alias_name[trigger] = alias_match_left[trigger]
     }
@@ -2411,184 +2462,239 @@ alias[effect:set_empire_name] = scalar
 ### Silently disables the scoped fleet to prevent player action, remember to unlock at the end of the event
 alias[effect:set_event_locked] = bool
 
-#set_faction_hostility = { target = country set_hostile = yes set_neutral = no set_friendly = no }
-
 ### Sets the aggro state of the scoped faction-type country
-alias[effect:set_faction_hostility] = scalar
+alias[effect:set_faction_hostility] = {
+    ##cardinality = 0..1
+    target = scope[country]
+    ##cardinality = 0..1
+    set_hostile = bool
+    ##cardinality = 0..1
+    set_neutral = bool
+    ##cardinality = 0..1
+    set_friendly = bool
+}
 
 #
 ### Sets a country to lead a federation
-alias[effect:set_federation_leader] = scalar
-
-#set_fleet_stance = selective
+alias[effect:set_federation_leader] = scalar #TODO unknown unsage
 
 ### Sets the bombardment stance of the scoped fleet
-alias[effect:set_fleet_bombardment_stance] = scalar
+alias[effect:set_fleet_bombardment_stance] = scalar #TODO bombardment stancce
 
-#
 ### Sets a custom fleet formation on a fleet. set_fleet_formation = { position = { x = 1 y = 1 } position = { x = 2 y = 1 } }
-alias[effect:set_fleet_formation] = scalar
-
-#set_fleet_stance = <key, aggressive/passive/evasive>
-
-### Sets the stance of the scoped fleet
-alias[effect:set_fleet_stance] = scalar
-
-#set_formation_scale = <float>
-
-### Scales the scoped fleet's formation's ship spacing, above and below 1.0
-alias[effect:set_formation_scale] = scalar
-
-#set_halted = nDays
-
-### Sets the mega structure upgrade to halted status for n days
-alias[effect:set_halted] = scalar
-
-#set_heir = <target>
-
-### Sets the target leader to be the scoped country's heir
-alias[effect:set_heir] = scalar
-
-#set_home_base = event_target:cool_starbase
-
-### Set the home base of the scoped fleet to the specified starbase
-alias[effect:set_home_base] = scalar
-
-#
-### Sets the current mission of an observation station
-alias[effect:set_mission] = scalar
-
-#Example:
-set_planet_entity = {
-	entity = <name of entity>
-	graphical_culture = <target or name of culture>
-	picture = <picture override>
-	atmosphere_color = <color from 3 components>
-	atmosphere_intensity = <0.0 - 1.0>
-	atmosphere_width = <0.0 - 1.0> 
+alias[effect:set_fleet_formation] = {
+    ## cardinality = 0..100
+    position = { x = float y = float}
 }
 
-### Change entity of a planet.
-alias[effect:set_planet_entity] = scalar
+### Sets the stance of the scoped fleet
+alias[effect:set_fleet_stance] = enum[fleet_stance]
 
-#
+enums = {
+    enum[fleet_stance] = {
+        aggressive
+        passive
+        evasive
+    }
+}
+
+### Scales the scoped fleet's formation's ship spacing, above and below 1.0
+alias[effect:set_formation_scale] = float
+
+### Sets the mega structure upgrade to halted status for n days
+alias[effect:set_halted] = int
+
+### Sets the target leader to be the scoped country's heir
+alias[effect:set_heir] = scope[leader]
+
+### Set the home base of the scoped fleet to the specified starbase
+alias[effect:set_home_base] = scope[ship]
+
+### Sets the current mission of an observation station
+alias[effect:set_mission] = <observation_station_mission>
+
+### Change entity of a planet.
+alias[effect:set_planet_entity] = {
+    ## cardinality = 0..1
+    entity = scalar #TODO entity
+    ## cardinality = 0..1
+    graphical_culture = <graphical_culture>
+    ## cardinality = 0..1
+    picture = scalar #TODO picture
+    ## cardinality = 0..1
+    atmosphere_color = scalar #TODO color
+    ## cardinality = 0..1
+    atmosphere_intensity = float[0.0..1.0]
+    ## cardinality = 0..1
+    atmosphere_width = float[0.0..1.0]
+}
+
 ### Sets the name of the current planet.
 alias[effect:set_planet_name] = scalar
 
-#set_policy = { policy = <key> option = <key> cooldown = <bool> }
-
 ### Sets a policy to a specific option for the scoped country and specifies if policy cooldown should go into effect
-alias[effect:set_policy] = scalar
-
-#set_pop_faction = <target>
+alias[effect:set_policy] = {
+    policy = <policy>
+    option = <policy_option>
+    cooldown = bool
+}
 
 ### Sets the scoped pop to belong to a specific pop faction
-alias[effect:set_pop_faction] = scalar
-
-#set_pop_faction_flag = <key>
+alias[effect:set_pop_faction] = <pop_faction>
 
 ### Sets an arbitrarily-named flag on the scoped pop's faction/pop faction
 alias[effect:set_pop_faction_flag] = scalar
 
-#set_primitive = yes
-
 ### [DEPRECATED, USE SET_COUNTRY_TYPE] Sets the scoped country as primitive
-alias[effect:set_primitive] = scalar
-
-#set_primitive_age = renaissance_age
+alias[effect:set_primitive] = bool
 
 ### Sets a 'primitive age' for the scoped (primitive, pre-FTL) country
-alias[effect:set_primitive_age] = scalar
+alias[effect:set_primitive_age] = enum[primative_ages]
 
-#set_ring = no
+
+enums = {
+    enum[primitive_ages] = {
+        stone_age
+        bronze_age
+        iron_age
+        late_medieval_age
+        renaissance_age
+        steam_age
+        industrial_age
+        machine_age
+        atomic_age
+        early_space_age
+    }
+}
 
 ### Adds or removes a planetary ring around the scoped planet
-alias[effect:set_ring] = scalar
+alias[effect:set_ring] = bool
 
-#
 ### Sets the name of the current sector.
 alias[effect:set_sector_name] = scalar
 
-#set_skill = 3
-
 ### Sets the scoped leader's level
-alias[effect:set_skill] = scalar
+alias[effect:set_skill] = int
 
-#Spawn system should be located in a block between Begin and End.
-Begin: set_spawn_system_batch = begin
-End: set_spawn_system_batch = end
 
 ### Optimizes the calls for spawn_system effect.
-alias[effect:set_spawn_system_batch] = scalar
+###Spawn system should be located in a block between Begin and End.
+###Begin: set_spawn_system_batch = begin
+###End: set_spawn_system_batch = end
+alias[effect:set_spawn_system_batch] = enum[spawn_system_batch]
 
-#
+enums = {
+    enum[spawn_system_batch] = {
+        begin
+        end
+    }
+}
+
 ### Defines a homeworld for the current species.
-alias[effect:set_species_homeworld] = scalar
+alias[effect:set_species_homeworld] = scope[planet]
 
-#
 ### Sets the current species scopes identity to match the target scopes making them evaluate as the same species in is_same_species trigger.
-alias[effect:set_species_identity] = scalar
-
-#set_starbase_building = { slot = <int> buiding = <starbase_buildin> }
+alias[effect:set_species_identity] = scope[species]
 
 ### Sets a building in a slot on a starbase
-alias[effect:set_starbase_building] = scalar
-
-#set_starbase_module = { slot = <int> module = <starbase_module> }
+alias[effect:set_starbase_building] = {
+    slot = int
+    building = <starbase_building>
+}
 
 ### Sets a module in a slot on a starbase
-alias[effect:set_starbase_module] = scalar
-
-#set_starbase_size = <ship_size>
+alias[effect:set_starbase_module] = {
+    slot = int
+    module = <starbase_module>
+}
 
 ### Sets the ship size of a starbase
-alias[effect:set_starbase_size] = scalar
-
-#set_tutorial_level = 0
+alias[effect:set_starbase_size] = <ship_size> #TODO starbase ship_size
 
 ### Changes the scoped country's tutorial level (0 none, 1 limited, 2 full)
-alias[effect:set_tutorial_level] = scalar
+alias[effect:set_tutorial_level] = int
 
-#
 ### Spawns a mega structure in a system.
-alias[effect:spawn_megastructure] = scalar
+alias[effect:spawn_megastructure] = {
+    type = <megastructure>
+    location = scope[any] #TODO check scope
+    ## cardinality = 0..1
+    name = localisation
+    ## cardinality = 0..1
+    orbit_angle = int[0..360]
+    ## cardinality = 0..1
+    orbit_distance = int
+    ## cardinality = 0..1
+    owner = scope[country]
+    ## cardinality = 0..1
+    graphical_culture = <graphical_culture>
+    ## cardinality = 0..1
+    random_pos = bool
+    ## cardinality = 0..1
+    init_effect = {
+        alias_name[effect] = alias_match_left[effect]
+    }
+}
 
-#
 ### Spawns a planet in a system.
-alias[effect:spawn_planet] = scalar
+alias[effect:spawn_planet] = {
+    class = <planet_class>
+    location = scope[any] #TODO scope
+    ## cardinality = 0..1
+    orbit_location = bool
+    ## cardinality = 0..1
+    orbit_distance_offset = float
+    ## cardinality = 0..1
+    size = int
+    ## cardinality = 0..1
+    has_ring = bool
+    ## cardinality = 0..1
+    orbit_angle_offset = int
+    ## cardinality = 0..1
+    init_effect = {
+        alias_name[effect] = alias_match_left[effect]
+    }
 
-#spawn_system = { min_distance = <int 0-100> max_distance = <int 0-100> initializer = <key for pre-defined system> hyperlane=<yes/no> is_discovered=<yes/no>}
+}
 
 ### Spawns a new system at a position relative to the scoped system/planet/ship.
-alias[effect:spawn_system] = scalar
+alias[effect:spawn_system] = {
+    min_distance = int[0..100]
+    max_distance = int[0..100]
+    initializer = <solar_system_initializer>
+    ## cardinality = 0..1
+    hyperlane = bool
+    ## cardinality = 0..1
+    is_discovered = bool
+    ## cardinality = 0..1
+    min_orientation_angle = int
+    ## cardinality = 0..1
+    max_orientation_angle = int
+}
 
-#
 ###Scope (/context) switch
 alias[effect:star] = scalar
 
-#start_colony = {
-	owner = <target>
-	species = <target / key>
-	ethos = <random / target / { ethic = <key> ethic = <key> }>
-}
-
 ### Starts colonization of the scoped planet
-alias[effect:start_colony] = scalar
-
-#stop_crisis_sound = yes
+alias[effect:start_colony] = {
+    owner = scope[country]
+    species = scope[species] #TODO species target
+    ethos = random
+    ethos = scope[species] #TODO ethic block
+}
 
 ### Stops the crisis ambient loop
-alias[effect:stop_crisis_sound] = scalar
+alias[effect:stop_crisis_sound] = yes
 
-#switch = {
-	trigger = <trigger>
-	<corresponding key/bool/int> = { <effect> }
-	<corresponding key/bool/int> > (less/greater than appear 'reversed') { <effect> }
-	default = { <effect> }
-}
+# #switch = {
+# 	trigger = <trigger>
+# 	<corresponding key/bool/int> = { <effect> }
+# 	<corresponding key/bool/int> > (less/greater than appear 'reversed') { <effect> }
+# 	default = { <effect> }
+# }
 
 ### Executes the first appropriate effect set for a specific trigger
-alias[effect:switch] = scalar
+alias[effect:switch] = scalar #TODO
 
 #
 ###Scope (/context) switch
@@ -2602,10 +2708,8 @@ alias[effect:tile] = scalar
 ### Just a tooltip
 alias[effect:tooltip] = scalar
 
-#
 ### if a planet has trigger_megastructure_icon = yes then the map icon for the star will show a megastructure icon
-alias[effect:trigger_megastructure_icon] = scalar
+alias[effect:trigger_megastructure_icon] = yes
 
-#
 ### Starts an upgrade process on a mega structure. upgrade_megastructure_to = <new_type>
-alias[effect:upgrade_megastructure_to] = scalar
+alias[effect:upgrade_megastructure_to] = <megastructure>
