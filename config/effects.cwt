@@ -1652,7 +1652,9 @@ alias[effect:set_age] = int
 alias[effect:modify_species] = {
 	## cardinality = 0..1
 	species = scope[species]
+	## cardinality = 0..1
 	species = scope[country]
+	## cardinality = 0..1
 	species = scope[leader]
 	## cardinality = 0..1
 	###new base species; default: auto (uses species)
@@ -2133,6 +2135,7 @@ alias[effect:create_research_station] = scalar
 alias[effect:create_saved_leader] = {
 	key = scalar
 	creator = scope[country]
+	name = random
 	name = localisation_synced
 	## cardinality = 0..1
 	gender = enum[genders]
