@@ -1090,9 +1090,9 @@ alias[effect:add_monthly_resource_mult] = {
 }
 
 #should be trait.leader_trait
-alias[effect:add_trait] = <trait>
+alias[effect:add_trait] = <trait.leader_trait>
 #should be trait.ruler_trait
-alias[effect:add_ruler_trait] = <trait>
+alias[effect:add_ruler_trait] = <trait.ruler_trait>
 alias[effect:remove_trait] = <trait>
 
 

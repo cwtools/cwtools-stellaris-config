@@ -952,8 +952,8 @@ alias[trigger:is_species_class] = <species_class>
 #could be refined to check leader or species traits depending on scope
 alias[trigger:has_trait] = <trait>
 #these two should be amended to <trait.species_trait> and <trait.ruler_trait>
-alias[trigger:pop_has_trait] = <trait>
-alias[trigger:has_ruler_trait] = <trait>
+alias[trigger:pop_has_trait] = <trait.species_trait>
+alias[trigger:has_ruler_trait] = <trait.ruler_trait>
 
 
 

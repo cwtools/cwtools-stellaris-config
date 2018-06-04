@@ -14,7 +14,7 @@ types = {
 			leader_class = { scientist }
         }
         subtype[species_trait] = {
-            # cardinality = 0..1
+            ## cardinality = 0..1
 			leader_trait = no
         }
     }
@@ -39,6 +39,8 @@ trait = {
 		improves_leaders = yes
 		## cardinality = 0..1
 		advanced_trait = yes
+		## cardinality = 0..1
+		leader_trait = no
 	}
 	
 	subtype[leader_trait] = {	
