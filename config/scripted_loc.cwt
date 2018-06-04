@@ -3,13 +3,13 @@
 types = {
     type[scripted_loc] = {
         name_field = "name"
-        path = "game/common/ship_behaviors"
+        path = "game/common/scripted_loc"
     }
 }
 
 scripted_loc = {
 	name = scalar
-	## cardinality = 2..100
+	## cardinality = 1..100
 	text = {
 		trigger = { alias_name[trigger] = alias_match_left[trigger] }
 		localization_key = localisation
