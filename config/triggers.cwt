@@ -951,7 +951,7 @@ alias[trigger:is_species_class] = <species_class>
 
 #could be refined to check leader or species traits depending on scope
 alias[trigger:has_trait] = <trait>
-#these two should be amended to <trait.species_trait> and <trait.ruler_trait>
+
 alias[trigger:pop_has_trait] = <trait.species_trait>
 alias[trigger:has_ruler_trait] = <trait.ruler_trait>
 
@@ -1482,7 +1482,7 @@ alias[trigger:has_colony_progress] = int
 alias[trigger:has_component] = <component_template>
 
 ### Checks if the country has a specific edict active
-alias[trigger:has_country_edict] = <country_edict> #TODO country edict
+alias[trigger:has_country_edict] = <edict.country_edict>
 
 ### Checks if two countries have a migration treaty.
 alias[trigger:has_diplo_migration_treaty] = scope[country]
@@ -1530,7 +1530,7 @@ alias[trigger:has_orbital_station] = bool
 alias[trigger:has_planet_class] = <planet_class>
 
 ### Checks if the planet has a specific edict active
-alias[trigger:has_planet_edict] = <edict> #TODO planet edict
+alias[trigger:has_planet_edict] = <edict.planet_edict>
 
 ### Checks if the planet has a specific planet modifier
 alias[trigger:has_planet_modifier] = <planet_modifier>

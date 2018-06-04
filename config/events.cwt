@@ -1,5 +1,30 @@
 types = {
-    type[event] = {
+	type[event] = {
+        name_field = "id"
+
+        path = "game/events"
+
+        ## type_key_filter = country_event
+        subtype[country] = {
+        }
+        ## type_key_filter = pop_event
+        subtype[pop] = {
+        }
+        ## type_key_filter = pop_faction_event
+        subtype[pop_faction] = {
+        }
+        ## type_key_filter = planet_event
+        subtype[planet] = {
+        }
+        ## type_key_filter = ship_event
+        subtype[ship] = {
+        }
+        ## type_key_filter = fleet_event
+        subtype[fleet] = {
+        }
+        ## type_key_filter = event
+        subtype[scopeless] = {
+        }
         path = "game/events"
         subtype[hidden] = {
             hide_window = yes
