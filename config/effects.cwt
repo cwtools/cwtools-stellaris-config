@@ -1267,6 +1267,7 @@ alias[effect:change_planet_size] = int
 ###Sets the name of the scoped country/planet/ship/fleet/leader/army/system/pop faction. Allowed entries are <random>/<string in localisation_synced>/<string written in quotes e.g. "United Nations">
 alias[effect:set_name] = random
 alias[effect:set_name] = localisation_synced
+alias[effect:set_name] = scope[any]
 
 
 #should somehow link to exile_leader_as
