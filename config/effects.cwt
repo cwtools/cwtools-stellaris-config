@@ -2138,29 +2138,9 @@ alias[effect:create_fleet] = {
 	settings = {
 		spawn_debris = bool
 	}
-	###set_owner, create_ship and set_location are put as obligatory here, even if you can do them in last_created_fleet, because forgetting them would be bad and putting them here makes the most sense.
+	###Must include set_owner, set_location and create_ship. These can also go in last_created_fleet, but the former two are marked as obligatory here anyway so you don't forget.
 	effect = {		
 		set_owner = scope[country]
-		## cardinality = 1..100
-		create_ship = { #this might be problematic (one could use e.g. while)
-			name = random
-			name = localisation_synced
-			## cardinality = 0..1
-			design = last_created_design
-			## cardinality = 0..1
-			design = <global_ship_design>
-			## cardinality = 0..1
-			random_existing_design = <ship_size>
-			## cardinality = 0..1
-			prefix = bool
-			## cardinality = 0..1
-			graphical_culture = <graphical_culture>
-			## cardinality = 0..1
-			upgradable = bool
-			## cardinality = 0..1
-			###Used if the created ship is a colony ship
-			colonizer_species = scope[species]
-		}
 		set_location = scope[planet]
 		set_location = scope[system]
 		
@@ -2214,9 +2194,13 @@ alias[effect:create_pop] = {
 	species = scope[country]
 	species = scope[pop]
 	species = scalar #key
+	## cardinality = 0..1
 	ethos = random
+	## cardinality = 0..1
 	ethos = scope[pop]
+	## cardinality = 0..1
 	ethos = scope[country]
+	## cardinality = 0..1
 	ethos = {
 		## cardinality = 2..2
 		ethic = <ethos>
@@ -2343,6 +2327,7 @@ alias[effect:every_owned_pop_species] = {
 
 ### Iterate through each defending army on a planet
 alias[effect:every_planet_army] = {
+	## cardinality = 0..1
     limit = {
         alias_name[trigger] = alias_match_left[trigger]
     }
