@@ -784,7 +784,7 @@ alias[trigger:opinion] = {
 }
 
 #should check <>
-alias[trigger:happiness] = float
+alias[trigger:happiness] = float[0.0..1.0]
 alias[trigger:energy] = int
 alias[trigger:unity] = int
 alias[trigger:vassals] = int
@@ -801,7 +801,7 @@ alias[trigger:num_ascension_perk_slots] = int
 alias[trigger:num_owned_active_gateways] = int
 alias[trigger:num_active_gateways] = int
 alias[trigger:num_trait_points] = int
-alias[trigger:has_skill] = int
+alias[trigger:has_skill] = int[0..10]
 ###Checks the war exhaustion of the war's attackers
 alias[trigger:attacker_exhaustion_score] = int
 ###Checks the war exhaustion of the war's defenders
@@ -903,7 +903,7 @@ alias[trigger:tech_unlocked_ratio] = {
 
 alias[trigger:has_ascension_perk] = <ascension_perk>
 
-alias[trigger:ascension_perk] = <ascension_perk>
+#alias[trigger:ascension_perk] = <ascension_perk>
 
 alias[trigger:has_technology] = <technology>
 
@@ -927,7 +927,7 @@ alias[trigger:check_variable] = {
 #	min/max_jumps cannot have type = euclidean
 ###Checks the ship/fleet/planet/leader/pop/system's galaxy map distance to target in absolute units
 alias[trigger:distance] = {
-	source = scalar
+	source = scope[planet] #Check Vanilla - other scopes might well work too
 	## cardinality = 0..1
 	min_distance = int
 	## cardinality = 0..1
@@ -939,7 +939,7 @@ alias[trigger:distance] = {
 	###Whether to use bypasses (wormholes/gateways) when evaluating distance (yes by default)
 	use_bypasses = bool
 	## cardinality = 0..1
-	###Determines what bypass can be used. This parameter is ignored if uses_bypass=false. If unset, bypasses will be ignored. Note: This needs testing, report results to Dayshine and Caligula.
+	###Determines what bypass can be used. This parameter is ignored if uses_bypass=false. If unset, bypasses will be ignored. Note: This needs testing (what are valid entries?), report results to Dayshine and Caligula.
 	bypass_empire = scalar
 	## cardinality = 0..1
 	min_jumps = int
@@ -1120,7 +1120,7 @@ alias[trigger:<scripted_trigger>] = bool
 #
 
 ###Scope (/context) switch
-alias[trigger:alliance] = scalar
+#alias[trigger:alliance] = scalar
 
 ### Checks the country's total army maintenance expenses for the previous month, in energy credits
 alias[trigger:army_maintenance] = int
@@ -1129,7 +1129,7 @@ alias[trigger:army_maintenance] = int
 alias[trigger:army_type] = <army>
 
 ###Scope (/context) switch
-alias[trigger:attacker] = scalar
+#alias[trigger:attacker] = scalar
 
 ### Checks the war exhaustion of the war's attackers
 alias[trigger:attacker_war_exhaustion] = int
@@ -1138,7 +1138,9 @@ alias[trigger:attacker_war_exhaustion] = int
 alias[trigger:balance] = int
 
 ###Scope (/context) switch
-alias[trigger:best_tile_for_pop] = scalar
+alias[trigger:best_tile_for_pop] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 ### Returns true if the specified number of sub-triggers return true
 ###calc_true_if = { amount = 2 <trigger> <trigger> <trigger> }
@@ -1164,7 +1166,7 @@ alias[trigger:can_create_sector] = scope[galactic_object]
 ### Checks if the country can declare war against target country
 alias[trigger:can_declare_war] = {
 	target = scope[country]
-	attacker_war_goal = <war_goal> #TODO check it's not scope
+	attacker_war_goal = <war_goal>
 }
 
 
@@ -1173,7 +1175,7 @@ alias[trigger:can_join_factions] = bool
 
 ### Checks if one of the faction's parameters is the same as target scope
 alias[trigger:check_pop_faction_parameter] = {
-	which = scalar
+	which = complex_enum[pop_faction_parameters]
 	value = scope[any]
 }
 
@@ -1196,7 +1198,9 @@ alias[trigger:conditional_tooltip] = {
 alias[trigger:construction_expenses] = int
 
 ###Scope (/context) switch
-alias[trigger:core_sector] = scalar
+alias[trigger:core_sector] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 ### Iterate through all bordering countries of a system
 alias[trigger:count_bordering_country] = {
@@ -1374,7 +1378,7 @@ alias[trigger:custom_tooltip_success] = {
 alias[trigger:debug_break] = scalar
 
 ###Scope (/context) switch
-alias[trigger:defender] = scalar
+#alias[trigger:defender] = scalar
 
 ### Checks the ship/fleet/planet/leader/pop/system's distance to the galactic core in percent, where center = 0 and galactic rim = 100
 alias[trigger:distance_to_core_percent] = int
@@ -1398,7 +1402,9 @@ alias[trigger:fail_text] = {
 alias[trigger:federation_expenses] = int
 
 ###Scope (/context) switch
-alias[trigger:fleet] = scalar
+alias[trigger:fleet] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 #TODO: citiznship
 ### Compares the former citizenship type with the given one.
@@ -1761,40 +1767,61 @@ alias[trigger:last_changed_policy] = <policy>
 alias[trigger:last_changed_species_rights_type] = enum[species_rights_type]
 
 ###Scope (/context) switch
-alias[trigger:last_created_ambient_object] = scalar
+alias[trigger:last_created_ambient_object] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 ###Scope (/context) switch
-alias[trigger:last_created_army] = scalar
+alias[trigger:last_created_army] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 ###Scope (/context) switch
-alias[trigger:last_created_country] = scalar
+alias[trigger:last_created_country] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 ###Scope (/context) switch
-alias[trigger:last_created_fleet] = scalar
+alias[trigger:last_created_fleet] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 ###Scope (/context) switch
-alias[trigger:last_created_leader] = scalar
+alias[trigger:last_created_leader] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 ###Scope (/context) switch
-alias[trigger:last_created_pop] = scalar
+alias[trigger:last_created_pop] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+###Scope (/context) switch
+alias[trigger:last_created_pop_faction] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 ###Scope (/context) switch
-alias[trigger:last_created_pop_faction] = scalar
+alias[trigger:last_created_ship] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 ###Scope (/context) switch
-alias[trigger:last_created_ship] = scalar
+alias[trigger:last_created_species] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 ###Scope (/context) switch
-alias[trigger:last_created_species] = scalar
-
-###Scope (/context) switch
-alias[trigger:last_created_system] = scalar
+alias[trigger:last_created_system] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 ### Checks if the country's last researched technology was a specific tech
 alias[trigger:last_increased_tech] = <technology>
 
 ###Scope (/context) switch
-alias[trigger:last_refugee_country] = scalar
+alias[trigger:last_refugee_country] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 ### Prints a message to game.log for debugging purposes
 alias[trigger:log] = scalar
@@ -1806,13 +1833,17 @@ alias[trigger:logged_in_to_pdx_account] = bool
 alias[trigger:max_naval_capacity] = int
 
 ###Scope (/context) switch
-alias[trigger:mining_station] = scalar
+alias[trigger:mining_station] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 ### Checks if the observation post has achieved specific progress in a mission
 alias[trigger:mission_progress] = float[0.0..1.0]
 
 ###Scope (/context) switch
-alias[trigger:no_scope] = scalar
+alias[trigger:no_scope] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 ### Checks the country's number of armies
 alias[trigger:num_armies] = int
@@ -1882,7 +1913,9 @@ alias[trigger:opposing_ethics_divergence] = {
 }
 
 ###Scope (/context) switch
-alias[trigger:owner_species] = scalar
+alias[trigger:owner_species] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 ### Checks if the scoped country controls any system containing a bypass of a specific type
 alias[trigger:owns_any_bypass] = <bypass>
@@ -1891,10 +1924,14 @@ alias[trigger:owns_any_bypass] = <bypass>
 alias[trigger:planet_health] = float[0.0..1.0]
 
 ###Scope (/context) switch
-alias[trigger:planet_owner] = scalar
+alias[trigger:planet_owner] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 ###Scope (/context) switch
-alias[trigger:pop] = scalar
+alias[trigger:pop] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 ### Checks if the pop is allowed to live on its planet
 alias[trigger:pop_can_live_on_planet] = bool
@@ -1915,13 +1952,17 @@ alias[trigger:pop_produces_resource] = {
 alias[trigger:produced_energy] = int
 
 ###Scope (/context) switch
-alias[trigger:research_station] = scalar
+alias[trigger:research_station] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 ### Checks the country's running energy credit balance
 alias[trigger:running_balance] = int
 
 ###Scope (/context) switch
-alias[trigger:sector] = scalar
+alias[trigger:sector] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 ### Checks the country's number of sectors
 alias[trigger:sectors] = int
@@ -1939,7 +1980,9 @@ alias[trigger:species_planet_slave_percentage] = float[0.0..1.0]
 alias[trigger:species_portrait] = enum[portait] #TODO portait
 
 ###Scope (/context) switch
-alias[trigger:star] = scalar
+alias[trigger:star] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 ### Checks the country's total orbital station maintenance expenses for the previous month, in energy credits
 alias[trigger:station_maintenance] = int
@@ -1973,7 +2016,9 @@ alias[trigger:success_text] = {
 alias[trigger:switch] = scalar #TODO sitch
 
 ###Scope (/context) switch
-alias[trigger:system_star] = scalar
+alias[trigger:system_star] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 ### Checks if planet is terraformed by country.
 alias[trigger:terraformed_by] = scope[country]
@@ -1988,7 +2033,9 @@ alias[trigger:their_opinion] = {
 }
 
 ###Scope (/context) switch
-alias[trigger:tile] = scalar
+alias[trigger:tile] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
 
 ### Checks the country's energy credits expenses from trade for the previous month
 alias[trigger:trade_expenses] = int
