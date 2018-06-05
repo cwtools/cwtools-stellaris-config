@@ -21,14 +21,25 @@ technology = {
 	is_rare = bool
 	
 	## cardinality = 0..1
+	start_tech = bool
+	## cardinality = 0..1
 	is_reverse_engineerable = bool
 	
+	## cardinality = 0..1
+	ai_update_type = enum[tech_ai_type]
+	
 	#usually in ""
+	## cardinality = 0..1
 	prerequisites = {
 		## cardinality = 0..100
 		<technology>
 	}
 	
+	## cardinality = 0..1
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
 	weight = int
 	
 	## cardinality = 0..1
@@ -56,11 +67,13 @@ technology = {
 		}
 	}
 	
+	## cardinality = 0..1
 	weight_modifier = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	
 	
+	## cardinality = 0..1
 	ai_weight = {
 		factor = int
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
@@ -114,6 +127,10 @@ enums = {
 		engineering
 		society
 		physics
+	}
+	enum[tech_ai_type] = {
+		all
+		military
 	}
 }
 
