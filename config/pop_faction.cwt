@@ -136,15 +136,15 @@ pop_faction = {
 
 		## cardinality = 0..1
 		### Issue title, shown in faction manager screen
-		title = scalar
+		title = localisation
 
 		## cardinality = 0..1
 		### Unfulfilled issue title, shown in faction manager screen
-		unfulfilled_title = scalar
+		unfulfilled_title = localisation
 
 		## cardinality = 0..1
 		### Issue full description, shown in faction manager screen
-		desc = scalar
+		desc = localisation
 
 		## cardinality = 0..1
 		### Positive happiness effect on faction, if demand is satisfied
@@ -175,9 +175,9 @@ pop_faction = {
 		## cardinality = 0..1
 		scalar = {
 			## cardinality = 0..1
-			title = scalar
+			title = localisation
 			## cardinality = 0..1
-			description = scalar
+			description = localisation
 
 			## cardinality = 0..1
 			### This = Pop faction.
