@@ -30,7 +30,7 @@ alias[scaled_modifier_rule:scaled_modifier] = {
     ## cardinality = 0..1
     limit = { alias_name[trigger] = alias_match_left[trigger]  }
     ## cardinality = 1..1
-    scope = scalar
+    scope = scope[any]
     ## cardinality = 1..1
     calc = enum[scaled_modifier_calc]
     ## cardinality = 0..1
