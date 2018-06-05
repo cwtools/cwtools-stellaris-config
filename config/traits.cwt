@@ -81,9 +81,9 @@ trait = {
 	}
 	
 	## cardinality = 0..1
-	initial = no
+	initial = bool
 	## cardinality = 0..1
-	randomized = no
+	randomized = bool
 	
 	## cardinality = 0..1
 	opposites = {

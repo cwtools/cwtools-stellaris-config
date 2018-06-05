@@ -161,6 +161,10 @@ alias[trigger:any_pop] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+alias[trigger:any_fleet_in_orbit] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+ 
 alias[trigger:any_research_station] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
@@ -603,7 +607,7 @@ alias[trigger:has_authority] = <authority>
 alias[trigger:has_valid_civic] = <civic>
 alias[trigger:has_civic] = <civic>
 alias[trigger:has_invalid_civic] = <civic>
-alias[trigger:has_policy_flag] = <policy_flag>
+alias[trigger:has_policy_flag] = enum[policy_flag]
 
 
 alias[trigger:leader_of_faction] = <pop_faction>
@@ -1120,7 +1124,8 @@ alias[trigger:<scripted_trigger>] = bool
 #
 
 ###Scope (/context) switch
-#alias[trigger:alliance] = scalar
+###Report to Caligula how this works
+alias[trigger:alliance] = { alias_name[trigger] = alias_match_left[trigger] }
 
 ### Checks the country's total army maintenance expenses for the previous month, in energy credits
 alias[trigger:army_maintenance] = int
@@ -1129,7 +1134,7 @@ alias[trigger:army_maintenance] = int
 alias[trigger:army_type] = <army>
 
 ###Scope (/context) switch
-#alias[trigger:attacker] = scalar
+alias[trigger:attacker] = { alias_name[trigger] = alias_match_left[trigger] }
 
 ### Checks the war exhaustion of the war's attackers
 alias[trigger:attacker_war_exhaustion] = int
@@ -1175,7 +1180,7 @@ alias[trigger:can_join_factions] = bool
 
 ### Checks if one of the faction's parameters is the same as target scope
 alias[trigger:check_pop_faction_parameter] = {
-	which = complex_enum[pop_faction_parameters]
+	which = enum[pop_faction_parameters]
 	value = scope[any]
 }
 
@@ -1378,7 +1383,8 @@ alias[trigger:custom_tooltip_success] = {
 alias[trigger:debug_break] = scalar
 
 ###Scope (/context) switch
-#alias[trigger:defender] = scalar
+###Tell Caligula how this works
+alias[trigger:defender] = { alias_name[trigger] = alias_match_left[trigger] }
 
 ### Checks the ship/fleet/planet/leader/pop/system's distance to the galactic core in percent, where center = 0 and galactic rim = 100
 alias[trigger:distance_to_core_percent] = int
@@ -1406,40 +1412,27 @@ alias[trigger:fleet] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
-#TODO: citiznship
+
 ### Compares the former citizenship type with the given one.
-alias[trigger:former_citizenship_type] = scalar
-
-
-#former_living_standard_type = living_standard_normal
+alias[trigger:former_citizenship_type] = enum[citizenship_types]
 
 ### Compares the former living standard type with the given one.
-alias[trigger:former_living_standard_type] = scalar
-
-#former_migration_control_type = migration_control_yes
+alias[trigger:former_living_standard_type] = enum[living_standards]
 
 ### Compares the former migration control type with the given one.
-alias[trigger:former_migration_control_type] = scalar
-
-#former_military_service_type = military_service_full
+alias[trigger:former_migration_control_type] = enum[migration_controls]
 
 ### Compares the former military service type with the given one.
-alias[trigger:former_military_service_type] = scalar
-
-#former_population_control_type = population_control_yes
+alias[trigger:former_military_service_type] = enum[military_service_types]
 
 ### Compares the former population control type with the given one.
-alias[trigger:former_population_control_type] = scalar
-
-#former_purge_type = purge_normal
+alias[trigger:former_population_control_type] = enum[population_controls]
 
 ### Compares the former purge type with the given one.
-alias[trigger:former_purge_type] = scalar
-
-#former_slavery_type = slavery_normal
+alias[trigger:former_purge_type] = enum[purge_types]
 
 ### Compares the former slavery type with the given one.
-alias[trigger:former_slavery_type] = scalar
+alias[trigger:former_slavery_type] = enum[slavery_types]
 
 ### Checks the planet's number of tiles available for new constructions
 alias[trigger:free_building_tiles] = int
@@ -1502,7 +1495,7 @@ alias[trigger:has_existing_ship_design] = <ship_size>
 ### Checks if the leader has a specific amount of experience
 alias[trigger:has_experience] = int
 
-### Checks if the ship/fleet has a specific fleet order
+### Checks if the ship/fleet has a specific fleet order. survey_planet_order is a valid entry, I (Caligula) don't know any others but there are likely some
 alias[trigger:has_fleet_order] = scalar #TODO fleet order
 
 ### Checks if the planet has an orbital researc station
@@ -1527,7 +1520,7 @@ alias[trigger:has_notification_modifier] = <notification_modifier>
 #has_orbital_bombardment_stance = selective
 
 ### Checks to what degree the planet is being bombarded
-alias[trigger:has_orbital_bombardment_stance] = scalar #TODO bombardment stance
+alias[trigger:has_orbital_bombardment_stance] = <bombardment_stance>
 
 ### Checks if the planet has any kind of orbital station
 alias[trigger:has_orbital_station] = bool
@@ -1562,7 +1555,7 @@ alias[trigger:has_same_ethos] = scope[country]
 alias[trigger:has_seen_any_bypass] = <bypass>
 
 ### Checks the scoped country has encountered a specific bypass before
-alias[trigger:has_seen_specific_bypass] = scope[galactic_object] #TODO bypass scope?
+alias[trigger:has_seen_specific_bypass] = scope[galactic_object] #TODO bypass scope? -Is this correct?
 
 ### Checks if the starbase has a specific building
 alias[trigger:has_starbase_building] = <starbase_building>
@@ -1574,7 +1567,7 @@ alias[trigger:has_starbase_module] = <starbase_module>
 alias[trigger:has_starbase_size] = <ship_size> #TODO starbase ship size
 
 ### Checks the current status of the scoped ship or fleet.
-alias[trigger:has_status] = enum[colossus_status
+alias[trigger:has_status] = enum[colossus_status]
 
 enums = {
 	enum[colossus_status] = {
@@ -1602,7 +1595,7 @@ alias[trigger:has_valid_ai_personality] = bool
 alias[trigger:has_war_goal] = bool
 
 ###Scope (/context) switch
-alias[trigger:heir] = scalar
+alias[trigger:heir] = { alias_name[trigger] = alias_match_left[trigger] }
 
 ### Checks if the country's ideal planet class is a specific class
 alias[trigger:ideal_planet_class] = <planet_class>
