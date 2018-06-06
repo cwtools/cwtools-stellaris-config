@@ -1,4 +1,6 @@
 ship_size = {
+    ## cardinality = 0..1  
+	graphical_culture = { <graphical_culture> }
     ## cardinality = 0..1    
     formation_priority = int
     ## cardinality = 0..1    
@@ -37,9 +39,43 @@ ship_size = {
     size_multiplier = int
     ## cardinality = 0..1    
     fleet_slot_size = int
+    ## cardinality = 0..1  
     section_slots = {
         subtype[starbase] = {
-
+            "core" = {
+				## cardinality = 1..2 
+                locator = scalar 
+            }
+            "1" = {
+				## cardinality = 1..2 
+                locator = scalar 
+            }
+            "2" = {
+				## cardinality = 1..2 
+                locator = scalar 
+            }
+            "3" = {
+				## cardinality = 1..2 
+                locator = scalar 
+            }
+            "4" = {
+				## cardinality = 1..2 
+                locator = scalar 
+            }
+            "5" = {
+				## cardinality = 1..2 
+                locator = scalar 
+            }
+            "6" = {
+				## cardinality = 1..2 
+                locator = scalar 
+            }
+        }
+        subtype[station] = {
+            "mid" = {
+				## cardinality = 1..2 
+                locator = scalar 
+            }
         }
         subtype[ship] = {
             "bow" = {
@@ -106,10 +142,6 @@ ship_size = {
     has_mineral_upkeep = bool
     class = enum[shipsize_class]
 	
-    subtype[ship]  = {
-		construction_type = starbase
-		construction_type = spaceport
-	}
     ## cardinality = 0..100
     required_component_set = scalar
     ## cardinality = 0..1
@@ -117,11 +149,20 @@ ship_size = {
     ## cardinality = 0..1
     auto_upgrade = bool
     ## cardinality = 0..1
+	ship_class_icon_frame = int
+    ## cardinality = 0..1
     uses_name_prefix = bool
     ## cardinality = 0..1
     takes_name_from_ship_design = bool
     subtype[starbase]  = {
         flip_control_on_disable = bool
+    }
+    subtype[shipclass_platform]  = {
+		construction_type = starbase_defenses
+		## cardinality = 0..1
+		possible_starbase = {
+			has_starbase_size = <ship_size.starbase> #>=
+		}
     }
     subtype[ship] = {
         combat_disengage_chance = float
@@ -138,6 +179,8 @@ ship_size = {
 			max = int
 			naval_cap_div = int
 		}
+		construction_type = starbase_shipyard
+		construction_type = spaceport
     }
     
 }
