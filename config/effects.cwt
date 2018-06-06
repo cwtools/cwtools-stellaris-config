@@ -2139,12 +2139,7 @@ alias[effect:create_fleet] = {
 	name = localisation_synced
 	## cardinality = 0..1
 	settings = {
-		## cardinality = 0..1
 		spawn_debris = bool
-		## cardinality = 0..1
-		can_change_composition = bool
-		## cardinality = 0..1
-		uses_naval_capacity = bool
 	}
 	###Must include set_owner, set_location and create_ship. These can also go in last_created_fleet, but the former two are marked as obligatory here anyway so you don't forget.
 	effect = {
