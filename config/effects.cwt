@@ -336,13 +336,13 @@ alias[effect:every_owned_starbase] = {
     limit = { alias_name[trigger] = alias_match_left[trigger] }
     alias_name[effect] = alias_match_left[effect]
 }
- 
+
 alias[effect:random_owned_starbase] = {
 	##cardinality = 0..1
     limit = { alias_name[trigger] = alias_match_left[trigger] }
     alias_name[effect] = alias_match_left[effect]
 }
- 
+
 alias[effect:every_pop_faction] = {
 	##cardinality = 0..1
     limit = { alias_name[trigger] = alias_match_left[trigger] }
@@ -977,7 +977,7 @@ alias[effect:kill_leader] = {
 alias[effect:shift_ethic] = <ethos>
 alias[effect:country_add_ethic] = <ethos>
 alias[effect:country_remove_ethic] = <ethos>
-						
+
 
 alias[effect:kill_pop] = yes
 alias[effect:enslave_pop] = bool
@@ -985,7 +985,7 @@ alias[effect:destroy_colony] = yes
 alias[effect:set_ruined] = yes
 
 alias[effect:random_list] = {
-    int = { 
+    int = {
 		##cardinality = 0..100
         alias_name[modifier_rule] = alias_match_left[modifier_rule]
         alias_name[effect] = alias_match_left[effect]
@@ -993,7 +993,7 @@ alias[effect:random_list] = {
 }
 
 alias[effect:random_list] = {
-    float = { 
+    float = {
 		##cardinality = 0..100
         alias_name[modifier_rule] = alias_match_left[modifier_rule]
         alias_name[effect] = alias_match_left[effect]
@@ -1108,7 +1108,7 @@ alias[effect:remove_trait] = <trait>
 #also, at least one of while and limit should be there
 alias[effect:while] = {
 	## cardinality = 0..1
-	count = int
+	count = scalar
 	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
@@ -1301,7 +1301,7 @@ alias[effect:destroy_country] = yes
 alias[effect:destroy_colony] = yes
 ###Destroys target ambient object
 alias[effect:destroy_ambient_object] = scope[ambient_object]
-###Removes the planet from the scope 
+###Removes the planet from the scope
 alias[effect:remove_planet] = yes
 ###Immediately adds a specific building to the scoped tile
 alias[effect:set_building] = <building>
@@ -1409,11 +1409,13 @@ alias[effect:create_species] = {
     allow_negative_traits = bool
     ## cardinality = 0..1
     extra_trait_points = int
-    
+
 	## cardinality = 0..1
     name_list = <name_list>
 	## cardinality = 0..1
     name_list = random
+	## cardinality = 0..1
+	alias_name[effect] = alias_match_left[effect]
 }
 
 
@@ -1424,7 +1426,7 @@ alias[effect:create_country] = {
 	name = scope[any]
 	name = random
 	type = <country_type>
-	
+
 	## cardinality = 0..1
 	auto_delete = bool
 	## cardinality = 0..1
@@ -1433,7 +1435,7 @@ alias[effect:create_country] = {
     name_list = random
 	## cardinality = 0..1
 	ship_prefix = scalar #should be string or a scope
-	
+
 	## cardinality = 0..1
 	authority = random
 	## cardinality = 0..1
@@ -1453,7 +1455,7 @@ alias[effect:create_country] = {
 	species = scope[pop]
 	## cardinality = 0..1
 	species = scope[species] #maybe key would work, I don't know which though
-	
+
 	## cardinality = 0..1
 	ethos = random
 	## cardinality = 0..1
@@ -1461,10 +1463,10 @@ alias[effect:create_country] = {
 		## cardinality = 1..3
 		ethic = <ethos>
 	}
-	
+
 	## cardinality = 0..1
 	effect = { alias_name[effect] = alias_match_left[effect] }
-	
+
 	## cardinality = 0..1
 	flag = random
 	## cardinality = 0..1
@@ -1484,12 +1486,12 @@ alias[effect:create_country] = {
 	}
 	## cardinality = 0..1
 	day_zero_contact = bool
-	
+
 	## cardinality = 0..1
 	released_by_country = scope[country] #scope
 	## cardinality = 0..1
     released_from_country = scope[country] #scope
-    
+
 	## cardinality = 0..1
     ignore_initial_colony_error = bool
 }
@@ -1510,14 +1512,14 @@ alias[effect:create_rebels] = {
 	species = scope[country]
 	species = scope[pop]
 	species = scope[species] #maybe key would work, I don't know which though
-	
+
 	ethos = random
 	ethos = {
 		## cardinality = 2..3
 		ethic = <ethos>
 		ethic = <ethos>
 	}
-	
+
 	## cardinality = 0..1
 	flag = random
 	## cardinality = 0..1
@@ -1535,7 +1537,7 @@ alias[effect:create_rebels] = {
 			scalar #should be one of a list of colours
 		}
 	}
-	
+
 	## cardinality = 0..1
     name_list = <name_list>
 	## cardinality = 0..1
@@ -1543,10 +1545,10 @@ alias[effect:create_rebels] = {
 	## cardinality = 0..1
 	###This presumably works (report if not)
     ship_prefix = scalar #should be string or a scope
-    
+
 	## cardinality = 0..1
     released_from_country = scope[country]
-	
+
 	effect = { alias_name[effect] = alias_match_left[effect] }
 }
 
@@ -1559,14 +1561,14 @@ alias[effect:create_army] = {
 	## cardinality = 0..1
 	species = scope[species]
 	## cardinality = 0..1
-	leader = scope[leader] 
+	leader = scope[leader]
 }
 
 
 ###Creates a colony on the scoped planet
 alias[effect:create_colony_effect] = {
 	owner = scope[country]
-	species = scope[country] 
+	species = scope[country]
 	species = scope[species] #key?
 	ethos = random
 	ethos = {
@@ -1894,7 +1896,7 @@ alias[effect:add_random_research_option] = {
 ### Adds a tech research option to the scoped country's tech view list, permanent until researched
 alias[effect:add_research_option] = <technology>
 
-### Makes the scoped country remember that it has encountered the bypass 
+### Makes the scoped country remember that it has encountered the bypass
 alias[effect:add_seen_bypass] = scope[any] ##TODO bypass
 
 ### Adds a specific ship design to the scoped country
@@ -2124,7 +2126,7 @@ alias[effect:create_cluster] = {
 	radius = int
 	center = scope[system]
 }
-			
+
 ### Creates a colony on the scoped planet
 alias[effect:create_colony_effect] = {
 	owner = scope[country]
@@ -2138,7 +2140,7 @@ alias[effect:create_colony_effect] = {
 }
 
 
-#create_fleet = { name = <string> effect = { <create_ship, set_owner, set_location etc effects go here> } } 
+#create_fleet = { name = <string> effect = { <create_ship, set_owner, set_location etc effects go here> } }
 
 ### Creates a new fleet
 alias[effect:create_fleet] = {
@@ -2161,8 +2163,11 @@ alias[effect:create_fleet] = {
 		## cardinality = 0..1
 		uses_naval_capacity = bool
 	}
-	###Must include set_owner, set_location and create_ship. These can also go in last_created_fleet
-	effect = { #Todo: find a way of checking for those three effects somewhere in this or last_created_fleet, including in random_lists and stuff
+	###Must include set_owner, set_location and create_ship. These can also go in last_created_fleet, but the former two are marked as obligatory here anyway so you don't forget.
+	effect = {
+		set_owner = scope[country]
+		set_location = scope[planet]
+		set_location = scope[system]
 		alias_name[effect] = alias_match_left[effect]
 	}
 }
@@ -2272,7 +2277,9 @@ alias[effect:create_sector] = {
 
 ### Creates a new ship
 alias[effect:create_ship] = {
+	## cardinality = 0..1
 	name = random
+	## cardinality = 0..1
 	name = localisation_synced
 	## cardinality = 0..1
 	design = last_created_design
@@ -2291,7 +2298,6 @@ alias[effect:create_ship] = {
 	## cardinality = 0..1
 	###Used if the created ship is a colony ship
 	colonizer_species = scope[species]
-	
 	## cardinality = 0..1
 	effect = { alias_name[effect] = alias_match_left[effect] }
 }
@@ -2490,7 +2496,7 @@ alias[effect:play_sound] = scalar #TODO sound
 ###Scope (/context) switch
 alias[effect:pop] = { alias_name[effect] = alias_match_left[effect] }
 
-### Adds a specific ethic to the scoped pop regardless if pop-species allows ethic divergence or not. 
+### Adds a specific ethic to the scoped pop regardless if pop-species allows ethic divergence or not.
 alias[effect:pop_force_add_ethic] = <ethic>
 
 ### Sets the scoped pop's migration speed
@@ -2599,7 +2605,7 @@ alias[effect:remove_saved_leader] = scalar
 # 	name_list = "key"
 # }
 
-### rename_species = { 
+### rename_species = {
 alias[effect:rename_species] = {
 	## cardinality = 0..1
 	prompt_country = prev
