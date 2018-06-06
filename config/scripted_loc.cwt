@@ -11,6 +11,7 @@ scripted_loc = {
 	name = scalar
 	## cardinality = 1..100
 	text = {
+		## cardinality = 0..1
 		trigger = { alias_name[trigger] = alias_match_left[trigger] }
 		localization_key = localisation
 	}
