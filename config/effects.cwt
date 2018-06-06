@@ -7,7 +7,7 @@ alias[effect:create_starbase] = {
     owner = scope[country]
 
     ## cardinality = 1..1
-    size = <starbase_level>
+    size = <ship_size.starbase>
 
     ## cardinality = 0..100
     module = <starbase_module>
@@ -1420,8 +1420,11 @@ alias[effect:create_species] = {
 #if the country is default or anything else that uses them, it really should specify all the details of government, species, etc
 ###Creates a new country
 alias[effect:create_country] = {
+	## cardinality = 0..1
 	name = localisation_synced
+	## cardinality = 0..1
 	name = scope[any]
+	## cardinality = 0..1
 	name = random
 	type = <country_type>
 	
@@ -2160,6 +2163,8 @@ alias[effect:create_fleet] = {
 		can_change_leader = bool 
 		## cardinality = 0..1
 		uses_naval_capacity = bool
+		## cardinality = 0..1
+		is_boss = bool
 	}
 	###Must include set_owner, set_location and create_ship. These can also go in last_created_fleet
 	effect = { #Todo: find a way of checking for those three effects somewhere in this or last_created_fleet, including in random_lists and stuff
