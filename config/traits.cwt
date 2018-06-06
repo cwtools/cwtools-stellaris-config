@@ -3,7 +3,7 @@
 types = {
     type[trait] = {
         path = "game/common/traits"
-		
+
         subtype[leader_trait] = {
             leader_trait = yes
         }
@@ -22,17 +22,17 @@ types = {
 
 trait = {
 	cost = int
-	
-	subtype[species_trait] = {	
+
+	subtype[species_trait] = {
 		## cardinality = 0..1
 		icon = filepath
-		
+
 		allowed_archetypes = { <species_archetype> }
-		
+
 		modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
-		
+
 		## cardinality = 0..1
 		modification = bool
 		## cardinality = 0..1
@@ -41,37 +41,50 @@ trait = {
 		advanced_trait = yes
 		## cardinality = 0..1
 		leader_trait = no
+		## cardinality = 0..1
+		immortal_leaders = bool
+		## cardinality = 0..1
+		sorting_priority = int
+		## cardinality = 0..1
+		leader_age_min = int
+		## cardinality = 0..1
+		leader_age_max = int
+		## cardinality = 0..1
+		prerequisites = {
+			## cardinality = 0..100
+			<technology>
+		}
 	}
-	
-	subtype[leader_trait] = {	
+
+	subtype[leader_trait] = {
 		icon = filepath
-		
+
 		modification = no
-		
+
 		leader_trait = yes
-		
+
 		## cardinality = 0..1
 		modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
-		
+
 		## cardinality = 0..1
 		self_modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
-		
+
 		## cardinality = 0..1
 		leader_class = {
 			## cardinality = 1..5
 			enum[leader_classes]
 		}
-		
+
 		## cardinality = 0..1
 		leader_potential_add = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
-	
+
 	subtype[scientist_trait] = {
 		## cardinality = 0..1
 		ai_categories = {
@@ -79,21 +92,21 @@ trait = {
 			enum[trait_ai_classes]
 		}
 	}
-	
+
 	## cardinality = 0..1
 	initial = bool
 	## cardinality = 0..1
 	randomized = bool
-	
+
 	## cardinality = 0..1
 	opposites = {
 		## cardinality = 1..100
 		"<trait>"
 	}
-	
+
 	## cardinality = 0..1
 	custom_tooltip = localisation
-	
+
 	## cardinality = 0..1
 	ai_weight = {
 		weight = int
