@@ -52,6 +52,11 @@ edict = {
         <technology>
     }
 
+	## cardinality = 0..1
+	show_tech_unlock_if = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	
 	ai_weight = {
 		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]

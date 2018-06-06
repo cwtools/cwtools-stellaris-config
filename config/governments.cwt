@@ -26,24 +26,27 @@ civic = {
 		text = localisation
 		
 		## cardinality = 0..1
+		always = bool
+		
+		## cardinality = 0..1
 		ethics = {
 			## cardinality = 0..3
 			value = <ethos>
 			
-			## cardinality = 0..1
+			## cardinality = 0..100
 			OR = {
 				## cardinality = 0..1
 				text = localisation
 				## cardinality = 2..99
 				value = <ethos>
 			}
-			## cardinality = 0..1
+			## cardinality = 0..100
 			NOT = {
 				## cardinality = 0..1
 				text = localisation
 				value = <ethos>
 			}
-			## cardinality = 0..1
+			## cardinality = 0..100
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
@@ -57,20 +60,20 @@ civic = {
 			## cardinality = 0..1
 			value = <country_type>
 			
-			## cardinality = 0..1
+			## cardinality = 0..100
 			OR = {
 				## cardinality = 0..1
 				text = localisation
 				## cardinality = 2..99
 				value = <country_type>
 			}
-			## cardinality = 0..1
+			## cardinality = 0..100
 			NOT = {
 				## cardinality = 0..1
 				text = localisation
 				value = <country_type>
 			}
-			## cardinality = 0..1
+			## cardinality = 0..100
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
@@ -84,20 +87,20 @@ civic = {
 			## cardinality = 0..1
 			value = <authority>
 			
-			## cardinality = 0..1
+			## cardinality = 0..100
 			OR = {
 				## cardinality = 0..1
 				text = localisation
 				## cardinality = 2..99
 				value = <authority>
 			}
-			## cardinality = 0..1
+			## cardinality = 0..100
 			NOT = {
 				## cardinality = 0..1
 				text = localisation
 				value = <authority>
 			}
-			## cardinality = 0..1
+			## cardinality = 0..100
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
@@ -111,20 +114,20 @@ civic = {
 			## cardinality = 0..3
 			value = <civic>
 			
-			## cardinality = 0..1
+			## cardinality = 0..100
 			OR = {
 				## cardinality = 0..1
 				text = localisation
 				## cardinality = 2..99
 				value = <civic>
 			}
-			## cardinality = 0..1
+			## cardinality = 0..100
 			NOT = {
 				## cardinality = 0..1
 				text = localisation
 				value = <civic>
 			}
-			## cardinality = 0..1
+			## cardinality = 0..100
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
@@ -133,30 +136,34 @@ civic = {
 			}
 		}
 	}
+	## cardinality = 0..1
 	### requirements list, supports country_type, ethics, authority and civics. See ../readme_requirements.txt
 	possible = {
 		## cardinality = 0..1
 		text = localisation
 		
 		## cardinality = 0..1
+		always = bool
+		
+		## cardinality = 0..1
 		ethics = {
 			## cardinality = 0..3
 			value = <ethos>
 			
-			## cardinality = 0..1
+			## cardinality = 0..100
 			OR = {
 				## cardinality = 0..1
 				text = localisation
 				## cardinality = 2..99
 				value = <ethos>
 			}
-			## cardinality = 0..1
+			## cardinality = 0..100
 			NOT = {
 				## cardinality = 0..1
 				text = localisation
 				value = <ethos>
 			}
-			## cardinality = 0..1
+			## cardinality = 0..100
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
@@ -170,20 +177,20 @@ civic = {
 			## cardinality = 0..1
 			value = <country_type>
 			
-			## cardinality = 0..1
+			## cardinality = 0..100
 			OR = {
 				## cardinality = 0..1
 				text = localisation
 				## cardinality = 2..99
 				value = <country_type>
 			}
-			## cardinality = 0..1
+			## cardinality = 0..100
 			NOT = {
 				## cardinality = 0..1
 				text = localisation
 				value = <country_type>
 			}
-			## cardinality = 0..1
+			## cardinality = 0..100
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
@@ -197,20 +204,20 @@ civic = {
 			## cardinality = 0..1
 			value = <authority>
 			
-			## cardinality = 0..1
+			## cardinality = 0..100
 			OR = {
 				## cardinality = 0..1
 				text = localisation
 				## cardinality = 2..99
 				value = <authority>
 			}
-			## cardinality = 0..1
+			## cardinality = 0..100
 			NOT = {
 				## cardinality = 0..1
 				text = localisation
 				value = <authority>
 			}
-			## cardinality = 0..1
+			## cardinality = 0..100
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
@@ -224,20 +231,20 @@ civic = {
 			## cardinality = 0..3
 			value = <civic>
 			
-			## cardinality = 0..1
+			## cardinality = 0..100
 			OR = {
 				## cardinality = 0..1
 				text = localisation
 				## cardinality = 2..99
 				value = <civic>
 			}
-			## cardinality = 0..1
+			## cardinality = 0..100
 			NOT = {
 				## cardinality = 0..1
 				text = localisation
 				value = <civic>
 			}
-			## cardinality = 0..1
+			## cardinality = 0..100
 			NOR = {
 				## cardinality = 0..1
 				text = localisation

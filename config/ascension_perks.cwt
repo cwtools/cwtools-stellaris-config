@@ -17,7 +17,7 @@ ascension_perk = {
 	possible = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	
+
 	## cardinality = 0..1
 	on_enabled = {
 		alias_name[effect] = alias_match_left[effect]
@@ -25,6 +25,14 @@ ascension_perk = {
 	
 	## cardinality = 0..1
 	modifier = {		
+		## cardinality = 0..1
+		description = localisation
+		## cardinality = 0..1
+		description_parameters = {
+			COST_MULT = float
+			POINTS = float
+		}
+		
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	
