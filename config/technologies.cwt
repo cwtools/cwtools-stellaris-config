@@ -20,23 +20,26 @@ types = {
 
 
 technology = {
-	cost = int
 	area = enum[research_areas]
-	tier = <technology_tier>
+	tier = int #should actually check <technology_tier> via @variable
 	category = { <technology_category> }
 	
+	## cardinality = 0..1
+	icon = scalar
+	
+	subtype[start_tech] = {
+		## cardinality = 0..1
+		cost = 0
+	}
+	
 	subtype[!start_tech] = {
+		cost = int
 		## cardinality = 0..1
 		is_rare = bool
 		## cardinality = 0..1
 		is_dangerous = bool
 		weight = int
 		#usually in ""
-		## cardinality = 0..1
-		prerequisites = {
-			## cardinality = 0..100
-			<technology>
-		}
 		
 		## cardinality = 0..1
 		potential = {
@@ -45,19 +48,35 @@ technology = {
 		## cardinality = 0..1
 		levels = int[-1..100]
 	}
+	## cardinality = 0..1
+	prerequisites = {
+		## cardinality = 0..100
+		<technology>
+	}
 	
+	
+	## cardinality = 0..1
+	gateway = enum[tech_gateways]
 	
 
 	subtype[repeatable] = {
 		cost_per_level = @repeatableTechLevelCost
-		weight_groups = {
-			## cardinality = 0..1
-			repeatable
-		}
-		mod_weight_if_group_picked = {
-			## cardinality = 0..1
-			repeatable = float
-		}
+	}
+	
+	## cardinality = 0..1
+	###someone tell Caligula and Dayshine how these work
+	weight_groups = {
+		## cardinality = 0..1
+		repeatable
+		## cardinality = 0..1
+		tile_blockers
+	}
+	## cardinality = 0..1
+	mod_weight_if_group_picked = {
+		## cardinality = 0..1
+		repeatable = float
+		## cardinality = 0..1
+		tile_blockers = float
 	}
 		
 	
@@ -81,6 +100,12 @@ technology = {
 	modifier = {
 		## cardinality = 0..1
 		description = localisation
+		
+		## cardinality = 0..1
+		description_parameters = {
+			POINTS = int
+		}
+		
 		## cardinality = 0..1
 		alias_name[modifier] = alias_match_left[modifier]
 	}
@@ -100,6 +125,8 @@ technology = {
 	weight_modifier = {
 		## cardinality = 0..1
 		factor = float
+		## cardinality = 0..1
+		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	
@@ -108,6 +135,8 @@ technology = {
 	ai_weight = {
 		## cardinality = 0..1
 		factor = float
+		## cardinality = 0..1
+		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 }
@@ -164,6 +193,14 @@ enums = {
 		all
 		military
 	}
+	enum[tech_gateways] = {
+		ship
+		robotics
+		kinetic_weapons
+		power_generation
+		energy_weapons
+		biological
+		capital
+		psionics
+	}
 }
-
-
