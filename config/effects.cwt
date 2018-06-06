@@ -1415,7 +1415,7 @@ alias[effect:create_species] = {
 	## cardinality = 0..1
     name_list = random
 	## cardinality = 0..1
-	alias_name[effect] = alias_match_left[effect]
+	effect = { alias_name[effect] = alias_match_left[effect] }
 }
 
 
@@ -2168,11 +2168,8 @@ alias[effect:create_fleet] = {
 		## cardinality = 0..1
 		is_boss = bool
 	}
-	###Must include set_owner, set_location and create_ship. These can also go in last_created_fleet, but the former two are marked as obligatory here anyway so you don't forget.
+	###Must include set_owner, set_location and create_ship (here or in last_created_country). Todo: Check this somehow
 	effect = {
-		set_owner = scope[country]
-		set_location = scope[planet]
-		set_location = scope[system]
 		alias_name[effect] = alias_match_left[effect]
 	}
 }
