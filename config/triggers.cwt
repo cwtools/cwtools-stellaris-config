@@ -1,7 +1,7 @@
 
 alias[trigger:scope] = { alias_name[trigger] = alias_match_left[trigger] }
 
-alias[trigger:NOT] = {
+alias[trigger:NOT] = { 
     ## cardinality = 1..1
     alias_name[trigger] = alias_match_left[trigger]
 }
@@ -164,7 +164,7 @@ alias[trigger:any_pop] = {
 alias[trigger:any_fleet_in_orbit] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
-
+ 
 alias[trigger:any_research_station] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
@@ -525,7 +525,7 @@ alias[trigger:relative_power] = {
 	category = enum[relative_power_categories]
 	value = enum[relative_power_values]
 }
-
+	
 enums = {
     enum[relative_power_categories] = {
         all
@@ -830,7 +830,7 @@ alias[trigger:sector_controlled] = bool
 ###Checks if the scoped ship design, ship or fleet (all ships) has a designable ship size.
 alias[trigger:is_designable] = bool
 alias[trigger:is_orbital_tile] = bool
-
+ 
 
 alias[trigger:leader_class] = enum[leader_classes]
 alias[trigger:pre_ruler_leader_class] = enum[leader_classes_no_ruler]
@@ -1024,8 +1024,8 @@ alias[trigger:years_of_peace] = {
 	value = int
 }
 alias[trigger:fleet_size] = int
-# vanilla have 0-4 levels
-alias[trigger:is_difficulty] = int[0..4]
+
+alias[trigger:is_difficulty] = int[0..2]
 
 alias[trigger:is_ruined] = bool
 
@@ -1109,9 +1109,9 @@ alias[trigger:has_special_project] = <special_project>
 alias[trigger:<scripted_trigger>] = bool
 
 
+							
 
-
-#Generated
+#Generated 
 #
 #
 #
@@ -1758,7 +1758,7 @@ alias[trigger:is_valid] = scope[any]
 ### Checks if the last policy changed by the country was a specific policy
 alias[trigger:last_changed_policy] = <policy>
 
-### Check if the last species rights type changed for the pop or leader is of type type
+### Check if the last species rights type changed for the pop or leader is of type type 
 alias[trigger:last_changed_species_rights_type] = enum[species_rights_type]
 
 ###Scope (/context) switch
@@ -1934,7 +1934,7 @@ alias[trigger:pop_can_live_on_planet] = bool
 ### Checks if a pop, or the pops of a particular species can reproduce
 alias[trigger:pop_can_reproduce] = bool
 
-### Checks the maintenace costs of a pop
+### Checks the maintenace costs of a pop 
 alias[trigger:pop_maintenance_cost] = int
 
 ### Checks if a pop is currently producing a particular resource

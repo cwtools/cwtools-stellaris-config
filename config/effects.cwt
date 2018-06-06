@@ -1351,7 +1351,9 @@ alias[effect:create_species] = {
 	portrait = scalar #random/<portrait id>
     ## cardinality = 0..1
 	homeworld = scope[planet]
+    ## cardinality = 1..2
 	traits = random
+    ## cardinality = 1..2
 	traits = {
 		## cardinality = 1..10
 		trait = <trait>
@@ -1442,6 +1444,8 @@ alias[effect:create_country] = {
 		## cardinality = 2..3
 		civic = <civic>
 	}
+	## cardinality = 0..1
+	species = random
 	## cardinality = 0..1
 	species = scope[country]
 	## cardinality = 0..1
@@ -2079,6 +2083,10 @@ alias[effect:create_ambient_object] = {
  		max = <int>
  	}
 	## cardinality = 0..1
+	base_angle_towards = scope[planet]
+	## cardinality = 0..1
+	base_angle_towards = scope[planet]
+	## cardinality = 0..1
 	entity_face_object = scope[planet]
 	## cardinality = 0..1
 	entity_face_object = scope[system]
@@ -2136,15 +2144,13 @@ alias[effect:create_fleet] = {
 	name = localisation_synced
 	## cardinality = 0..1
 	settings = {
+		## cardinality = 0..1
 		spawn_debris = bool
+		## cardinality = 0..1
+		garrison = bool
 	}
-	###Must include set_owner, set_location and create_ship. These can also go in last_created_fleet, but the former two are marked as obligatory here anyway so you don't forget.
-	effect = {		
-		set_owner = scope[country]
-		set_location = scope[planet]
-		set_location = scope[system]
-		
-		
+	###Must include set_owner, set_location and create_ship. These can also go in last_created_fleet
+	effect = { #Todo: find a way of checking for those three effects somewhere in this or last_created_fleet, including in random_lists and stuff
 		alias_name[effect] = alias_match_left[effect]
 	}
 }
@@ -2266,6 +2272,8 @@ alias[effect:create_ship] = {
 	prefix = bool
 	## cardinality = 0..1
 	graphical_culture = <graphical_culture>
+	## cardinality = 0..1
+	graphical_culture = scope[country]
 	## cardinality = 0..1
 	upgradable = bool
 	## cardinality = 0..1
