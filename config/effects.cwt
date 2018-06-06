@@ -1117,6 +1117,7 @@ alias[effect:while] = {
 
 alias[effect:resettle_pop] = {
 	pop = scope[pop]
+	## cardinality = 0..1
 	planet = scope[planet]
 	## cardinality = 0..1
 	tile = scope[tile]
@@ -2141,6 +2142,7 @@ alias[effect:create_colony_effect] = {
 
 ### Creates a new fleet
 alias[effect:create_fleet] = {
+	## cardinality = 0..1
 	name = localisation_synced
 	## cardinality = 0..1
 	settings = {
@@ -2148,6 +2150,16 @@ alias[effect:create_fleet] = {
 		spawn_debris = bool
 		## cardinality = 0..1
 		garrison = bool
+		## cardinality = 0..1
+		can_upgrade = bool 
+		## cardinality = 0..1
+		can_disband = bool
+		## cardinality = 0..1
+		can_change_composition = bool 
+		## cardinality = 0..1
+		can_change_leader = bool 
+		## cardinality = 0..1
+		uses_naval_capacity = bool
 	}
 	###Must include set_owner, set_location and create_ship. These can also go in last_created_fleet
 	effect = { #Todo: find a way of checking for those three effects somewhere in this or last_created_fleet, including in random_lists and stuff
@@ -2183,7 +2195,7 @@ alias[effect:create_mining_station] = {
 }
 
 ### Creates a point of interest for the scoped country at a specific location, associated with an event chain
-create_point_of_interest = {
+alias[effect:create_point_of_interest] = {
 	id = scalar
 	name = localisation
 	desc = localisation

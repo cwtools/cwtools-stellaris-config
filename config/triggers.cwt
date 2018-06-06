@@ -1025,7 +1025,7 @@ alias[trigger:years_of_peace] = {
 }
 alias[trigger:fleet_size] = int
 
-alias[trigger:is_difficulty] = int[0..2]
+alias[trigger:is_difficulty] = int[0..4]
 
 alias[trigger:is_ruined] = bool
 
