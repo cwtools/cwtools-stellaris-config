@@ -2133,6 +2133,7 @@ alias[effect:create_colony_effect] = {
 
 ### Creates a new fleet
 alias[effect:create_fleet] = {
+	## cardinality = 0..1
 	name = localisation_synced
 	## cardinality = 0..1
 	settings = {
