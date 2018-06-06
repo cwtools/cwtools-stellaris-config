@@ -477,11 +477,9 @@ alias[trigger:count_diplo_ties] = {
 
 
 alias[trigger:count_tile] = {
+	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	count = int
-}
-alias[trigger:count_tile] = {
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	count = all
 }
 
@@ -498,6 +496,7 @@ alias[trigger:count_potential_war_participants] = {
 	attacker = scope[country]
 	defender = scope[country]
 	side = scope[country]
+	## cardinality = 0..1
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
@@ -1216,6 +1215,7 @@ alias[trigger:core_sector] = {
 alias[trigger:count_bordering_country] = {
 	count = all
 	count = int
+	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
@@ -1223,6 +1223,7 @@ alias[trigger:count_bordering_country] = {
 alias[trigger:count_combatant_fleet] =  {
 	count = all
 	count = int
+	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
@@ -1230,12 +1231,14 @@ alias[trigger:count_combatant_fleet] =  {
 alias[trigger:count_country] =  {
 	count = all
 	count = int
+	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Checks the number of deposits on the tile/planet that meet the specified criteria
 alias[trigger:count_deposits] =  {
 	count = int
+	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
@@ -1243,6 +1246,7 @@ alias[trigger:count_deposits] =  {
 alias[trigger:count_megastructure] =  {
 	count = all
 	count = int
+	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
@@ -1250,6 +1254,7 @@ alias[trigger:count_megastructure] =  {
 alias[trigger:count_neighbor_country] =  {
 	count = all
 	count = int
+	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
@@ -1257,6 +1262,7 @@ alias[trigger:count_neighbor_country] =  {
 alias[trigger:count_owned_army] =  {
 	count = all
 	count = int
+	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
@@ -1264,6 +1270,7 @@ alias[trigger:count_owned_army] =  {
 alias[trigger:count_owned_megastructure] =  {
 	count = all
 	count = int
+	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
@@ -1271,6 +1278,7 @@ alias[trigger:count_owned_megastructure] =  {
 alias[trigger:count_owned_pop] =  {
 	count = all
 	count = int
+	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
@@ -1278,6 +1286,7 @@ alias[trigger:count_owned_pop] =  {
 alias[trigger:count_owned_pop_species] =  {
 	count = all
 	count = int
+	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
@@ -1285,6 +1294,7 @@ alias[trigger:count_owned_pop_species] =  {
 alias[trigger:count_owned_starbase] =  {
 	count = all
 	count = int
+	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
@@ -1292,12 +1302,14 @@ alias[trigger:count_owned_starbase] =  {
 alias[trigger:count_planet_army] =  {
 	count = all
 	count = int
+	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Checks the planets in system that meet the criteria
 alias[trigger:count_planets] =  {
 	count = int
+	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
@@ -1305,6 +1317,7 @@ alias[trigger:count_planets] =  {
 alias[trigger:count_pool_leader] =  {
 	count = all
 	count = int
+	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
@@ -1312,6 +1325,7 @@ alias[trigger:count_pool_leader] =  {
 alias[trigger:count_relation] =  {
 	count = all
 	count = int
+	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
@@ -1319,6 +1333,7 @@ alias[trigger:count_relation] =  {
 alias[trigger:count_rim_system] =  {
 	count = all
 	count = int
+	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
@@ -1339,6 +1354,7 @@ alias[trigger:count_starbase_sizes] =  {
 alias[trigger:count_system] =  {
 	count = all
 	count = int
+	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
@@ -1346,6 +1362,7 @@ alias[trigger:count_system] =  {
 alias[trigger:count_system_megastructure] =  {
 	count = all
 	count = int
+	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
@@ -1353,6 +1370,7 @@ alias[trigger:count_system_megastructure] =  {
 alias[trigger:count_system_within_border] =  {
 	count = all
 	count = int
+	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
@@ -1360,11 +1378,13 @@ alias[trigger:count_system_within_border] =  {
 alias[trigger:count_war_participant] =  {
 	count = all
 	count = int
+	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Checks the number of participants in the war on a specific side that meet the specified criteria
 alias[trigger:count_war_participants] = {
+	## cardinality = 0..1
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
