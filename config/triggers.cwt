@@ -919,8 +919,11 @@ alias[trigger:has_swapped_tradition] = enum[tradition_swap]
 
 alias[trigger:check_variable] = {
 	which = scalar
+	## cardinality = 1..2
 	value = float
+	## cardinality = 1..2
 	value = scope[any]
+	## cardinality = 1..2
 	value = scalar #TODO: another variable
 }
 
