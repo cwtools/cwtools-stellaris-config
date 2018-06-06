@@ -2272,7 +2272,8 @@ alias[effect:create_ship] = {
 	## cardinality = 0..1
 	###Used if the created ship is a colony ship
 	colonizer_species = scope[species]
-
+	## cardinality = 0..1
+	effect = { alias_name[effect] = alias_match_left[effect] }
 }
 
 

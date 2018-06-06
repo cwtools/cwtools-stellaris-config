@@ -44,16 +44,6 @@ policy = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
-	## cardinality = 0..1
-	on_enabled = {
-		alias_name[effect] = alias_match_left[effect]
-	}
-
-	## cardinality = 0..1
-	on_disabled = {
-		alias_name[effect] = alias_match_left[effect]
-	}
-	
 	## cardinality = 2..20
 	option = {
 		name = localisation
@@ -61,6 +51,21 @@ policy = {
 		policy_flags = {
 			## cardinality = 0..10
 			scalar
+		}
+		
+		## cardinality = 0..1
+		on_enabled = {
+			alias_name[effect] = alias_match_left[effect]
+		}
+
+		## cardinality = 0..1
+		on_disabled = {
+			alias_name[effect] = alias_match_left[effect]
+		}
+		
+		## cardinality = 0..1
+		potential = {
+			alias_name[trigger] = alias_match_left[trigger]
 		}
 		
 		## cardinality = 0..1
@@ -77,7 +82,12 @@ policy = {
 		## cardinality = 0..1
 		prerequisites = { <technology> }
 		
+		## cardinality = 0..1
 		AI_weight = {
+			## cardinality = 0..1
+			factor = float
+			## cardinality = 0..1
+			weight = float
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		}
 	}

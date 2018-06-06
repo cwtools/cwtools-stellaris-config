@@ -57,7 +57,7 @@ pop_faction = {
 		## cardinality = 0..1
 		scalar = {
 			## cardinality = 1..1
-			type = scope[any]
+			type = enum[basic_scopes]
 			## cardinality = 0..1
 			valid_objects = {
 				alias_name[trigger] = alias_match_left[trigger]
@@ -130,7 +130,7 @@ pop_faction = {
 
 	}
 
-	## cardinality = 0..1
+	## cardinality = 0..100
 	### This = Pop faction. Faction dynamic requests & issues.
 	demand = {
 
@@ -180,8 +180,19 @@ pop_faction = {
 			description = localisation
 
 			## cardinality = 0..1
+			cost = {
+				<resource> = int
+			}
+			
+			## cardinality = 0..1
 			### This = Pop faction.
 			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			
+			## cardinality = 0..1
+			### This = Pop faction.
+			valid = {
 				alias_name[trigger] = alias_match_left[trigger]
 			}
 
