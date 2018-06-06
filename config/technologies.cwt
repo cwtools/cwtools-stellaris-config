@@ -1,6 +1,13 @@
 types = {
     type[technology] = {
         path = "game/common/technology"
+		
+		subtype[repeatable] = {
+			levels = int[-1..100]
+		}
+		subtype[start_tech] = {
+			start_tech = yes
+		}
 	}
 	type[technology_category] = {
 		path = "game/common/technology/category"
@@ -15,10 +22,44 @@ types = {
 technology = {
 	cost = int
 	area = enum[research_areas]
-	tier = int
-	category = { enum[research_categories] }
-	## cardinality = 0..1
-	is_rare = bool
+	tier = <technology_tier>
+	category = { <technology_category> }
+	
+	subtype[!start_tech] = {
+		## cardinality = 0..1
+		is_rare = bool
+		## cardinality = 0..1
+		is_dangerous = bool
+		weight = int
+		#usually in ""
+		## cardinality = 0..1
+		prerequisites = {
+			## cardinality = 0..100
+			<technology>
+		}
+		
+		## cardinality = 0..1
+		potential = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..1
+		levels = int[-1..100]
+	}
+	
+	
+
+	subtype[repeatable] = {
+		cost_per_level = @repeatableTechLevelCost
+		weight_groups = {
+			## cardinality = 0..1
+			repeatable
+		}
+		mod_weight_if_group_picked = {
+			## cardinality = 0..1
+			repeatable = float
+		}
+	}
+		
 	
 	## cardinality = 0..1
 	start_tech = bool
@@ -28,19 +69,7 @@ technology = {
 	## cardinality = 0..1
 	ai_update_type = enum[tech_ai_type]
 	
-	#usually in ""
-	## cardinality = 0..1
-	prerequisites = {
-		## cardinality = 0..100
-		<technology>
-	}
-	
-	## cardinality = 0..1
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
 
-	weight = int
 	
 	## cardinality = 0..1
 	feature_flags = {
@@ -69,13 +98,16 @@ technology = {
 	
 	## cardinality = 0..1
 	weight_modifier = {
+		## cardinality = 0..1
+		factor = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	
 	
 	## cardinality = 0..1
 	ai_weight = {
-		factor = int
+		## cardinality = 0..1
+		factor = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 }
@@ -109,20 +141,20 @@ enums = {
 		unity_ambitions
 		modify_robots
 	}
-	enum[research_categories] = {
-		statecraft
-		voidcraft
-		field_manipulation
-		biology
-		computing
-		particles
-		military_theory
-		psionics
-		new_worlds
-		materials
-		propulsion
-		industry
-	}
+#	enum[research_categories] = {
+#		statecraft
+#		voidcraft
+#		field_manipulation
+#		biology
+#		computing
+#		particles
+#		military_theory
+#		psionics
+#		new_worlds
+#		materials
+#		propulsion
+#		industry
+#	}
 	enum[technology_areas] = {
 		engineering
 		society

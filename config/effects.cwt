@@ -1403,6 +1403,7 @@ alias[effect:create_species] = {
     ## cardinality = 0..1
     new_pop_resource_requirement = {
         type = <resource>
+        type = robot_food
         value = int
     }
     ## cardinality = 0..1
@@ -2010,6 +2011,7 @@ alias[effect:change_species_characteristics] = {
     ## cardinality = 0..1
     new_pop_resource_requirement = {
         type = <resource>
+        type = robot_food
         value = int
     }
     ## cardinality = 0..1
@@ -2128,18 +2130,6 @@ alias[effect:create_cluster] = {
 	id = scalar
 	radius = int
 	center = scope[system]
-}
-
-### Creates a colony on the scoped planet
-alias[effect:create_colony_effect] = {
-	owner = scope[country]
-	species = <target / key>
-	ethos = random
-	ethos = scope[country]
-	ethos = {
-		##cardinality = 2..2
-		ethic = <ethos>
-	}
 }
 
 
@@ -2854,6 +2844,11 @@ alias[effect:spawn_megastructure] = {
     name = localisation
     ## cardinality = 0..1
     orbit_angle = int[0..360]
+    ## cardinality = 0..1
+	orbit_angle = {
+		min = int[0..360]
+		max = int[0..360]
+	}
     ## cardinality = 0..1
     orbit_distance = int
     ## cardinality = 0..1

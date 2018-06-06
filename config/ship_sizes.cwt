@@ -1,6 +1,16 @@
 ship_size = {
-    ## cardinality = 0..1  
+    ## cardinality = 0..2
 	graphical_culture = { <graphical_culture> }
+    ## cardinality = 0..2
+	graphical_culture = bool
+	## cardinality = 0..1
+	is_space_object = yes
+	## cardinality = 0..1
+	can_be_inspected = bool
+	## cardinality = 0..1
+	pre_communications_name = localisation
+    ## cardinality = 0..1    
+	entity = scalar #entity
     ## cardinality = 0..1    
     formation_priority = int
     ## cardinality = 0..1    
@@ -22,6 +32,9 @@ ship_size = {
     components_add_to_cost = bool
     ## cardinality = 0..1    
     is_designable = bool
+	## cardinality = 0..1
+	### may be deprecated, tell Dayshine and Caligula if yes
+	build_time = int
     ## cardinality = 0..1    
     is_civilian = bool
     ## cardinality = 0..1    
@@ -40,7 +53,7 @@ ship_size = {
     ## cardinality = 0..1    
     fleet_slot_size = int
     ## cardinality = 0..1  
-    section_slots = {
+    section_slots = { #todo: These should really all be scalar or refer to the entity files. I just made it not bug with Vanilla
         subtype[starbase] = {
             "core" = {
 				## cardinality = 1..2 
@@ -77,6 +90,12 @@ ship_size = {
                 locator = scalar 
             }
         }
+        subtype[colossus] = {
+            "ship" = {
+				## cardinality = 1..2 
+                locator = scalar 
+            }
+        }
         subtype[ship] = {
             "bow" = {
 				## cardinality = 1..2 
@@ -90,12 +109,26 @@ ship_size = {
 				## cardinality = 1..2 
                 locator = scalar 
             }
+            "bot_1" = {
+				## cardinality = 1..2 
+                locator = scalar 
+            }
+            "bot_2" = {
+				## cardinality = 1..2 
+                locator = scalar 
+            }
+            "bot_3" = {
+				## cardinality = 1..2 
+                locator = scalar 
+            }
         }
         subtype[platform] = {
+			## cardinality = 0..1 
             "west" = {
 				## cardinality = 1..2 
                 locator = scalar 
             }
+			## cardinality = 0..1 
             "east" = {
 				## cardinality = 1..2 
                 locator = scalar 
@@ -107,6 +140,16 @@ ship_size = {
             }
 			## cardinality = 0..1
             "south" = {
+				## cardinality = 1..2 
+                locator = scalar 
+            }
+			## cardinality = 0..1
+            "mid" = {
+				## cardinality = 1..2 
+                locator = scalar 
+            }
+			## cardinality = 0..1
+            "ship" = {
 				## cardinality = 1..2 
                 locator = scalar 
             }
@@ -157,7 +200,7 @@ ship_size = {
     subtype[starbase]  = {
         flip_control_on_disable = bool
     }
-    subtype[shipclass_platform]  = {
+    subtype[platform]  = {
 		construction_type = starbase_defenses
 		## cardinality = 0..1
 		possible_starbase = {
@@ -176,13 +219,15 @@ ship_size = {
 		## cardinality = 0..1
 		empire_limit = {
 			base = int
+			## cardinality = 0..1
 			max = int
+			## cardinality = 0..1
 			naval_cap_div = int
 		}
 		construction_type = starbase_shipyard
 		construction_type = spaceport
+		
     }
-    
 }
 
 types = {
@@ -201,6 +246,9 @@ types = {
             ## cardinality = 0..1
 			is_space_station = no
         }
+        subtype[colossus] = {
+            class = shipclass_military_special
+        }
     }
 }
 
@@ -208,6 +256,7 @@ enums = {
     enum[shipsize_class] = {
         shipclass_military
         shipclass_military_station
+		shipclass_military_special
         shipclass_mining_station
         shipclass_research_station
         shipclass_terraform_station
