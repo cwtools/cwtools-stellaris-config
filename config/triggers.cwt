@@ -1211,110 +1211,110 @@ alias[trigger:core_sector] = {
 alias[trigger:count_bordering_country] = {
 	count = all
 	count = int
-	alias_name[trigger] = alias_match_left[trigger]
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Iterate through each fleet this fleet is in combat with
 alias[trigger:count_combatant_fleet] =  {
 	count = all
 	count = int
-	alias_name[trigger] = alias_match_left[trigger]
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Iterate through all countries
 alias[trigger:count_country] =  {
 	count = all
 	count = int
-	alias_name[trigger] = alias_match_left[trigger]
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Checks the number of deposits on the tile/planet that meet the specified criteria
 alias[trigger:count_deposits] =  {
 	count = int
-	alias_name[trigger] = alias_match_left[trigger]
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Iterate through each megastructure
 alias[trigger:count_megastructure] =  {
 	count = all
 	count = int
-	alias_name[trigger] = alias_match_left[trigger]
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Iterate through all neighbor countries
 alias[trigger:count_neighbor_country] =  {
 	count = all
 	count = int
-	alias_name[trigger] = alias_match_left[trigger]
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Iterate through each army that is owned by the country
 alias[trigger:count_owned_army] =  {
 	count = all
 	count = int
-	alias_name[trigger] = alias_match_left[trigger]
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Iterate through each owned megastructure
 alias[trigger:count_owned_megastructure] =  {
 	count = all
 	count = int
-	alias_name[trigger] = alias_match_left[trigger]
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Iterate through all owned pops
 alias[trigger:count_owned_pop] =  {
 	count = all
 	count = int
-	alias_name[trigger] = alias_match_left[trigger]
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Iterate through each species of a country's owned pops
 alias[trigger:count_owned_pop_species] =  {
 	count = all
 	count = int
-	alias_name[trigger] = alias_match_left[trigger]
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Iterate through every owned starbase
 alias[trigger:count_owned_starbase] =  {
 	count = all
 	count = int
-	alias_name[trigger] = alias_match_left[trigger]
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Iterate through each defending army on a planet
 alias[trigger:count_planet_army] =  {
 	count = all
 	count = int
-	alias_name[trigger] = alias_match_left[trigger]
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Checks the planets in system that meet the criteria
 alias[trigger:count_planets] =  {
 	count = int
-	alias_name[trigger] = alias_match_left[trigger]
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Iterate through each leader that is recruitable for the country
 alias[trigger:count_pool_leader] =  {
 	count = all
 	count = int
-	alias_name[trigger] = alias_match_left[trigger]
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Iterate through all relations
 alias[trigger:count_relation] =  {
 	count = all
 	count = int
-	alias_name[trigger] = alias_match_left[trigger]
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Iterate through all rim systems
 alias[trigger:count_rim_system] =  {
 	count = all
 	count = int
-	alias_name[trigger] = alias_match_left[trigger]
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Checks the number of starbase modules that are of the specified type
@@ -1334,28 +1334,28 @@ alias[trigger:count_starbase_sizes] =  {
 alias[trigger:count_system] =  {
 	count = all
 	count = int
-	alias_name[trigger] = alias_match_left[trigger]
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Iterate through each megastructure in system
 alias[trigger:count_system_megastructure] =  {
 	count = all
 	count = int
-	alias_name[trigger] = alias_match_left[trigger]
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Iterate through all systems within the country's borders
 alias[trigger:count_system_within_border] =  {
 	count = all
 	count = int
-	alias_name[trigger] = alias_match_left[trigger]
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Iterate through all war participants
 alias[trigger:count_war_participant] =  {
 	count = all
 	count = int
-	alias_name[trigger] = alias_match_left[trigger]
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
 ### Checks the number of participants in the war on a specific side that meet the specified criteria
