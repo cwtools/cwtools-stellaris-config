@@ -1,7 +1,7 @@
 types = {
-    type[ai_personality] = {
-        path = "game/common/personalities"
-    }
+	type[ai_personality] = {
+		path = "game/common/personalities"
+	}
 }
 
 enums = {
@@ -65,7 +65,7 @@ ai_personality = {
 
 	## cardinality = 0..1
 	weapon_preferences = scalar #should check weapon type keys, I don't know where they are defined though. TODO
-	
+
 	## cardinality = 0..1
 	armor_ratio = float
 	## cardinality = 0..1
@@ -116,11 +116,11 @@ ai_personality = {
 		### special for awakened fallen empires
 		crisis_leader = bool
 		## cardinality = 0..1
-		### special for awakened machine fallen empires, prevents colonization & locks attitude		
+		### special for awakened machine fallen empires, prevents colonization & locks attitude
 		custodian = bool
 		## cardinality = 0..1
 		### special for machine fallen empires
-		enigmatic = bool 
+		enigmatic = bool
 		## cardinality = 0..1
 		### prevents certain AI behaviours
 		limited = bool

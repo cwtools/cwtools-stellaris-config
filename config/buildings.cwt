@@ -1,5 +1,5 @@
 types = {
-    type[building] = {
-        path = "game/common/buildings"
-    }
+	type[building] = {
+		path = "game/common/buildings"
+	}
 }

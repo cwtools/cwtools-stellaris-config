@@ -1,7 +1,7 @@
 types = {
-    type[technology] = {
-        path = "game/common/technology"
-		
+	type[technology] = {
+		path = "game/common/technology"
+
 		subtype[repeatable] = {
 			levels = int[-1..100]
 		}
@@ -23,15 +23,15 @@ technology = {
 	area = enum[research_areas]
 	tier = int #should actually check <technology_tier> via @variable
 	category = { <technology_category> }
-	
+
 	## cardinality = 0..1
 	icon = scalar
-	
+
 	subtype[start_tech] = {
 		## cardinality = 0..1
 		cost = 0
 	}
-	
+
 	subtype[!start_tech] = {
 		cost = int
 		## cardinality = 0..1
@@ -40,7 +40,7 @@ technology = {
 		is_dangerous = bool
 		weight = int
 		#usually in ""
-		
+
 		## cardinality = 0..1
 		potential = {
 			alias_name[trigger] = alias_match_left[trigger]
@@ -53,16 +53,16 @@ technology = {
 		## cardinality = 0..100
 		<technology>
 	}
-	
-	
+
+
 	## cardinality = 0..1
 	gateway = enum[tech_gateways]
-	
+
 
 	subtype[repeatable] = {
 		cost_per_level = @repeatableTechLevelCost
 	}
-	
+
 	## cardinality = 0..1
 	###someone tell Caligula and Dayshine how these work
 	weight_groups = {
@@ -78,34 +78,34 @@ technology = {
 		## cardinality = 0..1
 		tile_blockers = float
 	}
-		
-	
+
+
 	## cardinality = 0..1
 	start_tech = bool
 	## cardinality = 0..1
 	is_reverse_engineerable = bool
-	
+
 	## cardinality = 0..1
 	ai_update_type = enum[tech_ai_type]
-	
 
-	
+
+
 	## cardinality = 0..1
 	feature_flags = {
 		## cardinality = 0..100
 		enum[feature_flags]
 	}
-	
+
 	## cardinality = 0..1
 	modifier = {
 		## cardinality = 0..1
 		description = localisation
-		
+
 		## cardinality = 0..1
 		description_parameters = {
 			POINTS = int
 		}
-		
+
 		## cardinality = 0..1
 		alias_name[modifier] = alias_match_left[modifier]
 	}
@@ -120,7 +120,7 @@ technology = {
 			desc = localisation
 		}
 	}
-	
+
 	## cardinality = 0..1
 	weight_modifier = {
 		## cardinality = 0..1
@@ -129,8 +129,8 @@ technology = {
 		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
-	
-	
+
+
 	## cardinality = 0..1
 	ai_weight = {
 		## cardinality = 0..1

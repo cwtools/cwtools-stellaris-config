@@ -1,23 +1,23 @@
 #subtype[species_trait] needs a lack of leader_trait = yes. Using [!leader_trait] for now
 
 types = {
-    type[trait] = {
-        path = "game/common/traits"
+	type[trait] = {
+		path = "game/common/traits"
 
-        subtype[leader_trait] = {
-            leader_trait = yes
-        }
-        subtype[ruler_trait] = {
+		subtype[leader_trait] = {
+			leader_trait = yes
+		}
+		subtype[ruler_trait] = {
 			leader_class = { ruler }
-        }
-        subtype[scientist_trait] = {
+		}
+		subtype[scientist_trait] = {
 			leader_class = { scientist }
-        }
-        subtype[species_trait] = {
-            ## cardinality = 0..1
+		}
+		subtype[species_trait] = {
+			## cardinality = 0..1
 			leader_trait = no
-        }
-    }
+		}
+	}
 }
 
 trait = {
@@ -127,7 +127,7 @@ trait = {
 }
 
 enums = {
-    enum[trait_ai_classes] = {
+	enum[trait_ai_classes] = {
 		engineering
 		physics
 		society

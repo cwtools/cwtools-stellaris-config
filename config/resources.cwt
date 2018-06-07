@@ -1,6 +1,6 @@
 
 types = {
-    type[resource] = {
-        path = "game/common/strategic_resources"
-    }
+	type[resource] = {
+		path = "game/common/strategic_resources"
+	}
 }

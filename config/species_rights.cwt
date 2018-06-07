@@ -1,7 +1,7 @@
 types = {
-    type[species_rights] = {
-        path = "game/common/species_rights"
-    }
+	type[species_rights] = {
+		path = "game/common/species_rights"
+	}
 }
 
 #sub-types don't work here as all sorts of things are bundled into one file without coding divisions between them. But afaik there is no way of adding new ones, they are all hardcoded, so the enums are sufficient.
@@ -11,31 +11,31 @@ species_rights = {
 	#localisation is complicated. I guess there is a default unless there is a name defined
 	## cardinality = 0..1
 	name = localisation
-	
+
 	## cardinality = 0..1
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	
+
 	## cardinality = 0..1
 	pop_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	
+
 	## cardinality = 0..1
 	free_pop_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	
+
 	## cardinality = 0..1
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	
+
 	allow = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	
+
 	ai_will_do = {
 		factor = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
