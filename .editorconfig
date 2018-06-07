@@ -6,4 +6,5 @@ root = true
 # 4 space indentation
 [*.cwt]
 indent_style = tab
+indent_size = 4
 trim_trailing_whitespace = true
