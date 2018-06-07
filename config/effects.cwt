@@ -1036,7 +1036,9 @@ alias[effect:unassign_leader] = scope[leader]
 
 alias[effect:add_claims] = {
 	who = scope[country]
+	## cardinality = 0..1
 	num_of_claims = int
+	## cardinality = 0..1
 	show_notification = bool
 }
 
@@ -1407,6 +1409,7 @@ alias[effect:create_species] = {
     ## cardinality = 0..1
     new_pop_resource_requirement = {
         type = <resource>
+        type = robot_food
         value = int
     }
     ## cardinality = 0..1
@@ -1439,6 +1442,8 @@ alias[effect:create_country] = {
     name_list = <name_list>
 	## cardinality = 0..1
     name_list = random
+	## cardinality = 0..1
+    name_list = scope[country]
 	## cardinality = 0..1
 	ship_prefix = scalar #should be string or a scope
 
@@ -1565,9 +1570,12 @@ alias[effect:create_army] = {
 	## cardinality = 0..1
 	name = random
 	owner = scope[country]
+	owner = last_created
 	type = <army>
 	## cardinality = 0..1
 	species = scope[species]
+	## cardinality = 0..1
+	species = last_created
 	## cardinality = 0..1
 	leader = scope[leader]
 }
@@ -1596,6 +1604,8 @@ alias[effect:create_leader] = {
     skill = random
     ## cardinality = 0..1
 	skill = int
+	## cardinality = 0..1
+    immortal = bool
 	## cardinality = 0..1
     event_leader = bool
 	## cardinality = 0..1
@@ -1793,6 +1803,11 @@ alias[effect:spawn_natural_wormhole] = {
     orbit_distance = int
     ## cardinality = 0..1
     orbit_angle = int[0..360]
+    ## cardinality = 0..1
+    orbit_angle = {
+		min = int[0..360]
+		max int[0..360]
+	}
     ## cardinality = 0..1
     random_pos = bool
 }
@@ -2000,6 +2015,7 @@ alias[effect:change_species_characteristics] = {
     ## cardinality = 0..1
     new_pop_resource_requirement = {
         type = <resource>
+        type = robot_food
         value = int
     }
     ## cardinality = 0..1
@@ -2138,7 +2154,6 @@ alias[effect:create_colony_effect] = {
 	}
 }
 
-
 #create_fleet = { name = <string> effect = { <create_ship, set_owner, set_location etc effects go here> } }
 
 ### Creates a new fleet
@@ -2200,10 +2215,14 @@ alias[effect:create_mining_station] = {
 ### Creates a point of interest for the scoped country at a specific location, associated with an event chain
 alias[effect:create_point_of_interest] = {
 	id = scalar
+	## cardinality = 0..1
 	name = localisation
+	## cardinality = 0..1
 	desc = localisation
 	event_chain = <event_chain>
 	location = scope[planet]
+	## cardinality = 0..1
+	category = scalar
 }
 
 
@@ -2839,8 +2858,8 @@ alias[effect:set_starbase_module] = {
 ### Sets the ship size of a starbase
 alias[effect:set_starbase_size] = <ship_size> #TODO starbase ship_size
 
-### Changes the scoped country's tutorial level (0 none, 1 limited, 2 full)
-alias[effect:set_tutorial_level] = int
+### Changes the scoped country's tutorial level
+alias[effect:set_tutorial_level] = enum[tutorial_levels]
 
 ### Spawns a mega structure in a system.
 alias[effect:spawn_megastructure] = {
@@ -2850,6 +2869,11 @@ alias[effect:spawn_megastructure] = {
     name = localisation
     ## cardinality = 0..1
     orbit_angle = int[0..360]
+    ## cardinality = 0..1
+	orbit_angle = {
+		min = int[0..360]
+		max = int[0..360]
+	}
     ## cardinality = 0..1
     orbit_distance = int
     ## cardinality = 0..1
@@ -2952,3 +2976,15 @@ alias[effect:trigger_megastructure_icon] = yes
 
 ### Starts an upgrade process on a mega structure. upgrade_megastructure_to = <new_type>
 alias[effect:upgrade_megastructure_to] = <megastructure>
+
+
+enums = {
+	enum[tutorial_levels] = {
+		0
+		1
+		2
+		full
+		medium
+		none
+	}
+}
