@@ -1,10 +1,10 @@
 
 
 types = {
-    type[scripted_loc] = {
-        name_field = "name"
-        path = "game/common/scripted_loc"
-    }
+	type[scripted_loc] = {
+		name_field = "name"
+		path = "game/common/scripted_loc"
+	}
 }
 
 scripted_loc = {

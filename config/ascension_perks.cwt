@@ -1,8 +1,8 @@
 
 types = {
-    type[ascension_perk] = {
-        path = "game/common/ascension_perks"
-    }
+	type[ascension_perk] = {
+		path = "game/common/ascension_perks"
+	}
 }
 
 
@@ -12,7 +12,7 @@ ascension_perk = {
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	
+
 	## cardinality = 0..1
 	possible = {
 		alias_name[trigger] = alias_match_left[trigger]
@@ -22,9 +22,9 @@ ascension_perk = {
 	on_enabled = {
 		alias_name[effect] = alias_match_left[effect]
 	}
-	
+
 	## cardinality = 0..1
-	modifier = {		
+	modifier = {
 		## cardinality = 0..1
 		description = localisation
 		## cardinality = 0..1
@@ -32,10 +32,10 @@ ascension_perk = {
 			COST_MULT = float
 			POINTS = float
 		}
-		
+
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	
+
 	## cardinality = 0..1
 	ai_weight = {
 		factor = float

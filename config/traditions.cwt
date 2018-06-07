@@ -1,16 +1,16 @@
 types = {
-    type[tradition] = {
-        path = "game/common/tradition"
-    }
+	type[tradition] = {
+		path = "game/common/tradition"
+	}
 }
 
 enums = {
-    complex_enum[tradition_swap] = {
-        path = "game/common/tradition"
-        name = {
-            tradition_swap = {
-                name = enum_name
-            }
-        }
-    }
+	complex_enum[tradition_swap] = {
+		path = "game/common/tradition"
+		name = {
+			tradition_swap = {
+				name = enum_name
+			}
+		}
+	}
 }

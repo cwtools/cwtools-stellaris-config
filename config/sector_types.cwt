@@ -1,8 +1,8 @@
 
 types = {
-    type[sector_type] = {
-        path = "game/common/sector_types"
-    }
+	type[sector_type] = {
+		path = "game/common/sector_types"
+	}
 }
 
 sector_type = {

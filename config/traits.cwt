@@ -1,29 +1,29 @@
 #subtype[species_trait] needs a lack of leader_trait = yes. Using [!leader_trait] for now
 
 types = {
-    type[trait] = {
-        path = "game/common/traits"
+	type[trait] = {
+		path = "game/common/traits"
 
-        subtype[leader_trait] = {
-            leader_trait = yes
-        }
-        subtype[ruler_trait] = {
+		subtype[leader_trait] = {
+			leader_trait = yes
+		}
+		subtype[ruler_trait] = {
 			leader_class = { ruler }
-        }
-        subtype[scientist_trait] = {
+		}
+		subtype[scientist_trait] = {
 			leader_class = { scientist }
-        }
-        subtype[species_trait] = {
-            ## cardinality = 0..1
+		}
+		subtype[species_trait] = {
+			## cardinality = 0..1
 			leader_trait = no
-        }
-    }
+		}
+	}
 }
 
-trait = {	
+trait = {
 	## cardinality = 0..1
 	immortal_leaders = yes
-	
+
 	subtype[species_trait] = {
 		## cardinality = 0..1
 		sapient = no
@@ -33,10 +33,10 @@ trait = {
 		cost = int
 		## cardinality = 0..1
 		icon = filepath
-			
+
 		## cardinality = 0..1
 		sorting_priority = int
-    
+
 		allowed_archetypes = { <species_archetype> }
 
 		modifier = {
@@ -60,9 +60,9 @@ trait = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
-	
-	subtype[leader_trait] = {	
-	
+
+	subtype[leader_trait] = {
+
 		cost = int
 		icon = filepath
 
@@ -72,7 +72,7 @@ trait = {
 
 		## cardinality = 0..1
 		hide_age = yes
-		
+
 		## cardinality = 0..1
 		modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
@@ -97,7 +97,7 @@ trait = {
 		leader_potential_add = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
-	}	
+	}
 	## cardinality = 0..1
 	ai_categories = {
 		## cardinality = 1..4
@@ -126,7 +126,7 @@ trait = {
 }
 
 enums = {
-    enum[trait_ai_classes] = {
+	enum[trait_ai_classes] = {
 		engineering
 		physics
 		society

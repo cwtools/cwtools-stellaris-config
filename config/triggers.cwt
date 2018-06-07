@@ -1,9 +1,9 @@
 
 alias[trigger:scope] = { alias_name[trigger] = alias_match_left[trigger] }
 
-alias[trigger:NOT] = { 
-    ## cardinality = 1..1
-    alias_name[trigger] = alias_match_left[trigger]
+alias[trigger:NOT] = {
+	## cardinality = 1..1
+	alias_name[trigger] = alias_match_left[trigger]
 }
 
 alias[trigger:NOR] = { alias_name[trigger] = alias_match_left[trigger] }
@@ -13,8 +13,8 @@ alias[trigger:OR] = { alias_name[trigger] = alias_match_left[trigger] }
 alias[trigger:hidden_trigger] = { alias_name[trigger] = alias_match_left[trigger] }
 
 alias[trigger:if] = {
-    limit = { alias_name[trigger] = alias_match_left[trigger] }
-    alias_name[trigger] = alias_match_left[trigger]
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[trigger] = alias_match_left[trigger]
 }
 
 alias[trigger:else] = { alias_name[trigger] = alias_match_left[trigger] }
@@ -54,35 +54,35 @@ alias[trigger:ruler] = {
 }
 
 alias[trigger:capital_scope] = {
-    alias_name[trigger] = alias_match_left[trigger]
+	alias_name[trigger] = alias_match_left[trigger]
 }
 
 alias[trigger:orbit] = {
-    alias_name[trigger] = alias_match_left[trigger]
+	alias_name[trigger] = alias_match_left[trigger]
 }
 
 alias[trigger:orbital_deposit_tile] = {
-    alias_name[trigger] = alias_match_left[trigger]
+	alias_name[trigger] = alias_match_left[trigger]
 }
 
 alias[trigger:solar_system] = {
-    alias_name[trigger] = alias_match_left[trigger]
+	alias_name[trigger] = alias_match_left[trigger]
 }
 
 alias[trigger:space_owner] = {
-    alias_name[trigger] = alias_match_left[trigger]
+	alias_name[trigger] = alias_match_left[trigger]
 }
 
 alias[trigger:pop_faction] = {
-    alias_name[trigger] = alias_match_left[trigger]
+	alias_name[trigger] = alias_match_left[trigger]
 }
 
 alias[trigger:home_planet] = {
-    alias_name[trigger] = alias_match_left[trigger]
+	alias_name[trigger] = alias_match_left[trigger]
 }
 
 alias[trigger:overlord] = {
-    alias_name[trigger] = alias_match_left[trigger]
+	alias_name[trigger] = alias_match_left[trigger]
 }
 
 alias[trigger:leader] = {
@@ -164,7 +164,7 @@ alias[trigger:any_pop] = {
 alias[trigger:any_fleet_in_orbit] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
- 
+
 alias[trigger:any_research_station] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
@@ -291,88 +291,88 @@ alias[trigger:count_pop_factions] = {
 	count = int
 	## cardinality = 0..1
 	limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 }
 
 alias[trigger:count_species] = {
 	count = int
 	## cardinality = 0..1
 	limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 }
 
 alias[trigger:count_exact_species] = {
 	count = int
 	## cardinality = 0..1
 	limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 }
 
 alias[trigger:count_fleet_ships] = {
 	count = int
 	## cardinality = 0..1
 	limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 }
 
 alias[trigger:count_system_ships] = {
 	count = int
 	## cardinality = 0..1
 	limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 }
 
 alias[trigger:count_armies] = {
 	count = int
 	## cardinality = 0..1
 	limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 }
 
 alias[trigger:count_ships] = {
 	count = int
 	## cardinality = 0..1
 	limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 }
 
 alias[trigger:count_owned_ships] = {
 	count = int
 	## cardinality = 0..1
 	limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 }
 
 alias[trigger:count_owned_pops] = {
 	count = int
 	## cardinality = 0..1
 	limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 }
 
 alias[trigger:count_pops] = {
 	count = int
 	## cardinality = 0..1
 	limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 }
 
 alias[trigger:count_diplo_ties] = {
 	count = int
 	## cardinality = 0..1
 	limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 }
 
 
@@ -513,7 +513,7 @@ alias[trigger:closest_system] = {
 	min_steps = int
 	##cardinality = 0..1
 	max_steps = int
-    alias_name[trigger] = alias_match_left[trigger]
+	alias_name[trigger] = alias_match_left[trigger]
 }
 
 
@@ -524,26 +524,26 @@ alias[trigger:relative_power] = {
 	category = enum[relative_power_categories]
 	value = enum[relative_power_values]
 }
-	
+
 enums = {
-    enum[relative_power_categories] = {
-        all
+	enum[relative_power_categories] = {
+		all
 		fleet
 		naval_capacity
 		technology
-    }
-    enum[relative_power_values] = {
-        pathetic
+	}
+	enum[relative_power_values] = {
+		pathetic
 		inferior
 		equivalent
 		superior
 		overwhelming
-    }
-    enum[research_areas] = {
-        physics
+	}
+	enum[research_areas] = {
+		physics
 		engineering
 		society
-    }
+	}
 	enum[genders] = {
 		female
 		male
@@ -590,15 +590,15 @@ alias[trigger:has_megastructure_flag] = scalar
 
 
 alias[trigger:has_relation_flag] = {
-    who = scope[country]
-    flag = scalar
+	who = scope[country]
+	flag = scalar
 	## cardinality = 0..1
 	is_reverse = bool
 }
 
 alias[trigger:reverse_has_relation_flag] = {
-    who = scope[country]
-    flag = scalar
+	who = scope[country]
+	flag = scalar
 }
 
 alias[trigger:has_government] = <government>
@@ -829,7 +829,7 @@ alias[trigger:sector_controlled] = bool
 ###Checks if the scoped ship design, ship or fleet (all ships) has a designable ship size.
 alias[trigger:is_designable] = bool
 alias[trigger:is_orbital_tile] = bool
- 
+
 
 alias[trigger:leader_class] = enum[leader_classes]
 alias[trigger:pre_ruler_leader_class] = enum[leader_classes_no_ruler]
@@ -1111,9 +1111,9 @@ alias[trigger:has_special_project] = <special_project>
 alias[trigger:<scripted_trigger>] = bool
 
 
-							
 
-#Generated 
+
+#Generated
 #
 #
 #
@@ -1781,7 +1781,7 @@ alias[trigger:is_valid] = scope[any]
 ### Checks if the last policy changed by the country was a specific policy
 alias[trigger:last_changed_policy] = <policy>
 
-### Check if the last species rights type changed for the pop or leader is of type type 
+### Check if the last species rights type changed for the pop or leader is of type type
 alias[trigger:last_changed_species_rights_type] = enum[species_rights_type]
 
 ###Scope (/context) switch
@@ -1957,7 +1957,7 @@ alias[trigger:pop_can_live_on_planet] = bool
 ### Checks if a pop, or the pops of a particular species can reproduce
 alias[trigger:pop_can_reproduce] = bool
 
-### Checks the maintenace costs of a pop 
+### Checks the maintenace costs of a pop
 alias[trigger:pop_maintenance_cost] = int
 
 ### Checks if a pop is currently producing a particular resource
