@@ -1311,7 +1311,7 @@ alias[effect:destroy_ambient_object] = scope[ambient_object]
 alias[effect:remove_planet] = yes
 ###Immediately adds a specific building to the scoped tile
 alias[effect:set_building] = <building>
-###Removes a building from the scoped tile
+###Removes a building from the scoped tile, this will also cancel construction
 alias[effect:remove_building] = yes
 ###Begins construction of a specific building on the scoped tile
 alias[effect:add_building_construction] = <building>
