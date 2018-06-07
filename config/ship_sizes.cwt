@@ -41,6 +41,7 @@ ship_size = {
 	build_block_radius = int
 	## cardinality = 0..1
 	can_disable = bool
+	## cardinality = 0..1
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
@@ -123,7 +124,7 @@ ship_size = {
 			}
 		}
 		subtype[platform] = {
-			## cardinality = 0..1 
+			## cardinality = 0..1
 			"west" = {
 				## cardinality = 1..2
 				locator = scalar
