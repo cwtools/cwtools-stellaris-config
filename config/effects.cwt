@@ -2916,8 +2916,8 @@ alias[effect:spawn_planet] = {
 
 ### Spawns a new system at a position relative to the scoped system/planet/ship.
 alias[effect:spawn_system] = {
-	min_distance = int[0..100]
-	max_distance = int[0..100]
+	min_distance = int[0..1000]
+	max_distance = int[0..1000]
 	initializer = <solar_system_initializer>
 	## cardinality = 0..1
 	hyperlane = bool
