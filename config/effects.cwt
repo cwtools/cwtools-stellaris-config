@@ -2137,7 +2137,7 @@ alias[effect:create_cluster] = {
 }
 
 ### Creates a colony on the scoped planet
-alias[effect:create_colony_effect] = {
+alias[effect:create_colony] = {
 	owner = scope[country]
 	species = scope[species]
 	species = scope[country]

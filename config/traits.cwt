@@ -20,29 +20,25 @@ types = {
     }
 }
 
-trait = {	
+trait = {
 	## cardinality = 0..1
 	immortal_leaders = yes
-	
+
 	subtype[species_trait] = {
+		## cardinality = 0..1
+		cost = int
+		## cardinality = 0..1
+		icon = filepath
+		allowed_archetypes = { <species_archetype> }
+		modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
 		## cardinality = 0..1
 		sapient = no
 		## cardinality = 0..1
 		forced_happiness = yes
 		## cardinality = 0..1
-		cost = int
-		## cardinality = 0..1
-		icon = filepath
-			
-		## cardinality = 0..1
 		sorting_priority = int
-    
-		allowed_archetypes = { <species_archetype> }
-
-		modifier = {
-			alias_name[modifier] = alias_match_left[modifier]
-		}
-
 		## cardinality = 0..1
 		modification = bool
 		## cardinality = 0..1
@@ -59,10 +55,15 @@ trait = {
 		species_potential_add = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
+		## cardinality = 0..1
+		prerequisites = {
+			## cardinality = 0..100
+			<technology>
+		}
 	}
-	
-	subtype[leader_trait] = {	
-	
+
+	subtype[leader_trait] = {
+
 		cost = int
 		icon = filepath
 
@@ -72,7 +73,7 @@ trait = {
 
 		## cardinality = 0..1
 		hide_age = yes
-		
+
 		## cardinality = 0..1
 		modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
@@ -97,7 +98,7 @@ trait = {
 		leader_potential_add = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
-	}	
+	}
 	## cardinality = 0..1
 	ai_categories = {
 		## cardinality = 1..4
