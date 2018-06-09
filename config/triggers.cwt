@@ -572,6 +572,8 @@ alias[trigger:has_modifier] = <static_modifier>
 alias[trigger:has_opinion_modifier] = {
 	who = scope[country]
 	modifier = <opinion_modifier>
+	##cardinality = 0..1
+	is_reverse = bool
 }
 
 #flags

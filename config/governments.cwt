@@ -262,8 +262,10 @@ civic = {
 	###default: yes, set to no to prevent adding or removing this after creation of the empire
 	modification = bool
 
+	## cardinality = 0..1
 	### scriptable weight for randomizing a civic; required, else the civic will not get assigned randomly
 	random_weight = {
+		## cardinality = 0..1
 		base = int
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}

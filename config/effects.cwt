@@ -1351,6 +1351,8 @@ alias[effect:create_species] = {
 	name = scope[any]
 	name = random
 	## cardinality = 0..1
+	namelist = <name_list>
+	## cardinality = 0..1
 	plural = scalar
 	## cardinality = 0..1
 	adjective = scalar
@@ -1460,6 +1462,8 @@ alias[effect:create_country] = {
 	}
 	## cardinality = 0..1
 	species = random
+	## cardinality = 0..1
+	species = last_created
 	## cardinality = 0..1
 	species = scope[country]
 	## cardinality = 0..1
@@ -2163,6 +2167,8 @@ alias[effect:create_fleet] = {
 	## cardinality = 0..1
 	name = localisation_synced
 	## cardinality = 0..1
+	set_take_point = bool
+	## cardinality = 0..1
 	settings = {
 		## cardinality = 0..1
 		spawn_debris = bool
@@ -2181,6 +2187,7 @@ alias[effect:create_fleet] = {
 		## cardinality = 0..1
 		is_boss = bool
 	}
+	## cardinality = 0..1
 	###Must include set_owner, set_location and create_ship (here or in last_created_country). Todo: Check this somehow
 	effect = {
 		alias_name[effect] = alias_match_left[effect]
@@ -2269,6 +2276,8 @@ alias[effect:create_saved_leader] = {
 	type = enum[leader_classes]
 	species = scope[species] #<target / key>
 	species = enum[create_leader_species]
+	## cardinality = 0..1
+	event_leader = bool
 	## cardinality = 0..1
 	set_age = int
 	skill = random
@@ -2918,7 +2927,9 @@ alias[effect:spawn_planet] = {
 
 ### Spawns a new system at a position relative to the scoped system/planet/ship.
 alias[effect:spawn_system] = {
+	## cardinality = 0..1
 	min_distance = int[0..1000]
+	## cardinality = 0..1
 	max_distance = int[0..1000]
 	initializer = <solar_system_initializer>
 	## cardinality = 0..1
