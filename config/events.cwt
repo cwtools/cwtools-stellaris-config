@@ -5,21 +5,27 @@ types = {
 		path = "game/events"
 
 		## type_key_filter = country_event
+		## push_scope = country
 		subtype[country] = {
 		}
 		## type_key_filter = pop_event
+		## push_scope = pop
 		subtype[pop] = {
 		}
 		## type_key_filter = pop_faction_event
+		## push_scope = pop_faction
 		subtype[pop_faction] = {
 		}
 		## type_key_filter = planet_event
+		## push_scope = planet
 		subtype[planet] = {
 		}
 		## type_key_filter = ship_event
+		## push_scope = ship
 		subtype[ship] = {
 		}
 		## type_key_filter = fleet_event
+		## push_scope = fleet
 		subtype[fleet] = {
 		}
 		## type_key_filter = event
@@ -70,6 +76,12 @@ event = {
 	location = scope[planet]
 	## cardinality = 0..1
 	location = scope[system]
+	## cardinality = 0..1
+	location = scope[ship]
+	## cardinality = 0..1
+	location = scope[fleet]
+	## cardinality = 0..1
+	location = scope[country]
 
 	## cardinality = 0..1
 	show_sound = scalar

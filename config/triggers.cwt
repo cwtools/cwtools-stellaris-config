@@ -33,70 +33,87 @@ alias[trigger:FROMFROM] = { alias_name[trigger] = alias_match_left[trigger] }
 alias[trigger:FROMFROMFROM] = { alias_name[trigger] = alias_match_left[trigger] }
 alias[trigger:FROMFROMFROMFROM] = { alias_name[trigger] = alias_match_left[trigger] }
 
+## push_scope = species
 alias[trigger:species] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = planet
 alias[trigger:planet] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = country
 alias[trigger:owner] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = country
 alias[trigger:controller] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = leader
 alias[trigger:ruler] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = planet
 alias[trigger:capital_scope] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = planet
 alias[trigger:orbit] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = tile
 alias[trigger:orbital_deposit_tile] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = system
 alias[trigger:solar_system] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = country
 alias[trigger:space_owner] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = pop_faction
 alias[trigger:pop_faction] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = planet
 alias[trigger:home_planet] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = country
 alias[trigger:overlord] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = leader
 alias[trigger:leader] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = starbase
 alias[trigger:starbase] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = country
 alias[trigger:any_playable_country] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = fleet
 alias[trigger:any_owned_fleet] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
@@ -105,22 +122,27 @@ alias[trigger:any_orbital_station] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = planet
 alias[trigger:any_planet_within_border] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = ship
 alias[trigger:any_owned_ship] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = ship
 alias[trigger:any_ship] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = planet
 alias[trigger:any_moon] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = country
 alias[trigger:observation_outpost_owner] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
@@ -141,26 +163,32 @@ alias[trigger:any_attacker] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = planet
 alias[trigger:any_planet] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = planet
 alias[trigger:any_owned_planet] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = planet
 alias[trigger:any_controlled_planet] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = country
 alias[trigger:any_country] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = pop
 alias[trigger:any_pop] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = fleet
 alias[trigger:any_fleet_in_orbit] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
@@ -173,50 +201,62 @@ alias[trigger:any_mining_station] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = tile
 alias[trigger:any_neighboring_tile] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = tile
 alias[trigger:any_tile] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = system
 alias[trigger:any_rim_system] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = ship
 alias[trigger:any_ship_in_system] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = leader
 alias[trigger:any_owned_leader] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = pop
 alias[trigger:any_owned_pop] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = sector
 alias[trigger:any_sector] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = ambient_object
 alias[trigger:any_ambient_object] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = ambient_object
 alias[trigger:any_system_ambient_object] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = country
 alias[trigger:any_bordering_country] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = country
 alias[trigger:any_member] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = system
 ###Checks if any of the system's neighboring systems meet the specified criteria
 alias[trigger:any_neighbor_system] = {
 	## cardinality = 0..1
@@ -224,6 +264,7 @@ alias[trigger:any_neighbor_system] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = country
 alias[trigger:any_subject] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
@@ -232,60 +273,74 @@ alias[trigger:any_relation] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = army
 alias[trigger:any_owned_army] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = army
 alias[trigger:any_planet_army] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = country
 alias[trigger:any_neighbor_country] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = fleet
 alias[trigger:any_combatant_fleet] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = leader
 alias[trigger:any_pool_leader] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = megastructure
 alias[trigger:any_megastructure] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = megastructure
 alias[trigger:any_owned_megastructure] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = megastructure
 alias[trigger:any_system_megastructure] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = species
 alias[trigger:any_owned_pop_species] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = starbase
 alias[trigger:any_owned_starbase] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = system
 alias[trigger:any_system] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = system
 alias[trigger:any_system_within_border] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = country
 alias[trigger:any_war_participant] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
 
 
+## push_scope = pop_faction
 #Count triggers: Should all check for < > on the ints
 alias[trigger:count_pop_factions] = {
 	count = int
@@ -295,6 +350,7 @@ alias[trigger:count_pop_factions] = {
 	}
 }
 
+## push_scope = species
 alias[trigger:count_species] = {
 	count = int
 	## cardinality = 0..1
@@ -303,6 +359,7 @@ alias[trigger:count_species] = {
 	}
 }
 
+## push_scope = species
 alias[trigger:count_exact_species] = {
 	count = int
 	## cardinality = 0..1
@@ -311,6 +368,7 @@ alias[trigger:count_exact_species] = {
 	}
 }
 
+## push_scope = ship
 alias[trigger:count_fleet_ships] = {
 	count = int
 	## cardinality = 0..1
@@ -319,6 +377,7 @@ alias[trigger:count_fleet_ships] = {
 	}
 }
 
+## push_scope = ship
 alias[trigger:count_system_ships] = {
 	count = int
 	## cardinality = 0..1
@@ -327,6 +386,7 @@ alias[trigger:count_system_ships] = {
 	}
 }
 
+## push_scope = army
 alias[trigger:count_armies] = {
 	count = int
 	## cardinality = 0..1
@@ -335,6 +395,7 @@ alias[trigger:count_armies] = {
 	}
 }
 
+## push_scope = ship
 alias[trigger:count_ships] = {
 	count = int
 	## cardinality = 0..1
@@ -343,6 +404,7 @@ alias[trigger:count_ships] = {
 	}
 }
 
+## push_scope = ship
 alias[trigger:count_owned_ships] = {
 	count = int
 	## cardinality = 0..1
@@ -351,6 +413,7 @@ alias[trigger:count_owned_ships] = {
 	}
 }
 
+## push_scope = pop
 alias[trigger:count_owned_pops] = {
 	count = int
 	## cardinality = 0..1
@@ -359,6 +422,7 @@ alias[trigger:count_owned_pops] = {
 	}
 }
 
+## push_scope = pop
 alias[trigger:count_pops] = {
 	count = int
 	## cardinality = 0..1
@@ -508,6 +572,7 @@ alias[trigger:has_faction] = <pop_faction>
 alias[trigger:is_pop_faction_type] = <pop_faction>
 
 
+## push_scope = system
 alias[trigger:closest_system] = {
 	##cardinality = 0..1
 	min_steps = int
@@ -681,6 +746,7 @@ alias[trigger:has_closed_borders] = scope[country]
 alias[trigger:is_same_species] = scope[country]
 alias[trigger:is_same_species] = scope[pop]
 alias[trigger:is_same_species] = scope[species]
+alias[trigger:is_same_species] = scope[ship] #Colony ship
 
 ###Checks if the scoped object is originally of the same species, or currently of the exact same species instance, as another object
 alias[trigger:is_exact_same_species] = scope[species]
@@ -861,6 +927,8 @@ alias[trigger:count_tech_options] = {
 	area = enum[research_areas]
 	count = int
 }
+
+## push_scope = leader
 alias[trigger:research_leader] = {
 	area = enum[research_areas]
 	## cardinality = 1..100
@@ -1140,6 +1208,7 @@ alias[trigger:army_maintenance] = int
 ### Checks the army's type
 alias[trigger:army_type] = <army>
 
+## push_scope = country
 ###Scope (/context) switch
 alias[trigger:attacker] = { alias_name[trigger] = alias_match_left[trigger] }
 
@@ -1149,6 +1218,7 @@ alias[trigger:attacker_war_exhaustion] = int
 ### Checks the country's energy credit balance
 alias[trigger:balance] = int
 
+## push_scope = tile
 ###Scope (/context) switch
 alias[trigger:best_tile_for_pop] = {
 	alias_name[trigger] = alias_match_left[trigger]
@@ -1209,11 +1279,13 @@ alias[trigger:conditional_tooltip] = {
 ### Checks the country's construction expenses for the previous month
 alias[trigger:construction_expenses] = int
 
+## push_scope = sector
 ###Scope (/context) switch
 alias[trigger:core_sector] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = country
 ### Iterate through all bordering countries of a system
 alias[trigger:count_bordering_country] = {
 	count = all
@@ -1222,6 +1294,7 @@ alias[trigger:count_bordering_country] = {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
+## push_scope = fleet
 ### Iterate through each fleet this fleet is in combat with
 alias[trigger:count_combatant_fleet] =  {
 	count = all
@@ -1230,6 +1303,7 @@ alias[trigger:count_combatant_fleet] =  {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
+## push_scope = country
 ### Iterate through all countries
 alias[trigger:count_country] =  {
 	count = all
@@ -1238,6 +1312,7 @@ alias[trigger:count_country] =  {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
+#TODO what scope is deposit?
 ### Checks the number of deposits on the tile/planet that meet the specified criteria
 alias[trigger:count_deposits] =  {
 	count = int
@@ -1245,6 +1320,7 @@ alias[trigger:count_deposits] =  {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
+## push_scope = megastructure
 ### Iterate through each megastructure
 alias[trigger:count_megastructure] =  {
 	count = all
@@ -1253,6 +1329,7 @@ alias[trigger:count_megastructure] =  {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
+## push_scope = country
 ### Iterate through all neighbor countries
 alias[trigger:count_neighbor_country] =  {
 	count = all
@@ -1261,6 +1338,7 @@ alias[trigger:count_neighbor_country] =  {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
+## push_scope = army
 ### Iterate through each army that is owned by the country
 alias[trigger:count_owned_army] =  {
 	count = all
@@ -1269,6 +1347,7 @@ alias[trigger:count_owned_army] =  {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
+## push_scope = megastructure
 ### Iterate through each owned megastructure
 alias[trigger:count_owned_megastructure] =  {
 	count = all
@@ -1277,6 +1356,7 @@ alias[trigger:count_owned_megastructure] =  {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
+## push_scope = pop
 ### Iterate through all owned pops
 alias[trigger:count_owned_pop] =  {
 	count = all
@@ -1285,6 +1365,7 @@ alias[trigger:count_owned_pop] =  {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
+## push_scope = pop
 ### Iterate through each species of a country's owned pops
 alias[trigger:count_owned_pop_species] =  {
 	count = all
@@ -1293,6 +1374,7 @@ alias[trigger:count_owned_pop_species] =  {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
+## push_scope = starbase
 ### Iterate through every owned starbase
 alias[trigger:count_owned_starbase] =  {
 	count = all
@@ -1301,6 +1383,7 @@ alias[trigger:count_owned_starbase] =  {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
+## push_scope = army
 ### Iterate through each defending army on a planet
 alias[trigger:count_planet_army] =  {
 	count = all
@@ -1309,6 +1392,7 @@ alias[trigger:count_planet_army] =  {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
+## push_scope = planet
 ### Checks the planets in system that meet the criteria
 alias[trigger:count_planets] =  {
 	count = int
@@ -1316,6 +1400,7 @@ alias[trigger:count_planets] =  {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
+## push_scope = leader
 ### Iterate through each leader that is recruitable for the country
 alias[trigger:count_pool_leader] =  {
 	count = all
@@ -1332,6 +1417,7 @@ alias[trigger:count_relation] =  {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
+## push_scope = system
 ### Iterate through all rim systems
 alias[trigger:count_rim_system] =  {
 	count = all
@@ -1353,6 +1439,7 @@ alias[trigger:count_starbase_sizes] =  {
 	starbase_size = <ship_size> #<ship_size.starbase>
 }
 
+## push_scope = system
 ### Iterate through all systems
 alias[trigger:count_system] =  {
 	count = all
@@ -1361,6 +1448,7 @@ alias[trigger:count_system] =  {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
+## push_scope = megastructure
 ### Iterate through each megastructure in system
 alias[trigger:count_system_megastructure] =  {
 	count = all
@@ -1369,6 +1457,7 @@ alias[trigger:count_system_megastructure] =  {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
+## push_scope = system
 ### Iterate through all systems within the country's borders
 alias[trigger:count_system_within_border] =  {
 	count = all
@@ -1410,6 +1499,7 @@ alias[trigger:custom_tooltip_success] = {
 ### Trigger an assertion to stop the debugger when encountering this trigger; returns the value it is assigned
 alias[trigger:debug_break] = scalar
 
+## push_scope = country
 ###Scope (/context) switch
 ###Tell Caligula how this works
 alias[trigger:defender] = { alias_name[trigger] = alias_match_left[trigger] }
@@ -1435,6 +1525,7 @@ alias[trigger:fail_text] = {
 ### Checks the country's federation expenses for the previous month
 alias[trigger:federation_expenses] = int
 
+## push_scope = fleet
 ###Scope (/context) switch
 alias[trigger:fleet] = {
 	alias_name[trigger] = alias_match_left[trigger]
@@ -1475,7 +1566,7 @@ alias[trigger:graphical_culture] = <graphical_culture>
 alias[trigger:happiness_planet] = int
 
 ### Checks if the system is accessible to the target country with construction vessels
-alias[trigger:has_access_fleet] = scope[galactic_object]
+alias[trigger:has_access_fleet] = scope[country]
 
 ### Checks if the planet has an anomaly
 alias[trigger:has_anomaly] = bool
@@ -1622,6 +1713,7 @@ alias[trigger:has_valid_ai_personality] = bool
 ### Checks if a war goal is set.
 alias[trigger:has_war_goal] = bool
 
+## push_scope = leader
 ###Scope (/context) switch
 alias[trigger:heir] = { alias_name[trigger] = alias_match_left[trigger] }
 
@@ -1787,50 +1879,61 @@ alias[trigger:last_changed_policy] = <policy>
 ### Check if the last species rights type changed for the pop or leader is of type type
 alias[trigger:last_changed_species_rights_type] = enum[species_rights_type]
 
+## push_scope = ambient_object
 ###Scope (/context) switch
 alias[trigger:last_created_ambient_object] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = army
 ###Scope (/context) switch
 alias[trigger:last_created_army] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = country
 ###Scope (/context) switch
 alias[trigger:last_created_country] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = fleet
 ###Scope (/context) switch
 alias[trigger:last_created_fleet] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = leader
 ###Scope (/context) switch
 alias[trigger:last_created_leader] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = pop
 ###Scope (/context) switch
 alias[trigger:last_created_pop] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
+
+## push_scope = pop_faction
 ###Scope (/context) switch
 alias[trigger:last_created_pop_faction] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = ship
 ###Scope (/context) switch
 alias[trigger:last_created_ship] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = species
 ###Scope (/context) switch
 alias[trigger:last_created_species] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = system
 ###Scope (/context) switch
 alias[trigger:last_created_system] = {
 	alias_name[trigger] = alias_match_left[trigger]
@@ -1839,6 +1942,7 @@ alias[trigger:last_created_system] = {
 ### Checks if the country's last researched technology was a specific tech
 alias[trigger:last_increased_tech] = <technology>
 
+## push_scope = country
 ###Scope (/context) switch
 alias[trigger:last_refugee_country] = {
 	alias_name[trigger] = alias_match_left[trigger]
@@ -1853,6 +1957,7 @@ alias[trigger:logged_in_to_pdx_account] = bool
 ### Checks the country's max naval capacity in absolute numbers
 alias[trigger:max_naval_capacity] = int
 
+## push_scope = fleet
 ###Scope (/context) switch
 alias[trigger:mining_station] = {
 	alias_name[trigger] = alias_match_left[trigger]
@@ -1933,6 +2038,7 @@ alias[trigger:opposing_ethics_divergence] = {
 	who = scope[pop]
 }
 
+## push_scope = species
 ###Scope (/context) switch
 alias[trigger:owner_species] = {
 	alias_name[trigger] = alias_match_left[trigger]
@@ -1944,11 +2050,13 @@ alias[trigger:owns_any_bypass] = <bypass>
 ### Checks the planet's health percentage
 alias[trigger:planet_health] = float[0.0..1.0]
 
+## push_scope = country
 ###Scope (/context) switch
 alias[trigger:planet_owner] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = pop
 ###Scope (/context) switch
 alias[trigger:pop] = {
 	alias_name[trigger] = alias_match_left[trigger]
@@ -1972,6 +2080,7 @@ alias[trigger:pop_produces_resource] = {
 ### Checks the country's gross amount of produced energy credits
 alias[trigger:produced_energy] = int
 
+## push_scope = fleet
 ###Scope (/context) switch
 alias[trigger:research_station] = {
 	alias_name[trigger] = alias_match_left[trigger]
@@ -1980,6 +2089,7 @@ alias[trigger:research_station] = {
 ### Checks the country's running energy credit balance
 alias[trigger:running_balance] = int
 
+## push_scope = sector
 ###Scope (/context) switch
 alias[trigger:sector] = {
 	alias_name[trigger] = alias_match_left[trigger]
@@ -2000,6 +2110,7 @@ alias[trigger:species_planet_slave_percentage] = float[0.0..1.0]
 ### Checks if the species (or pop/empire's dominant species) uses a certain portrait
 alias[trigger:species_portrait] = enum[portait] #TODO portait
 
+## push_scope = star
 ###Scope (/context) switch
 alias[trigger:star] = {
 	alias_name[trigger] = alias_match_left[trigger]
@@ -2036,6 +2147,7 @@ alias[trigger:success_text] = {
 ### Switch case for a trigger
 alias[trigger:switch] = scalar #TODO sitch
 
+## push_scope = star
 ###Scope (/context) switch
 alias[trigger:system_star] = {
 	alias_name[trigger] = alias_match_left[trigger]
@@ -2053,6 +2165,7 @@ alias[trigger:their_opinion] = {
 	value = int
 }
 
+## push_scope = tile
 ###Scope (/context) switch
 alias[trigger:tile] = {
 	alias_name[trigger] = alias_match_left[trigger]
