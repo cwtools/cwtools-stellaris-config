@@ -684,6 +684,8 @@ alias[trigger:is_same_species] = scope[species]
 
 ###Checks if the scoped object is originally of the same species, or currently of the exact same species instance, as another object
 alias[trigger:is_exact_same_species] = scope[species]
+alias[trigger:is_exact_same_species] = scope[country]
+alias[trigger:is_exact_same_species] = scope[pop]
 alias[trigger:is_subspecies] = scope[species]
 #any scope
 alias[trigger:exists] = scope[any]
@@ -764,6 +766,7 @@ alias[trigger:is_colonizable] = bool
 
 alias[trigger:is_ideal_planet_class] = {
 	who = scope[country]
+	who = scope[pop]
 	status = bool
 }
 
