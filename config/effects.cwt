@@ -1692,7 +1692,7 @@ alias[effect:create_army] = {
 	## cardinality = 0..1
 	species = scope[country]
 	## cardinality = 0..1
-	species = last_created
+	species = enum[create_leader_species]
 	## cardinality = 0..1
 	leader = scope[leader]
 }
@@ -1912,6 +1912,8 @@ alias[effect:enable_special_project] = {
 	owner = scope[ship]
 	## cardinality = 0..1
 	owner = scope[planet]
+	## cardinality = 0..1
+	owner = scope[fleet]
 	location = scope[all]
 }
 
