@@ -746,6 +746,7 @@ alias[trigger:has_closed_borders] = scope[country]
 alias[trigger:is_same_species] = scope[country]
 alias[trigger:is_same_species] = scope[pop]
 alias[trigger:is_same_species] = scope[species]
+alias[trigger:is_same_species] = scope[leader]
 alias[trigger:is_same_species] = scope[ship] #Colony ship
 
 ###Checks if the scoped object is originally of the same species, or currently of the exact same species instance, as another object

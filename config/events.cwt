@@ -82,6 +82,8 @@ event = {
 	location = scope[fleet]
 	## cardinality = 0..1
 	location = scope[country]
+	## cardinality = 0..1
+	location = scope[pop]
 
 	## cardinality = 0..1
 	show_sound = scalar
