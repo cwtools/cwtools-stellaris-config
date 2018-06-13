@@ -62,6 +62,22 @@ event = {
 			trigger = { alias_name[trigger] = alias_match_left[trigger] }
 			text = localisation
 		}
+		## cardinality = 0..1
+		location = scope[planet]
+		## cardinality = 0..1
+		location = scope[system]
+		## cardinality = 0..1
+		location = scope[ship]
+		## cardinality = 0..1
+		location = scope[fleet]
+		## cardinality = 0..1
+		location = scope[country]
+		## cardinality = 0..1
+		location = scope[pop]
+
+		## cardinality = 0..1
+		show_sound = scalar
+
 	}
 
 	subtype[default] = {
@@ -71,22 +87,9 @@ event = {
 			trigger = { alias_name[trigger] = alias_match_left[trigger] }
 		}
 	}
-
+	
 	## cardinality = 0..1
-	location = scope[planet]
-	## cardinality = 0..1
-	location = scope[system]
-	## cardinality = 0..1
-	location = scope[ship]
-	## cardinality = 0..1
-	location = scope[fleet]
-	## cardinality = 0..1
-	location = scope[country]
-	## cardinality = 0..1
-	location = scope[pop]
-
-	## cardinality = 0..1
-	show_sound = scalar
+	message_desc = localisation
 
 	## cardinality = 0..1
 	hide_window = bool
