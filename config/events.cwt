@@ -143,6 +143,8 @@ event = {
 		## cardinality = 0..1
 		custom_gui = scalar
 		## cardinality = 0..1
+		custom_gui_option = scalar
+		## cardinality = 0..1
 		###Force a diplomatic event to be viewed
 		force_open = bool
 	}

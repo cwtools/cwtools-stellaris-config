@@ -1596,6 +1596,8 @@ alias[effect:create_country] = {
 	## cardinality = 0..1
 	species = scope[pop]
 	## cardinality = 0..1
+ 	species = <buildable_pop>
+	## cardinality = 0..1
 	species = scope[species] #maybe key would work, I don't know which though
 
 	## cardinality = 0..1
@@ -1653,6 +1655,7 @@ alias[effect:create_rebels] = {
 		civic = <civic>
 	}
 	species = scope[country]
+ 	species = <buildable_pop>
 	species = scope[pop]
 	species = scope[species] #maybe key would work, I don't know which though
 
@@ -1714,6 +1717,8 @@ alias[effect:create_army] = {
 	## cardinality = 0..1
 	species = enum[create_leader_species]
 	## cardinality = 0..1
+ 	species = <buildable_pop>
+	## cardinality = 0..1
 	leader = scope[leader]
 }
 
@@ -1728,6 +1733,7 @@ alias[effect:create_leader] = {
 	species = scope[species] #<target / key>
 	species = scope[country]
 	species = enum[create_leader_species]
+ 	species = <buildable_pop>
 	## cardinality = 0..1
 	leader_age_min = int
 	## cardinality = 0..1
@@ -1785,6 +1791,8 @@ alias[effect:clone_leader] = {
 	## cardinality = 0..1
 	species = scope[species] #<target / key>
 	## cardinality = 0..1
+ 	species = <buildable_pop>
+	## cardinality = 0..1
 	leader_age_min = int
 	## cardinality = 0..1
 	leader_age_max = int	#should not be less than min...
@@ -1836,6 +1844,8 @@ alias[effect:modify_species] = {
 	## cardinality = 0..1
 	species = scope[pop]
 	## cardinality = 0..1
+ 	species = <buildable_pop>
+	## cardinality = 0..1
 	###new base species; default: auto (uses species)
 	base = scope[any]
 	## cardinality = 0..1
@@ -1868,6 +1878,7 @@ alias[effect:change_dominant_species] = {
 	species = scope[species]
 	species = scope[pop]
 	species = enum[create_leader_species]
+ 	species = <buildable_pop>
 	## cardinality = 0..1
 	change_all = yes
 }
@@ -2188,7 +2199,9 @@ alias[effect:change_species_characteristics] = {
 	## cardinality = 0..1
 	extra_trait_points = int
 	## cardinality = 0..1
-	portait = scope[species] #TODO portrait key
+	portait = scope[species]
+	## cardinality = 0..1
+	portait = scalar #TODO portrait key
 }
 
 ### Re-evaluate the specified casus belli type with given target country
@@ -2299,6 +2312,8 @@ alias[effect:create_army_transport] = {
  	army_name = localisation_synced
 	##cardinality = 0..1
  	species = scope[species]
+	##cardinality = 0..1
+ 	species = <buildable_pop>
 }
 
 #
@@ -2319,6 +2334,7 @@ alias[effect:create_colony] = {
 	species = scope[species]
 	species = scope[country]
 	species = scope[pop]
+ 	species = <buildable_pop>
 	species = scalar #key
 	##cardinality = 0..1
 	ethos = random
@@ -2416,6 +2432,7 @@ alias[effect:create_pop] = {
 	species = scope[species]
 	species = scope[country]
 	species = scope[pop]
+ 	species = <buildable_pop>
 	species = scalar #key
 	## cardinality = 0..1
 	ethos = random
@@ -2452,6 +2469,7 @@ alias[effect:create_saved_leader] = {
 	species = scope[country]
 	species = scope[species] #<target / key>
 	species = enum[create_leader_species]
+ 	species = <buildable_pop>
 	## cardinality = 0..1
 	event_leader = bool
 	## cardinality = 0..1
@@ -2678,6 +2696,8 @@ alias[effect:modify_army] = {
 	owner = scope[country]
 	## cardinality = 0..1
 	species = scope[species]
+	## cardinality = 0..1
+ 	species = <buildable_pop>
 	## cardinality = 0..1
 	type = <army>
 }
