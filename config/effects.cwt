@@ -1920,7 +1920,11 @@ alias[effect:establish_communications_no_message] = scope[country]
 alias[effect:establish_contact] = {
 	who = scope[country]
 	## cardinality = 0..1
-	location = scope[any]
+	location = scope[system]
+	## cardinality = 0..1
+	location = scope[planet]
+	## cardinality = 0..1
+	location = scope[ship]
 }
 
 alias[effect:pop_change_ethic] = <ethos>
@@ -1930,6 +1934,8 @@ alias[effect:begin_event_chain] = {
 	event_chain = <event_chain>
 	## cardinality = 0..2
 	target = scope[country]
+	## cardinality = 0..2
+	target = scope[ship]
 }
 
 ### Ends a specific situation log event chain for the scoped country
@@ -1953,14 +1959,23 @@ alias[effect:enable_special_project] = {
 	owner = scope[planet]
 	## cardinality = 0..1
 	owner = scope[fleet]
-	location = scope[all]
+	location = scope[planet]
+	location = scope[system]
+	location = scope[ship]
+	location = scope[fleet]
 }
 
 ###Aborts a specific special project for the country, removing it from the situation log
 alias[effect:abort_special_project] = {
 	type = <special_project>
 	## cardinality = 0..1
-	location = scope[all]
+	location = scope[planet]
+	## cardinality = 0..1
+	location = scope[system]
+	## cardinality = 0..1
+	location = scope[ship]
+	## cardinality = 0..1
+	location = scope[fleet]
 }
 
 ###Makes the scoped country remember that it has encountered the bypass type
@@ -2420,6 +2435,7 @@ alias[effect:create_point_of_interest] = {
 	desc = localisation
 	event_chain = <event_chain>
 	location = scope[planet]
+	location = scope[system]
 	## cardinality = 0..1
 	category = scalar
 }
@@ -3095,7 +3111,8 @@ alias[effect:set_tutorial_level] = enum[tutorial_levels]
 ### Spawns a mega structure in a system.
 alias[effect:spawn_megastructure] = {
 	type = <megastructure>
-	location = scope[any] #TODO check scope
+	location = scope[planet]
+	location = scope[system]
 	## cardinality = 0..1
 	name = localisation
 	## cardinality = 0..1
@@ -3124,7 +3141,9 @@ alias[effect:spawn_megastructure] = {
 alias[effect:spawn_planet] = {
 	class = <planet_class>
 	## cardinality = 0..1
-	location = scope[any] #TODO scope
+	location = scope[system]
+	## cardinality = 0..1
+	location = scope[planet]
 	## cardinality = 0..1
 	orbit_location = bool
 	## cardinality = 0..1
