@@ -2270,6 +2270,7 @@ alias[effect:create_ambient_object] = {
 
 ### Creates a new army in a new transport ship
 alias[effect:create_army_transport] = {
+	##cardinality = 0..1
  	graphical_culture = <graphical_culture>
 	army_type = <army>
 	##cardinality = 0..1
