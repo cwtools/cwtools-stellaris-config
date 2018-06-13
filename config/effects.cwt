@@ -472,6 +472,8 @@ alias[effect:every_system_in_cluster] = {
 
 ## push_scope = country
 alias[effect:observation_outpost_owner] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -1458,6 +1460,10 @@ alias[effect:create_species] = {
 	## cardinality = 0..1
 	namelist = <name_list>
 	## cardinality = 0..1
+	name_list = scope[country]
+	## cardinality = 0..1
+	name_list = random
+	## cardinality = 0..1
 	plural = scalar
 	## cardinality = 0..1
 	adjective = scalar
@@ -1528,6 +1534,20 @@ alias[effect:create_species] = {
 	name_list = <name_list>
 	## cardinality = 0..1
 	name_list = random
+	## cardinality = 0..1
+	name_list = scope[country]
+	
+	## cardinality = 0..1
+	pop_ethics = random
+	## cardinality = 0..1
+	pop_ethics = <ethos>
+	## cardinality = 0..1
+	pop_ethics = {
+		## cardinality = 1..3
+		<ethos>
+		## cardinality = 0..1
+		random
+	}
 	## cardinality = 0..1
 	## push_scope = species
 	effect = { alias_name[effect] = alias_match_left[effect] }
@@ -2337,6 +2357,8 @@ alias[effect:create_fleet] = {
 		uses_naval_capacity = bool
 		## cardinality = 0..1
 		is_boss = bool
+		## cardinality = 0..1
+		ai_ignore_strength = bool
 	}
 	## push_scope = fleet
 	## cardinality = 0..1
@@ -2819,6 +2841,8 @@ alias[effect:rename_species] = {
 	name_list = <name_list>
 	## cardinality = 0..1
 	name_list = random
+	## cardinality = 0..1
+	name_list = scope[country]
 }
  #TODO
 

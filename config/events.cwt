@@ -160,6 +160,9 @@ event = {
 	## cardinality = 0..100
 	option = {
 		name = localisation
+		
+		## cardinality = 0..1
+		sound = scalar
 
 		## cardinality = 0..1
 		tooltip = {
