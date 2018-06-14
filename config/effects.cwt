@@ -2136,6 +2136,7 @@ alias[effect:auto_follow_fleet] = {
 alias[effect:auto_move_to_planet] = {
 	target = scope[planet]
 	clear_auto_move_on_arrival = bool
+	## cardinality = 0..1
 	destroy_on_arrival = bool
 }
 
