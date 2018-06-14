@@ -28,27 +28,27 @@ building = {
 	produced_resources = { 	
 		<resource> = int
 	}
-	produced_resource_trigger = { #scope is country, cannot scope elsewhere from here in any way.
+	produced_resource_trigger = { ###scope = country, cannot scope to planet or tile 
 		modifier = { 
-			alias_name[modifier] = alias_match_left[modifier]
+			alias_name[trigger] = alias_match_left[trigger]
 			resources = {
 				<resources>
 			}
 		}
 	}	
 	adjacency_bonus = { 
-		#accepts only tile_building_resource_xyz_add = type modifiers
+		###accepts only tile_building_resource_xyz_add = type modifiers
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	planet_modifier = { 
-		#accepts planet modifiers
+		###accepts planet modifiers
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	country_modifier = { 
-		#accepts country modifiers
+		###accepts country modifiers
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	triggered_planet_modifier = { #scope = planet, owner = country, tile = tile.
+	triggered_planet_modifier = { ###scope = planet, owner = country, tile = tile.
 		key = localisation
 		trigger = { 
 			alias_name[trigger] = alias_match_left[trigger]
@@ -57,7 +57,7 @@ building = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}	
 	}
-	planet_modifier_with_pop_trigger = { #scope = pop, tile = tile, from/planet = planet, owner = country
+	planet_modifier_with_pop_trigger = { ###scope = pop, tile = tile, from/planet = planet, owner = country
 		key = localisation
 		trigger = { 
 			alias_name[trigger] = alias_match_left[trigger]
@@ -66,16 +66,16 @@ building = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
 	}
-	show_tech_unlock_if = { #scope = country, planet = planet
+	show_tech_unlock_if = { ###scope = country, planet = planet
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	destroy_if = { #scope planet, tile = tile, owner = country 
+	destroy_if = { ###scope planet, tile = tile, owner = country 
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	potential = { #scope planet, tile = tile, owner = country
+	potential = { ###scope planet, tile = tile, owner = country
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	active = { #scope = pop, tile = tile, from/planet = planet, owner = country
+	active = { ###scope = pop, tile = tile, from/planet = planet, owner = country
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	on_building_queue = { 
@@ -84,11 +84,11 @@ building = {
 	on_building_unqueue = { 
 		alias_name[effect] = alias_match_left[effect]
 	}
-	upgrades = { <building> } #can have multiple keys
-	ai_allow = { #scope tile, from/planet = planet, owner = country
+	upgrades = { <building> } ###can have multiple keys
+	ai_allow = { ###scope tile, from/planet = planet, owner = country
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	ai_weight = { #scope tile, from/planet = planet, owner = country
+	ai_weight = { ###scope tile, from/planet = planet, owner = country
 		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}	
