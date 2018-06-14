@@ -1,0 +1,21 @@
+terraform_link = {
+	#coutry scope, from = planet - please add this info
+	from = <planet_class>
+	to = <planet_class>
+	energy = int
+	duration = int
+	## cardinality = 0..1
+	condition = { #displayed in game, hence functions like after effect and requires localisations in the same way.
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	potential = { 
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	effect = {  
+		alias_name[effect] = alias_match_left[effect]
+	}
+	ai_weight = {
+		weight = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}	
