@@ -2,6 +2,10 @@ types = {
 	type[special_project] = {
 		name_field = "key"
 		path = "game/common/special_projects"
+		
+		subtype[cost] = {
+			cost = int[1..9999999]
+		}
 	}
 }
 
@@ -19,7 +23,16 @@ special_project = {
 	## cardinality = 0..1
 	icon = filepath
 	
-	tech_department = enum[tech_departments]
+	
+	subtype[cost] = {
+		tech_department = enum[tech_departments]
+	}
+	
+	subtype[!cost] = {
+		## cardinality = 0..1
+		tech_department = enum[tech_departments]
+	}
+	
 	## cardinality = 0..1
 	picture = scalar
 	
