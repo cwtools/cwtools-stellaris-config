@@ -3192,7 +3192,11 @@ alias[effect:start_colony] = {
 	owner = scope[country]
 	species = scope[species] #TODO species target
 	ethos = random
-	ethos = scope[species] #TODO ethic block
+	ethos = scope[country]
+	ethos = {
+		## cardinality = 2..2
+		ethic = <ethos>
+	}
 }
 
 ### Stops the crisis ambient loop
