@@ -37,7 +37,7 @@ building = {
 			alias_name[trigger] = alias_match_left[trigger]
 			resources = {
 				## cardinality = 1..100
-				<resource> = int
+				<resource> = float
 			}
 		}
 	}	
