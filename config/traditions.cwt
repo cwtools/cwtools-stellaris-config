@@ -14,3 +14,41 @@ enums = {
 		}
 	}
 }
+
+tradition = {
+	modifier = { ###accepts only country modifiers
+		## cardinality = 0..1
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	ai_weight = { ### the ai_weight in traditions applies both to the main traditions and the tradition swaps, there are no seperate fields. 
+		## cardinality = 0..1
+		factor = float
+		## cardinality = 0..1
+		weight = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]	
+	}
+	possible = { ###scope = country
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}	
+
+tradition_swap = {
+	name_field = "name"
+	inherit_icon = bool
+	inherit_name = bool
+	inherit_effects = bool
+	modifier = { ###accepts only country modifiers
+		## cardinality = 0..1
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}	
+	weight = { ###this determines the chances of a tradition swap appearing for a given empire IF multiple swaps are potential. It is unused in vanilla.
+		## cardinality = 0..1
+		factor = float
+		## cardinality = 0..1
+		weight = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]		
+	}
+	trigger = { ###scope = country
+		alias_name[trigger] = alias_match_left[trigger]
+	}	
+}	
