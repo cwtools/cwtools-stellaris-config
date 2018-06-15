@@ -140,29 +140,29 @@ weapon_component_template = {
 	missile_shield = float
 	missile_retarget_range = int
 }	
-
-weapon_type = {
-	subtype[instant]
-	subtype[missile]
-	subtype[point_defence]
-	subtype[planet_killer]
-}	
-weapon_slot_size = {
-	subtype[extra_large]
-	subtype[large]	
-	subtype[medium]
-	subtype[small]
-	subtype[torpedo]	
-	subtype[point_defence]
-	subtype[planet_killer]
-}
-
-utility_slot_size = { 
-	subtype[extra_large]
-	subtype[large]
-	subtype[medium]
-	subtype[small]
-	subtype[aux]
+enums = { 
+	enum[weapon_type] = {
+		instant
+		missile
+		point_defence
+		planet_killer
+	}	
+	enum[weapon_slot_size] = {
+		extra_large
+		large	
+		medium
+		small
+		torpedo	
+		point_defence
+		planet_killer
+	}
+	enum[utility_slot_size] = { 
+		extra_large
+		large
+		medium
+		small
+		aux
+	}
 }	
 
 strike_craft_component_template = {
