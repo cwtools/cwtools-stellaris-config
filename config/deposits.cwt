@@ -5,18 +5,31 @@ types = {
 }
 
 deposit = { 
-	resources = { <resources> = int }
-	is_null = bool ###this makes the deposit transparent, used by vanilla to designate an "empty" deposit.
-	station = { ###requires either a mining station or a research station defined, even if the deposit is solely planetary.
-		<shipclass_mining_station>
-		<shipclass_research_station>
-	}
-	orbital_weight = { ###the relative weight of the deposit in the orbital tile (1 per planet, always)
-		weight = float
-		alias_name[modifier_rule] = alias_match_left[modifier_rule]
-	}
-	drop_weight = { ###the relative weight of the deposit in non-orbital tiles
-		weight = float
-		alias_name[modifier_rule] = alias_match_left[modifier_rule]
-	}
+	## cardinality = 0..1
+	resources = { <resource> = int }
+	## cardinality = 0..1
+	###this makes the deposit transparent, used by vanilla to designate an "empty" deposit.
+	is_null = bool
 	
+	## cardinality = 0..1
+	is_orbital_slot = bool
+	
+	## cardinality = 0..1
+	###requires either a mining station or a research station defined, even if the deposit is solely planetary
+	station = {
+		<shipclass>
+	}
+	## cardinality = 0..1
+	###the relative weight of the deposit in the orbital tile (1 per planet, always)
+	orbital_weight = { 
+		##cardinality = 0..1
+		weight = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	###the relative weight of the deposit in non-orbital tiles
+	drop_weight = { 
+		##cardinality = 0..1
+		weight = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}

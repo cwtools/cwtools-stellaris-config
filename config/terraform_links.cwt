@@ -1,23 +1,34 @@
+types = {
+	type[terraform_link] = {
+		path = "game/common/terraform"
+	}
+}
+
 terraform_link = {
-	#coutry scope, from = planet - please add this info
+	###country scope, from = planet
 	from = <planet_class>
 	to = <planet_class>
 	energy = int
 	duration = int
 	## cardinality = 0..1
-	condition = { #displayed in game, hence functions like after effect and requires localisations in the same way.
+	###displayed in game, hence functions like after effect and requires localisations in the same way.
+	condition = {
 		## cardinality = 0..100
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## cardinality = 0..1
 	potential = { 
 		## cardinality = 0..100
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## cardinality = 0..1
 	effect = {  
 		## cardinality = 0..100
 		alias_name[effect] = alias_match_left[effect]
 	}
+	## cardinality = 0..1
 	ai_weight = {
+		## cardinality = 0..1
 		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
