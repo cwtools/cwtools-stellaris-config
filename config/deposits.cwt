@@ -3,3 +3,20 @@ types = {
 		path = "game/common/deposit"
 	}
 }
+
+deposit = { 
+	resources = { <resources> = int }
+	is_null = bool ###this makes the deposit transparent, used by vanilla to designate an "empty" deposit.
+	station = { ###requires either a mining station or a research station defined, even if the deposit is solely planetary.
+		<shipclass_mining_station>
+		<shipclass_research_station>
+	}
+	orbital_weight = { ###the relative weight of the deposit in the orbital tile (1 per planet, always)
+		weight = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	drop_weight = { ###the relative weight of the deposit in non-orbital tiles
+		weight = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	
