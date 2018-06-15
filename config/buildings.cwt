@@ -19,16 +19,20 @@ building = {
 		<technology>
 	}
 	cost = {
+		## cardinality = 0..100
 		<resource> = int
 	}
 	base_buildtime = int
 	required_resources = { 
+		## cardinality = 0..100
 		<resource> = int
 	} 
 	produced_resources = { 	
+		## cardinality = 0..100
 		<resource> = int
 	}
 	produced_resource_trigger = { ###scope = country, cannot scope to planet or tile 
+		## cardinality = 0..100
 		modifier = { 
 			alias_name[trigger] = alias_match_left[trigger]
 			resources = {
@@ -38,14 +42,17 @@ building = {
 	}	
 	adjacency_bonus = { 
 		###accepts only tile_building_resource_xyz_add = type modifiers
+		## cardinality = 0..100
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	planet_modifier = { 
 		###accepts planet modifiers
+		## cardinality = 0..100
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	country_modifier = { 
 		###accepts country modifiers
+		## cardinality = 0..100
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	triggered_planet_modifier = { ###scope = planet, owner = country, tile = tile.
