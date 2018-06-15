@@ -36,7 +36,8 @@ building = {
 		modifier = { 
 			alias_name[trigger] = alias_match_left[trigger]
 			resources = {
-				<resources>
+				## cardinality = 1..100
+				<resource> = int
 			}
 		}
 	}	
