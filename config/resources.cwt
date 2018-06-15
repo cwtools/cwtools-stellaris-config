@@ -4,3 +4,41 @@ types = {
 		path = "game/common/strategic_resources"
 	}
 }
+
+resource = {
+	AI_category = resource_category
+	accumulative = bool
+	collect_if_wrong_building = bool
+	accumulated_by_sectors = bool
+	sector_ignore_cost = bool
+	tooltip_decimals = int
+	tradable = bool
+	is_rare = bool
+	is_global = bool
+	is_planet_local = bool
+	max = int
+	base_income = float
+	capital_building_resource = bool ### When placing colony, AI should want to place on this resource
+	modifier = {
+		## cardinality = 0..1
+		alias_name[modifier] = alias_match_left[modifier]
+	}	
+	prerequisites = { <technology> }
+	visibility_prerequisite = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	potential = { 
+		alias_name[trigger] = alias_match_left[trigger]
+	}	
+	
+	resource_category = { ###these refer to different categories. You can new ones by refering to a key defined under strategic_resources
+		subtype[strategic_resource]
+		subtype[energy]
+		subtype[minerals]
+		subtype[food]
+		subtype[physics]
+		subtype[society]
+		subtype[engineering]
+		subtype[influence]
+		subtype[unity]
+	}	
