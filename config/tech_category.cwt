@@ -1,0 +1,15 @@
+enums = {
+	complex_enum[tech_category] = {
+		path = "game/common/technology/category"
+		name = {
+			enum_name
+		}
+	}
+}
+
+tech_category = {
+  key = "name"
+  ###a tech category causes the game to autogenerate a unique modifier:
+  ###category_tech_category_key_research_speed_mult
+  ###each of these modifiers requires localisation and a GFX (gfx/interface/icons/modifiers - same name as the tech_category key)
+}
