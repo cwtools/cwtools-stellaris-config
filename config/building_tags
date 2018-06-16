@@ -1,14 +1,10 @@
 
 types = {
+	# a building tag causes the game to autogenerate two modifiers:
+	# building_tag_construction_speed_mult and building_tag_build_cost_mult
+	# these modifiers require localisation and a GFX (gfx/interface/icons/modifiers - same name as the building_tag key)
+	# the build_cost_mult modifier does not have an effect in game.
 	type[building_tag] = {
 		path = "game/common/building_tags"	
 	}
-}
-
-building_tag = {
-  key = "name"
-  ###a building tag causes the game to autogenerate two modifiers:
-  ###building_tag_construction_speed_mult and building_tag_build_cost_mult
-  ###these modifiers require localisation and a GFX (gfx/interface/icons/modifiers - same name as the building_tag key)
-  ### the build_cost_mult modifier does not have an effect in game.
 }
