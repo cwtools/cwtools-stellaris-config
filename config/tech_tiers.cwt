@@ -7,5 +7,6 @@ types = {
 # Should actually be a number
 ### This should be a number
 technology_tier = {
+	## cardinality = 0..1
     previously_unlocked = int
  }
