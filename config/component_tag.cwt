@@ -1,8 +1,8 @@
-enums = {
-	complex_enum[component_tag] = {
+types = {
+  	# a component tag causes the game to autogenerate three modifiers:
+  	# component_tag_energy_weapon_damage_mult, component_tag_energy_weapon_fire_rate_mult and component_tag_energy_speed_mult
+  	#these modifiers require localisation and a GFX (gfx/interface/icons/modifiers - same name as the component_tag key)
+	type[component_tag] = {
 		path = "game/common/component_tags"
-		name = {
-			enum_name
-		}
 	}
 }
