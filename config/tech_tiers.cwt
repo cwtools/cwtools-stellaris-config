@@ -1,0 +1,12 @@
+types = {
+	type[technology_tier] = {
+		path = "game/common/technology/tier"
+	}
+}
+
+technology_tier = {
+  ## cardinality = 0..100
+  int = {
+    previously_unlocked = int
+  } 
+ } 
