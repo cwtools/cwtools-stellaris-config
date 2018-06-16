@@ -1,0 +1,15 @@
+enums = {
+	complex_enum[tech_tier] = {
+		path = "game/common/technology/tier"
+		name = {
+			enum_name
+		}
+	}
+}
+
+tech_tier = {
+  ## cardinality = 0..100
+  int = {
+    previously_unlocked = int
+  } 
+ } 
