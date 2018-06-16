@@ -4,9 +4,8 @@ types = {
 	}
 }
 
+# Should actually be a number
+### This should be a number
 technology_tier = {
-  ## cardinality = 0..100
-  int = {
     previously_unlocked = int
-  } 
- } 
+ }

@@ -1832,7 +1832,7 @@ alias[trigger:is_point_of_interest] = {
 }
 
 ### Checks if the country's AI prefers weapons using this component tag
-alias[trigger:is_preferred_weapons] = enum[component_tag] #TODO tag
+alias[trigger:is_preferred_weapons] = <component_tag> #TODO tag
 
 ### Checks if the planet is the system's primary star
 alias[trigger:is_primary_star] = bool
