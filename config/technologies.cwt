@@ -15,7 +15,7 @@ types = {
 
 technology = {
 	area = enum[research_areas]
-	tier = <tech_tier>
+	tier = <technology_tier>
 	category = { <technology_category> }
 
 	## cardinality = 0..1
