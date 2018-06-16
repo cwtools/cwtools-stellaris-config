@@ -9,19 +9,13 @@ types = {
 			start_tech = yes
 		}
 	}
-	type[technology_category] = {
-		path = "game/common/technology/category"
-	}
-	type[technology_tier] = {
-		path = "game/common/technology/tier"
-	}
 }
 
 
 
 technology = {
 	area = enum[research_areas]
-	tier = int #should actually check <technology_tier> via @variable
+	tier = <tech_tier>
 	category = { <technology_category> }
 
 	## cardinality = 0..1
