@@ -37,7 +37,7 @@ building = {
 	requires_pop = yes
 	
 	## cardinality = 0..1
-	tags = { localisation }
+	tags = { <building_tag> }
 	
 	## cardinality = 0..1
 	capital = yes
