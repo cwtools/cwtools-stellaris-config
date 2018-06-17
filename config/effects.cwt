@@ -1061,6 +1061,7 @@ alias[effect:change_government] = {
 	## cardinality = 0..1
 	authority = <authority>
 	## cardinality = 0..1
+	### random includes starting civics
 	civics = random
 	## cardinality = 0..1
 	civics = {
@@ -1536,7 +1537,7 @@ alias[effect:create_species] = {
 	name_list = random
 	## cardinality = 0..1
 	name_list = scope[country]
-	
+
 	## cardinality = 0..1
 	pop_ethics = random
 	## cardinality = 0..1
@@ -1581,6 +1582,7 @@ alias[effect:create_country] = {
 	## cardinality = 0..1
 	authority = <authority>
 	## cardinality = 0..1
+	### random includes starting civics
 	civics = random
 	## cardinality = 0..1
 	civics = {
@@ -1593,8 +1595,8 @@ alias[effect:create_country] = {
 	species = last_created
 	## cardinality = 0..1
 	species = scope[country]
-	## cardinality = 0..1
-	species = scope[pop]
+	#Does not support pop scope according to had
+	#species = scope[pop]
 	## cardinality = 0..1
  	species = <buildable_pop>
 	## cardinality = 0..1
@@ -1649,6 +1651,7 @@ alias[effect:create_rebels] = {
 	authority = random
 	authority = <authority>
 	authority = scope[country]
+	### random includes starting civics
 	civics = random
 	civics = {
 		## cardinality = 2..3
