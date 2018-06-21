@@ -4,3 +4,34 @@ types = {
 		path = "game/common/ship_behaviors"
 	}
 }
+
+ship_behavior = {
+	name = "name"
+	desc = <localisation>
+	preferred_attack_range = int
+	formation_distance = int
+	return_to_formation_distance = int
+	collision_awareness = int
+	collision_strafe = int
+	collision_radius = int
+	attack_move_pattern = <move_pattern>
+	passive_move_pattern = <move_pattern>
+	source_target_anchor_factor = float
+	combat_source_anchor = <combat_anchor>
+	combat_target_anchor = <combat_anchor>
+	ignore_combat_movement = bool
+}
+enum = { 
+	enum[move_pattern] = { 
+		none
+		stationary
+		charge
+		orbit
+		follow
+		stay_at_range
+	}
+	enum[combat_anchor] = {
+		root
+		parent
+	}
+}

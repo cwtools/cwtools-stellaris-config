@@ -3199,6 +3199,8 @@ alias[effect:start_colony] = {
 		## cardinality = 2..2
 		ethic = <ethos>
 	}
+	## cardinality = 0..1
+	ethos = random
 }
 
 ### Stops the crisis ambient loop
