@@ -3096,7 +3096,9 @@ alias[effect:star] = { alias_name[effect] = alias_match_left[effect] }
 alias[effect:start_colony] = {
 	owner = scope[country]
 	species = scope[species] #TODO species target
+	## cardinality = 0..1
 	ethos = random
+	## cardinality = 0..1
 	ethos = scope[species] #TODO ethic block
 }
 
