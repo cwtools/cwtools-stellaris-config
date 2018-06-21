@@ -1,10 +1,6 @@
 types = {
 	type[building] = {
 		path = "game/common/buildings"
-		
-		subtype[event_building] = {
-			event_building = yes
-		}
 	}
 }
 
@@ -34,7 +30,7 @@ building = {
 	## cardinality = 0..1
 	defense_armies = int
 	## cardinality = 0..1
-	requires_pop = yes
+	requires_pop = bool
 	
 	## cardinality = 0..1
 	tags = { <building_tag> }
@@ -110,7 +106,7 @@ building = {
 	###scope = planet, owner = country, tile = tile.
 	triggered_planet_modifier = { 
 		key = localisation
-		trigger = { 
+		potential = { 
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 		modifier = { 
@@ -122,16 +118,12 @@ building = {
 	planet_modifier_with_pop_trigger = { 
 		key = localisation
 		## cardinality = 0..1
-		trigger = { 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
-		modifier = { 
-			alias_name[modifier] = alias_match_left[modifier]
-		}
-		
-		## cardinality = 0..1
 		potential = { 
 			alias_name[trigger] = alias_match_left[trigger]
+		}		
+		## cardinality = 0..1
+		modifier = { 
+			alias_name[modifier] = alias_match_left[modifier]
 		}
 	}
 	## cardinality = 0..1
@@ -167,8 +159,10 @@ building = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 	## cardinality = 0..1
-	###can have multiple keys
-	upgrades = { <building> } 
+	upgrades = { 
+		## cardinality = 0..100
+		<building> 
+	} 
 	
 	## cardinality = 0..1
 	###scope tile, from/planet = planet, owner = country
