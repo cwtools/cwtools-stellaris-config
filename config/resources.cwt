@@ -6,39 +6,58 @@ types = {
 }
 
 resource = {
-	AI_category = resource_category
+	## cardinality = 0..1
+	AI_category = enum[resource_category]
+	## cardinality = 0..1
 	accumulative = bool
+	## cardinality = 0..1
 	collect_if_wrong_building = bool
+	## cardinality = 0..1
 	accumulated_by_sectors = bool
+	## cardinality = 0..1
 	sector_ignore_cost = bool
+	## cardinality = 0..1
 	tooltip_decimals = int
+	## cardinality = 0..1
 	tradable = bool
+	## cardinality = 0..1
 	is_rare = bool
+	## cardinality = 0..1
 	is_global = bool
+	## cardinality = 0..1
 	is_planet_local = bool
+	## cardinality = 0..1
 	max = int
+	## cardinality = 0..1
 	base_income = float
+	## cardinality = 0..1
 	capital_building_resource = bool ### When placing colony, AI should want to place on this resource
+	## cardinality = 0..1
 	modifier = {
 		## cardinality = 0..1
 		alias_name[modifier] = alias_match_left[modifier]
-	}	
+	}
+	## cardinality = 0..1
 	prerequisites = { <technology> }
+	## cardinality = 0..1
 	visibility_prerequisite = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	potential = { 
+	## cardinality = 0..1
+	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
-	}	
-	
-	resource_category = { ###these refer to different categories. You can new ones by refering to a key defined under strategic_resources
-		subtype[strategic_resource]
-		subtype[energy]
-		subtype[minerals]
-		subtype[food]
-		subtype[physics]
-		subtype[society]
-		subtype[engineering]
-		subtype[influence]
-		subtype[unity]
-	}	
+	}
+}
+enums = {
+	enum[resource_category] = { ###these refer to different categories. You can new ones by refering to a key defined under strategic_resources
+		strategic_resource
+		energy
+		minerals
+		food
+		physics
+		society
+		engineering
+		influence
+		unity
+	}
+}

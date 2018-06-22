@@ -6,23 +6,49 @@ types = {
 }
 
 ship_behavior = {
-	name = "name"
+	name = scalar
+	## cardinality = 0..1
 	desc = <localisation>
+
+	## cardinality = 0..1
 	preferred_attack_range = int
+	## cardinality = 0..1
+	preferred_attack_range = enum[combat_range]
+
+	## cardinality = 0..1
 	formation_distance = int
+	## cardinality = 0..1
+	formation_distance = enum[combat_range]
+
+	## cardinality = 0..1
 	return_to_formation_distance = int
+	## cardinality = 0..1
+	return_to_formation_distance = enum[combat_range]
+
+	## cardinality = 0..1
 	collision_awareness = int
+
+	## cardinality = 0..1
 	collision_strafe = int
+
+	## cardinality = 0..1
 	collision_radius = int
-	attack_move_pattern = <move_pattern>
-	passive_move_pattern = <move_pattern>
+	## cardinality = 0..1
+	attack_move_pattern = enum[move_pattern]
+	## cardinality = 0..1
+	passive_move_pattern = enum[move_pattern]
+
+	## cardinality = 0..1
 	source_target_anchor_factor = float
-	combat_source_anchor = <combat_anchor>
-	combat_target_anchor = <combat_anchor>
+	## cardinality = 0..1
+	combat_source_anchor = enum[combat_anchor]
+	## cardinality = 0..1
+	combat_target_anchor = enum[combat_anchor]
+	## cardinality = 0..1
 	ignore_combat_movement = bool
 }
-enum = { 
-	enum[move_pattern] = { 
+enums = {
+	enum[move_pattern] = {
 		none
 		stationary
 		charge
@@ -33,5 +59,10 @@ enum = {
 	enum[combat_anchor] = {
 		root
 		parent
+	}
+	enum[combat_range] = {
+		min
+		max
+		median
 	}
 }
