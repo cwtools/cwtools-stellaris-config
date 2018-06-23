@@ -102,7 +102,7 @@ building = {
 		## cardinality = 0..100
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	## cardinality = 0..1
+	## cardinality = 0..100
 	###scope = planet, owner = country, tile = tile.
 	triggered_planet_modifier = { 
 		key = localisation
