@@ -3194,9 +3194,11 @@ alias[effect:star] = { alias_name[effect] = alias_match_left[effect] }
 alias[effect:start_colony] = {
 	owner = scope[country]
 	species = scope[species] #TODO species target
+	## cardinality = 0..1
 	ethos = scope[species] #Yes, this is correct. No, I don't know why.
+	## cardinality = 0..1
 	ethos = {
-		## cardinality = 2..2
+		## cardinality = 0..10 #some mod allow multiple ethics.
 		ethic = <ethos>
 	}
 	## cardinality = 0..1
