@@ -340,7 +340,7 @@ alias[trigger:any_war_participant] = {
 
 
 
-## push_scope = pop_faction
+## replace_scope = { this = pop_faction }
 #Count triggers: Should all check for < > on the ints
 alias[trigger:count_pop_factions] = {
 	count = int
@@ -350,7 +350,7 @@ alias[trigger:count_pop_factions] = {
 	}
 }
 
-## push_scope = species
+## replace_scope = { this = species }
 alias[trigger:count_species] = {
 	count = int
 	## cardinality = 0..1
@@ -359,7 +359,7 @@ alias[trigger:count_species] = {
 	}
 }
 
-## push_scope = species
+## replace_scope = { this = species }
 alias[trigger:count_exact_species] = {
 	count = int
 	## cardinality = 0..1
@@ -368,7 +368,7 @@ alias[trigger:count_exact_species] = {
 	}
 }
 
-## push_scope = ship
+## replace_scope = { this = army }
 alias[trigger:count_fleet_ships] = {
 	count = int
 	## cardinality = 0..1
@@ -377,7 +377,7 @@ alias[trigger:count_fleet_ships] = {
 	}
 }
 
-## push_scope = ship
+## replace_scope = { this = army }
 alias[trigger:count_system_ships] = {
 	count = int
 	## cardinality = 0..1
@@ -386,7 +386,7 @@ alias[trigger:count_system_ships] = {
 	}
 }
 
-## push_scope = army
+## replace_scope = { this = army }
 alias[trigger:count_armies] = {
 	count = int
 	## cardinality = 0..1
@@ -396,6 +396,7 @@ alias[trigger:count_armies] = {
 }
 
 ## push_scope = ship
+## replace_scope = { this = ship }
 alias[trigger:count_ships] = {
 	count = int
 	## cardinality = 0..1
@@ -404,7 +405,7 @@ alias[trigger:count_ships] = {
 	}
 }
 
-## push_scope = ship
+## replace_scope = { this = ship }
 alias[trigger:count_owned_ships] = {
 	count = int
 	## cardinality = 0..1
@@ -413,7 +414,7 @@ alias[trigger:count_owned_ships] = {
 	}
 }
 
-## push_scope = pop
+## replace_scope = { this = pop }
 alias[trigger:count_owned_pops] = {
 	count = int
 	## cardinality = 0..1
@@ -422,7 +423,7 @@ alias[trigger:count_owned_pops] = {
 	}
 }
 
-## push_scope = pop
+## replace_scope = { this = pop }
 alias[trigger:count_pops] = {
 	count = int
 	## cardinality = 0..1
@@ -431,6 +432,7 @@ alias[trigger:count_pops] = {
 	}
 }
 
+## replace_scope = { this = country }
 alias[trigger:count_diplo_ties] = {
 	count = int
 	## cardinality = 0..1
