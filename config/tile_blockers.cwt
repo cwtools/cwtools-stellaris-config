@@ -9,12 +9,14 @@ tile_blocker = {
 	picture = <tile_blocker> #this is used to link to the icon of another tile blocker
 	## cardinality = 0..1
 	time = int
+	## cardinality = 0..1
 	cost = {
 		## cardinality = 0..1
 		energy = int
 		## cardinality = 0..1
 		minerals = int
 	}
+	## cardinality = 0..1
 	spawn_chance = {
 		## cardinality = 0..1
 		factor = float
@@ -26,7 +28,7 @@ tile_blocker = {
 	prerequisites = { <technology> }
 	## cardinality = 0..1
 	adjacency_bonus = { ###accepts only tile_building_resource_xyz_add = type modifiers
-		## cardinality = 0..1
+		## cardinality = 0..100
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 }
