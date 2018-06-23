@@ -164,7 +164,7 @@ event = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 
-	## cardinality = 0..100
+	## cardinality = 0..inf
 	option = {
 		name = localisation
 		
