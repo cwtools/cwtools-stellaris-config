@@ -11,4 +11,8 @@ species_archetype = {
 	species_trait_points = int
 	## cardinality = 0..1
 	species_max_traits = int
+	## cardinality = 0..1
+	inherit_traits_from = {
+		<species_archetype>
+	}
 }

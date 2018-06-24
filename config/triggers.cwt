@@ -22,17 +22,6 @@ alias[trigger:else] = { alias_name[trigger] = alias_match_left[trigger] }
 
 #Scopes
 
-alias[trigger:THIS] = { alias_name[trigger] = alias_match_left[trigger] }
-alias[trigger:ROOT] = { alias_name[trigger] = alias_match_left[trigger] }
-alias[trigger:PREV] = { alias_name[trigger] = alias_match_left[trigger] }
-alias[trigger:PREVPREV] = { alias_name[trigger] = alias_match_left[trigger] }
-alias[trigger:PREVPREVPREV] = { alias_name[trigger] = alias_match_left[trigger] }
-alias[trigger:PREVPREVPREVPREV] = { alias_name[trigger] = alias_match_left[trigger] }
-alias[trigger:FROM] = { alias_name[trigger] = alias_match_left[trigger] }
-alias[trigger:FROMFROM] = { alias_name[trigger] = alias_match_left[trigger] }
-alias[trigger:FROMFROMFROM] = { alias_name[trigger] = alias_match_left[trigger] }
-alias[trigger:FROMFROMFROMFROM] = { alias_name[trigger] = alias_match_left[trigger] }
-
 ## push_scope = species
 alias[trigger:species] = {
 	alias_name[trigger] = alias_match_left[trigger]

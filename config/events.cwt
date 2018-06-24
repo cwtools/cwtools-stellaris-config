@@ -89,7 +89,7 @@ event = {
 			trigger = { alias_name[trigger] = alias_match_left[trigger] }
 		}
 	}
-	
+
 	## cardinality = 0..1
 	message_desc = localisation
 
@@ -114,6 +114,9 @@ event = {
 	## cardinality = 0..1
 	###Forces the event to pop-up even if player has supressed pop ups
 	auto_opens = bool
+
+	## cardinality = 0..1
+	auto_select = bool
 
 	subtype[!triggered]
 	## cardinality = 0..1
@@ -167,7 +170,7 @@ event = {
 	## cardinality = 0..inf
 	option = {
 		name = localisation
-		
+
 		## cardinality = 0..1
 		sound = scalar
 

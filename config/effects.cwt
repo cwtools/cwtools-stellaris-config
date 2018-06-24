@@ -20,17 +20,6 @@ alias[effect:create_starbase] = {
 	effect = { alias_name[effect] = alias_match_left[effect] }
 }
 
-alias[effect:THIS] = { alias_name[effect] = alias_match_left[effect] }
-alias[effect:ROOT] = { alias_name[effect] = alias_match_left[effect] }
-alias[effect:PREV] = { alias_name[effect] = alias_match_left[effect] }
-alias[effect:PREVPREV] = { alias_name[effect] = alias_match_left[effect] }
-alias[effect:PREVPREVPREV] = { alias_name[effect] = alias_match_left[effect] }
-alias[effect:PREVPREVPREVPREV] = { alias_name[effect] = alias_match_left[effect] }
-alias[effect:FROM] = { alias_name[effect] = alias_match_left[effect] }
-alias[effect:FROMFROM] = { alias_name[effect] = alias_match_left[effect] }
-alias[effect:FROMFROMFROM] = { alias_name[effect] = alias_match_left[effect] }
-alias[effect:FROMFROMFROMFROM] = { alias_name[effect] = alias_match_left[effect] }
-
 alias[effect:hidden_effect] = { alias_name[effect] = alias_match_left[effect] }
 
 
@@ -1472,9 +1461,9 @@ alias[effect:create_species] = {
 	portrait = scalar #random/<portrait id>
 	## cardinality = 0..1
 	homeworld = scope[planet]
-	## cardinality = 1..2
+	## cardinality = 0..1
 	traits = random
-	## cardinality = 1..2
+	## cardinality = 0..1
 	##push_scope = leader
 	traits = {
 		## cardinality = 1..10
@@ -2150,6 +2139,7 @@ alias[effect:best_tile_for_pop] = { alias_name[effect] = alias_match_left[effect
 ### Creates a buildable pop on the scoped tile/planet
 alias[effect:build_pop] = { #TOOO trigger docs error
 	name = <buildable_pop>
+	## cardinality = 0..1
 	grown = bool
 }
 
@@ -2576,7 +2566,7 @@ alias[effect:dismantle] = yes
 alias[effect:end_rivalry] = scope[country]
 
 ### Send endgame telemetry event
-alias[effect:endgame_telemetry] = yes
+alias[effect:endgame_telemetry] = scalar
 
 ### Establish communications between scoped country and target country
 alias[effect:establish_communications] = scope[country]
@@ -3194,9 +3184,11 @@ alias[effect:star] = { alias_name[effect] = alias_match_left[effect] }
 alias[effect:start_colony] = {
 	owner = scope[country]
 	species = scope[species] #TODO species target
+	## cardinality = 0..1
 	ethos = scope[species] #Yes, this is correct. No, I don't know why.
+	## cardinality = 0..1
 	ethos = {
-		## cardinality = 2..2
+		## cardinality = 1..10
 		ethic = <ethos>
 	}
 	## cardinality = 0..1

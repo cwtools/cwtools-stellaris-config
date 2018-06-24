@@ -196,5 +196,7 @@ enums = {
 		biological
 		capital
 		psionics
+		engineering
+		ai
 	}
 }
