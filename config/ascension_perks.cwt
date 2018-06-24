@@ -9,16 +9,19 @@ types = {
 
 ascension_perk = {
 	## cardinality = 0..1
+	## replace_scope = { root = country this = country }
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
 	## cardinality = 0..1
+	## replace_scope = { root = country this = country }
 	possible = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
 	## cardinality = 0..1
+	## replace_scope = { root = country this = country }
 	on_enabled = {
 		alias_name[effect] = alias_match_left[effect]
 	}
@@ -37,6 +40,7 @@ ascension_perk = {
 	}
 
 	## cardinality = 0..1
+	## replace_scope = { root = country this = country }
 	ai_weight = {
 		factor = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]

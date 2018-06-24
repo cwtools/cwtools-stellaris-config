@@ -18,7 +18,8 @@ types = {
 	}
 }
 
-
+# TODO Confirm
+# TODO Document
 edict = {
 	name = scalar
 	length = int

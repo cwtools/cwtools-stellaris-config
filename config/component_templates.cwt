@@ -1,0 +1,496 @@
+types = {
+	type[component_template] = {
+		name_field = "key"
+		path = "game/common/component_templates"
+		## type_key_filter = utility_component_template
+		subtype[utility_component_template] = {
+		}
+		## type_key_filter = weapon_component_template
+		subtype[weapon_component_template] = {
+		}
+		## type_key_filter = strike_craft_component_template
+		subtype[strike_craft_component_template] = {
+		}
+	}
+}
+# TODO Confirm
+# TODO Document
+# TODO Expand
+
+component_template = {
+	key = scalar
+	icon = scalar #link to a GFX_ link defined under /interface
+	icon_frame = int
+	## cardinality = 0..1
+	prerequisites = { <technology> }
+	## cardinality = 0..1
+	component_set = <component_set>
+	## cardinality = 0..1
+	hidden = bool
+	## cardinality = 0..1
+	class_restriction = {
+		enum[shipsize_class]
+	}
+	## cardinality = 0..1
+	upgrades_to = <component_template>
+	## cardinality = 0..1
+	tags = { <component_tag> }
+	## cardinality = 0..1
+	ai_tags = {
+		## cardinality = 0..1
+		<component_tag>
+	}
+	## cardinality = 0..1
+	size_restriction =  <shipsize>
+	## cardinality = 0..1
+	should_ai_use = bool
+	subtype[utility_component_template] = {
+		power = int
+		cost = int
+		size = enum[utility_slot_size]
+		## cardinality = 0..1
+		modifier = {
+			## cardinality = 0..1
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		## cardinality = 0..1
+		ship_modifier = {
+			## cardinality = 0..1
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		## cardinality = 0..1
+		ai_weight = {
+			## cardinality = 0..1
+			weight = float
+			alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		}
+		## cardinality = 0..1
+		ftl = bool
+		## cardinality = 0..1
+		jumpdrive = bool
+		## cardinality = 0..1
+		ship_behavior = <ship_behavior>
+		## cardinality = 0..1
+		sensor_range = int
+		## cardinality = 0..1
+		hyperlane_range = int
+		friendly_aura = {
+			name = scalar
+			radius = int
+			apply_on = enum[aura_types]
+			stack_info = {
+				id = scalar
+				priority = int
+			}
+
+			modifier = {
+				## cardinality = 0..1
+				alias_name[modifier] = alias_match_left[modifier]
+			}
+
+			graphics = {
+				area_effect = {
+					entity = scalar #tied to defined entites under gfx
+					dynamic_scale = bool
+				}
+				ship_effect = {
+					entity = scalar #tied to defined entites under gfx
+					dynamic_scale = bool
+				}
+			}
+		}
+		hostile_aura = {
+			name = scalar
+			radius = int
+			apply_on = enum[aura_types]
+			stack_info = {
+				id = scalar
+				priority = int
+			}
+
+			modifier = {
+				## cardinality = 0..1
+				alias_name[modifier] = alias_match_left[modifier]
+			}
+
+			## cardinality = 0..1
+			graphics = {
+				area_effect = {
+					entity = scalar #tied to defined entites under gfx
+					dynamic_scale = bool
+				}
+				ship_effect = {
+					entity = scalar #tied to defined entites under gfx
+					dynamic_scale = bool
+				}
+			}
+			## cardinality = 0..1
+			damage_per_day = {
+				## cardinality = 0..1
+				accuracy = 1.0
+				## cardinality = 0..1
+				damage = { min = 5 max = 20 }
+				## cardinality = 0..1
+				shield_damage = 10.0
+				## cardinality = 0..1
+				shield_penetration = 0.1
+				## cardinality = 0..1
+				armor_penetration = 0.50
+			}
+		}
+	}
+	subtype[weapon_component_template] = {
+		size = enum[weapon_slot_size]
+		type = enum[weapon_type]
+		projectile_gfx = scalar #tied to defined entites under gfx
+		## cardinality = 0..1
+		color = {
+			## cardinality = 3..4
+			float
+		}
+		## cardinality = 0..1
+		ai_tag_weight = int
+		## cardinality = 0..1
+		entity = scalar #tied to defined entites under gfx
+		## cardinality = 0..1
+		power = float
+		## cardinality = 0..1
+		cost = float #minerals
+		## cardinality = 0..1
+		use_ship_kill_target = bool
+		## cardinality = 0..1
+		firing_arc = float
+		## cardinality = 0..1
+		min_range = float
+		## cardinality = 0..1
+		prio_projectile = bool
+		## cardinality = 0..1
+		static_rotation = bool #link to a GFX_ link defined under /interface
+		## cardinality = 0..1
+		planet_destruction_gfx = scalar
+		## cardinality = 0..1
+		target_weights = {
+			## cardinality = 1..inf
+			scalar = int
+		}
+
+		#these are optional, vanilla uses an .csv file to create these
+		## cardinality = 0..1
+		damage = { min = float max = float }
+		## cardinality = 0..1
+		shield_damage = float
+		## cardinality = 0..1
+		shield_penetration = float
+		## cardinality = 0..1
+		hull_damage = float
+		## cardinality = 0..1
+		armor_damage = float
+		## cardinality = 0..1
+		armor_penetration = float
+		## cardinality = 0..1
+		windup = { min = int max = int }
+		## cardinality = 0..1
+		total_fire_time = int
+		## cardinality = 0..1
+		range = int
+		## cardinality = 0..1
+		accuracy = float
+		## cardinality = 0..1
+		tracking = float
+		## cardinality = 0..1
+		#missiles only
+		## cardinality = 0..1
+		missile_speed = float
+		## cardinality = 0..1
+		missile_evasion = float
+		## cardinality = 0..1
+		missile_health = float
+		## cardinality = 0..1
+		missile_armor = float
+		## cardinality = 0..1
+		missile_shield = float
+		## cardinality = 0..1
+		missile_retarget_range = int
+	}
+	subtype[strike_craft_component_template] = {
+		size = enum[weapon_slot_size]
+		entity = scalar #tied to defined entites under gfx
+		weapon_type = enum[weapon_type]
+		ship_behavior = <ship_behavior>
+		projectile_gfx = scalar #tied to defined entites under gfx
+		power = int
+		cost = int
+		count = int
+		regeneration_per_day = int
+		launch_time = int
+		damage = { min = float max = float }
+		cooldown = float
+		range = int
+		accuracy = float
+		tracking = float
+		health = float
+		armor = int
+		shield = int
+		evasion = float
+		speed = int
+		rotation_speed = float
+		acceleration = float
+		shield_damage = float
+		shield_penetration = float
+		armor_damage = float
+		armor_penetration = float
+		hull_damage = float
+		## cardinality = 0..1
+		attack_range = int
+	}
+}
+
+# component_template = {
+# 	key = scalar
+# 	icon = scalar #link to a GFX_ link defined under /interface
+# 	icon_frame = int
+
+# 	subtype[utility_component_template] = {
+# 		size = enum[utility_slot_size]
+# 		power = float
+# 		cost = float
+
+# 	}
+# 	subtype[weapon_component_template] = {
+# 		size = enum[weapon_slot_size]
+# 		#these are optional, vanilla uses an .csv file to create these
+# 		damage = { min = float max = float }
+# 		shield_damage = float
+# 		shield_penetration = float
+# 		hull_damage = float
+# 		armor_damage = float
+# 		armor_penetration = float
+# 		windup = { min = int max = int }
+# 		total_fire_time = int
+# 		range = int
+# 		accuracy = float
+# 		tracking = float
+# 		#missiles only
+# 		missile_speed = float
+# 		missile_evasion = float
+# 		missile_health = float
+# 		missile_armor = float
+# 		missile_shield = float
+# 		missile_retarget_range = int
+# 	}
+# 	subtype[strike_craft_component_template] = {
+# 		size = enum[weapon_slot_size]
+# 		count = int
+# 		regeneration_per_day = int
+# 		launch_time = int
+# 		damage = { min = float max = float }
+# 		cooldown = float
+# 		range = int
+# 		accuracy = float
+# 		tracking = float
+# 		health = float
+# 		armor = int
+# 		shield = int
+# 		evasion = float
+# 		speed = int
+# 		rotation_speed = float
+# 		acceleration = float
+# 		shield_penetration = float
+# 		armor_damage = float
+# 		armor_penetration = float
+# 		hull_damage = float
+# 	}
+
+# 	icon = scalar #link to a GFX_ link defined under /interface
+# 	icon_frame = int
+# 	power = float
+# 	cost = float ###minerals
+# 	## cardinality = 0..1
+# 	ship_behavior = <ship_behavior>
+# 	## cardinality = 0..1
+# 	hidden = bool
+# 	## cardinality = 0..1
+# 	should_ai_use = bool
+# 	## cardinality = 0..1
+# 	ftl = bool
+# 	## cardinality = 0..1
+# 	sensor_range = int
+# 	## cardinality = 0..1
+# 	hyperlane_range = int
+# 	## cardinality = 0..1
+# 	size_restriction =  <shipsize>
+# 	## cardinality = 0..1
+# 	class_restriction = <shipsize_class>
+# 	component_set = <component_set>
+# 	## cardinality = 0..1
+# 	upgrades_to = <utility_component_template>
+# 	## cardinality = 0..1
+# 	prerequisites = { <technology> }
+# 	## cardinality = 0..1
+# 	hostile_aura = {
+# 		<aura_effect>
+# 	}
+# 	## cardinality = 0..1
+# 	friendly_aura = {
+# 		<aura_effect>
+# 	}
+# 	## cardinality = 0..1
+# 	valid_for_country = { ###scope = country
+# 	## cardinality = 0..1
+# 	weight = float
+# 	alias_name[modifier_rule] = alias_match_left[modifier_rule]
+# 	}
+# 	## cardinality = 0..1
+# 	modifier = {
+# 		## cardinality = 0..1
+# 		alias_name[modifier] = alias_match_left[modifier]
+# 	}
+# 	## cardinality = 0..1
+# 	ship_modifier = {
+# 		## cardinality = 0..1
+# 		alias_name[modifier] = alias_match_left[modifier]
+# 	}
+# 	## cardinality = 0..1
+# 	ai_weight = {
+# 		## cardinality = 0..1
+# 		weight = float
+# 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+# 	}
+# }
+
+# aura_effect = {
+# 	name = "name"
+# 	radius = int
+# 	apply_on = ###accepts fleets or ships
+# 	stack_info = {
+# 		id = #unique or shared key
+# 		priority = int
+# 	}
+
+# 	modifier = {
+# 		## cardinality = 0..1
+# 		alias_name[modifier] = alias_match_left[modifier]
+# 	}
+
+# 	graphics = {
+# 		area_effect = {
+# 			entity = scalar #tied to defined entites under gfx
+# 			dynamic_scale = bool
+# 		}
+# 		ship_effect = {
+# 			entity = scalar #tied to defined entites under gfx
+# 			dynamic_scale = bool
+# 		}
+# 	}
+# }
+
+# weapon_component_template = {
+# 	key = "name"
+# 	weapon_type = <weapon_type>
+# 	projectile_gfx = scalar #tied to defined entites under gfx
+# 	tags = { <component_tags> }
+# 	ai_tags = {
+# 		## cardinality = 0..1
+# 		<component_tags>
+# 	}
+# 	color = <hsv>
+# 	ai_tag_weight = int
+# 	entity = scalar #tied to defined entites under gfx
+# 	size = <weapon_slot_size>
+# 	icon = scalar #link to a GFX_ link defined under /interface
+# 	icon_frame = int
+# 	power = float
+# 	cost = float ###minerals
+# 	hidden = bool
+# 	should_ai_use = bool
+# 	size_restriction =  <shipsize>
+# 	class_restriction = <shipsize_class>
+# 	component_set = <component_set>
+# 	use_ship_kill_target = bool
+# 	firing_arc = float
+# 	min_range = float
+# 	prio_projectile = bool
+# 	static_rotation = bool #link to a GFX_ link defined under /interface
+# 	planet_destruction_gfx = scalar
+# 	upgrades_to = <weapon_component_template>
+# 	prerequisites = { <technology> }
+# 	valid_for_country = { ###scope = country
+# 		## cardinality = 0..1
+# 		weight = float
+# 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+# 	}
+# 	ai_weight = {
+# 		## cardinality = 0..1
+# 		weight = float
+# 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+# 	}
+
+
+# }
+enums = {
+	enum[weapon_type] = {
+		instant
+		missile
+		point_defence
+		planet_killer
+	}
+	enum[weapon_slot_size] = {
+		extra_large
+		large
+		medium
+		small
+		torpedo
+		point_defence
+		planet_killer
+		titanic
+	}
+	enum[utility_slot_size] = {
+		extra_large
+		large
+		medium
+		small
+		aux
+	}
+	enum[aura_types] = {
+		ships
+		fleets
+	}
+}
+
+# strike_craft_component_template = {
+# 	key = "name"
+# 	weapon_type = <weapon_type>
+# 	projectile_gfx = scalar #tied to defined entites under gfx
+# 	tags = { <component_tags> }
+# 	ai_tags = {
+# 		## cardinality = 0..1
+# 		<component_tags>
+# 	}
+# 	ai_tag_weight = int
+# 	entity = scalar #tied to defined entites under gfx
+# 	size = <weapon_slot_size>
+# 	icon = scalar #link to a GFX_ link defined under /interface
+# 	icon_frame = int
+# 	power = float
+# 	cost = float ###minerals
+# 	ship_behavior = <ship_behavior>
+# 	hidden = bool
+# 	should_ai_use = bool
+# 	size_restriction =  <shipsize>
+# 	class_restriction = <shipsize_class>
+# 	component_set = <component_set>
+# 	upgrades_to = <weapon_component_template>
+# 	prerequisites = { <technology> }
+# 	valid_for_country = { ###scope = country
+# 		## cardinality = 0..1
+# 		weight = float
+# 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+# 	}
+# 	ai_weight = {
+# 		## cardinality = 0..1
+# 		weight = float
+# 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+# 	}
+# 	ship_behavior = <ship_behavior>
+
+# }

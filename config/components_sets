@@ -1,12 +1,13 @@
 
 types = {
 	type[component_set] = {
-    path = "game/common/component_sets"		
+    path = "game/common/component_sets"
 }
 
-component_set = {   
+component_set = {
    	key = "name"
-		icon = scalar ###links to GFX_ defined under /interface/*.gfx (vanilla is icons.gfx)
+    ###links to GFX_ defined under /interface/*.gfx (vanilla is icons.gfx)
+	icon = scalar
     icon_frame = int
     required_component_set = bool
-} 
+}

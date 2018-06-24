@@ -1,0 +1,22 @@
+types = {
+	type[button_effect] = {
+		path = "game/common/button_effects"
+	}
+}
+
+# TODO Confirm
+# TODO Document
+button_effect = {
+	## replace_scope = { this = any root = any from = country }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## replace_scope = { this = any root = any from = country }
+	allow = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## replace_scope = { this = any root = any from = country }
+	effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+}

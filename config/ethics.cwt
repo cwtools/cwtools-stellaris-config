@@ -13,7 +13,8 @@ types = {
 	}
 }
 
-
+# TODO Confirm
+# TODO Document
 ethos = {
 	subtype[ethic_categories] = {
 		## cardinality = 0..100
@@ -61,6 +62,7 @@ ethos = {
 		## cardinality = 0..100
 		pop_attraction_tag = {
 			desc = localisation
+			## replace_scope = { root = country this = country }
 			###Scope = country
 			trigger = {
 				alias_name[trigger] = alias_match_left[trigger]
@@ -69,12 +71,14 @@ ethos = {
 
 		## cardinality = 0..1
 		###Root = country
+		## replace_scope = { root = country this = country }
 		country_attraction = {
 			value = float
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		}
 		## cardinality = 0..1
 		###Root = pop, from = planet
+		## replace_scope = { root = pop this = pop from = planet }
 		pop_attraction = {
 			value = float
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]

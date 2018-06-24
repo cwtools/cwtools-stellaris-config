@@ -4,16 +4,18 @@ types = {
 	}
 }
 
-deposit = { 
+#TODO Confirm
+#TODO Document
+deposit = {
 	## cardinality = 0..1
 	resources = { <resource> = int }
 	## cardinality = 0..1
 	###this makes the deposit transparent, used by vanilla to designate an "empty" deposit.
 	is_null = bool
-	
+
 	## cardinality = 0..1
 	is_orbital_slot = bool
-	
+
 	## cardinality = 0..1
 	###requires either a mining station or a research station defined, even if the deposit is solely planetary
 	station = {
@@ -21,13 +23,13 @@ deposit = {
 	}
 	## cardinality = 0..1
 	###the relative weight of the deposit in the orbital tile (1 per planet, always)
-	orbital_weight = { 
+	orbital_weight = {
 		##cardinality = 0..1
 		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	###the relative weight of the deposit in non-orbital tiles
-	drop_weight = { 
+	drop_weight = {
 		##cardinality = 0..1
 		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]

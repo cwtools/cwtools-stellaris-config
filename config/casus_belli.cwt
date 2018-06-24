@@ -5,6 +5,8 @@ types = {
 	}
 }
 
+# TODO Confirm
+# TODO Document
 casus_belli = {
 	#not needed?
 	#casus_belli = <casus_belli>
