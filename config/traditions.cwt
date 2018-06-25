@@ -17,7 +17,7 @@ enums = {
 
 tradition = {
 	modifier = { ###accepts only country modifiers
-		## cardinality = 0..100
+		## cardinality = 0..inf
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	## replace_scope = { this = country root = country }
@@ -30,12 +30,12 @@ tradition = {
 	}
 	## replace_scope = { this = country root = country }
 	possible = { ###scope = country
-		## cardinality = 0..100
+		## cardinality = 0..inf
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	 ## replace_scope = { this = country root = country }
 	on_enabled = { 
-		## cardinality = 0..100
+		## cardinality = 0..inf
 		alias_name[effect] = alias_match_left[effect]
 	}	
 }	
@@ -63,7 +63,7 @@ tradition_swap = {
 	}	
 	## replace_scope = { this = country root = country }
 	on_enabled = { 
-		## cardinality = 0..100
+		## cardinality = 0..inf
 		alias_name[effect] = alias_match_left[effect]
 	}	
 }	
