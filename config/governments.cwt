@@ -19,7 +19,7 @@ civic = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
-	icon = filepath #TODO graphics
+	icon = filepath
 	## cardinality = 0..1
 	### requirements list, supports country_type, ethics, authority and civics. See ../readme_requirements.txt
 	potential = {
