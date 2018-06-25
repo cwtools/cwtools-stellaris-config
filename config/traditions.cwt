@@ -17,9 +17,10 @@ enums = {
 
 tradition = {
 	modifier = { ###accepts only country modifiers
-		## cardinality = 0..1
+		## cardinality = 0..100
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
+	## replace_scope = { this = country root = country }
 	ai_weight = { ### the ai_weight in traditions applies both to the main traditions and the tradition swaps, there are no seperate fields. 
 		## cardinality = 0..1
 		factor = float
@@ -27,9 +28,16 @@ tradition = {
 		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]	
 	}
+	## replace_scope = { this = country root = country }
 	possible = { ###scope = country
+		## cardinality = 0..100
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	 ## replace_scope = { this = country root = country }
+	on_enabled = { 
+		## cardinality = 0..100
+		alias_name[effect] = alias_match_left[effect]
+	}	
 }	
 
 tradition_swap = {
@@ -41,6 +49,7 @@ tradition_swap = {
 		## cardinality = 0..1
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}	
+	## replace_scope = { this = country root = country }
 	weight = { ###this determines the chances of a tradition swap appearing for a given empire IF multiple swaps are potential. It is unused in vanilla.
 		## cardinality = 0..1
 		factor = float
@@ -48,7 +57,13 @@ tradition_swap = {
 		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]		
 	}
+	## replace_scope = { this = country root = country }
 	trigger = { ###scope = country
 		alias_name[trigger] = alias_match_left[trigger]
+	}	
+	## replace_scope = { this = country root = country }
+	on_enabled = { 
+		## cardinality = 0..100
+		alias_name[effect] = alias_match_left[effect]
 	}	
 }	
