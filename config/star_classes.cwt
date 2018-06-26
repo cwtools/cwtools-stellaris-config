@@ -3,3 +3,27 @@ types = {
 		path = "game/common/star_classes"
 	}
 }
+
+#TODO Confirm
+
+star_class = {
+    class = scalar
+    icon  = scalar
+    ## cardinality = 0..inf
+	planet = {
+		#TODO check star subtype
+        key = <planet_class.star>
+		class = scalar
+    }
+    spawn_odds = int
+    num_planets = { min = int max = int }
+    ## cardinality = 0..inf
+	#TODO check planet subtype
+	<planet_class.planet> = { spawn_odds = int }	
+	is_environmental_hazard = bool
+	## cardinality = 0..1
+	modifier = {
+		## cardinality = 0..inf
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+}	
