@@ -13,6 +13,206 @@ types = {
 	}
 }
 
+starbase_building = {
+	icon = scalar
+	## cardinality = 0..1
+	construction_days = int
+	## cardinality = 0..1
+	initial = bool
+	## cardinality = 0..1
+	ai_build_at_chokepoint = bool
+	## cardinality = 0..1
+	ai_build_outside_chokepoint = bool
+	## cardinality = 0..1
+	show_in_tech = <technology>
+	## cardinality = 0..1
+	cost = {
+		## cardinality = 0..inf
+		<resource> = int
+	}	
+	## cardinality = 0..1
+	upkeep_resources = { 
+		## cardinality = 0..inf
+		<resource> = int
+	}
+	## cardinality = 0..1
+	produced_resources = {
+		## cardinality = 0..inf
+		<resource> = int
+	}
+	## replace_scope = { this = starbase root = starbase from = country } #i haven't verified the from = country in this instance!
+	## cardinality = 0..1
+	produced_resource_trigger = {
+		## cardinality = 0..inf
+		modifier = { 
+			## cardinality = 0..inf
+			alias_name[trigger] = alias_match_left[trigger]
+			resources = { 
+				## cardinality = 0..inf
+				<resource> = int
+			}
+		}
+	}	
 
+	## replace_scope = { this = starbase root = starbase from = country }
+	## cardinality = 0..1
+	potential = { 
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]	
+	}
+	## replace_scope = { this = starbase root = starbase from = country } 
+	## cardinality = 0..1
+	posssible = { #entries here appear in game, and require localisation or the use of custom_tooltip
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]	
+	}
+	## cardinality = 0..1
+	equipped_component = <component_template>
+	
+	## cardinality = 0..inf
+	custom_tooltip = <localisation>
+	
+	## cardinality = 0..1
+	station_modifier = { ###ship modifiers, apply on the starbase itself
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]	
+	}	
+	## cardinality = 0..1
+	orbit_modifier = { ###ship modifiers, applies in orbit of the starbase
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}	
+	## cardinality = 0..1
+	system_modifier = { ###planet modifiers, apply on system planets. 
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	## cardinality = 0..1
+	country_modifier = { ###country modifiers
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	
+	## replace_scope = { this = starbase root = starbase from = country } #i haven't verified the from = country in this instance!
+	## cardinality = 0..inf
+	triggered_country_modifier = { ###country modifiers
+		potential = { 
+			## cardinality = 0..inf
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	## cardinality = 0..1
+	## replace_scope = { this = starbase root = starbase from = country } #i haven't verified the from = country in this instance!
+	ai_weight = { 
+		## cardinality = 0..1
+		weight = float
+		## cardinality = 0..1
+		factor = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}	
+}	
 
+starbase_module = {
+	## cardinality = 0..1
+	section = <section_template>
+	icon = scalar
+	## cardinality = 0..1
+	construction_days = int
+	## cardinality = 0..1
+	initial = bool
+	## cardinality = 0..1
+	ai_build_at_chokepoint = bool
+	## cardinality = 0..1
+	ai_build_outside_chokepoint = bool
+	## cardinality = 0..1
+	show_in_tech = <technology>
+	## cardinality = 0..1
+	cost = {
+		## cardinality = 0..inf
+		<resource> = int
+	}	
+	## cardinality = 0..1
+	upkeep_resources = { 
+		## cardinality = 0..inf
+		<resource> = int
+	}
+	## cardinality = 0..1
+	produced_resources = {
+		## cardinality = 0..inf
+		<resource> = int
+	}
+	## replace_scope = { this = starbase root = starbase from = country } #i haven't verified the from = country in this instance!
+	## cardinality = 0..1
+	produced_resource_trigger = {
+		## cardinality = 0..inf
+		modifier = { 
+			## cardinality = 0..inf
+			alias_name[trigger] = alias_match_left[trigger]
+			resources = { 
+				## cardinality = 0..inf
+				<resource> = int
+			}
+		}
+	}	
 
+	## replace_scope = { this = starbase root = starbase from = country }
+	## cardinality = 0..1
+	potential = { 
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]	
+	}
+	## replace_scope = { this = starbase root = starbase from = country } 
+	## cardinality = 0..1
+	posssible = { #entries here appear in game, and require localisation or the use of custom_tooltip
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]	
+	}
+	## cardinality = 0..1
+	equipped_component = <component_template>
+	
+	## cardinality = 0..inf
+	custom_tooltip = <localisation>
+	
+	## cardinality = 0..1
+	station_modifier = { ###ship modifiers, apply on the starbase itself
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]	
+	}	
+	## cardinality = 0..1
+	orbit_modifier = { ###ship modifiers, applies in orbit of the starbase
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}	
+	## cardinality = 0..1
+	system_modifier = { ###planet modifiers, apply on system planets. 
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	## cardinality = 0..1
+	country_modifier = { ###country modifiers
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	
+	## replace_scope = { this = starbase root = starbase from = country } #i haven't verified the from = country in this instance!
+	## cardinality = 0..inf
+	triggered_country_modifier = { ###country modifiers
+		potential = { 
+			## cardinality = 0..inf
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	## cardinality = 0..1
+	## replace_scope = { this = starbase root = starbase from = country } #i haven't verified the from = country in this instance!
+	ai_weight = { 
+		## cardinality = 0..1
+		weight = float
+		## cardinality = 0..1
+		factor = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}	
+}	
