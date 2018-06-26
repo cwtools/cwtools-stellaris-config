@@ -22,6 +22,7 @@ types = {
 
 trait = {
 	## cardinality = 0..1
+	### Default = no
 	immortal_leaders = bool
 
 	subtype[species_trait] = {
@@ -34,19 +35,23 @@ trait = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
 		## cardinality = 0..1
+		### Default = yes
 		sapient = bool
 		## cardinality = 0..1
+		### Default = no
 		forced_happiness = bool
 		## cardinality = 0..1
 		sorting_priority = int
 		## cardinality = 0..1
 		modification = bool
 		## cardinality = 0..1
+		### Default = no
 		improves_leaders = bool
 		## cardinality = 0..1
+		### Default = no
 		advanced_trait = bool
 		## cardinality = 0..1
-		leader_trait = bool
+		leader_trait = no
 		## cardinality = 0..1
 		leader_age_min = int
 		## cardinality = 0..1
@@ -75,11 +80,13 @@ trait = {
 		cost = int
 		icon = filepath
 
+		### Default = yes
 		modification = bool
 
-		leader_trait = bool
+		leader_trait = yes
 
 		## cardinality = 0..1
+		### Default = no
 		hide_age = bool
 
 		## cardinality = 0..1
