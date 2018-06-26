@@ -34,15 +34,22 @@ solar_system_initializer = {
 	scaled_spawn_chance = int
 	## cardinality = 0..1
 	scaled_spawn_settings = scalar
+	## cardinality = 0..1
+	prevent_anomalies = bool
+	## cardinality = 0..1
+	primitive_system = bool
 	## cardinality = 1..inf
 	planet = {
 		## cardinality = 0..1
-		name = localisation
+		name = localisation_synced
 		### count is optional, default to 1 if isn't specified or written at all
 		## cardinality = 0..1
 		count = int
 		## cardinality = 0..1
 		count = { min = int max = int }
+		## cardinality = 0..1
+		entity = scalar
+
 
 		### the class in planet init represents planet_class, not star_class. class = star means the planet class of this star is star.
 		## cardinality = 0..1
@@ -50,7 +57,11 @@ solar_system_initializer = {
 		## cardinality = 0..1
 		class = <planet_class>
 		## cardinality = 0..1
+		class = <planet_class_random_list>
+		## cardinality = 0..1
 		class = star
+		## cardinality = 0..1
+		class = enum[solar_sys_init_planet_class]
 
 		## cardinality = 0..1
 		orbit_distance = int
@@ -95,6 +106,8 @@ solar_system_initializer = {
 		## cardinality = 0..1
 		satellite_naming_policy = enum[satellite_naming_policy]
 
+		## cardinality = 0..1
+		starting_planet = bool
 		###The scope will be a planet scope, with prev being the system. prevprev will be the system that triggered this system's initialization ( if any ). Root will be the first system in this initializer tree
 		## replace_scope = { this = planet root = planet prev = galactic_object }
 		## cardinality = 0..1
@@ -102,8 +115,12 @@ solar_system_initializer = {
 			## cardinality = 0..inf
 			alias_name[effect] = alias_match_left[effect]
 		}
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		moon = {
+			## cardinality = 0..1
+			name = localisation_synced
+			## cardinality = 0..1
+			entity = scalar
 			### count is optional, default to 1 if isn't specified or written at all
 			## cardinality = 0..1
 			count = int
@@ -114,9 +131,16 @@ solar_system_initializer = {
 			class = random
 			## cardinality = 0..1
 			class = <planet_class>
+			## cardinality = 0..1
+			class = <planet_class_random_list>
+			## cardinality = 0..1
+			class = star
+			## cardinality = 0..1
+			class = enum[solar_sys_init_planet_class]
 
-			#one of these 2 varients is required
+			## cardinality = 0..1
 			orbit_distance = int
+			## cardinality = 0..1
 			orbit_distance = { min = int max = int }
 
 			#everything below this point is optional
@@ -141,7 +165,10 @@ solar_system_initializer = {
 			has_ring = bool
 			## cardinality = 0..1
 			home_planet = bool
-
+			## cardinality = 0..1
+			tile_blockers = none
+			## cardinality = 0..1
+			modifiers = none
 			## cardinality = 0..inf
 			modifier = <planet_modifier>
 			## cardinality = 0..inf
@@ -179,7 +206,8 @@ solar_system_initializer = {
 		#one of these varients is required
 		distance = int
 		distance = { min = int max = int }
-
+		## cardinality = 0..1
+		spawn_chance = int
 		## cardinality = 0..1
 		trigger = {
 			## cardinality = 0..inf
@@ -192,9 +220,14 @@ enums = {
 		empire_init
 		misc_system_init
 		custom_empire
+		fallen_empire_init
 	}
 	enum[satellite_naming_policy] = {
 		upper_case_roman_numerals
 		lower_case_latin_letters
+	}
+	enum[solar_sys_init_planet_class] = {
+		random_non_colonizable
+		ideal_planet_class
 	}
 }

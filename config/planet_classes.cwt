@@ -1,4 +1,5 @@
 types = {
+	## type_key_filter <> random_list
 	type[planet_class] = {
 		path = "game/common/planet_classes"
 		subtype[star] = {
@@ -9,6 +10,12 @@ types = {
 			star = no
 		}
 	}
+	## type_key_filter = random_list
+	type[planet_class_random_list] = {
+		path = "game/common/planet_classes"
+		name_field = "name"
+	}
+
 }
 
 #TODO Confirm
@@ -119,6 +126,13 @@ planet_class = {
 	allowed_archetypes = {
 		## cardinality = 0..100
 		<species_archetype>
+	}
+}
+
+planet_class_random_list = {
+	name = scalar
+	planets = {
+		<planet_class>
 	}
 }
 

@@ -1,5 +1,10 @@
 types = {
+	## type_key_filter <> random_list
 	type[star_class] = {
+		path = "game/common/star_classes"
+	}
+	## type_key_filter = random_list
+	type[star_class_random_list] = {
 		path = "game/common/star_classes"
 	}
 }
@@ -30,6 +35,13 @@ star_class = {
 	modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
+	}
+}
+
+star_class_random_list = {
+	name = scalar
+	stars = {
+		<star_class>
 	}
 }
 
