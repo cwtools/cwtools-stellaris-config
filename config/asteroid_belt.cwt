@@ -4,6 +4,8 @@ types = {
 	}
 }
 
+#TODO Confirm
+#TODO Add mesh/shader references
 asteroid_belt = { 
 	## cardinality = 1..inf
 	mesh = scalar
