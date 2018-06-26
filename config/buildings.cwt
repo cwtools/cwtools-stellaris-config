@@ -47,13 +47,13 @@ building = {
 		## cardinality = 0..1
 		cost = {
 			## cardinality = 0..100
-			<resource> = int
+			<resource> = float
 		}
 	}
 	subtype[!event_building] = {
 		cost = {
 			## cardinality = 0..100
-			<resource> = int
+			<resource> = float
 		}
 	}
 	## cardinality = 0..1
@@ -61,12 +61,12 @@ building = {
 	## cardinality = 0..1
 	required_resources = { 
 		## cardinality = 0..100
-		<resource> = int
+		<resource> = float
 	} 
 	## cardinality = 0..1
 	produced_resources = { 	
 		## cardinality = 0..100
-		<resource> = int
+		<resource> = float
 	}
 	## cardinality = 0..1
 	produced_resource_trigger = { ###scope = country, cannot scope to planet or tile 
