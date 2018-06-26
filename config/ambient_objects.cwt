@@ -4,3 +4,12 @@ types = {
 		path = "game/common/ambient_objects"
 	}
 }
+
+ambient_object = { 
+	name = localisation
+	description = localisation
+	tooltip = localisation
+	entity = scalar
+	selectable = bool
+	show_name = bool
+}	
