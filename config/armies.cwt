@@ -39,12 +39,8 @@ army = {
 	}
 	## cardinality = 0..1
 	cost = {
-		## cardinality = 0..1
-		minerals = int
-		## cardinality = 0..1
-		energy = int
-		## cardinality = 0..1
-		unity = int
+		## cardinality = 0..inf
+		<resource.accumulative> = float
 	}
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
