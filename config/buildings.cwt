@@ -46,35 +46,35 @@ building = {
 	subtype[event_building] = {
 		## cardinality = 0..1
 		cost = {
-			## cardinality = 0..100
-			<resource> = float
+			## cardinality = 0..inf
+			<resource.accumulative> = float
 		}
 	}
 	subtype[!event_building] = {
 		cost = {
-			## cardinality = 0..100
-			<resource> = float
+			## cardinality = 0..inf
+			<resource.accumulative> = float
 		}
 	}
 	## cardinality = 0..1
 	base_buildtime = int
 	## cardinality = 0..1
 	required_resources = { 
-		## cardinality = 0..100
+		## cardinality = 0..inf
 		<resource> = float
 	} 
 	## cardinality = 0..1
 	produced_resources = { 	
-		## cardinality = 0..100
+		## cardinality = 0..inf
 		<resource> = float
 	}
 	## cardinality = 0..1
 	produced_resource_trigger = { ###scope = country, cannot scope to planet or tile 
-		## cardinality = 0..100
+		## cardinality = 0..inf
 		modifier = { 
 			alias_name[trigger] = alias_match_left[trigger]
 			resources = {
-				## cardinality = 1..100
+				## cardinality = 1..inf
 				<resource> = float
 			}
 		}
@@ -82,27 +82,27 @@ building = {
 	## cardinality = 0..1
 	###accepts only tile_building_resource_xyz_add = type modifiers
 	adjacency_bonus = { 
-		## cardinality = 0..100
+		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
 	###accepts planet modifiers
 	planet_modifier = { 
-		## cardinality = 0..100
+		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
 	army_modifier = { 
-		## cardinality = 0..100
+		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
 	###accepts country modifiers
 	country_modifier = { 
-		## cardinality = 0..100
+		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	## cardinality = 0..100
+	## cardinality = 0..inf
 	###scope = planet, owner = country, tile = tile.
 	triggered_planet_modifier = { 
 		key = localisation
