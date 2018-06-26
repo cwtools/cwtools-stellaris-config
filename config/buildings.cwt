@@ -127,12 +127,12 @@ building = {
 		}
 	}
 	## cardinality = 0..1
-	## replace_scope = { this = tile root = tile from = planet fromfrom = counntry }
+	## replace_scope = { this = tile root = tile from = planet fromfrom = country }
 	allow = { 
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1		
-	## replace_scope = { this = counntry root = country }
+	## replace_scope = { this = country root = country }
 	show_tech_unlock_if = { 
 		alias_name[trigger] = alias_match_left[trigger]
 	}
