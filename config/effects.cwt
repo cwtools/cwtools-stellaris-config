@@ -1438,6 +1438,7 @@ alias[effect:copy_techs_from] = {
 
 ###Sets the scoped object's graphical culture
 alias[effect:set_graphical_culture] = <graphical_culture>
+alias[effect:set_graphical_culture] = scope[any]
 
 ###Creates a new species
 alias[effect:create_species] = {
@@ -3007,6 +3008,8 @@ alias[effect:set_planet_entity] = {
 	## cardinality = 0..1
 	graphical_culture = <graphical_culture>
 	## cardinality = 0..1
+	graphical_culture = scope[any]
+	## cardinality = 0..1
 	picture = scalar #TODO picture
 	## cardinality = 0..1
 	atmosphere_color = scalar #TODO color
@@ -3104,7 +3107,9 @@ alias[effect:set_tutorial_level] = enum[tutorial_levels]
 ### Spawns a mega structure in a system.
 alias[effect:spawn_megastructure] = {
 	type = <megastructure>
+	## cardinality = 0..1
 	location = scope[planet]
+	## cardinality = 0..1
 	location = scope[system]
 	## cardinality = 0..1
 	name = localisation
@@ -3121,6 +3126,8 @@ alias[effect:spawn_megastructure] = {
 	owner = scope[country]
 	## cardinality = 0..1
 	graphical_culture = <graphical_culture>
+	## cardinality = 0..1
+	graphical_culture = scope[megastructure]
 	## cardinality = 0..1
 	random_pos = bool
 	## cardinality = 0..1

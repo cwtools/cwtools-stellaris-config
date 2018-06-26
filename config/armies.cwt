@@ -34,6 +34,12 @@ army = {
 	## cardinality = 0..1
 	maintenance = float
 	## cardinality = 0..1
+	pop_limited = bool
+	## cardinality = 0..1
+	rebel = bool
+	## cardinality = 0..1
+	occupation = bool
+	## cardinality = 0..1
 	prerequisites = {
 		<technology>
 	}

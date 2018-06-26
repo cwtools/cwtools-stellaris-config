@@ -10,6 +10,8 @@ tile_blocker = {
 	## cardinality = 0..1
 	time = int
 	## cardinality = 0..1
+	from_planet_damage = bool
+	## cardinality = 0..1
 	cost = {
 		## cardinality = 0..1
 		energy = int
@@ -29,6 +31,6 @@ tile_blocker = {
 	## cardinality = 0..1
 	adjacency_bonus = { ###accepts only tile_building_resource_xyz_add = type modifiers
 		## cardinality = 0..100
-		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		alias_name[modifier] = alias_match_left[modifier]
 	}
 }

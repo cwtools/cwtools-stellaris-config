@@ -19,12 +19,24 @@ planet_class = {
 	## cardinality = 0..1
 	atmosphere_intensity = float
 	## cardinality = 0..1
-	atmosphere_width = float	
+	atmosphere_width = float
 	entity = scalar #entity file, defined under gfx/models/planets/*.asset
+	## cardinality = 0..1
+	overlay_entity = scalar
 	entity_scale = float
 	## cardinality = 0..1
 	fixed_entity_scale = bool
-	icon_frame = int 
+	subtype[planet] = {
+		icon_frame = int
+		## cardinality = 0..1
+		habitat = bool
+		## cardinality = 0..1
+		outliner_planet_type = special
+	}
+	subtype[star] = {
+		## cardinality = 0..1
+		star_gfx = bool
+	}
 	## cardinality = 0..1
 	spawn_odds = float
 	## cardinality = 0..1
@@ -39,15 +51,19 @@ planet_class = {
 	## cardinality = 0..1
 	chance_of_ring = float
 	## cardinality = 0..1
-	planet_size = { 
+	min_distance_from_sun = int
+	## cardinality = 0..1
+	max_distance_from_sun = int
+	## cardinality = 0..1
+	planet_size = {
 		min = int
 		max = int
 	}
 	## cardinality = 0..1
-	moon_size = { 
+	moon_size = {
 		min = int
 		max = int
-	}		
+	}
 	#only for planets defined as colonizable!
 	## cardinality = 0..1
 	climate = <localisation>
@@ -90,18 +106,19 @@ planet_class = {
 	colonization_tech = { <technology> }
 	## cardinality = 0..1
 	###this is only required if using a picture defined for another planet
-	picture = <planet_class> 
+	picture = <planet_class>
 	## cardinality = 0..1
 	###this is only required if using a tile-set defined for another planet
 	tile_set = <planet_class>
 	## cardinality = 0..1
-	modifier = { 
+	modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	allowed_archetypes = { 
+	## cardinality = 0..1
+	allowed_archetypes = {
 		## cardinality = 0..100
-		<species_archetype> 
+		<species_archetype>
 	}
 }
 
@@ -109,4 +126,4 @@ planet_class = {
 alias[planet_class_hsv:atmosphere_color] = {
     ## cardinality = 3..3
     float[0.0..1.0]
-}	
+}

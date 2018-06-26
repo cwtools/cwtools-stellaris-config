@@ -2,14 +2,17 @@ types = {
 	type[ambient_object] = {
 		name_field = "name"
 		path = "game/common/ambient_objects"
+		subtype[
 	}
 }
 
-ambient_object = { 
+ambient_object = {
 	name = localisation
+	## cardinality = 0..1
 	description = localisation
+	## cardinality = 0..1
 	tooltip = localisation
 	entity = scalar
 	selectable = bool
 	show_name = bool
-}	
+}

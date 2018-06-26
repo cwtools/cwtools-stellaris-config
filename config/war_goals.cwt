@@ -52,6 +52,9 @@ war_goal = {
 	###If used as attacker wargoal and set, defender will have their wargoal predetermined by this. If not set, defender gets to pick their own wargoal.
 	set_defender_wargoal = <wargoal>
 
+	## cardinality = 0..1
+	release_occupied_systems_on_status_quo = bool
+
 
 	## replace_scope = { this = country root = country from = country }
 	###FROM = The targeted country, THIS = The acting country
