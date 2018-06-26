@@ -1,12 +1,21 @@
 types = {
 	type[planet_class] = {
 		path = "game/common/planet_classes"
+		subtype[star] = {
+			star = yes
+		}
+		subtype[planet] = {
+			## cardinality = 0..1
+			star = no
+		}
 	}
 }
 
+#TODO Confirm
+#TODO Expand to add colonizable subtype
 planet_class = {
 	## cardinality = 0..1
-	atmosphere_color = <hsv>
+	alias_name[planet_class_hsv] = alias_match_left[planet_class_hsv]
 	## cardinality = 0..1
 	atmosphere_intensity = float
 	## cardinality = 0..1
@@ -73,15 +82,18 @@ planet_class = {
 	## cardinality = 0..1
 	orbit_lines = bool
 	## cardinality = 0..1
-	has_colonization_influence_cost = bool ### applies when within own borders only
+	### applies when within own borders only
+	has_colonization_influence_cost = bool
 	## cardinality = 0..1
 	survey_time_factor = float
 	## cardinality = 0..1
 	colonization_tech = { <technology> }
 	## cardinality = 0..1
-	picture = <planet_class> ###this is only required if using a picture defined for another planet ###this is only required if using a picture defined for another planet
+	###this is only required if using a picture defined for another planet
+	picture = <planet_class> 
 	## cardinality = 0..1
-	tile_set = <planet_class> ###this is only required if using a tile-set defined for another planet
+	###this is only required if using a tile-set defined for another planet
+	tile_set = <planet_class>
 	## cardinality = 0..1
 	modifier = { 
 		## cardinality = 0..inf
@@ -93,7 +105,8 @@ planet_class = {
 	}
 }
 
-hsv = {
+#Workaround for reusable
+alias[planet_class_hsv:atmosphere_color] = {
     ## cardinality = 3..3
     float[0.0..1.0]
 }	
