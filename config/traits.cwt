@@ -5,7 +5,7 @@ types = {
 		path = "game/common/traits"
 
 		subtype[leader_trait] = {
-			leader_trait = bool
+			leader_trait = yes
 		}
 		subtype[ruler_trait] = {
 			leader_class = { ruler }
@@ -15,7 +15,7 @@ types = {
 		}
 		subtype[species_trait] = {
 			## cardinality = 0..1
-			leader_trait = bool
+			leader_trait = no
 		}
 	}
 }
