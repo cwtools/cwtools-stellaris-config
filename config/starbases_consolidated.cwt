@@ -28,7 +28,7 @@ starbase_building = {
 	## cardinality = 0..1
 	cost = {
 		## cardinality = 0..inf
-		<resource> = int
+		<resource.accumulative> = int
 	}	
 	## cardinality = 0..1
 	upkeep_resources = { 
