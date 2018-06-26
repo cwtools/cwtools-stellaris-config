@@ -21,7 +21,8 @@ megastructure = {
   ## cardinality = 0..1
   bypass_type = <bypass>
 	## cardinality = 0..1
-  upgrade_desc = <localisation> ###also possible to use here upgrade_desc = hide, and localisations are not required in that case  
+	###also possible to use here upgrade_desc = hide, and localisations are not required in that case  
+  upgrade_desc = localisation
 	## cardinality = 0..1
   upgrade_from = {
 		<megastructure>
@@ -36,7 +37,7 @@ megastructure = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}  
   ## cardinality = 0..1
-  ## replace_scope = { this = galactic_object root = galactic_object from = country }
+  ## replace_scope = { this = system root = system from = country }
 	possible = { 
 		alias_name[trigger] = alias_match_left[trigger]
 	}    
@@ -44,53 +45,53 @@ megastructure = {
 	build_time = int
   ## cardinality = 0..1
 	build_cost = {
-		## cardinality = 0..100
-		<resource> = int
+		## cardinality = 0..inf
+		<resource.accumulative> = int
 	}
   ## cardinality = 0..1
 	monthly_production = {
-		## cardinality = 0..100
+		## cardinality = 0..inf
 		<resource> = int
 	}
   ## cardinality = 0..1
 	maintenance = {
-		## cardinality = 0..100
+		## cardinality = 0..inf
 		<resource> = int
 	}
 	## cardinality = 0..1
 	###accepts country modifiers
 	country_modifier = { 
-		## cardinality = 0..100
+		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
   ## cardinality = 0..1
 	placement_rules = {
 		 ## replace_scope = { this = planet root = planet }
     planet_possible = {
-      ## cardinality = 0..100
+      ## cardinality = 0..inf
       alias_name[trigger] = alias_match_left[trigger]
     }		
 	}
   ## cardinality = 0..1
-  ## replace_scope = { this = galactic_object root = galactic_object from = country fromfrom = megastructure }
+  ## replace_scope = { this = system root = system from = country fromfrom = megastructure }
 	on_build_start = {
-    ## cardinality = 0..100
+    ## cardinality = 0..inf
     alias_name[effect] = alias_match_left[effect]
   }				
   ## cardinality = 0..1
-  ## replace_scope = { this = galactic_object root = galactic_object from = country }
+  ## replace_scope = { this = system root = system from = country }
 	on_build_cancel = {
-    ## cardinality = 0..100
+    ## cardinality = 0..inf
     alias_name[effect] = alias_match_left[effect]
   }				
   ## cardinality = 0..1
-  ## replace_scope = { this = galactic_object root = galactic_object from = country fromfrom = megastructure }
+  ## replace_scope = { this = system root = system from = country fromfrom = megastructure }
 	on_build_complete = {
-    ## cardinality = 0..100
+    ## cardinality = 0..inf
     alias_name[effect] = alias_match_left[effect]
   }				  
 	## cardinality = 0..1
-	## replace_scope = { this = galactic_object root = galactic_object from = country fromfrom = megastructure }
+	## replace_scope = { this = system root = system from = country fromfrom = megastructure }
 	ai_weight = { 
 		## cardinality = 0..1
 		weight = float
