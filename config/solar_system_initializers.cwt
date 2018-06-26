@@ -3,3 +3,175 @@ types = {
 		path = "game/common/solar_system_initializers"
 	}
 }
+
+solar_system_initializer = { 
+	name = "name"
+	#the class below here represents star class, which is the icon of the system in galactic view.
+	class = <star_class> #this also includes random lists of stars, as defined in the star_classes files
+	## cardinality = 0..1
+	flags = { #star_flag
+		## cardinality = 0..inf
+		scalar
+	} 
+	## cardinality = 0..100
+	asteroid_belt = { 
+		type = <asteroid_belt> #this is defined in under common/asteroid_belts
+		radius = int
+	}	
+	## cardinality = 0..inf
+	usage = <usage_type>	
+	## cardinality = 0..1
+	usage_odds = int
+	## cardinality = 0..1
+	max_instances = int #accepts negative numbers, negative numbers = unrestricted	
+	
+	## cardinality = 1..inf
+	planet = { 
+		#count is optional, default to 1 if isn't specified or written at all
+		## cardinality = 0..1
+		count = int
+		## cardinality = 0..1
+		count = { min = int max = int } 
+		
+		#the class in planet init represents planet_class, not star_class. class = star means the planet class of this star is star.
+		#one of these 3 varients is required
+		## cardinality = 0..1 
+		class = random	
+		## cardinality = 0..1 
+		class = <planet_class>
+		## cardinality = 0..1
+		class = star		
+		
+		#one of these 2 varients is required
+		## cardinality = 0..inf
+		orbit_distance = int
+		## cardinality = 0..inf
+		orbit_distance = { min = int max = int } 			
+		
+		#everything below this point is optional
+		
+		flags = { #planet flags 
+			## cardinality = 0..inf
+			scalar
+		}	
+		
+		## cardinality = 0..inf
+		orbit_angle = int
+		## cardinality = 0..inf
+		orbit_angle = { min = int max = int } 
+		
+		## cardinality = 0..inf
+		size = int
+		## cardinality = 0..inf
+		size = { min = int max = int } 		
+		
+		## cardinality = 0..1
+		has_ring = bool
+		## cardinality = 0..1
+		home_planet = bool
+		
+		## cardinality = 0..inf
+		modifier = <planet_modifier>
+		## cardinality = 0..inf
+		resource = <resource>
+		## cardinality = 0..inf
+		anomaly = <anomaly>
+		
+		###The scope will be a planet scope, with prev being the system. prevprev will be the system that triggered this system's initialization ( if any ). Root will be the first system in this initializer tree
+		## replace_scope = { this = planet root = planet prev = galactic_object }
+		## cardinality = 0..1
+		init_effect = { 
+			## cardinality = 0..inf
+			alias_name[effect] = alias_match_left[effect]
+		}	
+		moon = { 		
+			#count is optional, default to 1 if isn't specified or written at all
+			## cardinality = 0..1
+			count = int
+			## cardinality = 0..1
+			count = { min = int max = int } 
+
+			#one of these 3 varients is required
+			## cardinality = 0..1 
+			class = random	
+			## cardinality = 0..1 
+			class = <planet_class>
+
+			#one of these 2 varients is required
+			## cardinality = 0..inf
+			orbit_distance = int
+			## cardinality = 0..inf
+			orbit_distance = { min = int max = int } 			
+
+			#everything below this point is optional
+
+			flags = { #planet flags 
+				## cardinality = 0..inf
+				scalar
+			}	
+
+			## cardinality = 0..inf
+			orbit_angle = int
+			## cardinality = 0..inf
+			orbit_angle = { min = int max = int } 
+
+			## cardinality = 0..inf
+			size = int
+			## cardinality = 0..inf
+			size = { min = int max = int } 		
+
+			## cardinality = 0..1
+			has_ring = bool
+			## cardinality = 0..1
+			home_planet = bool
+
+			## cardinality = 0..inf
+			modifier = <planet_modifier>
+			## cardinality = 0..inf
+			resource = <resource>
+			## cardinality = 0..inf
+			anomaly = <anomaly>
+
+			## replace_scope = { this = planet root = planet prev = planet prevprev = galactic_object }
+			## cardinality = 0..1
+			init_effect = { 
+				## cardinality = 0..inf
+				alias_name[effect] = alias_match_left[effect]
+			}			
+		
+	}
+	
+	## cardinality = 0..inf
+	change_orbit = int
+	## cardinality = 0..inf
+	change_orbit = { min = int max = int } 	
+	
+	###the scope here is galactic_object scope, with prev being set to the previous system that was initialized by this tree ( if any ). Root will point to the first system in the tree.
+	## replace_scope = { this = galactic_object root = galactic_object }
+	## cardinality = 0..1
+	init_effect = { 
+		## cardinality = 0..inf
+		alias_name[effect] = alias_match_left[effect]
+	}
+	
+	## cardinality = 0..inf
+	neighbor_system = {
+		initializer = solar_system_initializer
+		
+		#one of these varients is required
+		## cardinality = 0..1
+		distance = int
+		## cardinality = 0..1
+		distance = { min = int max = int }		
+		
+		## cardinality = 0..1
+		trigger = { 
+			## cardinality = 0..inf
+			alias_name[trigger] = alias_match_left[trigger]
+		}	
+}	
+enums = { 
+	enum[usage_type] = { 
+	empire_init
+	misc_system_init
+}	
