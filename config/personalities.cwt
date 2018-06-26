@@ -67,7 +67,7 @@ ai_personality = {
 	weapon_preferences = <component_tag>
 
 
-	###these three are fractions
+	#these three are fractions
 	## cardinality = 1..1
 	armor_ratio = float
 	## cardinality = 1..1
