@@ -1,0 +1,53 @@
+types = {
+	type[section_template] = {
+		name_field = "key"
+		path = "game/common/section_templates"
+	}
+}
+
+section_template = { 
+  key = localisation
+  ## cardinality = 0..inf
+  ship_size = <ship_size>
+  ## cardinality = 0..inf
+  fits_on_slot = <section_slots>   
+  entity = scalar
+  icon = scalar
+  ## cardinality = 0..1
+  should_draw_components = bool
+  ## cardinality = 0..1
+  cost = float
+  ## cardinality = 0..1
+  prerequisites = { <technology> }
+  
+  component_slot = {
+    name = localisation
+    slot_size = <weapon_slot_size>
+    slot_type = <slot_type>
+    locatorname = scalar
+    ## cardinality = 0..1
+    is_side_slot = bool
+  } 
+  ## cardinality = 0..1
+  small_utility_slots = int
+  ## cardinality = 0..1
+  medium_utility_slots = int
+  ## cardinality = 0..1
+  large_utility_slots = int
+  ## cardinality = 0..1
+  aux_utility_slots = int
+	## cardinality = 0..1
+  ai_weight = { 
+		## cardinality = 0..1
+		weight = float
+		## cardinality = 0..1
+		factor = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}	
+} 
+enums = {
+  enum[slot_type] = {
+     strike_craft
+     weapon
+   } 
+ } 
