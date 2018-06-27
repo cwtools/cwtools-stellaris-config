@@ -2,12 +2,19 @@ types = {
 	type[ambient_object] = {
 		name_field = "name"
 		path = "game/common/ambient_objects"
-		subtype[
+		subtype[show_name] = {
+			show_name = yes
+		}
 	}
 }
 
 ambient_object = {
-	name = localisation
+	subtype[show_name] = {
+		name = localisation
+	}
+	subtype[!show_name] = {
+		name = scalar
+	}
 	## cardinality = 0..1
 	description = localisation
 	## cardinality = 0..1
