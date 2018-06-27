@@ -1,13 +1,23 @@
 
 types = {
 	type[component_set] = {
-    path = "game/common/component_sets"
+    		path = "game/common/component_sets"
+		subtype[required_component] = {
+			required_component_set = yes
+		}
+	}	
 }
 
 component_set = {
-   	key = "name"
-    ###links to GFX_ defined under /interface/*.gfx (vanilla is icons.gfx)
+   	key = "name"   	
 	icon = scalar
-    icon_frame = int
-    required_component_set = bool
+	icon_frame = int    	
+	required_component_set = no
+	
+	subtype[!required_component] = {
+		required_component_set = yes
+		key = "name"   	
+		icon = scalar
+		icon_frame = int		
+	}	
 }
