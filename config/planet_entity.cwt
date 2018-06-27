@@ -10,25 +10,79 @@ types = {
 entity = { 
   #the names for planet entities are connected to the planet_classes files and have a serialized naming scheme 
   #the naming scheme is <entity_name>_int_entity and planets can have multiple entities, with the game spawning one of the entities.
+  #examples: toxic_planet_01_entity toxic_planet_02_entity toxic_planet_03_entity toxic_planet_04_entity - all connected to the planet_class files entry for pc_toxic, where entity is defined as "toxic_planet"
   name = "key" 
-  pdxmesh = <planet_mesh>
+  pdxmesh = <planet_mesh> #this connects to meshes defined in a *.gfx file!
   
   ## cardinality = 0..1
   cull_radius = float
-  
+  ## cardinality = 0..1
+  scale = float
   ## cardinality = 0..1
   playback_rate = float
   ## cardinality = 0..1
-  default_state = enum[planet_states]
+  default_state = <planet_states>
   ## cardinality = 0..inf
   state = { 
-		name = enum[planet_states]
+		name = <planet_states>
+		## cardinality = 0..1
 		state_time = float
+		## cardinality = 0..1
 		looping = bool
-		next_state = enum[planet_states]
+		## cardinality = 0..1
+		next_state = <planet_states>
+		## cardinality = 0..1
 		chance = bool
-    animation = <planet_animation>
-    
+		## cardinality = 0..1
+		get_state_from_parent = bool		
+		## cardinality = 0..1
+   		animation = <planet_animation> #animations are defined in a different file in the same folder, also a *.asset file
+		## cardinality = 0..1		
+		time_offset = { 0 100 } #no idea what these numbers signify
+		## cardinality = 0..inf
+		locator = { 
+			name = "key" #this is an overwride for locators defined in the meshes
+			position = { 0 0 0 } #XYZ axis coordinates
+		}	
+		## cardinality = 0..1		
+		game_data = { 
+			bloom_factor = float
+			uv_animation_speed = float
+			uv_animation_direction = { 0.0 -0.02 }
+		}	
+		## cardinality = 0..inf
+		event = { 
+			## cardinality = 0..1
+			time = int
+			## cardinality = 0..1
+			node = scalar #"bombardment_location_2" for example, no idea what these point to
+			## cardinality = 0..1
+			particle = scalar #"planetary_bombardment_effect"  for example, no idea what these point to 
+			## cardinality = 0..1
+			keep_particle = bool
+			## cardinality = 0..1
+			sound = { 
+				soundeffect = scalar #"bombardment_explosion" - these appear to be defined under game/sound
+			} 
+		}	
+		## cardinality = 0..inf
+		start_event = {
+			## cardinality = 0..1
+			trigger_once = bool
+			## cardinality = 0..1
+			soundeffect = scalar #example: "amb_planet_class"
+	}
+	#these need to be updated and linked to other files
+	## cardinality = 0..inf
+	meshsettings = {
+		name = scalar #examples: "planet_geosphereShape" "polesShape" "clouds_geosphereShape"
+		texture_diffuse = scalar #example: "toxic_01_purple_diffuse.dds"
+		texture_normal = scalar #example: "toxic_01_normal.dds"
+		texture_specular = scalar #example: "toxic_01_spec.dds"
+		## cardinality = 0..1
+		shader = scalar #this seems to point to a shader mesh, dunno where its stored. example: "PdxMeshPlanetEmissive"
+	}	
+}    
 
 enums = {
 	
