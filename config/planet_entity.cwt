@@ -19,13 +19,13 @@ entity = {
   ## cardinality = 0..1
   playback_rate = float
   ## cardinality = 0..1
-  default_state = <planet_states>
+  default_state = enum[planet_states]
   ## cardinality = 0..inf
   state = { 
-		name = <planet_states>
+		name = enum[planet_states]
 		state_time = float
 		looping = bool
-		next_state = <planet_states>
+		next_state = enum[planet_states]
 		chance = bool
     animation = <planet_animation>
     
