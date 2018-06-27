@@ -4,6 +4,47 @@ types = {
 	}
 }
 
+graphical_culture = { 
+	fallback = <graphical_culture>
+	ship_color = bool
+	ship_lighting = {
+		cam_light_1_dir = { <hsv? }
+		cam_light_2_dir = { <hsv? }
+		cam_light_3_dir = { <hsv? }
+
+		## cardinality = 0..1
+		### Amount of light when near
+		## cardinality = 0..1
+		intensity_near = float
+		## cardinality = 0..1
+		### Amount when far away
+		intensity_far = float
+		## cardinality = 0..1
+		### Near threshold
+		near_value = int
+		## cardinality = 0..1
+		### Far threshold
+		far_value = int
+		## cardinality = 0..1
+		rim_start_near = float
+		## cardinality = 0..1
+		rim_stop_near = float
+		## cardinality = 0..1
+		rim_start_far = float
+		## cardinality = 0..1
+		rim_stop_far = float
+		## cardinality = 0..1
+		rim_start_far = float
+		## cardinality = 0..1
+		rim_stop_far = float
+		## cardinality = 0..1
+		ambient_near = float
+		## cardinality = 0..1
+		ambient_far = float
+	}
+}
+
+
 # graphical_culture = {
 # 	### which icon to use in the main gui
 # 	icon = scalar
