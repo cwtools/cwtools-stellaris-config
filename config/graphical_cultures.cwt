@@ -8,9 +8,19 @@ graphical_culture = {
 	fallback = <graphical_culture>
 	ship_color = bool
 	ship_lighting = {
-		cam_light_1_dir = { <hsv? }
-		cam_light_2_dir = { <hsv? }
-		cam_light_3_dir = { <hsv? }
+		
+		cam_light_1_dir = { 
+			## cardinality = 3..3
+			float
+		}
+		cam_light_2_dir = { 
+			## cardinality = 3..3
+			float
+		}
+		cam_light_3_dir = { 
+			## cardinality = 3..3
+			float
+		}
 
 		## cardinality = 0..1
 		### Amount of light when near
