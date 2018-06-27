@@ -65,6 +65,12 @@ diplo_action = {
 	## cardinality = 0..1
 	###decides if a message notification is sent to all countries who have communications with actor or recipient
 	should_notify_all_communications = bool
+	
+	## cardinality = 0..1
+	diplo_view_acceptance_icon = bool
+	
+	## cardinality = 0..1
+	auto_accepted = bool
 
 	## cardinality = 0..1
 	AI_acceptance_base_value = int
