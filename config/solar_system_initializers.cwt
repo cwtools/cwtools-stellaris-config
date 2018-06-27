@@ -377,5 +377,6 @@ enums = {
 	enum[solar_sys_init_planet_class] = {
 		random_non_colonizable
 		ideal_planet_class
+		random_asteroid
 	}
 }
