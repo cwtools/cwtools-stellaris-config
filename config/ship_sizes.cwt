@@ -190,7 +190,7 @@ ship_size = {
 	  construction_type = spaceport
 	}
 	## cardinality = 0..100
-	required_component_set = scalar
+	required_component_set = <required_component>
 	## cardinality = 0..1
 	valid_target_aggressive_stance = bool
 	## cardinality = 0..1
