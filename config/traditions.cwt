@@ -2,6 +2,9 @@ types = {
 	type[tradition] = {
 		path = "game/common/tradition"
 	}
+	type[tradition_cateegory] = { #this defines the contents of tradition trees
+		path = "game/common/tradition_categories"
+	}	
 }
 
 enums = {
@@ -66,4 +69,13 @@ tradition_swap = {
 		## cardinality = 0..inf
 		alias_name[effect] = alias_match_left[effect]
 	}	
+}	
+
+tradition_cateegory = {
+	adoption_bonus = <tradition>
+	finish_bonus = <tradition>
+	traditions = { 
+		## cardinality = 1..inf
+		<tradition>
+	}
 }	
