@@ -1,13 +1,16 @@
-###WIP
-
 types = {
 	type[planet_entity] = {
-		name_field = "key"
-		path = "gfx\models\planets"
+		path = "gfx\models\planets" #need to add subfolder as well here! - these are stored in *.asset files!
    }
+	type[planet_mesh] = {
+		path = "gfx\models\planets" #need to add subfolder as well here! - these are stored in *.gfx files!
+   }   
+	type[planet_animation] = {
+		path = "gfx\models\planets" #need to add subfolder as well here! - these are stored in *.asset files!
+   }      
 } 
 
-entity = { 
+planet_entity = { #the container for each entry is called "entity = {" in the asset file, please check.
   #the names for planet entities are connected to the planet_classes files and have a serialized naming scheme 
   #the naming scheme is <entity_name>_int_entity and planets can have multiple entities, with the game spawning one of the entities.
   #examples: toxic_planet_01_entity toxic_planet_02_entity toxic_planet_03_entity toxic_planet_04_entity - all connected to the planet_class files entry for pc_toxic, where entity is defined as "toxic_planet"
@@ -107,3 +110,18 @@ enums = {
    		bombard_raiding
 	}
  } 
+
+planet_mesh = { #the container for all meshes is defined as objectTypes = { at the top of the file, please check, with each entry being defined under pdxmesh = { 
+	name = "key"
+	file = scalar #there is a full path string here - the path should be parsed. Example: file = "gfx/models/planets/shielded_planet.mesh"
+	animation = { 
+		id = "name" #example = "idle"
+		type = <planet_animation> #this connects to an animation defined in an *.asset file!
+	}
+	cull_distance = int #WTF? example: cull_distance = 999999999.0f
+}	
+
+planet_animation = { #the container here is called animation = { for each animation
+	name = "key" #example: "neutron_star_idle_animation"
+	file = scalar #this connects to *.anim file stored in the same folder as the asset file, it seems. Example: "neutron_star_idle.anim"
+}
