@@ -3,42 +3,43 @@
 types = {
 	type[planet_entity] = {
 		name_field = "key"
-		path = "gfx\models\planets"
+		path = "game/gfx/models/planets"
    }
-} 
+}
 
-entity = { 
-  #the names for planet entities are connected to the planet_classes files and have a serialized naming scheme 
+entity = {
+  #the names for planet entities are connected to the planet_classes files and have a serialized naming scheme
   #the naming scheme is <entity_name>_int_entity and planets can have multiple entities, with the game spawning one of the entities.
-  name = "key" 
+  name = "key"
   pdxmesh = <planet_mesh>
-  
+
   ## cardinality = 0..1
   cull_radius = float
-  
+
   ## cardinality = 0..1
   playback_rate = float
   ## cardinality = 0..1
   default_state = enum[planet_states]
   ## cardinality = 0..inf
-  state = { 
+  state = {
 		name = enum[planet_states]
 		state_time = float
 		looping = bool
 		next_state = enum[planet_states]
 		chance = bool
     animation = <planet_animation>
-    
+  }
+}
 
 enums = {
-	
+
   #these are tied to bombardment stances somehow, but I have no idea how - exnihil
   #TODO - link this to bombardment stances
-  enum[planet_states] = { 
+  enum[planet_states] = {
 		idle
 		bombard_selective
 		bombard_indiscriminate
 		bombard_armageddon
     bombard_raiding
 	}
- } 
+ }

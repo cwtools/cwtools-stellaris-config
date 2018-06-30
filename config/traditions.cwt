@@ -1,10 +1,10 @@
 types = {
 	type[tradition] = {
-		path = "game/common/tradition"
+		path = "game/common/traditions"
 	}
 	type[tradition_category] = { #this defines the contents of tradition trees
 		path = "game/common/tradition_categories"
-	}	
+	}
 }
 
 enums = {
@@ -21,61 +21,78 @@ enums = {
 tradition = {
 	modifier = { ###accepts only country modifiers
 		## cardinality = 0..inf
-		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## replace_scope = { this = country root = country }
-	ai_weight = { ### the ai_weight in traditions applies both to the main traditions and the tradition swaps, there are no seperate fields. 
+	### the ai_weight in traditions applies both to the main traditions and the tradition swaps, there are no seperate fields.
+	## cardinality = 0..1
+	ai_weight = {
 		## cardinality = 0..1
 		factor = float
 		## cardinality = 0..1
 		weight = float
-		alias_name[modifier_rule] = alias_match_left[modifier_rule]	
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
+	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
-	possible = { ###scope = country
+	possible = {
 		## cardinality = 0..inf
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## cardinality = 0..1
 	 ## replace_scope = { this = country root = country }
-	on_enabled = { 
+	on_enabled = {
 		## cardinality = 0..inf
 		alias_name[effect] = alias_match_left[effect]
-	}	
-}	
+	}
 
-tradition_swap = {
-	name_field = "name"
+	## cardinality = 0..inf
+	alias_name[tradition_swap] = alias_match_left[tradition_swap]
+}
+alias[tradition_swap:tradition_swap] = {
+	name = localisation
+	## cardinality = 0..1
 	inherit_icon = bool
+	## cardinality = 0..1
 	inherit_name = bool
+	## cardinality = 0..1
 	inherit_effects = bool
-	modifier = { ###accepts only country modifiers
+	## cardinality = 0..1
+	###accepts only country modifiers
+	modifier = {
 		## cardinality = 0..1
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
-	}	
+	}
 	## replace_scope = { this = country root = country }
-	weight = { ###this determines the chances of a tradition swap appearing for a given empire IF multiple swaps are potential. It is unused in vanilla.
+	###this determines the chances of a tradition swap appearing for a given empire IF multiple swaps are potential. It is unused in vanilla.
+	weight = {
 		## cardinality = 0..1
 		factor = float
 		## cardinality = 0..1
 		weight = float
-		alias_name[modifier_rule] = alias_match_left[modifier_rule]		
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	## cardinality = 0..1
+	## replace_scope = { this = country root = country }
+	trigger = {
+		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## replace_scope = { this = country root = country }
-	trigger = { ###scope = country
-		alias_name[trigger] = alias_match_left[trigger]
-	}	
-	## replace_scope = { this = country root = country }
-	on_enabled = { 
+	## cardinality = 0..1
+	on_enabled = {
 		## cardinality = 0..inf
 		alias_name[effect] = alias_match_left[effect]
-	}	
-}	
+	}
+}
 
 tradition_category = {
 	adoption_bonus = <tradition>
 	finish_bonus = <tradition>
-	traditions = { 
+	traditions = {
 		## cardinality = 1..inf
 		<tradition>
 	}
-}	
+	## cardinality = 0..inf
+	alias_name[tradition_swap] = alias_match_left[tradition_swap]
+
+}

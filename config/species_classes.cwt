@@ -15,13 +15,32 @@ species_class = {
 		## cardinality = 0..1
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	# cardinality = 0..1
+	## cardinality = 0..1
 	#used when starting a new game to give robots (see game_start.11) and techs (see game_start.8)
 	#description = localisaton
 	## cardinality = 0..1
-	## replace_scope = { root = country this = country }	
+	playable = bool
+	## cardinality = 0..1
+	playable = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	randomized = bool
+	## cardinality = 0..1
+	randomized = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	uplifted_into = <species_class>
+	## cardinality = 0..1
+	uplifted_portraits = {
+		## cardinality = 0..inf
+		enum[species_portraits]
+	}
+	## cardinality = 0..1
+	## replace_scope = { root = country this = country }
 	#TODO replace with an alias for government blocks
-	possible = { 
+	possible = {
 		## cardinality = 0..1
 		authority = {
 			## cardinality = 0..1
@@ -47,40 +66,42 @@ species_class = {
 				value = <authority>
 			}
 		}
-	}	
+	}
 	## cardinality = 0..1
 	portraits = {
 		## cardinality = 0..inf
 		enum[species_portraits]
 	}
-	## cardinality = 0..1
-	custom_portraits = {		
-		## replace_scope = { root = no_scope this = no_scope } 
+	## cardinality = 0..inf
+	custom_portraits = {
+		## replace_scope = { root = no_scope this = no_scope }
 		#i have no idea what the actual scope here is. someone should probably check it :)
-		randomized = { 
+		## cardinality = 0..1
+		randomized = {
 			## cardinality = 0..1
 			alias_name[trigger] = alias_match_left[trigger]
-		}		
-		## replace_scope = { root = no_scope this = no_scope } 
+		}
+		## replace_scope = { root = no_scope this = no_scope }
 		#i have no idea what the actual scope here is. someone should probably check it :)
-		playable = { 
+		## cardinality = 0..1
+		playable = {
 			## cardinality = 0..1
 			alias_name[trigger] = alias_match_left[trigger]
-		}		
-		portraits = { 
+		}
+		portraits = {
 			## cardinality = 1..inf
 			enum[species_portraits]
 		}
-	}	
+	}
 	## cardinality = 0..1
 	non_randomized_portraits = {
 		## cardinality = 1..inf
 		enum[species_portraits]
-	}	
+	}
 	## cardinality = 0..1
 	gender = bool
 	## cardinality = 0..1
 	graphical_culture = <graphical_culture>
 	## cardinality = 0..1
 	move_pop_sound_effect = scalar #should be connected to sounds under game/sound
-}	
+}

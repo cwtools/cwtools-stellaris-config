@@ -2218,6 +2218,8 @@ alias[effect:change_species_characteristics] = {
 ### Re-evaluate the specified casus belli type with given target country
 alias[effect:check_casus_belli_valid] = {
 	## cardinality = 0..1
+	target = scope[country]
+	## cardinality = 0..1
 	type = scope[country]
 	## cardinality = 0..1
 	type = <casus_belli>
