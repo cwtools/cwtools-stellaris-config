@@ -2,7 +2,7 @@ types = {
 	type[tradition] = {
 		path = "game/common/tradition"
 	}
-	type[tradition_cateegory] = { #this defines the contents of tradition trees
+	type[tradition_category] = { #this defines the contents of tradition trees
 		path = "game/common/tradition_categories"
 	}	
 }
@@ -71,7 +71,7 @@ tradition_swap = {
 	}	
 }	
 
-tradition_cateegory = {
+tradition_category = {
 	adoption_bonus = <tradition>
 	finish_bonus = <tradition>
 	traditions = { 
