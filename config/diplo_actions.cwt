@@ -1,12 +1,12 @@
 types = {
-	type[diplo_action] = {
+	type[diplomatic_action] = {
 		path = "game/common/diplomatic_actions"
 	}
 }
 
 #TODO Confirm
 #TODO Document
-diplo_action = {
+diplomatic_action = {
 	## cardinality = 0..1
 	###decides if this diplomactic action type is listed in diplomatic view.
 	is_listed = bool
