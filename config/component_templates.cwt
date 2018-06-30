@@ -23,7 +23,7 @@ component_template = {
 	icon_frame = int
 	## cardinality = 0..1
 	prerequisites = { <technology> }
-	## cardinality = 0..1
+	## cardinality = 1..1
 	component_set = <component_set>
 	## cardinality = 0..1
 	hidden = bool
@@ -76,8 +76,11 @@ component_template = {
 		sensor_range = int
 		## cardinality = 0..1
 		hyperlane_range = int
+		## cardinality = 0..1
 		friendly_aura = {
 			name = scalar
+			## cardinality = 0..1
+			system_wide = bool			
 			## cardinality = 0..1
 			radius = int
 			## cardinality = 0..1
@@ -88,7 +91,7 @@ component_template = {
 				id = scalar
 				priority = int
 			}
-
+			## cardinality = 0..1
 			modifier = {
 				## cardinality = 0..1
 				alias_name[modifier] = alias_match_left[modifier]
@@ -106,8 +109,11 @@ component_template = {
 				}
 			}
 		}
+		## cardinality = 0..1
 		hostile_aura = {
 			name = scalar
+			## cardinality = 0..1
+			system_wide = bool
 			## cardinality = 0..1
 			radius = int
 			## cardinality = 0..1
@@ -118,7 +124,7 @@ component_template = {
 				id = scalar
 				priority = int
 			}
-
+			## cardinality = 0..1
 			modifier = {
 				## cardinality = 0..1
 				alias_name[modifier] = alias_match_left[modifier]
