@@ -46,35 +46,35 @@ building = {
 	subtype[event_building] = {
 		## cardinality = 0..1
 		cost = {
-			## cardinality = 0..100
-			<resource> = int
+			## cardinality = 0..inf
+			<resource.accumulative> = float
 		}
 	}
 	subtype[!event_building] = {
 		cost = {
-			## cardinality = 0..100
-			<resource> = int
+			## cardinality = 0..inf
+			<resource.accumulative> = float
 		}
 	}
 	## cardinality = 0..1
 	base_buildtime = int
 	## cardinality = 0..1
 	required_resources = { 
-		## cardinality = 0..100
-		<resource> = int
+		## cardinality = 0..inf
+		<resource> = float
 	} 
 	## cardinality = 0..1
 	produced_resources = { 	
-		## cardinality = 0..100
-		<resource> = int
+		## cardinality = 0..inf
+		<resource> = float
 	}
 	## cardinality = 0..1
 	produced_resource_trigger = { ###scope = country, cannot scope to planet or tile 
-		## cardinality = 0..100
+		## cardinality = 0..inf
 		modifier = { 
 			alias_name[trigger] = alias_match_left[trigger]
 			resources = {
-				## cardinality = 1..100
+				## cardinality = 1..inf
 				<resource> = float
 			}
 		}
@@ -82,27 +82,27 @@ building = {
 	## cardinality = 0..1
 	###accepts only tile_building_resource_xyz_add = type modifiers
 	adjacency_bonus = { 
-		## cardinality = 0..100
+		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
 	###accepts planet modifiers
 	planet_modifier = { 
-		## cardinality = 0..100
+		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
 	army_modifier = { 
-		## cardinality = 0..100
+		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
 	###accepts country modifiers
 	country_modifier = { 
-		## cardinality = 0..100
+		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	###scope = planet, owner = country, tile = tile.
 	triggered_planet_modifier = { 
 		key = localisation
@@ -114,7 +114,7 @@ building = {
 		}	
 	}
 	## cardinality = 0..1
-	###scope = pop, tile = tile, from/planet = planet, owner = country
+	###scope = pop
 	planet_modifier_with_pop_trigger = { 
 		key = localisation
 		## cardinality = 0..1
@@ -127,34 +127,37 @@ building = {
 		}
 	}
 	## cardinality = 0..1
+	## replace_scope = { this = tile root = tile from = planet fromfrom = country }
 	allow = { 
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	## cardinality = 0..1
-	###scope = country, planet = planet
+	## cardinality = 0..1		
+	## replace_scope = { this = country root = country }
 	show_tech_unlock_if = { 
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
-	###scope planet, tile = tile, owner = country 
+	###scope planet, tile = tile, owner = country 	
 	destroy_if = { 
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
-	###scope planet, tile = tile, owner = country
+	###scope planet, tile = tile, owner = country	
 	potential = { 
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
-	###scope = pop, tile = tile, from/planet = planet, owner = country
+	###scope = pop, tile = tile, from/planet = planet, owner = country	
 	active = { 
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
+	## replace_scope = { this = tile root = tile from = planet fromfrom = country }
 	on_queued = { 
 		alias_name[effect] = alias_match_left[effect]
 	}
 	## cardinality = 0..1
+	
 	on_unqueued = { 
 		alias_name[effect] = alias_match_left[effect]
 	}
@@ -165,12 +168,13 @@ building = {
 	} 
 	
 	## cardinality = 0..1
-	###scope tile, from/planet = planet, owner = country
+	## replace_scope = { this = tile root = tile from = planet fromfrom = country }
 	ai_allow = { 
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
-	###scope tile, from/planet = planet, owner = country
+	
+	## replace_scope = { this = tile root = tile from = planet fromfrom = country }
 	ai_weight = { 
 		## cardinality = 0..1
 		weight = float

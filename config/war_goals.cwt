@@ -52,33 +52,42 @@ war_goal = {
 	###If used as attacker wargoal and set, defender will have their wargoal predetermined by this. If not set, defender gets to pick their own wargoal.
 	set_defender_wargoal = <wargoal>
 
+	## cardinality = 0..1
+	release_occupied_systems_on_status_quo = bool
 
+
+	## replace_scope = { this = country root = country from = country }
 	###FROM = The targeted country, THIS = The acting country
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## replace_scope = { this = country root = country from = country }
 	###FROM = The targeted country, THIS = The acting country
 	possible = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
 	## cardinality = 0..1
+	## replace_scope = { this = country root = country from = country }
 	###Run when war ends in status quo. The targeted country, THIS = The acting country
 	on_status_quo = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 
 	## cardinality = 0..1
+	## replace_scope = { this = country root = country from = country }
 	on_wargoal_set = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 
 	## cardinality = 0..1
+	## replace_scope = { this = country root = country from = country }
 	###Run when target surrenders after claims are ceded. The targeted country, THIS = The acting country
 	on_accept = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 
+	## replace_scope = { this = country root = country from = country }
 	###FROM = The targeted country, THIS = The acting country
 	ai_weight = {
 		weight = int

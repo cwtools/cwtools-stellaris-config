@@ -34,17 +34,19 @@ army = {
 	## cardinality = 0..1
 	maintenance = float
 	## cardinality = 0..1
+	pop_limited = bool
+	## cardinality = 0..1
+	rebel = bool
+	## cardinality = 0..1
+	occupation = bool
+	## cardinality = 0..1
 	prerequisites = {
 		<technology>
 	}
 	## cardinality = 0..1
 	cost = {
-		## cardinality = 0..1
-		minerals = int
-		## cardinality = 0..1
-		energy = int
-		## cardinality = 0..1
-		unity = int
+		## cardinality = 0..inf
+		<resource.accumulative> = float
 	}
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country }

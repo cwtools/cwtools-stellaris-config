@@ -141,6 +141,8 @@ enums = {
 		custom
 		component
 		diplo_action
+		feature
+		resource
 	}
 	enum[feature_flags] = {
 		experimental_subspace_navigation

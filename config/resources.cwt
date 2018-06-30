@@ -2,6 +2,9 @@
 types = {
 	type[resource] = {
 		path = "game/common/strategic_resources"
+		subtype[accumulative] = {
+			accumulative = yes
+		}
 	}
 }
 

@@ -22,7 +22,8 @@ types = {
 
 trait = {
 	## cardinality = 0..1
-	immortal_leaders = yes
+	### Default = no
+	immortal_leaders = bool
 
 	subtype[species_trait] = {
 		## cardinality = 0..1
@@ -34,27 +35,39 @@ trait = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
 		## cardinality = 0..1
-		sapient = no
+		### Default = yes
+		sapient = bool
 		## cardinality = 0..1
-		forced_happiness = yes
+		### Default = no
+		forced_happiness = bool
 		## cardinality = 0..1
 		sorting_priority = int
 		## cardinality = 0..1
 		modification = bool
 		## cardinality = 0..1
-		improves_leaders = yes
+		### Default = no
+		improves_leaders = bool
 		## cardinality = 0..1
-		advanced_trait = yes
+		### Default = no
+		advanced_trait = bool
 		## cardinality = 0..1
 		leader_trait = no
 		## cardinality = 0..1
 		leader_age_min = int
 		## cardinality = 0..1
 		leader_age_max = int
+		## replace_scope = { this = species root = species from = country }
 		## cardinality = 0..1
 		species_potential_add = {
+			## cardinality = 0..inf
 			alias_name[trigger] = alias_match_left[trigger]
 		}
+		## replace_scope = { this = species root = species from = country }
+		## cardinality = 0..1
+		species_possible_remove = {
+			## cardinality = 0..inf
+			alias_name[trigger] = alias_match_left[trigger]
+		}				
 		## cardinality = 0..1
 		prerequisites = {
 			## cardinality = 0..100
@@ -67,12 +80,14 @@ trait = {
 		cost = int
 		icon = filepath
 
-		modification = no
+		### Default = yes
+		modification = bool
 
 		leader_trait = yes
 
 		## cardinality = 0..1
-		hide_age = yes
+		### Default = no
+		hide_age = bool
 
 		## cardinality = 0..1
 		modifier = {

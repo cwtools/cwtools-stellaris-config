@@ -64,8 +64,10 @@ ai_personality = {
 	advanced_start_chance = int
 
 	## cardinality = 0..1
-	weapon_preferences = scalar #should check weapon type keys, I don't know where they are defined though. TODO
+	weapon_preferences = <component_tag>
 
+
+	#these three are fractions
 	## cardinality = 0..1
 	armor_ratio = float
 	## cardinality = 0..1

@@ -546,6 +546,7 @@ alias[trigger:count_tile] = {
 
 #side should be one of the previous two scopes
 #< >
+## replace_scope = { this = country }
 ###Checks the amount of potential war participants in a specific war that meet the specified criteria
 alias[trigger:count_potential_war_participants] = {
 	attacker = scope[country]
@@ -573,7 +574,7 @@ alias[trigger:closest_system] = {
 }
 
 
-#Relative Power - lacks who = scope and checking the >, < etc
+#Relative Power - lacks checking the >, < etc
 alias[trigger:relative_power] = {
 	who = scope[country]
 	## cardinality = 0..1

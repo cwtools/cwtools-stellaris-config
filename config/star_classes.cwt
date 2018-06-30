@@ -1,5 +1,55 @@
 types = {
+	## type_key_filter <> random_list
 	type[star_class] = {
 		path = "game/common/star_classes"
+	}
+	## type_key_filter = random_list
+	type[star_class_random_list] = {
+		path = "game/common/star_classes"
+	}
+}
+
+#TODO Confirm
+
+star_class = {
+    class = scalar
+	## cardinality = 0..1
+    icon = scalar
+	## cardinality = 0..1
+	icon_scale = float
+    ## cardinality = 0..inf
+	planet = {
+		#TODO check star subtype
+        key = <planet_class.star>
+		## cardinality = 0..1
+		class = scalar
+    }
+    spawn_odds = int
+    num_planets = { min = int max = int }
+    ## cardinality = 0..inf
+	#TODO check planet subtype
+	<planet_class.planet> = { spawn_odds = int }
+	## cardinality = 0..1
+	is_environmental_hazard = bool
+	## cardinality = 0..1
+	modifier = {
+		## cardinality = 0..inf
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+}
+
+star_class_random_list = {
+	name = scalar
+	stars = {
+		<star_class>
+	}
+}
+
+enums = {
+	complex_enum[star_class_random_list] = {
+		path = "game/common/star_classes"
+		name = {
+			name = enum_name
+		}
 	}
 }

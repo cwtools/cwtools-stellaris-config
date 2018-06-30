@@ -1,0 +1,108 @@
+types = {
+	type[megastructure] = {
+		path = "game/common/megastructures"
+	}
+}
+
+megastructure = {
+	entity = scalar
+	## cardinality = 0..1
+	construction_entity = scalar
+	portrait = scalar
+  ## cardinality = 0..1
+  place_entity_on_planet_plane = bool
+  ## cardinality = 0..1
+  entity_offset = { x = int y = int }
+  ## cardinality = 0..1
+  construction_blocks_others = bool
+  ## cardinality = 0..1
+  build_outside_gravity_well = bool
+  ## cardinality = 0..1
+  show_galactic_map_icon = bool
+  ## cardinality = 0..1
+  bypass_type = <bypass>
+	## cardinality = 0..1
+	###also possible to use here upgrade_desc = hide, and localisations are not required in that case
+  upgrade_desc = localisation
+	## cardinality = 0..1
+  upgrade_from = {
+		<megastructure>
+	}
+  ## cardinality = 0..1
+	prerequisites = {
+		<technology>
+	}
+  ## cardinality = 0..1
+  ## replace_scope = { this = country root = country }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+  ## cardinality = 0..1
+  ## replace_scope = { this = system root = system from = country }
+	possible = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+  ## cardinality = 0..1
+	build_time = int
+  ## cardinality = 0..1
+	build_cost = {
+		## cardinality = 0..inf
+		<resource.accumulative> = int
+	}
+  ## cardinality = 0..1
+	monthly_production = {
+		## cardinality = 0..inf
+		<resource> = int
+	}
+  ## cardinality = 0..1
+	maintenance = {
+		## cardinality = 0..inf
+		<resource> = int
+	}
+	## cardinality = 0..1
+	###accepts country modifiers
+	country_modifier = {
+		## cardinality = 0..inf
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+  ## cardinality = 0..1
+	placement_rules = {
+		 ## replace_scope = { this = planet root = planet }
+    planet_possible = {
+      ## cardinality = 0..inf
+      alias_name[trigger] = alias_match_left[trigger]
+    }
+	}
+  ## cardinality = 0..1
+  ## replace_scope = { this = system root = system from = country fromfrom = megastructure }
+	on_build_start = {
+    ## cardinality = 0..inf
+    alias_name[effect] = alias_match_left[effect]
+  }
+  ## cardinality = 0..1
+  ## replace_scope = { this = system root = system from = country }
+	on_build_cancel = {
+    ## cardinality = 0..inf
+    alias_name[effect] = alias_match_left[effect]
+  }
+  ## cardinality = 0..1
+  ## replace_scope = { this = system root = system from = country fromfrom = megastructure }
+	on_build_complete = {
+    ## cardinality = 0..inf
+    alias_name[effect] = alias_match_left[effect]
+  }
+	## cardinality = 0..1
+	## replace_scope = { this = system root = system from = country fromfrom = megastructure }
+	ai_weight = {
+		## cardinality = 0..1
+		weight = float
+		## cardinality = 0..1
+		factor = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	## cardinality = 0..1
+	sensor_range = int
+	## cardinality = 0..1
+	hyperlane_range = int
+}

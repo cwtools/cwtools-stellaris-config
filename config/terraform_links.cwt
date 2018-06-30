@@ -12,21 +12,25 @@ terraform_link = {
 	duration = int
 	## cardinality = 0..1
 	###displayed in game, hence functions like after effect and requires localisations in the same way.
+	## replace_scope = { this = country root = country from = planet }
 	condition = {
 		## cardinality = 0..100
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
+	## replace_scope = { this = country root = country from = planet }
 	potential = { 
 		## cardinality = 0..100
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
+	## replace_scope = { this = country root = country from = planet }
 	effect = {  
 		## cardinality = 0..100
 		alias_name[effect] = alias_match_left[effect]
 	}
 	## cardinality = 0..1
+	## replace_scope = { this = country root = country from = planet }
 	ai_weight = {
 		## cardinality = 0..1
 		weight = float

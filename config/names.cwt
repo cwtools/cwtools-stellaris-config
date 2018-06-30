@@ -1,0 +1,11 @@
+types = { #these are all connected. I added the others so whoever does these in the end knows where to look.
+	type[name_list] = {
+		path = "game/common/name_lists"
+	}
+	type[species_name] = {
+		path = "game/common/species_names"
+	}	
+	type[random_name] = {
+		path = "game/common/random_names"
+	}		
+}

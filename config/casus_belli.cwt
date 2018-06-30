@@ -18,12 +18,14 @@ casus_belli = {
 	}
 
 	## cardinality = 0..1
+	## replace_scope = { this = country root = country from = country }
 	###trigger, evaluated daily to check if CB should be created or destroyed automatically, does not affect CBs granted via script; this = attacker (CB owner), from = defender (target country); default: { always = yes }
 	is_valid = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
 	## cardinality = 0..1
+	## replace_scope = { this = country root = country from = country }
 	###trigger, evaluated daily to destroy CBs that have been granted via script ahead of expiration date; this = attacker (CB owner), from = defender (target country); default: { always = no }
 	destroy_if = {
 		alias_name[trigger] = alias_match_left[trigger]
