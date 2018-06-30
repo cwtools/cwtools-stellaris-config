@@ -93,7 +93,7 @@ buildable_pop = {
 	}
 	
 	portrait = { 
-		enum[species_portrait] = { 
+		enum[species_portraits] = { 
 			## cardinality = 0..inf
 			alias_name[trigger] = alias_match_left[trigger]
 		}
@@ -101,7 +101,7 @@ buildable_pop = {
 }	
 
 enums = {
-	complex_enum[species_portait] = {
+	complex_enum[species_portaits] = {
 		path = "gfx\portraits\portraits"
 		name = {
 			enum_name = {
