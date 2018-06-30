@@ -30,6 +30,7 @@ planet_class = {
 	entity = scalar #entity file, defined under gfx/models/planets/*.asset
 	## cardinality = 0..1
 	overlay_entity = scalar
+	## cardinality = 0..1
 	entity_scale = float
 	## cardinality = 0..1
 	fixed_entity_scale = bool
@@ -73,7 +74,7 @@ planet_class = {
 	}
 	#only for planets defined as colonizable!
 	## cardinality = 0..1
-	climate = <localisation>
+	climate = localisation
 	## cardinality = 0..1
 	enable_tilt = bool
 	## cardinality = 0..1

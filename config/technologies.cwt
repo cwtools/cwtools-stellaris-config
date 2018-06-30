@@ -54,7 +54,7 @@ technology = {
 
 
 	subtype[repeatable] = {
-		cost_per_level = @repeatableTechLevelCost
+		cost_per_level = int
 	}
 
 	## cardinality = 0..1
@@ -141,6 +141,8 @@ enums = {
 		custom
 		component
 		diplo_action
+		feature
+		resource
 	}
 	enum[feature_flags] = {
 		experimental_subspace_navigation

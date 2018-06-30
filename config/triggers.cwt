@@ -1124,7 +1124,7 @@ alias[trigger:has_resource] = {
 alias[trigger:has_strategic_resource] = bool
 
 alias[trigger:has_country_strategic_resource] = {
-	type = <strategic_resource>
+	type = <resource.strategic>
 	amount = int
 }
 alias[trigger:has_monthly_income] = {

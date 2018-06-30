@@ -1,0 +1,23 @@
+
+types = {
+	type[component_set] = {
+		name_field = "key"
+    	path = "game/common/component_sets"
+		subtype[required_component] = {
+			required_component_set = yes
+		}
+	}
+}
+
+component_set = {
+	icon = scalar
+	icon_frame = int
+	## cardinality = 0..1
+	required_component_set = bool
+	subtype[required_component] = {
+		key = scalar
+	}
+	subtype[!required_component] = {
+		key = localisation
+	}
+}

@@ -3,3 +3,119 @@ types = {
 		path = "game/common/species_classes"
 	}
 }
+
+#TODO Confirm
+#TODO Document
+#TODO Check portraits
+species_class = {
+	## cardinality = 0..1
+	archetype = <species_archetype>
+	## cardinality = 0..1
+	modifier = {
+		## cardinality = 0..1
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	## cardinality = 0..1
+	#used when starting a new game to give robots (see game_start.11) and techs (see game_start.8)
+	#description = localisaton
+	## cardinality = 0..1
+	playable = bool
+	## cardinality = 0..1
+	playable = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	randomized = bool
+	## cardinality = 0..1
+	randomized = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	uplifted_into = <species_class>
+	## cardinality = 0..1
+	uplifted_portraits = {
+		## cardinality = 0..inf
+		enum[species_portraits]
+	}
+	## cardinality = 0..1
+	## replace_scope = { root = country this = country }
+	#TODO replace with an alias for government blocks
+	possible = {
+		## cardinality = 0..1
+		authority = {
+			## cardinality = 0..1
+			value = <authority>
+			## cardinality = 0..inf
+			OR = {
+				## cardinality = 0..1
+				text = localisation
+				## cardinality = 2..inf
+				value = <authority>
+			}
+			## cardinality = 0..inf
+			NOT = {
+				## cardinality = 0..1
+				text = localisation
+				value = <authority>
+			}
+			## cardinality = 0..inf
+			NOR = {
+				## cardinality = 0..1
+				text = localisation
+				## cardinality = 2..inf
+				value = <authority>
+			}
+		}
+	}
+	## cardinality = 0..1
+	possible_secondary = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	portraits = {
+		## cardinality = 0..inf
+		enum[species_portraits]
+	}
+	## cardinality = 0..inf
+	custom_portraits = {
+		## replace_scope = { root = no_scope this = no_scope }
+		#i have no idea what the actual scope here is. someone should probably check it :)
+		## cardinality = 0..1
+		randomized = {
+			## cardinality = 0..1
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## replace_scope = { root = no_scope this = no_scope }
+		#i have no idea what the actual scope here is. someone should probably check it :)
+		## cardinality = 0..1
+		playable = {
+			## cardinality = 0..1
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		portraits = {
+			## cardinality = 1..inf
+			enum[species_portraits]
+		}
+	}
+	## cardinality = 0..1
+	non_randomized_portraits = {
+		## cardinality = 1..inf
+		enum[species_portraits]
+	}
+	## cardinality = 0..1
+	gender = bool
+	## cardinality = 0..1
+	graphical_culture = <graphical_culture>
+	## cardinality = 0..1
+	move_pop_sound_effect = scalar #should be connected to sounds under game/sound
+	## cardinality = 0..1
+	robotic = bool
+	## cardinality = 0..1
+	use_climate_preference = bool
+	## cardinality = 0..1
+	portrait_modding = bool
+	## cardinality = 0..1
+	leader_age_min = int
+	## cardinality = 0..1
+	leader_age_max = int
+}
