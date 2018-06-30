@@ -5,6 +5,8 @@ types = {
 	}
 }
 
+#TODO Confirm
+#TODO Document
 global_ship_design = {
 	## cardinality = 0..1
 	name = localisation_synced
@@ -28,17 +30,21 @@ global_ship_design = {
 		## cardinality = 0..1
 		template = <section_template>
 		## cardinality = 0..1
+		#TODO Section slots
 		slot = <section_slots>		
 		## cardinality = 0..inf
 		component = { 
 			#one slot, of one type! so one of the these two varients- and these need to match the component template as it is defined!
 			## cardinality = 0..1
+			#TODO check slot sizes
 			slot = <utility_slot_size>
 			## cardinality = 0..1
+			#TODO check slot sizes
 			slot = <weapon_slot_size>
 			## cardinality = 1..1
 			template = <component_template>
 		}
 	}
+	#TODO Check this
 	required_component = <required_component>
 }	
