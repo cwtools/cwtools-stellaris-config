@@ -4,6 +4,9 @@ types = {
 	}
 }
 
+#TODO Confirm
+#TODO DOcument
+#TODO Expand shelter
 country_customization = {
 	colony_shelter = { 
 		#the building should be defined as capital! and probably level 0 as well. Please add a check for this
