@@ -10,7 +10,13 @@ diplo_action = {
 	## cardinality = 0..1
 	###decides if this diplomactic action type is listed in diplomatic view.
 	is_listed = bool
+	
+	## cardinality = 0..1
+	requires_unanimous_vote = bool
 
+	## cardinality = 0..1
+	requires_recipient_peace = bool
+	
 	## cardinality = 0..1
 	###the technologies required to enable the player to send this diplomatic action.
 	prerequisites = {
@@ -21,6 +27,12 @@ diplo_action = {
 	## cardinality = 0..1
 	###will require the actor to be at peace for this action to pass the possible check.
 	requires_actor_peace = bool
+	
+	## cardinality = 0..1
+	show_to_alliance_members = bool
+	
+	## cardinality = 0..1
+	requires_recipient_alliance_vote = bool
 
 	## cardinality = 0..1
 	###will require the alliance of the actor to vote for this action before passing it on to the recipient.
