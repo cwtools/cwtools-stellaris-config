@@ -4,11 +4,13 @@ types = {
 	}
 }
 
+#TODO Confirm
+#TODO Document
 buildable_pop = {
 	## cardinality = 0..1
 	prerequisites = { <technology> }
 	## cardinality = 0..1
-	## replace_scope = { this = country root = country}
+	## replace_scope = { this = country root = country }
 	show_tech_unlock_if = { 
 		## cardinality = 0..inf
 		alias_name[trigger] = alias_match_left[trigger]	
@@ -18,13 +20,13 @@ buildable_pop = {
 		## cardinality = 0..inf
 		<resource.accumulative> = float
 	}
-	## replace_scope = { this = country root = country}
+	## replace_scope = { this = country root = country }
 	## cardinality = 0..1	
 	potential_build = {
 		## cardinality = 0..inf
 		alias_name[trigger] = alias_match_left[trigger]	
 	}
-	## replace_scope = { this = country root = country}
+	## replace_scope = { this = country root = country }
 	## cardinality = 0..1
 	allow = { 
 		## cardinality = 0..inf
@@ -35,7 +37,8 @@ buildable_pop = {
 	## cardinality = 0..1	
 	species_class = <species_class>	
 	## cardinality = 0..1
-	species = <species> #example from vanilla: species = founder_species
+	# Check if this accepts species
+	species = founder_species #example from vanilla: species = founder_species
 	## cardinality = 0..1
 	species = {		
 		name = localisation
@@ -89,8 +92,20 @@ buildable_pop = {
 		consumer_goods = bool
 	}
 	
-	#you will need to fix this one up.
 	portrait = { 
-		<portrait> = { [trigger] }
+		enum[species_portrait] = { 
+			## cardinality = 0..inf
+			alias_name[trigger] = alias_match_left[trigger]
+		}
 	}
 }	
+
+enums = {
+	complex_enum[species_portait] = {
+		path = "gfx\portraits\portraits"
+		name = {
+			enum_name = {
+			}
+		}
+	}
+}
