@@ -8,13 +8,13 @@ types = {
 #TODO DOcument
 #TODO Expand shelter
 country_customization = {
-	colony_shelter = { 
+	colony_shelter = {
 		#the building should be defined as capital! and probably level 0 as well. Please add a check for this
 		#the planet classes should be defined as colonizable!
-		default = <building> 
+		default = <building>
 		## cardinality = 0..inf
-		<planet_class> = <building> 
-	}	
+		<planet_class> = <building>
+	}
 	## cardinality = 0..1
 	graphical_culture_for_random_empire = {
 		## cardinality = 0..inf
@@ -22,13 +22,13 @@ country_customization = {
 			## cardinality = 0..inf
 			modifier = {
 				add = int
-				species_portrait = <portrait>
-			} 
+				species_portrait = enum[species_portraits]
+			}
 		}
-	}	 
+	}
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
-	weight = { 
+	weight = {
 		## cardinality = 0..1
 		base = int
 		## cardinality = 0..inf
@@ -36,5 +36,5 @@ country_customization = {
 			add = int
 			alias_name[trigger] = alias_match_left[trigger]
 		}
-	}	
-}	
+	}
+}

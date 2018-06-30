@@ -8,7 +8,7 @@ types = {
 ship_behavior = {
 	name = scalar
 	## cardinality = 0..1
-	desc = <localisation>
+	desc = localisation
 
 	## cardinality = 0..1
 	preferred_attack_range = int

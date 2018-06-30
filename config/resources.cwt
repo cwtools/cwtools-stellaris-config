@@ -5,6 +5,9 @@ types = {
 		subtype[accumulative] = {
 			accumulative = yes
 		}
+		subtype[strategic] = {
+			is_rare = yes
+		}
 	}
 }
 

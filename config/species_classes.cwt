@@ -68,6 +68,10 @@ species_class = {
 		}
 	}
 	## cardinality = 0..1
+	possible_secondary = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
 	portraits = {
 		## cardinality = 0..inf
 		enum[species_portraits]
@@ -104,4 +108,14 @@ species_class = {
 	graphical_culture = <graphical_culture>
 	## cardinality = 0..1
 	move_pop_sound_effect = scalar #should be connected to sounds under game/sound
+	## cardinality = 0..1
+	robotic = bool
+	## cardinality = 0..1
+	use_climate_preference = bool
+	## cardinality = 0..1
+	portrait_modding = bool
+	## cardinality = 0..1
+	leader_age_min = int
+	## cardinality = 0..1
+	leader_age_max = int
 }

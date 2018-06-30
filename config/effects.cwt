@@ -2283,18 +2283,18 @@ alias[effect:create_ambient_object] = {
  	use_3d_location = bool
 	## cardinality = 0..1
  	entity_offset = {
-		min = <int>
- 		max = <int>
+		min = int
+ 		max = int
  	}
 	## cardinality = 0..1
  	entity_offset_angle = {
- 		min = <int>
- 		max = <int>
+ 		min = int
+ 		max = int
  	}
 	## cardinality = 0..1
 	entity_offset_height = {
- 		min = <int>
- 		max = <int>
+ 		min = int
+ 		max = int
  	}
 	## cardinality = 0..1
 	base_angle_towards = scope[planet]
@@ -2750,13 +2750,13 @@ alias[effect:play_sound] = scalar #TODO sound
 alias[effect:pop] = { alias_name[effect] = alias_match_left[effect] }
 
 ### Adds a specific ethic to the scoped pop regardless if pop-species allows ethic divergence or not.
-alias[effect:pop_force_add_ethic] = <ethic>
+alias[effect:pop_force_add_ethic] = <ethos>
 
 ### Sets the scoped pop's migration speed
 alias[effect:pop_migration] = float
 
 ### Removes a specific ethic from the scoped pop
-alias[effect:pop_remove_ethic] = <ethic>
+alias[effect:pop_remove_ethic] = <ethos>
 
 ### Disables or enables anomaly generation for the scoped planet
 alias[effect:prevent_anomaly] = bool

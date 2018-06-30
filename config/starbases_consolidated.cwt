@@ -70,7 +70,7 @@ starbase_building = {
 	equipped_component = <component_template>
 
 	## cardinality = 0..inf
-	custom_tooltip = <localisation>
+	custom_tooltip = localisation
 
 	## cardinality = 0..1
 	### ship modifiers, apply on the starbase itself
@@ -234,7 +234,7 @@ starbase_module = {
 	}
 }
 
-starbase_level = {	
+starbase_level = {
 	ship_size = <ship_size>
 	## cardinality = 0..1
 	next_level = <starbase_level>
@@ -253,22 +253,22 @@ starbase_level = {
 	## cardinality = 0..1
 	### Determines which levels are more important to upgrade from
 	## replace_scope = { this = starbase root = starbase from = country }
-	ai_weight = { 
+	ai_weight = {
 		## cardinality = 0..1
 		weight = float
 		## cardinality = 0..1
 		factor = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
-	}	
+	}
 }
 
 starbase_type = {
 	## replace_scope = { this = starbase root = starbase from = country }
-	potential = { 
+	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
-	}	
+	}
 	## replace_scope = { this = starbase root = starbase from = country }
-	weight_modifier = { 
+	weight_modifier = {
 		## cardinality = 1..1 #one of these is required
 		base = float
 		## cardinality = 0..1
@@ -276,34 +276,35 @@ starbase_type = {
 		## cardinality = 0..1
 		add = int
 		## cardinality = 0..1
-		add = float		
+		add = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
-	}		
-	ai_design = { 
+	}
+	## cardinality = 0..1
+	ai_design = {
 		#one of these is required
-		min = { 
+		min = {
 			## cardinality = 1..1 #one of these is required
 			base = int
 		}
 		#one of these is required
-		ratio = { 
+		ratio = {
 			#one of these is required
 			base = float #this is a fraction from 100% of the base defined under min = {}!, total of fractions should not exceeed 100%
 			## cardinality = 0..inf
 			## replace_scope = { this = starbase root = starbase from = country }
-			modifier = { 
-				add = float #this increases or reduces parts of the fraciton, i.e. +0.05, -0.1 etc. 
+			modifier = {
+				add = float #this increases or reduces parts of the fraciton, i.e. +0.05, -0.1 etc.
 				## cardinality = 1..inf
 				alias_name[trigger] = alias_match_left[trigger]
 			}
 		}
-		buildings = { 
+		buildings = {
 			## cardinality = 0..inf
 			<starbase_building> = { base = float } #these probably also accept modifiers
 		}
-		modules = { 
+		modules = {
 			## cardinality = 0..inf
 			<starbase_module> = { base = float } #these probably also accept modifiers
-		}		
+		}
 	}
 }

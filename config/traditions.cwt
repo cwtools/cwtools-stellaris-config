@@ -19,6 +19,7 @@ enums = {
 }
 
 tradition = {
+	## cardinality = 0..1
 	modifier = { ###accepts only country modifiers
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
@@ -61,7 +62,7 @@ alias[tradition_swap:tradition_swap] = {
 	###accepts only country modifiers
 	modifier = {
 		## cardinality = 0..1
-		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## replace_scope = { this = country root = country }
 	###this determines the chances of a tradition swap appearing for a given empire IF multiple swaps are potential. It is unused in vanilla.

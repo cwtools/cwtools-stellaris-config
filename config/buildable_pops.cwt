@@ -66,7 +66,7 @@ buildable_pop = {
 		## cardinality = 0..1
 		pop_ethics = {
 			## cardinality = 0..inf
-			<ethic>
+			<ethos>
 		}
 
 		pops_auto_growth = float
@@ -102,7 +102,7 @@ buildable_pop = {
 }
 
 enums = {
-	complex_enum[species_portaits] = {
+	complex_enum[species_portraits] = {
 		path = "game/gfx/portraits/portraits"
 		name = {
 			enum_name = {

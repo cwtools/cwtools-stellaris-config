@@ -73,7 +73,7 @@ planet_class = {
 	}
 	#only for planets defined as colonizable!
 	## cardinality = 0..1
-	climate = <localisation>
+	climate = localisation
 	## cardinality = 0..1
 	enable_tilt = bool
 	## cardinality = 0..1

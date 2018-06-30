@@ -6,9 +6,9 @@ types = {
 
 #TODO Confirm
 #TODO Add mesh/shader references
-asteroid_belt = { 
+asteroid_belt = {
 	## cardinality = 1..inf
 	mesh = scalar
 	## cardinality = 0..1
 	shader = scalar
-}	
+}

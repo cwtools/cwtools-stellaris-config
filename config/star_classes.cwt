@@ -25,6 +25,7 @@ star_class = {
 		class = scalar
     }
     spawn_odds = int
+	## cardinality = 0..1
     num_planets = { min = int max = int }
     ## cardinality = 0..inf
 	#TODO check planet subtype
