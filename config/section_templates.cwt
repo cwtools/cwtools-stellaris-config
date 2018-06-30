@@ -10,6 +10,7 @@ section_template = {
   ## cardinality = 0..inf
   ship_size = <ship_size>
   ## cardinality = 0..inf
+  #TODO section slots
   fits_on_slot = <section_slots>   
   entity = scalar
   icon = scalar
@@ -19,11 +20,12 @@ section_template = {
   cost = float
   ## cardinality = 0..1
   prerequisites = { <technology> }
-  
+  ## cardinality = 0..inf
   component_slot = {
     name = localisation
+	#TODO slot size
     slot_size = <weapon_slot_size>
-    slot_type = <slot_type>
+    slot_type = enum[slot_type]
     locatorname = scalar
     ## cardinality = 0..1
     is_side_slot = bool
