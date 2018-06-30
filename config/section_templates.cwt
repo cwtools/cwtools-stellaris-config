@@ -39,6 +39,8 @@ section_template = {
 		x = float
 		y = float
 	}
+	## cardinality = 0..1
+	section_instance = bool
   }
   ## cardinality = 0..1
   small_utility_slots = int
@@ -62,7 +64,7 @@ enums = {
      	strike_craft
     	weapon
    	}
-	complex_enum[section_slots] = {
+	complex_enum[component_slots] = {
 		path = "game/common/section_templates"
 		component_slot = {
 			name = enum_name
