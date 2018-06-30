@@ -280,14 +280,14 @@ starbase_type = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}		
 	ai_design = { 
-		## cardinality = 1..1 #one of these is required
+		#one of these is required
 		min = { 
 			## cardinality = 1..1 #one of these is required
 			base = int
 		}
-		## cardinality = 1..1 #one of these is required
+		#one of these is required
 		ratio = { 
-			## cardinality = 1..1 #one of these is required
+			#one of these is required
 			base = float #this is a fraction from 100% of the base defined under min = {}!, total of fractions should not exceeed 100%
 			## cardinality = 0..inf
 			## replace_scope = { this = starbase root = starbase from = country }
