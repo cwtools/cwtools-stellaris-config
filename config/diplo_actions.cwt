@@ -12,12 +12,6 @@ diplomatic_action = {
 	is_listed = bool
 	
 	## cardinality = 0..1
-	requires_unanimous_vote = bool
-
-	## cardinality = 0..1
-	requires_recipient_peace = bool
-	
-	## cardinality = 0..1
 	###the technologies required to enable the player to send this diplomatic action.
 	prerequisites = {
 		## cardinality = 0..100
@@ -31,9 +25,6 @@ diplomatic_action = {
 	## cardinality = 0..1
 	show_to_alliance_members = bool
 	
-	## cardinality = 0..1
-	requires_recipient_alliance_vote = bool
-
 	## cardinality = 0..1
 	###will require the alliance of the actor to vote for this action before passing it on to the recipient.
 	requires_alliance_vote = bool
@@ -66,9 +57,6 @@ diplomatic_action = {
 	## cardinality = 0..1
 	###false by default, will show your alliance members when you decline a proposal of this type.
 	show_decline_to_alliance_members = bool
-
-	## cardinality = 0..1
-	show_to_alliance_members = bool
 
 	## cardinality = 0..1
 	###decides whether actor gets a response on acceptance (otherwise just on decline)

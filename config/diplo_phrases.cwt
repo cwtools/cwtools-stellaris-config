@@ -126,6 +126,11 @@ diplo_phrase = {
 				weight = {
 					weight = int
 				}
+				## cardinality = 0..1
+				only_for_gift = yes
+				
+				## cardinality = 0..1
+				only_for_trade = yes
 			}
 		}
 		## cardinality = 0..inf
