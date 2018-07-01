@@ -1,0 +1,30 @@
+types = {
+	type[alert] = {  #in common folder
+		path = "game/common"
+	}
+	type[message_type] = {
+		path = "game/common"
+	}  
+}
+
+alert = { 
+  category = <alert_category>
+  sound = scalar #<sound> #should be linked to an asset file /sounds
+} 
+enums = { 
+  enum[alert_category] = {
+    HIGH
+    MEDIUM
+    LOW
+    DISABLED
+  }
+}
+
+message_type = { 
+  icon = scalar
+  icon_frame = int
+  key = <localisation> #loc string is MESSAGE_<key>
+  sound = scalar #<sound> #should be linked to an asset file /sounds
+  sound_is_advisor = yes
+  ping = scalar #<sound> #should be linked to an asset file /sounds - I think exnihil
+ } 
