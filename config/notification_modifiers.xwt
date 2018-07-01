@@ -1,0 +1,9 @@
+types = {
+	type[notification_modifier] = {
+		path = "game/common/notification_modifiers"
+	}
+}
+
+notification_modifier = {
+  icon = filepath
+}
