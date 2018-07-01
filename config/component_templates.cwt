@@ -44,6 +44,14 @@ component_template = {
 	size_restriction =  <shipsize>
 	## cardinality = 0..1
 	should_ai_use = bool
+	## cardinality = 0..1
+	## replace_scope = { root = country this = country }
+ 	valid_for_country = {
+ 		## cardinality = 0..1
+ 		weight = float
+ 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+ 	}
+
 	subtype[utility_component_template] = {
 		power = int
 		cost = int
