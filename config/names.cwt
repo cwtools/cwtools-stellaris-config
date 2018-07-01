@@ -43,3 +43,20 @@ random_empire_name_format = {
 	### Not quite clear what it does. Matches [] string retreival in game format. If you know what it does, please contact CW Tools developer Dayshine.
 	noun = scalar
 }
+
+species_name = {
+	## cardinality = 1..inf
+	### Unique key for your species name entry
+	scalar = {
+		### Name of a species, singular, e. g. Human
+		name = scalar
+		### Plural for the species name, e. g. Humans
+		plural = scalar
+		### Name of the home planet, if this entry is used when generating random playable empire on game start, e. g. Earth
+		home_planet = scalar
+		### Name of the home system, if this entry is used when generating random playable empire on game start, e. g. Sol
+		home_system = scalar
+		### ID of the name list picked if this entry is used when generating random player empire on game start, e. g. HUMAN1
+		name_list = <name_list>
+	}
+}
