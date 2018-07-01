@@ -24,7 +24,7 @@ section_template = {
   prerequisites = { <technology> }
   ## cardinality = 0..inf
   component_slot = {
-    name = localisation
+    name = scalar
 	#TODO slot size
 	#slot_size = <weapon_slot_size>
 	slot_size = scalar

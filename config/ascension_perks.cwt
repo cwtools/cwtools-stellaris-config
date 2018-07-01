@@ -46,19 +46,3 @@ ascension_perk = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 }
-
-types = {
-	## test
-	type[asteroid_belt] = {
-		path = "game/common/asteroid_belts"
-	}
-}
-
-#TODO Confirm
-#TODO Add mesh/shader references
-asteroid_belt = {
-	## cardinality = 1..inf
-	mesh = scalar
-	## cardinality = 0..1
-	shader = scalar
-}
