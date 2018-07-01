@@ -2,15 +2,336 @@ types = {
 	type[authority] = {
 		path = "game/common/governments/authorities"
 	}
+	type[government] = {
+		path = "game/common/governments"
+	}	
 	type[civic] = {
 		path = "game/common/governments/civics"
 	}
-	type[government] = {
-		path = "game/common/governments"
-	}
 }
 
+authority = {
+	## cardinality = 0..1
+	potential = {
+		## cardinality = 0..1
+		text = localisation
 
+		## cardinality = 0..1
+		always = bool
+
+		## cardinality = 0..1
+		ethics = {
+			## cardinality = 0..inf #originally: 0..3 but actually this number can be higher, some mods add more ethic options
+			value = <ethos>
+
+			## cardinality = 0..inf
+			OR = {
+				## cardinality = 0..1
+				text = localisation
+				## cardinality = 2..99
+				value = <ethos>
+			}
+			## cardinality = 0..inf
+			NOT = {
+				## cardinality = 0..1
+				text = localisation
+				value = <ethos>
+			}
+			## cardinality = 0..inf
+			NOR = {
+				## cardinality = 0..1
+				text = localisation
+				## cardinality = 2..99
+				value = <ethos>
+			}
+		}
+
+		## cardinality = 0..1
+		country_type = {
+			## cardinality = 0..1
+			value = <country_type>
+
+			## cardinality = 0..inf
+			OR = {
+				## cardinality = 0..1
+				text = localisation
+				## cardinality = 2..99
+				value = <country_type>
+			}
+			## cardinality = 0..inf
+			NOT = {
+				## cardinality = 0..1
+				text = localisation
+				value = <country_type>
+			}
+			## cardinality = 0..inf
+			NOR = {
+				## cardinality = 0..1
+				text = localisation
+				## cardinality = 2..99
+				value = <country_type>
+			}
+		}
+	}
+	## cardinality = 0..1
+	possible = {
+		## cardinality = 0..1
+		text = localisation
+
+		## cardinality = 0..1
+		always = bool
+
+		## cardinality = 0..1
+		ethics = {
+			## cardinality = 0..inf #originally: 0..3 but actually this number can be higher, some mods add more ethic options
+			value = <ethos>
+
+			## cardinality = 0..inf
+			OR = {
+				## cardinality = 0..1
+				text = localisation
+				## cardinality = 2..99
+				value = <ethos>
+			}
+			## cardinality = 0..inf
+			NOT = {
+				## cardinality = 0..1
+				text = localisation
+				value = <ethos>
+			}
+			## cardinality = 0..inf
+			NOR = {
+				## cardinality = 0..1
+				text = localisation
+				## cardinality = 2..99
+				value = <ethos>
+			}
+		}
+
+		## cardinality = 0..1
+		country_type = {
+			## cardinality = 0..1
+			value = <country_type>
+
+			## cardinality = 0..inf
+			OR = {
+				## cardinality = 0..1
+				text = localisation
+				## cardinality = 2..99
+				value = <country_type>
+			}
+			## cardinality = 0..inf
+			NOT = {
+				## cardinality = 0..1
+				text = localisation
+				value = <country_type>
+			}
+			## cardinality = 0..inf
+			NOR = {
+				## cardinality = 0..1
+				text = localisation
+				## cardinality = 2..99
+				value = <country_type>
+			}
+		}
+	}
+	## replace_scope = { this = no_scope root = no_scope } #this can check has_dlc and other likewise triggers, but thats it.
+	random_weight = { 		
+		value = int
+		## cardinality = 0..inf
+		modifier = { 
+			## cardinality = 1..1
+			factor = float
+			alias_name[modifier_rule] = alias_match_left[modifier_rule]		
+		}	
+	}
+	## cardinality = 0..1
+	traits = { 
+		## cardinality = 0..inf
+		<trait>
+	}		
+	## cardinality = 0..1
+	has_heir = bool
+	election_type = <election_type>		
+	## cardinality = 0..1 #default = 0, hence required if defined to oligarchic or democratic
+	election_term_years = int
+	## cardinality = 0..1
+	election_term_variance = int #acts like random = int
+	## cardinality = 0..1
+	re_election_allowed = bool
+	## cardinality = 0..1
+	can_have_emergency_elections = bool
+	## cardinality = 0..1
+	emergency_election_cost = int #influence cost!
+	## cardinality = 0..1
+	max_election_candidates = int #default = -1, which equals limitless
+	## cardinality = 0..1
+	can_reform = bool
+	## cardinality = 0..1 #is tied to the agena files if = yes
+	has_agendas = bool
+	## cardinality = 0..1
+	uses_mandates = bool #is tied to the mandate files if = yes
+	
+	tags = { 
+		## cardinality = 1..inf
+		<localisation> 
+	}
+}	
+
+enums = {
+	enum[election_type] = {
+		none
+		oligarchic
+		democratic
+	}
+}	
+
+government = {
+	possible = { # Determines if a government name can be chosen. AND trigger, scope: country; valid triggers: has_ethic, has_authority, has_valid_civic; everything else is undefined behavior!
+		## cardinality = 0..1
+		text = localisation
+
+		## cardinality = 0..1
+		always = bool
+
+		## cardinality = 0..1
+		ethics = {
+			## cardinality = 0..inf #originally: 0..3 but actually this number can be higher, some mods add more ethic options
+			value = <ethos>
+
+			## cardinality = 0..inf
+			OR = {
+				## cardinality = 0..1
+				text = localisation
+				## cardinality = 2..99
+				value = <ethos>
+			}
+			## cardinality = 0..inf
+			NOT = {
+				## cardinality = 0..1
+				text = localisation
+				value = <ethos>
+			}
+			## cardinality = 0..inf
+			NOR = {
+				## cardinality = 0..1
+				text = localisation
+				## cardinality = 2..99
+				value = <ethos>
+			}
+		}
+
+		## cardinality = 0..1
+		country_type = {
+			## cardinality = 0..1
+			value = <country_type>
+
+			## cardinality = 0..inf
+			OR = {
+				## cardinality = 0..1
+				text = localisation
+				## cardinality = 2..99
+				value = <country_type>
+			}
+			## cardinality = 0..inf
+			NOT = {
+				## cardinality = 0..1
+				text = localisation
+				value = <country_type>
+			}
+			## cardinality = 0..inf
+			NOR = {
+				## cardinality = 0..1
+				text = localisation
+				## cardinality = 2..99
+				value = <country_type>
+			}
+		}
+
+		## cardinality = 0..1
+		authority = {
+			## cardinality = 0..1
+			value = <authority>
+
+			## cardinality = 0..inf
+			OR = {
+				## cardinality = 0..1
+				text = localisation
+				## cardinality = 2..99
+				value = <authority>
+			}
+			## cardinality = 0..inf
+			NOT = {
+				## cardinality = 0..1
+				text = localisation
+				value = <authority>
+			}
+			## cardinality = 0..inf
+			NOR = {
+				## cardinality = 0..1
+				text = localisation
+				## cardinality = 2..99
+				value = <authority>
+			}
+		}
+
+		## cardinality = 0..1
+		civics = {
+			## cardinality = 0..3
+			value = <civic>
+
+			## cardinality = 0..inf
+			OR = {
+				## cardinality = 0..1
+				text = localisation
+				## cardinality = 2..99
+				value = <civic>
+			}
+			## cardinality = 0..inf
+			NOT = {
+				## cardinality = 0..1
+				text = localisation
+				value = <civic>
+			}
+			## cardinality = 0..inf
+			NOR = {
+				## cardinality = 0..1
+				text = localisation
+				## cardinality = 2..99
+				value = <civic>
+			}
+		}		
+	}							
+	## replace_scope = { this = country root = country } 
+	weight = {	# scriptable value, scope: country; the (possible) government type with the biggest weight is assigned to the country
+		## cardinality = 0..1
+		base = 100
+		modifier = { 
+			## cardinality = 0..1
+			factor = float
+			alias_name[modifier_rule] = alias_match_left[modifier_rule]		
+		}	
+	}
+	ruler_title = <localisation>
+	ruler_title_female = <localisation>
+	heir_title = <localisation>
+	heir_title_female = <localisation>
+	use_regnal_names = bool
+	dynastic_last_names = bool
+	should_force_rename = bool
+	
+	## replace_scope = { this = leader root = leader } 
+	election_candidates = {					
+		## cardinality = 1..inf
+		modifier = {
+			## cardinality = 0..1 #one of these is required!
+			factor = float
+			## cardinality = 0..1
+			add = 100
+			leader_class = <leader_class>
+		}
+	}
+}	
 
 civic = {
 	## cardinality = 0..1
@@ -31,23 +352,23 @@ civic = {
 
 		## cardinality = 0..1
 		ethics = {
-			## cardinality = 0..3
+			## cardinality = 0..inf #originally: 0..3 but actually this number can be higher, some mods add more ethic options
 			value = <ethos>
 
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			OR = {
 				## cardinality = 0..1
 				text = localisation
 				## cardinality = 2..99
 				value = <ethos>
 			}
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			NOT = {
 				## cardinality = 0..1
 				text = localisation
 				value = <ethos>
 			}
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
@@ -61,20 +382,20 @@ civic = {
 			## cardinality = 0..1
 			value = <country_type>
 
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			OR = {
 				## cardinality = 0..1
 				text = localisation
 				## cardinality = 2..99
 				value = <country_type>
 			}
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			NOT = {
 				## cardinality = 0..1
 				text = localisation
 				value = <country_type>
 			}
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
@@ -88,20 +409,20 @@ civic = {
 			## cardinality = 0..1
 			value = <authority>
 
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			OR = {
 				## cardinality = 0..1
 				text = localisation
 				## cardinality = 2..99
 				value = <authority>
 			}
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			NOT = {
 				## cardinality = 0..1
 				text = localisation
 				value = <authority>
 			}
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
@@ -115,20 +436,20 @@ civic = {
 			## cardinality = 0..3
 			value = <civic>
 
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			OR = {
 				## cardinality = 0..1
 				text = localisation
 				## cardinality = 2..99
 				value = <civic>
 			}
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			NOT = {
 				## cardinality = 0..1
 				text = localisation
 				value = <civic>
 			}
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
@@ -151,20 +472,20 @@ civic = {
 			## cardinality = 0..3
 			value = <ethos>
 
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			OR = {
 				## cardinality = 0..1
 				text = localisation
 				## cardinality = 2..99
 				value = <ethos>
 			}
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			NOT = {
 				## cardinality = 0..1
 				text = localisation
 				value = <ethos>
 			}
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
@@ -178,20 +499,20 @@ civic = {
 			## cardinality = 0..1
 			value = <country_type>
 
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			OR = {
 				## cardinality = 0..1
 				text = localisation
 				## cardinality = 2..99
 				value = <country_type>
 			}
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			NOT = {
 				## cardinality = 0..1
 				text = localisation
 				value = <country_type>
 			}
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
@@ -205,20 +526,20 @@ civic = {
 			## cardinality = 0..1
 			value = <authority>
 
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			OR = {
 				## cardinality = 0..1
 				text = localisation
 				## cardinality = 2..99
 				value = <authority>
 			}
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			NOT = {
 				## cardinality = 0..1
 				text = localisation
 				value = <authority>
 			}
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
@@ -232,20 +553,20 @@ civic = {
 			## cardinality = 0..3
 			value = <civic>
 
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			OR = {
 				## cardinality = 0..1
 				text = localisation
 				## cardinality = 2..99
 				value = <civic>
 			}
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			NOT = {
 				## cardinality = 0..1
 				text = localisation
 				value = <civic>
 			}
-			## cardinality = 0..100
+			## cardinality = 0..inf
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
