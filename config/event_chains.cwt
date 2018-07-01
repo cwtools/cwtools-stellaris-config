@@ -16,3 +16,17 @@ enums = {
 		}
 	}
 }
+
+event_chain = {
+	icon = filepath
+	picture = scalar
+
+	## cardinality = 0..1
+	counter = {
+		## cardinality = 1..inf
+		localisation = {
+			## cardinality = 0..1
+			max = int
+		}
+	}
+}
