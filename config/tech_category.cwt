@@ -3,6 +3,10 @@ types = {
   	# category_tech_category_key_research_speed_mult
   	# each of these modifiers requires localisation and a GFX (gfx/interface/icons/modifiers - same name as the tech_category key)
 	type[technology_category] = {
-		path = "game/common/technology/category"
+		path = "game/common/technology/category"		
 	}
+}
+
+technology_category = { 
+	icon = scalar
 }
