@@ -5,22 +5,24 @@ types = {
 }
 
 system_type = {
-  ## replace_scope = { this = galactic_object root = galactic_object } #it appears so, but the file uses owner (not space_owner). Check pls
+  ## replace_scope = { this = system root = system } 
+  #TODO: it appears so, but the file uses owner (not space_owner). Check pls
   potential = { 	
 		alias_name[trigger] = alias_match_left[trigger]  
   }
   
-  ## replace_scope = { this = galactic_object root = galactic_object } #it appears so, but the file uses owner (not space_owner). Check pls
+  ## replace_scope = { this = system root = system } 
+  #TODO: it appears so, but the file uses owner (not space_owner). Check pls
   weight_modifier = { 
 		## cardinality = 0..1
-    base = int
-    ## cardinality = 1..inf
-    modifier = {     
-      ## cardinality = 0..1
-      factor = float
-      ## cardinality = 0..1
-      add = int
-      alias_name[modifier_rule] = alias_match_left[modifier_rule]  
-     } 
+    	base = int
+    	## cardinality = 1..inf
+    	modifier = {     
+      		## cardinality = 0..1
+      		factor = float
+      		## cardinality = 0..1
+      		add = int
+      		alias_name[modifier_rule] = alias_match_left[modifier_rule]  
+     	} 
   }
 }
