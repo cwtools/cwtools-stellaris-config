@@ -3,3 +3,43 @@ types = {
 		path = "game/common/observation_station_missions"
 	}
 }
+
+observation_station_mission = {
+	icon = scalar
+	small_icon = int
+	## cardinality = 0..1
+	cost = { 
+		## cardinality = 0..inf
+		<resource> = float
+	}
+	## cardinality = 0..1
+	gain = { 
+		## cardinality = 0..inf
+		<resource> = float
+	}
+	## replace_scope = { this = country root = country from = planet }
+	## cardinality = 0..1
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## replace_scope = { this = country root = country from = planet }
+	## cardinality = 0..1
+	valid = { 
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	
+	#if you have monthly_progress you need completion_event and vice versa.
+	## cardinality = 0..1
+	monthly_progress = float 
+	## cardinality = 0..1
+	completion_event = <event.country>
+		
+	ai_weight = { 
+		## cardinality = 0..1
+		weight = float
+		## cardinality = 0..1
+		factor = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}	
+}	
+	
