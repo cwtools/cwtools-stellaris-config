@@ -21,7 +21,7 @@ subject_type = {
 	## cardinality = 0..1
 	can_expand = bool
 	## cardinality = 0..1
-	## cardinality = 0..1overlord_influence = float
+	overlord_influence = float
 	## cardinality = 0..1
 	joins_overlord_wars = bool
 	## cardinality = 0..1
@@ -49,6 +49,6 @@ subject_type = {
 	## cardinality = 0..1
 	subject_tax_rate = { 
 		## cardinality = 0..inf
-		<accumulative_resource> = float[0..1] #max 1.0
+		<resource.accumulative> = float[0.0..1.0]
 	}	
 }	
