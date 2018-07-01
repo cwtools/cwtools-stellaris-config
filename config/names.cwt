@@ -28,7 +28,7 @@ random_empire_name_part = {
 	}
 }
 
-#This block contains rules for picking a specific name format
+### This block contains rules for picking a specific name format
 random_empire_name_format = {
 	## replace_scope = { root = country this = country }
 	### Conditional weight for choosing this format
@@ -36,8 +36,8 @@ random_empire_name_format = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 
-	#Reference to localisation string for generating random name
-	format = localisation_synched
+	### Reference to localisation string for generating random name
+	format = localisation_synced
 	### String used to determine prefix for empire's ship. (Default being ISS). Usually matches name format. Optional for countries that would not ever have ships, e. g. Primitives.
 	prefix_format = scalar
 	### Not quite clear what it does. Matches [] string retreival in game format. If you know what it does, please contact CW Tools developer Dayshine.
