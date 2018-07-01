@@ -67,7 +67,7 @@ trait = {
 		species_possible_remove = {
 			## cardinality = 0..inf
 			alias_name[trigger] = alias_match_left[trigger]
-		}				
+		}
 		## cardinality = 0..1
 		prerequisites = {
 			## cardinality = 0..100
@@ -128,7 +128,7 @@ trait = {
 	## cardinality = 0..1
 	opposites = {
 		## cardinality = 1..100
-		"<trait>"
+		<trait>
 	}
 
 	## cardinality = 0..1

@@ -4,13 +4,16 @@ types = {
 	}
 	type[government] = {
 		path = "game/common/governments"
-	}	
+	}
 	type[civic] = {
 		path = "game/common/governments/civics"
 	}
 }
 
 authority = {
+
+	## cardinality = 0..1
+	icon = filepath
 	## cardinality = 0..1
 	potential = {
 		## cardinality = 0..1
@@ -21,7 +24,8 @@ authority = {
 
 		## cardinality = 0..1
 		ethics = {
-			## cardinality = 0..inf #originally: 0..3 but actually this number can be higher, some mods add more ethic options
+			#originally: 0..3 but actually this number can be higher, some mods add more ethic options
+			## cardinality = 0..inf
 			value = <ethos>
 
 			## cardinality = 0..inf
@@ -83,7 +87,8 @@ authority = {
 
 		## cardinality = 0..1
 		ethics = {
-			## cardinality = 0..inf #originally: 0..3 but actually this number can be higher, some mods add more ethic options
+			#originally: 0..3 but actually this number can be higher, some mods add more ethic options
+			## cardinality = 0..inf
 			value = <ethos>
 
 			## cardinality = 0..inf
@@ -136,24 +141,31 @@ authority = {
 		}
 	}
 	## replace_scope = { this = no_scope root = no_scope } #this can check has_dlc and other likewise triggers, but thats it.
-	random_weight = { 		
+	## cardinality = 0..1
+	random_weight = {
+		## cardinality = 0..1
 		value = int
 		## cardinality = 0..inf
-		modifier = { 
-			## cardinality = 1..1
-			factor = float
-			alias_name[modifier_rule] = alias_match_left[modifier_rule]		
-		}	
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	## cardinality = 0..1
-	traits = { 
+	traits = {
 		## cardinality = 0..inf
-		<trait>
-	}		
+		trait = <trait>
+	}
+	## cardinality = 0..1
+	country_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	## cardinality = 0..1
+	playable = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 	## cardinality = 0..1
 	has_heir = bool
+	## cardinality = 0..1
 	election_type = enum[election_types]
-	## cardinality = 0..1 
+	## cardinality = 0..1
 	### default = 0, hence required if defined to oligarchic or democratic
 	election_term_years = int
 	## cardinality = 0..1
@@ -165,24 +177,31 @@ authority = {
 	can_have_emergency_elections = bool
 	## cardinality = 0..1
 	### influence cost!
-	emergency_election_cost = int 
+	emergency_election_cost = int
 	## cardinality = 0..1
 	### default = -1, which equals limitless
-	max_election_candidates = int 
+	max_election_candidates = int
 	## cardinality = 0..1
 	can_reform = bool
 	### is tied to the agena files if = yes
-	## cardinality = 0..1 
+	## cardinality = 0..1
 	has_agendas = bool
 	### is tied to the mandate files if = yes
 	## cardinality = 0..1
-	uses_mandates = bool 
-	
-	tags = { 
+	uses_mandates = bool
+	## cardinality = 0..1
+	has_factions = bool
+	## cardinality = 0..1
+	valid_for_released_vassal = bool
+	## cardinality = 0..1
+	localization_postfix = enum[authority_postfixes]
+
+	## cardinality = 0..1
+	tags = {
 		## cardinality = 1..inf
 		localisation
 	}
-}	
+}
 
 enums = {
 	enum[election_types] = {
@@ -190,38 +209,47 @@ enums = {
 		oligarchic
 		democratic
 	}
-}	
+	enum[authority_postfixes] = {
+		hive_mind
+		machine_intelligence
+	}
+}
 
 government = {
 	### Determines if a government name can be chosen. AND trigger, scope: country; valid triggers: has_ethic, has_authority, has_valid_civic; everything else is undefined behavior!
 	## replace_scope = { root = country this = country }
-	possible = { 
-		alias_name[trigger] = alias_match_left[trigger]		
-	}							
-	## replace_scope = { this = country root = country } 
+	possible = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## replace_scope = { this = country root = country }
 	### scriptable value, scope: country; the (possible) government type with the biggest weight is assigned to the country
-	weight = {	
+	weight = {
 		## cardinality = 0..1
 		base = int
-		modifier = { 
-			## cardinality = 0..1
-			factor = float
-			alias_name[modifier_rule] = alias_match_left[modifier_rule]		
-		}	
-	}
-	ruler_title = localisation
-	ruler_title_female = localisation
-	heir_title = localisation
-	heir_title_female = localisation
-	use_regnal_names = bool
-	dynastic_last_names = bool
-	should_force_rename = bool
-	
-	## replace_scope = { this = leader root = leader } 
-	election_candidates = {					
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
-}	
+	ruler_title = localisation
+	## cardinality = 0..1
+	ruler_title_female = localisation
+	## cardinality = 0..1
+	heir_title = localisation
+	## cardinality = 0..1
+	heir_title_female = localisation
+	## cardinality = 0..1
+	use_regnal_names = bool
+	## cardinality = 0..1
+	dynastic_last_names = bool
+	## cardinality = 0..1
+	should_force_rename = bool
+	## cardinality = 0..1
+	leader_class = enum[leader_classes_no_ruler]
+
+	## cardinality = 0..1
+	## replace_scope = { this = leader root = leader }
+	election_candidates = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
 
 civic = {
 	## cardinality = 0..1
@@ -242,7 +270,8 @@ civic = {
 
 		## cardinality = 0..1
 		ethics = {
-			## cardinality = 0..inf #originally: 0..3 but actually this number can be higher, some mods add more ethic options
+			#originally: 0..3 but actually this number can be higher, some mods add more ethic options
+			## cardinality = 0..inf
 			value = <ethos>
 
 			## cardinality = 0..inf

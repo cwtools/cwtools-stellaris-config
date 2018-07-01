@@ -9,9 +9,12 @@ types = {
 map_mode = {
 	icon = scalar
 	enable_terra_incognita = bool
+	## cardinality = 0..1
 	can_change_point_of_view = bool
 	## cardinality = 0..1
 	shortcut = scalar
+	## cardinality = 0..1
+	display_claims = bool
 
 	## cardinality = 1..inf
 	color = {
