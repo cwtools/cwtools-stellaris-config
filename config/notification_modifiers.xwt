@@ -5,5 +5,5 @@ types = {
 }
 
 notification_modifier = {
-  icon = scalar
+  icon = filepath
 }
