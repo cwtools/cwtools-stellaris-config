@@ -1,0 +1,17 @@
+types = {
+	type[achivement] = {
+		path = "game/common" #this file is in the common folder
+	}
+}
+
+achivement = { 
+  id = int
+  ## replace_scope = { this = country root = country }
+  possible = { 
+    alias_name[trigger] = alias_match_left[trigger]
+  }
+  ## replace_scope = { this = country root = country }
+  happened = { 
+    alias_name[trigger] = alias_match_left[trigger]
+  }
+}
