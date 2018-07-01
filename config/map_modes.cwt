@@ -1,0 +1,34 @@
+types = {
+	type[map_modes] = {
+		path = "game/common/map_modes"
+	}
+}
+
+#TODO Confirm
+map_modes = {
+	icon = scalar
+	enable_terra_incognita = bool
+	can_change_point_of_view = bool
+	## cardinality = 0..1
+	shortcut = scalar
+
+	## cardinality = 1..inf
+	color = {
+		## cardinality = 1..1
+        value = country
+		## cardinality = 1..1
+		# shoul be <hsv>
+		value = {
+			##cardinality = 3..4
+			float
+		}
+		## cardinality = 0..1
+		custom_tooltip = localisation
+		# not sure how it works, left scalar for now
+		## cardinality = 0..1
+		hardcoded_tooltip = scalar
+        condition = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+    }
+}
