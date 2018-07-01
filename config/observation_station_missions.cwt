@@ -10,12 +10,12 @@ observation_station_mission = {
 	## cardinality = 0..1
 	cost = { 
 		## cardinality = 0..inf
-		<resource> = int
+		<resource> = float
 	}
 	## cardinality = 0..1
 	gain = { 
 		## cardinality = 0..inf
-		<resource> = int
+		<resource> = float
 	}
 	## replace_scope = { this = country root = country from = planet }
 	## cardinality = 0..1
@@ -32,7 +32,7 @@ observation_station_mission = {
 	## cardinality = 0..1
 	monthly_progress = float 
 	## cardinality = 0..1
-	completion_event = <country_event>
+	completion_event = <event.country>
 		
 	ai_weight = { 
 		## cardinality = 0..1
