@@ -1,11 +1,12 @@
 types = {
-	type[map_modes] = {
+	type[map_mode] = {
 		path = "game/common/map_modes"
 	}
 }
 
 #TODO Confirm
-map_modes = {
+#TODO Colours
+map_mode = {
 	icon = scalar
 	enable_terra_incognita = bool
 	can_change_point_of_view = bool
@@ -24,11 +25,17 @@ map_modes = {
 		}
 		## cardinality = 0..1
 		custom_tooltip = localisation
-		# not sure how it works, left scalar for now
 		## cardinality = 0..1
-		hardcoded_tooltip = scalar
+		hardcoded_tooltip = enum[hardcoded_map_mode_tooltip]
+		## replace_scope = { root = country this = country from = country }
         condition = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
     }
+}
+enums = {
+	enum[hardcoded_map_mode_tooltip] = {
+		opinion
+		country
+	}
 }
