@@ -195,6 +195,8 @@ authority = {
 	valid_for_released_vassal = bool
 	## cardinality = 0..1
 	localization_postfix = enum[authority_postfixes]
+	## cardinality = 0..1
+	localization_postfix = scalar
 
 	## cardinality = 0..1
 	tags = {

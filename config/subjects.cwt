@@ -50,6 +50,6 @@ subject_type = {
 	## cardinality = 0..1
 	subject_tax_rate = {
 		## cardinality = 0..inf
-		<resource.accumulative> = float[0.0..1.0]
+		<resource> = float[0.0..1.0]
 	}
 }

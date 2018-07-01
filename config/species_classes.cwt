@@ -7,6 +7,7 @@ types = {
 #TODO Confirm
 #TODO Document
 #TODO Check portraits
+#TODO simplify government requirements
 species_class = {
 	## cardinality = 0..1
 	archetype = <species_archetype>
@@ -41,6 +42,8 @@ species_class = {
 	## replace_scope = { root = country this = country }
 	#TODO replace with an alias for government blocks
 	possible = {
+		## cardinality = 0..1
+		always = bool
 		## cardinality = 0..1
 		authority = {
 			## cardinality = 0..1
