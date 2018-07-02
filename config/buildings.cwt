@@ -31,16 +31,16 @@ building = {
 	defense_armies = int
 	## cardinality = 0..1
 	requires_pop = bool
-	
+
 	## cardinality = 0..1
 	tags = { <building_tag> }
-	
+
 	## cardinality = 0..1
 	capital = yes
 	## cardinality = 0..1
 	level = int
 	## cardinality = 0..1
-	prerequisites = { 
+	prerequisites = {
 		<technology>
 	}
 	subtype[event_building] = {
@@ -59,127 +59,127 @@ building = {
 	## cardinality = 0..1
 	base_buildtime = int
 	## cardinality = 0..1
-	required_resources = { 
-		## cardinality = 0..inf
-		<resource> = float
-	} 
-	## cardinality = 0..1
-	produced_resources = { 	
+	required_resources = {
 		## cardinality = 0..inf
 		<resource> = float
 	}
 	## cardinality = 0..1
-	produced_resource_trigger = { ###scope = country, cannot scope to planet or tile 
+	produced_resources = {
 		## cardinality = 0..inf
-		modifier = { 
+		<resource> = float
+	}
+	## cardinality = 0..inf
+	produced_resource_trigger = { ###scope = country, cannot scope to planet or tile
+		## cardinality = 0..inf
+		modifier = {
 			alias_name[trigger] = alias_match_left[trigger]
 			resources = {
 				## cardinality = 1..inf
 				<resource> = float
 			}
 		}
-	}	
+	}
 	## cardinality = 0..1
 	###accepts only tile_building_resource_xyz_add = type modifiers
-	adjacency_bonus = { 
+	adjacency_bonus = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
 	###accepts planet modifiers
-	planet_modifier = { 
+	planet_modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
-	army_modifier = { 
+	army_modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
 	###accepts country modifiers
-	country_modifier = { 
+	country_modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..inf
 	###scope = planet, owner = country, tile = tile.
-	triggered_planet_modifier = { 
+	triggered_planet_modifier = {
 		key = localisation
-		potential = { 
+		potential = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
-		modifier = { 
+		modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
-		}	
+		}
 	}
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	###scope = pop
-	planet_modifier_with_pop_trigger = { 
+	planet_modifier_with_pop_trigger = {
 		key = localisation
 		## cardinality = 0..1
-		potential = { 
+		potential = {
 			alias_name[trigger] = alias_match_left[trigger]
-		}		
+		}
 		## cardinality = 0..1
-		modifier = { 
+		modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
 	}
 	## cardinality = 0..1
 	## replace_scope = { this = tile root = tile from = planet fromfrom = country }
-	allow = { 
+	allow = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	## cardinality = 0..1		
+	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
-	show_tech_unlock_if = { 
+	show_tech_unlock_if = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
-	###scope planet, tile = tile, owner = country 	
-	destroy_if = { 
+	###scope planet, tile = tile, owner = country
+	destroy_if = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
-	###scope planet, tile = tile, owner = country	
-	potential = { 
+	###scope planet, tile = tile, owner = country
+	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
-	###scope = pop, tile = tile, from/planet = planet, owner = country	
-	active = { 
+	###scope = pop, tile = tile, from/planet = planet, owner = country
+	active = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
 	## replace_scope = { this = tile root = tile from = planet fromfrom = country }
-	on_queued = { 
+	on_queued = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 	## cardinality = 0..1
-	
-	on_unqueued = { 
+
+	on_unqueued = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 	## cardinality = 0..1
-	upgrades = { 
+	upgrades = {
 		## cardinality = 0..100
-		<building> 
-	} 
-	
+		<building>
+	}
+
 	## cardinality = 0..1
 	## replace_scope = { this = tile root = tile from = planet fromfrom = country }
-	ai_allow = { 
+	ai_allow = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
-	
+
 	## replace_scope = { this = tile root = tile from = planet fromfrom = country }
-	ai_weight = { 
+	ai_weight = {
 		## cardinality = 0..1
 		weight = float
 		## cardinality = 0..1
 		factor = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
-	}	
-}	
+	}
+}

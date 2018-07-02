@@ -282,11 +282,13 @@ starbase_type = {
 	## cardinality = 0..1
 	ai_design = {
 		#one of these is required
+		## cardinality = 0..1
 		min = {
 			## cardinality = 1..1 #one of these is required
 			base = int
 		}
 		#one of these is required
+		## cardinality = 0..1
 		ratio = {
 			#one of these is required
 			base = float #this is a fraction from 100% of the base defined under min = {}!, total of fractions should not exceeed 100%
