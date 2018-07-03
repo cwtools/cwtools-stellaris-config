@@ -1077,9 +1077,9 @@ alias[effect:country_add_ethic] = <ethos>
 alias[effect:country_remove_ethic] = <ethos>
 
 
-alias[effect:kill_pop] = yes
+alias[effect:kill_pop] = bool
 alias[effect:enslave_pop] = bool
-alias[effect:destroy_colony] = yes
+alias[effect:destroy_colony] = bool
 alias[effect:set_ruined] = bool
 
 alias[effect:random_list] = {
