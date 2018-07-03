@@ -21,8 +21,7 @@ map_mode = {
 		## cardinality = 1..1
         value = country
 		## cardinality = 1..1
-		# shoul be <hsv>
-		value = {
+		value = hsv { 
 			##cardinality = 3..4
 			float
 		}
