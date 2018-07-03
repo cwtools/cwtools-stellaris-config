@@ -72,10 +72,10 @@ ship_size = {
 	fleet_slot_size = int
 	## cardinality = 0..1
 	section_slots = {
-		#TODO: These should really all be scalar or refer to the entity files. I just made it not bug with Vanilla
-		scalar = {
+		## cardinality = 1..inf
+		section_slot = { #this is connected to the section templates and global ship designs files!
 			## cardinality = 1..inf
-			locator = scalar
+			locator = scalar #this is connected to the ship asset files. 
 		}
 	}
 	## cardinality = 0..1
