@@ -1687,7 +1687,8 @@ alias[effect:create_rebels] = {
 
 	## cardinality = 0..1
 	released_from_country = scope[country]
-
+	
+	## cardinality = 0..1
 	## push_scope = country
 	effect = { alias_name[effect] = alias_match_left[effect] }
 }
