@@ -1330,8 +1330,9 @@ alias[effect:set_war_goal] = {
 }
 
 ###Sets the planet as un/surveyed by target country
-alias[effect:surveyed] = {
+alias[effect:surveyed] = {	
 	set_surveyed = bool
+	## cardinality = 0..1
 	surveyor = scope[country]
 }
 
