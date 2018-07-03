@@ -208,6 +208,8 @@ pop_faction = {
 				## cardinality = 0..1
 				base = float
 				## cardinality = 0..1
+				factor = float
+				## cardinality = 0..1
 				alias_name[modifier_rule] = alias_match_left[modifier_rule]
 			}
 
