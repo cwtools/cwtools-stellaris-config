@@ -20,7 +20,7 @@ star_class = {
     ## cardinality = 0..inf
 	planet = {
 		#TODO check star subtype
-        key = <planet_class.star>
+        key = <planet_class> #this can receive any planet, doesn't require only is_star = yes!
 		## cardinality = 0..1
 		class = scalar
     }
