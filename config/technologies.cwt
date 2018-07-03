@@ -50,8 +50,7 @@ technology = {
 
 
 	## cardinality = 0..1
-	gateway = enum[tech_gateways]
-
+	gateway = scalar #can be any string
 
 	subtype[repeatable] = {
 		cost_per_level = int
@@ -188,17 +187,5 @@ enums = {
 	enum[tech_ai_type] = {
 		all
 		military
-	}
-	enum[tech_gateways] = {
-		ship
-		robotics
-		kinetic_weapons
-		power_generation
-		energy_weapons
-		biological
-		capital
-		psionics
-		engineering
-		ai
 	}
 }
