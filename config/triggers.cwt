@@ -868,7 +868,7 @@ alias[trigger:num_ascension_perk_slots] = int
 alias[trigger:num_owned_active_gateways] = int
 alias[trigger:num_active_gateways] = int
 alias[trigger:num_trait_points] = int
-alias[trigger:has_skill] = int[0..10]
+alias[trigger:has_skill] = int[1..10]
 ###Checks the war exhaustion of the war's attackers
 alias[trigger:attacker_exhaustion_score] = int
 ###Checks the war exhaustion of the war's defenders

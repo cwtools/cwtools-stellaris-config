@@ -2094,7 +2094,7 @@ alias[effect:add_seen_bypass] = scope[any] ##TODO bypass
 alias[effect:add_ship_design] = last_created_design #TODO check this
 
 ### Adds a sum of experience points to the scoped leader
-alias[effect:add_skill] = int[0..10] #check the interval
+alias[effect:add_skill] = int[-10..10] #check the interval
 
 ### Gives percentage progress (0.0-1.0) in a specific tech to the scoped country
 alias[effect:add_tech_progress] = {
