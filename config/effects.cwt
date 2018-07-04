@@ -1862,6 +1862,10 @@ alias[effect:modify_species] = {
 	change_scoped_species = bool
 	## cardinality = 0..1
 	portrait = scalar #<target or portrait name>
+	## cardinality = 0..1
+	hidden_effect = { 
+		alias_name[effect] = alias_match_left[effect] 
+	}
 }
 
 ###Changes the species of the scoped object
