@@ -10,14 +10,14 @@ types = {
 }
 
 component_set = {
-	icon = scalar
+	icon = <sprite_type>
 	icon_frame = int
 	## cardinality = 0..1
 	required_component_set = bool
 	subtype[required_component] = {
-		key = scalar
+		key = <localisation>
 	}
 	subtype[!required_component] = {
-		key = localisation
+		key = <localisation>
 	}
 }
