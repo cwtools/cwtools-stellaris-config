@@ -1,0 +1,17 @@
+types = {
+	type[species_portrait] = {
+		path = "game/gfx/portraits/portraits"
+	}
+	type[leader_portrait] = {
+		path = "game/gfx/portraits/leaders"
+	}  
+	type[enviornment_portrait] = {
+		path = "game/gfx/portraits/enviornments"
+	}    
+	type[city_set] = {
+		path = "game/gfx/portraits/city_sets"
+	}      
+	type[asset_selector] = { #these are files that define links for different gfx files.
+		path = "game/gfx/portraits/asset_selectors"
+	}        
+}
