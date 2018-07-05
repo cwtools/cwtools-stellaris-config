@@ -19,7 +19,7 @@ types = {
 
 component_template = {
 	key = scalar
-	icon = scalar #link to a GFX_ link defined under /interface
+	icon = <sprite_type>
 	icon_frame = int
 	## cardinality = 0..1
 	prerequisites = { <technology> }
@@ -273,7 +273,7 @@ component_template = {
 
 # component_template = {
 # 	key = scalar
-# 	icon = scalar #link to a GFX_ link defined under /interface
+# 	icon = <sprite_type>
 # 	icon_frame = int
 
 # 	subtype[utility_component_template] = {
