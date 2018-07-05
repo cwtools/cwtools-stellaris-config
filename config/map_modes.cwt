@@ -7,7 +7,7 @@ types = {
 #TODO Confirm
 #TODO Colours
 map_mode = {
-	icon = scalar
+	icon =  <sprite_type>
 	enable_terra_incognita = bool
 	## cardinality = 0..1
 	can_change_point_of_view = bool
