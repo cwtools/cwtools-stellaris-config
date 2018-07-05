@@ -13,7 +13,7 @@ section_template = {
   #TODO section slots
   fits_on_slot = enum[section_slots]
   entity = scalar
-  icon = scalar
+  icon =  <sprite_type>
   ## cardinality = 0..1
   icon_frame = int
   ## cardinality = 0..1
