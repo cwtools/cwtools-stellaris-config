@@ -21,7 +21,7 @@ enums = {
 }
 
 message_type = { 
-  icon = scalar
+  icon =  <sprite_type>
   icon_frame = int
   key = <localisation> #loc string is MESSAGE_<key>
   sound = scalar #<sound> #should be linked to an asset file /sounds
