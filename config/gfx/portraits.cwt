@@ -1,17 +1,10 @@
 types = {
-	type[species_portrait] = {
+	type[portrait] = {
 		path = "game/gfx/portraits/portraits"
 	}
-	type[leader_portrait] = {
-		path = "game/gfx/portraits/leaders"
-	}  
-	type[enviornment_portrait] = {
-		path = "game/gfx/portraits/enviornments"
-	}    
-	type[city_set] = {
-		path = "game/gfx/portraits/city_sets"
-	}      
 	type[asset_selector] = { #these are files that define links for different gfx files.
-		path = "game/gfx/portraits/asset_selectors"
-	}        
+		path = "game/gfx/portraits/asset_selectors"  
+	}	
 }
+
+#also included under game/gfx/portraits: leader portraits, planet enviornments, city color correction and city sets. The city sets and room sets are defined through asset_selector files, the other files are defined as GFX links or are tied to key.
