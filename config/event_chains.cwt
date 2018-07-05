@@ -21,7 +21,7 @@ event_chain = {
 	## cardinality = 0..1
 	icon = filepath
 	## cardinality = 0..1
-	picture = scalar
+	picture =  <sprite_type>
 
 	## cardinality = 0..1
 	counter = {
