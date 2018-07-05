@@ -67,11 +67,14 @@ megastructure = {
 	}
   ## cardinality = 0..1
 	placement_rules = {
+		 ## cardinality = 0..inf
+		 alias_name[trigger] = alias_match_left[trigger]
 		 ## replace_scope = { this = planet root = planet }
-    planet_possible = {
-      ## cardinality = 0..inf
-      alias_name[trigger] = alias_match_left[trigger]
-    }
+		 ## cardinality = 0..1
+		 planet_possible = {
+		 	## cardinality = 0..inf
+		 	alias_name[trigger] = alias_match_left[trigger]
+		}
 	}
   ## cardinality = 0..1
   ## replace_scope = { this = system root = system from = country fromfrom = megastructure }
