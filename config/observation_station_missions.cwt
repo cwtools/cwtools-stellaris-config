@@ -5,7 +5,7 @@ types = {
 }
 
 observation_station_mission = {
-	icon = scalar
+	icon =  <sprite_type>
 	small_icon = int
 	## cardinality = 0..1
 	cost = { 
