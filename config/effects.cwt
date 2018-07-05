@@ -2216,9 +2216,9 @@ alias[effect:change_species_characteristics] = {
 	## cardinality = 0..1
 	extra_trait_points = int
 	## cardinality = 0..1
-	portait = scope[species]
+	portrait = scope[species]
 	## cardinality = 0..1
-	portait = scalar #TODO portrait key
+	portrait = scalar #TODO portrait key
 }
 
 ### Re-evaluate the specified casus belli type with given target country
