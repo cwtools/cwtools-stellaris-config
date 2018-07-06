@@ -40,7 +40,7 @@ section_template = {
 		y = float
 	}
 	## cardinality = 0..1
-	section_instance = bool
+	section_instance = int
   }
   ## cardinality = 0..1
   small_utility_slots = int
