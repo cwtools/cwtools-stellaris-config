@@ -15,9 +15,9 @@ component_set = {
 	## cardinality = 0..1
 	required_component_set = bool
 	subtype[required_component] = {
-		key = <localisation>
+		key = localisation
 	}
 	subtype[!required_component] = {
-		key = <localisation>
+		key = localisation
 	}
 }
