@@ -27,7 +27,7 @@ anomaly_category = {
 	}
 	## cardinality = 0..1
 	###Picture displayed in category window
-	picture = scalar #spritetype
+	picture = <sprite_type>
 
 	###Anomaly level, 1 to 10
 	level = int[1..10]
