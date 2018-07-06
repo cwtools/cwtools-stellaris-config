@@ -1330,8 +1330,9 @@ alias[effect:set_war_goal] = {
 }
 
 ###Sets the planet as un/surveyed by target country
-alias[effect:surveyed] = {
+alias[effect:surveyed] = {	
 	set_surveyed = bool
+	## cardinality = 0..1
 	surveyor = scope[country]
 }
 
@@ -1661,7 +1662,9 @@ alias[effect:create_rebels] = {
 	authority = <authority>
 	authority = scope[country]
 	### random includes starting civics
+	## cardinality = 0..1
 	civics = random
+	## cardinality = 0..1
 	civics = {
 		## cardinality = 2..3
 		civic = <civic>
@@ -1670,8 +1673,10 @@ alias[effect:create_rebels] = {
  	species = <buildable_pop>
 	species = scope[pop]
 	species = scope[species] #maybe key would work, I don't know which though
-
+	
+	## cardinality = 0..1
 	ethos = random
+	## cardinality = 0..1
 	ethos = {
 		## cardinality = 2..3
 		ethic = <ethos>
