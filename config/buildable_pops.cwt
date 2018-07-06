@@ -45,17 +45,19 @@ buildable_pop = {
 		## cardinality = 0..1
 		name_list = <name_list>
 		class = <species_class>
-		portrait = scalar
+		portrait = <portrait>
 		traits = {
 			## cardinality = 0..inf
 			trait = <trait>
 		}
 		new_pop_resource_requirement = {
-			#one of these two!
+			#one of these three!
 			## cardinality = 0..1
 			type = <resource>
 			## cardinality = 0..1
 			type = robot_food
+			## cardinality = 0..1
+			type = scalar #it can receive any string
 
 			value = float
 		}
