@@ -1,0 +1,99 @@
+types = {
+	type[sound_category] = {
+		path = "game/sound" #*.asset file
+	}
+	type[sound_group] = {
+		path = "game/sound" #*.asset file
+	}	
+	type[sound_compressor] = {
+		path = "game/sound" #*.asset file
+	}	
+	type[sound_falloff] = {
+		path = "game/sound" #*.asset file
+	}			
+	type[sound_effect] = {
+		path = "game/sound" #*.asset file
+	}	
+	type[sound] = { #these are links between a key and a *.wav file, they are used in other parts
+		path = "game/sound" #*.asset file
+	}	
+}
+
+sound_category = { 
+	name = key
+	soundeffects = { 
+		## cardinality = 0..inf
+		<sound_effect>
+	}
+	compressor = { 		
+		enabled = bool
+		pregain = float
+		postgain = float
+		ratio = float
+		threshold = float
+		attacktime = float
+		releasetime = float
+	}
+} 
+
+sound_group = {
+	name = key #seems to be tied to languages ! please check the vanilla file and see.
+	## cardinality = 0..inf
+	soundoverride = { 
+		name = key
+		file = filepath
+	}
+}	
+sound_compressor = { 		
+	enabled = bool
+	pregain = float
+	postgain = float
+	ratio = float
+	threshold = float
+	attacktime = float
+	releasetime = float
+}
+
+sound_falloff = {
+	name = key
+	## cardinality = 0..1
+	type = enum[falloff_type] #vanilla only uses linear, but i assume there are other types. Should ask someone who knows. 
+	## cardinality = 0..1
+	hight_scale = float
+	min_distance = float
+	max_distance = float
+}	
+
+sound_effect = { 
+	name = key
+	loop = bool
+	sounds = {
+		## cardinality = 0..1
+		sound = <sound>
+	}
+	max_audible = int
+	max_audible_behaviour = enum[audible_behaviour] #vanilla only uses fail, should check this with mods/people who know this shit
+	volume = float
+	looping_volume_random_offset = bool
+	volume_random_offset = { 
+		## cardinality = 2..2 #number range appears to be -1 to 1
+		float
+	}
+}
+
+sound = { 
+	name = key
+	file = filepath
+	volume = float
+}	
+
+enums = { 
+	enum[falloff_type] = {
+		linear
+	}
+	enum[audible_behaviour] = {
+		fail
+	}	
+}
+	
+	
