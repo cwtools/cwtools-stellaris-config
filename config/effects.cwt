@@ -1713,6 +1713,7 @@ alias[effect:create_rebels] = {
 	released_from_country = scope[country]
 
 	## push_scope = country
+	###this is required to spawn rebels for the rebellion to work in the first place
 	effect = { alias_name[effect] = alias_match_left[effect] }
 }
 
