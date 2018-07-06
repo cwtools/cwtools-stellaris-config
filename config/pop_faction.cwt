@@ -43,7 +43,7 @@ pop_faction = {
 
 	## cardinality = 0..1
 	### UI color for candidate header
-	election_header = scalar
+	election_header =  <sprite_type>
 
 	## cardinality = 0..1
 	### This = Country. Existance requirements for this faction

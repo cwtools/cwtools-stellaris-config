@@ -118,7 +118,7 @@ planet_class = {
 	colonization_tech = { <technology> }
 	## cardinality = 0..1
 	###this is only required if using a picture defined for another planet
-	picture = <planet_class>
+	picture = scalar 
 	## cardinality = 0..1
 	###this is only required if using a tile-set defined for another planet
 	tile_set = <planet_class>

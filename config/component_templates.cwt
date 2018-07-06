@@ -104,13 +104,15 @@ component_template = {
 				## cardinality = 0..1
 				alias_name[modifier] = alias_match_left[modifier]
 			}
-
+			
+			## cardinality = 0..1
 			graphics = {
 				## cardinality = 0..1
 				area_effect = {
 					entity = scalar #tied to defined entites under gfx
 					dynamic_scale = bool
 				}
+				## cardinality = 0..1
 				ship_effect = {
 					entity = scalar #tied to defined entites under gfx
 					dynamic_scale = bool
@@ -145,6 +147,7 @@ component_template = {
 					entity = scalar #tied to defined entites under gfx
 					dynamic_scale = bool
 				}
+				## cardinality = 0..1
 				ship_effect = {
 					entity = scalar #tied to defined entites under gfx
 					dynamic_scale = bool
@@ -153,15 +156,15 @@ component_template = {
 			## cardinality = 0..1
 			damage_per_day = {
 				## cardinality = 0..1
-				accuracy = 1.0
+				accuracy = float
 				## cardinality = 0..1
-				damage = { min = 5 max = 20 }
+				damage = { min = int max = int }
 				## cardinality = 0..1
-				shield_damage = 10.0
+				shield_damage = float
 				## cardinality = 0..1
-				shield_penetration = 0.1
+				shield_penetration = float
 				## cardinality = 0..1
-				armor_penetration = 0.50
+				armor_penetration = float
 			}
 		}
 	}

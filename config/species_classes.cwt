@@ -36,7 +36,7 @@ species_class = {
 	## cardinality = 0..1
 	uplifted_portraits = {
 		## cardinality = 0..inf
-		enum[species_portraits]
+		<portrait>
 	}
 	## cardinality = 0..1
 	## replace_scope = { root = country this = country }
@@ -77,7 +77,7 @@ species_class = {
 	## cardinality = 0..1
 	portraits = {
 		## cardinality = 0..inf
-		enum[species_portraits]
+		<portrait>
 	}
 	## cardinality = 0..inf
 	custom_portraits = {
@@ -97,13 +97,13 @@ species_class = {
 		}
 		portraits = {
 			## cardinality = 1..inf
-			enum[species_portraits]
+			<portrait>
 		}
 	}
 	## cardinality = 0..1
 	non_randomized_portraits = {
 		## cardinality = 1..inf
-		enum[species_portraits]
+		<portrait>
 	}
 	## cardinality = 0..1
 	gender = bool

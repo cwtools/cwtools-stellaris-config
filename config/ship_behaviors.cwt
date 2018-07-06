@@ -55,6 +55,7 @@ enums = {
 		orbit
 		follow
 		stay_at_range
+		flee
 	}
 	enum[combat_anchor] = {
 		root
