@@ -1462,14 +1462,24 @@ alias[effect:create_species] = {
 	portrait = scalar #random/<portrait id>
 	## cardinality = 0..1
 	homeworld = scope[planet]
+	
+	# -> traits can be multiple. You can have traits = this, traits = { trait = xyz } at the same time
+
+	## cardinality = 0..1
+	traits = scope[country]
+	## cardinality = 0..1
+	traits = scope[pop]
+	## cardinality = 0..1
+	traits = scope[species]
 	## cardinality = 0..1
 	traits = random
 	## cardinality = 0..1
-	##push_scope = leader
+	##push_scope = leader #WTF?! leader? is this certain and verified?
 	traits = {
 		## cardinality = 1..10
 		trait = <trait>
 	}
+	
 	## cardinality = 0..1
 	sapient = bool
 	## cardinality = 0..1
@@ -1515,6 +1525,7 @@ alias[effect:create_species] = {
 	new_pop_resource_requirement = {
 		type = <resource>
 		type = robot_food
+		type = scalar
 		value = int
 	}
 	## cardinality = 0..1
