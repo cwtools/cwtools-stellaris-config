@@ -18,7 +18,9 @@ enums = {
 }
 
 event_chain = {
+	## cardinality = 0..1
 	icon = filepath
+	## cardinality = 0..1
 	picture = scalar
 
 	## cardinality = 0..1

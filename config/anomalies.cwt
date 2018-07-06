@@ -8,9 +8,13 @@ types = {
 
 anomaly_category = {
 	## cardinality = 0..1
-	###Allows AI empires to generate the category. Default: no
+	###Yes makes the anomaly exclusively used by the AI, no by the player. Default: no
 	should_ai_use = bool
-
+	
+	###If set to yes, this allows both the player and the AI to use the anomaly
+	## cardinality = 0..1
+	should_ai_and_humans_use = bool
+	
 	## cardinality = 0..1
 	###Optional. Will use <anomaly_category>_description if not specified.
 	desc = scalar #localisation

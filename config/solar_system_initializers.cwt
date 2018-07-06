@@ -17,7 +17,7 @@ solar_system_initializer = {
 	}
 	## cardinality = 0..inf
 	asteroid_belt = {
-		type = <asteroid_belt> #this is defined in under common/asteroid_belts
+		type = <asteroid_belt_type> #this is defined in under common/asteroid_belts
 		radius = int
 	}
 	## cardinality = 0..inf

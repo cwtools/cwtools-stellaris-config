@@ -1330,8 +1330,9 @@ alias[effect:set_war_goal] = {
 }
 
 ###Sets the planet as un/surveyed by target country
-alias[effect:surveyed] = {
+alias[effect:surveyed] = {	
 	set_surveyed = bool
+	## cardinality = 0..1
 	surveyor = scope[country]
 }
 
@@ -1458,18 +1459,34 @@ alias[effect:create_species] = {
 	plural = scalar
 	## cardinality = 0..1
 	adjective = scalar
-	class = scalar #random_non_machine / <species class key>
-	portrait = scalar #random/<portrait id>
+	class = <species_class>
+	## cardinality = 0..1
+	portait = scope[species]
+	## cardinality = 0..1
+	portait = <portrait>
+	## cardinality = 0..1
+	portait = random
 	## cardinality = 0..1
 	homeworld = scope[planet]
+	
+	# -> traits can be multiple. You can have traits = this, traits = { trait = xyz } at the same time
+
+	## cardinality = 0..1
+	traits = scope[country]
+	## cardinality = 0..1
+	traits = scope[pop]
+	## cardinality = 0..1
+	traits = scope[species]
 	## cardinality = 0..1
 	traits = random
 	## cardinality = 0..1
-	##push_scope = leader
 	traits = {
-		## cardinality = 1..10
-		trait = <trait>
+		## cardinality = 0..10
+		trait = <trait.species_trait>
+		## cardinality = 0..10
+		add_trait = <trait.species_trait>
 	}
+	
 	## cardinality = 0..1
 	sapient = bool
 	## cardinality = 0..1
@@ -1515,6 +1532,7 @@ alias[effect:create_species] = {
 	new_pop_resource_requirement = {
 		type = <resource>
 		type = robot_food
+		type = scalar
 		value = int
 	}
 	## cardinality = 0..1
@@ -1571,6 +1589,8 @@ alias[effect:create_country] = {
 	authority = random
 	## cardinality = 0..1
 	authority = <authority>
+	## cardinality = 0..1
+	authority = scope[country]
 	## cardinality = 0..1
 	### random includes starting civics
 	civics = random
@@ -1642,7 +1662,9 @@ alias[effect:create_rebels] = {
 	authority = <authority>
 	authority = scope[country]
 	### random includes starting civics
+	## cardinality = 0..1
 	civics = random
+	## cardinality = 0..1
 	civics = {
 		## cardinality = 2..3
 		civic = <civic>
@@ -1651,8 +1673,10 @@ alias[effect:create_rebels] = {
  	species = <buildable_pop>
 	species = scope[pop]
 	species = scope[species] #maybe key would work, I don't know which though
-
+	
+	## cardinality = 0..1
 	ethos = random
+	## cardinality = 0..1
 	ethos = {
 		## cardinality = 2..3
 		ethic = <ethos>
@@ -1748,14 +1772,13 @@ alias[effect:create_leader] = {
 	## cardinality = 0..1
 	sub_type = survey
 	## cardinality = 0..1
-	##push_scope = leader
 	traits = {
 		## cardinality = 0..5
-		add_trait = <trait>
+		add_trait = <trait.leader_trait>
 		## cardinality = 0..5
 		add_trait = random_trait
 		## cardinality = 0..5
-		trait = <trait>
+		trait = <trait.leader_trait>
 		## cardinality = 0..5
 		trait = random_trait
 	}
@@ -1805,14 +1828,13 @@ alias[effect:clone_leader] = {
 	## cardinality = 0..1
 	sub_type = survey
 	## cardinality = 0..1
-	##push_scope = leader
 	traits = {
 		## cardinality = 0..5
-		add_trait = <trait>
+		add_trait = <trait.leader_trait>
 		## cardinality = 0..5
 		add_trait = random_trait
 		## cardinality = 0..5
-		trait = <trait>
+		trait = <trait.leader_trait>
 		## cardinality = 0..5
 		trait = random_trait
 	}
@@ -1859,7 +1881,15 @@ alias[effect:modify_species] = {
 	###modify scoped pops/planet/leader/country; default: yes
 	change_scoped_species = bool
 	## cardinality = 0..1
-	portrait = scalar #<target or portrait name>
+	portait = scope[species]
+	## cardinality = 0..1
+	portait = <portrait>
+	## cardinality = 0..1
+	portait = random
+	## cardinality = 0..1
+	hidden_effect = { 
+		alias_name[effect] = alias_match_left[effect] 
+	}
 }
 
 ###Changes the species of the scoped object
@@ -2128,6 +2158,7 @@ alias[effect:auto_follow_fleet] = {
 ### Makes a fleet or ship auto-move to target planet
 alias[effect:auto_move_to_planet] = {
 	target = scope[planet]
+	target = scope[galactic_object]
 	clear_auto_move_on_arrival = bool
 	## cardinality = 0..1
 	destroy_on_arrival = bool
@@ -2210,9 +2241,11 @@ alias[effect:change_species_characteristics] = {
 	## cardinality = 0..1
 	extra_trait_points = int
 	## cardinality = 0..1
-	portait = scope[species]
+	portrait = scope[species]
 	## cardinality = 0..1
-	portait = scalar #TODO portrait key
+	portrait = <portrait>
+	## cardinality = 0..1
+	portrait = random	
 }
 
 ### Re-evaluate the specified casus belli type with given target country
@@ -2491,14 +2524,13 @@ alias[effect:create_saved_leader] = {
 	## cardinality = 0..1
 	skill = int[1..10]
 	## cardinality = 0..1
-	##push_scope = leader
 	traits = {
 		## cardinality = 0..5
-		add_trait = <trait>
+		add_trait = <trait.leader_trait>
 		## cardinality = 0..5
 		add_trait = random_trait
 		## cardinality = 0..5
-		trait = <trait>
+		trait = <trait.leader_trait>
 		## cardinality = 0..5
 		trait = random_trait
 	}
