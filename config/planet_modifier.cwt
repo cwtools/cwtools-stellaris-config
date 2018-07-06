@@ -1,3 +1,5 @@
+#planet modifiers, and deposits as well, are packages for the vanilla engine's spawn engine. They simply pack static modifiers + gfx or bundle resources together + a spawn chance modifier.
+
 types = {
 	type[planet_modifier] = {
 		path = "game/common/planet_modifiers"
@@ -12,17 +14,27 @@ types = {
 planet_modifier = {
 
 	## cardinality = 0..1
-	is_null = bool
+	is_null = no
 	
+	## cardinality = 0..1
 	spawn_chance = {
 		## cardinality = 0..1
-		value = int
-		
+		value = int		
 		alias_name[modifier_rule_add_factor] = alias_match_left[modifier_rule_add_factor]
 	}
+	## cardinality = 0..1
+	modifier = <static_modifier>
+	
+	#is_null = yes spawns an empty modifier or empty deposit (it also exists in the deposits file). 
 	
 	subtype[!null] = {
-		modifier = <static_modifier>
+		is_null = yes	
+		## cardinality = 0..1
+		spawn_chance = {
+			## cardinality = 0..1
+			value = int		
+			alias_name[modifier_rule_add_factor] = alias_match_left[modifier_rule_add_factor]
+		}		
 	}
 }
 		
