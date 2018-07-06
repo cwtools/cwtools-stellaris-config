@@ -1458,8 +1458,13 @@ alias[effect:create_species] = {
 	plural = scalar
 	## cardinality = 0..1
 	adjective = scalar
-	class = scalar #random_non_machine / <species class key>
-	portrait = scalar #random/<portrait id>
+	class = <species_class>
+	## cardinality = 0..1
+	portait = scope[species]
+	## cardinality = 0..1
+	portait = <portrait>
+	## cardinality = 0..1
+	portait = random
 	## cardinality = 0..1
 	homeworld = scope[planet]
 	
@@ -1871,7 +1876,11 @@ alias[effect:modify_species] = {
 	###modify scoped pops/planet/leader/country; default: yes
 	change_scoped_species = bool
 	## cardinality = 0..1
-	portrait = scalar #<target or portrait name>
+	portait = scope[species]
+	## cardinality = 0..1
+	portait = <portrait>
+	## cardinality = 0..1
+	portait = random
 	## cardinality = 0..1
 	hidden_effect = { 
 		alias_name[effect] = alias_match_left[effect] 
@@ -2228,7 +2237,9 @@ alias[effect:change_species_characteristics] = {
 	## cardinality = 0..1
 	portait = scope[species]
 	## cardinality = 0..1
-	portait = scalar #TODO portrait key
+	portait = <portrait>
+	## cardinality = 0..1
+	portait = random	
 }
 
 ### Re-evaluate the specified casus belli type with given target country
