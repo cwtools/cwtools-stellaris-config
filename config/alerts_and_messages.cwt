@@ -24,7 +24,7 @@ message_type = {
   icon =  <sprite_type>
   icon_frame = int
   key = <localisation> #loc string is MESSAGE_<key>
-  sound = scalar #<sound> #should be linked to an asset file /sounds
+  sound = <sound_effect>
   sound_is_advisor = yes
-  ping = scalar #<sound> #should be linked to an asset file /sounds - I think exnihil
+  ping = <pingmap>
  } 
