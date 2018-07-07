@@ -1,0 +1,18 @@
+types = {
+	type[song] = {
+		name_field = "key"
+		path = "game/msuic"
+  }
+	type[music] = {
+		name_field = "key"
+		path = "game/msuic"
+  }   
+}
+song = {
+	name = key
+}
+music = {
+	name = <song>
+	file = filatpath #*.ogg file
+	volume = float
+}
