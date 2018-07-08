@@ -1,0 +1,38 @@
+types = {
+	type[color_define] = {
+		path = "game/flags" #this is stored under flags but it does more than that
+	}
+	type[randomizable_combo] = {
+		path = "game/flags" #this is stored under flags but it does more than that
+	}  
+}
+
+#all defined colors are nestled within a field called colors = { } please see the pertinent file. 
+
+color_define = { 
+  flag = enum[color_type] { 
+    ## cardinality = 3..3
+    float
+   }
+  map = enum[color_type] { 
+    ## cardinality = 3..3
+    float
+   }   
+   ship = flag = enum[color_type] { 
+    ## cardinality = 3..3
+    float
+   }
+}
+
+randomizable_combo = { 
+  ## cardinality = 3..3
+  <color_define>
+ }
+
+enums = { 
+ enum[color_type] = {
+  hsv
+  rgb
+ }
+}
+
