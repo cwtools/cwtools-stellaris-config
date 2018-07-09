@@ -116,17 +116,17 @@ gui_type = {
 	}      
 
 	## cardinality = 0..inf
-  containerWindowType = {    
+  	containerWindowType = {    
 		name = <key>
-    ## cardinality = 0..1
-    <background> #see the bottom of the file!
 		## cardinality = 0..1
-    size = { 
+		<background> #see the bottom of the file!
+			## cardinality = 0..1
+		size = { 
 			x = int
 			y = int
 		}      
 		## cardinality = 0..1
-    position = { 
+		position = { 
 			x = int
 			y = int
 		}       
@@ -136,133 +136,154 @@ gui_type = {
 		origo = enum[direction]		
 		## cardinality = 0..1
 		clipping = bool
-    ## cardinality = 0..1
-    moveable = bool
-    ## cardinality = 0..1
+		## cardinality = 0..1
+		moveable = bool
+		## cardinality = 0..1
 		show_position = { 
 			x = int
 			y = int
 		}  
-    ## cardinality = 0..1
-    hide_position = { 
+		## cardinality = 0..1
+		hide_position = { 
 			x = int
 			y = int
 		}  
-    ## cardinality = 0..1
-    animation_time = int
-    ## cardinality = 0..1
-    animation_type = decelerated    
-    ## cardinality = 0..1
-    hide_animation_type = decelerated
-    ## cardinality = 0..1
-    show_animation_type = decelerated
-	  
-    #basically containerwindowtype elements can have any element - including other containerwindowtypes nestled within them.
-    #i do not know the rules for what is ok and what isn't.
-    ## cardinality = 0..inf
-    <gui_type>
-  }    
+		## cardinality = 0..1
+		animation_time = int
+		## cardinality = 0..1
+		animation_type = decelerated    
+		## cardinality = 0..1
+		hide_animation_type = decelerated
+		## cardinality = 0..1
+		show_animation_type = decelerated
+
+		#basically containerwindowtype elements can have any element - including other containerwindowtypes nestled within them.
+		#i do not know the rules for what is ok and what isn't.
 		## cardinality = 0..inf
-		iconType = {
-			name = <key>
-			#one of these two is required!
-			## cardinality = 0..1
-			quadTextureSprite = <sprite_type>
-			## cardinality = 0..1
-			spriteType = <sprite_type>
-			
-			position = { 
-			  x = int
-			  y = int
-			}      
-			 ## cardinality = 0..1
-			orientation = enum[direction]
-			 ## cardinality = 0..1
-			alwaystransparent = bool
-		}   
-		
+		<gui_type>
+	}    
+	## cardinality = 0..inf
+	iconType = {
+		name = <key>
+		#one of these two is required!
+		## cardinality = 0..1
+		quadTextureSprite = <sprite_type>
+		## cardinality = 0..1
+		spriteType = <sprite_type>
+
+		position = { 
+		  x = int
+		  y = int
+		}      
+		 ## cardinality = 0..1
+		orientation = enum[direction]
+		 ## cardinality = 0..1
+		alwaystransparent = bool
+	}   
     ## cardinality = 0..inf
-		buttonType = {
-			name = <key>
+  	buttonType = {
+		name = <key>
 
-			#one of these is required for buttontype entries. I don't know whats the difference between these sprites, but code wise they are the same I think. pls check. 
-			## cardinality = 0..1
-			quadTextureSprite = <sprite_type>
-			## cardinality = 0..1
-			spriteType = <sprite_type>
+		#one of these is required for buttontype entries. I don't know whats the difference between these sprites, but code wise they are the same I think. pls check. 
+		## cardinality = 0..1
+		quadTextureSprite = <sprite_type>
+		## cardinality = 0..1
+		spriteType = <sprite_type>
 
-			position = { 
-			  x = int
-			  y = int
-			}      
-			orientation = enum[direction]			
-			borderSize = { 
-			  x = int
-			  y = int
-			}      
-			font = <font>
-			#there can be text = and buttonText = for buttontypes. I don't know whats the difference between them. 
-			## cardinality = 0..1
-			text = <localisation>
-			## cardinality = 0..1
-			buttonText = <localisation>    
+		position = { 
+		  x = int
+		  y = int
+		}      
+		orientation = enum[direction]			
+		borderSize = { 
+		  x = int
+		  y = int
+		}      
+		font = <font>
+		#there can be text = and buttonText = for buttontypes. I don't know whats the difference between them. 
+		## cardinality = 0..1
+		text = <localisation>
+		## cardinality = 0..1
+		buttonText = <localisation>    
 
-			## cardinality = 0..1
-			pdx_tooltip = <localisation> #this is a tooltip localisation. 
-			## cardinality = 0..1
-      oversound = <sound_effect>
+		## cardinality = 0..1
+		pdx_tooltip = <localisation> #this is a tooltip localisation. 
+		## cardinality = 0..1
+		oversound = <sound_effect>
+
+		#clicksound seems to be mutually exclusive with the no_clicksound bool 
+		## cardinality = 0..1      
+		clicksound = <sound_effect>
+		## cardinality = 0..1
+		no_clicksound = bool
       
-      #clicksound seems to be mutually exclusive with the no_clicksound bool 
-      ## cardinality = 0..1      
-      clicksound = <sound_effect>
-      ## cardinality = 0..1
-      no_clicksound = bool
-      
-			## cardinality = 0..1
-			shortcut = scalar #--> this isn't scalar really, its a key binding with the keyboard!. 
-			## cardinality = 0..1
-			multiline = bool
-			## cardinality = 0..1
-			defaultSelection = bool
-			## cardinality = 0..1
-			clicksound = <sound_effect>
-			## cardinality = 0..1
-			actionShortcut = enum[actionshortcut]
-			## cardinality = 0..1
-			<id_and_nav>
-		}   
+		## cardinality = 0..1
+		shortcut = scalar #--> this isn't scalar really, its a key binding with the keyboard!. 
+		## cardinality = 0..1
+		multiline = bool
+		## cardinality = 0..1
+		defaultSelection = bool
+		## cardinality = 0..1
+		clicksound = <sound_effect>
+		## cardinality = 0..1
+		actionShortcut = enum[actionshortcut]
+		## cardinality = 0..1
+		<id_and_nav>
+	}   
     guiButtonType = {
-      name = <key>
-			position = { 
-			  x = int
-			  y = int
-			}        
-      quadTextureSprite = <sprite_type>
-      ## cardinality = 0..1
-      parent = <gui_type>
-	
-      #there appear to be various different types of optional localisations here  
-      ## cardinality = 0..1
-      tooltip = <localisation>
-      ## cardinality = 0..1
-      tooltipText = <localisation>
-      ## cardinality = 0..1
-      delayedTooltipText = <localisation>
-      ## cardinality = 0..1
-			buttonText = <localisation>
-      ## cardinality = 0..1
-      buttonFont = <font>
-      ## cardinality = 0..1
-      orientation = enum[direction]
-      ## cardinality = 0..1
-      shortcut = scalar #not really scalar, tied to a keyboard key!
+		name = <key>
+		position = { 
+		  x = int
+		  y = int
+		}        
+		quadTextureSprite = <sprite_type>
+		## cardinality = 0..1
+		parent = <gui_type>
 
-      #clicksound seems to be mutually exclusive with the no_clicksound bool 
-      ## cardinality = 0..1      
-      clicksound = <sound_effect>
-      ## cardinality = 0..1
-      no_clicksound = bool      
+		#there appear to be various different types of optional localisations here  
+		## cardinality = 0..1
+		tooltip = <localisation>
+		## cardinality = 0..1
+		tooltipText = <localisation>
+		## cardinality = 0..1
+		delayedTooltipText = <localisation>
+		## cardinality = 0..1
+		buttonText = <localisation>
+		## cardinality = 0..1
+		buttonFont = <font>
+		## cardinality = 0..1
+		orientation = enum[direction]
+		## cardinality = 0..1
+		shortcut = scalar #not really scalar, tied to a keyboard key!
+
+		#clicksound seems to be mutually exclusive with the no_clicksound bool 
+		## cardinality = 0..1      
+		clicksound = <sound_effect>
+		## cardinality = 0..1
+		no_clicksound = bool      
 	}	
+	effectButtonType = { #this is used to add new mod buttons, not used in vanilla but by other mods (e.g. iyur's and had's mods). 
+		name = <key>
+		buttonText = <localisation>
+		effect = <button_effect> #defined under /common/button_effects.		
+		position = { 
+		  x = int
+		  y = int
+		}         
+		size = { 
+		  x = int
+		  y = int
+		}        
+		quadTextureSprite = <sprite_type>
+		font = <font>
+		## cardinality = 0..1		
+		orientation = enum[direction]
+		## cardinality = 0..1
+		shortcut = scalar #keyboard short!
+		## cardinality = 0..1
+		clicksound = <sound_effect>		
+	}	
+	
 }
 
 enums = { 
@@ -294,39 +315,39 @@ enums = {
 }  
     
 overlay = {
-  name = <containerWindowType> #example: "selected_overlay" --> this refers to an containerWindowType with this key!
-  spriteType = <sprite_type>
-  position = { 
-    x = int
-    y = int
-  }
-  size = { 
-    x = int
-    y = int
-  }  
+	name = <containerWindowType> #example: "selected_overlay" --> this refers to an containerWindowType with this key!
+	spriteType = <sprite_type>
+	position = { 
+		x = int
+		y = int
+	}
+	size = { 
+		x = int
+		y = int
+	}  
 }  
 id_and_nav = { 
-  #these appear only in the species gamepad gui configuration. They appear to be tied to hardcoded instances that connect to 
-  #asset selector files (see gfx/portraits/asset_selectors) or localisations - examples: "research" "scientist" "ok etc. 
-  #there should probably be a way to parse these and figure this out. 
-  ## cardinality = 0..1 #id is not always required it seem, but when the navUP/DOWN/RIGHT/LEFT uses a key with id_ it appears to be required.
-  id = scalar #"id_name"
-  ## cardinality = 0..1
-  navUp = scalar #"id_male"
-  ## cardinality = 0..1
-  navDown = scalar #"id_title"
-  ## cardinality = 0..1
-  navRight = scalar #"id_hairstyle"
-  ## cardinality = 0..1
-  navLeft = scalar #"id_hairstyle"
+	#these appear only in the species gamepad gui configuration. They appear to be tied to hardcoded instances that connect to 
+	#asset selector files (see gfx/portraits/asset_selectors) or localisations - examples: "research" "scientist" "ok etc. 
+	#there should probably be a way to parse these and figure this out. 
+	## cardinality = 0..1 #id is not always required it seem, but when the navUP/DOWN/RIGHT/LEFT uses a key with id_ it appears to be required.
+	id = scalar #"id_name"
+	## cardinality = 0..1
+	navUp = scalar #"id_male"
+	## cardinality = 0..1
+	navDown = scalar #"id_title"
+	## cardinality = 0..1
+	navRight = scalar #"id_hairstyle"
+	## cardinality = 0..1
+	navLeft = scalar #"id_hairstyle"
 	## cardinality = 0..1            
 } 
 
 background = {
-  name = <key>
-  quadTextureSprite = <sprite_type>
-  position = { 
-    x = int
-    y = int
-  }        
+	name = <key>
+	quadTextureSprite = <sprite_type>
+	position = { 
+		x = int
+		y = int
+	}        
 }
