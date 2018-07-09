@@ -10,9 +10,18 @@ types = {
 #you can have these elements nestled within other such like elements as well. For example, you can have containerwindowtype nestled within another
 #containerwindowtype. This will require some work on Dayshine's part to figure out how to parse this. I also do not know what is optional
 #and what is not optional. CWTools should warn users that removing vanilla elements alltogether will result in a CTD!
+#see core.gui for a weird example. 
 
 gui_type = { 
-     ## cardinality = 0..inf
+	## cardinality = 0..inf
+	positionType = {
+		name = <key>
+		position = { 
+			x = int
+			y = int
+		}        
+	}     
+	 ## cardinality = 0..inf
   	textboxType={
 		name = <key>
 		textureFile = filepath
@@ -261,6 +270,8 @@ gui_type = {
 		clicksound = <sound_effect>
 		## cardinality = 0..1
 		no_clicksound = bool      
+		## cardinality = 0..1
+		frame = int #for portraits, according to vanilla. 
 	}	
 	effectButtonType = { #this is used to add new mod buttons, not used in vanilla but by other mods (e.g. iyur's and had's mods). 
 		name = <key>
@@ -283,7 +294,98 @@ gui_type = {
 		## cardinality = 0..1
 		clicksound = <sound_effect>		
 	}	
-	
+	scrollbarType = {
+		name = "standardtext_slider_small"	
+		slider = <guiButtonType>
+		track= <guiButtonType>
+		leftbutton = <guiButtonType>
+		rightbutton = <guiButtonType>
+		priority = int #no idea what this is. 
+		size = { 
+		  x = int
+		  y = int
+		}      	
+		position = { 
+		  x = int
+		  y = int
+		}      		
+		borderSize = { 
+		  x = int
+		  y = int
+		}      
+		maxValue = in
+		minValue = int
+		stepSize = int
+		startValue = int
+		horizontal = int
+		
+		#in vanilla the buttons used in the above are nestled within the scrollbarType field, see core.gui.
+    	## cardinality = 0..inf
+		<guiButtonType>
+	}		
+	extendedScrollbarType = {
+		name = "right_horizontal_slider"
+		position = { 
+		  x = int
+		  y = int
+		}      		
+ 		size = { 
+		  width = int
+		  height = int
+		}
+		startValue = int
+		horizontal = bool
+		## cardinality = 0..1
+		background = {
+			name = <key>
+			quadTextureSprite = <sprite_type>
+			## cardinality = 0..1
+			position = { 
+				x = int
+				y = int
+			}  
+		}	
+		## cardinality = 0..1
+		track = {
+			name = <key>
+			quadTextureSprite = <sprite_type>
+			## cardinality = 0..1
+			position = { 
+				x = int
+				y = int
+			}  
+		}	
+		## cardinality = 0..1
+		slider = {
+			name = <key>
+			quadTextureSprite = <sprite_type>
+			## cardinality = 0..1
+			position = { 
+				x = int
+				y = int
+			}  
+		}	
+		## cardinality = 0..1
+		decreaseButton = {
+			name = <key>
+			quadTextureSprite = <sprite_type>
+			## cardinality = 0..1
+			position = { 
+				x = int
+				y = int
+			}  
+		}
+		## cardinality = 0..1
+		increaseButton = {
+			name = <key>
+			quadTextureSprite = <sprite_type>
+			## cardinality = 0..1
+			position = { 
+				x = int
+				y = int
+			}  
+		}
+	}	
 }
 
 enums = { 
@@ -346,6 +448,7 @@ id_and_nav = {
 background = {
 	name = <key>
 	quadTextureSprite = <sprite_type>
+	## cardinality = 0..1
 	position = { 
 		x = int
 		y = int
