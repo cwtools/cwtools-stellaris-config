@@ -4,7 +4,7 @@ types = {
 	type[sprite_type] = { #these are links that start with the GFX_ prefix in vanilla
 		path = "game/interface"
 	}
-	subtype[progressbar_type] = { #these are links that start with the GFX_ prefix in vanilla as well
+	subtype[progressbar_type] = { #these are links that start with the GFX_ prefix in vanilla as well. thez r used in GUI files
 		path = "game/interface"
 	}  
 }
@@ -66,6 +66,7 @@ sprite_type = {
 
  
 #example: 
+#spriteTypes = {
 # progressbartype = {
 #		name = "GFX_waroverview_war_exhaustion_stats_progressbar"
 #		color = { 1.0 1.0 1.0 }
@@ -75,6 +76,7 @@ sprite_type = {
 #		size = { x = 143 y = 38 }
 #		effectFile = "gfx/FX/progress.lua"
 # }
+#}
  
  progressbar_type = {
 		name = "key"
