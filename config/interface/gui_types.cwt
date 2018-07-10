@@ -12,7 +12,47 @@ types = {
 #and what is not optional. CWTools should warn users that removing vanilla elements alltogether will result in a CTD!
 #see core.gui for a weird example. 
 
-gui_type = { 
+# You should also know, that not all of this stuff is suitable for modding, as a lot of it has been designed to represent the data, received
+# from the core game through some hardcoded way (like listboxes, grids and so on). -- Iyur
+
+# TODO:
+# [ ] All this stuff requires to sort out all parameters, properties, etc, to segregate them by their purpose
+# [ ] To add description for some exotic stuff/parameters
+
+enums = {
+	# Position of elements
+	enum[direction] = { 
+	    UPPER_LEFT #can be lower case as well! Vanilla has a mix of the two for no reason. 
+	    upper_left
+	    UPPER_RIGHT
+	    upper_right
+	    CENTER_DOWN
+	    center_down
+	    CENTER_UP
+	    center_up
+	    LOWER_LEFT
+	    lower_left
+	    LOWER_RIGHT
+	    lower_right
+	    LEFT
+	    left
+	    RIGHT #this one doesn't appear in vanilla, I just assumed it exists in theory. 
+	    right
+	    CENTER
+	    center
+	}
+	# Available actions
+	enum[actionshortcut] = {
+	    accept
+	    canel
+	    delete
+	    focus_camera
+	}
+}
+
+gui_type = {
+
+	# Used to set a position of entire containers or elements
 	## cardinality = 0..inf
 	positionType = {
 		name = <key>
@@ -20,9 +60,11 @@ gui_type = {
 			x = int
 			y = int
 		}        
-	}     
-	 ## cardinality = 0..inf
-  	textboxType={
+	}
+
+	# Used to show in tooltip sections
+	## cardinality = 0..inf
+  	textboxType = {
 		name = <key>
 		textureFile = filepath
 		font = <font>
@@ -37,8 +79,10 @@ gui_type = {
 		maxWidth = int
 		maxHeight = int
     }
+
+    # Normal block for displaying text
     ## cardinality = 0..inf
-  	instantTextboxType={
+  	instantTextboxType = {
 		name = <key>
 		position = { 
 			x = int
@@ -58,10 +102,14 @@ gui_type = {
 
 		#one of these is required!
 		## cardinality = 0..1
-		format = enum[direction]    
+		format = enum[direction]
 		## cardinality = 0..1
-		orientation = enum[direction]      
-    }    
+		vertical_alignment = enum[direction]
+		## cardinality = 0..1
+		orientation = enum[direction]
+    }
+
+    # Text type area
     ## cardinality = 0..inf    
 	editBoxType = {
 		name = <key>
@@ -73,6 +121,15 @@ gui_type = {
 			x = int
 			y = int
 		}
+		## cardinality = 0..1
+		spriteType = <sprite_type>
+		## cardinality = 0..1
+		textureFile = filepath
+		## cardinality = 0..1
+		borderSize = { 
+			x = int
+			y = int
+		} 
 		font = <font>
 		## cardinality = 0..1
 		cursor = { 
@@ -84,7 +141,13 @@ gui_type = {
 		## cardinality = 0..1
 		instantTextBoxType = bool       
 		## cardinality = 0..1
-		orientation = enum[direction]
+		orientation = enum[direction]       
+		## cardinality = 0..1
+		max_characters = int       
+		## cardinality = 0..1
+		allow_multi_line = bool       
+		## cardinality = 0..1
+		defaultSelection = bool
 
 		#id and nav can be attached to various elements. See the bottom of this file. 
 		## cardinality = 0..1
@@ -94,6 +157,8 @@ gui_type = {
 		#overlay can be attached to various elements it seems. The format is always the same! see bottom of this file!
 		<overlay>			      
 	}
+
+	# Container for listed items, usually option entries in event/diplo windows.
 	## cardinality = 0..inf
 	smoothListboxType = {
 		name = <key>
@@ -119,11 +184,15 @@ gui_type = {
 		## cardinality = 0..1
 		defaultSelection = bool    
 		## cardinality = 0..1
-		spacing = int
+		spacing = int 
+		## cardinality = 0..1
+		priority = int
+
 		## cardinality = 0..1
 		<id_and_nav>
 	}      
 
+	# General graphical block
 	## cardinality = 0..inf
   	containerWindowType = {    
 		name = <key>
@@ -170,7 +239,9 @@ gui_type = {
 		#i do not know the rules for what is ok and what isn't.
 		## cardinality = 0..inf
 		<gui_type>
-	}    
+	}
+
+	# Normal icon instance
 	## cardinality = 0..inf
 	iconType = {
 		name = <key>
@@ -179,16 +250,29 @@ gui_type = {
 		quadTextureSprite = <sprite_type>
 		## cardinality = 0..1
 		spriteType = <sprite_type>
-
 		position = { 
 		  x = int
 		  y = int
 		}      
-		 ## cardinality = 0..1
-		orientation = enum[direction]
-		 ## cardinality = 0..1
+		## cardinality = 0..1
+		orientation = enum[direction]      
+		## cardinality = 0..1
+		centerPosition = bool
+		## cardinality = 0..1
 		alwaystransparent = bool
-	}   
+		## cardinality = 0..1
+		rotation = float
+		## cardinality = 0..1
+		scale = float
+		## cardinality = 0..1
+		frame = int
+		## cardinality = 0..1
+		tooltip_mode_enabled = bool
+		## cardinality = 0..1
+		pdx_tooltip = <localisation>
+	} 
+
+	# Default game button. In some cases could be replaced by effectButtonType without CTD
     ## cardinality = 0..inf
   	buttonType = {
 		name = <key>
@@ -198,7 +282,6 @@ gui_type = {
 		quadTextureSprite = <sprite_type>
 		## cardinality = 0..1
 		spriteType = <sprite_type>
-
 		position = { 
 		  x = int
 		  y = int
@@ -207,16 +290,30 @@ gui_type = {
 		borderSize = { 
 		  x = int
 		  y = int
-		}      
+		}
+		## cardinality = 0..1
+		hitbox_margin = {
+		  x = int
+		  y = int			
+		}
+		## cardinality = 0..1
 		font = <font>
 		#there can be text = and buttonText = for buttontypes. I don't know whats the difference between them. 
 		## cardinality = 0..1
 		text = <localisation>
 		## cardinality = 0..1
-		buttonText = <localisation>    
+		buttonText = <localisation>  
+		## cardinality = 0..1
+		buttonFont = <font>
+		## cardinality = 0..1
+		scale = float		
 
 		## cardinality = 0..1
-		pdx_tooltip = <localisation> #this is a tooltip localisation. 
+		pdx_tooltip = <localisation> #this is a tooltip localisation.
+		## cardinality = 0..1
+		delayedTooltipText = <localisation>
+		## cardinality = 0..1
+		tooltip_mode_enabled = bool
 		## cardinality = 0..1
 		oversound = <sound_effect>
 
@@ -236,9 +333,80 @@ gui_type = {
 		clicksound = <sound_effect>
 		## cardinality = 0..1
 		actionShortcut = enum[actionshortcut]
+
 		## cardinality = 0..1
 		<id_and_nav>
 	}   
+
+	# Not a vanilla's content.
+	# Similar to default buttonType, but linked with specific events, described in button_effects.
+	# I guess, all parameters below are similar to buttonType, but need to make some tests -- Iyur
+	effectButtonType = {
+		name = <key>
+		effect = <button_effect> #defined under /common/button_effects.		
+
+		#one of these is required for buttontype entries. I don't know whats the difference between these sprites, but code wise they are the same I think. pls check. 
+		## cardinality = 0..1
+		quadTextureSprite = <sprite_type>
+		## cardinality = 0..1
+		spriteType = <sprite_type>
+		position = { 
+		  x = int
+		  y = int
+		}      
+		orientation = enum[direction]			
+		borderSize = { 
+		  x = int
+		  y = int
+		}
+		## cardinality = 0..1
+		hitbox_margin = {
+		  x = int
+		  y = int			
+		}
+		## cardinality = 0..1
+		font = <font>
+		#there can be text = and buttonText = for buttontypes. I don't know whats the difference between them. 
+		## cardinality = 0..1
+		text = <localisation>
+		## cardinality = 0..1
+		buttonText = <localisation>  
+		## cardinality = 0..1
+		buttonFont = <font>
+		## cardinality = 0..1
+		scale = float		
+
+		## cardinality = 0..1
+		pdx_tooltip = <localisation> #this is a tooltip localisation.
+		## cardinality = 0..1
+		delayedTooltipText = <localisation>
+		## cardinality = 0..1
+		tooltip_mode_enabled = bool
+		## cardinality = 0..1
+		oversound = <sound_effect>
+
+		#clicksound seems to be mutually exclusive with the no_clicksound bool 
+		## cardinality = 0..1      
+		clicksound = <sound_effect>
+		## cardinality = 0..1
+		no_clicksound = bool
+      
+		## cardinality = 0..1
+		shortcut = scalar #--> this isn't scalar really, its a key binding with the keyboard!. 
+		## cardinality = 0..1
+		multiline = bool
+		## cardinality = 0..1
+		defaultSelection = bool
+		## cardinality = 0..1
+		clicksound = <sound_effect>
+		## cardinality = 0..1
+		actionShortcut = enum[actionshortcut]
+
+		## cardinality = 0..1
+		<id_and_nav>	
+	}
+
+	# Icon-like button ?	
     guiButtonType = {
 		name = <key>
 		position = { 
@@ -272,28 +440,9 @@ gui_type = {
 		no_clicksound = bool      
 		## cardinality = 0..1
 		frame = int #for portraits, according to vanilla. 
-	}	
-	effectButtonType = { #this is used to add new mod buttons, not used in vanilla but by other mods (e.g. iyur's and had's mods). 
-		name = <key>
-		buttonText = <localisation>
-		effect = <button_effect> #defined under /common/button_effects.		
-		position = { 
-		  x = int
-		  y = int
-		}         
-		size = { 
-		  x = int
-		  y = int
-		}        
-		quadTextureSprite = <sprite_type>
-		font = <font>
-		## cardinality = 0..1		
-		orientation = enum[direction]
-		## cardinality = 0..1
-		shortcut = scalar #keyboard short!
-		## cardinality = 0..1
-		clicksound = <sound_effect>		
-	}	
+	}
+
+	# Default scrollbar
 	scrollbarType = {
 		name = "standardtext_slider_small"	
 		slider = <guiButtonType>
@@ -322,7 +471,9 @@ gui_type = {
 		#in vanilla the buttons used in the above are nestled within the scrollbarType field, see core.gui.
     	## cardinality = 0..inf
 		<guiButtonType>
-	}		
+	}
+
+	# ?
 	extendedScrollbarType = {
 		name = "right_horizontal_slider"
 		position = { 
@@ -385,37 +536,22 @@ gui_type = {
 				y = int
 			}  
 		}
-	}	
-}
+	}
 
-enums = { 
-  enum[direction] = { 
-    UPPER_LEFT #can be lower case as well! Vanilla has a mix of the two for no reason. 
-    upper_left
-    UPPER_RIGHT
-    upper_right
-    CENTER_DOWN
-    center_down
-    CENTER_UP
-    center_up
-    LOWER_LEFT
-    lower_left
-    LOWER_RIGHT
-    lower_right
-    LEFT
-    left
-    RIGHT #this one doesn't appear in vanilla, I just assumed it exists in theory. 
-    right
-    CENTER
-    center
-  }
-  enum[actionshortcut] = {
-    accept
-    canel
-    delete
-    focus_camera
+	#gridBoxType = {}
+	#dropDownBoxType = {}
+	#expandedWindow = {}
+	#checkboxType = {}
+	#checkboxType = {}
+	#listboxType = {}
+	#windowType = {}
+	#spinnerType = {}
+
 }  
-    
+
+# MINOR / OPTIONAL STUFF
+
+# graphical overlay for some elements
 overlay = {
 	name = <containerWindowType> #example: "selected_overlay" --> this refers to an containerWindowType with this key!
 	spriteType = <sprite_type>
@@ -427,7 +563,9 @@ overlay = {
 		x = int
 		y = int
 	}  
-}  
+} 
+
+# Moving between buttons/gui stuff
 id_and_nav = { 
 	#these appear only in the species gamepad gui configuration. They appear to be tied to hardcoded instances that connect to 
 	#asset selector files (see gfx/portraits/asset_selectors) or localisations - examples: "research" "scientist" "ok etc. 
@@ -445,12 +583,17 @@ id_and_nav = {
 	## cardinality = 0..1            
 } 
 
+# Background section (mostly for containers)
 background = {
 	name = <key>
 	quadTextureSprite = <sprite_type>
+	# optional
+	#spriteType = <sprite_type>
 	## cardinality = 0..1
 	position = { 
 		x = int
 		y = int
-	}        
+	}
+	## cardinality = 0..1
+	pdx_tooltip = <localisation>
 }
