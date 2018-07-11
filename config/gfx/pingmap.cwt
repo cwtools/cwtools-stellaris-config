@@ -1,3 +1,9 @@
+types = {
+	type[pingmap] = {
+		name_field = "name"
+		path = "game/gfx/pingmap"
+	}
+}
 pingmap = {
 	system_entity = <model_entity>
 	galaxy_entity = <model_entity>
