@@ -1,7 +1,9 @@
 types = {
+	## type_key_filter = colors
 	type[color_define] = {
 		path = "game/flags" #this is stored under flags but it does more than that
 	}
+	## type_key_filter = randomizable_combo
 	type[randomizable_combo] = {
 		path = "game/flags" #this is stored under flags but it does more than that
 	}  
