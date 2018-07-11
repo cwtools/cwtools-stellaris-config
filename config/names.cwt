@@ -16,6 +16,8 @@ types = { #these are all connected. I added the others so whoever does these in 
 	}
 }
 
+#TODO: Confirm
+#TODO: Add warning if ship_size doesn't have name list block
 name_list = {
 	## cardinality = 0..1
 	ship_names = {
@@ -48,7 +50,8 @@ name_list = {
 				scalar
 			}
 		}		
-		sequential_name = { #formula for name generation
+		#formula for name generation
+		sequential_name = { 
 			## cardinality = 0..inf
 			scalar
 		}
