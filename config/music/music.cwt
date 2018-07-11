@@ -1,18 +1,21 @@
 types = {
+	## type_key_filter = song
 	type[song] = {
-		name_field = "key"
+		name_field = name
 		path = "game/music"
   }
+  	## type_key_filter = music
 	type[music] = {
-		name_field = "key"
+		name_field = name
 		path = "game/music"
-  }   
+  }
 }
 song = {
-	name = key
+	name = scalar
 }
 music = {
 	name = <song>
-	file = filepath #*.ogg file
+	#*.ogg file
+	file = scalar # filepath
 	volume = float
 }
