@@ -1,11 +1,11 @@
 types = {
 	type[song] = {
 		name_field = "key"
-		path = "game/msuic"
+		path = "game/music"
   }
 	type[music] = {
 		name_field = "key"
-		path = "game/msuic"
+		path = "game/music"
   }   
 }
 song = {
@@ -13,6 +13,6 @@ song = {
 }
 music = {
 	name = <song>
-	file = filatpath #*.ogg file
+	file = filepath #*.ogg file
 	volume = float
 }
