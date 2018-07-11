@@ -1,5 +1,3 @@
-WIP
-
 #these are files that define links for different gfx files (models and icons).
 #they include rooms, hair, dress and various other elements related to portraits. 
 #please note: room asset selector specifically is called in diplomatic events like this:
@@ -9,9 +7,18 @@ WIP
 #the difference between them appears to be determined by the key!
 
 types = {
-	type[asset_selector] = { 
+	type[asset_selector_clothes] = { 
 		path = "game/gfx/portraits/asset_selectors"  
-	}	
+	}		
+	type[asset_selector_hair] = {  #this is identical in structure to the clothes asset selector, only difference is the key!
+		path = "game/gfx/portraits/asset_selectors"  
+	}			
+	type[asset_selector_room] = { 
+		path = "game/gfx/portraits/asset_selectors"  
+	}			
+	type[asset_selector_entity] = { #i'm not sure how these work and why. 
+		path = "game/gfx/portraits/asset_selectors"  
+	}				
 }
 
  #default has no trigger attached  it.
@@ -19,17 +26,12 @@ types = {
  #see other.txt for the default no texture.
 
 
-asset_selector = {   
+asset_selector_clothes = {   
   #clothes and hair selectors link directly to a dds files using filepath, room selectors point to textures that end with "_room.dds" but remove the file ending
   #entity selectors link to a model entity using its key. This is a way to distinguish between them I guess.
   
-  #one of these is required- depending on the type of selector
-  ## cardinality = 0..1
   default = filepath
-  ## cardinality = 0..1
-  default = <model_entity>
-  ## cardinality = 0..1
-  deflaut = scalar #should point to a file that ends with _room.dds, always. Need to be worked out by dayshine! See romm_textures.txt
+
   
   ## cardinality = 0..1
   no_texture = {    
@@ -40,12 +42,132 @@ asset_selector = {
   }
     
   ## cardinality = 0..1
+  game_setup = {    
+    default = filepath
+    ## replace_scope = { this = no_scope root = no_scope }
+    ## cardinality = 0..inf
+    filepath = { alias_name[trigger] = alias_match_left[trigger] }
+  }
+
+  ## cardinality = 0..1
+  species = {    
+    default = filepath
+    ## replace_scope = { this = species root = species }
+    ## cardinality = 0..inf
+    filepath = { alias_name[trigger] = alias_match_left[trigger] }
+  }
+  
+  ## cardinality = 0..1
+  pop = {    
+    default = filepath
+    ## replace_scope = { this = pop root = pop }
+    ## cardinality = 0..inf
+    filepath = { alias_name[trigger] = alias_match_left[trigger] }
+  }  
+  
+  ## cardinality = 0..1
+  leader = {    
+    ## cardinality = 0..1
+	default = filepath #these do not have default in vanilla, but i assume default is supported.
+    ## replace_scope = { this = leader root = leader }
+    ## cardinality = 0..inf
+    filepath = { alias_name[trigger] = alias_match_left[trigger] }
+  }    
+  
+  ## cardinality = 0..1
+  ruler = {    
+	default = filepath 
+    ## replace_scope = { this = leader root = leader }
+    ## cardinality = 0..inf
+    filepath = { alias_name[trigger] = alias_match_left[trigger] }
+  }   
+}  
+
+asset_selector_hair = {   
+  #clothes and hair selectors link directly to a dds files using filepath, room selectors point to textures that end with "_room.dds" but remove the file ending
+  #entity selectors link to a model entity using its key. This is a way to distinguish between them I guess.
+  
+  default = filepath
+
+  
+  ## cardinality = 0..1
   no_texture = {    
     default = filepath
     ## replace_scope = { this = no_scope root = no_scope }
     ## cardinality = 0..inf
     filepath = { alias_name[trigger] = alias_match_left[trigger] }
   }
+    
+  ## cardinality = 0..1
+  game_setup = {    
+    default = filepath
+    ## replace_scope = { this = no_scope root = no_scope }
+    ## cardinality = 0..inf
+    filepath = { alias_name[trigger] = alias_match_left[trigger] }
+  }
+
+  ## cardinality = 0..1
+  species = {    
+    default = filepath
+    ## replace_scope = { this = species root = species }
+    ## cardinality = 0..inf
+    filepath = { alias_name[trigger] = alias_match_left[trigger] }
+  }
   
+  ## cardinality = 0..1
+  pop = {    
+    default = filepath
+    ## replace_scope = { this = pop root = pop }
+    ## cardinality = 0..inf
+    filepath = { alias_name[trigger] = alias_match_left[trigger] }
+  }  
   
+  ## cardinality = 0..1
+  leader = {    
+    ## cardinality = 0..1
+	default = filepath #these do not have default in vanilla, but i assume default is supported.
+    ## replace_scope = { this = leader root = leader }
+    ## cardinality = 0..inf
+    filepath = { alias_name[trigger] = alias_match_left[trigger] }
+  }    
   
+  ## cardinality = 0..1
+  ruler = {    
+	default = filepath 
+    ## replace_scope = { this = leader root = leader }
+    ## cardinality = 0..inf
+    filepath = { alias_name[trigger] = alias_match_left[trigger] }
+  }   
+}  
+
+asset_selector_room = {   
+  
+  #room selectors use a special way to link to dds files stored under gfx/portraits/city_sets
+  ##by pointingto a file that ends with _room.dds, always.   
+  #this needs to be worked out by dayshine!
+  
+  default = scalar #the room file link as explained in the above comment! 
+  
+  ## cardinality = 0..1
+  ruler = {    
+	default = filepath 
+    ## replace_scope = { this = leader root = leader }
+    ## cardinality = 0..inf
+    scalar = { alias_name[trigger] = alias_match_left[trigger] } #the scalar here is the same kind of file link as in the above!
+  }   
+} 
+
+asset_selector_entity = {   
+  
+  #see entity_selectors.txt
+  
+  default = <model_entity>
+  
+  ## cardinality = 0..1
+  ruler = {    
+	default = filepath 
+    ## replace_scope = { this = leader root = leader }
+    ## cardinality = 0..inf
+    <model_entity> = { alias_name[trigger] = alias_match_left[trigger] } 
+  }   
+} 
