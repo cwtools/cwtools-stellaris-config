@@ -1,26 +1,42 @@
 types = {
+	## type_key_filter = category
 	type[sound_category] = {
+		name_field = name
 		path = "game/sound" #*.asset file
 	}
+	## type_key_filter = soundgroup
 	type[sound_group] = {
+		name_field = name
 		path = "game/sound" #*.asset file
 	}	
-	type[sound_compressor] = {
+	## type_key_filter = master_compressor
+	type[sound_master_compressor] = {
 		path = "game/sound" #*.asset file
 	}	
+	## type_key_filter = music_compressor
+	type[sound_music_compressor] = {
+		path = "game/sound" #*.asset file
+	}
+	## type_key_filter = falloff
 	type[sound_falloff] = {
+		name_field = name
 		path = "game/sound" #*.asset file
 	}			
+	## type_key_filter = soundeffect
 	type[sound_effect] = {
+		name_field = name
 		path = "game/sound" #*.asset file
 	}	
-	type[sound] = { #these are links between a key and a *.wav file, they are used in other parts
+	## type_key_filter = sound
+	#these are links between a key and a *.wav file, they are used in other parts
+	type[sound] = { 
+		name_field = name
 		path = "game/sound" #*.asset file
 	}	
 }
 
 sound_category = { 
-	name = key
+	name = scalar
 	soundeffects = { 
 		## cardinality = 0..inf
 		<sound_effect>
@@ -37,14 +53,25 @@ sound_category = {
 } 
 
 sound_group = {
-	name = key #seems to be tied to languages ! please check the vanilla file and see.
+	#seems to be tied to languages ! please check the vanilla file and see.
+	name = scalar 
 	## cardinality = 0..inf
 	soundoverride = { 
-		name = key
+		name = <sound>
 		file = filepath
 	}
 }	
-sound_compressor = { 		
+
+sound_master_compressor = { 		
+	pregain = float
+	postgain = float
+	ratio = float
+	threshold = float
+	attacktime = float
+	releasetime = float
+}
+
+sound_music_compressor = { 		
 	enabled = bool
 	pregain = float
 	postgain = float
@@ -55,34 +82,44 @@ sound_compressor = {
 }
 
 sound_falloff = {
-	name = key
+	name = scalar
 	## cardinality = 0..1
 	type = enum[falloff_type] #vanilla only uses linear, but i assume there are other types. Should ask someone who knows. 
 	## cardinality = 0..1
-	hight_scale = float
+	height_scale = float
 	min_distance = float
 	max_distance = float
 }	
 
 sound_effect = { 
-	name = key
+	name = scalar
 	loop = bool
 	sounds = {
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		sound = <sound>
 	}
 	max_audible = int
-	max_audible_behaviour = enum[audible_behaviour] #vanilla only uses fail, should check this with mods/people who know this shit
+	#vanilla only uses fail, should check this with mods/people who know this shit
+	max_audible_behaviour = enum[audible_behaviour] 
 	volume = float
 	looping_volume_random_offset = bool
 	volume_random_offset = { 
 		## cardinality = 2..2 #number range appears to be -1 to 1
 		float
 	}
+	## cardinality = 0..1
+	is3d = bool
+	## cardinality = 0..1
+	fade_out = float
+	## cardinality = 0..1
+	playbackrate_random_offset = {
+		## cardinality = 2..2
+		float
+	}
 }
 
 sound = { 
-	name = key
+	name = scalar
 	file = filepath
 	volume = float
 }	
