@@ -1,0 +1,51 @@
+WIP
+
+#these are files that define links for different gfx files (models and icons).
+#they include rooms, hair, dress and various other elements related to portraits. 
+#please note: room asset selector specifically is called in diplomatic events like this:
+#picture_event_data = { room = cgm_menu_room } - the room = key part is related to an asset selector. This needs to be worked out in diplomatic
+#events as well, to connect to the appropriate asset selector! You can see the menu events for my CGM mods for an example. -- exnihil
+#also - please check the vanilla asset selectors. Basically there are several different kinds but they all seem to function identically, 
+#the difference between them appears to be determined by the key!
+
+types = {
+	type[asset_selector] = { 
+		path = "game/gfx/portraits/asset_selectors"  
+	}	
+}
+
+ #default has no trigger attached  it.
+ #assets written under default replace the default entry given a trigger, or if no default is defined - when fulfilling the trigger. 
+ #see other.txt for the default no texture.
+
+
+asset_selector = {   
+  #clothes and hair selectors link directly to a dds files using filepath, room selectors point to textures that end with "_room.dds" but remove the file ending
+  #entity selectors link to a model entity using its key. This is a way to distinguish between them I guess.
+  
+  #one of these is required- depending on the type of selector
+  ## cardinality = 0..1
+  default = filepath
+  ## cardinality = 0..1
+  default = <model_entity>
+  ## cardinality = 0..1
+  deflaut = scalar #should point to a file that ends with _room.dds, always. Need to be worked out by dayshine! See romm_textures.txt
+  
+  ## cardinality = 0..1
+  no_texture = {    
+    default = filepath
+    ## replace_scope = { this = no_scope root = no_scope }
+    ## cardinality = 0..inf
+    filepath = { alias_name[trigger] = alias_match_left[trigger] }
+  }
+    
+  ## cardinality = 0..1
+  no_texture = {    
+    default = filepath
+    ## replace_scope = { this = no_scope root = no_scope }
+    ## cardinality = 0..inf
+    filepath = { alias_name[trigger] = alias_match_left[trigger] }
+  }
+  
+  
+  
