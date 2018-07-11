@@ -1627,7 +1627,9 @@ alias[effect:create_country] = {
 	## cardinality = 0..1
 	flag = random
 	## cardinality = 0..1
-	flag = {
+	flag = { 
+		#TODO - this is connected to game/flags. 
+		#I already created an entry for flag colors etc, you should work on connecting these.
 		icon = {
 			category = scalar #should be some sort of key
 			file = scalar #should be "filename.dds" in the correct folder
@@ -1687,6 +1689,8 @@ alias[effect:create_rebels] = {
 	flag = random
 	## cardinality = 0..1
 	flag = {
+		#TODO - this is connected to game/flags. 
+		#I already created an entry for flag colors etc, you should work on connecting these.	
 		icon = {
 			category = scalar #should be some sort of key
 			file = scalar #should be "filename.dds" in the correct folder
@@ -2365,7 +2369,7 @@ alias[effect:create_army_transport] = {
 
 #
 ### Creates a bypass in the parent SpatialObject (stored in FromFrom), of the type passed in "type".
-alias[effect:create_bypass] = scalar
+alias[effect:create_bypass] = <bypass>
 
 #
 ### Creates a cluster centered around the specified spatial object
@@ -2776,7 +2780,7 @@ alias[effect:order_forced_return] = yes
 alias[effect:planet_owner] = { alias_name[effect] = alias_match_left[effect] }
 
 ### Play the defined sound effect
-alias[effect:play_sound] = scalar #TODO sound
+alias[effect:play_sound] = <sound_effect>
 
 ## push_scope = pop
 ###Scope (/context) switch
@@ -3039,13 +3043,13 @@ alias[effect:set_mission] = <observation_station_mission>
 ### Change entity of a planet.
 alias[effect:set_planet_entity] = {
 	## cardinality = 0..1
-	entity = scalar #TODO entity
+	entity = <model_entity>
 	## cardinality = 0..1
 	graphical_culture = <graphical_culture>
 	## cardinality = 0..1
 	graphical_culture = scope[any]
 	## cardinality = 0..1
-	picture = scalar #TODO picture
+	picture = filepath #TODO picture
 	## cardinality = 0..1
 	atmosphere_color = scalar #TODO color
 	## cardinality = 0..1
