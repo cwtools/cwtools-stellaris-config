@@ -146,11 +146,11 @@ asset_selector_room = {
   ##by pointingto a file that ends with _room.dds, always.   
   #this needs to be worked out by dayshine!
   
-  default = scalar #the room file link as explained in the above comment! 
+  default = scalar #the room file link as explained in the above comment!   
   
   ## cardinality = 0..1
   ruler = {    
-	default = filepath 
+	default = scalar #the room file link as explained in the above comment!   
     ## replace_scope = { this = leader root = leader }
     ## cardinality = 0..inf
     scalar = { alias_name[trigger] = alias_match_left[trigger] } #the scalar here is the same kind of file link as in the above!
@@ -165,7 +165,7 @@ asset_selector_entity = {
   
   ## cardinality = 0..1
   ruler = {    
-	default = filepath 
+	default = <model_entity>
     ## replace_scope = { this = leader root = leader }
     ## cardinality = 0..inf
     <model_entity> = { alias_name[trigger] = alias_match_left[trigger] } 
