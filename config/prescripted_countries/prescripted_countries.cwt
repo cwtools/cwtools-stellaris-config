@@ -40,7 +40,7 @@ prescripted_country = {
 		scalar #this is a country flag string, can be anything.     
  	}	
 	planet_name = <localisation_synced>
-	planet_class = <planet_class> #should be colonizable of course!
+	planet_class = <habitable_planet>
 	initializer = <solar_system_initializer>
 	system_name = <localisation_synced>
 	
