@@ -267,661 +267,661 @@ types = {
 
 on_yearly_pulse = {
 	## replace_scope = { root = no_scope }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<event>
 }
 on_bi_yearly_pulse = {
 	## replace_scope = { root = no_scope }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<event>
 }
 on_five_year_pulse = {
 	## replace_scope = { root = no_scope }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<event>
 }
 on_decade_pulse = {
 	## replace_scope = { root = no_scope }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<event>
 }
 on_game_start = {
 	## replace_scope = { root = no_scope }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<event>
 }
 on_game_start_country = {
 	## replace_scope = { root = country this = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_initialize_advanced_colony = {
 	## replace_scope = { root = planet this = planet from = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_press_begin = {
 	## replace_scope = { root = country this = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_custom_diplomacy = {
 	## replace_scope = { root = country this = country from = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_first_contact = {
 	## replace_scope = { root = country this = country from = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_enforce_borders = {
 	## replace_scope = { root = country this = country from = country fromfrom = fleet fromfromfrom = galactic_object }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_planet_attackers_win = {
 	## replace_scope = { root = country this = country from = country fromfrom = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_planet_attackers_lose = {
 	## replace_scope = { root = country this = country from = country fromfrom = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_planet_defenders_win = {
 	## replace_scope = { root = country this = country from = country fromfrom = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_planet_defenders_lose = {
 	## replace_scope = { root = country this = country from = country fromfrom = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_galactic_object_first_visited = {
 	## replace_scope = { root = country this = country from = galactic_object }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_entering_galactic_object_first_time = {
 	## replace_scope = { root = ship this = ship from = country fromfrom = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<ship_event>
 }
 on_entering_galactic_object = {
 	## replace_scope = { root = ship this = ship from = galactic_object fromfrom = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<ship_event>
 }
 on_entering_galactic_object_fleet = {
 	## replace_scope = { root = fleet this = fleet from = galactic_object }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<fleet_event>
 }
 on_survey = {
 	## replace_scope = { root = ship this = ship from = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<ship_event>
 }
 on_planet_surveyed = {
 	## replace_scope = { root = planet this = planet from = country fromfrom = fleet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_galactic_object_survey = {
 	## replace_scope = { root = country this = country from = galactic_object fromfrom = fleet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_galactic_object_survey_ship = {
 	## replace_scope = { root = ship this = ship from = galactic_object }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<ship_event>
 }
 on_colonization_started = {
 	## replace_scope = { root = planet this = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_colonized = {
 	## replace_scope = { root = planet this = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_colony_destroyed = {
 	## replace_scope = { root = planet this = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_entering_battle = {
 	## replace_scope = { root = country this = country from = country fromfrom = fleet fromfromfrom = fleet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_ship_destroyed_victim = {
 	## replace_scope = { root = country this = country from = country fromfrom = ship fromfromfrom = ship }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_ship_destroyed_perp = {
 	## replace_scope = { root = country this = country from = country fromfrom = ship fromfromfrom = ship }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_ship_disengaged_victim = {
 	## replace_scope = { root = country this = country from = country fromfrom = ship fromfromfrom = ship }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_ship_disengaged_perp = {
 	## replace_scope = { root = country this = country from = country fromfrom = ship fromfromfrom = ship }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_fleet_destroyed_victim = {
 	## replace_scope = { root = country this = country from = country fromfrom = fleet fromfromfrom = fleet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_fleet_destroyed_perp = {
 	## replace_scope = { root = country this = country from = country fromfrom = fleet fromfromfrom = fleet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_space_battle_won = {
 	## replace_scope = { root = country this = country from = country fromfrom = fleet fromfromfrom = fleet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_space_battle_lost = {
 	## replace_scope = { root = country this = country from = country fromfrom = fleet fromfromfrom = fleet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_fleet_disbanded = {
 	## replace_scope = { root = country this = country from = fleet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_fleet_auto_move_arrival = {
 	## replace_scope = { root = country this = country from = fleet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_building_mining_station = {
 	## replace_scope = { root = ship this = ship from = ship }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<ship_event>
 }
 on_building_research_station = {
 	## replace_scope = { root = ship this = ship from = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<ship_event>
 }
 on_building_outpost_station = {
 	## replace_scope = { root = ship this = ship from = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<ship_event>
 }
 on_building_wormhole_station = {
 	## replace_scope = { root = ship this = ship }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<ship_event>
 }
 on_entering_war = {
 	## replace_scope = { root = country this = country from = opponent war leader }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_fleet_detected = {
 	## replace_scope = { root = country this = country from = fleet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_ship_disabled = {
 	## replace_scope = { root = ship this = ship from = ship }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<ship_event>
 }
 on_ship_enabled = {
 	## replace_scope = { root = ship this = ship }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<ship_event>
 }
 on_uplift_completion = {
 	## replace_scope = { root = planet this = planet from = species }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_purge_complete = {
 	## replace_scope = { root = planet this = planet from = country fromfrom = pop }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_purge_begun = {
 	## replace_scope = { root = pop this = pop from = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<pop_event>
 }
 on_purge_canceled = {
 	## replace_scope = { root = pop this = pop from = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<pop_event>
 }
 on_terraforming_begun = {
 	## replace_scope = { root = planet this = planet from = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_terraforming_complete = {
 	## replace_scope = { root = planet this = planet from = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_planet_zero_health = {
 	## replace_scope = { root = planet this = planet from orbital bombardment }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_planet_zero_pops = {
 	## replace_scope = { root = planet this = planet from orbital bombardment }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_planet_zero_health_ground_combat = {
 	## replace_scope = { root = planet this = planet from = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_pop_enslaved = {
 	## replace_scope = { root = pop this = pop }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<pop_event>
 }
 on_pop_emancipated = {
 	## replace_scope = { root = pop this = pop from }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<pop_event>
 }
 on_pre_communications_established = {
 	## replace_scope = { root = country this = country from = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_post_communications_established = {
 	## replace_scope = { root = country this = country from = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_leader_death = {
 	## replace_scope = { root = country this = country from = leader }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_leader_level_up = {
 	## replace_scope = { root = country this = country from = leader }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_ruler_set = {
 	## replace_scope = { root = country this = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_ruler_removed = {
 	## replace_scope = { root = country this = country from = leader }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_ruler_back_to_pre_ruler_class = {
 	## replace_scope = { root = country this = country from = leader }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_blocker_cleared = {
 	## replace_scope = { root = planet this = planet from = tile }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_ship_order = {
 	## replace_scope = { root = ship this = ship from = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<ship_event>
 }
 on_policy_changed = {
 	## replace_scope = { root = country this = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_ship_built = {
 	## replace_scope = { root = ship this = ship from = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<ship_event>
 }
 on_ship_designed = {
 	## replace_scope = { root = country this = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_ship_upgraded = {
 	## replace_scope = { root = ship this = ship }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<ship_event>
 }
 on_war_beginning = {
 	## replace_scope = { root = country this = country from = war }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_war_ended = {
 	## replace_scope = { root = country this = country from = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_tech_increased = {
 	## replace_scope = { root = country this = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_modification_complete = {
 	## replace_scope = { root = planet this = planet from = species }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_planet_occupied = {
 	## replace_scope = { root = planet this = planet from = country fromfrom = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_emergency_ftl = {
 	## replace_scope = { root = fleet this = fleet from = fleet fromfrom = galactic_object }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<fleet_event>
 }
 on_army_recruited = {
 	## replace_scope = { root = planet this = planet from = army }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_building_complete = {
 	## replace_scope = { root = planet this = planet from = tile }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_building_queued = {
 	## replace_scope = { root = planet this = planet from = tile }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_building_unqueued = {
 	## replace_scope = { root = planet this = planet from = tile }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_building_upgraded = {
 	## replace_scope = { root = planet this = planet from = tile }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_building_demolished = {
 	## replace_scope = { root = planet this = planet from = tile }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_building_replaced = {
 	## replace_scope = { root = planet this = planet from = tile }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_building_ruined = {
 	## replace_scope = { root = planet this = planet from = tile }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_building_repaired = {
 	## replace_scope = { root = planet this = planet from = tile }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_tutorial_level_changed = {
 	## replace_scope = { root = country this = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_war_won = {
 	## replace_scope = { root = country this = country from = country fromfrom = war }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_war_lost = {
 	## replace_scope = { root = country this = country from = country fromfrom = war }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_status_quo = {
 	## replace_scope = { root = country this = country from = country fromfrom = country fromfromfrom = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_status_quo_forced = {
 	## replace_scope = { root = country this = country from = country fromfrom = country fromfromfrom = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_pop_migration_end = {
 	## replace_scope = { root = pop this = pop from = planet fromfrom = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<pop_event>
 }
 on_pop_moved = {
 	## replace_scope = { root = pop this = pop from = tile }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<pop_event>
 }
 on_pop_added = {
 	## replace_scope = { root = pop this = pop from = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<pop_event>
 }
 on_pop_resettled = {
 	## replace_scope = { root = pop this = pop from = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<pop_event>
 }
 on_pop_rights_change = {
 	## replace_scope = { root = pop this = pop }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<pop_event>
 }
 on_pop_birth = {
 	## replace_scope = { root = pop this = pop }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<pop_event>
 }
 on_buildable_pop_created = {
 	## replace_scope = { root = pop this = pop }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<pop_event>
 }
 on_pop_fully_grown = {
 	## replace_scope = { root = pop this = pop }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<pop_event>
 }
 on_rebels_take_planet = {
 	## replace_scope = { root = country this = country from = planet fromfrom = war }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_rebels_take_planet_owner_switched = {
 	## replace_scope = { root = country this = country from = planet fromfrom = war }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_planet_ownerless = {
 	## replace_scope = { root = planet this = planet from = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_planet_transfer = {
 	## replace_scope = { root = planet this = planet from = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_planet_conquer = {
 	## replace_scope = { root = planet this = planet from = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_fleet_enter_orbit = {
 	## replace_scope = { root = fleet this = fleet from = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<fleet_event>
 }
 on_join_alliance = {
 	## replace_scope = { root = country this = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_leave_alliance = {
 	## replace_scope = { root = country this = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_country_destroyed = {
 	## replace_scope = { root = country this = country from = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_megastructure_built = {
 	## replace_scope = { root = country this = country from = megastructure fromfrom = galactic_object fromfromfrom = fleet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_megastructure_upgrade_begin = {
 	## replace_scope = { root = country this = country from = megastructure fromfrom = galactic_object }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_megastructure_upgraded = {
 	## replace_scope = { root = country this = country from = megastructure fromfrom = galactic_object }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_colony_1_year_old = {
 	## replace_scope = { root = planet this = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_colony_2_year_old = {
 	## replace_scope = { root = planet this = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_colony_3_year_old = {
 	## replace_scope = { root = planet this = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_colony_4_year_old = {
 	## replace_scope = { root = planet this = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_colony_5_year_old = {
 	## replace_scope = { root = planet this = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_colony_6_year_old = {
 	## replace_scope = { root = planet this = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_colony_7_year_old = {
 	## replace_scope = { root = planet this = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_colony_8_year_old = {
 	## replace_scope = { root = planet this = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_colony_9_year_old = {
 	## replace_scope = { root = planet this = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_colony_10_year_old = {
 	## replace_scope = { root = planet this = planet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 on_leader_spawned = {
 	## replace_scope = { root = country this = country from = leader }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 empire_init_add_technologies = {
 	## replace_scope = { root = country this = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 empire_init_create_capital_secondary_pops = {
 	## replace_scope = { root = planet this = planet from = species }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
 empire_init_create_capital_pops = {
 	## replace_scope = { root = pop this = pop from = species }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<pop_event>
 }
 empire_init_create_ships = {
 	## replace_scope = { root = country this = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_election_started = {
 	## replace_scope = { root = country this = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_election_ended = {
 	## replace_scope = { root = country this = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_entering_gateway = {
 	## replace_scope = { root = fleet this = fleet from = galactic_object fromfrom = galactic_object }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<fleet_event>
 }
 on_entering_wormhole = {
 	## replace_scope = { root = fleet this = fleet from = galactic_object fromfrom = galactic_object }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<fleet_event>
 }
 on_jump_drive = {
 	## replace_scope = { root = fleet this = fleet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<fleet_event>
 }
 on_pirate_spawn = {
 	## replace_scope = { root = country this = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<country_event>
 }
 on_starbase_transfer = {
 	## replace_scope = { root = ship this = ship from = country }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<ship_event>
 }
 on_destroy_planet_with_planet_killer_cracker = {
 	## replace_scope = { root = planet this = planet from = fleet }	
-	## cardinality = 0..inf	>
+	## cardinality = 0..inf
 	<planet_event>
 }
