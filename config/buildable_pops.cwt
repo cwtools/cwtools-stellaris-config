@@ -51,16 +51,22 @@ buildable_pop = {
 			trait = <trait>
 		}
 		new_pop_resource_requirement = {
-			#one of these three!
+			#one of these two
+			#type can receive any string - the game uses the string as a counter. By default there is something called "robot_food"
+			#but other mods also define custom strings and this works without issue. Examples: STNH and Stellar Expansion: Cloning			
+			
 			## cardinality = 0..1
 			type = <resource>
 			## cardinality = 0..1
-			type = robot_food
-			## cardinality = 0..1
-			type = scalar #it can receive any string
+			type = scalar 
 
-			value = float
+			value = float #this represents the required amount of the specified resource or dummy-resource for a pop to grow.
 		}
+
+		pops_auto_growth = float 
+		
+		#this is the amount of growth the pop generates every game month. 
+		#Growth is in effect an amount of the resource or dummy-resource that is accumulated monthly.
 
 		#one of these two is required!
 		## cardinality = 0..1
@@ -70,8 +76,7 @@ buildable_pop = {
 			## cardinality = 0..inf
 			<ethos>
 		}
-
-		pops_auto_growth = float
+		
 		pop_maintenance = float
 
 		## cardinality = 0..1
@@ -99,16 +104,6 @@ buildable_pop = {
 		enum[species_portraits] = {
 			## cardinality = 0..inf
 			alias_name[trigger] = alias_match_left[trigger]
-		}
-	}
-}
-
-enums = {
-	complex_enum[species_portraits] = {
-		path = "game/gfx/portraits/portraits"
-		name = {
-			enum_name = {
-			}
 		}
 	}
 }
