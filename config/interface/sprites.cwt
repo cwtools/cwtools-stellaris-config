@@ -1,13 +1,15 @@
 #sprites are saved in *.gfx files (like meshes) and are by and large stored in /interface
 
 types = {
-	## type_key_filter = spriteTypes
-	type[sprite_types] = { #these are links that start with the GFX_ prefix in vanilla
+	## type_key_filter = spriteType
+	type[sprite] = { #these are links that start with the GFX_ prefix in vanilla
 		path = "game/interface"
-		#these are links that start with the GFX_ prefix in vanilla as well. thez r used in GUI files
-		#subtype[progressbar_type] = {
-		#	path = "game/interface"
-		#}
+		skip_root_key = spriteTypes
+	}
+	## type_key_filter = progressbartype
+	type[progressbar] = { #these are links that start with the GFX_ prefix in vanilla
+		path = "game/interface"
+		skip_root_key = spriteTypes
 	}
 }
 
@@ -23,89 +25,65 @@ types = {
 # }
 #}
 
-enums = {
-	complex_enum[sprite_types] = {
-		path = "game/interface"
-		name = {
-			spriteType = {
-				name = enum_name
-			}
-		}
-	}
-	complex_enum[progressbar_types] = {
-		path = "game/interface"
-		name = {
-			progressbartype = {
-				name = enum_name
-			}
+sprite = {
+	name = scalar
+	textureFile = filepath
+	## cardinality = 0..1
+	masking_texture = filepath
+	## cardinality = 0..1
+	effectFile = filepath
+	## cardinality = 0..1
+	alwaysTransparent = bool
+	## cardinality = 0..1
+	transParencecheck = bool
+	## cardinality = 0..1
+	borderSize = { x = int y = int }
+	## cardinality = 0..1
+	noOfFrames = int
+	## cardinality = 0..1
+	animation = {
+		## cardinality = 0..1
+		animationmaskfile = filepath
+		## cardinality = 0..1
+		animationtexturefile = filepath
+		## cardinality = 0..1
+		animationrotation = int[0..360]
+		## cardinality = 0..1
+		animationlooping = bool
+		## cardinality = 0..1
+		animationtime = float
+		## cardinality = 0..1
+		animationdelay = float
+		## cardinality = 0..1
+		animationblendmode = enum[animation_mode]
+		## cardinality = 0..1
+		animationtype = enum[animation_type]
+		## cardinality = 0..1
+		animationrotationoffset = { x = float y = float }
+		## cardinality = 0..1
+		animationtexturescale = { x = float y = float }
+		## cardinality = 0..1
+		animationframes = {
+			## cardinality = 1..3
+			int
 		}
 	}
 }
 
-sprite_types = {
-	## cardinality = 0..inf
-	spriteType = {
-		name = scalar
-		textureFile = filepath
-  		## cardinality = 0..1
-  		masking_texture = filepath
-  		## cardinality = 0..1
-  		effectFile = filepath
-		## cardinality = 0..1
-  		alwaysTransparent = bool
-		## cardinality = 0..1
-  		transParencecheck = bool
-  		## cardinality = 0..1
-  		borderSize = { x = int y = int }
-  		## cardinality = 0..1
-  		noOfFrames = int
-  		## cardinality = 0..1
-  		animation = {
-			## cardinality = 0..1
-      		animationmaskfile = filepath
-			## cardinality = 0..1
-      		animationtexturefile = filepath
-			## cardinality = 0..1
-      		animationrotation = int[0..360]
-			## cardinality = 0..1
-      		animationlooping = bool
-			## cardinality = 0..1
-      		animationtime = float
-			## cardinality = 0..1
-      		animationdelay = float
-			## cardinality = 0..1
-      		animationblendmode = enum[animation_mode]
-			## cardinality = 0..1
-      		animationtype = enum[animation_type]
-			## cardinality = 0..1
-      		animationrotationoffset = { x = float y = float }
-			## cardinality = 0..1
-      		animationtexturescale = { x = float y = float }
-			## cardinality = 0..1
-      		animationframes = {
-        		## cardinality = 1..3
-       			int
-      		}
-   		}
+progressbar = {
+	name = scalar
+	textureFile1 = filepath
+	textureFile2 = filepath
+	effectFile = filepath
+	color = {
+		## cardinality = 3..3
+		float
 	}
-
-	## cardinality = 0..inf
-	progressbartype = {
-		name = scalar
-		textureFile1 = filepath
-		textureFile2 = filepath
-    	effectFile = filepath
-    	color = {
-      		## cardinality = 3..3
-      		float
-    	}
-		colortwo = {
-      		## cardinality = 3..3
-      		float
-    	}
-		size = { x = int y = int }
+	colortwo = {
+		## cardinality = 3..3
+		float
 	}
-
+	size = { x = int y = int }
 }
 
 #example:
