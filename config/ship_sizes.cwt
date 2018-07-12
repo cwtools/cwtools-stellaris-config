@@ -75,7 +75,7 @@ ship_size = {
 		## cardinality = 1..inf
 		section_slot = { #this is connected to the section templates and global ship designs files!
 			## cardinality = 1..inf
-			locator = scalar #this is connected to the ship asset files. 
+			locator = <locator> #this connects to the model_entity file. Please check it out!			
 		}
 	}
 	## cardinality = 0..1
