@@ -85,8 +85,6 @@ trait = {
 
 		leader_trait = yes
 		## cardinality = 0..1
-		sorting_priority = int
-		## cardinality = 0..1
 		### Default = no
 		hide_age = bool
 		## cardinality = 0..1
