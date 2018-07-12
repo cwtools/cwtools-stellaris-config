@@ -10,6 +10,8 @@ types = {
 		path = "game/music"
   }
 }
+#TODO: Add better filepath handling
+
 song = {
 	name = scalar
 }

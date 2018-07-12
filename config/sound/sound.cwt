@@ -42,6 +42,8 @@ types = {
 	}
 }
 
+#TODO: Add better filepath handling
+
 sound_category = {
 	name = scalar
 	soundeffects = {
@@ -76,7 +78,7 @@ sound_group = {
 	## cardinality = 0..1
 	soundfileoverrides = {
 		## cardinalit = 0..inf
-		<sound> = filepath
+		<sound> = scalar #filepath
 	}
 	## cardinality = 0..1
 	sort_order = int

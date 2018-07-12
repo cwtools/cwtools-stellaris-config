@@ -63,7 +63,13 @@ bitmapfonts = {
 	bitmapfont = {
   		name = scalar
 		#TODO: This should be filepath + extension
-  		path = scalar
+		## cardinality = 0..1
+		path = scalar
+		## cardinality = 0..1
+		fontfiles = {
+			## cardinality = 1..inf
+			scalar
+		}
 		#TODO: hex
   		color = scalar
   		## cardinality = 0..1

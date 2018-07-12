@@ -5,9 +5,9 @@ types = {
 	type[sprite_types] = { #these are links that start with the GFX_ prefix in vanilla
 		path = "game/interface"
 		#these are links that start with the GFX_ prefix in vanilla as well. thez r used in GUI files
-		#subtype[progressbar_type] = { 
+		#subtype[progressbar_type] = {
 		#	path = "game/interface"
-		#}  
+		#}
 	}
 }
 
@@ -44,7 +44,7 @@ enums = {
 
 sprite_types = {
 	## cardinality = 0..inf
-	sprite_type = { 
+	spriteType = {
 		name = scalar
 		textureFile = filepath
   		## cardinality = 0..1
@@ -54,7 +54,7 @@ sprite_types = {
 		## cardinality = 0..1
   		alwaysTransparent = bool
 		## cardinality = 0..1
-  		transParencecheck = bool  
+  		transParencecheck = bool
   		## cardinality = 0..1
   		borderSize = { x = int y = int }
   		## cardinality = 0..1
@@ -80,35 +80,35 @@ sprite_types = {
 			## cardinality = 0..1
       		animationrotationoffset = { x = float y = float }
 			## cardinality = 0..1
-      		animationtexturescale = { x = float y = float } 
+      		animationtexturescale = { x = float y = float }
 			## cardinality = 0..1
-      		animationframes = { 
+      		animationframes = {
         		## cardinality = 1..3
-       			int 
-      		} 
-   		}  
+       			int
+      		}
+   		}
 	}
-	
+
 	## cardinality = 0..inf
 	progressbartype = {
 		name = scalar
 		textureFile1 = filepath
 		textureFile2 = filepath
     	effectFile = filepath
-    	color = { 
+    	color = {
       		## cardinality = 3..3
       		float
     	}
-		colortwo = { 
+		colortwo = {
       		## cardinality = 3..3
       		float
     	}
-		size = { x = int y = int }		
+		size = { x = int y = int }
 	}
 
 }
- 
-#example: 
+
+#example:
 #spriteTypes = {
 # progressbartype = {
 #		name = "GFX_waroverview_war_exhaustion_stats_progressbar"
@@ -120,21 +120,21 @@ sprite_types = {
 #		effectFile = "gfx/FX/progress.lua"
 # }
 #}
- 
 
 
-enums = { 
-  enum[animation_mode] = { 
+
+enums = {
+  enum[animation_mode] = {
     overlay
     add
     multiply
-  } 
-  enum[animation_type] = { 
+  }
+  enum[animation_type] = {
     scrolling
     rotating
     pulsing
    }
- }  
-  
-  
-  
+ }
+
+
+
