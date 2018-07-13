@@ -7,6 +7,10 @@ types = {
 	type[NGraphics] = {
 		path = "game/common/defines"
 	}		
+ 	## type_key_filter = NInterface
+	type[NInterface] = {
+		path = "game/common/defines"
+	}				
 }
 
 NCamera = {
@@ -594,4 +598,168 @@ NGraphics = {
 		## cardinality = 3..3	
 		float
 	}
+}
+NInterface = {
+	## cardinality = 0..1
+	MAX_WARGOAL_ITEMS = int
+	## cardinality = 0..1
+	FLEET_SIZE = int
+	## cardinality = 0..1
+	TOOLTIP_TIME = float
+	## cardinality = 0..1
+	TOOLTIP_DELAYED_TIME = float
+	## cardinality = 0..1
+	TOOLTIP_POSITION_OFFSET = { 
+		## cardinality = 2..2
+		int
+	}
+	## cardinality = 0..1
+	TOOLTIP_POSITION_OFFSET_STAR = { 
+		## cardinality = 2..2
+		float
+	}
+	## cardinality = 0..1
+	COUNTRY_ICONS = int
+	## cardinality = 0..1
+	FLEET_VIEW_RESERVE_ABOVE = int
+	## cardinality = 0..1
+	FLEET_VIEW_RESERVE_INSIDE = int
+	## cardinality = 0..1
+	NOTIFICATION_MESSAGE_XPOS = int
+	## cardinality = 0..1
+	NOTIFICATION_MESSAGE_YPOS = int
+	## cardinality = 0..1
+	NOTIFICATION_MESSAGE_CLOSE_WARNING_PERC = float
+	## cardinality = 0..1
+	NOTIFICATION_MESSAGE_SPACING = int
+	## cardinality = 0..1
+	NOTIFICATION_MESSAGE_MARGIN_RIGHT = int
+	## cardinality = 0..1
+	NOTIFICATION_MESSAGE_SPEED = float
+	## cardinality = 0..1
+	NOTIFICATION_MESSAGE_DURATION_STANDARD = int
+	## cardinality = 0..1
+	TECH_VIEW_ZOOM_STEPS = { 
+		## cardinality = 4..4
+		float
+	}
+	## cardinality = 0..1
+	TECH_VIEW_CAMERA_SPEED = float
+	## cardinality = 0..1
+	TECH_VIEW_CAMERA_EDGE_SPEED = float
+	## cardinality = 0..1
+	PLANETVIEW_ORBITAL_RED_HEALTH = int
+	## cardinality = 0..1
+	PLANETVIEW_ORBITAL_YELLOW_HEALTH = int
+	## cardinality = 0..1
+	PLANETVIEW_DETACH_POP_DISTANCE = int
+	## cardinality = 0..1
+	GROWING_POP_ALPHA = float
+	## cardinality = 0..1
+	QUEUED_BUILDING_ALPHA = float
+	## cardinality = 0..1
+	POTENTIAL_ARMY_ALPHA = float
+	## cardinality = 0..1
+	HIGH_PIRACY_RISK = float
+	## cardinality = 0..1
+	BUILDINGS_TO_SHOW_CITY_LEVEL = { 
+		## cardinality = 5..5
+		int
+	}
+	## cardinality = 0..1
+	TRADE_VIEW_SMALL_CREDIT_CHANGE = int
+	## cardinality = 0..1
+	TRADE_VIEW_LARGE_CREDIT_CHANGE = int
+	## cardinality = 0..1
+	TRADE_VIEW_MASSIVE_CREDIT_CHANGE = int
+	## cardinality = 0..1
+	TRADE_VIEW_WIDE_MODE_THRESHHOLD = int
+	## cardinality = 0..1
+	SHIP_NAME_CAP_LENGTH = int
+	## cardinality = 0..1
+	SHIP_NAME_SIZE_MAX = int
+	## cardinality = 0..1
+	SPECIES_NAME_SIZE_MAX = int
+	## cardinality = 0..1
+	SPECIES_NAME_CAP_LENGTH = int
+	## cardinality = 0..1
+	EMPIRE_NAME_CAP_LENGTH = int
+	## cardinality = 0..1
+	ADVISOR_DEFAULT_SHOW_SOUND = <sound_effect>
+	## cardinality = 0..1
+	ADVISOR_DEFAULT_CLICK_SOUND = <sound_effect>
+	## cardinality = 0..1
+	ADVISOR_ANNOYED_COUNT = int
+	## cardinality = 0..1
+	ADVISOR_ANNOYED_SOUNDS = { 
+		## cardinality = 1..inf
+		<sound_effect>
+	}	
+	## cardinality = 0..1
+	ADVISOR_SOUND_MIN_WAIT = float
+	## cardinality = 0..1
+	ADVISOR_SOUND_BLOCKED_DEFAULT = float
+	## cardinality = 0..1
+	ADVISOR_SOUND_BLOCKED_SHIP_LOST = float
+	## cardinality = 0..1
+	ADVISOR_SOUND_BLOCKED_FLEET_ENGAGED = float
+	## cardinality = 0..1
+	POP_FACTION_HEADER_SPRITE_TYPE_DEFAULT = <sprite_type>
+	## cardinality = 0..1
+	OUTLINER_PING_TIME = float
+	## cardinality = 0..1
+	FRONTEND_ANIMATED_BG_ENTITY = <model_entity>
+	## cardinality = 0..1
+	FRONTEND_ANIMATED_BG_ASPECT_RATIO = float
+	## cardinality = 0..1
+	MAX_NUM_SAVE_GAMES = int
+	## cardinality = 0..1
+	DANGEROUS_FACTIONS_WHITE = float
+	## cardinality = 0..1
+	DANGEROUS_FACTIONS_YELLOW = float
+	## cardinality = 0..1
+	DANGEROUS_FACTIONS_RED = float
+	## cardinality = 0..1
+	SITUATION_LOG_DEBRIS_PICTURE_SPRITE = <sprite_type>
+	## cardinality = 0..1
+	SITUATION_LOG_DEBRIS_ICON_FILENAME = filepath
+	## cardinality = 0..1
+	SITUATION_LOG_MODIFICATION_PICTURE_SPRITE = <sprite_type>
+	## cardinality = 0..1
+	SITUATION_LOG_MODIFICATION_ICON_FILENAME = filepath
+	## cardinality = 0..1
+	MIN_GUI_SCALE = float
+	## cardinality = 0..1
+	BROWSER_BASE_URL = scalar
+	## cardinality = 0..1
+	INGAME_HELP_URL = scalar
+	## cardinality = 0..1
+	INGAME_HELP_URL_TGP = scalar
+	## cardinality = 0..1
+	TOPBAR_BUTTONS_SHORTCUTS = { 
+		## cardinality = 1..inf
+		scalar #keyboard shortcuts! "contacts" "F2" "situation" "F3" "technology" "F4" "empire" "F5" "policies" "F6" "factions" "F7" "traditions" "F8" "expansion_planner" "F9" "ship_designer" "F10"
+	}
+		
+	## cardinality = 0..1
+	TOPBAR_BUTTONS_PRIORITY	= { 
+		## cardinality = 1..inf
+		<gui_type> #these refer to buttons of various kinds: "contacts" "situation" "technology" "empire" "policies" "factions" "claims" "strategic_resource" "species" "leaders" "traditions" "expansion_planner" "ship_designer" "fleet_manager" 
+	}	
+	## cardinality = 0..1
+	TOPBAR_BUTTONS = int
+	## cardinality = 0..1
+	NUM_INDENTATION_SPACES = int
+	## cardinality = 0..1
+	OUTLINER_PLANET_CONSTRUCTION_MAX_ENTRIES = int
+	## cardinality = 0..1
+	OUTLINER_STARBASE_SHIPYARD_CONSTRUCTION_MAX_ENTRIES = int
+	## cardinality = 0..1
+	WAROVERVIEW_BATTLE_RESULT_BASE_EXHAUSTION = float
+	## cardinality = 0..1
+	WAROVERVIEW_BATTLE_RESULT_MAX_RELATIVE_DRAW = float
+	## cardinality = 0..1
+	WAROVERVIEW_BATTLE_RESULT_MIN_RELATIVE_OVERWHELMING = float
+	## cardinality = 0..1
+	WAROVERVIEW_BATTLE_RESULT_MIN_OVERWHELMING = float
 }
