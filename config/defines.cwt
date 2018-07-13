@@ -1,8 +1,12 @@
 types = {
-  ## type_key_filter = NCamera
+ 	## type_key_filter = NCamera
 	type[NCamera] = {
 		path = "game/common/defines"
 	}
+ 	## type_key_filter = NGraphics
+	type[NGraphics] = {
+		path = "game/common/defines"
+	}		
 }
 
 NCamera = {
@@ -175,4 +179,419 @@ NCamera = {
 	SYSTEM_SLIDE_RADIUS_FACTOR = float
 	## cardinality = 0..1
 	SYSTEM_SLIDE_SPEED = float
+}
+
+NGraphics = {
+	## cardinality = 0..1
+	CAMERA_DISTANCE_TO_ZOOM	= float
+	## cardinality = 0..1
+	DEAD_SHIP_DRAG	= float
+	## cardinality = 0..1
+	ORBIT_HSV = { 
+		## cardinality = 3..3	
+		float
+	}
+	## cardinality = 0..1
+	SYSTEM_INNER_BORDER_HSV = { 
+		## cardinality = 3..3	
+		float
+	}
+	## cardinality = 0..1
+	SYSTEM_OUTER_BORDER_HSV = { 
+		## cardinality = 3..3	
+		float
+	}
+
+	## cardinality = 0..1
+	SYSTEM_LINE_ALPHA_FADE_STEP = { 
+		## cardinality = 2..2	
+		int
+	}
+	## cardinality = 0..1
+	SYSTEM_LINE_ALPHA_FADE_VALUE = { 
+		## cardinality = 2..2	
+		float
+	}
+	## cardinality = 0..1
+	DEFAULT_PLANET_PLANE = float
+	## cardinality = 0..1
+	MOON_SCALE = float
+	## cardinality = 0..1
+	PLANET_SCALE_SYSTEM = { 
+		## cardinality = 7..7	
+		float
+	}
+	## cardinality = 0..1
+	PLANET_DESTRUCTION_HIT_ENTITY_SCALE = float
+	## cardinality = 0..1
+	RELATION_COLOR_PLAYER_HSV = { 
+		## cardinality = 3..3	
+		float
+	}
+	## cardinality = 0..1
+	RELATION_COLOR_ALLIED_HSV = { 
+		## cardinality = 3..3	
+		float
+	}
+	## cardinality = 0..1
+	RELATION_COLOR_NEUTRAL_HSV = { 
+		## cardinality = 3..3	
+		float
+	}
+	## cardinality = 0..1
+	RELATION_COLOR_HOSTILE_HSV = { 
+		## cardinality = 3..3	
+		float
+	}
+	## cardinality = 0..1
+	RELATION_COLOR_SELECTED_RGB = { 
+		## cardinality = 3..3	
+		float
+	}
+	## cardinality = 0..1
+	ASTEROID_PLANE = float
+	## cardinality = 0..1
+	ASTEROID_POSITION_OFFSET = float
+	## cardinality = 0..1
+	ASTEROID_HEIGHT_OFFSET = float
+	## cardinality = 0..1
+	ASTEROID_DIST_POW = float
+	## cardinality = 0..1
+	ASTEROID_AMOUNT_RADIUS_SCALER = float
+	## cardinality = 0..1
+	ASTEROID_MAX_SCALE = float
+	## cardinality = 0..1
+	ASTEROID_ROTATION_SPEED = float
+	## cardinality = 0..1
+	GALAXY_STAR_ICON_SCALE = float
+	## cardinality = 0..1
+	GALAXY_STAR_ICON_MAX_SCALE = float
+	## cardinality = 0..1
+	GALAXY_DUST_SIZE = float
+	## cardinality = 0..1
+	GALAXY_DUST_SIZE_EXTRA = float
+	## cardinality = 0..1
+	GALAXY_DUST_ROTATION_SPEED = float
+	## cardinality = 0..1
+	GALAXY_NEBULA_DUST_SIZE = float
+	## cardinality = 0..1
+	GALAXY_NEBULA_DUST_SIZE_EXTRA = float
+	## cardinality = 0..1
+	GALAXY_NEBULA_DUST_ROTATION_SPEED = float
+	## cardinality = 0..1
+	GALAXY_TERRA_INCOGNITA_MULTIPLIER = float
+	## cardinality = 0..1
+	SHIP_ZOOM_SCALE_MULT = float
+	## cardinality = 0..1
+	PLANET_TILT_FROM_SUN = float
+	## cardinality = 0..1
+	PLANET_RING_TILT_FROM_SUN = float
+	## cardinality = 0..1
+	PLANET_MAP_ICON_OFFSET = float
+	## cardinality = 0..1
+	PLANET_DISSOLVE_ANIMATION_TIME_SCALE = float
+	## cardinality = 0..1
+	MEGASTRUCTURE_MAP_ICON_OFFSET = float
+	## cardinality = 0..1
+	TRAILS_ALPHA_FADE = float
+	## cardinality = 0..1
+	TRAILS_MISSILE_ALPHA_FADE = float
+	## cardinality = 0..1
+	TRAILS_BASE_WIDTH = float
+	## cardinality = 0..1
+	TRAILS_MISSILE_BASE_WIDTH = float
+	## cardinality = 0..1
+	TRAILS_LOCATOR_NAME	= <locator> 
+	## cardinality = 0..1
+	STRIKE_CRAFT_TRAIL_FADE_RATE = float
+	## cardinality = 0..1
+	STRIKE_CRAFT_HEIGHT_OFFSET = float
+	## cardinality = 0..1
+	STRIKE_CRAFT_HEIGHT_RANDOM = float
+	## cardinality = 0..1
+	BORDER_TEXTURE_SIZE = int
+	## cardinality = 0..1
+	BORDER_MIN_SIZE_FOR_SYMBOL = int
+	## cardinality = 0..1
+	BORDER_SYSTEM_RADIUS = float
+	## cardinality = 0..1
+	BORDER_HYPERLANE_THICKNESS = float
+	## cardinality = 0..1
+	BORDER_INFLUENCE_MAX_DISTANCE_FACTOR = float
+	## cardinality = 0..1
+	BORDER_OWNERLESS_SYSTEM_RADIUS = float
+	## cardinality = 0..1
+	BORDER_OWNERLESS_HYPERLANE_THICKNESS = float
+	## cardinality = 0..1
+	BORDER_OWNERLESS_INFLUENCE_MAX_DISTANCE_FACTOR = float
+	## cardinality = 0..1
+	BORDER_VISIBILITY_THRESHOLD = float
+	## cardinality = 0..1
+	STAR_PIN_CIRCLE_RADIUS = float
+	## cardinality = 0..1
+	STAR_PIN_CIRCLE_NUM_POINTS = int
+	## cardinality = 0..1
+	STAR_PIN_ENABLE_NEUTRAL	= bool
+	## cardinality = 0..1
+	STAR_PIN_NEUTRAL_COLOR = { 
+		## cardinality = 4..4	
+		float
+	}
+	## cardinality = 0..1
+	BORDER_FLAG_SCALE = float
+	## cardinality = 0..1
+	MAPNAME_BORDER_SCALE = float
+	## cardinality = 0..1
+	MAPNAME_BORDER_MIN_SIZE = int
+	## cardinality = 0..1
+	MAPNAME_BORDER_OFFSET_MUL = float
+	## cardinality = 0..1
+	MAPNAME_BORDER_OFFSET_ADD = float
+	## cardinality = 0..1
+	MAPNAME_NEBULA_SCALE = float
+	## cardinality = 0..1
+	MAPNAME_SECTOR_SCALE = int
+	## cardinality = 0..1
+	NULL_ENTITY	= <model_entity>
+	## cardinality = 0..1
+	NULL_INSTANT_PROJECTILE = <model_entity>
+	## cardinality = 0..1
+	NULL_MISSILE_PROJECTILE = <model_entity>
+	## cardinality = 0..1
+	SCIENCE_SHIP_SURVEY_ENTITY = <model_entity>
+	## cardinality = 0..1
+	SCIENCE_SHIP_SURVEY_ENTITY_LOCATOR = <locator>
+	## cardinality = 0..1
+	SCIENCE_SHIP_SURVEY_ENTITY_MAX_SCALE_FACTOR = float
+	## cardinality = 0..1
+	CONSTRUCTION_SHIP_TERRAFORMING_BEAM_ENTITY = <model_entity>
+	## cardinality = 0..1
+	CONSTRUCTION_SHIP_TERRAFORMING_PLANET_ENTITY = <model_entity>
+	## cardinality = 0..1
+	CONSTRUCTION_SHIP_TERRAFORMING_BEAM_ENTITY_SCALE_XY = float
+	## cardinality = 0..1
+	CONSTRUCTION_SHIP_TERRAFORMING_BEAM_ENTITY_SCALE_Z = float
+	## cardinality = 0..1
+	CONSTRUCTION_SHIP_TERRAFORMING_PLANET_ENTITY_SCALE_R = float
+	## cardinality = 0..1	
+	NAVIGATION_ARROW_ENTITY	= <model_entity>
+	## cardinality = 0..1
+	NAVIGATION_ARROW_OFFSET = float
+	## cardinality = 0..1
+	NAVIGATION_ARROW_FONT = <font>
+	## cardinality = 0..1
+	NAVIGATION_ARROW_FONT_SPECIAL = <font>
+	## cardinality = 0..1
+	NAVIGATION_ARROW_FONT_SIMP_CHINESE = <font>
+	## cardinality = 0..1
+	NAVIGATION_ARROW_TEXT_OFFSET = float
+	## cardinality = 0..1
+	NAVIGATION_ARROW_TEXT_SCALE = float
+	## cardinality = 0..1
+	NAVIGATION_ARROW_FONT_SIZE = int
+	## cardinality = 0..1
+	NAVIGATION_ARROW_TEXT_KERNING = int
+	## cardinality = 0..1
+	SHIP_HEALTH_BAR_COLOR = { 
+		## cardinality = 4..4	
+		float
+	}
+	## cardinality = 0..1
+	SHIP_HEALTH_BAR_BG_COLOR = { 
+		## cardinality = 4..4	
+		float
+	}
+	## cardinality = 0..1
+	SHIP_SHIELD_BAR_COLOR = { 
+		## cardinality = 4..4	
+		float
+	}
+	## cardinality = 0..1
+	SHIP_SHIELD_BAR_BG_COLOR = { 
+		## cardinality = 4..4	
+		float
+	}
+	## cardinality = 0..1
+	SHIP_TURRET_PROJECTILE_SPAWN_LOCATOR = <locator>
+	## cardinality = 0..1
+	STRIKE_CRAFT_PROJECTILE_SPAWN_LOCATOR = <locator>
+	## cardinality = 0..1
+	SHIP_TARGET_LOCATOR = <locator>
+	## cardinality = 0..1
+	MISSILE_HEIGHT_OFFSET = float
+	## cardinality = 0..1
+	MISSILE_ROTATION_RATE = float
+	## cardinality = 0..1
+	MISSILE_RANDOM_OFFSET_MIN_RADIUS = float
+	## cardinality = 0..1
+	MISSILE_RANDOM_OFFSET_MAX_RADIUS = float
+	## cardinality = 0..1
+	BALLISTIC_PROJECTILE_MISSED_LIFETIME = float
+	## cardinality = 0..1
+	PROJECTILE_ENTITY_STOP_STATE = scalar #"stop" - this is connected to entity state, but to do this will require rework of model_entities
+	## cardinality = 0..1
+	SHIELD_EFFECT_TIME_SCALE = float
+	## cardinality = 0..1
+	SHIELD_EFFECT_LOOP_INTERVAL = float
+	## cardinality = 0..1
+	SHIELD_DISTANCE_FROM_SHIP = { 
+		## cardinality = 3..3	
+		float
+	}
+	## cardinality = 0..1
+	SHIELD_DISTANCE_FROM_SHIP_MULT = { 
+		## cardinality = 3..3	
+		float
+	}
+	## cardinality = 0..1
+	SHIELD_EFFECT_ENTITIES = {
+		## cardinality = 1..inf
+		<model_entity>
+	}
+	## cardinality = 0..1
+	SHIELD_EFFECT_LOOPING_ENTITIES = {
+		## cardinality = 1..inf
+		<model_entity>
+	}
+	## cardinality = 0..1
+	MISSED_BEAM_LENGTH = float
+	## cardinality = 0..1
+	SHIP_DAMAGE_TEXTURE = filepath
+	## cardinality = 0..1
+	SHIP_DISSOLVE_NOISE_TEXTURE = filepath
+	## cardinality = 0..1
+	SHIP_RANDOM_HEIGHT_OFFSET = float
+	## cardinality = 0..1
+	SHIP_MOVEMENT_LENGTH_CONSIDERED_ZERO = float
+	## cardinality = 0..1
+	RANDOM_HEIGHT_MIN = float
+	## cardinality = 0..1
+	RANDOM_HEIGHT_MAX = float
+	## cardinality = 0..1
+	MOVE_ARROW_SYSTEM_CONTROL_POINT_SPACING = float
+	## cardinality = 0..1
+	MOVE_ARROW_GALAXY_CONTROL_POINT_SPACING = float
+	## cardinality = 0..1
+	MOVE_ARROW_SYSTEM_TARGET_ENTITY = <model_entity>
+	## cardinality = 0..1
+	MOVE_ARROW_GALAXY_TARGET_ENTITY = <model_entity>
+	## cardinality = 0..1
+	ATTACK_ARROW_SYSTEM_TARGET_ENTITY = <model_entity>
+	## cardinality = 0..1
+	ATTACK_ARROW_GALAXY_TARGET_ENTITY = <model_entity>
+	## cardinality = 0..1
+	TASK_ARROW_SYSTEM_TARGET_ENTITY = <model_entity>
+	## cardinality = 0..1
+	TASK_ARROW_GALAXY_TARGET_ENTITY = <model_entity>
+	## cardinality = 0..1
+	BYPASS_ARROW_GALAXY_TARGET_ENTITY = <model_entity>
+	## cardinality = 0..1
+	GUI_PLANET_RING_DIR = { 
+		## cardinality = 3..3	
+		float
+	}
+	## cardinality = 0..1
+	TI_TEXTURE_GROW_AMOUNT = int	
+	## cardinality = 0..1
+	FLEET_EFFECT_ENTITIES = {
+		## cardinality = 1..inf
+		<model_entity>
+	}
+	## cardinality = 0..1
+	FLEET_EFFECT_ENTITIES_BILLBOARD = {
+		## cardinality = 4..4
+		int
+	}
+	## cardinality = 0..1
+	FLEET_EFFECT_ENTITIES_SCALE = {
+		## cardinality = 4..4
+		int
+	}
+	## cardinality = 0..1
+	FTL_WINDUP_ENTITY_HYPERLANE = <model_entity>
+	## cardinality = 0..1
+	FTL_WINDUP_ENTITY_JUMP = <model_entity>
+	## cardinality = 0..1
+	ALIENFX_DEFAULT_COLOR = { 
+		## cardinality = 3..3	
+		float
+	}
+	## cardinality = 0..1
+	RUINED_BUILDING = filepath
+	## cardinality = 0..1
+	AURA_EFFECT_COLOR_ALLIED_FRIENDLY = { 
+		## cardinality = 4..4	
+		float
+	}
+	## cardinality = 0..1
+	AURA_EFFECT_COLOR_ALLIED_HOSTILE = { 
+		## cardinality = 4..4	
+		float
+	}
+	## cardinality = 0..1
+	AURA_EFFECT_COLOR_ENEMY_FRIENDLY = { 
+		## cardinality = 4..4	
+		float
+	}
+	## cardinality = 0..1
+	AURA_EFFECT_COLOR_ENEMY_HOSTILE = { 
+		## cardinality = 4..4	
+		float
+	} 
+	## cardinality = 0..1	
+	MAX_GFX_PROJECTILES = int
+	## cardinality = 0..1
+	MAX_GFX_PRIO_PROJECTILES = int
+	## cardinality = 0..1
+	MAX_GFX_MISSILES = int
+	## cardinality = 0..1
+	MUZZLE_FLASH_LIMIT = int
+	## cardinality = 0..1
+	MUZZLE_FLASH_DURATION = float
+	## cardinality = 0..1
+	MAP_MODE_NEUTRAL_COLOR = { 
+		## cardinality = 4..4	
+		float
+	}
+	## cardinality = 0..1
+	COUNTRY_BORDER_COLOR_RANDOM_SATURATION_OFFSETS = { 
+		## cardinality = 7..7	
+		float
+	}
+	## cardinality = 0..1
+	COUNTRY_BORDER_COLOR_RANDOM_VALUE_OFFSETS = { 
+		## cardinality = 7..7	
+		float
+	}
+	## cardinality = 0..1	
+	CONSTRUCTION_COLOR_VALID = { 
+		## cardinality = 4..4	
+		float
+	}
+	## cardinality = 0..1
+	CONSTRUCTION_COLOR_INVALID = { 
+		## cardinality = 4..4	
+		float
+	}
+	## cardinality = 0..1
+	CONSTRUCTION_COLOR_IN_PROGRESS = { 
+		## cardinality = 4..4	
+		float
+	}
+	## cardinality = 0..1
+	CONSTRUCTION_PROGRESS_BLEND_SPEED = float
+	## cardinality = 0..1
+	CONSTRUCTION_MEGASTRUCTURE_PROGRESS_BLEND_SPEED = float
+	## cardinality = 0..1
+	HIDE_HYPERLANES_OUTSIDE_TERRA_INCOGNITA = bool
+	## cardinality = 0..1
+	HYPERLANE_DEFAULT_COLOR = { 
+		## cardinality = 3..3	
+		float
+	}
+	## cardinality = 0..1
+	HYPERLANE_NO_ACCESS_COLOR = { 
+		## cardinality = 3..3	
+		float
+	}
 }
