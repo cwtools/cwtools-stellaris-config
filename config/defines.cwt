@@ -1,0 +1,178 @@
+types = {
+  ## type_key_filter = NCamera
+	type[NCamera] = {
+		path = "game/common/defines"
+	}
+}
+
+NCamera = {
+	## cardinality = 0..1
+	FOV	= int
+	## cardinality = 0..1
+	ENTITY_SPRITE_DESIGN_ENTRY_CAM_DIR = {
+		## cardinality = 3..3
+		float
+	}	
+	## cardinality = 0..1
+	ENTITY_SPRITE_DESIGN_ENTRY_CAM_LOOK_AT = {
+		## cardinality = 3..3
+		float
+	}	
+	## cardinality = 0..1
+	ENTITY_SPRITE_DESIGN_ENTRY_ZOOM_SCALE = float
+	## cardinality = 0..1
+	ENTITY_SPRITE_SHIP_SECTION_CAM_DIR = {
+		## cardinality = 3..3
+		float
+	}	
+	## cardinality = 0..1
+	ENTITY_SPRITE_SHIP_SECTION_CAM_LOOK_AT = {
+		## cardinality = 3..3
+		float
+	}	
+	## cardinality = 0..1
+	ENTITY_SPRITE_SHIP_SECTION_ZOOM_SCALE = float
+	## cardinality = 0..1
+	ENTITY_SPRITE_SYSTEM_VIEW_CAM_DIR = {
+		## cardinality = 3..3
+		float
+	}	
+	## cardinality = 0..1
+	ENTITY_SPRITE_SYSTEM_VIEW_CAM_LOOK_AT = {
+		## cardinality = 3..3
+		float
+	}	
+	## cardinality = 0..1
+	ENTITY_SPRITE_SYSTEM_VIEW_ZOOM_SCALE = float
+	## cardinality = 0..1
+	ENTITY_SPRITE_CUSTOMIZE_SPECIES_VIEW_CAM_DIR = {
+		## cardinality = 3..3
+		float
+	}	
+	## cardinality = 0..1
+	ENTITY_SPRITE_CUSTOMIZE_SPECIES_VIEW_CAM_LOOK_AT = {
+		## cardinality = 3..3
+		float
+	}	
+	## cardinality = 0..1
+	ENTITY_SPRITE_CUSTOMIZE_SPECIES_VIEW_ZOOM_SCALE = float
+	## cardinality = 0..1
+	ENTITY_SPRITE_FRONTEND_BG_CAM_DIR = {
+		## cardinality = 3..3
+		float
+	}	
+	## cardinality = 0..1
+	ENTITY_SPRITE_FRONTEND_BG_CAM_LOOK_AT = {
+		## cardinality = 3..3
+		float
+	}	
+	## cardinality = 0..1
+	ENTITY_SPRITE_FRONTEND_BG_ZOOM_SCALE = float
+	## cardinality = 0..1
+	GALAXY_SHOW_FLEETS_ZOOM	= int
+	## cardinality = 0..1
+	GALAXY_SHOW_STARNAME_ZOOM = int
+	## cardinality = 0..1
+	GALAXY_SHOW_FILTERICONS_ZOOM = int
+	## cardinality = 0..1
+	SHOW_FLEETS_ZOOM = int
+	## cardinality = 0..1
+	HIDE_ORBITS_ZOOM = int
+	## cardinality = 0..1
+	ZOOM_STEPS_GALAXY  = {
+		## cardinality = 7..7
+		float
+	}	
+	## cardinality = 0..1
+	ZOOM_STEPS_SYSTEM_PERCENTAGES = {
+		## cardinality = 7..7
+		float
+	}	
+	## cardinality = 0..1
+	ZOOM_STEPS_SHOW_FLEET_HEALTH_BARS = {
+		## cardinality = 4..4
+		int
+	}	
+	## cardinality = 0..1
+	LEAVE_SYSTEM_BIAS = float
+	## cardinality = 0..1
+	LEAVE_GALAXY_BIAS = float
+	## cardinality = 0..1
+	LEAVE_SYSTEM_ZOOM_STEP = float
+	## cardinality = 0..1
+	ENTER_SYSTEM_ZOOM_STEP = float
+	## cardinality = 0..1
+	SYSTEM_FOCUS_PLANET_STEP = float
+	## cardinality = 0..1
+	FOCUS_PLANET_DBLCLICK_X_OFFSET = float
+	## cardinality = 0..1
+	SYSTEM_SPACE_SCALE_MULT = float
+	## cardinality = 0..1
+	GALAXY_SPACE_SCALE_MULT = float
+	## cardinality = 0..1
+	GALAXY_RANGE_MULT = float #0.05f need to be worked out
+	## cardinality = 0..1
+	SYSTEM_HOVER_RANGE = float
+	## cardinality = 0..1
+	DEFAULT_ACCELERATION = float
+	## cardinality = 0..1
+	FOCUS_ACCELERATION = float
+	## cardinality = 0..1
+	VELOCITY_FACTOR = float
+	## cardinality = 0..1
+	VELOCITY_FACTOR_TRANSITION = float
+	## cardinality = 0..1
+	BORDER_NAMES_FADEOUT_ZOOM = float
+	## cardinality = 0..1
+	BORDER_NAMES_FADEOUT_SPEED = float
+	## cardinality = 0..1
+	BORDER_FLAG_FADEOUT_ZOOM = float
+	## cardinality = 0..1
+	BORDER_FLAG_FADEOUT_SPEED = float
+	## cardinality = 0..1
+	NEBULA_NAMES_FADEOUT_ZOOM = float
+	## cardinality = 0..1
+	NEBULA_NAMES_FADEOUT_SPEED = float
+	## cardinality = 0..1
+	PARTICLE_GALAXY_TRANSITION_OFFSET = float
+	## cardinality = 0..1
+	PARTICLE_SYSTEM_TRANSITION_OFFSET = float
+	## cardinality = 0..1
+	EDGE_SCROLLING_PIXELS = int
+	## cardinality = 0..1
+	SCROLL_SPEED = float
+	## cardinality = 0..1
+	SYSTEM_CAMERA_RESTRICT_EXTRA_SPACE = float
+	## cardinality = 0..1
+	SYSTEM_MIN_PITCH = float #degrees!
+	## cardinality = 0..1
+	SYSTEM_MAX_PITCH = float #degrees!
+	## cardinality = 0..1
+	GALAXY_MIN_PITCH = float #degrees!
+	## cardinality = 0..1
+	GALAXY_MAX_PITCH = float #degrees!
+	## cardinality = 0..1
+	FOCUSED_MIN_PITCH = float #degrees!
+	## cardinality = 0..1
+	FOCUSED_MAX_PITCH = float #degrees!
+	## cardinality = 0..1
+	FOCUSED_MIN_ZOOM_BASE = float
+	## cardinality = 0..1
+	FOCUSED_MIN_ZOOM_MULT = float
+	## cardinality = 0..1
+	FOCUSED_PLANET_MIN_ZOOM_MULT = float
+	## cardinality = 0..1
+	FOCUSED_ZOOM_RATE = float
+	## cardinality = 0..1
+	FOCUS_START_ZOOM_STEP = int
+	## cardinality = 0..1
+	ROTATION_RADIANS_PER_MOUSE_UNIT = float
+	## cardinality = 0..1
+	MOUSE_MOVEMENT_TO_START_ROTATION_SQ = int
+	## cardinality = 0..1
+	OFFSET_ANOMALY_VIEW = float
+	## cardinality = 0..1
+	SYSTEM_SLIDE_RADIUS_FACTOR = float
+	## cardinality = 0..1
+	SYSTEM_SLIDE_SPEED = float
+}
