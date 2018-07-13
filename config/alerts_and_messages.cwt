@@ -9,7 +9,7 @@ types = {
 
 alert = { 
   category = <alert_category>
-  sound = scalar #<sound> #should be linked to an asset file /sounds
+  sound = <sound_effect>
 } 
 enums = { 
   enum[alert_category] = {
@@ -23,8 +23,8 @@ enums = {
 message_type = { 
   icon =  <sprite_type>
   icon_frame = int
-  key = <localisation> #loc string is MESSAGE_<key>
+  key = localisation #loc string is called MESSAGE_<key>, make sure to validate this. 
   sound = <sound_effect>
-  sound_is_advisor = yes
+  sound_is_advisor = bool
   ping = <pingmap>
  } 
