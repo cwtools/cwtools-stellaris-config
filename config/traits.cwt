@@ -84,11 +84,11 @@ trait = {
 		modification = bool
 
 		leader_trait = yes
-
 		## cardinality = 0..1
 		### Default = no
 		hide_age = bool
-
+		## cardinality = 0..1
+		can_retreat = bool #admiral
 		## cardinality = 0..1
 		modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
