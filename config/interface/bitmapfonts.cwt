@@ -1,9 +1,21 @@
 #all the types defined in this file are nestled within bitmapfonts = {
 #please see interface/fonts.gfx - this file is weird.
 types = {
-	## type_key_filter = bitmapfonts
-	type[bitmapfonts] = {
+	## type_key_filter = bitmapfont
+	type[bitmapfont] = {
+		name_field = name
+		skip_root_key = bitmapfonts
 		path = "game/interface" #see game/interface/fonts.gfx
+	}
+	## type_key_filter = bitmapfont_override
+	type[bitmapfont_override] = {
+		skip_root_key = bitmapfonts
+		path = "game/interface" #see game/interface/fonts.gfx
+	}
+	## type_key_filter = textcolors
+	type[textcolors] = {
+		skip_root_key = bitmapfonts
+		path = "game/interface"
 	}
 }
 #these are the defines for the text coloring used in localisations. For example in the localisation "§HGhost Signal§!" the
@@ -34,15 +46,6 @@ enums = {
 		}
 	}
 
-	complex_enum[bitmapfonts] = {
-		path = "game/interface"
-		name = {
-			bitmapfont = {
-				name = enum_name
-			}
-		}
-	}
-
 	enum[font_languages] = {
 		l_russian
 		l_polish
@@ -50,8 +53,6 @@ enums = {
 	}
 }
 
-bitmapfonts = {
-	## cardinality = 0..1
 	textcolors = {
   		scalar = {  #these should really have a unique ID each - so they can be refered to. They are linked to in GUI files in /interface.
     		## cardinality = 3..3
@@ -59,7 +60,6 @@ bitmapfonts = {
  		}
 	}
 
-	## cardinality = 0..inf
 	bitmapfont = {
   		name = scalar
 		#TODO: This should be filepath + extension
@@ -91,9 +91,8 @@ bitmapfonts = {
   		#}
 	}
 
-	## cardinality = 0..inf
 	bitmapfont_override = {
-		name = enum[bitmapfonts]
+		name = <bitmapfont>
     	## cardinality = 0..1
     	ttf_font = <font>
     	## cardinality = 0..1
@@ -110,8 +109,6 @@ bitmapfonts = {
       		enum[font_languages]
     	}
 	}
-
-}
 
 #bitmapfont entries are connected to the fonts defined at game/fonts and the file there (see pull requests).
 #example:

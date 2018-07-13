@@ -1,69 +1,73 @@
 types = {
-	## type_key_filter = positionType
-	type[position_type] = {
-		skip_root_key = guiTypes
-		path = "game/interface" #*.GUI files!
+	## type_key_filter = guiTypes
+	type[gui_type] = {
+		path = "game/interface"
 	}
-	## type_key_filter = textboxType
-	type[textbox_type] = {
-		skip_root_key = guiTypes
-		path = "game/interface" #*.GUI files!
-	}
-	## type_key_filter = instantTextboxType
-	type[instantTextbox_type] = {
-		skip_root_key = guiTypes
-		path = "game/interface" #*.GUI files!
-	}
-	## type_key_filter = editBoxType
-	type[editBox_type] = {
-		skip_root_key = guiTypes
-		path = "game/interface" #*.GUI files!
-	}
-	## type_key_filter = smoothListboxType
-	type[smoothListbox_type] = {
-		skip_root_key = guiTypes
-		path = "game/interface" #*.GUI files!
-	}
-	## type_key_filter = containerWindowType
-	type[containerWindow_type] = {
-		skip_root_key = guiTypes
-		path = "game/interface" #*.GUI files!
-	}
-	## type_key_filter = iconType
-	type[icon_type] = {
-		skip_root_key = guiTypes
-		path = "game/interface" #*.GUI files!
-	}
-	## type_key_filter = buttonType
-	type[button_type] = {
-		skip_root_key = guiTypes
-		path = "game/interface" #*.GUI files!
-	}
-	## type_key_filter = effectButtonType
-	type[effectButton_type] = {
-		skip_root_key = guiTypes
-		path = "game/interface" #*.GUI files!
-	}
-	## type_key_filter = guiButtonType
-	type[guiButton_type] = {
-		skip_root_key = guiTypes
-		path = "game/interface" #*.GUI files!
-	}
-	## type_key_filter = scrollbarType
-	type[scrollbar_type] = {
-		skip_root_key = guiTypes
-		path = "game/interface" #*.GUI files!
-	}
-	## type_key_filter = extendedScrollbarType
-	type[extendedScrollbar_type] = {
-		skip_root_key = guiTypes
-		path = "game/interface" #*.GUI files!
-	}
-	## type_key_filter = guiButtonType
-	type[guiButton_type] = {
-		skip_root_key = guiTypes
-		path = "game/interface" #*.GUI files!
-	}
+	# ## type_key_filter = positionType
+	# type[position_type] = {
+	# 	skip_root_key = guiTypes
+	# 	path = "game/interface" #*.GUI files!
+	# }
+	# ## type_key_filter = textboxType
+	# type[textbox_type] = {
+	# 	skip_root_key = guiTypes
+	# 	path = "game/interface" #*.GUI files!
+	# }
+	# ## type_key_filter = instantTextboxType
+	# type[instantTextbox_type] = {
+	# 	skip_root_key = guiTypes
+	# 	path = "game/interface" #*.GUI files!
+	# }
+	# ## type_key_filter = editBoxType
+	# type[editBox_type] = {
+	# 	skip_root_key = guiTypes
+	# 	path = "game/interface" #*.GUI files!
+	# }
+	# ## type_key_filter = smoothListboxType
+	# type[smoothListbox_type] = {
+	# 	skip_root_key = guiTypes
+	# 	path = "game/interface" #*.GUI files!
+	# }
+	# ## type_key_filter = containerWindowType
+	# type[containerWindow_type] = {
+	# 	skip_root_key = guiTypes
+	# 	path = "game/interface" #*.GUI files!
+	# }
+	# ## type_key_filter = iconType
+	# type[icon_type] = {
+	# 	skip_root_key = guiTypes
+	# 	path = "game/interface" #*.GUI files!
+	# }
+	# ## type_key_filter = buttonType
+	# type[button_type] = {
+	# 	skip_root_key = guiTypes
+	# 	path = "game/interface" #*.GUI files!
+	# }
+	# ## type_key_filter = effectButtonType
+	# type[effectButton_type] = {
+	# 	skip_root_key = guiTypes
+	# 	path = "game/interface" #*.GUI files!
+	# }
+	# ## type_key_filter = guiButtonType
+	# type[guiButton_type] = {
+	# 	skip_root_key = guiTypes
+	# 	path = "game/interface" #*.GUI files!
+	# }
+	# ## type_key_filter = scrollbarType
+	# type[scrollbar_type] = {
+	# 	skip_root_key = guiTypes
+	# 	path = "game/interface" #*.GUI files!
+	# }
+	# ## type_key_filter = extendedScrollbarType
+	# type[extendedScrollbar_type] = {
+	# 	skip_root_key = guiTypes
+	# 	path = "game/interface" #*.GUI files!
+	# }
+	# ## type_key_filter = guiButtonType
+	# type[guiButton_type] = {
+	# 	skip_root_key = guiTypes
+	# 	path = "game/interface" #*.GUI files!
+	# }
 }
 
 #GUI files under /interface have a unique structure. They are nestled within guiTypes = { }, within which there are different elements such as
@@ -85,38 +89,59 @@ enums = {
 	# Position of elements
 	enum[direction] = {
 	    UPPER_LEFT #can be lower case as well! Vanilla has a mix of the two for no reason.
-	    upper_left
 	    UPPER_RIGHT
-	    upper_right
 	    CENTER_DOWN
-	    center_down
-	    CENTER_UP
-	    center_up
+		CENTER_UP
+		CENTER_CENTER
 	    LOWER_LEFT
-	    lower_left
 	    LOWER_RIGHT
-	    lower_right
 	    LEFT
-	    left
 	    RIGHT #this one doesn't appear in vanilla, I just assumed it exists in theory.
-	    right
 	    CENTER
-	    center
 	}
 	# Available actions
 	enum[actionshortcut] = {
 	    accept
-	    canel
+	    cancel
 	    delete
 	    focus_camera
 	}
+	enum[button_sounds] = {
+		no_sound
+		interface
+		ui_galaxy_map_open
+		mouse_over
+		tab_click
+		back_click
+		outliner_click_tab
+		confirmation
+		confirm_click
+	}
+	complex_enum[scrollbar_types] = {
+		path = "game/interface"
+		name = {
+			scrollbarType = {
+				name = enum_name
+			}
+		}
+	}
+	complex_enum[vertical_scrollbar_types] = {
+		path = "game/interface"
+		name = {
+			extendedScrollbarType = {
+				name = enum_name
+			}
+		}
+	}
 }
 
-
+gui_type = {
+	alias_name[gui] = alias_match_left[gui]
+}
 
 	### Used to set a position of entire containers or elements
-	position_type = {
-		name = <key>
+	alias[gui:positionType] = {
+		name = scalar
 		position = {
 			x = int
 			y = int
@@ -124,10 +149,10 @@ enums = {
 	}
 
 	### Used to show in tooltip sections
-  	textbox_type = {
-		name = <key>
+  	alias[gui:textboxType] = {
+		name = scalar
 		textureFile = filepath
-		font = <font>
+		font = <bitmapfont>
 		borderSize = {
 			x = int
 			y = int
@@ -141,19 +166,28 @@ enums = {
     }
 
     # Normal block for displaying text
-  	instantTextbox_type = {
-		name = <key>
+  	alias[gui:instantTextboxType] = {
+		## cardinality = 0..1
+		id = scalar
+		name = scalar
 		position = {
 			x = int
 			y = int
 		}
+		## cardinality = 0..1
+		borderSize = {
+			x = int
+			y = int
+		}
+		## cardinality = 0..1
 		maxWidth = int
+		## cardinality = 0..1
 		maxHeight = int
-		font = <font>
+		font = <bitmapfont>
 		## cardinality = 0..1
-		text = <localisation>
+		text = localisation
 		## cardinality = 0..1
-		text_color_code = <color_define>
+		text_color_code = enum[textcolors]
 		## cardinality = 0..1
 		alwaysTransparent = bool
 		## cardinality = 0..1
@@ -166,11 +200,17 @@ enums = {
 		vertical_alignment = enum[direction]
 		## cardinality = 0..1
 		orientation = enum[direction]
+		## cardinality = 0..1
+		tooltip_mode_enabled = bool
+		## cardinality = 0..1
+		pdx_tooltip = localisation
+		## cardinality = 0..1
+		scrollbarType = enum[scrollbar_types]
     }
 
     # Text type area
-	editBox_type = {
-		name = <key>
+	alias[gui:editBoxType] = {
+		name = scalar
 		position = {
 			x = int
 			y = int
@@ -180,7 +220,7 @@ enums = {
 			y = int
 		}
 		## cardinality = 0..1
-		spriteType = <sprite_type>
+		spriteType = <sprite>
 		## cardinality = 0..1
 		textureFile = filepath
 		## cardinality = 0..1
@@ -188,14 +228,14 @@ enums = {
 			x = int
 			y = int
 		}
-		font = <font>
+		font = <bitmapfont>
 		## cardinality = 0..1
 		cursor = {
 			x = int
 			y = int
 		}
 		## cardinality = 0..1
-		text = <localisation>
+		text = localisation
 		## cardinality = 0..1
 		instantTextBoxType = bool
 		## cardinality = 0..1
@@ -217,8 +257,8 @@ enums = {
 	}
 
 	# Container for listed items, usually option entries in event/diplo windows.
-	smoothListbox_type = {
-		name = <key>
+	alias[gui:smoothListboxType] = {
+		name = scalar
 		position = {
 			x = int
 			y = int
@@ -227,13 +267,14 @@ enums = {
 			x = int
 			y = int
 		}
-		scrollbarType = <scrollbarType> #this is tied to instances defind as <scrollbarType> with a unique key.
+		scrollbarType = enum[scrollbar_types] #this is tied to instances defind as <scrollbarType> with a unique key.
+		## cardinality = 0..1
 		borderSize = {
 			x = int
 			y = int
 		}
 		## cardinality = 0..1
-		backGround = <sprite_type>
+		backGround = <sprite>
 		## cardinality = 0..1
 		orientation = enum[direction]
 		## cardinality = 0..1
@@ -244,20 +285,26 @@ enums = {
 		spacing = int
 		## cardinality = 0..1
 		priority = int
+		## cardinality = 0..1
+		alwaystransparent = bool
 
 		## cardinality = 0..1
 		<id_and_nav>
 	}
 
 	# General graphical block
-  	containerWindow_type = {
-		name = <key>
+  	alias[gui:containerWindowType] = {
 		## cardinality = 0..1
-		<background> #see the bottom of the file!
+		id = scalar
+		name = scalar
+		## cardinality = 0..1
+		alias_name[background] = alias_match_left[background] #see the bottom of the file!
 			## cardinality = 0..1
 		size = {
-			x = int
-			y = int
+			width = int
+			width = percentage
+			height = int
+			height = percentage
 		}
 		## cardinality = 0..1
 		position = {
@@ -283,6 +330,11 @@ enums = {
 			y = int
 		}
 		## cardinality = 0..1
+		margin = {
+			top = int
+			bottom = int
+		}
+		## cardinality = 0..1
 		animation_time = int
 		## cardinality = 0..1
 		animation_type = decelerated
@@ -291,20 +343,26 @@ enums = {
 		## cardinality = 0..1
 		show_animation_type = decelerated
 
+		## cardinality = 0..1
+		verticalScrollbar = enum[vertical_scrollbar_types]
+		## cardinality = 0..1
+		show_sound = enum[button_sounds]
+
 		#basically containerwindowtype elements can have any element - including other containerwindowtypes nestled within them.
 		#i do not know the rules for what is ok and what isn't.
 		## cardinality = 0..inf
-		<gui_type>
+		alias_name[gui] = alias_match_left[gui]
 	}
 
 	# Normal icon instance
-	icon_type = {
-		name = <key>
+	alias[gui:iconType] = {
+		name = scalar
 		#one of these two is required!
 		## cardinality = 0..1
-		quadTextureSprite = <sprite_type>
+		quadTextureSprite = <sprite>
 		## cardinality = 0..1
-		spriteType = <sprite_type>
+		spriteType = <sprite>
+		## cardinality = 0..1
 		position = {
 		  x = int
 		  y = int
@@ -324,23 +382,33 @@ enums = {
 		## cardinality = 0..1
 		tooltip_mode_enabled = bool
 		## cardinality = 0..1
-		pdx_tooltip = <localisation>
+		pdx_tooltip = localisation
 	}
 
 	# Default game button. In some cases could be replaced by effectButtonType without CTD
-  	button_type = {
-		name = <key>
+  	alias[gui:buttonType] = {
+		## cardinality = 0..1
+		id = scalar
+		name = scalar
 
 		#one of these is required for buttontype entries. I don't know whats the difference between these sprites, but code wise they are the same I think. pls check.
 		## cardinality = 0..1
-		quadTextureSprite = <sprite_type>
+		quadTextureSprite = <sprite>
 		## cardinality = 0..1
-		spriteType = <sprite_type>
+		spriteType = <sprite>
+		## cardinality = 0..1
 		position = {
+			x = int
+			y = int
+		}
+		## cardinality = 0..1
+		orientation = enum[direction]
+		## cardinality = 0..1
+		size = {
 		  x = int
 		  y = int
 		}
-		orientation = enum[direction]
+		## cardinality = 0..1
 		borderSize = {
 		  x = int
 		  y = int
@@ -351,29 +419,40 @@ enums = {
 		  y = int
 		}
 		## cardinality = 0..1
-		font = <font>
+		font = <bitmapfont>
 		#there can be text = and buttonText = for buttontypes. I don't know whats the difference between them.
 		## cardinality = 0..1
-		text = <localisation>
+		text = localisation
 		## cardinality = 0..1
-		buttonText = <localisation>
+		buttonText = localisation
 		## cardinality = 0..1
-		buttonFont = <font>
+		buttonFont = <bitmapfont>
 		## cardinality = 0..1
 		scale = float
 
 		## cardinality = 0..1
-		pdx_tooltip = <localisation> #this is a tooltip localisation.
+		navRight = enum[vertical_scrollbar_types]
 		## cardinality = 0..1
-		delayedTooltipText = <localisation>
+		navLeft = enum[vertical_scrollbar_types]
+
+		## cardinality = 0..1
+		pdx_tooltip = localisation #this is a tooltip localisation.
+		## cardinality = 0..1
+		delayedTooltipText = localisation
 		## cardinality = 0..1
 		tooltip_mode_enabled = bool
 		## cardinality = 0..1
 		oversound = <sound_effect>
+		## cardinality = 0..1
+		oversound = enum[button_sounds]
+		## cardinality = 0..1
+		alwaysTransparent = bool
 
 		#clicksound seems to be mutually exclusive with the no_clicksound bool
 		## cardinality = 0..1
 		clicksound = <sound_effect>
+		## cardinality = 0..1
+		clicksound = enum[button_sounds]
 		## cardinality = 0..1
 		no_clicksound = bool
 
@@ -384,9 +463,10 @@ enums = {
 		## cardinality = 0..1
 		defaultSelection = bool
 		## cardinality = 0..1
-		clicksound = <sound_effect>
-		## cardinality = 0..1
 		actionShortcut = enum[actionshortcut]
+
+		## cardinality = 0..1
+		web_link = scalar
 
 		## cardinality = 0..1
 		<id_and_nav>
@@ -395,15 +475,15 @@ enums = {
 	# Not a vanilla's content.
 	# Similar to default buttonType, but linked with specific events, described in button_effects.
 	# I guess, all parameters below are similar to buttonType, but need to make some tests -- Iyur
-	effectButton_type = {
-		name = <key>
+	alias[gui:effectButtonType] = {
+		name = scalar
 		effect = <button_effect> #defined under /common/button_effects.
 
 		#one of these is required for buttontype entries. I don't know whats the difference between these sprites, but code wise they are the same I think. pls check.
 		## cardinality = 0..1
-		quadTextureSprite = <sprite_type>
+		quadTextureSprite = <sprite>
 		## cardinality = 0..1
-		spriteType = <sprite_type>
+		spriteType = <sprite>
 		position = {
 		  x = int
 		  y = int
@@ -419,21 +499,21 @@ enums = {
 		  y = int
 		}
 		## cardinality = 0..1
-		font = <font>
+		font = <bitmapfont>
 		#there can be text = and buttonText = for buttontypes. I don't know whats the difference between them.
 		## cardinality = 0..1
-		text = <localisation>
+		text = localisation
 		## cardinality = 0..1
-		buttonText = <localisation>
+		buttonText = localisation
 		## cardinality = 0..1
-		buttonFont = <font>
+		buttonFont = <bitmapfont>
 		## cardinality = 0..1
 		scale = float
 
 		## cardinality = 0..1
-		pdx_tooltip = <localisation> #this is a tooltip localisation.
+		pdx_tooltip = localisation #this is a tooltip localisation.
 		## cardinality = 0..1
-		delayedTooltipText = <localisation>
+		delayedTooltipText = localisation
 		## cardinality = 0..1
 		tooltip_mode_enabled = bool
 		## cardinality = 0..1
@@ -461,27 +541,27 @@ enums = {
 	}
 
 	# Icon-like button ?
-    guiButton_type = {
-		name = <key>
+    alias[gui_button:guiButtonType] = {
+		name = scalar
 		position = {
 		  x = int
 		  y = int
 		}
-		quadTextureSprite = <sprite_type>
+		quadTextureSprite = <sprite>
 		## cardinality = 0..1
 		parent = <gui_type>
 
 		#there appear to be various different types of optional localisations here
 		## cardinality = 0..1
-		tooltip = <localisation>
+		tooltip = localisation
 		## cardinality = 0..1
-		tooltipText = <localisation>
+		tooltipText = localisation
 		## cardinality = 0..1
-		delayedTooltipText = <localisation>
+		delayedTooltipText = localisation
 		## cardinality = 0..1
-		buttonText = <localisation>
+		buttonText = localisation
 		## cardinality = 0..1
-		buttonFont = <font>
+		buttonFont = <bitmapfont>
 		## cardinality = 0..1
 		orientation = enum[direction]
 		## cardinality = 0..1
@@ -496,27 +576,57 @@ enums = {
 		frame = int #for portraits, according to vanilla.
 	}
 
-	# Default scrollbar
-	scrollbar_type = {
-		name = "standardtext_slider_small"
-		slider = <guiButtonType>
-		track= <guiButtonType>
-		leftbutton = <guiButtonType>
-		rightbutton = <guiButtonType>
-		priority = int #no idea what this is.
+	alias[gui:spinnerType] = {
+		id = scalar
+		name = scalar
+		leftbutton = scalar
+		rightbutton = scalar
 		size = {
-		  x = int
-		  y = int
+			x = int
+			y = int
 		}
 		position = {
-		  x = int
-		  y = int
+			x = int
+			y = int
 		}
+		priority = int
+		borderSize = {
+			x = int
+			y = int
+		}
+		horizontal = int
+		maxValue = int
+		startValue = int
+
+		#in vanilla the buttons used in the above are nestled within the scrollbarType field, see core.gui.
+    	## cardinality = 0..inf
+		alias_name[gui_button] = alias_match_left[gui_button]
+	}
+
+	# Default scrollbar
+	alias[gui:scrollbarType] = {
+		## cardinality = 0..1
+		id = scalar
+		name = scalar
+		slider = scalar
+		track= scalar
+		leftbutton = scalar
+		rightbutton = scalar
+		priority = int #no idea what this is.
+		size = {
+			x = int
+			y = int
+		}
+		position = {
+			x = int
+			y = int
+		}
+		## cardinality = 0..1
 		borderSize = {
 		  x = int
 		  y = int
 		}
-		maxValue = in
+		maxValue = int
 		minValue = int
 		stepSize = int
 		startValue = int
@@ -524,36 +634,29 @@ enums = {
 
 		#in vanilla the buttons used in the above are nestled within the scrollbarType field, see core.gui.
     	## cardinality = 0..inf
-		<guiButtonType>
+		alias_name[gui_button] = alias_match_left[gui_button]
 	}
 
 	# ?
-	extendedScrollbar_type = {
-		name = "right_horizontal_slider"
+	alias[gui:extendedScrollbarType] = {
+		name = scalar
 		position = {
 		  x = int
 		  y = int
 		}
- 		size = {
-		  width = int
-		  height = int
+		size = {
+			width = int
+			height = int
 		}
 		startValue = int
 		horizontal = bool
 		## cardinality = 0..1
-		background = {
-			name = <key>
-			quadTextureSprite = <sprite_type>
-			## cardinality = 0..1
-			position = {
-				x = int
-				y = int
-			}
-		}
+		alias_name[background] = alias_match_left[background] #see the bottom of the file!
+
 		## cardinality = 0..1
 		track = {
-			name = <key>
-			quadTextureSprite = <sprite_type>
+			name = scalar
+			quadTextureSprite = <sprite>
 			## cardinality = 0..1
 			position = {
 				x = int
@@ -562,8 +665,8 @@ enums = {
 		}
 		## cardinality = 0..1
 		slider = {
-			name = <key>
-			quadTextureSprite = <sprite_type>
+			name = scalar
+			quadTextureSprite = <sprite>
 			## cardinality = 0..1
 			position = {
 				x = int
@@ -572,8 +675,8 @@ enums = {
 		}
 		## cardinality = 0..1
 		decreaseButton = {
-			name = <key>
-			quadTextureSprite = <sprite_type>
+			name = scalar
+			quadTextureSprite = <sprite>
 			## cardinality = 0..1
 			position = {
 				x = int
@@ -582,8 +685,8 @@ enums = {
 		}
 		## cardinality = 0..1
 		increaseButton = {
-			name = <key>
-			quadTextureSprite = <sprite_type>
+			name = scalar
+			quadTextureSprite = <sprite>
 			## cardinality = 0..1
 			position = {
 				x = int
@@ -592,6 +695,113 @@ enums = {
 		}
 	}
 
+	alias[gui:checkboxType] = {
+		name = scalar
+		## cardinality = 0..1
+		spriteType = <sprite>
+		## cardinality = 0..1
+		quadTextureSprite = <sprite>
+		## cardinality = 0..1
+		pdx_tooltip = localisation
+		position = {
+			x = int
+			y = int
+		}
+		## cardinality = 0..1
+		orientation = enum[direction]
+
+	}
+
+	alias[gui:OverlappingElementsBoxType] = {
+		name = scalar
+		position = {
+			x = int
+			y = int
+		}
+		size = {
+			x = int
+			y = int
+		}
+		## cardinality = 0..1
+		spacing = int
+		## cardinality = 0..1
+		format = enum[direction]
+	}
+	alias[gui:listBoxType] = {
+		name = scalar
+		position = {
+			x = int
+			y = int
+		}
+		## cardinality = 0..1
+		orientation = enum[direction]
+		## cardinality = 0..1
+		priority = int
+		## cardinality = 0..1
+		spacing = int
+		## cardinality = 0..1
+		autohide_scrollbar = bool
+		size = {
+			x = int
+			y = int
+		}
+		borderSize = {
+			x = int
+			y = int
+		}
+		scrollbartype = enum[scrollbar_types]
+	}
+
+	alias[gui:gridBoxType] = {
+		name = scalar
+		slotSize = {
+			width = int
+			height = int
+		}
+		## cardinality = 0..1
+		max_slots_horizontal = int
+		## cardinality = 0..1
+		max_slots_vertical = int
+		format = enum[direction]
+		## cardinality = 0..1
+		size = {
+			width = int
+			height = int
+		}
+		position = {
+			x = int
+			y = int
+		}
+		## cardinality = 0..1
+		padding = {
+			## cardinality = 0..1
+			left = int
+			## cardinality = 0..1
+			top = int
+			## cardinality = 0..1
+			right = int
+			## cardinality = 0..1
+			bottom = int
+		}
+		alias_name[background] = alias_match_left[background]
+	}
+	alias[gui:windowType] = {
+		name = scalar
+		backGround = <sprite>
+		size = {
+			x = int
+			y = int
+		}
+		position = {
+			x = int
+			y = int
+		}
+		moveable = int
+		dontRender = ""
+		horizontalBorder= ""
+		verticalBorder= ""
+		fullScreen = bool
+	}
 	#gridBoxType = {}
 	#dropDownBoxType = {}
 	#expandedWindow = {}
@@ -608,14 +818,14 @@ enums = {
 # graphical overlay for some elements
 overlay = {
 	name = <containerWindowType> #example: "selected_overlay" --> this refers to an containerWindowType with this key!
-	spriteType = <sprite_type>
+	spriteType = <sprite>
 	position = {
 		x = int
 		y = int
 	}
 	size = {
-		x = int
-		y = int
+		width = int
+		height = int
 	}
 }
 
@@ -638,16 +848,27 @@ id_and_nav = {
 }
 
 # Background section (mostly for containers)
-background = {
-	name = <key>
-	quadTextureSprite = <sprite_type>
+alias[background:background] = {
+	name = scalar
+	## cardinality = 0..1
+	quadTextureSprite = <sprite>
 	# optional
-	#spriteType = <sprite_type>
+	## cardinality = 0..1
+	spriteType = <sprite>
 	## cardinality = 0..1
 	position = {
 		x = int
 		y = int
 	}
 	## cardinality = 0..1
-	pdx_tooltip = <localisation>
+	pdx_tooltip = localisation
+	## cardinality = 0..1
+	tooltip_mode_enabled = bool
+	## cardinality = 0..1
+	alwaysTransparent = bool
+	## cardinality = 0..1
+	clicksound = <sound_effect>
+	## cardinality = 0..1
+	clicksound = enum[button_sounds]
+
 }

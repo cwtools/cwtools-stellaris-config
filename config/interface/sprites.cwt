@@ -1,10 +1,18 @@
 #sprites are saved in *.gfx files (like meshes) and are by and large stored in /interface
 
 types = {
-	## type_key_filter = spriteType
 	type[sprite] = { #these are links that start with the GFX_ prefix in vanilla
+		name_field = name
 		path = "game/interface"
 		skip_root_key = spriteTypes
+		## type_key_filter = spriteType
+		subtype[normal] = {
+
+		}
+		## type_key_filter = corneredTileSpriteType
+		subtype[cornered_tile] = {
+
+		}
 	}
 	## type_key_filter = progressbartype
 	type[progressbar] = { #these are links that start with the GFX_ prefix in vanilla
