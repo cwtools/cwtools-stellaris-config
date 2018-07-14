@@ -136,17 +136,37 @@ event = {
 
 	subtype[diplomatic] = {
 		picture_event_data = {
-			#these can all be either a scope (country except for room that is ruler) or a key.
+			#only one of each of these!			
 			## cardinality = 0..1
-			room = scalar
+			room = <asset_selector_room>
 			## cardinality = 0..1
-			portrait = scalar
+			room = scope[country]
 			## cardinality = 0..1
-			planet_background = scalar
+			room = scope[species]
 			## cardinality = 0..1
-			graphical_culture = scalar
+			portrait = <portrait>
 			## cardinality = 0..1
-			city_level = scalar
+			portrait = scope[country]
+			## cardinality = 0..1
+			portrait = scope[species]
+			## cardinality = 0..1			
+			planet_background = scope[country]
+			## cardinality = 0..1
+			planet_background = scope[species]
+			## cardinality = 0..1
+			planet_background = scope[planet]
+			## cardinality = 0..1
+			graphical_culture = <graphical_culture>
+			## cardinality = 0..1
+			graphical_culture = scope[country]
+			## cardinality = 0..1
+			graphical_culture = scope[species]
+			## cardinality = 0..1			
+			city_level = scope[country]
+			## cardinality = 0..1
+			city_level = scope[species]
+			## cardinality = 0..1
+			city_level = scope[planet]			
 		}
 		## cardinality = 0..1
 		custom_gui = scalar
