@@ -6,24 +6,25 @@ types = {
 
 prescripted_country = {
 	name = localisation
-	adjective = <localisation_synced>
+	adjective = localisation_synced
 	spawn_enabled = bool # yes / no / always ---> this one receives always as well! 
+	spawn_enabled = always
 	ignore_portrait_duplication = bool
 	
-	ship_prefix = <localisation_synced>
+	ship_prefix = localisation_synced
 	
 	species = {
 		class = <species_class>
 		portrait = <portrait>
-		name = <localisation_synced>
-		plural = <localisation_synced>
-		adjective = <localisation_synced>
+		name = localisation_synced
+		plural = localisation_synced
+		adjective = localisation_synced
 		name_list = <name_list>
 		## cardinality = 0..inf
     	trait = <trait>
 	}
 	
-	room = <asset_selector_room> #this one is defined under gfx/portraits/asset_selectors
+	room = <asset_selector.room> #this one is defined under gfx/portraits/asset_selectors
 	
 	authority = <authority>
 	civics = { 
@@ -39,10 +40,10 @@ prescripted_country = {
     	## cardinality = 0..inf
 		scalar #this is a country flag string, can be anything.     
  	}	
-	planet_name = <localisation_synced>
+	planet_name = localisation_synced
 	planet_class = <habitable_planet>
 	initializer = <solar_system_initializer>
-	system_name = <localisation_synced>
+	system_name = localisation_synced
 	
 	graphical_culture = <graphical_culture>
 	city_graphical_culture =  <graphical_culture> #obviously there is some difference with the one above, but im not sure - should check this connection. 
