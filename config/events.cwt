@@ -169,8 +169,6 @@ event = {
 
 	## cardinality = 0..inf
 	option = {
-		name = localisation
-
 		## cardinality = 0..1
 		sound = scalar
 
@@ -203,6 +201,9 @@ event = {
 
 		subtype[diplomatic] = {
 			## cardinality = 0..1
+			name = localisation
+
+			## cardinality = 0..1
 			response_text = localisation
 
 			## cardinality = 0..1
@@ -214,6 +215,10 @@ event = {
 			## cardinality = 0..1
 			### Binds this option to the "dismiss" action
 			default_hide_option = bool
+		}
+
+		subtype[!diplomatic] = {
+			name = localisation
 		}
 
 		## cardinality = 0..1

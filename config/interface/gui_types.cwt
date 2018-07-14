@@ -2,72 +2,8 @@ types = {
 	## type_key_filter = guiTypes
 	type[gui_type] = {
 		path = "game/interface"
+		severity = warning
 	}
-	# ## type_key_filter = positionType
-	# type[position_type] = {
-	# 	skip_root_key = guiTypes
-	# 	path = "game/interface" #*.GUI files!
-	# }
-	# ## type_key_filter = textboxType
-	# type[textbox_type] = {
-	# 	skip_root_key = guiTypes
-	# 	path = "game/interface" #*.GUI files!
-	# }
-	# ## type_key_filter = instantTextboxType
-	# type[instantTextbox_type] = {
-	# 	skip_root_key = guiTypes
-	# 	path = "game/interface" #*.GUI files!
-	# }
-	# ## type_key_filter = editBoxType
-	# type[editBox_type] = {
-	# 	skip_root_key = guiTypes
-	# 	path = "game/interface" #*.GUI files!
-	# }
-	# ## type_key_filter = smoothListboxType
-	# type[smoothListbox_type] = {
-	# 	skip_root_key = guiTypes
-	# 	path = "game/interface" #*.GUI files!
-	# }
-	# ## type_key_filter = containerWindowType
-	# type[containerWindow_type] = {
-	# 	skip_root_key = guiTypes
-	# 	path = "game/interface" #*.GUI files!
-	# }
-	# ## type_key_filter = iconType
-	# type[icon_type] = {
-	# 	skip_root_key = guiTypes
-	# 	path = "game/interface" #*.GUI files!
-	# }
-	# ## type_key_filter = buttonType
-	# type[button_type] = {
-	# 	skip_root_key = guiTypes
-	# 	path = "game/interface" #*.GUI files!
-	# }
-	# ## type_key_filter = effectButtonType
-	# type[effectButton_type] = {
-	# 	skip_root_key = guiTypes
-	# 	path = "game/interface" #*.GUI files!
-	# }
-	# ## type_key_filter = guiButtonType
-	# type[guiButton_type] = {
-	# 	skip_root_key = guiTypes
-	# 	path = "game/interface" #*.GUI files!
-	# }
-	# ## type_key_filter = scrollbarType
-	# type[scrollbar_type] = {
-	# 	skip_root_key = guiTypes
-	# 	path = "game/interface" #*.GUI files!
-	# }
-	# ## type_key_filter = extendedScrollbarType
-	# type[extendedScrollbar_type] = {
-	# 	skip_root_key = guiTypes
-	# 	path = "game/interface" #*.GUI files!
-	# }
-	# ## type_key_filter = guiButtonType
-	# type[guiButton_type] = {
-	# 	skip_root_key = guiTypes
-	# 	path = "game/interface" #*.GUI files!
-	# }
 }
 
 #GUI files under /interface have a unique structure. They are nestled within guiTypes = { }, within which there are different elements such as
@@ -84,6 +20,7 @@ types = {
 # TODO:
 # [ ] All this stuff requires to sort out all parameters, properties, etc, to segregate them by their purpose
 # [ ] To add description for some exotic stuff/parameters
+# [ ] Refactor to use an alias for all the basic things that every gui element supports
 
 enums = {
 	# Position of elements
@@ -93,29 +30,41 @@ enums = {
 	    CENTER_DOWN
 		CENTER_UP
 		CENTER_CENTER
+		CENTERED_UP
 	    LOWER_LEFT
 	    LOWER_RIGHT
 	    LEFT
 	    RIGHT #this one doesn't appear in vanilla, I just assumed it exists in theory.
-	    CENTER
+		CENTER
+		CENTRE
 	}
 	# Available actions
 	enum[actionshortcut] = {
 	    accept
 	    cancel
 	    delete
-	    focus_camera
+		focus_camera
+		start
 	}
 	enum[button_sounds] = {
 		no_sound
 		interface
 		ui_galaxy_map_open
+		ui_galaxy_map_close
+		ui_click_pause
+		ui_speed_down_time_click
+		ui_speed_up_time_click
+		ui_click_map_mode
+		ui_click_research_tab
 		mouse_over
 		tab_click
 		back_click
 		outliner_click_tab
 		confirmation
 		confirm_click
+		click
+		click_outliner
+		research_click_01
 	}
 	complex_enum[scrollbar_types] = {
 		path = "game/interface"
@@ -169,7 +118,10 @@ gui_type = {
   	alias[gui:instantTextboxType] = {
 		## cardinality = 0..1
 		id = scalar
+		## cardinality = 0..1
+		textureFile = filepath
 		name = scalar
+		## cardinality = 0..1
 		position = {
 			x = int
 			y = int
@@ -267,6 +219,7 @@ gui_type = {
 			x = int
 			y = int
 		}
+		## cardinality = 0..1
 		scrollbarType = enum[scrollbar_types] #this is tied to instances defind as <scrollbarType> with a unique key.
 		## cardinality = 0..1
 		borderSize = {
@@ -404,6 +357,8 @@ gui_type = {
 		## cardinality = 0..1
 		orientation = enum[direction]
 		## cardinality = 0..1
+		format = enum[direction]
+		## cardinality = 0..1
 		size = {
 		  x = int
 		  y = int
@@ -429,6 +384,8 @@ gui_type = {
 		buttonFont = <bitmapfont>
 		## cardinality = 0..1
 		scale = float
+		## cardinality = 0..1
+		frame = int
 
 		## cardinality = 0..1
 		navRight = enum[vertical_scrollbar_types]
@@ -437,6 +394,8 @@ gui_type = {
 
 		## cardinality = 0..1
 		pdx_tooltip = localisation #this is a tooltip localisation.
+		## cardinality = 0..1
+		pdx_tooltip_delayed = localisation #this is a tooltip localisation.
 		## cardinality = 0..1
 		delayedTooltipText = localisation
 		## cardinality = 0..1
@@ -464,6 +423,14 @@ gui_type = {
 		defaultSelection = bool
 		## cardinality = 0..1
 		actionShortcut = enum[actionshortcut]
+		## cardinality = 0..1
+		pdx_tooltip_anchor_offset = {
+			x = int
+			y = int
+		}
+		## cardinality = 0..1
+		pdx_tooltip_anchor_orientation = enum[direction]
+
 
 		## cardinality = 0..1
 		web_link = scalar
@@ -476,6 +443,8 @@ gui_type = {
 	# Similar to default buttonType, but linked with specific events, described in button_effects.
 	# I guess, all parameters below are similar to buttonType, but need to make some tests -- Iyur
 	alias[gui:effectButtonType] = {
+		## cardinality = 0..1
+		id = scalar
 		name = scalar
 		effect = <button_effect> #defined under /common/button_effects.
 
@@ -484,11 +453,18 @@ gui_type = {
 		quadTextureSprite = <sprite>
 		## cardinality = 0..1
 		spriteType = <sprite>
+		## cardinality = 0..1
+		size = {
+		  x = int
+		  y = int
+		}
 		position = {
 		  x = int
 		  y = int
 		}
+		## cardinality = 0..1
 		orientation = enum[direction]
+		## cardinality = 0..1
 		borderSize = {
 		  x = int
 		  y = int
@@ -505,6 +481,8 @@ gui_type = {
 		text = localisation
 		## cardinality = 0..1
 		buttonText = localisation
+		## cardinality = 0..1
+		frame = int
 		## cardinality = 0..1
 		buttonFont = <bitmapfont>
 		## cardinality = 0..1
@@ -557,6 +535,8 @@ gui_type = {
 		## cardinality = 0..1
 		tooltipText = localisation
 		## cardinality = 0..1
+		pdx_tooltip = localisation
+		## cardinality = 0..1
 		delayedTooltipText = localisation
 		## cardinality = 0..1
 		buttonText = localisation
@@ -570,6 +550,8 @@ gui_type = {
 		#clicksound seems to be mutually exclusive with the no_clicksound bool
 		## cardinality = 0..1
 		clicksound = <sound_effect>
+		## cardinality = 0..1
+		clicksound = enum[button_sounds]
 		## cardinality = 0..1
 		no_clicksound = bool
 		## cardinality = 0..1
@@ -597,7 +579,8 @@ gui_type = {
 		horizontal = int
 		maxValue = int
 		startValue = int
-
+		## cardinality = 0..1
+		defaultSelection = bool
 		#in vanilla the buttons used in the above are nestled within the scrollbarType field, see core.gui.
     	## cardinality = 0..inf
 		alias_name[gui_button] = alias_match_left[gui_button]
@@ -714,10 +697,12 @@ gui_type = {
 
 	alias[gui:OverlappingElementsBoxType] = {
 		name = scalar
+		## cardinality = 0..1
 		position = {
 			x = int
 			y = int
 		}
+		## cardinality = 0..1
 		size = {
 			x = int
 			y = int
@@ -726,6 +711,9 @@ gui_type = {
 		spacing = int
 		## cardinality = 0..1
 		format = enum[direction]
+		## cardinality = 0..1
+		Orientation = enum[direction]
+
 	}
 	alias[gui:listBoxType] = {
 		name = scalar
@@ -745,11 +733,15 @@ gui_type = {
 			x = int
 			y = int
 		}
+		## cardinality = 0..1
 		borderSize = {
 			x = int
 			y = int
 		}
+		## cardinality = 0..1
 		scrollbartype = enum[scrollbar_types]
+		## cardinality = 0..1
+		backGround = <sprite>
 	}
 
 	alias[gui:gridBoxType] = {
@@ -762,12 +754,14 @@ gui_type = {
 		max_slots_horizontal = int
 		## cardinality = 0..1
 		max_slots_vertical = int
+		## cardinality = 0..1
 		format = enum[direction]
 		## cardinality = 0..1
 		size = {
 			width = int
 			height = int
 		}
+		## cardinality = 0..1
 		position = {
 			x = int
 			y = int
@@ -787,20 +781,30 @@ gui_type = {
 	}
 	alias[gui:windowType] = {
 		name = scalar
+		## cardinality = 0..1
 		backGround = <sprite>
 		size = {
 			x = int
 			y = int
 		}
+		## cardinality = 0..1
 		position = {
 			x = int
 			y = int
 		}
+		## cardinality = 0..1
 		moveable = int
+		## cardinality = 0..1
 		dontRender = ""
+		## cardinality = 0..1
 		horizontalBorder= ""
+		## cardinality = 0..1
 		verticalBorder= ""
+		## cardinality = 0..1
 		fullScreen = bool
+		## cardinality = 0..1
+		Orientation = enum[direction]
+		alias_name[gui] = alias_match_left[gui]
 	}
 	#gridBoxType = {}
 	#dropDownBoxType = {}
@@ -870,5 +874,7 @@ alias[background:background] = {
 	clicksound = <sound_effect>
 	## cardinality = 0..1
 	clicksound = enum[button_sounds]
+	## cardinality = 0..1
+	oversound = enum[button_sounds]
 
 }

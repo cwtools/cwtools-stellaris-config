@@ -47,6 +47,8 @@ sprite = {
 	## cardinality = 0..1
 	borderSize = { x = int y = int }
 	## cardinality = 0..1
+	hitbox_margin = { x = int y = int }
+	## cardinality = 0..1
 	noOfFrames = int
 	## cardinality = 0..1
 	animation = {
@@ -55,7 +57,7 @@ sprite = {
 		## cardinality = 0..1
 		animationtexturefile = filepath
 		## cardinality = 0..1
-		animationrotation = int[0..360]
+		animationrotation = float[0..360]
 		## cardinality = 0..1
 		animationlooping = bool
 		## cardinality = 0..1
