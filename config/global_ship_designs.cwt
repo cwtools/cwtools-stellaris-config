@@ -33,7 +33,7 @@ global_ship_design = {
 		template = <section_template>
 		## cardinality = 0..1
 		#TODO Section slots
-		slot = <section_slot> #this is connected to ship_sizes and section templates!
+		slot = enum[section_slots] #this is connected to ship_sizes and section templates!
 		## cardinality = 0..inf
 		component = {
 			#one slot, of one type! so one of the these two varients- and these need to match the component template as it is defined!

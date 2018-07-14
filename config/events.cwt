@@ -136,9 +136,9 @@ event = {
 
 	subtype[diplomatic] = {
 		picture_event_data = {
-			#only one of each of these!			
+			#only one of each of these!
 			## cardinality = 0..1
-			room = <asset_selector_room>
+			room = <asset_selector.room>
 			## cardinality = 0..1
 			room = scope[country]
 			## cardinality = 0..1
@@ -149,7 +149,7 @@ event = {
 			portrait = scope[country]
 			## cardinality = 0..1
 			portrait = scope[species]
-			## cardinality = 0..1			
+			## cardinality = 0..1
 			planet_background = scope[country]
 			## cardinality = 0..1
 			planet_background = scope[species]
@@ -161,12 +161,12 @@ event = {
 			graphical_culture = scope[country]
 			## cardinality = 0..1
 			graphical_culture = scope[species]
-			## cardinality = 0..1			
+			## cardinality = 0..1
 			city_level = scope[country]
 			## cardinality = 0..1
 			city_level = scope[species]
 			## cardinality = 0..1
-			city_level = scope[planet]			
+			city_level = scope[planet]
 		}
 		## cardinality = 0..1
 		custom_gui = scalar

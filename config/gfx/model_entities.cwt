@@ -211,7 +211,8 @@ model_entity = {
 	## cardinality = 0..inf
 	meshsettings = {
 		name = scalar #examples: "planet_geosphereShape" "polesShape" "clouds_geosphereShape"
-
+		## cardinality = 0..1
+		index = int
 		#The links below link to files stored under game/gfx/models/planets + subfolders!
 		## cardinality = 0..1
 		texture_diffuse = scalar ##TODO filepath #example: "toxic_01_purple_diffuse.dds"
@@ -257,7 +258,7 @@ model_mesh = { #the container for all meshes is defined as objectTypes = { at th
 	file = filepath #there is a full path string here - the path should be parsed. Example: file = "gfx/models/planets/shielded_planet.mesh"
 	## cardinality = 0..1
 	scale = float
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	meshsettings = {
 		## cardinality = 0..1
 		name = scalar

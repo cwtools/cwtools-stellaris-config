@@ -4,6 +4,7 @@ types = {
 	}
 	type[government] = {
 		path = "game/common/governments"
+		path_strict = yes
 	}
 	type[civic] = {
 		path = "game/common/governments/civics"

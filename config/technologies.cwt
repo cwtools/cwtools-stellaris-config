@@ -1,7 +1,7 @@
 types = {
 	type[technology] = {
 		path = "game/common/technology"
-
+		path_strict = yes
 		subtype[repeatable] = {
 			levels = int[-1..100]
 		}
