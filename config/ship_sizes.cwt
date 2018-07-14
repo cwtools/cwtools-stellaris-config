@@ -73,9 +73,9 @@ ship_size = {
 	## cardinality = 0..1
 	section_slots = {
 		## cardinality = 1..inf
-		section_slot = { #this is connected to the section templates and global ship designs files!
+		scalar = { #this is connected to the section templates and global ship designs files!
 			## cardinality = 1..inf
-			locator = scalar #this is connected to the ship asset files. 
+			locator = enum[locators] #this is connected to the ship asset files.
 		}
 	}
 	## cardinality = 0..1

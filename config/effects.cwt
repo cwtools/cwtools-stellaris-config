@@ -1465,6 +1465,8 @@ alias[effect:create_species] = {
 	## cardinality = 0..1
 	portrait = <portrait>
 	## cardinality = 0..1
+	portrait = <portrait_group>
+	## cardinality = 0..1
 	portrait = random
 	## cardinality = 0..1
 	homeworld = scope[planet]
@@ -3187,6 +3189,7 @@ alias[effect:spawn_megastructure] = {
 ### Spawns a planet in a system.
 alias[effect:spawn_planet] = {
 	class = <planet_class>
+	class = <planet_class_random_list>
 	## cardinality = 0..1
 	location = scope[system]
 	## cardinality = 0..1

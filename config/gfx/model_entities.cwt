@@ -159,7 +159,7 @@ model_entity = {
 	## cardinality = 0..inf
 	attach = {
 		# TODO: Make this smarter
-		scalar = <model_entity> #see locator in this file.
+		enum[locators] = <model_entity> #see locator in this file.
 	}
 	## cardinality = 0..1
 	game_data = {
@@ -251,6 +251,20 @@ enums = {
 		explode_med_hp
 		default
 	}
+	complex_enum[locators] = {
+		path = "game/gfx/models"
+		name = {
+			locator = {
+				name = enum_name
+			}
+			#TODO: support multiple routes
+			state = {
+				locator = {
+					name = enum_name
+				}
+			}
+		}
+	}
  }
 
 model_mesh = { #the container for all meshes is defined as objectTypes = { at the top of the file, please check, with each entry being defined under pdxmesh = {
@@ -274,7 +288,7 @@ model_mesh = { #the container for all meshes is defined as objectTypes = { at th
 		texture_specular = scalar #filepath
 
 	}
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	animation = {
 		id = enum[model_animation_types] #example = "idle"
 		type = <model_animation> #this connects to an animation defined in an *.asset file!
