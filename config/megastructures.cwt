@@ -5,9 +5,9 @@ types = {
 }
 
 megastructure = {
-	entity = <model_entity>
+	entity = scalar #TODO entity suffixes
 	## cardinality = 0..1
-	construction_entity = <model_entity>
+	construction_entity = scalar #TODO entity suffixes
 	## cardinality = 0..1
 	portrait = scalar
   ## cardinality = 0..1

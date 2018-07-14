@@ -12,7 +12,7 @@ types = {
 		subtype[habitable_planet] = {
 			## cardinality = 0..1
 			colonizable = yes
-		}		
+		}
 	}
 	## type_key_filter = random_list
 	type[planet_class_random_list] = {
@@ -31,7 +31,7 @@ planet_class = {
 	atmosphere_intensity = float
 	## cardinality = 0..1
 	atmosphere_width = float
-	entity = <model_entity>
+	entity = scalar #TODO: entity somehow
 	## cardinality = 0..1
 	overlay_entity = scalar
 	## cardinality = 0..1
@@ -122,7 +122,7 @@ planet_class = {
 	colonization_tech = { <technology> }
 	## cardinality = 0..1
 	###this is only required if using a picture defined for another planet
-	picture = scalar 
+	picture = scalar
 	## cardinality = 0..1
 	###this is only required if using a tile-set defined for another planet
 	tile_set = <planet_class>
