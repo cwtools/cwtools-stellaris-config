@@ -1893,9 +1893,9 @@ alias[effect:modify_species] = {
 	###modify scoped pops/planet/leader/country; default: yes
 	change_scoped_species = bool
 	## cardinality = 0..1
-	portait = scope[species]
+	portrait = scope[species]
 	## cardinality = 0..1
-	portait = <portrait>
+	portrait = <portrait>
 	## cardinality = 0..1
 	portait = random
 	## cardinality = 0..1
