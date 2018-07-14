@@ -43,7 +43,7 @@ bypass = {
 	### what effect to spawn on the ship when they jump through the bypass
 	ftl_ship_effect 	= scalar #TODO gfx effect
 	### what effect to spawn on the bypass when a ship jumps through
-	ftl_bypass_effect	= scalar #TODO gfx effect
+	ftl_bypass_effect	= <model_entity>
 	## cardinality = 0..1
 	bypass_effect 		= scalar #TODO gfx effect
 	### number of days to wait for the jump animation to be played

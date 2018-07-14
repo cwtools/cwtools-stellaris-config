@@ -94,6 +94,8 @@ special_project = {
 		
 		## cardinality = 0..1
 		is_founder_species = bool
+		## cardinality = 0..1
+		has_trait = <leader_trait>
 	}
 	
 	## push_scope = country

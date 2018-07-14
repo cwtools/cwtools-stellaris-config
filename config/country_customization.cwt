@@ -22,7 +22,7 @@ country_customization = {
 			## cardinality = 0..inf
 			modifier = {
 				add = int
-				species_portrait = enum[species_portraits]
+				species_portrait = <portrait>
 			}
 		}
 	}

@@ -11,7 +11,7 @@ section_template = {
   ship_size = <ship_size>
   ## cardinality = 0..inf
   #TODO section slots
-  fits_on_slot = enum[section_slots]
+  fits_on_slot = <section_slot>
   entity = scalar
   icon = scalar
   ## cardinality = 0..1
@@ -40,7 +40,7 @@ section_template = {
 		y = float
 	}
 	## cardinality = 0..1
-	section_instance = bool
+	section_instance = int
   }
   ## cardinality = 0..1
   small_utility_slots = int
