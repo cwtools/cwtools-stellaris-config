@@ -34,7 +34,7 @@ special_project = {
 	}
 
 	## cardinality = 0..1
-	picture = scalar
+	picture =  <sprite>
 
 	event_scope = enum[sp_event_scopes]
 

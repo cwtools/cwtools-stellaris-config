@@ -109,12 +109,12 @@ component_template = {
 			graphics = {
 				## cardinality = 0..1
 				area_effect = {
-					entity = scalar #tied to defined entites under gfx
+					entity = <model_entity>
 					dynamic_scale = bool
 				}
 				## cardinality = 0..1
 				ship_effect = {
-					entity = scalar #tied to defined entites under gfx
+					entity = <model_entity>
 					dynamic_scale = bool
 				}
 			}
@@ -144,12 +144,12 @@ component_template = {
 			graphics = {
 				## cardinality = 0..1
 				area_effect = {
-					entity = scalar #tied to defined entites under gfx
+					entity = <model_entity>
 					dynamic_scale = bool
 				}
 				## cardinality = 0..1
 				ship_effect = {
-					entity = scalar #tied to defined entites under gfx
+					entity = <model_entity>
 					dynamic_scale = bool
 				}
 			}
@@ -180,7 +180,7 @@ component_template = {
 		## cardinality = 0..1
 		ai_tag_weight = int
 		## cardinality = 0..1
-		entity = scalar #tied to defined entites under gfx
+		entity = <model_entity>
 		## cardinality = 0..1
 		power = float
 		## cardinality = 0..1
@@ -243,7 +243,7 @@ component_template = {
 	}
 	subtype[strike_craft_component_template] = {
 		size = enum[weapon_slot_size]
-		entity = scalar #tied to defined entites under gfx
+		entity = <model_entity>
 		weapon_type = enum[weapon_type]
 		ship_behavior = <ship_behavior>
 		projectile_gfx = scalar #tied to defined entites under gfx
