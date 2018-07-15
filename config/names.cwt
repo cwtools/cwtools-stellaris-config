@@ -20,13 +20,22 @@ types = { #these are all connected. I added the others so whoever does these in 
 #TODO: Add warning if ship_size doesn't have name list block
 name_list = {
 	## cardinality = 0..1
+	selectable = { 
+		## replace_scope = { this = country root = country } #i think, might be no_scope though
+		alias_name[trigger] = alias_match_left[trigger]
+	}	
+	## cardinality = 0..1
+	randomized = bool
+	## cardinality = 0..1
+	alias = scalar
+	## cardinality = 0..1
+	should_name_home_system_planets = bool
+	## cardinality = 0..1
 	ship_names = {
 		## cardinality = 0..1
 		generic = {
-			names = { 
-				## cardinality = 0..inf
-				scalar
-			}	
+			## cardinality = 0..inf
+			scalar
 		}
 		
 		#buildable ship sizes (have a prerequisite and/or defined as designable!) that are not defined in a name list will get a generic
@@ -35,35 +44,48 @@ name_list = {
 		
 		## cardinality = 0..inf
 		<ship_size> = { 
+			## cardinality = 0..1
 			names = { 
 				## cardinality = 0..inf
-				scalar
+				scalar				
 			}
+			## cardinality = 0..1
+			sequential_name = { 
+				## cardinality = 0..inf
+				scalar
+			}		
+			## cardinality = 0..1
+			random_names = { 
+				## cardinality = 0..inf
+				scalar
+			}						
 		}
 	}
 	## cardinality = 0..1
 	fleet_names = {
 		## cardinality = 0..1
 		generic = {
-			names = { 
-				## cardinality = 0..inf
-				scalar
-			}
+			## cardinality = 0..inf
+			scalar
 		}		
 		#formula for name generation
+		## cardinality = 0..1
 		sequential_name = { 
 			## cardinality = 0..inf
 			scalar
 		}
+		## cardinality = 0..1
+		random_names = { 
+			## cardinality = 0..inf
+			scalar
+		}			
 	}	
 	## cardinality = 0..1
 	army_names = {
 		## cardinality = 0..1
 		generic = {
-			names = { 
-				## cardinality = 0..inf
-				scalar
-			}
+			## cardinality = 0..inf
+			scalar
 		}
 		
 		#armies that can be built and do not defined in a name list will get a generic
@@ -71,10 +93,21 @@ name_list = {
 		
 		## cardinality = 0..inf
 		<army> = { 
+			## cardinality = 0..1
 			names = { 
 				## cardinality = 0..inf
 				scalar
 			}
+			## cardinality = 0..1
+			sequential_name = { 
+				## cardinality = 0..inf
+				scalar
+			}		
+			## cardinality = 0..1
+			random_names = { 
+				## cardinality = 0..inf
+				scalar
+			}				
 		}	
 	}
 	## cardinality = 0..1
