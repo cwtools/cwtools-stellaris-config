@@ -104,7 +104,7 @@ component_template = {
 				## cardinality = 0..1
 				alias_name[modifier] = alias_match_left[modifier]
 			}
-			
+
 			## cardinality = 0..1
 			graphics = {
 				## cardinality = 0..1
@@ -180,7 +180,7 @@ component_template = {
 		## cardinality = 0..1
 		ai_tag_weight = int
 		## cardinality = 0..1
-		entity = <model_entity>
+		entity = scalar #TODO: Replace with hardcoded  graphical_culture + <model_entity>
 		## cardinality = 0..1
 		power = float
 		## cardinality = 0..1
