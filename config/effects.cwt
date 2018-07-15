@@ -1450,16 +1450,18 @@ alias[effect:create_species] = {
 	## cardinality = 0..1
 	name = random
 	## cardinality = 0..1
-	name_list = <name_list>
+	namelist = <name_list>
 	## cardinality = 0..1
-	name_list = scope[country]
+	namelist = scope[country]
 	## cardinality = 0..1
-	name_list = random
+	namelist = random
 	## cardinality = 0..1
 	plural = scalar
 	## cardinality = 0..1
 	adjective = scalar
 	class = <species_class>
+	class = random_non_machine
+	class = scope[species]
 	## cardinality = 0..1
 	portrait = scope[species]
 	## cardinality = 0..1
@@ -1470,6 +1472,8 @@ alias[effect:create_species] = {
 	portrait = random
 	## cardinality = 0..1
 	homeworld = scope[planet]
+	## cardinality = 0..1
+	homeworld = scope[species]
 
 	# -> traits can be multiple. You can have traits = this, traits = { trait = xyz } at the same time
 
@@ -1610,7 +1614,7 @@ alias[effect:create_country] = {
 	#Does not support pop scope according to had
 	#species = scope[pop]
 	## cardinality = 0..1
- 	species = <buildable_pop>
+ 	species = enum[buildable_pop_species]
 	## cardinality = 0..1
 	species = scope[species] #maybe key would work, I don't know which though
 
@@ -1897,6 +1901,8 @@ alias[effect:modify_species] = {
 	## cardinality = 0..1
 	portrait = <portrait>
 	## cardinality = 0..1
+	portrait = <portrait_group>
+	## cardinality = 0..1
 	portrait = random
 	## cardinality = 0..1
 	hidden_effect = {
@@ -1971,6 +1977,8 @@ alias[effect:begin_event_chain] = {
 	target = scope[country]
 	## cardinality = 0..2
 	target = scope[ship]
+	## cardinality = 0..2
+	target = scope[planet]
 }
 
 ### Ends a specific situation log event chain for the scoped country
@@ -1998,6 +2006,7 @@ alias[effect:enable_special_project] = {
 	location = scope[system]
 	location = scope[ship]
 	location = scope[fleet]
+	location = scope[ambient_object]
 }
 
 ###Aborts a specific special project for the country, removing it from the situation log
@@ -2410,6 +2419,8 @@ alias[effect:create_fleet] = {
 	## cardinality = 0..1
 	name = localisation_synced
 	## cardinality = 0..1
+	name = scope[fleet]
+	## cardinality = 0..1
 	set_take_point = bool
 	## cardinality = 0..1
 	settings = {
@@ -2568,9 +2579,14 @@ alias[effect:create_ship] = {
 	## cardinality = 0..1
 	name = localisation_synced
 	## cardinality = 0..1
+	name = scope[ship]
+	## cardinality = 0..1
 	design = last_created_design
 	## cardinality = 0..1
 	design = <global_ship_design>
+	## cardinality = 0..1
+	# Hack to handle named designs
+	design = localisation
 	## cardinality = 0..1
 	random_existing_design = <ship_size>
 	## cardinality = 0..1
@@ -3059,7 +3075,7 @@ alias[effect:set_planet_entity] = {
 	## cardinality = 0..1
 	graphical_culture = scope[any]
 	## cardinality = 0..1
-	picture = filepath #TODO picture
+	picture = scalar #filepath #TODO picture
 	## cardinality = 0..1
 	atmosphere_color = scalar #TODO color
 	## cardinality = 0..1

@@ -107,3 +107,14 @@ buildable_pop = {
 		}
 	}
 }
+
+enums = {
+	complex_enum[buildable_pop_species] = {
+		path = "game/common/buildable_pops"
+		name = {
+			species = {
+				name = enun_name
+			}
+		}
+	}
+}

@@ -2,7 +2,7 @@ types = {
 	## type_key_filter = entity
 	type[model_entity] = {
 		name_field = name
-		path = "gfx/models" #need to add subfolder to the parsing here! - these are stored in *.asset files!
+		path = "gfx" #need to add subfolder to the parsing here! - these are stored in *.asset files!
 		severity = warning
    }
    ## type_key_filter = pdxmesh
@@ -46,6 +46,7 @@ types = {
 		  miss2_reversed
 		  start
 		  fly
+		  working
 	  }
   }
 model_entity = {
@@ -63,9 +64,11 @@ model_entity = {
   default_state = enum[model_states]
   ## cardinality = 0..1
   get_state_from_parent = bool
+  ## cardinality = 0..1
+  clone = <model_entity>
   ## cardinality = 0..inf
   state = {
-		name = enum[model_states]
+		name = scalar
 		## cardinality = 0..1
 		state_time = float
 		## cardinality = 0..1
@@ -80,6 +83,8 @@ model_entity = {
 		animation = <model_animation> #animations are defined in a different file in the same folder, also a *.asset file
 		## cardinality = 0..1
    		animation = enum[model_animation_types]
+		## cardinality = 0..1
+   		animation = scalar #TODO
 		## cardinality = 0..1
 		animation_speed = float
 		## cardinality = 0..1
@@ -147,6 +152,8 @@ model_entity = {
 			## cardinality = 0..1
 			particle = scalar #"planetary_bombardment_effect" for example, this points to a file stored under game/gfx/particles/_generic_particles.gfx
 			## cardinality = 0..1
+			#light = scalar
+			## cardinality = 0..1
 			keep_particle = bool
 			## cardinality = 0..1
 			sound = {
@@ -158,8 +165,14 @@ model_entity = {
 	}
 	## cardinality = 0..inf
 	attach = {
-		# TODO: Make this smarter
-		enum[locators] = <model_entity> #see locator in this file.
+		# TODO: Make this smarter, left side is locators
+		scalar = <model_entity> #see locator in this file.
+		## cardinality = 0..1
+		name = scalar
+		## cardinality = 0..1
+		root = <model_entity>
+		## cardinality = 0..1
+		scene_main = <model_entity>
 	}
 	## cardinality = 0..1
 	game_data = {
@@ -170,7 +183,7 @@ model_entity = {
 		## cardinality = 0..1
 		trail_locators = {
 			## cardinality = 0..inf
-			key = { #example: exhaust_01, this probably connects to something
+			scalar = { #example: exhaust_01, this probably connects to something
 				## cardinality = 0..1
 				width = int
 				## cardinality = 0..1
@@ -190,6 +203,17 @@ model_entity = {
 		bloom_factor = float
 		## cardinality = 0..1
 		shader_type = scalar
+		## cardinality = 0..1
+		raytrace_projectiles = bool
+		## cardinality = 0..1
+		custom_texture = filepath
+		## cardinality = 0..1
+		dissolve_on_death = float
+		## cardinality = 0..1
+		ship_color = {
+			## cardinality = 3..4
+			float
+		}
 	}
 	#locator here is linked to both attach = { in the same files and ship_sizes under common!
 	## cardinality = 0..inf
@@ -229,27 +253,13 @@ enums = {
 
   #these are tied to bombardment stances somehow, but I have no idea how - exnihil
   #TODO - link this to bombardment stances
-  enum[model_states] = {
-		idle
-		bombard_selective #planet state
-		bombard_indiscriminate #planet state
-		bombard_armageddon #planet state
-   		bombard_raiding #planet state
-		attack #ship state
-		death #ship state
-		moving #ship state
-		sad
-		stop
-		working
-		start
-		start2
-		wind_down
-		wind_up
-		jump_in
-		jump_out
-		explode_med_shield
-		explode_med_hp
-		default
+  complex_enum[model_states] = {
+		path = "game/gfx"
+		name = {
+			state = {
+				name = enum_name
+			}
+		}
 	}
 	complex_enum[locators] = {
 		path = "game/gfx/models"
@@ -291,6 +301,7 @@ model_mesh = { #the container for all meshes is defined as objectTypes = { at th
 	## cardinality = 0..inf
 	animation = {
 		id = enum[model_animation_types] #example = "idle"
+		id = scalar #example = "idle"
 		type = <model_animation> #this connects to an animation defined in an *.asset file!
 	}
 	## cardinality = 0..1

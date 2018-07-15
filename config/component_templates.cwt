@@ -243,7 +243,7 @@ component_template = {
 	}
 	subtype[strike_craft_component_template] = {
 		size = enum[weapon_slot_size]
-		entity = <model_entity>
+		entity = scalar #TODO: Replace with hardcoded  graphical_culture + <model_entity>
 		weapon_type = enum[weapon_type]
 		ship_behavior = <ship_behavior>
 		projectile_gfx = scalar #tied to defined entites under gfx
