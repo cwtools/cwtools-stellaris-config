@@ -1,0 +1,60 @@
+type = {
+  ## type_key_filter = light
+  type[light] = {
+    name_field = name
+    path = "game/gfx/light"
+  }  
+  ## type_key_filter = animation
+  type[light_animation] = { #these are actually a part of the the light assets, but i need to split them up because of the weird mix of values and keys in these files. 
+    name_field = name
+    path = "game/gfx/light"
+  }  
+
+light = {
+	name = scalar
+	
+	color = { 
+		r = { float }
+		g = { float }
+		b = { float }
+	}
+	
+  #one of these three variations
+  ## cardinality = 0..1
+	intensity = int,<light_animation>
+  ## cardinality = 0..1
+  intensity = int
+  ## cardinality = 0..1
+  intensity = <light_animation>
+  
+	radius = int
+	falloff = int
+	duration = float
+	
+	position = { x = int y = int z = int }
+	## cardinality = 0..1
+  <light_animation>	
+}
+light_animation = {
+	name = scalar
+	start = float
+	duration = float
+	## cardinality = 0..1
+  repeat = bool
+	op = enum[animation_op]
+	## cardinality = 0..1
+  minValue = float
+  ## cardinality = 0..1
+	maxValue = float
+	curve = { 
+    ## cardinality = 4..6
+		float
+	}
+}	
+enums = {
+  enum[animation_op] = {
+    "MUL"
+    "ADD"
+    "ABS"
+  } 
+} 
