@@ -35,6 +35,7 @@ types = {
 
 sprite = {
 	name = scalar
+	## cardinality = 0..1
 	textureFile = filepath
 	## cardinality = 0..1
 	masking_texture = filepath
@@ -50,6 +51,10 @@ sprite = {
 	hitbox_margin = { x = int y = int }
 	## cardinality = 0..1
 	noOfFrames = int
+	## cardinality = 0..1
+	type = enum[sprite_type]
+	## cardinality = 0..1
+	character = bool
 	## cardinality = 0..1
 	animation = {
 		## cardinality = 0..1
@@ -121,8 +126,13 @@ enums = {
     scrolling
     rotating
     pulsing
-   }
- }
+  }
+  enum[sprite_type] = { 
+  	planet
+	room
+  }
+}
+ 
 
 
 
