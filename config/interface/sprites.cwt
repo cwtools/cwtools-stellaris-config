@@ -103,6 +103,8 @@ progressbar = {
 		float
 	}
 	size = { x = int y = int }
+	## cardinality = 0..1
+	horizontal = bool
 }
 
 #example:
