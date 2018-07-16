@@ -252,6 +252,7 @@ enums = {
 		explode_med_shield
 		explode_med_hp
 		default
+		no_state
 	}		
 	complex_enum[locators] = {
 		path = "game/gfx/models"
