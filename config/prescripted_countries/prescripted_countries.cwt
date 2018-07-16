@@ -26,16 +26,19 @@ prescripted_country = {
 	
 	room = <asset_selector.room> #this one is defined under gfx/portraits/asset_selectors
 	
+	## cardinality = 0..1
 	authority = <authority>
+	## cardinality = 0..1
 	civics = { 
    		## cardinality = 2..2
     	<civic>
    	}
+	## cardinality = 0..1
 	government = <government>
 	
 	ethic = <ethic>
 	ethic = <ethic> #can probably also receive random!
-  
+  	## cardinality = 0..1
 	flags = { 
     	## cardinality = 0..inf
 		scalar #this is a country flag string, can be anything.     
