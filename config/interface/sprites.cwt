@@ -13,12 +13,25 @@ types = {
 		subtype[cornered_tile] = {
 
 		}
+		## type_key_filter = flagSpriteType
+		subtype[flag_sprite] = {
+
+		}		
+		## type_key_filter = frameAnimatedSpriteType
+		subtype[framed_animated_sprite] = {
+
+		}			
 	}
 	## type_key_filter = progressbartype
 	type[progressbar] = { #these are links that start with the GFX_ prefix in vanilla
 		path = "game/interface"
 		skip_root_key = spriteTypes
 	}
+	## type_key_filter = PieChartType
+	type[piechart] = { #these are links that start with the GFX_ prefix in vanilla
+		path = "game/interface"
+		skip_root_key = spriteTypes
+	}	
 }
 
 #TODO: Rework to use types inside the top level
@@ -56,6 +69,12 @@ sprite = {
 	## cardinality = 0..1
 	character = bool
 	## cardinality = 0..1
+	tilingCenter = bool
+	## cardinality = 0..1
+	loadType = "FRONTEND"
+	## cardinality = 0..1
+	legacy_lazy_load = bool
+	## cardinality = 0..1
 	animation = {
 		## cardinality = 0..1
 		animationmaskfile = filepath
@@ -83,6 +102,23 @@ sprite = {
 			int
 		}
 	}
+	#flag_sprite only!
+	## cardinality = 0..1
+	bg_position = { x = int y = int }
+	## cardinality = 0..1
+	bg_size = { width = int height = int }
+	## cardinality = 0..1
+	symbol_position = { x = int y = int }
+	## cardinality = 0..1
+	symbol_size = { width = int height = int }
+	## cardinality = 0..1
+	texture_size = enum[texture_size]
+	
+	#framed_animated_sprite only!
+	## cardinality = 0..1
+	play_on_show = bool
+	## cardinality = 0..1
+	animation_rate_fps = int
 }
 
 progressbar = {
@@ -107,21 +143,13 @@ progressbar = {
 	horizontal = bool
 }
 
-#example:
-#spriteTypes = {
-# progressbartype = {
-#		name = "GFX_waroverview_war_exhaustion_stats_progressbar"
-#		color = { 1.0 1.0 1.0 }
-#		colortwo = { 1.0 1.0 1.0 }
-#		textureFile1 = "gfx/interface/progressbars/fleet_combat_progeress_bar_red.dds"
-#		textureFile2 = "gfx/interface/progressbars/fleet_combat_progeress_bar_green.dds"
-#		size = { x = 143 y = 38 }
-#		effectFile = "gfx/FX/progress.lua"
-# }
-#}
+piechart = {
+	name = scalar
+	size = int
+}
 
-
-
+framed_animated_sprited = {
+	
 enums = {
   enum[animation_mode] = {
     overlay
@@ -132,11 +160,16 @@ enums = {
     scrolling
     rotating
     pulsing
+	rotating_ccw
+	rotating_cw
   }
   enum[sprite_type] = { 
   	planet
 	room
   }
+  enum[texture_size] = { 
+  	small
+  }  
 }
  
 
