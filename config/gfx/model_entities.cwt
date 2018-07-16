@@ -118,6 +118,8 @@ model_entity = {
 		## cardinality = 0..inf
 		event = {
 			## cardinality = 0..1
+			id = beam_start #this is tied to the planet killer projectiles, see the comment i left in projectiles -- exnihil.
+			## cardinality = 0..1			
 			time = int
 			## cardinality = 0..1
 			node = scalar #"bombardment_location_2" for example, this seem to point to a *.mesh file
@@ -250,7 +252,7 @@ enums = {
 		explode_med_shield
 		explode_med_hp
 		default
-	}
+	}		
 	complex_enum[locators] = {
 		path = "game/gfx/models"
 		name = {
