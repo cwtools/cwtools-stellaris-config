@@ -1,0 +1,17 @@
+types = {
+	type[particle] = { 
+		name_field = name
+		path = "game/gfx/particles"
+		skip_root_key = objectTypes
+	}
+  type[particle_type] = {
+		name_field = name
+		path = "game/gfx/particles"
+	}  
+} 
+
+particle = {
+		name = scalar
+		type = <particle_type>		
+		scale = float
+}
