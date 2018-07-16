@@ -87,8 +87,12 @@ sprite = {
 
 progressbar = {
 	name = scalar
+	
+	#either texturefile, or both texturefile1 and 2 - need to be worked out. 
+	textureFile = filepath
 	textureFile1 = filepath
 	textureFile2 = filepath
+	
 	effectFile = filepath
 	color = {
 		## cardinality = 3..3
