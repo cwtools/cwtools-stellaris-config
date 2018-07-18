@@ -76,6 +76,8 @@ ship_size = {
 		scalar = { #this is connected to the section templates and global ship designs files!
 			## cardinality = 1..inf
 			locator = enum[locators] #this is connected to the ship asset files.
+			## cardinality = 1..inf
+			locator = scalar #TODO: Some locators are in .mesh files, so are missed by the enum
 		}
 	}
 	## cardinality = 0..1

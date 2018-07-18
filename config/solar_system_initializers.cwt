@@ -38,6 +38,10 @@ solar_system_initializer = {
 	prevent_anomalies = bool
 	## cardinality = 0..1
 	primitive_system = bool
+	## cardinality = 0..1
+	inner_radius_offset = int
+	## cardinality = 0..1
+	outer_radius_offset = int
 	## cardinality = 1..inf
 	planet = {
 		## cardinality = 0..1
@@ -112,7 +116,7 @@ solar_system_initializer = {
 		## cardinality = 0..1
 		starting_planet = bool
 		###The scope will be a planet scope, with prev being the system. prevprev will be the system that triggered this system's initialization ( if any ). Root will be the first system in this initializer tree
-		## replace_scope = { this = planet root = planet prev = galactic_object }
+		## replace_scope = { this = planet root = any prev = galactic_object }
 		## cardinality = 0..1
 		init_effect = {
 			## cardinality = 0..inf
@@ -261,7 +265,7 @@ solar_system_initializer = {
 			## cardinality = 0..1
 			starting_planet = bool
 			###The scope will be a planet scope, with prev being the system. prevprev will be the system that triggered this system's initialization ( if any ). Root will be the first system in this initializer tree
-			## replace_scope = { this = planet root = planet prev = galactic_object }
+			## replace_scope = { this = planet root = any prev = galactic_object }
 			## cardinality = 0..1
 			init_effect = {
 				## cardinality = 0..inf
@@ -330,7 +334,7 @@ solar_system_initializer = {
 				## cardinality = 0..1
 				anomaly = none
 
-				## replace_scope = { this = planet root = planet prev = planet prevprev = galactic_object }
+				## replace_scope = { this = planet root = any prev = planet prevprev = galactic_object }
 				## cardinality = 0..1
 				init_effect = {
 					## cardinality = 0..inf
@@ -345,8 +349,8 @@ solar_system_initializer = {
 	## cardinality = 0..inf
 	change_orbit = { min = int max = int }
 
-	###the scope here is galactic_object scope, with prev being set to the previous system that was initialized by this tree ( if any ). Root will point to the first system in the tree.
-	## replace_scope = { this = galactic_object root = galactic_object }
+	###the scope here is galactic_object scope, with prev being set to the previous system that was initialized by this tree ( if any ). Root will point to the first system in the tree or the root of the calling event.
+	## replace_scope = { this = galactic_object root = any }
 	## cardinality = 0..1
 	init_effect = {
 		## cardinality = 0..inf

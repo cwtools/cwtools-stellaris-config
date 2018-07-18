@@ -5,6 +5,7 @@ types = {
 		name_field = name
 		path = "game/interface"
 		skip_root_key = spriteTypes
+		severity = warning
 		## type_key_filter = spriteType
 		subtype[normal] = {
 
@@ -13,11 +14,16 @@ types = {
 		subtype[cornered_tile] = {
 
 		}
+		## type_key_filter = flagSpriteType
+		subtype[flag] = {
+
+		}
 	}
 	## type_key_filter = progressbartype
 	type[progressbar] = { #these are links that start with the GFX_ prefix in vanilla
 		path = "game/interface"
 		skip_root_key = spriteTypes
+		severity = warning
 	}
 }
 
@@ -77,6 +83,20 @@ sprite = {
 			## cardinality = 1..3
 			int
 		}
+	}
+	subtype[cornered_tile] = {
+		## cardinality = 0..1
+		size = {  x = int y = int }
+		## cardinality = 0..1
+		tilingCenter = no
+
+	}
+	subtype[flag] = {
+		bg_position = { x = int y = int }
+		bg_size = { width = int height = int }
+		symbol_position = { x = int y = int }
+		symbol_size = { width = int height = int }
+
 	}
 }
 

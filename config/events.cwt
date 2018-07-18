@@ -79,6 +79,10 @@ event = {
 
 		## cardinality = 0..1
 		show_sound = scalar
+		## cardinality = 0..1
+		###Force a diplomatic event to be viewed
+		force_open = bool
+
 
 	}
 
@@ -143,6 +147,9 @@ event = {
 			room = scope[country]
 			## cardinality = 0..1
 			room = scope[species]
+			#TODO: Replace with picture
+			## cardinality = 0..1
+			room = scalar
 			## cardinality = 0..1
 			portrait = <portrait>
 			## cardinality = 0..1
@@ -172,9 +179,6 @@ event = {
 		custom_gui = scalar
 		## cardinality = 0..1
 		custom_gui_option = scalar
-		## cardinality = 0..1
-		###Force a diplomatic event to be viewed
-		force_open = bool
 	}
 
 	## cardinality = 0..1
@@ -243,6 +247,8 @@ event = {
 
 		## cardinality = 0..1
 		default_hide_option = bool
+		## cardinality = 0..1
+		custom_gui = scalar
 
 		## cardinality = 0..1
 		alias_name[effect] = alias_match_left[effect]

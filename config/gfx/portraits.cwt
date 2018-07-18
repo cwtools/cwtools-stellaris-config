@@ -33,6 +33,7 @@ portrait = {
 	entity = <model_entity>
 	clothes_selector = <asset_selector.clothes>
 	hair_selector = <asset_selector.hair>
+	## cardinality = 0..1
 	greeting_sound = <sound_effect>
 	## cardinality = 0..1
 	character_textures = {
@@ -69,7 +70,9 @@ portrait = {
 #the portrait_group = { below refers to the swarm = { above
 
 portrait_group = {
+	## cardinality = 0..1
 	default = <portrait>
+	## cardinality = 0..1
 	game_setup = {
 		## cardinality = 1..inf
 		add = {
@@ -124,7 +127,7 @@ portrait_group = {
 	}
 	## cardinality = 0..1
 	pop = {
-			## cardinality = 1..inf
+		## cardinality = 1..inf
 		add = {
 			## replace_scope = { this = pop root = pop }
 			## cardinality = 0..1
@@ -141,6 +144,7 @@ portrait_group = {
 			}
 		}
 	}
+	## cardinality = 0..1
 	species = {
 		## cardinality = 1..inf
 		add = {
