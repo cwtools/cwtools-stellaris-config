@@ -91,121 +91,47 @@ alias[gui:positionType] = {
 alias[gui:textboxType] = {
 	name = scalar
 	## cardinality = 0..1
-	id = scalar	
 	textureFile = filepath
-	font = <bitmapfont>
-	## cardinality = 0..1
-	borderSize = {
-		x = int
-		y = int
-	}
-	## cardinality = 0..1
-	position = {
-		x = int
-		y = int
-	}
-	## cardinality = 0..1
-	maxWidth = int
-	## cardinality = 0..1
-	maxHeight = int
+	
+	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
+	alias_name[gui_localisation] = alias_match_left[gui_localisation]	
 }
 
 # Normal block for displaying text
 alias[gui:instantTextboxType] = {
 	name = scalar
 	## cardinality = 0..1
-	id = scalar
-	## cardinality = 0..1
 	textureFile = filepath		
-	## cardinality = 0..1
-	position = {
-		x = int
-		y = int
-	}
-	## cardinality = 0..1
-	borderSize = {
-		x = int
-		y = int
-	}
-	## cardinality = 0..1
-	maxWidth = int
-	## cardinality = 0..1
-	maxHeight = int
-	font = <bitmapfont>
-	## cardinality = 0..1
-	text = localisation
-	## cardinality = 0..1
-	text_color_code = enum[textcolors]
-	## cardinality = 0..1
-	alwaysTransparent = bool
+
 	## cardinality = 0..1
 	fixedSize = bool
 	## cardinality = 0..1
 	appendtext = scalar
-	#one of these is required!
-	## cardinality = 0..1
-	format = enum[direction]
-	## cardinality = 0..1
-	vertical_alignment = enum[direction]
-	## cardinality = 0..1
-	orientation = enum[direction]
-	## cardinality = 0..1
-	tooltip_mode_enabled = bool
-	## cardinality = 0..1
-	tooltip = <localisation>
-	## cardinality = 0..1
-	tooltipText = <localisation>
-	## cardinality = 0..1
-	delayedTooltipText = <localisation>
-	## cardinality = 0..1
-	pdx_tooltip = localisation
-	## cardinality = 0..1
-	pdx_tooltip_delayed = localisation	
+
 	## cardinality = 0..1
 	scrollbarType = enum[scrollbar_types]
 	## cardinality = 0..1
 	truncate = bool
 	## cardinality = 0..1
 	multiline = bool
-
+	
+	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
+	alias_name[gui_localisation] = alias_match_left[gui_localisation]		
 }
 
 # Text type area
 alias[gui:editBoxType] = {
 	name = scalar
 	## cardinality = 0..1
-	id = scalar	
-	## cardinality = 0..1
-	position = {
-		x = int
-		y = int
-	}
-	## cardinality = 0..1
-	size = {
-		x = int
-		y = int
-	}
-	## cardinality = 0..1
-	spriteType = <sprite>
-	## cardinality = 0..1
-	textureFile = filepath
-	## cardinality = 0..1
-	borderSize = {
-		x = int
-		y = int
-	}
-	font = <bitmapfont>
+	textureFile = filepath		
 	## cardinality = 0..1
 	cursor = {
 		x = int
 		y = int
 	}
-	## cardinality = 0..1
-	text = localisation
+
 	## cardinality = 0..1
 	instantTextBoxType = bool
-	## cardinality = 0..1
-	orientation = enum[direction]
 	## cardinality = 0..1
 	max_characters = int
 	## cardinality = 0..1
@@ -215,32 +141,16 @@ alias[gui:editBoxType] = {
 	## cardinality = 0..1
 	use_special_chars = bool
 
-	## cardinality = 0..1
-	navUp = scalar
-	## cardinality = 0..1
-	navDown = scalar
-	## cardinality = 0..1
-	navRight = scalar
-	## cardinality = 0..1
-	navLeft = scalar
+	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
+	alias_name[gui_localisation] = alias_match_left[gui_localisation]	
 	alias_name[overlay] = alias_match_left[overlay]
+	alias_name[gui_navigation] = alias_match_left[gui_navigation]
 }
 
 # Container for listed items, usually option entries in event/diplo windows.
 alias[gui:smoothListboxType] = {
 	name = scalar
-	## cardinality = 0..1
-	id = scalar	
-	## cardinality = 0..1
-	position = {
-		x = int
-		y = int
-	}
-	## cardinality = 0..1
-	size = {
-		x = int
-		y = int
-	}
+
 	## cardinality = 0..1
 	offset = {
 		x = int
@@ -248,62 +158,31 @@ alias[gui:smoothListboxType] = {
 	}		
 	## cardinality = 0..1
 	scrollbarType = enum[scrollbar_types] #this is tied to instances defind as <scrollbarType> with a unique key.
-	## cardinality = 0..1
-	borderSize = {
-		x = int
-		y = int
-	}
-	## cardinality = 0..1
-	alias_name[background] = alias_match_left[background]
-	## cardinality = 0..1
-	orientation = enum[direction]
+
 	## cardinality = 0..1
 	autohide_scrollbar = bool
-	## cardinality = 0..1
-	defaultSelection = bool
 	## cardinality = 0..1
 	spacing = int
 	## cardinality = 0..1
 	priority = int
-	## cardinality = 0..1
-	horizontal = int
 	## cardinality = 0..1
 	wraparound = bool
 	## cardinality = 0..1
 	single_choice = bool
 	## cardinality = 0..1
 	alwaystransparent = bool
-	## cardinality = 0..1
-	navUp = scalar
-	## cardinality = 0..1
-	navDown = scalar
-	## cardinality = 0..1
-	navRight = scalar
-	## cardinality = 0..1
-	navLeft = scalar
+
+	alias_name[gui_background] = alias_match_left[gui_background]
+	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
+	alias_name[gui_localisation] = alias_match_left[gui_localisation]	
+	alias_name[gui_navigation] = alias_match_left[gui_navigation]
 }
 
 # General graphical block
 alias[gui:containerWindowType] = {
 	name = scalar
-	## cardinality = 0..1
-	id = scalar		
-	## cardinality = 0..1
-	upsound = <sound_effect>
-	## cardinality = 0..1
-	alias_name[background] = alias_match_left[background] #see the bottom of the file!
-	## cardinality = 0..1
-	size = {
-		width = int
-		width = percentage
-		height = int
-		height = percentage
-	}
-	## cardinality = 0..1
-	position = {
-		x = int
-		y = int
-	}
+	## cardinality = 0..1 #this one uses width/height instead of x/y
+
 	## cardinality = 0..inf	
 	if_resolution = { 
 		## cardinality = 0..1		
@@ -314,9 +193,9 @@ alias[gui:containerWindowType] = {
 			width = int
 			height = int
 		}
+		alias_name[gui_background] = alias_match_left[gui_background]
+		alias_name[gui] = alias_match_left[gui]		
 	}
-	## cardinality = 0..1
-	orientation = enum[direction]
 	## cardinality = 0..1
 	origo = enum[direction]
 	## cardinality = 0..1
@@ -346,11 +225,8 @@ alias[gui:containerWindowType] = {
 	hide_animation_type = decelerated
 	## cardinality = 0..1
 	show_animation_type = decelerated
-
 	## cardinality = 0..1
 	verticalScrollbar = enum[vertical_scrollbar_types]
-	## cardinality = 0..1
-	show_sound = <sound_effect>
 	## cardinality = 0..1
 	dontRender = ""
 	## cardinality = 0..1
@@ -360,33 +236,19 @@ alias[gui:containerWindowType] = {
 	## cardinality = 0..1
 	fade_type = enum[gui_fade_types]
 
-	## cardinality = 0..1
-	navUp = scalar
-	## cardinality = 0..1
-	navDown = scalar
-	## cardinality = 0..1
-	navRight = scalar
-	## cardinality = 0..1
-	navLeft = scalar	
+	alias_name[gui_background] = alias_match_left[gui_background]
 	alias_name[gui] = alias_match_left[gui]
+	alias_name[gui_sound] = alias_match_left[gui_sound]
 	alias_name[gui_button] = alias_match_left[gui_button]
+	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
+	alias_name[gui_localisation] = alias_match_left[gui_localisation]	
+	alias_name[gui_navigation] = alias_match_left[gui_navigation]
 }
 
 # Normal icon instance
 alias[gui:iconType] = {
 	name = scalar
-	#one of these two is required!
-	## cardinality = 0..1
-	quadTextureSprite = <sprite>
-	## cardinality = 0..1
-	spriteType = <sprite>
-	## cardinality = 0..1
-	position = {
-	  x = int
-	  y = int
-	}
-	## cardinality = 0..1
-	orientation = enum[direction]
+
 	## cardinality = 0..1
 	centerPosition = bool
 	## cardinality = 0..1
@@ -397,130 +259,34 @@ alias[gui:iconType] = {
 	scale = float
 	## cardinality = 0..1
 	frame = int
-	## cardinality = 0..1
-	tooltip_mode_enabled = bool
-	## cardinality = 0..1
-	tooltip = <localisation>
-	## cardinality = 0..1
-	tooltipText = <localisation>
-	## cardinality = 0..1
-	delayedTooltipText = <localisation>
-	## cardinality = 0..1
-	pdx_tooltip = localisation
-	## cardinality = 0..1
-	pdx_tooltip_delayed = localisation	
-	
+
+	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
+	alias_name[gui_localisation] = alias_match_left[gui_localisation]	
+	alias_name[gui_sprite] = alias_match_left[gui_sprite]	
 }
 
 # Default game button. In some cases could be replaced by effectButtonType without CTD
 alias[gui_button:buttonType] = {
 	name = scalar
-	## cardinality = 0..1
-	id = scalar		
 
-	#one of these is required for buttontype entries. I don't know whats the difference between these sprites, but code wise they are the same I think. pls check.
-	## cardinality = 0..1
-	quadTextureSprite = <sprite>
-	## cardinality = 0..1
-	spriteType = <sprite>
-	## cardinality = 0..1
-	position = {
-		x = int
-		y = int
-	}
-	## cardinality = 0..1
-	orientation = enum[direction]
-	## cardinality = 0..1
-	format = enum[direction]
-	## cardinality = 0..1
-	size = {
-	  x = int
-	  y = int
-	}
-	## cardinality = 0..1
-	borderSize = {
-	  x = int
-	  y = int
-	}
 	## cardinality = 0..1
 	hitbox_margin = {
 	  x = int
 	  y = int
 	}
-	## cardinality = 0..1
-	font = <bitmapfont>
-	#there can be text = and buttonText = for buttontypes. I don't know whats the difference between them.
-	## cardinality = 0..1
-	text = localisation
-	## cardinality = 0..1
-	buttonText = localisation
-	## cardinality = 0..1
-	buttonFont = <bitmapfont>
-	## cardinality = 0..1
-	scale = float
-	## cardinality = 0..1
-	frame = int
-	## cardinality = 0..1
-	tooltip = <localisation>
-	## cardinality = 0..1
-	tooltipText = <localisation>
-	## cardinality = 0..1
-	delayedTooltipText = <localisation>
-	## cardinality = 0..1
-	tooltipText = localisation
-	## cardinality = 0..1
-	pdx_tooltip = localisation #this is a tooltip localisation.
-	## cardinality = 0..1
-	pdx_tooltip_delayed = localisation #this is a tooltip localisation.
-	## cardinality = 0..1
-	delayedTooltipText = localisation
-	## cardinality = 0..1
-	tooltip_mode_enabled = bool
-	## cardinality = 0..1
-	oversound = <sound_effect>
-	## cardinality = 0..1
-	oversound = <sound_effect>
-	## cardinality = 0..1
-	alwaysTransparent = bool
 
-	#clicksound seems to be mutually exclusive with the no_clicksound bool
-	## cardinality = 0..1
-	clicksound = <sound_effect>
-	## cardinality = 0..1
-	clicksound = <sound_effect>
-	## cardinality = 0..1
-	no_clicksound = bool
-
-	## cardinality = 0..1
-	shortcut = scalar #--> this isn't scalar really, its a key binding with the keyboard!.
 	## cardinality = 0..1
 	multiline = bool
-	## cardinality = 0..1
-	defaultSelection = bool
-	## cardinality = 0..1
-	actionShortcut = enum[actionshortcut]
-	## cardinality = 0..1
-	pdx_tooltip_anchor_offset = {
-		x = int
-		y = int
-	}
-	## cardinality = 0..1
-	pdx_tooltip_anchor_orientation = enum[direction]
 
 	## cardinality = 0..1
 	vertical_alignment = enum[direction]
 	
-	## cardinality = 0..1
-	web_link = scalar
-
-	## cardinality = 0..1
-	navUp = scalar
-	## cardinality = 0..1
-	navDown = scalar
-	## cardinality = 0..1
-	navRight = scalar
-	## cardinality = 0..1
-	navLeft = scalar
+	alias_name[gui_localisation] = alias_match_left[gui_localisation]
+	alias_name[gui_sound] = alias_match_left[gui_sound]
+	alias_name[gui_sprite] = alias_match_left[gui_sprite]
+	alias_name[gui_navigation] = alias_match_left[gui_navigation]
+	alias_name[gui_button_element] = alias_match_left[gui_button_element]
+	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
 }
 
 # Not a vanilla's content.
@@ -532,150 +298,29 @@ alias[gui_button:effectButtonType] = {
 	name = scalar
 	effect = <button_effect> #defined under /common/button_effects.
 
-	#one of these is required for buttontype entries. I don't know whats the difference between these sprites, but code wise they are the same I think. pls check.
-	## cardinality = 0..1
-	quadTextureSprite = <sprite>
-	## cardinality = 0..1
-	spriteType = <sprite>
-	## cardinality = 0..1
-	size = {
-	  x = int
-	  y = int
-	}
-	## cardinality = 0..1
-	position = {
-	  x = int
-	  y = int
-	}
-	## cardinality = 0..1
-	orientation = enum[direction]
-	## cardinality = 0..1
-	borderSize = {
-	  x = int
-	  y = int
-	}
-	## cardinality = 0..1
-	hitbox_margin = {
-	  x = int
-	  y = int
-	}
-	## cardinality = 0..1
-	font = <bitmapfont>
-	#there can be text = and buttonText = for buttontypes. I don't know whats the difference between them.
-	## cardinality = 0..1
-	text = localisation
-	## cardinality = 0..1
-	buttonText = localisation
-	## cardinality = 0..1
-	frame = int
-	## cardinality = 0..1
-	buttonFont = <bitmapfont>
-	## cardinality = 0..1
-	scale = float
-	## cardinality = 0..1
-	tooltip = <localisation>
-	## cardinality = 0..1
-	tooltipText = <localisation>
-	## cardinality = 0..1
-	delayedTooltipText = <localisation>
-	## cardinality = 0..1
-	pdx_tooltip = localisation #this is a tooltip localisation.
-	## cardinality = 0..1
-	pdx_tooltip_delayed = localisation	
-	## cardinality = 0..1
-	delayedTooltipText = localisation
-	## cardinality = 0..1
-	tooltip_mode_enabled = bool
-	## cardinality = 0..1
-	oversound = <sound_effect>
-
-	#clicksound seems to be mutually exclusive with the no_clicksound bool
-	## cardinality = 0..1
-	clicksound = <sound_effect>
-	## cardinality = 0..1
-	no_clicksound = bool
-
-	## cardinality = 0..1
-	shortcut = scalar #--> this isn't scalar really, its a key binding with the keyboard!.
-	## cardinality = 0..1
-	multiline = bool
-	## cardinality = 0..1
-	defaultSelection = bool
-	## cardinality = 0..1
-	clicksound = <sound_effect>
-	## cardinality = 0..1
-	actionShortcut = enum[actionshortcut]
-
-	## cardinality = 0..1
-	navUp = scalar
-	## cardinality = 0..1
-	navDown = scalar
-	## cardinality = 0..1
-	navRight = scalar
-	## cardinality = 0..1
-	navLeft = scalar
+	alias_name[gui_localisation] = alias_match_left[gui_localisation]
+	alias_name[gui_sound] = alias_match_left[gui_sound]
+	alias_name[gui_sprite] = alias_match_left[gui_sprite]
+	alias_name[gui_navigation] = alias_match_left[gui_navigation]
+	alias_name[gui_button_element] = alias_match_left[gui_button_element]
+	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
 }
 
 # Icon-like button ?
 alias[gui_button:guiButtonType] = {
 	name = scalar
-	## cardinality = 0..1
-	position = {
-	  x = int
-	  y = int
-	}
-	quadTextureSprite = <sprite>
-	## cardinality = 0..1
-	size = {
-	  x = int
-	  y = int
-	}
+
 	## cardinality = 0..1
 	parent = <gui_type>
 	## cardinality = 0..1
-	parent = alias[gui_button]
+	parent = scalar #should be ->> alias[gui_button]
 
-	#there appear to be various different types of optional localisations here
-	## cardinality = 0..1
-	tooltip = <localisation>
-	## cardinality = 0..1
-	tooltipText = <localisation>
-	## cardinality = 0..1
-	delayedTooltipText = <localisation>
-	## cardinality = 0..1
-	pdx_tooltip = localisation
-	## cardinality = 0..1
-	pdx_tooltip_delayed = localisation	
-	## cardinality = 0..1
-	delayedTooltipText = localisation
-	## cardinality = 0..1
-	buttonText = localisation
-	## cardinality = 0..1
-	buttonFont = <bitmapfont>
-	## cardinality = 0..1
-	orientation = enum[direction]
-	## cardinality = 0..1
-	shortcut = scalar #not really scalar, tied to a keyboard key!
-
-	#clicksound seems to be mutually exclusive with the no_clicksound bool
-	## cardinality = 0..1
-	clicksound = <sound_effect>
-	## cardinality = 0..1
-	clicksound = <sound_effect>
-	## cardinality = 0..1
-	no_clicksound = bool
-	## cardinality = 0..1
-	frame = int #for portraits, according to vanilla.
-	## cardinality = 0..1
-	web_link = scalar
-	## cardinality = 0..1
-	navUp = scalar
-	## cardinality = 0..1
-	navDown = scalar
-	## cardinality = 0..1
-	navRight = scalar
-	## cardinality = 0..1
-	navLeft = scalar
+	alias_name[gui_localisation] = alias_match_left[gui_localisation]
+	alias_name[gui_sound] = alias_match_left[gui_sound]
+	alias_name[gui_sprite] = alias_match_left[gui_sprite]
+	alias_name[gui_navigation] = alias_match_left[gui_navigation]
+	alias_name[gui_button_element] = alias_match_left[gui_button_element]
+	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
 }
 
 alias[gui:browserType] = {
@@ -693,107 +338,53 @@ alias[gui:browserType] = {
 
 alias[gui:spinnerType] = {
 	name = scalar
-	## cardinality = 0..1
-	id = scalar	
+
 	leftbutton = scalar
 	rightbutton = scalar
-	size = {
-		x = int
-		y = int
-	}
-	position = {
-		x = int
-		y = int
-	}
+
 	priority = int
-	borderSize = {
-		x = int
-		y = int
-	}
-	horizontal = int
 	maxValue = int
 	startValue = int
-	## cardinality = 0..1
-	defaultSelection = bool
-	#in vanilla the buttons used in the above are nestled within the scrollbarType field, see core.gui.
-	## cardinality = 0..inf
+
 	alias_name[gui_button] = alias_match_left[gui_button]
 	alias_name[overlay] = alias_match_left[overlay]
-	## cardinality = 0..1
-	navUp = scalar
-	## cardinality = 0..1
-	navDown = scalar
-	## cardinality = 0..1
-	navRight = scalar
-	## cardinality = 0..1
-	navLeft = scalar	
+	alias_name[gui_navigation] = alias_match_left[gui_navigation]
+	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]	
 }
 
 # Default scrollbar
 alias[gui:scrollbarType] = {
 	name = scalar
-	## cardinality = 0..1
-	id = scalar	
+	
 	slider = scalar
-	track= scalar
+	track = scalar
 	leftbutton = scalar
 	rightbutton = scalar
-	priority = int #no idea what this is.
-	size = {
-		x = int
-		y = int
-	}
-	position = {
-		x = int
-		y = int
-	}
-	## cardinality = 0..1
-	borderSize = {
-	  x = int
-	  y = int
-	}
+	priority = int 
+
 	maxValue = int
 	minValue = int
 	stepSize = int
 	startValue = int
-	horizontal = int
 
-	#in vanilla the buttons used in the above are nestled within the scrollbarType field, see core.gui.
-	## cardinality = 0..inf
 	alias_name[gui_button] = alias_match_left[gui_button]
 	alias_name[overlay] = alias_match_left[overlay]
-	## cardinality = 0..1
-	navUp = scalar
-	## cardinality = 0..1
-	navDown = scalar
-	## cardinality = 0..1
-	navRight = scalar
-	## cardinality = 0..1
-	navLeft = scalar	
+	alias_name[gui_navigation] = alias_match_left[gui_navigation]
+	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]	
 }
 
 alias[gui:extendedScrollbarType] = {
 	name = scalar
-	## cardinality = 0..1
-	id = scalar	
-	position = {
-	  x = int
-	  y = int
-	}
-	size = {
-		width = int
-		height = int
-	}
-	startValue = int
-	## cardinality = 0..1
-	horizontal = bool
-	## cardinality = 0..1
-	alias_name[background] = alias_match_left[background] #see the bottom of the file!
 
+	startValue = int
+
+	alias_name[gui_background] = alias_match_left[gui_background] #see the bottom of the file!
+	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]	
+	
 	## cardinality = 0..1
 	track = {
 		name = scalar
-		quadTextureSprite = <sprite>
+		alias_name[gui_sprite] = alias_match_left[gui_sprite]	
 		## cardinality = 0..1
 		position = {
 			x = int
@@ -803,7 +394,7 @@ alias[gui:extendedScrollbarType] = {
 	## cardinality = 0..1
 	slider = {
 		name = scalar
-		quadTextureSprite = <sprite>
+		alias_name[gui_sprite] = alias_match_left[gui_sprite]	
 		## cardinality = 0..1
 		position = {
 			x = int
@@ -813,7 +404,7 @@ alias[gui:extendedScrollbarType] = {
 	## cardinality = 0..1
 	decreaseButton = {
 		name = scalar
-		quadTextureSprite = <sprite>
+		alias_name[gui_sprite] = alias_match_left[gui_sprite]	
 		## cardinality = 0..1
 		position = {
 			x = int
@@ -823,7 +414,7 @@ alias[gui:extendedScrollbarType] = {
 	## cardinality = 0..1
 	increaseButton = {
 		name = scalar
-		quadTextureSprite = <sprite>
+		alias_name[gui_sprite] = alias_match_left[gui_sprite]	
 		## cardinality = 0..1
 		position = {
 			x = int
@@ -834,82 +425,26 @@ alias[gui:extendedScrollbarType] = {
 
 alias[gui:checkboxType] = {
 	name = scalar
-	## cardinality = 0..1
-	id = scalar		
-	## cardinality = 0..1
-	spriteType = <sprite>
-	## cardinality = 0..1
-	quadTextureSprite = <sprite>
-	## cardinality = 0..1
-	tooltip = <localisation>
-	## cardinality = 0..1
-	tooltipText = <localisation>
-	## cardinality = 0..1
-	delayedTooltipText = <localisation>
-	## cardinality = 0..1
-	pdx_tooltip = localisation
-	## cardinality = 0..1
-	pdx_tooltip_delayed = localisation	
-	## cardinality = 0..1
-	position = {
-		x = int
-		y = int
-	}
-	## cardinality = 0..1
-	clicksound = <sound_effect>
-	## cardinality = 0..1
-	orientation = enum[direction]
-	## cardinality = 0..1
-	navUp = scalar
-	## cardinality = 0..1
-	navDown = scalar
-	## cardinality = 0..1
-	navRight = scalar
-	## cardinality = 0..1
-	navLeft = scalar
+
+	alias_name[gui_sprite] = alias_match_left[gui_sprite]	
+	alias_name[gui_localisation] = alias_match_left[gui_localisation]	
+	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]	
+	alias_name[gui_sound] = alias_match_left[gui_sound]	
+	alias_name[gui_navigation] = alias_match_left[gui_navigation]
 }
 
 alias[gui:OverlappingElementsBoxType] = {
 	name = scalar
-	## cardinality = 0..1
-	id = scalar		
-	## cardinality = 0..1
-	position = {
-		x = int
-		y = int
-	}
-	## cardinality = 0..1
-	size = {
-		x = int
-		y = int
-	}
+
 	## cardinality = 0..1
 	spacing = int
-	## cardinality = 0..1
-	format = enum[direction]
-	## cardinality = 0..1
-	defaultSelection = bool
-	## cardinality = 0..1
-	Orientation = enum[direction]
-	## cardinality = 0..1
-	navUp = scalar
-	## cardinality = 0..1
-	navDown = scalar
-	## cardinality = 0..1
-	navRight = scalar
-	## cardinality = 0..1
-	navLeft = scalar
+	
+	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]	
+	alias_name[gui_navigation] = alias_match_left[gui_navigation]
 }
 alias[gui:listBoxType] = {
 	name = scalar
-	## cardinality = 0..1
-	id = scalar		
-	position = {
-		x = int
-		y = int
-	}
-	## cardinality = 0..1
-	orientation = enum[direction]
+
 	## cardinality = 0..1
 	priority = int
 	## cardinality = 0..1
@@ -918,63 +453,30 @@ alias[gui:listBoxType] = {
 	autohide_scrollbar = bool
 	## cardinality = 0..1
 	alwaystransparent = bool
-	size = {
-		x = int
-		y = int
-	}
-	## cardinality = 0..1
-	horizontal = int
-	## cardinality = 0..1
-	defaultSelection = bool
-	## cardinality = 0..1
-	borderSize = {
-		x = int
-		y = int
-	}
 	## cardinality = 0..1
 	scrollbartype = enum[scrollbar_types]
-	## cardinality = 0..1
-	alias_name[background] = alias_match_left[background]
-	## cardinality = 0..1
-	navUp = scalar
-	## cardinality = 0..1
-	navDown = scalar
-	## cardinality = 0..1
-	navRight = scalar
-	## cardinality = 0..1
-	navLeft = scalar
+	
+	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]	
+	alias_name[gui_background] = alias_match_left[gui_background]
+	alias_name[gui_navigation] = alias_match_left[gui_navigation]
 }
 
 alias[gui:gridBoxType] = {
 	name = scalar
-	## cardinality = 0..1
-	id = scalar		
-	## cardinality = 0..1
-	Orientation = enum[direction]	
-	slotSize = {
-		width = int
+
+	slotSize = { 
+		width = int 
 		height = int
-	}
+	}	
 	## cardinality = 0..1
 	max_slots_horizontal = int
 	## cardinality = 0..1
 	max_slots_vertical = int
 	## cardinality = 0..1
-	format = enum[direction]
-	## cardinality = 0..1
 	add_horizontal = bool
 	## cardinality = 0..1	
 	wraparound = bool
-	## cardinality = 0..1
-	size = {
-		width = int
-		height = int
-	}
-	## cardinality = 0..1
-	position = {
-		x = int
-		y = int
-	}
+
 	## cardinality = 0..1
 	padding = {
 		## cardinality = 0..1
@@ -988,33 +490,14 @@ alias[gui:gridBoxType] = {
 	}
 	## cardinality = 0..1
 	scrollbarType = enum[scrollbar_types]
-	## defaultSelection = yes = 0..1
-	alias_name[background] = alias_match_left[background]
-	## cardinality = 0..1
-	navUp = scalar
-	## cardinality = 0..1
-	navDown = scalar
-	## cardinality = 0..1
-	navRight = scalar
-	## cardinality = 0..1
-	navLeft = scalar
+	
+	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]		
+	alias_name[gui_background] = alias_match_left[gui_background]
+	alias_name[gui_navigation] = alias_match_left[gui_navigation]
 }
 alias[gui:windowType] = {
 	name = scalar
-	## cardinality = 0..1
-	id = scalar		
-	## cardinality = 0..1
-	alias_name[background] = alias_match_left[background]
-	## cardinality = 0..1
-	size = {
-		x = int
-		y = int
-	}
-	## cardinality = 0..1
-	position = {
-		x = int
-		y = int
-	}
+
 	## cardinality = 0..1
 	moveable = int
 	## cardinality = 0..1
@@ -1025,20 +508,12 @@ alias[gui:windowType] = {
 	verticalBorder= scalar
 	## cardinality = 0..1
 	fullScreen = bool
-	## cardinality = 0..1
-	Orientation = enum[direction]
-	## cardinality = 0..1
-	dontRender = scalar
+
+	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]		
+	alias_name[gui_background] = alias_match_left[gui_background]	
 	alias_name[gui] = alias_match_left[gui]
 	alias_name[gui_button] = alias_match_left[gui_button]
-	## cardinality = 0..1
-	navUp = scalar
-	## cardinality = 0..1
-	navDown = scalar
-	## cardinality = 0..1
-	navRight = scalar
-	## cardinality = 0..1
-	navLeft = scalar
+	alias_name[gui_navigation] = alias_match_left[gui_navigation]	
 }
 
 alias[overlay:overlay] = {
@@ -1059,43 +534,78 @@ alias[overlay:overlay] = {
 	}
 }	
 
-alias[background:background] = {
+alias[gui_standard_element:size] = { 
+	#either x+y or width+height. Please work this in!
+	
+	## cardinality = 0..1
+	x = int
+	## cardinality = 0..1
+	y = int
+	## cardinality = 0..1
+	width = int
+	## cardinality = 0..1
+	height = int	
+}
+
+alias[gui_standard_element:position] = { 
+	x = int
+	y = int
+}
+alias[gui_standard_element:borderSize] = { 
+	x = int
+	y = int
+}
+alias[gui_standard_element:orientation] = enum[direction]
+alias[gui_standard_element:format] = enum[direction]
+alias[gui_standard_element:vertical_alignment] = enum[direction]
+alias[gui_standard_element:id] = scalar
+alias[gui_standard_element:horizontal] = int
+alias[gui_standard_element:maxWidth] = int
+alias[gui_standard_element:maxHeight] = int
+alias[gui_standard_element:defaultSelection] = bool
+alias[gui_standard_element:scale] = float
+alias[gui_standard_element:alwaysTransparent] = bool
+
+alias[gui_sprite:spriteType] = <sprite> 
+alias[gui_sprite:quadTextureSprite] = <sprite>
+
+alias[gui_sound:clicksound] = <sound_effect>
+alias[gui_sound:oversound] = <sound_effect>
+alias[gui_sound:show_sound] = <sound_effect>
+alias[gui_sound:up_sound] = <sound_effect>
+alias[gui_sound:no_clicksound] = bool
+
+alias[gui_localisation:tooltip_mode_enabled] = bool
+alias[gui_localisation:font] = <bitmapfont>
+alias[gui_localisation:text] = localisation
+alias[gui_localisation:text_color_code] = enum[textcolors]
+alias[gui_localisation:tooltip] = localisation
+alias[gui_localisation:tooltipText] = localisation
+alias[gui_localisation:delayedTooltipText] = localisation
+alias[gui_localisation:pdx_tooltip] = localisation
+alias[gui_localisation:pdx_tooltip_delayed] = localisation
+alias[gui_localisation:pdx_tooltip] = localisation
+alias[gui_localisation:pdx_tooltip_anchor_orientation] = enum[direction]
+alias[gui_localisation:pdx_tooltip_anchor_offset]= {
+	x = int
+	y = int
+}
+alias[gui_button_element:shortcut] = scalar
+alias[gui_button_element:frame] = int
+alias[gui_button_element:buttonText] = localisation
+alias[gui_button_element:buttonFont] = <bitmapfont>
+alias[gui_button_element:actionShortcut] = enum[actionshortcut]
+alias[gui_button_element:web_link] = scalar
+
+alias[gui_navigation:navUp] = scalar
+alias[gui_navigation:navDown] = scalar
+alias[gui_navigation:navLeft] = scalar
+alias[gui_navigation:navRight] = scalar
+
+alias[gui_background:background] = {
 	name = scalar
-	## cardinality = 0..1
-	quadTextureSprite = <sprite>
-	# optional
-	## cardinality = 0..1
-	spriteType = <sprite>
-	## cardinality = 0..1
-	position = {
-		x = int
-		y = int
-	}
-	## cardinality = 0..1
-	size = {
-		x = int
-		y = int
-	}	
-	## cardinality = 0..1
-	scale = float
-	## cardinality = 0..1
-	pdx_tooltip = localisation
-	## cardinality = 0..1
-	pdx_tooltip_delayed = localisation	
-	## cardinality = 0..1
-	tooltip_mode_enabled = bool
-	## cardinality = 0..1
-	alwaysTransparent = bool
-	## cardinality = 0..1
-	clicksound = <sound_effect>
-	## cardinality = 0..1
-	clicksound = <sound_effect>
-	## cardinality = 0..1
-	oversound = <sound_effect>
-	## cardinality = 0..1
-	tooltip = <localisation>
-	## cardinality = 0..1
-	tooltipText = <localisation>
-	## cardinality = 0..1
-	delayedTooltipText = <localisation>
+	alias_name[gui_sprite] = alias_match_left[gui_sprite]	
+	alias_name[gui_sound] = alias_match_left[gui_sound]	
+	alias_name[gui_localisation] = alias_match_left[gui_localisation]	
+	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]		
 }
