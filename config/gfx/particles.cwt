@@ -4,7 +4,8 @@ types = {
 		path = "game/gfx/particles"
 		skip_root_key = objectTypes
 	}
-  type[particle_type] = {
+	## type_key_filter = particle
+  	type[particle_type] = {
 		name_field = name
 		path = "game/gfx/particles"
 	}  
@@ -39,7 +40,7 @@ particle_type = {
 			x = float
 			y = float
 			z = float
-			alpha = float,<particle_animation>
+			alpha = scalar #float,<particle_animation>
 		}
 		position={
 			## cardinality = 0..1
@@ -88,7 +89,7 @@ particle_type = {
 			float
 		}
 		## cardinality = 0..1
-		force = <particle_animation>,<particle_animation>
+		force = enum[particle_force]
 	}
 	## cardinality = 1..inf
 	particle_animation = {
@@ -140,4 +141,12 @@ enums = {
 		spin
 		turbulence
 	}	
+	complex_enum[particle_force] = {
+		path = "game/gfx/particles"
+		name = {
+			force = {
+				name = enum_name
+			}
+		}
+	}
 }
