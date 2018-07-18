@@ -2255,6 +2255,7 @@ alias[effect:change_species_characteristics] = {
 	new_pop_resource_requirement = {
 		type = <resource>
 		type = robot_food
+		type = scalar
 		value = int
 	}
 	## cardinality = 0..1
@@ -2519,7 +2520,7 @@ alias[effect:create_pop] = {
 
 ### Creates a research station in orbit of the scoped planet
 alias[effect:create_research_station] = {
-	owner = scope[planet]
+	owner = scope[country]
 }
 
 
@@ -3177,7 +3178,7 @@ alias[effect:spawn_megastructure] = {
 	## cardinality = 0..1
 	location = scope[system]
 	## cardinality = 0..1
-	name = localisation
+	name = localisation_synced
 	## cardinality = 0..1
 	orbit_angle = int[0..360]
 	## cardinality = 0..1

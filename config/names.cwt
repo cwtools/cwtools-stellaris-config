@@ -145,7 +145,13 @@ name_list = {
 	}
 	## cardinality = 0..1
 	ship_class_names = {
+		## cardinality = 0..1
 		generic = {
+			## cardinality = 0..inf
+			scalar
+		}
+		## cardinality = 0..inf
+		<ship_size> = {
 			## cardinality = 0..inf
 			scalar
 		}
