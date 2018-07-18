@@ -1,5 +1,5 @@
 types = {
-	type[particle] = { 
+	type[particle] = {
 		name_field = name
 		path = "game/gfx/particles"
 		skip_root_key = objectTypes
@@ -8,14 +8,14 @@ types = {
   	type[particle_type] = {
 		name_field = name
 		path = "game/gfx/particles"
-	}  
-} 
+	}
+}
 
 #TODO: Shader keys
 
 particle = {
 		name = scalar
-		type = <particle_type>		
+		type = <particle_type>
 		scale = float
 }
 
@@ -53,16 +53,16 @@ particle_type = {
 			z = int
 		}
 		duration = float
-		life = { 
+		life = {
 			## cardinality = 2..2
 			float
 		}
 		emission = float
-		size = { 
+		size = {
 			## cardinality = 2..2
 			float
 		}
-		rotation = { 
+		rotation = {
 			## cardinality = 2..2
 			float
 		}
@@ -71,22 +71,22 @@ particle_type = {
 		## cardinality = 0..1
 		sphere_emitter_radius = float
 		## cardinality = 0..1
-		sphere_emitter_yaw = { 
+		sphere_emitter_yaw = {
 			## cardinality = 2..2
 			float
 		}
 		## cardinality = 0..1
-		sphere_emitter_pitch = { 
+		sphere_emitter_pitch = {
 			## cardinality = 2..2
 			float
 		}
 		## cardinality = 0..1
-		velocity_pitch = { 
+		velocity_pitch = {
 			## cardinality = 2..2
 			float
 		}
 		## cardinality = 0..1
-		velocity_yaw = { 
+		velocity_yaw = {
 			## cardinality = 2..2
 			float
 		}
@@ -94,7 +94,7 @@ particle_type = {
 		force = enum[particle_force]
 	}
 	## cardinality = 1..inf
-	particle_animation = {
+	animation = {
 		name = scalar
 		start = float
 		duration = float
@@ -111,11 +111,11 @@ particle_type = {
 	force={
 		name = scalar
 		type = enum[force_type]
-		position = { 
+		position = {
 			## cardinality = 3..3
 			float
 		}
-		direction = { 
+		direction = {
 			## cardinality = 3..3
 			float
 		}
@@ -124,9 +124,9 @@ particle_type = {
 		division = int
 		amount = float
 	}
-}	
+}
 
-enums = { 
+enums = {
 	enum[emitter_type] = {
 		point
 		sphere
@@ -135,14 +135,14 @@ enums = {
 	enum[animation_life] = {
 		life
 		life_abs
-	}	
+	}
 	enum[force_type] = {
 		planar
 		frictions
 		point
 		spin
 		turbulence
-	}	
+	}
 	complex_enum[particle_force] = {
 		path = "game/gfx/particles"
 		name = {

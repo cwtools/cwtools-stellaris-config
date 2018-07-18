@@ -1,6 +1,6 @@
 types = {
 	## type_key_filter = yearly_pulse
-	type[on_yearly_pulse] = { path = ”game/common/on_actions” }
+	type[on_yearly_pulse] = { path = "game/common/on_actions" }
 	## type_key_filter = bi_yearly_pulse
 	type[on_bi_yearly_pulse] = { path= "game/common/on_actions" }
 	## type_key_filter = five_year_pulse
@@ -262,7 +262,7 @@ types = {
 	## type_key_filter = starbase_transfer
 	type[on_starbase_transfer] = { path= "game/common/on_actions" }
 	## type_key_filter = destroy_planet_with_planet_killer_cracker
-	type[on_destroy_planet_with_planet_killer_cracker] = { path = ”game/common/on_actions” }
+	type[on_destroy_planet_with_planet_killer_cracker] = { path = "game/common/on_actions" }
 }
 
 on_yearly_pulse = {

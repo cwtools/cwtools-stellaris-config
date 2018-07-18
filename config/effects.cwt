@@ -2209,6 +2209,8 @@ alias[effect:change_country_flag] = scalar # TODO
 ###change_leader_portrait = <key or species event target>
 alias[effect:change_leader_portrait] = scope[species] #TODO add "key"
 alias[effect:change_leader_portrait] = scope[country]
+alias[effect:change_leader_portrait] = <portrait>
+alias[effect:change_leader_portrait] = <portrait_group>
 
 ### Changes the characteristics of a species
 alias[effect:change_species_characteristics] = {

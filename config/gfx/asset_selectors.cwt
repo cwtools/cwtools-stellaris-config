@@ -51,6 +51,7 @@ asset_selector = {
 			default = filepath
 			## cardinality = 0..inf
 			random = {
+				## cardinality = 0..1
 				trigger = { alias_name[trigger] = alias_match_left[trigger] }
 				list = {
 					## cardinality = 0..inf
@@ -67,6 +68,7 @@ asset_selector = {
 			default = filepath
 			## cardinality = 0..inf
 			random = {
+				## cardinality = 0..1
 				trigger = { alias_name[trigger] = alias_match_left[trigger] }
 				list = {
 					## cardinality = 0..inf
@@ -84,12 +86,13 @@ asset_selector = {
 			default = filepath
 			## cardinality = 0..inf
 			random = {
-					trigger = { alias_name[trigger] = alias_match_left[trigger] }
-					list = {
-						## cardinality = 0..inf
-						filepath
-					}
+				## cardinality = 0..1
+				trigger = { alias_name[trigger] = alias_match_left[trigger] }
+				list = {
+					## cardinality = 0..inf
+					filepath
 				}
+			}
 			## cardinality = 0..inf
 			filepath = { alias_name[trigger] = alias_match_left[trigger] }
 		}
@@ -101,12 +104,13 @@ asset_selector = {
 			default = filepath #these do not have default in vanilla, but i assume default is supported.
 			## cardinality = 0..inf
 			random = {
-					trigger = { alias_name[trigger] = alias_match_left[trigger] }
-					list = {
-						## cardinality = 0..inf
-						filepath
-					}
+				## cardinality = 0..1
+				trigger = { alias_name[trigger] = alias_match_left[trigger] }
+				list = {
+					## cardinality = 0..inf
+					filepath
 				}
+			}
 			## cardinality = 0..inf
 			filepath = { alias_name[trigger] = alias_match_left[trigger] }
 		}
@@ -117,12 +121,13 @@ asset_selector = {
 			default = filepath
 			## cardinality = 0..inf
 			random = {
-					trigger = { alias_name[trigger] = alias_match_left[trigger] }
-					list = {
-						## cardinality = 0..inf
-						filepath
-					}
+				## cardinality = 0..1
+				trigger = { alias_name[trigger] = alias_match_left[trigger] }
+				list = {
+					## cardinality = 0..inf
+					filepath
 				}
+			}
 			## cardinality = 0..inf
 			filepath = { alias_name[trigger] = alias_match_left[trigger] }
 		}
@@ -140,12 +145,13 @@ asset_selector = {
 			default = filepath
 			## cardinality = 0..inf
 			random = {
-					trigger = { alias_name[trigger] = alias_match_left[trigger] }
-					list = {
-						## cardinality = 0..inf
-						filepath
-					}
+				## cardinality = 0..1
+				trigger = { alias_name[trigger] = alias_match_left[trigger] }
+				list = {
+					## cardinality = 0..inf
+					filepath
 				}
+			}
 			## cardinality = 0..inf
 			filepath = { alias_name[trigger] = alias_match_left[trigger] }
 		}
@@ -156,12 +162,13 @@ asset_selector = {
 			default = filepath
 			## cardinality = 0..inf
 			random = {
-					trigger = { alias_name[trigger] = alias_match_left[trigger] }
-					list = {
-						## cardinality = 0..inf
-						filepath
-					}
+				## cardinality = 0..1
+				trigger = { alias_name[trigger] = alias_match_left[trigger] }
+				list = {
+					## cardinality = 0..inf
+					filepath
 				}
+			}
 			## cardinality = 0..inf
 			filepath = { alias_name[trigger] = alias_match_left[trigger] }
 		}
@@ -172,12 +179,13 @@ asset_selector = {
 			default = filepath
 			## cardinality = 0..inf
 			random = {
-					trigger = { alias_name[trigger] = alias_match_left[trigger] }
-					list = {
-						## cardinality = 0..inf
-						filepath
-					}
+				## cardinality = 0..1
+				trigger = { alias_name[trigger] = alias_match_left[trigger] }
+				list = {
+					## cardinality = 0..inf
+					filepath
 				}
+			}
 			## cardinality = 0..inf
 			filepath = { alias_name[trigger] = alias_match_left[trigger] }
 		}
@@ -188,12 +196,13 @@ asset_selector = {
 			default = filepath
 			## cardinality = 0..inf
 			random = {
-					trigger = { alias_name[trigger] = alias_match_left[trigger] }
-					list = {
-						## cardinality = 0..inf
-						filepath
-					}
+				## cardinality = 0..1
+				trigger = { alias_name[trigger] = alias_match_left[trigger] }
+				list = {
+					## cardinality = 0..inf
+					filepath
 				}
+			}
 			## cardinality = 0..inf
 			filepath = { alias_name[trigger] = alias_match_left[trigger] }
 		}
@@ -205,12 +214,13 @@ asset_selector = {
 			default = filepath #these do not have default in vanilla, but i assume default is supported
 			## cardinality = 0..inf
 			random = {
-					trigger = { alias_name[trigger] = alias_match_left[trigger] }
-					list = {
-						## cardinality = 0..inf
-						filepath
-					}
-				}.
+				## cardinality = 0..1
+				trigger = { alias_name[trigger] = alias_match_left[trigger] }
+				list = {
+					## cardinality = 0..inf
+					filepath
+				}
+			}
 			## cardinality = 0..inf
 			filepath = { alias_name[trigger] = alias_match_left[trigger] }
 		}
@@ -221,12 +231,13 @@ asset_selector = {
 			default = filepath
 			## cardinality = 0..inf
 			random = {
-					trigger = { alias_name[trigger] = alias_match_left[trigger] }
-					list = {
-						## cardinality = 0..inf
-						filepath
-					}
+				## cardinality = 0..1
+				trigger = { alias_name[trigger] = alias_match_left[trigger] }
+				list = {
+					## cardinality = 0..inf
+					filepath
 				}
+			}
 			## cardinality = 0..inf
 			filepath = { alias_name[trigger] = alias_match_left[trigger] }
 		}
