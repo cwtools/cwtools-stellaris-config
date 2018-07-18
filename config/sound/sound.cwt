@@ -119,6 +119,11 @@ sound_effect = {
 	loop = bool
 	sounds = {
 		## cardinality = 0..inf
+		weighted_sound = {
+			sound = <sound>
+			weight = int
+		}
+		## cardinality = 0..inf
 		sound = <sound>
 	}
 	## cardinality = 0..1
@@ -126,7 +131,15 @@ sound_effect = {
 	#vanilla only uses fail, should check this with mods/people who know this shit
 	## cardinality = 0..1
 	max_audible_behaviour = enum[audible_behaviour]
+	
+	#none or one of these!
+	## cardinality = 0..1
 	volume = float
+	## cardinality = 0..1
+	#TODO: Work out if 0.8dw was a typo or real
+	#reason for this is that vanilla allows for "volume = 0.8dw". Maybe there is a better way of doing this?
+	#volume = scalar	
+	
 	## cardinality = 0..1
 	looping_volume_random_offset = bool
 	## cardinality = 0..1
@@ -160,14 +173,6 @@ sound_effect = {
 	falloff = <sound_falloff>
 	## cardinality = 0..1
 	random_sound_when_looping = bool
-	## cardinality = 0..1
-	sounds = {
-		## cardinality = 0..inf
-		weighted_sound = {
-			sound = <sound>
-			weight = int
-		}
-	}
 }
 
 sound = {
