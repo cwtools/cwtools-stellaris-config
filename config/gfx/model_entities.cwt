@@ -123,6 +123,7 @@ model_entity = {
 		## cardinality = 0..inf
 		event = {
 			## cardinality = 0..1
+			### This is used only to link to planet killer projectiles
 			id = beam_start #this is tied to the planet killer projectiles, see the comment i left in projectiles -- exnihil.
 			## cardinality = 0..1			
 			time = int
