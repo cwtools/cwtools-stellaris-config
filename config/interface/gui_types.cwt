@@ -100,27 +100,33 @@ gui_type = {
 	### Used to show in tooltip sections
   	alias[gui:textboxType] = {
 		name = scalar
+		## cardinality = 0..1
+		id = scalar	
 		textureFile = filepath
 		font = <bitmapfont>
+		## cardinality = 0..1
 		borderSize = {
 			x = int
 			y = int
 		}
+		## cardinality = 0..1
 		position = {
 			x = int
 			y = int
 		}
+		## cardinality = 0..1
 		maxWidth = int
+		## cardinality = 0..1
 		maxHeight = int
     }
 
     # Normal block for displaying text
   	alias[gui:instantTextboxType] = {
+		name = scalar
 		## cardinality = 0..1
 		id = scalar
 		## cardinality = 0..1
-		textureFile = filepath
-		name = scalar
+		textureFile = filepath		
 		## cardinality = 0..1
 		position = {
 			x = int
@@ -159,15 +165,21 @@ gui_type = {
 		pdx_tooltip = localisation
 		## cardinality = 0..1
 		scrollbarType = enum[scrollbar_types]
+		## cardinality = 0..1
+		truncate = bool
     }
 
     # Text type area
 	alias[gui:editBoxType] = {
 		name = scalar
+		## cardinality = 0..1
+		id = scalar	
+		## cardinality = 0..1
 		position = {
 			x = int
 			y = int
-		  }
+		}
+		## cardinality = 0..1
 		size = {
 			x = int
 			y = int
@@ -199,27 +211,37 @@ gui_type = {
 		allow_multi_line = bool
 		## cardinality = 0..1
 		defaultSelection = bool
+		## cardinality = 0..1
+		use_special_chars = bool
 
 		#id and nav can be attached to various elements. See the bottom of this file.
 		## cardinality = 0..1
-		<id_and_nav>
+		alias_name[nav] = alias_match_left[nav]
 
 		## cardinality = 0..1
-		#overlay can be attached to various elements it seems. The format is always the same! see bottom of this file!
-		<overlay>
+		alias_name[overlay] = alias_match_left[gui]
 	}
 
 	# Container for listed items, usually option entries in event/diplo windows.
 	alias[gui:smoothListboxType] = {
 		name = scalar
+		## cardinality = 0..1
+		id = scalar	
+		## cardinality = 0..1
 		position = {
 			x = int
 			y = int
 		}
+		## cardinality = 0..1
 		size = {
 			x = int
 			y = int
 		}
+		## cardinality = 0..1
+		offset = {
+			x = int
+			y = int
+		}		
 		## cardinality = 0..1
 		scrollbarType = enum[scrollbar_types] #this is tied to instances defind as <scrollbarType> with a unique key.
 		## cardinality = 0..1
@@ -243,17 +265,19 @@ gui_type = {
 		alwaystransparent = bool
 
 		## cardinality = 0..1
-		<id_and_nav>
+		alias_name[nav] = alias_match_left[nav]
 	}
 
 	# General graphical block
   	alias[gui:containerWindowType] = {
-		## cardinality = 0..1
-		id = scalar
 		name = scalar
 		## cardinality = 0..1
+		id = scalar		
+		## cardinality = 0..1
+		upsound = <sound_effect>
+		## cardinality = 0..1
 		alias_name[background] = alias_match_left[background] #see the bottom of the file!
-			## cardinality = 0..1
+		## cardinality = 0..1
 		size = {
 			width = int
 			width = percentage
@@ -301,6 +325,10 @@ gui_type = {
 		verticalScrollbar = enum[vertical_scrollbar_types]
 		## cardinality = 0..1
 		show_sound = enum[button_sounds]
+		## cardinality = 0..1
+		dontRender = ""
+		## cardinality = 0..1
+		horizontalBorder = ""
 
 		#basically containerwindowtype elements can have any element - including other containerwindowtypes nestled within them.
 		#i do not know the rules for what is ok and what isn't.
@@ -341,9 +369,9 @@ gui_type = {
 
 	# Default game button. In some cases could be replaced by effectButtonType without CTD
   	alias[gui:buttonType] = {
-		## cardinality = 0..1
-		id = scalar
 		name = scalar
+		## cardinality = 0..1
+		id = scalar		
 
 		#one of these is required for buttontype entries. I don't know whats the difference between these sprites, but code wise they are the same I think. pls check.
 		## cardinality = 0..1
@@ -392,7 +420,10 @@ gui_type = {
 		navRight = enum[vertical_scrollbar_types]
 		## cardinality = 0..1
 		navLeft = enum[vertical_scrollbar_types]
-
+		## cardinality = 0..1
+		tooltip = localisation
+		## cardinality = 0..1
+		tooltipText = localisation
 		## cardinality = 0..1
 		pdx_tooltip = localisation #this is a tooltip localisation.
 		## cardinality = 0..1
@@ -437,7 +468,7 @@ gui_type = {
 		web_link = scalar
 
 		## cardinality = 0..1
-		<id_and_nav>
+		alias_name[nav] = alias_match_left[nav]
 	}
 
 	# Not a vanilla's content.
@@ -516,11 +547,11 @@ gui_type = {
 		actionShortcut = enum[actionshortcut]
 
 		## cardinality = 0..1
-		<id_and_nav>
+		alias_name[nav] = alias_match_left[nav]
 	}
 
 	# Icon-like button ?
-    alias[gui_button:guiButtonType] = {
+    alias[gui:guiButtonType] = {
 		name = scalar
 		position = {
 		  x = int
@@ -528,7 +559,13 @@ gui_type = {
 		}
 		quadTextureSprite = <sprite>
 		## cardinality = 0..1
+		size = {
+		  x = int
+		  y = int
+		}
+		## cardinality = 0..1
 		parent = <gui_type>
+		parent = <guiButtonType>
 
 		#there appear to be various different types of optional localisations here
 		## cardinality = 0..1
@@ -557,11 +594,29 @@ gui_type = {
 		no_clicksound = bool
 		## cardinality = 0..1
 		frame = int #for portraits, according to vanilla.
+		## cardinality = 0..1
+		web_link = scalar
+		## cardinality = 0..1
+		alias_name[nav] = alias_match_left[nav]		
 	}
-
-	alias[gui:spinnerType] = {
-		id = scalar
+	
+	alias[gui:browserType] = {
 		name = scalar
+		spriteType = <sprite>
+		position = {
+			x = int
+			y = int
+		}	
+		size = {
+			x = int
+			y = int
+		}
+	}	
+	
+	alias[gui:spinnerType] = {
+		name = scalar
+		## cardinality = 0..1
+		id = scalar	
 		leftbutton = scalar
 		rightbutton = scalar
 		size = {
@@ -585,13 +640,15 @@ gui_type = {
 		#in vanilla the buttons used in the above are nestled within the scrollbarType field, see core.gui.
     	## cardinality = 0..inf
 		alias_name[gui_button] = alias_match_left[gui_button]
+		## cardinality = 0..inf
+		alias_name[nav] = alias_match_left[nav]		
 	}
 
 	# Default scrollbar
 	alias[gui:scrollbarType] = {
-		## cardinality = 0..1
-		id = scalar
 		name = scalar
+		## cardinality = 0..1
+		id = scalar	
 		slider = scalar
 		track= scalar
 		leftbutton = scalar
@@ -624,6 +681,8 @@ gui_type = {
 	# ?
 	alias[gui:extendedScrollbarType] = {
 		name = scalar
+		## cardinality = 0..1
+		id = scalar	
 		position = {
 		  x = int
 		  y = int
@@ -687,6 +746,7 @@ gui_type = {
 		quadTextureSprite = <sprite>
 		## cardinality = 0..1
 		pdx_tooltip = localisation
+		## cardinality = 0..1
 		position = {
 			x = int
 			y = int
@@ -737,6 +797,8 @@ gui_type = {
 			y = int
 		}
 		## cardinality = 0..1
+		horizontal = int
+		## cardinality = 0..1
 		borderSize = {
 			x = int
 			y = int
@@ -759,6 +821,8 @@ gui_type = {
 		max_slots_vertical = int
 		## cardinality = 0..1
 		format = enum[direction]
+		## cardinality = 0..1
+		add_horizontal = bool
 		## cardinality = 0..1
 		size = {
 			width = int
@@ -826,7 +890,7 @@ gui_type = {
 # MINOR / OPTIONAL STUFF
 
 # graphical overlay for some elements
-overlay = {
+alias[overlay:overlay] = {
 	name = <containerWindowType> #example: "selected_overlay" --> this refers to an containerWindowType with this key!
 	spriteType = <sprite>
 	position = {
@@ -840,12 +904,10 @@ overlay = {
 }
 
 # Moving between buttons/gui stuff
-id_and_nav = {
+alias[nav:nav] = {
 	#these appear only in the species gamepad gui configuration. They appear to be tied to hardcoded instances that connect to
 	#asset selector files (see gfx/portraits/asset_selectors) or localisations - examples: "research" "scientist" "ok etc.
 	#there should probably be a way to parse these and figure this out.
-	## cardinality = 0..1 #id is not always required it seem, but when the navUP/DOWN/RIGHT/LEFT uses a key with id_ it appears to be required.
-	id = scalar #"id_name"
 	## cardinality = 0..1
 	navUp = scalar #"id_male"
 	## cardinality = 0..1
