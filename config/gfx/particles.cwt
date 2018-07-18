@@ -1,0 +1,154 @@
+types = {
+	type[particle] = { 
+		name_field = name
+		path = "game/gfx/particles"
+		skip_root_key = objectTypes
+	}
+	## type_key_filter = particle
+  	type[particle_type] = {
+		name_field = name
+		path = "game/gfx/particles"
+	}  
+} 
+
+#TODO: Shader keys
+
+particle = {
+		name = scalar
+		type = <particle_type>		
+		scale = float
+}
+
+particle_type = {
+	name = scalar
+	## cardinality = 1..inf
+	subsystem = {
+		name = scalar
+		max_amount = int
+		slave_particles = int
+		emitter_type = enum[emitter_type]
+		invert = bool
+		trail = bool
+		local_space = bool
+		billboard = bool
+		hide = bool
+		texture={
+			file = filepath
+			x = int
+			y = int
+			shader = scalar #<shader>
+		}
+		color={
+			x = float
+			y = float
+			z = float
+			alpha = scalar #float,<particle_animation>
+		}
+		position={
+			## cardinality = 0..1
+			x = int
+			## cardinality = 0..1
+			y = int
+			## cardinality = 0..1
+			z = int
+		}
+		duration = float
+		life = { 
+			## cardinality = 2..2
+			float
+		}
+		emission = float
+		size = { 
+			## cardinality = 2..2
+			float
+		}
+		rotation = { 
+			## cardinality = 2..2
+			float
+		}
+		## cardinality = 0..1
+		rotation_speed = float
+		## cardinality = 0..1
+		sphere_emitter_radius = float
+		## cardinality = 0..1
+		sphere_emitter_yaw = { 
+			## cardinality = 2..2
+			float
+		}
+		## cardinality = 0..1
+		sphere_emitter_pitch = { 
+			## cardinality = 2..2
+			float
+		}
+		## cardinality = 0..1
+		velocity_pitch = { 
+			## cardinality = 2..2
+			float
+		}
+		## cardinality = 0..1
+		velocity_yaw = { 
+			## cardinality = 2..2
+			float
+		}
+		## cardinality = 0..1
+		force = enum[particle_force]
+	}
+	## cardinality = 1..inf
+	particle_animation = {
+		name = scalar
+		start = float
+		duration = float
+		repeat = bool
+		minValue = float
+		maxValue = float
+		curve = {
+			## cardinality = 10..10
+			float
+		}
+		op = enum[animation_op] #defined in lights!
+		time = enum[animation_life]
+	}
+	force={
+		name = scalar
+		type = enum[force_type]
+		position = { 
+			## cardinality = 3..3
+			float
+		}
+		direction = { 
+			## cardinality = 3..3
+			float
+		}
+		local_force = bool
+		yaw = float
+		division = int
+		amount = float
+	}
+}	
+
+enums = { 
+	enum[emitter_type] = {
+		point
+		sphere
+		box
+	}
+	enum[animation_life] = {
+		life
+		life_abs
+	}	
+	enum[force_type] = {
+		planar
+		frictions
+		point
+		spin
+		turbulence
+	}	
+	complex_enum[particle_force] = {
+		path = "game/gfx/particles"
+		name = {
+			force = {
+				name = enum_name
+			}
+		}
+	}
+}
