@@ -533,18 +533,17 @@ alias[overlay:overlay] = {
 		y = int
 	}
 }	
-
-alias[gui_standard_element:size] = { 
-	#either x+y or width+height. Please work this in!
-	
-	## cardinality = 0..1
-	x = int
-	## cardinality = 0..1
-	y = int
-	## cardinality = 0..1
-	width = int
-	## cardinality = 0..1
-	height = int	
+alias[gui_standard_element:size] = {
+x = int
+x = percentage
+y = int
+y = percentage
+}
+alias[gui_standard_element:size] = {
+width = int
+width = percentage
+height = int
+height = percentage
 }
 
 alias[gui_standard_element:position] = { 
