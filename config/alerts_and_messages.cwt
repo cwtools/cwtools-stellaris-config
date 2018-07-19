@@ -21,7 +21,7 @@ enums = {
 }
 
 message_type = { 
-  icon =  <sprite_type>
+  icon =  <sprite>
   icon_frame = int
   key = localisation #loc string is called MESSAGE_<key>, make sure to validate this. 
   sound = <sound_effect>
