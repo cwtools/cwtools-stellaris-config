@@ -12,7 +12,7 @@ section_template = {
   ## cardinality = 0..inf
   #TODO section slots
   fits_on_slot = enum[section_slots]
-  entity = <model_entity>
+  entity = scalar #TODO: graphical culture <model_entity>
   icon = scalar
   ## cardinality = 0..1
   icon_frame = int
