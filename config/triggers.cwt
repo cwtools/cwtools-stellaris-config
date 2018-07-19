@@ -746,6 +746,8 @@ alias[trigger:is_exact_same_species] = scope[species]
 alias[trigger:is_exact_same_species] = scope[country]
 alias[trigger:is_exact_same_species] = scope[pop]
 alias[trigger:is_subspecies] = scope[species]
+alias[trigger:is_subspecies] = scope[country]
+alias[trigger:is_subspecies] = scope[pop]
 #any scope
 alias[trigger:exists] = scope[any]
 

@@ -16,6 +16,7 @@ button_effect = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## replace_scope = { this = any root = any from = country }
+	## cardinality = 0..1
 	effect = {
 		alias_name[effect] = alias_match_left[effect]
 	}

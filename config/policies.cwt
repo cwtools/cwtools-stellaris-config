@@ -48,6 +48,7 @@ policy = {
 	option = {
 		name = localisation
 
+		## cardinality = 0..1
 		policy_flags = {
 			## cardinality = 0..10
 			scalar

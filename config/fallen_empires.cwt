@@ -14,10 +14,10 @@ fallen_empires = {
 	}
 	create_country_effect = {
 		## cardinality = 0..1
-		create_species = { }
+		#create_species = { }
 		# initializer scope root as created country, but in theory user may create country inside initializer
 		## cardinality = 0..1
-		create_country = { }
+		#create_country = { }
 		alias_name[effect] = alias_match_left[effect]
 	}
 }
