@@ -419,7 +419,6 @@ enums = {
 		name = {
 			force = {
 				name = enum_name
-				name = scalar
 			}
 		}
 	}
