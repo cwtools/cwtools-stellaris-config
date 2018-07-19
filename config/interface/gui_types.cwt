@@ -30,6 +30,8 @@ enums = {
 		CENTER_UP
 		CENTER_CENTER
 		CENTERED_UP
+		CENTER_LEFT
+		CENTER_RIGHT
 	    LOWER_LEFT
 	    LOWER_RIGHT
 	    LEFT
@@ -158,7 +160,18 @@ alias[gui:smoothListboxType] = {
 	}		
 	## cardinality = 0..1
 	scrollbarType = enum[scrollbar_types] #this is tied to instances defind as <scrollbarType> with a unique key.
-
+	
+	## cardinality = 0..inf
+	if_resolution = { 	
+		## cardinality = 0..1		
+		max_height = int
+		## cardinality = 0..1
+		min_height = int
+		alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
+		alias_name[gui_background] = alias_match_left[gui_background]
+		alias_name[gui] = alias_match_left[gui]		
+	}	
+	
 	## cardinality = 0..1
 	autohide_scrollbar = bool
 	## cardinality = 0..1
@@ -181,18 +194,15 @@ alias[gui:smoothListboxType] = {
 # General graphical block
 alias[gui:containerWindowType] = {
 	name = scalar
-	## cardinality = 0..1 #this one uses width/height instead of x/y
-
+	## cardinality = 0..1 
+	click_to_front = bool
 	## cardinality = 0..inf	
 	if_resolution = { 
 		## cardinality = 0..1		
 		max_height = int
 		## cardinality = 0..1
 		min_height = int
-		size = { 
-			width = int
-			height = int
-		}
+		alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
 		alias_name[gui_background] = alias_match_left[gui_background]
 		alias_name[gui] = alias_match_left[gui]		
 	}
@@ -228,9 +238,9 @@ alias[gui:containerWindowType] = {
 	## cardinality = 0..1
 	verticalScrollbar = enum[vertical_scrollbar_types]
 	## cardinality = 0..1
-	dontRender = ""
+	dontRender = scalar
 	## cardinality = 0..1
-	horizontalBorder = ""
+	horizontalBorder = scalar
 	## cardinality = 0..1
 	fade_time = int
 	## cardinality = 0..1
@@ -425,7 +435,9 @@ alias[gui:extendedScrollbarType] = {
 
 alias[gui:checkboxType] = {
 	name = scalar
-
+	## cardinality = 0..1
+	actionShortcut = enum[actionshortcut]
+	
 	alias_name[gui_sprite] = alias_match_left[gui_sprite]	
 	alias_name[gui_localisation] = alias_match_left[gui_localisation]	
 	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]	
@@ -503,9 +515,9 @@ alias[gui:windowType] = {
 	## cardinality = 0..1
 	dontRender = scalar
 	## cardinality = 0..1
-	horizontalBorder= scalar
+	horizontalBorder = scalar
 	## cardinality = 0..1
-	verticalBorder= scalar
+	verticalBorder = scalar
 	## cardinality = 0..1
 	fullScreen = bool
 
@@ -515,7 +527,58 @@ alias[gui:windowType] = {
 	alias_name[gui_button] = alias_match_left[gui_button]
 	alias_name[gui_navigation] = alias_match_left[gui_navigation]	
 }
+alias[gui:dropDownBoxType] = {
+	name = scalar
+	
+	## cardinality = 0..1
+	expandButton = {
+		name = scalar
+		
+		alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
+		alias_name[gui_sprite] = alias_match_left[gui_sprite]
+		alias_name[gui_localisation] = alias_match_left[gui_localisation]
+		alias_name[gui_sound] = alias_match_left[gui_sound]
+	}	
+	## cardinality = 0..1
+	expandedWindow = {
+		name = scalar
+		
+		## cardinality = 0..1
+		margin = { 
+			top = int
+			bottom = int
+			right = int
+		}
+		## cardinality = 0..1
+		show_position = {
+			x = int
+			y = int
+		}
+		## cardinality = 0..1
+		hide_position = {
+			x = int
+			y = int
+		}
+		## cardinality = 0..1
+		hide_animation_type = decelerated
+		## cardinality = 0..1
+		show_animation_type = decelerated
+		## cardinality = 0..1
+		animation_time = int
+		## cardinality = 0..1
+		verticalScrollbar = scalar	
 
+		alias_name[gui_standard_element] = alias_match_left[gui_standard_element]		
+		alias_name[gui_background] = alias_match_left[gui_background]	
+		alias_name[gui] = alias_match_left[gui]
+		alias_name[gui_navigation] = alias_match_left[gui_navigation]	
+	}	
+	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]		
+	alias_name[gui_background] = alias_match_left[gui_background]	
+	alias_name[gui] = alias_match_left[gui]
+	alias_name[gui_button] = alias_match_left[gui_button]
+}
+	
 alias[overlay:overlay] = {
 	name = scalar
 	## cardinality = 0..1
