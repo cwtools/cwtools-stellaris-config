@@ -79,6 +79,10 @@ event = {
 
 		## cardinality = 0..1
 		show_sound = scalar
+		## cardinality = 0..1
+		###Force a diplomatic event to be viewed
+		force_open = bool
+
 
 	}
 
@@ -136,25 +140,45 @@ event = {
 
 	subtype[diplomatic] = {
 		picture_event_data = {
-			#these can all be either a scope (country except for room that is ruler) or a key.
+			#only one of each of these!
+			## cardinality = 0..1
+			room = <asset_selector.room>
+			## cardinality = 0..1
+			room = scope[country]
+			## cardinality = 0..1
+			room = scope[species]
+			#TODO: Replace with picture
 			## cardinality = 0..1
 			room = scalar
 			## cardinality = 0..1
-			portrait = scalar
+			portrait = <portrait>
 			## cardinality = 0..1
-			planet_background = scalar
+			portrait = scope[country]
 			## cardinality = 0..1
-			graphical_culture = scalar
+			portrait = scope[species]
 			## cardinality = 0..1
-			city_level = scalar
+			planet_background = scope[country]
+			## cardinality = 0..1
+			planet_background = scope[species]
+			## cardinality = 0..1
+			planet_background = scope[planet]
+			## cardinality = 0..1
+			graphical_culture = <graphical_culture>
+			## cardinality = 0..1
+			graphical_culture = scope[country]
+			## cardinality = 0..1
+			graphical_culture = scope[species]
+			## cardinality = 0..1
+			city_level = scope[country]
+			## cardinality = 0..1
+			city_level = scope[species]
+			## cardinality = 0..1
+			city_level = scope[planet]
 		}
 		## cardinality = 0..1
 		custom_gui = scalar
 		## cardinality = 0..1
 		custom_gui_option = scalar
-		## cardinality = 0..1
-		###Force a diplomatic event to be viewed
-		force_open = bool
 	}
 
 	## cardinality = 0..1
@@ -169,8 +193,6 @@ event = {
 
 	## cardinality = 0..inf
 	option = {
-		name = localisation
-
 		## cardinality = 0..1
 		sound = scalar
 
@@ -203,6 +225,9 @@ event = {
 
 		subtype[diplomatic] = {
 			## cardinality = 0..1
+			name = localisation
+
+			## cardinality = 0..1
 			response_text = localisation
 
 			## cardinality = 0..1
@@ -216,8 +241,14 @@ event = {
 			default_hide_option = bool
 		}
 
+		subtype[!diplomatic] = {
+			name = localisation
+		}
+
 		## cardinality = 0..1
 		default_hide_option = bool
+		## cardinality = 0..1
+		custom_gui = scalar
 
 		## cardinality = 0..1
 		alias_name[effect] = alias_match_left[effect]

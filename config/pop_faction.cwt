@@ -43,7 +43,7 @@ pop_faction = {
 
 	## cardinality = 0..1
 	### UI color for candidate header
-	election_header = scalar
+	election_header =  <sprite>
 
 	## cardinality = 0..1
 	### This = Country. Existance requirements for this faction
@@ -207,6 +207,8 @@ pop_faction = {
 			ai_weight = {
 				## cardinality = 0..1
 				base = float
+				## cardinality = 0..1
+				factor = float
 				## cardinality = 0..1
 				alias_name[modifier_rule] = alias_match_left[modifier_rule]
 			}

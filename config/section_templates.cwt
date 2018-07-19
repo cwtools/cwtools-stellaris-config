@@ -12,8 +12,8 @@ section_template = {
   ## cardinality = 0..inf
   #TODO section slots
   fits_on_slot = enum[section_slots]
-  entity = scalar
-  icon =  <sprite_type>
+  entity = scalar #TODO: graphical culture <model_entity>
+  icon = <sprite>
   ## cardinality = 0..1
   icon_frame = int
   ## cardinality = 0..1
@@ -29,7 +29,8 @@ section_template = {
 	#slot_size = <weapon_slot_size>
 	slot_size = scalar
     slot_type = enum[slot_type]
-    locatorname = scalar
+    locatorname = enum[locators]
+    locatorname = scalar #TODO: Some locators are in .mesh files, so are missed by the enum
     ## cardinality = 0..1
 	is_side_slot = bool
     ## cardinality = 0..1
@@ -40,7 +41,7 @@ section_template = {
 		y = float
 	}
 	## cardinality = 0..1
-	section_instance = bool
+	section_instance = int
   }
   ## cardinality = 0..1
   small_utility_slots = int

@@ -14,7 +14,7 @@ types = {
 }
 
 starbase_building = {
-	icon = scalar
+	icon =  <sprite>
 	## cardinality = 0..1
 	construction_days = int
 	## cardinality = 0..1
@@ -129,7 +129,7 @@ starbase_module = {
 	## cardinality = 0..1
 	section = <section_template>
 	## cardinality = 0..1
-	icon = scalar
+	icon =  <sprite>
 	## cardinality = 0..1
 	construction_days = int
 	## cardinality = 0..1

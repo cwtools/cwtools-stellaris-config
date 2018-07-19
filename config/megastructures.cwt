@@ -5,9 +5,10 @@ types = {
 }
 
 megastructure = {
-	entity = scalar
+	entity = scalar #TODO entity suffixes
 	## cardinality = 0..1
-	construction_entity = scalar
+	construction_entity = scalar #TODO entity suffixes
+	## cardinality = 0..1
 	portrait = scalar
   ## cardinality = 0..1
   place_entity_on_planet_plane = bool
@@ -67,11 +68,14 @@ megastructure = {
 	}
   ## cardinality = 0..1
 	placement_rules = {
+		 ## cardinality = 0..inf
+		 alias_name[trigger] = alias_match_left[trigger]
 		 ## replace_scope = { this = planet root = planet }
-    planet_possible = {
-      ## cardinality = 0..inf
-      alias_name[trigger] = alias_match_left[trigger]
-    }
+		 ## cardinality = 0..1
+		 planet_possible = {
+		 	## cardinality = 0..inf
+		 	alias_name[trigger] = alias_match_left[trigger]
+		}
 	}
   ## cardinality = 0..1
   ## replace_scope = { this = system root = system from = country fromfrom = megastructure }

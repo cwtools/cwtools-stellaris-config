@@ -7,7 +7,7 @@ types = {
 #TODO Confirm
 #TODO Colours
 map_mode = {
-	icon = scalar
+	icon =  <sprite>
 	enable_terra_incognita = bool
 	## cardinality = 0..1
 	can_change_point_of_view = bool
@@ -21,7 +21,7 @@ map_mode = {
 		## cardinality = 1..1
         value = country
 		## cardinality = 1..1
-		value = hsv { 
+		value = {
 			##cardinality = 3..4
 			float
 		}

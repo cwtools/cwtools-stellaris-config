@@ -13,6 +13,7 @@ subject_type = {
 	become_vassal = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## cardinality = 0..1
 	## replace_scope = { this = country root = country from = country }
 	effect = {
 		alias_name[effect] = alias_match_left[effect]
