@@ -1,50 +1,63 @@
 #sprites are saved in *.gfx files (like meshes) and are by and large stored in /interface
 
 types = {
+	## type_key_filter = progressbartype	
+	type[progressbartype] = { 
+		name_field = name
+		path = "game/interface"
+		skip_root_key = spriteTypes
+	}	
+	## type_key_filter = PieChartType
+	type[piechart] = { #these are links that start with the GFX_ prefix in vanilla
+		name_field = name
+		path = "game/interface"
+		skip_root_key = spriteTypes
+	}		
 	type[sprite] = { #these are links that start with the GFX_ prefix in vanilla
 		name_field = name
 		path = "game/interface"
 		skip_root_key = spriteTypes
 		## type_key_filter = spriteType
-		subtype[normal] = {
-
-		}
+		subtype[normal] = {}
 		## type_key_filter = corneredTileSpriteType
-		subtype[cornered_tile] = {
-
-		}
+		subtype[cornered_tile] = {}
 		## type_key_filter = flagSpriteType
-		subtype[flag_sprite] = {
-
-		}		
+		subtype[flag_sprite] = {}
 		## type_key_filter = frameAnimatedSpriteType
-		subtype[framed_animated_sprite] = {
-
-		}			
-	}
-	## type_key_filter = progressbartype
-	type[progressbar] = { #these are links that start with the GFX_ prefix in vanilla
-		path = "game/interface"
-		skip_root_key = spriteTypes
-	}
-	## type_key_filter = PieChartType
-	type[piechart] = { #these are links that start with the GFX_ prefix in vanilla
-		path = "game/interface"
-		skip_root_key = spriteTypes
+		subtype[framed_animated_sprite] = {}
+		## type_key_filter = textSpriteType
+		subtype[text_sprite] = {}		
 	}	
 }
 
 #TODO: Rework to use types inside the top level
 
-#sprites do not have a key, they are packaged like this:
-#spriteTypes = {
-# spriteType = {
-#	  	name = "GFX_dummy_3d_advisor_window" - the name is the key
-#		  textureFile = "gfx/interface/transp_white.dds"
-#		  effectFile = "gfx/FX/buttonstate_rendertarget.lua"
-#   ....
-# }
-#}
+progressbartype = {
+	name = scalar
+	
+	#either texturefile, or both texturefile1 and 2 - need to be worked out. 
+	
+	## cardinality = 0..1
+	textureFile = filepath	
+	## cardinality = 0..1
+	textureFile1 = filepath
+	## cardinality = 0..1
+	textureFile2 = filepath
+	
+	effectFile = filepath #shader file	
+	
+	color = {
+		## cardinality = 3..3
+		float
+	}
+	colortwo = {
+		## cardinality = 3..3
+		float
+	}
+	size = { x = int y = int }
+	## cardinality = 0..1
+	horizontal = bool
+}
 
 sprite = {
 	name = scalar
@@ -70,11 +83,13 @@ sprite = {
 	character = bool
 	## cardinality = 0..1
 	tilingCenter = bool
+	## cardinality = 0..1	
+	clicksound = <sound_effect>		
 	## cardinality = 0..1
-	loadType = "FRONTEND"
+	loadType = scalar
 	## cardinality = 0..1
 	legacy_lazy_load = bool
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	animation = {
 		## cardinality = 0..1
 		animationmaskfile = filepath
@@ -119,35 +134,22 @@ sprite = {
 	play_on_show = bool
 	## cardinality = 0..1
 	animation_rate_fps = int
-}
-
-progressbar = {
-	name = scalar
-	
-	#either texturefile, or both texturefile1 and 2 - need to be worked out. 
-	textureFile = filepath
-	textureFile1 = filepath
-	textureFile2 = filepath
-	
-	effectFile = filepath
-	color = {
-		## cardinality = 3..3
-		float
-	}
-	colortwo = {
-		## cardinality = 3..3
-		float
-	}
-	size = { x = int y = int }
 	## cardinality = 0..1
-	horizontal = bool
+	looping = bool
+	
+	#cornered_tile_sprite 
+	## cardinality = 0..1
+	size = { 
+		x = int
+		y = int
+	}	
 }
 
 piechart = {
 	name = scalar
 	size = int
 }
-	
+
 enums = {
   enum[animation_mode] = {
     overlay
@@ -164,12 +166,9 @@ enums = {
   enum[sprite_type] = { 
   	planet
 	room
+	character
   }
   enum[texture_size] = { 
   	small
   }  
 }
- 
-
-
-
