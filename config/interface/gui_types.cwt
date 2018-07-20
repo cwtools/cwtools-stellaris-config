@@ -224,8 +224,14 @@ alias[gui:containerWindowType] = {
 	}
 	## cardinality = 0..1
 	margin = {
+		## cardinality = 0..1
 		top = int
+		## cardinality = 0..1
 		bottom = int
+		## cardinality = 0..1
+		left = int
+		## cardinality = 0..1
+		right = int
 	}
 	## cardinality = 0..1
 	animation_time = int
@@ -545,8 +551,13 @@ alias[gui:dropDownBoxType] = {
 		
 		## cardinality = 0..1
 		margin = { 
+			## cardinality = 0..1
 			top = int
+			## cardinality = 0..1
 			bottom = int
+			## cardinality = 0..1
+			left = int
+			## cardinality = 0..1
 			right = int
 		}
 		## cardinality = 0..1
