@@ -1478,15 +1478,15 @@ alias[effect:create_species] = {
 
 	# -> traits can be multiple. You can have traits = this, traits = { trait = xyz } at the same time
 
-	## cardinality = 0..1
+	## cardinality = 0..2
 	traits = scope[country]
-	## cardinality = 0..1
+	## cardinality = 0..2
 	traits = scope[pop]
-	## cardinality = 0..1
+	## cardinality = 0..2
 	traits = scope[species]
-	## cardinality = 0..1
+	## cardinality = 0..2
 	traits = random
-	## cardinality = 0..1
+	## cardinality = 0..2
 	traits = {
 		## cardinality = 0..10
 		trait = <trait.species_trait>
