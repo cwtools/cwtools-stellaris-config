@@ -248,7 +248,15 @@ asset_selector = {
 		#this needs to be worked out by dayshine!
 
 		default = scalar #the room file link as explained in the above comment!
-
+		
+		## cardinality = 0..1
+		## replace_scope = { this = country root = country }
+		game_setup = {
+			## cardinality = 0..inf
+			scalar = { 
+				alias_name[trigger] = alias_match_left[trigger] 
+			}
+		}	
 		## cardinality = 0..1
 		## replace_scope = { this = leader root = leader }
 		ruler = {
