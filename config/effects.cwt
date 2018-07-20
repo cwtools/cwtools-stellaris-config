@@ -1461,6 +1461,7 @@ alias[effect:create_species] = {
 	adjective = scalar
 	class = <species_class>
 	class = random_non_machine
+	class = random
 	class = scope[species]
 	## cardinality = 0..1
 	portrait = scope[species]
