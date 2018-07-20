@@ -30,6 +30,7 @@ enums = {
 		CENTER_UP
 		CENTER_CENTER
 		CENTERED_UP
+		CENTERUP
 		CENTER_LEFT
 		CENTER_RIGHT
 	    LOWER_LEFT
@@ -49,6 +50,7 @@ enums = {
 		start
 		reset
 		track_on_map
+		toggle_cloud_save
 	}
 	enum[gui_fade_types] = { 
         smoothstep
