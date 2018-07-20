@@ -73,6 +73,8 @@ planet_killer_animation = {
  	ship_fire_entity = <model_entity>
  	planet_hit_entity = <model_entity>
  	megastructure_hit_entity = <model_entity>
+	## cardinality = 0..1
+	planet_overlay_entity = <model_entity>
 	windup = {
 		duration = float
 	}
