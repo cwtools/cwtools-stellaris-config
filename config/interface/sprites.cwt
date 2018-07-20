@@ -147,8 +147,6 @@ piechart = {
 	name = scalar
 	size = int
 }
-
-framed_animated_sprited = {
 	
 enums = {
   enum[animation_mode] = {
