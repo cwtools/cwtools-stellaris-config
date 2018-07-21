@@ -1,0 +1,82 @@
+type = { 
+	type[country_color] = {
+		path = "game/common/colors"
+		## type_key_filter = country
+		subtype[default] = {}
+		## type_key_filter = fallen_empire
+		subtype[fallen_empire] = {}
+		## type_key_filter = faction
+		subtype[faction] = {}
+		## type_key_filter = pirate
+		subtype[pirate] = {}
+		## type_key_filter = species
+		subtype[species] = {}
+	}
+}
+
+# these appear to be colors attached to scopes. Simple as that. 
+
+country = { 
+	##cardinality = 0..inf
+	rgb { 
+		##cardinality = 3..3
+		int
+	}	
+	##cardinality = 0..inf
+	hsv { 
+		##cardinality = 3..3
+		float
+	}			
+}
+
+fallen_empire = { 
+	##cardinality = 0..inf
+	rgb { 
+		##cardinality = 3..3
+		int
+	}	
+	##cardinality = 0..inf
+	hsv { 
+		##cardinality = 3..3
+		float
+	}		
+}
+
+faction = {
+	##cardinality = 0..inf
+	rgb { 
+		##cardinality = 3..3
+		int
+	}	
+	##cardinality = 0..inf
+	hsv { 
+		##cardinality = 3..3
+		float
+	}		
+}
+
+pirate = {
+	##cardinality = 0..inf
+	rgb { 
+		##cardinality = 3..3
+		int
+	}	
+	##cardinality = 0..inf
+	hsv { 
+		##cardinality = 3..3
+		float
+	}		
+}
+
+species = { 
+	##cardinality = 0..inf
+	rgb { 
+		##cardinality = 3..3
+		int
+	}	
+	##cardinality = 0..inf
+	hsv { 
+		##cardinality = 3..3
+		float
+	}		
+}
