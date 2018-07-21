@@ -19,7 +19,7 @@ types = {
 #NOTE 2
 #some settings in this folder have no containers at all. This poses a problem. 
 
-map_galaxy_setting = {
+map_galaxy_setting = { #this one is just a dummy container. In effect there is no container in these files! Container is filename.
 	### Core radius is x% of the galaxy radius
 	##cardinality = 0..1
 	core_radius_perc = float				
