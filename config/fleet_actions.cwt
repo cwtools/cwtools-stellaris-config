@@ -108,5 +108,6 @@ alias[fleet_action:wait] = {
 alias[fleet_action:move_to] = scope[planet]
 alias[fleet_action:move_to] = scope[galactic_object]
 alias[fleet_action:move_to] = scope[fleet]
+alias[fleet_action:move_to] = scope[starbase]
 
 alias[fleet_action:orbit_planet] = scope[planet]
