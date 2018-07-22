@@ -60,6 +60,7 @@ alias[effect:event] = {
 
 alias[effect:ship_event] = {
 	id = <event.ship>
+	id = <event.scopeless>
 	## cardinality = 0..1
 	days = int
 	## cardinality = 0..1
@@ -80,6 +81,7 @@ alias[effect:ship_event] = {
 
 alias[effect:country_event] = {
 	id = <event.country>
+	id = <event.scopeless>
 	## cardinality = 0..1
 	days = int
 	## cardinality = 0..1
@@ -118,6 +120,7 @@ alias[effect:pop_faction_event] = {
 
 alias[effect:pop_event] = {
 	id = <event.pop>
+	id = <event.scopeless>
 	## cardinality = 0..1
 	days = int
 	## cardinality = 0..1
@@ -137,6 +140,7 @@ alias[effect:pop_event] = {
 
 alias[effect:fleet_event] = {
 	id = <event.fleet>
+	id = <event.scopeless>
 	## cardinality = 0..1
 	days = int
 	## cardinality = 0..1
@@ -156,6 +160,7 @@ alias[effect:fleet_event] = {
 
 alias[effect:planet_event] = {
 	id = <event.planet>
+	id = <event.scopeless>
 	## cardinality = 0..1
 	days = int
 	## cardinality = 0..1
