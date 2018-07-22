@@ -10,9 +10,7 @@ types = {
 
 ambient_object = {
 	subtype[show_name] = {
-		## cardinality = 0..1
 		name = localisation #can also receive localisation_synced!, check vanilla for name = "NAME_Syzygy_Remains"
-		## cardinality = 0..1
 		name = localisation_synced #can also receive localisation_synced!, check vanilla for name = "NAME_Syzygy_Remains"
 	}
 	subtype[!show_name] = {
