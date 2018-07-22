@@ -296,9 +296,6 @@ alias[gui_button:buttonType] = {
 	## cardinality = 0..1
 	multiline = bool
 
-	## cardinality = 0..1
-	vertical_alignment = enum[direction]
-	
 	alias_name[gui_localisation] = alias_match_left[gui_localisation]
 	alias_name[gui_sound] = alias_match_left[gui_sound]
 	alias_name[gui_sprite] = alias_match_left[gui_sprite]
@@ -307,14 +304,14 @@ alias[gui_button:buttonType] = {
 	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
 }
 
-# Not a vanilla's content.
-# Similar to default buttonType, but linked with specific events, described in button_effects.
-# I guess, all parameters below are similar to buttonType, but need to make some tests -- Iyur
+### Similar to default buttonType, but linked with specific events, described in button_effects.
 alias[gui_button:effectButtonType] = {
 	## cardinality = 0..1
 	id = scalar
 	name = scalar
-	effect = <button_effect> #defined under /common/button_effects.
+	
+	### The effect key is defined under /common/button_effects.
+	effect = <button_effect> 
 
 	alias_name[gui_localisation] = alias_match_left[gui_localisation]
 	alias_name[gui_sound] = alias_match_left[gui_sound]
