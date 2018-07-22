@@ -33,11 +33,6 @@ types = {
 		}
 		path = "game/events"
 		subtype[hidden] = {
-			## cardinality = 0..1
-			title = OK
-			## cardinality = 0..1
-			desc = OK
-			
 			hide_window = yes
 		}
 		subtype[diplomatic] = {
@@ -158,6 +153,14 @@ event = {
 
 		}
 	}
+
+	subtype[!hidden] = {
+		## cardinality = 0..1
+		title = OK
+		## cardinality = 0..1
+		desc = OK
+	}
+			
 
 	subtype[default] = {
 		picture = scalar

@@ -81,6 +81,7 @@ alias[fleet_action:find_closest_planet] = {
         alias_name[fleet_action] = alias_match_left[fleet_action] 
     }
     
+	## cardinality = 0..1
     failed = {
         alias_name[fleet_action] = alias_match_left[fleet_action] 
     }    
