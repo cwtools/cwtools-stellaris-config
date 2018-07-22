@@ -1652,7 +1652,9 @@ alias[effect:create_country] = {
 		}
 		colors ={
 			##cardinality = 4..4
-			scalar #should be one of a list of colours
+			color_define
+			##cardinality = 4..4
+      		"null"
 		}
 	}
 	## cardinality = 0..1
@@ -1713,7 +1715,9 @@ alias[effect:create_rebels] = {
 		}
 		colors ={
 			##cardinality = 4..4
-			scalar #should be one of a list of colours
+			color_define
+			##cardinality = 4..4
+      		"null"
 		}
 	}
 
@@ -2205,11 +2209,24 @@ alias[effect:build_pop] = { #TOOO trigger docs error
 ### Cancels terraformation of the scoped planet
 alias[effect:cancel_terraformation] = bool
 
-#change_country_flag = random
-#change_country_flag = { icon = { category = <key> file = <filename> } background = { category = <key> file = <filename> } colors = { <key> <key> } }
 
 ### Changes the scoped country's flag
-alias[effect:change_country_flag] = scalar # TODO
+alias[effect:change_country_flag] = {
+	icon = {
+		category = scalar #TODO should be a folder name. This needs to be corrected for create_country, create_rebels and prescripted_countries too (possibly more)
+		file = scalar #TODO should be "filename.dds" in the named folder
+	}
+	background = {
+		category = scalar #TODO should be a folder name
+		file = scalar #TODO should be "filename.dds" in the named folder
+	}
+	colors ={
+		##cardinality = 4..4
+		color_define
+		##cardinality = 4..4
+		"null"
+	}
+}
 
 ### Changes the portrait of the leader in scope.
 ###change_leader_portrait = <key or species event target>
