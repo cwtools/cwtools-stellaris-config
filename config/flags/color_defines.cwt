@@ -1,7 +1,7 @@
 types = {
-	## type_key_filter = colors
 	type[color_define] = {
 		path = "game/flags" #this is stored under flags but it does more than that
+		skip_root_key = colors
 	}
 	## type_key_filter = randomizable_combo
 	type[randomizable_combo] = {
@@ -12,18 +12,30 @@ types = {
 #all defined colors are nestled within a field called colors = { } please see the pertinent file.
 
 color_define = {
-  flag = enum[color_type] {
-    ## cardinality = 3..3
-    float
-   }
-  map = enum[color_type] {
-    ## cardinality = 3..3
-    float
-   }
-   ship = enum[color_type] {
-    ## cardinality = 3..3
-    float
-   }
+	flag = rgb {
+		## cardinality = 3..3
+		int[0..255]
+	}
+	flag = hsv {
+		## cardinality = 3..3
+		float[0.0..1.0]
+	}
+	map = rgb {
+		## cardinality = 3..3
+		int[0..255]
+	}
+	map = hsv {
+		## cardinality = 3..3
+		float[0.0..1.0]
+	}
+	ship = rgb {
+		## cardinality = 3..3
+		int[0..255]
+	}
+	ship = hsv {
+		## cardinality = 3..3
+		float[0.0..1.0]
+	}
 }
 
 randomizable_combo = {
@@ -32,9 +44,9 @@ randomizable_combo = {
  }
 
 enums = {
- enum[color_type] = {
-  hsv
-  rgb
- }
+	enum[color_type] = {
+		hsv
+		rgb
+	}
 }
 

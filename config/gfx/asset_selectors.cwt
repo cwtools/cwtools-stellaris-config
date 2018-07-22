@@ -16,6 +16,8 @@ types = {
 		subtype[hair] = {#this is identical in structure to the clothes asset selector, only difference is the key!
 
 		}
+		
+		## type_key_filter = room_selector
 		subtype[room] = {
 
 		}
