@@ -1617,10 +1617,10 @@ alias[effect:create_country] = {
 	species = last_created
 	## cardinality = 0..1
 	species = scope[country]
-	#Does not support pop scope according to had
+	###Does not support pop scope according to had
 	#species = scope[pop]
 	## cardinality = 0..1
- 	species = enum[buildable_pop_species]
+ 	species = <buildable_pop>
 	## cardinality = 0..1
 	species = scope[species] #maybe key would work, I don't know which though
 
@@ -2485,6 +2485,7 @@ alias[effect:create_military_fleet] = scope[country]
 ### Creates a mining station in orbit of the scoped planet
 alias[effect:create_mining_station] = {
 	owner = scope[country]
+	owner = scope[ship]
 }
 
 ### Creates a point of interest for the scoped country at a specific location, associated with an event chain
@@ -2835,100 +2836,6 @@ alias[effect:prevent_anomaly] = bool
 
 ### Starts or stops purging the scoped pop/planet
 alias[effect:purge] = bool
-
-#queue_actions = { repeat = { <fleet actions> } }
-
-### Adds actions to the scoped fleet's action queue
-alias[effect:queue_actions] = {
-	alias_name[fleet_action] = alias_match_left[fleet_action]
-}
-
-alias[fleet_action:repeat] = {
-    
-    max_iterations = int
-    
-    while = {
-        id = "id"
-        alias_name[trigger] = alias_match_left[trigger]
-    }   
-
-    alias_name[fleet_action] = alias_match_left[fleet_action]    
-}
-
-alias[fleet_action:find_random_system] = {
-    trigger = {
-        id = "id"
-        alias_name[trigger] = alias_match_left[trigger]
-    }
-    ## push_scope = system
-    found_system = {
-        alias_name[fleet_action] = alias_match_left[fleet_action] 
-    }
-   
-    failed = {
-        alias_name[fleet_action] = alias_match_left[fleet_action] 
-    }
-}
-
-alias[fleet_action:find_random_planet] = {
-    trigger = {
-        id = "id"
-        alias_name[trigger] = alias_match_left[trigger]
-    }
-    ## push_scope = planet
-    found_planet = {
-        alias_name[fleet_action] = alias_match_left[fleet_action] 
-    }
-    
-    failed = {
-        alias_name[fleet_action] = alias_match_left[fleet_action] 
-    }
-}
-
-alias[fleet_action:find_closest_system] = {
-    trigger = {
-        id = "id"
-        alias_name[trigger] = alias_match_left[trigger]
-    }
-    ## push_scope = system
-    found_system = {
-        alias_name[fleet_action] = alias_match_left[fleet_action] 
-    }
-    
-    failed = {
-        alias_name[fleet_action] = alias_match_left[fleet_action] 
-    }
-}
-
-alias[fleet_action:find_closest_planet] = {
-    trigger = {
-        id = "id"
-        alias_name[trigger] = alias_match_left[trigger]
-    }
-    ## push_scope = planet
-    found_planet = {
-        alias_name[fleet_action] = alias_match_left[fleet_action] 
-    }
-    
-    failed = {
-        alias_name[fleet_action] = alias_match_left[fleet_action] 
-    }    
-}
-
-alias[fleet_action:effect] = {
-    id = "id"
-    alias_name[effect] = alias_match_left[effect]
-}
-
-alias[fleet_action:wait] = {
-    duration = float
-}
-
-alias[fleet_action:move_to] = scope[planet]
-alias[fleet_action:move_to] = scope[galactic_object]
-alias[fleet_action:move_to] = scope[fleet]
-
-alias[fleet_action:orbit_planet] = scope[planet]
 
 ## push_scope = country
 ### Iterate through all bordering countries of a system

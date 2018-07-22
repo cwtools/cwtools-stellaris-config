@@ -19,7 +19,10 @@ types = {
 
 component_template = {
 	key = scalar
-	icon = <sprite>
+	
+	## cardinality = 0..1
+	###As far as I can tell, this is unused (the Vanilla ones refer to non-existent sprites and I couldn't find an ingame effect) -Caligula
+	icon = scalar
 	icon_frame = int
 	## cardinality = 0..1
 	prerequisites = { <technology> }
