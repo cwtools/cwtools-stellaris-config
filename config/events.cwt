@@ -154,7 +154,7 @@ event = {
 		}
 	}
 
-	subtype[!hidden] = {
+	subtype[hidden] = {
 		## cardinality = 0..1
 		title = OK
 		## cardinality = 0..1

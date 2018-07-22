@@ -10,8 +10,8 @@ types = {
 
 ambient_object = {
 	subtype[show_name] = {
-		name = localisation #can also receive localisation_synced!, check vanilla for name = "NAME_Syzygy_Remains"
-		name = localisation_synced #can also receive localisation_synced!, check vanilla for name = "NAME_Syzygy_Remains"
+		###Cannot use localisation_synced! The Vanilla case NAME_Syzygy_Remains is a bug.
+		name = localisation
 	}
 	subtype[!show_name] = {
 		name = scalar
