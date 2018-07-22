@@ -2839,7 +2839,96 @@ alias[effect:purge] = bool
 #queue_actions = { repeat = { <fleet actions> } }
 
 ### Adds actions to the scoped fleet's action queue
-alias[effect:queue_actions] = scalar #TODO fleet actions. (I skipped this one for complexity reasons :P -Caligula)
+alias[effect:queue_actions] = {
+	alias_name[fleet_action] = alias_match_left[fleet_action]
+}
+
+alias[fleet_action:repeat] = {
+    
+    max_iterations = int
+    
+    while = {
+        id = "id"
+        alias_name[trigger] = alias_match_left[trigger]
+    }   
+
+    alias_name[fleet_action] = alias_match_left[fleet_action]    
+}
+
+alias[fleet_action:find_random_system] = {
+    trigger = {
+        id = "id"
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+    ## push_scope = system
+    found_system = {
+        alias_name[fleet_action] = alias_match_left[fleet_action] 
+    }
+   
+    failed = {
+        alias_name[fleet_action] = alias_match_left[fleet_action] 
+    }
+}
+
+alias[fleet_action:find_random_planet] = {
+    trigger = {
+        id = "id"
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+    ## push_scope = planet
+    found_planet = {
+        alias_name[fleet_action] = alias_match_left[fleet_action] 
+    }
+    
+    failed = {
+        alias_name[fleet_action] = alias_match_left[fleet_action] 
+    }
+}
+
+alias[fleet_action:find_closest_system] = {
+    trigger = {
+        id = "id"
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+    ## push_scope = system
+    found_system = {
+        alias_name[fleet_action] = alias_match_left[fleet_action] 
+    }
+    
+    failed = {
+        alias_name[fleet_action] = alias_match_left[fleet_action] 
+    }
+}
+
+alias[fleet_action:find_closest_planet] = {
+    trigger = {
+        id = "id"
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+    ## push_scope = planet
+    found_planet = {
+        alias_name[fleet_action] = alias_match_left[fleet_action] 
+    }
+    
+    failed = {
+        alias_name[fleet_action] = alias_match_left[fleet_action] 
+    }    
+}
+
+alias[fleet_action:effect] = {
+    id = "id"
+    alias_name[effect] = alias_match_left[effect]
+}
+
+alias[fleet_action:wait] = {
+    duration = float
+}
+
+alias[fleet_action:move_to] = scope[planet]
+alias[fleet_action:move_to] = scope[galactic_object]
+alias[fleet_action:move_to] = scope[fleet]
+
+alias[fleet_action:orbit_planet] = scope[planet]
 
 ## push_scope = country
 ### Iterate through all bordering countries of a system
