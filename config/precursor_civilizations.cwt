@@ -1,16 +1,13 @@
 types = {	
-  type[precursor_civilization] = {
+  type[precursors] = {
     name = key
 		path = "common/precursor_civlizations"
    }
- } 
- 
-#this vanilla file has a nestled structure:
-#precursors = {
-#	precursor_1 = 100
-#	precursor_2 = 100
-#	precursor_3 = 100
-#	precursor_4 = 100
-#	precursor_5 = 100
-#}
-#it governs the spawn odds of precursor stuff in the galaxy. Its only important if a new precursor civ is added. Dunno how to do this one.   
+} 
+
+#this is a rather useless file. I have no idea what this does really - seems to be a weight modifier tied to hardcode.
+
+precursors = {
+	##cardinality = 1..inf
+	scalar = int
+}
