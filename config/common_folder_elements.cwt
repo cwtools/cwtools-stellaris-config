@@ -1,0 +1,55 @@
+#this file contains all elements that are stored in the common folder itself!
+
+types = {
+	## type_key_filter = alert
+	type[alert] = {  
+		path = "game/common"
+		skip_root_key = alerts
+	}
+	## type_key_filter = icon
+	type[alert_icon] = {  
+		scalar = name
+		path = "game/common"		
+	}	
+	## type_key_filter = message_type
+	type[message_type] = {
+		key = name
+		path = "game/common"
+	}  
+	## type_key_filter = achivement
+	type[achivement] = {
+		path = "game/common" 
+	}	
+}
+
+alert = { 
+  alias[alert_category] = alias_match_left[alert_category]
+  sound = <sound_effect>
+} 
+alert_icon = { 
+	## cardinality = 0..inf
+	scalar = filepath
+}	
+alias[alert_category:category] = <alert_icon>
+alias[alert_category:category] = DISABLED
+
+message_type = { 
+  icon =  <sprite>
+  icon_frame = int
+  key = localisation #loc string is called MESSAGE_<key>, make sure to validate this. 
+  sound = <sound_effect>
+  sound_is_advisor = bool
+  ping = <pingmap>
+} 
+
+achivement = { 
+  id = int
+  ## replace_scope = { this = country root = country }
+  possible = { 
+    alias_name[trigger] = alias_match_left[trigger]
+  }
+  ## replace_scope = { this = country root = country }
+  happened = { 
+    alias_name[trigger] = alias_match_left[trigger]
+  }
+}
