@@ -1,22 +1,26 @@
 #sprites are saved in *.gfx files (like meshes) and are by and large stored in /interface
 
 types = {
-	## type_key_filter = progressbartype	
-	type[progressbartype] = { 
+	## type_key_filter = progressbartype
+	type[progressbartype] = {
 		name_field = name
 		path = "game/interface"
 		skip_root_key = spriteTypes
-	}	
+		severity = warning
+	}
 	## type_key_filter = PieChartType
 	type[piechart] = { #these are links that start with the GFX_ prefix in vanilla
 		name_field = name
 		path = "game/interface"
 		skip_root_key = spriteTypes
-	}		
+		severity = warning
+
+	}
 	type[sprite] = { #these are links that start with the GFX_ prefix in vanilla
 		name_field = name
 		path = "game/interface"
 		skip_root_key = spriteTypes
+		severity = warning
 		## type_key_filter = spriteType
 		subtype[normal] = {}
 		## type_key_filter = corneredTileSpriteType
@@ -26,26 +30,26 @@ types = {
 		## type_key_filter = frameAnimatedSpriteType
 		subtype[framed_animated_sprite] = {}
 		## type_key_filter = textSpriteType
-		subtype[text_sprite] = {}		
-	}	
+		subtype[text_sprite] = {}
+	}
 }
 
 #TODO: Rework to use types inside the top level
 
 progressbartype = {
 	name = scalar
-	
-	#either texturefile, or both texturefile1 and 2 - need to be worked out. 
-	
+
+	#either texturefile, or both texturefile1 and 2 - need to be worked out.
+
 	## cardinality = 0..1
-	textureFile = filepath	
+	textureFile = filepath
 	## cardinality = 0..1
 	textureFile1 = filepath
 	## cardinality = 0..1
 	textureFile2 = filepath
-	
-	effectFile = filepath #shader file	
-	
+
+	effectFile = filepath #shader file
+
 	color = {
 		## cardinality = 3..3
 		float
@@ -83,8 +87,8 @@ sprite = {
 	character = bool
 	## cardinality = 0..1
 	tilingCenter = bool
-	## cardinality = 0..1	
-	clicksound = <sound_effect>		
+	## cardinality = 0..1
+	clicksound = <sound_effect>
 	## cardinality = 0..1
 	loadType = scalar
 	## cardinality = 0..1
@@ -128,7 +132,7 @@ sprite = {
 	symbol_size = { width = int height = int }
 	## cardinality = 0..1
 	texture_size = enum[texture_size]
-	
+
 	#framed_animated_sprite only!
 	## cardinality = 0..1
 	play_on_show = bool
@@ -136,13 +140,13 @@ sprite = {
 	animation_rate_fps = int
 	## cardinality = 0..1
 	looping = bool
-	
-	#cornered_tile_sprite 
+
+	#cornered_tile_sprite
 	## cardinality = 0..1
-	size = { 
+	size = {
 		x = int
 		y = int
-	}	
+	}
 }
 
 piechart = {
@@ -163,12 +167,12 @@ enums = {
 	rotating_ccw
 	rotating_cw
   }
-  enum[sprite_type] = { 
+  enum[sprite_type] = {
   	planet
 	room
 	character
   }
-  enum[texture_size] = { 
+  enum[texture_size] = {
   	small
-  }  
+  }
 }
