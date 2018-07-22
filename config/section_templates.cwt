@@ -13,7 +13,11 @@ section_template = {
   #TODO section slots
   fits_on_slot = enum[section_slots]
   entity = scalar #TODO: graphical culture <model_entity>
-  icon = <sprite>
+
+	## cardinality = 0..1
+	###As far as I can tell, this is unused (the Vanilla ones refer to non-existent sprites and I couldn't find an ingame effect) -Caligula
+	icon = scalar
+
   ## cardinality = 0..1
   icon_frame = int
   ## cardinality = 0..1
