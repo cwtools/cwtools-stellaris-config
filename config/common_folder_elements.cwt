@@ -16,8 +16,8 @@ types = {
 		key = name
 		path = "game/common"
 	}  
-	## type_key_filter = achivement
-	type[achivement] = {
+	## type_key_filter = achievement
+	type[achievement] = {
 		path = "game/common" 
 	}	
 }
@@ -42,7 +42,7 @@ message_type = {
   ping = <pingmap>
 } 
 
-achivement = { 
+achievement = { 
   id = int
   ## replace_scope = { this = country root = country }
   possible = { 
