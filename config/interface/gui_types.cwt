@@ -26,6 +26,7 @@ enums = {
 	enum[direction] = {
 	    UPPER_LEFT #can be lower case as well! Vanilla has a mix of the two for no reason.
 	    UPPER_RIGHT
+		LEFT_UP
 	    CENTER_DOWN
 		CENTER_UP
 		CENTER_CENTER
@@ -40,6 +41,7 @@ enums = {
 		CENTER
 		CENTRE
 		BOTTOM
+		TOP
 	}
 	# Available actions
 	enum[actionshortcut] = {
@@ -55,7 +57,7 @@ enums = {
 	enum[gui_fade_types] = { 
         smoothstep
 		accelerated
-		decelerate
+		decelerated
 		smoothstep
 		linear		
 	}	
@@ -196,6 +198,9 @@ alias[gui:smoothListboxType] = {
 # General graphical block
 alias[gui:containerWindowType] = {
 	name = scalar
+	
+	## cardinality = 0..1 
+	upsound = click
 	## cardinality = 0..1 
 	click_to_front = bool
 	## cardinality = 0..inf	
@@ -572,7 +577,11 @@ alias[gui:dropDownBoxType] = {
 		## cardinality = 0..1
 		hide_animation_type = decelerated
 		## cardinality = 0..1
+		hide_animation_type = accelerated
+		## cardinality = 0..1
 		show_animation_type = decelerated
+		## cardinality = 0..1
+		show_animation_type = accelerated
 		## cardinality = 0..1
 		animation_time = int
 		## cardinality = 0..1

@@ -19,6 +19,12 @@ alias[fleet_action:repeat] = {
     alias_name[fleet_action] = alias_match_left[fleet_action]    
 }
 
+###This requires the fleet to be a planet destroyer
+alias[fleet_action:destroy_planet] = {
+	skip_rules = bool
+	target = scope[planet]
+}
+
 alias[fleet_action:find_random_system] = {
     trigger = {
 		###TODO: ID seems to have to be in quotes (Vanilla also does that). Also, I think they are meant to be unique ideas, but I'm not sure about that. -Caligula
