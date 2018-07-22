@@ -245,6 +245,7 @@ model_entity = {
 	#these need to be updated and linked to other files
 	## cardinality = 0..inf
 	meshsettings = {
+		## cardinality = 0..1
 		name = scalar #examples: "planet_geosphereShape" "polesShape" "clouds_geosphereShape"
 		## cardinality = 0..1
 		index = int
