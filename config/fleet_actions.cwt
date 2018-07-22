@@ -26,6 +26,7 @@ alias[fleet_action:destroy_planet] = {
 }
 
 alias[fleet_action:find_random_system] = {
+	## cardinality = 0..1
     trigger = {
 		###TODO: ID seems to have to be in quotes (Vanilla also does that). Also, I think they are meant to be unique ideas, but I'm not sure about that. -Caligula
 		id = scalar
@@ -43,6 +44,7 @@ alias[fleet_action:find_random_system] = {
 }
 
 alias[fleet_action:find_random_planet] = {
+	## cardinality = 0..1
     trigger = {
 		###TODO: ID seems to have to be in quotes (Vanilla also does that). Also, I think they are meant to be unique ideas, but I'm not sure about that. -Caligula
 		id = scalar
@@ -60,6 +62,7 @@ alias[fleet_action:find_random_planet] = {
 }
 
 alias[fleet_action:find_closest_system] = {
+	## cardinality = 0..1
     trigger = {
 		###TODO: ID seems to have to be in quotes (Vanilla also does that). Also, I think they are meant to be unique ideas, but I'm not sure about that. -Caligula
 		id = scalar
@@ -77,6 +80,7 @@ alias[fleet_action:find_closest_system] = {
 }
 
 alias[fleet_action:find_closest_planet] = {
+	## cardinality = 0..1
     trigger = {
 		###TODO: ID seems to have to be in quotes (Vanilla also does that). Also, I think they are meant to be unique ideas, but I'm not sure about that. -Caligula
 		id = scalar
