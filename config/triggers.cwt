@@ -565,12 +565,17 @@ alias[trigger:is_pop_faction_type] = <pop_faction>
 
 
 ## push_scope = system
+###Conditions in trigger = { } filters the systems within the min/max steps limits. If no system meets the condition, the trigger will return as false. Conditions outside of the trigger = { } will check whether these conditions are true for *the closest* system for which the trigger conditions and min_steps conditions.
+###checks for systems with these conditions
 alias[trigger:closest_system] = {
 	##cardinality = 0..1
 	min_steps = int
 	##cardinality = 0..1
 	max_steps = int
+	
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	
+	alias_name[trigger] = alias_match_left[trigger]
 }
 
 
