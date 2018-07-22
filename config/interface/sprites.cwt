@@ -1,46 +1,67 @@
 #sprites are saved in *.gfx files (like meshes) and are by and large stored in /interface
 
 types = {
+	## type_key_filter = progressbartype	
+	type[progressbartype] = { 
+		name_field = name
+		path = "game/interface"
+		skip_root_key = spriteTypes
+	}	
+	## type_key_filter = PieChartType
+	type[piechart] = { #these are links that start with the GFX_ prefix in vanilla
+		name_field = name
+		path = "game/interface"
+		skip_root_key = spriteTypes
+	}		
 	type[sprite] = { #these are links that start with the GFX_ prefix in vanilla
 		name_field = name
 		path = "game/interface"
 		skip_root_key = spriteTypes
-		severity = warning
 		## type_key_filter = spriteType
-		subtype[normal] = {
-
-		}
+		subtype[normal] = {}
 		## type_key_filter = corneredTileSpriteType
-		subtype[cornered_tile] = {
-
-		}
+		subtype[cornered_tile] = {}
 		## type_key_filter = flagSpriteType
-		subtype[flag] = {
-
-		}
-	}
-	## type_key_filter = progressbartype
-	type[progressbar] = { #these are links that start with the GFX_ prefix in vanilla
-		path = "game/interface"
-		skip_root_key = spriteTypes
-		severity = warning
-	}
+		subtype[flag_sprite] = {}
+		## type_key_filter = frameAnimatedSpriteType
+		subtype[framed_animated_sprite] = {}
+		## type_key_filter = textSpriteType
+		subtype[text_sprite] = {}		
+	}	
 }
 
 #TODO: Rework to use types inside the top level
 
-#sprites do not have a key, they are packaged like this:
-#spriteTypes = {
-# spriteType = {
-#	  	name = "GFX_dummy_3d_advisor_window" - the name is the key
-#		  textureFile = "gfx/interface/transp_white.dds"
-#		  effectFile = "gfx/FX/buttonstate_rendertarget.lua"
-#   ....
-# }
-#}
+progressbartype = {
+	name = scalar
+	
+	#either texturefile, or both texturefile1 and 2 - need to be worked out. 
+	
+	## cardinality = 0..1
+	textureFile = filepath	
+	## cardinality = 0..1
+	textureFile1 = filepath
+	## cardinality = 0..1
+	textureFile2 = filepath
+	
+	effectFile = filepath #shader file	
+	
+	color = {
+		## cardinality = 3..3
+		float
+	}
+	colortwo = {
+		## cardinality = 3..3
+		float
+	}
+	size = { x = int y = int }
+	## cardinality = 0..1
+	horizontal = bool
+}
 
 sprite = {
 	name = scalar
+	## cardinality = 0..1
 	textureFile = filepath
 	## cardinality = 0..1
 	masking_texture = filepath
@@ -57,13 +78,25 @@ sprite = {
 	## cardinality = 0..1
 	noOfFrames = int
 	## cardinality = 0..1
+	type = enum[sprite_type]
+	## cardinality = 0..1
+	character = bool
+	## cardinality = 0..1
+	tilingCenter = bool
+	## cardinality = 0..1	
+	clicksound = <sound_effect>		
+	## cardinality = 0..1
+	loadType = scalar
+	## cardinality = 0..1
+	legacy_lazy_load = bool
+	## cardinality = 0..inf
 	animation = {
 		## cardinality = 0..1
 		animationmaskfile = filepath
 		## cardinality = 0..1
 		animationtexturefile = filepath
 		## cardinality = 0..1
-		animationrotation = float[0..360]
+		animationrotation = float[-360..360]
 		## cardinality = 0..1
 		animationlooping = bool
 		## cardinality = 0..1
@@ -84,52 +117,38 @@ sprite = {
 			int
 		}
 	}
-	subtype[cornered_tile] = {
-		## cardinality = 0..1
-		size = {  x = int y = int }
-		## cardinality = 0..1
-		tilingCenter = no
-
-	}
-	subtype[flag] = {
-		bg_position = { x = int y = int }
-		bg_size = { width = int height = int }
-		symbol_position = { x = int y = int }
-		symbol_size = { width = int height = int }
-
-	}
+	#flag_sprite only!
+	## cardinality = 0..1
+	bg_position = { x = int y = int }
+	## cardinality = 0..1
+	bg_size = { width = int height = int }
+	## cardinality = 0..1
+	symbol_position = { x = int y = int }
+	## cardinality = 0..1
+	symbol_size = { width = int height = int }
+	## cardinality = 0..1
+	texture_size = enum[texture_size]
+	
+	#framed_animated_sprite only!
+	## cardinality = 0..1
+	play_on_show = bool
+	## cardinality = 0..1
+	animation_rate_fps = int
+	## cardinality = 0..1
+	looping = bool
+	
+	#cornered_tile_sprite 
+	## cardinality = 0..1
+	size = { 
+		x = int
+		y = int
+	}	
 }
 
-progressbar = {
+piechart = {
 	name = scalar
-	textureFile1 = filepath
-	textureFile2 = filepath
-	effectFile = filepath
-	color = {
-		## cardinality = 3..3
-		float
-	}
-	colortwo = {
-		## cardinality = 3..3
-		float
-	}
-	size = { x = int y = int }
+	size = int
 }
-
-#example:
-#spriteTypes = {
-# progressbartype = {
-#		name = "GFX_waroverview_war_exhaustion_stats_progressbar"
-#		color = { 1.0 1.0 1.0 }
-#		colortwo = { 1.0 1.0 1.0 }
-#		textureFile1 = "gfx/interface/progressbars/fleet_combat_progeress_bar_red.dds"
-#		textureFile2 = "gfx/interface/progressbars/fleet_combat_progeress_bar_green.dds"
-#		size = { x = 143 y = 38 }
-#		effectFile = "gfx/FX/progress.lua"
-# }
-#}
-
-
 
 enums = {
   enum[animation_mode] = {
@@ -141,8 +160,15 @@ enums = {
     scrolling
     rotating
     pulsing
-   }
- }
-
-
-
+	rotating_ccw
+	rotating_cw
+  }
+  enum[sprite_type] = { 
+  	planet
+	room
+	character
+  }
+  enum[texture_size] = { 
+  	small
+  }  
+}
