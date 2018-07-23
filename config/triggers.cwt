@@ -332,6 +332,7 @@ alias[trigger:any_war_participant] = {
 ## replace_scope = { this = pop_faction }
 #Count triggers: Should all check for < > on the ints
 alias[trigger:count_pop_factions] = {
+	## cardinality = 1..2
 	count = int
 	## cardinality = 0..1
 	limit = {
@@ -341,6 +342,7 @@ alias[trigger:count_pop_factions] = {
 
 ## replace_scope = { this = species }
 alias[trigger:count_species] = {
+	## cardinality = 1..2
 	count = int
 	## cardinality = 0..1
 	limit = {
@@ -350,6 +352,7 @@ alias[trigger:count_species] = {
 
 ## replace_scope = { this = species }
 alias[trigger:count_exact_species] = {
+	## cardinality = 1..2
 	count = int
 	## cardinality = 0..1
 	limit = {
@@ -359,6 +362,7 @@ alias[trigger:count_exact_species] = {
 
 ## replace_scope = { this = army }
 alias[trigger:count_fleet_ships] = {
+	## cardinality = 1..2
 	count = int
 	## cardinality = 0..1
 	limit = {
@@ -368,6 +372,7 @@ alias[trigger:count_fleet_ships] = {
 
 ## replace_scope = { this = army }
 alias[trigger:count_system_ships] = {
+	## cardinality = 1..2
 	count = int
 	## cardinality = 0..1
 	limit = {
@@ -377,6 +382,7 @@ alias[trigger:count_system_ships] = {
 
 ## replace_scope = { this = army }
 alias[trigger:count_armies] = {
+	## cardinality = 1..2
 	count = int
 	## cardinality = 0..1
 	limit = {
@@ -387,6 +393,7 @@ alias[trigger:count_armies] = {
 ## push_scope = ship
 ## replace_scope = { this = ship }
 alias[trigger:count_ships] = {
+	## cardinality = 1..2
 	count = int
 	## cardinality = 0..1
 	limit = {
@@ -396,6 +403,7 @@ alias[trigger:count_ships] = {
 
 ## replace_scope = { this = ship }
 alias[trigger:count_owned_ships] = {
+	## cardinality = 1..2
 	count = int
 	## cardinality = 0..1
 	limit = {
@@ -405,6 +413,7 @@ alias[trigger:count_owned_ships] = {
 
 ## replace_scope = { this = pop }
 alias[trigger:count_owned_pops] = {
+	## cardinality = 1..2
 	count = int
 	## cardinality = 0..1
 	limit = {
@@ -414,6 +423,7 @@ alias[trigger:count_owned_pops] = {
 
 ## replace_scope = { this = pop }
 alias[trigger:count_pops] = {
+	## cardinality = 1..2
 	count = int
 	## cardinality = 0..1
 	limit = {
@@ -423,6 +433,7 @@ alias[trigger:count_pops] = {
 
 ## replace_scope = { this = country }
 alias[trigger:count_diplo_ties] = {
+	## cardinality = 1..2
 	count = int
 	## cardinality = 0..1
 	limit = {
@@ -928,6 +939,7 @@ alias[trigger:is_researching_area] = enum[research_areas]
 #should have < >
 alias[trigger:count_tech_options] = {
 	area = enum[research_areas]
+	## cardinality = 1..2
 	count = int
 }
 
@@ -1315,9 +1327,10 @@ alias[trigger:count_country] =  {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
-#TODO what scope is deposit?
+#TODO what scope is deposit? deposit is tile scope --exnihil
 ### Checks the number of deposits on the tile/planet that meet the specified criteria
 alias[trigger:count_deposits] =  {
+	## cardinality = 1..2
 	count = int
 	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
@@ -1431,6 +1444,7 @@ alias[trigger:count_rim_system] =  {
 
 ### Checks the number of starbase modules that are of the specified type
 alias[trigger:count_starbase_modules] =  {
+	## cardinality = 1..2
 	count = int
 	type = <starbase_module>
 }
@@ -1438,6 +1452,7 @@ alias[trigger:count_starbase_modules] =  {
 #TODO ship_size
 ### Checks if the scoped country has a specified quantity of a starbase size
 alias[trigger:count_starbase_sizes] =  {
+	## cardinality = 1..2
 	count = int
 	starbase_size = <ship_size> #<ship_size.starbase>
 }
@@ -1484,6 +1499,7 @@ alias[trigger:count_war_participants] = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	side = scope[country]
+	## cardinality = 1..2
 	count = int
 }
 
