@@ -772,7 +772,7 @@ alias[trigger:is_country] = scope[country]
 
 #should also check < >
 alias[trigger:habitability] = {
-	who = scope[country]
+	###This only works with who = pop or who = species. Who = country creates an error log entry (Vanilla usage of it is a bug) -Caligula
 	who = scope[pop]
 	who = scope[species]
 	value = float[0.0..1.0]
