@@ -2955,11 +2955,8 @@ alias[effect:rename_species] = {
 	## cardinality = 0..1
 	name = scalar
 	## cardinality = 0..1
-	name_list = <name_list>
-	## cardinality = 0..1
-	name_list = random
-	## cardinality = 0..1
-	name_list = scope[country]
+	###Name lists defined in the name_lists folder might not work (where would it get the name from?). Rather, Vanilla uses ones defined in species_names. Let Dayshine and Caligula know if ones in name_lists work. (Same with name_list = random and name_list = country).
+	name_list = <named_list>
 }
  #TODO
 
