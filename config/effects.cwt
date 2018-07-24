@@ -1620,7 +1620,7 @@ alias[effect:create_country] = {
 	###Does not support pop scope according to had
 	#species = scope[pop]
 	## cardinality = 0..1
- 	species = <buildable_pop>
+ 	species = enum[buildable_pop_species]
 	## cardinality = 0..1
 	species = scope[species] #maybe key would work, I don't know which though
 
@@ -1686,7 +1686,7 @@ alias[effect:create_rebels] = {
 		civic = <civic>
 	}
 	species = scope[country]
- 	species = <buildable_pop>
+ 	species = enum[buildable_pop_species]
 	species = scope[pop]
 	species = scope[species] #maybe key would work, I don't know which though
 
@@ -1755,7 +1755,7 @@ alias[effect:create_army] = {
 	## cardinality = 0..1
 	species = enum[create_leader_species]
 	## cardinality = 0..1
- 	species = <buildable_pop>
+ 	species = <+pop>
 	## cardinality = 0..1
 	leader = scope[leader]
 }
@@ -1776,7 +1776,7 @@ alias[effect:create_leader] = {
 	## cardinality = 0..1
 	species = enum[create_leader_species]
 	## cardinality = 0..1
- 	species = <buildable_pop>
+ 	species = enum[buildable_pop_species]
 	## cardinality = 0..1
 	leader_age_min = int
 	## cardinality = 0..1
@@ -1833,7 +1833,7 @@ alias[effect:clone_leader] = {
 	## cardinality = 0..1
 	species = scope[species] #<target / key>
 	## cardinality = 0..1
- 	species = <buildable_pop>
+ 	species = enum[buildable_pop_species]
 	## cardinality = 0..1
 	leader_age_min = int
 	## cardinality = 0..1
@@ -1885,7 +1885,7 @@ alias[effect:modify_species] = {
 	## cardinality = 0..1
 	species = scope[pop]
 	## cardinality = 0..1
- 	species = <buildable_pop>
+ 	species = enum[buildable_pop_species]
 	## cardinality = 0..1
 	###new base species; default: auto (uses species)
 	base = scope[any]
@@ -1929,7 +1929,7 @@ alias[effect:change_dominant_species] = {
 	species = scope[species]
 	species = scope[pop]
 	species = enum[create_leader_species]
- 	species = <buildable_pop>
+ 	species = enum[buildable_pop_species]
 	## cardinality = 0..1
 	change_all = yes
 }
@@ -2406,7 +2406,7 @@ alias[effect:create_army_transport] = {
 	##cardinality = 0..1
  	species = scope[species]
 	##cardinality = 0..1
- 	species = <buildable_pop>
+ 	species = enum[buildable_pop_species]
 }
 
 #
@@ -2427,7 +2427,7 @@ alias[effect:create_colony] = {
 	species = scope[species]
 	species = scope[country]
 	species = scope[pop]
- 	species = <buildable_pop>
+ 	species = enum[buildable_pop_species]
 	species = scalar #key
 	##cardinality = 0..1
 	ethos = random
@@ -2527,7 +2527,7 @@ alias[effect:create_pop] = {
 	species = scope[species]
 	species = scope[country]
 	species = scope[pop]
- 	species = <buildable_pop>
+ 	species = enum[buildable_pop_species]
 	species = scalar #key
 	## cardinality = 0..1
 	ethos = random
@@ -2564,7 +2564,7 @@ alias[effect:create_saved_leader] = {
 	species = scope[country]
 	species = scope[species] #<target / key>
 	species = enum[create_leader_species]
- 	species = <buildable_pop>
+ 	species = enum[buildable_pop_species]
 	## cardinality = 0..1
 	event_leader = bool
 	## cardinality = 0..1
@@ -2799,7 +2799,7 @@ alias[effect:modify_army] = {
 	## cardinality = 0..1
 	species = scope[species]
 	## cardinality = 0..1
- 	species = <buildable_pop>
+ 	species = enum[buildable_pop_species]
 	## cardinality = 0..1
 	type = <army>
 }

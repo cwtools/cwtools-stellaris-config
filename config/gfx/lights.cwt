@@ -20,13 +20,8 @@ light = {
 		b = { float }
 	}
 	
-  #one of these three variations
-  ## cardinality = 0..1
-	intensity = scalar #TODO #int,<light_animation>
-  ## cardinality = 0..1
-  intensity = int
-  ## cardinality = 0..1
-  intensity = enum[light_animations]
+	## cardinality = 0..1
+  	alias[intensity] = alias_match_left[intensity]
   
 	radius = int
 	falloff = int
@@ -52,6 +47,10 @@ light = {
 		}
 	}	
 }
+alias[intensity:intensity] = scalar #TODO #int,<light_animation>
+alias[intensity:intensity] = int
+alias[intensity:intensity] = enum[light_animations]
+
 enums = {
   enum[animation_op] = {
     "MUL"
