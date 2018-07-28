@@ -39,40 +39,15 @@ species_class = {
 		<portrait>
 	}
 	## cardinality = 0..1
-	## replace_scope = { root = country this = country }
-	#TODO replace with an alias for government blocks
+	## replace_scope = { root = country this = country }	
 	possible = {
 		## cardinality = 0..1
 		always = bool
-		## cardinality = 0..1
-		authority = {
-			## cardinality = 0..1
-			value = <authority>
-			## cardinality = 0..inf
-			OR = {
-				## cardinality = 0..1
-				text = localisation
-				## cardinality = 2..inf
-				value = <authority>
-			}
-			## cardinality = 0..inf
-			NOT = {
-				## cardinality = 0..1
-				text = localisation
-				value = <authority>
-			}
-			## cardinality = 0..inf
-			NOR = {
-				## cardinality = 0..1
-				text = localisation
-				## cardinality = 2..inf
-				value = <authority>
-			}
-		}
+		alias_name[government_trigger] = alias_match_left[government_trigger]
 	}
 	## cardinality = 0..1
 	possible_secondary = {
-		alias_name[trigger] = alias_match_left[trigger]
+		alias_name[government_trigger] = alias_match_left[government_trigger]
 	}
 	## cardinality = 0..1
 	portraits = {
@@ -122,3 +97,4 @@ species_class = {
 	## cardinality = 0..1
 	leader_age_max = int
 }
+

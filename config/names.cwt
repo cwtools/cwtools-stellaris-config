@@ -1,7 +1,7 @@
 types = { #these are all connected. I added the others so whoever does these in the end knows where to look.
 	type[name_list] = {
 		path = "game/common/name_lists"
-		
+
 		subtype[random] = {
 			## cardinality = 0..0
 			randomized = bool
@@ -12,12 +12,11 @@ types = { #these are all connected. I added the others so whoever does these in 
 		path = "game/common/species_names"
 		name_field = "name"
 	}
-
-	type[named_list] = {
-		skip_root_key = named_lists
+	## type_key_filter = named_lists
+	type[species_named_list] = {
 		path = "game/common/species_names"
+		skip_root_key = named_lists
 	}
-	
 	## type_key_filter = empire_name_parts_list
 	type[random_empire_name_part] = {
 		path = "game/common/random_names"
@@ -371,7 +370,7 @@ species_name = {
 	}
 }
 
-named_list = {
+species_named_list = {
 	scalar = {
 		name = scalar
 		plural = scalar

@@ -547,3 +547,105 @@ civic = {
 		}
 	}
 }
+
+#aliases - used in species_classes and perhaps other places.
+
+alias[government_trigger:authority] = {
+	## cardinality = 0..1
+	value = <authority>
+	## cardinality = 0..inf
+	OR = {
+		## cardinality = 0..1
+		text = localisation
+		## cardinality = 2..inf
+		value = <authority>
+	}
+	## cardinality = 0..inf
+	NOT = {
+		## cardinality = 0..1
+		text = localisation
+		value = <authority>
+	}
+	## cardinality = 0..inf
+	NOR = {
+		## cardinality = 0..1
+		text = localisation
+		## cardinality = 2..inf
+		value = <authority>
+	}
+}	
+alias[government_trigger:country_type] = {
+	## cardinality = 0..1
+	value = <country_type>
+
+	## cardinality = 0..inf
+	OR = {
+		## cardinality = 0..1
+		text = localisation
+		## cardinality = 2..99
+		value = <country_type>
+	}
+	## cardinality = 0..inf
+	NOT = {
+		## cardinality = 0..1
+		text = localisation
+		value = <country_type>
+	}
+	## cardinality = 0..inf
+	NOR = {
+		## cardinality = 0..1
+		text = localisation
+		## cardinality = 2..99
+		value = <country_type>
+	}
+}
+alias[government_trigger:ethics] = {
+	## cardinality = 0..3
+	value = <ethos>
+
+	## cardinality = 0..inf
+	OR = {
+		## cardinality = 0..1
+		text = localisation
+		## cardinality = 2..99
+		value = <ethos>
+	}
+	## cardinality = 0..inf
+	NOT = {
+		## cardinality = 0..1
+		text = localisation
+		value = <ethos>
+	}
+	## cardinality = 0..inf
+	NOR = {
+		## cardinality = 0..1
+		text = localisation
+		## cardinality = 2..99
+		value = <ethos>
+	}
+}
+alias[government_trigger:civics] = {
+	## cardinality = 0..3
+	value = <civic>
+
+	## cardinality = 0..inf
+	OR = {
+		## cardinality = 0..1
+		text = localisation
+		## cardinality = 2..99
+		value = <civic>
+	}
+	## cardinality = 0..inf
+	NOT = {
+		## cardinality = 0..1
+		text = localisation
+		value = <civic>
+	}
+	## cardinality = 0..inf
+	NOR = {
+		## cardinality = 0..1
+		text = localisation
+		## cardinality = 2..99
+		value = <civic>
+	}
+}
