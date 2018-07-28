@@ -369,3 +369,10 @@ species_name = {
 		name_list = <name_list.random>
 	}
 }
+
+species_named_list = {
+	scalar = {
+		name = scalar
+		plural = scalar
+	}
+}
