@@ -47,9 +47,7 @@ component_template = {
 	should_ai_use = bool
 	## cardinality = 0..1
 	## replace_scope = { root = country this = country }
- 	valid_for_country = {
- 		## cardinality = 0..1
- 		weight = float
+ 	valid_for_country = { 		 		
  		alias_name[modifier_rule] = alias_match_left[modifier_rule]
  	}
 
