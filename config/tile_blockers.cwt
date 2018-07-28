@@ -13,10 +13,8 @@ tile_blocker = {
 	from_planet_damage = bool
 	## cardinality = 0..1
 	cost = {
-		## cardinality = 0..1
-		energy = int
-		## cardinality = 0..1
-		minerals = int
+		## cardinality = 0..inf
+		<accumlative_resource> = float
 	}
 	## cardinality = 0..1
 	spawn_chance = {
@@ -30,7 +28,7 @@ tile_blocker = {
 	prerequisites = { <technology> }
 	## cardinality = 0..1
 	adjacency_bonus = { ###accepts only tile_building_resource_xyz_add = type modifiers
-		## cardinality = 0..100
+		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 }
