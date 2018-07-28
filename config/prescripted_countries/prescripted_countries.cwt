@@ -34,6 +34,18 @@ prescripted_country = {
     	trait = <trait>
 	}
 	
+	## cardinality = 0..1
+	secondary_species = {
+		class = <species_class>
+		portrait = <portrait>
+		name = localisation_synced
+		plural = localisation_synced
+		adjective = localisation_synced
+		name_list = <name_list>
+		## cardinality = 0..inf
+    	trait = <trait>
+	}
+	
 	room = <asset_selector.room> #this one is defined under gfx/portraits/asset_selectors
 	
 	## cardinality = 0..1
