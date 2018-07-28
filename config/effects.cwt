@@ -2960,6 +2960,8 @@ alias[effect:rename_species] = {
 	name_list = random
 	## cardinality = 0..1
 	name_list = scope[country]
+	## cardinality = 0..1
+	name_list = <species_named_list>
 }
  #TODO
 
