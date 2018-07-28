@@ -50,26 +50,23 @@ component_template = {
  	valid_for_country = { 		 		
  		alias_name[modifier_rule] = alias_match_left[modifier_rule]
  	}
-
+	## cardinality = 0..1
+	ai_weight = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}	
 	subtype[utility_component_template] = {
 		power = int
 		cost = int
 		size = enum[utility_slot_size]
 		## cardinality = 0..1
-		modifier = {
-			## cardinality = 0..1
+		modifier = {			
+			## cardinality = 0..inf
 			alias_name[modifier] = alias_match_left[modifier]
 		}
 		## cardinality = 0..1
-		ship_modifier = {
-			## cardinality = 0..1
+		ship_modifier = {	
+			## cardinality = 0..inf
 			alias_name[modifier] = alias_match_left[modifier]
-		}
-		## cardinality = 0..1
-		ai_weight = {
-			## cardinality = 0..1
-			weight = float
-			alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		}
 		## cardinality = 0..1
 		ftl = bool
@@ -100,7 +97,7 @@ component_template = {
 			}
 			## cardinality = 0..1
 			modifier = {
-				## cardinality = 0..1
+				## cardinality = 0..inf
 				alias_name[modifier] = alias_match_left[modifier]
 			}
 
@@ -135,7 +132,7 @@ component_template = {
 			}
 			## cardinality = 0..1
 			modifier = {
-				## cardinality = 0..1
+				## cardinality = 0..inf
 				alias_name[modifier] = alias_match_left[modifier]
 			}
 
