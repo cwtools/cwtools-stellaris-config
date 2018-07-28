@@ -52,6 +52,10 @@ component_template = {
  	}
 	## cardinality = 0..1
 	ai_weight = {
+		## cardinality = 0..1
+		weight = int
+		## cardinality = 0..1
+		factor = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}	
 	subtype[utility_component_template] = {
