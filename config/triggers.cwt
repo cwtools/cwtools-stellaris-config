@@ -1766,6 +1766,7 @@ alias[trigger:is_bridge] = bool
 
 ### Checks if the scoped construction ship is building the specified thing
 ###is_constructing = megastructure | <megastructure type> | starbase | mining_station | research_station | observation_post | <ship class>
+alias[trigger:is_constructing] = megastructure
 alias[trigger:is_constructing] = <megastructure>
 alias[trigger:is_constructing] = <ship_size>
 alias[trigger:is_constructing] = enum[construction_type]
