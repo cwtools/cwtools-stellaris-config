@@ -16,7 +16,5 @@ species_archetype = {
 		<species_archetype>
 	}
 	## cardinality = 0..1
-	inherit_trait_points_from = {
-		<species_archetype>
-	}
+	inherit_trait_points_from = <species_archetype>
 }
