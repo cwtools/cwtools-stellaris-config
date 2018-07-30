@@ -26,6 +26,12 @@ buildable_pop = {
 		## cardinality = 0..inf
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## replace_scope = { this = tile root = tile }
+	## cardinality = 0..1
+	tile_potential = {
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}	
 	## replace_scope = { this = country root = country }
 	## cardinality = 0..1
 	allow = {
