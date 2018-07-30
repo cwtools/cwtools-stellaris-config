@@ -3241,8 +3241,13 @@ alias[effect:spawn_planet] = {
 	orbit_distance = float
 	## cardinality = 0..1
 	orbit_distance_offset = float
+	
+	#one of these two
 	## cardinality = 0..1
 	size = int
+	## cardinality = 0..1
+	size = random	
+	
 	## cardinality = 0..1
 	has_ring = bool
 	## cardinality = 0..1
