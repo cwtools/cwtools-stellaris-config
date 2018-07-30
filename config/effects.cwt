@@ -1447,6 +1447,7 @@ alias[effect:set_graphical_culture] = <graphical_culture>
 alias[effect:set_graphical_culture] = scope[any]
 
 ###Creates a new species
+## push_scope = species
 alias[effect:create_species] = {
 	## cardinality = 0..1
 	name = localisation_synced
@@ -2441,6 +2442,7 @@ alias[effect:create_colony] = {
 #create_fleet = { name = <string> effect = { <create_ship, set_owner, set_location etc effects go here> } }
 
 ### Creates a new fleet
+## push_scope = fleet
 alias[effect:create_fleet] = {
 	## cardinality = 0..1
 	name = localisation_synced
@@ -2500,6 +2502,7 @@ alias[effect:create_military_fleet] = scope[country]
 
 
 ### Creates a mining station in orbit of the scoped planet
+## push_scope = ship
 alias[effect:create_mining_station] = {
 	owner = scope[country]
 	owner = scope[ship]
@@ -2523,6 +2526,7 @@ alias[effect:create_point_of_interest] = {
 
 
 ### Creates a new pop on the scoped tile/planet
+## push_scope = pop
 alias[effect:create_pop] = {
 	species = scope[species]
 	species = scope[country]
@@ -2545,12 +2549,15 @@ alias[effect:create_pop] = {
 
 
 ### Creates a research station in orbit of the scoped planet
+## push_scope = ship
 alias[effect:create_research_station] = {
 	owner = scope[country]
+	owner = scope[ship]
 }
 
 
 ### Creates a new saved leader for the scoped country with a lookup key
+## push_scope = leader
 alias[effect:create_saved_leader] = {
 	key = scalar
 	## cardinality = 0..1
@@ -2592,6 +2599,7 @@ alias[effect:create_saved_leader] = {
 
 
 ### Creates a sector with a specific capital planet, of a specific type, and with optional additional systems within the scoped country
+## push_scope = sector
 alias[effect:create_sector] = {
 	capital = scope[planet]
 	type = <sector_type>
@@ -2600,6 +2608,7 @@ alias[effect:create_sector] = {
 }
 
 ### Creates a new ship
+## push_scope = ship
 alias[effect:create_ship] = {
 	## cardinality = 0..1
 	name = random
