@@ -2440,6 +2440,7 @@ alias[effect:create_colony] = {
 
 #create_fleet = { name = <string> effect = { <create_ship, set_owner, set_location etc effects go here> } }
 
+##push_scope = fleet
 ### Creates a new fleet
 alias[effect:create_fleet] = {
 	## cardinality = 0..1
