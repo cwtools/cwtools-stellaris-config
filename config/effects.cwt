@@ -2515,6 +2515,7 @@ alias[effect:create_point_of_interest] = {
 	event_chain = <event_chain>
 	location = scope[planet]
 	location = scope[system]
+	location = scope[fleet]
 	## cardinality = 0..1
 	category = scalar
 }
