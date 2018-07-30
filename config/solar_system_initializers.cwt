@@ -1,8 +1,6 @@
 types = {
 	type[solar_system_initializer] = {
 		path = "game/common/solar_system_initializers"
-		
-		## replace_scope = { this = solar_system root = country }
 		subtype[fallen_empire_initializer] = {
 			usage = fallen_empire_init
 		}	
