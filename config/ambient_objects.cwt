@@ -20,7 +20,7 @@ ambient_object = {
 	description = localisation
 	## cardinality = 0..1
 	tooltip = localisation
-	entity = scalar #TODO: <model_entity>
+	entity = <model_entity>
 	selectable = bool
 	show_name = bool
 }
