@@ -1152,6 +1152,7 @@ alias[effect:set_location] = scope[galactic_object]
 alias[effect:set_location] = {
 	target = scope[planet]
 	target = scope[galactic_object]
+	target = scope[star]
 	distance = int
 	angle = int[0..360]
 }
@@ -2190,6 +2191,7 @@ alias[effect:auto_follow_fleet] = {
 alias[effect:auto_move_to_planet] = {
 	target = scope[planet]
 	target = scope[galactic_object]
+	target = scope[star]
 	clear_auto_move_on_arrival = bool
 	## cardinality = 0..1
 	destroy_on_arrival = bool
