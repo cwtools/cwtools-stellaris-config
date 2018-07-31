@@ -58,10 +58,10 @@ anomaly_category = {
 	on_spawn = { alias_name[effect] = alias_match_left[effect] }
 
 	###Picks anomaly event to fire; similar to random_list
-	on_success = scalar #event ID
+	on_success = <event.ship>
 	on_success = {
 		## cardinality = 0..100
-		int = scalar #event ID
+		int = <event.ship>
 		## cardinality = 0..100
 		int = {
 			## cardinality = 0..1
@@ -73,7 +73,7 @@ anomaly_category = {
 
 			alias_name[modifier_rule_add_factor] = alias_match_left[modifier_rule_add_factor]
 
-			anomaly_event = scalar #event ID
+			anomaly_event = <event.ship>
 		}
 	}
 }
