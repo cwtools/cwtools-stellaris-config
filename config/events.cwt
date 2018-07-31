@@ -78,7 +78,7 @@ event = {
 		location = scope[starbase]
 
 		## cardinality = 0..1
-		show_sound = scalar
+		show_sound = <sound_effect>
 		## cardinality = 0..1
 		###Force a diplomatic event to be viewed
 		force_open = bool
@@ -135,7 +135,7 @@ event = {
 				is_dialog_only = bool
 
 				## cardinality = 0..1
-				custom_gui = scalar
+				custom_gui = scalar #points to a gui_type, currently all are defined as aliases but this needs to be updated
 
 				## cardinality = 0..1
 				### Binds this option to the "dismiss" action
@@ -145,7 +145,7 @@ event = {
 			## cardinality = 0..1
 			default_hide_option = bool
 			## cardinality = 0..1
-			custom_gui = scalar
+			custom_gui = scalar #points to a gui_type, currently all are defined as aliases but this needs to be updated
 
 			## cardinality = 0..1
 			alias_name[effect] = alias_match_left[effect]
@@ -163,9 +163,9 @@ event = {
 			
 
 	subtype[default] = {
-		picture = scalar
+		picture = <sprite>
 		picture = {
-			picture = scalar
+			picture = <sprite>
 			trigger = { alias_name[trigger] = alias_match_left[trigger] }
 		}
 	}
@@ -218,9 +218,6 @@ event = {
 			room = scope[country]
 			## cardinality = 0..1
 			room = scope[species]
-			#TODO: Replace with picture
-			## cardinality = 0..1
-			room = scalar
 			## cardinality = 0..1
 			portrait = <portrait>
 			## cardinality = 0..1
@@ -249,9 +246,9 @@ event = {
 			city_level = scope[planet]
 		}
 		## cardinality = 0..1
-		custom_gui = scalar
+		custom_gui = scalar #same as previous, needs to be gui_type
 		## cardinality = 0..1
-		custom_gui_option = scalar
+		custom_gui_option = scalar #same as previous, needs to be gui_type
 	}
 
 	## cardinality = 0..1
