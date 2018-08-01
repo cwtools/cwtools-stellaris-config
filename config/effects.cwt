@@ -1617,8 +1617,8 @@ alias[effect:create_country] = {
 	species = last_created
 	## cardinality = 0..1
 	species = scope[country]
-	###Does not support pop scope according to had
-	#species = scope[pop]
+	## cardinality = 0..1
+	species = scalar	
 	## cardinality = 0..1
  	species = enum[buildable_pop_species]
 	## cardinality = 0..1
