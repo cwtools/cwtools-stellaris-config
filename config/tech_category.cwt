@@ -8,5 +8,5 @@ types = {
 }
 
 technology_category = { 
-	icon = scalar
+	icon = filepath
 }
