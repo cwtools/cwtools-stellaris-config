@@ -149,7 +149,7 @@ building = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
-	###scope = pop, tile = tile, from/planet = planet, owner = country
+	## replace_scope = { this = pop root = pop from = planet fromfrom = country }
 	active = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
