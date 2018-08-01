@@ -57,7 +57,7 @@ technology = {
 	}
 
 	## cardinality = 0..1
-	###someone tell Caligula and Dayshine how these work
+	### a weight group increases the chances of a technology appearing - if another tech of a similar group is picked. 
 	weight_groups = {
 		## cardinality = 0..1
 		repeatable
@@ -115,6 +115,7 @@ technology = {
 	}
 
 	## cardinality = 0..1
+	## replace_scope = { this = country root = country }
 	weight_modifier = {
 		## cardinality = 0..1
 		factor = float
@@ -123,8 +124,8 @@ technology = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 
-
 	## cardinality = 0..1
+	## replace_scope = { this = country root = country }
 	ai_weight = {
 		## cardinality = 0..1
 		factor = float
@@ -165,20 +166,6 @@ enums = {
 		unity_ambitions
 		modify_robots
 	}
-#	enum[research_categories] = {
-#		statecraft
-#		voidcraft
-#		field_manipulation
-#		biology
-#		computing
-#		particles
-#		military_theory
-#		psionics
-#		new_worlds
-#		materials
-#		propulsion
-#		industry
-#	}
 	enum[technology_areas] = {
 		engineering
 		society
