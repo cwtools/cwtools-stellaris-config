@@ -28,14 +28,17 @@ species_rights = {
 	}
 
 	## cardinality = 0..1
+	## replace_scope = { this = species root = species from = country }
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
+	## replace_scope = { this = species root = species from = country }
 	allow = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-
+	
+	## replace_scope = { this = species root = species from = country }
 	ai_will_do = {
 		factor = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
