@@ -50,6 +50,7 @@ asset_selector = {
 		## cardinality = 0..1
 		## replace_scope = { this = no_scope root = no_scope }
 		game_setup = {
+			## cardinality = 0..1
 			default = filepath
 			## cardinality = 0..inf
 			random = {
@@ -67,6 +68,7 @@ asset_selector = {
 		## cardinality = 0..1
 		## replace_scope = { this = species root = species }
 		species = {
+			## cardinality = 0..1
 			default = filepath
 			## cardinality = 0..inf
 			random = {
@@ -85,6 +87,7 @@ asset_selector = {
 		## cardinality = 0..1
 		## replace_scope = { this = pop root = pop }
 		pop = {
+			## cardinality = 0..1
 			default = filepath
 			## cardinality = 0..inf
 			random = {
@@ -120,6 +123,7 @@ asset_selector = {
 		## cardinality = 0..1
 		## replace_scope = { this = leader root = leader }
 		ruler = {
+			## cardinality = 0..1
 			default = filepath
 			## cardinality = 0..inf
 			random = {
@@ -161,6 +165,7 @@ asset_selector = {
 		## cardinality = 0..1
 		## replace_scope = { this = no_scope root = no_scope }
 		game_setup = {
+			## cardinality = 0..1
 			default = filepath
 			## cardinality = 0..inf
 			random = {
@@ -178,6 +183,7 @@ asset_selector = {
 		## cardinality = 0..1
 		## replace_scope = { this = species root = species }
 		species = {
+			## cardinality = 0..1
 			default = filepath
 			## cardinality = 0..inf
 			random = {
@@ -195,6 +201,7 @@ asset_selector = {
 		## cardinality = 0..1
 		## replace_scope = { this = pop root = pop }
 		pop = {
+			## cardinality = 0..1
 			default = filepath
 			## cardinality = 0..inf
 			random = {
@@ -230,6 +237,7 @@ asset_selector = {
 		## cardinality = 0..1
 		## replace_scope = { this = leader root = leader }
 		ruler = {
+			## cardinality = 0..1
 			default = filepath
 			## cardinality = 0..inf
 			random = {
@@ -285,6 +293,7 @@ asset_selector = {
 		## cardinality = 0..1
 		## replace_scope = { this = leader root = leader }
 		ruler = {
+			## cardinality = 0..1
 			default = <model_entity>
 			## cardinality = 0..inf
 			random = {
