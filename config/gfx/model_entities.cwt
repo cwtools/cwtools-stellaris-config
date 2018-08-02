@@ -84,7 +84,8 @@ model_entity = {
 		next_state = enum[model_states]
 		## cardinality = 0..1
 		next_state = state2
-		
+		## cardinality = 0..1
+		next_state = start2		
 		
 		## cardinality = 0..1
 		chance = bool
