@@ -47,6 +47,8 @@ species_class = {
 	}
 	## cardinality = 0..1
 	possible_secondary = {
+		## cardinality = 0..1
+		always = bool
 		alias_name[government_trigger] = alias_match_left[government_trigger]
 	}
 	## cardinality = 0..1
