@@ -14,21 +14,6 @@ types = {
 	}
 }
 
-#also included under game/gfx/portraits: leader portraits, planet enviornments, city color correction and city sets. The city sets and room sets are defined through asset_selector files, the other files are defined as GFX links or are tied to key.
-
-#portraits are nestled under portraits = {
-#example:
-#portraits = {
-#	default_robot = {
-#		entity = "portrait_robot_01_entity"	clothes_selector = "no_texture"	hair_selector = "no_texture"	greeting_sound = "robot_human_greetings"
-#		character_textures = {
-#			"gfx/models/portraits/AI/Alien_AI.dds"
-#			"gfx/models/portraits/AI/robot_green.dds"
-#			"gfx/models/portraits/AI/robot_blue.dds"
-#		}
-#	}
-#the portrait = { below refers to stuff like the deafult_robot = { above.
-
 portrait = {
 	entity = <model_entity>
 	clothes_selector = <asset_selector.clothes>
@@ -42,39 +27,12 @@ portrait = {
 	}
 }
 
-#portrait groups are stored in the same file and they bundle portraits together into groups.
-# they are nestled below a header called portrait_groups = {
-#example:
-#portrait_groups = {
-#	swarm = {
-#		#country scope
-#		default = swarm1small
-#		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
-#			add = {
-#				portraits = {
-#					swarm1
-#				}
-#			}
-#		}
-#
-#		#leader scope
-#		ruler = {
-#				add = {
-#				portraits = {
-#					swarm1
-#				}
-#			}
-#		}
-#	}
-#}
-#the portrait_group = { below refers to the swarm = { above
-
 portrait_group = {
 	## cardinality = 0..1
 	default = <portrait>
 	## cardinality = 0..1
 	game_setup = {
-		## cardinality = 1..inf
+		## cardinality = 0..inf
 		add = {
 			## replace_scope = { this = country root = country }
 			## cardinality = 0..1
@@ -90,10 +48,26 @@ portrait_group = {
 				<portrait>
 			}
 		}
+		## cardinality = 0..inf
+		set = {
+			## replace_scope = { this = country root = country }
+			## cardinality = 0..1
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+				## cardinality = 0..1
+				scope[leader] = { gender = enum[gender] }
+				## cardinality = 0..1
+				scope[ruler] = { gender = enum[gender] }
+			}
+			portraits = {
+				## cardinality = 0..inf
+				<portrait>
+			}
+		}		
 	}
 	## cardinality = 0..1
 	leader = {
-		## cardinality = 1..inf
+		## cardinality = 0..inf
 		add = {
 			## replace_scope = { this = leader root = leader }
 			## cardinality = 0..1
@@ -107,10 +81,24 @@ portrait_group = {
 				<portrait>
 			}
 		}
+		## cardinality = 0..inf
+		set = {
+			## replace_scope = { this = leader root = leader }
+			## cardinality = 0..1
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+				## cardinality = 0..1
+				gender = enum[gender]
+			}
+			portraits = {
+				## cardinality = 0..inf
+				<portrait>
+			}
+		}		
 	}
 	## cardinality = 0..1
 	ruler = {
-		## cardinality = 1..inf
+		## cardinality = 0..inf
 		add = {
 			## replace_scope = { this = leader root = leader }
 			## cardinality = 0..1
@@ -124,10 +112,24 @@ portrait_group = {
 				<portrait>
 			}
 		}
+		## cardinality = 0..inf
+		set = {
+			## replace_scope = { this = leader root = leader }
+			## cardinality = 0..1
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+				## cardinality = 0..1
+				gender = enum[gender]
+			}
+			portraits = {
+				## cardinality = 0..inf
+				<portrait>
+			}
+		}		
 	}
 	## cardinality = 0..1
 	pop = {
-		## cardinality = 1..inf
+		## cardinality = 0..inf
 		add = {
 			## replace_scope = { this = pop root = pop }
 			## cardinality = 0..1
@@ -143,10 +145,26 @@ portrait_group = {
 				<portrait>
 			}
 		}
+		## cardinality = 0..inf
+		set = {
+			## replace_scope = { this = pop root = pop }
+			## cardinality = 0..1
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+				## cardinality = 0..1
+				scope[leader] = { gender = enum[gender] }
+				## cardinality = 0..1
+				scope[ruler] = { gender = enum[gender] }
+			}
+			portraits = {
+				## cardinality = 0..inf
+				<portrait>
+			}
+		}		
 	}
 	## cardinality = 0..1
 	species = {
-		## cardinality = 1..inf
+		## cardinality = 0..inf
 		add = {
 			## replace_scope = { this = species root = species }
 			## cardinality = 0..1
@@ -162,6 +180,22 @@ portrait_group = {
 				<portrait>
 			}
 		}
+		## cardinality = 0..inf
+		set = {
+			## replace_scope = { this = species root = species }
+			## cardinality = 0..1
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+				## cardinality = 0..1
+				scope[leader] = { gender = enum[gender] }
+				## cardinality = 0..1
+				scope[ruler] = { gender = enum[gender] }
+			}
+			portraits = {
+				## cardinality = 0..inf
+				<portrait>
+			}
+		}		
 	}
 }
 
@@ -174,4 +208,3 @@ enums = {
 
 #other than the above there is also a bunch of other data stored under gfx/portraits/00_portraits_main.txt
 #this stuff though will require attention from dayshine to be added.
-
