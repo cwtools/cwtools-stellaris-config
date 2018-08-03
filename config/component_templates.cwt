@@ -107,12 +107,12 @@ component_template = {
 
 			## cardinality = 0..1
 			graphics = {
-				## cardinality = 0..1
+				## cardinality = 0..inf
 				area_effect = {
 					entity = <model_entity>
 					dynamic_scale = bool
 				}
-				## cardinality = 0..1
+				## cardinality = 0..inf
 				ship_effect = {
 					entity = <model_entity>
 					dynamic_scale = bool
@@ -142,12 +142,12 @@ component_template = {
 
 			## cardinality = 0..1
 			graphics = {
-				## cardinality = 0..1
+				## cardinality = 0..inf
 				area_effect = {
 					entity = <model_entity>
 					dynamic_scale = bool
 				}
-				## cardinality = 0..1
+				## cardinality = 0..inf
 				ship_effect = {
 					entity = <model_entity>
 					dynamic_scale = bool
