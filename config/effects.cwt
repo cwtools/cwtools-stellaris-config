@@ -2995,6 +2995,10 @@ alias[effect:set_aggro_range] = int
 
 ### Determines whether the scoped fleet/country's aggro range is measured from the fleet's current position or its spawn location
 alias[effect:set_aggro_range_measure_from] = enum[aggro_range_measure_from]
+alias[effect:set_aggro_range_measure_from] = scope[planet]
+alias[effect:set_aggro_range_measure_from] = scope[galactic_object]
+alias[effect:set_aggro_range_measure_from] = scope[fleet]
+alias[effect:set_aggro_range_measure_from] = scope[ship]
 
 enums = {
 	enum[aggro_range_measure_from] = {
