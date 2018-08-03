@@ -113,6 +113,12 @@ trait = {
 		leader_potential_add = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
+		
+		## cardinality = 0..1
+		requires_traits = {
+			## cardinality = 1..100
+			<trait.species_trait>
+		}
 	}
 	## cardinality = 0..1
 	ai_categories = {

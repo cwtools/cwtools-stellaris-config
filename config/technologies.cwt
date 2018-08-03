@@ -36,6 +36,7 @@ technology = {
 		#usually in ""
 
 		## cardinality = 0..1
+		## replace_scope = { this = country root = country }
 		potential = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
