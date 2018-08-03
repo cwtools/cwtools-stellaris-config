@@ -9,7 +9,7 @@ types = {
 
 scripted_loc = {
 	name = scalar
-	## cardinality = 1..100
+	## cardinality = 1..inf
 	text = {
 		## cardinality = 0..1
 		trigger = { alias_name[trigger] = alias_match_left[trigger] }
