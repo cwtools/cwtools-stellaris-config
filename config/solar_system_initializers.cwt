@@ -4,6 +4,11 @@ types = {
 		subtype[fallen_empire_initializer] = {
 			usage = fallen_empire_init
 		}	
+	}
+	##type_key_filter = random_list
+	tyep[solar_system_initializer_random_list] = {
+		name_field = name
+		path = "game/common/solar_system_initializers"
 	}	
 }
 
@@ -258,7 +263,13 @@ alias[moon_initializer:moon] = {
 		alias_name[effect] = alias_match_left[effect]
 	}	
 }	
-		
+
+random_list = { 
+	name = scalar
+	## cardinality = 1..inf
+	<solar_system_initializer> = int
+}	
+
 enums = {
 	enum[usage_type] = {
 		empire_init
