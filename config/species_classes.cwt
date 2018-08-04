@@ -46,6 +46,7 @@ species_class = {
 		alias_name[government_trigger] = alias_match_left[government_trigger]
 	}
 	## cardinality = 0..1
+	## replace_scope = { root = country this = country }
 	possible_secondary = {
 		## cardinality = 0..1
 		always = bool
