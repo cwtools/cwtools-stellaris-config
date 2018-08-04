@@ -1,4 +1,5 @@
 types = {
+	## type_key_filter <> random_list
 	type[solar_system_initializer] = {
 		path = "game/common/solar_system_initializers"
 		subtype[fallen_empire_initializer] = {
