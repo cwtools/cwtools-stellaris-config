@@ -14,8 +14,6 @@ species_class = {
 		## cardinality = 0..1
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	## cardinality = 0..1	
-	#description = localisaton
 	## cardinality = 0..1
 	playable = bool
 	## cardinality = 0..1
