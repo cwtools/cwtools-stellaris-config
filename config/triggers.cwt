@@ -1720,7 +1720,7 @@ alias[trigger:has_hyperlane_to] = scope[galactic_object]
 alias[trigger:has_mandate] = bool
 alias[trigger:has_mandate] = <mandate>
 
-### Checks if a country or star has a mega structure.
+### Checks if a country or star has a megastructure. Does not accept boolean.
 alias[trigger:has_megastructure] = <megastructure>
 
 ### Checks if the planet has an orbital mining station
