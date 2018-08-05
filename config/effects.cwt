@@ -2508,8 +2508,11 @@ alias[effect:create_mining_station] = {
 ### Creates a point of interest for the scoped country at a specific location, associated with an event chain
 alias[effect:create_point_of_interest] = {
 	id = scalar
-	## cardinality = 0..1
+	## cardinality = 1..1
+	#TODO: This should be a yellow warning if you don't have it. It doesn't create any major errors, but looks really bad and unprofessional to have a blank button, so I feel you should definitely be warned.
+	###Leaving out "name" gives a blank button that looks really terrible and unprofessional. Don't do it :P
 	name = localisation
+	#The last comment does not apply here.
 	## cardinality = 0..1
 	desc = localisation
 	event_chain = <event_chain>
