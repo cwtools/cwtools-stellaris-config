@@ -4,10 +4,8 @@ types = {
 	}
 }
 
-#TODO Confirm
 #TODO Document
-#TODO Check portraits
-#TODO simplify government requirements
+
 species_class = {
 	## cardinality = 0..1
 	archetype = <species_archetype>
@@ -16,9 +14,6 @@ species_class = {
 		## cardinality = 0..1
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	## cardinality = 0..1
-	#used when starting a new game to give robots (see game_start.11) and techs (see game_start.8)
-	#description = localisaton
 	## cardinality = 0..1
 	playable = bool
 	## cardinality = 0..1
@@ -43,10 +38,19 @@ species_class = {
 	possible = {
 		## cardinality = 0..1
 		always = bool
+		## cardinality = 0..1
+		text = localisaton
+		## cardinality = 0..1
 		alias_name[government_trigger] = alias_match_left[government_trigger]
 	}
 	## cardinality = 0..1
+	## replace_scope = { root = country this = country }
 	possible_secondary = {
+		## cardinality = 0..1
+		always = bool
+		## cardinality = 0..1
+		text = localisaton
+		## cardinality = 0..1		
 		alias_name[government_trigger] = alias_match_left[government_trigger]
 	}
 	## cardinality = 0..1
@@ -56,15 +60,13 @@ species_class = {
 	}
 	## cardinality = 0..inf
 	custom_portraits = {
-		## replace_scope = { root = no_scope this = no_scope }
-		#i have no idea what the actual scope here is. someone should probably check it :)
+		## replace_scope = { root = no_scope this = no_scope }		
 		## cardinality = 0..1
 		randomized = {
 			## cardinality = 0..1
 			alias_name[trigger] = alias_match_left[trigger]
 		}
-		## replace_scope = { root = no_scope this = no_scope }
-		#i have no idea what the actual scope here is. someone should probably check it :)
+		## replace_scope = { root = no_scope this = no_scope }		
 		## cardinality = 0..1
 		playable = {
 			## cardinality = 0..1
@@ -97,4 +99,3 @@ species_class = {
 	## cardinality = 0..1
 	leader_age_max = int
 }
-
