@@ -1095,24 +1095,31 @@ alias[trigger:check_variable] = {
 #	min/max_distance now (very nearly exclusively) use <= for max and >= for min. Presumably there was a reason for the change and this should be enforced
 #	min should not be higher than max
 #	bypass_empire = country + only if not uses_bypass = no
+#	TODO: use_bypasses without bypass_empire does not work and should be an error
 #	min/max_jumps cannot have type = euclidean
 ###Checks the ship/fleet/planet/leader/pop/system's galaxy map distance to target in absolute units
 alias[trigger:distance] = {
-	source = scope[planet] #Check Vanilla - other scopes might well work too
+	#Leader scope does not appear to work correctly -Caligula
+	source = scope[planet]
 	source = scope[system]
+	source = scope[pop]
+	source = scope[fleet]
+	source = scope[ship]
 	## cardinality = 0..1
+	###Must use >= or will create error log entry
 	min_distance = int
 	## cardinality = 0..1
+	###Must use <= or will create error log entry
 	max_distance = int
 	## cardinality = 0..1
 	###Euclidean means the shortest distance from A to B, "as the crow flies" (hyperlane by default)
 	type = enum[hyperlane_euclidean]
 	## cardinality = 0..1
-	###Whether to use bypasses (wormholes/gateways) when evaluating distance (yes by default)
+	###Whether to use bypasses (wormholes/gateways) when evaluating distance (yes by default). Caligula's note: I think it is no by default. If it is "yes", it requires bypass_empire to work
 	use_bypasses = bool
 	## cardinality = 0..1
-	###Determines what bypass can be used. This parameter is ignored if uses_bypass=false. If unset, bypasses will be ignored. Note: This needs testing (what are valid entries?), report results to Dayshine and Caligula.
-	bypass_empire = scalar
+	###Determines what bypass can be used. This parameter is ignored if uses_bypass=false. If unset, bypasses will be ignored. It will check the bypasses available to the specified country. To check all possible bypasses, use e.g. the global event country.
+	bypass_empire = scope[country]
 	## cardinality = 0..1
 	min_jumps = int
 	## cardinality = 0..1
