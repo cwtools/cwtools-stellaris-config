@@ -1923,6 +1923,7 @@ alias[effect:modify_species] = {
 
 ###Changes the species of the scoped object
 alias[effect:change_species] = scope[species]
+alias[effect:change_species] = scope[country]
 alias[effect:change_species] = enum[create_leader_species]
 
 ###Changes the dominant species of the current Country, change_all also changes all usage of that species (Pops etc) in the empire
