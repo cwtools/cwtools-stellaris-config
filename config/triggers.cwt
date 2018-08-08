@@ -662,6 +662,7 @@ alias[trigger:closest_system] = {
 	##cardinality = 0..1
 	max_steps = int
 	
+	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	
 	alias_name[trigger] = alias_match_left[trigger]
