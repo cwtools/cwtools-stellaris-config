@@ -119,11 +119,14 @@ ship_size = {
 	## cardinality = 0..1
 	construction_type = starbase_defenses
 	## cardinality = 0..1
+	## replace_scope = { root = starbase this = starbase }
 	possible_starbase = {
-		## cardinality = 0..1 #might allow multiple entries!
-		has_starbase_size = <ship_size.starbase> #>= #this might need to be reworked
-		## cardinality = 0..1
-		has_starbase_building = <starbase_building>
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	## replace_scope = { root = starbase this = starbase }
+	potential_starbase = {
+		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..inf
 	required_component_set = <component_set.required_component> #this is linked to required components defined as such under component_sets, and is also linked to global_ship_designs!
@@ -152,6 +155,21 @@ ship_size = {
 	## cardinality = 0..1
 	## replace_scope = { root = country this = country }
 	potential_country = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	## replace_scope = { root = country this = country }
+	possible_country = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	## replace_scope = { root = planet this = planet }
+	potential_planet = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	## replace_scope = { root = planet this = planet }
+	possible_planet = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 }
