@@ -42,7 +42,7 @@ name_list = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
-	###It appears that randomized = yes will be read as randomized = no
+	###It appears that randomized = yes will be read as randomized = no. Anyway yes is default.
 	randomized = no
 	## cardinality = 0..1
 	alias = scalar
@@ -342,6 +342,10 @@ random_empire_name_format = {
 	## replace_scope = { root = country this = country }
 	### Conditional weight for choosing this format
 	random_weight = {
+		## cardinality = 0..1
+		factor = float
+		## cardinality = 0..1
+		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 
