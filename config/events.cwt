@@ -86,16 +86,16 @@ event = {
 
 		## cardinality = 0..1
 		diplomatic = bool
-		
+
 		## cardinality = 0..1
 		###Forces the event to pop-up even if player has supressed pop ups
 		auto_opens = bool
-		
+
 
 		## cardinality = 0..inf
 		option = {
 			name = localisation
-		
+
 			## cardinality = 0..1
 			sound = scalar
 
@@ -127,7 +127,7 @@ event = {
 			}
 
 			subtype[diplomatic] = {
-			
+
 				## cardinality = 0..1
 				response_text = localisation
 
@@ -160,7 +160,7 @@ event = {
 		## cardinality = 0..1
 		desc = OK
 	}
-			
+
 
 	subtype[default] = {
 		picture = <sprite>
@@ -219,7 +219,9 @@ event = {
 			## cardinality = 0..1
 			room = scope[species]
 			## cardinality = 0..1
-			room = scope[leader]			
+			room = scope[leader]
+			## cardinality = 0..1
+			room = icon[gfx/portraits/city_sets]
 			## cardinality = 0..1
 			portrait = <portrait>
 			## cardinality = 0..1
