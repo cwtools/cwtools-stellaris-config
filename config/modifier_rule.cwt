@@ -1,7 +1,4 @@
 
-#figured it made sense to add this!
-alias[modifier_rule:factor] = float
-alias[modifier_rule:weight] = float
 
 #needs some "or"s
 alias[modifier_rule:modifier] = {
