@@ -32,9 +32,11 @@ species_class = {
 	uplifted_portraits = {
 		## cardinality = 0..inf
 		<portrait>
+		## cardinality = 0..inf
+		<portrait_group>
 	}
 	## cardinality = 0..1
-	## replace_scope = { root = country this = country }	
+	## replace_scope = { root = country this = country }
 	possible = {
 		## cardinality = 0..1
 		always = bool
@@ -50,23 +52,25 @@ species_class = {
 		always = bool
 		## cardinality = 0..1
 		text = localisaton
-		## cardinality = 0..1		
+		## cardinality = 0..1
 		alias_name[government_trigger] = alias_match_left[government_trigger]
 	}
 	## cardinality = 0..1
 	portraits = {
 		## cardinality = 0..inf
 		<portrait>
+		## cardinality = 0..inf
+		<portrait_group>
 	}
 	## cardinality = 0..inf
 	custom_portraits = {
-		## replace_scope = { root = no_scope this = no_scope }		
+		## replace_scope = { root = no_scope this = no_scope }
 		## cardinality = 0..1
 		randomized = {
 			## cardinality = 0..1
 			alias_name[trigger] = alias_match_left[trigger]
 		}
-		## replace_scope = { root = no_scope this = no_scope }		
+		## replace_scope = { root = no_scope this = no_scope }
 		## cardinality = 0..1
 		playable = {
 			## cardinality = 0..1

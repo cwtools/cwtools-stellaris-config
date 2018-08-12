@@ -2,54 +2,54 @@
 
 types = {
 	## type_key_filter = alert
-	type[alert] = {  
+	type[alert] = {
 		path = "game/common"
 		skip_root_key = alerts
 	}
 	## type_key_filter = icon
-	type[alert_icon] = {  
+	type[alert_icon] = {
 		scalar = name
-		path = "game/common"		
-	}	
+		path = "game/common"
+	}
 	## type_key_filter = message_type
 	type[message_type] = {
 		key = name
 		path = "game/common"
-	}  
+	}
 	## type_key_filter = achievement
 	type[achievement] = {
-		path = "game/common" 
-	}	
+		path = "game/common"
+	}
 }
 
-alert = { 
-  alias[alert_category] = alias_match_left[alert_category]
+alert = {
+  alias_name[alert_category] = alias_match_left[alert_category]
   sound = <sound_effect>
-} 
-alert_icon = { 
+}
+alert_icon = {
 	## cardinality = 0..inf
 	scalar = filepath
-}	
+}
 alias[alert_category:category] = <alert_icon>
 alias[alert_category:category] = DISABLED
 
-message_type = { 
+message_type = {
   icon =  <sprite>
   icon_frame = int
-  key = localisation #loc string is called MESSAGE_<key>, make sure to validate this. 
+  key = localisation #loc string is called MESSAGE_<key>, make sure to validate this.
   sound = <sound_effect>
   sound_is_advisor = bool
   ping = <pingmap>
-} 
+}
 
-achievement = { 
+achievement = {
   id = int
   ## replace_scope = { this = country root = country }
-  possible = { 
+  possible = {
     alias_name[trigger] = alias_match_left[trigger]
   }
   ## replace_scope = { this = country root = country }
-  happened = { 
+  happened = {
     alias_name[trigger] = alias_match_left[trigger]
   }
 }

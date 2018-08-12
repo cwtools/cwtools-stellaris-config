@@ -51,6 +51,7 @@ ethos = {
 		}
 
 		tags = {
+			## cardinality = 0..inf
 			localisation
 		}
 

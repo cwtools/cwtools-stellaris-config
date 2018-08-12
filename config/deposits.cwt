@@ -18,9 +18,8 @@ deposit = {
 
 	## cardinality = 0..1
 	###requires either a mining station or a research station defined, even if the deposit is solely planetary
-	station = {
-		<shipclass>
-	}
+	station = enum[shipsize_classes]
+
 	## cardinality = 0..1
 	###the relative weight of the deposit in the orbital tile (1 per planet, always)
 	orbital_weight = {

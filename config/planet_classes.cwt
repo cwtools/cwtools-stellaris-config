@@ -74,6 +74,10 @@ planet_class = {
 		max = int
 	}
 	## cardinality = 0..1
+	planet_size = int
+	## cardinality = 0..1
+	moon_size = int
+	## cardinality = 0..1
 	moon_size = {
 		min = int
 		max = int

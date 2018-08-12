@@ -40,8 +40,6 @@ portrait_group = {
 				alias_name[trigger] = alias_match_left[trigger]
 				## cardinality = 0..1
 				scope[leader] = { gender = enum[gender] }
-				## cardinality = 0..1
-				scope[ruler] = { gender = enum[gender] }
 			}
 			portraits = {
 				## cardinality = 0..inf
@@ -56,14 +54,12 @@ portrait_group = {
 				alias_name[trigger] = alias_match_left[trigger]
 				## cardinality = 0..1
 				scope[leader] = { gender = enum[gender] }
-				## cardinality = 0..1
-				scope[ruler] = { gender = enum[gender] }
 			}
 			portraits = {
 				## cardinality = 0..inf
 				<portrait>
 			}
-		}		
+		}
 	}
 	## cardinality = 0..1
 	leader = {
@@ -94,7 +90,7 @@ portrait_group = {
 				## cardinality = 0..inf
 				<portrait>
 			}
-		}		
+		}
 	}
 	## cardinality = 0..1
 	ruler = {
@@ -125,7 +121,7 @@ portrait_group = {
 				## cardinality = 0..inf
 				<portrait>
 			}
-		}		
+		}
 	}
 	## cardinality = 0..1
 	pop = {
@@ -137,8 +133,6 @@ portrait_group = {
 				alias_name[trigger] = alias_match_left[trigger]
 				## cardinality = 0..1
 				scope[leader] = { gender = enum[gender] }
-				## cardinality = 0..1
-				scope[ruler] = { gender = enum[gender] }
 			}
 			portraits = {
 				## cardinality = 0..inf
@@ -153,14 +147,12 @@ portrait_group = {
 				alias_name[trigger] = alias_match_left[trigger]
 				## cardinality = 0..1
 				scope[leader] = { gender = enum[gender] }
-				## cardinality = 0..1
-				scope[ruler] = { gender = enum[gender] }
 			}
 			portraits = {
 				## cardinality = 0..inf
 				<portrait>
 			}
-		}		
+		}
 	}
 	## cardinality = 0..1
 	species = {
@@ -172,8 +164,6 @@ portrait_group = {
 				alias_name[trigger] = alias_match_left[trigger]
 				## cardinality = 0..1
 				scope[leader] = { gender = enum[gender] }
-				## cardinality = 0..1
-				scope[ruler] = { gender = enum[gender] }
 			}
 			portraits = {
 				## cardinality = 0..inf
@@ -188,14 +178,12 @@ portrait_group = {
 				alias_name[trigger] = alias_match_left[trigger]
 				## cardinality = 0..1
 				scope[leader] = { gender = enum[gender] }
-				## cardinality = 0..1
-				scope[ruler] = { gender = enum[gender] }
 			}
 			portraits = {
 				## cardinality = 0..inf
 				<portrait>
 			}
-		}		
+		}
 	}
 }
 

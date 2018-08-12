@@ -3,31 +3,31 @@ types = {
   type[light] = {
     name_field = name
     path = "game/gfx/lights"
-  }  
+  }
 }
   # ## type_key_filter = animation
-  # type[light_animation] = { #these are actually a part of the the light assets, but i need to split them up because of the weird mix of values and keys in these files. 
+  # type[light_animation] = { #these are actually a part of the the light assets, but i need to split them up because of the weird mix of values and keys in these files.
   #  name_field = name
   #  path = "game/gfx/lights"
-  #}  
+  #}
 
 light = {
 	name = scalar
-	
-	color = { 
+
+	color = {
 		r = { float }
 		g = { float }
 		b = { float }
 	}
-	
+
 	## cardinality = 0..1
-  	alias[intensity] = alias_match_left[intensity]
-  
+  	alias_name[intensity] = alias_match_left[intensity]
+
 	radius = int
 	falloff = int
 	## cardinality = 0..1
 	duration = float
-	
+
 	position = { x = int y = int z = int }
 	## cardinality = 0..1
 	animation = {
@@ -41,11 +41,11 @@ light = {
 	  minValue = float
 	  ## cardinality = 0..1
 		maxValue = float
-		curve = { 
+		curve = {
 		## cardinality = 4..6
 			float
 		}
-	}	
+	}
 }
 alias[intensity:intensity] = scalar #TODO #int,<light_animation>
 alias[intensity:intensity] = int
@@ -56,7 +56,7 @@ enums = {
     "MUL"
     "ADD"
     "ABS"
-  } 
+  }
   complex_enum[light_animations] = {
   	path = "game/gfx/lights"
 	name = {
@@ -65,4 +65,4 @@ enums = {
 		}
 	}
   }
-} 
+}

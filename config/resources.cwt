@@ -44,7 +44,10 @@ resource = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
-	prerequisites = { <technology> }
+	prerequisites = {
+		## cardinality = 0..inf
+		<technology>
+	}
 	## cardinality = 0..1
 	visibility_prerequisite = {
 		alias_name[trigger] = alias_match_left[trigger]

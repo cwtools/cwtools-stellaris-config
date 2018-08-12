@@ -62,16 +62,12 @@ name_list = {
 
 		## cardinality = 0..inf
 		<ship_size> = {
+			## cardinality = 0..inf
+			scalar
+
 			## cardinality = 0..1
-			names = {
-				## cardinality = 0..inf
-				scalar
-			}
-			## cardinality = 0..1
-			sequential_name = {
-				## cardinality = 0..inf
-				scalar
-			}
+			sequential_name = scalar
+
 			## cardinality = 0..1
 			random_names = {
 				## cardinality = 0..inf
@@ -88,10 +84,7 @@ name_list = {
 		}
 		#formula for name generation
 		## cardinality = 0..1
-		sequential_name = {
-			## cardinality = 0..inf
-			scalar
-		}
+		sequential_name = scalar
 		## cardinality = 0..1
 		random_names = {
 			## cardinality = 0..inf
@@ -106,10 +99,7 @@ name_list = {
 			scalar
 			#formula for name generation
 			## cardinality = 0..1
-			sequential_name = {
-				## cardinality = 0..inf
-				scalar
-			}
+			sequential_name = scalar
 		}
 
 		#armies that can be built and do not defined in a name list will get a generic
@@ -123,10 +113,7 @@ name_list = {
 				scalar
 			}
 			## cardinality = 0..1
-			sequential_name = {
-				## cardinality = 0..inf
-				scalar
-			}
+			sequential_name = scalar
 			## cardinality = 0..1
 			random_names = {
 				## cardinality = 0..inf

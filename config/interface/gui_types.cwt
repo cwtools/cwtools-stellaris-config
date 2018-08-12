@@ -618,15 +618,15 @@ alias[overlay:overlay] = {
 }
 alias[gui_standard_element:size] = {
 x = int
-x = percentage
+x = percentage_field
 y = int
-y = percentage
+y = percentage_field
 }
 alias[gui_standard_element:size] = {
 width = int
-width = percentage
+width = percentage_field
 height = int
-height = percentage
+height = percentage_field
 }
 
 alias[gui_standard_element:position] = {

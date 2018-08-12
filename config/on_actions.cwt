@@ -471,7 +471,7 @@ on_building_wormhole_station = {
 	<event.ship>
 }
 on_entering_war = {
-	## replace_scope = { root = country this = country from = opponent war leader }
+	## replace_scope = { root = country this = country from = country }
 	## cardinality = 0..inf
 	<event.country>
 }
@@ -520,13 +520,14 @@ on_terraforming_complete = {
 	## cardinality = 0..inf
 	<event.planet>
 }
+#TODO: check from
 on_planet_zero_health = {
-	## replace_scope = { root = planet this = planet from orbital bombardment }
+	## replace_scope = { root = planet this = planet from = any }
 	## cardinality = 0..inf
 	<event.planet>
 }
 on_planet_zero_pops = {
-	## replace_scope = { root = planet this = planet from orbital bombardment }
+	## replace_scope = { root = planet this = planet from = any }
 	## cardinality = 0..inf
 	<event.planet>
 }

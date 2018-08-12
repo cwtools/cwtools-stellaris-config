@@ -527,7 +527,7 @@ civic = {
 
 	## cardinality = 0..1
 	###default: no
-	can_build_ruler_ship = yes / no
+	can_build_ruler_ship = bool
 
 	## cardinality = 0..1
 	### default: empty; trait set to enforce on the primary species. They cannot be removed, but more can be added if points/picks permit
@@ -573,7 +573,7 @@ alias[government_trigger:authority] = {
 		## cardinality = 2..inf
 		value = <authority>
 	}
-}	
+}
 alias[government_trigger:country_type] = {
 	## cardinality = 0..1
 	value = <country_type>

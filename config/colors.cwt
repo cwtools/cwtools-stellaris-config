@@ -1,4 +1,4 @@
-type = { 
+type = {
 	type[country_color] = {
 		path = "game/common/colors"
 		## type_key_filter = country
@@ -14,69 +14,88 @@ type = {
 	}
 }
 
-# these appear to be colors attached to scopes. Simple as that. 
+# these appear to be colors attached to scopes. Simple as that.
 
-country = { 
+country = {
 	##cardinality = 0..inf
-	rgb { 
-		##cardinality = 3..3
-		int
-	}	
+	colour[rgb]
 	##cardinality = 0..inf
-	hsv { 
-		##cardinality = 3..3
-		float
-	}			
+	colour[hsv]
+	# rgb {
+	# 	##cardinality = 3..3
+	# 	int
+	# }
+	# ##cardinality = 0..inf
+	# hsv {
+	# 	##cardinality = 3..3
+	# 	float
+	# }
 }
 
-fallen_empire = { 
+fallen_empire = {
 	##cardinality = 0..inf
-	rgb { 
-		##cardinality = 3..3
-		int
-	}	
+	colour[rgb]
 	##cardinality = 0..inf
-	hsv { 
-		##cardinality = 3..3
-		float
-	}		
+	colour[hsv]
+	# ##cardinality = 0..inf
+	# rgb {
+	# 	##cardinality = 3..3
+	# 	int
+	# }
+	# ##cardinality = 0..inf
+	# hsv {
+	# 	##cardinality = 3..3
+	# 	float
+	# }
 }
 
 faction = {
 	##cardinality = 0..inf
-	rgb { 
-		##cardinality = 3..3
-		int
-	}	
+	colour[rgb]
 	##cardinality = 0..inf
-	hsv { 
-		##cardinality = 3..3
-		float
-	}		
+	colour[hsv]
+	# ##cardinality = 0..inf
+	# rgb {
+	# 	##cardinality = 3..3
+	# 	int
+	# }
+	# ##cardinality = 0..inf
+	# hsv {
+	# 	##cardinality = 3..3
+	# 	float
+	# }
 }
 
 pirate = {
 	##cardinality = 0..inf
-	rgb { 
-		##cardinality = 3..3
-		int
-	}	
+	colour[rgb]
 	##cardinality = 0..inf
-	hsv { 
-		##cardinality = 3..3
-		float
-	}		
+	colour[hsv]
+	# ##cardinality = 0..inf
+	# rgb {
+	# 	##cardinality = 3..3
+	# 	int
+	# }
+	# ##cardinality = 0..inf
+	# hsv {
+	# 	##cardinality = 3..3
+	# 	float
+	# }
 }
 
-species = { 
+species = {
 	##cardinality = 0..inf
-	rgb { 
-		##cardinality = 3..3
-		int
-	}	
+	colour[rgb]
 	##cardinality = 0..inf
-	hsv { 
-		##cardinality = 3..3
-		float
-	}		
+	colour[hsv]
+	# ##cardinality = 0..inf
+	# rgb {
+	# 	##cardinality = 3..3
+	# 	int
+	# }
+	# ##cardinality = 0..inf
+	# hsv {
+	# 	##cardinality = 3..3
+	# 	float
+	# }
 }

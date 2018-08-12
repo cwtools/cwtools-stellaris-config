@@ -12,30 +12,36 @@ types = {
 #all defined colors are nestled within a field called colors = { } please see the pertinent file.
 
 color_define = {
-	flag = rgb {
-		## cardinality = 3..3
-		int[0..255]
-	}
-	flag = hsv {
-		## cardinality = 3..3
-		float[0.0..1.0]
-	}
-	map = rgb {
-		## cardinality = 3..3
-		int[0..255]
-	}
-	map = hsv {
-		## cardinality = 3..3
-		float[0.0..1.0]
-	}
-	ship = rgb {
-		## cardinality = 3..3
-		int[0..255]
-	}
-	ship = hsv {
-		## cardinality = 3..3
-		float[0.0..1.0]
-	}
+	flag = colour[rgb]
+	flag = colour[hsv]
+	# flag = rgb {
+	# 	## cardinality = 3..3
+	# 	int[0..255]
+	# }
+	# flag = hsv {
+	# 	## cardinality = 3..3
+	# 	float[0.0..1.0]
+	# }
+	map = colour[rgb]
+	map = colour[hsv]
+	# map = rgb {
+	# 	## cardinality = 3..3
+	# 	int[0..255]
+	# }
+	# map = hsv {
+	# 	## cardinality = 3..3
+	# 	float[0.0..1.0]
+	# }
+	ship = colour[rgb]
+	ship = colour[hsv]
+	# ship = rgb {
+	# 	## cardinality = 3..3
+	# 	int[0..255]
+	# }
+	# ship = hsv {
+	# 	## cardinality = 3..3
+	# 	float[0.0..1.0]
+	# }
 }
 
 randomizable_combo = {
@@ -43,10 +49,10 @@ randomizable_combo = {
   <color_define>
  }
 
-enums = {
-	enum[color_type] = {
-		hsv
-		rgb
-	}
-}
+# enums = {
+# 	enum[color_type] = {
+# 		hsv
+# 		rgb
+# 	}
+# }
 

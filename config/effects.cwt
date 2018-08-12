@@ -25,12 +25,16 @@ alias[effect:hidden_effect] = { alias_name[effect] = alias_match_left[effect] }
 
 
 alias[effect:if] = {
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 	alias_name[effect] = alias_match_left[effect]
 }
 
 alias[effect:else_if] = {
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -1088,17 +1092,21 @@ alias[effect:destroy_colony] = yes
 alias[effect:set_ruined] = bool
 
 alias[effect:random_list] = {
+	##cardinality = 0..inf
 	int = {
-		##cardinality = 0..100
+		##cardinality = 0..inf
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		##cardinality = 0..inf
 		alias_name[effect] = alias_match_left[effect]
 	}
 }
 
 alias[effect:random_list] = {
+	##cardinality = 0..inf
 	float = {
-		##cardinality = 0..100
+		##cardinality = 0..inf
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		##cardinality = 0..inf
 		alias_name[effect] = alias_match_left[effect]
 	}
 }
@@ -1652,9 +1660,9 @@ alias[effect:create_country] = {
 			file = scalar #should be "filename.dds" in the correct folder
 		}
 		colors ={
-			##cardinality = 4..4
-			color_define
-			##cardinality = 4..4
+			##cardinality = 0..4
+			<color_define>
+			##cardinality = 0..4
       		"null"
 		}
 	}
@@ -2791,6 +2799,8 @@ alias[effect:leave_alliance] = {
 
 ### Prints a message to game.log for debugging purposes.
 alias[effect:log] = { alias_name[effect] = alias_match_left[effect] }
+### Prints a message to game.log for debugging purposes.
+alias[effect:log] = scalar
 
 ## push_scope = fleet
 ###Scope (/context) switch
@@ -3319,6 +3329,16 @@ alias[effect:stop_crisis_sound] = yes
 
 ### Executes the first appropriate effect set for a specific trigger
 alias[effect:switch] = scalar #TODO
+### Executes the first appropriate effect set for a specific trigger
+#TODO
+alias[effect:switch] = {
+	trigger = scalar
+	## cardinality = 0..inf
+	scalar = {
+		## cardinality = 0..inf
+		alias_name[effect] = alias_match_left[effect]
+	}
+}
 
 ## push_scope = star
 ###Scope (/context) switch

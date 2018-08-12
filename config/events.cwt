@@ -59,6 +59,7 @@ event = {
 		desc = localisation
 
 		desc = {
+			## cardinality = 0..1
 			trigger = { alias_name[trigger] = alias_match_left[trigger] }
 			text = localisation
 		}
@@ -193,20 +194,21 @@ event = {
 	## cardinality = 0..1
 	auto_select = bool
 
-	subtype[!triggered]
-	## cardinality = 0..1
-	mean_time_to_happen = {
+	subtype[!triggered] = {
 		## cardinality = 0..1
-		years = int
+		mean_time_to_happen = {
+			## cardinality = 0..1
+			years = int
 
-		## cardinality = 0..1
-		months = int
+			## cardinality = 0..1
+			months = int
 
-		## cardinality = 0..1
-		days = int
+			## cardinality = 0..1
+			days = int
 
-		## cardinality = 0..100
-		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+			## cardinality = 0..100
+			alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		}
 	}
 
 	subtype[diplomatic] = {

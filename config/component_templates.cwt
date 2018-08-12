@@ -19,7 +19,7 @@ types = {
 
 component_template = {
 	key = scalar
-	
+
 	icon = <sprite>
 	icon_frame = int
 	## cardinality = 0..1
@@ -42,12 +42,15 @@ component_template = {
 		<component_tag>
 	}
 	## cardinality = 0..1
-	size_restriction =  <shipsize>
+	size_restriction = {
+		## cardinality = 1..inf
+		<shipsize>
+	}
 	## cardinality = 0..1
 	should_ai_use = bool
 	## cardinality = 0..1
 	## replace_scope = { root = country this = country }
- 	valid_for_country = { 		 		
+ 	valid_for_country = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
  	}
 	## cardinality = 0..1
@@ -57,18 +60,18 @@ component_template = {
 		## cardinality = 0..1
 		factor = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
-	}	
+	}
 	subtype[utility_component_template] = {
 		power = int
 		cost = int
 		size = enum[utility_slot_size]
 		## cardinality = 0..1
-		modifier = {			
+		modifier = {
 			## cardinality = 0..inf
 			alias_name[modifier] = alias_match_left[modifier]
 		}
 		## cardinality = 0..1
-		ship_modifier = {	
+		ship_modifier = {
 			## cardinality = 0..inf
 			alias_name[modifier] = alias_match_left[modifier]
 		}

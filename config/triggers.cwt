@@ -661,10 +661,10 @@ alias[trigger:closest_system] = {
 	min_steps = int
 	##cardinality = 0..1
 	max_steps = int
-	
+
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
-	
+
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
@@ -1168,6 +1168,8 @@ alias[trigger:has_population_control] = {
 	type = enum[population_controls]
 }
 ###Checks if the pop is prevented from migrating
+alias[trigger:has_migration_control] = bool
+	###Checks if the pop is prevented from migrating
 alias[trigger:has_migration_control] = {
 	## cardinality = 0..1
 	country = scope[country]
@@ -1826,6 +1828,11 @@ alias[trigger:income] = int
 
 ### Checks the country's intel level of target system
 alias[trigger:intel_level] = enum[intel_level]
+### Checks the country's intel level of target system
+alias[trigger:intel_level] = {
+	intel = enum[intel_level]
+	system = scope[system]
+}
 
 enums = {
 	enum[intel_level] = {
@@ -2248,6 +2255,15 @@ alias[trigger:success_text] = {
 
 ### Switch case for a trigger
 alias[trigger:switch] = scalar #TODO sitch
+### Switch case for a trigger
+alias[trigger:switch] = {
+	trigger = scalar
+	## cardinality = 0..inf
+	scalar = {
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
 
 ## push_scope = star
 ###Scope (/context) switch
