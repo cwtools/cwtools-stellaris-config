@@ -4,13 +4,13 @@ types = {
 		path = "game/common/solar_system_initializers"
 		subtype[fallen_empire_initializer] = {
 			usage = fallen_empire_init
-		}	
+		}
 	}
 	## type_key_filter = random_list
 	type[solar_system_initializer_random_list] = {
 		name_field = name
 		path = "game/common/solar_system_initializers"
-	}	
+	}
 }
 
 solar_system_initializer = {
@@ -33,6 +33,13 @@ solar_system_initializer = {
 	usage = enum[usage_type]
 	## cardinality = 0..1
 	usage_odds = int
+	## cardinality = 0..1
+	usage_odds = {
+		## cardinality = 0..1
+		base = int
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
 	## cardinality = 0..1
 	### accepts negative numbers, negative numbers = unrestricted
 	max_instances = int
@@ -61,7 +68,7 @@ solar_system_initializer = {
 		## replace_scope = { this = planet root = country = prev = system }
 		alias_name[planet_initializer] = alias_match_left[planet_initializer]
 	}
-	
+
 	## cardinality = 0..inf
 	change_orbit = int
 	## cardinality = 0..inf
@@ -74,7 +81,7 @@ solar_system_initializer = {
 		init_effect = {
 			alias_name[effect] = alias_match_left[effect]
 		}
-	}	
+	}
 	subtype[fallen_empire_initializer] = {
 		###the scope here is galactic_object scope, with prev being set to the previous system that was initialized by this tree ( if any ). Root will point to the first system in the tree or the root of the calling event.
 		## replace_scope = { this = galactic_object root = country }
@@ -157,7 +164,7 @@ alias[planet_initializer:planet] = {
 	## cardinality = 0..1
 	tile_blockers = none
 	## cardinality = 0..inf
-	tile_blocker = <tile_blocker>	
+	tile_blocker = <tile_blocker>
 	## cardinality = 0..1
 	modifiers = none
 	## cardinality = 0..inf
@@ -174,7 +181,7 @@ alias[planet_initializer:planet] = {
 
 	## cardinality = 0..1
 	starting_planet = bool
-	
+
 	### The scope will be a planet scope, with prev being the system. prevprev will be the system that triggered this system's initialization ( if any ). Root will be the fallen empire.
 	## cardinality = 0..1
 	init_effect = {
@@ -184,8 +191,8 @@ alias[planet_initializer:planet] = {
 	alias_name[planet_initializer] = alias_match_left[planet_initializer]
 	## push_scope = planet
 	alias_name[moon_initializer] = alias_match_left[moon_initializer]
-	
-}	
+
+}
 alias[moon_initializer:moon] = {
 	## cardinality = 0..1
 	name = localisation_synced
@@ -257,19 +264,19 @@ alias[moon_initializer:moon] = {
 
 	## cardinality = 0..1
 	starting_planet = bool
-	
+
 	### The scope will be a planet scope, with prev being the system. prevprev will be the system that triggered this system's initialization ( if any ). Root will be the first system in this initializer tree
 	## cardinality = 0..1
 	init_effect = {
 		alias_name[effect] = alias_match_left[effect]
-	}	
-}	
+	}
+}
 
-solar_system_initializer_random_list = { 
+solar_system_initializer_random_list = {
 	name = scalar
 	## cardinality = 1..inf
 	<solar_system_initializer> = int
-}	
+}
 
 enums = {
 	enum[usage_type] = {

@@ -44,7 +44,7 @@ component_template = {
 	## cardinality = 0..1
 	size_restriction = {
 		## cardinality = 1..inf
-		<shipsize>
+		<ship_size>
 	}
 	## cardinality = 0..1
 	should_ai_use = bool

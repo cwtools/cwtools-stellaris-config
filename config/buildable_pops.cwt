@@ -31,7 +31,7 @@ buildable_pop = {
 	tile_potential = {
 		## cardinality = 0..inf
 		alias_name[trigger] = alias_match_left[trigger]
-	}	
+	}
 	## replace_scope = { this = country root = country }
 	## cardinality = 0..1
 	allow = {
@@ -78,6 +78,8 @@ buildable_pop = {
 		## cardinality = 0..1
 		pop_ethics = no
 		## cardinality = 0..1
+		pop_ethics = random
+		## cardinality = 0..1
 		pop_ethics = {
 			## cardinality = 0..inf
 			<ethos>
@@ -107,6 +109,7 @@ buildable_pop = {
 
 	## cardinality = 0..1
 	portrait = {
+		## cardinality = 0..inf
 		<portrait> = {
 			## cardinality = 0..inf
 			alias_name[trigger] = alias_match_left[trigger]

@@ -1162,7 +1162,10 @@ alias[effect:set_location] = {
 	target = scope[planet]
 	target = scope[galactic_object]
 	distance = int
+	## cardinality = 0..1
 	angle = int[0..360]
+	## cardinality = 0..1
+	angle = random
 }
 
 

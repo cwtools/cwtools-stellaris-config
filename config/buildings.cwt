@@ -41,6 +41,7 @@ building = {
 	level = int
 	## cardinality = 0..1
 	prerequisites = {
+		## cardinality = 0..inf
 		<technology>
 	}
 	subtype[event_building] = {
@@ -70,7 +71,7 @@ building = {
 	}
 	## cardinality = 0..inf
 	## replace_scope = { this = country root = country }
-	produced_resource_trigger = { 
+	produced_resource_trigger = {
 		## cardinality = 0..inf
 		modifier = {
 			alias_name[trigger] = alias_match_left[trigger]
