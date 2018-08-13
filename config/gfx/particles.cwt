@@ -16,6 +16,7 @@ types = {
 particle = {
 		name = scalar
 		type = <particle_type>
+		## cardinality = 0..1
 		scale = float
 }
 
