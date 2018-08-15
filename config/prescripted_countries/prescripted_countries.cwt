@@ -46,6 +46,7 @@ prescripted_country = {
     	trait = <trait>
 	}
 	
+	room = icon[gfx/portraits/city_sets]
 	room = <asset_selector.room> #this one is defined under gfx/portraits/asset_selectors
 	
 	## cardinality = 0..1
