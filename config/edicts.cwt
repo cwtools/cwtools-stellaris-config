@@ -25,7 +25,10 @@ edict = {
 	length = int
 
 	subtype[!country_edict_ambition] = {
-		cost = { <resource> = int }
+		cost = {
+			## cardinality = 0..5
+			<resource> = int
+		}
 	}
 
 	subtype[country_edict_ambition] = {

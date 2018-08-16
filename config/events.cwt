@@ -60,9 +60,75 @@ event = {
 
 		desc = {
 			## cardinality = 0..1
-			trigger = { alias_name[trigger] = alias_match_left[trigger] }
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+				
+				## cardinality = 0..inf
+				scope[any] = {
+					switch = {
+						trigger = scalar
+						## cardinality = 2..inf
+						scalar = {
+							## cardinality = 0..1
+							if = {
+								limit = { alias_name[trigger] = alias_match_left[trigger] }
+								text = localisation
+							}
+							## cardinality = 0..1
+							text = localisation
+						}
+					}
+				}
+				## cardinality = 0..1
+				switch = {
+					trigger = scalar
+					## cardinality = 2..inf
+					scalar = {
+						## cardinality = 0..1
+						if = {
+							limit = { alias_name[trigger] = alias_match_left[trigger] }
+							text = localisation
+						}
+						## cardinality = 0..1
+						text = localisation
+					}
+				}
+			}
 			## cardinality = 0..1
-			exclusive_trigger = { alias_name[trigger] = alias_match_left[trigger] }
+			exclusive_trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+				
+				## cardinality = 0..inf
+				scope[any] = {
+					switch = {
+						trigger = scalar
+						## cardinality = 2..inf
+						scalar = {
+							## cardinality = 0..1
+							if = {
+								limit = { alias_name[trigger] = alias_match_left[trigger] }
+								text = localisation
+							}
+							## cardinality = 0..1
+							text = localisation
+						}
+					}
+				}
+				## cardinality = 0..1
+				switch = {
+					trigger = scalar
+					## cardinality = 2..inf
+					scalar = {
+						## cardinality = 0..1
+						if = {
+							limit = { alias_name[trigger] = alias_match_left[trigger] }
+							text = localisation
+						}
+						## cardinality = 0..1
+						text = localisation
+					}
+				}
+			}
 			## cardinality = 0..1
 			text = localisation
 			## cardinality = 0..1

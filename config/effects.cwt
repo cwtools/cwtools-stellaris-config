@@ -1065,6 +1065,7 @@ alias[effect:change_government] = {
 	civics = {
 		## cardinality = 1..3
 		civic = <civic>
+		civic = random
 	}
 }
 
@@ -1168,6 +1169,7 @@ alias[effect:set_location] = {
 	target = scope[megastructure]
 	target = scope[fleet]
 	target = scope[ship]
+	## cardinality = 0..1
 	distance = int
 	## cardinality = 0..1
 	angle = int[0..360]
@@ -1457,6 +1459,7 @@ alias[effect:copy_techs_from] = {
 	target = scope[country]
 	## cardinality = 0..1
 	except = {
+		## cardinality = 0..inf
 		<technology>
 	}
 }
@@ -1512,11 +1515,13 @@ alias[effect:create_species] = {
 	traits = random
 	## cardinality = 0..2
 	traits = {
+		## cardinality = 0..1
+		ideal_planet_class = <planet_class.habitable_planet>
 		## cardinality = 0..10
 		trait = <trait.species_trait>
-		## cardinality = 0..1
+		## cardinality = 0..10
 		trait = random_traits
-		## cardinality = 0..1
+		## cardinality = 0..10
 		trait = random_presapient_trait
 		## cardinality = 0..10
 		add_trait = <trait.species_trait>
@@ -1582,6 +1587,8 @@ alias[effect:create_species] = {
 	name_list = scope[country]
 
 	## cardinality = 0..1
+	pop_ethics = no
+	## cardinality = 0..1
 	pop_ethics = random
 	## cardinality = 0..1
 	pop_ethics = <ethos>
@@ -1631,7 +1638,7 @@ alias[effect:create_country] = {
 	civics = random
 	## cardinality = 0..1
 	civics = {
-		## cardinality = 2..3
+		## cardinality = 1..4
 		civic = <civic>
 	}
 	## cardinality = 0..1
@@ -1659,6 +1666,8 @@ alias[effect:create_country] = {
 	## push_scope = country
 	effect = { alias_name[effect] = alias_match_left[effect] }
 
+	## cardinality = 0..1
+	flag = scope[country]
 	## cardinality = 0..1
 	flag = random
 	## cardinality = 0..1
@@ -1716,12 +1725,15 @@ alias[effect:create_rebels] = {
 	## cardinality = 0..1
 	ethos = random
 	## cardinality = 0..1
+	ethos = scope[country]
+	## cardinality = 0..1
 	ethos = {
-		## cardinality = 2..3
-		ethic = <ethos>
+		## cardinality = 1..3
 		ethic = <ethos>
 	}
 
+	## cardinality = 0..1
+	flag = scope[country]
 	## cardinality = 0..1
 	flag = random
 	## cardinality = 0..1
@@ -2235,6 +2247,9 @@ alias[effect:cancel_terraformation] = bool
 
 
 ### Changes the scoped country's flag
+alias[effect:change_country_flag] = random
+
+### Changes the scoped country's flag
 alias[effect:change_country_flag] = {
 	icon = {
 		category = scalar #TODO should be a folder name. This needs to be corrected for create_country, create_rebels and prescripted_countries too (possibly more)
@@ -2568,7 +2583,7 @@ alias[effect:create_pop] = {
 	ethos = scope[country]
 	## cardinality = 0..1
 	ethos = {
-		## cardinality = 2..2
+		## cardinality = 1..1
 		ethic = <ethos>
 	}
 }
