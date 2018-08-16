@@ -1667,6 +1667,8 @@ alias[effect:create_country] = {
 	effect = { alias_name[effect] = alias_match_left[effect] }
 
 	## cardinality = 0..1
+	flag = scope[country]
+	## cardinality = 0..1
 	flag = random
 	## cardinality = 0..1
 	flag = {
@@ -1730,6 +1732,8 @@ alias[effect:create_rebels] = {
 		ethic = <ethos>
 	}
 
+	## cardinality = 0..1
+	flag = scope[country]
 	## cardinality = 0..1
 	flag = random
 	## cardinality = 0..1
