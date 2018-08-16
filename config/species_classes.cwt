@@ -77,14 +77,19 @@ species_class = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 		portraits = {
-			## cardinality = 1..inf
+			## cardinality = 0..inf
 			<portrait>
+			## cardinality = 0..inf
+			<portrait_group>
 		}
 	}
 	## cardinality = 0..1
 	non_randomized_portraits = {
-		## cardinality = 1..inf
+		## cardinality = 0..inf
 		<portrait>
+		## cardinality = 0..inf
+		<portrait_group>
+
 	}
 	## cardinality = 0..1
 	gender = bool

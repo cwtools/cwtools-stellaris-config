@@ -26,7 +26,7 @@ types = {
 #TODO Expand to add colonizable subtype
 planet_class = {
 	## cardinality = 0..1
-	alias_name[planet_class_hsv] = alias_match_left[planet_class_hsv]
+	atmosphere_color = colour[hsv]
 	## cardinality = 0..1
 	atmosphere_intensity = float
 	## cardinality = 0..1
@@ -147,10 +147,4 @@ planet_class_random_list = {
 	planets = {
 		<planet_class>
 	}
-}
-
-#Workaround for reusable
-alias[planet_class_hsv:atmosphere_color] = {
-    ## cardinality = 3..3
-    float[0.0..1.0]
 }
