@@ -1065,6 +1065,7 @@ alias[effect:change_government] = {
 	civics = {
 		## cardinality = 1..3
 		civic = <civic>
+		civic = random
 	}
 }
 
@@ -1513,11 +1514,13 @@ alias[effect:create_species] = {
 	traits = random
 	## cardinality = 0..2
 	traits = {
+		## cardinality = 0..1
+		ideal_planet_class = <planet_class.habitable_planet>
 		## cardinality = 0..10
 		trait = <trait.species_trait>
-		## cardinality = 0..1
+		## cardinality = 0..10
 		trait = random_traits
-		## cardinality = 0..1
+		## cardinality = 0..10
 		trait = random_presapient_trait
 		## cardinality = 0..10
 		add_trait = <trait.species_trait>
