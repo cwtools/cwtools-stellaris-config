@@ -1674,6 +1674,7 @@ alias[effect:create_country] = {
 	flag = {
 		#TODO - this is connected to game/flags.
 		#I already created an entry for flag colors etc, you should work on connecting these.
+		## cardinality = 0..1
 		icon = {
 			category = scalar #should be some sort of key
 			file = scalar #should be "filename.dds" in the correct folder
@@ -1740,6 +1741,7 @@ alias[effect:create_rebels] = {
 	flag = {
 		#TODO - this is connected to game/flags.
 		#I already created an entry for flag colors etc, you should work on connecting these.
+		## cardinality = 0..1
 		icon = {
 			category = scalar #should be some sort of key
 			file = scalar #should be "filename.dds" in the correct folder

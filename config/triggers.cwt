@@ -1226,6 +1226,7 @@ alias[trigger:has_country_resource] = {
 	type = <resource>
 	amount = int
 }
+alias[trigger:has_resource] = <resource>
 alias[trigger:has_resource] = bool
 alias[trigger:has_resource] = {
 	type = <resource>
