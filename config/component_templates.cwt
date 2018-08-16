@@ -35,10 +35,13 @@ component_template = {
 	## cardinality = 0..1
 	upgrades_to = <component_template>
 	## cardinality = 0..1
-	tags = { <component_tag> }
+	tags = {
+		## cardinality = 0..inf
+		<component_tag>
+	}
 	## cardinality = 0..1
 	ai_tags = {
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		<component_tag>
 	}
 	## cardinality = 0..1
@@ -51,7 +54,7 @@ component_template = {
 	## cardinality = 0..1
 	## replace_scope = { root = country this = country }
  	valid_for_country = {
-		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		alias_name[trigger] = alias_match_left[trigger]
  	}
 	## cardinality = 0..1
 	ai_weight = {

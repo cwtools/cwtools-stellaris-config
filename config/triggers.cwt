@@ -1,5 +1,5 @@
 
-alias[trigger:scope] = { alias_name[trigger] = alias_match_left[trigger] }
+alias[trigger:scope_field] = { alias_name[trigger] = alias_match_left[trigger] }
 
 alias[trigger:NOT] = {
 	## cardinality = 1..1
@@ -1729,6 +1729,7 @@ alias[trigger:has_frontier_station] = bool
 
 ### Checks if the system has a hyperlane connection to target system
 alias[trigger:has_hyperlane_to] = scope[galactic_object]
+alias[trigger:has_hyperlane_to] = scope[country]
 
 ### Checks if the leader has any, or a specific, mandate
 alias[trigger:has_mandate] = bool
