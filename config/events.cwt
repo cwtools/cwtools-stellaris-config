@@ -63,7 +63,7 @@ event = {
 			trigger = {
 				alias_name[trigger] = alias_match_left[trigger]
 				
-				## cardinality = 0..1
+				## cardinality = 0..inf
 				scope[any] = {
 					switch = {
 						trigger = scalar
@@ -98,7 +98,7 @@ event = {
 			exclusive_trigger = {
 				alias_name[trigger] = alias_match_left[trigger]
 				
-				## cardinality = 0..1
+				## cardinality = 0..inf
 				scope[any] = {
 					switch = {
 						trigger = scalar
