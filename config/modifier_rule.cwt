@@ -28,7 +28,6 @@ alias[modifier_rule_add_factor:modifier] = {
 
 #for only parameter cases
 alias[scaled_modifier_rule:scaled_modifier] = {
-	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger]  }
 	## cardinality = 1..1
 	scope = scope[any]

@@ -1169,6 +1169,7 @@ alias[effect:set_location] = {
 	target = scope[megastructure]
 	target = scope[fleet]
 	target = scope[ship]
+	## cardinality = 0..1
 	distance = int
 	## cardinality = 0..1
 	angle = int[0..360]
@@ -1586,6 +1587,8 @@ alias[effect:create_species] = {
 	name_list = scope[country]
 
 	## cardinality = 0..1
+	pop_ethics = no
+	## cardinality = 0..1
 	pop_ethics = random
 	## cardinality = 0..1
 	pop_ethics = <ethos>
@@ -1635,7 +1638,7 @@ alias[effect:create_country] = {
 	civics = random
 	## cardinality = 0..1
 	civics = {
-		## cardinality = 2..3
+		## cardinality = 1..4
 		civic = <civic>
 	}
 	## cardinality = 0..1
