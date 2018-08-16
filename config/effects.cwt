@@ -1720,8 +1720,7 @@ alias[effect:create_rebels] = {
 	ethos = scope[country]
 	## cardinality = 0..1
 	ethos = {
-		## cardinality = 2..3
-		ethic = <ethos>
+		## cardinality = 1..3
 		ethic = <ethos>
 	}
 
@@ -2236,6 +2235,9 @@ alias[effect:build_pop] = { #TOOO trigger docs error
 ### Cancels terraformation of the scoped planet
 alias[effect:cancel_terraformation] = bool
 
+
+### Changes the scoped country's flag
+alias[effect:change_country_flag] = random
 
 ### Changes the scoped country's flag
 alias[effect:change_country_flag] = {
