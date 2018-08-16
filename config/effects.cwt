@@ -1,5 +1,5 @@
 
-alias[effect:scope] = { alias_name[effect] = alias_match_left[effect] }
+alias[effect:scope_field] = { alias_name[effect] = alias_match_left[effect] }
 
 
 alias[effect:create_starbase] = {
