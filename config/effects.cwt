@@ -1450,6 +1450,7 @@ alias[effect:copy_techs_from] = {
 	target = scope[country]
 	## cardinality = 0..1
 	except = {
+		## cardinality = 0..inf
 		<technology>
 	}
 }
@@ -1704,6 +1705,8 @@ alias[effect:create_rebels] = {
 
 	## cardinality = 0..1
 	ethos = random
+	## cardinality = 0..1
+	ethos = scope[country]
 	## cardinality = 0..1
 	ethos = {
 		## cardinality = 2..3
@@ -2554,7 +2557,7 @@ alias[effect:create_pop] = {
 	ethos = scope[country]
 	## cardinality = 0..1
 	ethos = {
-		## cardinality = 2..2
+		## cardinality = 1..1
 		ethic = <ethos>
 	}
 }
