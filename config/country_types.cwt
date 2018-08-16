@@ -245,32 +245,8 @@ country_type = {
 		#TODO Check if this even works as a rule, maybe replace with enum
 		## cardinality = 0..1
 		modules = {
-			## cardinality = 0..1
-			military_minister_module
-			## cardinality = 0..1
-			foreign_minister_module
-			## cardinality = 0..1
-			interior_minister_module
-			## cardinality = 0..1
-			horde_interior_minister_module
-			## cardinality = 0..1
-			horde_military_minister_module
-			## cardinality = 0..1
-			space_monsters_modul
-			## cardinality = 0..1
-			anti_crisis_military_minister_module
-			## cardinality = 0..1
-			invaders_military_minister_module
-			## cardinality = 0..1
-			swarm_interior_minister_module
-			## cardinality = 0..1
-			swarm_military_minister_module
-			## cardinality = 0..1
-			machine_interior_minister_module
-			## cardinality = 0..1
-			machine_military_minister_module
-			## cardinality = 0..1
-			berserk_military_minister_module
+			## cardinality = 0..inf
+			enum[country_type_module]
 		}
 	}
 	### used with extradimensional invaders
@@ -323,5 +299,24 @@ country_type = {
 		}
 		## cardinality = 0..1
 		all_technology_module = {}
+	}
+}
+
+enums = {
+	enum[country_type_module] = {
+			military_minister_module
+			foreign_minister_module
+			interior_minister_module
+			horde_interior_minister_module
+			horde_military_minister_module
+			space_monsters_module
+			anti_crisis_military_minister_module
+			invaders_military_minister_module
+			invaders_interior_minister_module
+			swarm_interior_minister_module
+			swarm_military_minister_module
+			machine_interior_minister_module
+			machine_military_minister_module
+			berserk_military_minister_module
 	}
 }

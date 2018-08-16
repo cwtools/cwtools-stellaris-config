@@ -58,7 +58,7 @@ technology = {
 	}
 
 	## cardinality = 0..1
-	### a weight group increases the chances of a technology appearing - if another tech of a similar group is picked. 
+	### a weight group increases the chances of a technology appearing - if another tech of a similar group is picked.
 	weight_groups = {
 		## cardinality = 0..1
 		repeatable
@@ -166,6 +166,8 @@ enums = {
 		campaign_edicts
 		unity_ambitions
 		modify_robots
+		advanced_gene_modding
+		add_advanced_traits
 	}
 	enum[technology_areas] = {
 		engineering

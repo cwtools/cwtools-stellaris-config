@@ -42,6 +42,8 @@ color_define = {
 	# 	## cardinality = 3..3
 	# 	float[0.0..1.0]
 	# }
+	## cardinality = 0..1
+	use_as_border_color = no
 }
 
 randomizable_combo = {

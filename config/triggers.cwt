@@ -1161,6 +1161,9 @@ alias[trigger:has_slavery_type] = {
 	country = scope[country]
 	type = enum[slavery_types]
 }
+
+###Checks if the pop is prevented from reproducing
+alias[trigger:has_population_control] = bool
 ###Checks if the pop is prevented from reproducing
 alias[trigger:has_population_control] = {
 	## cardinality = 0..1
@@ -1183,6 +1186,7 @@ alias[trigger:has_living_standard] = {
 }
 
 
+alias[trigger:custom_tooltip] = localisation
 alias[trigger:custom_tooltip] = {
 	## cardinality = 0..1
 	text = localisation
@@ -1779,7 +1783,7 @@ alias[trigger:has_seen_any_bypass] = <bypass>
 ### Checks the scoped country has encountered a specific bypass before
 alias[trigger:has_seen_specific_bypass] = scope[galactic_object] #TODO bypass scope? -Is this correct?
 
-### Checks if the starbase has a specific building
+### Checks if the starbase has a specific building, WARNING: Does not count queued buildings
 alias[trigger:has_starbase_building] = <starbase_building>
 
 ### Checks if the starbase has a specific module
@@ -1830,7 +1834,7 @@ alias[trigger:income] = int
 alias[trigger:intel_level] = enum[intel_level]
 ### Checks the country's intel level of target system
 alias[trigger:intel_level] = {
-	intel = enum[intel_level]
+	level = enum[intel_level]
 	system = scope[system]
 }
 
@@ -1852,7 +1856,14 @@ enums = {
 # }
 
 ### Switch case for a trigger treated as NOT.
-alias[trigger:inverted_switch] = scalar #TODO switch
+alias[trigger:inverted_switch] = {
+	trigger = scalar
+	## cardinality = 0..inf
+	scalar = {
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
 
 ### checks if a country has an advisor
 alias[trigger:is_advisor_active] = bool
@@ -2253,8 +2264,6 @@ alias[trigger:success_text] = {
 # 	default = { <trigger> }
 # }
 
-### Switch case for a trigger
-alias[trigger:switch] = scalar #TODO sitch
 ### Switch case for a trigger
 alias[trigger:switch] = {
 	trigger = scalar

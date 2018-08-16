@@ -15,6 +15,11 @@ special_project = {
 	## cardinality = 0..1
 	cost = int
 	## cardinality = 0..1
+	cost = {
+		base = int
+		alias_name[scaled_modifier_rule] = alias_match_left[scaled_modifier_rule]
+	}
+	## cardinality = 0..1
 	timelimit = int
 	## cardinality = 0..1
 	days_to_research = int
