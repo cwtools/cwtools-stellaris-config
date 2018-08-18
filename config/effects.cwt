@@ -1754,9 +1754,9 @@ alias[effect:create_rebels] = {
 			file = scalar #should be "filename.dds" in the correct folder
 		}
 		colors ={
-			##cardinality = 4..4
+			##cardinality = 0..4
 			<color_define>
-			##cardinality = 4..4
+			##cardinality = 0..4
       		"null"
 		}
 	}
@@ -1977,8 +1977,10 @@ alias[effect:change_dominant_species] = {
 
 ###Changes the class of the scoped planet
 alias[effect:change_pc] = <planet_class>
+alias[effect:change_pc] = <planet_class_random_list>
 alias[effect:change_pc] = {
 	class = <planet_class>
+	class = <planet_class_random_list>
 	inherit_entity = bool
 }
 

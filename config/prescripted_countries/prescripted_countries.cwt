@@ -8,24 +8,25 @@ prescripted_country = {
 	name = scalar #this is not localisation, this is a string!
 	adjective = localisation_synced
 	## cardinality = 0..1
-	spawn_enabled = bool # yes / no / always ---> this one receives always as well! 
+	spawn_enabled = bool # yes / no / always ---> this one receives always as well!
 	## cardinality = 0..1
 	spawn_enabled = always
-	
+
 	## cardinality = 0..1
 	default = yes
-	
+
 	## cardinality = 0..1
 	ignore_portrait_duplication = bool
-	
+
 	## cardinality = 0..1
 	spawn_as_fallen = bool
-	
+
 	ship_prefix = localisation_synced
-	
+
 	species = {
 		class = <species_class>
 		portrait = <portrait>
+		portrait = <portrait_group>
 		name = localisation_synced
 		plural = localisation_synced
 		adjective = localisation_synced
@@ -33,11 +34,12 @@ prescripted_country = {
 		## cardinality = 0..inf
     	trait = <trait>
 	}
-	
+
 	## cardinality = 0..1
 	secondary_species = {
 		class = <species_class>
 		portrait = <portrait>
+		portrait = <portrait_group>
 		name = localisation_synced
 		plural = localisation_synced
 		adjective = localisation_synced
@@ -45,40 +47,40 @@ prescripted_country = {
 		## cardinality = 0..inf
     	trait = <trait>
 	}
-	
+
 	room = icon[gfx/portraits/city_sets]
 	room = <asset_selector.room> #this one is defined under gfx/portraits/asset_selectors
-	
+
 	## cardinality = 0..1
 	authority = <authority>
 	## cardinality = 0..1
-	civics = { 
+	civics = {
    		## cardinality = 2..2
     	<civic>
    	}
 	## cardinality = 0..1
 	government = <government>
-	
+
 	## cardinality = 1..3
 	ethic = <ethos>
-	
+
   	## cardinality = 0..1
-	flags = { 
+	flags = {
     	## cardinality = 0..inf
-		scalar #this is a country flag string, can be anything.     
- 	}	
+		scalar #this is a country flag string, can be anything.
+ 	}
 	planet_name = localisation_synced
 	planet_class = <planet_class.habitable_planet>
-	
+
 	## cardinality = 0..1
 	initializer = <solar_system_initializer>
 	## cardinality = 0..1
 	initializer = ""
 	system_name = localisation_synced
-	
+
 	graphical_culture = <graphical_culture>
-	city_graphical_culture =  <graphical_culture> #obviously there is some difference with the one above, but im not sure - should check this connection. 
-	
+	city_graphical_culture =  <graphical_culture> #obviously there is some difference with the one above, but im not sure - should check this connection.
+
 	empire_flag = {
 		icon= {
 			category = scalar #TODO: this isn't really scalar, I think the category is the folder name! example: "human" refers to game/flags/human
@@ -92,15 +94,16 @@ prescripted_country = {
 			## cardinality = 0..4
       		<color_define>
 			## cardinality = 0..4
-      		"null"			
+      		"null"
 		}
 	}
-	
+
 	ruler = {
 		name = localisation_synced
 		gender = enum[gender]
 		portrait = <portrait>
-		texture = int 
+		portrait = <portrait_group>
+		texture = int
 		## cardinality = 0..1
 		hair = int
 		## cardinality = 0..1
@@ -108,4 +111,4 @@ prescripted_country = {
 		## cardinality = 0..1
 		ruler_title = localisation_synced
 	}
-}  
+}
