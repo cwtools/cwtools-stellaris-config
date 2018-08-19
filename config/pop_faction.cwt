@@ -130,7 +130,7 @@ pop_faction = {
 
 	}
 
-	## cardinality = 0..100
+	## cardinality = 0..inf
 	### This = Pop faction. Faction dynamic requests & issues.
 	demand = {
 
@@ -172,7 +172,7 @@ pop_faction = {
 	### This = Pop faction. Actions for this pop faction type (buttons)
 	actions = {
 
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		scalar = {
 			## cardinality = 0..1
 			title = localisation

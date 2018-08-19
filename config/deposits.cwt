@@ -8,7 +8,10 @@ types = {
 #TODO Document
 deposit = {
 	## cardinality = 0..1
-	resources = { <resource> = int }
+	resources = {
+		## cardinality = 1..inf
+		<resource> = int
+	}
 	## cardinality = 0..1
 	###this makes the deposit transparent, used by vanilla to designate an "empty" deposit.
 	is_null = bool

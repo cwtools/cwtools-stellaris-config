@@ -145,6 +145,7 @@ planet_class = {
 planet_class_random_list = {
 	name = scalar
 	planets = {
+		## cardinality = 1..inf
 		<planet_class>
 	}
 }

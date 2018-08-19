@@ -52,7 +52,7 @@ enums = {
 		l_simp_chinese
 	}
 }
-
+	## cardinality = 14..14
 	textcolors = {
   		scalar = {  #these should really have a unique ID each - so they can be refered to. They are linked to in GUI files in /interface.
     		## cardinality = 3..3

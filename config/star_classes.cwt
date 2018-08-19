@@ -43,6 +43,7 @@ star_class = {
 star_class_random_list = {
 	name = scalar
 	stars = {
+		## cardinality = 0..inf
 		<star_class>
 	}
 }

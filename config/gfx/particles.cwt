@@ -65,7 +65,7 @@ particle_type = {
 		}
 		duration = float
 		life = {
-			## cardinality = 2..2
+			## cardinality = 1..2
 			float
 		}
 		alias_name[emission] = alias_match_left[emission]
@@ -75,7 +75,7 @@ particle_type = {
 		}
 		## cardinality = 0..1
 		rotation = {
-			## cardinality = 2..2
+			## cardinality = 1..2
 			float
 		}
 		## cardinality = 0..1
@@ -105,9 +105,10 @@ particle_type = {
 		}
 		## cardinality = 0..1
 		start = {
-			## cardinality = 2..2
+			## cardinality = 1..2
 			float
 		}
+		alias_name[emission] = alias_match_left[emission]
 		## cardinality = 0..1
 		box_emitter_x = float
 		## cardinality = 0..1
@@ -128,6 +129,10 @@ particle_type = {
 		box_emitter_z = scalar
 		## cardinality = 0..1
 		velocity = float
+		## cardinality = 0..1
+		velocity = {
+			float
+		}
 		## cardinality = 0..1
 		velocity_pitch = {
 			## cardinality = 2..2
@@ -214,7 +219,7 @@ particle_type = {
 			}
 			duration = float
 			life = {
-				## cardinality = 2..2
+				## cardinality = 1..2
 				float
 			}
 			alias_name[emission] = alias_match_left[emission]
@@ -224,7 +229,7 @@ particle_type = {
 			}
 			## cardinality = 0..1
 			rotation = {
-				## cardinality = 2..2
+				## cardinality = 1..2
 				float
 			}
 			## cardinality = 0..1
@@ -275,6 +280,10 @@ particle_type = {
 			box_emitter_z = scalar
 			## cardinality = 0..1
 			velocity = float
+			## cardinality = 0..1
+			velocity = {
+				float
+			}
 			## cardinality = 0..1
 			velocity_pitch = {
 				## cardinality = 2..2

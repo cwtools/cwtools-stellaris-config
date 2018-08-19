@@ -1063,9 +1063,9 @@ alias[effect:change_government] = {
 	civics = random
 	## cardinality = 0..1
 	civics = {
-		## cardinality = 1..3
+		## cardinality = 1..4
 		civic = <civic>
-		## cardinality = 1..3
+		## cardinality = 1..4
 		civic = random
 	}
 }
@@ -1178,6 +1178,8 @@ alias[effect:set_location] = {
 	angle = int[0..360]
 	## cardinality = 0..1
 	angle = random
+	## cardinality = 0..1
+	direction = in_system
 }
 
 
@@ -1643,6 +1645,8 @@ alias[effect:create_country] = {
 	civics = {
 		## cardinality = 1..4
 		civic = <civic>
+		## cardinality = 1..4
+		civic = random
 	}
 	## cardinality = 0..1
 	species = random
@@ -1663,6 +1667,8 @@ alias[effect:create_country] = {
 	ethos = {
 		## cardinality = 1..3
 		ethic = <ethos>
+		## cardinality = 1..3
+		ethic = random
 	}
 
 	## cardinality = 0..1
@@ -2484,7 +2490,7 @@ alias[effect:create_colony] = {
 	ethos = owner
 	##cardinality = 0..1
 	ethos = {
-		##cardinality = 2..2
+		##cardinality = 2..3
 		ethic = <ethos>
 	}
 }

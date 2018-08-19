@@ -30,7 +30,10 @@ trait = {
 		cost = int
 		## cardinality = 0..1
 		icon = filepath
-		allowed_archetypes = { <species_archetype> }
+		allowed_archetypes = {
+			## cardinality = 1..inf
+			<species_archetype>
+		}
 		modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
