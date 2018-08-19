@@ -68,11 +68,13 @@ particle_type = {
 			## cardinality = 1..2
 			float
 		}
+		life = float
 		alias_name[emission] = alias_match_left[emission]
 		size = {
 			## cardinality = 2..2
 			float
 		}
+		size = float
 		## cardinality = 0..1
 		rotation = {
 			## cardinality = 1..2
@@ -94,6 +96,11 @@ particle_type = {
 		## cardinality = 0..1
 		sphere_emitter_radius = float
 		## cardinality = 0..1
+		sphere_emitter_radius = {
+			## cardinality = 2..2
+			float
+		}
+		## cardinality = 0..1
 		sphere_emitter_yaw = {
 			## cardinality = 2..2
 			float
@@ -103,6 +110,8 @@ particle_type = {
 			## cardinality = 2..2
 			float
 		}
+		## cardinality = 0..1
+		start = float
 		## cardinality = 0..1
 		start = {
 			## cardinality = 1..2
@@ -131,6 +140,7 @@ particle_type = {
 		velocity = float
 		## cardinality = 0..1
 		velocity = {
+			## cardinality = 1..2
 			float
 		}
 		## cardinality = 0..1
@@ -139,10 +149,14 @@ particle_type = {
 			float
 		}
 		## cardinality = 0..1
+		velocity_pitch = float
+		## cardinality = 0..1
 		velocity_yaw = {
 			## cardinality = 2..2
 			float
 		}
+		## cardinality = 0..1
+		velocity_yaw = float
 		## cardinality = 0..1
 		emitter_pitch = {
 			## cardinality = 2..2
@@ -222,11 +236,13 @@ particle_type = {
 				## cardinality = 1..2
 				float
 			}
+			life = float
 			alias_name[emission] = alias_match_left[emission]
 			size = {
 				## cardinality = 2..2
 				float
 			}
+			size = float
 			## cardinality = 0..1
 			rotation = {
 				## cardinality = 1..2
@@ -256,6 +272,8 @@ particle_type = {
 				float
 			}
 			## cardinality = 0..1
+			start = float
+			## cardinality = 0..1
 			start = {
 				## cardinality = 2..2
 				float
@@ -264,6 +282,11 @@ particle_type = {
 			box_emitter_x = float
 			## cardinality = 0..1
 			box_emitter_x = scalar
+			## cardinality = 0..1
+			box_emitter_x = {
+				## cardinality = 2..2
+				float
+			}
 			## cardinality = 0..1
 			box_emitter_y = {
 				## cardinality = 2..2
@@ -290,10 +313,14 @@ particle_type = {
 				float
 			}
 			## cardinality = 0..1
+			velocity_pitch = float
+			## cardinality = 0..1
 			velocity_yaw = {
 				## cardinality = 2..2
 				float
 			}
+			## cardinality = 0..1
+			velocity_yaw = float
 			## cardinality = 0..1
 			emitter_pitch = {
 				## cardinality = 2..2
@@ -342,7 +369,7 @@ particle_type = {
 		minValue = float
 		maxValue = float
 		curve = {
-			## cardinality = 10..10
+			## cardinality = 4..10
 			float
 		}
 		op = enum[animation_op] #defined in lights!
