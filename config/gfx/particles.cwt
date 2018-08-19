@@ -76,6 +76,8 @@ particle_type = {
 		}
 		size = float
 		## cardinality = 0..1
+		rotation = float
+		## cardinality = 0..1
 		rotation = {
 			## cardinality = 1..2
 			float
@@ -253,6 +255,8 @@ particle_type = {
 			}
 			size = float
 			## cardinality = 0..1
+			rotation = float
+			## cardinality = 0..1
 			rotation = {
 				## cardinality = 1..2
 				float
@@ -416,36 +420,31 @@ particle_type = {
 
 alias[subsystem_color:color] = {
 	## cardinality = 0..1
-	r = float
+	r = { float[0.0..255.0] }
 	## cardinality = 0..1
-	g = float
+	g = { float[0.0..255.0] }
 	## cardinality = 0..1
-	b = float
+	b = { float[0.0..255.0] }
 	## cardinality = 0..1
-	alpha = scalar #float,<particle_animation>
+	alpha = { float[0.0..255.0] }
 }
 alias[subsystem_color:color] = {
 	## cardinality = 0..1
-	x = float
+	x = float[0.0..255.0]
 	## cardinality = 0..1
-	y = float
+	y = float[0.0..255.0]
 	## cardinality = 0..1
-	z = float
+	z = float[0.0..255.0]
 	## cardinality = 0..1
-	alpha = scalar #float,<particle_animation>
+	alpha = float[0.0..255.0] #float,<particle_animation>
 }
-alias[subsystem_color:color] = {
-	## cardinality = 0..1
-	x = scalar
-	## cardinality = 0..1
-	y = scalar
-	## cardinality = 0..1
-	z = scalar
-	## cardinality = 0..1
-	alpha = scalar #float,<particle_animation>
-}
+
 alias[emission:emission] = float
 alias[emission:emission] = scalar
+alias[emission:emission] = {
+	## cardinality = 2..2
+	float
+}
 enums = {
 	enum[emitter_type] = {
 		point
