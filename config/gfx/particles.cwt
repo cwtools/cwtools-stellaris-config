@@ -90,6 +90,11 @@ particle_type = {
 		## cardinality = 0..1
 		rotation_speed = float
 		## cardinality = 0..1
+		rotation_speed = {
+			## cardinality = 2..2
+			float
+		}
+		## cardinality = 0..1
 		rotation_speed_yaw = float
 		## cardinality = 0..1
 		rotation_speed_pitch = float
@@ -158,10 +163,14 @@ particle_type = {
 		## cardinality = 0..1
 		velocity_yaw = float
 		## cardinality = 0..1
+		emitter_pitch = float
+		## cardinality = 0..1
 		emitter_pitch = {
 			## cardinality = 2..2
 			float
 		}
+		## cardinality = 0..1
+		emitter_yaw = float
 		## cardinality = 0..1
 		emitter_yaw = {
 			## cardinality = 2..2
@@ -305,6 +314,7 @@ particle_type = {
 			velocity = float
 			## cardinality = 0..1
 			velocity = {
+				## cardinality = 0..2
 				float
 			}
 			## cardinality = 0..1
@@ -322,10 +332,14 @@ particle_type = {
 			## cardinality = 0..1
 			velocity_yaw = float
 			## cardinality = 0..1
+			emitter_pitch = float
+			## cardinality = 0..1
 			emitter_pitch = {
 				## cardinality = 2..2
 				float
 			}
+			## cardinality = 0..1
+			emitter_yaw = float
 			## cardinality = 0..1
 			emitter_yaw = {
 				## cardinality = 2..2
@@ -369,7 +383,7 @@ particle_type = {
 		minValue = float
 		maxValue = float
 		curve = {
-			## cardinality = 4..10
+			## cardinality = 4..12
 			float
 		}
 		op = enum[animation_op] #defined in lights!
