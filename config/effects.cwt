@@ -1816,6 +1816,7 @@ alias[effect:create_leader] = {
 	type = enum[leader_classes]
 	type = random
 	## cardinality = 0..1
+	###Other scopes will simply default to this.owner_main_species
 	species = scope[species] #<target / key>
 	## cardinality = 0..1
 	species = enum[create_leader_species]
