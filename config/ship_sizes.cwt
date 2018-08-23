@@ -17,7 +17,10 @@ types = {
 
 ship_size = {
 	## cardinality = 0..2
-	graphical_culture = { <graphical_culture> }
+	graphical_culture = { 
+		## cardinality = 1..inf
+		<graphical_culture> 
+	}
 	## cardinality = 0..2
 	graphical_culture = bool
 	## cardinality = 0..1
