@@ -630,8 +630,8 @@ height = percentage_field
 }
 
 alias[gui_standard_element:position] = {
-	x = int
-	y = int
+	x = float
+	y = float
 }
 alias[gui_standard_element:borderSize] = {
 	x = int
@@ -660,6 +660,8 @@ alias[gui_sound:no_clicksound] = bool
 alias[gui_localisation:tooltip_mode_enabled] = bool
 alias[gui_localisation:font] = <bitmapfont>
 alias[gui_localisation:text] = localisation
+alias[gui_localisation:text] = -
+alias[gui_localisation:text] = 0
 alias[gui_localisation:text_color_code] = enum[textcolors]
 alias[gui_localisation:tooltip] = localisation
 alias[gui_localisation:tooltipText] = localisation

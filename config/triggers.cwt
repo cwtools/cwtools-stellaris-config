@@ -950,11 +950,11 @@ alias[trigger:opinion] = {
 
 #should check <>
 alias[trigger:happiness] = float[0.0..1.0]
-alias[trigger:energy] = int
-alias[trigger:unity] = int
+alias[trigger:energy] = float
+alias[trigger:unity] = float
 alias[trigger:vassals] = int
-alias[trigger:food] = int
-alias[trigger:minerals] = int
+alias[trigger:food] = float
+alias[trigger:minerals] = float
 ###Checks the number of regular empires in the galaxy
 alias[trigger:num_empires] = int
 ###Checks the number of members in the alliance

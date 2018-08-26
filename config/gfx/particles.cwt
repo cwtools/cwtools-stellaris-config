@@ -57,11 +57,11 @@ particle_type = {
 		## cardinality = 0..1
 		position={
 			## cardinality = 0..1
-			x = int
+			x = float
 			## cardinality = 0..1
-			y = int
+			y = float
 			## cardinality = 0..1
-			z = int
+			z = float
 		}
 		duration = float
 		life = {
@@ -71,10 +71,14 @@ particle_type = {
 		life = float
 		alias_name[emission] = alias_match_left[emission]
 		size = {
-			## cardinality = 2..2
+			## cardinality = 0..2
 			float
+			## cardinality = 0..2
+			scalar
 		}
 		size = float
+		#TODO handle "4.00,grow"
+		size = scalar
 		## cardinality = 0..1
 		rotation = float
 		## cardinality = 0..1
@@ -236,11 +240,11 @@ particle_type = {
 			## cardinality = 0..1
 			position={
 				## cardinality = 0..1
-				x = int
+				x = float
 				## cardinality = 0..1
-				y = int
+				y = float
 				## cardinality = 0..1
-				z = int
+				z = float
 			}
 			duration = float
 			life = {
@@ -387,7 +391,7 @@ particle_type = {
 		minValue = float
 		maxValue = float
 		curve = {
-			## cardinality = 4..12
+			## cardinality = 4..14
 			float
 		}
 		op = enum[animation_op] #defined in lights!
@@ -426,7 +430,12 @@ alias[subsystem_color:color] = {
 	## cardinality = 0..1
 	b = { float[0.0..255.0] }
 	## cardinality = 0..1
-	alpha = { float[0.0..255.0] }
+	alpha = {
+		## cardinality = 0..1
+		float[0.0..255.0]
+		## cardinality = 0..1
+		scalar
+	 }
 }
 alias[subsystem_color:color] = {
 	## cardinality = 0..1
@@ -436,13 +445,14 @@ alias[subsystem_color:color] = {
 	## cardinality = 0..1
 	z = float[0.0..255.0]
 	## cardinality = 0..1
-	alpha = float[0.0..255.0] #float,<particle_animation>
+	alpha = scalar
+	#alpha = float[0.0..255.0] #float,<particle_animation>
 }
 
 alias[emission:emission] = float
 alias[emission:emission] = scalar
 alias[emission:emission] = {
-	## cardinality = 2..2
+	## cardinality = 1..2
 	float
 }
 enums = {
