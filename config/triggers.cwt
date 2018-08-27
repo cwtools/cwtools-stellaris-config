@@ -1013,7 +1013,7 @@ alias[trigger:num_ethics] = int
 
 alias[trigger:is_ship_size] = <ship_size>
 
-alias[trigger:is_ship_class] = enum[shipsize_class]
+alias[trigger:is_ship_class] = enum[shipsize_classes]
 
 alias[trigger:is_researching_area] = enum[research_areas]
 #should have < >
@@ -1248,7 +1248,7 @@ alias[trigger:has_deposit] = bool
 alias[trigger:has_deposit] = <deposit>
 
 ###Checks if the planet has a deposit for a specific ship class
-alias[trigger:has_deposit_for] = enum[shipsize_class]
+alias[trigger:has_deposit_for] = enum[shipsize_classes]
 
 
 alias[trigger:can_be_subject] = {
@@ -2196,7 +2196,7 @@ alias[trigger:pop_maintenance_cost] = int
 ### Checks if a pop is currently producing a particular resource
 alias[trigger:pop_produces_resource] = {
 	type = <resource>
-	amount = int
+	amount = bool
 }
 
 ### Checks the country's gross amount of produced energy credits

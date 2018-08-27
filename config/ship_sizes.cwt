@@ -73,7 +73,7 @@ ship_size = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
-	size_multiplier = int
+	size_multiplier = float
 	## cardinality = 0..1
 	fleet_slot_size = int
 	## cardinality = 0..1
@@ -181,7 +181,7 @@ ship_size = {
 }
 
 #enums = { #you can change, mod, remove and add new shipclasses. This is not an enum!
-#	enum[shipsize_class] = {
+#	enum[shipsize_classes] = {
 #		shipclass_military
 #		shipclass_military_station
 #		shipclass_military_special
