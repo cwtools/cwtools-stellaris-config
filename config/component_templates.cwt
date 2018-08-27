@@ -223,11 +223,11 @@ component_template = {
 		## cardinality = 0..1
 		armor_penetration = float
 		## cardinality = 0..1
-		windup = { min = int max = int }
+		windup = { min = float max = float }
 		## cardinality = 0..1
-		total_fire_time = int
+		total_fire_time = float
 		## cardinality = 0..1
-		range = int
+		range = float
 		## cardinality = 0..1
 		accuracy = float
 		## cardinality = 0..1
