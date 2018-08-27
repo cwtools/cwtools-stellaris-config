@@ -1342,7 +1342,7 @@ alias[effect:add_threat] = {
 	who = scope[planet]
 	who = scope[country]
 	who = scope[galactic_object]
-	amount = int
+	amount = float
 }
 
 ###Adds a Casus Belli to the scoped country against the target country.
