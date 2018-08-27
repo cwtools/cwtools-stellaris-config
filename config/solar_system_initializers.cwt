@@ -132,7 +132,7 @@ alias[planet_initializer:planet] = {
 	class = enum[solar_sys_init_planet_class]
 
 	## cardinality = 0..1
-	orbit_distance = int
+	orbit_distance = float
 	## cardinality = 0..1
 	orbit_distance = { min = int max = int }
 
@@ -222,7 +222,7 @@ alias[moon_initializer:moon] = {
 	class = enum[solar_sys_init_planet_class]
 
 	## cardinality = 0..1
-	orbit_distance = int
+	orbit_distance = float
 	## cardinality = 0..1
 	orbit_distance = { min = int max = int }
 

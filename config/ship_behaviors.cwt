@@ -26,13 +26,13 @@ ship_behavior = {
 	return_to_formation_distance = enum[combat_range]
 
 	## cardinality = 0..1
-	collision_awareness = int
+	collision_awareness = float
 
 	## cardinality = 0..1
-	collision_strafe = int
+	collision_strafe = float
 
 	## cardinality = 0..1
-	collision_radius = int
+	collision_radius = float
 	## cardinality = 0..1
 	attack_move_pattern = enum[move_pattern]
 	## cardinality = 0..1

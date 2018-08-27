@@ -256,8 +256,8 @@ component_template = {
 		power = int
 		cost = int
 		count = int
-		regeneration_per_day = int
-		launch_time = int
+		regeneration_per_day = float
+		launch_time = float
 		damage = { min = float max = float }
 		cooldown = float
 		range = int

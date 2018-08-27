@@ -60,13 +60,13 @@ model_entity = {
   scale = float
   ## cardinality = 0..1
   playback_rate = float
-  
+
   #none or one of the two below!
   ## cardinality = 0..1
-  default_state = enum[model_states] 
+  default_state = enum[model_states]
   ## cardinality = 0..1
   default_state = no_state
-  
+
   ## cardinality = 0..1
   get_state_from_parent = bool
   ## cardinality = 0..1
@@ -78,15 +78,15 @@ model_entity = {
 		state_time = float
 		## cardinality = 0..1
 		looping = bool
-		
+
 		#none or one of the two below!
 		## cardinality = 0..1
 		next_state = enum[model_states]
 		## cardinality = 0..1
 		next_state = state2
 		## cardinality = 0..1
-		next_state = start2		
-		
+		next_state = start2
+
 		## cardinality = 0..1
 		chance = bool
 		## cardinality = 0..1
@@ -113,11 +113,11 @@ model_entity = {
 		## cardinality = 0..1
 		animation_speed = float
 		## cardinality = 0..1
-		animation_blend_time = int
+		animation_blend_time = float
 		## cardinality = 0..1
 		time_offset = {
 			## cardinality = 2..2
-			int
+			float
 		}
 		#locator here is linked to both attach = { in the same files and ship_sizes under common!
 		## cardinality = 0..inf
@@ -148,8 +148,8 @@ model_entity = {
 			## cardinality = 0..1
 			### This is used only to link to planet killer projectiles
 			id = beam_start #this is tied to the planet killer projectiles, see the comment i left in projectiles -- exnihil.
-			## cardinality = 0..1			
-			time = int
+			## cardinality = 0..1
+			time = float
 			## cardinality = 0..1
 			node = scalar #"bombardment_location_2" for example, this seem to point to a *.mesh file
 			## cardinality = 0..1

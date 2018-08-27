@@ -25,7 +25,7 @@ star_class = {
 		class = scalar
     }
 	## cardinality = 0..1
-    spawn_odds = int
+    spawn_odds = float
 	## cardinality = 0..1
     num_planets = { min = int max = int }
     ## cardinality = 0..inf
