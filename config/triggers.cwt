@@ -2196,7 +2196,7 @@ alias[trigger:pop_maintenance_cost] = int
 ### Checks if a pop is currently producing a particular resource
 alias[trigger:pop_produces_resource] = {
 	type = <resource>
-	amount = bool
+	amount = float
 }
 
 ### Checks the country's gross amount of produced energy credits
