@@ -1222,7 +1222,7 @@ alias[effect:divide_variable] = {
 #max should not be less than min...
 alias[effect:add_monthly_resource_mult] = {
 	resource = <resource>
-	value = int
+	value = float
 	## cardinality = 0..1
 	min = int
 	## cardinality = 0..1
@@ -1342,7 +1342,7 @@ alias[effect:add_threat] = {
 	who = scope[planet]
 	who = scope[country]
 	who = scope[galactic_object]
-	amount = int
+	amount = float
 }
 
 ###Adds a Casus Belli to the scoped country against the target country.
