@@ -23,8 +23,8 @@ light = {
 	## cardinality = 0..1
   	alias_name[intensity] = alias_match_left[intensity]
 
-	radius = int
-	falloff = int
+	radius = float
+	falloff = float
 	## cardinality = 0..1
 	duration = float
 

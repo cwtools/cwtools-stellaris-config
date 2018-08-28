@@ -30,7 +30,7 @@ star_class = {
     num_planets = { min = int max = int }
     ## cardinality = 0..inf
 	#TODO check planet subtype
-	<planet_class.planet> = { spawn_odds = int }
+	<planet_class.planet> = { spawn_odds = float }
 	## cardinality = 0..1
 	is_environmental_hazard = bool
 	## cardinality = 0..1

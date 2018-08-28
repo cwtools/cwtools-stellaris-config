@@ -1002,7 +1002,7 @@ alias[trigger:has_mission] = <observation_station_mission>
 alias[trigger:years_passed] = int
 alias[trigger:num_owned_planets] = int
 alias[trigger:unrest] = int[0..100]
-alias[trigger:influence] = int
+alias[trigger:influence] = float
 alias[trigger:num_pops] = int
 alias[trigger:planet_size] = int
 ###Checks the number of fallen empires in the galaxy
