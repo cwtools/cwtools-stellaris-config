@@ -107,6 +107,8 @@ alias[fleet_action:effect] = {
     alias_name[effect] = alias_match_left[effect]
 }
 
+
+alias[fleet_action:wait] = int
 alias[fleet_action:wait] = {
     duration = int
 	## cardinality = 0..1
