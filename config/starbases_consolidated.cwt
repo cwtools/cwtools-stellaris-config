@@ -33,12 +33,12 @@ starbase_building = {
 	## cardinality = 0..1
 	upkeep_resources = {
 		## cardinality = 0..inf
-		<resource> = int
+		<resource> = float
 	}
 	## cardinality = 0..1
 	produced_resources = {
 		## cardinality = 0..inf
-		<resource> = int
+		<resource> = float
 	}
 	## replace_scope = { this = starbase root = starbase from = country } 
 	## cardinality = 0..1
@@ -156,12 +156,12 @@ starbase_module = {
 	## cardinality = 0..1
 	upkeep_resources = {
 		## cardinality = 0..inf
-		<resource> = int
+		<resource> = float
 	}
 	## cardinality = 0..1
 	produced_resources = {
 		## cardinality = 0..inf
-		<resource> = int
+		<resource> = float
 	}
 	## replace_scope = { this = starbase root = starbase from = country } 
 	## cardinality = 0..1
