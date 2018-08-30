@@ -1662,7 +1662,9 @@ alias[effect:create_country] = {
 	species = scope[species] #maybe key would work, I don't know which though
 
 	## cardinality = 0..1
-	ethos = random
+	ethos = random	
+	## cardinality = 0..1
+	ethos = scope[country]
 	## cardinality = 0..1
 	ethos = {
 		## cardinality = 1..3
