@@ -154,6 +154,7 @@ alias[trigger:observation_outpost] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+## push_scope = war
 alias[trigger:any_war] = {
 	alias_name[trigger] = alias_match_left[trigger]
 	##cardinality = 0..1

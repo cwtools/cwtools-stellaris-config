@@ -2802,7 +2802,11 @@ alias[effect:get_galaxy_setup_value] = {
 
 ### Makes a country guarantee another country
 alias[effect:guarantee_country] = scope[country]
-
+### Makes a country guarantee another country
+alias[effect:guarantee_country] = {
+	target = scope[country]
+	free_guarantee_days  = int
+}
 
 ## push_scope = leader
 ###Scope (/context) switch
