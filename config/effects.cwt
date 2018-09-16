@@ -1643,9 +1643,10 @@ alias[effect:create_country] = {
 	civics = random
 	## cardinality = 0..1
 	civics = {
-		## cardinality = 1..4
+		# TODO: Make this 1..4 with warning only
+		## cardinality = 0..4
 		civic = <civic>
-		## cardinality = 1..4
+		## cardinality = 0..4
 		civic = random
 	}
 	## cardinality = 0..1
