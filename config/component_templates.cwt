@@ -257,21 +257,21 @@ component_template = {
 		weapon_type = enum[weapon_type]
 		ship_behavior = <ship_behavior>
 		projectile_gfx = scalar #tied to defined entites under gfx
-		power = int
-		cost = int
-		count = int
+		power = float
+		cost = float
+		count = float
 		regeneration_per_day = float
 		launch_time = float
 		damage = { min = float max = float }
 		cooldown = float
-		range = int
+		range = float
 		accuracy = float
 		tracking = float
 		health = float
-		armor = int
-		shield = int
+		armor = float
+		shield = float
 		evasion = float
-		speed = int
+		speed = float
 		rotation_speed = float
 		acceleration = float
 		shield_damage = float
@@ -280,7 +280,7 @@ component_template = {
 		armor_penetration = float
 		hull_damage = float
 		## cardinality = 0..1
-		attack_range = int
+		attack_range = float
 	}
 }
 

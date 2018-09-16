@@ -1578,7 +1578,7 @@ alias[effect:create_species] = {
 		type = <resource>
 		type = robot_food
 		type = scalar
-		value = int
+		value = float
 	}
 	## cardinality = 0..1
 	allow_negative_traits = bool
@@ -2337,7 +2337,7 @@ alias[effect:change_species_characteristics] = {
 		type = <resource>
 		type = robot_food
 		type = scalar
-		value = int
+		value = float
 	}
 	## cardinality = 0..1
 	allow_negative_traits = bool
