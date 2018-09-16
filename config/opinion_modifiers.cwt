@@ -19,6 +19,7 @@ opinion_modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier_rule_add_factor] = alias_match_left[modifier_rule_add_factor]
 	}
+	opinion = int
 
 	subtype[!triggered_opinion_modifier] = {
 		## cardinality = 0..1

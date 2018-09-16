@@ -8,6 +8,7 @@ alias[modifier_rule:modifier] = {
 	weight = float
 	## cardinality = 0..1
 	add = float
+	## cardinality = 0..inf
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
