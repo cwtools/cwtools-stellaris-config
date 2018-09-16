@@ -2348,6 +2348,8 @@ alias[effect:change_species_characteristics] = {
 	## cardinality = 0..1
 	portrait = <portrait>
 	## cardinality = 0..1
+	portrait = <portrait_group>
+	## cardinality = 0..1
 	portrait = random
 }
 
