@@ -41,7 +41,7 @@ species_class = {
 		## cardinality = 0..1
 		always = bool
 		## cardinality = 0..1
-		text = localisaton
+		text = localisation
 		## cardinality = 0..1
 		alias_name[government_trigger] = alias_match_left[government_trigger]
 	}
@@ -51,7 +51,7 @@ species_class = {
 		## cardinality = 0..1
 		always = bool
 		## cardinality = 0..1
-		text = localisaton
+		text = localisation
 		## cardinality = 0..1
 		alias_name[government_trigger] = alias_match_left[government_trigger]
 	}
