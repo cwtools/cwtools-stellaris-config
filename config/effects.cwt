@@ -1639,6 +1639,8 @@ alias[effect:create_country] = {
 	## cardinality = 0..1
 	authority = scope[country]
 	## cardinality = 0..1
+	civics = scope[country]
+	## cardinality = 0..1
 	### random includes starting civics
 	civics = random
 	## cardinality = 0..1
