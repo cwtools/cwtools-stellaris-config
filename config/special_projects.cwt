@@ -141,6 +141,12 @@ special_project = {
 	on_fail = {
 		alias_name[effect] = alias_match_left[effect]
 	}
+	## push_scope = country
+	## cardinality = 0..1
+	### new thing from 2.1.3 patch, have it from?
+	on_cancel = {
+		alias_name[effect] = alias_match_left[effect]
+	}
 }
 
 
