@@ -289,6 +289,19 @@ alias[effect:random_owned_leader] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = leader
@@ -305,6 +318,19 @@ alias[effect:random_owned_leader] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = country
@@ -319,6 +345,19 @@ alias[effect:random_war_participant] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = army
@@ -333,6 +372,19 @@ alias[effect:random_owned_army] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = system
@@ -347,6 +399,19 @@ alias[effect:random_system_within_border] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = starbase
@@ -361,6 +426,19 @@ alias[effect:random_owned_starbase] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = pop_faction
@@ -375,6 +453,19 @@ alias[effect:random_pop_faction] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = pop
@@ -389,6 +480,19 @@ alias[effect:random_owned_pop] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = pop
@@ -403,6 +507,19 @@ alias[effect:random_pop] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = country
@@ -417,6 +534,19 @@ alias[effect:random_relation] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = country
@@ -431,6 +561,19 @@ alias[effect:random_country] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = planet
@@ -445,6 +588,19 @@ alias[effect:random_owned_planet] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = country
@@ -459,6 +615,19 @@ alias[effect:random_playable_country] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = system
@@ -492,6 +661,19 @@ alias[effect:random_planet_within_border] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = fleet
@@ -506,6 +688,19 @@ alias[effect:random_mining_station] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = fleet
@@ -520,6 +715,19 @@ alias[effect:random_research_station] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = country
@@ -534,6 +742,19 @@ alias[effect:random_subject] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = fleet
@@ -548,6 +769,19 @@ alias[effect:random_owned_fleet] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = country
@@ -562,6 +796,19 @@ alias[effect:random_neighbor_country] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = system
@@ -580,6 +827,19 @@ alias[effect:random_neighbor_system] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = fleet
@@ -594,6 +854,19 @@ alias[effect:random_fleet_in_system] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = ambient_object
@@ -601,6 +874,19 @@ alias[effect:random_ambient_object] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = ambient_object
@@ -608,6 +894,19 @@ alias[effect:random_system_ambient_object] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = ambient_object
@@ -629,6 +928,19 @@ alias[effect:random_sector] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = sector
@@ -650,6 +962,19 @@ alias[effect:random_rim_system] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = planet
@@ -657,6 +982,19 @@ alias[effect:random_moon] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = planet
@@ -678,6 +1016,19 @@ alias[effect:random_tile] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = tile
@@ -692,6 +1043,19 @@ alias[effect:random_neighboring_tile] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = planet
@@ -706,6 +1070,19 @@ alias[effect:random_system_planet] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = ship
@@ -727,6 +1104,19 @@ alias[effect:random_planet] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = ship
@@ -741,6 +1131,19 @@ alias[effect:random_owned_ship] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = planet
@@ -755,6 +1158,19 @@ alias[effect:random_controlled_planet] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 
@@ -784,6 +1200,19 @@ alias[effect:random_war_defender] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = country
@@ -801,6 +1230,19 @@ alias[effect:random_war_attacker] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = megastructure
@@ -808,6 +1250,19 @@ alias[effect:random_megastructure] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = megastructure
@@ -822,6 +1277,19 @@ alias[effect:random_owned_megastructure] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = megastructure
@@ -836,6 +1304,19 @@ alias[effect:random_system_megastructure] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = megastructure
@@ -851,6 +1332,19 @@ alias[effect:random_system] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+	
+	##cardinality = 0..1
+	weights = {
+		base = float
+		modifier = {
+			##cardinality = 0..1
+			add = float
+			##cardinality = 0..1
+			mult = float
+			
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 ## push_scope = system
@@ -2385,7 +2879,7 @@ alias[effect:clear_uncharted_space] = {
 	radius = int
 }
 ### Clears uncharted space from the galaxy map for the scoped country, in a radius around target system
-alias[effect:clear_uncharted_space] = scope[country
+alias[effect:clear_uncharted_space] = scope[country]
 
 ### Conquers the planet by setting its owner to target country and adding an unhappiness modifier
 alias[effect:conquer] = scope[country]
