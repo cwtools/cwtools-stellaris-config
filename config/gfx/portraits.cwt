@@ -37,8 +37,9 @@ portrait_group = {
 			## replace_scope = { this = country root = country }
 			## cardinality = 0..1
 			trigger = {
+				## cardinality = 0..inf
 				alias_name[trigger] = alias_match_left[trigger]
-				## cardinality = 0..1
+				## cardinality = 0..inf
 				scope[leader] = { gender = enum[gender] }
 			}
 			portraits = {

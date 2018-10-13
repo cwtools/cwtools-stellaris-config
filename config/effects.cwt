@@ -289,7 +289,7 @@ alias[effect:random_owned_leader] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -298,7 +298,7 @@ alias[effect:random_owned_leader] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -318,7 +318,7 @@ alias[effect:random_owned_leader] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -327,7 +327,7 @@ alias[effect:random_owned_leader] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -345,7 +345,7 @@ alias[effect:random_war_participant] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -354,7 +354,7 @@ alias[effect:random_war_participant] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -372,7 +372,7 @@ alias[effect:random_owned_army] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -381,7 +381,7 @@ alias[effect:random_owned_army] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -399,7 +399,7 @@ alias[effect:random_system_within_border] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -408,7 +408,7 @@ alias[effect:random_system_within_border] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -426,7 +426,7 @@ alias[effect:random_owned_starbase] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -435,7 +435,7 @@ alias[effect:random_owned_starbase] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -453,7 +453,7 @@ alias[effect:random_pop_faction] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -462,7 +462,7 @@ alias[effect:random_pop_faction] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -480,7 +480,7 @@ alias[effect:random_owned_pop] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -489,7 +489,7 @@ alias[effect:random_owned_pop] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -507,7 +507,7 @@ alias[effect:random_pop] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -516,7 +516,7 @@ alias[effect:random_pop] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -534,7 +534,7 @@ alias[effect:random_relation] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -543,7 +543,7 @@ alias[effect:random_relation] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -561,7 +561,7 @@ alias[effect:random_country] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -570,7 +570,7 @@ alias[effect:random_country] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -588,7 +588,7 @@ alias[effect:random_owned_planet] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -597,7 +597,7 @@ alias[effect:random_owned_planet] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -615,7 +615,7 @@ alias[effect:random_playable_country] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -624,7 +624,7 @@ alias[effect:random_playable_country] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -661,7 +661,7 @@ alias[effect:random_planet_within_border] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -670,7 +670,7 @@ alias[effect:random_planet_within_border] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -688,7 +688,7 @@ alias[effect:random_mining_station] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -697,7 +697,7 @@ alias[effect:random_mining_station] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -715,7 +715,7 @@ alias[effect:random_research_station] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -724,7 +724,7 @@ alias[effect:random_research_station] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -742,7 +742,7 @@ alias[effect:random_subject] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -751,7 +751,7 @@ alias[effect:random_subject] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -769,7 +769,7 @@ alias[effect:random_owned_fleet] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -778,7 +778,7 @@ alias[effect:random_owned_fleet] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -796,7 +796,7 @@ alias[effect:random_neighbor_country] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -805,7 +805,7 @@ alias[effect:random_neighbor_country] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -827,7 +827,7 @@ alias[effect:random_neighbor_system] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -836,7 +836,7 @@ alias[effect:random_neighbor_system] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -854,7 +854,7 @@ alias[effect:random_fleet_in_system] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -863,7 +863,7 @@ alias[effect:random_fleet_in_system] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -874,7 +874,7 @@ alias[effect:random_ambient_object] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -883,7 +883,7 @@ alias[effect:random_ambient_object] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -894,7 +894,7 @@ alias[effect:random_system_ambient_object] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -903,7 +903,7 @@ alias[effect:random_system_ambient_object] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -928,7 +928,7 @@ alias[effect:random_sector] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -937,7 +937,7 @@ alias[effect:random_sector] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -962,7 +962,7 @@ alias[effect:random_rim_system] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -971,7 +971,7 @@ alias[effect:random_rim_system] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -982,7 +982,7 @@ alias[effect:random_moon] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -991,7 +991,7 @@ alias[effect:random_moon] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -1016,7 +1016,7 @@ alias[effect:random_tile] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -1025,7 +1025,7 @@ alias[effect:random_tile] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -1043,7 +1043,7 @@ alias[effect:random_neighboring_tile] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -1052,7 +1052,7 @@ alias[effect:random_neighboring_tile] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -1070,7 +1070,7 @@ alias[effect:random_system_planet] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -1079,7 +1079,7 @@ alias[effect:random_system_planet] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -1104,7 +1104,7 @@ alias[effect:random_planet] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -1113,7 +1113,7 @@ alias[effect:random_planet] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -1131,7 +1131,7 @@ alias[effect:random_owned_ship] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -1140,7 +1140,7 @@ alias[effect:random_owned_ship] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -1158,7 +1158,7 @@ alias[effect:random_controlled_planet] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -1167,7 +1167,7 @@ alias[effect:random_controlled_planet] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -1200,7 +1200,7 @@ alias[effect:random_war_defender] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -1209,7 +1209,7 @@ alias[effect:random_war_defender] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -1230,7 +1230,7 @@ alias[effect:random_war_attacker] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -1239,7 +1239,7 @@ alias[effect:random_war_attacker] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -1250,7 +1250,7 @@ alias[effect:random_megastructure] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -1259,7 +1259,7 @@ alias[effect:random_megastructure] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -1277,7 +1277,7 @@ alias[effect:random_owned_megastructure] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -1286,7 +1286,7 @@ alias[effect:random_owned_megastructure] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -1304,7 +1304,7 @@ alias[effect:random_system_megastructure] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -1313,7 +1313,7 @@ alias[effect:random_system_megastructure] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -1332,7 +1332,7 @@ alias[effect:random_system] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-	
+
 	##cardinality = 0..1
 	weights = {
 		base = float
@@ -1341,7 +1341,7 @@ alias[effect:random_system] = {
 			add = float
 			##cardinality = 0..1
 			mult = float
-			
+
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -1674,6 +1674,8 @@ alias[effect:set_location] = {
 	angle = random
 	## cardinality = 0..1
 	direction = in_system
+	## cardinality = 0..1
+	direction = out_system
 }
 
 

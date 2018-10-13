@@ -62,7 +62,7 @@ event = {
 			## cardinality = 0..1
 			trigger = {
 				alias_name[trigger] = alias_match_left[trigger]
-				
+
 				## cardinality = 0..inf
 				scope[any] = {
 					switch = {
@@ -97,7 +97,7 @@ event = {
 			## cardinality = 0..1
 			exclusive_trigger = {
 				alias_name[trigger] = alias_match_left[trigger]
-				
+
 				## cardinality = 0..inf
 				scope[any] = {
 					switch = {
@@ -238,6 +238,7 @@ event = {
 		picture = <sprite>
 		picture = {
 			picture = <sprite>
+			## cardinality = 0..1
 			trigger = { alias_name[trigger] = alias_match_left[trigger] }
 		}
 	}

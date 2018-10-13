@@ -2257,6 +2257,7 @@ alias[trigger:subject_can_diplomacy] = scope[country]
 ### For 'desc={trigger={' use. Shows custom text when the associated trigger passes.
 alias[trigger:success_text] = {
 	text = localisation
+	## cardinality = 0..inf
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
