@@ -2626,7 +2626,7 @@ alias[effect:effect_on_blob] = {
 alias[effect:set_player] = scope[country]
 
 #scripted effects
-alias[effect:<scripted_effect>] = bool
+alias[effect:<scripted_effect>] = yes
 
 #Imported
 #
