@@ -12,7 +12,6 @@ types = { #these are all connected. I added the others so whoever does these in 
 		path = "game/common/species_names"
 		name_field = "name"
 	}
-	## type_key_filter = named_lists
 	type[species_named_list] = {
 		path = "game/common/species_names"
 		skip_root_key = named_lists

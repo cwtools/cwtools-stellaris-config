@@ -101,14 +101,14 @@ planet_killer_animation = {
  		}
  		texture_tiling = float
  		alpha = {
-			## cardinality = 6..8
+			## cardinality = 4..8
 			float
  		}
  	}
  	in_progress = {
  		duration = float
  		width = {
-			## cardinality = 6..6
+			## cardinality = 2..6
 			float
  		}
  		texture_scroll_speed = {
@@ -120,20 +120,20 @@ planet_killer_animation = {
 			float
  		}
  		alpha = {
-			## cardinality = 6..6
+			## cardinality = 4..8
 			float
  		}
  	}
  	end = {
  		duration = float
  		width = {
-			## cardinality = 4..4
+			## cardinality = 2..4
 			float
  		}
  		texture_scroll_speed = float
  		texture_tiling = float
  		alpha = {
-			## cardinality = 4..4
+			## cardinality = 4..8
 			float
  		}
  	}

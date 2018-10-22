@@ -199,6 +199,7 @@ model_entity = {
 	}
 	## cardinality = 0..inf
 	attach = {
+		## cardinality = 0..4
 		# TODO: Make this smarter, left side is locators
 		scalar = <model_entity> #see locator in this file.
 		## cardinality = 0..1

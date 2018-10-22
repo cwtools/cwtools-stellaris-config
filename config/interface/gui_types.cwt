@@ -180,7 +180,7 @@ alias[gui:smoothListboxType] = {
 	## cardinality = 0..1
 	autohide_scrollbar = bool
 	## cardinality = 0..1
-	spacing = int
+	spacing = float
 	## cardinality = 0..1
 	priority = int
 	## cardinality = 0..1
@@ -385,7 +385,7 @@ alias[gui:scrollbarType] = {
 
 	maxValue = int
 	minValue = int
-	stepSize = int
+	stepSize = float
 	startValue = int
 
 	alias_name[gui_button] = alias_match_left[gui_button]

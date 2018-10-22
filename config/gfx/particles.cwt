@@ -134,6 +134,11 @@ particle_type = {
 		## cardinality = 0..1
 		box_emitter_x = scalar
 		## cardinality = 0..1
+		box_emitter_x = {
+			## cardinality = 2..2
+			float
+		}
+		## cardinality = 0..1
 		box_emitter_y = {
 			## cardinality = 2..2
 			float
@@ -391,7 +396,7 @@ particle_type = {
 		minValue = float
 		maxValue = float
 		curve = {
-			## cardinality = 4..14
+			## cardinality = 4..16
 			float
 		}
 		op = enum[animation_op] #defined in lights!
@@ -435,9 +440,9 @@ alias[subsystem_color:color] = {
 		float[0.0..255.0]
 		## cardinality = 0..1
 		scalar
-	 }
-}
-alias[subsystem_color:color] = {
+	}
+	 
+	 
 	## cardinality = 0..1
 	x = float[0.0..255.0]
 	## cardinality = 0..1
@@ -448,6 +453,10 @@ alias[subsystem_color:color] = {
 	alpha = scalar
 	#alpha = float[0.0..255.0] #float,<particle_animation>
 }
+
+#Better to split in two aliases, but it was defaulting to the first as alpha = { scalar ... } was correct
+#alias[subsystem_color:color] = {
+#}
 
 alias[emission:emission] = float
 alias[emission:emission] = scalar
