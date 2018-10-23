@@ -2919,15 +2919,21 @@ alias[effect:create_ambient_object] = {
 	## cardinality = 0..1
  	use_3d_location = bool
 	## cardinality = 0..1
+ 	entity_offset = int
+	## cardinality = 0..1
  	entity_offset = {
 		min = int
  		max = int
  	}
 	## cardinality = 0..1
+ 	entity_offset_angle = int
+	## cardinality = 0..1
  	entity_offset_angle = {
  		min = int
  		max = int
  	}
+	## cardinality = 0..1
+	entity_offset_height = int
 	## cardinality = 0..1
 	entity_offset_height = {
  		min = int
