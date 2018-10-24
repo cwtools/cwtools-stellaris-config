@@ -33,6 +33,7 @@ authority = {
 			OR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <ethos>
 			}
@@ -46,6 +47,7 @@ authority = {
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <ethos>
 			}
@@ -60,6 +62,7 @@ authority = {
 			OR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <country_type>
 			}
@@ -73,6 +76,7 @@ authority = {
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <country_type>
 			}
@@ -96,6 +100,7 @@ authority = {
 			OR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <ethos>
 			}
@@ -109,6 +114,7 @@ authority = {
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <ethos>
 			}
@@ -123,6 +129,7 @@ authority = {
 			OR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <country_type>
 			}
@@ -136,6 +143,7 @@ authority = {
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <country_type>
 			}
@@ -281,6 +289,7 @@ civic = {
 			OR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <ethos>
 			}
@@ -294,6 +303,7 @@ civic = {
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <ethos>
 			}
@@ -308,6 +318,7 @@ civic = {
 			OR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <country_type>
 			}
@@ -321,6 +332,7 @@ civic = {
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <country_type>
 			}
@@ -335,6 +347,7 @@ civic = {
 			OR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <authority>
 			}
@@ -348,6 +361,7 @@ civic = {
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <authority>
 			}
@@ -362,6 +376,7 @@ civic = {
 			OR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <civic>
 			}
@@ -375,6 +390,7 @@ civic = {
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <civic>
 			}
@@ -398,6 +414,7 @@ civic = {
 			OR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <ethos>
 			}
@@ -411,6 +428,7 @@ civic = {
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <ethos>
 			}
@@ -425,6 +443,7 @@ civic = {
 			OR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <country_type>
 			}
@@ -438,6 +457,7 @@ civic = {
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <country_type>
 			}
@@ -452,6 +472,7 @@ civic = {
 			OR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <authority>
 			}
@@ -465,6 +486,7 @@ civic = {
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <authority>
 			}
@@ -479,6 +501,7 @@ civic = {
 			OR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <civic>
 			}
@@ -492,6 +515,7 @@ civic = {
 			NOR = {
 				## cardinality = 0..1
 				text = localisation
+				# severity = information
 				## cardinality = 2..99
 				value = <civic>
 			}
@@ -557,6 +581,7 @@ alias[government_trigger:authority] = {
 	OR = {
 		## cardinality = 0..1
 		text = localisation
+		# severity = information
 		## cardinality = 2..inf
 		value = <authority>
 	}
@@ -570,6 +595,7 @@ alias[government_trigger:authority] = {
 	NOR = {
 		## cardinality = 0..1
 		text = localisation
+		# severity = information
 		## cardinality = 2..inf
 		value = <authority>
 	}
@@ -582,6 +608,7 @@ alias[government_trigger:country_type] = {
 	OR = {
 		## cardinality = 0..1
 		text = localisation
+		# severity = information
 		## cardinality = 2..99
 		value = <country_type>
 	}
@@ -595,6 +622,7 @@ alias[government_trigger:country_type] = {
 	NOR = {
 		## cardinality = 0..1
 		text = localisation
+		# severity = information
 		## cardinality = 2..99
 		value = <country_type>
 	}
@@ -607,6 +635,7 @@ alias[government_trigger:ethics] = {
 	OR = {
 		## cardinality = 0..1
 		text = localisation
+		# severity = information
 		## cardinality = 2..99
 		value = <ethos>
 	}
@@ -620,6 +649,7 @@ alias[government_trigger:ethics] = {
 	NOR = {
 		## cardinality = 0..1
 		text = localisation
+		# severity = information
 		## cardinality = 2..99
 		value = <ethos>
 	}
@@ -632,6 +662,7 @@ alias[government_trigger:civics] = {
 	OR = {
 		## cardinality = 0..1
 		text = localisation
+		# severity = information
 		## cardinality = 2..99
 		value = <civic>
 	}
@@ -645,6 +676,7 @@ alias[government_trigger:civics] = {
 	NOR = {
 		## cardinality = 0..1
 		text = localisation
+		# severity = information
 		## cardinality = 2..99
 		value = <civic>
 	}

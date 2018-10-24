@@ -65,6 +65,7 @@ event = {
 
 				## cardinality = 0..inf
 				scope[any] = {
+					## cardinality = 0..1
 					switch = {
 						trigger = scalar
 						## cardinality = 2..inf

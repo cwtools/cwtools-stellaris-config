@@ -71,9 +71,9 @@ particle_type = {
 		life = float
 		alias_name[emission] = alias_match_left[emission]
 		size = {
-			## cardinality = 0..2
-			float
-			## cardinality = 0..2
+			# cardinality = 0..2
+			#float
+			## cardinality = 2..2
 			scalar
 		}
 		size = float
@@ -84,7 +84,7 @@ particle_type = {
 		## cardinality = 0..1
 		rotation = {
 			## cardinality = 1..2
-			float
+			scalar
 		}
 		## cardinality = 0..1
 		rotation_speed_roll = {
@@ -116,6 +116,8 @@ particle_type = {
 			## cardinality = 2..2
 			float
 		}
+		## cardinality = 0..1
+		sphere_emitter_pitch = float
 		## cardinality = 0..1
 		sphere_emitter_pitch = {
 			## cardinality = 2..2
@@ -201,10 +203,10 @@ particle_type = {
 		## cardinality = 0..1
 		particle_yaw = {
 			## cardinality = 2..2
-			float
+			scalar
 		}
 		## cardinality = 0..1
-		particle_yaw = float
+		particle_yaw = scalar
 		## cardinality = 0..1
 		particle_roll = {
 			## cardinality = 2..2
@@ -259,8 +261,10 @@ particle_type = {
 			life = float
 			alias_name[emission] = alias_match_left[emission]
 			size = {
+				# cardinality = 0..2
+				#float
 				## cardinality = 2..2
-				float
+				scalar
 			}
 			size = float
 			## cardinality = 0..1
@@ -268,7 +272,7 @@ particle_type = {
 			## cardinality = 0..1
 			rotation = {
 				## cardinality = 1..2
-				float
+				scalar
 			}
 			## cardinality = 0..1
 			rotation_speed_roll = {
@@ -438,17 +442,20 @@ alias[subsystem_color:color] = {
 	alpha = {
 		## cardinality = 0..1
 		float[0.0..255.0]
-		## cardinality = 0..1
+		## cardinality = 0..2
 		scalar
 	}
 	 
 	 
 	## cardinality = 0..1
-	x = float[0.0..255.0]
+	#x = float[0.0..255.0]
+	x = scalar
 	## cardinality = 0..1
-	y = float[0.0..255.0]
+	#y = float[0.0..255.0]
+	y = scalar
 	## cardinality = 0..1
-	z = float[0.0..255.0]
+	#z = float[0.0..255.0]
+	z = scalar
 	## cardinality = 0..1
 	alpha = scalar
 	#alpha = float[0.0..255.0] #float,<particle_animation>

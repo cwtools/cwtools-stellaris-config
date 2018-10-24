@@ -242,7 +242,7 @@ alias[gui:containerWindowType] = {
 		right = int
 	}
 	## cardinality = 0..1
-	animation_time = int
+	animation_time = float
 	## cardinality = 0..1
 	animation_type = enum[gui_fade_types]
 	## cardinality = 0..1
@@ -460,7 +460,7 @@ alias[gui:OverlappingElementsBoxType] = {
 	name = scalar
 
 	## cardinality = 0..1
-	spacing = int
+	spacing = float
 
 	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
 	alias_name[gui_navigation] = alias_match_left[gui_navigation]
@@ -471,7 +471,7 @@ alias[gui:listBoxType] = {
 	## cardinality = 0..1
 	priority = int
 	## cardinality = 0..1
-	spacing = int
+	spacing = float
 	## cardinality = 0..1
 	autohide_scrollbar = bool
 	## cardinality = 0..1
@@ -584,7 +584,7 @@ alias[gui:dropDownBoxType] = {
 		## cardinality = 0..1
 		show_animation_type = accelerated
 		## cardinality = 0..1
-		animation_time = int
+		animation_time = float
 		## cardinality = 0..1
 		verticalScrollbar = scalar
 
