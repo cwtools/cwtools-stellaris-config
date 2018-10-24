@@ -3185,13 +3185,13 @@ alias[effect:create_ship] = {
 	name = localisation_synced
 	## cardinality = 0..1
 	name = scope[ship]
-	# severity = information
+	## severity = warning
 	## cardinality = 0..1
 	design = last_created_design
-	# severity = information
+	## severity = warning
 	## cardinality = 0..1
 	design = <global_ship_design>
-	# severity = information
+	## severity = warning
 	## cardinality = 0..1
 	# Hack to handle named designs
 	design = localisation
