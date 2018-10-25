@@ -1577,7 +1577,6 @@ alias[effect:kill_leader] = {
 	##cardinality = 0..1
 	heir = bool
 }
-alias[effect:kill_leader] = yes
 
 alias[effect:shift_ethic] = <ethos>
 alias[effect:country_add_ethic] = <ethos>
