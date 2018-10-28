@@ -2686,10 +2686,13 @@ alias[effect:add_notification_modifier] = <notification_modifier>
 
 ### Adds s random tech research option to the scoped country's tech view list, permanent until researched. if none applicable it runs fail_effects
 alias[effect:add_random_research_option] = {
+	## cardinality = 0..1
 	category = <technology_category>
 	area = enum[technology_areas]
+	## cardinality = 0..1
 	tier = <technology_tier>
 	add_progress = int
+	## cardinality = 0..1
 	fail_effects = {
 		alias_name[effect] = alias_match_left[effect]
 	}
