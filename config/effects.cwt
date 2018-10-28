@@ -2112,11 +2112,11 @@ alias[effect:create_species] = {
 ###Creates a new country
 alias[effect:create_country] = {
 	## cardinality = 0..1
-	name = localisation_synced
-	## cardinality = 0..1
 	name = scope[any]
 	## cardinality = 0..1
 	name = random
+	## cardinality = 0..1
+	name = localisation_synced
 	type = <country_type>
 
 	## cardinality = 0..1
