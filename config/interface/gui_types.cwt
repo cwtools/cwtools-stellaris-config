@@ -284,6 +284,17 @@ alias[gui:iconType] = {
 	## cardinality = 0..1
 	frame = int
 
+	## cardinality = 0..inf
+	if_resolution = {
+		## cardinality = 0..1
+		max_height = int
+		## cardinality = 0..1
+		min_height = int
+		alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
+		alias_name[gui_background] = alias_match_left[gui_background]
+		alias_name[gui] = alias_match_left[gui]
+	}
+	
 	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
 	alias_name[gui_localisation] = alias_match_left[gui_localisation]
 	alias_name[gui_sprite] = alias_match_left[gui_sprite]
@@ -299,6 +310,17 @@ alias[gui_button:buttonType] = {
 	  y = int
 	}
 
+	## cardinality = 0..inf
+	if_resolution = {
+		## cardinality = 0..1
+		max_height = int
+		## cardinality = 0..1
+		min_height = int
+		alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
+		alias_name[gui_background] = alias_match_left[gui_background]
+		alias_name[gui] = alias_match_left[gui]
+	}
+	
 	## cardinality = 0..1
 	multiline = bool
 
@@ -641,7 +663,8 @@ alias[gui_standard_element:orientation] = enum[direction]
 alias[gui_standard_element:format] = enum[direction]
 alias[gui_standard_element:vertical_alignment] = enum[direction]
 alias[gui_standard_element:id] = scalar
-alias[gui_standard_element:horizontal] = int
+alias[gui_standard_element:horizontal] = int[0..1]
+alias[gui_standard_element:horizontal] = bool
 alias[gui_standard_element:maxWidth] = int
 alias[gui_standard_element:maxHeight] = int
 alias[gui_standard_element:defaultSelection] = bool
@@ -673,7 +696,7 @@ alias[gui_localisation:pdx_tooltip_anchor_offset]= {
 }
 alias[gui_button_element:shortcut] = scalar
 alias[gui_button_element:frame] = int
-alias[gui_button_element:buttonText] = localisation
+alias[gui_button_element:buttonText] = scalar #since many are not defined anyway but are hardcoded.
 alias[gui_button_element:buttonFont] = <bitmapfont>
 alias[gui_button_element:actionShortcut] = enum[actionshortcut]
 alias[gui_button_element:web_link] = scalar

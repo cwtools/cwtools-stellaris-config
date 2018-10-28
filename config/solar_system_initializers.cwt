@@ -32,11 +32,11 @@ solar_system_initializer = {
 	## cardinality = 0..inf
 	usage = enum[usage_type]
 	## cardinality = 0..1
-	usage_odds = int
+	usage_odds = float
 	## cardinality = 0..1
 	usage_odds = {
 		## cardinality = 0..1
-		base = int
+		base = float
 		## cardinality = 0..inf
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
@@ -186,6 +186,7 @@ alias[planet_initializer:planet] = {
 	## cardinality = 0..1
 	starting_planet = bool
 
+	## severity = info
 	### The scope will be a planet scope, with prev being the system. prevprev will be the system that triggered this system's initialization ( if any ). Root will be the fallen empire.
 	## cardinality = 0..1
 	init_effect = {

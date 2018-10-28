@@ -362,6 +362,7 @@ species_name = {
 }
 
 species_named_list = {
+	## cardinality = 1..inf
 	scalar = {
 		name = scalar
 		plural = scalar

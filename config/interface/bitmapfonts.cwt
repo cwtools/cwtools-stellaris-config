@@ -52,63 +52,68 @@ enums = {
 		l_simp_chinese
 	}
 }
-	## cardinality = 14..14
-	textcolors = {
-  		scalar = {  #these should really have a unique ID each - so they can be refered to. They are linked to in GUI files in /interface.
-    		## cardinality = 3..3
-    		int
- 		}
-	}
 
-	bitmapfont = {
-  		name = scalar
-		#TODO: This should be filepath + extension
-		## cardinality = 0..1
-		path = scalar
-		## cardinality = 0..1
-		fontfiles = {
-			## cardinality = 1..inf
-			scalar
-		}
-		#TODO: hex
-  		color = scalar
-  		## cardinality = 0..1
-  		cursor_offset = {
-			## cardinality = 2..2
-    		int
-  		}
-  		## cardinality = 0..1
-  		selection_offset = {
-    		## cardinality = 2..2
-    		int
-  		}
-  		# cardinality = 0..1 #textcolors can appear for each bitmapfont as well. it seems these override the global colors defined above it in the list. see the file.
-  		#textcolors = {
-    	#	key = {
-      	#		## cardinality = 3..3
-      	#		float
-		#	}
-  		#}
-	}
 
-	bitmapfont_override = {
-		name = <bitmapfont>
-    	## cardinality = 0..1
-    	ttf_font = <font>
-    	## cardinality = 0..1
-    	ttf_size = int
-    	## cardinality = 0..1
-    	vertical_offset = int
-		## cardinality = 0..1
-    	fontfiles = {
-			## cardinality = 1..inf #im not sure about this
-	    	filepath
-		}
-		languages = {
-      		## cardinality = 1..3 #im not sure about this - probably some set number. -Caligula: Set to 3 as there are only 3 names defined in the enum
-      		enum[font_languages]
-    	}
+textcolors = {
+	## cardinality = 14..inf
+	scalar = {  #these should really have a unique ID each - so they can be refered to. They are linked to in GUI files in /interface.
+		## cardinality = 3..3
+		int[0..255]
 	}
+}
+
+bitmapfont = {
+	name = scalar
+	#TODO: This should be filepath + extension
+	## cardinality = 0..1
+	path = scalar
+	## cardinality = 0..1
+	fontfiles = {
+		## cardinality = 1..inf
+		scalar
+	}
+	#TODO: hex
+	color = scalar
+	## cardinality = 0..1
+	cursor_offset = {
+		## cardinality = 2..2
+		int
+	}
+	## cardinality = 0..1
+	selection_offset = {
+		## cardinality = 2..2
+		int
+	}
+	# cardinality = 0..1 #textcolors can appear for each bitmapfont as well. it seems these override the global colors defined above it in the list. see the file.
+	#textcolors = {
+	#	key = {
+	#		## cardinality = 3..3
+	#		float
+	#	}
+	#}
+}
+
+bitmapfont_override = {
+	name = <bitmapfont>
+	## cardinality = 0..1
+	ttf_font = <font>
+	## cardinality = 0..1
+	ttf_size = int
+	## cardinality = 0..1
+	vertical_offset = int
+	## cardinality = 0..1
+	fontfiles = {
+		## severity = info
+		#I'm not sure about this
+		## cardinality = 1..inf
+		scalar #todo: some kind of filepath but not one that CW Tools currently knows
+	}
+	languages = {
+		#I'm not sure about this - probably some set number. -Caligula: Set to 3 as there are only 3 names defined in the enum. Note: It is erroring anyway, not sure why.
+		## cardinality = 1..3
+		enum[font_languages]
+	}
+}
 
 #bitmapfont entries are connected to the fonts defined at game/fonts and the file there (see pull requests).
 #example:

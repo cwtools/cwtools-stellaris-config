@@ -2222,6 +2222,8 @@ alias[effect:create_rebels] = {
 	authority = random
 	authority = <authority>
 	authority = scope[country]
+	## cardinality = 0..1
+	civics = scope[country]
 	### random includes starting civics
 	## cardinality = 0..1
 	civics = random
@@ -2282,6 +2284,8 @@ alias[effect:create_rebels] = {
 	released_from_country = scope[country]
 
 	## push_scope = country
+	## severity = warning
+	#STNH do some interesting tricks, so I demoted it for their benefit.
 	###this is required to spawn rebels for the rebellion to work in the first place
 	effect = { alias_name[effect] = alias_match_left[effect] }
 }
@@ -2725,7 +2729,7 @@ alias[effect:add_tradition] = <tradition>
 
 ### Adds trust on scope country towards target country
 alias[effect:add_trust] = {
-	amount = int
+	amount = float
 	who = scope[country]
 }
 
@@ -3064,7 +3068,7 @@ alias[effect:create_message] = {
 	## cardinality = 0..10
 	variable = {
 		type = name
-		localization = localisation
+		localization = scalar #not localisation, but rather something that can be used in localisation
 		scope = scope[any]
 	}
 }
@@ -3092,8 +3096,11 @@ alias[effect:create_point_of_interest] = {
 	## cardinality = 0..1
 	desc = localisation
 	event_chain = <event_chain>
+	## severity = warning
 	location = scope[planet]
+	## severity = warning
 	location = scope[system]
+	## severity = warning
 	location = scope[fleet]
 	## cardinality = 0..1
 	category = scalar

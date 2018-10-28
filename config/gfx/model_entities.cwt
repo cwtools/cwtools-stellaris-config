@@ -223,6 +223,10 @@ model_entity = {
 				width = int
 				## cardinality = 0..1
 				length = int
+				#dunno if it works. Seems to be used often so downgraded it because it probably does -Caligula
+				## severity = info
+				## cardinality = 0..0
+				lenght = int
 				## cardinality = 0..1
 				height = int
 			}

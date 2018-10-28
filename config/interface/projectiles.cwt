@@ -92,7 +92,7 @@ planet_killer_animation = {
  	start = {
  		duration = float
  		width = {
-			## cardinality = 2..4
+			## cardinality = 2..8
 			float
  		}
  		texture_scroll_speed = {
@@ -108,7 +108,7 @@ planet_killer_animation = {
  	in_progress = {
  		duration = float
  		width = {
-			## cardinality = 2..6
+			## cardinality = 2..8
 			float
  		}
  		texture_scroll_speed = {
@@ -127,7 +127,7 @@ planet_killer_animation = {
  	end = {
  		duration = float
  		width = {
-			## cardinality = 2..4
+			## cardinality = 2..8
 			float
  		}
  		texture_scroll_speed = float

@@ -132,9 +132,14 @@ event = {
 			}
 			## cardinality = 0..1
 			text = localisation
-			## cardinality = 0..1
-			show_sound = <sound_effect>
 		}
+		
+		## cardinality = 0..1
+		show_sound = <sound_effect>
+		## cardinality = 0..1
+		###Force a diplomatic event to be viewed
+		force_open = bool
+
 		## cardinality = 0..1
 		location = scope[planet]
 		## cardinality = 0..1
@@ -149,13 +154,6 @@ event = {
 		location = scope[pop]
 		## cardinality = 0..1
 		location = scope[starbase]
-
-		## cardinality = 0..1
-		show_sound = <sound_effect>
-		## cardinality = 0..1
-		###Force a diplomatic event to be viewed
-		force_open = bool
-
 
 		## cardinality = 0..1
 		diplomatic = bool
@@ -228,10 +226,22 @@ event = {
 	}
 
 	subtype[hidden] = {
+		## severity = info
 		## cardinality = 0..1
 		title = OK
+		## severity = info
 		## cardinality = 0..1
 		desc = OK
+		
+		## severity = info
+		## cardinality = 0..0
+		picture = scalar
+		## severity = info
+		## cardinality = 0..0
+		location = scalar
+		## severity = info
+		## cardinality = 0..0
+		show_sound = scalar
 	}
 
 

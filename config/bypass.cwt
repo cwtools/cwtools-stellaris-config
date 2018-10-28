@@ -50,6 +50,8 @@ bypass = {
 	animation_time = int
 	## cardinality = 0..1
 	prerequisites = {
+		## severity = info
+		## cardinality = 1..inf
 		<technology>
 	}
 	## cardinality = 0..1
