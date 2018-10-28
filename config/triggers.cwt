@@ -2346,3 +2346,7 @@ alias[trigger:would_join_war] = {
 	defender = scope[country]
 	side = scope[country]
 }
+
+
+## scope = country
+alias[trigger:is_researching_special_project] = <special_project>

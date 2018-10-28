@@ -32,6 +32,7 @@ alias[effect:if] = {
 }
 
 alias[effect:else_if] = {
+	## severity = info
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
@@ -3084,7 +3085,7 @@ alias[effect:create_mining_station] = {
 alias[effect:create_point_of_interest] = {
 	id = scalar
 	## cardinality = 1..1
-	#TODO: This should be a yellow warning if you don't have it. It doesn't create any major errors, but looks really bad and unprofessional to have a blank button, so I feel you should definitely be warned.
+	## severity = info
 	###Leaving out "name" gives a blank button that looks really terrible and unprofessional. Don't do it :P
 	name = localisation
 	#The last comment does not apply here.
