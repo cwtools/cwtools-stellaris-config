@@ -31,7 +31,7 @@ types = {
 		## type_key_filter = event
 		subtype[scopeless] = {
 		}
-		path = "game/events"
+		
 		subtype[hidden] = {
 			hide_window = yes
 		}
