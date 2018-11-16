@@ -12,6 +12,11 @@ alias[modifier_rule:modifier] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+alias[modifier_rule_factor:modifier] = {
+	factor = float
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
 #for only "add = int" (opinion modifiers, for example)
 alias[modifier_rule_add:modifier] = {
 	add = int
