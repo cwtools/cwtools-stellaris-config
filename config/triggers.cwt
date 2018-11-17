@@ -2231,7 +2231,10 @@ alias[trigger:ship_maintenance] = int
 alias[trigger:species_planet_slave_percentage] = float[0.0..1.0]
 
 ### Checks if the species (or pop/empire's dominant species) uses a certain portrait
-alias[trigger:species_portrait] = enum[portait] #TODO portait
+alias[trigger:species_portrait] = <portrait>
+### Checks if the species (or pop/empire's dominant species) uses a certain portrait
+alias[trigger:species_portrait] = <portrait_group>
+
 
 ## push_scope = star
 ###Scope (/context) switch
