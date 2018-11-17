@@ -3893,10 +3893,15 @@ alias[effect:star] = { alias_name[effect] = alias_match_left[effect] }
 ### Starts colonization of the scoped planet
 alias[effect:start_colony] = {
 	owner = scope[country]
+	## cardinality = 0..1
 	species = scope[species]
+	## cardinality = 0..1
 	species = scope[country]
+	## cardinality = 0..1
 	species = scope[pop]
+	## cardinality = 0..1
  	species = enum[buildable_pop_species]
+	## cardinality = 0..1
 	species = scalar #key
 	## cardinality = 0..1
 	ethos = scope[species] #Yes, this is correct. No, I don't know why.
