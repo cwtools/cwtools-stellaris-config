@@ -74,8 +74,10 @@ enums = {
    	}
 	complex_enum[component_slots] = {
 		path = "game/common/section_templates"
-		component_slot = {
-			name = enum_name
+		name = {
+			component_slot = {
+				name = enum_name
+			}
 		}
 	}
 }
