@@ -3735,7 +3735,7 @@ alias[effect:set_pop_faction_flag] = scalar
 alias[effect:set_primitive] = bool
 
 ### Sets a 'primitive age' for the scoped (primitive, pre-FTL) country
-alias[effect:set_primitive_age] = enum[primative_ages]
+alias[effect:set_primitive_age] = enum[primitive_ages]
 
 
 enums = {
