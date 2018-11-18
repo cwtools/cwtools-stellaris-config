@@ -40,6 +40,8 @@ global_ship_design = {
 			## cardinality = 0..1
 			#TODO check slot sizes
 			slot = enum[component_slots]
+			## cardinality = 0..1
+			slot = enum[utility_component_slots]
 			# cardinality = 0..1
 			#TODO check slot sizes
 			#slot = <weapon_slot_size>
