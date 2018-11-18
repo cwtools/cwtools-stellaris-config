@@ -98,14 +98,9 @@ alias[trigger:else] = { alias_name[trigger] = alias_match_left[trigger] }
 # 	alias_name[trigger] = alias_match_left[trigger]
 # }
 
-# ## push_scope = country
-# alias[trigger:observation_outpost_owner] = {
-# 	alias_name[trigger] = alias_match_left[trigger]
-# }
 
-# alias[trigger:observation_outpost] = {
-# 	alias_name[trigger] = alias_match_left[trigger]
-# }
+
+
 
 
 # ## push_scope = country
@@ -272,6 +267,15 @@ alias[trigger:else] = { alias_name[trigger] = alias_match_left[trigger] }
 # alias[trigger:star] = {
 # 	alias_name[trigger] = alias_match_left[trigger]
 # }
+
+# ## push_scope = country
+# alias[trigger:observation_outpost_owner] = {
+# 	alias_name[trigger] = alias_match_left[trigger]
+# }
+
+ alias[trigger:observation_outpost] = {
+ 	alias_name[trigger] = alias_match_left[trigger]
+ }
 
 ## push_scope = country
 alias[trigger:any_playable_country] = {
