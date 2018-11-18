@@ -1,16 +1,17 @@
 
 alias[trigger:scope_field] = { alias_name[trigger] = alias_match_left[trigger] }
 
-alias[trigger:NOT] = {
-	## cardinality = 1..1
-	alias_name[trigger] = alias_match_left[trigger]
-}
+#These are not required as covered by scope_field
+# alias[trigger:NOT] = {
+#	## cardinality = 1..1
+# 	alias_name[trigger] = alias_match_left[trigger]
+# }
 
-alias[trigger:NOR] = { alias_name[trigger] = alias_match_left[trigger] }
-alias[trigger:NAND] = { alias_name[trigger] = alias_match_left[trigger] }
-alias[trigger:AND] = { alias_name[trigger] = alias_match_left[trigger] }
-alias[trigger:OR] = { alias_name[trigger] = alias_match_left[trigger] }
-alias[trigger:hidden_trigger] = { alias_name[trigger] = alias_match_left[trigger] }
+# alias[trigger:NOR] = { alias_name[trigger] = alias_match_left[trigger] }
+# alias[trigger:NAND] = { alias_name[trigger] = alias_match_left[trigger] }
+# alias[trigger:AND] = { alias_name[trigger] = alias_match_left[trigger] }
+# alias[trigger:OR] = { alias_name[trigger] = alias_match_left[trigger] }
+# alias[trigger:hidden_trigger] = { alias_name[trigger] = alias_match_left[trigger] }
 
 alias[trigger:if] = {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
