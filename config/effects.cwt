@@ -294,14 +294,9 @@ alias[effect:random_owned_leader] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -323,14 +318,8 @@ alias[effect:random_owned_leader] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
-
-			alias_name[trigger] = alias_match_left[trigger]
-		}
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 	}
 }
 
@@ -350,14 +339,9 @@ alias[effect:random_war_participant] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -377,14 +361,9 @@ alias[effect:random_owned_army] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -404,14 +383,9 @@ alias[effect:random_system_within_border] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -431,14 +405,9 @@ alias[effect:random_owned_starbase] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -458,14 +427,9 @@ alias[effect:random_pop_faction] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -485,14 +449,9 @@ alias[effect:random_owned_pop] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -512,14 +471,9 @@ alias[effect:random_pop] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -539,14 +493,9 @@ alias[effect:random_relation] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -566,14 +515,9 @@ alias[effect:random_country] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -593,14 +537,9 @@ alias[effect:random_owned_planet] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -620,14 +559,9 @@ alias[effect:random_playable_country] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -666,14 +600,9 @@ alias[effect:random_planet_within_border] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -693,14 +622,9 @@ alias[effect:random_mining_station] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -720,14 +644,9 @@ alias[effect:random_research_station] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -747,14 +666,9 @@ alias[effect:random_subject] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -774,14 +688,9 @@ alias[effect:random_owned_fleet] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -801,14 +710,9 @@ alias[effect:random_neighbor_country] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -832,14 +736,9 @@ alias[effect:random_neighbor_system] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -859,14 +758,9 @@ alias[effect:random_fleet_in_system] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -879,14 +773,9 @@ alias[effect:random_ambient_object] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -899,14 +788,9 @@ alias[effect:random_system_ambient_object] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -933,14 +817,9 @@ alias[effect:random_sector] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -967,14 +846,9 @@ alias[effect:random_rim_system] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -987,14 +861,9 @@ alias[effect:random_moon] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -1021,14 +890,9 @@ alias[effect:random_tile] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -1048,14 +912,9 @@ alias[effect:random_neighboring_tile] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -1075,14 +934,9 @@ alias[effect:random_system_planet] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -1109,14 +963,9 @@ alias[effect:random_planet] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -1136,14 +985,9 @@ alias[effect:random_owned_ship] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -1163,14 +1007,9 @@ alias[effect:random_controlled_planet] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -1205,14 +1044,9 @@ alias[effect:random_war_defender] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -1235,14 +1069,9 @@ alias[effect:random_war_attacker] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -1255,14 +1084,9 @@ alias[effect:random_megastructure] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -1282,14 +1106,9 @@ alias[effect:random_owned_megastructure] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -1309,14 +1128,9 @@ alias[effect:random_system_megastructure] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 
@@ -1337,14 +1151,9 @@ alias[effect:random_system] = {
 	##cardinality = 0..1
 	weights = {
 		base = float
-		modifier = {
-			##cardinality = 0..1
-			add = float
-			##cardinality = 0..1
-			mult = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult_factor] = alias_match_left[modifier_rule_add_mult_factor]
 
-			alias_name[trigger] = alias_match_left[trigger]
-		}
 	}
 }
 

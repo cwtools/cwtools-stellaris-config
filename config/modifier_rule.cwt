@@ -32,6 +32,17 @@ alias[modifier_rule_add_factor:modifier] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+#for effect modifiers?
+alias[modifier_rule_add_mult_factor:modifier] = {
+	## cardinality = 0..1
+	factor = float
+	## cardinality = 0..1
+	add = float
+	## cardinality = 0..1
+	mult = float
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
 #for only parameter cases
 alias[scaled_modifier_rule:scaled_modifier] = {
 	limit = { alias_name[trigger] = alias_match_left[trigger]  }
