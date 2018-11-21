@@ -20,7 +20,7 @@ alias[effect:create_starbase] = {
 	effect = { alias_name[effect] = alias_match_left[effect] }
 }
 
-alias[effect:hidden_effect] = { alias_name[effect] = alias_match_left[effect] }
+#alias[effect:hidden_effect] = { alias_name[effect] = alias_match_left[effect] }
 
 
 
