@@ -345,7 +345,7 @@ alias[effect:country_remove_ethic] = <ethos>
 alias[effect:kill_pop] = yes
 alias[effect:enslave_pop] = bool
 alias[effect:destroy_colony] = yes
-alias[effect:set_ruined] = bool
+#alias[effect:set_ruined] = bool
 
 alias[effect:random_list] = {
 	##cardinality = 0..inf
@@ -696,18 +696,7 @@ alias[effect:set_building] = <building>
 ###Removes a building from the scoped tile, this will also cancel construction and clear the queue
 alias[effect:remove_building] = yes
 ###Begins construction of a specific building on the scoped tile
-alias[effect:add_building_construction] = <building>
-
-alias[effect:add_minerals] = int
-alias[effect:add_energy] = int
-alias[effect:add_unity] = int
-alias[effect:add_influence] = int
-###Instantly gives stored physics research points to the scoped county
-alias[effect:add_physics_research] = int
-###Instantly gives stored society research points to the scoped county
-alias[effect:add_society_research] = int
-###Instantly gives stored engineering research points to the scoped county
-alias[effect:add_engineering_research] = int
+#alias[effect:add_building_construction] = <building>
 
 ###Instantly gives a specific tech to the scoped country
 alias[effect:give_technology] = {
@@ -1258,10 +1247,6 @@ alias[effect:change_pc] = {
 ###Adds/Removes tiles to/from the scoped planet to adjust its planet size
 alias[effect:set_planet_size] = int
 
-alias[effect:set_blocker] = random
-alias[effect:set_blocker] = <tile_blocker>
-###Removes the tile blocker from the scoped tile
-alias[effect:remove_blocker] = bool
 ###Adds a specific deposit to the scoped tile
 alias[effect:add_deposit] = <deposit>
 ###Replaces resource deposit on the scoped tile
@@ -1274,10 +1259,6 @@ alias[effect:clear_planet_modifiers] = yes
 alias[effect:clear_resources] = yes
 ###Rebuild modifiers on target planet
 alias[effect:reroll_planet_modifiers] = yes
-###Rebuild resource blockers on target planet
-alias[effect:reroll_blockers] = yes
-###Rebuild resource deposits on target planet
-alias[effect:reroll_deposits] = yes
 
 alias[effect:establish_communications_no_message] = scope[country]
 
@@ -1429,9 +1410,6 @@ alias[effect:add_asteroid_belt] = {
 ### Adds to ongoing colonization progress on the scoped planet
 alias[effect:add_colony_progress] = float[0.0..1.0]
 
-### Adds a sum of food to the scoped country)
-alias[effect:add_food] = int
-
 ### Adds a specific global design to the game
 alias[effect:add_global_ship_design] = <global_ship_design>
 
@@ -1518,12 +1496,12 @@ alias[effect:auto_move_to_planet] = {
 ###Scope (/context) switch
 alias[effect:best_tile_for_pop] = { alias_name[effect] = alias_match_left[effect] }
 
-### Creates a buildable pop on the scoped tile/planet
-alias[effect:build_pop] = { #TOOO trigger docs error
-	name = <buildable_pop>
-	## cardinality = 0..1
-	grown = bool
-}
+# ### Creates a buildable pop on the scoped tile/planet
+#alias[effect:build_pop] = { #TOOO trigger docs error
+#	name = <buildable_pop>
+#	## cardinality = 0..1
+#	grown = bool
+#}
 
 ### Cancels terraformation of the scoped planet
 alias[effect:cancel_terraformation] = bool
@@ -1657,9 +1635,6 @@ alias[effect:conquer] = scope[country]
 
 ### Makes the scoped country copy the ethos and government authority of the target country.
 alias[effect:copy_ethos_and_authority] = scope[country]
-
-### Copies orbital tile of source planet onto scoped planet
-alias[effect:copy_orbital_tile] = scope[planet]
 
 
 ## push_scope = sector
@@ -1938,13 +1913,13 @@ alias[effect:create_saved_leader] = {
 
 
 
-### Creates a sector with a specific capital planet, of a specific type, and with optional additional systems within the scoped country
-alias[effect:create_sector] = {
-	capital = scope[planet]
-	type = <sector_type>
-	## cardinality = 0..100
-	add = scope[system]
-}
+# ### Creates a sector with a specific capital planet, of a specific type, and with optional additional systems within the #scoped country
+#alias[effect:create_sector] = {
+#	capital = scope[planet]
+#	type = <sector_type>
+#	## cardinality = 0..100
+#	add = scope[system]
+#}
 
 ### Creates a new ship
 alias[effect:create_ship] = {
@@ -2168,9 +2143,8 @@ alias[effect:modify_army] = {
 	type = <army>
 }
 
-### Moves a pop from a tile to another
-alias[effect:move_pop] = scope[planet]
-alias[effect:move_pop] = scope[tile]
+# ### Moves a pop from a tile to another
+#alias[effect:move_pop] = scope[planet]
 
 ### Randomly mutate a species.
 alias[effect:mutate_species] = yes
@@ -2206,17 +2180,11 @@ alias[effect:pop] = { alias_name[effect] = alias_match_left[effect] }
 ### Adds a specific ethic to the scoped pop regardless if pop-species allows ethic divergence or not.
 alias[effect:pop_force_add_ethic] = <ethos>
 
-### Sets the scoped pop's migration speed
-alias[effect:pop_migration] = float
-
 ### Removes a specific ethic from the scoped pop
 alias[effect:pop_remove_ethic] = <ethos>
 
 ### Disables or enables anomaly generation for the scoped planet
 alias[effect:prevent_anomaly] = bool
-
-### Starts or stops purging the scoped pop/planet
-alias[effect:purge] = bool
 
 ## push_scope = country
 ### Iterate through all bordering countries of a system
@@ -2291,8 +2259,8 @@ alias[effect:remove_hyperlane] = {
 ### Remove a notification modifier to the country
 alias[effect:remove_notification_modifier] = <notification_modifier>
 
-### Removes the orbital deposit slot from the scoped planet
-alias[effect:remove_orbital_deposit] = yes
+# ### Removes the orbital deposit slot from the scoped planet
+#alias[effect:remove_orbital_deposit] = yes
 
 ### Removes a specific point of interest from the scoped country's situation log
 alias[effect:remove_point_of_interest] = scalar
@@ -2513,9 +2481,6 @@ enums = {
 
 ### Adds or removes a planetary ring around the scoped planet
 alias[effect:set_ring] = bool
-
-### Sets the name of the current sector.
-alias[effect:set_sector_name] = scalar
 
 ### Sets the scoped leader's level
 alias[effect:set_skill] = int
