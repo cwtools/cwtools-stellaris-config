@@ -1,0 +1,45 @@
+
+alias[economic_template:cost] = {
+	## cardinality = 0..1
+	trigger = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 1..inf
+	<resource> = int
+}
+
+alias[economic_template:produces] = {
+	## cardinality = 0..1
+	trigger = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 1..inf
+	<resource> = int
+}
+
+alias[economic_template:upkeep] = {
+	## cardinality = 0..1
+	trigger = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 1..inf
+	<resource> = int
+}
+
+
+alias[triggered_planet_modifier:triggered_planet_modifier] = {
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+}
+
+alias[triggered_desc:triggered_desc] = {
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	text = localisation
+}
+

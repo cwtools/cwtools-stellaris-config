@@ -1,0 +1,60 @@
+
+types = {
+	## push_scope = planet
+	type[district] = {
+		path = "game/common/districts"
+	}
+}
+
+district = {
+	base_buildtime = int
+  
+	min_for_deposits_on_planet = int
+	max_for_deposits_on_planet = int
+
+	show_on_uncolonized = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+  
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+  
+	allow = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+  
+	prerequisites = {
+		## cardinality = 0..inf
+		<technology>
+	}
+
+	conversion_ratio = int
+	convert_to = {
+		<district>
+	}
+  
+	resources = {
+		category = planet_districts
+		alias_name[economic_template] = alias_match_left[economic_template]
+	}
+  
+	planet_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+  
+	alias_name[triggered_planet_modifier] = alias_match_left[triggered_planet_modifier]
+	alias_name[triggered_desc] = alias_match_left[triggered_desc]
+
+	ai_weight = {
+		weight = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	ai_resource_production = {
+		<resource> = int
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
+}
