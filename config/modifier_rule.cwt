@@ -65,5 +65,9 @@ enums = {
 		factor
 		weight
 	}
+	enum[factor_weight] = {
+		factor
+		weight
+	}
 }
 

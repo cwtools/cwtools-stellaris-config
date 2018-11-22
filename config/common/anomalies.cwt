@@ -17,13 +17,13 @@ anomaly_category = {
 
 	## cardinality = 0..1
 	###Optional. Will use <anomaly_category>_description if not specified.
-	desc = scalar #localisation
+	desc = localisation
 	## cardinality = 0..1
 	## replace_scope = { root = planet this = planet from = ship }
 	desc = {
 		### Scope: planet, from = ship
 		trigger = { alias_name[trigger] = alias_match_left[trigger] }
-		text = scalar #localisation
+		text = localisation
 	}
 	## cardinality = 0..1
 	###Picture displayed in category window
