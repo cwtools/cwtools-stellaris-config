@@ -34,9 +34,6 @@ types = {
 	type[country_customization] = {
 		path = "game/common/country_customization"
 	}
-	type[static_modifier] = {
-		path = "game/common/static_modifiers"
-	}
 	type[system_type] = {
 		path = "game/common/system_types"
 	}
@@ -44,9 +41,17 @@ types = {
 	type[start_screen_message] = {
 		path = "game/common/start_screen_messages"
 	}
+	type[precursors] = {
+		name = key
+		path = "common/precursor_civlizations"
+	}
+	type[sector_type] = {
+		path = "game/common/sector_types"
+	}
+	type[map_mode] = {
+		path = "game/common/map_modes"
+	}
 }
-
-
 
 ambient_object = {
 	subtype[show_name] = {
@@ -183,16 +188,6 @@ country_customization = {
 }
 
 
-static_modifier = {
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	icon_frame = int[0..9]
-	## cardinality = 0..1
-	icon = filepath
-	## cardinality = 0..1
-	important = bool
-}
-
 
 
 system_type = {
@@ -220,5 +215,76 @@ start_screen_message = {
 	## replace_scope = { root = country this = country }
 	trigger = {
 		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+  
+  #this is a rather useless file. I have no idea what this does really - seems to be a weight modifier tied to hardcode.
+  
+precursors = {
+	##cardinality = 1..inf
+	scalar = int
+}
+
+
+sector_type = {
+
+	## cardinality = 0..1
+	### Sector will focus on producing this resources
+	production_targets = {
+		<resource>
+	}
+
+	## cardinality = 0..1
+	### Sector will build this ships (on planet spaceports)
+	ships = {
+		<ship_size>
+	}
+
+	## cardinality = 0..1
+	### This = Sector
+	ai_weight = {
+		## cardinality = 0..1
+		weight = float
+		## cardinality = 0..1
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+
+#TODO Confirm
+#TODO Colours
+map_mode = {
+	icon =  <sprite>
+	enable_terra_incognita = bool
+	## cardinality = 0..1
+	can_change_point_of_view = bool
+	## cardinality = 0..1
+	shortcut = scalar
+	## cardinality = 0..1
+	display_claims = bool
+
+	## cardinality = 1..inf
+	color = {
+		## cardinality = 1..1
+        value = country
+		## cardinality = 1..1
+		value = {
+			##cardinality = 3..4
+			float
+		}
+		## cardinality = 0..1
+		custom_tooltip = localisation
+		## cardinality = 0..1
+		hardcoded_tooltip = enum[hardcoded_map_mode_tooltip]
+		## replace_scope = { root = country this = country from = country }
+        condition = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+    }
+}
+enums = {
+	enum[hardcoded_map_mode_tooltip] = {
+		opinion
+		country
 	}
 }
