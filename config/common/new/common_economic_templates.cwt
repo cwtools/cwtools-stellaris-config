@@ -31,6 +31,7 @@ alias[triggered_planet_modifier:triggered_planet_modifier] = {
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## push_scope = planet
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}

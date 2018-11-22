@@ -1,0 +1,105 @@
+
+types = {
+	## push_scope = pop
+	type[job] = {
+		path = "game/common/pop_jobs"
+	}
+	## push_scope = pop
+	type[social_stata] = {
+		path = "game/common/pop_categories"
+	}
+}
+
+enums = {
+	enum[job_categories] = {
+		specialist
+	}
+	enum[job_resource_categories] = {
+		planet_enforcers
+	}
+	enum[social_strata_resource_categories] = {
+		pop_category_drones
+	}
+}
+
+job = {
+	category = enum[job_categories]
+	condition_string = localisation
+	building_icon = <sprite>
+	clothes_texture_index = int
+
+	possible = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+  
+	resources = {
+		category = enum[job_resource_categories]
+		alias_name[economic_template] = alias_match_left[economic_template]
+	}
+
+	pop_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	## push_scope = planet
+	planet_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { has_non_swapped_tradition = tr_domination_judgment_corps }
+		}
+		modifier = {
+			planet_crime_add = -5
+		}	   
+	}
+
+	alias_name[triggered_planet_modifier] = alias_match_left[triggered_planet_modifier]
+
+	weight = {
+		weight = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+
+
+
+
+social_stata = {
+	rank = int
+	clothes_texture_index = social_stata
+  
+	###This is called whenever a Pop is created, moved to a different planet, or gets a new owner
+	assign_to_pop = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	weight = {
+		weight = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	pop_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	###scope: pop to be resettled
+	allow_resettlement = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	resettlement_cost = {
+		<resource> = int
+	}
+
+	unemployment_resources = {
+		category = unemployment_resources
+		alias_name[economic_template] = alias_match_left[economic_template]
+	}
+  
+	resources = {
+		category = enum[social_strata_resource_categories]
+		alias_name[economic_template] = alias_match_left[economic_template]
+	}   
+}
