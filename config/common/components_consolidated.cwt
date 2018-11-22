@@ -1,4 +1,12 @@
+
 types = {
+	type[component_set] = {
+		name_field = "key"
+    	path = "game/common/component_sets"
+		subtype[required_component] = {
+			required_component_set = yes
+		}
+	}
 	type[component_template] = {
 		name_field = "key"
 		path = "game/common/component_templates"
@@ -13,6 +21,42 @@ types = {
 		}
 	}
 }
+
+# a component tag causes the game to autogenerate three modifiers:
+# component_tag_energy_weapon_damage_mult, component_tag_energy_weapon_fire_rate_mult and component_tag_energy_speed_mult
+#these modifiers require localisation and a GFX (gfx/interface/icons/modifiers - same name as the component_tag key)
+enums = {
+	complex_enum[component_tags] = {
+		path = "game/common/component_tags"
+		name = {
+			enum_name = scalar
+		}
+		start_from_root = yes
+	}
+}
+
+
+
+component_set = {
+	## cardinality = 0..1
+	required_component_set = bool
+	subtype[required_component] = {
+		key = scalar
+		## cardinality = 0..1
+		icon = scalar
+		## cardinality = 0..1
+		icon_frame = scalar		
+	}
+	subtype[!required_component] = {
+		key = localisation
+		icon = <sprite>
+		icon_frame = int		
+	}
+}
+
+
+
+
 # TODO Confirm
 # TODO Document
 # TODO Expand
@@ -66,9 +110,7 @@ component_template = {
 	## cardinality = 0..1
 	ai_weight = {
 		## cardinality = 0..1
-		weight = int
-		## cardinality = 0..1
-		factor = float
+		enum[factor_weight] = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	subtype[utility_component_template] = {
@@ -77,12 +119,10 @@ component_template = {
 		size = enum[utility_slot_size]
 		## cardinality = 0..1
 		modifier = {
-			## cardinality = 0..inf
 			alias_name[modifier] = alias_match_left[modifier]
 		}
 		## cardinality = 0..1
 		ship_modifier = {
-			## cardinality = 0..inf
 			alias_name[modifier] = alias_match_left[modifier]
 		}
 		## cardinality = 0..1
@@ -114,7 +154,6 @@ component_template = {
 			}
 			## cardinality = 0..1
 			modifier = {
-				## cardinality = 0..inf
 				alias_name[modifier] = alias_match_left[modifier]
 			}
 
@@ -149,7 +188,6 @@ component_template = {
 			}
 			## cardinality = 0..1
 			modifier = {
-				## cardinality = 0..inf
 				alias_name[modifier] = alias_match_left[modifier]
 			}
 

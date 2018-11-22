@@ -4,6 +4,16 @@ types = {
 	}
 }
 
+enums = {
+	complex_enum[building_tags] = {
+		path = "game/common/building_tags"
+		name = {
+			enum_name = scalar
+		}
+		start_from_root = yes
+	}
+}
+
 building = {
 	## cardinality = 0..1
 	icon = scalar
@@ -33,7 +43,7 @@ building = {
 	requires_pop = bool
 
 	## cardinality = 0..1
-	tags = { <building_tag> }
+	tags = { enum[building_tags] }
 
 	## cardinality = 0..1
 	capital = yes

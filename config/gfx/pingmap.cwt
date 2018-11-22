@@ -1,6 +1,5 @@
 types = {
 	type[pingmap] = {
-		name_field = "name"
 		path = "game/gfx/pingmap"
 	}
 }

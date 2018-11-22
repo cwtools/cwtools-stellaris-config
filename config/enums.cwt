@@ -13,4 +13,9 @@ enums = {
 		governor
 		general
 	}
+	enum[days_months_years] = {
+		days
+		months
+		years
+	}
 }

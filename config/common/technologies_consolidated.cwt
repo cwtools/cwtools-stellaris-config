@@ -9,7 +9,17 @@ types = {
 			start_tech = yes
 		}
 	}
+	type[technology_tier] = {
+		path = "game/common/technology/tier"
+	}
+	# a tech category causes the game to autogenerate a unique modifier:
+	# category_tech_category_key_research_speed_mult
+	# each of these modifiers requires localisation and a GFX (gfx/interface/icons/modifiers - same name as the tech_category key)
+	type[technology_category] = {
+		path = "game/common/technology/category"		
+	}
 }
+
 
 
 
@@ -178,4 +188,17 @@ enums = {
 		all
 		military
 	}
+}
+
+
+# Should actually be a number
+### This should be a number
+technology_tier = {
+	## cardinality = 0..1
+	previously_unlocked = int
+}
+
+
+technology_category = { 
+  icon = filepath
 }
