@@ -617,6 +617,8 @@ alias[trigger:closest_system] = {
 
 # Effect Scopes
 
+alias[effect:scope_field] = { alias_name[effect] = alias_match_left[effect] }
+
 #scope_field stuff
 
 # push_scope = leader
