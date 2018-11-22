@@ -8,7 +8,7 @@ enums = {
 	complex_enum[building_tags] = {
 		path = "game/common/building_tags"
 		name = {
-			enum_name = scalar
+			enum_name
 		}
 		start_from_root = yes
 	}

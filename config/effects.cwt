@@ -185,6 +185,7 @@ alias[effect:planet_event] = {
 
 alias[effect:add_modifier] = {
 	modifier = <static_modifier>
+	## severity = info
 	enum[days_months_years] = int
 }
 

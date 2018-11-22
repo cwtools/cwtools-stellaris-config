@@ -29,7 +29,7 @@ enums = {
 	complex_enum[component_tags] = {
 		path = "game/common/component_tags"
 		name = {
-			enum_name = scalar
+			enum_name
 		}
 		start_from_root = yes
 	}
@@ -85,12 +85,12 @@ component_template = {
 	## cardinality = 0..1
 	tags = {
 		## cardinality = 0..inf
-		<component_tag>
+		enum[component_tags]
 	}
 	## cardinality = 0..1
 	ai_tags = {
 		## cardinality = 0..inf
-		<component_tag>
+		enum[component_tags]
 	}
 	## cardinality = 0..1
 	size_restriction = {

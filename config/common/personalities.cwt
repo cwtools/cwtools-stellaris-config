@@ -64,7 +64,7 @@ ai_personality = {
 	advanced_start_chance = int
 
 	## cardinality = 0..1
-	weapon_preferences = <component_tag>
+	weapon_preferences = enum[component_tags]
 
 
 	#these three are fractions
