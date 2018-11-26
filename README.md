@@ -1,8 +1,8 @@
-# cwtools-stellaris-config
+# CWTools config rules for Stellaris
 .cwt config files for Stellaris
 
-To use these copy the contents of the config folder and place it in a folder called `.cwtools` in the folder you open in vscode.
-You'll also need to enable the `experimental_completion` setting.
+These will be used automatically, using the latest tag for `stable` and the latest commit for `latest`.
+To manually use for testing or contributing, copy the contents of the config folder and place it in a folder called `.cwtools` in the folder you open in vscode.
 
 See https://github.com/tboby/cwtools/wiki/.cwt-config-file-guidance for guidance on the file format
 
