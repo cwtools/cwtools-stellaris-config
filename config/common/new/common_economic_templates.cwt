@@ -1,4 +1,36 @@
 
+types = {
+	type[economic_category] = {
+		path = "game/common/economic_categories"
+		
+		#I don't know if there is an "economic_category" for country (which as no parent), but if there is it will be the one without.
+		subtype[has_parent] = {
+			parent = scalar
+		}
+	}
+}
+
+economic_category = {
+	#Verify: Are country, planet economic categories? Otherwise need to specify those. Also, are there any with no parent?
+    parent = <economic_category>
+	## cardinality = 0..1
+    use_for_ai_budget = yes
+
+	## cardinality = 0..inf
+	triggered_produces_modifier = {
+		subtype[has_parent] = {
+			## cardinality = 0..1
+			use_parent_icon = yes
+		}
+		key = localisation
+		## cardinality = 0..1
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
+}
+
+
 alias[economic_template:cost] = {
 	## cardinality = 0..1
 	trigger = {
