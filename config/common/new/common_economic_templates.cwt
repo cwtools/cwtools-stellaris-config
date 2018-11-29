@@ -37,6 +37,26 @@ alias[triggered_planet_modifier:triggered_planet_modifier] = {
 	}
 }
 
+alias[triggered_system_modifier:triggered_system_modifier] = {
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## push_scope = system
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+}
+
+alias[triggered_country_modifier:triggered_country_modifier] = {
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## push_scope = country
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+}
+
 alias[triggered_desc:triggered_desc] = {
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
