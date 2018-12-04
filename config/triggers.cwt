@@ -1627,3 +1627,9 @@ alias[trigger:count_potential_war_participants] = {
 ## scope = pop_faction
 ###Checks the pop_faction's approval level
 alias[trigger:faction_approval] = int[0..100]
+
+
+alias[trigger:resource_stockpile_compare ] = {
+	resource = <resource>
+	value = float
+}

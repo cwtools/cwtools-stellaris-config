@@ -2690,3 +2690,8 @@ enums = {
 		none
 	}
 }
+
+
+alias[effect:add_resource] = {
+	<resource> = float
+}
