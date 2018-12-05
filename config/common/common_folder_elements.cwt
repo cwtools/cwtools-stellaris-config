@@ -32,7 +32,7 @@ alert = {
 }
 alert_icon = {
 	## cardinality = 0..inf
-	scalar = filepath
+	scalar = <sprite>
 }
 alias[alert_category:category] = <alert_icon>
 alias[alert_category:category] = DISABLED
@@ -43,6 +43,7 @@ message_type = {
 	key = scalar
 	## cardinality = 0..1
 	name = localisation
+	## cardinality = 0..1
 	sound = <sound_effect>
 	## cardinality = 0..1
 	sound_is_advisor = bool

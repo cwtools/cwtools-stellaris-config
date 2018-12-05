@@ -116,6 +116,7 @@ alias[trigger:is_same_value] = scope[any]
 
 
 #should check for <> too
+## replace_scope = { this = pop }
 alias[trigger:pop_percentage] = {
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]

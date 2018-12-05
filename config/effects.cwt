@@ -185,6 +185,7 @@ alias[effect:planet_event] = {
 
 alias[effect:add_modifier] = {
 	modifier = <static_modifier>
+	## severity = info
 	enum[days_months_years] = int
 }
 
@@ -1306,7 +1307,7 @@ alias[effect:enable_special_project] = {
 	## cardinality = 0..1
 	owner = scope[fleet]
 	location = scope[planet]
-	location = scope[system]
+#	location = scope[system] #Caligula's note: Doesn't work (the project will not be researchable as it will have no precise location).
 	location = scope[ship]
 	location = scope[fleet]
 	location = scope[ambient_object]
