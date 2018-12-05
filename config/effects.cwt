@@ -2692,6 +2692,103 @@ enums = {
 }
 
 
+
+
+#2.2
+
 alias[effect:add_resource] = {
+	## cardinality = 1..inf
 	<resource> = float
 }
+
+## scope = { planet deposit }
+###Remove resource deposit on the scoped planet or deposit, does not fire on_cleared if used on a blocker
+alias[effect:remove_deposit] = yes
+
+## scope = pop
+###Fires scoped pop from its job
+alias[effect:unemploy_pop] = yes
+
+## scope = planet
+###Immediately runs a job evaluation on the planet, firing and employing pops as needed
+alias[effect:check_planet_employment] = yes
+
+## scope = pop
+###Resets category of a pop
+alias[effect:clear_pop_category] = yes
+
+## scope = planet
+###Adds random non-blocker resource deposit to the scoped planet
+alias[effect:add_random_non_blocker_deposit] = yes
+
+## scope = planet
+###Removes last built building from the scoped planet
+alias[effect:remove_last_built_building] = yes
+
+## scope = planet
+###Removes all buildings from the scoped planet
+alias[effect:remove_all_buildings] = yes
+
+## scope = planet
+###Instantly adds devastation to scoped planet
+alias[effect:add_planet_devastation] = int[-100..100]
+
+## scope = any
+###Creates a new pop from a half-species on the planet
+alias[effect:create_half_species] = {
+	#todo: there's probably a few more things you can use here, I'm guessing!
+	species_one = scope[species]
+	species_two = scope[species]
+}
+
+## scope = { planet country }
+###Forces target planet or country to calculate its internal modifier
+alias[effect:calculate_modifier] = yes
+
+## scope = planet
+###Establish branch office on scoped planet for target country
+alias[effect:establish_branch_office] = scope[country]
+
+## scope = planet
+###Close branch office on scoped planet
+alias[effect:close_branch_office] = yes
+
+## scope = planet
+###Removes all blockers from the scoped planet
+alias[effect:clear_blockers] = yes
+
+## scope = country
+###Changes the built species of the scoped object
+alias[effect:set_built_species] = scope[species]
+
+## scope = planet
+###Removes last built district from the scoped planet
+alias[effect:remove_last_built_district] = yes
+
+## scope = planet
+###Removes all district from the scoped planet
+alias[effect:remove_all_districts] = yes
+
+## scope = planet
+###Removes a specific district from the scoped planet
+alias[effect:remove_district] = <district>
+
+## scope = planet
+###Begins construction of a specific district on the scoped planet
+alias[effect:add_district] = <district>
+
+## scope = any
+###Enables a resource on the Galactic Market
+alias[effect:enable_on_market] = <resource>
+
+## scope = country
+###Enables the galactic market. enable_galactic_market = <yes/no>
+alias[effect:enable_galactic_market] = bool
+
+## scope = planet
+alias[effect:validate_planet_buildings_and_districts] = yes
+
+## scope = deposit
+###Clears scoped deposit blocker and fires its on_cleared effect
+alias[effect:clear_blocker] = yes
+

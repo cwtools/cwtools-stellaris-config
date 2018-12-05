@@ -5,7 +5,7 @@ types = {
 		path = "game/common/pop_jobs"
 	}
 	## push_scope = pop
-	type[social_stata] = {
+	type[social_strata] = {
 		path = "game/common/pop_categories"
 	}
 }
@@ -67,7 +67,7 @@ job = {
 
 
 
-social_stata = {
+social_strata = {
 	rank = int
 	clothes_texture_index = social_stata
   

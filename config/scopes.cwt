@@ -447,7 +447,16 @@ alias[trigger:any_owned_pop] = {
 }
 
 ## push_scope = sector
+###Iterate through all sectors
 alias[trigger:any_sector] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## push_scope = sector
+###Iterate through owned sectors
+alias[trigger:any_owned_sector] = {
 	alias_name[trigger] = alias_match_left[trigger]
 	##cardinality = 0..1
 	count = int
@@ -1246,6 +1255,7 @@ alias[effect:every_system_ambient_object] = {
 }
 
 ## push_scope = sector
+###Select a random sector out of all sectors
 alias[effect:random_sector] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
@@ -1261,7 +1271,32 @@ alias[effect:random_sector] = {
 }
 
 ## push_scope = sector
+###Select a random owned sector
+alias[effect:random_owned_sector] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		base = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult] = alias_match_left[modifier_rule_add_mult]
+
+	}
+}
+
+## push_scope = sector
+###Run an effect on every sector in the game
 alias[effect:every_sector] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = sector
+###Run an effect on every sector owned by the country
+alias[effect:every_owned_sector] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
