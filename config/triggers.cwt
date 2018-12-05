@@ -1344,7 +1344,7 @@ alias[trigger:count_country] =  {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
-#TODO what scope is deposit?
+## replace_scope = { this = deposit }
 ### Checks the number of deposits on the tile/planet that meet the specified criteria
 alias[trigger:count_deposits] =  {
 	count = int
@@ -1783,7 +1783,7 @@ alias[trigger:is_deposit_type] = <deposit>
 
 ## scope = country
 ###Checks if country has a built species defined
-alias[trigger:is_deposit_type] = bool
+alias[trigger:has_built_species] = bool
 
 ## scope = planet
 ###Checks the number the planet has of any, or a specific, building
