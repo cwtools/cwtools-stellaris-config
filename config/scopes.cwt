@@ -1581,7 +1581,6 @@ alias[effect:random_system] = {
 		base = float
 		## cardinality = 0..inf
 		alias_name[modifier_rule_add_mult] = alias_match_left[modifier_rule_add_mult]
-
 	}
 }
 
@@ -1590,4 +1589,39 @@ alias[effect:every_system] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+}
+
+
+#2.2
+
+## scope = planet
+## push_scope = deposit
+###Checks if any deposits on the planet meet the criteria
+alias[effect:any_deposit] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+## scope = planet
+## push_scope = deposit
+###Executes on every deposit on planet
+alias[effect:every_deposit] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = planet
+## push_scope = deposit
+###Executes enclosed effects on a random deposit on the scoped planet that meets the limit criteria
+alias[effect:random_deposit] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		base = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult] = alias_match_left[modifier_rule_add_mult]
+	}
 }
