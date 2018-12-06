@@ -45,12 +45,12 @@ component_set = {
 		## cardinality = 0..1
 		icon = scalar
 		## cardinality = 0..1
-		icon_frame = scalar		
+		icon_frame = scalar
 	}
 	subtype[!required_component] = {
 		key = localisation
 		icon = <sprite>
-		icon_frame = int		
+		icon_frame = int
 	}
 }
 
@@ -96,7 +96,7 @@ component_template = {
 	size_restriction = {
 		## cardinality = 0..inf
 		<ship_size>
-		
+
 		## cardinality = 0..1
 		null
 	}
@@ -115,7 +115,10 @@ component_template = {
 	}
 	subtype[utility_component_template] = {
 		power = int
-		cost = int
+		resources = {
+			category = ship_components
+			alias_name[economic_template] = alias_match_left[economic_template]
+		}
 		size = enum[utility_slot_size]
 		## cardinality = 0..1
 		modifier = {
@@ -234,8 +237,10 @@ component_template = {
 		entity = scalar #TODO: Replace with hardcoded  graphical_culture + <model_entity>
 		## cardinality = 0..1
 		power = float
-		## cardinality = 0..1
-		cost = float #minerals
+		resources = {
+			category = ship_components
+			alias_name[economic_template] = alias_match_left[economic_template]
+		}
 		## cardinality = 0..1
 		use_ship_kill_target = bool
 		## cardinality = 0..1
@@ -299,7 +304,10 @@ component_template = {
 		ship_behavior = <ship_behavior>
 		projectile_gfx = scalar #tied to defined entites under gfx
 		power = float
-		cost = float
+		resources = {
+			category = ship_components
+			alias_name[economic_template] = alias_match_left[economic_template]
+		}
 		count = float
 		regeneration_per_day = float
 		launch_time = float

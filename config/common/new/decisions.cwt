@@ -1,0 +1,35 @@
+
+types = {
+	## replace_scope = { this = planet root = planet from = country }
+	type[building] = {
+		path = "game/common/buildings"
+	}
+}
+
+decision = {
+    owned_planets_only = bool
+    sound = <sound>
+    icon = <sprite>
+
+	resources = {
+		category = decisions
+		alias_name[economic_template] = alias_match_left[economic_template]
+	}
+
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	allow = {
+		alias_name[trigger] = alias_match_left[trigger]
+	} 
+
+	effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+	
+	ai_weight = {
+		weight = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}

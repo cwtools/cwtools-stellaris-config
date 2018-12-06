@@ -30,6 +30,9 @@ types = { #these are all connected. I added the others so whoever does these in 
 #TODO: Add warning if ship_size doesn't have name list block
 name_list = {
 	## cardinality = 0..1
+	language = scalar
+
+	## cardinality = 0..1
 	selectable = {
 		## replace_scope = { this = country root = country } #i think, might be no_scope though
 		alias_name[trigger] = alias_match_left[trigger]
@@ -358,6 +361,8 @@ species_name = {
 		home_system = scalar
 		### ID of the name list picked if this entry is used when generating random player empire on game start, e. g. HUMAN1. It cannot be a non-randomizable name list (creates species with blank names). It is unclear whether selectable = { always = no } will also avoid this bug, let Dayshine and Caligula know if it does.
 		name_list = <name_list>
+		## cardinality = 0..1
+		language = scalar
 	}
 }
 
@@ -366,5 +371,7 @@ species_named_list = {
 	scalar = {
 		name = scalar
 		plural = scalar
+		## cardinality = 0..1
+		language = scalar
 	}
 }

@@ -1,16 +1,26 @@
 
 types = {
+	## push_scope = planet
 	type[army] = {
 		path = "game/common/armies"
 	}
 }
 
 #TODO subtypes, and make stricter this was an initial pass
+#This is a draft guess (assuming that only the resources bit has changed)
 army = {
+	## cardinality = 0..1
+	resources = {
+		category = armies
+		alias_name[economic_template] = alias_match_left[economic_template]
+	}
+
 	## cardinality = 0..1
 	defensive = bool
 	## cardinality = 0..1
 	is_building_spawned = bool
+	## cardinality = 0..1
+	is_pop_spawned = bool
 	## cardinality = 0..1
 	damage = float
 	## cardinality = 0..1
@@ -32,8 +42,6 @@ army = {
 	## cardinality = 0..1
 	time = int
 	## cardinality = 0..1
-	maintenance = float
-	## cardinality = 0..1
 	pop_limited = bool
 	## cardinality = 0..1
 	rebel = bool
@@ -44,32 +52,23 @@ army = {
 		<technology>
 	}
 	## cardinality = 0..1
-	cost = {
-		## cardinality = 0..inf
-		<resource.accumulative> = float
-	}
-	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
 	show_tech_unlock_if = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
-	## replace_scope = { this = tile root = tile from = pop }
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
-	## replace_scope = { this = tile root = tile }
 	allow = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
-	## replace_scope = { this = tile root = tile }
 	on_queued = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 	## cardinality = 0..1
-	## replace_scope = { this = tile root = tile }
 	on_unqueued = {
 		alias_name[effect] = alias_match_left[effect]
 	}

@@ -16,7 +16,6 @@ enums = {
 		ship
 		war
 		army
-		tile
 	}
 }
 
@@ -419,20 +418,6 @@ alias[trigger:any_mining_station] = {
 	count = int
 }
 
-## push_scope = tile
-alias[trigger:any_neighboring_tile] = {
-	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
-}
-
-## push_scope = tile
-alias[trigger:any_tile] = {
-	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
-}
-
 ## push_scope = system
 alias[trigger:any_rim_system] = {
 	alias_name[trigger] = alias_match_left[trigger]
@@ -462,7 +447,16 @@ alias[trigger:any_owned_pop] = {
 }
 
 ## push_scope = sector
+###Iterate through all sectors
 alias[trigger:any_sector] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## push_scope = sector
+###Iterate through owned sectors
+alias[trigger:any_owned_sector] = {
 	alias_name[trigger] = alias_match_left[trigger]
 	##cardinality = 0..1
 	count = int
@@ -1261,6 +1255,7 @@ alias[effect:every_system_ambient_object] = {
 }
 
 ## push_scope = sector
+###Select a random sector out of all sectors
 alias[effect:random_sector] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
@@ -1276,7 +1271,32 @@ alias[effect:random_sector] = {
 }
 
 ## push_scope = sector
+###Select a random owned sector
+alias[effect:random_owned_sector] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		base = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult] = alias_match_left[modifier_rule_add_mult]
+
+	}
+}
+
+## push_scope = sector
+###Run an effect on every sector in the game
 alias[effect:every_sector] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = sector
+###Run an effect on every sector owned by the country
+alias[effect:every_owned_sector] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
@@ -1324,50 +1344,6 @@ alias[effect:every_moon] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-}
-
-## push_scope = tile
-alias[effect:every_tile] = {
-	##cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-	alias_name[effect] = alias_match_left[effect]
-}
-
-## push_scope = tile
-alias[effect:random_tile] = {
-	##cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-	alias_name[effect] = alias_match_left[effect]
-
-	##cardinality = 0..1
-	weights = {
-		base = float
-		## cardinality = 0..inf
-		alias_name[modifier_rule_add_mult] = alias_match_left[modifier_rule_add_mult]
-
-	}
-}
-
-## push_scope = tile
-alias[effect:every_neighboring_tile] = {
-	##cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-	alias_name[effect] = alias_match_left[effect]
-}
-
-## push_scope = tile
-alias[effect:random_neighboring_tile] = {
-	##cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-	alias_name[effect] = alias_match_left[effect]
-
-	##cardinality = 0..1
-	weights = {
-		base = float
-		## cardinality = 0..inf
-		alias_name[modifier_rule_add_mult] = alias_match_left[modifier_rule_add_mult]
-
-	}
 }
 
 ## push_scope = planet
@@ -1605,7 +1581,6 @@ alias[effect:random_system] = {
 		base = float
 		## cardinality = 0..inf
 		alias_name[modifier_rule_add_mult] = alias_match_left[modifier_rule_add_mult]
-
 	}
 }
 
@@ -1614,4 +1589,39 @@ alias[effect:every_system] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+}
+
+
+#2.2
+
+## scope = planet
+## push_scope = deposit
+###Checks if any deposits on the planet meet the criteria
+alias[effect:any_deposit] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+## scope = planet
+## push_scope = deposit
+###Executes on every deposit on planet
+alias[effect:every_deposit] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = planet
+## push_scope = deposit
+###Executes enclosed effects on a random deposit on the scoped planet that meets the limit criteria
+alias[effect:random_deposit] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		base = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult] = alias_match_left[modifier_rule_add_mult]
+	}
 }

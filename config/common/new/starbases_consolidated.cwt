@@ -1,10 +1,12 @@
 types = {
+	## replace_scope = { this = starbase root = starbase from = country }
 	type[starbase_building] = {
 		path = "game/common/starbase_buildings"
 	}
 	type[starbase_level] = {
 		path = "game/common/starbase_levels"
 	}
+	## replace_scope = { this = starbase root = starbase from = country }
 	type[starbase_module] = {
 		path = "game/common/starbase_modules"
 	}
@@ -14,7 +16,7 @@ types = {
 }
 
 starbase_building = {
-	icon =  <sprite>
+	icon = <sprite>
 	## cardinality = 0..1
 	construction_days = int
 	## cardinality = 0..1
@@ -25,44 +27,15 @@ starbase_building = {
 	ai_build_outside_chokepoint = bool
 	## cardinality = 0..1
 	show_in_tech = <technology>
-	## cardinality = 0..1
-	cost = {
-		## cardinality = 0..inf
-		<resource.accumulative> = int
-	}
-	## cardinality = 0..1
-	upkeep_resources = {
-		## cardinality = 0..inf
-		<resource> = float
-	}
-	## cardinality = 0..1
-	produced_resources = {
-		## cardinality = 0..inf
-		<resource> = float
-	}
-	## replace_scope = { this = starbase root = starbase from = country } 
-	## cardinality = 0..1
-	produced_resource_trigger = {
-		## cardinality = 0..inf
-		modifier = {
-			## cardinality = 0..inf
-			alias_name[trigger] = alias_match_left[trigger]
-			resources = {
-				## cardinality = 0..inf
-				<resource> = int
-			}
-		}
-	}
 
-	## replace_scope = { this = starbase root = starbase from = country }
 	## cardinality = 0..1
-	potential = {		
+	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	## replace_scope = { this = starbase root = starbase from = country }
+
 	## cardinality = 0..1
-	### entries in possible are displayed in game. Use custom_tooltip to replace localisations.		
-	possible = { 
+	### entries in possible are displayed in game. Use custom_tooltip to replace localisations.
+	possible = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
@@ -70,6 +43,20 @@ starbase_building = {
 
 	## cardinality = 0..inf
 	custom_tooltip = localisation
+
+
+	resources = {
+		category = starbase_buildings
+		alias_name[economic_template] = alias_match_left[economic_template]
+	}
+
+	## cardinality = 0..1
+	ai_weight = {
+		weight = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	#To verify the stuff below this
 
 	## cardinality = 0..1
 	### ship modifiers, apply on the starbase itself
@@ -102,37 +89,12 @@ starbase_building = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 
-	## replace_scope = { this = starbase root = starbase from = country } #i haven't verified the from = country in this instance!
-	## cardinality = 0..inf
-	### country modifiers
-	triggered_country_modifier = {
-		potential = {			
-			alias_name[trigger] = alias_match_left[trigger]
-		}
-		## cardinality = 0..inf
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## replace_scope = { this = starbase root = starbase from = country } 
-	## cardinality = 0..inf
-	### system modifiers
-	triggered_system_modifier = {
-		potential = {			
-			alias_name[trigger] = alias_match_left[trigger]
-		}
-		## cardinality = 0..inf
-		alias_name[modifier] = alias_match_left[modifier]
-	}	
-	## cardinality = 0..1
-	## replace_scope = { this = starbase root = starbase from = country } 
-	ai_weight = {
-		## cardinality = 0..1
-		weight = float
-		## cardinality = 0..1
-		factor = float
-		alias_name[modifier_rule] = alias_match_left[modifier_rule]
-	}
+	alias_name[triggered_system_modifier] = alias_match_left[triggered_system_modifier]
+	alias_name[triggered_country_modifier] = alias_match_left[triggered_country_modifier]
+	alias_name[triggered_station_modifier] = alias_match_left[triggered_station_modifier]
 }
 
+#Done based on educated guesswork
 starbase_module = {
 	## cardinality = 0..1
 	section = <section_template>
@@ -148,44 +110,19 @@ starbase_module = {
 	ai_build_outside_chokepoint = bool
 	## cardinality = 0..1
 	show_in_tech = <technology>
-	## cardinality = 0..1
-	cost = {
-		## cardinality = 0..inf
-		<resource> = int
-	}
-	## cardinality = 0..1
-	upkeep_resources = {
-		## cardinality = 0..inf
-		<resource> = float
-	}
-	## cardinality = 0..1
-	produced_resources = {
-		## cardinality = 0..inf
-		<resource> = float
-	}
-	## replace_scope = { this = starbase root = starbase from = country } 
-	## cardinality = 0..1
-	produced_resource_trigger = {
-		## cardinality = 0..inf
-		modifier = {
-			## cardinality = 0..inf
-			alias_name[trigger] = alias_match_left[trigger]
-			resources = {
-				## cardinality = 0..inf
-				<resource> = int
-			}
-		}
+
+	resources = {
+		category = starbase_modules
+		alias_name[economic_template] = alias_match_left[economic_template]
 	}
 
-	## replace_scope = { this = starbase root = starbase from = country }
 	## cardinality = 0..1
-	potential = {		
+	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	## replace_scope = { this = starbase root = starbase from = country }
 	## cardinality = 0..1
-	### entries in possible are displayed in game. Use custom_tooltip to replace localisations.		
-	possible = { 
+	### entries in possible are displayed in game. Use custom_tooltip to replace localisations.
+	possible = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
@@ -225,33 +162,12 @@ starbase_module = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 
-	## replace_scope = { this = starbase root = starbase from = country } #i haven't verified the from = country in this instance!
-	## cardinality = 0..inf
-	### country modifiers
-	triggered_country_modifier = {
-		potential = {			
-			alias_name[trigger] = alias_match_left[trigger]
-		}
-		## cardinality = 0..inf
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## replace_scope = { this = starbase root = starbase from = country } 
-	## cardinality = 0..inf
-	### system modifiers
-	triggered_system_modifier = {
-		potential = {			
-			alias_name[trigger] = alias_match_left[trigger]
-		}
-		## cardinality = 0..inf
-		alias_name[modifier] = alias_match_left[modifier]
-	}	
+	alias_name[triggered_system_modifier] = alias_match_left[triggered_system_modifier]
+	alias_name[triggered_country_modifier] = alias_match_left[triggered_country_modifier]
+
 	## cardinality = 0..1
-	## replace_scope = { this = starbase root = starbase from = country } 
 	ai_weight = {
-		## cardinality = 0..1
 		weight = float
-		## cardinality = 0..1
-		factor = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 }

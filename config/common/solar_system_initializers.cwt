@@ -181,6 +181,9 @@ alias[planet_initializer:planet] = {
 	anomaly = none
 
 	## cardinality = 0..1
+	deposit_blockers = none
+
+	## cardinality = 0..1
 	satellite_naming_policy = enum[satellite_naming_policy]
 
 	## cardinality = 0..1
@@ -277,6 +280,9 @@ alias[moon_initializer:moon] = {
 	init_effect = {
 		alias_name[effect] = alias_match_left[effect]
 	}
+
+	## cardinality = 0..1
+	deposit_blockers = none
 }
 
 solar_system_initializer_random_list = {
