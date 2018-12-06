@@ -570,6 +570,9 @@ civic = {
 			trait = <trait>
 		}
 	}
+
+	## cardinality = 0..1
+	homeworld = <planet_class>
 }
 
 #aliases - used in species_classes and perhaps other places.

@@ -9,6 +9,7 @@ types = {
 #TODO subtypes, and make stricter this was an initial pass
 #This is a draft guess (assuming that only the resources bit has changed)
 army = {
+	## cardinality = 0..1
 	resources = {
 		category = armies
 		alias_name[economic_template] = alias_match_left[economic_template]
@@ -18,6 +19,8 @@ army = {
 	defensive = bool
 	## cardinality = 0..1
 	is_building_spawned = bool
+	## cardinality = 0..1
+	is_pop_spawned = bool
 	## cardinality = 0..1
 	damage = float
 	## cardinality = 0..1

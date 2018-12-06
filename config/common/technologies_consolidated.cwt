@@ -16,7 +16,7 @@ types = {
 	# category_tech_category_key_research_speed_mult
 	# each of these modifiers requires localisation and a GFX (gfx/interface/icons/modifiers - same name as the tech_category key)
 	type[technology_category] = {
-		path = "game/common/technology/category"		
+		path = "game/common/technology/category"
 	}
 }
 
@@ -73,14 +73,14 @@ technology = {
 		## cardinality = 0..1
 		repeatable
 		## cardinality = 0..1
-		tile_blockers
+		deposit_blockers
 	}
 	## cardinality = 0..1
 	mod_weight_if_group_picked = {
 		## cardinality = 0..1
 		repeatable = float
 		## cardinality = 0..1
-		tile_blockers = float
+		deposit_blockers = float
 	}
 
 
@@ -199,6 +199,6 @@ technology_tier = {
 }
 
 
-technology_category = { 
+technology_category = {
   icon = filepath
 }

@@ -4,6 +4,13 @@ alias[trigger:if] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+alias[trigger:else_if] = {
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
 alias[trigger:else] = { alias_name[trigger] = alias_match_left[trigger] }
 
 
@@ -1698,14 +1705,14 @@ alias[trigger:has_commercial_pact] = scope[country]
 
 ## scope = country
 ###Checks specific resource stockpile for the country scope
-alias[trigger:resource_stockpile_compare ] = {
+alias[trigger:resource_stockpile_compare] = {
 	resource = <resource>
 	value = float
 }
 
 ## scope = country
 ###Checks specific resource income value for the country scope
-alias[trigger:resource_income_compare ] = {
+alias[trigger:resource_income_compare] = {
 	resource = <resource>
 	value = float
 }
@@ -1893,3 +1900,9 @@ alias[trigger:has_sector_type] = <sector_type>
 ## scope = country
 ###Counts the number of sectors owned by the scoped country
 alias[trigger:num_sectors] = int
+
+## scope = planet
+alias[trigger:branch_office_owner] = {
+	## cardinality = 0..1
+	alias_name[trigger] = alias_match_left[trigger]
+}

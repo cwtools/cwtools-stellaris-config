@@ -17,9 +17,9 @@ types = {
 
 ship_size = {
 	## cardinality = 0..2
-	graphical_culture = { 
+	graphical_culture = {
 		## cardinality = 1..inf
-		<graphical_culture> 
+		<graphical_culture>
 	}
 	## cardinality = 0..2
 	graphical_culture = bool
@@ -48,9 +48,6 @@ ship_size = {
 	max_hitpoints = int
 	## cardinality = 0..1
 	is_listed = bool
-	## cardinality = 0..1
-	### The base cost of this ship_size
-	cost = int
 	## cardinality = 0..1
 	components_add_to_cost = bool
 	## cardinality = 0..1
@@ -107,13 +104,6 @@ ship_size = {
 		## cardinality = 0..inf
 		<technology>
 	}
-	## cardinality = 0..1
-	upkeep_override = {
-		## cardinality = 0..inf
-		<resource> = float
-	}
-	## cardinality = 0..1
-	has_mineral_upkeep = bool
 	#this is where ship classes are defined! this is important for other files, and it also causes the game to auto generate modifiers for each shipclass!
 	class = enum[shipsize_classes]
 	## cardinality = 0..1
@@ -178,6 +168,20 @@ ship_size = {
 	possible_planet = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+
+	## cardinality = 0..1
+	resources = {
+		category = ships
+		category = colonies
+		alias_name[economic_template] = alias_match_left[economic_template]
+	}
+
+	## cardinality = 0..1
+	min_upgrade_cost = {
+		## cardinality = 1..inf
+		<resource> = float
+	}
+
 }
 
 #enums = { #you can change, mod, remove and add new shipclasses. This is not an enum!

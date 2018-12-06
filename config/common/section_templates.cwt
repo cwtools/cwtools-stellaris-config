@@ -22,9 +22,13 @@ section_template = {
   icon_frame = int
   ## cardinality = 0..1
   should_draw_components = bool
-  ## cardinality = 0..1
-  cost = float
-  ## cardinality = 0..1
+	## cardinality = 0..1
+	resources = {
+		category = ship_sections
+		alias_name[economic_template] = alias_match_left[economic_template]
+	}
+
+	## cardinality = 0..1
   	prerequisites = {
 		## cardinality = 0..inf
 	  	<technology>

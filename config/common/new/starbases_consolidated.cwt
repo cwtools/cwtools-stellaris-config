@@ -29,13 +29,13 @@ starbase_building = {
 	show_in_tech = <technology>
 
 	## cardinality = 0..1
-	potential = {		
+	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	
+
 	## cardinality = 0..1
-	### entries in possible are displayed in game. Use custom_tooltip to replace localisations.		
-	possible = { 
+	### entries in possible are displayed in game. Use custom_tooltip to replace localisations.
+	possible = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
@@ -44,12 +44,12 @@ starbase_building = {
 	## cardinality = 0..inf
 	custom_tooltip = localisation
 
-	
+
 	resources = {
 		category = starbase_buildings
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}
-	
+
 	## cardinality = 0..1
 	ai_weight = {
 		weight = float
@@ -88,9 +88,10 @@ starbase_building = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	
+
 	alias_name[triggered_system_modifier] = alias_match_left[triggered_system_modifier]
 	alias_name[triggered_country_modifier] = alias_match_left[triggered_country_modifier]
+	alias_name[triggered_station_modifier] = alias_match_left[triggered_station_modifier]
 }
 
 #Done based on educated guesswork
@@ -109,19 +110,19 @@ starbase_module = {
 	ai_build_outside_chokepoint = bool
 	## cardinality = 0..1
 	show_in_tech = <technology>
-	
+
 	resources = {
 		category = starbase_modules
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}
-	
+
 	## cardinality = 0..1
-	potential = {		
+	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
-	### entries in possible are displayed in game. Use custom_tooltip to replace localisations.		
-	possible = { 
+	### entries in possible are displayed in game. Use custom_tooltip to replace localisations.
+	possible = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
@@ -163,7 +164,7 @@ starbase_module = {
 
 	alias_name[triggered_system_modifier] = alias_match_left[triggered_system_modifier]
 	alias_name[triggered_country_modifier] = alias_match_left[triggered_country_modifier]
-	
+
 	## cardinality = 0..1
 	ai_weight = {
 		weight = float

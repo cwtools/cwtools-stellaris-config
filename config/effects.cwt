@@ -692,10 +692,12 @@ alias[effect:destroy_ambient_object] = scope[ambient_object]
 alias[effect:remove_planet] = yes
 ###Immediately adds a specific building to the scoped tile
 alias[effect:set_building] = <building>
-###Removes a building from the scoped tile, this will also cancel construction and clear the queue
-alias[effect:remove_building] = yes
-###Begins construction of a specific building on the scoped tile
-#alias[effect:add_building_construction] = <building>
+###Removes a building from the scoped planet, this will also cancel construction and clear the queue
+## scope = planet
+alias[effect:remove_building] = <building>
+###Begins construction of a specific building
+## scope = planet
+alias[effect:add_building] = <building>
 
 ###Instantly gives a specific tech to the scoped country
 alias[effect:give_technology] = {
@@ -1066,8 +1068,8 @@ alias[effect:create_leader] = {
 	name = localisation_synced
 	## cardinality = 0..1
 	name = random
-	type = enum[leader_classes]
-	type = random
+	class = enum[leader_classes]
+	class = random
 	## cardinality = 0..1
 	###Other scopes will simply default to this.owner_main_species
 	species = scope[species] #<target / key>
@@ -2566,6 +2568,8 @@ alias[effect:spawn_planet] = {
 	## cardinality = 0..1
 	location = scope[planet]
 	## cardinality = 0..1
+	location = scope[megastructure]
+	## cardinality = 0..1
 	orbit_location = bool
 	## cardinality = 0..1
 	orbit_distance = float
@@ -2705,6 +2709,7 @@ alias[effect:add_resource] = {
 ## scope = { planet deposit }
 ###Remove resource deposit on the scoped planet or deposit, does not fire on_cleared if used on a blocker
 alias[effect:remove_deposit] = yes
+alias[effect:remove_deposit] = <deposit>
 
 ## scope = pop
 ###Fires scoped pop from its job
@@ -2793,3 +2798,7 @@ alias[effect:validate_planet_buildings_and_districts] = yes
 ###Clears scoped deposit blocker and fires its on_cleared effect
 alias[effect:clear_blocker] = yes
 
+alias[effect:change_species_portrait] = scope[species]
+alias[effect:change_species_portrait] = <portrait>
+alias[effect:change_species_portrait] = <portrait_group>
+alias[effect:change_species_portrait] = random

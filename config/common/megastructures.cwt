@@ -10,18 +10,18 @@ megastructure = {
 	construction_entity = scalar #TODO entity suffixes
 	## cardinality = 0..1
 	portrait =  <sprite>
-  ## cardinality = 0..1
-  place_entity_on_planet_plane = bool
-  ## cardinality = 0..1
-  entity_offset = { x = int y = int }
-  ## cardinality = 0..1
-  construction_blocks_others = bool
-  ## cardinality = 0..1
-  build_outside_gravity_well = bool
-  ## cardinality = 0..1
-  show_galactic_map_icon = bool
-  ## cardinality = 0..1
-  bypass_type = <bypass>
+	## cardinality = 0..1
+	place_entity_on_planet_plane = bool
+	## cardinality = 0..1
+	entity_offset = { x = int y = int }
+	## cardinality = 0..1
+	construction_blocks_others = bool
+	## cardinality = 0..1
+	build_outside_gravity_well = bool
+	## cardinality = 0..1
+	show_galactic_map_icon = bool
+	## cardinality = 0..1
+	bypass_type = <bypass>
 	## cardinality = 0..1
 	###also possible to use here upgrade_desc = hide, and localisations are not required in that case
 	upgrade_desc = localisation
@@ -32,28 +32,28 @@ megastructure = {
 	upgrade_from = {
 		<megastructure>
 	}
-  ## cardinality = 0..1
+  	## cardinality = 0..1
 	prerequisites = {
 		<technology>
 	}
-  ## cardinality = 0..1
-  ## replace_scope = { this = country root = country }
+	## cardinality = 0..1
+	## replace_scope = { this = country root = country }
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-  ## cardinality = 0..1
-  ## replace_scope = { this = system root = system from = country }
+	## cardinality = 0..1
+	## replace_scope = { this = system root = system from = country }
 	possible = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-  ## cardinality = 0..1
+  	## cardinality = 0..1
 	build_time = int
-  ## cardinality = 0..1
-	build_cost = {
-		## cardinality = 0..inf
-		<resource.accumulative> = int
+  	## cardinality = 0..1
+	resources = {
+		category = megastructures
+		alias_name[economic_template] = alias_match_left[economic_template]
 	}
-  ## cardinality = 0..1
+  	## cardinality = 0..1
 	monthly_production = {
 		## cardinality = 0..inf
 		<resource> = int

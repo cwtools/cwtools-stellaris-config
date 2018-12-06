@@ -5,7 +5,8 @@ types = {
 		path = "game/common/traits"
 
 		subtype[leader_trait] = {
-			leader_trait = yes
+			leader_trait = { }
+			leader_trait = all
 		}
 		subtype[ruler_trait] = {
 			leader_class = { ruler }
@@ -86,7 +87,11 @@ trait = {
 		### Default = yes
 		modification = bool
 
-		leader_trait = yes
+		leader_trait = {
+			## cardinality = 1..5
+			enum[leader_classes]
+		}
+		leader_trait = all
 		## cardinality = 0..1
 		### Default = no
 		hide_age = bool
@@ -116,7 +121,7 @@ trait = {
 		leader_potential_add = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
-		
+
 		## cardinality = 0..1
 		requires_traits = {
 			## cardinality = 1..100

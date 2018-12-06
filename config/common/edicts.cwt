@@ -1,18 +1,8 @@
 types = {
 	type[edict] = {
-		name_field = "name"
 		path = "game/common/edicts"
 
-		## type_key_filter = planet_edict
-		subtype[planet_edict] = {
-		}
-
-		## type_key_filter = country_edict
-		subtype[country_edict] = {
-		}
-
-		## type_key_filter = country_edict
-		subtype[country_edict_ambition] = {
+		subtype[edict_ambition] = {
 			is_ambition = yes
 		}
 	}
@@ -21,17 +11,17 @@ types = {
 # TODO Confirm
 # TODO Document
 edict = {
-	name = scalar
 	length = int
 
-	subtype[!country_edict_ambition] = {
-		cost = {
-			## cardinality = 0..5
-			<resource> = int
+	subtype[!edict_ambition] = {
+		resources = {
+			category = edicts
+			category = campaigns
+			alias_name[economic_template] = alias_match_left[economic_template]
 		}
 	}
 
-	subtype[country_edict_ambition] = {
+	subtype[edict_ambition] = {
 		is_ambition = yes
 	}
 
