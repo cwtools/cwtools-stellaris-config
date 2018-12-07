@@ -40,11 +40,12 @@ deposit = {
 		###this makes the deposit transparent, used by vanilla to designate an "empty" deposit.
 		is_null = yes
 	}
+	## cardinality = 0..1
 	use_for_min_max_adjustments = bool
 		
 	#blocker?
 	## cardinality = 0..1
-	icon = <sprite>
+	icon = scalar #todo
   
 	subtype[blocker] = {
 		## cardinality = 0..1
@@ -63,6 +64,15 @@ deposit = {
 		}
 		## cardinality = 0..1
 		use_weights_for_blocker_swap_types = no
+
+		## cardinality = 0..1
+		all_blocker_swap_types = yes
+
+		## cardinality = 0..1
+		prerequisites = {
+			## cardinality = 0..inf
+			<technology>
+		}
 	}
 
 	subtype[colonisable] = {
@@ -81,6 +91,7 @@ deposit = {
 		category = <deposit_category>
 	}
 
+	## cardinality = 0..1
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
@@ -93,6 +104,11 @@ deposit = {
 	
 	subtype[orbital] = {
 		station = shipclass_mining_station
+		station = shipclass_research_station
+		## cardinality = 0..1
+		planet_modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
 	}
 	
 	alias_name[triggered_planet_modifier] = alias_match_left[triggered_planet_modifier]
