@@ -11,7 +11,8 @@ country_type = {
 	has_pulse_events = bool
 	## cardinality = 0..1
 	can_use_invalid_technology = bool
-
+	## cardinality = 0..1
+	can_use_market = bool
 
 
 	## cardinality = 0..1
