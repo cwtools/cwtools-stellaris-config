@@ -9,6 +9,7 @@ megastructure = {
 
 	## cardinality = 0..1
 	rotate_to_center = bool
+	## cardinality = 0..1
 	scale_offset = bool
 
 	## cardinality = 0..1
