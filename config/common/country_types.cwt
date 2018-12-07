@@ -6,6 +6,14 @@ types = {
 }
 
 country_type = {
+
+	## cardinality = 0..1
+	has_pulse_events = bool
+	## cardinality = 0..1
+	can_use_invalid_technology = bool
+
+
+
 	## cardinality = 0..1
 	can_own_empty_planets = bool
 	## cardinality = 0..1
@@ -257,6 +265,13 @@ country_type = {
 		## cardinality = 0..inf
 		<country_type>
 	}
+	
+	## cardinality = 0..1
+	replace_scope = { this = country root = country }
+	trade_routes_available = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
 	## cardinality = 0..1
 	modules = {
 		## cardinality = 0..1
@@ -301,6 +316,18 @@ country_type = {
 		}
 		## cardinality = 0..1
 		all_technology_module = {}
+		## cardinality = 0..1
+		standard_trade_routes_module = {}
+	}
+	## cardinality = 0..1
+	resources = {
+		category = country_base
+		alias_name[economic_template] = alias_match_left[economic_template]
+	}
+	## cardinality = 0..1
+	branch_office_resources = {
+		category = planet_branch_offices
+		alias_name[economic_template] = alias_match_left[economic_template]
 	}
 }
 

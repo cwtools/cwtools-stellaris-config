@@ -20,8 +20,8 @@ bombardment_stance = {
 	army_damage = float
 	kill_pop_chance = float
 	min_pops_to_kill_pop = int
-	add_blocker_chance = float
-	max_blockers = int
+#	add_blocker_chance = float
+#	max_blockers = int
 	## replace_scope = { root = fleet this = fleet from = planet }
 	ai_weight = {
 		weight = int

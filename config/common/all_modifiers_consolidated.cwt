@@ -5,6 +5,10 @@ types = {
 		subtype[triggered_opinion_modifier] = {
 			trigger = { }
 		}
+		subtype[block_triggered] = {
+			block_triggered = yes
+		}
+		
 	}
 	type[static_modifier] = {
 		path = "game/common/static_modifiers"
@@ -81,6 +85,18 @@ opinion_modifier = {
 		##cardinality = 0..1
 		months = int
 	}
+	
+	subtype[block_triggered] = {
+		### stops modifier from automatically triggering when trigger evaluates to true
+		block_triggered = yes
+		## cardinality = 0..1
+		###For use with accumulative if the base is negative
+		min = int[-9999...-1]
+		## cardinality = 0..1
+		###For use with accumulative if the base is positive
+		max = int[1...999]
+	}
+	
 
 	subtype[triggered_opinion_modifier] = {
 		###root = country with the opinion, from = country it has the opinion of

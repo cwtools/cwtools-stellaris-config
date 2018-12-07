@@ -1,8 +1,9 @@
 
 types = {
 	## push_scope = planet
-	type[planetary_feature] = {
+	type[deposit] = {
 		path = "game/common/deposits"
+		path_strict = yes
 		
 		#some guesswork here...
 		subtype[colonisable] = {
@@ -11,9 +12,14 @@ types = {
 		subtype[orbital] = {
 			station = scalar
 		}
-		subtype[blocker] = {
-			time = int
+		subtype[blocker] = { #currently cannot test
 		}
+		subtype[null] = {
+			is_null = yes
+		}
+	}
+	type[deposit_category] = {
+		path = "game/common/deposit_categories"
 	}
 }
 
@@ -22,15 +28,18 @@ enums = {
 		deposit_blockers
 		orbital_mining_deposits
 	}
-	enum[deposit_categories] = {
-		deposit_cat_minerals
-	}
 }
 
 #deposits/planetary features
 
-planetary_feature = {
-	is_for_colonizeable = bool
+deposit = {
+	subtype[!null] = {
+		is_for_colonizeable = bool
+	}
+	subtype[null] = {
+		###this makes the deposit transparent, used by vanilla to designate an "empty" deposit.
+		is_null = yes
+	}
 	use_for_min_max_adjustments = bool
 		
 	#blocker?
@@ -38,10 +47,22 @@ planetary_feature = {
 	icon = <sprite>
   
 	subtype[blocker] = {
+		## cardinality = 0..1
 		time = int
+		## cardinality = 0..1
 		on_cleared = {
 			alias_name[effect] = alias_match_left[effect]
 		}
+		## cardinality = 0..1
+		can_be_cleared = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..1
+		blocker_swap_types = {
+			<deposit.blocker>
+		}
+		## cardinality = 0..1
+		use_weights_for_blocker_swap_types = no
 	}
 
 	subtype[colonisable] = {
@@ -57,7 +78,7 @@ planetary_feature = {
 			<deposit>
 		}
 		
-		category = enum[deposit_categories]
+		category = <deposit_category>
 	}
 
 	potential = {
@@ -74,15 +95,11 @@ planetary_feature = {
 		station = shipclass_mining_station
 	}
 	
+	alias_name[triggered_planet_modifier] = alias_match_left[triggered_planet_modifier]
+	
 	## cardinality = 0..1
 	resources = {
-		subtype[!blocker] = {
-			#how much do these matter? Do they determine what economic_template stuff can be used?
-			category = enum[resource_list_categories]
-		}
-		subtype[blocker] = {
-			category = deposit_cat_blockers
-		}
+		category = value_set[economic_category]
 		
 		alias_name[economic_template] = alias_match_left[economic_template]
 		
@@ -92,5 +109,23 @@ planetary_feature = {
 #			cost = {
 #			}
 #		}
+	}
+}
+
+
+
+deposit_category = {
+	## cardinality = 0..1
+	blocker = yes
+	## cardinality = 0..1
+	important = yes
+}
+
+
+
+#TODO add blocked subtype
+types = {
+	type[deposit] = {
+		path = "game/common/deposit"
 	}
 }

@@ -288,6 +288,7 @@ alias[trigger:observation_outpost_owner] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+
 ## push_scope = fleet
 alias[trigger:observation_outpost] = {
 	alias_name[trigger] = alias_match_left[trigger]
@@ -1624,4 +1625,15 @@ alias[effect:random_deposit] = {
 		## cardinality = 0..inf
 		alias_name[modifier_rule_add_mult] = alias_match_left[modifier_rule_add_mult]
 	}
+}
+
+
+## push_scope = country
+alias[trigger:branch_office_owner] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+## push_scope = country
+alias[effect:branch_office_owner] = {
+	alias_name[effect] = alias_match_left[effect]
 }

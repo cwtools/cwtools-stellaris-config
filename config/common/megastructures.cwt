@@ -6,6 +6,11 @@ types = {
 
 megastructure = {
 	entity = scalar #TODO entity suffixes
+
+	## cardinality = 0..1
+	rotate_to_center = bool
+	scale_offset = bool
+
 	## cardinality = 0..1
 	construction_entity = scalar #TODO entity suffixes
 	## cardinality = 0..1

@@ -51,6 +51,10 @@ types = {
 	type[map_mode] = {
 		path = "game/common/map_modes"
 	}
+	## replace_scope = { this = country root = country }
+	type[ai_budget] = {
+		path = "game/common/ai_budget"
+	}
 }
 
 ambient_object = {
@@ -280,5 +284,20 @@ enums = {
 	enum[hardcoded_map_mode_tooltip] = {
 		opinion
 		country
+	}
+}
+
+ai_budget = {
+	resource = <resource>
+	type = expenditure
+	type = upkeep
+	category = <economic_category>
+	
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	
+	fraction = {
+		weight = float
 	}
 }

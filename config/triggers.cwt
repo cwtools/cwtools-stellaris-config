@@ -1902,7 +1902,5 @@ alias[trigger:has_sector_type] = <sector_type>
 alias[trigger:num_sectors] = int
 
 ## scope = planet
-alias[trigger:branch_office_owner] = {
-	## cardinality = 0..1
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:free_district_slots] = int
+

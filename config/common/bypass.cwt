@@ -65,6 +65,11 @@ bypass = {
 	country_can_use = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	#unsure about scope here
+	## cardinality = 0..1
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 	## cardinality = 0..1
 	### The name of the on-action event that will be fired upon entering FTL (if set)
 	### THIS = Fleet

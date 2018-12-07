@@ -40,6 +40,8 @@ planet_class = {
 	outliner_planet_type = special
 	## cardinality = 0..1
 	fixed_entity_scale = bool
+	## cardinality = 0..1
+	icon_frame = int
 	subtype[planet] = {
 		icon_frame = int
 		## cardinality = 0..1
@@ -142,6 +144,9 @@ planet_class = {
 	}
 	## cardinality = 0..1
 	uses_alternative_skies_for_moons = bool
+
+	## cardinality = 0..1
+	fixed_city_level = int
 }
 
 planet_class_random_list = {

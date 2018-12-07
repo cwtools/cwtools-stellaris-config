@@ -14,6 +14,9 @@ enums = {
 		pop_assembly
 		resource
 		unity
+		research
+		trade
+		amenity
 	}
 }
 
@@ -66,6 +69,7 @@ building = {
 	alias_name[triggered_planet_modifier] = alias_match_left[triggered_planet_modifier]
 	alias_name[triggered_desc] = alias_match_left[triggered_desc]
 
+	## cardinality = 0..1
 	resources = {
 		category = planet_branch_office_buildings
 		category = planet_buildings
@@ -74,6 +78,7 @@ building = {
 
 	## cardinality = 0..1
 	upgrades = {
+		## cardinality = 0..1
 		<building>
 	}
 
@@ -88,8 +93,9 @@ building = {
 		<technology>
 	}
 
+	## cardinality = 0..1
 	ai_weight = {
-		weight = float
+		enum[factor_weight] = float
 		alias_name[modifier_rule_factor] = alias_match_left[modifier_rule_factor]
 	}
 
@@ -107,6 +113,14 @@ building = {
 		<building>
 	}
 
-
-
+	## cardinality = 0..1
+	## replace_scope = { this = country root = country }
+	country_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	## cardinality = 0..1
+	## replace_scope = { this = army root = army }
+	army_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
 }

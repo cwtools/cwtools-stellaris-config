@@ -15,8 +15,7 @@ edict = {
 
 	subtype[!edict_ambition] = {
 		resources = {
-			category = edicts
-			category = campaigns
+			category = <economic_category>
 			alias_name[economic_template] = alias_match_left[economic_template]
 		}
 	}

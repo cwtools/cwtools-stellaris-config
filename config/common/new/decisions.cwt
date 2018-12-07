@@ -1,8 +1,8 @@
 
 types = {
 	## replace_scope = { this = planet root = planet from = country }
-	type[building] = {
-		path = "game/common/buildings"
+	type[decision] = {
+		path = "game/common/decisions"
 	}
 }
 
