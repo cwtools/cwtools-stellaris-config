@@ -77,6 +77,11 @@ trait = {
 			## cardinality = 0..100
 			<technology>
 		}
+		## cardinality = 0..1
+		opposites = {
+			## cardinality = 1..100
+			<trait.species_trait>
+		}
 	}
 
 	subtype[leader_trait] = {
@@ -127,6 +132,11 @@ trait = {
 			## cardinality = 1..100
 			<trait.species_trait>
 		}
+		## cardinality = 0..1
+		opposites = {
+			## cardinality = 1..100
+			<trait.leader_trait>
+		}
 	}
 	## cardinality = 0..1
 	ai_categories = {
@@ -138,12 +148,6 @@ trait = {
 	initial = bool
 	## cardinality = 0..1
 	randomized = bool
-
-	## cardinality = 0..1
-	opposites = {
-		## cardinality = 1..100
-		<trait>
-	}
 
 	## cardinality = 0..1
 	custom_tooltip = localisation
