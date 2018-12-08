@@ -135,10 +135,6 @@ alias[trigger:pop_percentage] = {
 alias[trigger:support] = float[0.0..1.0]
 alias[trigger:used_naval_capacity_percent] = float
 alias[trigger:num_moons] = int
-alias[trigger:num_adjacent_tiles] = int
-
-###Checks the planet's number of open tiles for pops
-alias[trigger:free_pop_tiles] = int
 
 alias[trigger:is_country_type] = <country_type>
 alias[trigger:has_ethic] = <ethos>
@@ -388,7 +384,7 @@ alias[trigger:is_robot_pop] = bool
 alias[trigger:is_alliance_fleet] = bool
 alias[trigger:is_capital] = bool
 alias[trigger:has_blocker] = bool
-alias[trigger:has_blocker] = <tile_blocker>
+alias[trigger:has_blocker] = <deposit.blocker>
 
 
 ###Checks if the planet can be colonized by target country
@@ -1625,14 +1621,6 @@ alias[trigger:count_diplo_ties] = {
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-}
-
-## replace_scope = { this = tile }
-alias[trigger:count_tile] = {
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-	count = int
-	count = all
 }
 
 #side should be one of the previous two scopes
