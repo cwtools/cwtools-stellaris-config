@@ -12,7 +12,8 @@ types = {
 		subtype[orbital] = {
 			station = scalar
 		}
-		subtype[blocker] = { #currently cannot test
+		subtype[blocker] = {
+			category = <deposit_category.blocker>
 		}
 		subtype[null] = {
 			is_null = yes
@@ -20,6 +21,9 @@ types = {
 	}
 	type[deposit_category] = {
 		path = "game/common/deposit_categories"
+		subtype[blocker] = {
+			blocker = yes
+		}
 	}
 }
 
