@@ -66,7 +66,7 @@ building = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
-	alias_name[triggered_planet_modifier] = alias_match_left[triggered_planet_modifier]
+	alias_name[triggered_planet_modifier_direct] = alias_match_left[triggered_planet_modifier_direct]
 	alias_name[triggered_desc] = alias_match_left[triggered_desc]
 
 	## cardinality = 0..1

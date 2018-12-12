@@ -7,8 +7,13 @@ types = {
 }
 
 decision = {
-    owned_planets_only = bool
-    sound = <sound>
+	## cardinality = 0..1
+	owned_planets_only = bool
+	## cardinality = 0..1
+	enactment_time = int
+	## cardinality = 0..1
+	sound = <sound>
+	## cardinality = 0..1
     icon = <sprite>
 
 	resources = {
@@ -20,16 +25,23 @@ decision = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
+	## cardinality = 0..1
 	allow = {
 		alias_name[trigger] = alias_match_left[trigger]
-	} 
+	}
 
 	effect = {
 		alias_name[effect] = alias_match_left[effect]
 	}
-	
+
 	ai_weight = {
 		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	## cardinality = 0..1
+	prerequisites = {
+		## cardinality = 1..inf
+		<technology>
 	}
 }
