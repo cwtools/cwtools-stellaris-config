@@ -20,12 +20,6 @@ enums = {
 		ruler
 		precursor
 	}
-	enum[job_resource_categories] = {
-		planet_enforcers
-	}
-	enum[social_strata_resource_categories] = {
-		pop_category_drones
-	}
 }
 
 job = {
@@ -37,6 +31,8 @@ job = {
 	#building_icon = <sprite>
 	## cardinality = 0..1
 	clothes_texture_index = int
+	## cardinality = 0..1
+	icon = scalar #todo
 
 	## cardinality = 0..1
 	is_capped_by_modifier = bool
@@ -135,7 +131,7 @@ social_strata = {
 	}
 
 	resources = {
-		category = enum[social_strata_resource_categories]
+		category = <economic_category>
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}
 
@@ -145,6 +141,7 @@ social_strata = {
 	demotion_time = int
 	## cardinality = 0..1
 	change_job_threshold = float
+	## cardinality = 0..1
 	display_category = enum[job_categories]
 
 	## cardinality = 0..inf

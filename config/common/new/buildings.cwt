@@ -29,7 +29,7 @@ building = {
 	category = enum[building_categories]
 
 	## cardinality = 0..1
-	icon = filepath
+	icon = scalar #todo: filepath
 	## cardinality = 0..1
 	icon = <building>
 	## cardinality = 0..1

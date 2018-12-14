@@ -300,4 +300,9 @@ ai_budget = {
 	fraction = {
 		weight = float
 	}
+	
+	## cardinality = 0..1
+	static_max = {
+		base = int
+	}
 }

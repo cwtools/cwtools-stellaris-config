@@ -1766,12 +1766,16 @@ alias[trigger:perc_communications_with_playable] = int
 alias[trigger:planet_crime] = int[0..100]
 
 ## scope = pop
-###Checks if the pop has a specific job, or any job if set to yes
+###Checks if the pop has a specific job, or any job if set to "yes", or none if set to "unemployed"
 alias[trigger:has_job] = <job>
 
 ## scope = pop
-###Checks if the pop has a specific job, or any job if set to yes
+###Checks if the pop has a specific job, or any job if set to "yes", or none if set to "unemployed"
 alias[trigger:has_job] = yes
+
+## scope = pop
+###Checks if the pop has a specific job, or any job if set to "yes", or none if set to "unemployed"
+alias[trigger:has_job] = unemployed
 
 ## scope = deposit
 ###Checks if deposit is specified type
@@ -1892,3 +1896,6 @@ alias[trigger:num_sectors] = int
 ## scope = planet
 alias[trigger:free_district_slots] = int
 
+alias[trigger:has_ai_expansion_plan] = bool
+
+alias[trigger:has_district] = <district>

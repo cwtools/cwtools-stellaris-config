@@ -1491,6 +1491,8 @@ alias[effect:auto_move_to_planet] = {
 	clear_auto_move_on_arrival = bool
 	## cardinality = 0..1
 	destroy_on_arrival = bool
+	## cardinality = 0..1
+	arrival_effect = <scripted_effect>
 }
 
 #
@@ -2802,3 +2804,5 @@ alias[effect:change_species_portrait] = scope[species]
 alias[effect:change_species_portrait] = <portrait>
 alias[effect:change_species_portrait] = <portrait_group>
 alias[effect:change_species_portrait] = random
+
+alias[effect:reroll_deposits] = yes

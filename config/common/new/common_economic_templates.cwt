@@ -90,6 +90,9 @@ alias[triggered_planet_modifier:triggered_planet_modifier] = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## push_scope = planet
+	alias_name[modifier] = alias_match_left[modifier]
+	## cardinality = 0..1
+	## push_scope = planet
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
@@ -99,6 +102,9 @@ alias[triggered_system_modifier:triggered_system_modifier] = {
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## push_scope = system
+	alias_name[modifier] = alias_match_left[modifier]
+	## cardinality = 0..1
 	## push_scope = system
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
@@ -110,6 +116,9 @@ alias[triggered_country_modifier:triggered_country_modifier] = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## push_scope = country
+	alias_name[modifier] = alias_match_left[modifier]
+	## cardinality = 0..1
+	## push_scope = country
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
@@ -120,6 +129,9 @@ alias[triggered_pop_modifier:triggered_pop_modifier] = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## push_scope = pop
+	alias_name[modifier] = alias_match_left[modifier]
+	## cardinality = 0..1
+	## push_scope = pop
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
@@ -129,6 +141,9 @@ alias[triggered_station_modifier:triggered_station_modifier] = {
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## push_scope = station
+	alias_name[modifier] = alias_match_left[modifier]
+	## cardinality = 0..1
 	## push_scope = station
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]

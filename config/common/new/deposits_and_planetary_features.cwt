@@ -64,7 +64,8 @@ deposit = {
 		}
 		## cardinality = 0..1
 		blocker_swap_types = {
-			<deposit.blocker>
+			## cardinality = 1..inf
+			<deposit>
 		}
 		## cardinality = 0..1
 		use_weights_for_blocker_swap_types = no
@@ -89,6 +90,7 @@ deposit = {
 		should_swap_deposit_on_terraforming = bool
 		## cardinality = 0..1
 		terraforming_swap_types = {
+			## cardinality = 1..inf
 			<deposit>
 		}
 		
