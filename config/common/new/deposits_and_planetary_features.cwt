@@ -1,6 +1,5 @@
 
 types = {
-	## push_scope = planet
 	type[deposit] = {
 		path = "game/common/deposits"
 		path_strict = yes
@@ -36,6 +35,7 @@ enums = {
 
 #deposits/planetary features
 
+## push_scope = planet
 deposit = {
 	subtype[!null] = {
 		is_for_colonizeable = bool
@@ -144,10 +144,3 @@ deposit_category = {
 }
 
 
-
-#TODO add blocked subtype
-types = {
-	type[deposit] = {
-		path = "game/common/deposit"
-	}
-}

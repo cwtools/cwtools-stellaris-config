@@ -1,6 +1,5 @@
 
 types = {
-	## push_scope = planet
 	type[army] = {
 		path = "game/common/armies"
 	}
@@ -8,6 +7,7 @@ types = {
 
 #TODO subtypes, and make stricter this was an initial pass
 #This is a draft guess (assuming that only the resources bit has changed)
+## push_scope = planet
 army = {
 	## cardinality = 0..1
 	resources = {

@@ -1,6 +1,5 @@
 #Add branch office subtype
 types = {
-	## push_scope = planet
 	type[building] = {
 		path = "game/common/buildings"
 	}
@@ -21,6 +20,7 @@ enums = {
 }
 
 
+## push_scope = planet
 building = {
 	## cardinality = 0..1
 	base_buildtime = int

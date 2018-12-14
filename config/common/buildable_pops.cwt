@@ -1,6 +1,6 @@
 types = {
 	type[buildable_pop] = {
-		path = "game/common/buildable_pops"
+		path = "game/common/unused"
 	}
 }
 

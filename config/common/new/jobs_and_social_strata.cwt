@@ -1,10 +1,8 @@
 
 types = {
-	## push_scope = pop
 	type[job] = {
 		path = "game/common/pop_jobs"
 	}
-	## push_scope = pop
 	type[social_strata] = {
 		path = "game/common/pop_categories"
 	}
@@ -22,6 +20,7 @@ enums = {
 	}
 }
 
+## push_scope = pop
 job = {
 	category = enum[job_categories]
 	## cardinality = 0..1
@@ -85,6 +84,7 @@ job = {
 
 
 
+## push_scope = pop
 social_strata = {
 	rank = int
 	clothes_texture_index = int

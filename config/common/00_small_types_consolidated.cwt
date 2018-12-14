@@ -51,7 +51,6 @@ types = {
 	type[map_mode] = {
 		path = "game/common/map_modes"
 	}
-	## replace_scope = { this = country root = country }
 	type[ai_budget] = {
 		path = "game/common/ai_budget"
 	}
@@ -287,6 +286,7 @@ enums = {
 	}
 }
 
+## replace_scope = { this = country root = country }
 ai_budget = {
 	resource = <resource>
 	type = expenditure

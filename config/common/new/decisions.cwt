@@ -1,11 +1,11 @@
 
 types = {
-	## replace_scope = { this = planet root = planet from = country }
 	type[decision] = {
 		path = "game/common/decisions"
 	}
 }
 
+## replace_scope = { this = planet root = planet from = country }
 decision = {
 	## cardinality = 0..1
 	owned_planets_only = bool

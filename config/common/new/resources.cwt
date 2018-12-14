@@ -1,6 +1,5 @@
 
 types = {
-	## push_scope = country
 	type[resource] = {
 		path = "game/common/strategic_resources"
 
@@ -11,6 +10,7 @@ types = {
 }
 
 
+## push_scope = country
 resource = {
 	tradable = bool
 

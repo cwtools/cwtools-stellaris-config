@@ -1,11 +1,11 @@
 
 types = {
-	## push_scope = planet
 	type[district] = {
 		path = "game/common/districts"
 	}
 }
 
+## push_scope = planet
 district = {
 	base_buildtime = int
 

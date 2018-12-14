@@ -1,12 +1,10 @@
 types = {
-	## replace_scope = { this = starbase root = starbase from = country }
 	type[starbase_building] = {
 		path = "game/common/starbase_buildings"
 	}
 	type[starbase_level] = {
 		path = "game/common/starbase_levels"
 	}
-	## replace_scope = { this = starbase root = starbase from = country }
 	type[starbase_module] = {
 		path = "game/common/starbase_modules"
 	}
@@ -15,6 +13,7 @@ types = {
 	}
 }
 
+## replace_scope = { this = starbase root = starbase from = country }
 starbase_building = {
 	icon = <sprite>
 	## cardinality = 0..1
@@ -95,6 +94,7 @@ starbase_building = {
 }
 
 #Done based on educated guesswork
+## replace_scope = { this = starbase root = starbase from = country }
 starbase_module = {
 	## cardinality = 0..1
 	section = <section_template>
