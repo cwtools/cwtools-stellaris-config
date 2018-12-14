@@ -102,6 +102,27 @@ alias[effect:country_event] = {
 	}
 }
 
+alias[effect:observer_event] = {
+	id = <event.observer>
+	id = <event.scopeless>
+	## cardinality = 0..1
+	days = int
+	## cardinality = 0..1
+	random = int
+	## cardinality = 0..1
+	scopes = {
+		## cardinality = 0..1
+		from = scope[any]
+		## cardinality = 0..1
+		fromfrom = scope[any]
+		## cardinality = 0..1
+		fromfromfrom = scope[any]
+		## cardinality = 0..1
+		fromfromfromfrom = scope[any]
+	}
+}
+
+
 alias[effect:pop_faction_event] = {
 	id = <event.pop_faction>
 	## cardinality = 0..1

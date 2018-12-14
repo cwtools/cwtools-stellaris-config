@@ -1899,3 +1899,8 @@ alias[trigger:free_district_slots] = int
 alias[trigger:has_ai_expansion_plan] = bool
 
 alias[trigger:has_district] = <district>
+
+alias[trigger:has_active_event] = {
+	## cardinality = 0..inf
+	<event>
+}

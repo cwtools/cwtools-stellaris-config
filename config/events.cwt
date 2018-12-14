@@ -8,6 +8,10 @@ types = {
 		## push_scope = country
 		subtype[country] = {
 		}
+		## type_key_filter = observer_event
+		## push_scope = country
+		subtype[observer] = {
+		}
 		## type_key_filter = pop_event
 		## push_scope = pop
 		subtype[pop] = {

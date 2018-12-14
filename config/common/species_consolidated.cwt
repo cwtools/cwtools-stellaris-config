@@ -198,6 +198,7 @@ enums = {
 		citizenship_slavery
 		citizenship_purge
 		citizenship_purge_machine
+		citizenship_robot_servitude
 	}
 	enum[military_service_types] = {
 		military_service_full
@@ -235,6 +236,7 @@ enums = {
 		living_standard_servitude
 		living_standard_hive_mind
 		living_standard_none
+		living_standard_shared_burden
 	}
 	enum[migration_controls] = {
 		migration_control_yes

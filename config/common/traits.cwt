@@ -82,6 +82,14 @@ trait = {
 			## cardinality = 1..100
 			<trait.species_trait>
 		}
+
+		## cardinality = 0..1
+		potential_crossbreeding_chance = float
+
+		## cardinality = 0..1
+		slave_cost = {
+			energy = int
+		}
 	}
 
 	subtype[leader_trait] = {
