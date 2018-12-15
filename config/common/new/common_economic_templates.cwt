@@ -45,14 +45,20 @@ economic_category = {
 		trigger = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
+		## cardinality = 0..1
+		uses_parent_icon = yes
 	}
 	## cardinality = 0..inf
 	triggered_upkeep_modifier = {
-		key = localisation
+		key = scalar
 		## cardinality = 0..1
 		trigger = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
+	}
+	## cardinality = 0..1
+	ai_use_parent_for_resources_upkeep = {
+		<resource>
 	}
 }
 
