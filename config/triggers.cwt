@@ -1523,8 +1523,8 @@ alias[trigger:count_war_participants] = {
 	count = int
 }
 
-## replace_scope = { this = pop_faction }
 #Count triggers: Should all check for < > on the ints
+## replace_scope = { this = pop_faction }
 alias[trigger:count_pop_factions] = {
 	count = int
 	## cardinality = 0..1
