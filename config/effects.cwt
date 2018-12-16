@@ -1517,8 +1517,8 @@ alias[effect:auto_move_to_planet] = {
 }
 
 #
-###Scope (/context) switch
-alias[effect:best_tile_for_pop] = { alias_name[effect] = alias_match_left[effect] }
+# ###Scope (/context) switch
+#alias[effect:best_tile_for_pop] = { alias_name[effect] = alias_match_left[effect] }
 
 # ### Creates a buildable pop on the scoped tile/planet
 #alias[effect:build_pop] = { #TOOO trigger docs error
