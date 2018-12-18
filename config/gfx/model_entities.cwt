@@ -133,6 +133,8 @@ model_entity = {
 				## cardinality = 3..3
 				float
 			}
+			## cardinality = 0..1
+			scale = float
 		}
 		## cardinality = 0..1
 		game_data = {
