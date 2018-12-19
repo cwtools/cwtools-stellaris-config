@@ -14,7 +14,8 @@ decision = {
 	## cardinality = 0..1
 	sound = <sound>
 	## cardinality = 0..1
-    icon = <sprite>
+	icon = icon[gfx/interface/icons/decisions]
+    #icon = <sprite>
 
 	resources = {
 		category = decisions

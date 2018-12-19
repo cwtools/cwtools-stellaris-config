@@ -29,7 +29,7 @@ technology = {
 	category = { <technology_category> }
 
 	## cardinality = 0..1
-	icon = scalar
+	icon = icon[gfx/interface/icons/technologies]
 
 	subtype[start_tech] = {
 		## cardinality = 0..1

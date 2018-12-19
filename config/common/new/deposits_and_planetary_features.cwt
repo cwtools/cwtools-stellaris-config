@@ -49,7 +49,7 @@ deposit = {
 
 	#blocker?
 	## cardinality = 0..1
-	icon = scalar #todo
+	icon = icon[gfx/interface/icons/deposits]
 
 	subtype[blocker] = {
 		## cardinality = 0..1
