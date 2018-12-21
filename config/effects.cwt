@@ -228,80 +228,80 @@ alias[effect:remove_modifier] = <static_modifier>
 
 
 #flags
-alias[effect:set_country_flag] = scalar
-alias[effect:set_planet_flag] = scalar
-alias[effect:set_pop_facton_flag] = scalar
-alias[effect:set_star_flag] = scalar
-alias[effect:set_species_flag] = scalar
-alias[effect:set_pop_flag] = scalar
-alias[effect:set_fleet_flag] = scalar
-alias[effect:set_ship_flag] = scalar
-alias[effect:set_global_flag] = scalar
-alias[effect:set_leader_flag] = scalar
-alias[effect:set_ambient_object_flag] = scalar
-alias[effect:set_megastructure_flag] = scalar
+alias[effect:set_country_flag] = value_set[country_flag]
+alias[effect:set_planet_flag] = value_set[planet_flag]
+alias[effect:set_pop_facton_flag] = value_set[pop_facton_flag]
+alias[effect:set_star_flag] = value_set[star_flag]
+alias[effect:set_species_flag] = value_set[species_flag]
+alias[effect:set_pop_flag] = value_set[pop_flag]
+alias[effect:set_fleet_flag] = value_set[fleet_flag]
+alias[effect:set_ship_flag] = value_set[ship_flag]
+alias[effect:set_global_flag] = value_set[global_flag]
+alias[effect:set_leader_flag] = value_set[leader_flag]
+alias[effect:set_ambient_object_flag] = value_set[ambient_object_flag]
+alias[effect:set_megastructure_flag] = value_set[megastructure_flag]
 
-alias[effect:remove_country_flag] = scalar
-alias[effect:remove_planet_flag] = scalar
-alias[effect:remove_pop_facton_flag] = scalar
-alias[effect:remove_star_flag] = scalar
-alias[effect:remove_species_flag] = scalar
-alias[effect:remove_pop_flag] = scalar
-alias[effect:remove_fleet_flag] = scalar
-alias[effect:remove_ship_flag] = scalar
-alias[effect:remove_global_flag] = scalar
-alias[effect:remove_leader_flag] = scalar
-alias[effect:remove_ambient_object_flag] = scalar
-alias[effect:remove_megastructure_flag] = scalar
+alias[effect:remove_country_flag] = value[country_flag]
+alias[effect:remove_planet_flag] = value[planet_flag]
+alias[effect:remove_pop_facton_flag] = value[pop_facton_flag]
+alias[effect:remove_star_flag] = value[star_flag]
+alias[effect:remove_species_flag] = value[species_flag]
+alias[effect:remove_pop_flag] = value[pop_flag]
+alias[effect:remove_fleet_flag] = value[fleet_flag]
+alias[effect:remove_ship_flag] = value[ship_flag]
+alias[effect:remove_global_flag] = value[global_flag]
+alias[effect:remove_leader_flag] = value[leader_flag]
+alias[effect:remove_ambient_object_flag] = value[ambient_object_flag]
+alias[effect:remove_megastructure_flag] = value[megastructure_flag]
 
 
 alias[effect:set_timed_country_flag] = {
-	flag = scalar
+	flag = value_set[country_flag]
 	enum[days_months_years] = int
 }
 alias[effect:set_timed_planet_flag] = {
-	flag = scalar
+	flag = value_set[planet_flag]
 	enum[days_months_years] = int
 }
 alias[effect:set_timed_pop_faction_flag] = {
-	flag = scalar
+	flag = value_set[pop_faction_flag]
 	enum[days_months_years] = int
 }
 
 alias[effect:set_timed_star_flag] = {
-	flag = scalar
+	flag = value_set[star_flag]
 	enum[days_months_years] = int
 }
 alias[effect:set_timed_species_flag] = {
-	flag = scalar
+	flag = value_set[species_flag]
 	enum[days_months_years] = int
 }
 alias[effect:set_timed_pop_flag] = {
-	flag = scalar
+	flag = value_set[pop_flag]
 	enum[days_months_years] = int
 }
 alias[effect:set_timed_fleet_flag] = {
-	flag = scalar
+	flag = value_set[fleet_flag]
 	enum[days_months_years] = int
 }
 alias[effect:set_timed_ship_flag] = {
-	flag = scalar
+	flag = value_set[ship_flag]
 	enum[days_months_years] = int
 }
 alias[effect:set_timed_global_flag] = {
-	flag = scalar
+	flag = value_set[global_flag]
 	enum[days_months_years] = int
 }
 alias[effect:set_timed_leader_flag] = {
-	flag = scalar
+	flag = value_set[leader_flag]
 	enum[days_months_years] = int
 }
 alias[effect:set_timed_ambient_object_flag] = {
-	flag = scalar
+	flag = value_set[ambient_object_flag]
 	enum[days_months_years] = int
 }
 alias[effect:set_timed_megastructure_flag] = {
-	flag = scalar
+	flag = value_set[megastructure_flag]
 	enum[days_months_years] = int
 }
 
@@ -310,19 +310,19 @@ alias[effect:remove_megastructure] = scope[megastructure]
 
 alias[effect:set_relation_flag] = {
 	who = scope[country]
-	flag = scalar
+	flag = value_set[relation_flag]
 }
 
 alias[effect:set_timed_relation_flag] = {
 	who = scope[country]
-	flag = scalar
+	flag = value_set[relation_flag]
 	enum[days_months_years] = int
 }
 
 
 alias[effect:remove_relation_flag] = {
 	who = scope[country]
-	flag = scalar
+	flag = value[relation_flag]
 }
 
 

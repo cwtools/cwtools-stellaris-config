@@ -22,7 +22,7 @@ solar_system_initializer = {
 	## cardinality = 0..1
 	flags = { #star_flag
 		## cardinality = 0..inf
-		scalar
+		value_set[star_flag]
 	}
 	## cardinality = 0..inf
 	asteroid_belt = {
@@ -142,7 +142,7 @@ alias[planet_initializer:planet] = {
 	## cardinality = 0..1
 	flags = { #planet flags
 		## cardinality = 0..inf
-		scalar
+		value_set[planet_flag]
 	}
 
 	## cardinality = 0..inf
@@ -236,7 +236,7 @@ alias[moon_initializer:moon] = {
 	## cardinality = 0..1
 	flags = { #planet flags
 		## cardinality = 0..inf
-		scalar
+		value_set[planet_flag]
 	}
 
 	## cardinality = 0..inf

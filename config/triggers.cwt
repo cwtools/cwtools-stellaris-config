@@ -81,30 +81,30 @@ alias[trigger:has_opinion_modifier] = {
 }
 
 #flags
-alias[trigger:has_country_flag] = scalar
-alias[trigger:has_planet_flag] = scalar
-alias[trigger:has_pop_facton_flag] = scalar
-alias[trigger:has_star_flag] = scalar
-alias[trigger:has_species_flag] = scalar
-alias[trigger:has_pop_flag] = scalar
-alias[trigger:has_fleet_flag] = scalar
-alias[trigger:has_ship_flag] = scalar
-alias[trigger:has_global_flag] = scalar
-alias[trigger:has_leader_flag] = scalar
-alias[trigger:has_ambient_object_flag] = scalar
-alias[trigger:has_megastructure_flag] = scalar
+alias[trigger:has_country_flag] = value[country_flag]
+alias[trigger:has_planet_flag] = value[planet_flag]
+alias[trigger:has_pop_facton_flag] = value[pop_facton_flag]
+alias[trigger:has_star_flag] = value[star_flag]
+alias[trigger:has_species_flag] = value[species_flag]
+alias[trigger:has_pop_flag] = value[pop_flag]
+alias[trigger:has_fleet_flag] = value[fleet_flag]
+alias[trigger:has_ship_flag] = value[ship_flag]
+alias[trigger:has_global_flag] = value[global_flag]
+alias[trigger:has_leader_flag] = value[leader_flag]
+alias[trigger:has_ambient_object_flag] = value[ambient_object_flag]
+alias[trigger:has_megastructure_flag] = value[megastructure_flag]
 
 
 alias[trigger:has_relation_flag] = {
 	who = scope[country]
-	flag = scalar
+	flag = value[relation_flag]
 	## cardinality = 0..1
 	is_reverse = bool
 }
 
 alias[trigger:reverse_has_relation_flag] = {
 	who = scope[country]
-	flag = scalar
+	flag = value[relation_flag]
 }
 
 alias[trigger:has_government] = <government>

@@ -43,7 +43,7 @@ types = {
 	}
 	type[precursors] = {
 		name = key
-		path = "common/precursor_civlizations"
+		path = "common/precursor_civilizations"
 	}
 	type[sector_type] = {
 		path = "game/common/sector_types"
@@ -225,7 +225,7 @@ start_screen_message = {
 
 precursors = {
 	##cardinality = 1..inf
-	scalar = int
+	value_set[star_flag] = int
 }
 
 
@@ -292,15 +292,15 @@ ai_budget = {
 	type = expenditure
 	type = upkeep
 	category = <economic_category>
-	
+
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	
+
 	fraction = {
 		weight = float
 	}
-	
+
 	## cardinality = 0..1
 	static_max = {
 		base = int
