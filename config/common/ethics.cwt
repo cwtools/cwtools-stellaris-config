@@ -46,6 +46,7 @@ ethos = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 
+		## replace_scope = { this = country root = country }
 		country_modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}

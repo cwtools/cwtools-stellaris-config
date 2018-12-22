@@ -14,6 +14,7 @@ agenda = {
 		enum[factor_weight] = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
+	## replace_scope = { this = country root = country }
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}

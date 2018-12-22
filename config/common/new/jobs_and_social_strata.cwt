@@ -55,17 +55,18 @@ job = {
 	}
 
 	## cardinality = 0..1
+	## replace_scope = { this = pop root = pop }
 	pop_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 
-	## push_scope = planet
+	## replace_scope = { this = country root = country }
 	## cardinality = 0..1
 	country_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 
-	## push_scope = planet
+	## replace_scope = { this = planet root = planet }
 	## cardinality = 0..1
 	planet_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
@@ -104,6 +105,7 @@ social_strata = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 
+	## replace_scope = { this = pop root = pop }
 	pop_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
@@ -119,6 +121,7 @@ social_strata = {
 	}
 
 	## cardinality = 0..1
+	## replace_scope = { this = planet root = planet }
 	unemployment_penalties = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}

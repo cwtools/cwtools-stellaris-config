@@ -163,6 +163,7 @@ authority = {
 		trait = <trait>
 	}
 	## cardinality = 0..1
+	## replace_scope = { this = country root = country }
 	country_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
@@ -540,6 +541,7 @@ civic = {
 
 	## cardinality = 0..1
 	### modifier added to the country if the civic is selected and valid
+	## replace_scope = { this = country root = country }
 	modifier = {
 		## cardinality = 0..1
 		alias_name[modifier] = alias_match_left[modifier]

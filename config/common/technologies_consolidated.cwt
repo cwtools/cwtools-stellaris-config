@@ -101,6 +101,7 @@ technology = {
 	}
 
 	## cardinality = 0..1
+	## replace_scope = { this = country root = country }
 	modifier = {
 		## cardinality = 0..1
 		description = localisation

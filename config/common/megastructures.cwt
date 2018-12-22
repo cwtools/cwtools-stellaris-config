@@ -71,6 +71,7 @@ megastructure = {
 	}
 	## cardinality = 0..1
 	###accepts country modifiers
+	## replace_scope = { this = country root = country }
 	country_modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]

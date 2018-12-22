@@ -83,6 +83,7 @@ building = {
 	}
 
 	## cardinality = 0..1
+	## replace_scope = { this = planet root = planet }
 	planet_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}

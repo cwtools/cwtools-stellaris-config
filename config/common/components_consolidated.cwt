@@ -121,10 +121,12 @@ component_template = {
 		}
 		size = enum[utility_slot_size]
 		## cardinality = 0..1
+		## replace_scope = { this = ship root = ship }
 		modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
 		## cardinality = 0..1
+		## replace_scope = { this = ship root = ship }
 		ship_modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
@@ -156,6 +158,7 @@ component_template = {
 				priority = int
 			}
 			## cardinality = 0..1
+			## replace_scope = { this = ship root = ship }
 			modifier = {
 				alias_name[modifier] = alias_match_left[modifier]
 			}
@@ -190,6 +193,7 @@ component_template = {
 				priority = int
 			}
 			## cardinality = 0..1
+			## replace_scope = { this = ship root = ship }
 			modifier = {
 				alias_name[modifier] = alias_match_left[modifier]
 			}

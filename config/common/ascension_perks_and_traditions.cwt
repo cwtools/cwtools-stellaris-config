@@ -44,6 +44,7 @@ ascension_perk = {
 	}
 
 	## cardinality = 0..1
+	## replace_scope = { this = country root = country }
 	modifier = {
 		## cardinality = 0..1
 		description = localisation
@@ -66,6 +67,7 @@ ascension_perk = {
 
 tradition = {
 	## cardinality = 0..1
+	## replace_scope = { this = country root = country }
 	modifier = { ###accepts only country modifiers
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
@@ -106,6 +108,7 @@ alias[tradition_swap:tradition_swap] = {
 	inherit_effects = bool
 	## cardinality = 0..1
 	###accepts only country modifiers
+	## replace_scope = { this = country root = country }
 	modifier = {
 		## cardinality = 0..1
 		alias_name[modifier] = alias_match_left[modifier]

@@ -25,6 +25,7 @@ edict = {
 	}
 
 	## cardinality = 0..1
+	## replace_scope = { this = country root = country }
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}

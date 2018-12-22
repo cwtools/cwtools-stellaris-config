@@ -59,30 +59,35 @@ starbase_building = {
 
 	## cardinality = 0..1
 	### ship modifiers, apply on the starbase itself
+	## replace_scope = { this = starbase root = starbase }
 	station_modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
 	###ship modifiers, apply in orbit of the starbase
+	## replace_scope = { this = ship root = ship }
 	ship_modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
 	###ship modifiers, apply in orbit of the starbase
+	## replace_scope = { this = ship root = ship }
 	orbit_modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
 	###planet modifiers, apply on system planets.
+	## replace_scope = { this = planet root = planet }
 	system_modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
 	###country modifiers
+	## replace_scope = { this = country root = country }
 	country_modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
@@ -133,30 +138,35 @@ starbase_module = {
 
 	## cardinality = 0..1
 	### ship modifiers, apply on the starbase itself
+	## replace_scope = { this = starbase root = starbase }
 	station_modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
 	###ship modifiers, apply in orbit of the starbase
+	## replace_scope = { this = ship root = ship }
 	ship_modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
 	###ship modifiers, apply in orbit of the starbase
+	## replace_scope = { this = ship root = ship }
 	orbit_modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
 	###planet modifiers, apply on system planets.
+	## replace_scope = { this = planet root = planet }
 	system_modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
 	###country modifiers
+	## replace_scope = { this = country root = country }
 	country_modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]

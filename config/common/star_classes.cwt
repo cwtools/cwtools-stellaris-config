@@ -34,6 +34,7 @@ star_class = {
 	## cardinality = 0..1
 	is_environmental_hazard = bool
 	## cardinality = 0..1
+	## replace_scope = { this = ship root = ship }
 	modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]

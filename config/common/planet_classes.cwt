@@ -133,6 +133,7 @@ planet_class = {
 	###this is only required if using a tile-set defined for another planet
 	tile_set = <planet_class>
 	## cardinality = 0..1
+	## replace_scope = { this = planet root = planet }
 	modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]

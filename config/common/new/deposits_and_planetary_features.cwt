@@ -81,6 +81,7 @@ deposit = {
 	}
 
 	subtype[colonisable] = {
+		## replace_scope = { this = planet root = planet }
 		planet_modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
@@ -112,6 +113,7 @@ deposit = {
 		station = shipclass_mining_station
 		station = shipclass_research_station
 		## cardinality = 0..1
+		## replace_scope = { this = planet root = planet }
 		planet_modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}

@@ -32,6 +32,7 @@ species_class = {
 	## cardinality = 0..1
 	archetype = <species_archetype>
 	## cardinality = 0..1
+	## replace_scope = { this = pop root = pop }
 	modifier = {
 		## cardinality = 0..1
 		alias_name[modifier] = alias_match_left[modifier]
@@ -151,16 +152,19 @@ species_rights = {
 	new_pop_weight = float
 
 	## cardinality = 0..1
+	## replace_scope = { this = army root = army }
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 
 	## cardinality = 0..1
+	## replace_scope = { this = pop root = pop }
 	pop_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 
 	## cardinality = 0..1
+	## replace_scope = { this = pop root = pop }
 	free_pop_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
