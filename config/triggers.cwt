@@ -1560,7 +1560,7 @@ alias[trigger:count_exact_species] = {
 	}
 }
 
-## replace_scope = { this = army }
+## replace_scope = { this = ship }
 alias[trigger:count_fleet_ships] = {
 	count = int
 	## cardinality = 0..1
@@ -1569,7 +1569,7 @@ alias[trigger:count_fleet_ships] = {
 	}
 }
 
-## replace_scope = { this = army }
+## replace_scope = { this = ship }
 alias[trigger:count_system_ships] = {
 	count = int
 	## cardinality = 0..1
