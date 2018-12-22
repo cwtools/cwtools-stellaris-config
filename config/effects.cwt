@@ -688,6 +688,9 @@ alias[effect:set_leader] = value[exiled_leader]
 ###Reinstates a previously-exiled leader to the scoped country/fleet/army/pop faction
 alias[effect:set_leader] = last_created_leader
 
+###Reinstates a previously-exiled leader to the scoped country/fleet/army/pop faction
+alias[effect:set_leader] = scope[leader]
+
 alias[effect:enable_faction_of_type] = <pop_faction>
 
 alias[effect:set_subject_of] = {
