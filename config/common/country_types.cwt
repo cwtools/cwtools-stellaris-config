@@ -11,8 +11,6 @@ country_type = {
 	has_pulse_events = bool
 	## cardinality = 0..1
 	can_use_invalid_technology = bool
-	## cardinality = 0..1
-	can_use_market = bool
 
 
 	## cardinality = 0..1
@@ -186,6 +184,9 @@ country_type = {
 		## cardinality = 0..1
 		limited_construction = bool
 
+		## cardinality = 0..1
+		can_use_market = bool
+		
 		## cardinality = 0..1
 		ship_data = {
 			## cardinality = 0..inf
