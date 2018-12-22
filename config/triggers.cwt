@@ -81,17 +81,29 @@ alias[trigger:has_opinion_modifier] = {
 }
 
 #flags
+## severity = warning
 alias[trigger:has_country_flag] = value[country_flag]
+## severity = warning
 alias[trigger:has_planet_flag] = value[planet_flag]
-alias[trigger:has_pop_facton_flag] = value[pop_facton_flag]
+## severity = warning
+alias[trigger:has_pop_faction_flag] = value[pop_faction_flag]
+## severity = warning
 alias[trigger:has_star_flag] = value[star_flag]
+## severity = warning
 alias[trigger:has_species_flag] = value[species_flag]
+## severity = warning
 alias[trigger:has_pop_flag] = value[pop_flag]
+## severity = warning
 alias[trigger:has_fleet_flag] = value[fleet_flag]
+## severity = warning
 alias[trigger:has_ship_flag] = value[ship_flag]
+## severity = warning
 alias[trigger:has_global_flag] = value[global_flag]
+## severity = warning
 alias[trigger:has_leader_flag] = value[leader_flag]
+## severity = warning
 alias[trigger:has_ambient_object_flag] = value[ambient_object_flag]
+## severity = warning
 alias[trigger:has_megastructure_flag] = value[megastructure_flag]
 
 
@@ -411,13 +423,13 @@ alias[trigger:has_non_swapped_tradition] = <tradition>
 alias[trigger:has_swapped_tradition] = enum[tradition_swap]
 
 alias[trigger:check_variable] = {
-	which = scalar
+	which = value[variable]
 	## cardinality = 1..2
 	value = float
 	## cardinality = 1..2
 	value = scope[any]
 	## cardinality = 1..2
-	value = scalar #TODO: another variable
+	value = value[variable]
 }
 
 
@@ -842,11 +854,8 @@ alias[trigger:has_planet_modifier] = <planet_modifier>
 
 ### Checks if the scoped country has a specific point of interest in its situation log
 alias[trigger:has_point_of_interest] = {
-	poi = scalar
+	poi = value[point_of_interest]
 }
-
-### Checks if the pop faction has a specific flag
-alias[trigger:has_pop_faction_flag] = scalar
 
 ### Checks if a system contains any fleets, stations, mega structures or colonized planets.
 alias[trigger:has_presence] = bool

@@ -40,7 +40,7 @@ alias[effect:else_if] = {
 alias[effect:else] = { alias_name[effect] = alias_match_left[effect] }
 
 alias[effect:save_event_target_as] = scalar
-alias[effect:save_global_event_target_as] = scalar
+alias[effect:save_global_event_target_as] = value_set[global_event_target]
 
 alias[effect:event] = {
 	id = <event.scopeless>
@@ -230,7 +230,7 @@ alias[effect:remove_modifier] = <static_modifier>
 #flags
 alias[effect:set_country_flag] = value_set[country_flag]
 alias[effect:set_planet_flag] = value_set[planet_flag]
-alias[effect:set_pop_facton_flag] = value_set[pop_facton_flag]
+alias[effect:set_pop_faction_flag] = value_set[pop_faction_flag]
 alias[effect:set_star_flag] = value_set[star_flag]
 alias[effect:set_species_flag] = value_set[species_flag]
 alias[effect:set_pop_flag] = value_set[pop_flag]
@@ -243,7 +243,7 @@ alias[effect:set_megastructure_flag] = value_set[megastructure_flag]
 
 alias[effect:remove_country_flag] = value[country_flag]
 alias[effect:remove_planet_flag] = value[planet_flag]
-alias[effect:remove_pop_facton_flag] = value[pop_facton_flag]
+alias[effect:remove_pop_faction_flag] = value[pop_faction_flag]
 alias[effect:remove_star_flag] = value[star_flag]
 alias[effect:remove_species_flag] = value[species_flag]
 alias[effect:remove_pop_flag] = value[pop_flag]
@@ -403,7 +403,7 @@ alias[effect:reduce_hp_percent] = float[0.0..1.0]
 alias[effect:reduce_hp_percent] = int[0..100]
 
 
-alias[effect:exile_leader_as] = scalar
+alias[effect:exile_leader_as] = value_set[exiled_leader]
 ###Adds a sum of experience points to the scoped leader
 alias[effect:add_experience] = int
 
@@ -462,38 +462,38 @@ alias[effect:set_location] = {
 
 #variables
 alias[effect:set_variable] = {
-	which = scalar
+	which = value_set[variable]
 	value = float
 	value = scope[any]
-	value = scalar
+	value = value[variable]
 }
 #presumably need to check the variable exists first for these, somehow
 alias[effect:change_variable] = {
-	which = scalar
+	which = value_set[variable]
 	value = float
 	value = scope[any]
-	value = scalar
+	value = value[variable]
 }
 ###Decrements a previously-set variable by a specific amount
 alias[effect:subtract_variable] = {
-	which = scalar
+	which = value[variable]
 	value = float
 	value = scope[any]
-	value = scalar
+	value = value[variable]
 }
 ###Multiplies a previously-set variable by a specific amount
 alias[effect:multiply_variable] = {
-	which = scalar
+	which = value[variable]
 	value = float
 	value = scope[any]
-	value = scalar
+	value = value[variable]
 }
 ###Divides a previously-set variable by a specific amount
 alias[effect:divide_variable] = {
-	which = scalar
+	which = value[variable]
 	value = float
 	value = scope[any]
-	value = scalar
+	value = value[variable]
 }
 
 #max should not be less than min...
@@ -515,7 +515,9 @@ alias[effect:remove_trait] = <trait>
 #also, at least one of while and limit should be there
 alias[effect:while] = {
 	## cardinality = 0..1
-	count = scalar
+	count = int
+	## cardinality = 0..1
+	count = value[variable]
 	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
@@ -680,9 +682,8 @@ alias[effect:set_name] = scope[any]
 alias[effect:set_name] = localisation
 
 
-#should somehow link to exile_leader_as
 ###Reinstates a previously-exiled leader to the scoped country/fleet/army/pop faction
-alias[effect:set_leader] = scalar
+alias[effect:set_leader] = value[exiled_leader]
 
 alias[effect:enable_faction_of_type] = <pop_faction>
 
@@ -1411,7 +1412,7 @@ alias[effect:activate_gateway] = scope[megastructure]
 
 ### Moves a saved leader to the active for the scoped country with a lookup key
 alias[effect:activate_saved_leader] = {
-	key = scalar
+	key = value[saved_leader]
 	## cardinality = 0..1
 	add_to_owned = bool
 	## cardinality = 0..1
@@ -1639,7 +1640,7 @@ alias[effect:clear_ethos] = yes
 alias[effect:clear_fleet_actions] = scope[fleet]
 
 ### Deletes the specified saved global target reference
-alias[effect:clear_global_event_target] = scalar
+alias[effect:clear_global_event_target] = value[global_event_target]
 
 ### Deletes all saved global target references
 alias[effect:clear_global_event_targets] = yes
@@ -1845,7 +1846,7 @@ alias[effect:create_mining_station] = {
 
 ### Creates a point of interest for the scoped country at a specific location, associated with an event chain
 alias[effect:create_point_of_interest] = {
-	id = scalar
+	id = value_set[point_of_interest]
 	## cardinality = 1..1
 	## severity = info
 	###Leaving out "name" gives a blank button that looks really terrible and unprofessional. Don't do it :P
@@ -1897,7 +1898,7 @@ alias[effect:create_research_station] = {
 
 ### Creates a new saved leader for the scoped country with a lookup key
 alias[effect:create_saved_leader] = {
-	key = scalar
+	key = value_set[saved_leader]
 	## cardinality = 0..1
 	creator = scope[country]
 	## cardinality = 0..1
@@ -2288,16 +2289,13 @@ alias[effect:remove_notification_modifier] = <notification_modifier>
 #alias[effect:remove_orbital_deposit] = yes
 
 ### Removes a specific point of interest from the scoped country's situation log
-alias[effect:remove_point_of_interest] = scalar
-
-### Removes a flag from the scoped pop's faction/pop faction
-alias[effect:remove_pop_faction_flag] = scalar
+alias[effect:remove_point_of_interest] = value[point_of_interest]
 
 ### Removes a specific ruler trait from the scoped leader, even if they are not currently ruler; this is relevant if they ever become ruler
 alias[effect:remove_ruler_trait] = <trait> #TODO ruler trait
 
 ### Removes a saved leader for the scoped country with a lookup key
-alias[effect:remove_saved_leader] = scalar
+alias[effect:remove_saved_leader] = value[saved_leader]
 
 #use one of the following:
 # 	name = "an explicit name with [Bracket.Stuff]"
@@ -2478,9 +2476,6 @@ alias[effect:set_policy] = {
 
 ### Sets the scoped pop to belong to a specific pop faction
 alias[effect:set_pop_faction] = <pop_faction>
-
-### Sets an arbitrarily-named flag on the scoped pop's faction/pop faction
-alias[effect:set_pop_faction_flag] = scalar
 
 ### [DEPRECATED, USE SET_COUNTRY_TYPE] Sets the scoped country as primitive
 alias[effect:set_primitive] = bool
