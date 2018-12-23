@@ -270,6 +270,8 @@ model_entity = {
 			## cardinality = 3..3
 			float
 		}
+		## cardinality = 0..1
+		scale = float
 	}
 
 	#these need to be updated and linked to other files
