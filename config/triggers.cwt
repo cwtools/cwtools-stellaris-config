@@ -1088,6 +1088,7 @@ alias[trigger:last_increased_tech] = <technology>
 
 
 ### Prints a message to game.log for debugging purposes
+## scope = all
 alias[trigger:log] = scalar
 
 ### Checks if the local human is logged in to a Pdx account. This WILL cause an out of sync if used for anything that can change the game state
