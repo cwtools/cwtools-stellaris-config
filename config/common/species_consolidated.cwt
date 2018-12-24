@@ -133,7 +133,7 @@ species_class = {
 
 	## cardinality = 0..1
 	resources = {
-		category = value_set[economic_category]
+		category = <economic_category>
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}
 }

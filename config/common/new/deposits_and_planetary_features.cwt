@@ -26,13 +26,6 @@ types = {
 	}
 }
 
-enums = {
-	enum[resource_list_categories_deposits] = {
-		deposit_blockers
-		orbital_mining_deposits
-	}
-}
-
 #deposits/planetary features
 
 ## push_scope = planet
@@ -123,7 +116,7 @@ deposit = {
 
 	## cardinality = 0..1
 	resources = {
-		category = value_set[economic_category]
+		category = <economic_category>
 
 		alias_name[economic_template] = alias_match_left[economic_template]
 
