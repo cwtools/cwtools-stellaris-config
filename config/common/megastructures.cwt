@@ -59,16 +59,6 @@ megastructure = {
 		category = megastructures
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}
-  	## cardinality = 0..1
-	monthly_production = {
-		## cardinality = 0..inf
-		<resource> = int
-	}
-  ## cardinality = 0..1
-	maintenance = {
-		## cardinality = 0..inf
-		<resource> = int
-	}
 	## cardinality = 0..1
 	###accepts country modifiers
 	## replace_scope = { this = country root = country }
