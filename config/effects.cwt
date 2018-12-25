@@ -570,7 +570,7 @@ alias[effect:set_slavery_type] = {
 alias[effect:set_population_controls] = {
 	## cardinality = 0..1
 	country = scope[country]
-	type = enum[population_controls]
+	type = bool
 	## cardinality = 0..1
 	cooldown = bool
 }
@@ -578,7 +578,7 @@ alias[effect:set_population_controls] = {
 alias[effect:set_migration_controls] = {
 	## cardinality = 0..1
 	country = scope[country]
-	type = enum[migration_controls]
+	type = bool
 	## cardinality = 0..1
 	cooldown = bool
 }
