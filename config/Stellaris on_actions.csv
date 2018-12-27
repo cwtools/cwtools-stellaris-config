@@ -1,11 +1,12 @@
-on_game_start,root = no_scope this = no_scope,no_scope
-on_monthly_pulse,root = no_scope this = no_scope,no_scope
-on_yearly_pulse,root = no_scope this = no_scope,no_scope
-on_bi_yearly_pulse,root = no_scope this = no_scope,no_scope
-on_five_year_pulse,root = no_scope this = no_scope,no_scope
-on_decade_pulse,root = no_scope this = no_scope,no_scope
-on_mid_game_pulse,root = no_scope this = no_scope,no_scope
-on_late_game_pulse,root = no_scope this = no_scope,no_scope
+key,scopes,event
+on_game_start,root = no_scope this = no_scope,scopeless
+on_monthly_pulse,root = no_scope this = no_scope,scopeless
+on_yearly_pulse,root = no_scope this = no_scope,scopeless
+on_bi_yearly_pulse,root = no_scope this = no_scope,scopeless
+on_five_year_pulse,root = no_scope this = no_scope,scopeless
+on_decade_pulse,root = no_scope this = no_scope,scopeless
+on_mid_game_pulse,root = no_scope this = no_scope,scopeless
+on_late_game_pulse,root = no_scope this = no_scope,scopeless
 ,,
 on_game_start_country,root = country this = country,country
 on_monthly_pulse_country,root = country this = country,country
@@ -127,7 +128,7 @@ on_building_starbase_ai,this = ship root = ship from = planet,ship
 on_building_starbase_exd,this = ship root = ship from = planet,ship
 on_building_starbase_swarm,this = ship root = ship from = planet,ship
 on_building_starbase_marauder,this = ship root = ship from = planet,ship
-on_building_(PlaceholderForMoreStationShipSizes),this = ship root = ship from = planet,ship
+on_building__PlaceholderForMoreStationShipSizes,this = ship root = ship from = planet,ship
 on_ship_built,this = ship root = ship from = planet,ship
 ,,
 on_ship_disabled,this = ship root = ship from = ship,ship
@@ -200,4 +201,4 @@ on_destroy_planet_with_PLANET_KILLER_SHIELDER,this = planet root = planet from =
 on_destroy_planet_with_PLANET_KILLER_NEUTRON,this = planet root = planet from = fleet,planet
 on_destroy_planet_with_PLANET_KILLER_GODRAY,this = planet root = planet from = fleet,planet
 on_destroy_planet_with_PLANET_KILLER_NANOBOTS,this = planet root = planet from = fleet,planet
-on_destroy_planet_with_PLANET_DESTRUCTION_COMPONENT(PlaceholderForMore),this = planet root = planet from = fleet,planet
+on_destroy_planet_with_PLANET_DESTRUCTION_COMPONENT_PlaceholderForMore,this = planet root = planet from = fleet,planet
