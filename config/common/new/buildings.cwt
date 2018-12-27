@@ -62,6 +62,7 @@ building = {
 	}
 
 	## cardinality = 0..1
+	## replace_scope = { root = country this = country }
 	show_tech_unlock_if = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
