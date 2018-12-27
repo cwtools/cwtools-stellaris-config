@@ -35,7 +35,7 @@ types = {
 		## type_key_filter = event
 		subtype[scopeless] = {
 		}
-		
+
 		subtype[hidden] = {
 			hide_window = yes
 		}
@@ -139,7 +139,7 @@ event = {
 			## cardinality = 0..1
 			show_sound = <sound_effect>
 		}
-		
+
 		## cardinality = 0..1
 		show_sound = <sound_effect>
 		## cardinality = 0..1
@@ -199,7 +199,7 @@ event = {
 			## cardinality = 0..1
 			ai_chance = {
 				factor = float[0..10000]
-				
+
 				#Note: Weight does not work (guaranteed error message), add seems to usually cause error messages
 				alias_name[modifier_rule_factor] = alias_match_left[modifier_rule_factor]
 			}
@@ -239,7 +239,7 @@ event = {
 		## severity = info
 		## cardinality = 0..1
 		desc = OK
-		
+
 		## severity = info
 		## cardinality = 0..0
 		picture = scalar

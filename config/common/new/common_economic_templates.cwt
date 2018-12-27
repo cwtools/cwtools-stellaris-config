@@ -91,14 +91,26 @@ alias[economic_template:upkeep] = {
 }
 
 
+## replace_scope = { this = planet root = planet }
 alias[triggered_planet_modifier:triggered_planet_modifier] = {
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	## replace_scope = { this = planet root = planet }
 	alias_name[modifier] = alias_match_left[modifier]
 	## cardinality = 0..1
-	## replace_scope = { this = planet root = planet }
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+}
+
+## replace_scope = { this = planet root = planet }
+alias[triggered_planet_modifier_pop:triggered_planet_modifier] = {
+	## replace_scope = { this = pop root = pop }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	alias_name[modifier] = alias_match_left[modifier]
+	## cardinality = 0..1
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
@@ -116,53 +128,75 @@ alias[triggered_planet_modifier_direct:triggered_planet_modifier] = {
 	}
 }
 
-alias[triggered_system_modifier:triggered_system_modifier] = {
+## replace_scope = { this = system root = system }
+alias[triggered_system_modifier_starbase:triggered_system_modifier] = {
+	## replace_scope = { this = starbase root = starbase }
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	## replace_scope = { this = system root = system }
 	alias_name[modifier] = alias_match_left[modifier]
 	## cardinality = 0..1
-	## replace_scope = { this = system root = system }
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 }
 
-alias[triggered_country_modifier:triggered_country_modifier] = {
+## replace_scope = { this = country root = country }
+alias[triggered_country_modifier_starbase:triggered_country_modifier] = {
+	## replace_scope = { this = starbase root = starbase }
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	## replace_scope = { this = country root = country }
 	alias_name[modifier] = alias_match_left[modifier]
 	## cardinality = 0..1
-	## replace_scope = { this = country root = country }
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+}
+## replace_scope = { this = country root = country }
+alias[triggered_country_modifier_pop:triggered_country_modifier] = {
+	## replace_scope = { this = pop root = pop }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	alias_name[modifier] = alias_match_left[modifier]
+	## cardinality = 0..1
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 }
 
+## replace_scope = { this = pop root = pop }
 alias[triggered_pop_modifier:triggered_pop_modifier] = {
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	## replace_scope = { this = pop root = pop }
 	alias_name[modifier] = alias_match_left[modifier]
 	## cardinality = 0..1
-	## replace_scope = { this = pop root = pop }
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 }
 
+## replace_scope = { this = starbase root = starbase }
 alias[triggered_station_modifier:triggered_station_modifier] = {
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	## replace_scope = { this = starbase root = starbase }
 	alias_name[modifier] = alias_match_left[modifier]
 	## cardinality = 0..1
-	## replace_scope = { this = starbase root = starbase }
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+}
+
+## replace_scope = { this = starbase root = starbase }
+alias[triggered_station_modifier_starbase:triggered_station_modifier] = {
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	alias_name[modifier] = alias_match_left[modifier]
+	## cardinality = 0..1
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}

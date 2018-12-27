@@ -73,9 +73,9 @@ job = {
 	}
 
 	## cardinality = 0..1
-	alias_name[triggered_planet_modifier] = alias_match_left[triggered_planet_modifier]
+	alias_name[triggered_planet_modifier_pop] = alias_match_left[triggered_planet_modifier_pop]
 	## cardinality = 0..1
-	alias_name[triggered_country_modifier] = alias_match_left[triggered_country_modifier]
+	alias_name[triggered_country_modifier_pop] = alias_match_left[triggered_country_modifier_pop]
 	## cardinality = 0..1
 	alias_name[triggered_pop_modifier] = alias_match_left[triggered_pop_modifier]
 
