@@ -22,7 +22,7 @@ enums = {
 
 ## push_scope = pop
 job = {
-	category = enum[job_categories]
+	category = <social_strata>
 	## cardinality = 0..1
 	condition_string = localisation
 	## cardinality = 0..1
@@ -149,7 +149,7 @@ social_strata = {
 	## cardinality = 0..1
 	change_job_threshold = float
 	## cardinality = 0..1
-	display_category = enum[job_categories]
+	display_category = <social_strata>
 
 	## cardinality = 0..inf
 	alias_name[triggered_planet_modifier] = alias_match_left[triggered_planet_modifier]
