@@ -39,7 +39,7 @@ alias[effect:else_if] = {
 
 alias[effect:else] = { alias_name[effect] = alias_match_left[effect] }
 
-alias[effect:save_event_target_as] = scalar
+alias[effect:save_event_target_as] = value_set[event_target]
 alias[effect:save_global_event_target_as] = value_set[global_event_target]
 
 alias[effect:event] = {
