@@ -46,7 +46,7 @@ economic_category = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 		## cardinality = 0..1
-		uses_parent_icon = yes
+		use_parent_icon = yes
 	}
 	## cardinality = 0..inf
 	triggered_upkeep_modifier = {
