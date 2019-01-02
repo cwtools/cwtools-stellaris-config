@@ -70,17 +70,13 @@ technology = {
 	## cardinality = 0..1
 	### a weight group increases the chances of a technology appearing - if another tech of a similar group is picked.
 	weight_groups = {
-		## cardinality = 0..1
-		repeatable
-		## cardinality = 0..1
-		deposit_blockers
+		## cardinality = 0..inf
+		value_set[tech_weight_group]
 	}
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	mod_weight_if_group_picked = {
-		## cardinality = 0..1
-		repeatable = float
-		## cardinality = 0..1
-		deposit_blockers = float
+		## cardinality = 0..inf
+		value[tech_weight_group] = float
 	}
 
 
