@@ -96,7 +96,6 @@ deposit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
-	## cardinality = 0..1
 	drop_weight = {
 		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
