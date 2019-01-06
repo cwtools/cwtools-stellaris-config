@@ -1158,7 +1158,6 @@ alias[effect:clone_leader] = {
 	name = localisation_synced
 	## cardinality = 0..1
 	name = random
-	## cardinality = 0..1
 	class = enum[leader_classes]
 	## cardinality = 0..1
 	species = scope[species] #<target / key>
