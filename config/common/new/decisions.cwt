@@ -2,6 +2,13 @@
 types = {
 	type[decision] = {
 		path = "game/common/decisions"
+		localisation = {
+			## required
+			name = "$"
+			## required
+			desc = "$_desc"
+		}
+
 	}
 }
 
