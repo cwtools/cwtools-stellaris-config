@@ -118,7 +118,7 @@ component_template = {
 		## replace_scope = { root = ship this = ship }
 		resources = {
 			category = ship_components
-			alias_name[economic_template] = alias_match_left[economic_template]
+			alias_name[economic_template_no_produce] = alias_match_left[economic_template_no_produce]
 		}
 		size = enum[utility_slot_size]
 		## cardinality = 0..1
@@ -245,7 +245,7 @@ component_template = {
 		## replace_scope = { root = ship this = ship }
 		resources = {
 			category = ship_components
-			alias_name[economic_template] = alias_match_left[economic_template]
+			alias_name[economic_template_no_produce] = alias_match_left[economic_template_no_produce]
 		}
 		## cardinality = 0..1
 		use_ship_kill_target = bool
@@ -313,7 +313,7 @@ component_template = {
 		## replace_scope = { root = ship this = ship }
 		resources = {
 			category = ship_components
-			alias_name[economic_template] = alias_match_left[economic_template]
+			alias_name[economic_template_no_produce] = alias_match_left[economic_template_no_produce]
 		}
 		count = float
 		regeneration_per_day = float
