@@ -115,6 +115,7 @@ component_template = {
 	}
 	subtype[utility_component_template] = {
 		power = int
+		## replace_scope = { root = ship this = ship }
 		resources = {
 			category = ship_components
 			alias_name[economic_template] = alias_match_left[economic_template]
@@ -241,6 +242,7 @@ component_template = {
 		entity = scalar #TODO: Replace with hardcoded  graphical_culture + <model_entity>
 		## cardinality = 0..1
 		power = float
+		## replace_scope = { root = ship this = ship }
 		resources = {
 			category = ship_components
 			alias_name[economic_template] = alias_match_left[economic_template]
@@ -308,6 +310,7 @@ component_template = {
 		ship_behavior = <ship_behavior>
 		projectile_gfx = scalar #tied to defined entites under gfx
 		power = float
+		## replace_scope = { root = ship this = ship }
 		resources = {
 			category = ship_components
 			alias_name[economic_template] = alias_match_left[economic_template]
