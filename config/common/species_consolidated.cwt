@@ -241,6 +241,7 @@ enums = {
 		living_standard_hive_mind
 		living_standard_none
 		living_standard_shared_burden
+		living_standard_stratified
 	}
 	enum[migration_controls] = {
 		migration_control_yes
