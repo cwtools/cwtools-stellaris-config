@@ -364,7 +364,7 @@ alias[trigger:any_attacker] = {
 }
 
 ## push_scope = planet
-alias[trigger:any_planet] = {
+alias[trigger:any_system_planet] = {
 	alias_name[trigger] = alias_match_left[trigger]
 	##cardinality = 0..1
 	count = int

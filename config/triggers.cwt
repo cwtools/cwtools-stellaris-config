@@ -1854,3 +1854,5 @@ alias[trigger:has_active_event] = {
 }
 
 alias[trigger:free_building_slots] = int
+
+alias[trigger:is_archetype] = <species_archetype>
