@@ -38,6 +38,8 @@ static_modifier = {
 	custom_tooltip = localisation
 	## cardinality = 0..1
 	show_only_custom_tooltip = bool
+	## cardinality = 0..1
+	apply_modifier_to_other_planets = <static_modifier>
 }
 
 

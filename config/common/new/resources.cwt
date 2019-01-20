@@ -6,12 +6,16 @@ types = {
 		subtype[tradable] = {
 			tradable = yes
 		}
+		subtype[max] = {
+			max = int
+		}
 	}
 }
 
 
 ## push_scope = country
 resource = {
+	## cardinality = 0..1
 	tradable = bool
 
 	subtype[tradable] = {
@@ -36,14 +40,23 @@ resource = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
+	## cardinality = 0..1
 	ai_weight = {
 		weight = float
 		#TBC
 #		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
+	
+	## cardinality = 0..1
+	tooltip_decimals = int
 
 	## cardinality = 0..1
 	ai_wants = {
 		base = int
+	}
+	
+	subtype[max] = {
+		## cardinality = 0..1
+		fixed_max_amount = yes
 	}
 }
