@@ -153,7 +153,7 @@ authority = {
 	## cardinality = 0..1
 	random_weight = {
 		## cardinality = 0..1
-		value = int
+		base = int
 		## cardinality = 0..inf
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
