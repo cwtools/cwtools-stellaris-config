@@ -57,6 +57,26 @@ building = {
 	}
 
 	## cardinality = 0..1
+	on_queued = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+
+	## cardinality = 0..1
+	on_unqueued = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+
+	## cardinality = 0..1
+	on_built = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+
+	## cardinality = 0..1
+	on_destroy = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+
+	## cardinality = 0..1
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
