@@ -3,7 +3,14 @@ types = {
 	type[deposit] = {
 		path = "game/common/deposits"
 		path_strict = yes
-
+		
+		localisation = {
+			subtype[colonisable] = {
+				## required
+				Name = "$"
+			}
+		}
+		
 		#some guesswork here...
 		subtype[colonisable] = {
 			is_for_colonizeable = yes
