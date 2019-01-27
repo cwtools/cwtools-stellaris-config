@@ -304,5 +304,6 @@ ai_budget = {
 	## cardinality = 0..1
 	static_max = {
 		base = int
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 }
