@@ -50,6 +50,8 @@ building = {
 	is_capped_by_modifier = bool
 	## cardinality = 0..1
 	branch_office_building = bool
+	## cardinality = 0..1
+	planetary_ftl_inhibitor = bool
 
 	## cardinality = 0..1
 	allow = {
