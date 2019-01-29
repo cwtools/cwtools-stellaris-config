@@ -6,6 +6,9 @@ types = {
 			## cardinality = 0..1
 			is_capped_by_modifier = yes
 		}
+		subtype[uncapped] = {
+			is_capped_by_modifier = no
+		}
 	}
 }
 
