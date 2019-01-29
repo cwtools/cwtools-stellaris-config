@@ -1776,9 +1776,10 @@ alias[trigger:num_districts] = {
 }
 
 ###Checks the number of available slots the planet has of any, or a specific, district
+###Only works for uncapped districts as of 2.2.4
 alias[trigger:num_free_districts] = {
 	type = any
-	type = <district>
+	type = <district.uncapped>
 	value = int
 }
 
