@@ -2,6 +2,10 @@
 types = {
 	type[district] = {
 		path = "game/common/districts"
+		subtype[capped] = {
+			## cardinality = 0..1
+			is_capped_by_modifier = yes
+		}
 	}
 }
 
