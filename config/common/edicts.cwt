@@ -5,6 +5,13 @@ types = {
 		subtype[edict_ambition] = {
 			is_ambition = yes
 		}
+
+		localisation = {
+			## required
+			Name = "edict_$"
+			## required
+			Description = "edict_$_desc"
+		}
 	}
 }
 

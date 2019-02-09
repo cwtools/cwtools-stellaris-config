@@ -2,6 +2,14 @@
 types = {
 	type[building] = {
 		path = "game/common/buildings"
+		localisation = {
+			## replace_scope = { root = army this = army }
+			## required
+			Name = "$"
+			## replace_scope = { root = army this = army }
+			## required
+			Description = "$_desc"
+		}
 	}
 }
 

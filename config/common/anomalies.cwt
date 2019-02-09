@@ -2,6 +2,10 @@
 types = {
 	type[anomaly_category] = {
 		path = "game/common/anomalies"
+		localisation = {
+			## required
+			Name = "$"
+		}
 	}
 }
 

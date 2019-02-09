@@ -1,12 +1,63 @@
 types = {
 	type[species_class] = {
 		path = "game/common/species_classes"
+		subtype[playable] = {
+			## cardinality = 0..1
+			playable = {
+				## cardinality = 0..1
+				always = yes
+			}
+		}
+		localisation = {
+			subtype[playable] = {
+				## required
+				Name = "$"
+				## required
+				Description = "$_desc"
+				## required
+				Plural = "$_plural"
+				## required
+				Insult = "$_insult_01"
+				## required
+				"Insult plural" = "$_insult_plural_01"
+				## required
+				Compliment = "$_compliment_01"
+				## required
+				"Compliment plural" = "$_compliment_plural_01"
+				## required
+				Spawn = "$_spawn"
+				## required
+				"Spawn plural" = "$_spawn_plural"
+				## required
+				"Sound 01" = "$_sound_01"
+				## required
+				"Sound 02" = "$_sound_02"
+				## required
+				"Sound 03" = "$_sound_03"
+				## required
+				"Sound 04" = "$_sound_04"
+				## required
+				"Sound 05" = "$_sound_05"
+				## required
+				Organ = "$_organ"
+				## required
+				Mouth = "$_mouth"
+			}
+		}
 	}
 	type[species_archetype] = {
 		path = "game/common/species_archetypes"
 	}
 	type[species_rights] = {
 		path = "game/common/species_rights"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Tooltip = "$_tooltip"
+			## required
+			"Delayed tooltip" = "$_tooltip_delayed"
+		}
 	}
 }
 

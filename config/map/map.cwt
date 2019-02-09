@@ -72,7 +72,7 @@ alias[galaxy_shape:arms] = {
 }
 
 map_setup_scenerio = {
-	name = scalar
+	name = localisation
 	### priority decides in which order the scenarios are listed
 	priority = int
 	num_stars = int

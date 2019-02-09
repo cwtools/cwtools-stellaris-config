@@ -2,6 +2,14 @@
 types = {
 	type[army] = {
 		path = "game/common/armies"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Plural = "$_plural"
+			## required
+			Desc = "$_desc"
+		}
 	}
 }
 

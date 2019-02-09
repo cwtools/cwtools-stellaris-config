@@ -1,6 +1,12 @@
 types = {
 	type[pop_faction] = {
 		path = "game/common/pop_faction_types"
+		localisation = {
+			## required
+			Name = "pft_$"
+			## required
+			Description = "pft_$_desc"
+		}
 	}
 }
 

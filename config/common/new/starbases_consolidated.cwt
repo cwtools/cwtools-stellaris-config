@@ -1,15 +1,31 @@
 types = {
 	type[starbase_building] = {
 		path = "game/common/starbase_buildings"
+		localisation = {
+			## required
+			Name = "sm_$"
+			## required
+			Description = "sm_$_desc"
+		}
 	}
 	type[starbase_level] = {
 		path = "game/common/starbase_levels"
 	}
 	type[starbase_module] = {
 		path = "game/common/starbase_modules"
+		localisation = {
+			## required
+			Name = "sm_$"
+			## required
+			Description = "sm_$_desc"
+		}
 	}
 	type[starbase_type] = {
 		path = "game/common/starbase_types"
+		localisation = {
+			## required
+			Name = "$"
+		}
 	}
 }
 

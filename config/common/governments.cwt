@@ -5,9 +5,22 @@ types = {
 	type[government] = {
 		path = "game/common/governments"
 		path_strict = yes
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Description = "$_desc"
+		}
 	}
 	type[civic] = {
 		path = "game/common/governments/civics"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Description = "$_desc"
+		}
+
 	}
 }
 

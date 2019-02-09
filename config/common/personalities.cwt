@@ -1,6 +1,12 @@
 types = {
 	type[ai_personality] = {
 		path = "game/common/personalities"
+		localisation = {
+			## required
+			Name = "personality_$"
+			## required
+			Description = "personality_$_desc"
+		}
 	}
 }
 

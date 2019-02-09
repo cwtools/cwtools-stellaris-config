@@ -9,6 +9,13 @@ types = {
 		subtype[max] = {
 			max = int
 		}
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Description = "$_desc"
+		}
+
 	}
 }
 
@@ -46,7 +53,7 @@ resource = {
 		#TBC
 #		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
-	
+
 	## cardinality = 0..1
 	tooltip_decimals = int
 
@@ -54,7 +61,7 @@ resource = {
 	ai_wants = {
 		base = int
 	}
-	
+
 	subtype[max] = {
 		## cardinality = 0..1
 		fixed_max_amount = yes

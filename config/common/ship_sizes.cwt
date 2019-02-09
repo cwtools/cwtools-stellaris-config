@@ -11,6 +11,12 @@ types = {
 		subtype[starbase] = {
 			class = shipclass_starbase
 		}
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Plural = "$_plural"
+		}
 	}
 }
 

@@ -7,6 +7,12 @@ types = {
 		subtype[policy_option] = {
 
 		}
+		localisation = {
+			## required
+			Name = "policy_$"
+			## required
+			Description = "policy_$_desc"
+		}
 	}
 }
 

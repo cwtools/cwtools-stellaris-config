@@ -27,7 +27,7 @@ types = {
 diplo_phrase = {
 	subtype[greetings] = {
 		## cardinality = 0..inf
-		scalar = {
+		localisation = {
 			## replace_scope = { root = country this = country from = country }
 			trigger = { alias_name[trigger] = alias_match_left[trigger] }
 			## cardinality = 0..1
@@ -42,7 +42,7 @@ diplo_phrase = {
 		## cardinality = 0..inf
 		select = {
 			## cardinality = 0..inf
-			scalar = {
+			localisation = {
 				## replace_scope = { root = country this = country from = country }
 				trigger = { alias_name[trigger] = alias_match_left[trigger] }
 				## cardinality = 0..1
@@ -55,7 +55,7 @@ diplo_phrase = {
 		## cardinality = 0..inf
 		consider = {
 			## cardinality = 0..inf
-			scalar = {
+			localisation = {
 				## replace_scope = { root = country this = country from = country }
 				trigger = { alias_name[trigger] = alias_match_left[trigger] }
 				## cardinality = 0..1
@@ -68,7 +68,7 @@ diplo_phrase = {
 		## cardinality = 0..inf
 		propose = {
 			## cardinality = 0..inf
-			scalar = {
+			localisation = {
 				## replace_scope = { root = country this = country from = country }
 				trigger = { alias_name[trigger] = alias_match_left[trigger] }
 				## cardinality = 0..1
@@ -81,7 +81,7 @@ diplo_phrase = {
 		## cardinality = 0..inf
 		accept = {
 			## cardinality = 0..inf
-			scalar = {
+			localisation = {
 				## replace_scope = { root = country this = country from = country }
 				trigger = { alias_name[trigger] = alias_match_left[trigger] }
 				## cardinality = 0..1
@@ -94,7 +94,7 @@ diplo_phrase = {
 		## cardinality = 0..inf
 		refuse = {
 			## cardinality = 0..inf
-			scalar = {
+			localisation = {
 				## replace_scope = { root = country this = country from = country }
 				trigger = { alias_name[trigger] = alias_match_left[trigger] }
 				## cardinality = 0..1
@@ -107,7 +107,7 @@ diplo_phrase = {
 		## cardinality = 0..inf
 		propose_vote = {
 			## cardinality = 0..inf
-			scalar = {
+			localisation = {
 				## replace_scope = { root = country this = country from = country }
 				trigger = { alias_name[trigger] = alias_match_left[trigger] }
 				## cardinality = 0..1
@@ -123,7 +123,7 @@ diplo_phrase = {
 		## cardinality = 0..inf
 		propose = {
 			## cardinality = 0..inf
-			scalar = {
+			localisation = {
 				## replace_scope = { root = country this = country from = country }
 				trigger = { alias_name[trigger] = alias_match_left[trigger] }
 				## cardinality = 0..1
@@ -140,7 +140,7 @@ diplo_phrase = {
 		## cardinality = 0..inf
 		accept = {
 			## cardinality = 0..inf
-			scalar = {
+			localisation = {
 				## replace_scope = { root = country this = country from = country }
 				trigger = { alias_name[trigger] = alias_match_left[trigger] }
 				## cardinality = 0..1
@@ -159,7 +159,7 @@ diplo_phrase = {
 	subtype[declare_war] = {
 		opinion = {
 			## cardinality = 0..inf
-			scalar = {
+			localisation = {
 				## replace_scope = { root = country this = country from = country }
 				trigger = { alias_name[trigger] = alias_match_left[trigger] }
 				## cardinality = 0..1

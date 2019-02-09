@@ -13,6 +13,25 @@ types = {
 			## cardinality = 0..1
 			colonizable = yes
 		}
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Description = "$_desc"
+			subtype[habitable_planet] = {
+				## required
+				Tile = "$_tile"
+				## required
+				"Tile description" = "$_tile_desc"
+				## required
+				Habitibility = "$_habitability"
+				## required
+				"Preference trait" = "trait_$_preference"
+				## required
+				"Preference trait descrption" = "trait_$_preference_desc"
+			}
+		}
+
 	}
 	## type_key_filter = random_list
 	type[planet_class_random_list] = {

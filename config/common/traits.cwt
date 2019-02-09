@@ -18,6 +18,13 @@ types = {
 			## cardinality = 0..1
 			leader_trait = no
 		}
+
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Description = "$_desc"
+		}
 	}
 }
 

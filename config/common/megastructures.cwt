@@ -1,6 +1,16 @@
 types = {
 	type[megastructure] = {
 		path = "game/common/megastructures"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Description = "$_DESC"
+			## required
+			Details = "$_MEGASTRUCTURE_DETAILS"
+			## required
+			"Delayed info" = "$_CONSTRUCTION_INFO_DELAYED"
+		}
 	}
 }
 

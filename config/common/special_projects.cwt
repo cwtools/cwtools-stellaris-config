@@ -6,6 +6,12 @@ types = {
 		subtype[cost] = {
 			cost = int[1..9999999]
 		}
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Description = "$_DESC"
+		}
 	}
 }
 

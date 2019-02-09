@@ -8,6 +8,9 @@ types = {
 		subtype[show_name] = {
 			show_name = yes
 		}
+		subtype[selectable] = {
+			selectable = yes
+		}
 	}
 	type[country_color] = {
 		path = "game/common/colors"
@@ -64,10 +67,10 @@ ambient_object = {
 	subtype[!show_name] = {
 		name = scalar
 	}
-	## cardinality = 0..1
-	description = localisation
-	## cardinality = 0..1
-	tooltip = localisation
+	subtype[selectable] = {
+		description = localisation
+		tooltip = localisation
+	}
 	entity = <model_entity>
 	selectable = bool
 	show_name = bool

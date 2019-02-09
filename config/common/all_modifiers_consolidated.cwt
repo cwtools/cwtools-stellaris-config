@@ -8,10 +8,19 @@ types = {
 		subtype[block_triggered] = {
 			block_triggered = yes
 		}
-		
+		localisation = {
+			## required
+			Name = "$"
+		}
+
 	}
 	type[static_modifier] = {
 		path = "game/common/static_modifiers"
+		localisation = {
+			## required
+			Name = "$"
+			Description = "$_desc"
+		}
 	}
 	type[planet_modifier] = {
 		path = "game/common/planet_modifiers"
@@ -87,7 +96,7 @@ opinion_modifier = {
 		##cardinality = 0..1
 		months = int
 	}
-	
+
 	subtype[block_triggered] = {
 		### stops modifier from automatically triggering when trigger evaluates to true
 		block_triggered = yes
@@ -98,7 +107,7 @@ opinion_modifier = {
 		###For use with accumulative if the base is positive
 		max = int[1...999]
 	}
-	
+
 
 	subtype[triggered_opinion_modifier] = {
 		###root = country with the opinion, from = country it has the opinion of

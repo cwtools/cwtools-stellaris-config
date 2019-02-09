@@ -5,6 +5,12 @@ types = {
 	}
 	type[war_goal] = {
 		path = "game/common/war_goals"
+		localisation = {
+			## required
+			Name = "war_goal_$"
+			## required
+			Desc = "war_goal_$_desc"
+		}
 	}
 }
 
