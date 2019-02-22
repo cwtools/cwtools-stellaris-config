@@ -24,7 +24,7 @@ types = {
 				## required
 				"Tile description" = "$_tile_desc"
 				## required
-				Habitibility = "$_habitability"
+				Habitibility = "mod_$_habitability"
 				## required
 				"Preference trait" = "trait_$_preference"
 				## required
