@@ -20,10 +20,6 @@ types = {
 			Description = "$_desc"
 			subtype[habitable_planet] = {
 				## required
-				Tile = "$_tile"
-				## required
-				"Tile description" = "$_tile_desc"
-				## required
 				Habitibility = "mod_$_habitability"
 				## required
 				"Preference trait" = "trait_$_preference"
