@@ -24,6 +24,11 @@ types = {
 		subtype[null] = {
 			is_null = yes
 		}
+		subtype[not_dropped] = {
+			potential = {
+				always = no
+			}
+		}
 		localisation = {
 			## required
 			Name = "$"
@@ -108,12 +113,14 @@ deposit = {
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-
-	drop_weight = {
-		weight = float
-		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	
+	subtype[!not_dropped] = {
+		drop_weight = {
+			weight = float
+			alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		}
 	}
-
+	
 	subtype[orbital] = {
 		station = shipclass_mining_station
 		station = shipclass_research_station
