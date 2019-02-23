@@ -22,6 +22,8 @@ decision = {
 	sound = <sound>
 	## cardinality = 0..1
 	icon = icon[gfx/interface/icons/decisions]
+	## cardinality = 0..1
+	icon = <decision>
     #icon = <sprite>
 
 	## cardinality = 0..1
