@@ -42,7 +42,7 @@ technology = {
 		is_rare = bool
 		## cardinality = 0..1
 		is_dangerous = bool
-		weight = int
+		weight = float
 		#usually in ""
 
 		## cardinality = 0..1
