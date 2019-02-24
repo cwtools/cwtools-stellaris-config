@@ -110,8 +110,6 @@ alias[trigger:has_megastructure_flag] = value[megastructure_flag]
 alias[trigger:has_relation_flag] = {
 	who = scope[country]
 	flag = value[relation_flag]
-	## cardinality = 0..1
-	is_reverse = bool
 }
 
 alias[trigger:reverse_has_relation_flag] = {
