@@ -75,7 +75,8 @@ job = {
 	}
 
 	## replace_scope = { this = planet root = planet }
-	## cardinality = 0..1
+	## cardinality = 1..1
+	### Multiple planet_modifiers blocks result in only the last one applying
 	planet_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
