@@ -1777,7 +1777,7 @@ alias[trigger:num_districts] = {
 ###Only works for uncapped districts as of 2.2.4
 alias[trigger:num_free_districts] = {
 	type = any
-	type = <district.uncapped>
+	type = <district>
 	value = int
 }
 
