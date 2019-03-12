@@ -190,6 +190,7 @@ starbase_module = {
 
 	alias_name[triggered_system_modifier_starbase] = alias_match_left[triggered_system_modifier_starbase]
 	alias_name[triggered_country_modifier_starbase] = alias_match_left[triggered_country_modifier_starbase]
+	alias_name[triggered_station_modifier_starbase] = alias_match_left[triggered_station_modifier_starbase]
 
 	## cardinality = 0..1
 	ai_weight = {
