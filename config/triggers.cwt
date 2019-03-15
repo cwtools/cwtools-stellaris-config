@@ -1744,13 +1744,13 @@ alias[trigger:perc_communications_with_playable] = int
 ###Compares the crime present on the planet with the given value
 alias[trigger:planet_crime] = int[0..100]
 
-###Checks if the pop has a specific job, or any job if set to "yes", or none if set to "unemployed"
+###Checks if the pop has a specific job, or any job if set to "yes/no", or none if set to "unemployed"
 alias[trigger:has_job] = <job>
 
-###Checks if the pop has a specific job, or any job if set to "yes", or none if set to "unemployed"
-alias[trigger:has_job] = yes
+###Checks if the pop has a specific job, or any job if set to "yes/no", or none if set to "unemployed"
+alias[trigger:has_job] = bool
 
-###Checks if the pop has a specific job, or any job if set to "yes", or none if set to "unemployed"
+###Checks if the pop has a specific job, or any job if set to "yes/no", or none if set to "unemployed"
 alias[trigger:has_job] = unemployed
 
 ###Checks if deposit is specified type
