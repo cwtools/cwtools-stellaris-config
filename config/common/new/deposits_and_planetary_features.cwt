@@ -16,7 +16,8 @@ types = {
 			is_for_colonizeable = yes
 		}
 		subtype[orbital] = {
-			station = scalar
+			station = shipclass_research_station
+			station = shipclass_mining_station
 		}
 		subtype[blocker] = {
 			category = <deposit_category.blocker>
