@@ -2,13 +2,21 @@
 types = {
 	type[army] = {
 		path = "game/common/armies"
+		subtype[buildable] = {
+			potential = {
+				## cardinality = 0..0
+				always = no
+			}
+		}
 		localisation = {
 			## required
 			Name = "$"
 			## required
-			Plural = "$_plural"
-			## required
 			Desc = "$_desc"
+			subtype[buildable] = {
+				## required
+				Plural = "$_plural"
+			}
 		}
 	}
 }
