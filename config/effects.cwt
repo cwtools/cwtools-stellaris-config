@@ -1458,6 +1458,7 @@ alias[effect:add_notification_modifier] = <notification_modifier>
 alias[effect:add_random_research_option] = {
 	## cardinality = 0..1
 	category = <technology_category>
+	## cardinality = 0..1
 	area = enum[technology_areas]
 	## cardinality = 0..1
 	tier = <technology_tier>
