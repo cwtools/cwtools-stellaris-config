@@ -542,7 +542,8 @@ civic = {
 	## cardinality = 0..1
 	###default: yes, set to no to prevent adding or removing this after creation of the empire
 	modification = bool
-
+	## cardinality = 0..1
+	preferred_planet_class_neighbor = no
 	## cardinality = 0..1
 	## replace_scope = { root = country this = country }
 	### scriptable weight for randomizing a civic; required, else the civic will not get assigned randomly
