@@ -17,7 +17,8 @@ economic_category = {
 	## cardinality = 0..1
 	use_for_ai_budget = yes
 	subtype[!hidden] = {
-		icon = "dummy"
+		# TODO: icons
+		icon = scalar
 	}
 	subtype[hidden] = {
 		hidden = yes
