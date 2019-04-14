@@ -588,7 +588,11 @@ civic = {
 	}
 
 	## cardinality = 0..1
-	homeworld = <planet_class>
+	starting_colony = <planet_class>
+	## cardinality = 0..1
+	habitability_preference = <planet_class>
+	## cardinality = 0..1
+	preferred_planet_class_neighbor = bool
 }
 
 #aliases - used in species_classes and perhaps other places.
