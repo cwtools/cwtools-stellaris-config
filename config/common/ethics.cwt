@@ -28,7 +28,7 @@ ethos = {
 
 	#theoretically this should link to the ethic categories, not sure how to do that though (or whether it is worth it)
 	category = scalar
-	category_value = int[0..4]
+	category_value = int[0..20]
 
 	## cardinality = 0..1
 	###Yes by default

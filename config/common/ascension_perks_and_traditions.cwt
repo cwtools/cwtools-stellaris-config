@@ -50,8 +50,9 @@ ascension_perk = {
 		description = localisation
 		## cardinality = 0..1
 		description_parameters = {
-			COST_MULT = float
-			POINTS = float
+			## cardinality = 0..inf
+			### Any value can go here to be used in localisation
+			scalar = float
 		}
 
 		alias_name[modifier] = alias_match_left[modifier]
