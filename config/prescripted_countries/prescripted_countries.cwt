@@ -118,7 +118,7 @@ prescripted_country = {
 		ruler_title_female = localisation_synced
 		## cardinality = 0..1
 		heir_title = localisation_synced
-		## cardinality = 0.1
+		## cardinality = 0..1
 		heir_title_female = localisation_synced
 	}
 
