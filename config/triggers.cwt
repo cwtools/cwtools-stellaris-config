@@ -796,7 +796,10 @@ alias[trigger:has_casus_belli] = {
 }
 
 ### Checks if the pop is prevented from migrating
-alias[trigger:has_colonization_control] = bool
+alias[trigger:has_colonization_control] = {
+	value = bool
+	country = scope[country]
+}
 
 ### Checks the planet's progress towards completing colonization
 alias[trigger:has_colony_progress] = int
