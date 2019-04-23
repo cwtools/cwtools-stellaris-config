@@ -203,6 +203,9 @@ species_rights = {
 	new_pop_weight = float
 
 	## cardinality = 0..1
+	pop_escape_chance = float
+
+	## cardinality = 0..1
 	## replace_scope = { this = army root = army }
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]

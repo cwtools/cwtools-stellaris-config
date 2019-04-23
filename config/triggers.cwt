@@ -260,6 +260,7 @@ alias[trigger:is_war_leader] = bool
 alias[trigger:is_occupied_flag] = bool
 
 alias[trigger:is_planet_class] = <planet_class>
+alias[trigger:is_planet_class] = scope[planet]
 alias[trigger:is_star_class] = <star_class>
 alias[trigger:is_ringworld] = bool
 alias[trigger:is_homeworld] = bool
