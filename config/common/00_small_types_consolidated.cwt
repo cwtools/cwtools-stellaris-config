@@ -300,6 +300,7 @@ ai_budget = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
+	## cardinality = 0..1
 	fraction = {
 		weight = float
 	}
