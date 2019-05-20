@@ -1449,7 +1449,7 @@ alias[effect:add_hyperlane] = {
 }
 
 ### Adds or subtracts progress to/from the scoped observation post's current mission
-alias[effect:add_mission_progress] = float
+alias[effect:add_mission_progress] = float[0.0..1.0]
 
 ### Add a notification modifier to the country
 alias[effect:add_notification_modifier] = <notification_modifier>
