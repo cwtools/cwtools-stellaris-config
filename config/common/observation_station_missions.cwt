@@ -25,7 +25,7 @@ observation_station_mission = {
 
 	#if you have monthly_progress you need completion_event and vice versa.
 	## cardinality = 0..1
-	monthly_progress = float
+	monthly_progress = float[0.0..1.0]
 	## cardinality = 0..1
 	completion_event = <event.country>
 
