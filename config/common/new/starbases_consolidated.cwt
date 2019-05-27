@@ -61,7 +61,7 @@ starbase_building = {
 
 
 	resources = {
-		category = starbase_buildings
+		category = <economic_category>
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}
 
