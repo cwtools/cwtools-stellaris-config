@@ -18,4 +18,8 @@ enums = {
 		months
 		years
 	}
+	enum[weight_or_base] = {
+		weight
+		base
+	}
 }

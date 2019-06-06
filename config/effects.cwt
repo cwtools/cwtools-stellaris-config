@@ -2809,3 +2809,42 @@ alias[effect:change_species_portrait] = <portrait_group>
 alias[effect:change_species_portrait] = random
 
 alias[effect:reroll_deposits] = yes
+
+
+
+#2.3
+
+###Creates a archaeological site associated with the scope object
+alias[effect:create_archaeological_site] = <archaeological_site_type>
+
+###Destroys a archaeological site in right hand site event target
+alias[effect:destroy_archaeological_site] = scope[planet]
+
+###Adds clues to the current stage of a archaeological site
+alias[effect:add_stage_clues] = int
+
+alias[effect:add_expedition_log_entry] = who_knows_tell_us_please
+
+###Resets the current stage
+alias[effect:reset_current_stage] = yes
+
+###Finish the current stage
+alias[effect:finish_current_stage] = yes
+
+###Finish the current stage. yes = trigger stage completed for each stage and current excavator. no = do not trigger any stage completed. country = use this country instead of excavator, no stage complete will be triggered.
+alias[effect:finish_site] = bool
+
+###Finish the current stage. yes = trigger stage completed for each stage and current excavator. no = do not trigger any stage completed. country = use this country instead of excavator, no stage complete will be triggered.
+alias[effect:finish_site] = country
+
+###Locks or unlocks the progress of a site
+alias[effect:set_site_progress_locked] = bool
+
+###Displays a specific localization string with parameters in tooltip
+alias[effect:custom_tooltip_with_params] = {
+	description = localisation
+	description_parameters = {
+		## cardinality = 1..inf
+		enum = enum
+	}
+}

@@ -1859,3 +1859,55 @@ alias[trigger:has_active_event] = {
 alias[trigger:free_building_slots] = int
 
 alias[trigger:is_archetype] = <species_archetype>
+
+
+
+#2.3
+
+###Checks if the country has any potential claims they can make.
+alias[trigger:has_potential_claims] = bool
+
+###Checks if the scoped country has the specified relic
+alias[trigger:has_relic] = <relic>
+
+###Checks if the scoped country's last activated relic is the specified relic
+alias[trigger:last_activated_relic] = <relic>
+
+###Checks if the scoped country's last activated relic is the specified relic
+alias[trigger:last_activated_relic] = <relic>
+
+###Compares the last dice roll.
+alias[trigger:is_site_last_die_result] = int
+
+###Compares the current stage difficulty.
+alias[trigger:is_current_stage_difficulty] = int
+
+###Compares the current stage index.
+alias[trigger:is_site_at_stage] = int
+
+###Compares the current stage clues.
+alias[trigger:is_current_stage_clues] = int
+
+###Compares days to next die roll.
+alias[trigger:is_site_days_to_next_die_roll] = int
+
+###Checks last excavating country.
+alias[trigger:is_site_last_excavator] = scope[country]
+
+###Checks the type of the site.
+alias[trigger:is_site_type] = <archaeological_site_type>
+
+###Checks if all stages has ben completed.
+alias[trigger:is_site_completed] = bool
+
+###Checks if the site is currently being excavated.
+alias[trigger:is_site_under_excavation] = bool
+
+###Compares the current stage discovery score.
+alias[trigger:is_site_current_stage_score] = int
+
+###Compares the current stage discovery score excluding the current die roll.
+alias[trigger:is_site_current_stage_score_no_die] = int
+
+###Checks current excavator fleet.
+alias[trigger:is_site_last_excavator] = scope[fleet]

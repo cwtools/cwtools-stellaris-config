@@ -18,7 +18,10 @@ bombardment_stance = {
 	abduct_pops = bool
 	planet_damage = float
 	army_damage = float
-	kill_pop_chance = float
+	kill_pop_chance = {
+		base = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
 	min_pops_to_kill_pop = int
 #	add_blocker_chance = float
 #	max_blockers = int

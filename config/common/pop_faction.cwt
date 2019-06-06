@@ -52,7 +52,7 @@ pop_faction = {
 	election_header =  <sprite>
 
 	## cardinality = 0..1
-	### This = Country. Existance requirements for this faction
+	### This = Country. Existence requirements for this faction
 	is_potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
@@ -72,7 +72,7 @@ pop_faction = {
 	}
 
 	## cardinality = 0..1
-	### This = Pop faction. Existance requirements for defined parameter
+	### This = Pop faction. Existence requirements for defined parameter
 	valid = {
 		## cardinality = 0..1
 		alias_name[trigger] = alias_match_left[trigger]
@@ -85,7 +85,12 @@ pop_faction = {
 		}
 	}
 
-	### This = Pop. Determines, which pops are able to join this faction
+	### This = Pop. Determines which pops are able to join this faction. Only uses certain simple triggers.
+	can_join_pre_triggers = {
+		alias_name[pop_pre_trigger] = alias_match_left[pop_pre_trigger]
+	}
+
+	### This = Pop. Determines which pops are able to join this faction
 	can_join_faction = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}

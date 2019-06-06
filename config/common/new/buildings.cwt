@@ -133,7 +133,7 @@ building = {
 	## cardinality = 0..1
 	ai_weight = {
 		enum[factor_weight] = float
-		alias_name[modifier_rule_factor] = alias_match_left[modifier_rule_factor]
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 
 	## cardinality = 0..1

@@ -7,6 +7,20 @@ types = {
 			Name = "$"
 		}
 	}
+	type[archaeological_site_type] = {
+		path = "game/common/archaeological_site_types"
+		localisation = {
+			## required
+			Name = "$"
+		}
+	}
+	type[relic] = {
+		path = "game/common/relics"
+		localisation = {
+			## required
+			Name = "$"
+		}
+	}
 }
 
 
@@ -82,3 +96,9 @@ anomaly_category = {
 		}
 	}
 }
+
+
+
+
+
+#will do archaeological_site_type and relic later

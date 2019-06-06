@@ -302,7 +302,7 @@ ai_budget = {
 
 	## cardinality = 0..1
 	fraction = {
-		weight = float
+		enum[weight_or_base] = float
 	}
 
 	## cardinality = 0..1
