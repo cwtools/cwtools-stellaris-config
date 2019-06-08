@@ -103,7 +103,7 @@ anomaly_category = {
 relic = {
 	activation_duration = int[0..inf]
 	portrait = <sprite>
-	sound = <sound>
+	sound = <sound_effect>
 
 	resources = {
 		category = relics
@@ -117,17 +117,108 @@ relic = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 
-	alias_name[triggered_country_modifier_pop] = alias_match_left[triggered_country_modifier_pop]
+	alias_name[triggered_country_modifier_country] = alias_match_left[triggered_country_modifier_country]
 
 	score = int[0..inf]
 
+	## replace_scope = { root = country this = country }
 	active_effect = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 
 	### Possible check for activation
+	## replace_scope = { root = country this = country }
 	possible = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 }
+
+## push_scope = archaeological_site
+archaeological_site_type = {
+	## cardinality = 0..1
+	picture = <sprite>
+	desc = localisation
+	desc = {
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		text = localisation
+	}
+	## cardinality = 0..1
+	max_instances = int[1..inf]
+	## cardinality = 0..1
+	## replace_scope = { root = planet this = planet }
+	weight = {
+		base = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	## cardinality = 0..1
+	weight = int
+	stages = int[1..inf]
+
+	## cardinality = 0..1
+	## replace_scope = { root = fleet this = fleet from = archaeological_site }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## replace_scope = { root = fleet this = fleet from = archaeological_site }
+	allow = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## replace_scope = { root = country this = country from = archaeological_site }
+	visible = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## cardinality = 0..inf
+	stage = {
+		difficulty = int[0..inf]
+		difficulty = {
+			min = int[0..inf]
+			max = int[0..inf]
+		}
+		icon = <sprite>
+		event = <event>
+	}
+
+	## replace_scope = { root = fleet this = fleet from = archaeological_site }
+	on_roll_failed = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { root = archaeological_site this = archaeological_site }
+	on_create = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { root = country this = country from = archaeological_site }
+	on_visible = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+}
+# site_type_name = {				# Key of the site, used for name lookup etc.
+#	picture = <sprite key>		# GFX_* sprite key for the sites image
+#	desc = <triggered event desc>	# Description generator for the site, with scope this=archaeological site.
+#	max_instances = <int>			# Max instances of this type a galaxy can have, only checked when using 'create_archaeological_site = random'
+#	weight = <scriptable value>		# Weight used for random weight, only used when using 'create_archaeological_site = random'. scriptable value type is defined either by '<int>' or '<mean time to happen>'.
+#	stages = <int>					# Should match number of defined stages below.
+#	potential = <trigger>			# Trigger checking if a scope with this=fleet ,from=archaeological site is potential to excavate (this will add/remove this option without giving the player a reason).
+#	allow = <trigger>				# Trigger checking if a scope with this=fleet ,from=archaeological site is allowed to excavate (this will toggle enable/disabled mode on buttons etc).
+#	visible = <trigger>				# Trigger that checks if a scope with this=country can see the from=archaeological site
+#	stage = {						# Stage definition, order dependent.
+#		difficulty = <intervall int> 	# min max intervall type. intervall is defined either by '<int>' or '{ min = <int> max=<int> }' where the later will randomize a value between min and max.
+#		icon = <string>				# rune icon gfx type.
+#		event = <string>			# event to fire when finished the state.
+#	}
+#	stage = {...}					# Second stage, the total number of 'stage' entries should match value of 'stages'
+#	on_roll_failed = <effect>			# Effect to fire when a roll fails, with scope this=fleet ,from=archaeological site.
+#	on_create = <effect>			# Effect to fire upon site creation, with scope this=archaeological site.
+#	on_visible = <effect>			# Effect to fire upon site visible, with scope this=country, from=archaeological site.
+#}
+
+
 #will do archaeological_site_type and relic later
