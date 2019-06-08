@@ -100,5 +100,34 @@ anomaly_category = {
 
 
 
+relic = {
+	activation_duration = int[0..inf]
+	portrait = <sprite>
+	sound = <sound>
 
+	resources = {
+		category = relics
+		alias_name[economic_template] = alias_match_left[economic_template]
+	}
+
+
+	## cardinality = 0..1
+	ai_weight = {
+		enum[factor_weight] = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	alias_name[triggered_country_modifier_pop] = alias_match_left[triggered_country_modifier_pop]
+
+	score = int[0..inf]
+
+	active_effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+
+	### Possible check for activation
+	possible = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
 #will do archaeological_site_type and relic later

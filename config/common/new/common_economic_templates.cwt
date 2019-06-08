@@ -225,6 +225,18 @@ alias[triggered_country_modifier_pop:triggered_country_modifier] = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 }
+## replace_scope = { this = country root = country }
+alias[triggered_country_modifier_country:triggered_country_modifier] = {
+	## replace_scope = { this = country root = country }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	alias_name[modifier] = alias_match_left[modifier]
+	## cardinality = 0..1
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+}
 
 ## replace_scope = { this = pop root = pop }
 alias[triggered_pop_modifier:triggered_pop_modifier] = {
