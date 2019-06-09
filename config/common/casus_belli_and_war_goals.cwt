@@ -5,6 +5,8 @@ types = {
 		localisation = {
 			## required
 			Name = "casus_belli_$"
+			## optional
+			Hint = "casus_belli_$__acquire_hint"
 		}
 	}
 	type[war_goal] = {
