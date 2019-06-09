@@ -805,6 +805,8 @@ alias[trigger:has_colonization_control] = {
 ### Checks the planet's progress towards completing colonization
 alias[trigger:has_colony_progress] = int
 
+alias[trigger:has_designation] = <colony_type>
+
 ### Checks if a ship has a certain component
 alias[trigger:has_component] = <component_template>
 
