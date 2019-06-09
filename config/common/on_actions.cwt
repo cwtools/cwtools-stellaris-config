@@ -1,7 +1,6 @@
 types = {
     type[on_action] = {
         path = "game/common/on_actions"
-        start_from_root = yes
         ## type_key_filter = on_game_start
         subtype[on_game_start] = { }
         ## type_key_filter = on_monthly_pulse
