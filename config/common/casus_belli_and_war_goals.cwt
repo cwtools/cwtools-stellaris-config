@@ -2,6 +2,10 @@
 types = {
 	type[casus_belli] = {
 		path = "game/common/casus_belli"
+		localisation = {
+			## required
+			Name = "casus_belli_$"
+		}
 	}
 	type[war_goal] = {
 		path = "game/common/war_goals"
