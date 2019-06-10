@@ -45,7 +45,6 @@ types = {
 		path = "game/common/start_screen_messages"
 	}
 	type[precursors] = {
-		name = key
 		path = "common/precursor_civilizations"
 	}
 	type[sector_type] = {
@@ -310,7 +309,7 @@ ai_budget = {
 		base = int
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
-	
+
 	## cardinality = 0..1
 	static_min = {
 		base = int

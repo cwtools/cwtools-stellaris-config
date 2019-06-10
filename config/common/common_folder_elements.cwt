@@ -15,7 +15,7 @@ types = {
 	}
 	## type_key_filter = message_type
 	type[message_type] = {
-		key = name
+		name_field = name
 		path = "game/common"
 		path_file = "message_types.txt"
 	}
