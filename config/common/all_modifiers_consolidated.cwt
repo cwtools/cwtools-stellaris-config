@@ -43,7 +43,7 @@ types = {
 
 static_modifier = {
 	alias_name[modifier] = alias_match_left[modifier]
-	subtype[planet_modifier] = {
+	subtype[planet] = {
 		icon_frame = int[0..9]
 		icon = filepath
 	}
