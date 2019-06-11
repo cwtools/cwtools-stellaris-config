@@ -16,10 +16,18 @@ types = {
 	}
 	type[static_modifier] = {
 		path = "game/common/static_modifiers"
+		subtype[planet] = {
+			icon_frame = int
+		}
 		localisation = {
 			## required
 			Name = "$"
+			## optional
 			Description = "$_desc"
+			subtype[planet] = {
+				## required
+				Description = "$_desc"
+			}
 		}
 	}
 	type[planet_modifier] = {
@@ -37,10 +45,10 @@ types = {
 
 static_modifier = {
 	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	icon_frame = int[0..9]
-	## cardinality = 0..1
-	icon = filepath
+	subtype[planet_modifier] = {
+		icon_frame = int[0..9]
+		icon = filepath
+	}
 	## cardinality = 0..1
 	important = bool
 	## cardinality = 0..1
