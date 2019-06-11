@@ -22,8 +22,6 @@ types = {
 		localisation = {
 			## required
 			Name = "$"
-			## optional
-			Description = "$_desc"
 			subtype[planet] = {
 				## required
 				Description = "$_desc"
