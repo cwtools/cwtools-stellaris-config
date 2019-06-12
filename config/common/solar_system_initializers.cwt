@@ -96,8 +96,19 @@ solar_system_initializer = {
 		initializer = <solar_system_initializer>
 
 		#one of these varients is required
+		#TODO: exclusive or
+		## cardinality = 0..1
 		distance = int
+		## cardinality = 0..1
 		distance = { min = int max = int }
+		## cardinality = 0..1
+		hyperlane_distance = int
+		## cardinality = 0..1
+		hyperlane_distance = { min = int max = int }
+		## cardinality = 0..1
+		hyperlane_jumps = int
+		## cardinality = 0..1
+		hyperlane_jumps = { min = int max = int }
 		## cardinality = 0..1
 		spawn_chance = int
 		## cardinality = 0..1
