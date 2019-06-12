@@ -187,5 +187,8 @@ links = {
 		inputscopes = { Planet }
 		output_scope = Country
 	}
-
+	archaeological_site = {
+		inputscopes = { allScopes }
+		output_scope = archaeological_site
+	}
 }
