@@ -85,6 +85,7 @@ pop_faction = {
 		}
 	}
 
+	## cardinality = 0..1
 	### This = Pop. Determines which pops are able to join this faction. Only uses certain simple triggers.
 	can_join_pre_triggers = {
 		alias_name[pop_pre_trigger] = alias_match_left[pop_pre_trigger]
