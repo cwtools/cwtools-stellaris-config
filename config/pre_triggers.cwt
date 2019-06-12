@@ -41,3 +41,5 @@ alias[pop_pre_trigger:has_planet] = bool
 
 #### whether the pop is sapients
 alias[pop_pre_trigger:is_sapient] = bool
+
+alias[pop_pre_trigger:is_robot_pop] = bool
