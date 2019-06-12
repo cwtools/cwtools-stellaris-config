@@ -366,6 +366,11 @@ event = {
 			alias_name[pop_pre_trigger] = alias_match_left[pop_pre_trigger]
 		}
 	}
+	
+	subtype[fleet] = {
+		## cardinality = 0..1
+		archaeology = bool
+	}
 
 	## cardinality = 0..1
 	trigger = {
