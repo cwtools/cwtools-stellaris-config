@@ -54,11 +54,13 @@ job = {
 	## cardinality = 0..1
 	purge = enum[purge_types]
 
+	## cardinality = 0..1
 	### Only uses certain simple triggers.
 	possible_pre_triggers = {
 		alias_name[pop_pre_trigger] = alias_match_left[pop_pre_trigger]
 	}
 
+	## cardinality = 0..1
 	possible = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
