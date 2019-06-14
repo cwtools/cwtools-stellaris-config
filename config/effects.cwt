@@ -2857,3 +2857,9 @@ alias[effect:custom_tooltip_with_params] = {
 		enum = enum
 	}
 }
+
+###Adds the specified relic to the scoped country. add_relic = <relic_key>
+alias[effect:add_relic] = <relic>
+
+###Removes the specified relic from the scoped country. remove_relic = <relic_key>
+alias[effect:remove_relic] = <relic>
