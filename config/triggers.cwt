@@ -35,6 +35,7 @@ enums = {
 		fleet
 		naval_capacity
 		technology
+		energy
 	}
 	enum[relative_power_values] = {
 		pathetic
