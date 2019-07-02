@@ -8,6 +8,8 @@ types = {
 			subtype[colonisable] = {
 				## required
 				Name = "$"
+				## required
+				Description = "$_desc"
 			}
 		}
 
@@ -29,12 +31,6 @@ types = {
 			potential = {
 				always = no
 			}
-		}
-		localisation = {
-			## required
-			Name = "$"
-			## required
-			Description = "$_desc"
 		}
 	}
 	type[deposit_category] = {
