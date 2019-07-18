@@ -1437,7 +1437,11 @@ alias[effect:activate_saved_leader] = {
 }
 
 ### Adds a specific anomaly category to the scoped planet
-alias[effect:add_anomaly] = <anomaly_category>
+alias[effect:add_anomaly] = {
+	category = <anomaly_category>
+	## cardinality = 0..1
+	target = scope[country]
+}
 
 ### Adds an asteroid belt at the distance in the scope.
 alias[effect:add_asteroid_belt] = {
