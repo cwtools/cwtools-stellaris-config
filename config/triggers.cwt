@@ -1366,8 +1366,7 @@ alias[trigger:count_country] =  {
 ### Checks the number of deposits on the tile/planet that meet the specified criteria
 alias[trigger:count_deposits] =  {
 	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	type = <deposit>
 }
 
 ## replace_scope = { this = megastructure }
