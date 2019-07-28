@@ -163,6 +163,9 @@ planet_class = {
 
 	## cardinality = 0..1
 	fixed_city_level = int
+	
+	## cardinality = 0..1
+	is_artificial_planet = bool
 }
 
 planet_class_random_list = {
