@@ -171,6 +171,8 @@ social_strata = {
 	change_job_threshold = float
 	## cardinality = 0..1
 	display_category = <social_strata>
+	## cardinality = 0..1
+	display_unemployment = bool
 
 	## cardinality = 0..inf
 	alias_name[triggered_planet_modifier] = alias_match_left[triggered_planet_modifier]
