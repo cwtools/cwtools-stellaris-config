@@ -119,4 +119,6 @@ megastructure = {
 	sensor_range = int
 	## cardinality = 0..1
 	hyperlane_range = int
+	## cardinality = 0..1
+	construction_blocked_by_others = bool
 }
