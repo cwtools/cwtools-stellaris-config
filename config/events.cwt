@@ -358,14 +358,6 @@ event = {
 			alias_name[planet_pre_trigger] = alias_match_left[planet_pre_trigger]
 		}
 	}
-
-	subtype[pop] = {
-		## cardinality = 0..1
-		###Like trigger, but only uses certain simple triggers
-		pre_triggers = {
-			alias_name[pop_pre_trigger] = alias_match_left[pop_pre_trigger]
-		}
-	}
 	
 	subtype[fleet] = {
 		## cardinality = 0..1
