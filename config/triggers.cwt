@@ -1672,7 +1672,7 @@ alias[trigger:last_building_changed] = <building>
 alias[trigger:empire_size] = int
 
 ###Checks if the last district queued/unqueued/built/demolished/upgraded was the specified district
-alias[trigger:last_building_changed] = <district>
+alias[trigger:last_district_changed] = <district>
 
 ###Checks the planet's available housing
 alias[trigger:free_housing] = int
