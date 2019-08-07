@@ -6,6 +6,9 @@ types = {
 				alias_name[trigger] = alias_match_left[trigger]
 			}
 		}
+		subtype[has_prereqs] = {
+			prerequisites = { }
+		}
 #		subtype[not_buildable] = {
 #			potential = { always = no }
 #		}
@@ -17,8 +20,8 @@ types = {
 			Name = "$"
 			## required
 			Description = "$_DESC"
-			## required
 			subtype[base_level] = {
+				## required
 				Details = "$_MEGASTRUCTURE_DETAILS"
 				## optional
 				"Delayed info" = "$_CONSTRUCTION_INFO_DELAYED"
@@ -64,6 +67,12 @@ megastructure = {
   	## cardinality = 0..1
 	prerequisites = {
 		<technology>
+	}
+	subtype[has_prereqs] = {
+  		## cardinality = 0..1
+		show_prereqs = yes
+  		## cardinality = 0..1
+		prereq_name = localisation
 	}
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
