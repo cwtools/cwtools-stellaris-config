@@ -202,3 +202,6 @@ on_destroy_planet_with_PLANET_KILLER_NEUTRON,this = planet root = planet from = 
 on_destroy_planet_with_PLANET_KILLER_GODRAY,this = planet root = planet from = fleet,planet
 on_destroy_planet_with_PLANET_KILLER_NANOBOTS,this = planet root = planet from = fleet,planet
 on_destroy_planet_with_PLANET_DESTRUCTION_COMPONENT_PlaceholderForMore,this = planet root = planet from = fleet,planet
+on_relic_activated,this = country root = country,ship
+on_arch_stage_finished,this = fleet root = fleet from = archaeological_site,fleet
+on_arch_site_finished,this = fleet root = fleet from = archaeological_site,fleet

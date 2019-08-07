@@ -1,3 +1,5 @@
+#DO NOT RE-ENABLE THIS WITHOUT UPDATING THE CONTENT! IT IS USELESS AT THE MOMENT!
+
 types = {
  	## type_key_filter = NCamera
 	type[NCamera] = {

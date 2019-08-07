@@ -105,6 +105,10 @@ deposit = {
 
 		category = <deposit_category>
 	}
+	subtype[!colonisable] = {
+		## cardinality = 0..1
+		category = deposit_cat_rare
+	}
 
 	## cardinality = 0..1
 	potential = {
@@ -115,6 +119,12 @@ deposit = {
 		drop_weight = {
 			weight = float
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		}
+	}
+	subtype[not_dropped] = {
+	## cardinality = 0..1
+		drop_weight = {
+			weight = 0
 		}
 	}
 	

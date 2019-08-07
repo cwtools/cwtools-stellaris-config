@@ -48,6 +48,8 @@ static_modifier = {
 		icon = filepath
 	}
 	## cardinality = 0..1
+	icon = filepath
+	## cardinality = 0..1
 	important = bool
 	## cardinality = 0..1
 	custom_tooltip = localisation

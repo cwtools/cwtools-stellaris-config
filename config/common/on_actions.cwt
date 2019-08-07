@@ -323,6 +323,12 @@ types = {
         subtype[on_destroy_planet_with_PLANET_KILLER_NANOBOTS] = { }
         ## type_key_filter = on_destroy_planet_with_PLANET_DESTRUCTION_COMPONENT_PlaceholderForMore
         subtype[on_destroy_planet_with_PLANET_DESTRUCTION_COMPONENT_PlaceholderForMore] = { }
+        ## type_key_filter = on_relic_activated
+        subtype[on_relic_activated] = { }
+        ## type_key_filter = on_arch_stage_finished
+        subtype[on_arch_stage_finished] = { }
+        ## type_key_filter = on_arch_site_finished
+        subtype[on_arch_site_finished] = { }
     }
 }
 on_action = {
@@ -2740,6 +2746,51 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             int = <event.planet>
+        }
+    }
+    ## replace_scope = { this = country root = country }
+    subtype[on_relic_activated] = {
+        ## cardinality = 0..1
+        events = {
+            ## cardinality = 0..inf
+            <event.country>
+        }
+        ## cardinality = 0..1
+        random_events = {
+            ## cardinality = 0..inf
+            int = 0
+            ## cardinality = 0..inf
+            int = <event.country>
+        }
+    }
+    ## replace_scope = { this = fleet root = fleet from = archaeological_site }
+    subtype[on_arch_stage_finished] = {
+        ## cardinality = 0..1
+        events = {
+            ## cardinality = 0..inf
+            <event.fleet>
+        }
+        ## cardinality = 0..1
+        random_events = {
+            ## cardinality = 0..inf
+            int = 0
+            ## cardinality = 0..inf
+            int = <event.fleet>
+        }
+    }
+    ## replace_scope = { this = fleet root = fleet from = archaeological_site }
+    subtype[on_arch_site_finished] = {
+        ## cardinality = 0..1
+        events = {
+            ## cardinality = 0..inf
+            <event.fleet>
+        }
+        ## cardinality = 0..1
+        random_events = {
+            ## cardinality = 0..inf
+            int = 0
+            ## cardinality = 0..inf
+            int = <event.fleet>
         }
     }
 }

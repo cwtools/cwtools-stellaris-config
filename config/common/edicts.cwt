@@ -20,15 +20,14 @@ types = {
 edict = {
 	length = int
 
-	subtype[!edict_ambition] = {
-		resources = {
-			category = <economic_category>
-			alias_name[economic_template] = alias_match_left[economic_template]
-		}
-	}
-
 	subtype[edict_ambition] = {
 		is_ambition = yes
+	}
+
+	## cardinality = 0..1
+	resources = {
+		category = <economic_category>
+		alias_name[economic_template] = alias_match_left[economic_template]
 	}
 
 	## cardinality = 0..1
