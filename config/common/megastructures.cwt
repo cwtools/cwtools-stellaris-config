@@ -1,15 +1,28 @@
 types = {
 	type[megastructure] = {
 		path = "game/common/megastructures"
+		subtype[base_level] = {
+			possible = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+		}
+#		subtype[not_buildable] = {
+#			potential = { always = no }
+#		}
+#		subtype[upgrade] = {
+#			upgrade_from = { <megastructure> }
+#		}
 		localisation = {
 			## required
 			Name = "$"
 			## required
 			Description = "$_DESC"
 			## required
-			Details = "$_MEGASTRUCTURE_DETAILS"
-			## required
-			"Delayed info" = "$_CONSTRUCTION_INFO_DELAYED"
+			subtype[base_level] = {
+				Details = "$_MEGASTRUCTURE_DETAILS"
+				## optional
+				"Delayed info" = "$_CONSTRUCTION_INFO_DELAYED"
+			}
 		}
 	}
 }

@@ -153,6 +153,7 @@ alias[resources_template_optional:resources] = {
 
 ## replace_scope = { this = planet root = planet }
 alias[triggered_planet_modifier:triggered_planet_modifier] = {
+	## severity = warning
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
@@ -165,6 +166,7 @@ alias[triggered_planet_modifier:triggered_planet_modifier] = {
 
 ## replace_scope = { this = planet root = planet }
 alias[triggered_planet_modifier_pop:triggered_planet_modifier] = {
+	## severity = warning
 	## replace_scope = { this = pop root = pop }
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
@@ -177,6 +179,7 @@ alias[triggered_planet_modifier_pop:triggered_planet_modifier] = {
 }
 ## replace_scope = { this = planet root = planet }
 alias[triggered_planet_modifier_direct:triggered_planet_modifier] = {
+	## severity = warning
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
@@ -190,6 +193,7 @@ alias[triggered_planet_modifier_direct:triggered_planet_modifier] = {
 
 ## replace_scope = { this = system root = system }
 alias[triggered_system_modifier_starbase:triggered_system_modifier] = {
+	## severity = warning
 	## replace_scope = { this = starbase root = starbase }
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
@@ -203,6 +207,7 @@ alias[triggered_system_modifier_starbase:triggered_system_modifier] = {
 
 ## replace_scope = { this = country root = country }
 alias[triggered_country_modifier_starbase:triggered_country_modifier] = {
+	## severity = warning
 	## replace_scope = { this = starbase root = starbase }
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
@@ -215,6 +220,7 @@ alias[triggered_country_modifier_starbase:triggered_country_modifier] = {
 }
 ## replace_scope = { this = country root = country }
 alias[triggered_country_modifier_pop:triggered_country_modifier] = {
+	## severity = warning
 	## replace_scope = { this = pop root = pop }
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
@@ -227,6 +233,7 @@ alias[triggered_country_modifier_pop:triggered_country_modifier] = {
 }
 ## replace_scope = { this = country root = country }
 alias[triggered_country_modifier_country:triggered_country_modifier] = {
+	## severity = warning
 	## replace_scope = { this = country root = country }
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
@@ -242,6 +249,7 @@ alias[triggered_country_modifier_country:triggered_country_modifier] = {
 
 ## replace_scope = { this = pop root = pop }
 alias[triggered_pop_modifier:triggered_pop_modifier] = {
+	## severity = warning
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
@@ -254,6 +262,7 @@ alias[triggered_pop_modifier:triggered_pop_modifier] = {
 
 ## replace_scope = { this = starbase root = starbase }
 alias[triggered_station_modifier:triggered_station_modifier] = {
+	## severity = warning
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
@@ -266,6 +275,7 @@ alias[triggered_station_modifier:triggered_station_modifier] = {
 
 ## replace_scope = { this = starbase root = starbase }
 alias[triggered_station_modifier_starbase:triggered_station_modifier] = {
+	## severity = warning
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}

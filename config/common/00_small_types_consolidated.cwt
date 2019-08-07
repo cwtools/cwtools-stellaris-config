@@ -12,19 +12,19 @@ types = {
 			selectable = yes
 		}
 	}
-	type[country_color] = {
-		path = "game/common/colors"
-		## type_key_filter = country
-		subtype[default] = {}
-		## type_key_filter = fallen_empire
-		subtype[fallen_empire] = {}
-		## type_key_filter = faction
-		subtype[faction] = {}
-		## type_key_filter = pirate
-		subtype[pirate] = {}
-		## type_key_filter = species
-		subtype[species] = {}
-	}
+#	type[country_color] = { #commented out as it threw errors anyway
+#		path = "game/common/colors"
+#		## type_key_filter = country
+#		subtype[default] = {}
+#		## type_key_filter = fallen_empire
+#		subtype[fallen_empire] = {}
+#		## type_key_filter = faction
+#		subtype[faction] = {}
+#		## type_key_filter = pirate
+#		subtype[pirate] = {}
+#		## type_key_filter = species
+#		subtype[species] = {}
+#	}
 	type[asteroid_belt_type] = { #reason for this rename is the way vanilla names stuff, creating ambiguity.
 		path = "game/common/asteroid_belts"
 	}
@@ -76,38 +76,38 @@ ambient_object = {
 }
 
 
-country_color = {
-	subtype[default] = {
-		##cardinality = 0..inf
-		colour[rgb]
-		##cardinality = 0..inf
-		colour[hsv]
-	}
-	subtype[fallen_empire] = {
-		##cardinality = 0..inf
-		colour[rgb]
-		##cardinality = 0..inf
-		colour[hsv]
-	}
-	subtype[faction] = {
-		##cardinality = 0..inf
-		colour[rgb]
-		##cardinality = 0..inf
-		colour[hsv]
-	}
-	subtype[pirate] = {
-		##cardinality = 0..inf
-		colour[rgb]
-		##cardinality = 0..inf
-		colour[hsv]
-	}
-	subtype[species] = {
-		##cardinality = 0..inf
-		colour[rgb]
-		##cardinality = 0..inf
-		colour[hsv]
-	}
-}
+#country_color = { #commented out as it threw errors on every line anyway
+#	subtype[default] = {
+#		##cardinality = 0..inf
+#		colour[rgb]
+#		##cardinality = 0..inf
+#		colour[hsv]
+#	}
+#	subtype[fallen_empire] = {
+#		##cardinality = 0..inf
+#		colour[rgb]
+#		##cardinality = 0..inf
+#		colour[hsv]
+#	}
+#	subtype[faction] = {
+#		##cardinality = 0..inf
+#		colour[rgb]
+#		##cardinality = 0..inf
+#		colour[hsv]
+#	}
+#	subtype[pirate] = {
+#		##cardinality = 0..inf
+#		colour[rgb]
+#		##cardinality = 0..inf
+#		colour[hsv]
+#	}
+#	subtype[species] = {
+#		##cardinality = 0..inf
+#		colour[rgb]
+#		##cardinality = 0..inf
+#		colour[hsv]
+#	}
+#}
 
 
 #TODO Confirm
@@ -226,8 +226,12 @@ start_screen_message = {
   #this is a rather useless file. I have no idea what this does really - seems to be a weight modifier tied to hardcode.
 
 precursors = {
-	##cardinality = 1..inf
-	value_set[star_flag] = int
+	size = int
+
+	## cardinality = 0..1
+	possible = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 }
 
 

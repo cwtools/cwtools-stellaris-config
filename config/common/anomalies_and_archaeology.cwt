@@ -39,7 +39,7 @@ anomaly_category = {
 	## cardinality = 0..1
 	###Optional. Will use <anomaly_category>_description if not specified.
 	desc = localisation
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	## replace_scope = { root = planet this = planet from = ship }
 	desc = {
 		### Scope: planet, from = ship

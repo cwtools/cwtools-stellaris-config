@@ -90,6 +90,8 @@ alias[trigger:has_pop_faction_flag] = value[pop_faction_flag]
 ## severity = warning
 alias[trigger:has_star_flag] = value[star_flag]
 ## severity = warning
+alias[trigger:has_star_flag] = <precursors>
+## severity = warning
 alias[trigger:has_species_flag] = value[species_flag]
 ## severity = warning
 alias[trigger:has_pop_flag] = value[pop_flag]
@@ -1912,3 +1914,10 @@ alias[trigger:is_site_current_stage_score_no_die] = int
 
 ###Checks current excavator fleet.
 alias[trigger:is_site_last_excavator] = scope[fleet]
+
+###Checks the planet's total amount of uncleared blockers
+alias[trigger:num_uncleared_blockers] = int
+
+###Checks whether the country has unlocked all traditions
+alias[trigger:has_unlocked_all_traditions] = bool
+
