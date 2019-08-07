@@ -2,8 +2,7 @@ types = {
 	type[megastructure] = {
 		path = "game/common/megastructures"
 		subtype[base_level] = {
-			possible = {
-				alias_name[trigger] = alias_match_left[trigger]
+			placement_rules = {
 			}
 		}
 		subtype[has_prereqs] = {
@@ -70,7 +69,7 @@ megastructure = {
 	}
 	subtype[has_prereqs] = {
   		## cardinality = 0..1
-		show_prereqs = yes
+		show_prereqs = bool
   		## cardinality = 0..1
 		prereq_name = localisation
 	}
