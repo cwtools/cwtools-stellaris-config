@@ -16,6 +16,7 @@ types = {
 		severity = warning
 
 	}
+	## type_key_filter <> { progressbartype PieChartType }
 	type[sprite] = { #these are links that start with the GFX_ prefix in vanilla
 		name_field = name
 		path = "game/interface"
