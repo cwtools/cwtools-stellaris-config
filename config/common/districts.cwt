@@ -25,6 +25,8 @@ district = {
 	icon = icon[gfx/interface/icons/districts]
 	## cardinality = 0..1
 	is_capped_by_modifier = bool
+	## cardinality = 0..1
+	can_demolish = bool
 
 	show_on_uncolonized = {
 		alias_name[trigger] = alias_match_left[trigger]
