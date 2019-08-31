@@ -4,8 +4,14 @@ types = {
 
 		path = "game/events"
 
+		localisation = {
+			## primary
+			title = title
+		}
 		## type_key_filter = country_event
 		## push_scope = country
+		## display_name = Country event
+		## abbreviation = CE
 		subtype[country] = {
 		}
 		## type_key_filter = observer_event
@@ -14,22 +20,32 @@ types = {
 		}
 		## type_key_filter = pop_event
 		## push_scope = pop
+		## display_name = Pop event
+		## abbreviation = PoE
 		subtype[pop] = {
 		}
 		## type_key_filter = pop_faction_event
 		## push_scope = pop_faction
+		## display_name = Pop faction event
+		## abbreviation = PFE
 		subtype[pop_faction] = {
 		}
 		## type_key_filter = planet_event
 		## push_scope = planet
+		## display_name = Planet event
+		## abbreviation = PE
 		subtype[planet] = {
 		}
 		## type_key_filter = ship_event
 		## push_scope = ship
+		## display_name = Ship event
+		## abbreviation = SE
 		subtype[ship] = {
 		}
 		## type_key_filter = fleet_event
 		## push_scope = fleet
+		## display_name = Fleet event
+		## abbreviation = FE
 		subtype[fleet] = {
 		}
 		## type_key_filter = event
@@ -358,7 +374,7 @@ event = {
 			alias_name[planet_pre_trigger] = alias_match_left[planet_pre_trigger]
 		}
 	}
-	
+
 	subtype[fleet] = {
 		## cardinality = 0..1
 		archaeology = bool
