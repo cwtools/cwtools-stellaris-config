@@ -1,4 +1,5 @@
 types = {
+	## graph_related_types = { special_project anomaly_category }
 	type[event] = {
 		name_field = "id"
 

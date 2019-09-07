@@ -1,5 +1,6 @@
 
 types = {
+	## graph_related_types = { event special_project }
 	type[anomaly_category] = {
 		path = "game/common/anomalies"
 		localisation = {

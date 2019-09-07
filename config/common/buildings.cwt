@@ -1,5 +1,6 @@
 #Add branch office subtype
 types = {
+	## graph_related_types = { technology }
 	type[building] = {
 		path = "game/common/buildings"
 		localisation = {
@@ -88,7 +89,7 @@ building = {
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	
+
 	## cardinality = 0..1
 	destroy_trigger = {
 		alias_name[trigger] = alias_match_left[trigger]
@@ -125,6 +126,7 @@ building = {
 	## cardinality = 0..1
 	prerequisites = {
 		## cardinality = 0..inf
+		## incomingReferenceLabel = prereq
 		<technology>
 	}
 

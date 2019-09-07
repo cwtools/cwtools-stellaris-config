@@ -1,4 +1,5 @@
 types = {
+	## graph_related_types = { event anomaly_category }
 	type[special_project] = {
 		name_field = "key"
 		path = "game/common/special_projects"
