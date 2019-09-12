@@ -2875,7 +2875,7 @@ alias[effect:custom_tooltip_with_params] = {
 	description = localisation
 	description_parameters = {
 		## cardinality = 1..inf
-		enum = enum
+		scalar = scalar
 	}
 }
 
