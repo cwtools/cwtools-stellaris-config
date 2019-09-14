@@ -123,7 +123,8 @@ prescripted_country = {
 		
 		## cardinality = 0..1
 		leader_class = enum[leader_classes]
-
+		## cardinality = 0..inf
+	    trait = <trait.leader_trait>
 	}
 
 	## cardinality = 0..1
