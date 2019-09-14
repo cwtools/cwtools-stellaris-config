@@ -380,7 +380,7 @@ alias[effect:random_list] = {
 
 alias[effect:random_list] = {
 	##cardinality = 1..inf
-	float = {
+	float[0.0..0.9999] = {
 		##cardinality = 0..inf
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		##cardinality = 0..inf
