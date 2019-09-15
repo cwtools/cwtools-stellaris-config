@@ -1,6 +1,6 @@
-[19:30:26][game_application.cpp:300]: Game Version: Wolfe v2.3.0
-[19:30:26][defines.cpp:123]: 1177 defines loaded
-[19:33:31][consolecmdimpl.cpp:2694]: 
+[22:31:01][game_application.cpp:301]: Game Version: Wolfe v2.3.3
+[22:31:01][defines.cpp:123]: 1184 defines loaded
+[22:34:53][consolecmdimpl.cpp:2697]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -473,6 +473,16 @@ valid tokens are: none, megastructure, planet, country, ship, pop, fleet, galact
 Supported Scopes: all
 Supported Targets: none
 
+has_unlocked_all_traditions - Checks if the country has unlocked all traditions
+has_unlocked_all_traditions = yes/no
+Supported Scopes: country
+Supported Targets: ???
+
+has_potential_claims - Checks if the country has any potential claims they can make.
+has_potential_claims = yes/no
+Supported Scopes: country
+Supported Targets: ???
+
 and - all inside trigger must be true
 Supported Scopes: all
 Supported Targets: THIS ROOT PREV FROM OWNER CONTROLLER CAPITAL SOLAR_SYSTEM LEADER RANDOM FROMFROM PREVPREV PREVPREVPREV PREVPREVPREVPREV
@@ -821,8 +831,8 @@ is_inside_nebula = yes
 Supported Scopes: planet ship fleet galactic_object
 Supported Targets: none
 
-is_infrontier_space - checks if the planet/ship/fleet/system is in frontier space
-is_infrontier_space = yes
+is_in_frontier_space - checks if the planet/ship/fleet/system is in frontier space
+is_in_frontier_space = yes
 Supported Scopes: planet ship fleet galactic_object
 Supported Targets: none
 
@@ -2583,6 +2593,16 @@ is_current_excavator_fleet = <fleet>
 Supported Scopes: archaeological_site
 Supported Targets: THIS ROOT PREV FROM OWNER CONTROLLER CAPITAL SOLAR_SYSTEM LEADER RANDOM FROMFROM PREVPREV PREVPREVPREV PREVPREVPREVPREV
 
+is_last_lost_relic - Checks whether the relic passed in parameter is the last relic lost by the country int the current scope.
+is_last_lost_relic = <relic_key>
+Supported Scopes: country
+Supported Targets: none
+
+is_last_received_relic - Checks whether the relic passed in parameter is the last relic received by the country int the current scope.
+is_last_received_relic = <relic_key>
+Supported Scopes: country
+Supported Targets: none
+
 any_owned_army - Iterate through each army that is owned by the country
 any_owned_army = { <count=<num/all>> <triggers> }
 Supported Scopes: country
@@ -2760,7 +2780,7 @@ Supported Targets: none
 
 
 =================
-[19:33:31][consolecmdimpl.cpp:2695]: 
+[22:34:53][consolecmdimpl.cpp:2698]: 
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: planet country ship pop fleet
@@ -3264,8 +3284,8 @@ Supported Scopes: all
 Supported Targets: none
 
 spawn_system - Spawns a new system at a position relative to the scoped system/planet/ship.
-spawn_system = { min_distance = <int 0-100> max_distance = <int 0-100> initializer = <key for pre-defined system> hyperlane=<yes/no> is_discovered=<yes/no>}
-Supported Scopes: planet ship galactic_object no_scope
+spawn_system = { min_jumps = <value> max_jumps = <value> min_distance = <int 0-100> max_distance = <int 0-100> initializer = <key for pre-defined system> hyperlane=<yes/no> is_discovered=<yes/no>}
+Supported Scopes: megastructure planet ship fleet galactic_object starbase no_scope
 Supported Targets: none
 
 random_research_station - Executes enclosed effects on a random orbital research station that meets the limit criteria
@@ -3435,7 +3455,9 @@ Supported Scopes: country
 Supported Targets: none
 
 add_anomaly - Adds a specific anomaly category to the scoped planet
-add_anomaly = <key>
+add_anomaly = {
+ category = <key>
+ target = target:country }
 Supported Scopes: all
 Supported Targets: none
 
@@ -4300,7 +4322,7 @@ Supported Scopes: all
 Supported Targets: THIS ROOT PREV FROM OWNER CONTROLLER CAPITAL SOLAR_SYSTEM LEADER RANDOM FROMFROM PREVPREV PREVPREVPREV PREVPREVPREVPREV
 
 spawn_natural_wormhole - Spawns a new natural wormhole in the scoped system.
-spawn_system = { bypass_type = <wormhole/sealed_wormhole> orbit_distance = 100 orbit_angle = 90 random_pos = yes/no }
+spawn_natural_wormhole = { bypass_type = <wormhole/sealed_wormhole> orbit_distance = 100 orbit_angle = 90 random_pos = yes/no }
 Supported Scopes: galactic_object
 Supported Targets: none
 
@@ -4586,6 +4608,11 @@ custom_tooltip_with_param = {
 	}
 }
 Supported Scopes: all
+Supported Targets: none
+
+steal_relic - Steal all/a random/a specific relic from a target country
+steal_relice = { target = <Target Country> relic = <relic_name/all/random>
+Supported Scopes: country
 Supported Targets: none
 
 validate_planet_buildings_and_districts - Rebuild modifiers on target planet

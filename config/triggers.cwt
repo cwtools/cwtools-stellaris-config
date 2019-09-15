@@ -66,6 +66,28 @@ enums = {
 		attackers
 		defenders
 	}
+	enum[scope_type_tokens] = {
+		none
+		megastructure
+		planet
+		country
+		ship
+		pop
+		fleet
+		galactic_object
+		leader
+		army
+		ambient_object
+		species
+		design
+		pop_faction
+		war
+		alliance
+		starbase
+		deposit
+		observer
+		sector
+	}
 }
 
 alias[trigger:has_election_type] = enum[election_types]
@@ -1921,3 +1943,5 @@ alias[trigger:num_uncleared_blockers] = int
 ###Checks whether the country has unlocked all traditions
 alias[trigger:has_unlocked_all_traditions] = bool
 
+###Checks whether the current scope is of the specified type
+alias[trigger:is_scope_type] = enum[scope_type_tokens]
