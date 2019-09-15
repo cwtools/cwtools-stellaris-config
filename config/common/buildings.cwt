@@ -139,6 +139,7 @@ building = {
 
 	## cardinality = 0..1
 	ai_resource_production = {
+		## cardinality = 1..inf
 		<resource> = int
 		trigger = {
 			alias_name[trigger] = alias_match_left[trigger]
