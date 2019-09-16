@@ -33,7 +33,7 @@ prescripted_country = {
 		adjective = localisation_synced
 		name_list = <name_list>
 		## cardinality = 0..inf
-    	trait = <trait.species_trait>
+		trait = <trait.species_trait>
 	}
 
 	## cardinality = 0..1
@@ -46,7 +46,7 @@ prescripted_country = {
 		adjective = localisation_synced
 		name_list = <name_list>
 		## cardinality = 0..inf
-    	trait = <trait.species_trait>
+		trait = <trait.species_trait>
 	}
 
 	room = icon[gfx/portraits/city_sets]
@@ -56,20 +56,20 @@ prescripted_country = {
 	authority = <authority>
 	## cardinality = 0..1
 	civics = {
-   		## cardinality = 2..2
-    	<civic>
-   	}
+		## cardinality = 2..2
+		<civic>
+	}
 	## cardinality = 0..1
 	government = <government>
 
 	## cardinality = 1..3
 	ethic = <ethos>
 
-  	## cardinality = 0..1
+	## cardinality = 0..1
 	flags = {
-    	## cardinality = 0..inf
+		## cardinality = 0..inf
 		value_set[country_flag] #this is a country flag string, can be anything.
- 	}
+	}
 	planet_name = localisation_synced
 	planet_class = <planet_class.habitable_planet>
 
@@ -93,9 +93,9 @@ prescripted_country = {
 		}
 		colors = {
 			## cardinality = 0..4
-      		<color_define>
+			<color_define>
 			## cardinality = 0..4
-      		"null"
+			"null"
 		}
 	}
 
@@ -120,11 +120,11 @@ prescripted_country = {
 		heir_title = localisation_synced
 		## cardinality = 0..1
 		heir_title_female = localisation_synced
-		
+
 		## cardinality = 0..1
 		leader_class = enum[leader_classes]
 		## cardinality = 0..inf
-	    trait = <trait.leader_trait>
+		trait = <trait.leader_trait>
 	}
 
 	## cardinality = 0..1
@@ -148,4 +148,70 @@ prescripted_country = {
 
 	## cardinality = 0..inf
 	trait = <trait.species_trait>
+}
+
+"prescripted_country" = {
+	key = scalar
+	ship_prefx = scalar
+	species =  {
+		class = <species_class>
+		portrait = <portrait>
+		portrait = <portrait_group>
+		name = localisation_synced
+		plural = localisation_synced
+		adjective = localisation_synced
+		species_bio = scalar
+		name_list = <name_list>
+		trait = <trait.species_trait>
+	}
+	name = scalar
+	adjective = scalar
+	authority = <authority>
+	government = <government>
+	planet_name = scalar
+	planet_class = <planet_class.habitable_planet>
+	system_name = scalar
+	initializer = ""
+	graphical_culture = <graphical_culture>
+	city_graphical_culture = <graphical_culture>
+	empire_flag = {
+		icon= {
+			category = scalar
+			file = scalar
+		}
+		background = {
+			category = scalar
+			file = scalar
+		}
+		colors = {
+			<color_define>
+			"null"
+		}
+	}
+	ruler = {
+		gender = enum[gender]
+		name = localisation_synced
+		portrait = <portrait>
+		portrait = <portrait_group>
+		texture = int
+		hair = int
+		clothes = int
+		leader_class = enum[leader_classes]
+		ruler_title = localisation_synced			# unsure
+		ruler_title_male = localisation_synced		# unsure
+		ruler_title_female = localisation_synced	# unsure
+		heir_title = localisation_synced			# unsure
+		heir_title_female = localisation_synced		# unsure
+		trait = <trait.leader_trait>				# unsure
+	}
+	spawn_as_fallen = bool
+	ignore_portrait_duplication = bool
+	room = icon[gfx/portraits/city_sets]
+	room = <asset_selector.room> 
+	spawn_enabled = bool
+	spawn_enabled = always
+	ethic = <ethos>
+	civics = {
+		<civic>
+	}
 }
