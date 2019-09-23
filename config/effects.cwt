@@ -2134,7 +2134,7 @@ alias[effect:heir] = { alias_name[effect] = alias_match_left[effect] }
 
 ### Executes the first appropriate effect set for a specific trigger treated as NOT.
 alias[effect:inverted_switch] = {
-	trigger = scalar
+	trigger = alias_keys_field[trigger]
 	## cardinality = 0..inf
 	scalar = {
 		## cardinality = 0..inf
@@ -2707,7 +2707,7 @@ alias[effect:stop_crisis_sound] = yes
 
 ### Executes the first appropriate effect set for a specific trigger
 alias[effect:switch] = {
-	trigger = scalar
+	trigger = alias_keys_field[trigger]
 	## cardinality = 0..inf
 	scalar = {
 		## cardinality = 0..inf

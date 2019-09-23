@@ -971,7 +971,7 @@ enums = {
 
 ### Switch case for a trigger treated as NOT.
 alias[trigger:inverted_switch] = {
-	trigger = scalar
+	trigger = alias_keys_field[trigger]
 	## cardinality = 0..inf
 	scalar = {
 		## cardinality = 0..inf
@@ -1266,7 +1266,7 @@ alias[trigger:success_text] = {
 
 ### Switch case for a trigger
 alias[trigger:switch] = {
-	trigger = scalar
+	trigger = alias_keys_field[trigger]
 	## cardinality = 0..inf
 	scalar = {
 		## cardinality = 0..inf
