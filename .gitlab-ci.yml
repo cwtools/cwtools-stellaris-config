@@ -1,0 +1,27 @@
+image: mcr.microsoft.com/dotnet/core/sdk:3.0
+
+variables:
+  DOCKER_DRIVER: overlay2
+
+stages:
+  - docs
+
+githubpages:
+    only:
+      variables:
+      - $CI_PIPELINE_SOURCE == "schedule" && $CI_COMMIT_REF_NAME == "master"
+    stage: docs
+    script:
+    - cd ..
+    - git clone --depth 1 -b gh-pages https://tboby:$GITHUB_ACCESS_TOKEN@github.com/tboby/cwtools-stellaris-config.git public
+    - git clone https://www.github.com/tboby/cwtools
+    - cd ./cwtools/CWToolsDocs
+    - dotnet tool restore
+    - dotnet run $CI_PROJECT_DIR
+    - cp output.html $CI_PROJECT_DIR/../public/index.html
+    - cd $CI_PROJECT_DIR/../public
+    - git config user.email "th.boby@gmail.com"
+    - git config user.name "Thomas Boby"
+    - git add -A
+    - git commit -m "Build from $CI_SERVER_NAME $CI_PIPELINE_ID"
+    - git push
