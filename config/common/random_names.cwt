@@ -1,0 +1,144 @@
+
+types = {
+	## type_key_filter = empire_name_parts_list
+	type[empire_name_parts_list] = {
+		path = "game/common/random_names"
+		name_field = key
+	}
+	## type_key_filter = empire_name_format
+	type[empire_name_format] = {
+		path = "game/common/random_names"
+		name_field = format
+	}
+	## type_key_filter = pop_faction_name_parts_list
+	type[pop_faction_name_parts_list] = {
+		path = "game/common/random_names"
+		name_field = key
+	}
+	## type_key_filter = pop_faction_name_format
+	type[pop_faction_name_format] = {
+		path = "game/common/random_names"
+		name_field = format
+	}
+	## type_key_filter = pre_communications_name_parts_list
+	type[pre_communications_name_parts_list] = {
+		path = "game/common/random_names"
+		name_field = key
+	}
+	## type_key_filter = pre_communications_name_format
+	type[pre_communications_name_format] = {
+		path = "game/common/random_names"
+		name_field = format
+	}
+	## type_key_filter = war_name_parts_list
+	type[war_name_parts_list] = {
+		path = "game/common/random_names"
+		name_field = key
+	}
+	## type_key_filter = war_name_format
+	type[war_name_format] = {
+		path = "game/common/random_names"
+		name_field = format
+	}
+}
+
+
+
+
+empire_name_parts_list = {
+	key = scalar
+	parts = {
+		## cardinality = 0..inf
+		localisation_synced = int
+		## cardinality = 0..inf
+		localisation_synced
+	}
+}
+
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = float
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
+	format = localisation_synced
+		## cardinality = 0..1
+	prefix_format = scalar
+	noun = scalar
+}
+
+
+
+pop_faction_name_parts_list = {
+	key = scalar
+	parts = {
+		## cardinality = 0..inf
+		localisation_synced = int
+		## cardinality = 0..inf
+		localisation_synced
+	}
+}
+
+pop_faction_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = float
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
+	format = scalar
+}
+
+
+
+pre_communications_name_parts_list = {
+	key = scalar
+	## cardinality = 0..1
+	cyclic = yes
+	parts = {
+		## cardinality = 0..inf
+		localisation_synced = int
+		## cardinality = 0..inf
+		localisation_synced
+	}
+}
+
+pre_communications_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = float
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
+	format = scalar
+}
+
+
+
+war_name_parts_list = {
+	key = scalar
+	parts = {
+		## cardinality = 0..inf
+		localisation_synced = int
+		## cardinality = 0..inf
+		localisation_synced
+	}
+}
+
+war_name_format = {
+	random_weight = {
+		factor = 1
+	}
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = float
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
+	format = scalar
+}
