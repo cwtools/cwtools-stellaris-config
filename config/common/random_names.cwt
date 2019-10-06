@@ -46,7 +46,7 @@ types = {
 
 
 empire_name_parts_list = {
-	key = scalar
+	key = value_set[empire_name_parts]
 	parts = {
 		## cardinality = 0..inf
 		localisation_synced = int
@@ -66,13 +66,13 @@ empire_name_format = {
 	format = localisation_synced
 		## cardinality = 0..1
 	prefix_format = scalar
-	noun = scalar
+	noun = stellaris_name_format[empire_name_parts]
 }
 
 
 
 pop_faction_name_parts_list = {
-	key = scalar
+	key = value_set[pop_faction_name_parts]
 	parts = {
 		## cardinality = 0..inf
 		localisation_synced = int
@@ -89,13 +89,13 @@ pop_faction_name_format = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
-	format = scalar
+	format = stellaris_name_format[pop_faction_name_parts]
 }
 
 
 
 pre_communications_name_parts_list = {
-	key = scalar
+	key = value_set[pre_communications_name_parts]
 	## cardinality = 0..1
 	cyclic = yes
 	parts = {
@@ -114,13 +114,13 @@ pre_communications_name_format = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
-	format = scalar
+	format = stellaris_name_format[pre_communications_name_parts]
 }
 
 
 
 war_name_parts_list = {
-	key = scalar
+	key = value_set[war_name_parts]
 	parts = {
 		## cardinality = 0..inf
 		localisation_synced = int
@@ -140,5 +140,5 @@ war_name_format = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
-	format = scalar
+	format = stellaris_name_format[war_name_parts]
 }
