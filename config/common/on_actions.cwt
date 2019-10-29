@@ -499,6 +499,7 @@ on_action = {
     subtype[on_entering_system_first_time] = single_alias_right[on_action_ship]
     ## replace_scope = { this = ship root = ship from = system fromfrom = country }
     subtype[on_entering_system] = single_alias_right[on_action_ship]
+
     ## replace_scope = { this = fleet root = fleet from = system }
     subtype[on_entering_system_fleet] = single_alias_right[on_action_fleet]
     ## replace_scope = { this = fleet root = fleet from = system fromfrom = system }
@@ -509,10 +510,13 @@ on_action = {
     subtype[on_entering_gateway] = single_alias_right[on_action_fleet]
     ## replace_scope = { this = fleet root = fleet from = system fromfrom = system }
     subtype[on_entering_wormhole] = single_alias_right[on_action_fleet]
+
     ## replace_scope = { this = planet root = planet from = country fromfrom = fleet }
     subtype[on_planet_surveyed] = single_alias_right[on_action_planet]
+
     ## replace_scope = { this = country root = country from = system fromfrom = fleet }
     subtype[on_system_survey] = single_alias_right[on_action_country]
+    
     ## replace_scope = { this = ship root = ship from = system }
     subtype[on_system_survey_ship] = single_alias_right[on_action_ship]
 
@@ -573,8 +577,10 @@ on_action = {
     subtype[on_ship_enabled] = single_alias_right[on_action_ship]
     ## replace_scope = { this = ship root = ship }
     subtype[on_ship_upgraded] = single_alias_right[on_action_ship]
+
     ## replace_scope = { this = planet root = planet from = species }
     subtype[on_uplift_completion] = single_alias_right[on_action_planet]
+
     ## replace_scope = { this = pop root = pop from = planet }
     subtype[on_purge_begun] = single_alias_right[on_action_pop]
     ## replace_scope = { this = pop root = pop from = planet }
@@ -589,6 +595,7 @@ on_action = {
     subtype[on_pop_emancipated] = single_alias_right[on_action_pop]
     ## replace_scope = { this = pop root = pop }
     subtype[on_pop_rights_change] = single_alias_right[on_action_pop]
+
     ## replace_scope = { this = country root = country from = leader }
     subtype[on_leader_death] = single_alias_right[on_action_country]
     ## replace_scope = { this = country root = country from = leader }
@@ -599,6 +606,7 @@ on_action = {
     subtype[on_ruler_back_to_pre_ruler_class] = single_alias_right[on_action_country]
     ## replace_scope = { this = country root = country from = leader }
     subtype[on_leader_spawned] = single_alias_right[on_action_country]
+
     ## replace_scope = { this = ship root = ship from = country }
     subtype[on_ship_order] = single_alias_right[on_action_ship]
 
@@ -631,10 +639,12 @@ on_action = {
     subtype[on_pop_declined] = single_alias_right[on_action_planet]
     ## replace_scope = { this = planet root = planet from = country fromfrom = pop }
     subtype[on_pop_displaced] = single_alias_right[on_action_planet]
+
     ## replace_scope = { this = country root = country from = planet }
     subtype[on_rebels_take_planet] = single_alias_right[on_action_country]
     ## replace_scope = { this = country root = country from = planet }
     subtype[on_rebels_take_planet_owner_switched] = single_alias_right[on_action_country]
+
     ## replace_scope = { this = fleet root = fleet from = planet }
     subtype[on_fleet_enter_orbit] = single_alias_right[on_action_fleet]
 
@@ -644,19 +654,24 @@ on_action = {
     subtype[on_megastructure_upgrade_begin] = single_alias_right[on_action_country]
     ## replace_scope = { root = country this = country from = megastructure fromfrom = system }
     subtype[on_megastructure_upgraded] = single_alias_right[on_action_country]
+
     ## replace_scope = { root = fleet this = fleet }
-    
     subtype[on_jump_drive] = single_alias_right[on_action_fleet]
+
     ## replace_scope = { this = planet root = planet from = species fromfrom = species }
     subtype[empire_init_capital_planet] = single_alias_right[on_action_planet]
+
     ## replace_scope = { this = ship root = ship from = country }
     subtype[on_starbase_transfer] = single_alias_right[on_action_ship]
+
     ## replace_scope = { root = fleet this = fleet from = fleet fromfrom = fleet fromfromfrom = fleet }
     subtype[on_fleet_combat_joined_attacker] = single_alias_right[on_action_fleet]
     ## replace_scope = { root = fleet this = fleet from = fleet fromfrom = fleet fromfromfrom = fleet }
     subtype[on_fleet_combat_joined_defender] = single_alias_right[on_action_fleet]
+
     ## replace_scope = { this = pop root = pop from = country fromfrom = country }
     subtype[on_slave_sold_on_market] = single_alias_right[on_action_pop]
+
     ## replace_scope = { this = planet root = planet from = fleet }
     subtype[on_destroy_planet_with_PLANET_KILLER_CRACKER] = single_alias_right[on_action_planet]
     ## replace_scope = { this = planet root = planet from = fleet }
@@ -669,8 +684,10 @@ on_action = {
     subtype[on_destroy_planet_with_PLANET_KILLER_NANOBOTS] = single_alias_right[on_action_planet]
     ## replace_scope = { this = planet root = planet from = fleet }
     subtype[on_destroy_planet_with_PLANET_DESTRUCTION_COMPONENT_PlaceholderForMore] = single_alias_right[on_action_planet]
+
     ## replace_scope = { this = country root = country }
     subtype[on_relic_activated] = single_alias_right[on_action_country]
+    
     ## replace_scope = { this = fleet root = fleet from = archaeological_site }
     subtype[on_arch_stage_finished] = single_alias_right[on_action_fleet]
     ## replace_scope = { this = fleet root = fleet from = archaeological_site }
