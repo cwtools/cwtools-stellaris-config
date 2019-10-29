@@ -28,3 +28,18 @@ single_alias[on_action_country] = {
         int = <event.country>
     }
 }
+
+single_alias[on_action_planet] = {
+    ## cardinality = 0..1
+    events = {
+        ## cardinality = 0..inf
+        <event.planet>
+    }
+    ## cardinality = 0..1
+    random_events = {
+        ## cardinality = 0..inf
+        int = 0
+        ## cardinality = 0..inf
+        int = <event.planet>
+    }
+}
