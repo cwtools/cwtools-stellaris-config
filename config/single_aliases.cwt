@@ -13,3 +13,18 @@ single_alias[on_action_scopeless] = {
         int = <event.scopeless>
     }
 }
+
+single_alias[on_action_country] = {
+    ## cardinality = 0..1
+    events = {
+        ## cardinality = 0..inf
+        <event.country>
+    }
+    ## cardinality = 0..1
+    random_events = {
+        ## cardinality = 0..inf
+        int = 0
+        ## cardinality = 0..inf
+        int = <event.country>
+    }
+}
