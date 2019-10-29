@@ -576,110 +576,19 @@ on_action = {
     ## replace_scope = { this = planet root = planet from = species }
     subtype[on_uplift_completion] = single_alias_right[on_action_planet]
     ## replace_scope = { this = pop root = pop from = planet }
-    subtype[on_purge_begun] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.pop>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.pop>
-        }
-    }
+    subtype[on_purge_begun] = single_alias_right[on_action_pop]
     ## replace_scope = { this = pop root = pop from = planet }
-    subtype[on_purge_canceled] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.pop>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.pop>
-        }
-    }
+    subtype[on_purge_canceled] = single_alias_right[on_action_pop]
     ## replace_scope = { this = pop root = pop from = planet }
-    subtype[on_pop_abducted] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.pop>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.pop>
-        }
-    }
+    subtype[on_pop_abducted] = single_alias_right[on_action_pop]
     ## replace_scope = { this = pop root = pop from = planet }
-    subtype[on_pop_added] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.pop>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.pop>
-        }
-    }
+    subtype[on_pop_added] = single_alias_right[on_action_pop]
     ## replace_scope = { this = pop root = pop }
-    subtype[on_pop_enslaved] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.pop>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.pop>
-        }
-    }
+    subtype[on_pop_enslaved] = single_alias_right[on_action_pop]
     ## replace_scope = { this = pop root = pop }
-    subtype[on_pop_emancipated] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.pop>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.pop>
-        }
-    }
+    subtype[on_pop_emancipated] = single_alias_right[on_action_pop]
     ## replace_scope = { this = pop root = pop }
-    subtype[on_pop_rights_change] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.pop>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.pop>
-        }
-    }
+    subtype[on_pop_rights_change] = single_alias_right[on_action_pop]
     ## replace_scope = { this = country root = country from = leader }
     subtype[on_leader_death] = single_alias_right[on_action_country]
     ## replace_scope = { this = country root = country from = leader }
@@ -747,20 +656,7 @@ on_action = {
     ## replace_scope = { root = fleet this = fleet from = fleet fromfrom = fleet fromfromfrom = fleet }
     subtype[on_fleet_combat_joined_defender] = single_alias_right[on_action_fleet]
     ## replace_scope = { this = pop root = pop from = country fromfrom = country }
-    subtype[on_slave_sold_on_market] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.pop>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.pop>
-        }
-    }
+    subtype[on_slave_sold_on_market] = single_alias_right[on_action_pop]
     ## replace_scope = { this = planet root = planet from = fleet }
     subtype[on_destroy_planet_with_PLANET_KILLER_CRACKER] = single_alias_right[on_action_planet]
     ## replace_scope = { this = planet root = planet from = fleet }
