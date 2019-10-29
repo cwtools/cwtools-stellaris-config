@@ -334,125 +334,22 @@ types = {
 on_action = {
 
     ## replace_scope = { root = no_scope this = no_scope }
-    subtype[on_game_start] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.scopeless>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.scopeless>
-        }
-    }
+    subtype[on_game_start] = single_alias_right[on_action_scopeless]
     ## replace_scope = { root = no_scope this = no_scope }
-    subtype[on_monthly_pulse] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.scopeless>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.scopeless>
-        }
-    }
+    subtype[on_monthly_pulse] = single_alias_right[on_action_scopeless]
     ## replace_scope = { root = no_scope this = no_scope }
-    subtype[on_yearly_pulse] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.scopeless>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.scopeless>
-        }
-    }
+    subtype[on_yearly_pulse] = single_alias_right[on_action_scopeless]
     ## replace_scope = { root = no_scope this = no_scope }
-    subtype[on_bi_yearly_pulse] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.scopeless>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.scopeless>
-        }
-    }
+    subtype[on_bi_yearly_pulse] = single_alias_right[on_action_scopeless]
     ## replace_scope = { root = no_scope this = no_scope }
-    subtype[on_five_year_pulse] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.scopeless>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.scopeless>
-        }
-    }
+    subtype[on_five_year_pulse] = single_alias_right[on_action_scopeless]
     ## replace_scope = { root = no_scope this = no_scope }
-    subtype[on_decade_pulse] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.scopeless>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.scopeless>
-        }
-    }
+    subtype[on_decade_pulse] = single_alias_right[on_action_scopeless]
     ## replace_scope = { root = no_scope this = no_scope }
-    subtype[on_mid_game_pulse] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.scopeless>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.scopeless>
-        }
-    }
+    subtype[on_mid_game_pulse] = single_alias_right[on_action_scopeless]
     ## replace_scope = { root = no_scope this = no_scope }
-    subtype[on_late_game_pulse] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.scopeless>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.scopeless>
-        }
-    }
+    subtype[on_late_game_pulse] = single_alias_right[on_action_scopeless]
+    
     ## replace_scope = { root = country this = country }
     subtype[on_game_start_country] = {
         ## cardinality = 0..1
