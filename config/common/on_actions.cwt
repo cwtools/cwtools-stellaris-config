@@ -496,35 +496,9 @@ on_action = {
     subtype[on_system_gained] = single_alias_right[on_action_country]
     ## replace_scope = { this = ship root = ship from = system fromfrom = country }
 
-    subtype[on_entering_system_first_time] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.ship>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.ship>
-        }
-    }
+    subtype[on_entering_system_first_time] = single_alias_right[on_action_ship]
     ## replace_scope = { this = ship root = ship from = system fromfrom = country }
-    subtype[on_entering_system] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.ship>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.ship>
-        }
-    }
+    subtype[on_entering_system] = single_alias_right[on_action_ship]
     ## replace_scope = { this = fleet root = fleet from = system }
     subtype[on_entering_system_fleet] = {
         ## cardinality = 0..1
@@ -605,20 +579,7 @@ on_action = {
     ## replace_scope = { this = country root = country from = system fromfrom = fleet }
     subtype[on_system_survey] = single_alias_right[on_action_country]
     ## replace_scope = { this = ship root = ship from = system }
-    subtype[on_system_survey_ship] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.ship>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.ship>
-        }
-    }
+    subtype[on_system_survey_ship] = single_alias_right[on_action_ship]
 
     ## replace_scope = { this = country root = country from = fleet fromfrom = fleet }
     subtype[on_entering_battle] = single_alias_right[on_action_country]
@@ -646,245 +607,37 @@ on_action = {
     subtype[on_fleet_auto_move_arrival] = single_alias_right[on_action_country]
     ## replace_scope = { this = ship root = ship from = planet }
 
-    subtype[on_survey] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.ship>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.ship>
-        }
-    }
+    subtype[on_survey] = single_alias_right[on_action_ship]
     ## replace_scope = { this = ship root = ship from = planet }
-    subtype[on_building_mining_station] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.ship>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.ship>
-        }
-    }
+    subtype[on_building_mining_station] = single_alias_right[on_action_ship]
     ## replace_scope = { this = ship root = ship from = planet }
-    subtype[on_building_research_station] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.ship>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.ship>
-        }
-    }
+    subtype[on_building_research_station] = single_alias_right[on_action_ship]
     ## replace_scope = { this = ship root = ship from = planet }
-    subtype[on_building_outpost_station] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.ship>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.ship>
-        }
-    }
+    subtype[on_building_outpost_station] = single_alias_right[on_action_ship]
     ## replace_scope = { this = ship root = ship from = planet }
-    subtype[on_building_wormhole_station] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.ship>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.ship>
-        }
-    }
+    subtype[on_building_wormhole_station] = single_alias_right[on_action_ship]
     ## replace_scope = { this = ship root = ship from = planet }
-    subtype[on_building_starbase_outpost] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.ship>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.ship>
-        }
-    }
+    subtype[on_building_starbase_outpost] = single_alias_right[on_action_ship]
     ## replace_scope = { this = ship root = ship from = planet }
-    subtype[on_building_observation_station] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.ship>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.ship>
-        }
-    }
+    subtype[on_building_observation_station] = single_alias_right[on_action_ship]
     ## replace_scope = { this = ship root = ship from = planet }
-    subtype[on_building_starbase_ai] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.ship>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.ship>
-        }
-    }
+    subtype[on_building_starbase_ai] = single_alias_right[on_action_ship]
     ## replace_scope = { this = ship root = ship from = planet }
-    subtype[on_building_starbase_exd] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.ship>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.ship>
-        }
-    }
+    subtype[on_building_starbase_exd] = single_alias_right[on_action_ship]
     ## replace_scope = { this = ship root = ship from = planet }
-    subtype[on_building_starbase_swarm] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.ship>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.ship>
-        }
-    }
+    subtype[on_building_starbase_swarm] = single_alias_right[on_action_ship]
     ## replace_scope = { this = ship root = ship from = planet }
-    subtype[on_building_starbase_marauder] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.ship>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.ship>
-        }
-    }
+    subtype[on_building_starbase_marauder] = single_alias_right[on_action_ship]
     ## replace_scope = { this = ship root = ship from = planet }
-    subtype[on_building__PlaceholderForMoreStationShipSizes] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.ship>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.ship>
-        }
-    }
+    subtype[on_building__PlaceholderForMoreStationShipSizes] = single_alias_right[on_action_ship]
     ## replace_scope = { this = ship root = ship from = planet }
-    subtype[on_ship_built] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.ship>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.ship>
-        }
-    }
+    subtype[on_ship_built] = single_alias_right[on_action_ship]
     ## replace_scope = { this = ship root = ship from = ship }
-    subtype[on_ship_disabled] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.ship>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.ship>
-        }
-    }
+    subtype[on_ship_disabled] = single_alias_right[on_action_ship]
     ## replace_scope = { this = ship root = ship }
-    subtype[on_ship_enabled] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.ship>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.ship>
-        }
-    }
+    subtype[on_ship_enabled] = single_alias_right[on_action_ship]
     ## replace_scope = { this = ship root = ship }
-    subtype[on_ship_upgraded] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.ship>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.ship>
-        }
-    }
+    subtype[on_ship_upgraded] = single_alias_right[on_action_ship]
     ## replace_scope = { this = planet root = planet from = species }
     subtype[on_uplift_completion] = single_alias_right[on_action_planet]
     ## replace_scope = { this = pop root = pop from = planet }
@@ -1003,20 +756,7 @@ on_action = {
     ## replace_scope = { this = country root = country from = leader }
     subtype[on_leader_spawned] = single_alias_right[on_action_country]
     ## replace_scope = { this = ship root = ship from = country }
-    subtype[on_ship_order] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.ship>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.ship>
-        }
-    }
+    subtype[on_ship_order] = single_alias_right[on_action_ship]
 
     ## replace_scope = { this = country root = country from = war }
     subtype[on_war_beginning] = single_alias_right[on_action_country]
@@ -1092,20 +832,7 @@ on_action = {
     ## replace_scope = { this = planet root = planet from = species fromfrom = species }
     subtype[empire_init_capital_planet] = single_alias_right[on_action_planet]
     ## replace_scope = { this = ship root = ship from = country }
-    subtype[on_starbase_transfer] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.ship>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.ship>
-        }
-    }
+    subtype[on_starbase_transfer] = single_alias_right[on_action_ship]
     ## replace_scope = { root = fleet this = fleet from = fleet fromfrom = fleet fromfromfrom = fleet }
     subtype[on_fleet_combat_joined_attacker] = {
         ## cardinality = 0..1

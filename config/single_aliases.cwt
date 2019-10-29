@@ -43,3 +43,18 @@ single_alias[on_action_planet] = {
         int = <event.planet>
     }
 }
+
+single_alias[on_action_ship] = {
+    ## cardinality = 0..1
+    events = {
+        ## cardinality = 0..inf
+        <event.ship>
+    }
+    ## cardinality = 0..1
+    random_events = {
+        ## cardinality = 0..inf
+        int = 0
+        ## cardinality = 0..inf
+        int = <event.ship>
+    }
+}
