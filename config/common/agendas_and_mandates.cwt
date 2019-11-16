@@ -2,6 +2,9 @@
 types = {
 	type[agenda] = {
 		path = "game/common/agendas"
+		localisation = {
+			Name = "$"
+		}
 	}
 	type[mandate] = {
 		path = "game/common/mandates"

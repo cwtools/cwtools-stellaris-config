@@ -2887,3 +2887,25 @@ alias[effect:remove_relic] = <relic>
 
 ###Makes the archaeological site event expire
 alias[effect:expire_site_event] = <event.fleet>
+
+#2.5.1 (or missing from earlier)
+
+###Adds a specific trait to the scoped leader for a specific duration
+alias[effect:add_timed_trait] = {
+	trait = <trait>
+	enum[days_months_years] = int
+}
+
+###Recomputes strategic war ( attack / defense ) data for AI = yes
+alias[effect:run_ai_strategic_war_data] = yes
+
+###Set scoped country as the current Galactic Market leader. set_market_leader = <yes/no>
+alias[effect:set_market_leader] = bool
+
+###Steal all/a random/a specific relic from a target country
+alias[effect:steal_relic] = {
+	target = scope[country]
+	relic = <relic>
+	relic = all
+	relic = random
+}

@@ -1945,3 +1945,35 @@ alias[trigger:has_unlocked_all_traditions] = bool
 
 ###Checks whether the current scope is of the specified type
 alias[trigger:is_scope_type] = enum[scope_type_tokens]
+
+## 2.5.1 (or missing from earlier)
+
+###Checks if Caravaneers are enabled in game setup
+alias[trigger:caravaneers_enabled] = bool
+
+###Checks if the colony is of a certain type
+alias[trigger:colony_type] = <colony_type>
+
+###Checks if a deposit has specified category
+alias[trigger:has_deposit_category] = <deposit_category>
+
+###Checks if the sector has a specific type
+alias[trigger:has_sector_type] = <sector_type>
+
+###Checks current excavator fleet.
+alias[trigger:is_current_excavator_fleet] = scope[fleet]
+
+###Checks if the planet/ship/fleet/system is in frontier space
+alias[trigger:is_in_frontier_space] = bool
+
+###Checks whether the relic passed in parameter is the last relic lost by the country int the current scope.
+alias[trigger:is_last_lost_relic] = <relic>
+
+###Checks whether the relic passed in parameter is the last relic received by the country int the current scope.
+alias[trigger:is_last_received_relic] = <relic>
+
+###Checks if local humans founder species is a specific species class
+alias[trigger:local_human_species_class] = <species_class>
+
+###Checks the number of relics owned by the scoped country
+alias[trigger:num_owned_relics] = int
