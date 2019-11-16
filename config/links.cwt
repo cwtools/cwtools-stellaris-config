@@ -16,7 +16,7 @@ links = {
 		output_scope = Country
 	}
 	owner = {
-		inputscopes = { Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase Tile System }
+		inputscopes = { Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System }
 		output_scope = Country
 	}
 	controller = {
@@ -52,7 +52,7 @@ links = {
 		output_scope = System
 	}
 	planet = {
-		inputscopes = { Pop Tile Planet System Army Megastructure }
+		inputscopes = { Pop Planet System Army Megastructure }
 		output_scope = Planet
 	}
 	capital_scope = {
@@ -88,7 +88,7 @@ links = {
 		output_scope = Fleet
 	}
 	pop = {
-		inputscopes = { Pop Tile }
+		inputscopes = { Pop }
 		output_scope = Pop
 	}
 	last_created_pop = {
@@ -104,7 +104,7 @@ links = {
 		output_scope = Army
 	}
 	owner_species = {
-		inputscopes = { Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase Tile System }
+		inputscopes = { Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System }
 		output_scope = Species
 	}
 	last_created_species = {
@@ -136,11 +136,11 @@ links = {
 		output_scope = Sector
 	}
 	ruler = {
-		inputscopes = { Country Planet Tile }
+		inputscopes = { Country Planet }
 		output_scope = Leader
 	}
 	heir = {
-		inputscopes = { Country Planet Tile }
+		inputscopes = { Country Planet }
 		output_scope = Leader
 	}
 	alliance = {
@@ -172,7 +172,7 @@ links = {
 		output_scope = Megastructure
 	}
 	owner_main_species = {
-		inputscopes = { Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase Tile System }
+		inputscopes = { Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System }
 		output_scope = Species
 	}
 	system_star = {

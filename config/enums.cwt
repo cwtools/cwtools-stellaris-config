@@ -22,4 +22,88 @@ enums = {
 		weight
 		base
 	}
+	enum[relative_power_categories] = {
+		all
+		fleet
+		technology
+		economy
+	}
+	enum[relative_power_values] = {
+		pathetic
+		inferior
+		equivalent
+		superior
+		overwhelming
+	}
+	enum[research_areas] = {
+		physics
+		engineering
+		society
+	}
+	enum[genders] = {
+		female
+		male
+		indeterminable
+	}
+	enum[hyperlane_euclidean] = {
+		hyperlane
+		euclidean
+	}
+	enum[election_types] = {
+		none
+		democratic
+		oligarchic
+	}
+	enum[war_sides] = {
+		attackers
+		defenders
+	}
+	enum[scope_type_tokens] = {
+		none
+		megastructure
+		planet
+		country
+		ship
+		pop
+		fleet
+		galactic_object
+		leader
+		army
+		ambient_object
+		species
+		design
+		pop_faction
+		war
+		alliance
+		starbase
+		deposit
+		observer
+		sector
+	}
+	enum[intel_level] = {
+		none
+		low
+		medium
+		high
+		full
+	}
+	enum[construction_type] = {
+		starbase
+		mining_station
+		research_station
+		observation_post
+	}
+	enum[tutorial_levels] = {
+		0
+		1
+		2
+		full
+		medium
+		none
+	}
+	enum[fleet_stance] = {
+		aggressive
+		passive
+		evasive
+	}
 }
