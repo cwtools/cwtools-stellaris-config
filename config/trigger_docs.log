@@ -1,6 +1,6 @@
-[22:31:01][game_application.cpp:301]: Game Version: Wolfe v2.3.3
-[22:31:01][defines.cpp:123]: 1184 defines loaded
-[22:34:53][consolecmdimpl.cpp:2697]: 
+[12:21:25][game_application.cpp:350]: Game Version: Shelley v2.5.1
+[12:21:25][defines.cpp:123]: 1188 defines loaded
+[12:21:45][consolecmdimpl.cpp:2484]:
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -456,7 +456,7 @@ is_researching_special_project = special_project_name
 Supported Scopes: country leader
 Supported Targets: none
 
-last_activated_relic - Checks if the specified relic was the last activated one 
+last_activated_relic - Checks if the specified relic was the last activated one
 last_activated_relic = <relic_key>
 Supported Scopes: country
 Supported Targets: none
@@ -1060,6 +1060,11 @@ num_uncleared_blockers - Checks the planet's total amount of uncleared blockers
 num_uncleared_blockers > 3
 Supported Scopes: planet
 Supported Targets: none
+
+local_human_species_class - Checks if local humans founder species is a specific species class
+is_species_class = MAM
+Supported Scopes: all
+Supported Targets: THIS ROOT PREV FROM OWNER CONTROLLER CAPITAL SOLAR_SYSTEM LEADER RANDOM FROMFROM PREVPREV PREVPREVPREV PREVPREVPREVPREV
 
 trade_income - Checks the country's energy credits income from trade for the previous month
 trade_income < 30
@@ -2295,7 +2300,7 @@ has_notification_modifier = <key>
 Supported Scopes: country
 Supported Targets: THIS ROOT PREV FROM OWNER CONTROLLER CAPITAL SOLAR_SYSTEM LEADER RANDOM FROMFROM PREVPREV PREVPREVPREV PREVPREVPREVPREV
 
-pop_maintenance_cost - Checks the maintenace costs of a pop 
+pop_maintenance_cost - Checks the maintenace costs of a pop
 pop_maintenance_cost > 0
 Supported Scopes: pop
 Supported Targets: none
@@ -2370,8 +2375,8 @@ Supported Scopes: country
 Supported Targets: ???
 
 has_casus_belli - Checks if the country has a valid casus belli (any casus belli or a specific one) on the given country.
- has_casus_belli = { 
-	target = <country> 
+ has_casus_belli = {
+	target = <country>
 	type = <cb_type> #optional
  }
 Supported Scopes: country
@@ -2414,7 +2419,7 @@ Supported Targets: none
 
 count_starbase_sizes - Checks if the scoped country has a specified quantity of a starbase size
 count_starbase_sizes = {
-starbase_size = <starbase_ship_size> 
+starbase_size = <starbase_ship_size>
 count >= 2}
 Supported Scopes: country
 Supported Targets: none
@@ -2454,7 +2459,7 @@ is_primary_star = yes
 Supported Scopes: planet
 Supported Targets: none
 
-last_changed_species_rights_type - Check if the last species rights type changed for the pop or leader is of type type 
+last_changed_species_rights_type - Check if the last species rights type changed for the pop or leader is of type type
 last_changed_species_rights_type = <living_standard/citizenship/military_service/slavery/purge/colonization_control/population_control/migration_control/none>
 Supported Scopes: pop leader
 Supported Targets: none
@@ -2780,7 +2785,7 @@ Supported Targets: none
 
 
 =================
-[22:34:53][consolecmdimpl.cpp:2698]: 
+[12:21:45][consolecmdimpl.cpp:2485]:
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: planet country ship pop fleet
@@ -3024,7 +3029,7 @@ Supported Scopes: all
 Supported Targets: none
 
 create_fleet - Creates a new fleet
-create_fleet = { name = <string> effect = { <create_ship, set_owner, set_location etc effects go here> } } 
+create_fleet = { name = <string> effect = { <create_ship, set_owner, set_location etc effects go here> } }
 Supported Scopes: all
 Supported Targets: none
 
@@ -3439,7 +3444,7 @@ set_faction_hostility = { target = country set_hostile = yes set_neutral = no se
 Supported Scopes: country
 Supported Targets: none
 
-set_market_leader - Set scoped country as the current Galactic Market leader. set_market_leader = <yes/no> 
+set_market_leader - Set scoped country as the current Galactic Market leader. set_market_leader = <yes/no>
 Supported Scopes: country
 Supported Targets: THIS ROOT PREV FROM OWNER CONTROLLER CAPITAL SOLAR_SYSTEM LEADER RANDOM FROMFROM PREVPREV PREVPREVPREV PREVPREVPREVPREV
 
@@ -4085,7 +4090,7 @@ set_species_identity - Sets the current species scopes identity to match the tar
 Supported Scopes: species
 Supported Targets: none
 
-pop_force_add_ethic - Adds a specific ethic to the scoped pop regardless if pop-species allows ethic divergence or not. 
+pop_force_add_ethic - Adds a specific ethic to the scoped pop regardless if pop-species allows ethic divergence or not.
 pop_add_ethic = <key>
 Supported Scopes: pop
 Supported Targets: none
@@ -4128,12 +4133,12 @@ set_planet_entity = {
 	picture = <picture override>
 	atmosphere_color = <color from 3 components>
 	atmosphere_intensity = <0.0 - 1.0>
-	atmosphere_width = <0.0 - 1.0> 
+	atmosphere_width = <0.0 - 1.0>
 }
 Supported Scopes: planet
 Supported Targets: none
 
-remove_planet - Removes the planet from the scope 
+remove_planet - Removes the planet from the scope
 remove_planet = yes
 Supported Scopes: planet
 Supported Targets: THIS ROOT PREV FROM OWNER CONTROLLER CAPITAL SOLAR_SYSTEM LEADER RANDOM FROMFROM PREVPREV PREVPREVPREV PREVPREVPREVPREV
@@ -4242,7 +4247,7 @@ mutate_species - Randomly mutate a species.
 Supported Scopes: species
 Supported Targets: THIS ROOT PREV FROM OWNER CONTROLLER CAPITAL SOLAR_SYSTEM LEADER RANDOM FROMFROM PREVPREV PREVPREVPREV PREVPREVPREVPREV
 
-rename_species - rename_species = { 
+rename_species - rename_species = {
 	use one of the following:
 	name = "an explicit name with [Bracket.Stuff]"
 	name = random
@@ -4306,7 +4311,7 @@ Supported Scopes: species
 Supported Targets: none
 
 copy_techs_from - Copies all techs from the target country to the scoped country, except for some exceptions listed. Tech weights (and weight modifiers) are honoured, meaning that techs a country should not have will not be copied.
-copy_techs_from = { 
+copy_techs_from = {
 	target = country
 	except = { tech_1 tech_2 }
 }
@@ -4387,7 +4392,7 @@ add_seen_bypass_type = bypass_type
 Supported Scopes: country
 Supported Targets: none
 
-add_seen_bypass - Makes the scoped country remember that it has encountered the bypass 
+add_seen_bypass - Makes the scoped country remember that it has encountered the bypass
 add_seen_bypass = FROM
 Supported Scopes: country
 Supported Targets: THIS ROOT PREV FROM OWNER CONTROLLER CAPITAL SOLAR_SYSTEM LEADER RANDOM FROMFROM PREVPREV PREVPREVPREV PREVPREVPREVPREV
@@ -4543,7 +4548,7 @@ enable_on_market = <resource_key>
 Supported Scopes: all
 Supported Targets: none
 
-enable_galactic_market - Enables the galactic market. enable_galactic_market = <yes/no> 
+enable_galactic_market - Enables the galactic market. enable_galactic_market = <yes/no>
 Supported Scopes: country
 Supported Targets: THIS ROOT PREV FROM OWNER CONTROLLER CAPITAL SOLAR_SYSTEM LEADER RANDOM FROMFROM PREVPREV PREVPREVPREV PREVPREVPREVPREV
 
@@ -4845,7 +4850,7 @@ run_ai_strategic_data - Recomputes ALL strategic data for AI = yes
 Supported Scopes: country
 Supported Targets: THIS ROOT PREV FROM OWNER CONTROLLER CAPITAL SOLAR_SYSTEM LEADER RANDOM FROMFROM PREVPREV PREVPREVPREV PREVPREVPREVPREV
 
-add_static_war_exhaustion - Adds static war exhaustion, scaled with value_for_planet_destruction, to owner of the battle location 
+add_static_war_exhaustion - Adds static war exhaustion, scaled with value_for_planet_destruction, to owner of the battle location
  owner = { add_static_war_exhaustion = { attacker = <country> location = <planet> value_for_planet_destruction = <0.0-1.0> #scales the amount WE that is added }}
 Supported Scopes: country
 Supported Targets: none

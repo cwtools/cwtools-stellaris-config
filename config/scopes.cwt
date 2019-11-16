@@ -1614,7 +1614,7 @@ alias[effect:every_system] = {
 ## scope = planet
 ## push_scope = deposit
 ###Checks if any deposits on the planet meet the criteria
-alias[effect:any_deposit] = {
+alias[trigger:any_deposit] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
