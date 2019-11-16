@@ -92,7 +92,6 @@ enums = {
 
 alias[trigger:has_election_type] = enum[election_types]
 
-
 alias[trigger:has_modifier] = <static_modifier>
 
 alias[trigger:has_opinion_modifier] = {

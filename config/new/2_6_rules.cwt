@@ -1,0 +1,136 @@
+#     Effects
+
+## scope = federation
+###Sets the given law for the scoped federation.
+alias[effect:set_federation_law] = scalar #todo
+
+## scope = country
+###Tries to add the country to the Galactic Community.
+alias[effect:add_to_galactic_community] = yes
+
+## scope = country
+###Tries to remove the country from the Galactic Community.
+alias[effect:remove_from_galactic_community] = yes
+
+## scope = country
+###Tries to add the scoped country to the Galactic Council.
+alias[effect:add_to_galactic_council] = yes
+
+## scope = country
+###Tries to remove the scoped country from the Galactic Council.
+alias[effect:remove_from_galactic_council] = yes
+
+## scope = federation
+###Adds experience to the scoped federation.
+alias[effect:add_federation_experience] = int
+
+## scope = federation
+###Sets federation type to the scoped federation.
+alias[effect:set_federation_type] = scalar #todo
+
+## scope = federation
+###Sets federation succession type to the scoped federation. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
+alias[effect:set_federation_succession_type] = enum[federation_succession_types]
+
+## scope = federation
+###Sets federation succession term to the scoped federation. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
+alias[effect:set_federation_succession_term] = enum[federation_succession_terms]
+
+## scope = federation
+###Sets exclusive right to build fleets by federation leader. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
+alias[effect:set_only_leader_builds_fleets] = bool
+
+## scope = federation
+###Sets right for subjects to join federations. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
+alias[effect:set_allow_subjects_to_join] = bool
+
+## scope = federation
+###Sets different voting weight. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
+alias[effect:set_equal_voting_power] = bool
+
+## scope = federation
+###Sets diplomatic action custom setting. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
+alias[effect:set_diplomacy_action_setting] = {
+	action = <diplomatic_action>
+	settings = {
+		## cardinality = 0..1
+		vote_type = enum[vote_types] #unanimous_vote majority_vote leader
+		## cardinality = 0..1
+		acceptance_type = enum[acceptance_types] #leader default
+	}
+}
+
+## scope = federation
+###Sets unified migration flag for federation. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
+alias[effect:set_free_migration] = bool
+
+## scope = federation
+###Sets federation custom setting. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
+alias[effect:set_federation_settings] = {
+	## cardinality = 0..1
+	research_sharing = bool
+	## cardinality = 0..1
+	failed_vote_half_price = bool
+}
+
+## scope = federation
+###Add cohesion to the federation
+alias[effect:add_cohesion] = int
+
+## scope = any
+###Sets the number of seats on the Galactic Council
+alias[effect:set_council_size] = int
+
+## scope = any
+###Increases the number of seats on the Galactic Council by 1
+alias[effect:increase_council_size] = yes
+
+## scope = any
+###Decreases the number of seats on the Galactic Council by 1
+alias[effect:decrease_council_size] = yes
+
+## scope = any
+###Sets whether council members can veto resolutions or not
+alias[effect:set_council_veto] = bool
+
+## scope = any
+###Sets whether council members can propose emergency measures or not
+alias[effect:set_council_emergency_measures] = bool
+
+## scope = country
+###Gives scoped country a permanent position on the Galactic Council
+alias[effect:add_permanent_councillor] = yes
+
+## scope = country
+###Remove the scoped country from their permanent council position
+alias[effect:remove_permanent_councillor] = yes
+
+
+
+#       Enums
+
+enums = {
+	enum[federation_succession_types] = {
+		strongest
+		diplomatic_weight
+		rotation
+		challenge
+		random
+	}
+	enum[federation_succession_terms] = {
+		status_change
+		years_10
+		years_20
+		years_30
+		years_40
+	}
+	enum[vote_types] = {
+		unanimous_vote
+		majority_vote
+		leader
+	}
+	enum[acceptance_types] = {
+		default
+		leader
+	}
+}
