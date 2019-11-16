@@ -1,4 +1,153 @@
+
+#     Triggers
+
+## scope = federation
+###Checks if the federation has a specific flag.
+alias[trigger:has_federation_flag] = value[country_flag]
+
+## scope = federation
+###Checks the country's number of envoys sent to its federation.
+alias[trigger:num_envoys_to_federation] = int
+
+## scope = federation
+###Checks the country's number of envoys sent to the galactic community.
+alias[trigger:num_envoys_to_galcom] = int
+
+## scope = federation
+###Checks experience of the federation.
+alias[trigger:federation_experience] = int
+
+## scope = federation
+###Checks cohesion of the federation.
+alias[trigger:federation_cohesion] = int
+
+## scope = federation
+###Checks cohesion growth of the federation.
+alias[trigger:federation_cohesion_growth] = float
+
+## scope = federation
+###Checks if given law has been enacted in scoped federation.
+alias[trigger:has_federation_law] = scalar #todo
+
+## scope = country
+###Checks if scoped country is part of the Galactic Community.
+alias[trigger:is_galactic_community_member] = bool
+
+## scope = country
+###Checks if scoped country is part of the Galactic Council.
+alias[trigger:is_part_of_galactic_council] = bool
+
+## scope = federation
+###Checks if given perk has been unlocked in scoped federation.
+alias[trigger:has_federation_perk] = scalar #todo
+
+## scope = federation
+###Checks if federation has specific federation type.
+alias[trigger:has_federation_type] = scalar #todo
+
+## scope = federation
+###Checks federation level in comparison to given value in scoped federation.
+alias[trigger:federation_level] = int
+
+## scope = any
+###Checks if the Galactic Community is currently voting on any, or a specific, resolution.
+alias[trigger:is_voting_on_resolution] = any
+
+## scope = any
+###Checks if the Galactic Community is currently voting on any, or a specific, resolution.
+alias[trigger:is_voting_on_resolution] = scalar #todo
+
+## scope = country
+###Checks if the scoped country is currently proposing any, or a specific, resolution.
+alias[trigger:is_proposing_resolution] = any
+
+## scope = country
+###Checks if the scoped country is currently proposing any, or a specific, resolution.
+alias[trigger:is_proposing_resolution] = scalar #todo
+
+## scope = any
+###Compare with number of years since the formation of the Galactic Community. NOTE: A negative value means it hasn't been formed yet!
+alias[trigger:is_years_since_community_formation] = int
+
+## scope = any
+###Compares with number of years since the establishment of the Galactic Council. NOTE: A negative value means it hasn't been established yet!
+alias[trigger:is_years_since_council_establishment] = int
+
+## scope = any
+###Checks if the Galactic Community has been formed.
+alias[trigger:is_galactic_community_formed] = bool
+
+## scope = any
+###Checks if the Galactic Council has been established.
+alias[trigger:is_galactic_council_established] = bool
+
+## scope = country
+###Checks if scoped country has specified origin
+alias[trigger:has_origin] = scalar #todo
+
+## scope = country
+###Checks if the provided Resolution is active in the Community
+alias[trigger:is_active_resolution] = scalar #todo
+
+## scope = country
+###Checks if an empire is in breach of any galactic resolution.
+alias[trigger:is_in_breach_of_any] = bool
+
+## scope = federation
+###Checks if given setting is on for scoped federation.
+alias[trigger:has_federation_setting] = enum[federation_settings]
+
+## scope = any
+###Compares the number of council positions in the Galactic Community.
+alias[trigger:num_council_positions] = int
+
+## scope = country
+###Compares empire rank ( sorted by diplomatic weight ) in the Galactic Community. NOTE: If the scoped country isn't part of the community this returns -1.
+alias[trigger:galactic_community_rank] = int[-1..inf]
+
+## scope = country
+###Checks if an empire has a permanent seat on the Galactic Council.
+alias[trigger:is_permanent_councillor] = bool
+
+## scope = country
+###Checks the country's opinion of the target country has been changed by envoys.
+alias[trigger:envoy_opinion_change] = {
+	who = scope[country]
+	value = int
+}
+
+## scope = country
+###Checks if the country has an envoy sent to the target country to improve relations.
+alias[trigger:is_improving_relations_with] = scope[country]
+
+## scope = country
+###Checks if the country has an envoy sent to the target country to harm relations.
+alias[trigger:is_harming_relations_with] = scope[country]
+
+## scope = federation
+## push_scope = country
+###Iterate through each member of the federation
+alias[trigger:count_member] = {
+	count = all
+	count = int
+	## cardinality = 0..1
+	trigger = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+
+
 #     Effects
+
+## scope = federation
+###Sets an arbitrarily-named flag on the scoped federation
+alias[effect:set_federation_flag] = value[country_flag]
+
+## scope = federation
+###Sets an arbitrarily-named flag on the scoped federation
+alias[effect:set_timed_federation_flag] = {
+	flag = value[country_flag]
+	enum[days_months_years] = int
+}
 
 ## scope = federation
 ###Sets the given law for the scoped federation.
@@ -67,10 +216,7 @@ alias[effect:set_free_migration] = bool
 ## scope = federation
 ###Sets federation custom setting. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
 alias[effect:set_federation_settings] = {
-	## cardinality = 0..1
-	research_sharing = bool
-	## cardinality = 0..1
-	failed_vote_half_price = bool
+	enum[federation_settings] = bool
 }
 
 ## scope = federation
@@ -107,6 +253,34 @@ alias[effect:remove_permanent_councillor] = yes
 
 
 
+#       Scopes
+
+## scope = federation
+## push_scope = country
+###Iterate through each member of the federation
+alias[trigger:any_member] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## scope = federation
+## push_scope = country
+###Iterate through each member of the federation
+alias[effect:random_member] = {
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = federation
+## push_scope = country
+###Iterate through each member of the federation
+alias[effect:every_member] = {
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+
 #       Enums
 
 enums = {
@@ -123,6 +297,10 @@ enums = {
 		years_20
 		years_30
 		years_40
+	}
+	enum[federation_settings] = {
+		research_sharing
+		failed_vote_half_price
 	}
 	enum[vote_types] = {
 		unanimous_vote
