@@ -20,10 +20,18 @@ types = {
 		localisation = {
 			## required
 			Name = "$"
+			## required
+			Desc = "$_desc"
 		}
 	}
 	type[artifact_action] = {
 		path = "game/common/artifact_action"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Desc = "$_desc"
+		}
 	}
 }
 
@@ -143,6 +151,7 @@ archaeological_site_type = {
 	picture = <sprite>
 	desc = localisation
 	desc = {
+		replace_scope = { this = archaeological_site root = archaeological_site }
 		trigger = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
@@ -184,7 +193,7 @@ archaeological_site_type = {
 			max = int[0..inf]
 		}
 		icon = <sprite>
-		event = <event>
+		event = <event.fleet>
 	}
 
 	## replace_scope = { root = fleet this = fleet from = archaeological_site }

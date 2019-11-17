@@ -3,11 +3,18 @@ types = {
 	type[agenda] = {
 		path = "game/common/agendas"
 		localisation = {
+			## required
 			Name = "$"
 		}
 	}
 	type[mandate] = {
 		path = "game/common/mandates"
+		localisation = {
+			## required
+			Name = "MANDATE_$"
+			## required
+			Desc = "MANDATE_$_DESC"
+		}
 	}
 }
 

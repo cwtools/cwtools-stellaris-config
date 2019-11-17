@@ -26,6 +26,10 @@ types = {
 				## required
 				Description = "$_desc"
 			}
+			subtype[!planet] = {
+				## optional
+				Description = "$_desc"
+			}
 		}
 	}
 	type[planet_modifier] = {
@@ -37,6 +41,10 @@ types = {
 	}
 	type[notification_modifier] = {
 		path = "game/common/notification_modifiers"
+		## required
+		Name = "$"
+		## required
+		Description = "$_desc"
 	}
 }
 
