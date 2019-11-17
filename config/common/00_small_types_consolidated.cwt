@@ -8,6 +8,12 @@ types = {
 		subtype[show_name] = {
 			show_name = yes
 		}
+		localisation = {
+			subtype[show_name] = {
+				## required
+				name = "$"
+			}
+		}
 		subtype[selectable] = {
 			selectable = yes
 		}
@@ -30,6 +36,10 @@ types = {
 	}
 	type[attitude] = {
 		path = "game/common/attitudes"
+		localisation = {
+			## required
+			name = "attitude_$"
+		}
 	}
 	type[button_effect] = {
 		path = "game/common/button_effects"
@@ -39,6 +49,10 @@ types = {
 	}
 	type[system_type] = {
 		path = "game/common/system_types"
+		localisation = {
+			## required
+			name = "$"
+		}
 	}
 	## type_key_filter = part
 	type[start_screen_message] = {
@@ -47,11 +61,22 @@ types = {
 	type[precursors] = {
 		path = "common/precursor_civilizations"
 	}
+	## replace_scope = { root = system this = system }
 	type[sector_type] = {
 		path = "game/common/sector_types"
+		localisation = {
+			## required
+			name = "$"
+		}
 	}
 	type[map_mode] = {
 		path = "game/common/map_modes"
+		localisation = {
+			## required
+			name = "$"
+			## required
+			desc = "$_desc"
+		}
 	}
 	type[ai_budget] = {
 		path = "game/common/ai_budget"
@@ -60,7 +85,7 @@ types = {
 
 ambient_object = {
 	subtype[show_name] = {
-		###Cannot use localisation_synced! The Vanilla case NAME_Syzygy_Remains is a bug.
+		###A localisation key. Does not use localisation_synced.
 		name = localisation
 	}
 	subtype[!show_name] = {
@@ -72,6 +97,7 @@ ambient_object = {
 	}
 	entity = <model_entity>
 	selectable = bool
+	###Determines whether you can read the name of the object ingame.
 	show_name = bool
 }
 
@@ -244,11 +270,18 @@ sector_type = {
 	local_capital_scores = {
 		## cardinality = 0..1
 		base = int
-		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		## cardinality = 0..1
+		modifier = {
+			mult = float
+			alias_name[trigger] = alias_match_left[trigger]
+		}
 	}
 	resource_conversion_table = {
 		energy = int
 		minerals = int
+	}
+	resources = {
+		category = <economic_category>
 	}
 	max_jumps = int
 }

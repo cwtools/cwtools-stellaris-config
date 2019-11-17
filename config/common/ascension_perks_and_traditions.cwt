@@ -2,12 +2,54 @@
 types = {
 	type[ascension_perk] = {
 		path = "game/common/ascension_perks"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Desc = "$_desc"
+		}
 	}
 	type[tradition] = {
 		path = "game/common/traditions"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Desc = "$_desc"
+		}
+	}
+	## type_key_filter = tradition_swap
+	type[tradition_swap] = {
+		path = "game/common/tradition_categories"
+		skip_root_key = { any }
+		name_field = name
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Desc = "$_desc"
+		}
 	}
 	type[tradition_category] = { #this defines the contents of tradition trees
 		path = "game/common/tradition_categories"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Desc = "$_desc"
+		}
+	}
+	## type_key_filter = tradition_swap
+	type[tradition_swap_category] = {
+		path = "game/common/tradition_categories"
+		skip_root_key = { any }
+		name_field = name
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Desc = "$_desc"
+		}
 	}
 }
 
