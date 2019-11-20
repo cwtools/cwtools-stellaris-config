@@ -11,6 +11,10 @@ types = {
 		subtype[starbase] = {
 			class = shipclass_starbase
 		}
+		subtype[designable] = {
+			## cardinality = 0..1
+			designable = yes
+		}
 		localisation = {
 			## required
 			Name = "$"

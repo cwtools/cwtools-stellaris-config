@@ -14,19 +14,19 @@ types = {
 		localisation = {
 			## required
 			Name = "$"
-			## required
+			## optional
 			Desc = "$_desc"
 		}
 	}
 	## type_key_filter = tradition_swap
 	type[tradition_swap] = {
-		path = "game/common/tradition_categories"
+		path = "game/common/traditions"
 		skip_root_key = { any }
 		name_field = name
 		localisation = {
 			## required
 			Name = "$"
-			## required
+			## optional
 			Desc = "$_desc"
 		}
 	}

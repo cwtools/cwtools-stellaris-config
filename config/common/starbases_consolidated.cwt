@@ -133,7 +133,7 @@ starbase_module = {
 	show_in_tech = <technology>
 
 	resources = {
-		category = starbase_modules
+		category = <economic_category>
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}
 

@@ -6,6 +6,16 @@ types = {
 		subtype[required_component] = {
 			required_component_set = yes
 		}
+		localisation = {
+			## required
+			Name = "$"
+			## optional
+			Description = "$_DESC"
+			## optional
+			"Ship Description" = "ship_$_DESC"
+			## optional
+			"Station Description" = "station_$_DESC"
+		}
 	}
 	type[component_template] = {
 		name_field = "key"
@@ -18,6 +28,10 @@ types = {
 		}
 		## type_key_filter = strike_craft_component_template
 		subtype[strike_craft_component_template] = {
+		}
+		localisation = {
+			## required
+			Name = "$"
 		}
 	}
 }
@@ -119,7 +133,7 @@ component_template = {
 		power = int
 		## replace_scope = { root = ship this = ship }
 		resources = {
-			category = ship_components
+			category = <economic_category>
 			alias_name[economic_template] = alias_match_left[economic_template]
 		}
 		size = enum[utility_slot_size]
@@ -246,7 +260,7 @@ component_template = {
 		power = float
 		## replace_scope = { root = ship this = ship }
 		resources = {
-			category = ship_components
+			category = <economic_category>
 			alias_name[economic_template_no_produce] = alias_match_left[economic_template_no_produce]
 		}
 		## cardinality = 0..1
@@ -314,7 +328,7 @@ component_template = {
 		power = float
 		## replace_scope = { root = ship this = ship }
 		resources = {
-			category = ship_components
+			category = <economic_category>
 			alias_name[economic_template_no_produce] = alias_match_left[economic_template_no_produce]
 		}
 		count = float
