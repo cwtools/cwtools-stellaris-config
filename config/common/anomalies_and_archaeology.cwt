@@ -20,10 +20,18 @@ types = {
 		localisation = {
 			## required
 			Name = "$"
+			## required
+			Desc = "$_desc"
 		}
 	}
 	type[artifact_action] = {
 		path = "game/common/artifact_action"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Desc = "$_desc"
+		}
 	}
 }
 
@@ -110,7 +118,7 @@ relic = {
 	sound = <sound_effect>
 
 	resources = {
-		category = relics
+		category = <economic_category>
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}
 
@@ -141,8 +149,11 @@ relic = {
 archaeological_site_type = {
 	## cardinality = 0..1
 	picture = <sprite>
+	## cardinality = 1..inf
 	desc = localisation
+	## cardinality = 1..inf
 	desc = {
+		replace_scope = { this = archaeological_site root = archaeological_site }
 		trigger = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
@@ -184,7 +195,7 @@ archaeological_site_type = {
 			max = int[0..inf]
 		}
 		icon = <sprite>
-		event = <event>
+		event = <event.fleet>
 	}
 
 	## replace_scope = { root = fleet this = fleet from = archaeological_site }
@@ -209,7 +220,7 @@ archaeological_site_type = {
 artifact_action = {
 	## cardinality = 0..1
 	resources = {
-		category = artifact_actions
+		category = <economic_category>
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}
 

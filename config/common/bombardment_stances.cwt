@@ -1,6 +1,12 @@
 types = {
 	type[bombardment_stance] = {
 		path = "game/common/bombardment_stances"
+		localisation = {
+			## required
+			Name = "bombardment_$"
+			## required
+			Desc = "bombardment_$_desc"
+		}
 	}
 }
 

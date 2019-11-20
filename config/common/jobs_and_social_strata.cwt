@@ -13,6 +13,14 @@ types = {
 	}
 	type[social_strata] = {
 		path = "game/common/pop_categories"
+		localisation = {
+			## required
+			name = "pop_cat_$"
+			## required
+			plural = "pop_cat_$_plural"
+			## required
+			desc = "pop_cat_$_desc"
+		}
 	}
 }
 

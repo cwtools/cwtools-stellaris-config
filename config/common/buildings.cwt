@@ -3,6 +3,9 @@ types = {
 	## graph_related_types = { technology }
 	type[building] = {
 		path = "game/common/buildings"
+		subtype[branch_office_building] = {
+			branch_office_building = yes
+		}
 		localisation = {
 			## required
 			Name = "$"
@@ -106,8 +109,6 @@ building = {
 
 	## cardinality = 0..1
 	resources = {
-		category = planet_branch_office_buildings
-		category = planet_buildings
 		category = <economic_category>
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}

@@ -9,6 +9,14 @@ types = {
 		subtype[uncapped] = {
 			is_capped_by_modifier = no
 		}
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Desc = "$_desc"
+			## required
+			Plural = "$_plural"
+		}
 	}
 }
 

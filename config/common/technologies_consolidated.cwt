@@ -9,6 +9,12 @@ types = {
 		subtype[start_tech] = {
 			start_tech = yes
 		}
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Description = "$_desc"
+		}
 	}
 	type[technology_tier] = {
 		path = "game/common/technology/tier"
@@ -18,6 +24,12 @@ types = {
 	# each of these modifiers requires localisation and a GFX (gfx/interface/icons/modifiers - same name as the tech_category key)
 	type[technology_category] = {
 		path = "game/common/technology/category"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Description = "$_desc"
+		}
 	}
 }
 

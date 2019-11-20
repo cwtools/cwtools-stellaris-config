@@ -45,8 +45,11 @@ types = {
 
 
 
+### Define possible parts of empire name here, such as "Glorious Empire of". When generating random name for empire, format can refer to it via <key> and pick random part.
 empire_name_parts_list = {
+	### Unique ID by which list can be referred to from name format via <key>.
 	key = value_set[empire_name_parts]
+	### List of possible parts. Random weights to the right are optional
 	parts = {
 		## cardinality = 0..inf
 		localisation_synced = int
@@ -55,7 +58,10 @@ empire_name_parts_list = {
 	}
 }
 
+### This block contains rules for picking a specific name format
 empire_name_format = {
+	## replace_scope = { root = country this = country }
+	### Conditional weight for choosing this format
 	random_weight = {
 		factor = 0
 		modifier = {
@@ -63,8 +69,11 @@ empire_name_format = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
+
+	### Reference to localisation string for generating random name
 	format = localisation_synced
-		## cardinality = 0..1
+	### String used to determine prefix for empire's ship. (Default being ISS). Usually matches name format. Optional for countries that would not ever have ships, e. g. Primitives.
+	## cardinality = 0..1
 	prefix_format = scalar
 	noun = stellaris_name_format[empire_name_parts]
 }
