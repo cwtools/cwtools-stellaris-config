@@ -81,6 +81,9 @@ types = {
 	type[ai_budget] = {
 		path = "game/common/ai_budget"
 	}
+	type[trade_conversion] = {
+		path = "game/common/trade_conversions"
+	}
 }
 
 ambient_object = {
@@ -353,4 +356,19 @@ ai_budget = {
 		base = int
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
+}
+
+trade_conversion = {
+	## replace_scope = { this = country from = country }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	weight = {
+		weight = int
+	}
+	conversion_rate = {
+		## cardinality = 1..inf
+		<resource> = float
+	}
+	economic_category = <economic_category>
 }

@@ -1,6 +1,12 @@
 types = {
 	type[colony_type] = {
 		path = "game/common/colony_type"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Description = "$_desc"
+		}
 	}
 	type[colony_automation] = {
 		path = "game/common/colony_automation"

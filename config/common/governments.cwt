@@ -1,6 +1,12 @@
 types = {
 	type[authority] = {
 		path = "game/common/governments/authorities"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Description = "$_desc"
+		}
 	}
 	type[government] = {
 		path = "game/common/governments"
@@ -20,7 +26,18 @@ types = {
 			## required
 			Description = "$_desc"
 		}
-
+	}
+	## type_key_filter = swap_type
+	type[swapped_civic] = {
+		path = "game/common/governments/civics"
+		skip_root_key = { any }
+		name_field = "name"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Description = "$_desc"
+		}
 	}
 }
 
@@ -594,6 +611,15 @@ civic = {
 	habitability_preference = <planet_class>
 	## cardinality = 0..1
 	preferred_planet_class_neighbor = bool
+
+	## cardinality = 0..1
+	swap_type = {
+		name = localisation
+		description = localisation
+		trigger = {
+			local_human_species_class = <species_class>
+		}
+	}
 }
 
 #aliases - used in species_classes and perhaps other places.

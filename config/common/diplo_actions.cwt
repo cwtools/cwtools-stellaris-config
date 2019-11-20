@@ -7,11 +7,11 @@ types = {
 			## optional
 			Desc = "$_DESC"
 			## optional
-			"Long desc"" = "$_LONG_DESC"
+			"Long desc" = "$_LONG_DESC"
 			## optional
 			Type = "$_TYPE"
 			## optional
-			"Type desc"" = "$_TYPE_DESC"
+			"Type desc" = "$_TYPE_DESC"
 		}
 	}
 }

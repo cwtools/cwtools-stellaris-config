@@ -14,11 +14,11 @@ types = {
 enums = {
 	complex_enum[pop_faction_parameters] = {
 		path = "game/common/pop_faction_types"
-			name = {
-				parameters = {
-					enum_name = {}
-				}
+		name = {
+			parameters = {
+				enum_name = {}
 			}
+		}
 	}
 }
 
@@ -26,11 +26,11 @@ enums = {
 enums = {
 	complex_enum[pop_faction_actions] = {
 		path = "game/common/pop_faction_types"
-			name = {
-				actions = {
-					enum_name = {}
-				}
+		name = {
+			actions = {
+				enum_name = {}
 			}
+		}
 	}
 }
 
@@ -229,7 +229,7 @@ pop_faction = {
 
 	}
 	resources = {
-		category = pop_factions
+		category = <economic_category>
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}
 

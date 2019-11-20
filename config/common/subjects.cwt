@@ -1,6 +1,12 @@
 types = {
 	type[subject_type] = {
 		path = "game/common/subjects"
+		localisation = {
+			## required
+			Name = "SUBJECT_$"
+			## required
+			Description = "SUBJECT_DESC_$"
+		}
 	}
 }
 

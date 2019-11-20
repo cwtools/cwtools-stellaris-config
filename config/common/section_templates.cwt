@@ -2,11 +2,20 @@ types = {
 	type[section_template] = {
 		name_field = "key"
 		path = "game/common/section_templates"
+		subtype[needs_locs] = {
+			ship_size = <ship_size.designable>
+		}
+		localisation = {
+			subtype[needs_locs] = {
+				## required
+				Name = "$"
+			}
+		}
 	}
 }
 
 section_template = {
-  key = localisation
+  key = scalar
   ## cardinality = 0..inf
   ship_size = <ship_size>
   ## cardinality = 0..inf
@@ -24,7 +33,7 @@ section_template = {
   should_draw_components = bool
 	## cardinality = 0..1
 	resources = {
-		category = ship_sections
+		category = <economic_category>
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}
 

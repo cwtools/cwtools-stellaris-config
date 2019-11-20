@@ -2,6 +2,12 @@ types = {
 	## type_key_filter <> random_list
 	type[star_class] = {
 		path = "game/common/star_classes"
+		localisation = {
+			## required
+			Name = "$"
+			## optional
+			Description = "$_desc"
+		}
 	}
 	## type_key_filter = random_list
 	type[star_class_random_list] = {
