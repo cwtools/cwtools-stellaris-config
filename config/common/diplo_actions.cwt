@@ -19,7 +19,9 @@ types = {
 #TODO Confirm
 #TODO Document
 diplomatic_action = {
+	## cardinality = 0..1
 	icon = <sprite>
+	## cardinality = 0..1
 	action_type = enum[action_types]
 	## cardinality = 0..1
 	require_envoy = yes

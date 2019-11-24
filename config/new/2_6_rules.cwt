@@ -27,7 +27,7 @@ alias[trigger:federation_cohesion_growth] = float
 
 ## scope = federation
 ###Checks if given law has been enacted in scoped federation.
-alias[trigger:has_federation_law] = scalar #todo
+alias[trigger:has_federation_law] = <federation_law>
 
 ## scope = country
 ###Checks if scoped country is part of the Galactic Community.
@@ -39,11 +39,11 @@ alias[trigger:is_part_of_galactic_council] = bool
 
 ## scope = federation
 ###Checks if given perk has been unlocked in scoped federation.
-alias[trigger:has_federation_perk] = scalar #todo
+alias[trigger:has_federation_perk] = <federation_perk>
 
 ## scope = federation
 ###Checks if federation has specific federation type.
-alias[trigger:has_federation_type] = scalar #todo
+alias[trigger:has_federation_type] = <federation_type>
 
 ## scope = federation
 ###Checks federation level in comparison to given value in scoped federation.
@@ -146,14 +146,18 @@ alias[trigger:opinion_level] = {
 
 ## scope = federation
 ###Sets an arbitrarily-named flag on the scoped federation
-alias[effect:set_federation_flag] = value[country_flag]
+alias[effect:set_federation_flag] = value_set[country_flag]
 
 ## scope = federation
 ###Sets an arbitrarily-named flag on the scoped federation
 alias[effect:set_timed_federation_flag] = {
-	flag = value[country_flag]
+	flag = value_set[country_flag]
 	enum[days_months_years] = int
 }
+
+## scope = federation
+###Removes a previously-set flag from the scoped federation
+alias[effect:remove_federation_flag] = value[country_flag]
 
 ## scope = federation
 ###Sets the given law for the scoped federation.
@@ -274,6 +278,7 @@ alias[trigger:any_member] = {
 ## push_scope = country
 ###Iterate through each member of the federation
 alias[effect:random_member] = {
+	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
 }
@@ -324,6 +329,19 @@ enums = {
 		good
 		excellent
 	}
+	enum[diplomacy_economy_tags] = {
+		federation
+		rivalry
+		non_aggression_pact
+		migration_pact
+		research_agreement
+		commercial_pact
+		defensive_pact
+		guarantee
+		improving_relations
+		harming_relations
+		diplo_stance_closed_borders
+	}
 }
 
 #Modifiers
@@ -338,3 +356,61 @@ alias[modifier:envoy_harm_relations_mult] = float
 alias[modifier:empire_size_pops_mult] = float
 ## scope = country
 alias[modifier:envoys_add] = int
+## scope = country
+alias[modifier:country_admin_cap_mult] = float
+## scope = country
+alias[modifier:diplo_weight_naval_mult] = float
+## scope = country
+alias[modifier:lithoid_pop_happiness] = float
+## scope = country
+alias[modifier:diplo_weight_technology_mult] = float
+## scope = federation
+alias[modifier:ship_federation_territory_speed_mult] = float
+## scope = federation
+alias[modifier:federation_research_sharing_mult] = float
+## scope = federation
+alias[modifier:federation_join_malus_mult] = float
+## scope = federation
+alias[modifier:federation_leader_fleet_scale_mult] = float
+## scope = federation
+alias[modifier:federation_leader_diplo_weight_from_members_mult] = float
+
+
+types = {
+	type[diplomacy_economy] = {
+        path = "game/common/diplomacy_economy"
+        name_from_file = yes
+        type_per_file = yes
+	}
+}
+
+diplomacy_economy = {
+	once = {
+		#Not sure if you can define your own stuff here so used an enum
+		## cardinality = 0..inf
+		enum[diplomacy_economy_tags] = {
+			## replace_scopes = { this = country root = country from = country }
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			resources = {
+				category = <economic_category>
+				alias_name[economic_template] = alias_match_left[economic_template]
+			}
+		}
+	}
+	per_relation = {
+		#Not sure if you can define your own stuff here so used an enum
+		## cardinality = 0..inf
+		enum[diplomacy_economy_tags] = {
+			## replace_scopes = { this = country root = country from = country }
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			resources = {
+				category = <economic_category>
+				alias_name[economic_template] = alias_match_left[economic_template]
+			}
+		}
+	}
+}
