@@ -106,4 +106,10 @@ enums = {
 		passive
 		evasive
 	}
+	enum[action_types] = {
+		positive
+		negative
+		aggressive
+		neutral
+	}
 }

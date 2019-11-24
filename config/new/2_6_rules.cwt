@@ -83,7 +83,7 @@ alias[trigger:is_galactic_council_established] = bool
 
 ## scope = country
 ###Checks if scoped country has specified origin
-alias[trigger:has_origin] = scalar #todo
+alias[trigger:has_origin] = <civic_or_origin.origin>
 
 ## scope = country
 ###Checks if the provided Resolution is active in the Community
@@ -134,6 +134,12 @@ alias[trigger:count_member] = {
 	trigger = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
+## scope = country
+###Checks whether the country has the specified opinion level to the specified country.
+alias[trigger:opinion_level] = {
+	who = scope[country]
+	level = enum[opinion_levels]
+}
 
 
 #     Effects
@@ -311,4 +317,24 @@ enums = {
 		default
 		leader
 	}
+	enum[opinion_levels] = {
+		terrible
+		poor
+		neutral
+		good
+		excellent
+	}
 }
+
+#Modifiers
+
+## scope = country
+alias[modifier:diplo_weight_mult] = float
+## scope = country
+alias[modifier:envoy_improve_relations_mult] = float
+## scope = country
+alias[modifier:envoy_harm_relations_mult] = float
+## scope = country
+alias[modifier:empire_size_pops_mult] = float
+## scope = country
+alias[modifier:envoys_add] = int

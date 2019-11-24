@@ -191,4 +191,8 @@ links = {
 		inputscopes = { allScopes }
 		output_scope = archaeological_site
 	}
+	federation = {
+		inputscopes = { country }
+		output_scope = federation
+	}
 }

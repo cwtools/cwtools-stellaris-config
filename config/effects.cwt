@@ -378,7 +378,7 @@ alias[effect:change_government] = {
 	## cardinality = 0..1
 	civics = {
 		## cardinality = 1..4
-		civic = <civic>
+		civic = <civic_or_origin.civic>
 		## cardinality = 1..4
 		civic = random
 	}
@@ -986,7 +986,7 @@ alias[effect:create_country] = {
 	civics = {
 		# TODO: Make this 1..4 with warning only
 		## cardinality = 0..4
-		civic = <civic>
+		civic = <civic_or_origin.civic>
 		## cardinality = 0..4
 		civic = random
 	}
@@ -1071,7 +1071,7 @@ alias[effect:create_rebels] = {
 	## cardinality = 0..1
 	civics = {
 		## cardinality = 2..3
-		civic = <civic>
+		civic = <civic_or_origin.civic>
 	}
 	species = scope[country]
  	species = enum[buildable_pop_species]

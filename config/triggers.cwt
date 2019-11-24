@@ -117,13 +117,13 @@ alias[trigger:has_government] = <government>
 alias[trigger:has_authority] = <authority>
 
 ###Checks if the current country has a certain civic and if its validated
-alias[trigger:has_valid_civic] = <civic>
+alias[trigger:has_valid_civic] = <civic_or_origin.civic>
 
 ###Checks if the current country has the specified civic
-alias[trigger:has_civic] = <civic>
+alias[trigger:has_civic] = <civic_or_origin.civic>
 
 ###Checks if the current country has a certain civic and if its invalidated
-alias[trigger:has_invalid_civic] = <civic>
+alias[trigger:has_invalid_civic] = <civic_or_origin.civic>
 
 ###Checks if the country has a specific policy
 alias[trigger:has_policy_flag] = enum[policy_flag]
