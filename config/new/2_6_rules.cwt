@@ -85,7 +85,7 @@ alias[trigger:is_galactic_council_established] = bool
 ###Checks if scoped country has specified origin
 alias[trigger:has_origin] = <civic_or_origin.origin>
 
-## scope = country
+## scope = any
 ###Checks if the provided Resolution is active in the Community
 alias[trigger:is_active_resolution] = <resolution>
 
