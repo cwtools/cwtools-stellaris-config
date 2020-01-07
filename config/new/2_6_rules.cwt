@@ -295,6 +295,15 @@ alias[effect:every_member] = {
 	alias_name[effect] = alias_match_left[effect]
 }
 
+## scope = country
+## push_scope = pop_faction
+###Checks if any of the country's pop factions meet the specified criteria
+alias[trigger:any_pop_faction] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
 
 #       Enums
 
