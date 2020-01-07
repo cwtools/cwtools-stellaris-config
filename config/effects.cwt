@@ -980,6 +980,8 @@ alias[effect:create_country] = {
 	## cardinality = 0..1
 	civics = scope[country]
 	## cardinality = 0..1
+	origin = <civic_or_origin.origin>
+	## cardinality = 0..1
 	### random includes starting civics
 	civics = random
 	## cardinality = 0..1
@@ -1063,6 +1065,8 @@ alias[effect:create_rebels] = {
 	authority = random
 	authority = <authority>
 	authority = scope[country]
+	## cardinality = 0..1
+	origin = <civic_or_origin.origin>
 	## cardinality = 0..1
 	civics = scope[country]
 	### random includes starting civics
