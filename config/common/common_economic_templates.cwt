@@ -187,7 +187,7 @@ alias[triggered_planet_modifier_direct:triggered_planet_modifier] = {
 	alias_name[modifier] = alias_match_left[modifier]
 	## cardinality = 0..inf
 	modifier = {
-		alias_name[modifier] = alias_match_left[modifier
+		alias_name[modifier] = alias_match_left[modifier]
 	}
 }
 
