@@ -406,7 +406,7 @@ alias[trigger:has_skill] = int[1..10]
 # ###Checks the war exhaustion of the war's attackers
 # alias[trigger:attacker_exhaustion_score] = int #deprecated
 ###Checks the war exhaustion of the war's defenders
-alias[trigger:defender_war_exhaustion] = int
+alias[trigger:defender_war_exhaustion] = float[0.0..1.0]
 ###Checks the country's total war exhaustion for all offensive wars
 alias[trigger:off_war_exhaustion_sum] = int
 ###Checks the country's total war exhaustion for all defemsove wars
@@ -752,7 +752,7 @@ alias[trigger:army_type] = <army>
 
 
 ### Checks the war exhaustion of the war's attackers
-alias[trigger:attacker_war_exhaustion] = int
+alias[trigger:attacker_war_exhaustion] = float[0.0..1.0]
 
 ### Checks the country's energy credit balance
 alias[trigger:balance] = int
