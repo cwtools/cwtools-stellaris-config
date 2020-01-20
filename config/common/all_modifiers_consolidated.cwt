@@ -41,10 +41,12 @@ types = {
 	}
 	type[notification_modifier] = {
 		path = "game/common/notification_modifiers"
-		## required
-		Name = "$"
-		## required
-		Description = "$_desc"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Description = "$_desc"
+		}
 	}
 }
 

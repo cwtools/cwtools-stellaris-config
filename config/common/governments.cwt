@@ -37,7 +37,7 @@ types = {
 	## type_key_filter = swap_type
 	type[swapped_civic] = {
 		path = "game/common/governments/civics"
-		skip_root_key = { any }
+		skip_root_key = any
 		name_field = "name"
 		localisation = {
 			## required

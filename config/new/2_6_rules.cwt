@@ -422,7 +422,7 @@ alias[modifier:federation_leader_diplo_weight_from_members_mult] = float
 types = {
 	type[diplomacy_economy] = {
         path = "game/common/diplomacy_economy"
-        name_from_file = yes
+#        name_from_file = yes
         type_per_file = yes
 	}
 }
