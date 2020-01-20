@@ -269,6 +269,45 @@ alias[effect:pass_resolution] = <resolution>
 
 #       Scopes
 
+## scope = any
+## push_scope = federation
+###Iterate through each federation
+alias[trigger:any_federation] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## scope = any
+## push_scope = federation
+###Iterate through each federation
+alias[trigger:count_federation] = {
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	##cardinality = 0..1
+	count = int
+}
+
+## scope = any
+## push_scope = federation
+###Iterate through each federation
+alias[effect:random_federation] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = any
+## push_scope = federation
+###Iterate through each federation
+alias[effect:every_federation] = {
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+
+
 ## scope = federation
 ## push_scope = country
 ###Iterate through each member of the federation
