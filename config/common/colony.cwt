@@ -57,17 +57,7 @@ colony_type = {
 	}
 
 	## replace_scope = { this = planet root = planet }
-	alias[triggered_planet_modifier:triggered_planet_modifier] = {
-		## cardinality = 0..1
-		potential = {
-			alias_name[trigger] = alias_match_left[trigger]
-		}
-		alias_name[modifier] = alias_match_left[modifier]
-		## cardinality = 0..1
-		modifier = {
-			alias_name[modifier] = alias_match_left[modifier]
-		}
-	}
+	alias_name[triggered_planet_modifier] = alias_match_left[triggered_planet_modifier]
 	
 	weight_modifier = {
 		## cardinality = 0..1

@@ -245,7 +245,7 @@ component_template = {
 	}
 	subtype[weapon_component_template] = {
 		size = enum[weapon_slot_size]
-		type = enum[weapon_type]
+		type = enum[weapon_type2]
 		projectile_gfx = scalar #tied to defined entites under gfx
 		## cardinality = 0..1
 		color = {
@@ -368,6 +368,8 @@ enums = {
 	enum[weapon_type2] = {
 		instant
 		point_defence
+		missile
+		planet_killer
 	}
 	enum[weapon_slot_size] = {
 		extra_large

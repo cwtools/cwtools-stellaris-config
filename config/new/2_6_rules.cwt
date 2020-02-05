@@ -149,6 +149,11 @@ alias[trigger:opinion_level] = {
 	level = enum[opinion_levels]
 }
 
+## scope = species
+###Check if the species in the scope is a robot species or not.
+alias[trigger:is_robotic] = bool
+
+
 
 #     Effects
 
@@ -390,18 +395,55 @@ alias[trigger:any_fleet_in_system] = {
 	count = int
 }
 
-## scope = country
+## scope = any
 ## push_scope = species
-###Iterate through each species belonging to the country
+###Iterate through each species in the galaxy
+alias[trigger:any_galaxy_species] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## scope = any
+## push_scope = species
+###Iterate through each species in the galaxy
+alias[trigger:count_galaxy_species] = {
+	##cardinality = 0..1
+	trigger = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+## scope = any
+## push_scope = species
+###Iterate through each species in the galaxy
+alias[effect:random_galaxy_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = any
+## push_scope = species
+###Iterate through each species in the galaxy
+alias[effect:every_galaxy_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = { country planet }
+## push_scope = species
+###Iterate through each species belonging to the country/planet
 alias[trigger:any_owned_species] = {
 	alias_name[trigger] = alias_match_left[trigger]
 	##cardinality = 0..1
 	count = int
 }
 
-## scope = country
+## scope = { country planet }
 ## push_scope = species
-###Iterate through each species belonging to the country
+###Iterate through each species belonging to the country/planet
 alias[trigger:count_owned_species] = {
 	##cardinality = 0..1
 	trigger = { alias_name[trigger] = alias_match_left[trigger] }
@@ -409,36 +451,36 @@ alias[trigger:count_owned_species] = {
 	count = all
 }
 
-## scope = country
+## scope = { country planet }
 ## push_scope = species
-###Iterate through each species belonging to the country
+###Iterate through each species belonging to the country/planet
 alias[effect:random_owned_species] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
 }
 
-## scope = country
+## scope = { country planet }
 ## push_scope = species
-###Iterate through each species belonging to the country
+###Iterate through each species belonging to the country/planet
 alias[effect:every_owned_species] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
 }
 
-## scope = country
+## scope = { country planet }
 ## push_scope = species
-###Iterate through each species enslaved by the country
+###Iterate through each species enslaved by the country/planet
 alias[trigger:any_enslaved_species] = {
 	alias_name[trigger] = alias_match_left[trigger]
 	##cardinality = 0..1
 	count = int
 }
 
-## scope = country
+## scope = { country planet }
 ## push_scope = species
-###Iterate through each species enslaved by the country
+###Iterate through each species enslaved by the country/planet
 alias[trigger:count_enslaved_species] = {
 	##cardinality = 0..1
 	trigger = { alias_name[trigger] = alias_match_left[trigger] }
@@ -446,18 +488,18 @@ alias[trigger:count_enslaved_species] = {
 	count = all
 }
 
-## scope = country
+## scope = { country planet }
 ## push_scope = species
-###Iterate through each species enslaved by the country
+###Iterate through each species enslaved by the country/planet
 alias[effect:random_enslaved_species] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
 }
 
-## scope = country
+## scope = { country planet }
 ## push_scope = species
-###Iterate through each species enslaved by the country
+###Iterate through each species enslaved by the country/planet
 alias[effect:every_enslaved_species] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }

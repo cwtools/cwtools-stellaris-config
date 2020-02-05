@@ -24,7 +24,7 @@ enums = {
 	}
 	enum[weight_or_factor] = {
 		weight
-		facctor
+		factor
 	}
 	enum[relative_power_categories] = {
 		all
