@@ -511,7 +511,7 @@ alias[trigger:is_capital] = bool
 
 ###Checks if the planet can be colonized by target country
 alias[trigger:can_colonize] = {
-	who = scope[country]
+	who = scope[country] 	
 	status = bool
 }
 ###Checks the relative amount of already-researched tech between the country and target country
@@ -1826,7 +1826,7 @@ alias[trigger:is_pop_category] = <social_strata>
 alias[trigger:won_the_game] = bool
 
 ###Checks the country's percentage of communications with playable empires
-alias[trigger:perc_communications_with_playable] = int
+alias[trigger:perc_communications_with_playable] = float[0.0..1.0]
 
 ###Compares the crime present on the planet with the given value
 alias[trigger:planet_crime] = int[0..100]

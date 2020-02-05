@@ -946,6 +946,12 @@ alias[effect:create_species] = {
 	## cardinality = 0..1
 	## push_scope = species
 	effect = { alias_name[effect] = alias_match_left[effect] }
+
+	## cardinality = 0..1
+	blocked_archetypes = {
+		## cardinality = 1..inf
+		<species_archetype>
+	}
 }
 
 
@@ -1005,6 +1011,8 @@ alias[effect:create_country] = {
 	## cardinality = 0..1
 	species = scope[species] #maybe key would work, I don't know which though
 
+	## cardinality = 0..1
+	randomize_ethos = yes
 	## cardinality = 0..1
 	ethos = random
 	## cardinality = 0..1

@@ -195,4 +195,8 @@ links = {
 		inputscopes = { country }
 		output_scope = federation
 	}
+	last_added_deposit = {
+		inputscopes = { planet }
+		output_scope = deposit
+	}
 }

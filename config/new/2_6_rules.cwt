@@ -34,6 +34,14 @@ alias[trigger:has_federation_law] = <federation_law>
 alias[trigger:is_galactic_community_member] = bool
 
 ## scope = country
+###Checks how much the empire sprawl is over its admin capacity.
+alias[trigger:empire_sprawl_over_cap] = int
+
+## scope = country
+###Checks the empire's sprawl compared to its admin level.
+alias[trigger:empire_sprawl_cap_fraction] = int
+
+## scope = country
 ###Checks if scoped country is part of the Galactic Council.
 alias[trigger:is_part_of_galactic_council] = bool
 
@@ -266,8 +274,12 @@ alias[effect:remove_permanent_councillor] = yes
 alias[effect:pass_resolution] = <resolution>
 
 ## scope = war
-###Removes the specified participant from the scoped war
-alias[effect:remove_war_participant] = scope[country
+###Removes the specified participant from the scoped war.
+alias[effect:remove_war_participant] = scope[country]
+
+## scope = country
+###Ends all treaties with the target.
+alias[effect:end_all_treaties_with] = scope[country]
 
 
 
@@ -378,6 +390,82 @@ alias[trigger:any_fleet_in_system] = {
 	count = int
 }
 
+## scope = country
+## push_scope = species
+###Iterate through each species belonging to the country
+alias[trigger:any_owned_species] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## scope = country
+## push_scope = species
+###Iterate through each species belonging to the country
+alias[trigger:count_owned_species] = {
+	##cardinality = 0..1
+	trigger = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+## scope = country
+## push_scope = species
+###Iterate through each species belonging to the country
+alias[effect:random_owned_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = country
+## push_scope = species
+###Iterate through each species belonging to the country
+alias[effect:every_owned_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = country
+## push_scope = species
+###Iterate through each species enslaved by the country
+alias[trigger:any_enslaved_species] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## scope = country
+## push_scope = species
+###Iterate through each species enslaved by the country
+alias[trigger:count_enslaved_species] = {
+	##cardinality = 0..1
+	trigger = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+## scope = country
+## push_scope = species
+###Iterate through each species enslaved by the country
+alias[effect:random_enslaved_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = country
+## push_scope = species
+###Iterate through each species enslaved by the country
+alias[effect:every_enslaved_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+
+
 
 #       Enums
 
@@ -388,6 +476,8 @@ enums = {
 		rotation
 		challenge
 		random
+		tech
+		fleet
 	}
 	enum[federation_succession_terms] = {
 		status_change
@@ -461,6 +551,29 @@ alias[modifier:federation_join_malus_mult] = float
 alias[modifier:federation_leader_fleet_scale_mult] = float
 ## scope = federation
 alias[modifier:federation_leader_diplo_weight_from_members_mult] = float
+## scope = ship
+alias[modifier:ship_engagement_range_mult] = float
+## scope = ship
+alias[modifier:ship_jumpdrive_cooldown_mult] = float
+## scope = country
+alias[modifier:diplo_weight_economy_mult] = float
+## scope = country
+alias[modifier:diplo_weight_pops_mult] = float
+## scope = country
+alias[modifier:diplo_weight_council_mult] = float
+## scope = country
+alias[modifier:diplo_weight_envoys_mult] = float
+## scope = federation
+alias[modifier:federation_fleet_cap_add] = int
+## scope = country
+alias[modifier:empire_size_districts_mult] = float
+## scope = country
+alias[modifier:empire_size_systems_mult] = float
+## scope = country
+alias[modifier:empire_size_colonies_mult] = float
+## scope = species
+alias[modifier:species_empire_size_mult] = float
+
 
 
 types = {

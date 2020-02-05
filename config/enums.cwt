@@ -22,6 +22,10 @@ enums = {
 		weight
 		base
 	}
+	enum[weight_or_factor] = {
+		weight
+		facctor
+	}
 	enum[relative_power_categories] = {
 		all
 		fleet

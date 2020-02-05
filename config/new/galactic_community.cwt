@@ -64,6 +64,8 @@ resolution = {
 	###Does the resolution require a target country?
 	target = bool
 	## cardinality = 0..1
+	harmful = bool
+	## cardinality = 0..1
 	###Modifier to be applied to all community members if passed. Apparently. Not sure about that...
 	modifier = {
 		## cardinality = 0..inf

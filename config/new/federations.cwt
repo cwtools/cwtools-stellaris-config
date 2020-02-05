@@ -173,4 +173,17 @@ federation_type = {
 	on_create = {
 		alias_name[effect] = alias_match_left[effect]
 	}
+
+	ai_weight = {
+		base = float
+		## cardinality = 0..inf
+		modifier = {
+			add = float
+			desc = localisation
+			## push_scope = country
+			from = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+		}
+	}
 }
