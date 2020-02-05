@@ -265,6 +265,10 @@ alias[effect:remove_permanent_councillor] = yes
 ###Passes the specified resolution
 alias[effect:pass_resolution] = <resolution>
 
+## scope = war
+###Removes the specified participant from the scoped war
+alias[effect:remove_war_participant] = scope[country
+
 
 
 #       Scopes
@@ -282,11 +286,12 @@ alias[trigger:any_federation] = {
 ## push_scope = federation
 ###Iterate through each federation
 alias[trigger:count_federation] = {
+	##cardinality = 0..1
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	##cardinality = 0..1
 	count = int
+	count = all
 }
 
 ## scope = any
@@ -330,8 +335,47 @@ alias[effect:random_member] = {
 ## push_scope = country
 ###Iterate through each member of the federation
 alias[effect:every_member] = {
+	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = country
+## push_scope = war
+###Iterate through each war the country is fighting in
+alias[effect:every_war] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = country
+## push_scope = war
+###Iterate through each war the country is fighting in
+alias[effect:random_war] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = country
+## push_scope = war
+###Iterate through each war the country is fighting in
+alias[trigger:count_war] = {
+	##cardinality = 0..1
+	trigger = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+
+## scope = system
+## push_scope = fleet
+###Iterate through each fleet in the system
+alias[trigger:any_fleet_in_system] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
 }
 
 

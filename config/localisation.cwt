@@ -21,6 +21,8 @@ localisation_commands = {
             GetSpeciesNamePluralCompliment = country
             GetSpeciesNamePluralInsult = country
             GetSpeciesOrganName = country
+            GetSpeciesMouthName = country
+            GetSpeciesHandName = country
             GetSpeciesSpawnNamePlural = country
             GetNebula = { planet ship galactic_object ambient_object }
             GetStarName = { planet ship fleet ambient_object }
@@ -71,4 +73,5 @@ localisation_commands = {
             GetFirstName = leader
             GetSecondName = leader
             GetAge = leader
+            GetHerselfHimself = leader
 }
