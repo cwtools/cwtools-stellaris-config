@@ -1,0 +1,57 @@
+
+## scope = country
+## push_scope = leader
+###Iterate through each envoy available to the country
+alias[trigger:any_envoy] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## scope = country
+## push_scope = leader
+###Iterate through each envoy available to the country
+alias[trigger:count_envoy] = {
+	##cardinality = 0..1
+	trigger = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+## scope = country
+## push_scope = leader
+###Iterate through each envoy available to the country
+alias[effect:random_envoy] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = country
+## push_scope = leader
+###Iterate through each envoy available to the country
+alias[effect:every_envoy] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+
+## scope = country
+## push_scope = leader
+###Iterate through each envoy available to the country
+alias[trigger:has_envoy_task] = {
+	##cardinality = 0..1
+	who = scope[country]
+	task = enum[envoy_tasks]
+}
+
+enums = {
+	enum[envoy_tasks] = {
+		improve_relations
+		harm_relations
+		federation
+		galactic_community
+		none
+	}
+}
