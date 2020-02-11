@@ -177,13 +177,11 @@ federation_type = {
 	ai_weight = {
 		base = float
 		## cardinality = 0..inf
+		## replace_scopes = { this = country root = country from = country }
 		modifier = {
 			add = float
 			desc = localisation
-			## push_scope = country
-			from = {
-				alias_name[trigger] = alias_match_left[trigger]
-			}
+			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
 }
