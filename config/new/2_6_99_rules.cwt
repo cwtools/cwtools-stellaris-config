@@ -37,9 +37,8 @@ alias[effect:every_envoy] = {
 }
 
 
-## scope = country
-## push_scope = leader
-###Iterate through each envoy available to the country
+## scope = leader
+###Checks the scoped envoy's task.
 alias[trigger:has_envoy_task] = {
 	##cardinality = 0..1
 	who = scope[country]
