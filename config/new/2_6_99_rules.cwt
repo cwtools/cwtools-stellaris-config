@@ -36,12 +36,11 @@ alias[effect:every_envoy] = {
 	alias_name[effect] = alias_match_left[effect]
 }
 
-
 ## scope = leader
 ###Checks the scoped envoy's task.
 alias[trigger:has_envoy_task] = {
 	##cardinality = 0..1
-	who = scope[country]
+	target = scope[country]
 	task = enum[envoy_tasks]
 }
 
@@ -54,3 +53,7 @@ enums = {
 		none
 	}
 }
+
+## scope = leader
+###Checks the scoped leader's age.
+alias[trigger:leader_age] = int
