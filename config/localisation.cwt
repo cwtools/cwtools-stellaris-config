@@ -74,4 +74,6 @@ localisation_commands = {
             GetSecondName = leader
             GetAge = leader
             GetHerselfHimself = leader
+            ## post-2.6
+            GetGovernmentName = country
 }

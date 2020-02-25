@@ -197,11 +197,6 @@ event = {
 			sound = scalar
 
 			## cardinality = 0..1
-			tooltip = {
-				alias_name[effect] = alias_match_left[effect]
-			}
-
-			## cardinality = 0..1
 			trigger = {
 				alias_name[trigger] = alias_match_left[trigger]
 			}

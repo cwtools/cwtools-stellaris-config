@@ -153,9 +153,30 @@ alias[trigger:opinion_level] = {
 ###Check if the species in the scope is a robot species or not.
 alias[trigger:is_robotic] = bool
 
+## scope = country
+###Check amount of favors that scoped country can collect from target country.
+alias[trigger:num_favors] = {
+	target = scope[country]
+	value = int
+}
 
 
 #     Effects
+
+## scope = country
+###Add <value> favors for scoped country to use on target country.
+alias[effect:add_favors] = {
+	target = scope[country]
+	value = int
+}
+
+## scope = country
+###Remove <value/all> favors that scoped country have on target country.
+alias[effect:remove_favors] = {
+	target = scope[country]
+	value = int
+	value = all
+}
 
 ## scope = federation
 ###Sets an arbitrarily-named flag on the scoped federation
