@@ -180,7 +180,7 @@ links = {
 		output_scope = Planet
 	}
 	observation_outpost_owner = {
-		inputscopes = { allScopes }
+		inputscopes = { planet }
 		output_scope = Country
 	}
 	branch_office_owner = {
@@ -198,5 +198,9 @@ links = {
 	last_added_deposit = {
 		inputscopes = { planet }
 		output_scope = deposit
+	}
+	envoy_location_country = {
+		inputscopes = { leader }
+		output_scope = country
 	}
 }

@@ -872,7 +872,7 @@ alias[trigger:graphical_culture] = <graphical_culture>
 ### Checks the average happiness on the planet
 alias[trigger:happiness_planet] = int
 
-### Checks if the system is accessible to the target country with construction vessels
+### Checks if the target country is allowed to enter the system
 alias[trigger:has_access_fleet] = scope[country]
 
 ### Checks if the planet has an anomaly

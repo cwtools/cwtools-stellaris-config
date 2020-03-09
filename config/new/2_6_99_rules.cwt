@@ -44,6 +44,20 @@ alias[trigger:has_envoy_task] = {
 	task = enum[envoy_tasks]
 }
 
+## scope = leader
+###Checks whether the scoped envoy is affected by a cooldown.
+alias[trigger:has_envoy_cooldown] = bool
+
+## scope = fleet
+###Checks if the scoped fleet is able to enter the system. Note: Avoid overusing this, it is a performance-intensive trigger!
+alias[trigger:can_access_system] = scope[system]
+
+## scope = system
+###Checks the system's trade value
+alias[trigger:has_system_trade_value] = float
+
+
+
 enums = {
 	enum[envoy_tasks] = {
 		improve_relations

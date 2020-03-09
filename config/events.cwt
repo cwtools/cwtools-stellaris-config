@@ -191,7 +191,15 @@ event = {
 
 		## cardinality = 0..inf
 		option = {
+			## cardinality = 0..inf
 			name = localisation
+			## cardinality = 0..inf
+			name = {
+				text = localisation
+				trigger = {
+					alias_name[trigger] = alias_match_left[trigger]
+				}
+			}
 
 			## cardinality = 0..1
 			sound = scalar
