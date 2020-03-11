@@ -44,6 +44,16 @@ alias[trigger:has_envoy_task] = {
 	task = enum[envoy_tasks]
 }
 
+enums = {
+	enum[envoy_tasks] = {
+		improve_relations
+		harm_relations
+		federation
+		galactic_community
+		none
+	}
+}
+
 ## scope = leader
 ###Checks whether the scoped envoy is affected by a cooldown.
 alias[trigger:has_envoy_cooldown] = bool
@@ -56,18 +66,14 @@ alias[trigger:can_access_system] = scope[system]
 ###Checks the system's trade value
 alias[trigger:has_system_trade_value] = float
 
-
-
-enums = {
-	enum[envoy_tasks] = {
-		improve_relations
-		harm_relations
-		federation
-		galactic_community
-		none
-	}
-}
-
 ## scope = leader
 ###Checks the scoped leader's age.
 alias[trigger:leader_age] = int
+
+## scope = country
+###Checks if the country has completed a specific special project as part of an in-progress event chain
+alias[trigger:has_completed_special_project] = <special_project>
+
+## scope = country
+###Checks if the country has failed, timed out or aborted a specific special project as part of an in-progress event chain.
+alias[trigger:has_failed_special_project] = <special_project>
