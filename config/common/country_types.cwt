@@ -12,7 +12,8 @@ country_type = {
 	## cardinality = 0..1
 	can_use_invalid_technology = bool
 
-
+	## cardinality = 0..1
+	can_receive_envoys = bool
 	## cardinality = 0..1
 	can_own_empty_planets = bool
 	## cardinality = 0..1

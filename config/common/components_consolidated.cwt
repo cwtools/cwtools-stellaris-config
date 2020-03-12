@@ -245,7 +245,7 @@ component_template = {
 	}
 	subtype[weapon_component_template] = {
 		size = enum[weapon_slot_size]
-		type = enum[weapon_type]
+		type = enum[weapon_type2]
 		projectile_gfx = scalar #tied to defined entites under gfx
 		## cardinality = 0..1
 		color = {
@@ -322,7 +322,7 @@ component_template = {
 	subtype[strike_craft_component_template] = {
 		size = enum[weapon_slot_size]
 		entity = scalar #TODO: Replace with hardcoded  graphical_culture + <model_entity>
-		weapon_type = enum[weapon_type]
+		weapon_type = enum[weapon_type2]
 		ship_behavior = <ship_behavior>
 		projectile_gfx = scalar #tied to defined entites under gfx
 		power = float
@@ -337,6 +337,7 @@ component_template = {
 		damage = { min = float max = float }
 		cooldown = float
 		range = float
+		engagement_range = float
 		accuracy = float
 		tracking = float
 		health = float
@@ -358,9 +359,16 @@ component_template = {
 
 enums = {
 	enum[weapon_type] = {
+		weapon_type_energy
+		weapon_type_kinetic
+		weapon_type_explosive
+		weapon_type_strike_craft
+		weapon_type_point_defense
+	}
+	enum[weapon_type2] = {
 		instant
-		missile
 		point_defence
+		missile
 		planet_killer
 	}
 	enum[weapon_slot_size] = {

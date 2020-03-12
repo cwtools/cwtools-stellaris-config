@@ -1969,6 +1969,21 @@ on_action = {
         }
     }
     ## replace_scope = { this = ship root = ship from = planet }
+    subtype[on_building_starbase_exd_0] = {
+        ## cardinality = 0..1
+        events = {
+            ## cardinality = 0..inf
+            <event.ship>
+        }
+        ## cardinality = 0..1
+        random_events = {
+            ## cardinality = 0..inf
+            int = 0
+            ## cardinality = 0..inf
+            int = <event.ship>
+        }
+    }
+    ## replace_scope = { this = ship root = ship from = planet }
     subtype[on_building_starbase_swarm] = {
         ## cardinality = 0..1
         events = {
@@ -2780,6 +2795,186 @@ on_action = {
     }
     ## replace_scope = { this = fleet root = fleet from = archaeological_site }
     subtype[on_arch_site_finished] = {
+        ## cardinality = 0..1
+        events = {
+            ## cardinality = 0..inf
+            <event.fleet>
+        }
+        ## cardinality = 0..1
+        random_events = {
+            ## cardinality = 0..inf
+            int = 0
+            ## cardinality = 0..inf
+            int = <event.fleet>
+        }
+    }
+    ## replace_scope = { this = country root = country from = country }
+    subtype[on_join_federation] = {
+        ## cardinality = 0..1
+        events = {
+            ## cardinality = 0..inf
+            <event.fleet>
+        }
+        ## cardinality = 0..1
+        random_events = {
+            ## cardinality = 0..inf
+            int = 0
+            ## cardinality = 0..inf
+            int = <event.fleet>
+        }
+    }
+    ## replace_scope = { this = country root = country from = country }
+    subtype[on_leave_federation] = {
+        ## cardinality = 0..1
+        events = {
+            ## cardinality = 0..inf
+            <event.fleet>
+        }
+        ## cardinality = 0..1
+        random_events = {
+            ## cardinality = 0..inf
+            int = 0
+            ## cardinality = 0..inf
+            int = <event.fleet>
+        }
+    }
+    ## replace_scope = { this = country root = country from = country }
+    subtype[on_federation_law_vote_succeed] = {
+        ## cardinality = 0..1
+        events = {
+            ## cardinality = 0..inf
+            <event.fleet>
+        }
+        ## cardinality = 0..1
+        random_events = {
+            ## cardinality = 0..inf
+            int = 0
+            ## cardinality = 0..inf
+            int = <event.fleet>
+        }
+    }
+    ## replace_scope = { this = country root = country from = country }
+    subtype[on_federation_law_vote_failed] = {
+        ## cardinality = 0..1
+        events = {
+            ## cardinality = 0..inf
+            <event.fleet>
+        }
+        ## cardinality = 0..1
+        random_events = {
+            ## cardinality = 0..inf
+            int = 0
+            ## cardinality = 0..inf
+            int = <event.fleet>
+        }
+    }
+    ## replace_scope = { this = country root = country from = country }
+    subtype[on_federation_leader_elections] = {
+        ## cardinality = 0..1
+        events = {
+            ## cardinality = 0..inf
+            <event.fleet>
+        }
+        ## cardinality = 0..1
+        random_events = {
+            ## cardinality = 0..inf
+            int = 0
+            ## cardinality = 0..inf
+            int = <event.fleet>
+        }
+    }
+    ## replace_scope = { this = country root = country from = country }
+    subtype[on_federation_leader_challenge] = {
+        ## cardinality = 0..1
+        events = {
+            ## cardinality = 0..inf
+            <event.fleet>
+        }
+        ## cardinality = 0..1
+        random_events = {
+            ## cardinality = 0..inf
+            int = 0
+            ## cardinality = 0..inf
+            int = <event.fleet>
+        }
+    }
+    ## replace_scope = { this = country root = country from = country }
+    subtype[on_becoming_subject] = {
+        ## cardinality = 0..1
+        events = {
+            ## cardinality = 0..inf
+            <event.fleet>
+        }
+        ## cardinality = 0..1
+        random_events = {
+            ## cardinality = 0..inf
+            int = 0
+            ## cardinality = 0..inf
+            int = <event.fleet>
+        }
+    }
+    ## replace_scope = { this = country root = country from = country }
+    subtype[on_ask_to_leave_federation_declined] = {
+        ## cardinality = 0..1
+        events = {
+            ## cardinality = 0..inf
+            <event.fleet>
+        }
+        ## cardinality = 0..1
+        random_events = {
+            ## cardinality = 0..inf
+            int = 0
+            ## cardinality = 0..inf
+            int = <event.fleet>
+        }
+    }
+    ## replace_scope = { this = country root = country }
+    subtype[on_galactic_community_formed] = {
+        ## cardinality = 0..1
+        events = {
+            ## cardinality = 0..inf
+            <event.fleet>
+        }
+        ## cardinality = 0..1
+        random_events = {
+            ## cardinality = 0..inf
+            int = 0
+            ## cardinality = 0..inf
+            int = <event.fleet>
+        }
+    }
+    ## replace_scope = { this = country root = country }
+    subtype[on_galactic_council_established] = {
+        ## cardinality = 0..1
+        events = {
+            ## cardinality = 0..inf
+            <event.fleet>
+        }
+        ## cardinality = 0..1
+        random_events = {
+            ## cardinality = 0..inf
+            int = 0
+            ## cardinality = 0..inf
+            int = <event.fleet>
+        }
+    }
+    ## replace_scope = { this = country root = country }
+    subtype[on_add_community_member] = {
+        ## cardinality = 0..1
+        events = {
+            ## cardinality = 0..inf
+            <event.fleet>
+        }
+        ## cardinality = 0..1
+        random_events = {
+            ## cardinality = 0..inf
+            int = 0
+            ## cardinality = 0..inf
+            int = <event.fleet>
+        }
+    }
+    ## replace_scope = { this = country root = country }
+    subtype[on_remove_community_member] = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf

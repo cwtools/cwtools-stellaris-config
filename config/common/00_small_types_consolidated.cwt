@@ -84,6 +84,9 @@ types = {
 	type[trade_conversion] = {
 		path = "game/common/trade_conversions"
 	}
+	type[economic_plan] = {
+		path = "game/common/economic_plans"
+	}
 }
 
 ambient_object = {
@@ -371,4 +374,34 @@ trade_conversion = {
 		<resource> = float
 	}
 	economic_category = <economic_category>
+}
+
+
+
+economic_plan = {
+	type = scalar
+
+	income = {
+		## cardinality = 1..inf
+		<resource> = int
+	}
+
+	focus = {
+		## cardinality = 1..inf
+		<resource> = int
+	}
+
+	pops = int
+	empire_size = float
+
+	## replace_scope = { this = country root = country }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## replace_scope = { this = country root = country }
+	ai_weight = {
+		weight = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
 }
