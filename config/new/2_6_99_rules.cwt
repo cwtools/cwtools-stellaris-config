@@ -36,6 +36,9 @@ alias[effect:every_envoy] = {
 	alias_name[effect] = alias_match_left[effect]
 }
 
+
+#--- Triggers
+
 ## scope = leader
 ###Checks the scoped envoy's task.
 alias[trigger:has_envoy_task] = {
@@ -77,3 +80,15 @@ alias[trigger:has_completed_special_project] = <special_project>
 ## scope = country
 ###Checks if the country has failed, timed out or aborted a specific special project as part of an in-progress event chain.
 alias[trigger:has_failed_special_project] = <special_project>
+
+
+#--- Effects
+
+## scope = any
+###Prints the countries that match the limit triggers in a list for a tooltip.
+alias[effect:country_list_tooltip] = {
+	## push_scope = country
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
