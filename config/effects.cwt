@@ -586,8 +586,6 @@ alias[effect:resettle_pop] = {
 	pop = scope[pop]
 	## cardinality = 0..1
 	planet = scope[planet]
-	## cardinality = 0..1
-	tile = scope[tile]
 }
 
 
