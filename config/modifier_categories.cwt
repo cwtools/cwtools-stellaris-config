@@ -35,10 +35,6 @@ modifier_categories = {
         internal_id = 16508
         supported_scopes = { ship starbase fleet country }
     }
-    Tile = {
-        internal_id = 32768
-        supported_scopes = { tile pop planet country }
-    }
     Megastructure = {
         internal_id = 65536
         supported_scopes = { megastructure country }
