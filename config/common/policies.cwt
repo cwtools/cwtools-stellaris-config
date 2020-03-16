@@ -53,6 +53,8 @@ policy = {
 	## cardinality = 2..20
 	option = {
 		name = localisation
+		## cardinality = 0..1
+		icon = <sprite>
 
 		## cardinality = 0..1
 		policy_flags = {

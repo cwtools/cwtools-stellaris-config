@@ -12,6 +12,22 @@ types = {
 			}
 		}
 	}
+	type[component_slot_template] = {
+		path = "game/common/component_slot_templates"
+	}
+}
+
+component_slot_template = {
+	size = enum[weapon_slot_size]
+	component = weapon
+	component = strike_craft
+	## cardinality = 0..1
+	is_fixed = yes
+	## cardinality = 0..1
+	entities = {
+		## cardinality = 1..inf
+		enum[weapon_type] = <model_entity>
+	}
 }
 
 section_template = {
@@ -45,10 +61,7 @@ section_template = {
   ## cardinality = 0..inf
   component_slot = {
     name = scalar
-	#TODO slot size
-	#slot_size = <weapon_slot_size>
-	slot_size = scalar
-    slot_type = enum[slot_type]
+	template = <component_slot_template>
     locatorname = enum[locators]
     locatorname = scalar #TODO: Some locators are in .mesh files, so are missed by the enum
     ## cardinality = 0..1

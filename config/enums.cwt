@@ -22,6 +22,10 @@ enums = {
 		weight
 		base
 	}
+	enum[weight_or_factor] = {
+		weight
+		factor
+	}
 	enum[relative_power_categories] = {
 		all
 		fleet
@@ -105,5 +109,11 @@ enums = {
 		aggressive
 		passive
 		evasive
+	}
+	enum[action_types] = {
+		positive
+		negative
+		aggressive
+		neutral
 	}
 }

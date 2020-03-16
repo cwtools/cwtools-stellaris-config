@@ -63,6 +63,10 @@ job = {
 	purge = enum[purge_types]
 
 	## cardinality = 0..1
+	###Sets whether the job contributes to diplo weight. Default = yes
+	contributes_to_diplo_weight = bool
+
+	## cardinality = 0..1
 	### Only uses certain simple triggers.
 	possible_pre_triggers = {
 		alias_name[pop_pre_trigger] = alias_match_left[pop_pre_trigger]

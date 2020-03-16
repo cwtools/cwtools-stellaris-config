@@ -20,6 +20,14 @@ types = {
 #TODO Document
 diplomatic_action = {
 	## cardinality = 0..1
+	icon = <sprite>
+	## cardinality = 0..1
+	action_type = enum[action_types]
+	## cardinality = 0..1
+	require_envoy = yes
+	## cardinality = 0..1
+	envoy_assignment = localisation
+	## cardinality = 0..1
 	###decides if this diplomactic action type is listed in diplomatic view.
 	is_listed = bool
 

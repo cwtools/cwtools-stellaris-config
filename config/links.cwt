@@ -180,7 +180,7 @@ links = {
 		output_scope = Planet
 	}
 	observation_outpost_owner = {
-		inputscopes = { allScopes }
+		inputscopes = { planet }
 		output_scope = Country
 	}
 	branch_office_owner = {
@@ -190,5 +190,17 @@ links = {
 	archaeological_site = {
 		inputscopes = { allScopes }
 		output_scope = archaeological_site
+	}
+	federation = {
+		inputscopes = { country }
+		output_scope = federation
+	}
+	last_added_deposit = {
+		inputscopes = { planet }
+		output_scope = deposit
+	}
+	envoy_location_country = {
+		inputscopes = { leader }
+		output_scope = country
 	}
 }

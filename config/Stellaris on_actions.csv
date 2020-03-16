@@ -126,6 +126,7 @@ on_building_starbase_outpost,this = ship root = ship from = planet,ship
 on_building_observation_station,this = ship root = ship from = planet,ship
 on_building_starbase_ai,this = ship root = ship from = planet,ship
 on_building_starbase_exd,this = ship root = ship from = planet,ship
+on_building_starbase_exd_0,this = ship root = ship from = planet,ship
 on_building_starbase_swarm,this = ship root = ship from = planet,ship
 on_building_starbase_marauder,this = ship root = ship from = planet,ship
 on_building__PlaceholderForMoreStationShipSizes,this = ship root = ship from = planet,ship
@@ -205,3 +206,17 @@ on_destroy_planet_with_PLANET_DESTRUCTION_COMPONENT_PlaceholderForMore,this = pl
 on_relic_activated,this = country root = country,ship
 on_arch_stage_finished,this = fleet root = fleet from = archaeological_site,fleet
 on_arch_site_finished,this = fleet root = fleet from = archaeological_site,fleet
+,,
+on_join_federation,this = country, root = country from = country,country
+on_leave_federation,this = country, root = country from = country,country
+on_federation_law_vote_succeed,this = country, root = country from = country,country
+on_federation_law_vote_failed,this = country, root = country from = country,country
+on_federation_leader_elections,this = country, root = country from = country,country
+on_federation_leader_challenge,this = country, root = country from = country,country
+on_becoming_subject,this = country, root = country from = country,country
+on_ask_to_leave_federation_declined,this = country, root = country from = country,country
+,,
+on_galactic_community_formed,this = country, root = country,country
+on_galactic_council_established,this = country, root = country,country
+on_add_community_member,this = country, root = country,country
+on_remove_community_member,this = country, root = country,country
