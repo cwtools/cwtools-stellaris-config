@@ -203,4 +203,12 @@ links = {
 		inputscopes = { leader }
 		output_scope = country
 	}
+	sector_capital = {
+		inputscopes = { sector }
+		output_scope = planet
+	}
+	orbital_station = {
+		inputscopes = { planet }
+		output_scope = fleet
+	}
 }

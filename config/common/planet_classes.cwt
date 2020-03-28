@@ -101,23 +101,12 @@ planet_class = {
 		min = int
 		max = int
 	}
-	#only for planets defined as colonizable!
-	## cardinality = 0..1
-	climate = localisation
 	## cardinality = 0..1
 	enable_tilt = bool
 	## cardinality = 0..1
 	place_entity_on_planet_plane = bool
 	## cardinality = 0..1
 	entity_face_object = bool
-	## cardinality = 0..1
-	colonizable = bool
-	## cardinality = 0..1
-	colonizable_by_event = bool
-	## cardinality = 0..1
-	habitat = bool
-	## cardinality = 0..1
-	starting_planet = bool
 	## cardinality = 0..1
 	can_be_moon = bool #this should be checked against solar system initializers - only planets defined as can_be_mmon can be spawned as moons there!
 	## cardinality = 0..1
@@ -128,12 +117,6 @@ planet_class = {
 	star = bool
 	## cardinality = 0..1
 	ringworld = bool
-	## cardinality = 0..1
-	show_city = bool
-	## cardinality = 0..1
-	show_health_bar_in_planet_view = bool
-	## cardinality = 0..1
-	ideal = bool
 	## cardinality = 0..1
 	can_be_invaded = bool
 	## cardinality = 0..1
@@ -170,6 +153,27 @@ planet_class = {
 	
 	## cardinality = 0..1
 	is_artificial_planet = bool
+
+	subtype[habitable_planet] = {
+		district_set = string
+		
+		## cardinality = 0..1
+		climate = localisation
+		## cardinality = 0..1
+		colonizable = bool
+		## cardinality = 0..1
+		colonizable_by_event = bool
+		## cardinality = 0..1
+		habitat = bool
+		## cardinality = 0..1
+		starting_planet = bool
+		## cardinality = 0..1
+		show_city = bool
+		## cardinality = 0..1
+		show_health_bar_in_planet_view = bool
+		## cardinality = 0..1
+		ideal = bool
+	}
 }
 
 planet_class_random_list = {
@@ -177,5 +181,14 @@ planet_class_random_list = {
 	planets = {
 		## cardinality = 1..inf
 		<planet_class>
+	}
+}
+
+enums = {
+	complex_enum[district_sets] = {
+		path = "game/common/planet_classes"
+		name = {
+			district_set = enum_name
+		}
 	}
 }

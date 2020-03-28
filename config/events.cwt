@@ -355,6 +355,9 @@ event = {
 	}
 
 	subtype[diplomatic] = {
+		## cardinality = 0..1
+		###The title that shows at the top of the diplomatic screen (above the portrait/room, not above the event text)
+		diplomatic_title = localisation
 		picture_event_data = {
 			#only one of each of these!
 			## cardinality = 0..1
