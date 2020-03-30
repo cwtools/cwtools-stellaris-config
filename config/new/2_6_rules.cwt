@@ -405,7 +405,7 @@ alias[effect:random_war] = {
 ###Iterate through each war the country is fighting in
 alias[trigger:count_war] = {
 	##cardinality = 0..1
-	trigger = { alias_name[trigger] = alias_match_left[trigger] }
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	count = int
 	count = all
 }
@@ -418,6 +418,16 @@ alias[trigger:any_fleet_in_system] = {
 	alias_name[trigger] = alias_match_left[trigger]
 	##cardinality = 0..1
 	count = int
+}
+
+## scope = system
+## push_scope = fleet
+###Iterate through each fleet in the system
+alias[trigger:count_fleet_in_system] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
 }
 
 ## scope = any
@@ -434,7 +444,7 @@ alias[trigger:any_galaxy_species] = {
 ###Iterate through each species in the galaxy
 alias[trigger:count_galaxy_species] = {
 	##cardinality = 0..1
-	trigger = { alias_name[trigger] = alias_match_left[trigger] }
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	count = int
 	count = all
 }
@@ -471,7 +481,7 @@ alias[trigger:any_owned_species] = {
 ###Iterate through each species belonging to the country/planet
 alias[trigger:count_owned_species] = {
 	##cardinality = 0..1
-	trigger = { alias_name[trigger] = alias_match_left[trigger] }
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	count = int
 	count = all
 }
@@ -508,7 +518,7 @@ alias[trigger:any_enslaved_species] = {
 ###Iterate through each species enslaved by the country/planet
 alias[trigger:count_enslaved_species] = {
 	##cardinality = 0..1
-	trigger = { alias_name[trigger] = alias_match_left[trigger] }
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	count = int
 	count = all
 }

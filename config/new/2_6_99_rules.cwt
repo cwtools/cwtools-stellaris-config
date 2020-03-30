@@ -13,7 +13,7 @@ alias[trigger:any_envoy] = {
 ###Iterate through each envoy available to the country
 alias[trigger:count_envoy] = {
 	##cardinality = 0..1
-	trigger = { alias_name[trigger] = alias_match_left[trigger] }
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	count = int
 	count = all
 }
@@ -41,7 +41,7 @@ alias[effect:every_envoy] = {
 ###Checks if a specified number of playable countries meet the specified criteria
 alias[trigger:count_playable_country] = {
 	##cardinality = 0..1
-	trigger = { alias_name[trigger] = alias_match_left[trigger] }
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	count = int
 	count = all
 }
@@ -60,7 +60,7 @@ alias[trigger:any_rival_country] = {
 ###Iterate through each country rivalled by the current country
 alias[trigger:count_rival_country] = {
 	##cardinality = 0..1
-	trigger = { alias_name[trigger] = alias_match_left[trigger] }
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	count = int
 	count = all
 }
@@ -97,7 +97,7 @@ alias[trigger:any_federation_ally] = {
 ###Iterate through each country in a federation with the current country
 alias[trigger:count_federation_ally] = {
 	##cardinality = 0..1
-	trigger = { alias_name[trigger] = alias_match_left[trigger] }
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	count = int
 	count = all
 }
