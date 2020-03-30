@@ -101,6 +101,10 @@ alias[trigger:is_active_resolution] = <resolution>
 ###Checks if an empire is in breach of any galactic resolution.
 alias[trigger:is_in_breach_of_any] = bool
 
+## scope = country
+###Checks if the scoped country is in breach of the specified resolution (or would be, were it to be enacted).
+alias[trigger:in_breach_of] = <resolution>
+
 ## scope = federation
 ###Checks if given setting is on for scoped federation.
 alias[trigger:has_federation_setting] = enum[federation_settings]
