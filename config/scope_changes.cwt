@@ -16,6 +16,7 @@ enums = {
 		ship
 		war
 		army
+		federation
 	}
 }
 
