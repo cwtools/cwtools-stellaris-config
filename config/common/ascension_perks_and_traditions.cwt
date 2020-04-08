@@ -21,7 +21,7 @@ types = {
 	## type_key_filter = tradition_swap
 	type[tradition_swap] = {
 		path = "game/common/traditions"
-		skip_root_key = { any }
+		skip_root_key = any
 		name_field = name
 		localisation = {
 			## required
@@ -42,7 +42,7 @@ types = {
 	## type_key_filter = tradition_swap
 	type[tradition_swap_category] = {
 		path = "game/common/tradition_categories"
-		skip_root_key = { any }
+		skip_root_key = any
 		name_field = name
 		localisation = {
 			## required

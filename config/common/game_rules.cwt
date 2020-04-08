@@ -350,7 +350,7 @@ can_be_hostile_towards = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 can_resettle_pop = {
-	## replace_scope = { this = pop from = country fromfrom = tile }
+	## replace_scope = { this = pop root = pop }
 	alias_name[trigger] = alias_match_left[trigger]
 }
 can_resettle_pop_planet = {

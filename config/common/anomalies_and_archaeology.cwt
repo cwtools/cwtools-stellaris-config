@@ -153,7 +153,7 @@ archaeological_site_type = {
 	desc = localisation
 	## cardinality = 1..inf
 	desc = {
-		replace_scope = { this = archaeological_site root = archaeological_site }
+		## replace_scope = { this = archaeological_site root = archaeological_site }
 		trigger = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}

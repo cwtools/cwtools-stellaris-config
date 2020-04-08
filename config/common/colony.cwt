@@ -56,6 +56,9 @@ colony_type = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 
+	## replace_scope = { this = planet root = planet }
+	alias_name[triggered_planet_modifier] = alias_match_left[triggered_planet_modifier]
+	
 	weight_modifier = {
 		## cardinality = 0..1
 		base = float

@@ -31,6 +31,9 @@ name_list = {
 	language = scalar
 
 	## cardinality = 0..1
+	category = localisation_synced
+
+	## cardinality = 0..1
 	selectable = {
 		## replace_scope = { this = country root = country } #i think, might be no_scope though
 		alias_name[trigger] = alias_match_left[trigger]

@@ -275,6 +275,7 @@ enums = {
 		slavery_military
 		slavery_matrix
 		slavery_livestock
+		slavery_indentured
 	}
 	enum[purge_types] = {
 		purge_matrix

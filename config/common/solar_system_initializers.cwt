@@ -310,6 +310,7 @@ enums = {
 		misc_system_init
 		custom_empire
 		fallen_empire_init
+		origin
 	}
 	enum[satellite_naming_policy] = {
 		upper_case_roman_numerals
