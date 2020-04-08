@@ -120,6 +120,19 @@ alias[effect:every_federation_ally] = {
 	alias_name[effect] = alias_match_left[effect]
 }
 
+###Completes a specific special project for the country, firing the on_success effects
+alias[effect:complete_special_project] = {
+	type = <special_project>
+	## cardinality = 0..1
+	location = scope[planet]
+	## cardinality = 0..1
+	location = scope[system]
+	## cardinality = 0..1
+	location = scope[ship]
+	## cardinality = 0..1
+	location = scope[fleet]
+}
+
 
 #--- Triggers
 
