@@ -110,8 +110,10 @@ alias[trigger:reverse_has_relation_flag] = {
 	flag = value[relation_flag]
 }
 
-###Checks if the country has a specific government type
+###Checks if the country has a specific government type, or any government
 alias[trigger:has_government] = <government>
+###Checks if the country has a specific government type, or any government
+alias[trigger:has_government] = bool
 
 ###Checks if the current country has the specified government authority
 alias[trigger:has_authority] = <authority>
