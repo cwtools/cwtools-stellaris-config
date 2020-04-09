@@ -2045,4 +2045,4 @@ alias[trigger:num_owned_relics] = int
 ## 2.6.3
 
 ###Checks whether the galaxy size if of a certain type
-alias[trigger:galaxy_size] = <map_setup_scenerio>
+alias[trigger:galaxy_size] = <map_setup_scenario>
