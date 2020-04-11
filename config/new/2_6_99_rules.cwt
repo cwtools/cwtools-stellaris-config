@@ -213,6 +213,11 @@ alias[trigger:planet_resource_compare] = {
 	value = float
 }
 
+###Checks if given law category has any active law.
+alias[trigger:has_any_federation_law_in_category] = <federation_law_category>
+
+###Check that the planet has available jobs of a specific type
+alias[trigger:has_available_jobs] = <job>
 
 
 #--- Effects

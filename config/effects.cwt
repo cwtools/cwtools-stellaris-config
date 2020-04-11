@@ -2660,6 +2660,12 @@ alias[effect:remove_district] = <district>
 ###Begins construction of a specific district on the scoped planet
 alias[effect:add_district] = <district>
 
+###Begins construction of a specific district on the scoped planet
+alias[effect:add_district] = {
+	district_type = <district>
+	ignore_cap = yes
+}
+
 ###Enables a resource on the Galactic Market
 alias[effect:enable_on_market] = <resource>
 

@@ -69,6 +69,14 @@ types = {
 			name = "$"
 		}
 	}
+	## replace_scope = { root = sector this = sector }
+	type[sector_focus] = {
+		path = "game/common/sector_focuses"
+		localisation = {
+			## required
+			name = "$"
+		}
+	}
 	type[map_mode] = {
 		path = "game/common/map_modes"
 		localisation = {
@@ -290,6 +298,33 @@ sector_type = {
 		category = <economic_category>
 	}
 	max_jumps = int
+}
+
+
+sector_focus = {
+	
+	ai_weight = {
+		weight = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	## cardinality = 0..inf
+	district = {
+		key = <district>
+		weight = {
+			weight = float
+			alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		}
+	}
+
+	## cardinality = 0..inf
+	building = {
+		key = <building>
+		weight = {
+			weight = float
+			alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		}
+	}
 }
 
 

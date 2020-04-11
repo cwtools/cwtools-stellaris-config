@@ -1622,8 +1622,9 @@ alias[trigger:count_war_participants] = {
 
 #Count triggers: Should all check for < > on the ints
 ## replace_scope = { this = pop_faction }
-alias[trigger:count_pop_factions] = {
+alias[trigger:count_pop_faction] = {
 	count = int
+	count = all
 	## cardinality = 0..1
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
@@ -1641,15 +1642,6 @@ alias[trigger:count_species] = {
 
 ## replace_scope = { this = species }
 alias[trigger:count_exact_species] = {
-	count = int
-	## cardinality = 0..1
-	limit = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-}
-
-## replace_scope = { this = ship }
-alias[trigger:count_fleet_ships] = {
 	count = int
 	## cardinality = 0..1
 	limit = {
@@ -1685,8 +1677,9 @@ alias[trigger:count_ships] = {
 }
 
 ## replace_scope = { this = ship }
-alias[trigger:count_owned_ships] = {
+alias[trigger:count_owned_ship] = {
 	count = int
+	count = all
 	## cardinality = 0..1
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]

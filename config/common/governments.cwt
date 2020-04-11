@@ -515,8 +515,11 @@ civic_or_origin = {
 	subtype[origin] = {
 		is_origin = yes
 		picture = <sprite>
-		initializer = <solar_system_initializer>
 		## cardinality = 0..1
+		initializers = {
+			## cardinality = 1..inf
+			<solar_system_initializer>
+		}
 		max_once_global = yes
 		## cardinality = 0..1
 		flags = {

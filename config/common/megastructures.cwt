@@ -97,7 +97,20 @@ megastructure = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-  ## cardinality = 0..1
+	
+	## cardinality = 0..1
+	## replace_scope = { this = ship root = ship }
+	ship_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = starbase root = starbase }
+	station_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	## cardinality = 0..1
 	placement_rules = {
 		 ## cardinality = 0..inf
 		 alias_name[trigger] = alias_match_left[trigger]

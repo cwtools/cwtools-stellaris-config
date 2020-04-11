@@ -154,13 +154,14 @@ planet_class = {
 	## cardinality = 0..1
 	is_artificial_planet = bool
 
+	## cardinality = 0..1
+	colonizable = bool
+	
 	subtype[habitable_planet] = {
 		district_set = string
 		
 		## cardinality = 0..1
 		climate = localisation
-		## cardinality = 0..1
-		colonizable = bool
 		## cardinality = 0..1
 		colonizable_by_event = bool
 		## cardinality = 0..1
