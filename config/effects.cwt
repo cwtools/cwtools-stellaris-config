@@ -1510,7 +1510,7 @@ alias[effect:add_anomaly] = {
 ### Adds an asteroid belt at the distance in the scope.
 alias[effect:add_asteroid_belt] = {
 	radius = int
-	type = <asteroid_belt>
+	type = <asteroid_belt_type>
 }
 
 ### Adds to ongoing colonization progress on the scoped planet
@@ -2272,7 +2272,7 @@ alias[effect:set_asteroid_belt] = {
 	## cardinality = 0..1
 	radius = float
 	## cardinality = 0..1
-	type = <asteroid_belt>
+	type = <asteroid_belt_type>
 }
 
 ### Sets the scoped planet to be the capital of its owner country

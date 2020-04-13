@@ -513,7 +513,7 @@ alias[trigger:is_capital] = bool
 
 ###Checks if the planet can be colonized by target country
 alias[trigger:can_colonize] = {
-	who = scope[country] 	
+	who = scope[country]
 	status = bool
 }
 ###Checks the relative amount of already-researched tech between the country and target country
@@ -2036,3 +2036,8 @@ alias[trigger:local_human_species_class] = <species_class>
 
 ###Checks the number of relics owned by the scoped country
 alias[trigger:num_owned_relics] = int
+
+## 2.6.3
+
+###Checks whether the galaxy size if of a certain type
+alias[trigger:galaxy_size] = <map_setup_scenario>
