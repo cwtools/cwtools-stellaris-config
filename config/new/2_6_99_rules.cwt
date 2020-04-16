@@ -131,6 +131,8 @@ alias[effect:complete_special_project] = {
 	location = scope[ship]
 	## cardinality = 0..1
 	location = scope[fleet]
+	## cardinality = 0..1
+	location = scope[starbase]
 }
 
 

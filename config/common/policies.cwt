@@ -56,6 +56,16 @@ policy = {
 		## cardinality = 0..1
 		icon = <sprite>
 
+		## cardinality = 0..inf
+		in_breach_of = {
+			## cardinality = 0..1
+			## replace_scope = { this = country root = country }
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			key = <resolution>
+		}
+
 		## cardinality = 0..1
 		policy_flags = {
 			## cardinality = 0..10

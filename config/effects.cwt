@@ -1385,6 +1385,8 @@ alias[effect:establish_contact] = {
 	location = scope[planet]
 	## cardinality = 0..1
 	location = scope[ship]
+	## cardinality = 0..1
+	location = scope[starbase]
 }
 
 ###Changes scoped pop to chosen ethic
@@ -1427,6 +1429,7 @@ alias[effect:enable_special_project] = {
 	location = scope[ship]
 	location = scope[fleet]
 	location = scope[ambient_object]
+	location = scope[starbase]
 }
 
 ###Aborts a specific special project for the country, removing it from the situation log
@@ -1440,6 +1443,8 @@ alias[effect:abort_special_project] = {
 	location = scope[ship]
 	## cardinality = 0..1
 	location = scope[fleet]
+	## cardinality = 0..1
+	location = scope[starbase]
 }
 
 ###Makes the scoped country remember that it has encountered the bypass type
@@ -1752,6 +1757,8 @@ alias[effect:create_ambient_object] = {
 	## cardinality = 0..1
 	location = scope[megastructure]
 	## cardinality = 0..1
+	location = scope[starbase]
+	## cardinality = 0..1
  	scale = float
 	## cardinality = 0..1
  	use_3d_location = bool
@@ -1930,6 +1937,10 @@ alias[effect:create_point_of_interest] = {
 	location = scope[system]
 	## severity = warning
 	location = scope[fleet]
+	## cardinality = 0..1
+	location = scope[megastructure]
+	## cardinality = 0..1
+	location = scope[starbase]
 	## cardinality = 0..1
 	category = scalar
 }

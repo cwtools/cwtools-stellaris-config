@@ -537,11 +537,8 @@ alias[trigger:has_swapped_tradition] = enum[tradition_swap]
 ###Checks a variable for the country/leader/planet/system/fleet against a specified value or another variable on the same scope
 alias[trigger:check_variable] = {
 	which = value[variable]
-	## cardinality = 1..2
 	value = float
-	## cardinality = 1..2
 	value = scope[any]
-	## cardinality = 1..2
 	value = value[variable]
 }
 
