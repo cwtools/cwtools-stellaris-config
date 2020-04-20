@@ -1,6 +1,6 @@
-[19:19:10][game_application.cpp:377]: Game Version: Wells 2.7.0
-[19:19:10][defines.cpp:123]: 1311 defines loaded
-[19:19:53][consolecmdimpl.cpp:2492]: 
+[20:08:30][game_application.cpp:377]: Game Version: Wells 2.7.0
+[20:08:30][defines.cpp:123]: 1311 defines loaded
+[20:09:18][consolecmdimpl.cpp:2492]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -3215,7 +3215,7 @@ Supported Targets: none
 
 
 =================
-[19:19:53][consolecmdimpl.cpp:2493]: 
+[20:09:18][consolecmdimpl.cpp:2493]: 
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -3974,9 +3974,9 @@ kill_leader = { type = <key, optional, if left out will kill scoped leader> show
 Supported Scopes: planet country ship fleet leader army
 Supported Targets: none
 
-assign_leader - Assigns target leader to the scoped country/fleet/army/pop faction
+assign_leader - Assigns target leader to the scoped country/fleet/army/pop faction/sector
 assign_leader = <target>
-Supported Scopes: country fleet army pop_faction
+Supported Scopes: country fleet army pop_faction sector (unknown)
 Supported Targets: none
 
 country_add_ethic - Adds a specific ethic to the scoped country
@@ -4360,6 +4360,16 @@ stop_crisis_sound - Stops the crisis ambient loop
 stop_crisis_sound = yes
 Supported Scopes: all
 Supported Targets: THIS ROOT PREV FROM OWNER CONTROLLER CAPITAL SOLAR_SYSTEM LEADER RANDOM FROMFROM PREVPREV PREVPREVPREV PREVPREVPREVPREV
+
+force_add_civic - Adds civic to a goverment without checking the restrictions
+add_civic = <civic>
+Supported Scopes: country
+Supported Targets: none
+
+force_remove_civic - Removes civic to a goverment without checking the restrictions
+forced_remove_civic = <civic>
+Supported Scopes: country
+Supported Targets: none
 
 set_is_female - Sets the gender of the scoped leader
 set_is_female = true
