@@ -1,6 +1,6 @@
-[23:12:13][game_application.cpp:365]: Game Version: Verne Dev 2.6.X.xxxx
-[23:12:13][defines.cpp:123]: 1310 defines loaded
-[23:13:45][consolecmdimpl.cpp:2492]: 
+[19:19:10][game_application.cpp:377]: Game Version: Wells 2.7.0
+[19:19:10][defines.cpp:123]: 1311 defines loaded
+[19:19:53][consolecmdimpl.cpp:2492]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -579,6 +579,10 @@ trust = { who = <target> value = 50 }
 Supported Scopes: country
 Supported Targets: ???
 
+name_list_category - Checks if a specific name list is used for the a species during empire creation
+Supported Scopes: dlc_recommendation
+Supported Targets: THIS ROOT PREV FROM OWNER CONTROLLER CAPITAL SOLAR_SYSTEM LEADER RANDOM FROMFROM PREVPREV PREVPREVPREV PREVPREVPREVPREV
+
 hidden_trigger - Hides the tooltip for the triggers within
 hidden_trigger = { <triggers> }
 Supported Scopes: all
@@ -632,12 +636,12 @@ Supported Targets: none
 
 has_trait - Checks if a pop/leader/species/country's dominant species has a certain trait
 has_trait = leader_trait_carefree
-Supported Scopes: country pop leader species
+Supported Scopes: country pop leader species dlc_recommendation
 Supported Targets: none
 
 has_ethic - Checks if a country has a certain ethos
 has_ethic = ethic_fanatic_pacifist
-Supported Scopes: country pop
+Supported Scopes: country pop dlc_recommendation
 Supported Targets: none
 
 is_owned_by - Checks if the planet/system/army/ship is owned by the target country
@@ -1012,7 +1016,7 @@ Supported Targets: none
 
 check_variable - Checks a variable for the country/leader/planet/system/fleet
 check_variable = { which = <variable> value < 4 }
-Supported Scopes: planet country fleet galactic_object leader federation
+Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army species pop_faction war federation starbase sector (unknown)
 Supported Targets: none
 
 is_colony - Checks if the planet is colonized
@@ -1053,7 +1057,7 @@ Supported Targets: none
 
 has_star_flag - Checks if the solar system has a specific flag
 has_star_flag = <flag>
-Supported Scopes: galactic_object
+Supported Scopes: galactic_object dlc_recommendation
 Supported Targets: none
 
 has_mining_station - Checks if the planet has an orbital mining station
@@ -1265,7 +1269,7 @@ Supported Targets: none
 
 is_species_class - Checks if the pop/country's founder species is a specific species class
 is_species_class = MAM
-Supported Scopes: country pop species
+Supported Scopes: country pop species dlc_recommendation
 Supported Targets: THIS ROOT PREV FROM OWNER CONTROLLER CAPITAL SOLAR_SYSTEM LEADER RANDOM FROMFROM PREVPREV PREVPREVPREV PREVPREVPREVPREV
 
 has_opinion_modifier - Checks if the country has a specific opinion modifier towards target country or anyone
@@ -2328,12 +2332,12 @@ Supported Targets: ???
 
 has_civic - Checks if the current country has the specified civic
 has_civic = my_test_civic_1
-Supported Scopes: country
+Supported Scopes: country dlc_recommendation
 Supported Targets: THIS ROOT PREV FROM OWNER CONTROLLER CAPITAL SOLAR_SYSTEM LEADER RANDOM FROMFROM PREVPREV PREVPREVPREV PREVPREVPREVPREV
 
 has_authority - Checks if the current country has the specified government authority
 has_government_authority = democratic
-Supported Scopes: country
+Supported Scopes: country dlc_recommendation
 Supported Targets: THIS ROOT PREV FROM OWNER CONTROLLER CAPITAL SOLAR_SYSTEM LEADER RANDOM FROMFROM PREVPREV PREVPREVPREV PREVPREVPREVPREV
 
 has_invalid_civic - Checks if the current country has a certain civic and if its invalidated
@@ -2820,7 +2824,7 @@ Supported Targets: none
 
 has_origin - Checks if scoped country has specified origin
 has_origin = <origin key>
-Supported Scopes: country
+Supported Scopes: country dlc_recommendation
 Supported Targets: THIS ROOT PREV FROM OWNER CONTROLLER CAPITAL SOLAR_SYSTEM LEADER RANDOM FROMFROM PREVPREV PREVPREVPREV PREVPREVPREVPREV
 
 is_last_lost_relic - Checks whether the relic passed in parameter is the last relic lost by the country int the current scope.
@@ -3211,10 +3215,10 @@ Supported Targets: none
 
 
 =================
-[23:13:45][consolecmdimpl.cpp:2493]: 
+[19:19:53][consolecmdimpl.cpp:2493]: 
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
-Supported Scopes: planet country ship pop fleet
+Supported Scopes: all
 Supported Targets: ???
 
 hidden_effect - Prevents enclosed effects from being displayed in tooltip
@@ -3643,7 +3647,7 @@ Supported Targets: THIS ROOT PREV FROM OWNER CONTROLLER CAPITAL SOLAR_SYSTEM LEA
 
 set_variable - Sets or creates an arbitrarily-named variable with a specific value in the current scope
 set_variable = { which = <string> value = <int> }
-Supported Scopes: all
+Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army species pop_faction war federation starbase sector (unknown)
 Supported Targets: none
 
 remove_global_flag - Removes a global flag
@@ -3658,7 +3662,7 @@ Supported Targets: none
 
 change_variable - Increments a previously-set variable by a specific amount
 change_variable = { which = <string> = value = <int> }
-Supported Scopes: all
+Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army species pop_faction war federation starbase sector (unknown)
 Supported Targets: none
 
 every_galaxy_pop - Executes enclosed effects for every pop in the game that meet the limit criteria
@@ -3870,7 +3874,7 @@ modify_species = {
 	change_scoped_species = yes/no # modify scoped pops/planet/leader/country; default: yes
 	portrait = <target or portrait name> # optional
 }
-Supported Scopes: planet country pop leader
+Supported Scopes: planet country pop leader species
 Supported Targets: none
 
 add_opinion_modifier - Adds a specific opinion modifier for the scoped country towards target country
@@ -4329,17 +4333,17 @@ Supported Targets: none
 
 subtract_variable - Decrements a previously-set variable by a specific amount
 subtract_variable = { which = <string> = value = <int> }
-Supported Scopes: all
+Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army species pop_faction war federation starbase sector (unknown)
 Supported Targets: none
 
 multiply_variable - Multiplies a previously-set variable by a specific amount
 multiply_variable = { which = <string> = value = <int> }
-Supported Scopes: all
+Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army species pop_faction war federation starbase sector (unknown)
 Supported Targets: none
 
 divide_variable - Divides a previously-set variable by a specific amount
 divide_variable = { which = <string> = value = <int> }
-Supported Scopes: all
+Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army species pop_faction war federation starbase sector (unknown)
 Supported Targets: none
 
 play_sound - Play the defined sound effect
