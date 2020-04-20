@@ -191,14 +191,21 @@ event = {
 
 		## cardinality = 0..inf
 		option = {
-			## cardinality = 0..inf
+			## cardinality = 1..inf
 			name = localisation
-			## cardinality = 0..inf
+			## cardinality = 1..inf
 			name = {
-				text = localisation
 				trigger = {
 					alias_name[trigger] = alias_match_left[trigger]
 				}
+				text = localisation
+			}
+			## cardinality = 1..inf
+			name = {
+				exclusive_trigger = {
+					alias_name[trigger] = alias_match_left[trigger]
+				}
+				text = localisation
 			}
 
 			## cardinality = 0..1
