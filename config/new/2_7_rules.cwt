@@ -221,6 +221,9 @@ alias[trigger:has_any_federation_law_in_category] = <federation_law_category>
 ###Check that the planet has available jobs of a specific type
 alias[trigger:has_available_jobs] = <job>
 
+###Checks if Xeno Compatibility are enabled in game setup
+alias[trigger:xeno_compatibility_enabled] = <job>
+
 
 #--- Effects
 
@@ -284,4 +287,10 @@ alias[effect:set_sector_focus] = <sector_focus>
 ## scope = planet
 ###Sets the current planet to have the specified type designation.
 alias[effect:set_colony_type] = <colony_type>
+
+###Adds civic to a goverment without checking the restrictions.
+alias[effect:force_add_civic] = <civic_or_origin.civic>
+
+###Removes civic from a goverment without checking the restrictions.
+alias[effect:force_remove_civic] = <civic_or_origin.civic>
 
