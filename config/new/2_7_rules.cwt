@@ -217,6 +217,12 @@ alias[trigger:has_available_jobs] = <job>
 ###Checks if Xeno Compatibility are enabled in game setup
 alias[trigger:xeno_compatibility_enabled] = <job>
 
+###Checks if the country has been set to be neutral towards target country via set_faction_hostility.
+alias[trigger:is_forced_friendly] = scope[country]
+
+###Checks if the country has been set to be friendly towards target country via set_faction_hostility.
+alias[trigger:is_forced_neutral] = scope[country]
+
 
 #--- Effects
 
