@@ -223,6 +223,16 @@ alias[trigger:is_forced_friendly] = scope[country]
 ###Checks if the country has been set to be friendly towards target country via set_faction_hostility.
 alias[trigger:is_forced_neutral] = scope[country]
 
+###Checks if the current pop has happiness or not.
+alias[trigger:pop_has_happiness] = bool
+
+###Checks if any pops are being purged on the current planet.
+alias[trigger:has_current_purge] = bool
+
+###Checks if the current species has happiness or not when owned by a specified country.
+alias[trigger:species_has_happiness_with_owner] = scope[country]
+
+
 
 #--- Effects
 
