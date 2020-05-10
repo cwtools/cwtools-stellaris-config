@@ -48,6 +48,8 @@ message_type = {
 	## cardinality = 0..1
 	sound_is_advisor = bool
 	ping = <pingmap>
+	## cardinality = 0..1
+	auto_opens = scalar
 }
 
 achievement = {

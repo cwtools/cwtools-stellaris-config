@@ -189,10 +189,10 @@ archaeological_site_type = {
 
 	## cardinality = 0..inf
 	stage = {
-		difficulty = int[0..inf]
+		difficulty = int[-inf..inf]
 		difficulty = {
-			min = int[0..inf]
-			max = int[0..inf]
+			min = int[-inf..inf]
+			max = int[-inf..inf]
 		}
 		icon = <sprite>
 		event = <event.fleet>

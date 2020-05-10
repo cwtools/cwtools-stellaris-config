@@ -26,6 +26,11 @@ enums = {
 		occupied_only
 		no
 	}
+	enum[peace_offers] = {
+		status_quo
+		surrender
+		demand_surrender
+	}
 }
 
 # TODO Confirm
@@ -113,6 +118,12 @@ war_goal = {
 	###FROM = The targeted country, THIS = The acting country
 	possible = {
 		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	# TODO: add replace_scope if necessary and add comment
+	allowed_peace_offers = {
+		## cardinality = 1..3	
+		enum[peace_offers]
 	}
 
 	## cardinality = 0..1

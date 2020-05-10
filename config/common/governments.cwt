@@ -688,6 +688,34 @@ civic_or_origin = {
 					value = <civic_or_origin.civic>
 				}
 			}
+
+			## cardinality = 0..1
+			origin = {
+				value = <civic_or_origin.origin>
+
+				## cardinality = 0..inf
+				OR = {
+					## cardinality = 0..1
+					text = localisation
+					## severity = info
+					## cardinality = 2..99
+					value = <civic_or_origin.origin>
+				}
+				## cardinality = 0..inf
+				NOT = {
+					## cardinality = 0..1
+					text = localisation
+					value = <civic_or_origin.origin>
+				}
+				## cardinality = 0..inf
+				NOR = {
+					## cardinality = 0..1
+					text = localisation
+					## severity = info
+					## cardinality = 2..99
+					value = <civic_or_origin.origin>
+				}
+			}
 		}
 		## cardinality = 0..1
 		###default: yes

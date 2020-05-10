@@ -225,6 +225,9 @@ starbase_level = {
 		factor = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
+	## cardinality = 0..1
+	### Default no, if yes starbase may be used as homebase for fleets
+	potential_home_base = bool
 }
 
 starbase_type = {
@@ -251,6 +254,8 @@ starbase_type = {
 		min = {
 			## cardinality = 1..1 #one of these is required
 			base = int
+			## cardinality = 1..1 #one of these is required
+			factor = int
 		}
 		#one of these is required
 		## cardinality = 0..1

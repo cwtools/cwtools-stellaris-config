@@ -426,13 +426,26 @@ economic_plan = {
 		<resource> = int
 	}
 
+	## cardinality = 1..inf
+	subplan = {
+		## replace_scope = { this = country root = country }
+		potential = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+
+		income = {
+			## cardinality = 1..inf
+			<resource> = int
+		}
+	
+		focus = {
+			## cardinality = 1..inf
+			<resource> = int
+		}
+	}
+
 	pops = int
 	empire_size = float
-
-	## replace_scope = { this = country root = country }
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
 
 	## replace_scope = { this = country root = country }
 	ai_weight = {
