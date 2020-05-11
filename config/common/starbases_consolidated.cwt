@@ -242,8 +242,6 @@ starbase_type = {
 		## cardinality = 0..1
 		factor = float
 		## cardinality = 0..1
-		add = int
-		## cardinality = 0..1
 		add = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
@@ -254,8 +252,8 @@ starbase_type = {
 		min = {
 			## cardinality = 1..1 #one of these is required
 			base = int
-			## cardinality = 1..1 #one of these is required
-			factor = int
+			## cardinality = 0..1
+			factor = float
 		}
 		#one of these is required
 		## cardinality = 0..1

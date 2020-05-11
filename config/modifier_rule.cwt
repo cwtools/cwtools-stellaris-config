@@ -29,6 +29,12 @@ alias[modifier_rule_add_mult:modifier] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
+alias[modifier_rule_with_loc:modifier] = {
+	add = float
+	desc = localisation
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
 #for only parameter cases
 alias[scaled_modifier_rule:scaled_modifier] = {
 	limit = { alias_name[trigger] = alias_match_left[trigger]  }
