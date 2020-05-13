@@ -297,6 +297,7 @@ enums = {
 		purge_displacement
 		purge_labor_camps
 		purge_processing
+		purge_necrophage
 	}
 	enum[living_standards] = {
 		living_standard_deassimilation
