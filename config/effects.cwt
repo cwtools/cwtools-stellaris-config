@@ -1058,7 +1058,11 @@ alias[effect:create_country] = {
 		}
 	}
 	## cardinality = 0..1
+	###Establishing contact on_action (on_first_contact) will not fire for any countries (ever) if this is set to no
 	day_zero_contact = bool
+	## cardinality = 0..1
+	###Establishing contact on_action (on_first_contact) will not fire for this country or its federation allies
+	exclude_day_zero_contact = scope[country]
 
 	## cardinality = 0..1
 	released_by_country = scope[country] #scope
