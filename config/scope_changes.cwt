@@ -627,7 +627,7 @@ alias[effect:random_owned_pop] = {
 
 ## push_scope = pop
 ###Executes enclosed effects for every pop in the game that meet the limit criteria
-alias[effect:every_pop] = {
+alias[effect:every_galaxy_pop] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
