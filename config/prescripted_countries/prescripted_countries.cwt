@@ -49,6 +49,9 @@ prescripted_country = {
     	trait = <trait.species_trait>
 	}
 
+	## cardinality = 0..1
+	playable = <scripted_trigger>
+
 	room = icon[gfx/portraits/city_sets]
 	room = <asset_selector.room> #this one is defined under gfx/portraits/asset_selectors
 
