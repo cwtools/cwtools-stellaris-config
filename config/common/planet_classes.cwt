@@ -158,7 +158,7 @@ planet_class = {
 	colonizable = bool
 	
 	subtype[habitable_planet] = {
-		district_set = string
+		district_set = scalar
 		
 		## cardinality = 0..1
 		climate = localisation

@@ -32,6 +32,8 @@ prescripted_country = {
 		plural = localisation_synced
 		adjective = localisation_synced
 		name_list = <name_list>
+		## cardinality = 0..1
+		species_bio = scalar
 		## cardinality = 0..inf
     	trait = <trait.species_trait>
 	}
