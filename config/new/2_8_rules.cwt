@@ -1,0 +1,13 @@
+
+
+## scope = { planet country }
+###Checks the number of pops the planet or country has that work a specific job.
+alias[trigger:num_assigned_jobs] = {
+	job = <job>
+	job = unemployed
+	value = int
+}
+
+## scope = ambient_object
+###Checks if the ambient object is a specific type.
+alias[trigger:is_ambient_object_type] = <ambient_object>
