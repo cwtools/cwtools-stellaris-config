@@ -382,6 +382,8 @@ alias[effect:change_government] = {
 		## cardinality = 1..4
 		civic = random
 	}
+	## cardinality = 0..1
+	cooldown = bool
 }
 
 
