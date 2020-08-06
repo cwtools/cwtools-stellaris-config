@@ -95,6 +95,27 @@ alias[effect:country_event] = {
 	}
 }
 
+###Fires a first contact event for the scoped ... first contact, with optional DAYS and RANDOM delay
+alias[effect:first_contact_event] = {
+	id = <event.first_contact>
+	id = <event.scopeless>
+	## cardinality = 0..1
+	days = int
+	## cardinality = 0..1
+	random = int
+	## cardinality = 0..1
+	scopes = {
+		## cardinality = 0..1
+		from = scope[any]
+		## cardinality = 0..1
+		fromfrom = scope[any]
+		## cardinality = 0..1
+		fromfromfrom = scope[any]
+		## cardinality = 0..1
+		fromfromfromfrom = scope[any]
+	}
+}
+
 ###Fires an observer event for all observers.
 alias[effect:observer_event] = {
 	id = <event.observer>
@@ -205,6 +226,10 @@ alias[effect:add_modifier] = {
 	# severity = info
 	## cardinality = 0..1
 	enum[days_months_years] = int
+	## cardinality = 0..1
+	multiplier = float
+	## cardinality = 0..1
+	clear_on_owner_change = yes
 }
 
 ###Displays a custom text (localisation string)
@@ -991,8 +1016,6 @@ alias[effect:create_country] = {
 	## cardinality = 0..1
 	species = random
 	## cardinality = 0..1
-	species = last_created
-	## cardinality = 0..1
 	species = scope[country]
 	###Does not support pop scope according to had
 	#species = scope[pop]
@@ -1138,7 +1161,6 @@ alias[effect:create_army] = {
 	## cardinality = 0..1
 	name = random
 	owner = scope[country]
-	owner = last_created
 	type = <army>
 	## cardinality = 0..1
 	species = scope[species]
@@ -1210,8 +1232,6 @@ alias[effect:create_leader] = {
 enums = {
 	enum[create_leader_species] = {
 		this
-		owner_main_species
-		last_created
 	}
 }
 
