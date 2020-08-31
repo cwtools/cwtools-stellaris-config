@@ -435,6 +435,11 @@ event = {
 		archaeology = bool
 	}
 
+	subtype[first_contact] = {
+		## cardinality = 0..1
+		first_contact = bool
+	}
+
 	## cardinality = 0..1
 	trigger = {
 		alias_name[trigger] = alias_match_left[trigger]

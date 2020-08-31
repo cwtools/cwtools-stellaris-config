@@ -16,7 +16,7 @@ links = {
 		output_scope = Country
 	}
 	owner = {
-		inputscopes = { Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System }
+		inputscopes = { Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System first_contact }
 		output_scope = Country
 	}
 	controller = {
@@ -36,7 +36,7 @@ links = {
 		output_scope = Country
 	}
 	leader = {
-		inputscopes = { Ship Planet Country PopFaction Fleet Sector Army }
+		inputscopes = { Ship Planet Country PopFaction Fleet Sector Army first_contact }
 		output_scope = Leader
 	}
 	last_created_leader = {
@@ -104,6 +104,10 @@ links = {
 		output_scope = Army
 	}
 	owner_species = {
+		inputscopes = { Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System }
+		output_scope = Species
+	}
+	owner_main_species = {
 		inputscopes = { Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System }
 		output_scope = Species
 	}
@@ -210,5 +214,9 @@ links = {
 	orbital_station = {
 		inputscopes = { planet }
 		output_scope = fleet
+	}
+	contact_country = {
+		inputscopes = { first_contact }
+		output_scope = country
 	}
 }

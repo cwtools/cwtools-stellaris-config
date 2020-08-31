@@ -1,0 +1,32 @@
+
+
+
+## scope = first_contact
+###Sets the first contact site to using a specified stage
+alias[effect:set_first_contact_stage] = <first_contact_stage>
+
+## scope = first_contact
+###Completes the first contact site, establishing communications.
+alias[effect:finish_first_contact] = yes
+
+## scope = first_contact
+###Sets an arbitrarily-named flag on the scoped first contact
+alias[effect:set_first_contact_flag] = value_set[first_contact_flag]
+
+## scope = first_contact
+###Sets an arbitrarily-named flag on the scoped first contact
+alias[effect:set_timed_first_contact_flag] = {
+	flag = value_set[first_contact_flag]
+	enum[days_months_years] = int
+}
+
+## scope = first_contact
+###Removes a previously-set flag from the scoped first contact
+alias[effect:remove_first_contact_flag] = value[first_contact_flag]
+
+## scope = first_contact
+###Checks whether the country has the speficied first contact flag
+alias[trigger:has_first_contact_flag] = value[first_contact_flag]
+
+###Prints a custom error to the error log
+alias[effect:log_error] = scalar

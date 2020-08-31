@@ -6,6 +6,7 @@ enums = {
 		admiral
 		governor
 		general
+		envoy
 	}
 	enum[leader_classes_no_ruler] = {
 		scientist
@@ -78,11 +79,15 @@ enums = {
 		design
 		pop_faction
 		war
-		alliance
+		federation
 		starbase
 		deposit
-		observer
 		sector
+		no_scope
+		archaeological_site
+		first_contact
+		spy_network
+		espionage_operation
 	}
 	enum[intel_level] = {
 		none
