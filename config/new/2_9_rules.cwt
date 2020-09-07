@@ -30,3 +30,79 @@ alias[trigger:has_first_contact_flag] = value[first_contact_flag]
 
 ###Prints a custom error to the error log
 alias[effect:log_error] = scalar
+
+
+
+## scope = country
+## push_scope = first_contact
+###Iterate through each first contact site the current country has
+alias[trigger:any_first_contact] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## scope = country
+## push_scope = first_contact
+###Iterate through each first contact site the current country has
+alias[trigger:count_first_contact] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+## scope = country
+## push_scope = first_contact
+###Iterate through each first contact site the current country has
+alias[effect:random_first_contact] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = country
+## push_scope = first_contact
+###Iterate through each first contact site the current country has
+alias[effect:every_first_contact] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = country
+## push_scope = first_contact
+###Iterate through each active first contact site the current country has
+alias[trigger:any_active_first_contact] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## scope = country
+## push_scope = first_contact
+###Iterate through each active first contact site the current country has
+alias[trigger:count_active_first_contact] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+## scope = country
+## push_scope = first_contact
+###Iterate through each active first contact site the current country has
+alias[effect:random_active_first_contact] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = country
+## push_scope = first_contact
+###Iterate through each active first contact site the current country has
+alias[effect:every_active_first_contact] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}

@@ -45,6 +45,7 @@ first_contact_stage = {
 
 	## cardinality = 0..inf
 	stage_event = {
+		## cardinality = 1..1 # this has to be there or it won't work
 		event_weight = {
 			weight = int
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
