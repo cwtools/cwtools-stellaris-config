@@ -334,6 +334,8 @@ alias[trigger:has_any_strategic_resource] = bool
 alias[trigger:is_war_leader] = bool
 ###Checks if the planet is under military occupation
 alias[trigger:is_occupied_flag] = bool
+###Checks if the country is a crisis facction
+alias[trigger:is_crisis_faction] = bool
 
 ###Checks if the planet is of a certain class
 alias[trigger:is_planet_class] = <planet_class>
