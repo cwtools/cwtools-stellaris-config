@@ -77,3 +77,78 @@ localisation_commands = {
             ## post-2.6
             GetGovernmentName = country
 }
+
+localisation_links = {
+	Capital = {
+		input_scopes = { any }
+		output_scope = planet
+	}
+	capital_scope = {
+		input_scopes = { any }
+		output_scope = planet
+	}
+	solar_system = {
+		input_scopes = { any }
+		ouput_scope = { system }
+	}
+	system = {
+		input_scopes = { any }
+		ouput_scope = { system }
+	}
+	Star = {
+		input_scopes = { system }
+		ouput_scope = { star }
+	}
+	Owner = {
+		input_scopes = { any }
+		output_scope = country
+	}
+	Planet = {
+		input_scopes = { pop planet }
+		output_scope = planet
+	}
+	Leader = {
+		input_scopes = { any }
+		output_scope = leader
+	}
+	Ruler = {
+		input_scopes = { country }
+		output_scope = leader
+	}
+	Heir = {
+		input_scopes = { country }
+		output_scope = leader
+	}
+	Species = {
+		input_scopes = { any }
+		output_scope = species
+	}
+	Ship = {
+		input_scopes = { leader }
+		output_scope = ship
+	}
+	Fleet = {
+		input_scopes = { ship starbase }
+		output_scope = fleet
+	}
+	Starbase = {
+		input_scopes = { system planet }
+		output_scope = starbase
+	}
+	Home_planet = {
+		input_scopes = { country species planet }
+		ouput_scope = planet
+	}
+	Overlord = {
+		input_scopes = { country }
+		ouput_scope = country
+	}
+	space_owner = {
+		input_scopes = { ship fleet system planet }
+		ouput_scope = country
+	}
+	Federation = {
+		input_scopes = { country }
+		output_scope = federation
+	}
+}
