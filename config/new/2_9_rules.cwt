@@ -32,6 +32,36 @@ alias[trigger:has_first_contact_flag] = value[first_contact_flag]
 alias[effect:log_error] = scalar
 
 
+## scope = country
+###Checks whether the target country has a technology the current country can steal via copy_random_tech_from effect
+alias[trigger:can_copy_random_tech_from] = {
+	who = scope[country]
+	## cardinality = 0..1
+	category = <technology_category>
+	## cardinality = 0..1
+	area = enum[research_areas]
+}
+
+## scope = country
+###Adds a random tech from the target country within the given category and tech area constraints.
+alias[effect:copy_random_tech_from] = {
+	who = scope[country]
+	## cardinality = 0..1
+	category = <technology_category>
+	## cardinality = 0..1
+	area = enum[research_areas]
+	## cardinality = 0..1
+	###Optional: this makes it grant the tech option rather than the whole tech
+	progress = float[0.0..1.0]
+}
+
+## scope = country
+###Adds the defined amount of intel toward the target empire.
+alias[effect:add_intel] = {
+	who = scope[country]
+	value = float
+}
+
 
 ## scope = country
 ## push_scope = first_contact

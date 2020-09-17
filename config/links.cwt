@@ -219,4 +219,8 @@ links = {
 		inputscopes = { first_contact }
 		output_scope = country
 	}
+	reverse_first_contact = {
+		inputscopes = { first_contact }
+		output_scope = first_contact
+	}
 }
