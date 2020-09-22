@@ -19,6 +19,8 @@ alias[modifier_rule:scaled_modifier] = {
 	add = float
 	## cardinality = 0..1
 	div = float
+	## cardinality = 0..1
+	mul = float
 }
 
 alias[modifier_rule_factor:modifier] = {
@@ -39,6 +41,8 @@ alias[modifier_rule_factor:scaled_modifier] = {
 	add = float
 	## cardinality = 0..1
 	div = float
+	## cardinality = 0..1
+	mul = float
 }
 
 #for only "add = int" (opinion modifiers, for example)
@@ -78,6 +82,8 @@ alias[scaled_modifier_rule:scaled_modifier] = {
 	add = float
 	## cardinality = 0..1
 	div = float
+	## cardinality = 0..1
+	mul = float
 }
 
 #calculation types for scaled_modifier
