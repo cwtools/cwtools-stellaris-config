@@ -67,3 +67,13 @@ scopes = {
         aliases = { first_contact }
     }
 }
+
+scope_groups = {
+    celestial_coordinate = {
+        planet ship fleet system ambient_object megastructure starbase archaeological_site first_contact
+        deposit pop army country leader
+    }
+    spatial_object = {
+        planet ship fleet system ambient_object megastructure starbase archaeological_site first_contact
+    }
+}
