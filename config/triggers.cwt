@@ -1017,6 +1017,9 @@ alias[trigger:has_war_goal] = bool
 ### Checks if the country's ideal planet class is a specific class
 alias[trigger:ideal_planet_class] = <planet_class>
 
+### Checks if the country's ideal planet class is a specific class
+alias[trigger:ideal_planet_class] = scope[planet]
+
 ### Checks the country's monthly energy credit income
 alias[trigger:income] = int
 

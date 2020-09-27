@@ -1846,9 +1846,12 @@ alias[effect:create_message] = {
 	localization = localisation
 	days = int
 	target = scope[any]
-	## cardinality = 0..10
+	## cardinality = 0..100
 	variable = {
 		type = name
+		type = variable
+		## cardinality = 0..1
+		variable = value[variable]
 		localization = scalar		#not localisation, but rather something that can be used in localisation
 		scope = scope[any]
 	}
@@ -2032,10 +2035,8 @@ alias[effect:force_faction_evaluation] = yes
 ### Copies a value from the galaxy setup into a variable, optionally scaling it by an int value
 ###get_galaxy_setup_value = { which = <string> setting = <string> [ scale = <int> ] }
 alias[effect:get_galaxy_setup_value] = {
-	which = scalar
-	setting = scalar
-	## cardinality = 0..1
-	scale = int
+	which = value_set[variable]
+	setting = enum[galaxy_setup_values]
 	## cardinality = 0..1
 	scale_by = int
 }

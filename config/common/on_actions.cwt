@@ -109,6 +109,10 @@ types = {
         subtype[on_colony_9_years_old] = { }
         ## type_key_filter = on_colony_10_years_old
         subtype[on_colony_10_years_old] = { }
+        ## type_key_filter = on_colony_5_year_pulse
+        subtype[on_colony_5_year_pulse] = { }
+        ## type_key_filter = on_colony_10_year_pulse
+        subtype[on_colony_10_year_pulse] = { }
         ## type_key_filter = on_custom_diplomacy
         subtype[on_custom_diplomacy] = { }
         ## type_key_filter = on_entering_war
@@ -1130,6 +1134,36 @@ on_action = {
     }
     ## replace_scope = { root = planet this = planet }
     subtype[on_colony_10_years_old] = {
+        ## cardinality = 0..1
+        events = {
+            ## cardinality = 0..inf
+            <event.planet>
+        }
+        ## cardinality = 0..1
+        random_events = {
+            ## cardinality = 0..inf
+            int = 0
+            ## cardinality = 0..inf
+            int = <event.planet>
+        }
+    }
+    ## replace_scope = { root = planet this = planet }
+    subtype[on_colony_5_year_pulse] = {
+        ## cardinality = 0..1
+        events = {
+            ## cardinality = 0..inf
+            <event.planet>
+        }
+        ## cardinality = 0..1
+        random_events = {
+            ## cardinality = 0..inf
+            int = 0
+            ## cardinality = 0..inf
+            int = <event.planet>
+        }
+    }
+    ## replace_scope = { root = planet this = planet }
+    subtype[on_colony_10_year_pulse] = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
