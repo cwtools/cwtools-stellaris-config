@@ -66,6 +66,12 @@ scopes = {
     "First Contact" = {
         aliases = { first_contact }
     }
+    "Espionage Operation" = {
+        aliases = { espionage_operation }
+    }
+    "Spy Network" = {
+        aliases = { spy_network }
+    }
 }
 
 scope_groups = {
@@ -75,5 +81,18 @@ scope_groups = {
     }
     spatial_object = {
         planet ship fleet system ambient_object megastructure starbase archaeological_site first_contact
+    }
+    target_species = {
+        country pop leader planet ship fleet army species first_contact
+    }
+    target_planet = {
+        pop planet deposit archaeological_site megastructure ship fleet army 
+    }
+    target_country = {
+        planet fleet system ship pop army leader pop_faction country megastructure starbase deposit
+        sector archaeological_site first_contact spy_network
+    }
+    target_leader = {
+        country fleet ship pop_faction army leader sector archaeological_site first_contact
     }
 }
