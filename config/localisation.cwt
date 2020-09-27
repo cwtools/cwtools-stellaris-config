@@ -6,6 +6,7 @@ localisation_commands = {
             GetHomeWorldName = country
             GetLeaderName = { fleet ship }
             GetName = any
+            GetRealName = country
             GetRandomSpeciesSound = { country species }
             GetRegnalName = leader
             GetRulerName = { country species }
@@ -111,15 +112,19 @@ localisation_links = {
         output_scope = system
     }
     System = {
-        input_scopes = { fleet planet }
+        input_scopes = { fleet planet first_contact }
         output_scope = system
     }
     Owner = {
-        input_scopes = { army planet system leader pop_faction fleet ship }
+        input_scopes = { army planet system leader pop_faction fleet ship first_contact }
+        output_scope = country
+    }
+    ContactCountry = {
+        input_scopes = { first_contact }
         output_scope = country
     }
     Leader = {
-        input_scopes = { army pop_faction fleet }
+        input_scopes = { army pop_faction fleet first_contact }
         output_scope = leader
     }
     Leader = {
