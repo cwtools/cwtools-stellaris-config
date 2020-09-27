@@ -134,6 +134,9 @@ alias[trigger:has_policy_flag] = enum[policy_flag]
 alias[trigger:leader_of_faction] = <pop_faction>
 
 ###Checks if the leader is the leader of a faction
+alias[trigger:leader_of_faction] = scope[pop_faction]
+
+###Checks if the leader is the leader of a faction
 alias[trigger:leader_of_faction] = bool
 
 ###Checks if the current scope and the target scope are the same thing
@@ -340,6 +343,8 @@ alias[trigger:is_planet_class] = <planet_class>
 alias[trigger:is_planet_class] = scope[planet]
 ###Checks if the system/planet(star) is of a certain class
 alias[trigger:is_star_class] = <star_class>
+###Checks if the system/planet(star) is of a certain class
+alias[trigger:is_star_class] = scope[system]
 ###Checks if the planet is a ringworld
 alias[trigger:is_ringworld] = bool
 ###Checks if the planet is its owner's homeworld
@@ -369,12 +374,17 @@ alias[trigger:has_edict] = <edict>
 
 ###Checks if target country is participating in the war on the specified side
 alias[trigger:is_war_participant] = {
+	## cardinality = 0..1
 	who = scope[country]
+	## cardinality = 0..1
+	war = scope[war]
 	## cardinality = 0..1
 	side = scope[country]
 	## cardinality = 0..1
 	side = enum[war_sides]
 }
+alias[trigger:is_war_participant] = scope[country]
+alias[trigger:is_war_participant] = scope[war]
 
 ###Checks the country's opinion of the target country against a specific value
 alias[trigger:opinion] = {
@@ -728,8 +738,10 @@ alias[trigger:host_has_dlc] = enum[DLCs]
 alias[trigger:is_multiplayer] = bool
 
 
-###Checks if the pop belongs to any faction (check for specific faction appears not to work)
+###Checks if the pop belongs to any faction, or a specific faction
 alias[trigger:member_of_faction] = bool
+alias[trigger:member_of_faction] = scope[pop_faction]
+alias[trigger:member_of_faction] = <pop_faction>
 
 ###Checks if the country has a specific event chain
 alias[trigger:has_event_chain] = <event_chain>
@@ -906,6 +918,7 @@ alias[trigger:has_colonization_control] = {
 alias[trigger:has_colony_progress] = int
 
 alias[trigger:has_designation] = <colony_type>
+alias[trigger:has_designation] = scope[planet]
 
 ### Checks if a ship has a certain component
 alias[trigger:has_component] = <component_template>
@@ -923,7 +936,7 @@ alias[trigger:has_existing_ship_design] = <ship_size>
 alias[trigger:has_experience] = int
 
 ### Checks if the ship/fleet has a specific fleet order. survey_planet_order is a valid entry, I (Caligula) don't know any others but there are likely some
-alias[trigger:has_fleet_order] = scalar #TODO fleet order
+alias[trigger:has_fleet_order] = enum[fleet_orders]
 
 ### Checks if the system has a hyperlane connection to target system
 alias[trigger:has_hyperlane_to] = scope[galactic_object]
@@ -952,6 +965,9 @@ alias[trigger:has_orbital_station] = bool
 
 ### Checks if the system has planet of specific class
 alias[trigger:has_planet_class] = <planet_class>
+
+### Checks if the system has planet of specific class
+alias[trigger:has_planet_class] = scope[planet]
 
 ### Checks if the planet has a specific planet modifier
 alias[trigger:has_planet_modifier] = <planet_modifier>
@@ -2009,6 +2025,7 @@ alias[trigger:caravaneers_enabled] = bool
 
 ###Checks if the colony is of a certain type
 alias[trigger:colony_type] = <colony_type>
+alias[trigger:colony_type] = scope[planet]
 
 ###Checks if a deposit has specified category
 alias[trigger:has_deposit_category] = <deposit_category>

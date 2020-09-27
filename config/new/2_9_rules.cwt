@@ -28,6 +28,10 @@ alias[effect:remove_first_contact_flag] = value[first_contact_flag]
 ###Checks whether the country has the speficied first contact flag
 alias[trigger:has_first_contact_flag] = value[first_contact_flag]
 
+
+###Checks whether the current country is allowed to have the specified technology, i.e. does it fulfil the potential = { } field for that tech.
+alias[trigger:can_research_technology] = <technology>
+
 ###Prints a custom error to the error log
 alias[effect:log_error] = scalar
 
@@ -59,7 +63,7 @@ alias[effect:copy_random_tech_from] = {
 ###Adds the defined amount of intel toward the target empire.
 alias[effect:add_intel] = {
 	who = scope[country]
-	value = float
+	amount = float
 }
 
 
