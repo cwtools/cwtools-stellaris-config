@@ -3,7 +3,7 @@
 
 ## scope = federation
 ###Checks if the federation has a specific flag.
-alias[trigger:has_federation_flag] = value[country_flag]
+alias[trigger:has_federation_flag] = value[federation_flag]
 
 ## scope = federation
 ###Checks the country's number of envoys sent to its federation.
@@ -184,18 +184,18 @@ alias[effect:remove_favors] = {
 
 ## scope = federation
 ###Sets an arbitrarily-named flag on the scoped federation
-alias[effect:set_federation_flag] = value_set[country_flag]
+alias[effect:set_federation_flag] = value_set[federation_flag]
 
 ## scope = federation
 ###Sets an arbitrarily-named flag on the scoped federation
 alias[effect:set_timed_federation_flag] = {
-	flag = value_set[country_flag]
+	flag = value_set[federation_flag]
 	enum[days_months_years] = int
 }
 
 ## scope = federation
 ###Removes a previously-set flag from the scoped federation
-alias[effect:remove_federation_flag] = value[country_flag]
+alias[effect:remove_federation_flag] = value[federation_flag]
 
 ## scope = federation
 ###Sets the given law for the scoped federation.

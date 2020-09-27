@@ -37,6 +37,12 @@ types = {
 		## abbreviation = PE
 		subtype[planet] = {
 		}
+		## type_key_filter = first_contact_event
+		## push_scope = first_contact
+		## display_name = First contact event
+		## abbreviation = FCE
+		subtype[first_contact] = {
+		}
 		## type_key_filter = ship_event
 		## push_scope = ship
 		## display_name = Ship event
@@ -427,6 +433,11 @@ event = {
 	subtype[fleet] = {
 		## cardinality = 0..1
 		archaeology = bool
+	}
+
+	subtype[first_contact] = {
+		## cardinality = 0..1
+		first_contact = bool
 	}
 
 	## cardinality = 0..1

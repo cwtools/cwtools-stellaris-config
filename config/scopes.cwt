@@ -63,4 +63,7 @@ scopes = {
     Federation = {
         aliases = { federation }
     }
+    "First Contact" = {
+        aliases = { first_contact }
+    }
 }

@@ -1,0 +1,142 @@
+
+
+
+## scope = first_contact
+###Sets the first contact site to using a specified stage
+alias[effect:set_first_contact_stage] = <first_contact_stage>
+
+## scope = first_contact
+###Completes the first contact site, establishing communications.
+alias[effect:finish_first_contact] = yes
+
+## scope = first_contact
+###Sets an arbitrarily-named flag on the scoped first contact
+alias[effect:set_first_contact_flag] = value_set[first_contact_flag]
+
+## scope = first_contact
+###Sets an arbitrarily-named flag on the scoped first contact
+alias[effect:set_timed_first_contact_flag] = {
+	flag = value_set[first_contact_flag]
+	enum[days_months_years] = int
+}
+
+## scope = first_contact
+###Removes a previously-set flag from the scoped first contact
+alias[effect:remove_first_contact_flag] = value[first_contact_flag]
+
+## scope = first_contact
+###Checks whether the country has the speficied first contact flag
+alias[trigger:has_first_contact_flag] = value[first_contact_flag]
+
+
+###Checks whether the current country is allowed to have the specified technology, i.e. does it fulfil the potential = { } field for that tech.
+alias[trigger:can_research_technology] = <technology>
+
+###Prints a custom error to the error log
+alias[effect:log_error] = scalar
+
+
+## scope = country
+###Checks whether the target country has a technology the current country can steal via copy_random_tech_from effect
+alias[trigger:can_copy_random_tech_from] = {
+	who = scope[country]
+	## cardinality = 0..1
+	category = <technology_category>
+	## cardinality = 0..1
+	area = enum[research_areas]
+}
+
+## scope = country
+###Adds a random tech from the target country within the given category and tech area constraints.
+alias[effect:copy_random_tech_from] = {
+	who = scope[country]
+	## cardinality = 0..1
+	category = <technology_category>
+	## cardinality = 0..1
+	area = enum[research_areas]
+	## cardinality = 0..1
+	###Optional: this makes it grant the tech option rather than the whole tech
+	progress = float[0.0..1.0]
+}
+
+## scope = country
+###Adds the defined amount of intel toward the target empire.
+alias[effect:add_intel] = {
+	who = scope[country]
+	amount = float
+}
+
+
+## scope = country
+## push_scope = first_contact
+###Iterate through each first contact site the current country has
+alias[trigger:any_first_contact] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## scope = country
+## push_scope = first_contact
+###Iterate through each first contact site the current country has
+alias[trigger:count_first_contact] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+## scope = country
+## push_scope = first_contact
+###Iterate through each first contact site the current country has
+alias[effect:random_first_contact] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = country
+## push_scope = first_contact
+###Iterate through each first contact site the current country has
+alias[effect:every_first_contact] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = country
+## push_scope = first_contact
+###Iterate through each active first contact site the current country has
+alias[trigger:any_active_first_contact] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## scope = country
+## push_scope = first_contact
+###Iterate through each active first contact site the current country has
+alias[trigger:count_active_first_contact] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+## scope = country
+## push_scope = first_contact
+###Iterate through each active first contact site the current country has
+alias[effect:random_active_first_contact] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = country
+## push_scope = first_contact
+###Iterate through each active first contact site the current country has
+alias[effect:every_active_first_contact] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}

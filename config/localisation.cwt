@@ -49,7 +49,8 @@ localisation_commands = {
             GetControllerName = planet
             GetPlanetMoon = planet
             GetPlanetMoonCap = planet
-            GetClassName = planet
+            GetClassName = { planet galactic_object }
+            GetClassAdj = planet
             GetLastReceivedRelic = country
             GetMouthName = species
             GetOrganName = species
@@ -74,6 +75,8 @@ localisation_commands = {
             GetSecondName = leader
             GetAge = leader
             GetHerselfHimself = leader
-            ## post-2.6
             GetGovernmentName = country
+            GetShipSizeName = ship
+            GetShipSizeNamePlural = ship
+            GetDesignName = ship
 }
