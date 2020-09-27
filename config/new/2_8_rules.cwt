@@ -12,6 +12,8 @@ alias[trigger:num_assigned_jobs] = {
 ###Checks if the ambient object is a specific type.
 alias[trigger:is_ambient_object_type] = <ambient_object>
 
+###Checks the number of AI empires defined in setup
+alias[trigger:num_ai_empires_setting] = int
 
 ###Removes a module from a certain slot or all slots on a starbase
 alias[effect:remove_starbase_module] = {
