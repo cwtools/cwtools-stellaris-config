@@ -64,3 +64,13 @@ scopes = {
         aliases = { federation }
     }
 }
+
+scope_groups = {
+    celestial_coordinate = {
+        planet ship fleet system ambient_object megastructure starbase archaeological_site
+        deposit pop army country leader
+    }
+    spatial_object = {
+        planet ship fleet system ambient_object megastructure starbase archaeological_site
+    }
+}
