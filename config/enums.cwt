@@ -171,4 +171,18 @@ enums = {
 		crisis_strength_scale
 		tech_costs_scale
 	}
+	enum[contact_rules] = {
+		always
+		never
+		on_action_only
+		does_first_contact_sites
+		auto
+	}
+	enum[maths] = {
+		add
+		subtract
+		multiply
+		divide
+		modulo
+	}
 }

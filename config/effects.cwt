@@ -534,6 +534,10 @@ alias[effect:set_variable] = {
 	value = float
 	value = scope[any]
 	value = value[variable]
+	value = {
+		scope = scope[any]
+		variable = value[variable]
+	}
 }
 
 #presumably need to check the variable exists first for these, somehow
@@ -543,6 +547,10 @@ alias[effect:change_variable] = {
 	value = float
 	value = scope[any]
 	value = value[variable]
+	value = {
+		scope = scope[any]
+		variable = value[variable]
+	}
 }
 
 ###Decrements a previously-set variable by a specific amount
@@ -551,6 +559,10 @@ alias[effect:subtract_variable] = {
 	value = float
 	value = scope[any]
 	value = value[variable]
+	value = {
+		scope = scope[any]
+		variable = value[variable]
+	}
 }
 
 ###Multiplies a previously-set variable by a specific amount
@@ -559,6 +571,10 @@ alias[effect:multiply_variable] = {
 	value = float
 	value = scope[any]
 	value = value[variable]
+	value = {
+		scope = scope[any]
+		variable = value[variable]
+	}
 }
 
 ###Divides a previously-set variable by a specific amount
@@ -567,6 +583,22 @@ alias[effect:divide_variable] = {
 	value = float
 	value = scope[any]
 	value = value[variable]
+	value = {
+		scope = scope[any]
+		variable = value[variable]
+	}
+}
+
+###Modulos a previously-set variable by a specific amount i.e. X % Y
+alias[effect:modulo_variable] = {
+	which = value[variable]
+	value = float
+	value = scope[any]
+	value = value[variable]
+	value = {
+		scope = scope[any]
+		variable = value[variable]
+	}
 }
 
 #max should not be less than min...
@@ -1878,8 +1910,15 @@ alias[effect:create_message] = {
 }
 
 #
-### Creates a military fleet with the designs of a specified country. Tell Caligula what this does.
-alias[effect:create_military_fleet] = scope[country]
+### Creates a military fleet with the designs of a specified country.
+alias[effect:create_military_fleet] = {
+	owner = scope_group[target_country]
+	scaled_size = float
+	effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+}
+
 ### Creates a mining station in orbit of the scoped planet
 alias[effect:create_mining_station] = {
 	owner = scope[country]
@@ -2580,6 +2619,8 @@ alias[effect:create_archaeological_site] = <archaeological_site_type>
 alias[effect:destroy_archaeological_site] = scope[planet]
 ###Adds clues to the current stage of a archaeological site
 alias[effect:add_stage_clues] = int
+alias[effect:add_stage_clues] = lower_insight_reward
+alias[effect:add_stage_clues] = higher_insight_reward
 alias[effect:add_expedition_log_entry] = who_knows_tell_us_please
 ###Resets the current stage
 alias[effect:reset_current_stage] = yes

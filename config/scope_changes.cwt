@@ -430,6 +430,350 @@ alias[trigger:closest_system] = {
 
 
 
+
+#Count stuff
+
+## scope = any
+## replace_scope = { this = sector }
+###Iterate through all sectors in the game
+alias[trigger:count_sector] = {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## scope = country
+## replace_scope = { this = sector }
+###Iterate through every owned sector
+alias[trigger:count_owned_sector] = {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## replace_scope = { this = country }
+### Iterate through all bordering countries of a system
+alias[trigger:count_bordering_country] = {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## replace_scope = { this = fleet }
+### Iterate through each fleet this fleet is in combat with
+alias[trigger:count_combatant_fleet] =  {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## replace_scope = { this = country }
+### Iterate through all countries
+alias[trigger:count_country] =  {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## replace_scope = { this = deposit }
+### Checks the number of deposits on the tile/planet that meet the specified criteria
+alias[trigger:count_deposits] =  {
+	count = int
+	type = <deposit>
+}
+
+## replace_scope = { this = megastructure }
+### Iterate through each megastructure
+alias[trigger:count_megastructure] =  {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## replace_scope = { this = country }
+### Iterate through all neighbor countries
+alias[trigger:count_neighbor_country] =  {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## replace_scope = { this = army }
+### Iterate through each army that is owned by the country
+alias[trigger:count_owned_army] =  {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## replace_scope = { this = megastructure }
+### Iterate through each owned megastructure
+alias[trigger:count_owned_megastructure] =  {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## replace_scope = { this = pop }
+### Iterate through all owned pops
+alias[trigger:count_owned_pop] =  {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## replace_scope = { this = species }
+### Iterate through each species of a country's owned pops
+alias[trigger:count_owned_pop_species] =  {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## replace_scope = { this = starbase }
+### Iterate through every owned starbase
+alias[trigger:count_owned_starbase] =  {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## replace_scope = { this = army }
+### Iterate through each defending army on a planet
+alias[trigger:count_planet_army] =  {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## replace_scope = { this = planet }
+### Checks the planets in system that meet the criteria
+alias[trigger:count_planets] =  {
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## replace_scope = { this = planet }
+### Checks the planets in system that meet the criteria
+alias[trigger:count_system_planet] =  {
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## replace_scope = { this = leader }
+### Iterate through each leader that is recruitable for the country
+alias[trigger:count_pool_leader] =  {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## replace_scope = { this = country }
+### Iterate through all relations
+alias[trigger:count_relation] =  {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## replace_scope = { this = system }
+### Iterate through all rim systems
+alias[trigger:count_rim_system] =  {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+### Checks the number of starbase modules that are of the specified type
+alias[trigger:count_starbase_modules] =  {
+	count = int
+	type = <starbase_module>
+}
+
+#TODO ship_size
+### Checks if the scoped country has a specified quantity of a starbase size
+alias[trigger:count_starbase_sizes] =  {
+	count = int
+	starbase_size = <ship_size> #<ship_size.starbase>
+}
+
+## replace_scope = { this = system }
+### Iterate through all systems
+alias[trigger:count_system] =  {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## replace_scope = { this = megastructure }
+### Iterate through each megastructure in system
+alias[trigger:count_system_megastructure] =  {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## replace_scope = { this = system }
+### Iterate through all systems within the country's borders
+alias[trigger:count_system_within_border] =  {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## replace_scope = { this = country }
+### Iterate through all war participants
+alias[trigger:count_war_participant] =  {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## replace_scope = { this = country }
+### Checks the number of participants in the war on a specific side that meet the specified criteria
+alias[trigger:count_war_participants] = {
+	## cardinality = 0..1
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	side = scope[country]
+	count = int
+}
+
+#Count triggers: Should all check for < > on the ints
+## replace_scope = { this = pop_faction }
+alias[trigger:count_pop_faction] = {
+	count = int
+	count = all
+	## cardinality = 0..1
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+## replace_scope = { this = species }
+alias[trigger:count_species] = {
+	count = int
+	## cardinality = 0..1
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+## replace_scope = { this = species }
+alias[trigger:count_exact_species] = {
+	count = int
+	## cardinality = 0..1
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+## replace_scope = { this = ship }
+alias[trigger:count_system_ships] = {
+	count = int
+	## cardinality = 0..1
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+## replace_scope = { this = army }
+alias[trigger:count_armies] = {
+	count = int
+	## cardinality = 0..1
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+## replace_scope = { this = ship }
+alias[trigger:count_ships] = {
+	count = int
+	## cardinality = 0..1
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+## replace_scope = { this = ship }
+alias[trigger:count_owned_ship] = {
+	count = int
+	count = all
+	## cardinality = 0..1
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+## replace_scope = { this = pop }
+alias[trigger:count_owned_pops] = {
+	count = int
+	## cardinality = 0..1
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+## replace_scope = { this = pop }
+alias[trigger:count_pops] = {
+	count = int
+	## cardinality = 0..1
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+## replace_scope = { this = country }
+alias[trigger:count_diplo_ties] = {
+	count = int
+	## cardinality = 0..1
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+#side should be one of the previous two scopes
+#< >
+## replace_scope = { this = country }
+###Checks the amount of potential war participants in a specific war that meet the specified criteria
+alias[trigger:count_potential_war_participants] = {
+	attacker = scope[country]
+	defender = scope[country]
+	side = scope[country]
+	## cardinality = 0..1
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	count = int
+}
+
+
+
+
+
 # Effect Scopes
 
 alias[effect:scope_field] = { alias_name[effect] = alias_match_left[effect] }

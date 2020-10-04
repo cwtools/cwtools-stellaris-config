@@ -1,0 +1,6 @@
+
+types = {
+	type[espionage_category] = {
+		path = "game/common/espionage_operation_categories"
+	}
+}

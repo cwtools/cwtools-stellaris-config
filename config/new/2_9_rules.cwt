@@ -140,3 +140,138 @@ alias[effect:every_active_first_contact] = {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
 }
+
+## scope = country
+## push_scope = spy_network
+###Iterate through each spy network
+alias[trigger:any_spy_network] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## scope = country
+## push_scope = spy_network
+###Iterate through each spy network
+alias[trigger:count_spy_network] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+## scope = country
+## push_scope = spy_network
+###Iterate through each spy network
+alias[effect:random_spy_network] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = country
+## push_scope = spy_network
+###Iterate through each spy network
+alias[effect:every_spy_network] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+
+###Unlocks the selected Menace Perk for the current empire
+alias[effect:unlock_menace_perk] = <menace_perk>
+
+###Deactivates the selected Menace Perk for the current empire
+alias[effect:deactivate_menace_perk] = <menace_perk>
+
+###Gives the player the reward for the specified crisis mean
+alias[effect:unlock_menace_perk] = <crisis_mean>
+
+###Sets whether the Galactic Emperor can change Imperial Council members or not
+alias[effect:set_emperor_can_change_council_members] = bool
+
+###Sets a specified policy group to have the cooldown specified in defines
+alias[effect:set_policy_cooldown] = <policy>
+
+###Sets the current ship or fleet to be destroyed and spawn a debris project for the specified country.
+alias[effect:destroy_and_spawn_debris_for] = scope_group[target_country]
+
+###Sets the star's star class, affecting system and galactic map graphics and potentially modifiers. You will still need to change the star's planet class via change_pc
+alias[effect:set_star_class] = <star_class>
+
+
+
+## scope = pop
+alias[trigger:would_work_job] = <job>
+
+## scope = planet
+alias[trigger:can_fill_jobs_for_buildable] = <building>
+## scope = planet
+alias[trigger:can_fill_jobs_for_buildable] = <district>
+
+###Checks if the scoped fleet or ship is civilian (as set in ship sizes).
+alias[trigger:is_civilian] = bool
+
+###Checks if a country has a specific Menace Perk unlocked.
+alias[trigger:has_menace_perk] = <menace_perk>
+
+###Compares the spy power of the network
+alias[trigger:has_spy_power] = int
+
+###Compares the available spy power of the network
+alias[trigger:has_available_spy_power] = int
+
+###Checks if the scope is of a specific category
+alias[trigger:has_espionage_category] = <espionage_category>
+
+###Checks if the scope is currently running an espionage operation
+alias[trigger:is_running_espionage_operation] = bool
+
+###Checks if a country has a specific crisis path.
+alias[trigger:has_crisis_path] = <crisis_path>
+
+###Checks if scoped network has any power
+alias[trigger:has_spy_network] = bool
+
+###Checks if the scope hold an asset of specified type
+alias[trigger:has_espionage_asset] = scalar #<espionage_asset>
+
+###Checks if the scoped country has an active First Contact site with the target country
+alias[trigger:has_active_first_contact_with] = scope_group[target_country]
+
+###Checks if the scoped country is allowed to have a First Contact site with the target country
+alias[trigger:can_have_first_contact_site_with] = scope_group[target_country]
+
+###Checks if the planet is artificial (as set in planet_classes)
+alias[trigger:is_artificial] = bool
+
+###Checks if the solar has its owner's capital
+alias[trigger:is_capital_system] = bool
+
+###Checks if the espionage operation has a certain modifier specific for the current stage
+alias[trigger:has_stage_modifier] = <static_modifier>
+
+###Checks if the Galactic Defense Force or Imperial Armada exists
+alias[trigger:galactic_defense_force_exists] = bool
+
+###Checks a variable for the scope if a certain amount of arithmetic is done to it (note: the variable's value is not changed by this trigger)
+alias[trigger:check_variable_arithmetic] = {
+	which = value[variable]
+	by = float
+	by = value[variable]
+	by = scope[any]
+	by = {
+		scope = scope[any]
+		variable = value[variable]
+	}
+	###Specify >/< on the value or variable fields
+	value = float
+	value = value[variable]
+	value = scope[any]
+	value = {
+		scope = scope[any]
+		variable = value[variable]
+	}
+	mode = enum[maths]
+}

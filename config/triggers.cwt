@@ -360,8 +360,7 @@ alias[trigger:is_colonizable] = bool
 
 ###Checks if the planet is of the ideal class for target country
 alias[trigger:is_ideal_planet_class] = {
-	who = scope[country]
-	who = scope[pop]
+	who = scope_group[target_species]
 	status = bool
 }
 
@@ -550,6 +549,10 @@ alias[trigger:check_variable] = {
 	value = float
 	value = scope[any]
 	value = value[variable]
+	value = {
+		scope = scope[any]
+		variable = value[variable]
+	}
 }
 
 
@@ -755,9 +758,6 @@ alias[trigger:has_completed_event_chain_counter] = {
 ###Checks if the country has a specific special project available
 alias[trigger:has_special_project] = <special_project>
 
-### Checks the country's total army maintenance expenses for the previous month, in energy credits
-alias[trigger:army_maintenance] = int
-
 ### Checks the army's type
 alias[trigger:army_type] = <army>
 
@@ -812,9 +812,6 @@ alias[trigger:conditional_tooltip] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
-### Checks the country's construction expenses for the previous month
-alias[trigger:construction_expenses] = int
-
 ### Shows custom text only when the associated trigger fails
 alias[trigger:custom_tooltip_fail] = {
 	text = localisation
@@ -848,10 +845,6 @@ alias[trigger:fail_text] = {
 	text = localisation
 	alias_name[trigger] = alias_match_left[trigger]
 }
-
-### Checks the country's federation expenses for the previous month
-alias[trigger:federation_expenses] = int
-
 
 ### Compares the former citizenship type with the given one.
 alias[trigger:former_citizenship_type] = enum[citizenship_types]
@@ -1289,16 +1282,9 @@ alias[trigger:pop_produces_resource] = {
 	amount = float
 }
 
-### Checks the country's gross amount of produced energy credits
-alias[trigger:produced_energy] = int
-
-
 ### Checks the country's running energy credit balance
 alias[trigger:running_balance] = int
 
-
-### Checks the country's total ship maintenance expenses for the previous month, in energy credits
-alias[trigger:ship_maintenance] = int
 
 ### Checks if a pop's planet has a specific percentage (0.00-1.00) of the same species enslaved
 alias[trigger:species_planet_slave_percentage] = float[0.0..1.0]
@@ -1309,10 +1295,6 @@ alias[trigger:species_portrait] = <portrait>
 alias[trigger:species_portrait] = <portrait_group>
 
 
-
-
-### Checks the country's total orbital station maintenance expenses for the previous month, in energy credits
-alias[trigger:station_maintenance] = int
 
 ### Checks the country's amount of stored engineering research
 alias[trigger:stored_engineering_points] = int
@@ -1364,10 +1346,6 @@ alias[trigger:their_opinion] = {
 }
 
 
-
-### Checks the country's energy credits expenses from trade for the previous month
-alias[trigger:trade_expenses] = int
-
 ### Checks the country's energy credits income from trade for the previous month
 alias[trigger:trade_income] = int
 
@@ -1412,337 +1390,6 @@ alias[trigger:would_join_war] = {
 alias[trigger:is_researching_special_project] = <special_project>
 
 
-
-#Count stuff
-
-## scope = any
-## replace_scope = { this = sector }
-###Iterate through all sectors in the game
-alias[trigger:count_sector] = {
-	count = all
-	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-## scope = country
-## replace_scope = { this = sector }
-###Iterate through every owned sector
-alias[trigger:count_owned_sector] = {
-	count = all
-	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-## replace_scope = { this = country }
-### Iterate through all bordering countries of a system
-alias[trigger:count_bordering_country] = {
-	count = all
-	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-## replace_scope = { this = fleet }
-### Iterate through each fleet this fleet is in combat with
-alias[trigger:count_combatant_fleet] =  {
-	count = all
-	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-## replace_scope = { this = country }
-### Iterate through all countries
-alias[trigger:count_country] =  {
-	count = all
-	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-## replace_scope = { this = deposit }
-### Checks the number of deposits on the tile/planet that meet the specified criteria
-alias[trigger:count_deposits] =  {
-	count = int
-	type = <deposit>
-}
-
-## replace_scope = { this = megastructure }
-### Iterate through each megastructure
-alias[trigger:count_megastructure] =  {
-	count = all
-	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-## replace_scope = { this = country }
-### Iterate through all neighbor countries
-alias[trigger:count_neighbor_country] =  {
-	count = all
-	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-## replace_scope = { this = army }
-### Iterate through each army that is owned by the country
-alias[trigger:count_owned_army] =  {
-	count = all
-	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-## replace_scope = { this = megastructure }
-### Iterate through each owned megastructure
-alias[trigger:count_owned_megastructure] =  {
-	count = all
-	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-## replace_scope = { this = pop }
-### Iterate through all owned pops
-alias[trigger:count_owned_pop] =  {
-	count = all
-	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-## replace_scope = { this = species }
-### Iterate through each species of a country's owned pops
-alias[trigger:count_owned_pop_species] =  {
-	count = all
-	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-## replace_scope = { this = starbase }
-### Iterate through every owned starbase
-alias[trigger:count_owned_starbase] =  {
-	count = all
-	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-## replace_scope = { this = army }
-### Iterate through each defending army on a planet
-alias[trigger:count_planet_army] =  {
-	count = all
-	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-## replace_scope = { this = planet }
-### Checks the planets in system that meet the criteria
-alias[trigger:count_planets] =  {
-	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-## replace_scope = { this = leader }
-### Iterate through each leader that is recruitable for the country
-alias[trigger:count_pool_leader] =  {
-	count = all
-	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-## replace_scope = { this = country }
-### Iterate through all relations
-alias[trigger:count_relation] =  {
-	count = all
-	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-## replace_scope = { this = system }
-### Iterate through all rim systems
-alias[trigger:count_rim_system] =  {
-	count = all
-	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-### Checks the number of starbase modules that are of the specified type
-alias[trigger:count_starbase_modules] =  {
-	count = int
-	type = <starbase_module>
-}
-
-#TODO ship_size
-### Checks if the scoped country has a specified quantity of a starbase size
-alias[trigger:count_starbase_sizes] =  {
-	count = int
-	starbase_size = <ship_size> #<ship_size.starbase>
-}
-
-## replace_scope = { this = system }
-### Iterate through all systems
-alias[trigger:count_system] =  {
-	count = all
-	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-## replace_scope = { this = megastructure }
-### Iterate through each megastructure in system
-alias[trigger:count_system_megastructure] =  {
-	count = all
-	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-## replace_scope = { this = system }
-### Iterate through all systems within the country's borders
-alias[trigger:count_system_within_border] =  {
-	count = all
-	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-## replace_scope = { this = country }
-### Iterate through all war participants
-alias[trigger:count_war_participant] =  {
-	count = all
-	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-## replace_scope = { this = country }
-### Checks the number of participants in the war on a specific side that meet the specified criteria
-alias[trigger:count_war_participants] = {
-	## cardinality = 0..1
-	limit = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	side = scope[country]
-	count = int
-}
-
-#Count triggers: Should all check for < > on the ints
-## replace_scope = { this = pop_faction }
-alias[trigger:count_pop_faction] = {
-	count = int
-	count = all
-	## cardinality = 0..1
-	limit = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-}
-
-## replace_scope = { this = species }
-alias[trigger:count_species] = {
-	count = int
-	## cardinality = 0..1
-	limit = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-}
-
-## replace_scope = { this = species }
-alias[trigger:count_exact_species] = {
-	count = int
-	## cardinality = 0..1
-	limit = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-}
-
-## replace_scope = { this = ship }
-alias[trigger:count_system_ships] = {
-	count = int
-	## cardinality = 0..1
-	limit = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-}
-
-## replace_scope = { this = army }
-alias[trigger:count_armies] = {
-	count = int
-	## cardinality = 0..1
-	limit = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-}
-
-## replace_scope = { this = ship }
-alias[trigger:count_ships] = {
-	count = int
-	## cardinality = 0..1
-	limit = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-}
-
-## replace_scope = { this = ship }
-alias[trigger:count_owned_ship] = {
-	count = int
-	count = all
-	## cardinality = 0..1
-	limit = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-}
-
-## replace_scope = { this = pop }
-alias[trigger:count_owned_pops] = {
-	count = int
-	## cardinality = 0..1
-	limit = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-}
-
-## replace_scope = { this = pop }
-alias[trigger:count_pops] = {
-	count = int
-	## cardinality = 0..1
-	limit = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-}
-
-## replace_scope = { this = country }
-alias[trigger:count_diplo_ties] = {
-	count = int
-	## cardinality = 0..1
-	limit = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-}
-
-#side should be one of the previous two scopes
-#< >
-## replace_scope = { this = country }
-###Checks the amount of potential war participants in a specific war that meet the specified criteria
-alias[trigger:count_potential_war_participants] = {
-	attacker = scope[country]
-	defender = scope[country]
-	side = scope[country]
-	## cardinality = 0..1
-	limit = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	count = int
-}
 
 
 
@@ -2005,6 +1652,8 @@ alias[trigger:is_site_under_excavation] = bool
 
 ###Compares the current stage discovery score.
 alias[trigger:is_site_current_stage_score] = int
+alias[trigger:is_site_current_stage_score] = lower_insight_score
+alias[trigger:is_site_current_stage_score] = higher_insight_score
 
 ###Compares the current stage discovery score excluding the current die roll.
 alias[trigger:is_site_current_stage_score_no_die] = int
