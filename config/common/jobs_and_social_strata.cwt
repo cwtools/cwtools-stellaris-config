@@ -60,6 +60,8 @@ job = {
 	## cardinality = 0..1
 	is_pre_sapient = bool
 	## cardinality = 0..1
+	ignores_sapience = bool
+	## cardinality = 0..1
 	purge = enum[purge_types]
 
 	## cardinality = 0..1
