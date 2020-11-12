@@ -177,7 +177,7 @@ alias[fleet_action:attack_fleet] = {
 }
 
 
-alias[fleet_action:move_to] = scope_list[celestial_coordinate]
+alias[fleet_action:move_to] = scope_group[celestial_coordinate]
 
 alias[fleet_action:orbit_planet] = scope[planet]
 alias[fleet_action:orbit_planet] = random
