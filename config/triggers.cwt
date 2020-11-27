@@ -1542,6 +1542,15 @@ alias[trigger:count_pool_leader] =  {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
+## replace_scope = { this = leader }
+### Iterate through each leader that is owned by the country
+alias[trigger:count_recruited_leader] =  {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
 ## replace_scope = { this = country }
 ### Iterate through all relations
 alias[trigger:count_relation] =  {
