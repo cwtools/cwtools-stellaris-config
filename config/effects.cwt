@@ -1206,6 +1206,11 @@ alias[effect:create_army] = {
 	species = <buildable_pop>
 	## cardinality = 0..1
 	leader = scope[leader]
+	## cardinality = 0..1
+	## push_scope = army
+	effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
 }
 
 ###Creates a new leader for the scoped country
@@ -1800,6 +1805,11 @@ alias[effect:create_ambient_object] = {
 	target = scalar
 	## cardinality = 0..1
 	duration = int
+	## cardinality = 0..1
+	## push_scope = ambient_object
+	effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
 }
 
 ### Creates a new army in a new transport ship
@@ -1815,6 +1825,11 @@ alias[effect:create_army_transport] = {
 	species = scope[species]
 	##cardinality = 0..1
 	species = enum[buildable_pop_species]
+	## cardinality = 0..1
+	## push_scope = ship
+	effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
 }
 
 #
@@ -1923,6 +1938,11 @@ alias[effect:create_military_fleet] = {
 alias[effect:create_mining_station] = {
 	owner = scope[country]
 	owner = scope[ship]
+	## cardinality = 0..1
+	## push_scope = ship
+	effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
 }
 
 ### Creates a point of interest for the scoped country at a specific location, associated with an event chain
@@ -1968,11 +1988,21 @@ alias[effect:create_pop] = {
 		## cardinality = 1..1
 		ethic = <ethos>
 	}
+	## cardinality = 0..1
+	## push_scope = pop
+	effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
 }
 
 ### Creates a research station in orbit of the scoped planet
 alias[effect:create_research_station] = {
 	owner = scope[country]
+	## cardinality = 0..1
+	## push_scope = ship
+	effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
 }
 
 ### Creates a new saved leader for the scoped country with a lookup key
@@ -2571,6 +2601,11 @@ alias[effect:create_half_species] = {
 	#todo: there's probably a few more things you can use here, I'm guessing!
 	species_one = scope[species]
 	species_two = scope[species]
+	## cardinality = 0..1
+	## push_scope = species
+	effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
 }
 
 ###Forces target planet or country to calculate its internal modifier

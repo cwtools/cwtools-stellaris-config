@@ -528,7 +528,7 @@ alias[trigger:can_colonize] = {
 ###Checks the relative amount of already-researched tech between the country and target country
 alias[trigger:tech_unlocked_ratio] = {
 	who = scope[country]
-	ratio = float[0.0..1.0]
+	ratio = float[0.0..2.0]
 }
 
 ###Checks if a country has the given ascension perk.
@@ -1122,7 +1122,7 @@ alias[trigger:is_overlord_to] = scope[country]
 
 ### Checks if the planet/country/ship/system/ambient object has a specific point of interest for a specific event chain for a specific country
 alias[trigger:is_point_of_interest] = {
-	id = scalar
+	id = value[point_of_interest]
 	event_chain = <event_chain>
 	owner = scope[country]
 }
@@ -1274,7 +1274,10 @@ alias[trigger:pop_can_live_on_planet] = bool
 #alias[trigger:pop_can_reproduce] = bool
 
 ### Checks the maintenace costs of a pop
-alias[trigger:pop_maintenance_cost] = int
+alias[trigger:pop_maintenance_cost] = {
+	resource = <resource>
+	value = float
+}
 
 ### Checks if a pop is currently producing a particular resource
 alias[trigger:pop_produces_resource] = {

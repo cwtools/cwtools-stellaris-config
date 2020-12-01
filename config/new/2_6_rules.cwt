@@ -39,7 +39,7 @@ alias[trigger:empire_sprawl_over_cap] = int
 
 ## scope = country
 ###Checks the empire's sprawl compared to its admin level.
-alias[trigger:empire_sprawl_cap_fraction] = int
+alias[trigger:empire_sprawl_cap_fraction] = float
 
 ## scope = country
 ###Checks if scoped country is part of the Galactic Council.

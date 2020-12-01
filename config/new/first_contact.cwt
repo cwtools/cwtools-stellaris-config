@@ -10,41 +10,20 @@ types = {
 first_contact_stage = {
 	## cardinality = 0..1
 	picture = <sprite>
+	## cardinality = 0..1
 	icon = <sprite>
-	## cardinality = 1..inf
-	desc = localisation
-	## cardinality = 1..inf
-	desc = {
-		## replace_scope = { this = archaeological_site root = archaeological_site }
-		trigger = {
-			alias_name[trigger] = alias_match_left[trigger]
-		}
-		text = localisation
-	}
 	difficulty = int[-inf..inf]
 	difficulty = {
 		min = int[-inf..inf]
 		max = int[-inf..inf]
 	}
 	
-	
-	
-	## cardinality = 0..1
-	abort_trigger = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-
-	## cardinality = 0..1
-	on_abort = {
-		alias_name[effect] = alias_match_left[effect]
-	}
-
-	allow = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-
 	## cardinality = 0..inf
 	stage_event = {
+		## cardinality = 0..1
+		icon = <sprite>
+		## cardinality = 0..1
+		summary = localisation
 		## cardinality = 1..1 # this has to be there or it won't work
 		event_weight = {
 			weight = int
