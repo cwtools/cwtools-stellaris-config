@@ -167,5 +167,6 @@ enums = {
 	enum[sp_event_scopes] = {
 		ship_event
 		planet_event
+		country_event
 	}
 }

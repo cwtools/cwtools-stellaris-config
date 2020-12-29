@@ -66,6 +66,18 @@ alias[effect:add_intel] = {
 	amount = float
 }
 
+###Checks the amount of intel the current country has toward the target empire.
+alias[trigger:intel] = {
+	who = scope[country]
+	value = float
+}
+
+###Checks the amount of intel the current country has toward the target empire.
+alias[trigger:has_intel_level] = {
+	who = scope[country]
+	category = <intel_category>
+	level = int
+}
 
 ## scope = country
 ## push_scope = first_contact
@@ -200,7 +212,30 @@ alias[effect:destroy_and_spawn_debris_for] = scope_group[target_country]
 ###Sets the star's star class, affecting system and galactic map graphics and potentially modifiers.
 alias[effect:set_star_class] = <star_class>
 
+###Fires an on_action (including custom-made ones), can set scopes like in fire event effects
+alias[effect:fire_on_action] = {
+	on_action = <on_action>
+	## cardinality = 0..1
+	scopes = {
+		## cardinality = 0..1
+		from = scope[any]
+		## cardinality = 0..1
+		fromfrom = scope[any]
+		## cardinality = 0..1
+		fromfromfrom = scope[any]
+		## cardinality = 0..1
+		fromfromfromfrom = scope[any]
+	}
+}
 
+###sSets the current fleet to go missing in action and return home.
+alias[effect:set_mia] = yes
+
+### Checks whether a country can set a policy via set_policy effect
+alias[trigger:can_set_policy] = {
+	policy = <policy>
+	option = enum[policy_option]
+}
 
 ## scope = pop
 alias[trigger:would_work_job] = <job>

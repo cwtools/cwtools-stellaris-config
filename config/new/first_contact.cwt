@@ -3,8 +3,31 @@ types = {
 	type[first_contact_stage] = {
 		path = "game/common/first_contact"
 	}
+	type[intel_category] = {
+		path = "game/common/intel_categories"
+	}
+	type[intel_level] = {
+		path = "game/common/intel_levels"
+	}
 }
 
+intel_category = {
+	## cardinality = 0..inf
+	intel_level = {
+		## cardinality = 0..inf
+		scalar
+	}
+}
+
+intel_level = {
+    frame = int
+    intel = {
+		## cardinality = 0..inf
+		int[0..100]
+	}
+	## cardinality = 1..inf
+    <intel_category> = int
+}
 
 ## push_scope = first_contact
 first_contact_stage = {

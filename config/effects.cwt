@@ -1459,11 +1459,16 @@ alias[effect:enable_special_project] = {
 	owner = scope[planet]
 	## cardinality = 0..1
 	owner = scope[fleet]
+	## cardinality = 0..1
 	location = scope[planet]
+	## cardinality = 0..1
 	#	location = scope[system] #Caligula's note: Doesn't work (the project will not be researchable as it will have no precise location).
 	location = scope[ship]
+	## cardinality = 0..1
 	location = scope[fleet]
+	## cardinality = 0..1
 	location = scope[ambient_object]
+	## cardinality = 0..1
 	location = scope[starbase]
 }
 
