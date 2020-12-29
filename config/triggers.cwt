@@ -2049,7 +2049,7 @@ alias[trigger:num_owned_relics] = int
 ## 2.6.3
 
 ###Checks if the federation has a specific flag.
-alias[trigger:has_federation_flag] = value[country_flag]
+alias[trigger:has_federation_flag] = value[federation_flag]
 
 ###Checks the country's number of envoys sent to its federation.
 alias[trigger:num_envoys_to_federation] = int
