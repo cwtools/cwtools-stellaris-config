@@ -70,7 +70,7 @@ scopes = {
         aliases = { espionage_operation }
     }
     "Spy Network" = {
-        aliases = { spy_network }
+        aliases = { spy_network spynetwork }
     }
 }
 

@@ -259,12 +259,16 @@ links = {
 		inputscopes = { first_contact }
 		output_scope = first_contact
 	}
-	spy_network = {
+	spynetwork = {
 		inputscopes = { espionage_operation }
 		output_scope = spy_network
 	}
 	target = {
 		inputscopes = { espionage_operation spy_network }
+		output_scope = country
+	}
+	federation_leader = {
+		inputscopes = { federation }
 		output_scope = country
 	}
 }

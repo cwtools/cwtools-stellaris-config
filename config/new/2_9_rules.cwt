@@ -144,7 +144,7 @@ alias[effect:every_active_first_contact] = {
 ## scope = country
 ## push_scope = spy_network
 ###Iterate through each spy network
-alias[trigger:any_spy_network] = {
+alias[trigger:any_spynetwork] = {
 	alias_name[trigger] = alias_match_left[trigger]
 	##cardinality = 0..1
 	count = int
@@ -153,7 +153,7 @@ alias[trigger:any_spy_network] = {
 ## scope = country
 ## push_scope = spy_network
 ###Iterate through each spy network
-alias[trigger:count_spy_network] = {
+alias[trigger:count_spynetwork] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	count = int
@@ -163,7 +163,7 @@ alias[trigger:count_spy_network] = {
 ## scope = country
 ## push_scope = spy_network
 ###Iterate through each spy network
-alias[effect:random_spy_network] = {
+alias[effect:random_spynetwork] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
@@ -172,7 +172,7 @@ alias[effect:random_spy_network] = {
 ## scope = country
 ## push_scope = spy_network
 ###Iterate through each spy network
-alias[effect:every_spy_network] = {
+alias[effect:every_spynetwork] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
@@ -197,7 +197,7 @@ alias[effect:set_policy_cooldown] = <policy>
 ###Sets the current ship or fleet to be destroyed and spawn a debris project for the specified country.
 alias[effect:destroy_and_spawn_debris_for] = scope_group[target_country]
 
-###Sets the star's star class, affecting system and galactic map graphics and potentially modifiers. You will still need to change the star's planet class via change_pc
+###Sets the star's star class, affecting system and galactic map graphics and potentially modifiers.
 alias[effect:set_star_class] = <star_class>
 
 
@@ -232,7 +232,7 @@ alias[trigger:is_running_espionage_operation] = bool
 alias[trigger:has_crisis_path] = <crisis_path>
 
 ###Checks if scoped network has any power
-alias[trigger:has_spy_network] = bool
+alias[trigger:has_spynetwork] = bool
 
 ###Checks if the scope hold an asset of specified type
 alias[trigger:has_espionage_asset] = scalar #<espionage_asset>
