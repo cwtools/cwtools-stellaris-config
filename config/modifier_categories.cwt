@@ -51,4 +51,32 @@ modifier_categories = {
         internal_id = 524288
         supported_scopes = { country planet ship pop leader }
     }
+    System = {
+        internal_id = 1048576
+        supported_scopes = { galacticobject }
+    }
+    SystemAndOwner = {
+        internal_id = 1048832
+        supported_scopes = { galacticobject country }
+    }
+    SystemExtended = {
+        internal_id = 1049984
+        supported_scopes = { galacticobject country leader fleet }
+    }
+    TradeStarbase = {
+        internal_id = 2359296
+        supported_scopes = { starbase }
+    }
+    TradeCountry = {
+        internal_id = 2097408
+        supported_scopes = { country }
+    }
+    Federation = {
+        internal_id = 4194304
+        supported_scopes = { federation }
+    }
+    Espionage = {
+        internal_id = 8388608
+        supported_scopes = { country spynetwork }
+    }
 }
