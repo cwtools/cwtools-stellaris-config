@@ -171,6 +171,67 @@ enums = {
 		crisis_strength_scale
 		tech_costs_scale
 	}
+	enum[federation_succession_types] = {
+		strongest
+		diplomatic_weight
+		rotation
+		challenge
+		random
+		tech
+		fleet
+	}
+	enum[federation_succession_terms] = {
+		status_change
+		years_10
+		years_20
+		years_30
+		years_40
+	}
+	enum[federation_settings] = {
+		research_sharing
+		failed_vote_half_price
+	}
+	enum[vote_types] = {
+		unanimous_vote
+		majority_vote
+		leader
+	}
+	enum[acceptance_types] = {
+		default
+		leader
+	}
+	enum[opinion_levels] = {
+		terrible
+		poor
+		neutral
+		good
+		excellent
+	}
+	enum[diplomacy_economy_tags] = {
+		federation
+		rivalry
+		non_aggression_pact
+		migration_pact
+		research_agreement
+		commercial_pact
+		defensive_pact
+		guarantee
+		improving_relations
+		harming_relations
+		diplo_stance_closed_borders
+	}
+	enum[envoy_tasks] = {
+		improve_relations
+		harm_relations
+		federation
+		galactic_community
+		none
+	}
+	enum[planet_resource_compare_types] = {
+		produces
+		upkeep
+		balance
+	}
 	enum[contact_rules] = {
 		always
 		never

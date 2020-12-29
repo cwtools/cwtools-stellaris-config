@@ -1704,5 +1704,222 @@ alias[trigger:num_owned_relics] = int
 
 ## 2.6.3
 
+###Checks if the federation has a specific flag.
+alias[trigger:has_federation_flag] = value[country_flag]
+
+###Checks the country's number of envoys sent to its federation.
+alias[trigger:num_envoys_to_federation] = int
+
+###Checks the country's number of envoys sent to the galactic community.
+alias[trigger:num_envoys_to_galcom] = int
+
+###Checks experience of the federation.
+alias[trigger:federation_experience] = int
+
+###Checks cohesion of the federation.
+alias[trigger:federation_cohesion] = int
+
+###Checks cohesion growth of the federation.
+alias[trigger:federation_cohesion_growth] = float
+
+###Checks if given law has been enacted in scoped federation.
+alias[trigger:has_federation_law] = <federation_law>
+
+###Checks if scoped country is part of the Galactic Community.
+alias[trigger:is_galactic_community_member] = bool
+
+###Checks how much the empire sprawl is over its admin capacity.
+alias[trigger:empire_sprawl_over_cap] = int
+
+###Checks the empire's sprawl compared to its admin level.
+alias[trigger:empire_sprawl_cap_fraction] = float
+
+###Checks if scoped country is part of the Galactic Council.
+alias[trigger:is_part_of_galactic_council] = bool
+
+###Checks if given perk has been unlocked in scoped federation.
+alias[trigger:has_federation_perk] = <federation_perk>
+
+###Checks if federation has specific federation type.
+alias[trigger:has_federation_type] = <federation_type>
+
+###Checks federation level in comparison to given value in scoped federation.
+alias[trigger:federation_level] = int
+
+###Checks if the Galactic Community is currently voting on any, or a specific, resolution.
+alias[trigger:is_voting_on_resolution] = any
+
+###Checks if the Galactic Community is currently voting on any, or a specific, resolution.
+alias[trigger:is_voting_on_resolution] = <resolution>
+
+###Checks if the scoped country is currently proposing any, or a specific, resolution.
+alias[trigger:is_proposing_resolution] = any
+
+###Checks if the scoped country is currently proposing any, or a specific, resolution.
+alias[trigger:is_proposing_resolution] = <resolution>
+
+###Compare with number of years since the formation of the Galactic Community. NOTE: A negative value means it hasn't been formed yet!
+alias[trigger:is_years_since_community_formation] = int
+
+###Compares with number of years since the establishment of the Galactic Council. NOTE: A negative value means it hasn't been established yet!
+alias[trigger:is_years_since_council_establishment] = int
+
+###Checks if the Galactic Community has been formed.
+alias[trigger:is_galactic_community_formed] = bool
+
+###Checks if the Galactic Council has been established.
+alias[trigger:is_galactic_council_established] = bool
+
+###Checks if scoped country has specified origin
+alias[trigger:has_origin] = <civic_or_origin.origin>
+
+###Checks if the provided Resolution is active in the Community
+alias[trigger:is_active_resolution] = <resolution>
+
+###Checks if an empire is in breach of any galactic resolution.
+alias[trigger:is_in_breach_of_any] = bool
+
+###Checks if the scoped country is in breach of the specified resolution (or would be, were it to be enacted).
+alias[trigger:in_breach_of] = <resolution>
+
+###Checks if given setting is on for scoped federation.
+alias[trigger:has_federation_setting] = enum[federation_settings]
+
+###Compares the number of council positions in the Galactic Community.
+alias[trigger:num_council_positions] = int
+
+###Compares empire rank ( sorted by diplomatic weight ) in the Galactic Community. NOTE: If the scoped country isn't part of the community this returns -1.
+alias[trigger:galactic_community_rank] = int[-1..inf]
+
+###Checks if an empire has a permanent seat on the Galactic Council.
+alias[trigger:is_permanent_councillor] = bool
+
+###Checks the country's opinion of the target country has been changed by envoys.
+alias[trigger:envoy_opinion_change] = {
+	who = scope[country]
+	value = int
+}
+
+###Checks if the country has an envoy sent to the target country to improve relations.
+alias[trigger:is_improving_relations_with] = scope[country]
+
+###Checks if the country has an envoy sent to the target country to harm relations.
+alias[trigger:is_harming_relations_with] = scope[country]
+
+###Checks whether the country has the specified opinion level to the specified country.
+alias[trigger:opinion_level] = {
+	who = scope[country]
+	level = enum[opinion_levels]
+}
+
+###Check if the species in the scope is a robot species or not.
+alias[trigger:is_robotic] = bool
+
+###Check amount of favors that scoped country can collect from target country.
+alias[trigger:num_favors] = {
+	target = scope[country]
+	value = int
+}
+
 ###Checks whether the galaxy size if of a certain type
 alias[trigger:galaxy_size] = <map_setup_scenario>
+
+
+# 2.7
+
+###Checks the scoped envoy's task.
+alias[trigger:has_envoy_task] = {
+	##cardinality = 0..1
+	target = scope[country]
+	task = enum[envoy_tasks]
+}
+
+###Checks whether the scoped envoy is affected by a cooldown.
+alias[trigger:has_envoy_cooldown] = bool
+
+###Checks if the scoped fleet is able to enter the system. Note: Avoid overusing this, it is a performance-intensive trigger!
+alias[trigger:can_access_system] = scope[system]
+
+###Checks the system's trade value
+alias[trigger:has_system_trade_value] = float
+
+###Checks the scoped leader's age.
+alias[trigger:leader_age] = int
+
+###Checks if the country has completed a specific special project as part of an in-progress event chain
+alias[trigger:has_completed_special_project] = <special_project>
+
+###Checks if the country has failed, timed out or aborted a specific special project as part of an in-progress event chain.
+alias[trigger:has_failed_special_project] = <special_project>
+
+###Compares the value of the planet's total housing
+alias[trigger:num_housing] = int
+
+###Compares the number of planets in the current solar system
+alias[trigger:num_planets_in_system] = int
+
+###Checks if the current planet is the capital of its sector.
+alias[trigger:is_sector_capital] = bool
+
+###Checks if the current sector has the specified focus.
+alias[trigger:has_sector_focus] = <sector_focus>
+
+###Checks if the planet uses the specified district set.
+alias[trigger:uses_district_set] = enum[district_sets]
+
+###Compares the planet's production/upkeep or balance (default: balance) of a given resource with a specified value.
+alias[trigger:planet_resource_compare] = {
+	## cardinality = 0..1
+	###Default: Balance
+	type = enum[planet_resource_compare_types]
+	resource = <resource>
+	value = float
+}
+
+###Checks if given law category has any active law.
+alias[trigger:has_any_federation_law_in_category] = <federation_law_category>
+
+###Check that the planet has available jobs of a specific type
+alias[trigger:has_available_jobs] = <job>
+
+###Checks if Xeno Compatibility are enabled in game setup
+alias[trigger:xeno_compatibility_enabled] = <job>
+
+###Checks if the country has been set to be neutral towards target country via set_faction_hostility.
+alias[trigger:is_forced_friendly] = scope[country]
+
+###Checks if the country has been set to be friendly towards target country via set_faction_hostility.
+alias[trigger:is_forced_neutral] = scope[country]
+
+###Checks if the current pop has happiness or not.
+alias[trigger:pop_has_happiness] = bool
+
+###Checks if any pops are being purged on the current planet.
+alias[trigger:has_current_purge] = bool
+
+###Checks if the current species has happiness or not when owned by a specified country.
+alias[trigger:species_has_happiness_with_owner] = scope[country]
+
+
+
+# 2.8
+
+## scope = { planet country }
+###Checks the number of pops the planet or country has that work a specific job.
+alias[trigger:num_assigned_jobs] = {
+	job = <job>
+	job = unemployed
+	value = int
+}
+
+## scope = ambient_object
+###Checks if the ambient object is a specific type.
+alias[trigger:is_ambient_object_type] = <ambient_object>
+
+###Checks the number of AI empires defined in setup
+alias[trigger:num_ai_empires_setting] = int
+
+
+# 2.9
+
+#to be populated

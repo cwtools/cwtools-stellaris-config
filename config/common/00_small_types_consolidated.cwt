@@ -95,6 +95,11 @@ types = {
 	type[economic_plan] = {
 		path = "game/common/economic_plans"
 	}
+	type[diplomacy_economy] = {
+        path = "game/common/diplomacy_economy"
+#        name_from_file = yes
+        type_per_file = yes
+	}
 }
 
 ambient_object = {
@@ -451,5 +456,37 @@ economic_plan = {
 	ai_weight = {
 		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+
+diplomacy_economy = {
+	once = {
+		#Not sure if you can define your own stuff here so used an enum
+		## cardinality = 0..inf
+		enum[diplomacy_economy_tags] = {
+			## replace_scopes = { this = country root = country from = country }
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			resources = {
+				category = <economic_category>
+				alias_name[economic_template] = alias_match_left[economic_template]
+			}
+		}
+	}
+	per_relation = {
+		#Not sure if you can define your own stuff here so used an enum
+		## cardinality = 0..inf
+		enum[diplomacy_economy_tags] = {
+			## replace_scopes = { this = country root = country from = country }
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			resources = {
+				category = <economic_category>
+				alias_name[economic_template] = alias_match_left[economic_template]
+			}
+		}
 	}
 }
