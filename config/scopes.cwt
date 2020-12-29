@@ -72,6 +72,9 @@ scopes = {
     "Spy Network" = {
         aliases = { spy_network spynetwork }
     }
+    "Espionage Asset" = {
+        aliases = { espionage_asset }
+    }
 }
 
 scope_groups = {

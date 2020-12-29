@@ -88,6 +88,7 @@ enums = {
 		first_contact
 		spy_network
 		espionage_operation
+		espionage_asset
 	}
 	enum[intel_level] = {
 		none
