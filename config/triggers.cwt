@@ -1394,10 +1394,6 @@ alias[trigger:is_researching_special_project] = <special_project>
 
 
 
-
-
-
-
 #2.2
 
 ###Checks the pop_faction's approval level. Is a float (0.0-1.0).

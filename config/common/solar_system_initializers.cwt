@@ -296,6 +296,10 @@ alias[moon_initializer:moon] = {
 
 	## cardinality = 0..1
 	deposit_blockers = none
+	
+	## push_scope = planet
+	alias_name[moon_initializer] = alias_match_left[moon_initializer]
+
 }
 
 solar_system_initializer_random_list = {
