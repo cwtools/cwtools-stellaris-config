@@ -47,6 +47,18 @@ modifier_categories = {
         internal_id = 262144
         supported_scopes = { starbase country }
     }
+    Starbase2 = { #Technically starbase + planet, but presumably the planet part doesn't work!
+        internal_id = 264192
+        supported_scopes = { starbase country }
+    }
+    StarbaseAndMegastructure = {
+        internal_id = 327680
+        supported_scopes = { starbase megastructure }
+    }
+    StarbaseTrade = {
+        internal_id = 329728
+        supported_scopes = { starbase planet megastructure }
+    }
     Resource = {
         internal_id = 524288
         supported_scopes = { country planet ship pop leader }
@@ -63,13 +75,13 @@ modifier_categories = {
         internal_id = 1049984
         supported_scopes = { galacticobject country leader fleet }
     }
-    TradeStarbase = {
-        internal_id = 2359296
-        supported_scopes = { starbase }
-    }
     TradeCountry = {
         internal_id = 2097408
         supported_scopes = { country }
+    }
+    TradeStarbase = {
+        internal_id = 2359296
+        supported_scopes = { starbase }
     }
     Federation = {
         internal_id = 4194304
