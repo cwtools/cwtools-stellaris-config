@@ -108,14 +108,6 @@ alias[trigger:any_moon] = {
 	count = int
 }
 
-## push_scope = war
-###Checks if any wars meet the specified criteria
-alias[trigger:any_war] = {
-	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
-}
-
 ## push_scope = country
 ###Checks if any of the defenders in the war meet the specified criteria
 alias[trigger:any_defender] = {
@@ -271,14 +263,6 @@ alias[trigger:any_system_ambient_object] = {
 ## push_scope = country
 ###Iterate through all bordering countries of a system
 alias[trigger:any_bordering_country] = {
-	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
-}
-
-## push_scope = country
-###Checks if any members of the alliance meet the specified criteria
-alias[trigger:any_member] = {
 	alias_name[trigger] = alias_match_left[trigger]
 	##cardinality = 0..1
 	count = int
@@ -1494,3 +1478,352 @@ alias[effect:random_deposit] = {
 		alias_name[modifier_rule_add_mult] = alias_match_left[modifier_rule_add_mult]
 	}
 }
+
+
+
+
+## From now on, let's order it. Script lists make random/every/any/count of each kind, so may as well group them together.
+
+# 2.6
+
+## push_scope = country
+###Iterate through each member of the federation
+alias[effect:random_member] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = country
+###Iterate through each member of the federation
+alias[effect:every_member] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = country
+###Iterate through each member of the federation
+alias[trigger:any_member] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## push_scope = country
+###Iterate through each member of the federation
+alias[trigger:count_member] = {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+
+## push_scope = war
+###Iterate through each war the country is fighting in
+alias[effect:every_war] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = war
+###Iterate through each war the country is fighting in
+alias[effect:random_war] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = war
+###Checks if any wars meet the specified criteria
+alias[trigger:any_war] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## push_scope = war
+###Iterate through each war the country is fighting in
+alias[trigger:count_war] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+
+## push_scope = federation
+###Iterate through each federation
+alias[trigger:any_federation] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## push_scope = federation
+###Iterate through each federation
+alias[trigger:count_federation] = {
+	##cardinality = 0..1
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	count = int
+	count = all
+}
+
+## push_scope = federation
+###Iterate through each federation
+alias[effect:random_federation] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = federation
+###Iterate through each federation
+alias[effect:every_federation] = {
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+
+## push_scope = fleet
+###Iterate through each fleet in the system
+alias[trigger:any_fleet_in_system] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## push_scope = fleet
+###Iterate through each fleet in the system
+alias[trigger:count_fleet_in_system] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+## push_scope = species
+###Iterate through each species in the galaxy
+alias[trigger:any_galaxy_species] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## push_scope = species
+###Iterate through each species in the galaxy
+alias[trigger:count_galaxy_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+## push_scope = species
+###Iterate through each species in the galaxy
+alias[effect:random_galaxy_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+###Iterate through each species in the galaxy
+alias[effect:every_galaxy_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = species
+###Iterate through each species belonging to the country/planet
+alias[trigger:any_owned_species] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## push_scope = species
+###Iterate through each species belonging to the country/planet
+alias[trigger:count_owned_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+## push_scope = species
+###Iterate through each species belonging to the country/planet
+alias[effect:random_owned_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = species
+###Iterate through each species belonging to the country/planet
+alias[effect:every_owned_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = species
+###Iterate through each species enslaved by the country/planet
+alias[trigger:any_enslaved_species] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## push_scope = species
+###Iterate through each species enslaved by the country/planet
+alias[trigger:count_enslaved_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+## push_scope = species
+###Iterate through each species enslaved by the country/planet
+alias[effect:random_enslaved_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = species
+###Iterate through each species enslaved by the country/planet
+alias[effect:every_enslaved_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+# 2.7
+
+## push_scope = leader
+###Iterate through each envoy available to the country
+alias[trigger:any_envoy] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## push_scope = leader
+###Iterate through each envoy available to the country
+alias[trigger:count_envoy] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+## push_scope = leader
+###Iterate through each envoy available to the country
+alias[effect:random_envoy] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = leader
+###Iterate through each envoy available to the country
+alias[effect:every_envoy] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = country
+###Checks if a specified number of playable countries meet the specified criteria
+alias[trigger:count_playable_country] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+## push_scope = country
+###Iterate through each country rivalled by the current country
+alias[trigger:any_rival_country] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## push_scope = country
+###Iterate through each country rivalled by the current country
+alias[trigger:count_rival_country] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+## push_scope = country
+###Iterate through each country rivalled by the current country
+alias[effect:random_rival_country] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = country
+###Iterate through each country rivalled by the current country
+alias[effect:every_rival_country] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = country
+###Iterate through each country in a federation with the current country
+alias[trigger:any_federation_ally] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## push_scope = country
+###Iterate through each country in a federation with the current country
+alias[trigger:count_federation_ally] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+## push_scope = country
+###Iterate through each country in a federation with the current country
+alias[effect:random_federation_ally] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = country
+###Iterate through each country in a federation with the current country
+alias[effect:every_federation_ally] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = pop_faction
+###Checks if any of the country's pop factions meet the specified criteria
+alias[trigger:any_pop_faction] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+
+
+# 2.9
+
+#to be populated

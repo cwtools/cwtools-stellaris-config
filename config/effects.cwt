@@ -2604,3 +2604,239 @@ alias[effect:steal_relic] = {
 	relic = all
 	relic = random
 }
+
+
+
+# 2.6
+
+###Add <value> favors for scoped country to use on target country.
+alias[effect:add_favors] = {
+	target = scope[country]
+	value = int
+}
+
+###Remove <value/all> favors that scoped country have on target country.
+alias[effect:remove_favors] = {
+	target = scope[country]
+	value = int
+	value = all
+}
+
+###Sets an arbitrarily-named flag on the scoped federation
+alias[effect:set_federation_flag] = value_set[federation_flag]
+
+###Sets an arbitrarily-named flag on the scoped federation
+alias[effect:set_timed_federation_flag] = {
+	flag = value_set[federation_flag]
+	enum[days_months_years] = int
+}
+
+###Removes a previously-set flag from the scoped federation
+alias[effect:remove_federation_flag] = value[federation_flag]
+
+###Sets the given law for the scoped federation.
+alias[effect:set_federation_law] = <federation_law>
+
+###Tries to add the country to the Galactic Community.
+alias[effect:add_to_galactic_community] = yes
+
+###Tries to remove the country from the Galactic Community.
+alias[effect:remove_from_galactic_community] = yes
+
+###Tries to add the scoped country to the Galactic Council.
+alias[effect:add_to_galactic_council] = yes
+
+###Tries to remove the scoped country from the Galactic Council.
+alias[effect:remove_from_galactic_council] = yes
+
+###Adds experience to the scoped federation.
+alias[effect:add_federation_experience] = int
+
+###Sets federation type to the scoped federation.
+alias[effect:set_federation_type] = <federation_type>
+
+###Sets federation succession type to the scoped federation. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
+alias[effect:set_federation_succession_type] = enum[federation_succession_types]
+
+###Sets federation succession term to the scoped federation. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
+alias[effect:set_federation_succession_term] = enum[federation_succession_terms]
+
+###Sets exclusive right to build fleets by federation leader. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
+alias[effect:set_only_leader_builds_fleets] = bool
+
+###Sets right for subjects to join federations. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
+alias[effect:set_allow_subjects_to_join] = bool
+
+###Sets different voting weight. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
+alias[effect:set_equal_voting_power] = bool
+
+###Sets diplomatic action custom setting. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
+alias[effect:set_diplomacy_action_setting] = {
+	action = <diplomatic_action>
+	settings = {
+		## cardinality = 0..1
+		vote_type = enum[vote_types] #unanimous_vote majority_vote leader
+		## cardinality = 0..1
+		acceptance_type = enum[acceptance_types] #leader default
+	}
+}
+
+###Sets unified migration flag for federation. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
+alias[effect:set_free_migration] = bool
+
+###Sets federation custom setting. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
+alias[effect:set_federation_settings] = {
+	enum[federation_settings] = bool
+}
+
+###Add cohesion to the federation
+alias[effect:add_cohesion] = int
+
+###Sets the number of seats on the Galactic Council
+alias[effect:set_council_size] = int
+
+###Increases the number of seats on the Galactic Council by 1
+alias[effect:increase_council_size] = yes
+
+###Decreases the number of seats on the Galactic Council by 1
+alias[effect:decrease_council_size] = yes
+
+###Sets whether council members can veto resolutions or not
+alias[effect:set_council_veto] = bool
+
+###Sets whether council members can propose emergency measures or not
+alias[effect:set_council_emergency_measures] = bool
+
+###Gives scoped country a permanent position on the Galactic Council
+alias[effect:add_permanent_councillor] = yes
+
+###Remove the scoped country from their permanent council position
+alias[effect:remove_permanent_councillor] = yes
+
+###Passes the specified resolution
+alias[effect:pass_resolution] = <resolution>
+
+###Removes the specified participant from the scoped war.
+alias[effect:remove_war_participant] = scope[country]
+
+###Ends all treaties with the target.
+alias[effect:end_all_treaties_with] = scope[country]
+
+
+# 2.7
+
+###Prints the countries that match the limit triggers in a list for a tooltip.
+alias[effect:country_list_tooltip] = {
+	## push_scope = country
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+###Prints the country's colonies that match the limit triggers in a list for a tooltip.
+alias[effect:owned_planet_list_tooltip] = {
+	## push_scope = planet
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+###Prints the country's pop factions that match the limit triggers in a list for a tooltip.
+alias[effect:owned_pop_faction_list_tooltip] = {
+	## push_scope = pop_faction
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+###Prints the country's leaders that match the limit triggers in a list for a tooltip.
+alias[effect:owned_leader_list_tooltip] = {
+	## push_scope = leader
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+###Prints the country's fleets that match the limit triggers in a list for a tooltip.
+alias[effect:owned_fleet_list_tooltip] = {
+	## push_scope = fleet
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+###Locks the leader in its current role for the next X days.
+alias[effect:set_cooldown] = int
+
+###Sets the current planet as the capital of its sector.
+alias[effect:set_sector_capital] = yes
+
+###Sets the current sector's focus.
+alias[effect:set_sector_focus] = <sector_focus>
+
+###Sets the current planet to have the specified type designation.
+alias[effect:set_colony_type] = <colony_type>
+
+###Adds civic to a goverment without checking the restrictions.
+alias[effect:force_add_civic] = <civic_or_origin.civic>
+
+###Removes civic from a goverment without checking the restrictions.
+alias[effect:force_remove_civic] = <civic_or_origin.civic>
+
+###Completes a specific special project for the country, firing the on_success effects
+alias[effect:complete_special_project] = {
+	type = <special_project>
+	## cardinality = 0..1
+	location = scope[planet]
+	## cardinality = 0..1
+	location = scope[system]
+	## cardinality = 0..1
+	location = scope[ship]
+	## cardinality = 0..1
+	location = scope[fleet]
+	## cardinality = 0..1
+	location = scope[starbase]
+}
+
+# 2.8
+
+###Removes a module from a certain slot or all slots on a starbase
+alias[effect:remove_starbase_module] = {
+	## cardinality = 0..1
+	###Optional, default = all
+	slot = int
+	## cardinality = 0..1
+	module = <starbase_module>
+}
+
+###Remove a building from a certain slot or all slots on a starbase
+alias[effect:remove_starbase_building] = {
+	## cardinality = 0..1
+	###Optional, default = all
+	slot = int
+	## cardinality = 0..1
+	module = <starbase_building>
+}
+
+###Changes the colony foundation date (affecting on_colony_X_years pulses) by a specific number of days. Use with care, you can probably break things with this!
+alias[effect:change_colony_foundation_date] = int
+
+###Sets the adjective of the scoped country
+alias[effect:set_adjective] = localisation_synced
+alias[effect:set_adjective] = scope[country]
+
+###Sets the ship prefix of the scoped country
+alias[effect:set_ship_prefix] = localisation_synced
+alias[effect:set_ship_prefix] = scope[country]
+
+###Locks the country's government for a given period of days, the default cooldown, or unlocks it.
+alias[effect:set_government_cooldown] = int
+alias[effect:set_government_cooldown] = default
+alias[effect:set_government_cooldown] = no
+
+###Sets the country's origin to a certain value. Note: This will not run effects executed during galaxy generation.
+alias[effect:set_origin] = <civic_or_origin.origin>
+
+# 2.9
+
+#to be populated
