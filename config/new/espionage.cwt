@@ -3,4 +3,67 @@ types = {
 	type[espionage_category] = {
 		path = "game/common/espionage_operation_categories"
 	}
+	type[espionage_asset] = {
+		path = "game/common/espionage_assets"
+	}
+	## replace_scope = { this = espionage_operation root = espionage_operation }
+	type[espionage_operation] = {
+		path = "game/common/espionage_operation_types"
+	}
 }
+
+
+espionage_asset = {
+    passive = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+    active = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+    possible = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+    potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	### primary category always goes first!
+    categories = {
+		## cardinality = 1..inf
+		<espionage_category>
+	} 
+}
+
+espionage_operation = {
+    categories = {
+		## cardinality = 1..inf
+		<espionage_category>
+	}
+	picture = <sprite>
+	desc = localisation
+	stages = int
+
+	spy_power_cost = int
+    spy_network_lvl_requirement = int
+
+    potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+    allow = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	
+	## cardinality = 1..inf
+	stage = {
+        difficulty = int
+        icon = <sprite>
+        event = <event.espionage_operation>
+	}
+	
+    on_roll_failed = {
+		alias_name[effect] = alias_match_left[effect]
+    }
+    on_create = {
+		alias_name[effect] = alias_match_left[effect]
+    }
+}
+

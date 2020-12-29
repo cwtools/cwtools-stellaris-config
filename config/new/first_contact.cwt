@@ -41,7 +41,7 @@ first_contact_stage = {
 		max = int[-inf..inf]
 	}
 	
-	## cardinality = 0..inf
+	## cardinality = 1..inf
 	stage_event = {
 		## cardinality = 0..1
 		icon = <sprite>

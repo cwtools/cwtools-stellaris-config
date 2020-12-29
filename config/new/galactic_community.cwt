@@ -48,13 +48,15 @@ galactic_focus = {
 resolution_category = {
 	group = localisation
 	icon = <sprite>
+	## cardinality = 0..1
+	multiple_active_resolutions = yes
 	resolution_types = {
 		## cardinality = 1..inf
 		<resolution>
 	}
 }
 
-## replace_scope = { this = country root = country }
+## replace_scope = { this = country root = country from = country }
 resolution = {
 	icon = scalar #not really
 	resources = {

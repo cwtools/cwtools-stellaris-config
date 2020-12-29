@@ -399,12 +399,15 @@ alias[trigger:any_war_participant] = {
 }
 
 ## push_scope = system
-###Checks if any close-by systems meet the criteria. Conditions in trigger = { } filters the systems within the min/max steps limits. If no system meets the condition, the trigger will return as false. Conditions outside of the trigger = { } will check whether these conditions are true for *the closest* system for which the trigger conditions and min_steps conditions.
+###Checks if any close-by systems meet the criteria. Conditions in limit = { } filters the systems within the min/max steps limits. If no system meets the condition, the trigger will return as false. Conditions outside of the limit = { } will check whether these conditions are true for *the closest* system for which the trigger conditions and min_steps conditions.
 alias[trigger:closest_system] = {
 	##cardinality = 0..1
 	min_steps = int
 	##cardinality = 0..1
 	max_steps = int
+
+	##cardinality = 0..1
+	use_bypasses = bool
 
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
@@ -1533,6 +1536,8 @@ alias[effect:closest_system] = {
 	##cardinality = 0..1
 	max_steps = int
 	##cardinality = 0..1
+	use_bypasses = bool
+	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
 }
@@ -2158,4 +2163,169 @@ alias[trigger:any_pop_faction] = {
 
 # 2.9
 
-#to be populated
+## push_scope = first_contact
+###Iterate through each first contact site the current country has
+alias[trigger:any_first_contact] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## push_scope = first_contact
+###Iterate through each first contact site the current country has
+alias[trigger:count_first_contact] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+## push_scope = first_contact
+###Iterate through each first contact site the current country has
+alias[effect:random_first_contact] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = first_contact
+###Iterate through each first contact site the current country has
+alias[effect:every_first_contact] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = first_contact
+###Iterate through each active first contact site the current country has
+alias[trigger:any_active_first_contact] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## push_scope = first_contact
+###Iterate through each active first contact site the current country has
+alias[trigger:count_active_first_contact] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+## push_scope = first_contact
+###Iterate through each active first contact site the current country has
+alias[effect:random_active_first_contact] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = first_contact
+###Iterate through each active first contact site the current country has
+alias[effect:every_active_first_contact] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = spy_network
+###Iterate through each spy network
+alias[trigger:any_spynetwork] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## push_scope = spy_network
+###Iterate through each spy network
+alias[trigger:count_spynetwork] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+## push_scope = spy_network
+###Iterate through each spy network
+alias[effect:random_spynetwork] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = spy_network
+###Iterate through each spy network
+alias[effect:every_spynetwork] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+
+## push_scope = espionage_operation
+###Iterate through each espionage operation
+alias[trigger:any_espionage_operation] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## push_scope = espionage_operation
+###Iterate through each espionage operation
+alias[trigger:count_espionage_operation] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+## push_scope = espionage_operation
+###Iterate through each espionage operation
+alias[effect:random_espionage_operation] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = espionage_operation
+###Iterate through each espionage operation
+alias[effect:every_espionage_operation] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+
+## push_scope = espionage_asset
+###Iterate through each espionage asset
+alias[trigger:any_espionage_asset] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## push_scope = espionage_asset
+###Iterate through each espionage asset
+alias[trigger:count_espionage_asset] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	count = int
+	count = all
+}
+
+## push_scope = espionage_asset
+###Iterate through each espionage asset
+alias[effect:random_espionage_asset] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = espionage_asset
+###Iterate through each espionage asset
+alias[effect:every_espionage_asset] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}

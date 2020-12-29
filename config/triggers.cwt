@@ -1847,10 +1847,10 @@ alias[trigger:has_system_trade_value] = float
 alias[trigger:leader_age] = int
 
 ###Checks if the country has completed a specific special project as part of an in-progress event chain
-alias[trigger:has_completed_special_project] = <special_project>
+alias[trigger:has_completed_special_project_in_log] = <special_project>
 
 ###Checks if the country has failed, timed out or aborted a specific special project as part of an in-progress event chain.
-alias[trigger:has_failed_special_project] = <special_project>
+alias[trigger:has_failed_special_project_in_log] = <special_project>
 
 ###Compares the value of the planet's total housing
 alias[trigger:num_housing] = int
@@ -1922,4 +1922,213 @@ alias[trigger:num_ai_empires_setting] = int
 
 # 2.9
 
-#to be populated
+
+### Checks whether a country can set a policy via set_policy effect
+alias[trigger:can_set_policy] = {
+	policy = <policy>
+	option = enum[policy_option]
+}
+
+###Checks if the pop will work a specific job if a vacancy becomes available (i.e. does it meet the requirements, would it have a higher job weight?)
+alias[trigger:would_work_job] = <job>
+
+###Checks if the scoped fleet or ship is civilian (as set in ship sizes).
+alias[trigger:is_civilian] = bool
+
+###Checks if a country has a specific Menace Perk unlocked.
+alias[trigger:has_menace_perk] = <menace_perk>
+
+###Compares the spy power of the network
+alias[trigger:has_spy_power] = int
+
+###Compares the available spy power of the network
+alias[trigger:has_available_spy_power] = int
+
+###Checks if the scope is of a specific category
+alias[trigger:has_espionage_category] = <espionage_category>
+
+###Checks if the scope is currently running an espionage operation
+alias[trigger:is_running_espionage_operation] = bool
+
+###Checks if scoped country has any spynetworks with a value > 0
+alias[trigger:has_spynetwork] = bool
+
+###Checks if the scope hold an asset of specified type
+alias[trigger:has_espionage_asset] = <espionage_asset>
+
+###Checks if the scoped country has an active First Contact site with the target country
+alias[trigger:has_active_first_contact_with] = scope_group[target_country]
+
+###Checks if the scoped country is allowed to have a First Contact site with the target country
+alias[trigger:can_have_first_contact_site_with] = scope_group[target_country]
+
+###Checks if the planet is artificial (as set in planet_classes)
+alias[trigger:is_artificial] = bool
+
+###Checks if the solar has its owner's capital
+alias[trigger:is_capital_system] = bool
+
+###Checks if the espionage operation has a certain modifier specific for the current stage
+alias[trigger:has_stage_modifier] = <static_modifier>
+
+###Checks if the Galactic Defense Force or Imperial Armada exists
+alias[trigger:galactic_defense_force_exists] = bool
+
+###Checks a variable for the scope if a certain amount of arithmetic is done to it (note: the variable's value is not changed by this trigger)
+alias[trigger:check_variable_arithmetic] = {
+	which = value[variable]
+	by = float
+	by = value[variable]
+	by = scope[any]
+	by = {
+		scope = scope[any]
+		variable = value[variable]
+	}
+	###Specify >/< on the value or variable fields
+	value = float
+	value = value[variable]
+	value = scope[any]
+	value = {
+		scope = scope[any]
+		variable = value[variable]
+	}
+	mode = enum[maths]
+}
+
+###Checks the value of a specified modifier in the current scope against a value.
+alias[trigger:check_modifier_value] = {
+	modifier = <modifier>
+	value = float
+}
+
+###Checks which crisis is allowed to spawn in the current game
+alias[trigger:allowed_crisis_type] = enum[crisis_types]
+
+###Checks whether the country has the speficied first contact flag
+alias[trigger:has_first_contact_flag] = value[first_contact_flag]
+
+###Checks whether the current country is allowed to have the specified technology, i.e. does it fulfil the potential = { } field for that tech.
+alias[trigger:can_research_technology] = <technology>
+
+## scope = country
+###Checks whether the target country has a technology the current country can steal via copy_random_tech_from effect
+alias[trigger:can_copy_random_tech_from] = {
+	who = scope[country]
+	## cardinality = 0..1
+	category = <technology_category>
+	## cardinality = 0..1
+	area = enum[research_areas]
+}
+
+###Checks the amount of intel the current country has toward the target empire.
+alias[trigger:intel] = {
+	who = scope[country]
+	value = float
+}
+
+###Checks the amount of intel the current country has toward the target empire.
+alias[trigger:has_intel_level] = {
+	who = scope[country]
+	category = <intel_category>
+	level = int
+}
+
+###Checks the number of defensive pacts the current country has.
+alias[trigger:num_defensive_pacts] = int
+
+###Checks the number of empires the current country is supporting the independence of.
+alias[trigger:num_support_independence] = int
+
+###Checks the number of empires the current country is guaranteeing.
+alias[trigger:num_guarantees] = int
+
+###Checks the number of non-aggression pacts the current country has.
+alias[trigger:num_non_aggression_pacts] = int
+
+###Checks the number of commercial pacts the current country has.
+alias[trigger:num_commercial_pacts] = int
+
+###Checks the number of research agreements a country has
+alias[trigger:num_research_agreements] = int
+
+###Checks the number of migration pacts a country has
+alias[trigger:num_migration_pacts] = int
+
+###Checks the number of rivalries a country has
+alias[trigger:num_rivals] = int
+
+###Checks the number of countries the country has closed borders to
+alias[trigger:num_closed_borders] = int
+
+###Checks the number of truces country has
+alias[trigger:num_truces] = int
+
+###Checks if the espionage operation has a specific flag
+alias[trigger:has_espionage_operation_flag] = value[espionage_operation_flag]
+
+###Checks if the scoped espionage operation is of a specific type
+alias[trigger:has_espionage_type] = <espionage_operation>
+
+###Divides the encryption value of the scope object with the decryption value of the target and compares with value. Target is only used for country scope.
+alias[trigger:relative_encryption_decryption] = {
+	## cardinality = 0..1
+	target = scope_group[target_country]
+	value = float
+}
+
+###Compares days to next die roll.
+alias[trigger:is_espionage_operation_days_to_next_die_roll] = int
+
+###Compares the current espionage operation chapter index.
+alias[trigger:is_espionage_operation_chapter] = int
+
+###Compares the current espionage operation difficulty.
+alias[trigger:is_espionage_operation_difficulty] = int
+
+###Compares the current espionage score excluding the current die roll.
+alias[trigger:is_espionage_operation_score_no_die] = int
+
+###Compares the current espionage score.
+alias[trigger:is_espionage_operation_score] = int
+
+###Compares the last dice roll.
+alias[trigger:is_espionage_operation_last_die_result] = int
+
+###Compares the number of assets associated with the scope object.
+alias[trigger:num_espionage_assets] = int
+
+###Checks if the ship/fleet/design has a specific owner type (country/federation/galactic_community/global_ship_design)
+alias[trigger:has_ship_owner_type] = enum[ship_owner_types]
+
+###Checks if a country has a specific Crisis Level unlocked.
+alias[trigger:has_crisis_level] = int
+
+###Compares spy network value of the scoped object
+alias[trigger:has_spynetwork_value] = float
+
+###Compares spy network level of the scoped object
+alias[trigger:is_spynetwork_level] = int
+
+###Compares counter espionage of the scoped object
+alias[trigger:is_counter_espionage] = int
+
+###Checks if an empire is Custodian of the Galactic Council
+alias[trigger:is_galactic_custodian] = bool
+
+###Checks if the Galactic Community has named a Custodian
+alias[trigger:has_galactic_custodian] = bool
+
+###Checks if an empire is the Galactic Emperor
+alias[trigger:is_galactic_emperor] = bool
+
+###Checks if the Galactic Emperor has taken over
+alias[trigger:has_galactic_emperor] = bool
+
+###Checks imperial authority.
+alias[trigger:imperial_authority] = float
+
+###Checks if the Galactic Defense Force or Imperial Armada exists
+alias[trigger:galactic_defense_force_exists] = bool
+
+###Checks if the espionage operation has a certain modifier specific for the current stage
+alias[trigger:has_stage_modifier] = <static_modifier>

@@ -247,4 +247,15 @@ enums = {
 		divide
 		modulo
 	}
+	enum[crisis_types] = {
+		prethoryn
+		unbidden
+		contingency
+	}
+	enum[ship_owner_types] = {
+		country
+		federation
+		galactic_community
+		global_ship_design
+	}
 }

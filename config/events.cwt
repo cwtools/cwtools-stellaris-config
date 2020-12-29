@@ -55,6 +55,24 @@ types = {
 		## abbreviation = FE
 		subtype[fleet] = {
 		}
+		## type_key_filter = system_event
+		## push_scope = system
+		## display_name = System event
+		## abbreviation = SyE
+		subtype[system] = {
+		}
+		## type_key_filter = starbase_event
+		## push_scope = starbase
+		## display_name = Starbase event
+		## abbreviation = StE
+		subtype[starbase] = {
+		}
+		## type_key_filter = espionage_operation_event
+		## push_scope = espionage_operation
+		## display_name = Espionage event
+		## abbreviation = EOE
+		subtype[espionage_operation] = {
+		}
 		## type_key_filter = event
 		subtype[scopeless] = {
 		}

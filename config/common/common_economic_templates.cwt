@@ -115,6 +115,15 @@ alias[economic_template:upkeep] = {
 	<resource> = float
 }
 
+alias[economic_template_only_produces:produces] = {
+	## cardinality = 0..1
+	trigger = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..inf
+	<resource> = float
+}
+
 alias[economic_template_no_produce:cost] = {
 	## cardinality = 0..1
 	trigger = {
