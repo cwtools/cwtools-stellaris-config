@@ -12,7 +12,7 @@ alias[effect:<scripted_effect>] = {
 ###Creates a starbase in orbit of the star of the scoped galactic object
 alias[effect:create_starbase] = {
 	## cardinality = 0..1
-	owner = scope[country]
+	owner = scope_group[target_country]
 	## cardinality = 1..1
 	size = <ship_size.starbase>
 	## cardinality = 0..100
@@ -299,13 +299,13 @@ alias[effect:add_modifier] = {
 alias[effect:custom_tooltip] = localisation
 ###Adds a specific opinion modifier for the scoped country towards target country
 alias[effect:add_opinion_modifier] = {
-	who = scope[country]
+	who = scope_group[target_country]
 	modifier = <opinion_modifier>
 }
 
 ###Removes a specific opinion modifier towards target country or any contry from the scoped country
 alias[effect:remove_opinion_modifier] = {
-	who = scope[country]
+	who = scope_group[target_country]
 	modifier = <opinion_modifier>
 }
 
@@ -436,20 +436,20 @@ alias[effect:set_timed_megastructure_flag] = {
 alias[effect:remove_megastructure] = scope[megastructure]
 ###Sets a relation flag for the scoped country towards target country
 alias[effect:set_relation_flag] = {
-	who = scope[country]
+	who = scope_group[target_country]
 	flag = value_set[relation_flag]
 }
 
 ###Sets an arbitrarily-named flag for the scoped country towards target country for a set duration
 alias[effect:set_timed_relation_flag] = {
-	who = scope[country]
+	who = scope_group[target_country]
 	flag = value_set[relation_flag]
 	enum[days_months_years] = int
 }
 
 ###Removes a specific relation flag towards target country from the scoped country
 alias[effect:remove_relation_flag] = {
-	who = scope[country]
+	who = scope_group[target_country]
 	flag = value[relation_flag]
 }
 
@@ -545,12 +545,12 @@ alias[effect:set_is_female] = bool
 ###Sets scoped leader as non/recruitable
 alias[effect:recruitable] = bool
 ###Assigns target leader to the scoped country/fleet/army/pop faction
-alias[effect:assign_leader] = scope[leader]
+alias[effect:assign_leader] = scope_group[target_leader]
 ###Unassigns scoped leader from their post or unassigns leader from the scoped planet/ship/fleet/army/sector
-alias[effect:unassign_leader] = scope[leader]
+alias[effect:unassign_leader] = scope_group[target_leader]
 ###Adds claims on target system
 alias[effect:add_claims] = {
-	who = scope[country]
+	who = scope_group[target_country]
 	## cardinality = 0..1
 	num_of_claims = int
 	## cardinality = 0..1
@@ -558,26 +558,14 @@ alias[effect:add_claims] = {
 }
 
 ###Instantly sets the owner of the scoped planet/fleet/army/starbase to target country
-alias[effect:set_owner] = scope[country]
+alias[effect:set_owner] = scope_group[target_country]
 ###Instantly sets the planet/fleet's controller to target country
-alias[effect:set_controller] = scope[country]
+alias[effect:set_controller] = scope_group[target_country]
 ###Sets the fleet/ambient object's location, can be fine-tuned
-alias[effect:set_location] = scope[planet]
-alias[effect:set_location] = scope[starbase]
-alias[effect:set_location] = scope[galactic_object]
-alias[effect:set_location] = scope[megastructure]
-alias[effect:set_location] = scope[fleet]
-alias[effect:set_location] = scope[ship]
-alias[effect:set_location] = scope[ambient_object]
+alias[effect:set_location] = scope_group[spatial_object]
 ###Sets the fleet/ambient object's location, can be fine-tuned
 alias[effect:set_location] = {
-	target = scope[planet]
-	target = scope[galactic_object]
-	target = scope[starbase]
-	target = scope[ambient_object]
-	target = scope[megastructure]
-	target = scope[fleet]
-	target = scope[ship]
+	target = scope_group[spatial_object]
 	## cardinality = 0..1
 	distance = float
 	## cardinality = 0..1
@@ -699,14 +687,14 @@ alias[effect:while] = {
 alias[effect:resettle_pop] = {
 	pop = scope[pop]
 	## cardinality = 0..1
-	planet = scope[planet]
+	planet = scope_group[target_planet]
 }
 
 #also, most of these are not used in Vanilla (the first is, I did the cardinality based on it)
 ###Set citizenship type for scoped species/pop/leader
 alias[effect:set_citizenship_type] = {
 	## cardinality = 0..1
-	country = scope[country]
+	country = scope_group[target_country]
 	type = enum[citizenship_types]
 	## cardinality = 0..1
 	cooldown = bool
@@ -715,7 +703,7 @@ alias[effect:set_citizenship_type] = {
 ###Set military service type for scoped species/pop/leader
 alias[effect:set_military_service_type] = {
 	## cardinality = 0..1
-	country = scope[country]
+	country = scope_group[target_country]
 	type = enum[military_service_types]
 	## cardinality = 0..1
 	cooldown = bool
@@ -724,7 +712,7 @@ alias[effect:set_military_service_type] = {
 ###Set purge type for scoped species/pop/leader
 alias[effect:set_purge_type] = {
 	## cardinality = 0..1
-	country = scope[country]
+	country = scope_group[target_country]
 	type = enum[purge_types]
 	## cardinality = 0..1
 	cooldown = bool
@@ -733,7 +721,7 @@ alias[effect:set_purge_type] = {
 ###Set slavery type for scoped species/pop/leader
 alias[effect:set_slavery_type] = {
 	## cardinality = 0..1
-	country = scope[country]
+	country = scope_group[target_country]
 	type = enum[slavery_types]
 	## cardinality = 0..1
 	cooldown = bool
@@ -742,7 +730,7 @@ alias[effect:set_slavery_type] = {
 ###Set population control for scoped species/pop/leader
 alias[effect:set_population_controls] = {
 	## cardinality = 0..1
-	country = scope[country]
+	country = scope_group[target_country]
 	type = bool
 	## cardinality = 0..1
 	cooldown = bool
@@ -751,7 +739,7 @@ alias[effect:set_population_controls] = {
 ###Set migration control for scoped species/pop/leader
 alias[effect:set_migration_controls] = {
 	## cardinality = 0..1
-	country = scope[country]
+	country = scope_group[target_country]
 	type = bool
 	## cardinality = 0..1
 	cooldown = bool
@@ -760,17 +748,17 @@ alias[effect:set_migration_controls] = {
 ###Set living standard for scoped species/pop/leader
 alias[effect:set_living_standard] = {
 	## cardinality = 0..1
-	country = scope[country]
+	country = scope_group[target_country]
 	type = enum[living_standards]
 	## cardinality = 0..1
 	cooldown = bool
 }
 
 ###Joins wars on the side of target country
-alias[effect:join_war] = scope[country]
+alias[effect:join_war] = scope_group[target_country]
 ###Changes closed borders status between two countries
 alias[effect:set_closed_borders] = {
-	who = scope[country]
+	who = scope_group[target_country]
 	status = bool
 	## cardinality = 0..1
 	forced = int
@@ -778,7 +766,7 @@ alias[effect:set_closed_borders] = {
 
 ###Declares war between the scoped country and target country
 alias[effect:declare_war] = {
-	target = scope[country]
+	target = scope_group[target_country]
 	attacker_war_goal = <war_goal>
 	## cardinality = 0..1
 	name = localisation_synced
@@ -786,33 +774,29 @@ alias[effect:declare_war] = {
 
 ###Adds static war exhaustion, scaled with value_for_planet_destruction, to owner of the battle location
 alias[effect:add_static_war_exhaustion] = {
-	attacker = scope[country]
-	location = scope[planet]
+	attacker = scope_group[target_country]
+	location = scope[planet] #target planet was omitted here
 	value_for_planet_destruction = float[0.0..1.0]
 }
 
 ###Adds diplomatic threat from target country
 alias[effect:add_threat] = {
-	who = scope[planet]
-	who = scope[country]
-	who = scope[galactic_object]
+	who = scope_group[target_country]
 	amount = float
 }
 
 ###Adds a Casus Belli to the scoped country against the target country.
 alias[effect:add_casus_belli] = {
 	type = <casus_belli>
-	who = scope[country]
+	who = scope_group[target_country]
 	days = int
 }
 
 ###Sets a war goal to the scoped rebel country/war
 alias[effect:set_war_goal] = {
 	type = <war_goal>
-	target = scope[country]
-	target = scope[war]
-	enemy = scope[country]
-	enemy = scope[war]
+	target = scope_group[target_country]
+	enemy = scope_group[target_country]
 }
 
 ###Sets the planet as un/surveyed by target country
@@ -1977,7 +1961,7 @@ alias[effect:create_fleet] = {
 #create_message = { type = BYPASS_EXPLORED localization = BYPASS_EXPLORED_MESSAGE days = 30 target = root variable = { type = name localization = SYSTEM1 scope = from } variable = { type = name localization = SYSTEM2 scope = fromfrom } }
 ### Creates a message, can take multiple variables
 alias[effect:create_message] = {
-	type = scalar
+	type = <message_type>
 	localization = localisation
 	days = int
 	target = scope[any]

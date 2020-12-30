@@ -13,12 +13,6 @@ types = {
 		path_file = "alerts.txt"
 		path = "game/common"
 	}
-	## type_key_filter = message_type
-	type[message_type] = {
-		name_field = name
-		path = "game/common"
-		path_file = "message_types.txt"
-	}
 	## type_key_filter = achievement
 	type[achievement] = {
 		path = "game/common"
@@ -37,20 +31,6 @@ alert_icon = {
 alias[alert_category:category] = <alert_icon>
 alias[alert_category:category] = DISABLED
 
-message_type = {
-	icon =	<sprite>
-	icon_frame = int
-	key = scalar
-	## cardinality = 0..1
-	name = localisation
-	## cardinality = 0..1
-	sound = <sound_effect>
-	## cardinality = 0..1
-	sound_is_advisor = bool
-	ping = <pingmap>
-	## cardinality = 0..1
-	auto_opens = scalar
-}
 
 achievement = {
 	id = int

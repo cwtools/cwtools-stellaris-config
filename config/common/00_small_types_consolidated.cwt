@@ -100,6 +100,10 @@ types = {
 #        name_from_file = yes
         type_per_file = yes
 	}
+	type[message_type] = {
+		name_field = name
+		path = "game/common/message_types"
+	}
 }
 
 ambient_object = {
@@ -489,4 +493,19 @@ diplomacy_economy = {
 			}
 		}
 	}
+}
+
+message_type = {
+	icon =	<sprite>
+	icon_frame = int
+	key = scalar
+	## cardinality = 0..1
+	name = localisation
+	## cardinality = 0..1
+	sound = <sound_effect>
+	## cardinality = 0..1
+	sound_is_advisor = bool
+	ping = <pingmap>
+	## cardinality = 0..1
+	auto_opens = scalar
 }
