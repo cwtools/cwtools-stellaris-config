@@ -16,7 +16,8 @@ alias[trigger:AND] = { alias_name[trigger] = alias_match_left[trigger] }
 ###At least one entry inside the trigger must be true
 alias[trigger:OR] = { alias_name[trigger] = alias_match_left[trigger] }
 
-# alias[trigger:hidden_trigger] = { alias_name[trigger] = alias_match_left[trigger] }
+###Hides the enclosed triggers from any generated tooltips
+alias[trigger:hidden_trigger] = { alias_name[trigger] = alias_match_left[trigger] }
 
 
 ## push_scope = country
