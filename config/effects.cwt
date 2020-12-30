@@ -26,7 +26,8 @@ alias[effect:create_starbase] = {
 	}
 }
 
-#alias[effect:hidden_effect] = { alias_name[effect] = alias_match_left[effect] }
+###Hides the enclosed effects from any generated tooltips
+alias[effect:hidden_effect] = { alias_name[effect] = alias_match_left[effect] }
 ###Executes enclosed effects if limit criteria are met
 alias[effect:if] = {
 	limit = {
@@ -1312,7 +1313,7 @@ alias[effect:modify_species] = {
 	## cardinality = 0..1
 	portrait = random
 	## cardinality = 0..1
-	hidden_effect = {
+	effect = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 }
