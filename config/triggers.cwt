@@ -2162,7 +2162,7 @@ alias[trigger:galactic_defense_force_exists] = bool
 alias[trigger:has_stage_modifier] = <static_modifier>
 
 ###Checks the number of unemployed pops on the planet
-alias[trigger:num_unemployed] = <static_modifier>
+alias[trigger:num_unemployed] = int
 
 ###Checks whether the current scope is closer to a specified object than it is to a second specified object within the same solar system.
 alias[trigger:compare_distance] = {

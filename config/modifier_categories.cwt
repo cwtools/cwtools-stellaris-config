@@ -53,11 +53,11 @@ modifier_categories = {
     }
     StarbaseAndMegastructure = {
         internal_id = 327680
-        supported_scopes = { starbase megastructure }
+        supported_scopes = { starbase megastructure country }
     }
     StarbaseTrade = {
         internal_id = 329728
-        supported_scopes = { starbase planet megastructure }
+        supported_scopes = { starbase planet megastructure country }
     }
     Resource = {
         internal_id = 524288
