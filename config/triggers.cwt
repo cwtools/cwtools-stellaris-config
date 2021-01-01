@@ -626,20 +626,10 @@ alias[trigger:has_slavery_type] = {
 
 ###Checks if the pop is prevented from reproducing
 alias[trigger:has_population_control] = bool
-###Checks if the pop is prevented from reproducing
-alias[trigger:has_population_control] = {
-	## cardinality = 0..1
-	country = scope[country]
-	type = enum[population_controls]
-}
+
 ###Checks if the pop is prevented from migrating
 alias[trigger:has_migration_control] = bool
-###Checks if the pop is prevented from migrating
-alias[trigger:has_migration_control] = {
-	## cardinality = 0..1
-	country = scope[country]
-	type = enum[migration_controls]
-}
+
 ###Checks if a species/pop/leader has a particular living standard in their country
 alias[trigger:has_living_standard] = {
 	## cardinality = 0..1
@@ -1824,6 +1814,12 @@ alias[trigger:num_favors] = {
 
 ###Checks whether the galaxy size if of a certain type
 alias[trigger:galaxy_size] = <map_setup_scenario>
+
+###Checks the countrys diplomacy weight
+alias[trigger:diplomacy_weight] = float
+
+###Checks the number of fallen empires defined in setup
+alias[trigger:num_fallen_empires_setting] = int
 
 
 # 2.7
