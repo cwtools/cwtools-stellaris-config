@@ -264,7 +264,7 @@ alias[effect:system_event] = {
 }
 
 ###Fires an espionage operation event for the scoped espionage operation, with optional DAYS and RANDOM delay
-alias[effect:first_contact_event] = {
+alias[effect:espionage_operation_event] = {
 	id = <event.espionage_operation>
 	id = <event.scopeless>
 	## cardinality = 0..1
@@ -2789,6 +2789,9 @@ alias[effect:set_federation_law] = <federation_law>
 ###Tries to add the country to the Galactic Community.
 alias[effect:add_to_galactic_community] = yes
 
+###Tries to add the country to the Galactic Community without triggering notifications.
+alias[effect:add_to_galactic_community_no_message] = yes
+
 ###Tries to remove the country from the Galactic Community.
 alias[effect:remove_from_galactic_community] = yes
 
@@ -3208,3 +3211,7 @@ alias[effect:export_modifier_to_variable] = {
 	modifier = <modifier>
 	variable = value_set[variable]
 }
+
+###Finish the current operation phase
+alias[effect:finish_current_operaton_stage] = yes
+

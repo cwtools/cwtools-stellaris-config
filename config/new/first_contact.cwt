@@ -11,6 +11,17 @@ types = {
 	}
 }
 
+enums = {
+	complex_enum[intel_tokens] = {
+		path = "game/common/intel_categories"
+		name = {
+			intel_level = {
+				enum_name
+			}
+		}
+	}
+}
+
 intel_category = {
 	## cardinality = 0..inf
 	intel_level = {

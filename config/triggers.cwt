@@ -797,9 +797,6 @@ alias[trigger:check_pop_faction_parameter] = {
 	value = scope[any]
 }
 
-### Checks the country's total colony maintenance expenses for the previous month, in energy credits
-alias[trigger:colony_maintenance] = int
-
 ### Checks the country's command limit
 alias[trigger:command_limit] = int
 
@@ -2022,15 +2019,34 @@ alias[trigger:can_copy_random_tech_from] = {
 
 ###Checks the amount of intel the current country has toward the target empire.
 alias[trigger:intel] = {
-	who = scope[country]
+	who = scope_group[target_country]
 	value = float
 }
 
 ###Checks the amount of intel the current country has toward the target empire.
 alias[trigger:has_intel_level] = {
-	who = scope[country]
+	who = scope_group[target_country]
 	category = <intel_category>
 	level = int
+}
+
+###Checks if the country has intel report of at least the specified level on a category for the target country
+alias[trigger:has_intel_report] = {
+	who = scope_group[target_country]
+	category = <intel_category>
+	level = int
+}
+
+###Checks if the specified intel is available for the target country (stale intel will not return true)
+alias[trigger:has_intel] = {
+	who = scope_group[target_country]
+	intel = enum[intel_tokens]
+}
+
+###Checks if the specified intel is stale for the target country (available intel will not return true)
+alias[trigger:has_stale_intel] = {
+	who = scope_group[target_country]
+	intel = enum[intel_tokens]
 }
 
 ###Checks the number of defensive pacts the current country has.
