@@ -1546,6 +1546,9 @@ alias[effect:add_tech_progress] = {
 	progress = float[0.0..1.0]
 }
 
+###Create and sends an telemetry event keeping track of the tutorial steps for the current game
+alias[effect:complete_tutorial_step] = scalar
+
 ### Adds the specified tradition to the scoped country. add_tradition = <tradition_key>
 alias[effect:add_tradition] = <tradition>
 ### Adds trust on scope country towards target country
@@ -2607,7 +2610,6 @@ alias[effect:steal_relic] = {
 }
 
 
-
 # 2.6
 
 ###Add <value> favors for scoped country to use on target country.
@@ -2798,6 +2800,16 @@ alias[effect:complete_special_project] = {
 	## cardinality = 0..1
 	location = scope[starbase]
 }
+
+###Force a truce with target country of a specified type, or a war
+alias[effect:set_truce] = {
+	target = scope[country]
+	type = enum[truce_types]
+}
+
+###Force-end truce with target country
+alias[effect:end_truce] = scope[country]
+
 
 # 2.8
 
