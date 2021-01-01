@@ -77,10 +77,7 @@ federation_law = {
 	modifier = {
 		## cardinality = 0..1
 		description = localisation
-		## cardinality = 0..1
-		federation_fleet_contribution_factor = float
-		## cardinality = 0..1
-		cohesion_add = float
+		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
 	## replace_scopes = { this = federation root = federation }
