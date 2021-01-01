@@ -24,6 +24,15 @@ types = { #these are all connected. I added the others so whoever does these in 
 	}
 }
 
+enums = {
+	complex_enum[name_list_categories] = {
+		path = "game/common/name_lists"
+		name = {
+			category = enum_name
+		}
+	}
+}
+
 #TODO: Confirm
 #TODO: Add warning if ship_size doesn't have name list block
 name_list = {

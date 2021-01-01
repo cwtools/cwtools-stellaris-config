@@ -653,6 +653,10 @@ alias[effect:modulo_variable] = {
 	}
 }
 
+###Removes a previously-set variable from the scope
+alias[effect:clear_variable] = value[variable]
+
+
 #max should not be less than min...
 ###Adds a lump sum of a resource to the scoped country, defined as a multiple of the country's monthly income of that resource (clamped to max and min allowed values)
 alias[effect:add_monthly_resource_mult] = {
@@ -733,6 +737,17 @@ alias[effect:set_population_controls] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
 	type = bool
+	type = enum[population_controls]
+	## cardinality = 0..1
+	cooldown = bool
+}
+
+###Set colonization control for scoped species/pop/leader
+set_colonization_controls = {
+	## cardinality = 0..1
+	country = scope_group[target_country]
+	type = bool
+	type = enum[colonization_controls]
 	## cardinality = 0..1
 	cooldown = bool
 }
@@ -742,6 +757,7 @@ alias[effect:set_migration_controls] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
 	type = bool
+	type = enum[migration_controls]
 	## cardinality = 0..1
 	cooldown = bool
 }

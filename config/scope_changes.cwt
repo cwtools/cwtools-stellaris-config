@@ -65,22 +65,6 @@ alias[trigger:any_owned_ship] = {
 	count = int
 }
 
-## push_scope = country
-###Checks if any of the defenders in the war meet the specified criteria
-alias[trigger:any_defender] = {
-	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
-}
-
-## push_scope = country
-###Checks if any attackers in the war meet the specified criteria
-alias[trigger:any_attacker] = {
-	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
-}
-
 ## push_scope = planet
 ###Checks if any planet ANYWHERE meets the specified criteria
 alias[trigger:any_galaxy_planet] = {
@@ -1298,57 +1282,6 @@ alias[effect:closest_system] = {
 }
 
 
-## push_scope = country
-###Executes enclosed effects on every defender that meets the limit criteria in the scoped country's war with a specific enemy
-alias[effect:every_defender] = {
-	enemy = scope[country]
-	##cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-	alias_name[effect] = alias_match_left[effect]
-}
-
-## push_scope = country
-###Executes enclosed effects on a random defender that meets the limit criteria in the scoped country's war with a specific enemy
-alias[effect:random_defender] = {
-	enemy = scope[country]
-	##cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-	alias_name[effect] = alias_match_left[effect]
-
-	##cardinality = 0..1
-	weights = {
-		base = float
-		## cardinality = 0..inf
-		alias_name[modifier_rule_add_mult] = alias_match_left[modifier_rule_add_mult]
-	}
-}
-
-## push_scope = country
-###Executes enclosed effects on every attacker that meets the limit criteria in the scoped country's war with a specific enemy
-alias[effect:every_attacker] = {
-	enemy = scope[country]
-	##cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-	alias_name[effect] = alias_match_left[effect]
-}
-
-
-## push_scope = country
-###Executes enclosed effects on a random attacker that meets the limit criteria in the scoped country's war with a specific enemy
-alias[effect:random_attacker] = {
-	enemy = scope[country]
-	##cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-	alias_name[effect] = alias_match_left[effect]
-
-	##cardinality = 0..1
-	weights = {
-		base = float
-		## cardinality = 0..inf
-		alias_name[modifier_rule_add_mult] = alias_match_left[modifier_rule_add_mult]
-	}
-}
-
 ## push_scope = megastructure
 ###Iterate through each megastructure
 alias[effect:random_megastructure] = {
@@ -2473,3 +2406,87 @@ alias[trigger:count_neighbor_system_including_bypasses] = {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
+
+## push_scope = country
+###Executes enclosed effects on every defender that meets the limit criteria in the scoped country's war with a specific enemy
+alias[effect:every_defender] = {
+	enemy = scope[country]
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = country
+###Executes enclosed effects on a random defender that meets the limit criteria in the scoped country's war with a specific enemy
+alias[effect:random_defender] = {
+	enemy = scope[country]
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		base = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult] = alias_match_left[modifier_rule_add_mult]
+	}
+}
+
+## push_scope = country
+###Executes enclosed effects on every attacker that meets the limit criteria in the scoped country's war with a specific enemy
+alias[effect:every_attacker] = {
+	enemy = scope[country]
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = country
+###Executes enclosed effects on a random attacker that meets the limit criteria in the scoped country's war with a specific enemy
+alias[effect:random_attacker] = {
+	enemy = scope[country]
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		base = float
+		## cardinality = 0..inf
+		alias_name[modifier_rule_add_mult] = alias_match_left[modifier_rule_add_mult]
+	}
+}
+
+## push_scope = country
+###Checks if any of the defenders in the war meet the specified criteria
+alias[trigger:any_defender] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## push_scope = country
+###Checks if any attackers in the war meet the specified criteria
+alias[trigger:any_attacker] = {
+	alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	count = int
+}
+
+## push_scope = country
+###Checks if X defenders in the war meet the specified criteria
+alias[trigger:count_defender] = {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## push_scope = country
+###Checks if X attackers in the war meet the specified criteria
+alias[trigger:count_attacker] = {
+	count = all
+	count = int
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}

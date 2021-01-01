@@ -329,7 +329,6 @@ enums = {
 		population_control_yes
 		population_control_no
 	}
-	#unused
 	enum[colonization_controls] = {
 		colonization_control_yes
 		colonization_control_no

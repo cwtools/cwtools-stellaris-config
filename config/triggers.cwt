@@ -1920,9 +1920,11 @@ alias[trigger:is_ambient_object_type] = <ambient_object>
 ###Checks the number of AI empires defined in setup
 alias[trigger:num_ai_empires_setting] = int
 
+###Checks if a specific name list is used for the a species during empire creation
+alias[trigger:name_list_category] = enum[name_list_categories]
+
 
 # 2.9
-
 
 ### Checks whether a country can set a policy via set_policy effect
 alias[trigger:can_set_policy] = {
@@ -2152,3 +2154,6 @@ alias[trigger:galactic_defense_force_exists] = bool
 
 ###Checks if the espionage operation has a certain modifier specific for the current stage
 alias[trigger:has_stage_modifier] = <static_modifier>
+
+###Checks the number of unemployed pops on the planet
+alias[trigger:num_unemployed] = <static_modifier>
