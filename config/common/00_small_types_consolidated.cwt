@@ -272,8 +272,7 @@ start_screen_message = {
 	}
 }
 
-  #this is a rather useless file. I have no idea what this does really - seems to be a weight modifier tied to hardcode.
-
+# Sets the chance for a system getting a specific precursor and distributes star flags named after the precursor. Or something like that.
 precursors = {
 	size = int
 

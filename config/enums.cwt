@@ -122,6 +122,13 @@ enums = {
 		aggressive
 		neutral
 	}
+	enum[truce_types] = {
+		war
+		liberation
+		alliance
+		guarantee
+		none
+	}
 	enum[fleet_orders] = {
 		move_to_system_point_order
 		orbit_planet_order

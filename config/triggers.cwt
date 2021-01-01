@@ -1405,7 +1405,11 @@ alias[trigger:is_half_species] = any
 ###Checks if the last building queued/unqueued/built/demolished/upgraded was the specified building
 alias[trigger:last_building_changed] = <building>
 
+###Checks the empire's size
 alias[trigger:empire_size] = int
+
+###Checks the empire's sprawl
+alias[trigger:empire_sprawl] = int
 
 ###Checks if the last district queued/unqueued/built/demolished/upgraded was the specified district
 alias[trigger:last_district_changed] = <district>
