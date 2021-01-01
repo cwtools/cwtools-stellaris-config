@@ -72,8 +72,7 @@ resolution = {
 	## cardinality = 0..1
 	###Modifier to be applied to all community members if passed. Apparently. Not sure about that...
 	modifier = {
-		## cardinality = 0..inf
-		<static_modifier> = int
+		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
 	###Modifier to be applied to all community members if passed and the potential trigger is true
@@ -82,8 +81,7 @@ resolution = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 		modifier = {
-			## cardinality = 1..inf
-			<static_modifier> = int
+			alias_name[modifier] = alias_match_left[modifier]
 		}
 	}
 	## cardinality = 0..1

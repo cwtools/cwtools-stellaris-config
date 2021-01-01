@@ -245,6 +245,8 @@ alias[triggered_country_modifier_country:triggered_country_modifier] = {
 	}
 	## cardinality = 0..1
 	custom_tooltip = localisation
+	## cardinality = 0..1
+	show_only_custom_tooltip = no
 }
 
 ## replace_scope = { this = pop root = pop }
