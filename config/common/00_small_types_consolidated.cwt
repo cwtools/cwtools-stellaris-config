@@ -101,7 +101,7 @@ types = {
         type_per_file = yes
 	}
 	type[message_type] = {
-		name_field = name
+		name_field = key
 		path = "game/common/message_types"
 	}
 }

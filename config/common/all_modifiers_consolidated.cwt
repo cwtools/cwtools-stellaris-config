@@ -67,6 +67,9 @@ static_modifier = {
 	show_only_custom_tooltip = bool
 	## cardinality = 0..1
 	apply_modifier_to_other_planets = <static_modifier>
+	## cardinality = 0..1
+	###Hides it from the country government modifiers interface
+	hide_from_country_list = yes
 }
 
 
@@ -86,6 +89,16 @@ opinion_modifier = {
 		## cardinality = 0..1
 		## replace_scope = { this = country root = country from = country }
 		decay = {
+			## cardinality = 0..1
+			base = int
+
+			###root = country with the opinion, from = country it has the opinion of
+			## cardinality = 0..inf
+			alias_name[modifier_rule_add_factor] = alias_match_left[modifier_rule_add_factor]
+		}
+		## cardinality = 0..1
+		## replace_scope = { this = country root = country from = country }
+		growth = {
 			## cardinality = 0..1
 			base = int
 

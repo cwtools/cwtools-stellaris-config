@@ -193,4 +193,7 @@ social_strata = {
 
 	## cardinality = 0..inf
 	alias_name[triggered_planet_modifier_pop] = alias_match_left[triggered_planet_modifier_pop]
+
+	## cardinality = 0..inf
+	alias_name[triggered_pop_modifier] = alias_match_left[triggered_pop_modifier]
 }
