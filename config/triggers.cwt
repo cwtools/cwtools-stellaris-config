@@ -1366,8 +1366,6 @@ alias[trigger:war_begun_num_fleets_gone_mia] = {
 	value = int
 }
 
-#would_join_war = { attacker = <target> defender = <target> side = <target> }
-
 ### Checks if the country would join the side of target country in a hypothetical war
 alias[trigger:would_join_war] = {
 	attacker = scope[country]
@@ -1379,6 +1377,18 @@ alias[trigger:would_join_war] = {
 ## scope = country
 alias[trigger:is_researching_special_project] = <special_project>
 
+
+### Checks the number of starbase modules that are of the specified type
+alias[trigger:count_starbase_modules] =  {
+	count = int
+	type = <starbase_module>
+}
+
+### Checks if the scoped country has a specified quantity of a starbase size
+alias[trigger:count_starbase_sizes] =  {
+	count = int
+	starbase_size = <ship_size.starbase>
+}
 
 
 #2.2
@@ -2153,3 +2163,31 @@ alias[trigger:has_stage_modifier] = <static_modifier>
 
 ###Checks the number of unemployed pops on the planet
 alias[trigger:num_unemployed] = <static_modifier>
+
+###Checks whether the current scope is closer to a specified object than it is to a second specified object within the same solar system.
+alias[trigger:compare_distance] = {
+	closer_object = scope_group[celestial_coordinate]
+	further_object = scope_group[celestial_coordinate]
+}
+
+###Checks the country's number of researched repeatable technologies
+alias[trigger:num_repeatable_techs] = int
+
+###Checks market price of a specific resource for the current country
+alias[trigger:market_resource_price] = {
+	resource = <resource_name>
+	## cardinality = 0..1
+	###Default = 1; basically a mult factor
+	amount = int
+	## cardinality = 0..1
+	###market_buy/market_sell/not_set (i.e. price without market fees)
+	trade_type = enum[trade_types]
+	value = float
+}
+
+###Checks number of members in scoped federation
+alias[trigger:num_members] = int
+
+###Checks number of associates in scoped federation
+alias[trigger:num_associates] = int
+

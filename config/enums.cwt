@@ -265,4 +265,9 @@ enums = {
 		galactic_community
 		global_ship_design
 	}
+	enum[trade_types] = {
+		market_buy
+		market_sell
+		not_set
+	}
 }

@@ -2500,7 +2500,7 @@ alias[effect:set_starbase_module] = {
 }
 
 ### Sets the ship size of a starbase
-alias[effect:set_starbase_size] = <ship_size>#TODO starbase ship_size
+alias[effect:set_starbase_size] = <ship_size.starbase>
 ### Changes the scoped country's tutorial level
 alias[effect:set_tutorial_level] = enum[tutorial_levels]
 ### Spawns a mega structure in a system.
@@ -3242,4 +3242,19 @@ alias[effect:export_modifier_to_variable] = {
 
 ###Finish the current operation phase
 alias[effect:finish_current_operaton_stage] = yes
+
+###Sets the target country as hostile. This will work on countries you don't have comms with, unlike set_faction_hostility.
+alias[effect:set_hostile] = scope_group[target_country]
+
+###Add specified country as an associate member
+alias[effect:add_associate_member] = {
+	who = scope_group[target_country]
+	override_requirements = bool
+}
+
+###Removes a specific associate member from the federation
+alias[effect:remove_associate_member] = {
+	who = scope_group[target_country]
+	override_requirements = bool
+}
 
