@@ -350,6 +350,15 @@ map_mode = {
 
 	## cardinality = 1..inf
 	color = {
+		## cardinality = 0..1
+		type = country_and_borders
+		## cardinality = 0..1
+		type = country
+		## cardinality = 0..1
+		type = borders
+		## cardinality = 0..1
+		zoom = int
+
 		## cardinality = 1..1
         value = country
 		## cardinality = 1..1
@@ -371,6 +380,7 @@ enums = {
 	enum[hardcoded_map_mode_tooltip] = {
 		opinion
 		country
+		intel
 	}
 }
 

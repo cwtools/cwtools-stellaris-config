@@ -61,6 +61,7 @@ megastructure = {
 	upgrade_desc = hide
 	## cardinality = 0..1
 	upgrade_from = {
+		## cardinality = 0..1
 		<megastructure>
 	}
   	## cardinality = 0..1
