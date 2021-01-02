@@ -148,6 +148,7 @@ federation_perk = {
 
 federation_type = {
 	icon = <sprite>
+	base_intel = int
 	## replace_scopes = { this = country root = country }
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]

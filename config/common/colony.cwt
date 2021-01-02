@@ -29,11 +29,10 @@ colony_automation = {
 	}
 
 	buildings = {
-		## cardinality = 1..16
-		int[1..16] = {
-			## cardinality = 1..inf
+		## cardinality = 1..inf
+		int[1..inf] = {
 			building = <building>
-			## cardinality = 1..inf
+			## cardinality = 0..1
 			available = {
 				alias_name[trigger] = alias_match_left[trigger]
 			}
@@ -53,6 +52,8 @@ colony_type = {
 	## cardinality = 0..1
 	## replace_scope = { this = planet root = planet }
 	planet_modifier = {
+		## cardinality = 0..1
+		custom_tooltip = localisation
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 

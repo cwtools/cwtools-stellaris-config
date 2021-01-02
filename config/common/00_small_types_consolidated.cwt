@@ -310,7 +310,12 @@ sector_type = {
 
 
 sector_focus = {
+	## cardinality = 0..1
+	hidden = yes
+	## cardinality = 0..1
+	clear_blockers = bool
 	
+	## cardinality = 0..1
 	ai_weight = {
 		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
@@ -328,6 +333,12 @@ sector_focus = {
 	## cardinality = 0..inf
 	building = {
 		key = <building>
+		## cardinality = 0..1
+		###only works on buildings and upgrades; puts them at the front of the list (otherwise it will pick a district first, then a building, then an upgrade)
+		priority = yes
+		## cardinality = 0..1
+		###gets built whether or not a pop would work the jobs
+		exempt_from_jobs_check = yes
 		weight = {
 			weight = float
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
