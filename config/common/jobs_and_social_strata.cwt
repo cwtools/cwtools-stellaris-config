@@ -179,7 +179,9 @@ social_strata = {
 	resettlement_cost = {
 		<resource> = int
 		## cardinality = 0..1
-		alias_name[trigger] = alias_match_left[trigger]
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
 	}
 
 	## cardinality = 0..1
