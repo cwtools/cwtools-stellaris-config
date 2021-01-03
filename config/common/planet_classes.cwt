@@ -176,7 +176,17 @@ planet_class = {
 		show_health_bar_in_planet_view = bool
 		## cardinality = 0..1
 		ideal = bool
+		
+		## cardinality = 0..1
+		initial = yes
+		## cardinality = 0..1
+		carry_cap_per_free_district = float
 	}
+
+	## cardinality = 0..1
+	starting_planet = no
+	## cardinality = 0..1
+	show_city = no
 }
 
 planet_class_random_list = {

@@ -46,6 +46,7 @@ decision = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 
+	## cardinality = 0..1
 	ai_weight = {
 		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]

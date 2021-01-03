@@ -287,7 +287,10 @@ country_type = {
 		## cardinality = 0..1
 		standard_leader_module = {}
 		## cardinality = 0..1
-		standard_diplomacy_module = {}
+		standard_diplomacy_module = {
+			## cardinality = 0..1
+			contact_rule = enum[contact_rules]
+		}
 		## cardinality = 0..1
 		standard_technology_module = {}
 		## cardinality = 0..1

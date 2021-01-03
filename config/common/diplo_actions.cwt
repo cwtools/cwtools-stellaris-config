@@ -91,6 +91,9 @@ diplomatic_action = {
 	should_open_auto_accept_message_recipient = bool
 
 	## cardinality = 0..1
+	should_notify_auto_recipient_on_vote_fail = bool
+
+	## cardinality = 0..1
 	###decides if the actor gets a reply showing the diplomatic action.
 	should_show_auto_accept_message_actor = bool
 

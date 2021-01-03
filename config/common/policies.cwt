@@ -41,6 +41,7 @@ enums = {
 }
 
 policy = {
+	## cardinality = 0..1
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}

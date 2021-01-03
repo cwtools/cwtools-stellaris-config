@@ -161,4 +161,10 @@ ai_personality = {
 		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
+
+	## cardinality = 0..1
+	ai_module_overrides = {
+		## cardinality = 1..inf
+		scalar
+	}
 }
