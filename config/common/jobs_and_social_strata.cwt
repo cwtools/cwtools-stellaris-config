@@ -2,6 +2,10 @@
 types = {
 	type[job] = {
 		path = "game/common/pop_jobs"
+		subtype[uncapped_by_modifier] = {
+			## cardinality = 0..1
+			is_capped_by_modifier = yes
+		}
 		localisation = {
 			## required
 			name = "job_$"
@@ -9,6 +13,14 @@ types = {
 			plural = "job_$_plural"
 			## required
 			desc = "job_$_desc"
+			subtype[uncapped_by_modifier] = {
+				## required
+				modifier = mod_job_$_add
+				## optional
+				per_pop_modifier = mod_job_$_per_pop
+				## optional
+				per_pop_modifier_short = mod_job_$_per_pop_short
+			}
 		}
 	}
 	type[social_strata] = {
