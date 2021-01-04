@@ -120,9 +120,9 @@ war_goal = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
-	# TODO: add replace_scope if necessary and add comment
+	###Set what peace offers are allowed. Leaving this out means no peace, which is usually a bug, hence making this a necessary field.
 	allowed_peace_offers = {
-		## cardinality = 1..3	
+		## cardinality = 0..3	
 		enum[peace_offers]
 	}
 
