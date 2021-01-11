@@ -233,6 +233,10 @@ enums = {
 		harm_relations
 		federation
 		galactic_community
+		spy_network
+		first_contact
+		strengthen_imperial_authority
+		undermine_imperial_authority
 		none
 	}
 	enum[planet_resource_compare_types] = {
