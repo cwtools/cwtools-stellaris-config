@@ -2995,7 +2995,7 @@ alias[effect:remove_starbase_building] = {
 	###Optional, default = all
 	slot = int
 	## cardinality = 0..1
-	module = <starbase_building>
+	building = <starbase_building>
 }
 
 ###Changes the colony foundation date (affecting on_colony_X_years pulses) by a specific number of days. Use with care, you can probably break things with this!

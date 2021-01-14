@@ -458,6 +458,11 @@ event = {
 		first_contact = bool
 	}
 
+	subtype[espionage_operation] = {
+		## cardinality = 0..1
+		espionage_operation = bool
+	}
+
 	## cardinality = 0..1
 	trigger = {
 		alias_name[trigger] = alias_match_left[trigger]

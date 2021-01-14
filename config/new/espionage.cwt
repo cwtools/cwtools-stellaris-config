@@ -34,6 +34,7 @@ espionage_asset = {
 }
 
 espionage_operation = {
+	target = enum[espionage_operation_targets]
     categories = {
 		## cardinality = 1..inf
 		<espionage_category>

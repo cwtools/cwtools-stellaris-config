@@ -9,6 +9,10 @@ types = {
 			Description = "$_desc"
 		}
 	}
+	type[crisis_level] = {
+		path = "game/common/crisis_levels"
+		#Todo: localisation?
+	}
 	type[menace_perk] = {
 		path = "game/common/menace_perks"
 		localisation = {
@@ -17,6 +21,25 @@ types = {
 			## required
 			Description = "$_desc"
 		}
+	}
+}
+
+## replace_scopes = { this = country root = country }
+crisis_level = {
+	## cardinality = 0..1
+	allow = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	required_menace = int
+
+	# REWARDS
+	perks = {
+		## cardinality = 0..inf
+		<menace_perk>
+	}
+
+	on_unlock = {
+		alias_name[effect] = alias_match_left[effect]
 	}
 }
 

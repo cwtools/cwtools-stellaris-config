@@ -274,4 +274,15 @@ enums = {
 		market_sell
 		not_set
 	}
+	enum[espionage_operation_targets] = {
+		none
+		megastructure
+		country
+		fleet
+		army
+		pop_faction
+		federation
+		starbase
+		spynetwork
+	}
 }

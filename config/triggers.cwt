@@ -1574,6 +1574,9 @@ alias[trigger:scientist_count] = bool
 ###Checks if resource is enabled on the Galactic Market
 alias[trigger:is_on_market] = <resource>
 
+###Checks if the current country can buy the specified resource on the market or galactic market
+alias[trigger:can_buy_on_market] = <resource>
+
 ###Checks the country's highest threat against it
 alias[trigger:highest_threat] = int
 
@@ -2129,7 +2132,7 @@ alias[trigger:num_espionage_assets] = int
 alias[trigger:has_ship_owner_type] = enum[ship_owner_types]
 
 ###Checks if a country has a specific Crisis Level unlocked.
-alias[trigger:has_crisis_level] = int
+alias[trigger:has_crisis_level] = <crisis_level>
 
 ###Compares spy network value of the scoped object
 alias[trigger:has_spynetwork_value] = float
