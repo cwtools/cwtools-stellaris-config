@@ -9,6 +9,38 @@ types = {
 	## replace_scope = { this = espionage_operation root = espionage_operation }
 	type[espionage_operation] = {
 		path = "game/common/espionage_operation_types"
+		localisation = {
+			## required
+			Name = "$"
+		}
+		subtype[no_target] = {
+			## cardinality = 0..1
+			target = none
+		}
+		subtype[megastructure] = {
+			target = megastructure
+		}
+		subtype[country] = {
+			target = country
+		}
+		subtype[fleet] = {
+			target = fleet
+		}
+		subtype[army] = {
+			target = army
+		}
+		subtype[pop_faction] = {
+			target = pop_faction
+		}
+		subtype[federation] = {
+			target = federation
+		}
+		subtype[starbase] = {
+			target = starbase
+		}
+		subtype[spynetwork] = {
+			target = spynetwork
+		}
 	}
 }
 
@@ -51,6 +83,63 @@ espionage_operation = {
 	}
     allow = {
 		alias_name[trigger] = alias_match_left[trigger]
+	}
+	
+	subtype[megastructure] = {
+		## cardinality = 0..1
+		## replace_scope = { this = megastructure root = megastructure }
+		target_allow = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
+	subtype[country] = {
+		## cardinality = 0..1
+		## replace_scope = { this = country root = country }
+		target_allow = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
+	subtype[fleet] = {
+		## cardinality = 0..1
+		## replace_scope = { this = fleet root = fleet }
+		target_allow = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
+	subtype[army] = {
+		## cardinality = 0..1
+		## replace_scope = { this = megastructure root = megastructure }
+		target_allow = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
+	subtype[pop_faction] = {
+		## cardinality = 0..1
+		## replace_scope = { this = pop_faction root = pop_faction }
+		target_allow = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
+	subtype[federation] = {
+		## cardinality = 0..1
+		## replace_scope = { this = federation root = federation }
+		target_allow = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
+	subtype[starbase] = {
+		## cardinality = 0..1
+		## replace_scope = { this = starbase root = starbase }
+		target_allow = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
+	subtype[spynetwork] = {
+		## cardinality = 0..1
+		## replace_scope = { this = spynetwork root = spynetwork }
+		target_allow = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
 	}
 	
 	## cardinality = 1..inf
