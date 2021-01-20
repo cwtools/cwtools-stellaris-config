@@ -2194,3 +2194,5 @@ alias[trigger:num_members] = int
 ###Checks number of associates in scoped federation
 alias[trigger:num_associates] = int
 
+###Checks whether the army is defensive
+alias[trigger:is_defensive_army] = bool
