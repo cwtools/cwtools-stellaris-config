@@ -2016,7 +2016,7 @@ alias[trigger:any_pop_faction] = {
 
 
 
-# 2.9
+# 3.0
 
 ## push_scope = first_contact
 ###Iterate through each first contact site the current country has

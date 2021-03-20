@@ -422,8 +422,13 @@ alias[trigger:defender_war_exhaustion] = float[0.0..1.0]
 alias[trigger:off_war_exhaustion_sum] = float
 ###Checks the country's total war exhaustion for all defemsove wars
 alias[trigger:def_war_exhaustion_sum] = float
+
 ###Checks the scope's total fleet power
 alias[trigger:fleet_power] = int
+###Checks the scope's total fleet power
+alias[trigger:fleet_power] = scope[any] #any that match fleet_power trigger
+###Checks the scope's total fleet power
+alias[trigger:fleet_power] = value[variable]
 
 ###is_megastructure_type = <name of type>. Compares the type of scope's mega structure to a type from the database
 alias[trigger:is_megastructure_type] = <megastructure>
@@ -1933,7 +1938,7 @@ alias[trigger:num_ai_empires_setting] = int
 alias[trigger:name_list_category] = enum[name_list_categories]
 
 
-# 2.9
+# 3.0
 
 ### Checks whether a country can set a policy via set_policy effect
 alias[trigger:can_set_policy] = {
@@ -2009,7 +2014,7 @@ alias[trigger:check_variable_arithmetic] = {
 
 ###Checks the value of a specified modifier in the current scope against a value.
 alias[trigger:check_modifier_value] = {
-	modifier = <modifier>
+	modifier = alias_keys_field[modifier]
 	value = float
 }
 

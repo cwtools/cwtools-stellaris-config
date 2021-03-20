@@ -293,6 +293,8 @@ alias[effect:add_modifier] = {
 	## cardinality = 0..1
 	multiplier = float
 	## cardinality = 0..1
+	multiplier = value[variable]
+	## cardinality = 0..1
 	clear_on_owner_change = yes
 }
 
@@ -2647,6 +2649,10 @@ alias[effect:upgrade_megastructure_to] = <megastructure>
 alias[effect:add_resource] = {
 	## cardinality = 1..inf
 	<resource> = float
+	## cardinality = 0..1
+	mult = float
+	## cardinality = 0..1
+	mult = value[variable]
 }
 
 ###Remove resource deposit on the scoped planet or deposit, does not fire on_cleared if used on a blocker
@@ -3017,7 +3023,7 @@ alias[effect:set_government_cooldown] = no
 ###Sets the country's origin to a certain value. Note: This will not run effects executed during galaxy generation.
 alias[effect:set_origin] = <civic_or_origin.origin>
 
-# 2.9
+# 3.0
 
 ###Gives the player the reward for the specified crisis objective
 alias[effect:complete_crisis_objective] = <crisis_objective>
@@ -3234,9 +3240,36 @@ alias[effect:clear_intel_report] = {
 	who = scope_group[target_country]
 }
 
+###Rounds a previously-set variable to the closest integer.
+alias[effect:round_variable] = value[variable]
+
+###Rounds a previously-set variable down to the previous integer.
+alias[effect:floor_variable] = value[variable]
+
+###Rounds a previously-set variable up to the next integer.
+alias[effect:ceiling_variable] = value[variable]
+
+###Exports the value of a specified simple value trigger (i.e. no { }, returns a number on the right hand side) to a specified variable.
+alias[effect:export_trigger_value_to_variable] = {
+	trigger = alias_keys_field[trigger]
+	variable = value_set[variable]
+}
+
+###Exports the value of the current country's stockpile of the specified resource to a variable.
+alias[effect:export_resource_stockpile_to_variable] = {
+	resource = <resource>
+	variable = value_set[variable]
+}
+
+###Exports the value of the current country's monthly income of the specified resource to a variable.
+alias[effect:export_resource_income_to_variable] = {
+	resource = <resource>
+	variable = value_set[variable]
+}
+
 ###Exports the value of a specified modifier in the current scope to a specified variable.
 alias[effect:export_modifier_to_variable] = {
-	modifier = <modifier>
+	modifier = alias_keys_field[modifier]
 	variable = value_set[variable]
 }
 

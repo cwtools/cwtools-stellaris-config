@@ -45,10 +45,6 @@ crisis_level = {
 
 crisis_objective = {
 	reward = int
-	## replace_scopes = { this = country root = country }
-	trigger = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
 }
 
 menace_perk = {
