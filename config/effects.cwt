@@ -3222,7 +3222,7 @@ alias[effect:cancel_resolution] = <resolution_category>
 ###Adds the intel level for the category selected. Default duration (0) is forever.
 alias[effect:add_intel_report] = {
 	category = <intel_category>
-	level = <intel_level>
+	level = int
 	## cardinality = 0..1
 	days = int
 	who = scope_group[target_country]

@@ -138,7 +138,7 @@ building = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	ai_resource_production = {
 		## cardinality = 1..inf
 		<resource> = int
