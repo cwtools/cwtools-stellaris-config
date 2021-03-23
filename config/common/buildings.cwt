@@ -62,6 +62,8 @@ building = {
 	branch_office_building = bool
 	## cardinality = 0..1
 	planetary_ftl_inhibitor = bool
+	## cardinality = 0..1
+	position_priority = int
 
 	## cardinality = 0..1
 	allow = {
