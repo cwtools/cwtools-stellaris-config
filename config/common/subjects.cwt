@@ -70,4 +70,8 @@ subject_type = {
 		category = subjects
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}
+	## severity = warning
+	intel_from_being_subject = intv
+	## severity = warning
+	intel_from_being_overlord = int
 }
