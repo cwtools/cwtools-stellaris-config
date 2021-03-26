@@ -26,7 +26,7 @@ component_slot_template = {
 	## cardinality = 0..1
 	entities = {
 		## cardinality = 1..inf
-		enum[weapon_type] = <model_entity>
+		enum[weapon_type] = scalar #<model_entity>, but that doesn't work
 	}
 }
 

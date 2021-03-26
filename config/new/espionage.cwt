@@ -46,6 +46,14 @@ types = {
 
 
 espionage_asset = {
+	appearance = {
+		name_generation_method = random_person
+		name_generation_method = nongenerated
+		portrait_generation_method = random_person
+		portrait_generation_method = nongenerated
+		## cardinality = 0..1
+		default_portrait = <sprite>
+	}
     passive = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
@@ -77,6 +85,11 @@ espionage_operation = {
 
 	spy_power_cost = int
     spy_network_lvl_requirement = int
+
+    resources = {
+        category = <economic_category>
+		alias_name[economic_template_no_produce] = alias_match_left[economic_template_no_produce]
+    }
 
     potential = {
 		alias_name[trigger] = alias_match_left[trigger]

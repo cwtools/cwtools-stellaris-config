@@ -18,6 +18,8 @@ global_ship_design = {
 	is_event_design = bool
 	## cardinality = 0..1
 	use_design_name = bool
+	## cardinality = 0..1
+	regenerates_when_disabled = bool
 
 	## cardinality = 0..1
 	country_type = <country_type>

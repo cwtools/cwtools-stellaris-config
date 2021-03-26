@@ -57,135 +57,19 @@ authority = {
 	potential = {
 		## cardinality = 0..1
 		text = localisation
-
 		## cardinality = 0..1
 		always = bool
 
-		## cardinality = 0..1
-		ethics = {
-			#originally: 0..3 but actually this number can be higher, some mods add more ethic options
-			## cardinality = 0..inf
-			value = <ethos>
-
-			## cardinality = 0..inf
-			OR = {
-				## cardinality = 0..1
-				text = localisation
-				## severity = info
-				## cardinality = 2..99
-				value = <ethos>
-			}
-			## cardinality = 0..inf
-			NOT = {
-				## cardinality = 0..1
-				text = localisation
-				value = <ethos>
-			}
-			## cardinality = 0..inf
-			NOR = {
-				## cardinality = 0..1
-				text = localisation
-				## severity = info
-				## cardinality = 2..99
-				value = <ethos>
-			}
-		}
-
-		## cardinality = 0..1
-		country_type = {
-			## cardinality = 0..1
-			value = <country_type>
-
-			## cardinality = 0..inf
-			OR = {
-				## cardinality = 0..1
-				text = localisation
-				## severity = info
-				## cardinality = 2..99
-				value = <country_type>
-			}
-			## cardinality = 0..inf
-			NOT = {
-				## cardinality = 0..1
-				text = localisation
-				value = <country_type>
-			}
-			## cardinality = 0..inf
-			NOR = {
-				## cardinality = 0..1
-				text = localisation
-				## severity = info
-				## cardinality = 2..99
-				value = <country_type>
-			}
-		}
+		alias_name[government_trigger] = alias_match_left[government_trigger]
 	}
 	## cardinality = 0..1
 	possible = {
 		## cardinality = 0..1
 		text = localisation
-
 		## cardinality = 0..1
 		always = bool
 
-		## cardinality = 0..1
-		ethics = {
-			#originally: 0..3 but actually this number can be higher, some mods add more ethic options
-			## cardinality = 0..inf
-			value = <ethos>
-
-			## cardinality = 0..inf
-			OR = {
-				## cardinality = 0..1
-				text = localisation
-				## severity = info
-				## cardinality = 2..99
-				value = <ethos>
-			}
-			## cardinality = 0..inf
-			NOT = {
-				## cardinality = 0..1
-				text = localisation
-				value = <ethos>
-			}
-			## cardinality = 0..inf
-			NOR = {
-				## cardinality = 0..1
-				text = localisation
-				## severity = info
-				## cardinality = 2..99
-				value = <ethos>
-			}
-		}
-
-		## cardinality = 0..1
-		country_type = {
-			## cardinality = 0..1
-			value = <country_type>
-
-			## cardinality = 0..inf
-			OR = {
-				## cardinality = 0..1
-				text = localisation
-				## severity = info
-				## cardinality = 2..99
-				value = <country_type>
-			}
-			## cardinality = 0..inf
-			NOT = {
-				## cardinality = 0..1
-				text = localisation
-				value = <country_type>
-			}
-			## cardinality = 0..inf
-			NOR = {
-				## cardinality = 0..1
-				text = localisation
-				## severity = info
-				## cardinality = 2..99
-				value = <country_type>
-			}
-		}
+		alias_name[government_trigger] = alias_match_left[government_trigger]
 	}
 	## replace_scope = { this = no_scope root = no_scope } #this can check has_dlc and other likewise triggers, but thats it.
 	## cardinality = 0..1
@@ -313,181 +197,21 @@ civic_or_origin = {
 	possible = {
 		## cardinality = 0..1
 		text = localisation
-
 		## cardinality = 0..1
 		always = bool
 
+		alias_name[government_trigger] = alias_match_left[government_trigger]
+	}
+
+	## cardinality = 0..1
+	### requirements list, supports country_type, ethics, authority and civics. See ../readme_requirements.txt
+	potential = {
 		## cardinality = 0..1
-		ethics = {
-			## cardinality = 0..3
-			value = <ethos>
-
-			## cardinality = 0..inf
-			OR = {
-				## cardinality = 0..1
-				text = localisation
-				## severity = info
-				## cardinality = 2..99
-				value = <ethos>
-			}
-			## cardinality = 0..inf
-			NOT = {
-				## cardinality = 0..1
-				text = localisation
-				value = <ethos>
-			}
-			## cardinality = 0..inf
-			NOR = {
-				## cardinality = 0..1
-				text = localisation
-				## severity = info
-				## cardinality = 2..99
-				value = <ethos>
-			}
-		}
-
+		text = localisation
 		## cardinality = 0..1
-		country_type = {
-			## cardinality = 0..1
-			value = <country_type>
+		always = bool
 
-			## cardinality = 0..inf
-			OR = {
-				## cardinality = 0..1
-				text = localisation
-				## severity = info
-				## cardinality = 2..99
-				value = <country_type>
-			}
-			## cardinality = 0..inf
-			NOT = {
-				## cardinality = 0..1
-				text = localisation
-				value = <country_type>
-			}
-			## cardinality = 0..inf
-			NOR = {
-				## cardinality = 0..1
-				text = localisation
-				## severity = info
-				## cardinality = 2..99
-				value = <country_type>
-			}
-		}
-
-		## cardinality = 0..1
-		authority = {
-			## cardinality = 0..1
-			value = <authority>
-
-			## cardinality = 0..inf
-			OR = {
-				## cardinality = 0..1
-				text = localisation
-				## severity = info
-				## cardinality = 2..99
-				value = <authority>
-			}
-			## cardinality = 0..inf
-			NOT = {
-				## cardinality = 0..1
-				text = localisation
-				value = <authority>
-			}
-			## cardinality = 0..inf
-			NOR = {
-				## cardinality = 0..1
-				text = localisation
-				## severity = info
-				## cardinality = 2..99
-				value = <authority>
-			}
-		}
-
-		## cardinality = 0..1
-		civics = {
-			## cardinality = 0..3
-			value = <civic_or_origin.civic>
-
-			## cardinality = 0..inf
-			OR = {
-				## cardinality = 0..1
-				text = localisation
-				## severity = info
-				## cardinality = 2..99
-				value = <civic_or_origin.civic>
-			}
-			## cardinality = 0..inf
-			NOT = {
-				## cardinality = 0..1
-				text = localisation
-				value = <civic_or_origin.civic>
-			}
-			## cardinality = 0..inf
-			NOR = {
-				## cardinality = 0..1
-				text = localisation
-				## severity = info
-				## cardinality = 2..99
-				value = <civic_or_origin.civic>
-			}
-		}
-		## cardinality = 0..1
-		origin = {
-			## cardinality = 0..1
-			value = <civic_or_origin.origin>
-			## cardinality = 0..inf
-			OR = {
-				## cardinality = 0..1
-				text = localisation
-				## severity = info
-				## cardinality = 2..99
-				value = <civic_or_origin.origin>
-			}
-			## cardinality = 0..inf
-			NOT = {
-				## cardinality = 0..1
-				text = localisation
-				## cardinality = 0..1
-				value = <civic_or_origin.origin>
-			}
-			## cardinality = 0..inf
-			NOR = {
-				## cardinality = 0..1
-				text = localisation
-				## severity = info
-				## cardinality = 2..99
-				value = <civic_or_origin.origin>
-			}
-		}
-		## cardinality = 0..1
-		species = { #unsure if species class or archetype
-			## cardinality = 0..1
-			value = <species_class>
-
-			## cardinality = 0..inf
-			OR = {
-				## cardinality = 0..1
-				text = localisation
-				## severity = info
-				## cardinality = 2..99
-				value = <species_class>
-			}
-			## cardinality = 0..inf
-			NOT = {
-				## cardinality = 0..1
-				text = localisation
-				value = <species_class>
-			}
-			## cardinality = 0..inf
-			NOR = {
-				## cardinality = 0..1
-				text = localisation
-				## severity = info
-				## cardinality = 2..99
-				value = <species_class>
-			}
-		}
+		alias_name[government_trigger] = alias_match_left[government_trigger]
 	}
 
 	## cardinality = 0..1
@@ -541,11 +265,6 @@ civic_or_origin = {
 		starting_colony = <planet_class>
 
 		## cardinality = 0..1
-		potential = {
-			always = bool
-		}
-
-		## cardinality = 0..1
 		### default: none; if present, will enable secondary species customization in empire designer and will create secondary species & pops at galaxy generation time (see empire_init_create_capital_secondary_pops)
 		has_secondary_species = {
 			title = localisation
@@ -564,159 +283,10 @@ civic_or_origin = {
 	}
 	subtype[civic] = {
 		## cardinality = 0..1
-		### requirements list, supports country_type, ethics, authority and civics. See ../readme_requirements.txt
-		potential = {
-			## cardinality = 0..1
-			text = localisation
-
-			## cardinality = 0..1
-			always = bool
-
-			## cardinality = 0..1
-			ethics = {
-				#originally: 0..3 but actually this number can be higher, some mods add more ethic options
-				## cardinality = 0..inf
-				value = <ethos>
-
-				## cardinality = 0..inf
-				OR = {
-					## cardinality = 0..1
-					text = localisation
-					## severity = info
-					## cardinality = 2..99
-					value = <ethos>
-				}
-				## cardinality = 0..inf
-				NOT = {
-					## cardinality = 0..1
-					text = localisation
-					value = <ethos>
-				}
-				## cardinality = 0..inf
-				NOR = {
-					## cardinality = 0..1
-					text = localisation
-					## severity = info
-					## cardinality = 2..99
-					value = <ethos>
-				}
-			}
-
-			## cardinality = 0..1
-			country_type = {
-				## cardinality = 0..1
-				value = <country_type>
-
-				## cardinality = 0..inf
-				OR = {
-					## cardinality = 0..1
-					text = localisation
-					## severity = info
-					## cardinality = 2..99
-					value = <country_type>
-				}
-				## cardinality = 0..inf
-				NOT = {
-					## cardinality = 0..1
-					text = localisation
-					value = <country_type>
-				}
-				## cardinality = 0..inf
-				NOR = {
-					## cardinality = 0..1
-					text = localisation
-					## severity = info
-					## cardinality = 2..99
-					value = <country_type>
-				}
-			}
-
-			## cardinality = 0..1
-			authority = {
-				## cardinality = 0..1
-				value = <authority>
-
-				## cardinality = 0..inf
-				OR = {
-					## cardinality = 0..1
-					text = localisation
-					## severity = info
-					## cardinality = 2..99
-					value = <authority>
-				}
-				## cardinality = 0..inf
-				NOT = {
-					## cardinality = 0..1
-					text = localisation
-					value = <authority>
-				}
-				## cardinality = 0..inf
-				NOR = {
-					## cardinality = 0..1
-					text = localisation
-					## severity = info
-					## cardinality = 2..99
-					value = <authority>
-				}
-			}
-
-			## cardinality = 0..1
-			civics = {
-				## cardinality = 0..3
-				value = <civic_or_origin.civic>
-
-				## cardinality = 0..inf
-				OR = {
-					## cardinality = 0..1
-					text = localisation
-					## severity = info
-					## cardinality = 2..99
-					value = <civic_or_origin.civic>
-				}
-				## cardinality = 0..inf
-				NOT = {
-					## cardinality = 0..1
-					text = localisation
-					value = <civic_or_origin.civic>
-				}
-				## cardinality = 0..inf
-				NOR = {
-					## cardinality = 0..1
-					text = localisation
-					## severity = info
-					## cardinality = 2..99
-					value = <civic_or_origin.civic>
-				}
-			}
-
-			## cardinality = 0..1
-			origin = {
-				value = <civic_or_origin.origin>
-
-				## cardinality = 0..inf
-				OR = {
-					## cardinality = 0..1
-					text = localisation
-					## severity = info
-					## cardinality = 2..99
-					value = <civic_or_origin.origin>
-				}
-				## cardinality = 0..inf
-				NOT = {
-					## cardinality = 0..1
-					text = localisation
-					value = <civic_or_origin.origin>
-				}
-				## cardinality = 0..inf
-				NOR = {
-					## cardinality = 0..1
-					text = localisation
-					## severity = info
-					## cardinality = 2..99
-					value = <civic_or_origin.origin>
-				}
-			}
+		playable = {
+			alias_name[trigger] = alias_match_left[trigger]
 		}
+		
 		## cardinality = 0..1
 		###default: yes
 		pickable_at_start = bool
@@ -889,4 +459,34 @@ alias[government_trigger:origin] = {
 		## cardinality = 2..99
 		value = <civic_or_origin.origin>
 	}
+}
+alias[government_trigger:species] = {
+	## cardinality = 0..1
+	value = <species_archetype>
+
+	## cardinality = 0..inf
+	OR = {
+		## cardinality = 0..1
+		text = localisation
+		## severity = info
+		## cardinality = 2..99
+		value = <species_archetype>
+	}
+	## cardinality = 0..inf
+	NOT = {
+		## cardinality = 0..1
+		text = localisation
+		value = <species_archetype>
+	}
+	## cardinality = 0..inf
+	NOR = {
+		## cardinality = 0..1
+		text = localisation
+		## severity = info
+		## cardinality = 2..99
+		value = <species_archetype>
+	}
+}
+alias[government_trigger:OR] = {
+	alias_name[government_trigger] = alias_match_left[government_trigger]
 }

@@ -819,8 +819,8 @@ alias[effect:set_war_goal] = {
 }
 
 ###Sets the planet as un/surveyed by target country
-alias[effect:surveyed] = {
-	set_surveyed = bool
+alias[effect:set_surveyed] = {
+	surveyed = bool
 	## cardinality = 0..1
 	surveyor = scope[country]
 }
@@ -3223,7 +3223,7 @@ alias[effect:remove_stage_modifier] = <static_modifier>
 alias[effect:transfer_galactic_defense_force_fleets] = scope[country]
 
 ###Immediately cancels/removes the latest active/passed/proposed/voting for/failed resolution of this type
-alias[effect:cancel_resolution] = <resolution_category>
+alias[effect:cancel_resolution] = <resolution>
 
 ###Adds the intel level for the category selected. Default duration (0) is forever.
 alias[effect:add_intel_report] = {
@@ -3291,3 +3291,8 @@ alias[effect:remove_associate_member] = {
 	override_requirements = bool
 }
 
+###Immediately passes the first found (oldest) proposed/voting for/failed resolution OR a new resolution of this type that has the specified target. Ignores whether the target is valid or not.
+alias[effect:pass_targeted_resolution] = {
+	resolution = <resolution>
+	target = scope[country]
+}

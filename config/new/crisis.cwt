@@ -45,11 +45,14 @@ crisis_level = {
 
 crisis_objective = {
 	reward = int
+	## cardinality = 0..1
+	recurring = yes
 }
 
 menace_perk = {
 	portrait = <sprite>
 
+	## cardinality = 0..1
 	## replace_scopes = { this = country root = country }
 	resources = {
 		category = <economic_category>

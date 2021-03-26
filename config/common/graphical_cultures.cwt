@@ -6,6 +6,8 @@ types = {
 
 graphical_culture = {
 	##cardinality = 0..1
+	has_city_graphics = no
+	##cardinality = 0..1
 	fallback = <graphical_culture>
 	##cardinality = 0..1
 	ship_color = bool

@@ -354,5 +354,6 @@ enums = {
 			machine_interior_minister_module
 			machine_military_minister_module
 			berserk_military_minister_module
+			galactic_community_patrol_military_minister_module
 	}
 }

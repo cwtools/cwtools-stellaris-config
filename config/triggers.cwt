@@ -671,6 +671,9 @@ alias[trigger:is_difficulty] = int[0..5]
 alias[trigger:has_building] = bool
 alias[trigger:has_building] = <building>
 
+###Checks if the planet has a specific building and that that building is neither disabled nor ruined
+alias[trigger:has_active_building] = <building>
+
 ###Checks if the planet has any, or a specific, ongoing building construction
 alias[trigger:has_building_construction] = bool
 ###Checks if the planet has any, or a specific, ongoing building construction
@@ -1898,7 +1901,7 @@ alias[trigger:has_any_federation_law_in_category] = <federation_law_category>
 alias[trigger:has_available_jobs] = <job>
 
 ###Checks if Xeno Compatibility are enabled in game setup
-alias[trigger:xeno_compatibility_enabled] = <job>
+alias[trigger:xeno_compatibility_enabled] = bool
 
 ###Checks if the country has been set to be neutral towards target country via set_faction_hostility.
 alias[trigger:is_forced_friendly] = scope[country]
@@ -1939,6 +1942,12 @@ alias[trigger:name_list_category] = enum[name_list_categories]
 
 
 # 3.0
+
+###Checks how many organic pops the planet expects to gain in a year on average (through growth and assembly) at the current rate.
+alias[trigger:num_organic_pops_per_year] = float
+
+###Checks how many artificial pops the planet expects to assemble in a year on average at the current rate.
+alias[trigger:num_artificial_pops_per_year] = float
 
 ### Checks whether a country can set a policy via set_policy effect
 alias[trigger:can_set_policy] = {
