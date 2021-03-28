@@ -36,7 +36,8 @@ alias[trigger:is_pop_faction_type] = <pop_faction>
 
 ###Compares relative power between two countries. relative_power = { who = <target country> category = <fleet/economy/technology/all> value ><= <pathetic/inferior/equivalent/superior/overwhelming>
 alias[trigger:relative_power] = {
-	who = scope[country]
+	who = scope_group[target_country]
+	who = scope[federation]
 	## cardinality = 0..1
 	category = enum[relative_power_categories]
 	value = enum[relative_power_values]
