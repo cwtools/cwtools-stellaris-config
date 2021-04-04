@@ -39,7 +39,7 @@ links = {
 		output_scope = Country
 	}
 	leader = {
-		inputscopes = { Ship Planet Country PopFaction Fleet Sector Army first_contact archaeological_site }
+		inputscopes = { Ship Planet Country PopFaction Fleet Sector Army first_contact archaeological_site spy_network espionage_operation }
 		output_scope = Leader
 	}
 	last_created_leader = {
@@ -98,7 +98,7 @@ links = {
 		output_scope = Fleet
 	}
 	pop = {
-		inputscopes = { Pop }
+		inputscopes = { Pop Army }
 		output_scope = Pop
 	}
 	unhappiest_pop = {
@@ -152,7 +152,7 @@ links = {
 		output_scope = PopFaction
 	}
 	default_pop_faction = {
-		inputscopes = { allScopes }
+		inputscopes = { pop }
 		output_scope = PopFaction
 	}
 	sector = {
@@ -235,6 +235,14 @@ links = {
 		inputscopes = { country }
 		output_scope = federation
 	}
+	federation_leader = {
+		inputscopes = { federation }
+		output_scope = country
+	}
+	associated_federation = {
+		inputscopes = { country }
+		output_scope = federation
+	}
 	last_added_deposit = {
 		inputscopes = { planet }
 		output_scope = deposit
@@ -267,8 +275,16 @@ links = {
 		inputscopes = { espionage_operation spy_network }
 		output_scope = country
 	}
-	federation_leader = {
-		inputscopes = { federation }
-		output_scope = country
+	growing_species = {
+		inputscopes = { planet }
+		output_scope = species
+	}
+	assembling_species = {
+		inputscopes = { planet }
+		output_scope = species
+	}
+	declining_species = {
+		inputscopes = { planet }
+		output_scope = species
 	}
 }
