@@ -1442,13 +1442,7 @@ alias[effect:establish_communications_no_message] = scope_group[target_country]
 alias[effect:establish_contact] = {
 	who = scope_group[target_country]
 	## cardinality = 0..1
-	location = scope[system] #TODO
-	## cardinality = 0..1
-	location = scope[planet]
-	## cardinality = 0..1
-	location = scope[ship]
-	## cardinality = 0..1
-	location = scope[starbase]
+	location = scope_group[celestial_coordinate]
 }
 
 ###Changes scoped pop to chosen ethic
@@ -1456,12 +1450,8 @@ alias[effect:pop_change_ethic] = <ethos>
 ### Starts a situation log event chain for target country
 alias[effect:begin_event_chain] = {
 	event_chain = <event_chain>
-	## cardinality = 0..2
+	## cardinality = 0..1
 	target = scope_group[target_country]
-	## cardinality = 0..2
-	target = scope[ship] #TODO
-	## cardinality = 0..2
-	target = scope[planet]
 }
 
 ### Ends a specific situation log event chain for the scoped country
@@ -1479,31 +1469,14 @@ alias[effect:enable_special_project] = {
 	## cardinality = 0..1
 	owner = scope_group[target_country]
 	## cardinality = 0..1
-	location = scope[planet] #TODO + check if code errors on system scope
-	## cardinality = 0..1
-	#	location = scope[system] #Caligula's note: Doesn't work (the project will not be researchable as it will have no precise location).
-	location = scope[ship]
-	## cardinality = 0..1
-	location = scope[fleet]
-	## cardinality = 0..1
-	location = scope[ambient_object]
-	## cardinality = 0..1
-	location = scope[starbase]
+	location = scope_group[spatial_object]
 }
 
 ###Aborts a specific special project for the country, removing it from the situation log
 alias[effect:abort_special_project] = {
 	type = <special_project>
 	## cardinality = 0..1
-	location = scope[planet]  #TODO
-	## cardinality = 0..1
-	location = scope[system]
-	## cardinality = 0..1
-	location = scope[ship]
-	## cardinality = 0..1
-	location = scope[fleet]
-	## cardinality = 0..1
-	location = scope[starbase]
+	location = scope_group[spatial_object]
 }
 
 ###Makes the scoped country remember that it has encountered the bypass type
@@ -1544,15 +1517,7 @@ alias[effect:effect_on_blob] = {
 
 ###Assign the player of the target country to play the scoped country instead
 alias[effect:set_player] = scope_group[target_country]
-#Imported
-#
-#
-#
-#
-#
-#
-#
-#
+
 ### Activates the gateway associated with a megastructure.
 alias[effect:activate_gateway] = scope[megastructure]
 ### Moves a saved leader to the active for the scoped country with a lookup key
@@ -1615,7 +1580,7 @@ alias[effect:add_random_research_option] = {
 ### Adds a tech research option to the scoped country's tech view list, permanent until researched
 alias[effect:add_research_option] = <technology>
 ### Makes the scoped country remember that it has encountered the bypass
-alias[effect:add_seen_bypass] = scope[any]##TODO bypass
+alias[effect:add_seen_bypass] = scope_group[spatial_object] #megastructure or wormhole
 ### Adds a specific ship design to the scoped country
 alias[effect:add_ship_design] = last_created_design#TODO check this
 ### Adds a sum of experience points to the scoped leader
@@ -1734,7 +1699,7 @@ alias[effect:change_species_characteristics] = {
 	## cardinality = 0..1
 	extra_trait_points = int
 	## cardinality = 0..1
-	portrait = scope[species]
+	portrait = scope_group[target_species]
 	## cardinality = 0..1
 	portrait = <portrait>
 	## cardinality = 0..1
@@ -1776,19 +1741,7 @@ alias[effect:copy_ethos_and_authority] = scope_group[target_country]
 alias[effect:create_ambient_object] = {
 	type = <ambient_object>
 	## cardinality = 0..1
-	location = scope[planet]
-	## cardinality = 0..1
-	location = scope[system]
-	## cardinality = 0..1
-	location = scope[ship]
-	## cardinality = 0..1
-	location = scope[ambient_object]
-	## cardinality = 0..1
-	location = scope[fleet]
-	## cardinality = 0..1
-	location = scope[megastructure]
-	## cardinality = 0..1
-	location = scope[starbase]
+	location = scope_group[celestial_coordinate]
 	## cardinality = 0..1
 	scale = float
 	## cardinality = 0..1
@@ -1815,18 +1768,11 @@ alias[effect:create_ambient_object] = {
 		max = int
 	}
 	## cardinality = 0..1
-	base_angle_towards = scope[planet]
+	base_angle_towards = scope_group[spatial_object]
 	## cardinality = 0..1
-	base_angle_towards = scope[planet]
-	## cardinality = 0..1
-	entity_face_object = scope[planet]
-	## cardinality = 0..1
-	entity_face_object = scope[system]
+	entity_face_object = scope_group[spatial_object]
 	## cardinality = 0..1
 	entity_scale_to_size = bool
-	## cardinality = 0..1
-	###What does this do? Tell Caligula and Dayshine
-	target = scalar
 	## cardinality = 0..1
 	duration = int
 	## cardinality = 0..1
@@ -1846,7 +1792,7 @@ alias[effect:create_army_transport] = {
 	##cardinality = 0..1
 	army_name = localisation_synced
 	##cardinality = 0..1
-	species = scope[species]
+	species = scope_group[target_species]
 	##cardinality = 0..1
 	species = enum[buildable_pop_species]
 	## cardinality = 0..1
@@ -1976,15 +1922,17 @@ alias[effect:create_point_of_interest] = {
 	desc = localisation
 	event_chain = <event_chain>
 	## severity = warning
-	location = scope[planet]
-	## severity = warning
-	location = scope[system]
-	## severity = warning
-	location = scope[fleet]
+	location = scope[spatial_object]
 	## cardinality = 0..1
-	location = scope[megastructure]
+	location = scope[country]
 	## cardinality = 0..1
-	location = scope[starbase]
+	location = scope[pop]
+	## cardinality = 0..1
+	location = scope[leader]
+	## cardinality = 0..1
+	location = scope[deposit]
+	## cardinality = 0..1
+	location = scope[army]
 	## cardinality = 0..1
 	category = scalar
 }
@@ -2063,13 +2011,7 @@ alias[effect:create_saved_leader] = {
 	}
 }
 
-# ### Creates a sector with a specific capital planet, of a specific type, and with optional additional systems within the #scoped country
-#alias[effect:create_sector] = {
-#	capital = scope[planet]
-#	type = <sector_type>
-#	## cardinality = 0..100
-#	add = scope[system]
-#}
+
 ### Creates a new ship
 alias[effect:create_ship] = {
 	## cardinality = 0..1
@@ -2100,7 +2042,7 @@ alias[effect:create_ship] = {
 	upgradable = bool
 	## cardinality = 0..1
 	###Used if the created ship is a colony ship
-	colonizer_species = scope[species]
+	colonizer_species = scope_group[target_species]
 	## cardinality = 0..1
 	## push_scope = ship
 	effect = {
@@ -2131,7 +2073,7 @@ alias[effect:finish_upgrade] = yes
 ###fleet_action_research_special_project = { special_project = test_project target = event_target:project_planet }
 alias[effect:fleet_action_research_special_project] = {
 	special_project = <special_project>
-	target = scope[planet]
+	target = scope_group[spatial_objectt]
 }
 
 ### Forces target pop to immediately evaluate their attraction to various pop factions
@@ -2196,15 +2138,13 @@ alias[effect:modify_army] = {
 	## cardinality = 0..1
 	owner = scope_group[target_country]
 	## cardinality = 0..1
-	species = scope[species]
+	species = scope_group[target_species]
 	## cardinality = 0..1
 	species = enum[buildable_pop_species]
 	## cardinality = 0..1
 	type = <army>
 }
 
-# ### Moves a pop from a tile to another
-#alias[effect:move_pop] = scope[planet]
 ### Randomly mutate a species.
 alias[effect:mutate_species] = yes
 ## push_scope = fleet
@@ -2283,12 +2223,7 @@ alias[effect:set_advisor_active] = bool
 alias[effect:set_aggro_range] = int
 ### Determines whether the scoped fleet/country's aggro range is measured from the fleet's current position or its spawn location
 alias[effect:set_aggro_range_measure_from] = enum[aggro_range_measure_from]
-alias[effect:set_aggro_range_measure_from] = scope[planet]
-alias[effect:set_aggro_range_measure_from] = scope[galactic_object]
-alias[effect:set_aggro_range_measure_from] = scope[starbase]
-alias[effect:set_aggro_range_measure_from] = scope[megastructure]
-alias[effect:set_aggro_range_measure_from] = scope[fleet]
-alias[effect:set_aggro_range_measure_from] = scope[ship]
+
 enums = {
 	enum[aggro_range_measure_from] = {
 		self
@@ -2313,7 +2248,7 @@ alias[effect:set_country_type] = <country_type>
 ### Sets the crisis ambient loop to the current effect
 alias[effect:set_crisis_sound] = scalar#TODO sound
 ### Sets a custom spatial object as custom country capital location.
-alias[effect:set_custom_capital_location] = scope[any]
+alias[effect:set_custom_capital_location] = scope_group[spatial_object]
 ### Sets the scoped ship to become disabled at a certain hull point percentage
 alias[effect:set_disable_at_health] = float[0.0..1.0]
 ### Enables or disables the scoped ship
@@ -2369,7 +2304,9 @@ alias[effect:set_planet_entity] = {
 	## cardinality = 0..1
 	graphical_culture = <graphical_culture>
 	## cardinality = 0..1
-	graphical_culture = scope[any]
+	graphical_culture = scope[country]
+	## cardinality = 0..1
+	graphical_culture = scope[ship]
 	## cardinality = 0..1
 	picture = scalar	#filepath #TODO picture
 	## cardinality = 0..1
@@ -2427,9 +2364,9 @@ enums = {
 }
 
 ### Defines a homeworld for the current species.
-alias[effect:set_species_homeworld] = scope[planet]
+alias[effect:set_species_homeworld] = scope_group[target_planet]
 ### Sets the current species scopes identity to match the target scopes making them evaluate as the same species in is_same_species trigger.
-alias[effect:set_species_identity] = scope[species]
+alias[effect:set_species_identity] = scope_group[target_species]
 ### Sets a building in a slot on a starbase
 alias[effect:set_starbase_building] = {
 	slot = int
@@ -2471,6 +2408,8 @@ alias[effect:spawn_megastructure] = {
 	## cardinality = 0..1
 	graphical_culture = <graphical_culture>
 	## cardinality = 0..1
+	graphical_culture = scope[country]
+	## cardinality = 0..1
 	graphical_culture = scope[megastructure]
 	## cardinality = 0..1
 	graphical_culture = scope[ship]
@@ -2488,11 +2427,7 @@ alias[effect:spawn_planet] = {
 	class = <planet_class>
 	class = <planet_class_random_list>
 	## cardinality = 0..1
-	location = scope[system]
-	## cardinality = 0..1
-	location = scope[planet]
-	## cardinality = 0..1
-	location = scope[megastructure]
+	location = scope_group[celestial_coordinate]
 	## cardinality = 0..1
 	orbit_location = bool
 	## cardinality = 0..1
@@ -2549,7 +2484,7 @@ alias[effect:start_colony] = {
 	## cardinality = 0..1
 	species = scalar	#key
 	## cardinality = 0..1
-	ethos = scope[species]	#Yes, this is correct. No, I don't know why.
+	ethos = owner
 	## cardinality = 0..1
 	ethos = {
 		## cardinality = 1..10
@@ -2613,9 +2548,8 @@ alias[effect:add_planet_devastation] = int[-100..100]
 ## scope = any
 ###Creates a new pop from a half-species on the planet
 alias[effect:create_half_species] = {
-	#todo: there's probably a few more things you can use here, I'm guessing!
-	species_one = scope[species]
-	species_two = scope[species]
+	species_one = scope_group[target_species]
+	species_two = scope_group[target_species]
 	## cardinality = 0..1
 	## push_scope = species
 	effect = {
@@ -2632,7 +2566,7 @@ alias[effect:close_branch_office] = yes
 ###Removes all blockers from the scoped planet
 alias[effect:clear_blockers] = yes
 ###Changes the built species of the scoped object
-alias[effect:set_built_species] = scope[species]
+alias[effect:set_built_species] = scope_group[target_species]
 ###Removes last built district from the scoped planet
 alias[effect:remove_last_built_district] = yes
 ###Removes all district from the scoped planet
@@ -2656,7 +2590,7 @@ alias[effect:validate_planet_buildings_and_districts] = yes
 ###Clears scoped deposit blocker and fires its on_cleared effect
 alias[effect:clear_blocker] = yes
 ###Changes the portrait of the species in scope.
-alias[effect:change_species_portrait] = scope[species]
+alias[effect:change_species_portrait] = scope_group[target_species]
 alias[effect:change_species_portrait] = <portrait>
 alias[effect:change_species_portrait] = <portrait_group>
 alias[effect:change_species_portrait] = random
@@ -2666,7 +2600,7 @@ alias[effect:reroll_deposits] = yes
 ###Creates a archaeological site associated with the scope object
 alias[effect:create_archaeological_site] = <archaeological_site_type>
 ###Destroys a archaeological site in right hand site event target
-alias[effect:destroy_archaeological_site] = scope[planet]
+alias[effect:destroy_archaeological_site] = scope[archaeological_site]
 ###Adds clues to the current stage of a archaeological site
 alias[effect:add_stage_clues] = int
 alias[effect:add_stage_clues] = lower_insight_reward
@@ -2900,15 +2834,7 @@ alias[effect:force_remove_civic] = <civic_or_origin.civic>
 alias[effect:complete_special_project] = {
 	type = <special_project>
 	## cardinality = 0..1
-	location = scope[planet]
-	## cardinality = 0..1
-	location = scope[system]
-	## cardinality = 0..1
-	location = scope[ship]
-	## cardinality = 0..1
-	location = scope[fleet]
-	## cardinality = 0..1
-	location = scope[starbase]
+	location = scope_group[spatial_object]
 }
 
 ###Force a truce with target country of a specified type, or a war

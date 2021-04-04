@@ -83,7 +83,7 @@ scope_groups = {
         deposit pop army country leader
     }
     spatial_object = {
-        planet ship fleet system ambient_object megastructure starbase archaeological_site first_contact
+        planet ship fleet ambient_object megastructure starbase archaeological_site
     }
     target_species = {
         country pop leader planet ship fleet army species first_contact
