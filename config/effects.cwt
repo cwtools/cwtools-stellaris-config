@@ -476,6 +476,8 @@ alias[effect:change_government] = {
 	}
 	## cardinality = 0..1
 	cooldown = bool
+	## cardinality = 0..1
+	remove_invalid_civics = yes
 }
 
 #ideally, "heir" should only be if type = ruler
@@ -489,6 +491,9 @@ alias[effect:kill_leader] = {
 	show_notification = bool
 	##cardinality = 0..1
 	heir = bool
+	##cardinality = 0..1
+	###default: no; if yes, fires on_leader_fired instead of on_leader_death
+	fire = yes
 }
 
 ###Shifts an empire towards a specific ethic, adjusting aferwards to keep number of ethics points consistent
@@ -533,6 +538,14 @@ alias[effect:random] = {
 
 ###Creates a new fleet from empire designs up to specified fraction of naval cap
 alias[effect:create_fleet_from_naval_cap] = float
+###Creates a new fleet from empire designs up to specified fraction of naval cap
+alias[effect:create_fleet_from_naval_cap] = {
+	fraction = float
+	ship_owner_type = country
+	ship_owner_type = federation
+	ship_owner_type = galactic_community
+}
+
 ###Reduces the hull points of the scoped ship by a specific amount
 alias[effect:reduce_hp] = int
 ###Reduces the hull points of the scoped ship by a relative amount
@@ -1317,6 +1330,7 @@ alias[effect:clone_leader] = {
 	name = localisation_synced
 	## cardinality = 0..1
 	name = random
+	## cardinality = 0..1
 	class = enum[leader_classes]
 	## cardinality = 0..1
 	species = scope_group[target_species]
@@ -1884,7 +1898,7 @@ alias[effect:create_message] = {
 		type = name
 		type = variable
 		## cardinality = 0..1
-		variable = value[variable]
+		varname = value[variable]
 		localization = scalar		#not localisation, but rather something that can be used in localisation
 		scope = scope[any]
 	}
@@ -2200,7 +2214,7 @@ alias[effect:remove_saved_leader] = value[saved_leader]
 ### rename_species = {
 alias[effect:rename_species] = {
 	## cardinality = 0..1
-	prompt_country = prev
+	prompt_country = scope_group[target_country]
 	## cardinality = 0..1
 	name = scalar
 	## cardinality = 0..1
@@ -2355,9 +2369,13 @@ alias[effect:set_skill] = int
 ###Spawn system should be located in a block between Begin and End.
 ###Begin: set_spawn_system_batch = begin
 ###End: set_spawn_system_batch = end
-alias[effect:set_spawn_system_batch] = enum[spawn_system_batch]
+alias[effect:set_spawn_system_batch] = enum[optimisation_batch]
+
+###Disables modifier system to do full updates between Begin and End.
+alias[effect:set_update_modifiers_batch] = enum[optimisation_batch]
+
 enums = {
-	enum[spawn_system_batch] = {
+	enum[optimisation_batch] = {
 		begin
 		end
 	}
@@ -2472,6 +2490,10 @@ alias[effect:spawn_system] = {
 	min_orientation_angle = float
 	## cardinality = 0..1
 	max_orientation_angle = float
+	## cardinality = 0..1
+	effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
 }
 
 ### Starts colonization of the scoped planet
@@ -2597,8 +2619,10 @@ alias[effect:change_species_portrait] = random
 ###Rebuild resource deposits on target planet
 alias[effect:reroll_deposits] = yes
 #2.3
-###Creates a archaeological site associated with the scope object
+###Creates an archaeological site associated with the scope object
 alias[effect:create_archaeological_site] = <archaeological_site_type>
+###Creates an archaeological site associated with the scope object
+alias[effect:create_archaeological_site] = random
 ###Destroys a archaeological site in right hand site event target
 alias[effect:destroy_archaeological_site] = scope[archaeological_site]
 ###Adds clues to the current stage of a archaeological site
@@ -2762,6 +2786,9 @@ alias[effect:remove_permanent_councillor] = yes
 
 ###Passes the specified resolution
 alias[effect:pass_resolution] = <resolution>
+
+###Immediately passes the first found (oldest) proposed/voting for/failed resolution OR a new resolution of this type. Skips the cooldown on the relevant category.
+alias[effect:pass_resolution_no_cooldown] = <resolution>
 
 ###Removes the specified participant from the scoped war.
 alias[effect:remove_war_participant] = scope_group[target_country]
@@ -3159,3 +3186,16 @@ alias[effect:pass_targeted_resolution] = {
 	resolution = <resolution>
 	target = scope_group[target_country]
 }
+
+###Increase the current Custodian term time
+alias[effect:add_custodian_term_days] = int
+
+###Set the current Custodian term time. -1 will make the Custodianship permanent.
+alias[effect:set_custodian_term_days] = int
+
+###The scoped country wins the game
+alias[effect:win] = yes
+
+###Adds levels to the current Spy Network
+alias[effect:add_spy_network_level] = int
+

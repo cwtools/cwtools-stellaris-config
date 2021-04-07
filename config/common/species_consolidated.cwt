@@ -219,6 +219,10 @@ species_rights = {
 	}
 
 	## cardinality = 0..1
+	###For purge types. Divide by 100 for monthy reduction
+	pop_decline_rate = int
+
+	## cardinality = 0..1
 	new_pop_weight = float
 
 	## cardinality = 0..1

@@ -32,6 +32,9 @@ diplomatic_action = {
 	is_listed = bool
 
 	## cardinality = 0..1
+	should_remove_response_message_when_not_possible = bool
+
+	## cardinality = 0..1
 	###the technologies required to enable the player to send this diplomatic action.
 	prerequisites = {
 		## cardinality = 0..100

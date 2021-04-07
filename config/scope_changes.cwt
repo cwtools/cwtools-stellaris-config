@@ -2475,7 +2475,6 @@ alias[trigger:count_neighbor_system_including_bypasses] = {
 ## push_scope = country
 ###Executes enclosed effects on every defender that meets the limit criteria in the scoped country's war with a specific enemy
 alias[effect:every_defender] = {
-	enemy = scope[country]
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
@@ -2484,7 +2483,6 @@ alias[effect:every_defender] = {
 ## push_scope = country
 ###Executes enclosed effects on a random defender that meets the limit criteria in the scoped country's war with a specific enemy
 alias[effect:random_defender] = {
-	enemy = scope[country]
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
@@ -2500,7 +2498,6 @@ alias[effect:random_defender] = {
 ## push_scope = country
 ###Executes enclosed effects on every attacker that meets the limit criteria in the scoped country's war with a specific enemy
 alias[effect:every_attacker] = {
-	enemy = scope[country]
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
@@ -2509,7 +2506,6 @@ alias[effect:every_attacker] = {
 ## push_scope = country
 ###Executes enclosed effects on a random attacker that meets the limit criteria in the scoped country's war with a specific enemy
 alias[effect:random_attacker] = {
-	enemy = scope[country]
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]

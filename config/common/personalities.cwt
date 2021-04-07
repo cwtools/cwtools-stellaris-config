@@ -45,8 +45,11 @@ enums = {
 
 #needs checking
 ai_personality = {
+	## cardinality = 0..1
 	aggressiveness = float
+	## cardinality = 0..1
 	trade_willingness = float
+	## cardinality = 0..1
 	bravery = float
 	## cardinality = 0..1
 	combat_bravery = float
@@ -153,10 +156,12 @@ ai_personality = {
 		berserker = bool
 	}
 
+	## cardinality = 0..1
 	allow = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
+	## cardinality = 0..1
 	weight_modifier = {
 		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]

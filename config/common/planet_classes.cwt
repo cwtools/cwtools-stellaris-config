@@ -165,15 +165,11 @@ planet_class = {
 		## cardinality = 0..1
 		climate = localisation
 		## cardinality = 0..1
-		colonizable_by_event = bool
-		## cardinality = 0..1
 		habitat = bool
 		## cardinality = 0..1
 		starting_planet = bool
 		## cardinality = 0..1
 		show_city = bool
-		## cardinality = 0..1
-		show_health_bar_in_planet_view = bool
 		## cardinality = 0..1
 		ideal = bool
 		
@@ -182,11 +178,17 @@ planet_class = {
 		## cardinality = 0..1
 		carry_cap_per_free_district = float
 	}
+	## cardinality = 0..1
+	colonizable_by_event = bool
+	## cardinality = 0..1
+	show_health_bar_in_planet_view = bool
 
 	## cardinality = 0..1
 	starting_planet = no
 	## cardinality = 0..1
 	show_city = no
+	## cardinality = 0..1
+	default_planet_selection = bool
 }
 
 planet_class_random_list = {

@@ -2211,3 +2211,16 @@ alias[trigger:num_associates] = int
 
 ###Checks whether the army is defensive
 alias[trigger:is_defensive_army] = bool
+
+###Checks if the pop is currently working this strata job (worker, specialist, complex_drone, etc.) Returns false if unemployed.
+alias[trigger:has_job_category] = <social_strata>
+
+###Checks the value for a specific option from the galaxy setup 
+alias[trigger:check_galaxy_setup_value] = {
+	setting = enum[galaxy_setup_values]
+	value = float
+}
+
+###Checks if the scoped fleet can move.
+alias[trigger:is_mobile] = bool
+

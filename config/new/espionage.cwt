@@ -80,7 +80,13 @@ espionage_operation = {
 		<espionage_category>
 	}
 	picture = <sprite>
+	## cardinality = 1..inf
 	desc = localisation
+	## cardinality = 1..inf
+	desc = {
+		trigger = { alias_name[trigger] = alias_match_left[trigger] }
+		text = localisation
+	}
 	stages = int
 
 	spy_power_cost = int
@@ -97,11 +103,19 @@ espionage_operation = {
     allow = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+    abort = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 	
 	subtype[megastructure] = {
 		## cardinality = 0..1
 		## replace_scope = { this = megastructure root = megastructure }
 		target_allow = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..1
+		## replace_scope = { this = megastructure root = megastructure }
+		target_potential = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -111,11 +125,21 @@ espionage_operation = {
 		target_allow = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
+		## cardinality = 0..1
+		## replace_scope = { this = country root = country }
+		target_potential = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
 	}
 	subtype[fleet] = {
 		## cardinality = 0..1
 		## replace_scope = { this = fleet root = fleet }
 		target_allow = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..1
+		## replace_scope = { this = fleet root = fleet }
+		target_potential = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -125,11 +149,21 @@ espionage_operation = {
 		target_allow = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
+		## cardinality = 0..1
+		## replace_scope = { this = megastructure root = megastructure }
+		target_potential = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
 	}
 	subtype[pop_faction] = {
 		## cardinality = 0..1
 		## replace_scope = { this = pop_faction root = pop_faction }
 		target_allow = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..1
+		## replace_scope = { this = pop_faction root = pop_faction }
+		target_potential = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -139,6 +173,11 @@ espionage_operation = {
 		target_allow = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
+		## cardinality = 0..1
+		## replace_scope = { this = federation root = federation }
+		target_potential = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
 	}
 	subtype[starbase] = {
 		## cardinality = 0..1
@@ -146,11 +185,21 @@ espionage_operation = {
 		target_allow = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
+		## cardinality = 0..1
+		## replace_scope = { this = starbase root = starbase }
+		target_potential = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
 	}
 	subtype[spynetwork] = {
 		## cardinality = 0..1
 		## replace_scope = { this = spynetwork root = spynetwork }
 		target_allow = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..1
+		## replace_scope = { this = spynetwork root = spynetwork }
+		target_potential = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
