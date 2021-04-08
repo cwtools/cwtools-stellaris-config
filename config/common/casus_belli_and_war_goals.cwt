@@ -153,6 +153,7 @@ war_goal = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 
+	## cardinality = 0..1
 	## replace_scope = { this = country root = country from = country }
 	galactic_empire_joins_defender = {
 		alias_name[trigger] = alias_match_left[trigger]
