@@ -90,6 +90,9 @@ alias[trigger:has_ship_flag] = value[ship_flag]
 ###Checks if a Global Flag has been set
 alias[trigger:has_global_flag] = value[global_flag]
 ## severity = warning
+###Checks if the specified variable is set on the current scope. Use to avoid unset variables errors
+alias[trigger:is_variable_set] = value[variable]
+## severity = warning
 ###Checks if the leader has a specific, arbitrarily-named, flag
 alias[trigger:has_leader_flag] = value[leader_flag]
 ## severity = warning
