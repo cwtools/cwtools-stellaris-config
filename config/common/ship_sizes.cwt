@@ -105,6 +105,10 @@ ship_size = {
 		}
 	}
 	## cardinality = 0..1
+	text_icon = scalar
+	## cardinality = 0..1
+	use_shipnames_from = <ship_size>
+	## cardinality = 0..1
 	combat_size_multiplier = int
 	## cardinality = 0..1
 	num_target_locators = int
