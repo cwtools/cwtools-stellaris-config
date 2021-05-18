@@ -1,19 +1,24 @@
 enums = {
 	enum[DLCs] = {
+		"Symbols of Domination"
+		"Arachnoid Portrait Pack"
+		"Paradox Account Sign-up Bonus"
 		"Plantoid"
+		"Creatures of the Void Portrait Pack"
+		"Original Game Soundrack"
+		"Leviathans Story Pack"
+		"Horizon Signal"
 		"Utopia"
+		"Anniversary Portraits"
 		"Synthetic Dawn Story Pack"
 		"Apocalypse"
 		"Humanoids Species Pack"
 		"Distant Stars Story Pack"
-		"Anniversary Portraits"
-		"Leviathans Story Pack"
-		"Creatures of the Void Portrait Pack"
-		"Arachnoid Portrait Pack"
 		"Megacorp"
 		"Ancient Relics Story Pack"
 		"Lithoids Species Pack"
 		"Federations"
 		"Necroids Species Pack"
+		"Nemesis"
 	}
 }
