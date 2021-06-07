@@ -2363,8 +2363,7 @@ alias[effect:set_policy] = {
 
 ### Sets the scoped pop to belong to a specific pop faction
 alias[effect:set_pop_faction] = <pop_faction>
-### [DEPRECATED, USE SET_COUNTRY_TYPE] Sets the scoped country as primitive
-alias[effect:set_primitive] = bool
+
 ### Sets a 'primitive age' for the scoped (primitive, pre-FTL) country
 alias[effect:set_primitive_age] = localisation
 enums = {

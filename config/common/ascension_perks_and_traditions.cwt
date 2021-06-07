@@ -23,11 +23,27 @@ types = {
 		path = "game/common/traditions"
 		skip_root_key = any
 		name_field = name
+		subtype[not_inheriting_name] = {
+			## cardinality = 0..0
+			inherit_name = yes
+		}
+		subtype[not_inheriting_effects] = {
+			## cardinality = 0..0
+			inherit_effects = yes
+		}
 		localisation = {
 			## required
 			Name = "$"
 			## optional
 			Desc = "$_desc"
+			subtype[not_inheriting_name] = {
+				## required
+				Name = "$"
+			}
+			subtype[not_inheriting_effects] = {
+				## optional
+				Description = "$_desc"
+			}
 		}
 	}
 	type[tradition_category] = { #this defines the contents of tradition trees
@@ -149,13 +165,17 @@ alias[tradition_swap:tradition_swap] = {
 	inherit_name = bool
 	## cardinality = 0..1
 	inherit_effects = bool
-	## cardinality = 0..1
-	###accepts only country modifiers
-	## replace_scope = { this = country root = country }
-	modifier = {
+
+	subtype[not_inheriting_effects] = {
 		## cardinality = 0..1
-		alias_name[modifier] = alias_match_left[modifier]
+		###accepts only country modifiers
+		## replace_scope = { this = country root = country }
+		modifier = {
+			## cardinality = 0..1
+			alias_name[modifier] = alias_match_left[modifier]
+		}
 	}
+	
 	## replace_scope = { this = country root = country }
 	###this determines the chances of a tradition swap appearing for a given empire IF multiple swaps are potential. It is unused in vanilla.
 	weight = {
