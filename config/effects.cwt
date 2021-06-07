@@ -1107,6 +1107,12 @@ alias[effect:create_country] = {
 	name = random
 	## cardinality = 0..1
 	name = localisation_synced
+	## cardinality = 0..1
+	adjective = scope[any]
+	## cardinality = 0..1
+	adjective = random
+	## cardinality = 0..1
+	adjective = localisation_synced
 	type = <country_type>
 	## cardinality = 0..1
 	auto_delete = bool
@@ -1197,6 +1203,10 @@ alias[effect:create_country] = {
 	released_from_country = scope_group[target_country]	#scope
 	## cardinality = 0..1
 	ignore_initial_colony_error = bool
+	## cardinality = 0..1
+	government_restrictions = {
+		alias_name[government_trigger] = alias_match_left[government_trigger]
+	}
 }
 
 ###Creates a rebellion on this planet
@@ -1282,7 +1292,8 @@ alias[effect:create_army] = {
 	type = <army>
 	## cardinality = 0..1
 	species = scope_group[target_species]
-	species = <buildable_pop>
+	## cardinality = 0..1
+	species = enum[buildable_pop_species]
 	## cardinality = 0..1
 	leader = scope_group[target_leader]
 	## cardinality = 0..1
@@ -3219,3 +3230,19 @@ alias[effect:win] = yes
 ###Adds levels to the current Spy Network
 alias[effect:add_spy_network_level] = int
 
+###Dissolves the scoped federation
+alias[effect:dissolve_federation] = yes
+
+
+#3.1
+
+###Sets the country's male ruler title to a custom value
+alias[effect:set_male_ruler_title] = localisation
+###Sets the country's female ruler title to a custom value
+alias[effect:set_female_ruler_title] = localisation
+###Sets the country's male heir title to a custom value
+alias[effect:set_male_heir_title] = localisation
+###Sets the country's female heir title to a custom value
+alias[effect:set_female_heir_title] = localisation
+###Clears all custom ruler and heir titles from the country, resetting them to default values
+alias[effect:clear_custom_ruler_and_heir_titles] = yes

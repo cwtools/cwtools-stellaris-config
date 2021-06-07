@@ -57,12 +57,6 @@ alias[modifier_rule_add_factor:modifier] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
-#for effect modifiers?
-alias[modifier_rule_add_mult:modifier] = {
-	enum[add_mult] = float
-	alias_name[trigger] = alias_match_left[trigger]
-}
-
 alias[modifier_rule_with_loc:modifier] = {
 	add = float
 	desc = localisation
@@ -93,10 +87,6 @@ enums = {
 		pop_happiness
 		planet_distance_empire
 		planets_in_country
-	}
-	enum[add_mult] = {
-		add
-		mult
 	}
 	enum[add_factor] = {
 		add

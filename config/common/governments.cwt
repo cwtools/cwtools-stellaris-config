@@ -462,7 +462,34 @@ alias[government_trigger:origin] = {
 		value = <civic_or_origin.origin>
 	}
 }
-alias[government_trigger:species] = {
+alias[government_trigger:species_class] = {
+	## cardinality = 0..1
+	value = <species_class>
+
+	## cardinality = 0..inf
+	OR = {
+		## cardinality = 0..1
+		text = localisation
+		## severity = info
+		## cardinality = 2..99
+		value = <species_class>
+	}
+	## cardinality = 0..inf
+	NOT = {
+		## cardinality = 0..1
+		text = localisation
+		value = <species_class>
+	}
+	## cardinality = 0..inf
+	NOR = {
+		## cardinality = 0..1
+		text = localisation
+		## severity = info
+		## cardinality = 2..99
+		value = <species_class>
+	}
+}
+alias[government_trigger:species_archetype] = {
 	## cardinality = 0..1
 	value = <species_archetype>
 

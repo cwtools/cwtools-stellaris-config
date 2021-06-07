@@ -1515,6 +1515,14 @@ alias[trigger:num_buildings] = {
 	type = any
 	type = <building>
 	value = int
+	## cardinality = 0..1
+	disabled = any
+	## cardinality = 0..1
+	disabled = bool
+	## cardinality = 0..1
+	in_construction = any
+	## cardinality = 0..1
+	in_construction = bool
 }
 
 ###Checks the number the planet has of any, or a specific, district
@@ -2221,3 +2229,17 @@ alias[trigger:check_galaxy_setup_value] = {
 ###Checks if the scoped fleet can move.
 alias[trigger:is_mobile] = bool
 
+
+#3.1
+
+###Checks if the starbase is currently building a specific module
+alias[trigger:is_starbase_building_module] = <starbase_module>
+###Checks if the starbase is currently building a specific building
+alias[trigger:is_starbase_building_building] = <starbase_building>
+###Check if the first buildable is in the starbase building queue before the second buildable (for prerequisites, mostly). Returns false if the first one, or both aren't in the queue. Returns true if the first one is in, but the second isn't.
+alias[trigger:starbase_buildable_is_in_queue_before] = {
+	first = <starbase_module>
+	first = <starbase_building>
+	second = <starbase_module>
+	second = <starbase_building>
+}

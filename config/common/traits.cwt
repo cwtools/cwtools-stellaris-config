@@ -30,6 +30,8 @@ types = {
 
 trait = {
 	## cardinality = 0..1
+	host_has_dlc = enum[DLCs]
+	## cardinality = 0..1
 	### Default = no
 	immortal_leaders = bool
 
@@ -41,6 +43,11 @@ trait = {
 		allowed_archetypes = {
 			## cardinality = 1..inf
 			<species_archetype>
+		}
+		## cardinality = 0..1
+		species_class = {
+			## cardinality = 1..inf
+			<species_class>
 		}
 		# This should be expanded into subtypes
 		## replace_scope = { this = country root = country }
@@ -111,6 +118,8 @@ trait = {
 		slave_cost = {
 			energy = int
 		}
+		## cardinality = 0..1
+		infertile = yes
 	}
 
 	subtype[leader_trait] = {

@@ -32,6 +32,15 @@ enums = {
 
 ## push_scope = planet
 building = {
+	## cardinality = 0..inf
+	desc = {
+		## replace_scope = { this = planet root = planet }
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		text = localisation
+	}
+
 	## cardinality = 0..1
 	base_buildtime = int
 

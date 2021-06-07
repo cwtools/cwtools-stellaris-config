@@ -8,15 +8,15 @@ types = {
 				always = no
 			}
 		}
+		subtype[has_species] = {
+			## cardinality = 0..0
+			has_species = no
+		}
 		localisation = {
 			## required
 			Name = "$"
 			## required
 			Desc = "$_desc"
-			subtype[buildable] = {
-				## required
-				Plural = "$_plural"
-			}
 		}
 	}
 }
@@ -52,7 +52,7 @@ army = {
 	## cardinality = 0..1
 	war_exhaustion = float
 	## cardinality = 0..1
-	icon_frame = int
+	icon = <sprite>
 	## cardinality = 0..1
 	has_species = bool
 	## cardinality = 0..1

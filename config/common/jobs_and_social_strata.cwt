@@ -50,6 +50,15 @@ enums = {
 
 ## push_scope = pop
 job = {
+	## cardinality = 0..inf
+	desc = {
+		## replace_scope = { this = planet root = planet }
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		text = localisation
+	}
+	
 	category = <social_strata>
 	## cardinality = 0..1
 	condition_string = localisation

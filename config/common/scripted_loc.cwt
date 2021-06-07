@@ -20,4 +20,6 @@ scripted_loc = {
 		trigger = { alias_name[trigger] = alias_match_left[trigger] }
 		localization_key = localisation
 	}
+	## cardinality = 0..1
+	default = localisation
 }

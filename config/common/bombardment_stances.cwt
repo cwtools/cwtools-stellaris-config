@@ -18,7 +18,6 @@ bombardment_stance = {
 	trigger = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	icon_frame = int
 	default = bool
 	stop_when_armies_dead = bool
 	abduct_pops = bool
