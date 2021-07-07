@@ -316,6 +316,8 @@ alias[effect:add_modifier] = {
 	## cardinality = 0..1
 	multiplier = value[variable]
 	## cardinality = 0..1
+	time_multiplier = value[variable]
+	## cardinality = 0..1
 	clear_on_owner_change = yes
 }
 
@@ -620,12 +622,7 @@ alias[effect:set_location] = {
 alias[effect:set_variable] = {
 	which = value_set[variable]
 	value = float
-	value = scope[any]
 	value = value[variable]
-	value = {
-		scope = scope[any]
-		variable = value[variable]
-	}
 }
 
 #presumably need to check the variable exists first for these, somehow
@@ -633,60 +630,42 @@ alias[effect:set_variable] = {
 alias[effect:change_variable] = {
 	which = value_set[variable]
 	value = float
-	value = scope[any]
 	value = value[variable]
-	value = {
-		scope = scope[any]
-		variable = value[variable]
-	}
 }
 
 ###Decrements a previously-set variable by a specific amount
 alias[effect:subtract_variable] = {
 	which = value[variable]
 	value = float
-	value = scope[any]
 	value = value[variable]
-	value = {
-		scope = scope[any]
-		variable = value[variable]
-	}
 }
 
 ###Multiplies a previously-set variable by a specific amount
 alias[effect:multiply_variable] = {
 	which = value[variable]
 	value = float
-	value = scope[any]
 	value = value[variable]
-	value = {
-		scope = scope[any]
-		variable = value[variable]
-	}
 }
 
 ###Divides a previously-set variable by a specific amount
 alias[effect:divide_variable] = {
 	which = value[variable]
 	value = float
-	value = scope[any]
 	value = value[variable]
-	value = {
-		scope = scope[any]
-		variable = value[variable]
-	}
 }
 
 ###Modulos a previously-set variable by a specific amount i.e. X % Y
 alias[effect:modulo_variable] = {
 	which = value[variable]
 	value = float
-	value = scope[any]
 	value = value[variable]
-	value = {
-		scope = scope[any]
-		variable = value[variable]
-	}
+}
+
+###Rounds a previously-set variable to the closest X
+alias[effect:round_variable_to_closest] = {
+	which = value[variable]
+	value = float
+	value = value[variable]
 }
 
 ###Removes a previously-set variable from the scope

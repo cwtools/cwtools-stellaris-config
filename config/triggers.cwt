@@ -548,12 +548,7 @@ alias[trigger:has_swapped_tradition] = enum[tradition_swap]
 alias[trigger:check_variable] = {
 	which = value[variable]
 	value = float
-	value = scope[any]
 	value = value[variable]
-	value = {
-		scope = scope[any]
-		variable = value[variable]
-	}
 }
 
 
@@ -2013,22 +2008,13 @@ alias[trigger:galactic_defense_force_exists] = bool
 ###Checks a variable for the scope if a certain amount of arithmetic is done to it (note: the variable's value is not changed by this trigger)
 alias[trigger:check_variable_arithmetic] = {
 	which = value[variable]
-	by = float
-	by = value[variable]
-	by = scope[any]
-	by = {
-		scope = scope[any]
-		variable = value[variable]
-	}
+	## cardinality = 1..inf
+	enum[maths] = float
+	## cardinality = 1..inf
+	enum[maths] = value[variable]
 	###Specify >/< on the value or variable fields
 	value = float
 	value = value[variable]
-	value = scope[any]
-	value = {
-		scope = scope[any]
-		variable = value[variable]
-	}
-	mode = enum[maths]
 }
 
 ###Checks the value of a specified modifier in the current scope against a value.

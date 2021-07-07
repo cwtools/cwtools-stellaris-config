@@ -105,6 +105,16 @@ building = {
 	}
 
 	## cardinality = 0..1
+	abort_trigger = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## cardinality = 0..1
+	ruined_trigger = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## cardinality = 0..1
 	destroy_trigger = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}

@@ -36,6 +36,12 @@ district = {
 	## cardinality = 0..1
 	can_demolish = bool
 
+	## cardinality = 0..1
+	show_tech_unlock_if = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## cardinality = 0..1
 	show_on_uncolonized = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
