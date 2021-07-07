@@ -453,8 +453,6 @@ trade_conversion = {
 
 
 economic_plan = {
-	type = scalar
-
 	income = {
 		## cardinality = 1..inf
 		<resource> = int
@@ -472,11 +470,13 @@ economic_plan = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 
+		## cardinality = 0..1
 		income = {
 			## cardinality = 1..inf
 			<resource> = int
 		}
 	
+		## cardinality = 0..1
 		focus = {
 			## cardinality = 1..inf
 			<resource> = int

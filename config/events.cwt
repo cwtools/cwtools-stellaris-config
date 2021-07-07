@@ -178,7 +178,7 @@ event = {
 					}
 				}
 			}
-			## cardinality = 0..1
+			## cardinality = 0..inf
 			text = localisation
 			## cardinality = 0..1
 			show_sound = <sound_effect>
