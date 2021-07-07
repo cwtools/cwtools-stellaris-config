@@ -1441,6 +1441,7 @@ alias[trigger:has_commercial_pact] = scope_group[target_country]
 alias[trigger:resource_stockpile_compare] = {
 	resource = <resource>
 	value = float
+	## cardinality = 0..1
 	mult = value[variable]
 }
 
@@ -2221,4 +2222,3 @@ alias[trigger:check_galaxy_setup_value] = {
 
 ###Checks if the scoped fleet can move.
 alias[trigger:is_mobile] = bool
-
