@@ -75,7 +75,9 @@ authority = {
 	## cardinality = 0..1
 	random_weight = {
 		## cardinality = 0..1
-		base = int
+		base = float
+		## cardinality = 0..1
+		factor = float
 		## cardinality = 0..inf
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
@@ -229,7 +231,9 @@ civic_or_origin = {
 	### scriptable weight for randomizing a civic; required, else the civic will not get assigned randomly
 	random_weight = {
 		## cardinality = 0..1
-		base = int
+		base = float
+		## cardinality = 0..1
+		factor = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 

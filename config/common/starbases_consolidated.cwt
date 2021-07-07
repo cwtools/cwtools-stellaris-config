@@ -81,6 +81,13 @@ starbase_building = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
+	###ship modifiers, apply to defensive platforms
+	## replace_scope = { this = ship root = ship }
+	defense_platform_modifier = {
+		## cardinality = 0..inf
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	## cardinality = 0..1
 	###ship modifiers, apply in orbit of the starbase
 	## replace_scope = { this = ship root = ship }
 	ship_modifier = {
@@ -156,6 +163,13 @@ starbase_module = {
 	### ship modifiers, apply on the starbase itself
 	## replace_scope = { this = starbase root = starbase }
 	station_modifier = {
+		## cardinality = 0..inf
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	## cardinality = 0..1
+	###ship modifiers, apply to defensive platforms
+	## replace_scope = { this = ship root = ship }
+	defense_platform_modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}

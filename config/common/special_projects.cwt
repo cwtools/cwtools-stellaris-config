@@ -10,7 +10,7 @@ types = {
 		localisation = {
 			## required
 			Name = "$"
-			## required
+			## optional
 			Description = "$_DESC"
 		}
 	}
@@ -35,6 +35,13 @@ special_project = {
 	## cardinality = 0..1
 	icon = filepath
 
+	## cardinality = 0..inf
+	desc = {
+		text = localisation
+		trigger = {	
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 
 	subtype[cost] = {
 		tech_department = enum[tech_departments]

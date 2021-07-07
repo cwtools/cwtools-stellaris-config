@@ -75,6 +75,12 @@ building = {
 	position_priority = int
 
 	## cardinality = 0..1
+	empire_limit = {
+		base = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	## cardinality = 0..1
 	allow = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
