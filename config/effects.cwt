@@ -1119,7 +1119,12 @@ alias[effect:create_country] = {
 	## cardinality = 0..1
 	ship_prefix = scalar	#should be string or a scope
   ## cardinality = 0..1
+  ###Sets country adjective. Allowed values are < string in localisation >/< string in localisation_synced >/< string written in quotes e.g. "Korean" >
 	adjective = localisation_synced
+  ## cardinality = 0..1
+	adjective = localisation
+  ## cardinality = 0..1
+	adjective = string
 	## cardinality = 0..1
 	authority = random
 	## cardinality = 0..1
