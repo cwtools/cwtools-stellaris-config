@@ -457,6 +457,8 @@ alias[trigger:num_owned_planets] = int
 alias[trigger:planet_stability] = int[0..100]
 ###Checks the number of pops on the planet/country/pop faction
 alias[trigger:num_pops] = int
+###Checks the number of sapient pops on the planet/country
+alias[trigger:num_sapient_pops] = int
 ###Checks the planet's size
 alias[trigger:planet_size] = int
 ###Checks the number of fallen empires in the galaxy

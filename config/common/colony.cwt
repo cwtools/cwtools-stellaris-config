@@ -43,7 +43,7 @@ colony_automation = {
 }
 
 colony_type = {
-	icon = int
+	icon = <sprite>
 
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
