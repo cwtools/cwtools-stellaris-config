@@ -502,9 +502,8 @@ economic_plan = {
 
 diplomacy_economy = {
 	once = {
-		#Not sure if you can define your own stuff here so used an enum
 		## cardinality = 0..inf
-		enum[diplomacy_economy_tags] = {
+		scalar = {
 			## replace_scopes = { this = country root = country from = country }
 			trigger = {
 				alias_name[trigger] = alias_match_left[trigger]
@@ -518,7 +517,7 @@ diplomacy_economy = {
 	per_relation = {
 		#Not sure if you can define your own stuff here so used an enum
 		## cardinality = 0..inf
-		enum[diplomacy_economy_tags] = {
+		scalar = {
 			## replace_scopes = { this = country root = country from = country }
 			trigger = {
 				alias_name[trigger] = alias_match_left[trigger]

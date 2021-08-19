@@ -540,11 +540,10 @@ alias[trigger:has_ascension_perk] = <ascension_perk>
 ###Checks if the country has a technology (of at least a specific level)
 alias[trigger:has_technology] = <technology>
 
-###Checks if a country has the given tradition and it is not swapped.
-alias[trigger:has_non_swapped_tradition] = <tradition>
+###Checks if a country has the given tradition or tradition swap. Tradition specified must be the one giving effects, i.e. tradition swaps with 'inherit_effects = yes' are ignored and the base tradition should be specified in those cases.
+alias[trigger:has_active_tradition] = <tradition>
+alias[trigger:has_active_tradition] = enum[tradition_swap]
 
-###Checks if a country has the given swapped tradition.
-alias[trigger:has_swapped_tradition] = enum[tradition_swap]
 
 ###Checks a variable for the country/leader/planet/system/fleet against a specified value or another variable on the same scope
 alias[trigger:check_variable] = {

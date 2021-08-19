@@ -40,6 +40,14 @@ trait = {
 		cost = int
 		## cardinality = 0..1
 		icon = filepath
+		## cardinality = 0..1
+		valid_for_all_ethics = bool
+		## cardinality = 0..1
+		###This only does something if valid_for_all_ethics is set to no
+		allowed_ethics = {
+			## cardinality = 1..inf
+			<ethos>
+		}
 		allowed_archetypes = {
 			## cardinality = 1..inf
 			<species_archetype>

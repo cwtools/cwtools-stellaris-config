@@ -3225,3 +3225,27 @@ alias[effect:set_male_heir_title] = localisation
 alias[effect:set_female_heir_title] = localisation
 ###Clears all custom ruler and heir titles from the country, resetting them to default values
 alias[effect:clear_custom_ruler_and_heir_titles] = yes
+
+###Adds a blocker to a planet, with some control over what it is set to block (add_deposit will add a random planetary deposit to block)
+alias[effect:add_blocker] = {
+	type = <deposit.blocker>
+	## cardinality = 0..1
+	###none is default, if you specify a scope or random then it copies the type to the blocked deposit but any flags or variables are lost
+	blocked_deposit = random
+	## cardinality = 0..1
+	blocked_deposit = none
+	## cardinality = 0..1
+	blocked_deposit = scope[deposit]
+}
+
+###Sets an arbitrarily-named date flag for the scoped object. Acts both as an <scope object>_flag and as a means for saving a date. The flag can then be referred to in localisations [This.<flag>] to produce the date.
+alias[effect:set_saved_date] = {
+	###Refer to this in locs; note: this is actually a <country/whatever>_flag
+	key = scalar #todo: actually a flag of the current scope type
+	## cardinality = 0..1
+	###Time until the date you wish to save. Default is present
+	days_from_present = int
+	## cardinality = 0..1
+	###Time until the saved date is cleared, default is never
+	days_from_present = int
+}

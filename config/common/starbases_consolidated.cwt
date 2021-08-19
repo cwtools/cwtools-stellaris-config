@@ -242,6 +242,9 @@ starbase_level = {
 	## cardinality = 0..1
 	### Default no, if yes starbase may be used as homebase for fleets
 	potential_home_base = bool
+	## cardinality = 0..1
+	### Default yes, if no then starbase_trade_collection_range_add and starbase_trade_protection_range_add will have no effect on starbases of this level
+	collects_trade = bool
 }
 
 starbase_type = {

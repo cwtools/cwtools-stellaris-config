@@ -35,6 +35,9 @@ army = {
 	}
 
 	## cardinality = 0..1
+	###Specify another army type to use names from, instead of having to copy them for each name list.
+	use_armynames_from = <army>
+	## cardinality = 0..1
 	defensive = bool
 	## cardinality = 0..1
 	is_building_spawned = bool

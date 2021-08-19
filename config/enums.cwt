@@ -215,19 +215,6 @@ enums = {
 		good
 		excellent
 	}
-	enum[diplomacy_economy_tags] = {
-		federation
-		rivalry
-		non_aggression_pact
-		migration_pact
-		research_agreement
-		commercial_pact
-		defensive_pact
-		guarantee
-		improving_relations
-		harming_relations
-		diplo_stance_closed_borders
-	}
 	enum[envoy_tasks] = {
 		improve_relations
 		harm_relations
