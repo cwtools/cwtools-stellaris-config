@@ -123,6 +123,13 @@ ship_size = {
 	## cardinality = 0..1
 	enable_default_design = bool
 	## cardinality = 0..1
+	enable_3dview_in_ship_browser = bool
+	## cardinality = 0..1
+	selectable = {
+		## cardinality = 0..1
+		host_has_dlc = enum[DLCs]
+	}
+	## cardinality = 0..1
 	default_behavior = <ship_behavior>
 	## cardinality = 0..1
 	prerequisites = {
