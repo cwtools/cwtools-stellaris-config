@@ -2472,46 +2472,6 @@ alias[trigger:count_neighbor_system_euclidean] = {
 }
 
 
-## push_scope = system
-###Executes enclosed effects on every one of the scoped system's neighboring systems that meet the limit criteria
-alias[effect:every_neighbor_system_including_bypasses] = {
-	##cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-	alias_name[effect] = alias_match_left[effect]
-}
-
-## push_scope = system
-###Executes enclosed effects on a random system neigboring the scoped system that meets the limit criteria
-alias[effect:random_neighbor_system_including_bypasses] = {
-	##cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-	alias_name[effect] = alias_match_left[effect]
-
-	##cardinality = 0..1
-	weights = {
-		base = float
-		## cardinality = 0..inf
-		alias_name[modifier_rule_add_mult] = alias_match_left[modifier_rule_add_mult]
-	}
-}
-
-## push_scope = system
-###Checks if any of the system's neighboring systems meet the specified criteria
-alias[trigger:any_neighbor_system_including_bypasses] = {
-	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
-}
-
-## push_scope = system
-###Checks if X of the system's neighboring systems meet the specified criteria
-alias[trigger:count_neighbor_system_including_bypasses] = {
-	count = all
-	count = int
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
 
 ## push_scope = country
 ###Executes enclosed effects on every defender that meets the limit criteria in the scoped country's war with a specific enemy
