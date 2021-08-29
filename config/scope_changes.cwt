@@ -2391,7 +2391,7 @@ alias[effect:every_galaxy_sector] = {
 
 
 ## push_scope = system
-###Executes enclosed effects on every one of the scoped system's neighboring systems that meet the limit criteria, bypasses not included
+###Executes enclosed effects on every one of the scoped system's neighboring systems by hyperlane - that meet the limit criteria, bypasses not included
 alias[effect:every_neighbor_system] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
@@ -2399,7 +2399,7 @@ alias[effect:every_neighbor_system] = {
 }
 
 ## push_scope = system
-###Executes enclosed effects on a random system neigboring the scoped system that meets the limit criteria, bypasses not included
+###Executes enclosed effects on a random system neigboring the scoped system by hyperlane - that meets the limit criteria, bypasses not included
 alias[effect:random_neighbor_system] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
@@ -2414,7 +2414,7 @@ alias[effect:random_neighbor_system] = {
 }
 
 ## push_scope = system
-###Checks if any of the system's neighboring systems meet the specified criteria, bypasses not included
+###Checks if any of the system's neighboring systems by hyperlane - meet the specified criteria, bypasses not included
 alias[trigger:any_neighbor_system] = {
 	alias_name[trigger] = alias_match_left[trigger]
 	##cardinality = 0..1
@@ -2422,7 +2422,7 @@ alias[trigger:any_neighbor_system] = {
 }
 
 ## push_scope = system
-###Checks if X of the system's neighboring systems meet the specified criteria, bypasses not included
+###Checks if X of the system's neighboring systems by hyperlane - meet the specified criteria, bypasses not included
 alias[trigger:count_neighbor_system] = {
 	count = all
 	count = int
@@ -2432,16 +2432,16 @@ alias[trigger:count_neighbor_system] = {
 
 
 ## push_scope = system
-###Executes enclosed effects on every one of the scoped system's neighboring systems that meet the limit criteria
-alias[effect:every_neighbor_system_including_bypasses] = {
+###Executes enclosed effects on every one of the scoped system's neighboring systems (by closeness, not by hyperlanes) that meet the limit criteria, bypasses not included
+alias[effect:every_neighbor_system_euclidean] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
 }
 
 ## push_scope = system
-###Executes enclosed effects on a random system neigboring the scoped system that meets the limit criteria
-alias[effect:random_neighbor_system_including_bypasses] = {
+###Executes enclosed effects on a random system neigboring the scoped system (by closeness, not by hyperlanes) that meets the limit criteria, bypasses not included
+alias[effect:random_neighbor_system_euclidean] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
@@ -2455,21 +2455,22 @@ alias[effect:random_neighbor_system_including_bypasses] = {
 }
 
 ## push_scope = system
-###Checks if any of the system's neighboring systems meet the specified criteria
-alias[trigger:any_neighbor_system_including_bypasses] = {
+###Checks if any of the system's neighboring systems (by closeness, not by hyperlanes) meet the specified criteria, bypasses not included
+alias[trigger:any_neighbor_system_euclidean] = {
 	alias_name[trigger] = alias_match_left[trigger]
 	##cardinality = 0..1
 	count = int
 }
 
 ## push_scope = system
-###Checks if X of the system's neighboring systems meet the specified criteria
-alias[trigger:count_neighbor_system_including_bypasses] = {
+###Checks if X of the system's neighboring systems (by closeness, not by hyperlanes) meet the specified criteria, bypasses not included
+alias[trigger:count_neighbor_system_euclidean] = {
 	count = all
 	count = int
 	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
+
 
 
 ## push_scope = country
@@ -2674,4 +2675,3 @@ alias[trigger:count_fleet_in_orbit] = {
 	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
-
