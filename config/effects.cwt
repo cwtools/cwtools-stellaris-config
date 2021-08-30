@@ -3151,6 +3151,12 @@ alias[effect:ceiling_variable] = value[variable]
 
 ###Exports the value of a specified simple value trigger (i.e. no { }, returns a number on the right hand side) to a specified variable.
 alias[effect:export_trigger_value_to_variable] = {
+	## cardinality = 0..1
+	###specify extra parameters for triggers with { }, e.g. resource = energy
+	parameters = {
+		## cardinality = 1..inf
+		scalar = scalar
+	}
 	trigger = alias_keys_field[trigger]
 	variable = value_set[variable]
 }
