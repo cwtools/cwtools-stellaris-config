@@ -1,4 +1,4 @@
-[22:40:01][game_application.cpp:1895]: 
+[22:40:01][game_application.cpp:1895]:
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -303,7 +303,7 @@ any_attacker = { <count=<num/all>> <triggers> }
 Supported Scopes: war
 
 original_owner - Checks if the planet is still owned by its first colonizer
-original owner = yes
+original_owner = yes
 Supported Scopes: planet
 
 tech_unlocked_ratio - Checks the relative amount of already-researched tech between the country and target country
@@ -426,7 +426,7 @@ is_researching_special_project - Checks if the country is currently researching 
 is_researching_special_project = special_project_name
 Supported Scopes: country leader
 
-last_activated_relic - Checks if the specified relic was the last activated one 
+last_activated_relic - Checks if the specified relic was the last activated one
 last_activated_relic = <relic_key>
 Supported Scopes: country
 
@@ -477,7 +477,7 @@ imperial_authority >=< 40
 Supported Scopes: all
 
 has_stage_modifier - Checks if the espionage operation has a certain modifier specific for the current stage
-has_modifier = <modifier>
+has_stage_modifier = <modifier>
 Supported Scopes: espionage_operation
 
 galactic_defense_force_exists - Checks if the Galactic Defense Force or Imperial Armada exists
@@ -919,7 +919,7 @@ check_modifier_value - Checks the value of a specified modifier in the current s
 check_modifier_value = { modifier = pop_growth_speed_reduction value > 1.05
 Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army species design pop_faction spy_network espionage_operation
 
-check_galaxy_setup_value - Checks the value for a specific option from the galaxy setup 
+check_galaxy_setup_value - Checks the value for a specific option from the galaxy setup
 check_galaxy_setup_value = { setting = <string> value >=< <float> ] }
 possible values: num_empires, num_advanced_empires, num_fallen_empires, num_marauder_empires, mid_game_year, end_game_year, victory_year, num_guaranteed_colonies, num_gateways, num_wormhole_pairs, num_hyperlanes, habitable_worlds_scale, primitive_worlds_scale, crisis_strength_scale, tech_costs_scale
 Supported Scopes: all
@@ -938,7 +938,7 @@ has_building = building_capital_3
 Supported Scopes: planet
 
 has_active_building - Checks if the planet has a specific building, and that that building is not disabled or ruined.
-has_building = yes
+has_active_building = yes
 has_active_building = building_capital_3
 Supported Scopes: planet
 
@@ -1034,7 +1034,7 @@ num_uncleared_blockers > 3
 Supported Scopes: planet
 
 local_human_species_class - Checks if local humans founder species is a specific species class
-is_species_class = MAM
+local_human_species_class = MAM
 Supported Scopes: all
 
 num_envoys_to_federation - Checks the country's number of envoys sent to its federation
@@ -1580,7 +1580,7 @@ has_colony_progress > 20
 Supported Scopes: planet
 
 distance_to_empire - Checks the ship/fleet/planet/system's galaxy map distance to target empire
-distance = { who = <target> distance = x }
+distance_to_empire = { who = <target> distance = x }
 Supported Scopes: planet ship fleet galactic_object
 
 is_unemployed - Checks if the pop is unemployed
@@ -1979,7 +1979,7 @@ has_living_standard = { country = <who> type = <type> }
 Supported Scopes: pop leader species
 
 num_ascension_perk_slots - Compares the number of unlocked ascension perk slots of the scope with the given value
-num_ascension_perks > 7
+num_ascension_perk_slots > 7
 Supported Scopes: country
 
 is_fleet_idle - Checks if the ship/fleet is idfle
@@ -2051,7 +2051,7 @@ has_ruler_trait = leader_trait_carefree
 Supported Scopes: leader
 
 num_trait_points - Checks the country/pop/leader/species' number of traits points spent
-num_traits < 3
+num_trait_points < 3
 Supported Scopes: country pop leader species
 
 has_component - Checks if a ship has a certain component
@@ -2062,7 +2062,7 @@ has_notification_modifier - Checks if a country has a certain notification modif
 has_notification_modifier = <key>
 Supported Scopes: country
 
-pop_maintenance_cost - Checks the maintenace costs of a pop 
+pop_maintenance_cost - Checks the maintenace costs of a pop
 pop_maintenance_cost = { value > 0.5 resource = energy }
 Supported Scopes: pop
 
@@ -2122,8 +2122,8 @@ owns_any_bypass = bypass_type
 Supported Scopes: country
 
 has_casus_belli - Checks if the country has a valid casus belli (any casus belli or a specific one) on the given country.
- has_casus_belli = { 
-	target = <country> 
+has_casus_belli = {
+	target = <country>
 	type = <cb_type> #optional
  }
 Supported Scopes: country
@@ -2162,7 +2162,7 @@ Supported Scopes: planet
 
 count_starbase_sizes - Checks if the scoped country has a specified quantity of a starbase size
 count_starbase_sizes = {
-starbase_size = <starbase_ship_size> 
+starbase_size = <starbase_ship_size>
 count >= 2}
 Supported Scopes: country
 
@@ -2199,7 +2199,7 @@ uses_district_set - Checks if the planet has the specified tag for district usag
 uses_district_set = standard
 Supported Scopes: planet
 
-last_changed_species_rights_type - Check if the last species rights type changed for the pop or leader is of type type 
+last_changed_species_rights_type - Check if the last species rights type changed for the pop or leader is of type type
 last_changed_species_rights_type = <living_standard/citizenship/military_service/slavery/purge/colonization_control/population_control/migration_control/none>
 Supported Scopes: pop leader
 
@@ -3219,7 +3219,7 @@ Supported Scopes: country
 
 
 =================
-[22:14:02][game_application.cpp:1898]: 
+[22:14:02][game_application.cpp:1898]:
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -3421,7 +3421,7 @@ create_country = {
 Supported Scopes: all
 
 create_fleet - Creates a new fleet
-create_fleet = { name = <string> effect = { <create_ship, set_owner, set_location etc effects go here> } } 
+create_fleet = { name = <string> effect = { <create_ship, set_owner, set_location etc effects go here> } }
 Supported Scopes: all
 
 create_army - Creates a new army
@@ -3834,7 +3834,7 @@ set_faction_hostility - Sets the aggro state of the scoped faction-type country
 set_faction_hostility = { target = country set_hostile = yes set_neutral = no set_friendly = no }
 Supported Scopes: country
 
-set_market_leader - Set scoped country as the current Galactic Market leader. set_market_leader = <yes/no> 
+set_market_leader - Set scoped country as the current Galactic Market leader. set_market_leader = <yes/no>
 Supported Scopes: country
 
 random_system_planet - Iterate through each planet in the current system - executes the enclosed effects on one of them for which the limit triggers return true
@@ -3924,7 +3924,7 @@ Supported Scopes: planet
 kill_leader - Kills the scoped leader or leader of the scoped country/fleet/ship/planet/army
 kill_leader = { type = general type = scientist etc. }
 kill_leader = {
-	type = <key, optional, if left out will kill scoped leader> 
+	type = <key, optional, if left out will kill scoped leader>
 	show_notification = <yes/no> heir = <yes, optional, if added to type = ruler, will kill heir instead>
 	fire = yes (default: no; if yes, fires on_leader_fired instead of on_leader_death
 }
@@ -4514,7 +4514,7 @@ set_species_identity - Sets the current species scopes identity to match the tar
 set_species_identity = new/<target species>
 Supported Scopes: species
 
-pop_force_add_ethic - Adds a specific ethic to the scoped pop regardless if pop-species allows ethic divergence or not. 
+pop_force_add_ethic - Adds a specific ethic to the scoped pop regardless if pop-species allows ethic divergence or not.
 pop_force_add_ethic = <key>
 Supported Scopes: pop
 
@@ -4530,7 +4530,7 @@ set_planet_name - Sets the name of the current planet.
 set_planet_name = "name"
 Supported Scopes: planet
 
-set_fleet_formation - Sets a custom fleet formation on a fleet. 
+set_fleet_formation - Sets a custom fleet formation on a fleet.
 set_fleet_formation = { position = { x = 1 y = 1 } position = { x = 2 y = 1 } }
 Supported Scopes: fleet
 
@@ -4542,7 +4542,7 @@ set_halted - Sets the mega structure upgrade to halted status for n days
 set_halted = nDays
 Supported Scopes: megastructure
 
-upgrade_megastructure_to - Starts an upgrade process on a mega structure. 
+upgrade_megastructure_to - Starts an upgrade process on a mega structure.
 upgrade_megastructure_to = <new_type>
 Supported Scopes: megastructure
 
@@ -4554,11 +4554,11 @@ set_planet_entity = {
 	picture = <picture override>
 	atmosphere_color = <color from 3 components>
 	atmosphere_intensity = <0.0 - 1.0>
-	atmosphere_width = <0.0 - 1.0> 
+	atmosphere_width = <0.0 - 1.0>
 }
 Supported Scopes: planet
 
-remove_planet - Removes the planet from the scope 
+remove_planet - Removes the planet from the scope
 remove_planet = yes
 Supported Scopes: planet
 
@@ -4650,7 +4650,7 @@ mutate_species - Randomly mutate a species.
 mutate_species = yes
 Supported Scopes: species
 
-rename_species - rename_species = { 
+rename_species - rename_species = {
 	use one of the following:
 	name = "an explicit name with [Bracket.Stuff]"
 	name = random
@@ -4706,7 +4706,7 @@ change_species_characteristics = {
 Supported Scopes: species
 
 copy_techs_from - Copies all techs from the target country to the scoped country, except for some exceptions listed. Tech weights (and weight modifiers) are honoured, meaning that techs a country should not have will not be copied.
-copy_techs_from = { 
+copy_techs_from = {
 	target = country
 	except = { tech_1 tech_2 }
 }
@@ -4747,7 +4747,7 @@ set_starbase_module = { slot = <int> module = <starbase_module> }
 Supported Scopes: starbase
 
 set_starbase_building - Sets a building in a slot on a starbase
-set_starbase_building = { slot = <int> buiding = <starbase_buildin> }
+set_starbase_building = { slot = <int> building = <starbase_building> }
 Supported Scopes: starbase
 
 remove_starbase_module - Removes a module from a certain slot or all slots on a starbase
@@ -4784,7 +4784,7 @@ add_seen_bypass_type - Makes the scoped country remember that it has encountered
 add_seen_bypass_type = bypass_type
 Supported Scopes: country
 
-add_seen_bypass - Makes the scoped country remember that it has encountered the bypass 
+add_seen_bypass - Makes the scoped country remember that it has encountered the bypass
 add_seen_bypass = FROM
 Supported Scopes: country
 
@@ -4925,7 +4925,7 @@ enable_on_market - Enables a resource on the Galactic Market
 enable_on_market = <resource_key>
 Supported Scopes: all
 
-enable_galactic_market - Enables the galactic market. enable_galactic_market = <yes/no> 
+enable_galactic_market - Enables the galactic market. enable_galactic_market = <yes/no>
 Supported Scopes: country
 
 add_timed_trait - Adds a specific trait to the scoped leader for a specific duration
@@ -5455,7 +5455,7 @@ add_deposit = <key/random>
 Supported Scopes: planet
 
 clear_deposits - Removes all deposits from the scoped planet
-clear_desposits = yes
+clear_deposits = yes
 Supported Scopes: planet
 
 set_country_type - Changes the country type of the scoped country
@@ -5547,7 +5547,7 @@ Supported Scopes: planet
 run_ai_strategic_data - Recomputes ALL strategic data for AI = yes
 Supported Scopes: country
 
-add_static_war_exhaustion - Adds static war exhaustion, scaled with value_for_planet_destruction, to owner of the battle location 
+add_static_war_exhaustion - Adds static war exhaustion, scaled with value_for_planet_destruction, to owner of the battle location
  owner = { add_static_war_exhaustion = { attacker = <country> location = <planet> value_for_planet_destruction = <0.0-1.0> #scales the amount WE that is added }}
 Supported Scopes: country
 
@@ -5674,11 +5674,11 @@ create_leader - Creates a new leader for the scoped country
 create_leader = {
 	name = <random / string>
 	species = <target / key>
-	gender = <optional / gender> #defalut = random
-type = <random / key>
+	gender = <optional / gender> #default = random
+	class = <random / key>
 	skill = <random / int>
 	set_age = <int>
- traits = { trait = <key> trait = <key> }
+	traits = { trait = <key> trait = <key> }
 }
 Supported Scopes: country
 
@@ -6365,7 +6365,7 @@ Supported Scopes: country
 
 
 =================
-[22:14:02][game_application.cpp:1910]: 
+[22:14:02][game_application.cpp:1910]:
 == SCOPE DOCUMENTATION ==
 These work as context switches (links) in triggers and effects (e.g. 'owner = { <triggers/effects> }'), or as targets of triggers and effects (e.g. 'is_owned_by = from'). Dot scoping (e.g. root.owner.capital_scope) is allowed.
 Complete list of scope changes:
@@ -6445,7 +6445,7 @@ space_owner
 ruler
 
 =================
-[22:14:02][game_application.cpp:1925]: 
+[22:14:02][game_application.cpp:1925]:
 == LOCALIZATION DOCUMENTATION ==
 This is a list of all hardcoded scoped localization commands in the game. It does not include scripted locs (see game/customizable_localization).
 In most cases, it is also possible to get the value of variables: [Scope.my_variable].

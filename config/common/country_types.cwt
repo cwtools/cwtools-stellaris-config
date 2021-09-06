@@ -191,9 +191,10 @@ country_type = {
 		starbase_upgrade = bool
 		## cardinality = 0..1
 		limited_construction = bool
-
 		## cardinality = 0..1
 		can_use_market = bool
+		## cardinality = 0..1
+		espionage = bool
 		
 		## cardinality = 0..1
 		ship_data = {
