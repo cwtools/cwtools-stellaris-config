@@ -312,11 +312,9 @@ alias[effect:add_modifier] = {
 	## cardinality = 0..1
 	enum[days_months_years] = int
 	## cardinality = 0..1
-	multiplier = float
+	multiplier = value_field
 	## cardinality = 0..1
-	multiplier = value[variable]
-	## cardinality = 0..1
-	time_multiplier = value[variable]
+	time_multiplier = value_field
 	## cardinality = 0..1
 	clear_on_owner_change = yes
 }
@@ -621,51 +619,44 @@ alias[effect:set_location] = {
 ###Sets or creates an arbitrarily-named variable with a specific value in the current scope
 alias[effect:set_variable] = {
 	which = value_set[variable]
-	value = float
-	value = value[variable]
+	value = value_field
 }
 
 #presumably need to check the variable exists first for these, somehow
 ###Increments a previously-set variable by a specific amount
 alias[effect:change_variable] = {
 	which = value_set[variable]
-	value = float
-	value = value[variable]
+	value = value_field
 }
 
 ###Decrements a previously-set variable by a specific amount
 alias[effect:subtract_variable] = {
 	which = value[variable]
-	value = float
-	value = value[variable]
+	value = value_field
 }
 
 ###Multiplies a previously-set variable by a specific amount
 alias[effect:multiply_variable] = {
 	which = value[variable]
-	value = float
-	value = value[variable]
+	value = value_field
 }
 
 ###Divides a previously-set variable by a specific amount
 alias[effect:divide_variable] = {
 	which = value[variable]
-	value = float
-	value = value[variable]
+	value = value_field
 }
 
 ###Modulos a previously-set variable by a specific amount i.e. X % Y
 alias[effect:modulo_variable] = {
 	which = value[variable]
-	value = float
-	value = value[variable]
+	value = value_field
 }
 
 ###Rounds a previously-set variable to the closest X
 alias[effect:round_variable_to_closest] = {
 	which = value[variable]
-	value = float
-	value = value[variable]
+	value = value_field
 }
 
 ###Removes a previously-set variable from the scope
@@ -693,9 +684,7 @@ alias[effect:remove_trait] = <trait>
 ###Repeats enclosed effects while limit criteria are met or until set iteration count is reached. Can use a variable for the count.
 alias[effect:while] = {
 	## cardinality = 0..1
-	count = int
-	## cardinality = 0..1
-	count = value[variable]
+	count = int_value_field
 	## cardinality = 0..1
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
@@ -2177,15 +2166,6 @@ alias[effect:modify_army] = {
 
 ### Randomly mutate a species.
 alias[effect:mutate_species] = yes
-## push_scope = fleet
-### Executes enclosed effects on every observation post in the game that meets the limit criteria
-alias[effect:observation_outpost] = {
-	## cardinality = 0..1
-	limit = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	alias_name[effect] = alias_match_left[effect]
-}
 
 ### Forces scoped fleet to retreat to friendly territory
 alias[effect:order_forced_return] = yes
@@ -2559,9 +2539,7 @@ alias[effect:add_resource] = {
 	## cardinality = 1..inf
 	<resource> = float
 	## cardinality = 0..1
-	mult = float
-	## cardinality = 0..1
-	mult = value[variable]
+	mult = value_field
 }
 
 ###Remove resource deposit on the scoped planet or deposit, does not fire on_cleared if used on a blocker
