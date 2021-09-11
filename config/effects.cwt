@@ -387,73 +387,73 @@ alias[effect:remove_megastructure_flag] = value[megastructure_flag]
 ###Sets an arbitrarily-named flag on the scoped country for a set duration
 alias[effect:set_timed_country_flag] = {
 	flag = value_set[country_flag]
-	enum[days_months_years] = int
+	enum[days_months_years] = int_value_field
 }
 
 ###Sets an arbitrarily-named flag on the scoped planet for a set duration
 alias[effect:set_timed_planet_flag] = {
 	flag = value_set[planet_flag]
-	enum[days_months_years] = int
+	enum[days_months_years] = int_value_field
 }
 
 ###Sets an arbitrarily-named flag on the scoped pop faction for a set duration
 alias[effect:set_timed_pop_faction_flag] = {
 	flag = value_set[pop_faction_flag]
-	enum[days_months_years] = int
+	enum[days_months_years] = int_value_field
 }
 
 ###Sets an arbitrarily-named flag on the scoped system for a set duration
 alias[effect:set_timed_star_flag] = {
 	flag = value_set[star_flag]
-	enum[days_months_years] = int
+	enum[days_months_years] = int_value_field
 }
 
 ###Sets an arbitrarily-named flag on the scoped species for a set duration
 alias[effect:set_timed_species_flag] = {
 	flag = value_set[species_flag]
-	enum[days_months_years] = int
+	enum[days_months_years] = int_value_field
 }
 
 ###Sets an arbitrarily-named flag on the scoped pop for a set duration
 alias[effect:set_timed_pop_flag] = {
 	flag = value_set[pop_flag]
-	enum[days_months_years] = int
+	enum[days_months_years] = int_value_field
 }
 
 ###Sets an arbitrarily-named flag on the scoped fleet for a set duration
 alias[effect:set_timed_fleet_flag] = {
 	flag = value_set[fleet_flag]
-	enum[days_months_years] = int
+	enum[days_months_years] = int_value_field
 }
 
 ###Sets an arbitrarily-named flag on the scoped ship for a set duration
 alias[effect:set_timed_ship_flag] = {
 	flag = value_set[ship_flag]
-	enum[days_months_years] = int
+	enum[days_months_years] = int_value_field
 }
 
 ###Sets an arbitrarily-named global flag for a set duration
 alias[effect:set_timed_global_flag] = {
 	flag = value_set[global_flag]
-	enum[days_months_years] = int
+	enum[days_months_years] = int_value_field
 }
 
 ###Sets an arbitrarily-named flag on the scoped leader for a set duration
 alias[effect:set_timed_leader_flag] = {
 	flag = value_set[leader_flag]
-	enum[days_months_years] = int
+	enum[days_months_years] = int_value_field
 }
 
 ###Sets an arbitrarily-named flag on the scoped ambient object for a set duration
 alias[effect:set_timed_ambient_object_flag] = {
 	flag = value_set[ambient_object_flag]
-	enum[days_months_years] = int
+	enum[days_months_years] = int_value_field
 }
 
 ###Sets an arbitrarily-named flag on the scoped mega structure for a set duration
 alias[effect:set_timed_megastructure_flag] = {
 	flag = value_set[megastructure_flag]
-	enum[days_months_years] = int
+	enum[days_months_years] = int_value_field
 }
 
 ###Removes a megastructure.
@@ -468,7 +468,7 @@ alias[effect:set_relation_flag] = {
 alias[effect:set_timed_relation_flag] = {
 	who = scope_group[target_country]
 	flag = value_set[relation_flag]
-	enum[days_months_years] = int
+	enum[days_months_years] = int_value_field
 }
 
 ###Removes a specific relation flag towards target country from the scoped country
@@ -558,7 +558,7 @@ alias[effect:random] = {
 }
 
 ###Creates a new fleet from empire designs up to specified fraction of naval cap
-alias[effect:create_fleet_from_naval_cap] = float
+alias[effect:create_fleet_from_naval_cap] = value_field
 ###Creates a new fleet from empire designs up to specified fraction of naval cap
 alias[effect:create_fleet_from_naval_cap] = {
 	fraction = float
@@ -568,15 +568,15 @@ alias[effect:create_fleet_from_naval_cap] = {
 }
 
 ###Reduces the hull points of the scoped ship by a specific amount
-alias[effect:reduce_hp] = int
+alias[effect:reduce_hp] = int_value_field
 ###Reduces the hull points of the scoped ship by a relative amount
-alias[effect:reduce_hp_percent] = float[0.0..1.0]
+alias[effect:reduce_hp_percent] = value_field[0.0..1.0]
 ###Reduces the hull points of the scoped ship by a relative amount
-alias[effect:reduce_hp_percent] = int[0..100]
+alias[effect:reduce_hp_percent] = int_value_field[0..100]
 ###Exiles the scoped country/fleet/army/pop faction's leader and saves them with a custom name so you can bring them back.
 alias[effect:exile_leader_as] = value_set[exiled_leader]
 ###Adds a sum of experience points to the scoped leader
-alias[effect:add_experience] = int
+alias[effect:add_experience] = int_value_field
 ###Sets the gender of the scoped leader
 alias[effect:set_is_female] = bool
 ###Sets scoped leader as non/recruitable
@@ -854,7 +854,7 @@ alias[effect:delete_ship] = scope[ship]
 ###Destroys the target ship (with death graphics)
 alias[effect:destroy_ship] = scope[ship]
 ###Adds/Removes tiles to/from the scoped planet to adjust its planet size
-alias[effect:change_planet_size] = int
+alias[effect:change_planet_size] = int_value_field
 #see comment for what should actually be written here
 ###Sets the name of the scoped country/planet/ship/fleet/leader/army/system/pop faction. Allowed entries are <random>/<string in localisation_synced>/<string written in quotes e.g. "United Nations">
 alias[effect:set_name] = random
@@ -1379,7 +1379,7 @@ alias[effect:clone_leader] = {
 }
 
 ###Sets the age of the scoped leader
-alias[effect:set_age] = int
+alias[effect:set_age] = int_value_field
 ###Creates a new, modified species based on an already-extant species
 alias[effect:modify_species] = {
 	## cardinality = 0..1
@@ -1442,7 +1442,7 @@ alias[effect:change_pc] = {
 }
 
 ###Adds/Removes district slots to/from the scoped planet to adjust its planet size
-alias[effect:set_planet_size] = int
+alias[effect:set_planet_size] = int_value_field
 ###Adds a specific deposit to the scoped planet
 alias[effect:add_deposit] = <deposit>
 ###Replaces resource deposit on the scoped planet
@@ -1565,7 +1565,7 @@ alias[effect:add_asteroid_belt] = {
 }
 
 ### Adds to ongoing colonization progress on the scoped planet
-alias[effect:add_colony_progress] = float[0.0..1.0]
+alias[effect:add_colony_progress] = value_field[0.0..1.0]
 ### Adds a specific global design to the game
 alias[effect:add_global_ship_design] = <global_ship_design>
 ### Adds a hyperlane between two systems
@@ -1575,7 +1575,7 @@ alias[effect:add_hyperlane] = {
 }
 
 ### Adds or subtracts progress to/from the scoped observation post's current mission
-alias[effect:add_mission_progress] = float[-1.0..1.0]
+alias[effect:add_mission_progress] = value_field[-1.0..1.0]
 ### Add a notification modifier to the country
 alias[effect:add_notification_modifier] = <notification_modifier>
 ### Adds s random tech research option to the scoped country's tech view list, permanent until researched. if none applicable it runs fail_effects
@@ -1603,7 +1603,7 @@ alias[effect:add_seen_bypass] = scope_group[spatial_object] #megastructure or wo
 ### Adds a specific ship design to the scoped country
 alias[effect:add_ship_design] = last_created_design#TODO check this
 ### Adds a sum of experience points to the scoped leader
-alias[effect:add_skill] = int[-10..10]#check the interval
+alias[effect:add_skill] = int[-10..20]#check the interval
 ### Gives percentage progress (0.0-1.0) in a specific tech to the scoped country
 alias[effect:add_tech_progress] = {
 	tech = <technology>
@@ -2220,7 +2220,7 @@ alias[effect:rename_species] = {
 
 #TODO
 ### Restores all hull points to the scoped ship
-alias[effect:repair_percentage] = float
+alias[effect:repair_percentage] = value_field
 ### Restores all hull points to the scoped ship
 alias[effect:repair_ship] = yes
 ### Resets years of peace for a country.
@@ -2230,7 +2230,7 @@ alias[effect:run_ai_strategic_data] = yes
 ### Enables or disables the VIR window pop-in
 alias[effect:set_advisor_active] = bool
 ### Sets the scoped fleet/country's aggro range in intra-system units
-alias[effect:set_aggro_range] = int
+alias[effect:set_aggro_range] = int_value_field
 ### Determines whether the scoped fleet/country's aggro range is measured from the fleet's current position or its spawn location
 alias[effect:set_aggro_range_measure_from] = enum[aggro_range_measure_from]
 
@@ -2260,7 +2260,7 @@ alias[effect:set_crisis_sound] = scalar#TODO sound
 ### Sets a custom spatial object as custom country capital location.
 alias[effect:set_custom_capital_location] = scope_group[spatial_object]
 ### Sets the scoped ship to become disabled at a certain hull point percentage
-alias[effect:set_disable_at_health] = float[0.0..1.0]
+alias[effect:set_disable_at_health] = value_field[0.0..1.0]
 ### Enables or disables the scoped ship
 alias[effect:set_disabled] = bool
 ### Sets the flag of the current Empire.
@@ -2298,9 +2298,9 @@ alias[effect:set_fleet_formation] = {
 ### Sets the stance of the scoped fleet
 alias[effect:set_fleet_stance] = enum[fleet_stance]
 ### Scales the scoped fleet's formation's ship spacing, above and below 1.0
-alias[effect:set_formation_scale] = float
+alias[effect:set_formation_scale] = value_field
 ### Sets the mega structure upgrade to halted status for n days
-alias[effect:set_halted] = int
+alias[effect:set_halted] = int_value_field
 ### Sets the target leader to be the scoped country's heir
 alias[effect:set_heir] = scope[leader]
 ### Set the home base of the scoped fleet to the specified starbase
@@ -2359,7 +2359,7 @@ enums = {
 ### Adds or removes a planetary ring around the scoped planet
 alias[effect:set_ring] = bool
 ### Sets the scoped leader's level
-alias[effect:set_skill] = int
+alias[effect:set_skill] = int_value_field
 ### Optimizes the calls for spawn_system effect.
 ###Spawn system should be located in a block between Begin and End.
 ###Begin: set_spawn_system_batch = begin
@@ -2559,7 +2559,7 @@ alias[effect:remove_last_built_building] = yes
 ###Removes all buildings from the scoped planet
 alias[effect:remove_all_buildings] = yes
 ###Instantly adds devastation to scoped planet
-alias[effect:add_planet_devastation] = int[-100..100]
+alias[effect:add_planet_devastation] = value_field[-100..100]
 ## scope = any
 ###Creates a new pop from a half-species on the planet
 alias[effect:create_half_species] = {
@@ -2619,7 +2619,7 @@ alias[effect:create_archaeological_site] = random
 ###Destroys a archaeological site in right hand site event target
 alias[effect:destroy_archaeological_site] = scope[archaeological_site]
 ###Adds clues to the current stage of a archaeological site
-alias[effect:add_stage_clues] = int
+alias[effect:add_stage_clues] = int_value_field
 alias[effect:add_stage_clues] = lower_insight_reward
 alias[effect:add_stage_clues] = higher_insight_reward
 alias[effect:add_expedition_log_entry] = who_knows_tell_us_please
@@ -2714,7 +2714,7 @@ alias[effect:add_to_galactic_council] = yes
 alias[effect:remove_from_galactic_council] = yes
 
 ###Adds experience to the scoped federation.
-alias[effect:add_federation_experience] = int
+alias[effect:add_federation_experience] = value_field
 
 ###Sets federation type to the scoped federation.
 alias[effect:set_federation_type] = <federation_type>
@@ -2754,7 +2754,7 @@ alias[effect:set_federation_settings] = {
 }
 
 ###Add cohesion to the federation
-alias[effect:add_cohesion] = int
+alias[effect:add_cohesion] = value_field
 
 ###Sets the number of seats on the Galactic Council
 alias[effect:set_council_size] = int
@@ -2833,7 +2833,7 @@ alias[effect:owned_fleet_list_tooltip] = {
 }
 
 ###Locks the leader in its current role for the next X days.
-alias[effect:set_cooldown] = int
+alias[effect:set_cooldown] = int_value_field
 
 ###Sets the current planet as the capital of its sector.
 alias[effect:set_sector_capital] = yes
@@ -2888,7 +2888,7 @@ alias[effect:remove_starbase_building] = {
 }
 
 ###Changes the colony foundation date (affecting on_colony_X_years pulses) by a specific number of days. Use with care, you can probably break things with this!
-alias[effect:change_colony_foundation_date] = int
+alias[effect:change_colony_foundation_date] = int_value_field
 
 ###Sets the adjective of the scoped country
 alias[effect:set_adjective] = localisation_synced
@@ -2899,7 +2899,7 @@ alias[effect:set_ship_prefix] = localisation_synced
 alias[effect:set_ship_prefix] = scope_group[target_country]
 
 ###Locks the country's government for a given period of days, the default cooldown, or unlocks it.
-alias[effect:set_government_cooldown] = int
+alias[effect:set_government_cooldown] = int_value_field
 alias[effect:set_government_cooldown] = default
 alias[effect:set_government_cooldown] = no
 
@@ -3042,7 +3042,7 @@ alias[effect:remove_random_starbase_module] = {
 alias[effect:destroy_espionage_operation] = scope[espionage_operation]
 
 ###Adds information to the current stage of an espionage operation
-alias[effect:add_espionage_information] = float
+alias[effect:add_espionage_information] = value_field
 
 ###Adds victory score to a country
 alias[effect:add_victory_score] = {
@@ -3087,7 +3087,7 @@ alias[effect:set_galactic_emperor] = bool
 alias[effect:set_galactic_defense_force] = bool
 
 ###Add imperial_authority
-alias[effect:add_imperial_authority] = float
+alias[effect:add_imperial_authority] = value_field
 
 ###Adds a specific modifier to the current espionage operation stage for a set duration or until stage is changed
 alias[effect:add_stage_modifier] = {
@@ -3187,16 +3187,16 @@ alias[effect:pass_targeted_resolution] = {
 }
 
 ###Increase the current Custodian term time
-alias[effect:add_custodian_term_days] = int
+alias[effect:add_custodian_term_days] = int_value_field
 
 ###Set the current Custodian term time. -1 will make the Custodianship permanent.
-alias[effect:set_custodian_term_days] = int
+alias[effect:set_custodian_term_days] = int_value_field
 
 ###The scoped country wins the game
 alias[effect:win] = yes
 
 ###Adds levels to the current Spy Network
-alias[effect:add_spy_network_level] = int
+alias[effect:add_spy_network_level] = int_value_field
 
 ###Dissolves the scoped federation
 alias[effect:dissolve_federation] = yes
