@@ -418,11 +418,7 @@ alias[trigger:off_war_exhaustion_sum] = float
 alias[trigger:def_war_exhaustion_sum] = float
 
 ###Checks the scope's total fleet power
-alias[trigger:fleet_power] = int
-###Checks the scope's total fleet power
-alias[trigger:fleet_power] = scope[any] #any that match fleet_power trigger
-###Checks the scope's total fleet power
-alias[trigger:fleet_power] = value[variable]
+alias[trigger:fleet_power] == value_field
 
 ###is_megastructure_type = <name of type>. Compares the type of scope's mega structure to a type from the database
 alias[trigger:is_megastructure_type] = <megastructure>
@@ -548,8 +544,7 @@ alias[trigger:has_active_tradition] = enum[tradition_swap]
 ###Checks a variable for the country/leader/planet/system/fleet against a specified value or another variable on the same scope
 alias[trigger:check_variable] = {
 	which = value[variable]
-	value = float
-	value = value[variable]
+	value = value_field
 }
 
 
@@ -2010,12 +2005,9 @@ alias[trigger:galactic_defense_force_exists] = bool
 alias[trigger:check_variable_arithmetic] = {
 	which = value[variable]
 	## cardinality = 1..inf
-	enum[maths] = float
-	## cardinality = 1..inf
-	enum[maths] = value[variable]
+	enum[maths] = value_field
 	###Specify >/< on the value or variable fields
-	value = float
-	value = value[variable]
+	value = value_field
 }
 
 ###Checks the value of a specified modifier in the current scope against a value.

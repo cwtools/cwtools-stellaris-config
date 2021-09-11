@@ -219,6 +219,10 @@ links = {
 		input_scopes = { planet }
 		output_scope = Country
 	}
+	observation_outpost = {
+		input_scopes = { planet }
+		output_scope = fleet
+	}
 	branch_office_owner = {
 		input_scopes = { Planet }
 		output_scope = Country
