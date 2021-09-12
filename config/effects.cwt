@@ -360,6 +360,19 @@ alias[effect:set_leader_flag] = value_set[leader_flag]
 alias[effect:set_ambient_object_flag] = value_set[ambient_object_flag]
 ###Sets an arbitrarily-named flag on the scoped megastructure
 alias[effect:set_megastructure_flag] = value_set[megastructure_flag]
+###Sets an arbitrarily-named flag on the scoped deposit
+alias[effect:set_deposit_flag] = value_set[deposit_flag]
+###Sets an arbitrarily-named flag on the scoped sector
+alias[effect:set_sector_flag] = value_set[sector_flag]
+###Sets an arbitrarily-named flag on the scoped starbase
+alias[effect:set_starbase_flag] = value_set[starbase_flag]
+###Sets an arbitrarily-named flag on the scoped spy network
+alias[effect:set_spynetwork_flag] = value_set[spynetwork_flag]
+###Sets an arbitrarily-named flag on the scoped espionage asset
+alias[effect:set_espionage_asset_flag] = value_set[espionage_asset_flag]
+###Sets an arbitrarily-named flag on the scoped war
+alias[effect:set_war_flag] = value_set[war_flag]
+
 ###Removes a flag from the scoped country
 alias[effect:remove_country_flag] = value[country_flag]
 ###Removes a flag from the scoped planet
@@ -384,6 +397,19 @@ alias[effect:remove_leader_flag] = value[leader_flag]
 alias[effect:remove_ambient_object_flag] = value[ambient_object_flag]
 ###Removes a flag from the scoped megastructure
 alias[effect:remove_megastructure_flag] = value[megastructure_flag]
+###Removes a flag from the scoped deposit
+alias[effect:remove_deposit_flag] = value[deposit_flag]
+###Removes a flag from the scoped sector
+alias[effect:remove_sector_flag] = value[sector_flag]
+###Removes a flag from the scoped starbase
+alias[effect:remove_starbase_flag] = value[starbase_flag]
+###Removes a flag from the scoped spy network
+alias[effect:remove_spynetwork_flag] = value[spynetwork_flag]
+###Removes a flag from the scoped espionage asset
+alias[effect:remove_espionage_asset_flag] = value[espionage_asset_flag]
+###Removes a flag from the scoped war
+alias[effect:remove_war_flag] = value[war_flag]
+
 ###Sets an arbitrarily-named flag on the scoped country for a set duration
 alias[effect:set_timed_country_flag] = {
 	flag = value_set[country_flag]
@@ -453,6 +479,42 @@ alias[effect:set_timed_ambient_object_flag] = {
 ###Sets an arbitrarily-named flag on the scoped mega structure for a set duration
 alias[effect:set_timed_megastructure_flag] = {
 	flag = value_set[megastructure_flag]
+	enum[days_months_years] = int_value_field
+}
+
+###Sets an arbitrarily-named flag on the scoped deposit for a set duration
+alias[effect:set_timed_deposit_flag] = {
+	flag = value_set[deposit_flag]
+	enum[days_months_years] = int_value_field
+}
+
+###Sets an arbitrarily-named flag on the scoped sector for a set duration
+alias[effect:set_timed_sector_flag] = {
+	flag = value_set[sector_flag]
+	enum[days_months_years] = int_value_field
+}
+
+###Sets an arbitrarily-named flag on the scoped starbase for a set duration
+alias[effect:set_timed_starbase_flag] = {
+	flag = value_set[starbase_flag]
+	enum[days_months_years] = int_value_field
+}
+
+###Sets an arbitrarily-named flag on the scoped spy network for a set duration
+alias[effect:set_timed_spynetwork_flag] = {
+	flag = value_set[spynetwork_flag]
+	enum[days_months_years] = int_value_field
+}
+
+###Sets an arbitrarily-named flag on the scoped espionage asset for a set duration
+alias[effect:set_timed_espionage_asset_flag] = {
+	flag = value_set[espionage_asset_flag]
+	enum[days_months_years] = int_value_field
+}
+
+###Sets an arbitrarily-named flag on the scoped war for a set duration
+alias[effect:set_timed_war_flag] = {
+	flag = value_set[war_flag]
 	enum[days_months_years] = int_value_field
 }
 
@@ -1725,6 +1787,13 @@ alias[effect:change_species_characteristics] = {
 	portrait = <portrait_group>
 	## cardinality = 0..1
 	portrait = random
+	## cardinality = 0..inf
+	add_trait = <trait.species_trait>
+	## cardinality = 0..inf
+	remove_trait = <trait.species_trait>
+	## cardinality = 0..1
+	###optional, pushes out other traits if needed
+	add_traits_at_start_of_list = yes
 }
 
 ### Re-evaluate the specified casus belli type with given target country
@@ -3237,3 +3306,9 @@ alias[effect:set_saved_date] = {
 	###Time until the saved date is cleared, default is never
 	expires = int_value_field
 }
+
+###Rerolls the random seed. Use if you want to have a second random_list return a different result. Do not use in tooltips that show random results, because the tooltip will be wrong!
+alias[effect:reroll_random] = yes
+
+###Sets the target system as 'visited' (i.e. low system intel on the map)
+alias[effect:set_visited] = scope[system]

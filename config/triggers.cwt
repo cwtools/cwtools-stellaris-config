@@ -103,6 +103,24 @@ alias[trigger:has_ambient_object_flag] = value[ambient_object_flag]
 ## severity = warning
 ###Checks if the mega structure has a specific, arbitrarily-named, flag
 alias[trigger:has_megastructure_flag] = value[megastructure_flag]
+## severity = warning
+###Checks if the deposit has a specific, arbitrarily-named, flag
+alias[trigger:has_deposit_flag] = value[deposit_flag]
+## severity = warning
+###Checks if the sector has a specific, arbitrarily-named, flag
+alias[trigger:has_sector_flag] = value[sector_flag]
+## severity = warning
+###Checks if the starbase has a specific, arbitrarily-named, flag
+alias[trigger:has_starbase_flag] = value[starbase_flag]
+## severity = warning
+###Checks if the spy network has a specific, arbitrarily-named, flag
+alias[trigger:has_spynetwork_flag] = value[spynetwork_flag]
+## severity = warning
+###Checks if the espionage asset has a specific, arbitrarily-named, flag
+alias[trigger:has_espionage_asset_flag] = value[espionage_asset_flag]
+## severity = warning
+###Checks if the war has a specific, arbitrarily-named, flag
+alias[trigger:has_war_flag] = value[war_flag]
 
 ###Checks if the country has a specific relation flag towards target country
 alias[trigger:has_relation_flag] = {
@@ -1253,7 +1271,7 @@ alias[trigger:opposing_ethics_divergence] = {
 alias[trigger:owns_any_bypass] = <bypass>
 
 ### Checks if the pop or species is allowed to live on a specified planet
-alias[trigger:can_live_on_planet] = scope[planet]
+alias[trigger:can_live_on_planet] = scope_group[target_planet]
 
 # ### Checks if a pop, or the pops of a particular species can reproduce
 #alias[trigger:pop_can_reproduce] = bool
@@ -1414,9 +1432,6 @@ alias[trigger:last_district_changed] = <district>
 
 ###Checks the planet's available housing
 alias[trigger:free_housing] == int_value_field
-
-###Checks if the pop's species is allowed to live on its planet
-alias[trigger:pop_can_live_on_planet] = bool
 
 ###Checks the number of in-game days passed since the 2200.1.1 start
 alias[trigger:days_passed] == int_value_field
@@ -1860,6 +1875,12 @@ alias[trigger:can_access_system] = scope[system]
 ###Checks the system's trade value
 alias[trigger:has_system_trade_value] == value_field
 
+###Checks the system's trade value that is collected by any country
+alias[trigger:has_collected_system_trade_value] == value_field
+
+###Checks the system's uncollected trade value (i.e. that no country profits from)
+alias[trigger:has_uncollected_system_trade_value] == value_field
+
 ###Checks the scoped leader's age.
 alias[trigger:leader_age] == int_value_field
 
@@ -2224,3 +2245,12 @@ alias[trigger:starbase_buildable_is_in_queue_before] = {
 	second = <starbase_module>
 	second = <starbase_building>
 }
+
+###Checks the country's number of researched technologies
+alias[trigger:num_researched_techs] == int_value_field
+
+###Checks number of tradition categories the country has picked
+alias[trigger:num_tradition_categories] == int_value_field
+
+###Checks if the planet's climate is set to a specified string in planet_classes:
+alias[trigger:has_climate] = localisation
