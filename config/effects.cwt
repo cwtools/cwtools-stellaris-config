@@ -553,7 +553,7 @@ alias[effect:locked_random_list] = {
 
 ###All enclosed effects may or may not be executed depending on set chance
 alias[effect:random] = {
-	chance = int[1...99]
+	chance = int_value_field[1...99]
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -561,7 +561,7 @@ alias[effect:random] = {
 alias[effect:create_fleet_from_naval_cap] = value_field
 ###Creates a new fleet from empire designs up to specified fraction of naval cap
 alias[effect:create_fleet_from_naval_cap] = {
-	fraction = float
+	fraction = value_field
 	ship_owner_type = country
 	ship_owner_type = federation
 	ship_owner_type = galactic_community
@@ -604,7 +604,7 @@ alias[effect:set_location] = scope_group[spatial_object]
 alias[effect:set_location] = {
 	target = scope_group[spatial_object]
 	## cardinality = 0..1
-	distance = float
+	distance = float #No variables here atm
 	## cardinality = 0..1
 	angle = int[0..360]
 	## cardinality = 0..1
@@ -667,7 +667,7 @@ alias[effect:clear_variable] = value[variable]
 ###Adds a lump sum of a resource to the scoped country, defined as a multiple of the country's monthly income of that resource (clamped to max and min allowed values)
 alias[effect:add_monthly_resource_mult] = {
 	resource = <resource>
-	value = float
+	value = value_field
 	## cardinality = 0..1
 	min = int
 	## cardinality = 0..1
@@ -782,7 +782,7 @@ alias[effect:set_closed_borders] = {
 	who = scope_group[target_country]
 	status = bool
 	## cardinality = 0..1
-	forced = int
+	forced = int_value_field
 }
 
 ###Declares war between the scoped country and target country
@@ -797,20 +797,20 @@ alias[effect:declare_war] = {
 alias[effect:add_static_war_exhaustion] = {
 	attacker = scope_group[target_country]
 	location = scope[planet] #target planet was omitted here
-	value_for_planet_destruction = float[0.0..1.0]
+	value_for_planet_destruction = value_field[0.0..1.0]
 }
 
 ###Adds diplomatic threat from target country
 alias[effect:add_threat] = {
 	who = scope_group[target_country]
-	amount = float
+	amount = value_field
 }
 
 ###Adds a Casus Belli to the scoped country against the target country.
 alias[effect:add_casus_belli] = {
 	type = <casus_belli>
 	who = scope_group[target_country]
-	days = int
+	days = int_value_field
 }
 
 ###Sets a war goal to the scoped rebel country/war
@@ -884,7 +884,7 @@ alias[effect:set_subject_of] = {
 alias[effect:remove_claims] = {
 	who = scope_group[target_country]
 	## cardinality = 0..1
-	num_of_claims = int
+	num_of_claims = int_value_field
 }
 
 ###Prevents execution of subsequent effects in the same effect block, used with if-statements
@@ -1354,7 +1354,7 @@ alias[effect:clone_leader] = {
 	## cardinality = 0..1
 	skill = random
 	## cardinality = 0..1
-	skill = int[1..10]
+	skill = int[1..20]
 	## cardinality = 0..1
 	event_leader = bool
 	#Not sure what other types there are
@@ -1479,7 +1479,7 @@ alias[effect:end_event_chain] = <event_chain>
 alias[effect:add_event_chain_counter] = {
 	event_chain = <event_chain>
 	counter = enum[event_chain_counter]
-	amount = int
+	amount = int_value_field
 }
 
 ###Enables a specific special research project for target country at a specific location (should be same as the current scope where possible)
@@ -1504,7 +1504,7 @@ alias[effect:add_seen_bypass_type] = <bypass>
 alias[effect:spawn_natural_wormhole] = {
 	bypass_type = <bypass>
 	## cardinality = 0..1
-	orbit_distance = float
+	orbit_distance = float #no variables here atm
 	## cardinality = 0..1
 	orbit_angle = random
 	## cardinality = 0..1
@@ -1523,7 +1523,7 @@ alias[effect:link_wormholes] = scope[galactic_object]
 ###Executes an effect on systems with planets owned by the scoped country, starting at an origin, and until a certain percentage of owned planets matching the planet_limit has been covered.
 alias[effect:effect_on_blob] = {
 	center = scope[galactic_object]
-	owned_planets_percentage = float[0.0..1.0]
+	owned_planets_percentage = value_field[0.0..1.0]
 	## push_scope = planet
 	planet_limit = {
 		alias_name[trigger] = alias_match_left[trigger]
@@ -1560,7 +1560,7 @@ alias[effect:add_anomaly] = {
 
 ### Adds an asteroid belt at the distance in the scope.
 alias[effect:add_asteroid_belt] = {
-	radius = int
+	radius = int #no variables here atm
 	type = <asteroid_belt_type>
 }
 
@@ -1586,7 +1586,7 @@ alias[effect:add_random_research_option] = {
 	area = enum[technology_areas]
 	## cardinality = 0..1
 	tier = <technology_tier>
-	add_progress = float[0..1]
+	add_progress = value_field[0.1..1.0]
 	## cardinality = 0..1
 	fail_effects = {
 		alias_name[effect] = alias_match_left[effect]
@@ -1603,11 +1603,11 @@ alias[effect:add_seen_bypass] = scope_group[spatial_object] #megastructure or wo
 ### Adds a specific ship design to the scoped country
 alias[effect:add_ship_design] = last_created_design#TODO check this
 ### Adds a sum of experience points to the scoped leader
-alias[effect:add_skill] = int[-10..20]#check the interval
+alias[effect:add_skill] = int_value_field[-10..20]#check the interval
 ### Gives percentage progress (0.0-1.0) in a specific tech to the scoped country
 alias[effect:add_tech_progress] = {
 	tech = <technology>
-	progress = float[0.0..1.0]
+	progress = value_field[0.1..1.0]
 }
 
 ###Create and sends an telemetry event keeping track of the tutorial steps for the current game
@@ -1617,7 +1617,7 @@ alias[effect:complete_tutorial_step] = scalar
 alias[effect:add_tradition] = <tradition>
 ### Adds trust on scope country towards target country
 alias[effect:add_trust] = {
-	amount = float
+	amount = value_field
 	who = scope_group[target_country]
 }
 
@@ -1746,13 +1746,10 @@ alias[effect:clear_global_event_targets] = yes
 ### Clears all fleet orders from the scoped fleet
 alias[effect:clear_orders] = yes
 ### Clears uncharted space from the galaxy map for the scoped country, in a radius around target system
-alias[effect:clear_uncharted_space] = {
-	from = scope_group[target_country]
-	radius = int
-}
-
+alias[effect:clear_uncharted_space] = scope[country]
 ### Clears uncharted space from the galaxy map for the scoped country, in a radius around target system
-alias[effect:clear_uncharted_space] = scope_group[target_country]
+alias[effect:clear_uncharted_space] = scope[system]
+
 ### Conquers the planet by setting its owner to target country and adding an unhappiness modifier
 alias[effect:conquer] = scope_group[target_country]
 ### Makes the scoped country copy the ethos and government authority of the target country.
@@ -1828,7 +1825,7 @@ alias[effect:create_bypass] = <bypass>
 ### Creates a cluster centered around the specified spatial object
 alias[effect:create_cluster] = {
 	id = scalar
-	radius = int
+	radius = int #no variables here atm
 	center = scope[system]
 }
 
@@ -1896,7 +1893,7 @@ alias[effect:create_fleet] = {
 alias[effect:create_message] = {
 	type = <message_type>
 	localization = localisation
-	days = int
+	days = int #no variables here atm
 	target = scope[any]
 	## cardinality = 0..100
 	variable = {
@@ -1913,7 +1910,9 @@ alias[effect:create_message] = {
 ### Creates a military fleet with the designs of a specified country.
 alias[effect:create_military_fleet] = {
 	owner = scope_group[target_country]
-	scaled_size = float
+	scaled_size = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
 	effect = {
 		alias_name[effect] = alias_match_left[effect]
 	}
@@ -2103,15 +2102,15 @@ alias[effect:get_galaxy_setup_value] = {
 	which = value_set[variable]
 	setting = enum[galaxy_setup_values]
 	## cardinality = 0..1
-	scale_by = int
+	scale_by = int #no variables here atm
 }
 
 ### Makes a country guarantee another country
 alias[effect:guarantee_country] = scope_group[target_country]
 ### Makes a country guarantee another country
 alias[effect:guarantee_country] = {
+	###free_guarantee_days is deprecated, does nothing
 	target = scope_group[target_country]
-	free_guarantee_days = int
 }
 
 #inverted_switch = {
@@ -2244,7 +2243,7 @@ enums = {
 ### Sets an asteroid belt at the distance in the scope.
 alias[effect:set_asteroid_belt] = {
 	## cardinality = 0..1
-	radius = float
+	radius = float #no variables here atm
 	## cardinality = 0..1
 	type = <asteroid_belt_type>
 }
@@ -2382,13 +2381,13 @@ alias[effect:set_species_homeworld] = scope_group[target_planet]
 alias[effect:set_species_identity] = scope_group[target_species]
 ### Sets a building in a slot on a starbase
 alias[effect:set_starbase_building] = {
-	slot = int
+	slot = int #no variables here atm
 	building = <starbase_building>
 }
 
 ### Sets a module in a slot on a starbase
 alias[effect:set_starbase_module] = {
-	slot = int
+	slot = int #no variables here atm
 	module = <starbase_module>
 }
 
@@ -2652,7 +2651,7 @@ alias[effect:expire_site_event] = <event.fleet>
 ###Adds a specific trait to the scoped leader for a specific duration
 alias[effect:add_timed_trait] = {
 	trait = <trait>
-	enum[days_months_years] = int
+	enum[days_months_years] = int_value_field
 }
 
 ###Recomputes strategic war ( attack / defense ) data for AI = yes
@@ -2673,13 +2672,13 @@ alias[effect:steal_relic] = {
 ###Add <value> favors for scoped country to use on target country.
 alias[effect:add_favors] = {
 	target = scope_group[target_country]
-	value = int
+	value = int_value_field
 }
 
 ###Remove <value/all> favors that scoped country have on target country.
 alias[effect:remove_favors] = {
 	target = scope_group[target_country]
-	value = int
+	value = int_value_field
 	value = all
 }
 
@@ -2689,7 +2688,7 @@ alias[effect:set_federation_flag] = value_set[federation_flag]
 ###Sets an arbitrarily-named flag on the scoped federation
 alias[effect:set_timed_federation_flag] = {
 	flag = value_set[federation_flag]
-	enum[days_months_years] = int
+	enum[days_months_years] = int_value_field
 }
 
 ###Removes a previously-set flag from the scoped federation
@@ -2757,7 +2756,7 @@ alias[effect:set_federation_settings] = {
 alias[effect:add_cohesion] = value_field
 
 ###Sets the number of seats on the Galactic Council
-alias[effect:set_council_size] = int
+alias[effect:set_council_size] = int_value_field
 
 ###Increases the number of seats on the Galactic Council by 1
 alias[effect:increase_council_size] = yes
@@ -2873,7 +2872,7 @@ alias[effect:end_truce] = scope_group[target_country]
 alias[effect:remove_starbase_module] = {
 	## cardinality = 0..1
 	###Optional, default = all
-	slot = int
+	slot = int #no variables here atm
 	## cardinality = 0..1
 	module = <starbase_module>
 }
@@ -2882,7 +2881,7 @@ alias[effect:remove_starbase_module] = {
 alias[effect:remove_starbase_building] = {
 	## cardinality = 0..1
 	###Optional, default = all
-	slot = int
+	slot = int #no variables here atm
 	## cardinality = 0..1
 	building = <starbase_building>
 }
@@ -2954,7 +2953,7 @@ alias[effect:set_first_contact_flag] = value_set[first_contact_flag]
 ###Sets an arbitrarily-named flag on the scoped first contact
 alias[effect:set_timed_first_contact_flag] = {
 	flag = value_set[first_contact_flag]
-	enum[days_months_years] = int
+	enum[days_months_years] = int_value_field
 }
 
 ###Removes a previously-set flag from the scoped first contact
@@ -2972,13 +2971,13 @@ alias[effect:copy_random_tech_from] = {
 	area = enum[research_areas]
 	## cardinality = 0..1
 	###Optional: this makes it grant the tech option rather than the whole tech
-	progress = float[0.0..1.0]
+	progress = value_field[0.0..1.0]
 }
 
 ###Adds the defined amount of intel toward the target empire.
 alias[effect:add_intel] = {
 	who = scope_group[target_country]
-	amount = float
+	amount = value_field
 }
 
 ###Creates espionage asset within a given spy network
@@ -3012,7 +3011,7 @@ alias[effect:remove_espionage_operation_flag] = value[espionage_operation_flag]
 ###Sets an arbitrarily-named flag on the scoped espionage operation for a set duration
 alias[effect:set_timed_espionage_operation_flag] = {
 	flag = value_set[espionage_operation_flag]
-	enum[days_months_years] = int
+	enum[days_months_years] = int_value_field
 }
 
 ###Joins the war on the specified side.
@@ -3027,7 +3026,7 @@ alias[effect:remove_random_starbase_building] = {
 	## cardinality = 0..1
 	type = <starbase_building>
 	## cardinality = 0..1
-	count = int
+	count = int #no variables here atm
 }
 
 ###Remove a number of random module(s) matching/not matching a type from the starbase
@@ -3035,7 +3034,7 @@ alias[effect:remove_random_starbase_module] = {
 	## cardinality = 0..1
 	type = <starbase_module>
 	## cardinality = 0..1
-	count = int
+	count = int #no variables here atm
 }
 
 ###Destroys a espionage operation site in right hand site event target
@@ -3047,7 +3046,7 @@ alias[effect:add_espionage_information] = value_field
 ###Adds victory score to a country
 alias[effect:add_victory_score] = {
 	source = localisation
-	score = float
+	score = value_field
 }
 
 ###Stores a copy of the specified data of the Galactic Custodian/Emperor. The values default to 'no'.
@@ -3096,7 +3095,7 @@ alias[effect:add_stage_modifier] = {
 	## cardinality = 0..1
 	enum[days_months_years] = int
 	## cardinality = 0..1
-	multiplier = float
+	multiplier = float #no variables here atm
 }
 
 ###Removes a specific modifier from the espionage operation current stage
@@ -3233,8 +3232,8 @@ alias[effect:set_saved_date] = {
 	key = scalar #todo: actually a flag of the current scope type
 	## cardinality = 0..1
 	###Time until the date you wish to save. Default is present
-	days_from_present = int
+	days_from_present = int_value_field
 	## cardinality = 0..1
 	###Time until the saved date is cleared, default is never
-	days_from_present = int
+	expires = int_value_field
 }
