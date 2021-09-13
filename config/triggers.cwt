@@ -509,6 +509,8 @@ alias[trigger:ethos] == value_field[0.0..1.0]
 
 ###Checks the leader's gender
 alias[trigger:gender] = enum[genders]
+###Checks the species' preset gender
+alias[trigger:species_gender] = enum[genders]
 ###Checks whether the leader is idle
 alias[trigger:is_idle] = bool
 
