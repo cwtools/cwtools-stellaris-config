@@ -2256,3 +2256,6 @@ alias[trigger:num_tradition_categories] == int_value_field
 
 ###Checks if the planet's climate is set to a specified string in planet_classes:
 alias[trigger:has_climate] = localisation
+
+###Check if the country has an embassy with the target country
+alias[trigger:has_embassy] = scope_group[target_country]
