@@ -24,7 +24,7 @@ modifier_categories = {
         supported_scopes = { megastructure country }
     }
     Habitability = {
-        supported_scopes = { species }
+        supported_scopes = { species planet }
     }
     Starbases = {
         supported_scopes = { starbase country }
