@@ -15,7 +15,7 @@ types = {
 
 		#some guesswork here...
 		subtype[colonisable] = {
-			is_for_colonizable = yes
+			is_for_colonizeable = yes
 		}
 		subtype[orbital] = {
 			station = shipclass_research_station
