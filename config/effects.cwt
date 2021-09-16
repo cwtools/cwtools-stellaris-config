@@ -2382,7 +2382,7 @@ alias[effect:set_halted] = int_value_field
 ### Sets the target leader to be the scoped country's heir
 alias[effect:set_heir] = scope[leader]
 ### Set the home base of the scoped fleet to the specified starbase
-alias[effect:set_home_base] = scope[ship]
+alias[effect:set_home_base] = scope[starbase]
 ### Sets the current mission of an observation station
 alias[effect:set_mission] = <observation_station_mission>
 ### Change entity of a planet.
