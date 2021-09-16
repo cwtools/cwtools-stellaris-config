@@ -121,6 +121,9 @@ alias[trigger:has_espionage_asset_flag] = value[espionage_asset_flag]
 ## severity = warning
 ###Checks if the war has a specific, arbitrarily-named, flag
 alias[trigger:has_war_flag] = value[war_flag]
+## severity = warning
+###Checks if the army has a specific, arbitrarily-named, flag
+alias[trigger:has_army_flag] = value[army_flag]
 
 ###Checks if the country has a specific relation flag towards target country
 alias[trigger:has_relation_flag] = {
