@@ -87,9 +87,6 @@ economic_category = {
 	}
 }
 
-
-alias[economic_template:mult] = value_field
-
 alias[economic_template:cost] = {
 	## cardinality = 0..1
 	trigger = {
@@ -97,6 +94,8 @@ alias[economic_template:cost] = {
 	}
 	## cardinality = 0..inf
 	<resource> = float
+	## cardinality = 0..1
+	mult = value_field
 }
 
 alias[economic_template:produces] = {
@@ -106,6 +105,8 @@ alias[economic_template:produces] = {
 	}
 	## cardinality = 0..inf
 	<resource> = float
+	## cardinality = 0..1
+	mult = value_field
 }
 
 alias[economic_template:upkeep] = {
@@ -115,9 +116,9 @@ alias[economic_template:upkeep] = {
 	}
 	## cardinality = 0..inf
 	<resource> = float
+	## cardinality = 0..1
+	mult = value_field
 }
-
-alias[economic_template_only_produces:mult] = value_field
 
 alias[economic_template_only_produces:produces] = {
 	## cardinality = 0..1
@@ -128,8 +129,6 @@ alias[economic_template_only_produces:produces] = {
 	<resource> = float
 }
 
-alias[economic_template_no_produce:mult] = value_field
-
 alias[economic_template_no_produce:cost] = {
 	## cardinality = 0..1
 	trigger = {
@@ -137,6 +136,8 @@ alias[economic_template_no_produce:cost] = {
 	}
 	## cardinality = 0..inf
 	<resource> = float
+	## cardinality = 0..1
+	mult = value_field
 }
 
 alias[economic_template_no_produce:upkeep] = {
@@ -146,6 +147,8 @@ alias[economic_template_no_produce:upkeep] = {
 	}
 	## cardinality = 0..inf
 	<resource> = float
+	## cardinality = 0..1
+	mult = value_field
 }
 
 ## cardinality = 0..1
@@ -163,6 +166,8 @@ alias[resources_template_optional:resources] = {
 		}
 		## cardinality = 0..inf
 		<resource> = float
+		## cardinality = 0..1
+		mult = value_field
 	}
 }
 
