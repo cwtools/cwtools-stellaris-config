@@ -1373,6 +1373,9 @@ alias[trigger:using_war_goal] = {
 	owner = scope_group[target_country]
 }
 
+### Checks if a war is a total war
+alias[trigger:is_total_war] = bool
+
 ### Checks if the scoped fleet can target the given planet with its planet killer weapon
 alias[trigger:valid_planet_killer_target] = scope_group[target_planet]
 
@@ -1462,9 +1465,6 @@ alias[trigger:is_being_assimilated] = bool
 
 ###Checks the number of guaranteed colonies defined in setup
 alias[trigger:num_guaranteed_colonies] == int_value_field
-
-###Check if the planet has a branch office owned by target country/any country/no country
-alias[trigger:has_branch_office] = bool
 
 ###Check if the planet has a branch office owned by target country/any country/no country
 alias[trigger:has_branch_office] = scope_group[target_country]
@@ -2222,7 +2222,7 @@ alias[trigger:is_defensive_army] = bool
 ###Checks if the pop is currently working this strata job (worker, specialist, complex_drone, etc.) Returns false if unemployed.
 alias[trigger:has_job_category] = <social_strata>
 
-###Checks the value for a specific option from the galaxy setup 
+###Checks the value for a specific option from the galaxy setup
 alias[trigger:check_galaxy_setup_value] = {
 	setting = enum[galaxy_setup_values]
 	value = value_field
