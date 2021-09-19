@@ -70,9 +70,7 @@ job = {
 	## cardinality = 0..1
 	clothes_texture_index = int
 	## cardinality = 0..1
-	icon = icon[gfx/interface/icons/jobs]
-	## cardinality = 0..1
-	icon = <job>
+	icon = filepath[gfx/interface/icons/jobs/job_,.dds]
 
 	## cardinality = 0..1
 	is_capped_by_modifier = bool
