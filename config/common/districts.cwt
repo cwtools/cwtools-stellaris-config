@@ -24,7 +24,7 @@ types = {
 district = {
 	base_buildtime = int
 
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	desc = {
 		trigger = {
 			alias_name[trigger] = alias_match_left[trigger]
