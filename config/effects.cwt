@@ -1805,6 +1805,17 @@ alias[effect:change_species_characteristics] = {
 	## cardinality = 0..1
 	###optional, pushes out other traits if needed
 	add_traits_at_start_of_list = yes
+	## cardinality = 0..1
+	###Limits species to this gender or removes limit if 'any'
+	gender = enum[genders]
+	## cardinality = 0..1
+	###Limits species to this gender or removes limit if 'any'
+	gender = scope[leader]
+	## cardinality = 0..1
+	###Limits species to this gender or removes limit if 'any'
+	gender = any
+	###Apply portrait and gender (randomizes new name) changes to existing leaders
+	can_change_leader = bool
 }
 
 ### Re-evaluate the specified casus belli type with given target country
