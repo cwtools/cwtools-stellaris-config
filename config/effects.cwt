@@ -372,6 +372,8 @@ alias[effect:set_spynetwork_flag] = value_set[spynetwork_flag]
 alias[effect:set_espionage_asset_flag] = value_set[espionage_asset_flag]
 ###Sets an arbitrarily-named flag on the scoped war
 alias[effect:set_war_flag] = value_set[war_flag]
+###Sets an arbitrarily-named flag on the scoped army
+alias[effect:set_army_flag] = value_set[army_flag]
 
 ###Removes a flag from the scoped country
 alias[effect:remove_country_flag] = value[country_flag]
@@ -409,6 +411,8 @@ alias[effect:remove_spynetwork_flag] = value[spynetwork_flag]
 alias[effect:remove_espionage_asset_flag] = value[espionage_asset_flag]
 ###Removes a flag from the scoped war
 alias[effect:remove_war_flag] = value[war_flag]
+###Removes a flag from the scoped army
+alias[effect:remove_army_flag] = value[army_flag]
 
 ###Sets an arbitrarily-named flag on the scoped country for a set duration
 alias[effect:set_timed_country_flag] = {
@@ -515,6 +519,12 @@ alias[effect:set_timed_espionage_asset_flag] = {
 ###Sets an arbitrarily-named flag on the scoped war for a set duration
 alias[effect:set_timed_war_flag] = {
 	flag = value_set[war_flag]
+	enum[days_months_years] = int_value_field
+}
+
+###Sets an arbitrarily-named flag on the scoped army for a set duration
+alias[effect:set_timed_army_flag] = {
+	flag = value_set[army_flag]
 	enum[days_months_years] = int_value_field
 }
 
@@ -1479,6 +1489,7 @@ alias[effect:modify_species] = {
 	## cardinality = 0..1
 	portrait = random
 	## cardinality = 0..1
+	## push_scope = species
 	effect = {
 		alias_name[effect] = alias_match_left[effect]
 	}
@@ -1754,9 +1765,13 @@ alias[effect:change_species_characteristics] = {
 	###optional, pushes out other traits if needed
 	add_traits_at_start_of_list = yes
 	## cardinality = 0..1
+	###Limits species to this gender
 	gender = enum[genders]
 	## cardinality = 0..1
+	###Limits species to this gender
 	gender = scope_group[target_leader]
+	###Apply portrait and gender (randomizes new name) changes to existing leaders
+	can_change_leader = bool
 }
 
 ### Re-evaluate the specified casus belli type with given target country
@@ -2335,7 +2350,7 @@ alias[effect:set_halted] = int_value_field
 ### Sets the target leader to be the scoped country's heir
 alias[effect:set_heir] = scope[leader]
 ### Set the home base of the scoped fleet to the specified starbase
-alias[effect:set_home_base] = scope[ship]
+alias[effect:set_home_base] = scope[starbase]
 ### Sets the current mission of an observation station
 alias[effect:set_mission] = <observation_station_mission>
 ### Change entity of a planet.
