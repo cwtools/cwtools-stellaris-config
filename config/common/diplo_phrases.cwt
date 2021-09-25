@@ -2,8 +2,7 @@ types = {
 	type[diplo_phrase] = {
 		path = "game/common/diplo_phrases"
 
- #       name_from_file = yes
-        type_per_file = yes
+		type_per_file = yes
 
 		## type_key_filter = greetings
 		subtype[greetings] = {
@@ -42,6 +41,7 @@ diplo_phrase = {
 	}
 	## cardinality = 0..inf
 	<diplomatic_action> = {
+		## cardinality = 0..inf
 		enum[diplo_phrase_types] = {
 			## cardinality = 0..inf
 			localisation = {
