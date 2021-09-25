@@ -1492,7 +1492,7 @@ alias[trigger:branch_office_value] = {
 alias[trigger:free_jobs] == int_value_field
 
 ###Checks the planet's devastation
-alias[trigger:planet_devastation] = value_field[0.0..100.0]
+alias[trigger:planet_devastation] == value_field[0.0..100.0]
 
 ###Checks if the pop has the chosen pop category
 alias[trigger:is_pop_category] = <social_strata>
