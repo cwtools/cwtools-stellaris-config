@@ -184,8 +184,9 @@ social_strata = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	resettlement_cost = {
+		## cardinality = 0..inf
 		<resource> = int
 		## cardinality = 0..1
 		trigger = {
