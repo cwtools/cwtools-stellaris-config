@@ -1814,6 +1814,7 @@ alias[effect:change_species_characteristics] = {
 	## cardinality = 0..1
 	###Limits species to this gender or removes limit if 'any'
 	gender = any
+	## cardinality = 0..1
 	###Apply portrait and gender (randomizes new name) changes to existing leaders
 	can_change_leader = bool
 }
