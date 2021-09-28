@@ -75,6 +75,9 @@ scopes = {
     "Espionage Asset" = {
         aliases = { espionage_asset }
     }
+	"DLC Recommendation" = {
+		aliases = { dlc_recommendation }
+	}
 }
 
 scope_groups = {
