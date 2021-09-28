@@ -169,14 +169,20 @@ alias[trigger:leader_of_faction] = bool
 ###Checks if the current scope and the target scope are the same thing
 alias[trigger:is_same_value] = scope[any]
 
-
 #should check for <> too
 ## replace_scope = { this = pop }
 ###Checks the percentage of pops in the scope that fulfill the specified criteria
 alias[trigger:pop_percentage] = {
+	## cardinality = 0..1
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## cardinality = 0..1
+	###(optional: specifies pops to exclude from the calculation)
+	exclude = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## required
 	percentage = value_field[0.0..1.0]
 }
 
