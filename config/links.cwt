@@ -31,11 +31,11 @@ links = {
 		output_scope = Country
 	}
 	last_created_country = {
-		input_scopes = { allScopes }
+		input_scopes = { all }
 		output_scope = Country
 	}
 	last_refugee_country = {
-		input_scopes = { allScopes }
+		input_scopes = { all }
 		output_scope = Country
 	}
 	leader = {
@@ -43,7 +43,7 @@ links = {
 		output_scope = Leader
 	}
 	last_created_leader = {
-		input_scopes = { allScopes }
+		input_scopes = { all }
 		output_scope = Leader
 	}
 	solar_system = {
@@ -54,7 +54,7 @@ links = {
 		output_scope = System
 	}
 	last_created_system = {
-		input_scopes = { allScopes }
+		input_scopes = { all }
 		output_scope = System
 	}
 	planet = {
@@ -74,7 +74,7 @@ links = {
 		output_scope = Planet
 	}
 	last_created_ship = {
-		input_scopes = { allScopes }
+		input_scopes = { all }
 		output_scope = Ship
 	}
 	mining_station = {
@@ -86,7 +86,7 @@ links = {
 		output_scope = Fleet
 	}
 	last_created_fleet = {
-		input_scopes = { allScopes }
+		input_scopes = { all }
 		output_scope = Fleet
 	}
 	fleet = {
@@ -106,15 +106,15 @@ links = {
 		output_scope = Pop
 	}
 	last_created_pop = {
-		input_scopes = { allScopes }
+		input_scopes = { all }
 		output_scope = Pop
 	}
 	last_created_ambient_object = {
-		input_scopes = { allScopes }
+		input_scopes = { all }
 		output_scope = AmbientObject
 	}
 	last_created_army = {
-		input_scopes = { allScopes }
+		input_scopes = { all }
 		output_scope = Army
 	}
 	owner_species = {
@@ -132,7 +132,7 @@ links = {
 		output_scope = Species
 	}
 	last_created_species = {
-		input_scopes = { allScopes }
+		input_scopes = { all }
 		output_scope = Species
 	}
 	built_species = {
@@ -148,7 +148,7 @@ links = {
 		output_scope = PopFaction
 	}
 	last_created_pop_faction = {
-		input_scopes = { allScopes }
+		input_scopes = { all }
 		output_scope = PopFaction
 	}
 	default_pop_faction = {
@@ -185,7 +185,7 @@ links = {
 		output_scope = Planet
 	}
 	last_created_design = {
-		input_scopes = { allScopes }
+		input_scopes = { all }
 		output_scope = Design
 	}
 	starbase = {
@@ -197,11 +197,11 @@ links = {
 		output_scope = Planet
 	}
 	no_scope = {
-		input_scopes = { allScopes }
+		input_scopes = { all }
 		output_scope = Any
 	}
 	megastructure = {
-		input_scopes = { allScopes }
+		input_scopes = { all }
 		output_scope = Megastructure
 	}
 	owner_main_species = {
@@ -292,11 +292,11 @@ links = {
 		output_scope = species
 	}
 	galactic_emperor = {
-		input_scopes = { allscopes }
+		input_scopes = { all }
 		output_scope = country
 	}
 	galactic_custodian = {
-		input_scopes = { allscopes }
+		input_scopes = { all }
 		output_scope = country
 	}
 }

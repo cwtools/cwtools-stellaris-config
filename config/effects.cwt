@@ -1770,6 +1770,7 @@ alias[effect:change_species_characteristics] = {
 	## cardinality = 0..1
 	###Limits species to this gender
 	gender = scope_group[target_leader]
+	## cardinality = 0..1
 	###Apply portrait and gender (randomizes new name) changes to existing leaders
 	can_change_leader = bool
 }
@@ -1987,7 +1988,7 @@ alias[effect:create_point_of_interest] = {
 	desc = localisation
 	event_chain = <event_chain>
 	## severity = warning
-	location = scope[spatial_object]
+	location = scope_group[spatial_object]
 	## cardinality = 0..1
 	location = scope[country]
 	## cardinality = 0..1
