@@ -84,10 +84,10 @@ trait = {
 		growing_modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
-
+		## cardinality = 0..inf
 		## replace_scope = { this = pop root = pop }
+		###won't show in trait tooltips, use custom_tooltip/custom_tooltip_with_modifiers
 		alias_name[triggered_pop_modifier] = alias_match_left[triggered_pop_modifier]
-
 		## cardinality = 0..1
 		### Default = yes
 		sapient = bool
@@ -147,7 +147,7 @@ trait = {
 		random_weight = {
 			## cardinality = 1..inf
 			<species_class> = float
-		}
+	}
 	}
 
 	subtype[leader_trait] = {
