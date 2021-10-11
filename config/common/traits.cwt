@@ -57,23 +57,30 @@ trait = {
 			## cardinality = 1..inf
 			<species_class>
 		}
-		# This should be expanded into subtypes
+		## cardinality = 0..1
 		## replace_scope = { this = country root = country }
 		modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
+		## cardinality = 0..1
 		## replace_scope = { this = planet root = planet }
 		assembling_modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
+		## cardinality = 0..1
 		## replace_scope = { this = planet root = planet }
 		declining_modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
+		## cardinality = 0..1
 		## replace_scope = { this = planet root = planet }
 		growing_modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
+
+		## replace_scope = { this = pop root = pop }
+		alias_name[triggered_pop_modifier] = alias_match_left[triggered_pop_modifier]
+
 		## cardinality = 0..1
 		### Default = yes
 		sapient = bool
@@ -128,6 +135,12 @@ trait = {
 		}
 		## cardinality = 0..1
 		infertile = yes
+
+		## cardinality = 0..1
+		random_weight = {
+			## cardinality = 1..inf
+			<species_class> = float
+		}
 	}
 
 	subtype[leader_trait] = {
@@ -199,6 +212,9 @@ trait = {
 
 	## cardinality = 0..1
 	custom_tooltip = localisation
+	## cardinality = 0..1
+	###unlike custom_tooltip, this shows in addition to the modifiers
+	custom_tooltip_with_modifiers = localisation
 
 	## cardinality = 0..1
 	ai_weight = {
