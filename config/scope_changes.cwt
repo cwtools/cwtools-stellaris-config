@@ -2100,6 +2100,7 @@ alias[effect:random_federation] = {
 ## push_scope = federation
 ###Iterate through each federation
 alias[effect:every_federation] = {
+	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
 }
