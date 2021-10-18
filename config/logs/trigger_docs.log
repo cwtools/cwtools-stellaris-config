@@ -4683,7 +4683,7 @@ every_war_participant = { limit = { <triggers> } <effects> }
 Supported Scopes: war
 
 repair_percentage - Restores a certain percentage of hull points to the scoped ship
-repair_percentage = yes
+repair_percentage = 0.05
 Supported Scopes: ship fleet
 
 endgame_telemetry - Send endgame telemetry event
