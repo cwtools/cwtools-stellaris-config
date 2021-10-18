@@ -27,7 +27,7 @@ links = {
 		output_scope = Country
 	}
 	planet_owner = {
-		input_scopes = { army megastructure deposit archaeological_site }
+		input_scopes = { planet army megastructure deposit archaeological_site }
 		output_scope = Country
 	}
 	last_created_country = {
