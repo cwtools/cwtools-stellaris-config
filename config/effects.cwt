@@ -2230,6 +2230,7 @@ alias[effect:join_alliance] = {
 ### Removes scoped country from any alliances it is in
 alias[effect:leave_alliance] = {
 	override_requirements = bool
+	apply_opinion_penalty = bool
 }
 
 ### Prints a message to game.log for debugging purposes.
