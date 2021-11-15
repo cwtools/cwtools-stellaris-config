@@ -18,7 +18,7 @@ links = {
 	owner = {
 		input_scopes = {
 			Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System first_contact Megastructure Army
-			Deposit archaeological_site spy_network espionage_operation
+			Deposit archaeological_site spy_network espionage_operation situation
 		}
 		output_scope = Country
 	}
@@ -276,8 +276,8 @@ links = {
 		output_scope = spy_network
 	}
 	target = {
-		input_scopes = { espionage_operation spy_network }
-		output_scope = country
+		input_scopes = { espionage_operation spy_network situation }
+		output_scope = any
 	}
 	growing_species = {
 		input_scopes = { planet }

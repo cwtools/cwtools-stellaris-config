@@ -79,6 +79,12 @@ types = {
 		## abbreviation = LE
 		subtype[leader] = {
 		}
+		## type_key_filter = situation_event
+		## push_scope = situation
+		## display_name = Situation event
+		## abbreviation = LE
+		subtype[situation] = {
+		}
 		## type_key_filter = event
 		subtype[scopeless] = {
 		}

@@ -1,0 +1,54 @@
+
+types = {
+	type[situation_type] = {
+		path = "game/common/situations"
+	}
+}
+
+## replace_scope = { this = situation root = situation }
+situation_type = {
+	picture = <sprite>
+
+	## cardinality = 0..1
+	on_start = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+	## cardinality = 0..1
+	on_fail = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+	## cardinality = 0..1
+	should_fail = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = country root = country }
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	## cardinality = 0..1
+	on_monthly = {
+		## cardinality = 0..1
+		events = {
+			## cardinality = 0..inf
+			<event>
+		}
+		## cardinality = 0..1
+		random_events = {
+			## cardinality = 0..inf
+			int = 0
+			## cardinality = 0..inf
+			int = <event>
+		}
+	}
+
+	monthly_progress = {
+		base = float
+		alias_name[modifier_rule_with_loc] = alias_match_left[modifier_rule_with_loc]
+	}
+	on_progress_complete = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+}

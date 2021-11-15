@@ -58,7 +58,7 @@ alias[modifier_rule_add_factor:modifier] = {
 }
 
 alias[modifier_rule_with_loc:modifier] = {
-	add = value_field
+	enum[add_factor] = value_field
 	desc = localisation
 	alias_name[trigger] = alias_match_left[trigger]
 }

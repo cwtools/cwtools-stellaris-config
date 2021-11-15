@@ -124,6 +124,9 @@ alias[trigger:has_war_flag] = value[war_flag]
 ## severity = warning
 ###Checks if the army has a specific, arbitrarily-named, flag
 alias[trigger:has_army_flag] = value[army_flag]
+## severity = warning
+###Checks if the situation has a specific, arbitrarily-named, flag
+alias[trigger:has_situation_flag] = value[situation_flag]
 
 ###Checks if the country has a specific relation flag towards target country
 alias[trigger:has_relation_flag] = {
@@ -2262,3 +2265,15 @@ alias[trigger:has_climate] = localisation
 
 ###Check if the country has an embassy with the target country
 alias[trigger:has_embassy] = scope_group[target_country]
+
+
+#3.3
+
+###Checks if the scoped situation's progress is a certain value.
+alias[trigger:situation_progress] == value_field
+
+###Checks if the scoped situation's monthly progress is a certain value.
+alias[trigger:situation_monthly_progress] == value_field
+
+###Checks if the scoped situation is a certain type.
+alias[trigger:is_situation_type] = <situation_type>
