@@ -48,6 +48,9 @@ pop_faction = {
 	guiding_ethic = <ethos>
 
 	## cardinality = 0..1
+	use_guiding_ethic_as_pop_filter = bool
+
+	## cardinality = 0..1
 	### UI color for candidate header
 	election_header =  <sprite>
 
