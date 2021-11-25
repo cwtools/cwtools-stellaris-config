@@ -273,4 +273,10 @@ enums = {
 		starbase
 		spynetwork
 	}
+	enum[job_triggers] = {
+		can_fill_drone_job
+		can_fill_worker_job
+		can_fill_specialist_job
+		can_fill_ruler_job
+	}
 }

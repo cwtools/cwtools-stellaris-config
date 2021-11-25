@@ -58,7 +58,7 @@ job = {
 		}
 		text = localisation
 	}
-	
+
 	category = <social_strata>
 	## cardinality = 0..1
 	condition_string = localisation
@@ -103,6 +103,9 @@ job = {
 	possible_precalc = can_fill_worker_job
 	## cardinality = 0..1
 	possible_precalc = can_fill_drone_job
+	## cardinality = 0..1
+	possible_precalc = enum[job_triggers]
+
 	## cardinality = 0..1
 	possible = {
 		alias_name[trigger] = alias_match_left[trigger]
