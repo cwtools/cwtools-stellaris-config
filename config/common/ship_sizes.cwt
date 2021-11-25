@@ -189,6 +189,12 @@ ship_size = {
 		max = int
 		## cardinality = 0..1
 		naval_cap_div = int
+		## cardinality = 0..1
+		## replace_scope = { root = country this = country }
+		###This determines whether it shows in the breakdown for naval capacity
+		show = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
 	}
 	## cardinality = 0..1
 	## replace_scope = { root = country this = country }

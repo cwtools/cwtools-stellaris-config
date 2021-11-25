@@ -94,7 +94,15 @@ job = {
 	possible_pre_triggers = {
 		alias_name[pop_pre_trigger] = alias_match_left[pop_pre_trigger]
 	}
-
+	
+	## cardinality = 0..1
+	possible_precalc = can_fill_ruler_job
+	## cardinality = 0..1
+	possible_precalc = can_fill_specialist_job
+	## cardinality = 0..1
+	possible_precalc = can_fill_worker_job
+	## cardinality = 0..1
+	possible_precalc = can_fill_drone_job
 	## cardinality = 0..1
 	possible_precalc = enum[job_triggers]
 
