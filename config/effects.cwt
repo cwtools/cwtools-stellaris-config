@@ -642,7 +642,7 @@ alias[effect:create_fleet_from_naval_cap] = {
 ###Reduces the hull points of the scoped ship by a specific amount
 alias[effect:reduce_hp] = int_value_field
 ###Reduces the hull points of the scoped ship by a relative amount
-alias[effect:reduce_hp_percent] = value_field[0.0..1.0]
+# alias[effect:reduce_hp_percent] = value_field[0.0..1.0]
 ###Reduces the hull points of the scoped ship by a relative amount
 alias[effect:reduce_hp_percent] = int_value_field[0..100]
 ###Exiles the scoped country/fleet/army/pop faction's leader and saves them with a custom name so you can bring them back.
@@ -2232,6 +2232,8 @@ alias[effect:join_alliance] = {
 ### Removes scoped country from any alliances it is in
 alias[effect:leave_alliance] = {
 	override_requirements = bool
+	##cardinality = 0..1
+	apply_opinion_penalty = bool
 }
 
 ### Prints a message to game.log for debugging purposes.
@@ -2309,9 +2311,10 @@ alias[effect:rename_species] = {
 	name_list = <species_named_list>
 }
 
-#TODO
-### Restores all hull points to the scoped ship
-alias[effect:repair_percentage] = value_field
+### Restores the hull points of the scoped ship by a relative amount
+alias[effect:repair_percentage] = value_field[0.0..1.0]
+
+# TODO
 ### Restores all hull points to the scoped ship
 alias[effect:repair_ship] = yes
 ### Resets years of peace for a country.
@@ -2374,7 +2377,7 @@ alias[effect:set_faction_hostility] = {
 
 #
 ### Sets a country to lead a federation
-alias[effect:set_federation_leader] = scalar#TODO unknown unsage
+alias[effect:set_federation_leader] = scalar #TODO unknown unsage
 ### Sets the bombardment stance of the scoped fleet
 alias[effect:set_fleet_bombardment_stance] = <bombardment_stance>
 ### Sets a custom fleet formation on a fleet. set_fleet_formation = { position = { x = 1 y = 1 } position = { x = 2 y = 1 } }
