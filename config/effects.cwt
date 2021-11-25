@@ -2636,6 +2636,10 @@ alias[effect:add_random_non_blocker_deposit] = yes
 alias[effect:remove_last_built_building] = yes
 ###Removes all buildings from the scoped planet
 alias[effect:remove_all_buildings] = yes
+###Downgrades all non-capital buildings on the scoped planet/country. Leaves tier 1 buildings untouched.
+alias[effect:downgrade_all_buildings] = yes
+###Downgrades all buildings of a specified type on the planet/country.
+alias[effect:downgrade_buildings_of_type] = <building>
 ###Instantly adds devastation to scoped planet
 alias[effect:add_planet_devastation] = value_field[-100..100]
 ## scope = any
@@ -3331,3 +3335,10 @@ alias[effect:start_situation] = {
 	type = <situation_type>
 	target = scope[any]
 }
+
+###Destroys a situation in right hand side event target, use once situation is complete (on_fail/on_complete is not called)
+alias[effect:destroy_situation] = scope[situation]
+
+###Adds a sum of progress scoped situation
+alias[effect:add_situation_progress] = value_field
+

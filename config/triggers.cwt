@@ -2277,3 +2277,6 @@ alias[trigger:situation_monthly_progress] == value_field
 
 ###Checks if the scoped situation is a certain type.
 alias[trigger:is_situation_type] = <situation_type>
+
+###Checks if scoped starbase would evaluate to be a certain starbase_type for its current owner. Warning: expensive trigger.
+alias[trigger:is_starbase_type] = <starbase_type>

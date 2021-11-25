@@ -23,256 +23,192 @@ alias[trigger:hidden_trigger] = { alias_name[trigger] = alias_match_left[trigger
 ###Checks if any playable country meet the specified criteria
 alias[trigger:any_playable_country] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = fleet
 ###Checks if any of the country's owned fleets meet the specified criteria
 alias[trigger:any_owned_fleet] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = fleet
 ###Checks if the planet's orbital station meets the specified criteria
 alias[trigger:any_orbital_station] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = planet
 ###Checks if any planets within the country's borders meet the specified criteria
 alias[trigger:any_planet_within_border] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = ship
 ###Checks if any of the country's ships meet the specified criteria
 alias[trigger:any_owned_ship] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = planet
 ###Checks if any planet ANYWHERE meets the specified criteria
 alias[trigger:any_galaxy_planet] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = planet
 ###Checks if any planet in the system meets the specified criteria
 alias[trigger:any_system_planet] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = planet
 ###Checks if any of the country's owned planets meet the specified criteria
 alias[trigger:any_owned_planet] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = planet
 ###Checks if any of the country's controlled planets meet the specified criteria
 alias[trigger:any_controlled_planet] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = country
 ###Iterate through all countries
 alias[trigger:any_country] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = system
 ###Iterate through all rim systems
 alias[trigger:any_rim_system] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = leader
 ###Checks if any of the country's leaders meet the specified criteria
 alias[trigger:any_owned_leader] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = pop
 ###Iterate through all owned pops
 alias[trigger:any_owned_pop] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = sector
 ###Iterate through every owned sector
 alias[trigger:any_owned_sector] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = ambient_object
 ###Checks if any ambient objects in the game meet the specified criteria
 alias[trigger:any_ambient_object] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = ambient_object
 ###Checks if any ambient objects in the system meet the specified criteria
 alias[trigger:any_system_ambient_object] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = country
 ###Iterate through all bordering countries of a system
 alias[trigger:any_bordering_country] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = country
 ###Checks if any of the country's subject states meet the specified criteria
 alias[trigger:any_subject] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = country
 ###Iterate through all relations
 alias[trigger:any_relation] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = army
 ###Iterate through each army that is owned by the country
 alias[trigger:any_owned_army] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = army
 ###Iterate through each defending army on a planet
 alias[trigger:any_planet_army] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = country
 ###Iterate through all neighbor countries
 alias[trigger:any_neighbor_country] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = fleet
 ###Iterate through each fleet this fleet is in combat with
 alias[trigger:any_combatant_fleet] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = leader
 ###Iterate through each leader that is recruitable for the country
 alias[trigger:any_pool_leader] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = megastructure
 ###Iterate through each megastructure
 alias[trigger:any_megastructure] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = megastructure
 ###Iterate through each owned megastructure
 alias[trigger:any_owned_megastructure] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = megastructure
 ###Iterate through each megastructure in system
 alias[trigger:any_system_megastructure] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = species
 ###Iterate through each species of a country's owned pops
 alias[trigger:any_owned_pop_species] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = starbase
 ###Iterate through every owned starbase
 alias[trigger:any_owned_starbase] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = system
 ###Iterate through all systems
 alias[trigger:any_system] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = system
 ###Iterate through all systems within the country's borders
 alias[trigger:any_system_within_border] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = country
 ###Iterate through all war participants
 alias[trigger:any_war_participant] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = system
@@ -1902,8 +1838,6 @@ alias[effect:random_pool_leader] = {
 ###Checks if any deposits on the planet meet the criteria
 alias[trigger:any_deposit] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = deposit
@@ -1996,8 +1930,6 @@ alias[effect:ordered_member] = {
 ###Iterate through each member of the federation
 alias[trigger:any_member] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = country
@@ -2049,8 +1981,6 @@ alias[effect:random_war] = {
 ###Checks if any wars meet the specified criteria
 alias[trigger:any_war] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = war
@@ -2067,8 +1997,6 @@ alias[trigger:count_war] = {
 ###Iterate through each federation
 alias[trigger:any_federation] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = federation
@@ -2122,8 +2050,6 @@ alias[effect:ordered_federation] = {
 ###Iterate through each fleet in the system
 alias[trigger:any_fleet_in_system] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = fleet
@@ -2139,8 +2065,6 @@ alias[trigger:count_fleet_in_system] = {
 ###Iterate through each species in the galaxy
 alias[trigger:any_galaxy_species] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = species
@@ -2191,8 +2115,6 @@ alias[effect:ordered_galaxy_species] = {
 ###Iterate through each species belonging to the country/planet
 alias[trigger:any_owned_species] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = species
@@ -2243,8 +2165,6 @@ alias[effect:ordered_owned_species] = {
 ###Iterate through each species enslaved by the country/planet
 alias[trigger:any_enslaved_species] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = species
@@ -2297,8 +2217,6 @@ alias[effect:ordered_enslaved_species] = {
 ###Iterate through each envoy available to the country
 alias[trigger:any_envoy] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = leader
@@ -2358,8 +2276,6 @@ alias[trigger:count_playable_country] = {
 ###Iterate through each country rivalled by the current country
 alias[trigger:any_rival_country] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = country
@@ -2410,8 +2326,6 @@ alias[effect:ordered_rival_country] = {
 ###Iterate through each country in a federation with the current country
 alias[trigger:any_federation_ally] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = country
@@ -2462,8 +2376,6 @@ alias[effect:ordered_federation_ally] = {
 ###Checks if any of the country's pop factions meet the specified criteria
 alias[trigger:any_pop_faction] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 
@@ -2474,8 +2386,6 @@ alias[trigger:any_pop_faction] = {
 ###Iterate through each first contact site the current country has
 alias[trigger:any_first_contact] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = first_contact
@@ -2526,8 +2436,6 @@ alias[effect:ordered_first_contact] = {
 ###Iterate through each active first contact site the current country has
 alias[trigger:any_active_first_contact] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = first_contact
@@ -2578,8 +2486,6 @@ alias[effect:ordered_active_first_contact] = {
 ###Iterate through each spy network
 alias[trigger:any_spynetwork] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = spy_network
@@ -2631,8 +2537,6 @@ alias[effect:ordered_spynetwork] = {
 ###Iterate through each espionage operation
 alias[trigger:any_espionage_operation] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = espionage_operation
@@ -2684,8 +2588,6 @@ alias[effect:ordered_espionage_operation] = {
 ###Iterate through each espionage asset
 alias[trigger:any_espionage_asset] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = espionage_asset
@@ -2737,8 +2639,6 @@ alias[effect:ordered_espionage_asset] = {
 ###Iterate through each ship in the system
 alias[trigger:any_ship_in_system] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = ship
@@ -2792,8 +2692,6 @@ alias[effect:ordered_ship_in_system] = {
 ###Iterate through every fleet in the game
 alias[trigger:any_galaxy_fleet] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = fleet
@@ -2882,8 +2780,6 @@ alias[effect:ordered_moon] = {
 ###Checks if any of the planet's moons meet the specified criteria
 alias[trigger:any_moon] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = planet
@@ -2901,8 +2797,6 @@ alias[trigger:count_moon] = {
 ###Iterate through all sectors in the game
 alias[trigger:any_galaxy_sector] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = sector
@@ -2989,8 +2883,6 @@ alias[effect:random_neighbor_system] = {
 ###Checks if any of the system's neighboring systems by hyperlane - meet the specified criteria, bypasses not included
 alias[trigger:any_neighbor_system] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = system
@@ -3042,8 +2934,6 @@ alias[effect:random_neighbor_system_euclidean] = {
 ###Checks if any of the system's neighboring systems (by closeness, not by hyperlanes) meet the specified criteria, bypasses not included
 alias[trigger:any_neighbor_system_euclidean] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = system
@@ -3131,16 +3021,12 @@ alias[effect:random_attacker] = {
 ###Checks if any of the defenders in the war meet the specified criteria
 alias[trigger:any_defender] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = country
 ###Checks if any attackers in the war meet the specified criteria
 alias[trigger:any_attacker] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = country
@@ -3201,8 +3087,6 @@ alias[effect:random_associate] = {
 ###Iterate through each associate member of the federation
 alias[trigger:any_associate] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = country
@@ -3254,8 +3138,6 @@ alias[effect:random_species_pop] = {
 ###Iterate through each pop that belongs to this species; warning: resource-intensive!
 alias[trigger:any_species_pop] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = pop
@@ -3307,8 +3189,6 @@ alias[effect:random_fleet_in_orbit] = {
 ###Checks if any fleet in orbit of the planet meet the specified criteria
 alias[trigger:any_fleet_in_orbit] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = fleet
@@ -3362,8 +3242,6 @@ alias[effect:random_orbital_station] = {
 ###Iterate through each orbital station owned by the current country or in the current system - checks whether the enclosed triggers return true for any of them
 alias[trigger:any_orbital_station] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = fleet
@@ -3415,8 +3293,6 @@ alias[effect:random_galcom_member] = {
 ###Iterate through each member of the galactic community - checks whether the enclosed triggers return true for any of them
 alias[trigger:any_galcom_member] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = country
@@ -3468,8 +3344,6 @@ alias[effect:random_council_member] = {
 ###Iterate through each member of the galactic council - checks whether the enclosed triggers return true for any of them
 alias[trigger:any_council_member] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = country
