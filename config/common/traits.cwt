@@ -53,6 +53,13 @@ trait = {
 			<species_archetype>
 		}
 		## cardinality = 0..1
+		allowed_planet_classes = {
+			## cardinality = 1..inf
+			<planet_class>
+		}
+		## cardinality = 0..1
+		ideal_planet_class = <planet_class>
+		## cardinality = 0..1
 		species_class = {
 			## cardinality = 1..inf
 			<species_class>

@@ -42,6 +42,26 @@ decision = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
+	## cardinality = 0..1
+	abort_trigger = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## cardinality = 0..1
+	abort_effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+
+	## cardinality = 0..1
+	on_queued = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+
+	## cardinality = 0..1
+	on_unqueued = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+
 	effect = {
 		alias_name[effect] = alias_match_left[effect]
 	}

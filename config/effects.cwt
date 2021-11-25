@@ -1747,49 +1747,8 @@ alias[effect:change_species_characteristics] = {
 	###determines if species leaders are immortal
 	immortal = bool
 	## cardinality = 0..1
-	###determines if pops of that species can colonize
-	pops_can_be_colonizers = bool
-	## cardinality = 0..1
-	###determines if pops of that species can migrate
-	pops_can_migrate = bool
-	## cardinality = 0..1
-	###determines if pops of that species can reproduce
-	pops_can_reproduce = bool
-	## cardinality = 0..1
-	###determines if pops of that species can join factions
-	pops_can_join_factions = bool
-	## cardinality = 0..1
-	###determines if that species can generate leaders
-	can_generate_leaders = bool
-	## cardinality = 0..1
-	###determines if pops from that species can become slaves
-	pops_can_be_slaves = bool
-	## cardinality = 0..1
-	###determines if pops from that species have happiness
-	pops_have_happiness = bool
-	## cardinality = 0..1
-	###determines if pops from need consumer goods
-	consumer_goods = bool
-	## cardinality = 0..1
 	###determines if the species can be modified
 	can_be_modified = bool
-	## cardinality = 0..1
-	###speed at which the pops from that species grow automatically
-	pops_auto_growth = float[0.0..1.0]
-	## cardinality = 0..1
-	###amount of energy each pop of that species consume monthly
-	pop_maintenance = float[0.0..1.0]
-	## cardinality = 0..1
-	new_pop_resource_requirement = {
-		type = <resource>
-		type = robot_food
-		type = scalar
-		value = float
-	}
-	## cardinality = 0..1
-	allow_negative_traits = bool
-	## cardinality = 0..1
-	extra_trait_points = int
 	## cardinality = 0..1
 	portrait = scope_group[target_species]
 	## cardinality = 0..1
@@ -1806,14 +1765,11 @@ alias[effect:change_species_characteristics] = {
 	###optional, pushes out other traits if needed
 	add_traits_at_start_of_list = yes
 	## cardinality = 0..1
-	###Limits species to this gender or removes limit if 'any'
+	###Limits species to this gender
 	gender = enum[genders]
 	## cardinality = 0..1
-	###Limits species to this gender or removes limit if 'any'
-	gender = scope[leader]
-	## cardinality = 0..1
-	###Limits species to this gender or removes limit if 'any'
-	gender = any
+	###Limits species to this gender
+	gender = scope_group[target_leader]
 	## cardinality = 0..1
 	###Apply portrait and gender (randomizes new name) changes to existing leaders
 	can_change_leader = bool
@@ -1917,7 +1873,7 @@ alias[effect:create_bypass] = <bypass>
 ### Creates a cluster centered around the specified spatial object
 alias[effect:create_cluster] = {
 	id = scalar
-	radius = int #no variables here atm
+	radius = float #no variables here atm
 	center = scope[system]
 }
 

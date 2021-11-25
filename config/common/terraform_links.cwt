@@ -8,7 +8,12 @@ terraform_link = {
 	###country scope, from = planet
 	from = <planet_class>
 	to = <planet_class>
-	energy = int
+	
+	resources = {
+		category = <economic_category>
+		alias_name[economic_template] = alias_match_left[economic_template]
+	}
+
 	duration = int
 	## cardinality = 0..1
 	###displayed in game, hence functions like after effect and requires localisations in the same way.
