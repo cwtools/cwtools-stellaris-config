@@ -3671,7 +3671,7 @@ reduce_hp = 120
 Supported Scopes: ship
 
 reduce_hp_percent - Reduces the hull points of the scoped ship by a relative amount
-reduce_hp_percent = 0.25
+reduce_hp_percent = 25
 Supported Scopes: ship
 
 repair_ship - Restores all hull points to the scoped ship
