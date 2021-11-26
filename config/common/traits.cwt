@@ -147,7 +147,7 @@ trait = {
 		random_weight = {
 			## cardinality = 1..inf
 			<species_class> = float
-	}
+		}
 	}
 
 	subtype[leader_trait] = {
