@@ -316,6 +316,13 @@ civic_or_origin = {
 		## cardinality = 0..1
 		###default: no
 		can_build_ruler_ship = bool
+		
+		## cardinality = 0..1
+		### default: empty; trait set to enforce on the primary species
+		traits = {
+			## cardinality = 0..inf
+			trait = <trait.species_trait>
+		}
 
 		## cardinality = 0..1
 		### default: none; if present, will enable secondary species customization in empire designer and will create secondary species & pops at galaxy generation time (see empire_init_create_capital_secondary_pops)
