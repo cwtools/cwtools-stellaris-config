@@ -180,6 +180,11 @@ alias[trigger:pop_percentage] = {
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## cardinality = 0..1
+	###(optional: specifies pops to exclude from the calculation)
+	exclude = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 	percentage = value_field[0.0..1.0]
 }
 
@@ -514,9 +519,9 @@ alias[trigger:research_leader] = {
 alias[trigger:ethos] == value_field[0.0..1.0]
 
 ###Checks the leader's gender
-alias[trigger:gender] = enum[genders]
+alias[trigger:gender] = enum[genders_not_set]
 ###Checks the species' preset gender
-alias[trigger:species_gender] = enum[genders]
+alias[trigger:species_gender] = enum[genders_not_set]
 ###Checks whether the leader is idle
 alias[trigger:is_idle] = bool
 
