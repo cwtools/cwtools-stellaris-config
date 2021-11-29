@@ -1010,6 +1010,8 @@ alias[effect:create_species] = {
 	## cardinality = 0..1
 	namelist = scope_group[target_country]
 	## cardinality = 0..1
+	namelist = scope[species]
+	## cardinality = 0..1
 	namelist = random
 	## cardinality = 0..1
 	plural = scalar
@@ -1113,6 +1115,8 @@ alias[effect:create_species] = {
 	name_list = random
 	## cardinality = 0..1
 	name_list = scope_group[target_country]
+	## cardinality = 0..1
+	name_list = scope[species]
 	## cardinality = 0..1
 	pop_ethics = no
 	## cardinality = 0..1
@@ -1366,7 +1370,6 @@ alias[effect:create_leader] = {
 	## cardinality = 0..1
 	leader_age_max = int	#should not be less than min...
 	## cardinality = 0..1
-	###Warning: This is in trigger_docs but is not used in this place in Vanilla, and might not work
 	gender = enum[genders]
 	## cardinality = 0..1
 	###Warning: This is in trigger_docs but is not used in this place in Vanilla, and likely does not work
@@ -1418,7 +1421,6 @@ alias[effect:clone_leader] = {
 	## cardinality = 0..1
 	leader_age_max = int	#should not be less than min...
 	## cardinality = 0..1
-	###Warning: This is in trigger_docs but is not used in this place in Vanilla, and might not work
 	gender = enum[genders]
 	## cardinality = 0..1
 	###Warning: This is in trigger_docs but is not used in this place in Vanilla, and likely does not work
@@ -1766,7 +1768,7 @@ alias[effect:change_species_characteristics] = {
 	add_traits_at_start_of_list = yes
 	## cardinality = 0..1
 	###Limits species to this gender
-	gender = enum[genders]
+	gender = enum[genders_not_set]
 	## cardinality = 0..1
 	###Limits species to this gender
 	gender = scope_group[target_leader]
@@ -1837,6 +1839,8 @@ alias[effect:create_ambient_object] = {
 	entity_face_object = scope_group[spatial_object]
 	## cardinality = 0..1
 	entity_scale_to_size = bool
+	## cardinality = 0..1
+	play_animation_once = bool
 	## cardinality = 0..1
 	duration = int
 	## cardinality = 0..1
