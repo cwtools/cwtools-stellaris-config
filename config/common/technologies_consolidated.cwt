@@ -197,6 +197,7 @@ enums = {
 		robots
 		synths
 		unlock_arcane_deciphering
+		unlocks_auto_research
 	}
 	enum[technology_areas] = {
 		engineering
