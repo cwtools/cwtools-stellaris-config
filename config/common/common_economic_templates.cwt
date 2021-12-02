@@ -183,7 +183,19 @@ alias[triggered_planet_modifier:triggered_planet_modifier] = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 }
-
+## replace_scope = { this = planet root = planet }
+alias[triggered_planet_growth_modifier:triggered_planet_growth_modifier] = {
+	## cardinality = 0..1
+	## replace_scope = { this = pop root = pop }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	alias_name[modifier] = alias_match_left[modifier]
+	## cardinality = 0..1
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+}
 ## replace_scope = { this = planet root = planet }
 alias[triggered_planet_modifier_pop:triggered_planet_modifier] = {
 	## cardinality = 0..1
