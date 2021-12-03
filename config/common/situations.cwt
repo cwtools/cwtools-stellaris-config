@@ -18,7 +18,11 @@ situation_type = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 	## cardinality = 0..1
-	should_fail = {
+	on_abort = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+	## cardinality = 0..1
+	abort_trigger = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
@@ -50,5 +54,58 @@ situation_type = {
 	}
 	on_progress_complete = {
 		alias_name[effect] = alias_match_left[effect]
+	}
+
+	## cardinality = 0..inf
+	approach = {
+		name = localisation
+		icon = {
+			icon = <sprite>
+			text = localisation
+		}
+		## cardinality = 0..1
+		allow = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..1
+		potential = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..1
+		modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		## cardinality = 0..1
+		triggered_modifier = {
+			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			modifier = {
+				alias_name[modifier] = alias_match_left[modifier]
+			}
+		}
+		## cardinality = 0..1
+		target_modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		## cardinality = 0..1
+		triggered_target_modifier = {
+			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			modifier = {
+				alias_name[modifier] = alias_match_left[modifier]
+			}
+		}
+		## cardinality = 0..1
+		resources = {
+			category = <economic_category>
+			alias_name[economic_template] = alias_match_left[economic_template]
+		}
+		## cardinality = 0..1
+		ai_weight = {
+			base = float
+			alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		}
 	}
 }
