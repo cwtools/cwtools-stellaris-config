@@ -31,6 +31,28 @@ situation_type = {
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
+	## cardinality = 0..inf
+	triggered_modifier = {
+		potential = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+	}
+	## cardinality = 0..1
+	target_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	## cardinality = 0..inf
+	triggered_target_modifier = {
+		potential = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+	}
 
 	## cardinality = 0..1
 	on_monthly = {
@@ -49,7 +71,6 @@ situation_type = {
 	}
 
 	monthly_progress = {
-		base = float
 		alias_name[modifier_rule_with_loc] = alias_match_left[modifier_rule_with_loc]
 	}
 	on_progress_complete = {
@@ -75,7 +96,7 @@ situation_type = {
 		modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		triggered_modifier = {
 			potential = {
 				alias_name[trigger] = alias_match_left[trigger]
@@ -88,7 +109,7 @@ situation_type = {
 		target_modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		triggered_target_modifier = {
 			potential = {
 				alias_name[trigger] = alias_match_left[trigger]
@@ -104,8 +125,50 @@ situation_type = {
 		}
 		## cardinality = 0..1
 		ai_weight = {
-			base = float
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		}
+	}
+
+	## cardinality = 0..1
+	start_value = int
+	## cardinality = 0..1
+	completion_value = int
+	
+	## cardinality = 0..1
+	severity_levels = {
+		## cardinality = 1..inf
+	 	scalar = {
+	 		end = int
+			## cardinality = 0..1
+			on_first_enter = {
+				alias_name[effect] = alias_match_left[effect]
+			}
+			## cardinality = 0..inf
+			triggered_modifier = {
+				potential = {
+					alias_name[trigger] = alias_match_left[trigger]
+				}
+				modifier = {
+					alias_name[modifier] = alias_match_left[modifier]
+				}
+			}
+	    }
+	}
+}
+
+enums = {
+	complex_enum[situation_approaches] = {
+		path = "game/common/situations"
+		name = {
+			approach = {
+				name = enum_name
+			}
+		}
+	}
+	complex_enum[situation_severity_levels] = {
+		path = "game/common/situations"
+		severity_levels = {
+			enum_name = {}
 		}
 	}
 }
