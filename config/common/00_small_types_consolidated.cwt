@@ -235,9 +235,7 @@ country_customization = {
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
 	weight = {
-		## cardinality = 0..1
-		base = int
-		alias_name[modifier_rule_add] = alias_match_left[modifier_rule_add]
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 }
 
@@ -255,8 +253,6 @@ system_type = {
 	#TODO: it appears so, but the file uses owner (not space_owner). Check pls
 	## cardinality = 0..1
 	weight_modifier = {
-		## cardinality = 0..1
-		base = int
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 }
@@ -285,14 +281,10 @@ precursors = {
 
 sector_type = {
 	system_scores = {
-		## cardinality = 0..1
-		base = int
-		alias_name[modifier_rule_add_factor] = alias_match_left[modifier_rule_add_factor]
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	local_capital_scores = {
-		## cardinality = 0..1
-		base = int
-		alias_name[modifier_rule_add_factor] = alias_match_left[modifier_rule_add_factor]
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	resource_conversion_table = {
 		energy = int
@@ -313,7 +305,6 @@ sector_focus = {
 	
 	## cardinality = 0..1
 	ai_weight = {
-		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 
@@ -321,7 +312,6 @@ sector_focus = {
 	district = {
 		key = <district>
 		weight = {
-			weight = float
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		}
 	}
@@ -336,7 +326,6 @@ sector_focus = {
 		###gets built whether or not a pop would work the jobs
 		exempt_from_jobs_check = yes
 		weight = {
-			weight = float
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		}
 	}
@@ -424,13 +413,11 @@ ai_budget = {
 
 	## cardinality = 0..1
 	static_max = {
-		base = int
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 
 	## cardinality = 0..1
 	static_min = {
-		base = int
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 }
@@ -441,7 +428,7 @@ trade_conversion = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	weight = {
-		weight = int
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	conversion_rate = {
 		## cardinality = 1..inf
@@ -494,7 +481,6 @@ economic_plan = {
 
 	## replace_scope = { this = country root = country }
 	ai_weight = {
-		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 }

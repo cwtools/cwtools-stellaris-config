@@ -280,7 +280,7 @@ event = {
 				factor = float[0..10000]
 
 				#Note: Weight does not work (guaranteed error message), add seems to usually cause error messages
-				alias_name[modifier_rule_factor] = alias_match_left[modifier_rule_factor]
+				alias_name[modifier_rule] = alias_match_left[modifier_rule]
 			}
 
 			subtype[diplomatic] = {

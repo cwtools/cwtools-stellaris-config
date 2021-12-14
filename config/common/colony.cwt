@@ -61,8 +61,6 @@ colony_type = {
 	alias_name[triggered_planet_modifier] = alias_match_left[triggered_planet_modifier]
 	
 	weight_modifier = {
-		## cardinality = 0..1
-		base = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 

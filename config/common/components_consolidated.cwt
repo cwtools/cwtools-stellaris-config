@@ -123,8 +123,6 @@ component_template = {
  	}
 	## cardinality = 0..1
 	ai_weight = {
-		## cardinality = 0..1
-		enum[factor_weight] = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	subtype[utility_component_template] = {

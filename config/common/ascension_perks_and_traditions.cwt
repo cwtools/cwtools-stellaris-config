@@ -123,10 +123,6 @@ tradition = {
 	### the ai_weight in traditions applies both to the main traditions and the tradition swaps, there are no seperate fields.
 	## cardinality = 0..1
 	ai_weight = {
-		## cardinality = 0..1
-		factor = float
-		## cardinality = 0..1
-		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	## cardinality = 0..1
@@ -172,10 +168,6 @@ tradition = {
 		## cardinality = 0..1
 		###this determines the chances of a tradition swap appearing for a given empire IF multiple swaps are potential.
 		weight = {
-			## cardinality = 0..1
-			factor = float
-			## cardinality = 0..1
-			weight = float
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		}
 		## cardinality = 0..1
@@ -213,10 +205,6 @@ tradition_category = {
 	
 	## replace_scope = { this = country root = country }
 	ai_weight = {
-		## cardinality = 0..1
-		factor = float
-		## cardinality = 0..1
-		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 }

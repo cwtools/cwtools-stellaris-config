@@ -147,7 +147,6 @@ job = {
 	alias_name[triggered_pop_modifier] = alias_match_left[triggered_pop_modifier]
 
 	weight = {
-		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 }
@@ -170,7 +169,6 @@ social_strata = {
 	}
 	## cardinality = 0..1
 	weight = {
-		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 

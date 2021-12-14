@@ -152,7 +152,6 @@ war_goal = {
 	## replace_scope = { this = country root = country from = country }
 	###FROM = The targeted country, THIS = The acting country
 	ai_weight = {
-		weight = int
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 

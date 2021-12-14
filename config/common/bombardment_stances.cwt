@@ -24,7 +24,6 @@ bombardment_stance = {
 	planet_damage = float
 	army_damage = float
 	kill_pop_chance = {
-		base = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	min_pops_to_kill_pop = int
@@ -32,8 +31,6 @@ bombardment_stance = {
 #	max_blockers = int
 	## replace_scope = { root = fleet this = fleet from = planet }
 	ai_weight = {
-		weight = int
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
-
 	}
 }

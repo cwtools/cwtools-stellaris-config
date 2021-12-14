@@ -67,7 +67,6 @@ starbase_building = {
 
 	## cardinality = 0..1
 	ai_weight = {
-		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 
@@ -208,7 +207,6 @@ starbase_module = {
 
 	## cardinality = 0..1
 	ai_weight = {
-		weight = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 }
@@ -233,10 +231,6 @@ starbase_level = {
 	### Determines which levels are more important to upgrade from
 	## replace_scope = { this = starbase root = starbase from = country }
 	ai_weight = {
-		## cardinality = 0..1
-		weight = float
-		## cardinality = 0..1
-		factor = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	## cardinality = 0..1
@@ -254,12 +248,6 @@ starbase_type = {
 	}
 	## replace_scope = { this = starbase root = starbase from = country }
 	weight_modifier = {
-		## cardinality = 1..1 #one of these is required
-		base = float
-		## cardinality = 0..1
-		factor = float
-		## cardinality = 0..1
-		add = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	## cardinality = 0..1
@@ -267,31 +255,24 @@ starbase_type = {
 		#one of these is required
 		## cardinality = 0..1
 		min = {
-			## cardinality = 1..1 #one of these is required
-			base = int
-			## cardinality = 0..1
-			factor = float
+			alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		}
 		#one of these is required
 		## cardinality = 0..1
 		ratio = {
-			#one of these is required
-			base = float #this is a fraction from 100% of the base defined under min = {}!, total of fractions should not exceeed 100%
-			## cardinality = 0..inf
-			## replace_scope = { this = starbase root = starbase from = country }
-			modifier = {
-				add = float #this increases or reduces parts of the fraciton, i.e. +0.05, -0.1 etc.
-				## cardinality = 1..inf
-				alias_name[trigger] = alias_match_left[trigger]
-			}
+			alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		}
 		buildings = {
 			## cardinality = 0..inf
-			<starbase_building> = { base = float } #these probably also accept modifiers
+			<starbase_building> = {
+				alias_name[modifier_rule] = alias_match_left[modifier_rule]
+			}
 		}
 		modules = {
 			## cardinality = 0..inf
-			<starbase_module> = { base = float } #these probably also accept modifiers
+			<starbase_module> = {
+				alias_name[modifier_rule] = alias_match_left[modifier_rule]
+			}
 		}
 	}
 }

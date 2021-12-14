@@ -74,11 +74,6 @@ authority = {
 	## replace_scope = { this = no_scope root = no_scope } #this can check has_dlc and other likewise triggers, but thats it.
 	## cardinality = 0..1
 	random_weight = {
-		## cardinality = 0..1
-		base = float
-		## cardinality = 0..1
-		factor = float
-		## cardinality = 0..inf
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	## cardinality = 0..1
@@ -160,8 +155,6 @@ government = {
 	## replace_scope = { this = country root = country }
 	### scriptable value, scope: country; the (possible) government type with the biggest weight is assigned to the country
 	weight = {
-		## cardinality = 0..1
-		base = int
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	ruler_title = localisation
@@ -230,10 +223,6 @@ civic_or_origin = {
 	## replace_scope = { root = country this = country }
 	### scriptable weight for randomizing a civic; required, else the civic will not get assigned randomly
 	random_weight = {
-		## cardinality = 0..1
-		base = float
-		## cardinality = 0..1
-		factor = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 
