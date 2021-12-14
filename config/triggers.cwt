@@ -2286,7 +2286,7 @@ alias[trigger:current_situation_approach] = enum[situation_approaches]
 ###Checks if the specified approach is allowed to be picked (according to potential and allow triggers) on the scoped situation.
 alias[trigger:can_set_situation_approach] = enum[situation_approaches]
 
-###Checks if the specified severity level is currently active in the scoped situation.
+# ###Checks if the specified severity level is currently active in the scoped situation.
 alias[trigger:current_severity_level] = enum[situation_severity_levels]
 
 ###Checks if the scoped situation is a certain type.
