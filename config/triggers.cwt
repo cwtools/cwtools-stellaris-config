@@ -2280,6 +2280,15 @@ alias[trigger:situation_progress] == value_field
 ###Checks if the scoped situation's monthly progress is a certain value.
 alias[trigger:situation_monthly_progress] == value_field
 
+###Checks if the specified approach has been picked on the scoped situation.
+alias[trigger:current_situation_approach] = enum[situation_approaches]
+
+###Checks if the specified approach is allowed to be picked (according to potential and allow triggers) on the scoped situation.
+alias[trigger:can_set_situation_approach] = enum[situation_approaches]
+
+###Checks if the specified severity level is currently active in the scoped situation.
+alias[trigger:current_severity_level] = enum[situation_severity_levels]
+
 ###Checks if the scoped situation is a certain type.
 alias[trigger:is_situation_type] = <situation_type>
 
