@@ -342,7 +342,6 @@ enums = {
 		living_standard_utopian
 		living_standard_good
 		living_standard_normal
-		living_standard_poor
 		living_standard_subsistence
 		living_standard_servitude
 		living_standard_hive_mind
