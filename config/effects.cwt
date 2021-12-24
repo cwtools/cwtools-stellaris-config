@@ -3334,6 +3334,21 @@ alias[effect:reroll_random] = yes
 ###Sets the target system as 'visited' (i.e. low system intel on the map)
 alias[effect:set_visited] = scope[system]
 
+###Creates a new Nebula with a given radius centered around the current system.
+alias[effect:create_nebula] = {
+	## cardinality = 0..1
+	###(loc synced, optional - default is random)
+	name = localisation_synced
+	## required
+	radius = int_value_field
+	## cardinality = 0..1
+	## push_scope = galactic_object
+	###effects on every system in the new nebula
+	effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+}
+
 
 #3.3
 
