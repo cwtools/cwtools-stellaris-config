@@ -102,12 +102,26 @@ types = {
 		subtype[major] = {
 			major = yes
 		}
+		subtype[inherited] = {
+			base = <event>
+		}
 	}
 }
 
 event = {
 	id = scalar
 
+	subtype[inherited] = {
+		base = <event>
+		## cardinality = 0..1
+		desc_clear = yes
+		## cardinality = 0..1
+		option_clear = yes
+		## cardinality = 0..1
+		picture_clear = yes
+		## cardinality = 0..1
+		show_sound_clear = yes
+	}
 	subtype[!hidden] = {
 		title = localisation
 		desc = localisation
