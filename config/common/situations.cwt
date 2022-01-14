@@ -41,6 +41,7 @@ situation_type = {
 		}
 	}
 	## cardinality = 0..1
+	## push_scope = planet
 	target_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
@@ -49,6 +50,7 @@ situation_type = {
 		potential = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
+		## push_scope = planet
 		modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
@@ -101,11 +103,13 @@ situation_type = {
 			potential = {
 				alias_name[trigger] = alias_match_left[trigger]
 			}
+			## push_scope = planet
 			modifier = {
 				alias_name[modifier] = alias_match_left[modifier]
 			}
 		}
 		## cardinality = 0..1
+		## push_scope = planet
 		target_modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
@@ -167,8 +171,10 @@ enums = {
 	}
 	complex_enum[situation_severity_levels] = {
 		path = "game/common/situations"
-		severity_levels = {
-			enum_name = {}
+		name = {
+			severity_levels = {
+				enum_name = {}
+			}
 		}
 	}
 }
