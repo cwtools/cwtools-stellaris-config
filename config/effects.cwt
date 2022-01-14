@@ -1232,6 +1232,9 @@ alias[effect:create_country] = {
 	## cardinality = 0..1
 	randomize_ethos = yes
 	## cardinality = 0..1
+	###Copies friendliness and hostility data from specified country.
+	use_hostilities_from = scope_group[target_country]
+	## cardinality = 0..1
 	ethos = random
 	## cardinality = 0..1
 	ethos = scope_group[target_country]
@@ -1541,9 +1544,13 @@ alias[effect:change_dominant_species] = {
 ###Changes the class of the scoped planet
 alias[effect:change_pc] = <planet_class>
 alias[effect:change_pc] = <planet_class_random_list>
+alias[effect:change_pc] = scope_group[target_species]
+alias[effect:change_pc] = scope[species]
 alias[effect:change_pc] = {
 	class = <planet_class>
 	class = <planet_class_random_list>
+	class = scope_group[target_species]
+	class = scope[species]
 	inherit_entity = bool
 }
 
@@ -1800,6 +1807,9 @@ alias[effect:change_species_characteristics] = {
 	## cardinality = 0..1
 	###Limits species to this gender
 	gender = enum[genders_not_set]
+	## cardinality = 0..1
+	###Limits species to this gender
+	gender = any
 	## cardinality = 0..1
 	###Limits species to this gender
 	gender = scope_group[target_leader]
@@ -2174,7 +2184,7 @@ alias[effect:finish_upgrade] = yes
 ###fleet_action_research_special_project = { special_project = test_project target = event_target:project_planet }
 alias[effect:fleet_action_research_special_project] = {
 	special_project = <special_project>
-	target = scope_group[spatial_objectt]
+	target = scope_group[spatial_object]
 }
 
 ### Forces target pop to immediately evaluate their attraction to various pop factions
@@ -3333,6 +3343,21 @@ alias[effect:reroll_random] = yes
 
 ###Sets the target system as 'visited' (i.e. low system intel on the map)
 alias[effect:set_visited] = scope[system]
+
+###Creates a new Nebula with a given radius centered around the current system.
+alias[effect:create_nebula] = {
+	## cardinality = 0..1
+	###(loc synced, optional - default is random)
+	name = localisation_synced
+	## required
+	radius = int_value_field
+	## cardinality = 0..1
+	## push_scope = galactic_object
+	###effects on every system in the new nebula
+	effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+}
 
 
 #3.3

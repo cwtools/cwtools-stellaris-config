@@ -95,7 +95,7 @@ alias[economic_template:cost] = {
 	## cardinality = 0..inf
 	<resource> = float
 	## cardinality = 0..1
-	mult = value_field
+	multiplier = value_field
 }
 
 alias[economic_template:produces] = {
@@ -106,7 +106,7 @@ alias[economic_template:produces] = {
 	## cardinality = 0..inf
 	<resource> = float
 	## cardinality = 0..1
-	mult = value_field
+	multiplier = value_field
 }
 
 alias[economic_template:upkeep] = {
@@ -117,7 +117,7 @@ alias[economic_template:upkeep] = {
 	## cardinality = 0..inf
 	<resource> = float
 	## cardinality = 0..1
-	mult = value_field
+	multiplier = value_field
 }
 
 alias[economic_template_only_produces:produces] = {
@@ -137,7 +137,7 @@ alias[economic_template_no_produce:cost] = {
 	## cardinality = 0..inf
 	<resource> = float
 	## cardinality = 0..1
-	mult = value_field
+	multiplier = value_field
 }
 
 alias[economic_template_no_produce:upkeep] = {
@@ -148,7 +148,7 @@ alias[economic_template_no_produce:upkeep] = {
 	## cardinality = 0..inf
 	<resource> = float
 	## cardinality = 0..1
-	mult = value_field
+	multiplier = value_field
 }
 
 ## cardinality = 0..1
@@ -167,7 +167,7 @@ alias[resources_template_optional:resources] = {
 		## cardinality = 0..inf
 		<resource> = float
 		## cardinality = 0..1
-		mult = value_field
+		multiplier = value_field
 	}
 }
 
@@ -183,7 +183,19 @@ alias[triggered_planet_modifier:triggered_planet_modifier] = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 }
-
+## replace_scope = { this = planet root = planet }
+alias[triggered_planet_growth_modifier:triggered_planet_growth_modifier] = {
+	## cardinality = 0..1
+	## replace_scope = { this = pop root = pop }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	alias_name[modifier] = alias_match_left[modifier]
+	## cardinality = 0..1
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+}
 ## replace_scope = { this = planet root = planet }
 alias[triggered_planet_modifier_pop:triggered_planet_modifier] = {
 	## cardinality = 0..1
