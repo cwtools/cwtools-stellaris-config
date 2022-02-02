@@ -107,5 +107,6 @@ enums = {
 		ceiling
 		floor
 		abs
+		round
 	}
 }

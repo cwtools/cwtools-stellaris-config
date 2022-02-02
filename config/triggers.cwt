@@ -2305,3 +2305,13 @@ alias[trigger:is_starbase_type] = <starbase_type>
 ###Checks if the planet's ascension tier is as specified.
 alias[trigger:has_planetary_ascension_tier] == int_value_field
 
+#3.4
+
+###Checks if the planet's ascension tier is as specified.
+alias[trigger:check_economic_modifier_for_job] = {
+	job = <job>
+	resource = <resource>
+	value = value_field
+	## cardinality = 0..1
+	species_modifiers_only = no
+}

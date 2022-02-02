@@ -2581,6 +2581,10 @@ alias[effect:spawn_system] = {
 	## cardinality = 0..1
 	max_orientation_angle = float
 	## cardinality = 0..1
+	direction = corewards
+	## cardinality = 0..1
+	direction = rimwards
+	## cardinality = 0..1
 	effect = {
 		alias_name[effect] = alias_match_left[effect]
 	}
