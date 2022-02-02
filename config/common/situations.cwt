@@ -28,6 +28,7 @@ situation_type = {
 
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
+	## push_scope = country
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
@@ -36,6 +37,7 @@ situation_type = {
 		potential = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
+		## push_scope = country
 		modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
@@ -95,6 +97,7 @@ situation_type = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 		## cardinality = 0..1
+		## push_scope = country
 		modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
@@ -103,7 +106,7 @@ situation_type = {
 			potential = {
 				alias_name[trigger] = alias_match_left[trigger]
 			}
-			## push_scope = planet
+			## push_scope = country
 			modifier = {
 				alias_name[modifier] = alias_match_left[modifier]
 			}
@@ -118,6 +121,7 @@ situation_type = {
 			potential = {
 				alias_name[trigger] = alias_match_left[trigger]
 			}
+			## push_scope = planet
 			modifier = {
 				alias_name[modifier] = alias_match_left[modifier]
 			}
@@ -147,11 +151,36 @@ situation_type = {
 			on_first_enter = {
 				alias_name[effect] = alias_match_left[effect]
 			}
+			## cardinality = 0..1
+			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			## push_scope = country
+			modifier = {
+				alias_name[modifier] = alias_match_left[modifier]
+			}
 			## cardinality = 0..inf
 			triggered_modifier = {
 				potential = {
 					alias_name[trigger] = alias_match_left[trigger]
 				}
+				## push_scope = country
+				modifier = {
+					alias_name[modifier] = alias_match_left[modifier]
+				}
+			}
+			## cardinality = 0..1
+			## push_scope = planet
+			target_modifier = {
+				alias_name[modifier] = alias_match_left[modifier]
+			}
+			## cardinality = 0..inf
+			triggered_target_modifier = {
+				potential = {
+					alias_name[trigger] = alias_match_left[trigger]
+				}
+				## push_scope = planet
 				modifier = {
 					alias_name[modifier] = alias_match_left[modifier]
 				}

@@ -2301,3 +2301,7 @@ alias[trigger:is_situation_type] = <situation_type>
 
 ###Checks if scoped starbase would evaluate to be a certain starbase_type for its current owner. Warning: expensive trigger.
 alias[trigger:is_starbase_type] = <starbase_type>
+
+###Checks if the planet's ascension tier is as specified.
+alias[trigger:has_planetary_ascension_tier] == int_value_field
+

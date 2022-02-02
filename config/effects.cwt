@@ -3380,3 +3380,5 @@ alias[effect:add_situation_progress] = value_field
 ###Sets the approach to the Situation. Respects allow and potential triggers.
 alias[effect:set_situation_approach] = enum[situation_approaches]
 
+###Sets the planet's ascension tier to the specified value.
+alias[effect:set_planetary_ascension_tier] = int_value_field

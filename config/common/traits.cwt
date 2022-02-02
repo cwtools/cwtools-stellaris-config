@@ -114,13 +114,31 @@ trait = {
 		## replace_scope = { this = species root = species from = country }
 		## cardinality = 0..1
 		species_potential_add = {
-			## cardinality = 0..inf
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## replace_scope = { this = species root = species from = country }
+		## cardinality = 0..1
+		species_possible_add = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## replace_scope = { this = species root = species from = country }
+		## cardinality = 0..1
+		species_potential_remove = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 		## replace_scope = { this = species root = species from = country }
 		## cardinality = 0..1
 		species_possible_remove = {
-			## cardinality = 0..inf
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## replace_scope = { this = species root = species from = country }
+		## cardinality = 0..1
+		species_possible_merge_add = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## replace_scope = { this = species root = species from = country }
+		## cardinality = 0..1
+		species_possible_merge_remove = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 		## cardinality = 0..1
