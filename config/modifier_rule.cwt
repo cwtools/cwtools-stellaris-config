@@ -1,4 +1,14 @@
 
+types = {
+	type[script_value] = {
+		path = "game/common/script_values"
+	}
+}
+
+script_value = {
+	alias_name[modifier_rule] = alias_match_left[modifier_rule]
+}
+
 alias[modifier_rule:base] = float
 alias[modifier_rule:enum[complex_maths_enum]] = value_field
 alias[modifier_rule:enum[simple_maths_enum]] = yes
