@@ -1001,10 +1001,8 @@ alias[effect:destroy_ambient_object] = scope[ambient_object]
 ###Removes the planet from the scope
 alias[effect:remove_planet] = yes
 ###Removes a building from the scoped planet, this will also cancel construction and clear the queue
-## scope = planet
 alias[effect:remove_building] = <building>
 ###Begins construction of a specific building
-## scope = planet
 alias[effect:add_building] = <building>
 ###Instantly gives a specific tech to the scoped country
 alias[effect:give_technology] = {
@@ -1062,6 +1060,15 @@ alias[effect:create_species] = {
 	portrait = <portrait_group>
 	## cardinality = 0..1
 	portrait = random
+	## cardinality = 0..1
+	###Limits species to this gender
+	gender = enum[genders_not_set]
+	## cardinality = 0..1
+	###Limits species to this gender
+	gender = scope_group[target_leader]
+	## cardinality = 0..1
+	###Limits species to this gender
+	gender = scope_group[target_species]
 	## cardinality = 0..1
 	homeworld = scope_group[target_planet]
 	## cardinality = 0..1
@@ -1813,6 +1820,9 @@ alias[effect:change_species_characteristics] = {
 	## cardinality = 0..1
 	###Limits species to this gender
 	gender = scope_group[target_leader]
+	## cardinality = 0..1
+	###Limits species to this gender
+	gender = scope_group[target_species]
 	## cardinality = 0..1
 	###Apply portrait and gender (randomizes new name) changes to existing leaders
 	can_change_leader = bool
@@ -3386,3 +3396,9 @@ alias[effect:set_situation_approach] = enum[situation_approaches]
 
 ###Sets the planet's ascension tier to the specified value.
 alias[effect:set_planetary_ascension_tier] = int_value_field
+
+###Disables a single instance of a specific building on the scoped planet
+alias[effect:disable_building] = <building>
+
+###Ruins a single instance of a specific building on the scoped planet
+alias[effect:ruin_building] = <building>

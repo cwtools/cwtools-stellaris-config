@@ -1467,8 +1467,20 @@ alias[trigger:resource_stockpile_compare] = {
 	mult = value[variable]
 }
 
-###Checks specific resource income value for the country scope
+###Checks specific resource income value for the country scope (note: checks profit/loss, not revenue)
 alias[trigger:resource_income_compare] = {
+	resource = <resource>
+	value = value_field
+}
+
+###Checks specific resource expenses value for the country scope
+alias[trigger:resource_expenses_compare] = {
+	resource = <resource>
+	value = value_field
+}
+
+###Checks specific resource revenue value for the country scope
+alias[trigger:resource_revenue_compare] = {
 	resource = <resource>
 	value = value_field
 }
@@ -2311,7 +2323,17 @@ alias[trigger:has_planetary_ascension_tier] == int_value_field
 alias[trigger:check_economic_modifier_for_job] = {
 	job = <job>
 	resource = <resource>
+	resource = {
+		## cardinality = 1..inf
+		<resource> = float
+	}
 	value = value_field
 	## cardinality = 0..1
 	species_modifiers_only = no
+}
+
+###Checks ratio between the country's income and expenditures for a specific resource. E.g. if it makes 80 energy and spends 100, its ratio is 0.8
+alias[trigger:resource_income_to_expenditure_balance_ratio] = {
+	resource = <resource>
+	value = value_field
 }
