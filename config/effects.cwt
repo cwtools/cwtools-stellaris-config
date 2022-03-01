@@ -779,10 +779,11 @@ alias[effect:add_monthly_resource_mult] = {
 
 ###Adds a specific trait to the scoped leader
 alias[effect:add_trait] = <trait.leader_trait>
-###Adds a specific ruler trait to the scoped leader, even if they are not currently ruler; it becomes active when they become ruler
-alias[effect:add_ruler_trait] = <trait.ruler_trait>
+## severity = warning
+###Adds a specific leader trait to the scoped leader's ruler traits, even if they are not currently ruler; it becomes active when they become ruler
+alias[effect:add_ruler_trait] = <trait.leader_trait>
 ###Removes a specific trait from the scoped leader
-alias[effect:remove_trait] = <trait>
+alias[effect:remove_trait] = <trait.leader_trait>
 #also, at least one of while and limit should be there
 ###Repeats enclosed effects while limit criteria are met or until set iteration count is reached. Can use a variable for the count.
 alias[effect:while] = {
@@ -2302,8 +2303,8 @@ alias[effect:remove_notification_modifier] = <notification_modifier>
 #alias[effect:remove_orbital_deposit] = yes
 ### Removes a specific point of interest from the scoped country's situation log
 alias[effect:remove_point_of_interest] = value[point_of_interest]
-### Removes a specific ruler trait from the scoped leader, even if they are not currently ruler; this is relevant if they ever become ruler
-alias[effect:remove_ruler_trait] = <trait>#TODO ruler trait
+### Removes a specific leader trait from the scoped leader's ruler traits, even if they are not currently ruler; this is relevant if they ever become ruler
+alias[effect:remove_ruler_trait] = <trait.leader_trait>
 ### Removes a saved leader for the scoped country with a lookup key
 alias[effect:remove_saved_leader] = value[saved_leader]
 #use one of the following:
