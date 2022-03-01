@@ -1137,6 +1137,16 @@ alias[effect:create_species] = {
 		value = float
 	}
 	## cardinality = 0..1
+	###Limits species to this gender
+	gender = enum[genders_not_set]
+	## cardinality = 0..1
+	###Limits species to this gender
+	gender = scope[species]
+	## cardinality = 0..1
+	###(default: no)
+	clear_parent_species_link = bool
+	## cardinality = 0..1
+	###(default: yes)
 	allow_negative_traits = bool
 	## cardinality = 0..1
 	extra_trait_points = int
@@ -1808,7 +1818,7 @@ alias[effect:change_species_characteristics] = {
 	###Limits species to this gender
 	gender = enum[genders_not_set]
 	## cardinality = 0..1
-	###Limits species to this gender
+	###Removes species gender restrictions
 	gender = any
 	## cardinality = 0..1
 	###Limits species to this gender
