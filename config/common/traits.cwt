@@ -98,8 +98,6 @@ trait = {
 		## cardinality = 0..1
 		sorting_priority = int
 		## cardinality = 0..1
-		modification = bool
-		## cardinality = 0..1
 		### Default = no
 		improves_leaders = bool
 		## cardinality = 0..1
@@ -173,9 +171,6 @@ trait = {
 
 		cost = int
 		icon = filepath
-
-		### Default = yes
-		modification = bool
 
 		leader_trait = {
 			## cardinality = 1..5
