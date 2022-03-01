@@ -2278,6 +2278,12 @@ alias[trigger:has_embassy] = scope_group[target_country]
 ###Checks if the planet is ideal (as set in planet_classes)
 alias[trigger:is_ideal] = bool
 
+###Checks if the specified ship, fleet, planet or system is within sensor range of the scoped country.
+alias[trigger:is_in_sensor_range] = scope[ship]
+alias[trigger:is_in_sensor_range] = scope[fleet]
+alias[trigger:is_in_sensor_range] = scope[planet]
+alias[trigger:is_in_sensor_range] = scope[galactic_object]
+
 ###Checks if the scoped ship, fleet, planet or system is within sensor range of the specified country.
 alias[trigger:is_in_sensor_range_of_country] = scope_group[target_country]
 
