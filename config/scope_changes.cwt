@@ -3275,8 +3275,6 @@ alias[effect:random_situation] = {
 ###Iterate through each situation a country is experiencing - checks whether the enclosed triggers return true for any of them
 alias[trigger:any_situation] = {
 	alias_name[trigger] = alias_match_left[trigger]
-	##cardinality = 0..1
-	count = int
 }
 
 ## push_scope = situation
