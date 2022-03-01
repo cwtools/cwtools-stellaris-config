@@ -385,6 +385,8 @@ alias[effect:set_megastructure_flag] = value_set[megastructure_flag]
 alias[effect:set_deposit_flag] = value_set[deposit_flag]
 ###Sets an arbitrarily-named flag on the scoped sector
 alias[effect:set_sector_flag] = value_set[sector_flag]
+###Sets an arbitrarily-named flag on the scoped arc site
+alias[effect:set_archaeology_flag] = value_set[archaeology_flag]
 ###Sets an arbitrarily-named flag on the scoped starbase
 alias[effect:set_starbase_flag] = value_set[starbase_flag]
 ###Sets an arbitrarily-named flag on the scoped spy network
@@ -426,6 +428,8 @@ alias[effect:remove_megastructure_flag] = value[megastructure_flag]
 alias[effect:remove_deposit_flag] = value[deposit_flag]
 ###Removes a flag from the scoped sector
 alias[effect:remove_sector_flag] = value[sector_flag]
+###Removes a flag from the scoped arc site
+alias[effect:remove_archaeology_flag] = value[archaeology_flag]
 ###Removes a flag from the scoped starbase
 alias[effect:remove_starbase_flag] = value[starbase_flag]
 ###Removes a flag from the scoped spy network
@@ -520,6 +524,12 @@ alias[effect:set_timed_deposit_flag] = {
 ###Sets an arbitrarily-named flag on the scoped sector for a set duration
 alias[effect:set_timed_sector_flag] = {
 	flag = value_set[sector_flag]
+	enum[days_months_years] = int_value_field
+}
+
+###Sets an arbitrarily-named flag on the scoped arc site for a set duration
+alias[effect:set_timed_archaeology_flag] = {
+	flag = value_set[archaeology_flag]
 	enum[days_months_years] = int_value_field
 }
 

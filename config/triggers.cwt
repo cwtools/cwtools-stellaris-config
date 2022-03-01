@@ -110,6 +110,9 @@ alias[trigger:has_deposit_flag] = value[deposit_flag]
 ###Checks if the sector has a specific, arbitrarily-named, flag
 alias[trigger:has_sector_flag] = value[sector_flag]
 ## severity = warning
+###Checks if the archaeological site has a specific flag
+alias[trigger:has_archaeology_flag] = value[archaeology_flag]
+## severity = warning
 ###Checks if the starbase has a specific, arbitrarily-named, flag
 alias[trigger:has_starbase_flag] = value[starbase_flag]
 ## severity = warning
