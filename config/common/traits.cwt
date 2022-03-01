@@ -158,7 +158,7 @@ trait = {
 			energy = int
 		}
 		## cardinality = 0..1
-		infertile = yes
+		infertile = bool
 
 		## cardinality = 0..1
 		random_weight = {
