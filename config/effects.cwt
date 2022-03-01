@@ -400,46 +400,67 @@ alias[effect:set_army_flag] = value_set[army_flag]
 ###Sets an arbitrarily-named flag on the scoped situation
 alias[effect:set_situation_flag] = value_set[situation_flag]
 
+## severity = warning
 ###Removes a flag from the scoped country
 alias[effect:remove_country_flag] = value[country_flag]
+## severity = warning
 ###Removes a flag from the scoped planet
 alias[effect:remove_planet_flag] = value[planet_flag]
+## severity = warning
 ###Removes a flag from the scoped pop's faction/pop faction
 alias[effect:remove_pop_faction_flag] = value[pop_faction_flag]
+## severity = warning
 ###Removes a flag from the scoped system
 alias[effect:remove_star_flag] = value[star_flag]
+## severity = warning
 ###Removes a flag from the scoped species
 alias[effect:remove_species_flag] = value[species_flag]
+## severity = warning
 ###Removes a flag from the scoped pop
 alias[effect:remove_pop_flag] = value[pop_flag]
+## severity = warning
 ###Removes a flag from the scoped fleet
 alias[effect:remove_fleet_flag] = value[fleet_flag]
+## severity = warning
 ###Removes a flag from the scoped ship
 alias[effect:remove_ship_flag] = value[ship_flag]
+## severity = warning
 ###Removes a global flag
 alias[effect:remove_global_flag] = value[global_flag]
+## severity = warning
 ###Removes a flag from the scoped leader
 alias[effect:remove_leader_flag] = value[leader_flag]
+## severity = warning
 ###Removes a flag from the scoped ambient object
 alias[effect:remove_ambient_object_flag] = value[ambient_object_flag]
+## severity = warning
 ###Removes a flag from the scoped megastructure
 alias[effect:remove_megastructure_flag] = value[megastructure_flag]
+## severity = warning
 ###Removes a flag from the scoped deposit
 alias[effect:remove_deposit_flag] = value[deposit_flag]
+## severity = warning
 ###Removes a flag from the scoped sector
 alias[effect:remove_sector_flag] = value[sector_flag]
+## severity = warning
 ###Removes a flag from the scoped arc site
 alias[effect:remove_archaeology_flag] = value[archaeology_flag]
+## severity = warning
 ###Removes a flag from the scoped starbase
 alias[effect:remove_starbase_flag] = value[starbase_flag]
+## severity = warning
 ###Removes a flag from the scoped spy network
 alias[effect:remove_spynetwork_flag] = value[spynetwork_flag]
+## severity = warning
 ###Removes a flag from the scoped espionage asset
 alias[effect:remove_espionage_asset_flag] = value[espionage_asset_flag]
+## severity = warning
 ###Removes a flag from the scoped war
 alias[effect:remove_war_flag] = value[war_flag]
+## severity = warning
 ###Removes a flag from the scoped army
 alias[effect:remove_army_flag] = value[army_flag]
+## severity = warning
 ###Removes a flag from the scoped situation
 alias[effect:remove_situation_flag] = value[situation_flag]
 
@@ -448,121 +469,101 @@ alias[effect:set_timed_country_flag] = {
 	flag = value_set[country_flag]
 	enum[days_months_years] = int_value_field
 }
-
 ###Sets an arbitrarily-named flag on the scoped planet for a set duration
 alias[effect:set_timed_planet_flag] = {
 	flag = value_set[planet_flag]
 	enum[days_months_years] = int_value_field
 }
-
 ###Sets an arbitrarily-named flag on the scoped pop faction for a set duration
 alias[effect:set_timed_pop_faction_flag] = {
 	flag = value_set[pop_faction_flag]
 	enum[days_months_years] = int_value_field
 }
-
 ###Sets an arbitrarily-named flag on the scoped system for a set duration
 alias[effect:set_timed_star_flag] = {
 	flag = value_set[star_flag]
 	enum[days_months_years] = int_value_field
 }
-
 ###Sets an arbitrarily-named flag on the scoped species for a set duration
 alias[effect:set_timed_species_flag] = {
 	flag = value_set[species_flag]
 	enum[days_months_years] = int_value_field
 }
-
 ###Sets an arbitrarily-named flag on the scoped pop for a set duration
 alias[effect:set_timed_pop_flag] = {
 	flag = value_set[pop_flag]
 	enum[days_months_years] = int_value_field
 }
-
 ###Sets an arbitrarily-named flag on the scoped fleet for a set duration
 alias[effect:set_timed_fleet_flag] = {
 	flag = value_set[fleet_flag]
 	enum[days_months_years] = int_value_field
 }
-
 ###Sets an arbitrarily-named flag on the scoped ship for a set duration
 alias[effect:set_timed_ship_flag] = {
 	flag = value_set[ship_flag]
 	enum[days_months_years] = int_value_field
 }
-
 ###Sets an arbitrarily-named global flag for a set duration
 alias[effect:set_timed_global_flag] = {
 	flag = value_set[global_flag]
 	enum[days_months_years] = int_value_field
 }
-
 ###Sets an arbitrarily-named flag on the scoped leader for a set duration
 alias[effect:set_timed_leader_flag] = {
 	flag = value_set[leader_flag]
 	enum[days_months_years] = int_value_field
 }
-
 ###Sets an arbitrarily-named flag on the scoped ambient object for a set duration
 alias[effect:set_timed_ambient_object_flag] = {
 	flag = value_set[ambient_object_flag]
 	enum[days_months_years] = int_value_field
 }
-
 ###Sets an arbitrarily-named flag on the scoped mega structure for a set duration
 alias[effect:set_timed_megastructure_flag] = {
 	flag = value_set[megastructure_flag]
 	enum[days_months_years] = int_value_field
 }
-
 ###Sets an arbitrarily-named flag on the scoped deposit for a set duration
 alias[effect:set_timed_deposit_flag] = {
 	flag = value_set[deposit_flag]
 	enum[days_months_years] = int_value_field
 }
-
 ###Sets an arbitrarily-named flag on the scoped sector for a set duration
 alias[effect:set_timed_sector_flag] = {
 	flag = value_set[sector_flag]
 	enum[days_months_years] = int_value_field
 }
-
 ###Sets an arbitrarily-named flag on the scoped arc site for a set duration
 alias[effect:set_timed_archaeology_flag] = {
 	flag = value_set[archaeology_flag]
 	enum[days_months_years] = int_value_field
 }
-
 ###Sets an arbitrarily-named flag on the scoped starbase for a set duration
 alias[effect:set_timed_starbase_flag] = {
 	flag = value_set[starbase_flag]
 	enum[days_months_years] = int_value_field
 }
-
 ###Sets an arbitrarily-named flag on the scoped spy network for a set duration
 alias[effect:set_timed_spynetwork_flag] = {
 	flag = value_set[spynetwork_flag]
 	enum[days_months_years] = int_value_field
 }
-
 ###Sets an arbitrarily-named flag on the scoped espionage asset for a set duration
 alias[effect:set_timed_espionage_asset_flag] = {
 	flag = value_set[espionage_asset_flag]
 	enum[days_months_years] = int_value_field
 }
-
 ###Sets an arbitrarily-named flag on the scoped war for a set duration
 alias[effect:set_timed_war_flag] = {
 	flag = value_set[war_flag]
 	enum[days_months_years] = int_value_field
 }
-
 ###Sets an arbitrarily-named flag on the scoped army for a set duration
 alias[effect:set_timed_army_flag] = {
 	flag = value_set[army_flag]
 	enum[days_months_years] = int_value_field
 }
-
 ###Sets an arbitrarily-named flag for the scoped situation for a set duration
 alias[effect:set_timed_situation_flag] = {
 	flag = value_set[situation_flag]
@@ -583,7 +584,7 @@ alias[effect:set_timed_relation_flag] = {
 	flag = value_set[relation_flag]
 	enum[days_months_years] = int_value_field
 }
-
+## severity = warning
 ###Removes a specific relation flag towards target country from the scoped country
 alias[effect:remove_relation_flag] = {
 	who = scope_group[target_country]
@@ -2811,7 +2812,7 @@ alias[effect:set_timed_federation_flag] = {
 	flag = value_set[federation_flag]
 	enum[days_months_years] = int_value_field
 }
-
+## severity = warning
 ###Removes a previously-set flag from the scoped federation
 alias[effect:remove_federation_flag] = value[federation_flag]
 
@@ -3076,7 +3077,7 @@ alias[effect:set_timed_first_contact_flag] = {
 	flag = value_set[first_contact_flag]
 	enum[days_months_years] = int_value_field
 }
-
+## severity = warning
 ###Removes a previously-set flag from the scoped first contact
 alias[effect:remove_first_contact_flag] = value[first_contact_flag]
 
@@ -3128,7 +3129,7 @@ alias[effect:set_espionage_operation_flag] = value_set[espionage_operation_flag]
 
 ###Removes a flag from the scoped espionage operation
 alias[effect:remove_espionage_operation_flag] = value[espionage_operation_flag]
-
+## severity = warning
 ###Sets an arbitrarily-named flag on the scoped espionage operation for a set duration
 alias[effect:set_timed_espionage_operation_flag] = {
 	flag = value_set[espionage_operation_flag]
