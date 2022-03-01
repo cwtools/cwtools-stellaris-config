@@ -184,7 +184,7 @@ alias[triggered_planet_modifier:triggered_planet_modifier] = {
 	}
 }
 ## replace_scope = { this = planet root = planet }
-alias[triggered_planet_growth_modifier:triggered_planet_growth_modifier] = {
+alias[triggered_planet_growth_habitability_modifier:triggered_planet_growth_habitability_modifier] = {
 	## cardinality = 0..1
 	## replace_scope = { this = pop root = pop }
 	potential = {

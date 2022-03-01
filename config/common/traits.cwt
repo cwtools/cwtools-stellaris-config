@@ -88,7 +88,7 @@ trait = {
 		###won't show in trait tooltips, use custom_tooltip/custom_tooltip_with_modifiers
 		alias_name[triggered_pop_modifier] = alias_match_left[triggered_pop_modifier]
 		## cardinality = 0..inf
-		alias_name[triggered_planet_growth_modifier] = alias_match_left[triggered_planet_growth_modifier]
+		alias_name[triggered_planet_growth_habitability_modifier] = alias_match_left[triggered_planet_growth_habitability_modifier]
 		## cardinality = 0..1
 		### Default = yes
 		sapient = bool
