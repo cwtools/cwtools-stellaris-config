@@ -1915,6 +1915,7 @@ alias[trigger:is_sector_capital] = bool
 ###Checks if the current sector has the specified focus.
 alias[trigger:has_sector_focus] = <sector_focus>
 
+## severity = warning
 ###Checks if the planet uses the specified district set.
 alias[trigger:uses_district_set] = enum[district_sets]
 
