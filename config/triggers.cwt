@@ -110,6 +110,9 @@ alias[trigger:has_deposit_flag] = value[deposit_flag]
 ###Checks if the sector has a specific, arbitrarily-named, flag
 alias[trigger:has_sector_flag] = value[sector_flag]
 ## severity = warning
+###Checks if the archaeological site has a specific flag
+alias[trigger:has_archaeology_flag] = value[archaeology_flag]
+## severity = warning
 ###Checks if the starbase has a specific, arbitrarily-named, flag
 alias[trigger:has_starbase_flag] = value[starbase_flag]
 ## severity = warning
@@ -612,10 +615,8 @@ alias[trigger:has_trait] = <trait>
 
 ###Checks if the pop has a specific trait
 alias[trigger:pop_has_trait] = <trait.species_trait>
-###Checks if a leader has a certain ruler trait, even if they are not currently ruler
-alias[trigger:has_ruler_trait] = <trait.ruler_trait>
-
-
+###Checks if a leader has a certain leader trait in their ruler traits, even if they are not currently ruler
+alias[trigger:has_ruler_trait] = <trait.leader_trait>
 
 ###Checks if a species/pop/leader has a particular citizenship type in their country
 alias[trigger:has_citizenship_type] = {
@@ -1827,7 +1828,7 @@ alias[trigger:has_origin] = <civic_or_origin.origin>
 ###Checks if the provided Resolution is active in the Community
 alias[trigger:is_active_resolution] = <resolution>
 
-###Checks if an empire is in breach of any galactic resolution.
+###Checks if an empire is in breach of any galactic resolution. Warning: quite performance intensive
 alias[trigger:is_in_breach_of_any] = bool
 
 ###Checks if the scoped country is in breach of the specified resolution (or would be, were it to be enacted).
@@ -1927,6 +1928,7 @@ alias[trigger:is_sector_capital] = bool
 ###Checks if the current sector has the specified focus.
 alias[trigger:has_sector_focus] = <sector_focus>
 
+## severity = warning
 ###Checks if the planet uses the specified district set.
 alias[trigger:uses_district_set] = enum[district_sets]
 
@@ -2000,8 +2002,9 @@ alias[trigger:can_set_policy] = {
 	option = enum[policy_option]
 }
 
-###Checks if the pop will work a specific job if a vacancy becomes available (i.e. does it meet the requirements, would it have a higher job weight?)
-alias[trigger:would_work_job] = <job>
+## scope = pop
+###Checks if the pop can work a specific job if a vacancy becomes available
+alias[trigger:can_work_specific_job] = <job>
 
 ###Checks if the scoped fleet or ship is civilian (as set in ship sizes).
 alias[trigger:is_civilian] = bool
@@ -2256,13 +2259,14 @@ alias[trigger:check_galaxy_setup_value] = {
 ###Checks if the scoped fleet can move.
 alias[trigger:is_mobile] = bool
 
-
 #3.1
 
 ###Checks if the starbase is currently building a specific module
 alias[trigger:is_starbase_building_module] = <starbase_module>
+
 ###Checks if the starbase is currently building a specific building
 alias[trigger:is_starbase_building_building] = <starbase_building>
+
 ###Check if the first buildable is in the starbase building queue before the second buildable (for prerequisites, mostly). Returns false if the first one, or both aren't in the queue. Returns true if the first one is in, but the second isn't.
 alias[trigger:starbase_buildable_is_in_queue_before] = {
 	first = <starbase_module>
@@ -2288,6 +2292,21 @@ alias[trigger:has_embassy] = scope_group[target_country]
 ###Checks if the planet is ideal (as set in planet_classes)
 alias[trigger:is_ideal] = bool
 
+###Checks if the specified ship, fleet, planet or system is within sensor range of the scoped country.
+alias[trigger:is_in_sensor_range] = scope[ship]
+
+## scope = country
+###Checks if the specified ship, fleet, planet or system is within sensor range of the scoped country.
+alias[trigger:is_in_sensor_range] = scope[fleet]
+
+## scope = country
+###Checks if the specified ship, fleet, planet or system is within sensor range of the scoped country.
+alias[trigger:is_in_sensor_range] = scope[planet]
+
+## scope = country
+###Checks if the specified ship, fleet, planet or system is within sensor range of the scoped country.
+alias[trigger:is_in_sensor_range] = scope[galactic_object]
+
 ###Checks if the scoped ship, fleet, planet or system is within sensor range of the specified country.
 alias[trigger:is_in_sensor_range_of_country] = scope_group[target_country]
 
@@ -2311,11 +2330,38 @@ alias[trigger:current_severity_level] = enum[situation_severity_levels]
 ###Checks if the scoped situation is a certain type.
 alias[trigger:is_situation_type] = <situation_type>
 
+###Checks specific resource expenses value for the country scope
+alias[trigger:resource_expenses_compare] = {
+	resource = <resource>
+	value = value_field
+}
+
+###Checks specific resource revenue value for the country scope
+alias[trigger:resource_revenue_compare] = {
+	resource = <resource>
+	value = value_field
+}
+
+###Checks if the country has a civic in a slot 
+alias[trigger:has_civic_in_slot] = {
+	civic = <civic_or_origin.civic>
+	index = int_value_field
+}
+
+###Checks the country's number of owned (recruited) non-envoy leaders (includes the ruler)
+alias[trigger:num_owned_leaders] == int_value_field
+
 ###Checks if scoped starbase would evaluate to be a certain starbase_type for its current owner. Warning: expensive trigger.
 alias[trigger:is_starbase_type] = <starbase_type>
 
 ###Checks if the planet's ascension tier is as specified.
 alias[trigger:has_planetary_ascension_tier] == int_value_field
+
+###Checks number of star systems in the galaxy
+alias[trigger:num_galaxy_systems] == int_value_field
+
+###Checks if the planet has an unemployed pop of a category
+alias[trigger:has_unemployed_pop_of_category] = <social_strata>
 
 #3.4
 

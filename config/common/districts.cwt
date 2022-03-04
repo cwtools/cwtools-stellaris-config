@@ -41,7 +41,15 @@ district = {
 	## cardinality = 0..1
 	is_capped_by_modifier = bool
 	## cardinality = 0..1
+	###whether this district is exempt from being swapped into groups by the AI; default: no
+	exempt_from_ai_planet_specialization = bool
+	## cardinality = 0..1
 	can_demolish = bool
+
+	## cardinality = 0..1
+	destroy_trigger = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 
 	## cardinality = 0..1
 	## replace_scope = { root = country this = country }

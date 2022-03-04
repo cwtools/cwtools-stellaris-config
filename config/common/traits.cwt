@@ -88,7 +88,7 @@ trait = {
 		###won't show in trait tooltips, use custom_tooltip/custom_tooltip_with_modifiers
 		alias_name[triggered_pop_modifier] = alias_match_left[triggered_pop_modifier]
 		## cardinality = 0..inf
-		alias_name[triggered_planet_growth_modifier] = alias_match_left[triggered_planet_growth_modifier]
+		alias_name[triggered_planet_growth_habitability_modifier] = alias_match_left[triggered_planet_growth_habitability_modifier]
 		## cardinality = 0..1
 		### Default = yes
 		sapient = bool
@@ -97,8 +97,6 @@ trait = {
 		forced_happiness = bool
 		## cardinality = 0..1
 		sorting_priority = int
-		## cardinality = 0..1
-		modification = bool
 		## cardinality = 0..1
 		### Default = no
 		improves_leaders = bool
@@ -160,7 +158,7 @@ trait = {
 			energy = int
 		}
 		## cardinality = 0..1
-		infertile = yes
+		infertile = bool
 
 		## cardinality = 0..1
 		random_weight = {
@@ -173,9 +171,6 @@ trait = {
 
 		cost = int
 		icon = filepath
-
-		### Default = yes
-		modification = bool
 
 		leader_trait = {
 			## cardinality = 1..5

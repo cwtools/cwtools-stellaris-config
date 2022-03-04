@@ -45,6 +45,10 @@ building = {
 	base_buildtime = int
 
 	## cardinality = 0..1
+	###whether this building is exempt from being swapped into groups by the AI; default: no
+	exempt_from_ai_planet_specialization = bool
+
+	## cardinality = 0..1
 	category = enum[building_categories]
 
 	## cardinality = 0..1
