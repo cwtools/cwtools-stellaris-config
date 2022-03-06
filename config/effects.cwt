@@ -3272,7 +3272,11 @@ alias[effect:export_trigger_value_to_variable] = {
 	## cardinality = 0..1
 	###specify extra parameters for triggers with { }, e.g. resource = energy
 	parameters = {
-		## cardinality = 1..inf
+		## cardinality = 0..1
+		limit = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..inf
 		scalar = scalar
 	}
 	trigger = alias_keys_field[trigger]
