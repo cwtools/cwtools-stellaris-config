@@ -46,7 +46,11 @@ alias[modifier_rule:complex_trigger_modifier] = {
 	trigger_scope = scope[any]
 	## cardinality = 0..1
 	parameters = {
-		## cardinality = 1..inf
+		## cardinality = 0..1
+		limit = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..inf
 		scalar = scalar
 	}
 	mode = enum[complex_maths_enum]
@@ -77,7 +81,11 @@ alias[modifier_rule_with_loc:complex_trigger_modifier] = {
 	trigger_scope = scope[any]
 	## cardinality = 0..1
 	parameters = {
-		## cardinality = 1..inf
+		## cardinality = 0..1
+		limit = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..inf
 		scalar = scalar
 	}
 	mode = enum[complex_maths_enum]
