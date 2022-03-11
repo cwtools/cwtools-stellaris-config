@@ -17,6 +17,18 @@ modifier_categories = {
     "Pop Factions" = {
         supported_scopes = { popfaction country }
     }
+	"Military Ships" = {
+        supported_scopes = { ship starbase fleet country }
+    }
+	"Civilian Ships" = {
+        supported_scopes = { ship starbase fleet country }
+    }
+	"Science Ships" = {
+        supported_scopes = { ship starbase fleet country }
+    }
+	"Transport Ships" = {
+        supported_scopes = { ship starbase fleet country }
+    }
     Ships = {
         supported_scopes = { ship starbase fleet country }
     }
