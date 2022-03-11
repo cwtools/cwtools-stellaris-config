@@ -182,6 +182,8 @@ alias[triggered_planet_modifier:triggered_planet_modifier] = {
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
+	## cardinality = 0..1
+	mult = value_field
 }
 ## replace_scope = { this = planet root = planet }
 alias[triggered_planet_growth_modifier:triggered_planet_growth_modifier] = {
@@ -195,6 +197,8 @@ alias[triggered_planet_growth_modifier:triggered_planet_growth_modifier] = {
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
+	## cardinality = 0..1
+	mult = value_field
 }
 ## replace_scope = { this = planet root = planet }
 alias[triggered_planet_modifier_pop:triggered_planet_modifier] = {
@@ -208,6 +212,8 @@ alias[triggered_planet_modifier_pop:triggered_planet_modifier] = {
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
+	## cardinality = 0..1
+	mult = value_field
 }
 ## replace_scope = { this = planet root = planet }
 alias[triggered_planet_modifier_direct:triggered_planet_modifier] = {
@@ -221,6 +227,8 @@ alias[triggered_planet_modifier_direct:triggered_planet_modifier] = {
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
+	## cardinality = 0..1
+	mult = value_field
 }
 
 ## replace_scope = { this = system root = system }
@@ -235,6 +243,8 @@ alias[triggered_system_modifier_starbase:triggered_system_modifier] = {
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
+	## cardinality = 0..1
+	mult = value_field
 }
 
 ## replace_scope = { this = country root = country }
@@ -249,6 +259,8 @@ alias[triggered_country_modifier_starbase:triggered_country_modifier] = {
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
+	## cardinality = 0..1
+	mult = value_field
 }
 ## replace_scope = { this = country root = country }
 alias[triggered_country_modifier_pop:triggered_country_modifier] = {
@@ -262,6 +274,8 @@ alias[triggered_country_modifier_pop:triggered_country_modifier] = {
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
+	## cardinality = 0..1
+	mult = value_field
 }
 ## replace_scope = { this = country root = country }
 alias[triggered_country_modifier_country:triggered_country_modifier] = {
@@ -279,6 +293,8 @@ alias[triggered_country_modifier_country:triggered_country_modifier] = {
 	custom_tooltip = localisation
 	## cardinality = 0..1
 	show_only_custom_tooltip = no
+	## cardinality = 0..1
+	mult = value_field
 }
 
 ## replace_scope = { this = pop root = pop }
@@ -292,6 +308,8 @@ alias[triggered_pop_modifier:triggered_pop_modifier] = {
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
+	## cardinality = 0..1
+	mult = value_field
 }
 
 ## replace_scope = { this = starbase root = starbase }
@@ -305,6 +323,8 @@ alias[triggered_station_modifier:triggered_station_modifier] = {
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
+	## cardinality = 0..1
+	mult = value_field
 }
 
 ## replace_scope = { this = starbase root = starbase }
@@ -318,6 +338,8 @@ alias[triggered_station_modifier_starbase:triggered_station_modifier] = {
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
+	## cardinality = 0..1
+	mult = value_field
 }
 
 alias[triggered_desc:triggered_desc] = {

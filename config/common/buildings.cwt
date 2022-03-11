@@ -4,7 +4,7 @@ types = {
 	type[building] = {
 		path = "game/common/buildings"
 		subtype[branch_office_building] = {
-			branch_office_building = yes
+			owner_type = corporate
 		}
 		localisation = {
 			## required

@@ -8,6 +8,7 @@ types = {
 ## replace_scope = { this = situation root = situation }
 situation_type = {
 	picture = <sprite>
+	category = enum[situation_categories]
 
 	## cardinality = 0..1
 	on_start = {
@@ -132,6 +133,10 @@ situation_type = {
 			alias_name[economic_template] = alias_match_left[economic_template]
 		}
 		## cardinality = 0..1
+		on_select = {
+			alias_name[effect] = alias_match_left[effect]
+		}
+		## cardinality = 0..1
 		ai_weight = {
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		}
@@ -205,5 +210,10 @@ enums = {
 				enum_name = {}
 			}
 		}
+	}
+	enum[situation_categories] = {
+		positive
+		negative
+		neutral
 	}
 }

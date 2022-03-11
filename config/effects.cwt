@@ -635,7 +635,7 @@ alias[effect:destroy_colony] = yes
 ###Picks one random set of effects from a list, influenced by relative weight
 alias[effect:random_list] = {
 	##cardinality = 1..inf
-	float = {
+	int = {
 		##cardinality = 0..inf
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		##cardinality = 0..inf
@@ -3163,8 +3163,8 @@ alias[effect:add_victory_score] = {
 	score = value_field
 }
 
-###Stores a copy of the specified data of the Galactic Custodian/Emperor. The values default to 'no'.
-alias[effect:store_galactic_community_leader_backup_data] = {
+###Stores a copy of the specified data of the country. The values default to 'no'.
+alias[effect:store_country_backup_data] = {
 	## cardinality = 0..1
 	flag = bool
 	## cardinality = 0..1
@@ -3177,8 +3177,8 @@ alias[effect:store_galactic_community_leader_backup_data] = {
 	government = bool
 }
 
-##Restores backed up data to the Galactic Custodian/Emperor
-alias[effect:restore_galactic_community_leader_backup_data] = bool
+##Restores backed up data to the country
+alias[effect:restore_country_backup_data] = bool
 
 ##Activates crisis progression for the country
 alias[effect:activate_crisis_progression] = yes

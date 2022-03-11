@@ -745,16 +745,6 @@ alias[trigger:has_deposit] = <deposit>
 ###Checks if the planet has a deposit for a specific ship class
 alias[trigger:has_deposit_for] = enum[shipsize_classes]
 
-###Checks if the country can be a subject of a specific type under target country
-alias[trigger:can_be_subject] = {
-	overlord = scope_group[target_country]
-	subject_type = <subject_type>
-}
-
-###Checks if the country is a specific type of subject
-alias[trigger:is_subject_type] = <subject_type>
-
-
 ###Checks if the country has claims on the given country or system.
 alias[trigger:has_claim] = scope_group[target_country]
 alias[trigger:has_claim] = scope[system]
@@ -1029,9 +1019,6 @@ alias[trigger:has_tech_option] = <technology>
 
 ### Checks if a country has the given tradition.
 alias[trigger:has_tradition] = <tradition>
-
-### Checks if two countries have a research agreement.
-alias[trigger:has_tributary] = scope_group[target_country]
 
 ### Checks if the country has a valid AI personality
 alias[trigger:has_valid_ai_personality] = bool
@@ -1413,7 +1400,17 @@ alias[trigger:is_researching_special_project] = <special_project>
 ### Checks the number of starbase modules that are of the specified type
 alias[trigger:count_starbase_modules] =  {
 	count = int_value_field
+	## cardinality = 0..1
 	type = <starbase_module>
+	## cardinality = 0..1
+	include_being_constructed = bool
+}
+alias[trigger:count_starbase_buildings] =  {
+	count = int_value_field
+	## cardinality = 0..1
+	type = <starbase_module>
+	## cardinality = 0..1
+	include_being_constructed = bool
 }
 
 ### Checks if the scoped country has a specified quantity of a starbase size
@@ -2048,7 +2045,7 @@ alias[trigger:galactic_defense_force_exists] = bool
 ###Checks a variable for the scope if a certain amount of arithmetic is done to it (note: the variable's value is not changed by this trigger)
 alias[trigger:check_variable_arithmetic] = {
 	which = value[variable]
-	## cardinality = 1..inf
+	## cardinality = 0..inf
 	enum[maths] = value_field
 	###Specify >/< on the value or variable fields
 	value = value_field

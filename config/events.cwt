@@ -239,6 +239,9 @@ event = {
 		location = scope[starbase]
 
 		## cardinality = 0..1
+		situation = scope[situation]
+
+		## cardinality = 0..1
 		diplomatic = bool
 
 		## cardinality = 0..1
