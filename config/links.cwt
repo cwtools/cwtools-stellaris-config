@@ -299,4 +299,16 @@ links = {
 		input_scopes = { all }
 		output_scope = country
 	}
+	script_value = {
+		from_data = yes
+		type = value
+		prefix = value:
+		data_source = <script_value>
+    }
+	modifier = {
+		from_data = yes
+		type = value
+		prefix = modifier:
+		data_source = <modifier>
+    }
 }
