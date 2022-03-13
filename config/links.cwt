@@ -309,6 +309,6 @@ links = {
 		from_data = yes
 		type = value
 		prefix = modifier:
-		data_source = <modifier>
+		data_source = alias_keys_field[modifier]
     }
 }
