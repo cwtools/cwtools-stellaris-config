@@ -32,6 +32,9 @@ modifier_categories = {
     Ships = {
         supported_scopes = { ship starbase fleet country }
     }
+	Fleets = {
+        supported_scopes = { fleet country }
+	}
     Megastructures = {
         supported_scopes = { megastructure country }
     }
