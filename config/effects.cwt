@@ -1729,6 +1729,9 @@ alias[effect:add_random_research_option] = {
 	## cardinality = 0..1
 	###default no
 	ignore_prereqs = bool
+    ## cardinality = 0..1
+	###default yes
+	ignore_rare = bool
 }
 
 ### Adds a tech research option to the scoped country's tech view list, permanent until researched
