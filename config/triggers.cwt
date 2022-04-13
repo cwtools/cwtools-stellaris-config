@@ -130,6 +130,9 @@ alias[trigger:has_army_flag] = value[army_flag]
 ## severity = warning
 ###Checks if the situation has a specific, arbitrarily-named, flag
 alias[trigger:has_situation_flag] = value[situation_flag]
+## severity = warning
+###Checks if the agreement has a specific, arbitrarily-named, flag
+alias[trigger:has_agreement_flag] = value[agreement_flag]
 
 ###Checks if the country has a specific relation flag towards target country
 alias[trigger:has_relation_flag] = {

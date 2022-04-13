@@ -263,6 +263,27 @@ alias[effect:situation_event] = {
 	}
 }
 
+###Fires a agreement event for the scoped agreement, with optional DAYS and RANDOM delay
+alias[effect:agreement_event] = {
+	id = <event.agreements>
+	id = <event.scopeless>
+	## cardinality = 0..1
+	days = int
+	## cardinality = 0..1
+	random = int
+	## cardinality = 0..1
+	scopes = {
+		## cardinality = 0..1
+		from = scope[any]
+		## cardinality = 0..1
+		fromfrom = scope[any]
+		## cardinality = 0..1
+		fromfromfrom = scope[any]
+		## cardinality = 0..1
+		fromfromfromfrom = scope[any]
+	}
+}
+
 ###Fires a starbase event for the scoped starbase, with optional DAYS and RANDOM delay
 alias[effect:starbase_event] = {
 	id = <event.starbase>
@@ -399,6 +420,8 @@ alias[effect:set_war_flag] = value_set[war_flag]
 alias[effect:set_army_flag] = value_set[army_flag]
 ###Sets an arbitrarily-named flag on the scoped situation
 alias[effect:set_situation_flag] = value_set[situation_flag]
+###Sets an arbitrarily-named flag on the scoped agreement
+alias[effect:set_agreement_flag] = value_set[agreement_flag]
 
 ## severity = warning
 ###Removes a flag from the scoped country
@@ -463,6 +486,9 @@ alias[effect:remove_army_flag] = value[army_flag]
 ## severity = warning
 ###Removes a flag from the scoped situation
 alias[effect:remove_situation_flag] = value[situation_flag]
+## severity = warning
+###Removes a flag from the scoped agreement
+alias[effect:remove_agreement_flag] = value[agreement_flag]
 
 ###Sets an arbitrarily-named flag on the scoped country for a set duration
 alias[effect:set_timed_country_flag] = {
@@ -567,6 +593,12 @@ alias[effect:set_timed_army_flag] = {
 ###Sets an arbitrarily-named flag for the scoped situation for a set duration
 alias[effect:set_timed_situation_flag] = {
 	flag = value_set[situation_flag]
+	enum[days_months_years] = int_value_field
+}
+
+###Sets an arbitrarily-named flag for the scoped agreement for a set duration
+alias[effect:set_timed_agreement_flag] = {
+	flag = value_set[agreement_flag]
 	enum[days_months_years] = int_value_field
 }
 
@@ -3428,3 +3460,37 @@ alias[effect:disable_building] = <building>
 
 ###Ruins a single instance of a specific building on the scoped planet
 alias[effect:ruin_building] = <building>
+
+###Changes the agreement term for wether the Subject can be integrated
+alias[effect:set_rule_can_subject_be_integrated] = bool
+
+###Changes the agreement term for whether the Subject can do diplomacy
+alias[effect:set_rule_can_subject_do_diplomacy] = bool
+
+###Changes the agreement term for whether the Subject can expand
+alias[effect:set_rule_can_subject_expand] = enum[agreement_subject_expand]
+
+###Changes the agreement term for whether the Subject can vote independently of its overlord in GalCom/federations
+alias[effect:set_rule_can_subject_vote] = bool
+
+###Changes the agreement term for Subject to join Overlord wars
+alias[effect:set_rule_can_subject_expand] = enum[agreement_wars]
+
+###Changes the agreement term for Overlord to wars of its Subject
+alias[effect:set_rule_join_subject_wars] = enum[agreement_wars]
+
+###Changes the agreement term for whether the Subject can access the overlord's territory (and territories the overlord has access to) despite closed borders
+alias[effect:set_rule_subject_has_access] = bool
+
+###Changes the agreement term for whether the Subject gets sensors data from Overlord
+alias[effect:set_rule_subject_has_sensors] = bool
+
+###Passes the scoped debris ownership to the specified country 
+alias[effect:pass_debris_ownership] = {
+	owner = scope_group[target_country]
+}
+
+#Todo: specialists
+#convert_to_specialist - Starts the process of converting the subject of the scoped agreement to the given specialist type
+#Can also be used to remove the specialization from a subject, by using 'none' as value
+#convert_to_specialist = <specialist_subject_type>

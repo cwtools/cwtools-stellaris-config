@@ -3335,7 +3335,7 @@ alias[trigger:count_council_member] = {
 }
 
 
-#3.3
+#3.4
 
 ## push_scope = situation
 ###Iterate through each situation a country is experiencing - executes the enclosed effects on all of them for which the limit triggers return true
@@ -3384,3 +3384,102 @@ alias[trigger:count_situation] = {
 	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
+
+
+## push_scope = agreement
+###Iterate through each agreement - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_agreement] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = agreement
+###Iterate through each agreement - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_agreement] = {
+	position = int
+	order_by = value_field
+	##cardinality = 0..1
+	inverse = bool
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = agreement
+###Iterate through each agreement - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_agreement] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+## push_scope = agreement
+###Iterate through each agreement - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_agreement] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+## push_scope = agreement
+###Iterate through each agreement - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_agreement] = {
+	count = all
+	count = int_value_field
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+
+## push_scope = debris
+###Iterate through all debris belong to available special projects of the scoped country - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_available_debris] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = debris
+###Iterate through all debris belong to available special projects of the scoped country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_available_debris] = {
+	position = int
+	order_by = value_field
+	##cardinality = 0..1
+	inverse = bool
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = debris
+###Iterate through all debris belong to available special projects of the scoped country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_available_debris] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+## push_scope = debris
+###Iterate through all debris belong to available special projects of the scoped country - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_available_debris] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+## push_scope = debris
+###Iterate through all debris belong to available special projects of the scoped country - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_available_debris] = {
+	count = all
+	count = int_value_field
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
