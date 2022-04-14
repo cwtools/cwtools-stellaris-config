@@ -280,6 +280,11 @@ alias[trigger:is_same_empire] = scope_group[target_country]
 alias[trigger:has_migration_access] = scope_group[target_country]
 ###Check if the country has closed its borders to target country
 alias[trigger:has_closed_borders] = scope_group[target_country]
+###Checks if the country has a secret fealty from any of the target country's subjects
+alias[trigger:has_secret_fealty_from_subject_of] = scope_group[target_country]
+
+###Checks if the pop/species/leader has rights
+alias[trigger:has_citizenship_rights] = bool
 
 ###checks if the scoped object is of the same species as another object
 alias[trigger:is_same_species] = scope_group[target_species]
@@ -425,6 +430,8 @@ alias[trigger:opinion] = {
 alias[trigger:happiness] == value_field[0.0..1.0]
 ###Checks the country's number of vassals
 alias[trigger:vassals] == int_value_field
+###Checks the country's number of subjects
+alias[trigger:subjects] == int_value_field
 ###Checks the number of regular empires in the galaxy
 alias[trigger:num_empires] == int_value_field
 # ###Checks the number of members in the alliance
@@ -1931,6 +1938,9 @@ alias[trigger:is_sector_capital] = bool
 
 ###Checks if the current sector has the specified focus.
 alias[trigger:has_sector_focus] = <sector_focus>
+
+###Checks if the sector has any focus
+alias[trigger:has_any_sector_focus] = bool
 
 ## severity = warning
 ###Checks if the planet uses the specified district set.

@@ -479,6 +479,13 @@ economic_plan = {
 		pops = int
 		## cardinality = 0..1
 		empire_size = float
+
+		## cardinality = 0..1
+		set_name = scalar
+		## cardinality = 0..1
+		scaling = bool
+		## cardinality = 0..1
+		optional = bool
 	}
 
 	## cardinality = 0..1

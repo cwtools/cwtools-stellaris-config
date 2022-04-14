@@ -76,6 +76,7 @@ empire_name_format = {
 	## cardinality = 0..1
 	prefix_format = scalar
 	noun = stellaris_name_format[empire_name_parts]
+	lookups = scalar
 }
 
 

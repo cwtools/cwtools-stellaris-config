@@ -241,7 +241,10 @@ civic_or_origin = {
 		name = localisation
 		description = localisation
 		trigger = {
-			local_human_species_class = <species_class>
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
 		}
 	}
 	
