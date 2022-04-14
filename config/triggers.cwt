@@ -1477,6 +1477,8 @@ alias[trigger:resource_stockpile_compare] = {
 	value = float #no variables here atm
 	## cardinality = 0..1
 	mult = value[variable]
+	## cardinality = 0..1
+	multiplier = value[variable]
 }
 
 ###Checks specific resource income value for the country scope (note: checks profit/loss, not revenue)
@@ -2064,7 +2066,7 @@ alias[trigger:galactic_defense_force_exists] = bool
 
 ###Checks a variable for the scope if a certain amount of arithmetic is done to it (note: the variable's value is not changed by this trigger)
 alias[trigger:check_variable_arithmetic] = {
-	which = value[variable]
+	which = value_field
 	## cardinality = 0..inf
 	enum[maths] = value_field
 	###Specify >/< on the value or variable fields
@@ -2082,6 +2084,9 @@ alias[trigger:allowed_crisis_type] = enum[crisis_types]
 
 ###Checks whether the country has the speficied first contact flag
 alias[trigger:has_first_contact_flag] = value[first_contact_flag]
+
+###Checks if the scoped first contact is at the specified stage.
+alias[trigger:is_current_first_contact_stage] = <first_contact_stage>
 
 ###Checks whether the current country is allowed to have the specified technology, i.e. does it fulfil the potential = { } field for that tech.
 alias[trigger:can_research_technology] = <technology>
@@ -2411,4 +2416,17 @@ alias[trigger:num_researched_techs_of_tier] = {
 alias[trigger:can_research_tier] = {
 	area = enum[technology_areas]
 	tier = int
+}
+
+###Checks the value of economic production modifiers a pop has for producing a certain resource via a certain job. Can specify checking all modifiers or just those from traits. WARNING: expensive trigger
+alias[trigger:check_economic_production_modifier_for_job] = {
+	job = <job>
+	resource = <resource>
+	resource = {
+		## cardinality == 1..inf
+		<resource> = float
+	}
+	## cardinality == 0..1
+	species_modifiers_only = bool
+	value = value_field
 }

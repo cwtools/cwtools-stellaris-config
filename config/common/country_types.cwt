@@ -199,47 +199,6 @@ country_type = {
 		espionage = bool
 		
 		## cardinality = 0..1
-		ship_data = {
-			## cardinality = 0..inf
-			#this should be tied to the ship_sizes file, for verification. If you can add a blue warning - the AI will not build a ship if its not defined under country_type
-			#TODO Add validator for undefined ship sizes
-			<ship_size> = {
-				## cardinality = 0..1
-				min = int
-				## cardinality = 0..1
-				max = int
-				## cardinality = 0..1
-				system_mult = float
-				## cardinality = 0..1
-				planet_mult = float
-				## cardinality = 0..1
-				#TODO Check if this can be replaced with modifier_rule alias
-				## replace_scope = { this = country root = country }
-				fraction = {
-					alias_name[modifier_rule] = alias_match_left[modifier_rule]
-				}
-			}
-		}
-		## cardinality = 0..1
-		army_data = {
-			## cardinality = 0..inf
-			#this should be tied to the army file, for verification. If you can add a blue warning - the AI will not build an army if its not defined under country_type
-			#TODO Add validator for undefined armies
-			<army> = {
-				## cardinality = 0..1
-				min = int
-				## cardinality = 0..1
-				max = int
-				## cardinality = 0..1
-				system_mult = float
-				## cardinality = 0..1
-				## replace_scope = { this = country root = country }
-				fraction = {
-					alias_name[modifier_rule] = alias_match_left[modifier_rule]
-				}
-			}
-		}
-		## cardinality = 0..1
 		modules = {
 			## cardinality = 0..inf
 			enum[country_type_module]

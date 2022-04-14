@@ -354,6 +354,8 @@ alias[effect:add_modifier] = {
 	## cardinality = 0..1
 	enum[days_months_years] = int
 	## cardinality = 0..1
+	mult = value_field
+	## cardinality = 0..1
 	multiplier = value_field
 	## cardinality = 0..1
 	time_multiplier = value_field
@@ -2705,6 +2707,8 @@ alias[effect:add_resource] = {
 	<resource> = float
 	## cardinality = 0..1
 	mult = value_field
+	## cardinality = 0..1
+	multiplier = value_field
 }
 
 ###Remove resource deposit on the scoped planet or deposit, does not fire on_cleared if used on a blocker
