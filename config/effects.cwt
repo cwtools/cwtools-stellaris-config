@@ -635,6 +635,8 @@ alias[effect:kill_leader] = {
 alias[effect:shift_ethic] = <ethos>
 ###Adds a specific ethic to the scoped country
 alias[effect:country_add_ethic] = <ethos>
+###Adds a specific ethic to the scoped country
+alias[effect:country_add_ethic] = random
 ###Removes a specific ethic from the scoped country
 alias[effect:country_remove_ethic] = <ethos>
 ###Instantly destroys the scoped pop
@@ -3428,3 +3430,6 @@ alias[effect:disable_building] = <building>
 
 ###Ruins a single instance of a specific building on the scoped planet
 alias[effect:ruin_building] = <building>
+
+###Locks the Situation so it will not progress until unlocked ("no" unlocks it).
+alias[effect:set_situation_locked] = bool

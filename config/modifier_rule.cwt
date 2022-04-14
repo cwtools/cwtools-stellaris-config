@@ -47,6 +47,8 @@ alias[modifier_rule:complex_trigger_modifier] = {
 	## cardinality = 0..1
 	parameters = {
 		## cardinality = 0..1
+		## push_scope = any
+		#Caligula's note: not entirely accurate, if you do trigger_scope then it should push scope twice
 		limit = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
@@ -82,6 +84,8 @@ alias[modifier_rule_with_loc:complex_trigger_modifier] = {
 	## cardinality = 0..1
 	parameters = {
 		## cardinality = 0..1
+		## push_scope = any
+		#Caligula's note: not entirely accurate, if you do trigger_scope then it should push scope twice
 		limit = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}

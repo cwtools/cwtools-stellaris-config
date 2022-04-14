@@ -208,9 +208,19 @@ enums = {
 technology_tier = {
 	## cardinality = 0..1
 	previously_unlocked = int
+	## cardinality = 0..1
+	## replace_scope = { this = country root = country }
+	weight_modifier = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
 }
 
 
 technology_category = {
   icon = filepath
+  ## cardinality = 0..1
+	## replace_scope = { this = country root = country }
+	weight_modifier = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
 }

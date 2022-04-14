@@ -3335,7 +3335,7 @@ alias[trigger:count_council_member] = {
 }
 
 
-#3.3
+#3.4
 
 ## push_scope = situation
 ###Iterate through each situation a country is experiencing - executes the enclosed effects on all of them for which the limit triggers return true
@@ -3379,6 +3379,54 @@ alias[trigger:any_situation] = {
 ## push_scope = situation
 ###Iterate through each situation a country is experiencing - checks whether the enclosed triggers return true for X/all of them
 alias[trigger:count_situation] = {
+	count = all
+	count = int_value_field
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+## push_scope = situation
+###Iterate through each situation that is targeting the current planet - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_targeting_situation] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = situation
+###Iterate through each situation that is targeting the current planet - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_targeting_situation] = {
+	position = int
+	order_by = value_field
+	##cardinality = 0..1
+	inverse = bool
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = situation
+###Iterate through each situation that is targeting the current planet - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_targeting_situation] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+## push_scope = situation
+###Iterate through each situation that is targeting the current planet - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_targeting_situation] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+## push_scope = situation
+###Iterate through each situation that is targeting the current planet - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_targeting_situation] = {
 	count = all
 	count = int_value_field
 	## cardinality = 0..1

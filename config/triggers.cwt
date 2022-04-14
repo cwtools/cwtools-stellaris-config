@@ -848,7 +848,11 @@ alias[trigger:distance_to_core_percent] == value_field
 ### Checks the ship/fleet/planet/system's galaxy map distance to target empire
 alias[trigger:distance_to_empire] = {
 	who = scope_group[target_country]
-	distance = int #no variables here atm
+	distance = int_value_field
+	## cardinality = 0..1
+	use_bypasses = bool
+	## cardinality = 0..1
+	type = enum[hyperlane_euclidean]
 }
 
 ### Checks the country's monthly energy credit expenses
@@ -2322,7 +2326,7 @@ alias[trigger:current_situation_approach] = enum[situation_approaches]
 alias[trigger:can_set_situation_approach] = enum[situation_approaches]
 
 # ###Checks if the specified severity level is currently active in the scoped situation.
-alias[trigger:current_severity_level] = enum[situation_severity_levels]
+alias[trigger:current_stage] = enum[situation_stages]
 
 ###Checks if the scoped situation is a certain type.
 alias[trigger:is_situation_type] = <situation_type>
@@ -2375,8 +2379,23 @@ alias[trigger:check_economic_modifier_for_job] = {
 	species_modifiers_only = no
 }
 
+###Checks the planet's army strength (as calculated by all armies including offensive or defensive owned by its current controller). Warning: moderately intensive trigger
+alias[trigger:planet_garrison_strength] == value_field
+
 ###Checks ratio between the country's income and expenditures for a specific resource. E.g. if it makes 80 energy and spends 100, its ratio is 0.8
 alias[trigger:resource_income_to_expenditure_balance_ratio] = {
 	resource = <resource>
 	value = value_field
+}
+
+###Checks the country's number of researched technologies of a certain tier
+alias[trigger:num_researched_techs_of_tier] = {
+	value = int_value_field
+	tier = int
+}
+
+###Checks whether the country can research a certain tech tie
+alias[trigger:can_research_tier] = {
+	area = enum[technology_areas]
+	tier = int
 }
