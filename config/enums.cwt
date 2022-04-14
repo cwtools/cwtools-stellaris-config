@@ -305,4 +305,15 @@ enums = {
 		can_fill_specialist_job
 		can_fill_ruler_job
 	}
+	enum[agreement_subject_expand] = {
+		can_expand
+		can_expand_with_tithe
+		cannot_expand
+	}
+	enum[agreement_wars] = {
+		none
+		defensive
+		offensive
+		all
+	}
 }

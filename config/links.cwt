@@ -299,6 +299,10 @@ links = {
 		input_scopes = { all }
 		output_scope = country
 	}
+	orbital_defence = {
+		input_scopes = { planet }
+		output_scope = starbase
+	}
 	script_value = {
 		from_data = yes
 		type = value
