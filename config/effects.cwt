@@ -1007,11 +1007,20 @@ alias[effect:destroy_ship] = scope[ship]
 ###Adds/Removes tiles to/from the scoped planet to adjust its planet size
 alias[effect:change_planet_size] = int_value_field
 #see comment for what should actually be written here
-###Sets the name of the scoped country/planet/ship/fleet/leader/army/system/pop faction. Allowed entries are <random>/<string in localisation_synced>/<string written in quotes e.g. "United Nations">
+###Sets the name of the scoped country/planet/ship/fleet/leader/army/system/pop_faction. Allowed entries are <random>/<string in localisation>/<string written in quotes e.g. "United Nations">/<parameters for localisation and the bracket command it uses>
 alias[effect:set_name] = random
-alias[effect:set_name] = localisation_synced
 alias[effect:set_name] = scope[any]
 alias[effect:set_name] = localisation
+alias[effect:set_name] = {
+	## required
+	## cardinality = 1..1
+	###string in localisation (which contains a bracket command)
+	key = localisation
+	## required
+	## cardinality = 1..1
+	###the bracket command contained in the localisation referenced above
+	variable_string = scalar
+}
 ###Reinstates a previously-exiled leader to the scoped country/fleet/army/pop faction
 alias[effect:set_leader] = value[exiled_leader]
 ###Reinstates a previously-exiled leader to the scoped country/fleet/army/pop faction
