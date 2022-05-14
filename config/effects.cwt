@@ -2317,6 +2317,8 @@ alias[effect:log] = scalar
 ### Modifies army with parameters:
 alias[effect:modify_army] = {
 	## cardinality = 0..1
+	name = random
+	## cardinality = 0..1
 	name = localisation
 	## cardinality = 0..1
 	owner = scope_group[target_country]
