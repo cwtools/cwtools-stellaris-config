@@ -4183,7 +4183,7 @@ Supported Scopes: megastructure planet ship fleet galactic_object starbase no_sc
 
 create_nebula - Creates a new Nebula with a given radius centered around the current system.
 create_nebula = {
-	name = <name> (loc synced, optional - default is random)
+	name = <name> (loc, optional - default is random)
 	radius = 100
 	effect = { <effects on every system in the new nebula> }
 }
