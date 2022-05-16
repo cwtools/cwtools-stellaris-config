@@ -316,4 +316,9 @@ enums = {
 		offensive
 		all
 	}
+	enum[megastructure_block_type] = {
+		none
+		self_type
+		multi_stage_type
+	}
 }

@@ -115,7 +115,7 @@ types = {
 
 ambient_object = {
 	subtype[show_name] = {
-		###A localisation key. Does not use localisation_synced.
+		###A localisation key.
 		name = localisation
 	}
 	subtype[!show_name] = {
@@ -130,7 +130,6 @@ ambient_object = {
 	###Determines whether you can read the name of the object ingame.
 	show_name = bool
 }
-
 
 #country_color = { #commented out as it threw errors on every line anyway
 #	subtype[default] = {
@@ -165,7 +164,6 @@ ambient_object = {
 #	}
 #}
 
-
 #TODO Confirm
 #TODO Add mesh/shader references
 asteroid_belt_type = {
@@ -174,8 +172,6 @@ asteroid_belt_type = {
 	## cardinality = 0..1
 	shader = scalar
 }
-
-
 
 ##TODO confirm and refine
 attitude = {
@@ -196,7 +192,6 @@ attitude = {
 	}
 }
 
-
 # TODO Confirm
 # TODO Document
 button_effect = {
@@ -215,10 +210,8 @@ button_effect = {
 	}
 }
 
-
-
 #TODO Confirm
-#TODO DOcument
+#TODO Document
 #TODO Expand shelter
 country_customization = {
 	colony_shelter = {
@@ -246,9 +239,6 @@ country_customization = {
 	}
 }
 
-
-
-
 system_type = {
 	## replace_scope = { this = system root = system }
 	#TODO: it appears so, but the file uses owner (not space_owner). Check pls
@@ -263,7 +253,6 @@ system_type = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 }
-
 
 start_screen_message = {
 	location = int
@@ -285,7 +274,6 @@ precursors = {
 	}
 }
 
-
 sector_type = {
 	system_scores = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
@@ -302,7 +290,6 @@ sector_type = {
 	}
 	max_jumps = int
 }
-
 
 sector_focus = {
 	## cardinality = 0..1
@@ -337,7 +324,6 @@ sector_focus = {
 		}
 	}
 }
-
 
 #TODO Confirm
 #TODO Colours
@@ -383,6 +369,7 @@ map_mode = {
 		filter = enum[hardcoded_map_mode_filters]
     }
 }
+
 enums = {
 	enum[hardcoded_map_mode_tooltip] = {
 		opinion
@@ -444,8 +431,6 @@ trade_conversion = {
 	economic_category = <economic_category>
 }
 
-
-
 economic_plan = {
 	income = {
 		## cardinality = 1..inf
@@ -499,7 +484,6 @@ economic_plan = {
 	}
 }
 
-
 diplomacy_economy = {
 	once = {
 		## cardinality = 0..inf
@@ -544,7 +528,6 @@ message_type = {
 	## cardinality = 0..1
 	auto_opens = scalar
 }
-
 
 scripted_modifier = {
 	## cardinality = 0..1
