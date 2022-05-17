@@ -5,7 +5,7 @@ types = {
 }
 
 prescripted_country = {
-	name = scalar #this is not localisation, this is a string!
+	name = localisation
 	adjective = localisation
 	## cardinality = 0..1
 	spawn_enabled = bool # yes / no / always ---> this one receives always as well!
