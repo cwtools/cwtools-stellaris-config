@@ -2434,7 +2434,6 @@ alias[trigger:check_economic_production_modifier_for_job] = {
 	value = value_field
 }
 
-
 ###Checks if the planet has any, or a specific, holding
 alias[trigger:has_holding] = {
 	holding = any
@@ -2444,5 +2443,11 @@ alias[trigger:has_holding] = {
 	owner = scope_group[target_country]
 }
 
-#Apparently this is a boolean trigger
+###Checks if the country AI wants to renegotiate any existing agreements
 alias[trigger:ai_wants_to_negotiate_agreement] = bool
+
+###Checks if the agreement has a specific term
+alias[trigger:has_term_value] = {
+	term = <agreement_term>
+	value = <agreement_term_value> # TODO: can this be limited to a subset based on the term?
+}
