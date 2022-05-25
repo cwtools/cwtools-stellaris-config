@@ -18,7 +18,7 @@ links = {
 	owner = {
 		input_scopes = {
 			Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System first_contact Megastructure Army
-			Deposit archaeological_site spy_network espionage_operation situation
+			Deposit archaeological_site spy_network espionage_operation situation agreement
 		}
 		output_scope = Country
 	}
@@ -120,14 +120,14 @@ links = {
 	owner_species = {
 		input_scopes = { #matches owner
 			Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System first_contact Megastructure Army
-			Deposit archaeological_site spy_network espionage_operation
+			Deposit archaeological_site spy_network espionage_operation situation agreement
 		}
 		output_scope = Species
 	}
 	owner_main_species = {
 		input_scopes = { #matches owner
 			Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System first_contact Megastructure Army
-			Deposit archaeological_site spy_network espionage_operation
+			Deposit archaeological_site spy_network espionage_operation situation agreement
 		}
 		output_scope = Species
 	}
@@ -169,14 +169,14 @@ links = {
 	ruler = {
 		input_scopes = { #matches owner
 			Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System first_contact Megastructure Army
-			Deposit archaeological_site spy_network espionage_operation
+			Deposit archaeological_site spy_network espionage_operation situation agreement
 		}
 		output_scope = Leader
 	}
 	heir = {
 		input_scopes = { #matches owner
 			Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System first_contact Megastructure Army
-			Deposit archaeological_site spy_network espionage_operation
+			Deposit archaeological_site spy_network espionage_operation situation agreement
 		}
 		output_scope = Leader
 	}
@@ -276,7 +276,7 @@ links = {
 		output_scope = spy_network
 	}
 	target = {
-		input_scopes = { espionage_operation spy_network situation }
+		input_scopes = { espionage_operation spy_network situation agreement }
 		output_scope = any
 	}
 	growing_species = {
