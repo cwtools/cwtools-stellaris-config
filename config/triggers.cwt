@@ -2430,3 +2430,9 @@ alias[trigger:check_economic_production_modifier_for_job] = {
 	species_modifiers_only = bool
 	value = value_field
 }
+
+###Checks if the agreement has a specific term
+alias[trigger:has_term_value] = {
+	term = <agreement_term>
+	value = <agreement_term_value> # TODO: can this be limited to a subset based on the term?
+}
