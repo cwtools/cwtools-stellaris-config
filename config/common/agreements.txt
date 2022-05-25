@@ -3,9 +3,11 @@ types = {
 		path = "game/common/agreement_presets"
 		localisation = {
 			## required
-			name = "$"
+			Name = "$"
 			## required
-			desc = "$_desc"
+			Description = "$_desc"
+			## required
+			Flavor = "$_flavor_desc"
 		}
 	}
 
@@ -13,28 +15,46 @@ types = {
 		path = "game/common/agreement_resources"
 		localisation = {
 			## required
-			name = "$"
-			## required
-			desc = "$_desc"
+			Name = "$"
 		}
 	}
 
 	type[agreement_term] = {
 		path = "game/common/agreement_terms"
+		subtype[agreement_term_hidden] = {
+			hidden = yes
+		}
 		localisation = {
-			## required
-			name = "$"
-			## required
-			desc = "$_desc"
+			subtype[!agreement_term_hidden] = {
+				## required
+				Name = "$"
+				## required
+				Description = "$_desc"
+				## optional
+				Tooltip = "$_tooltip"
+			}
 		}
 	}
 
 	type[agreement_term_value] = {
 		path = "game/common/agreement_term_values"
+		subtype[agreement_term_value_resouces] = {
+			## required
+			## cardinality 0..1
+			resources = {
+				## cardinality 0..inf
+				<resource>
+			}
+		}
 		localisation = {
-			name = "$"
-			desc = "$_desc"
-			flavor_desc = "$_flavor_desc"
+			## optional
+			Name = "$"
+			subtype[!agreement_term_value_resources] = {
+				## required
+				Description = "$_desc"
+				## required
+				Tooltip = "$_tooltip"
+			}
 		}
 	}
 }
@@ -94,6 +114,8 @@ agreement_preset = {
 	}
 }
 
+### Agreement terms are the different terms that can be negotiated in Agreements, such as Subject Agreements.
+### This only defines which terms can be negotiated. The different options for the terms are defined by agreement_term_values.
 agreement_term = {
 	## required
 	### This defines how the term will show up in the UI. If it shows up as discrete/separate buttons or if it's a scale.
@@ -101,7 +123,6 @@ agreement_term = {
 	### Whether the term should show up on the agreement negotiation screen (default: no)
 	hidden = bool
 }
-
 agreement_resource = {
 	## cardinality = 0..1
 	resources = {
@@ -116,11 +137,6 @@ agreement_term_value = {
 	## required
 	### The term in agreement_terms that this value applies to
 	term = <agreement_term>
-	## cardinality 0..1
-	resources = {
-		## cardinality 0..inf
-		<resource>
-	}
 	## cardinality 0..1
 	subsidy_multiplier = float
 	## cardinality 0..1
