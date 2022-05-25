@@ -2423,16 +2423,18 @@ alias[trigger:check_economic_production_modifier_for_job] = {
 	job = <job>
 	resource = <resource>
 	resource = {
-		## cardinality == 1..inf
+		## cardinality = 1..inf
 		<resource> = float
 	}
-	## cardinality == 0..1
+	## cardinality = 0..1
 	species_modifiers_only = bool
 	value = value_field
 }
 
 ###Checks if the agreement has a specific term
 alias[trigger:has_term_value] = {
+	## cardinality = 1..1
 	term = <agreement_term>
-	value = <agreement_term_value> # TODO: can this be limited to a subset based on the term?
+	## cardinality = 1..1
+	value = <agreement_term_value>
 }
