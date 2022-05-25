@@ -123,6 +123,7 @@ agreement_term = {
 	### Whether the term should show up on the agreement negotiation screen (default: no)
 	hidden = bool
 }
+
 agreement_resource = {
 	## cardinality = 0..1
 	resources = {
@@ -131,8 +132,10 @@ agreement_resource = {
 	}
 }
 
-# For Subject Agreements, the owner is the overlord and the target is the subject.
 ## replace_scope = { this = agreement root = agreement owner = country target = country }
+### Defines the different values available for given Agreement terms. The terms are defined in agreement_terms scripts.
+### The term values contain the main logic of Agreement terms, including the modifiers and effects.
+### For Subject Agreements, the owner is the overlord and the target is the subject.
 agreement_term_value = {
 	## required
 	### The term in agreement_terms that this value applies to
