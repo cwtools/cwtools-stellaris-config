@@ -65,7 +65,7 @@ name_list = {
 		## cardinality = 0..1
 		generic = {
 			## cardinality = 0..inf
-			scalar
+			localisation
 		}
 
 		#buildable ship sizes (have a prerequisite and/or defined as designable!) that are not defined in a name list will get a generic
@@ -75,15 +75,15 @@ name_list = {
 		## cardinality = 0..inf
 		<ship_size> = {
 			## cardinality = 0..inf
-			scalar
+			localisation
 
 			## cardinality = 0..1
-			sequential_name = scalar
+			sequential_name = localisation
 
 			## cardinality = 0..1
 			random_names = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 		}
 	}
@@ -92,15 +92,15 @@ name_list = {
 		## cardinality = 0..1
 		generic = {
 			## cardinality = 0..inf
-			scalar
+			localisation
 		}
 		#formula for name generation
 		## cardinality = 0..1
-		sequential_name = scalar
+		sequential_name = localisation
 		## cardinality = 0..1
 		random_names = {
 			## cardinality = 0..inf
-			scalar
+			localisation
 		}
 	}
 	## cardinality = 0..1
@@ -108,10 +108,10 @@ name_list = {
 		## cardinality = 0..1
 		generic = {
 			## cardinality = 0..inf
-			scalar
+			localisation
 			#formula for name generation
 			## cardinality = 0..1
-			sequential_name = scalar
+			sequential_name = localisation
 		}
 
 		#armies that can be built and do not defined in a name list will get a generic
@@ -122,14 +122,14 @@ name_list = {
 			## cardinality = 0..1
 			names = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
-			sequential_name = scalar
+			sequential_name = localisation
 			## cardinality = 0..1
 			random_names = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 		}
 	}
@@ -139,7 +139,7 @@ name_list = {
 		generic = {
 			names = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 		}
 
@@ -150,7 +150,7 @@ name_list = {
 		<planet_class> = {
 			names = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 		}
 	}
@@ -159,12 +159,12 @@ name_list = {
 		## cardinality = 0..1
 		generic = {
 			## cardinality = 0..inf
-			scalar
+			localisation
 		}
 		## cardinality = 0..inf
 		<ship_size> = {
 			## cardinality = 0..inf
-			scalar
+			localisation
 		}
 	}
 	## cardinality = 0..1
@@ -180,67 +180,67 @@ name_list = {
 			## cardinality = 0..1
 			full_names = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			full_names_male = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			full_names_female = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			first_names = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			first_names_male = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			first_names_female = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			second_names = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			second_names_male = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			second_names_female = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			regnal_first_names = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			regnal_first_names_male = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			regnal_first_names_female = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			regnal_second_names = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 		}
 		## cardinality = 0..inf
@@ -255,67 +255,67 @@ name_list = {
 			## cardinality = 0..1
 			full_names = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			full_names_male = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			full_names_female = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			first_names = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			first_names_male = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			first_names_female = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			second_names = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			second_names_male = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			second_names_female = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			regnal_first_names = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			regnal_first_names_male = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			regnal_first_names_female = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 			## cardinality = 0..1
 			regnal_second_names = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 		}
 	}
@@ -325,7 +325,7 @@ name_list = {
 		default = {
 			full_names = {
 				## cardinality = 0..inf
-				scalar
+				localisation
 			}
 		}
 	}
@@ -336,13 +336,13 @@ species_name = {
 	### Unique key for your species name entry
 	scalar = {
 		### Name of a species, singular, e. g. Human
-		name = scalar
+		name = localisation
 		### Plural for the species name, e. g. Humans
-		plural = scalar
+		plural = localisation
 		### Name of the home planet, if this entry is used when generating random playable empire on game start, e. g. Earth
-		home_planet = scalar
+		home_planet = localisation
 		### Name of the home system, if this entry is used when generating random playable empire on game start, e. g. Sol
-		home_system = scalar
+		home_system = localisation
 		### ID of the name list picked if this entry is used when generating random player empire on game start, e. g. HUMAN1. It cannot be a non-randomizable name list (creates species with blank names). It is unclear whether selectable = { always = no } will also avoid this bug, let Dayshine and Caligula know if it does.
 		name_list = <name_list>
 		## cardinality = 0..1
@@ -353,8 +353,8 @@ species_name = {
 species_named_list = {
 	## cardinality = 1..inf
 	scalar = {
-		name = scalar
-		plural = scalar
+		name = localisation
+		plural = localisation
 		## cardinality = 0..1
 		language = scalar
 	}

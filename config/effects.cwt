@@ -1014,11 +1014,11 @@ alias[effect:set_name] = localisation
 alias[effect:set_name] = {
 	## required
 	## cardinality = 1..1
-	###string in localisation (which contains a bracket command)
+	###string in localisation (which contains one or more bracket commands)
 	key = localisation
 	## required
-	## cardinality = 1..1
-	###the bracket command contained in the localisation referenced above
+	## cardinality = 1..inf
+	###one of the bracket commands contained in the localisation referenced above, brackets optional (there should be 1 variable_string per unique bracket command)
 	variable_string = scalar
 }
 ###Reinstates a previously-exiled leader to the scoped country/fleet/army/pop faction
