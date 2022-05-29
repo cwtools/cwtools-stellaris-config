@@ -281,7 +281,8 @@ enums = {
 	enum[scripted_modifier_categories] = {
 		all
 		pop
-		shipstation
+		ship
+		station
 		fleet
 		country
 		army
