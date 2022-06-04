@@ -26,6 +26,7 @@ colony_automation = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
+	## cardinality = 0..1
 	prio_districts = {
 		## cardinality = 0..inf
 		<district>

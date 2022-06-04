@@ -159,6 +159,11 @@ component_template = {
 		friendly_aura = {
 			name = scalar
 			## cardinality = 0..1
+			## push_scope = ship
+			limit = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
 			system_wide = bool
 			## cardinality = 0..1
 			radius = int
@@ -193,6 +198,11 @@ component_template = {
 		## cardinality = 0..1
 		hostile_aura = {
 			name = scalar
+			## cardinality = 0..1
+			## push_scope = ship
+			limit = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
 			## cardinality = 0..1
 			system_wide = bool
 			## cardinality = 0..1

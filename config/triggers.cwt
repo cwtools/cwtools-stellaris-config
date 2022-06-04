@@ -2430,3 +2430,13 @@ alias[trigger:check_economic_production_modifier_for_job] = {
 	species_modifiers_only = bool
 	value = value_field
 }
+
+
+###Checks if the planet has any, or a specific, holding
+alias[trigger:has_holding] = {
+	holding = any
+	holding = none
+	holding = <building.corporate>
+	holding = <building.holding>
+	owner = scope_group[target_country]
+}

@@ -6,6 +6,9 @@ types = {
 		subtype[branch_office_building] = {
 			owner_type = corporate
 		}
+		subtype[holding] = {
+			owner_type = subject_holding
+		}
 		localisation = {
 			## required
 			Name = "$"
@@ -81,6 +84,9 @@ building = {
 	planetary_ftl_inhibitor = bool
 	## cardinality = 0..1
 	position_priority = int
+	## cardinality = 0..1
+	###colony automation will not try to upgrade this
+	skip_automation_upgrading = bool
 
 	## cardinality = 0..1
 	allow = {
