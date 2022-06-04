@@ -285,6 +285,7 @@ sector_type = {
 		energy = int
 		minerals = int
 	}
+	## cardinality = 0..1
 	resources = {
 		category = <economic_category>
 	}

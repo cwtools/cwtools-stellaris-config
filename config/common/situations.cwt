@@ -66,6 +66,8 @@ situation_type = {
 		modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
+		## push_scope = country
+		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
 	## push_scope = planet
@@ -81,6 +83,8 @@ situation_type = {
 		modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
+		## push_scope = planet
+		alias_name[modifier] = alias_match_left[modifier]
 	}
 
 	## cardinality = 0..1
@@ -135,6 +139,8 @@ situation_type = {
 			modifier = {
 				alias_name[modifier] = alias_match_left[modifier]
 			}
+			## push_scope = country
+			alias_name[modifier] = alias_match_left[modifier]
 		}
 		## cardinality = 0..1
 		## push_scope = planet
@@ -150,6 +156,8 @@ situation_type = {
 			modifier = {
 				alias_name[modifier] = alias_match_left[modifier]
 			}
+			## push_scope = planet
+			alias_name[modifier] = alias_match_left[modifier]
 		}
 		## cardinality = 0..1
 		resources = {
@@ -212,6 +220,8 @@ situation_type = {
 				modifier = {
 					alias_name[modifier] = alias_match_left[modifier]
 				}
+				## push_scope = country
+				alias_name[modifier] = alias_match_left[modifier]
 			}
 			## cardinality = 0..1
 			## push_scope = planet
@@ -227,6 +237,8 @@ situation_type = {
 				modifier = {
 					alias_name[modifier] = alias_match_left[modifier]
 				}
+				## push_scope = planet
+				alias_name[modifier] = alias_match_left[modifier]
 			}
 	    }
 	}

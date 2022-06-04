@@ -73,6 +73,8 @@ job = {
 	icon = filepath[gfx/interface/icons/jobs/job_,.dds]
 
 	## cardinality = 0..1
+	exempt_from_ai_amenity_prioritization = bool
+	## cardinality = 0..1
 	is_capped_by_modifier = bool
 	## cardinality = 0..1
 	can_set_priority = bool

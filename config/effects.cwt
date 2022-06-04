@@ -3449,6 +3449,7 @@ alias[effect:create_nebula] = {
 ###Begins a situation.
 alias[effect:start_situation] = {
 	type = <situation_type>
+	## cardinality = 0..1
 	target = scope[any]
 	## cardinality = 0..1
 	## push_scope = situation

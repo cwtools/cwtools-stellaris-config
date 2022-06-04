@@ -34,7 +34,9 @@ ship_size = {
 	## cardinality = 0..2
 	graphical_culture = bool
 	## cardinality = 0..1
-	is_space_object = yes
+	is_space_object = bool
+	## cardinality = 0..1
+	scales_with_planet = bool
 	## cardinality = 0..1
 	can_be_inspected = bool
 	## cardinality = 0..1
@@ -244,6 +246,7 @@ ship_size = {
 		fraction = {
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		}
+		fraction = float
 	}
 }
 
