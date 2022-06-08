@@ -942,6 +942,11 @@ alias[effect:declare_war] = {
 	attacker_war_goal = <war_goal>
 	## cardinality = 0..1
 	name = localisation
+	## cardinality = 0..1
+	## push_scope = war
+	effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
 }
 
 ###Adds static war exhaustion, scaled with value_for_planet_destruction, to owner of the battle location
