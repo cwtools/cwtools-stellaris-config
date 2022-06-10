@@ -1647,6 +1647,9 @@ alias[trigger:has_rival] = scope_group[target_country]
 ###Checks if the target country is the country's overlord
 alias[trigger:has_overlord] = scope_group[target_country]
 
+###Checks if the target country is the country's subject
+alias[trigger:has_subject] = scope_group[target_country]
+
 ###Counts the number of sectors owned by the scoped country
 alias[trigger:num_sectors] == int_value_field
 
@@ -2440,3 +2443,6 @@ alias[trigger:has_holding] = {
 	holding = <building.holding>
 	owner = scope_group[target_country]
 }
+
+#Apparently this is a boolean trigger
+alias[trigger:ai_wants_to_negotiate_agreement] = bool
