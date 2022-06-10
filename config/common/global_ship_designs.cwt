@@ -20,7 +20,12 @@ global_ship_design = {
 	use_design_name = bool
 	## cardinality = 0..1
 	regenerates_when_disabled = bool
-
+	## cardinality = 0..1
+	### whether this design should be set to automatically upgrade its components (default: no)
+	upgrade_ship_components = bool
+	## cardinality = 0..1
+	### whether this design should be considered auto-generated, aka "auto-best" (default: no)
+	auto_gen_design = bool
 	## cardinality = 0..1
 	country_type = <country_type>
 	#these two triggers are connected. You need to have is_special_builable = yes + a trigger for this to work
