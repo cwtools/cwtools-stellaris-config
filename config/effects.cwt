@@ -3331,7 +3331,7 @@ alias[effect:export_trigger_value_to_variable] = {
 		## cardinality = 0..1
 		## push_scope = any
 		limit = {
-			alias_name[trigger] = alias_match_left[trig`ger]
+			alias_name[trigger] = alias_match_left[trigger]
 		}
 		## cardinality = 0..inf
 		scalar = scalar
