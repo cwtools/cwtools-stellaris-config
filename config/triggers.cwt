@@ -2471,8 +2471,7 @@ alias[trigger:has_attitude_behavior] = {
 
 ## scope = agreement
 ###Checks if the agreement has a specific specialist perk active
-# TODO: specialist perks complex_enum
-alias[trigger:has_specialist_perk] = <perk_key>
+alias[trigger:has_specialist_perk] = <subject_specialist_perk>
 
 ## scope = agreement
 ###Checks if the agreement has an active specialization of the specified type, or of any type if 'any' is specified
