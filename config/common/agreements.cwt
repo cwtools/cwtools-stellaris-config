@@ -160,7 +160,7 @@ agreement_term_value = {
  	}
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
-	### A modifier that applies to the Agreement owner country. Only applies once.
+	### A modifier that applies to the Agreement target country. Can stack multiple times.
 	target_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
