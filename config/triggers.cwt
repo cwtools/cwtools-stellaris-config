@@ -2464,10 +2464,9 @@ alias[trigger:has_loyalty] == int_value_field[-100..100]
 alias[trigger:has_monthly_loyalty] == int_value_field[-100..100]
 
 ###Checks if the country has a ai behavior towards another country
-# TODO: get the enum of behaviors, target i
 alias[trigger:has_attitude_behavior] = {
 	target = scope_group[target_country]
-	behavior = scalar
+	behavior = enum[ai_attitude_behaviours]
 }
 
 ## scope = agreement

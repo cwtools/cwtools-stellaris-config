@@ -322,4 +322,12 @@ enums = {
 		self_type
 		multi_stage_type
 	}
+	enum[ai_attitude_behaviours] = {
+		attack
+		weaken
+		alliance
+		vassalize
+		trade
+		coexist
+	}
 }
