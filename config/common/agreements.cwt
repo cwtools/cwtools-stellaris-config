@@ -5,6 +5,18 @@ types = {
 		subtype[hidden] = {
 			hidden = yes
 		}
+		subtype[discrete] = {
+			term_type = discrete
+		}
+		subtype[discrete_number] = {
+			term_type = discrete_number
+		}
+		subtype[specialist_type] = {
+			term_type = specialist_type
+		}
+		subtype[resource] = {
+			term_type = resource
+		}
 		localisation = {
 			subtype[!hidden] = {
 				## required
@@ -18,16 +30,22 @@ types = {
 	}
 	type[agreement_term_value] = {
 		path = "game/common/agreement_term_values"
-		subtype[agreement_term_value_resouces] = {
-			resources = {
-				## cardinality 0..inf
-				<resource>
-			}
+		subtype[discrete] = {
+			term = <agreement_term.discrete>
+		}
+		subtype[discrete_number] = {
+			term = <agreement_term.discrete_number>
+		}
+		subtype[specialist_type] = {
+			term = <agreement_term.specialist_type>
+		}
+		subtype[resource] = {
+			term = <agreement_term.resource>
 		}
 		localisation = {
 			## optional
 			Name = "$"
-			subtype[!agreement_term_value_resources] = {
+			subtype[!resource] = {
 				## required
 				Description = "$_desc"
 				## required
@@ -37,13 +55,25 @@ types = {
 	}
 	type[agreement_preset] = {
 		path = "game/common/agreement_presets"
+		subtype[specialist_type] = {
+			specialist_type = <agreement_term_value.specialist_type>
+		}
+		subtype[hidden] = {
+			hidden = yes
+		}
+		subtype[has_parent] = {
+			parent = <agreement_preset>
+			hidden = yes
+		}
 		localisation = {
-			## required
-			Name = "$"
-			## required
-			Description = "$_desc"
-			## required
-			Flavor = "$_flavor_desc"
+			subtype[!hidden] = {
+				## required
+				Name = "$"
+				## required
+				Description = "$_desc"
+				## required
+				Flavor = "$_flavor_desc"
+			}
 		}
 	}
 	type[agreement_resource] = {
@@ -60,21 +90,7 @@ enums = {
 		discrete
 		discrete_number
 		specialist_type
-	}
-	# complex_enum[specialist_type] = {
-	# 	path = "game/common/agreement_term_values"
-	# 	name = {
-	# 		enum_name = {
-	# 			term = specialist_type
-	# 		}
-	# 	}
-	# 	start_from_root = yes
-	# }
-	enum[specialist_type] = {
-		none
-		specialist_bulwark
-		specialist_scholarium
-		specialist_prospectorium
+		resource
 	}
 }
 
@@ -84,6 +100,7 @@ agreement_term = {
 	## cardinality = 1..1
 	### This defines how the term will show up in the UI. If it shows up as discrete/separate buttons or if it's a scale.
 	term_type = enum[agreement_term_type]
+	## cardinality = 0..1
 	### Whether the term should show up on the agreement negotiation screen (default: no)
 	hidden = bool
 }
@@ -95,10 +112,27 @@ agreement_term_value = {
 	## cardinality = 1..1
 	### The term in agreement_terms that this value applies to
 	term = <agreement_term>
-	## cardinality = 0..1
-	subsidy_multiplier = float
-	## cardinality = 0..1
-	subsidy_monthly_multiplier = float
+	subtype[discrete] = {
+		term = <agreement_term.discrete>
+	}
+	subtype[discrete_number] = {
+		term = <agreement_term.discrete_number>
+	}
+	subtype[specialist_type] = {
+		term = <agreement_term.specialist_type>
+	}
+	subtype[resource] = {
+		term = <agreement_term.resource>
+		## cardinality = 0..1
+		resources = {
+			## cardinality = 0..inf
+			<resource>
+		}
+		## cardinality = 0..1
+		subsidy_multiplier = float
+		## cardinality = 0..1
+		subsidy_monthly_multiplier = float
+	}
 	## cardinality = 0..1
 	resource_min = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
@@ -140,7 +174,7 @@ agreement_term_value = {
 	## cardinality = 0..1
 	### How much the subject's loyalty will change when a new agreement with this term starts
 	loyalty_change = int
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	### How much the subject's loyalty will additionally change when a new agreement with this term starts, if "trigger" is true
 	triggered_loyalty_change = {
 		## cardinality = 1..1
@@ -182,10 +216,14 @@ agreement_term_value = {
 }
 
 agreement_preset = {
-	## cardinality = 1..1
+	subtype[has_parent] = {
+		## cardinality = 0..1
+		parent = <agreement_preset>
+	}
+	## cardinality = 0..1
 	icon = <sprite>
 	## cardinality = 0..1
-	specialist_type = enum[specialist_type]
+	specialist_type = <agreement_term_value.specialist_type>
 	## cardinality = 1..1
 	term_data = {
 		## cardinality = 0..1
@@ -199,9 +237,13 @@ agreement_preset = {
 			## cardinality = 0..inf
 			{
 				### The term name, as defined in agreement_terms
-				key = <agreement_term>
+				key = <agreement_term.discrete>
+				key = <agreement_term.discrete_number>
+				key = <agreement_term.specialist_type>
 				### The term value to use, as defined in agreement_term_values
-				value = <agreement_term_value>
+				value = <agreement_term_value.discrete>
+				value = <agreement_term_value.discrete_number>
+				value = <agreement_term_value.specialist_type>
 			}
 		}
 		## cardinality = 0..1
@@ -209,9 +251,9 @@ agreement_preset = {
 			## cardinality = 0..inf
 			{
 				### The resource term value to use, as defined in agreement_term_values
-				key = <agreement_term_value>
+				key = <agreement_term_value.resource>
 				### subsidy percentage
-				value = float[0.0..1.0]
+				value = float[-1.0..1.0]
 			}
 		}
 	}
@@ -230,6 +272,9 @@ agreement_preset = {
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## cardinality = 0..1
+	### Whether the term should show up on the agreement negotiation screen (default: no)
+	hidden = bool
 }
 
 agreement_resource = {
