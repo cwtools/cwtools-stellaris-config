@@ -154,7 +154,7 @@ agreement_term_value = {
  	}
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
-	### A modifier that applies to the Agreement owner country. Can stack multiple times.
+	### A modifier that applies to the Agreement owner country. Only applies once.
 	unique_owner_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
  	}
