@@ -1,4 +1,3 @@
-
 types = {
 	type[agreement_term] = {
 		path = "game/common/agreement_terms"
