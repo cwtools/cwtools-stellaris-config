@@ -21,6 +21,10 @@ types = {
 		name_field = "key"
 		path = "game/common/component_templates"
 		## type_key_filter = utility_component_template
+		subtype[starbase] = {
+			class_restriction = { shipclass_starbase }
+		}
+		## type_key_filter = utility_component_template
 		subtype[utility_component_template] = {
 		}
 		## type_key_filter = weapon_component_template
