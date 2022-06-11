@@ -102,7 +102,7 @@ scope_groups = {
     }
     target_country = {
         planet fleet system ship pop army leader pop_faction country megastructure starbase deposit
-        sector archaeological_site first_contact spy_network
+        sector archaeological_site first_contact spy_network agreement
     }
     target_leader = {
         country fleet ship pop_faction army leader sector archaeological_site first_contact
