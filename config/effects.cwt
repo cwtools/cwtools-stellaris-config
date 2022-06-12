@@ -3503,16 +3503,12 @@ alias[effect:pass_debris_ownership] = {
 }
 ###Removes a specific holding from the scoped planet
 alias[effect:remove_holding] = {
-	holding = any
-	holding = none
 	holding = <building.corporate>
 	holding = <building.holding>
 	owner = scope_group[target_country]
 }
 ###Begins construction of a specific holding on the scoped planet
 alias[effect:add_holding] = {
-	holding = any
-	holding = none
 	holding = <building.corporate>
 	holding = <building.holding>
 	owner = scope_group[target_country]
