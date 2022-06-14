@@ -1,0 +1,285 @@
+types = {
+	type[agreement_term] = {
+		path = "game/common/agreement_terms"
+		subtype[hidden] = {
+			hidden = yes
+		}
+		subtype[discrete] = {
+			term_type = discrete
+		}
+		subtype[discrete_number] = {
+			term_type = discrete_number
+		}
+		subtype[specialist_type] = {
+			term_type = specialist_type
+		}
+		subtype[resource] = {
+			term_type = resource
+		}
+		localisation = {
+			subtype[!hidden] = {
+				## required
+				Name = "$"
+				## required
+				Description = "$_desc"
+				## optional
+				Tooltip = "$_tooltip"
+			}
+		}
+	}
+	type[agreement_term_value] = {
+		path = "game/common/agreement_term_values"
+		subtype[discrete] = {
+			term = <agreement_term.discrete>
+		}
+		subtype[discrete_number] = {
+			term = <agreement_term.discrete_number>
+		}
+		subtype[specialist_type] = {
+			term = <agreement_term.specialist_type>
+		}
+		subtype[resource] = {
+			term = <agreement_term.resource>
+		}
+		localisation = {
+			## optional
+			Name = "$"
+			subtype[!resource] = {
+				## required
+				Description = "$_desc"
+				## required
+				Tooltip = "$_tooltip"
+			}
+		}
+	}
+	type[agreement_preset] = {
+		path = "game/common/agreement_presets"
+		subtype[specialist_type] = {
+			specialist_type = <agreement_term_value.specialist_type>
+		}
+		subtype[hidden] = {
+			hidden = yes
+		}
+		subtype[has_parent] = {
+			parent = <agreement_preset>
+			hidden = yes
+		}
+		localisation = {
+			subtype[!hidden] = {
+				## required
+				Name = "$"
+				## required
+				Description = "$_desc"
+				## required
+				Flavor = "$_flavor_desc"
+			}
+		}
+	}
+	type[agreement_resource] = {
+		path = "game/common/agreement_resources"
+		localisation = {
+			## required
+			Name = "$"
+		}
+	}
+}
+
+enums = {
+	enum[agreement_term_type] = {
+		discrete
+		discrete_number
+		specialist_type
+		resource
+	}
+}
+
+# Agreement terms are the different terms that can be negotiated in Agreements, such as Subject Agreements.
+# This only defines which terms can be negotiated. The different options for the terms are defined by agreement_term_values.
+agreement_term = {
+	## cardinality = 1..1
+	### This defines how the term will show up in the UI. If it shows up as discrete/separate buttons or if it's a scale.
+	term_type = enum[agreement_term_type]
+	## cardinality = 0..1
+	### Whether the term should show up on the agreement negotiation screen (default: no)
+	hidden = bool
+}
+
+# Defines the different values available for given Agreement terms. The terms are defined in agreement_terms scripts.
+# The term values contain the main logic of Agreement terms, including the modifiers and effects.
+# For Subject Agreements, the owner is the overlord and the target is the subject.
+agreement_term_value = {
+	## cardinality = 1..1
+	### The term in agreement_terms that this value applies to
+	term = <agreement_term>
+	subtype[discrete] = {
+		term = <agreement_term.discrete>
+	}
+	subtype[discrete_number] = {
+		term = <agreement_term.discrete_number>
+	}
+	subtype[specialist_type] = {
+		term = <agreement_term.specialist_type>
+	}
+	subtype[resource] = {
+		term = <agreement_term.resource>
+		## cardinality = 0..1
+		resources = {
+			## cardinality = 0..inf
+			<resource>
+		}
+		## cardinality = 0..1
+		subsidy_multiplier = float
+		## cardinality = 0..1
+		subsidy_monthly_multiplier = float
+	}
+	## cardinality = 0..1
+	resource_min = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	## cardinality = 0..1
+	resource_max = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	## cardinality = 0..1
+	overlord_resources = {
+		category = <economic_category>
+		## cardinality = 0..inf
+		alias_name[economic_template] = alias_match_left[economic_template]
+	}
+	## cardinality = 0..1
+	## replace_scope = { this = country root = country }
+	### A modifier that applies to the Agreement owner country. Can stack multiple times.
+	owner_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+ 	}
+	## cardinality = 0..1
+	## replace_scope = { this = country root = country }
+	### A modifier that applies to the Agreement owner country. Only applies once.
+	unique_owner_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+ 	}
+	## cardinality = 0..1
+	## replace_scope = { this = country root = country }
+	### A modifier that applies to the Agreement target country. Can stack multiple times.
+	target_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	## cardinality = 0..1
+	## replace_scope = { this = country root = country }
+	### A modifier that applies to the Agreement target country. Only applies once.
+	unique_target_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	## cardinality = 0..1
+	### How much the subject's loyalty will change when a new agreement with this term starts
+	loyalty_change = int
+	## cardinality = 0..inf
+	### How much the subject's loyalty will additionally change when a new agreement with this term starts, if "trigger" is true
+	triggered_loyalty_change = {
+		## cardinality = 1..1
+		## replace_scope = { this = agreement root = agreement }
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 1..1
+		loyalty_change = int
+	}
+	## cardinality = 0..1
+	## replace_scope = { this = agreement root = agreement }
+	activate_effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+	## cardinality = 0..1
+	## replace_scope = { this = agreement root = agreement }
+	deactivate_effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+	## cardinality = 0..1
+	## replace_scope = { this = agreement root = agreement }
+	possible = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	## replace_scope = { this = agreement root = agreement }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	### What should be shown in the "extra terms" panel for the subject if this term value is active (default is to not show it)
+	### This loc key can use $SUBJECT$ and $OVERLORD$ to show the name of the relevant empire, and $MODIFIER$ to show the modifiers applying to the subject
+	extra_term_text_subject = localisation
+	## cardinality = 0..1
+	### What should be shown in the "extra terms" panel for the overlord if this term value is active (default is to not show it)
+	### Loc key can use $SUBJECT$ and $OVERLORD$ to show the name of the relevant empire, $MODIFIER$ for the overlord's modifiers, and $RESOURCES$ for the net resources it gains
+	extra_term_text_overlord = localisation
+}
+
+agreement_preset = {
+	subtype[has_parent] = {
+		## cardinality = 0..1
+		parent = <agreement_preset>
+	}
+	## cardinality = 0..1
+	icon = <sprite>
+	## cardinality = 0..1
+	specialist_type = <agreement_term_value.specialist_type>
+	## cardinality = 1..1
+	term_data = {
+		## cardinality = 0..1
+		### default: yes
+		has_cooldown_on_first_renegotiation = bool
+		## cardinality = 0..1
+		forced_initial_loyalty = int
+		## cardinality = 0..1
+		### The default discrete terms of this preset
+		discrete_terms = {
+			## cardinality = 0..inf
+			{
+				### The term name, as defined in agreement_terms
+				key = <agreement_term.discrete>
+				key = <agreement_term.discrete_number>
+				key = <agreement_term.specialist_type>
+				### The term value to use, as defined in agreement_term_values
+				value = <agreement_term_value.discrete>
+				value = <agreement_term_value.discrete_number>
+				value = <agreement_term_value.specialist_type>
+			}
+		}
+		## cardinality = 0..1
+		resource_terms = {
+			## cardinality = 0..inf
+			{
+				### The resource term value to use, as defined in agreement_term_values
+				key = <agreement_term_value.resource>
+				### subsidy percentage
+				value = float[-1.0..1.0]
+			}
+		}
+	}
+	## cardinality = 0..1
+	## replace_scope = { this = country root = country from = country }
+	overlord_weight = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	## cardinality = 0..1
+	## replace_scope = { this = country root = country from = country }
+	subject_weight = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	## cardinality = 0..1
+	## replace_scope = { this = country root = country from = country }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	### Whether the term should show up on the agreement negotiation screen (default: no)
+	hidden = bool
+}
+
+agreement_resource = {
+	## cardinality = 1..1
+	resources = {
+		category = <economic_category>
+		alias_name[economic_template] = alias_match_left[economic_template]
+	}
+}
