@@ -280,23 +280,25 @@ country_type = {
 
 enums = {
 	enum[country_type_module] = {
-			military_minister_module
-			foreign_minister_module
-			interior_minister_module
-			horde_interior_minister_module
-			horde_military_minister_module
-			space_monsters_modules
-			anti_crisis_military_minister_module
-			invaders_military_minister_module
-			invaders_interior_minister_module
-			swarm_interior_minister_module
-			swarm_military_minister_module
-			machine_interior_minister_module
-			machine_military_minister_module
-			berserk_military_minister_module
-			galactic_community_patrol_military_minister_module
-			enclave_mercenary_military_minister_module
-			standard_species_rights_module
-			enclave_mercenary_seller_minister_module
+		anti_crisis_military_minister_module
+		berserk_military_minister_module
+		enclave_founder_minister_module
+		enclave_mercenary_military_minister_module
+		enclave_mercenary_seller_minister_module
+		foreign_minister_module
+		galactic_community_patrol_military_minister_module
+		horde_interior_minister_module
+		horde_military_minister_module
+		interior_minister_module
+		invaders_military_minister_module
+		invaders_interior_minister_module
+		machine_interior_minister_module
+		machine_military_minister_module
+		mercenary_buyer_minister_module
+		military_minister_module
+		space_monsters_modules
+		standard_species_rights_module
+		swarm_interior_minister_module
+		swarm_military_minister_module
 	}
 }
