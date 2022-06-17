@@ -69,6 +69,7 @@ enums = {
 		propose
 		accept
 		refuse
+		reject
 		propose_vote
 		opinion
 	}
