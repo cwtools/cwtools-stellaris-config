@@ -143,4 +143,11 @@ diplomatic_action = {
 	ai_acceptance = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
+
+	## cardinality = 0..1
+	## replace_scope = { root = country this = country from = country }
+	###weight field where you can define AI reasons to propose the proposal. root is actor, from is recipient.
+	should_ai_propose = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
 }

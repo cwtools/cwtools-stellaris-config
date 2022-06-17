@@ -1,6 +1,6 @@
 links = {
 	space_owner = {
-		input_scopes = { Ship Fleet System Planet Megastructure Starbase Country archaeological_site first_contact spy_network }
+		input_scopes = { Ship Fleet System Planet Megastructure Starbase Country archaeological_site first_contact spy_network debris }
 		output_scope = Country
 	}
 	overlord = {
@@ -18,12 +18,12 @@ links = {
 	owner = {
 		input_scopes = {
 			Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System first_contact Megastructure Army
-			Deposit archaeological_site spy_network espionage_operation situation
+			Deposit archaeological_site spy_network espionage_operation situation agreement debris
 		}
 		output_scope = Country
 	}
 	controller = {
-		input_scopes = { Planet Starbase Fleet Ship }
+		input_scopes = { Planet Starbase Fleet Ship debris }
 		output_scope = Country
 	}
 	planet_owner = {
@@ -49,7 +49,7 @@ links = {
 	solar_system = {
 		input_scopes = { #matches celestial_coordinate scope_group
 			planet ship fleet system ambient_object megastructure starbase archaeological_site first_contact
-			deposit pop army country leader
+			deposit pop army country leader debris
 		}
 		output_scope = System
 	}
@@ -120,14 +120,14 @@ links = {
 	owner_species = {
 		input_scopes = { #matches owner
 			Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System first_contact Megastructure Army
-			Deposit archaeological_site spy_network espionage_operation
+			Deposit archaeological_site spy_network espionage_operation situation agreement debris
 		}
 		output_scope = Species
 	}
 	owner_main_species = {
 		input_scopes = { #matches owner
 			Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System first_contact Megastructure Army
-			Deposit archaeological_site spy_network espionage_operation
+			Deposit archaeological_site spy_network espionage_operation situation agreement debris
 		}
 		output_scope = Species
 	}
@@ -158,7 +158,7 @@ links = {
 	sector = {
 		input_scopes = {
 			Planet System Leader Ship Fleet ambient_object Megastructure Starbase archaeological_site first_contact
-			system sector pop army deposit
+			system sector pop army deposit debris
 		}
 		output_scope = Sector
 	}
@@ -169,19 +169,19 @@ links = {
 	ruler = {
 		input_scopes = { #matches owner
 			Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System first_contact Megastructure Army
-			Deposit archaeological_site spy_network espionage_operation
+			Deposit archaeological_site spy_network espionage_operation situation agreement debris
 		}
 		output_scope = Leader
 	}
 	heir = {
 		input_scopes = { #matches owner
 			Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System first_contact Megastructure Army
-			Deposit archaeological_site spy_network espionage_operation
+			Deposit archaeological_site spy_network espionage_operation situation agreement debris
 		}
 		output_scope = Leader
 	}
 	star = {
-		input_scopes = { Planet Ship Fleet System ambient_object Megastructure Starbase archaeological_site first_contact }
+		input_scopes = { Planet Ship Fleet System ambient_object Megastructure Starbase archaeological_site first_contact debris }
 		output_scope = Planet
 	}
 	last_created_design = {
@@ -204,14 +204,10 @@ links = {
 		input_scopes = { all }
 		output_scope = Megastructure
 	}
-	owner_main_species = {
-		input_scopes = { Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System }
-		output_scope = Species
-	}
 	system_star = {
 		input_scopes = { #matches celestial_coordinate scope_group
 			planet ship fleet system ambient_object megastructure starbase archaeological_site first_contact
-			deposit pop army country leader
+			deposit pop army country leader debris
 		}
 		output_scope = Planet
 	}
@@ -228,7 +224,7 @@ links = {
 		output_scope = Country
 	}
 	archaeological_site = {
-		input_scopes = { planet ship fleet ambient_object megastructure starbase system archaeological_site }
+		input_scopes = { planet ship fleet ambient_object megastructure starbase system archaeological_site debris }
 		output_scope = archaeological_site
 	}
 	alliance = {
@@ -276,7 +272,7 @@ links = {
 		output_scope = spy_network
 	}
 	target = {
-		input_scopes = { espionage_operation spy_network situation }
+		input_scopes = { espionage_operation spy_network situation agreement }
 		output_scope = any
 	}
 	growing_species = {

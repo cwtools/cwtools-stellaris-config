@@ -97,6 +97,8 @@ building = {
 	empire_limit = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
+	## cardinality = 0..1
+	empire_limit = float
 
 	## cardinality = 0..1
 	on_queued = {

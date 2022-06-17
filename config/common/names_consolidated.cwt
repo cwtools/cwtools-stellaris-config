@@ -40,7 +40,7 @@ name_list = {
 	language = scalar
 
 	## cardinality = 0..1
-	category = localisation
+	category = scalar
 
 	## cardinality = 0..1
 	selectable = {

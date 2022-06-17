@@ -266,7 +266,7 @@ alias[trigger:is_at_war_with] = scope_group[target_country]
 alias[trigger:is_within_borders_of] = scope_group[target_country]
 ###Check if the country has a non-aggression pact with target country
 alias[trigger:has_non_aggression_pact] = scope_group[target_country]
-###Checks if the planet is controlled by the target country
+###Checks if the planet/ship/fleet is controlled by the target country
 alias[trigger:is_controlled_by] = scope_group[target_country]
 ###Checks if the country/planet is neighbors with target country
 alias[trigger:is_neighbor_of] = scope_group[target_country]
@@ -428,7 +428,7 @@ alias[trigger:opinion] = {
 #should check <>
 ###Checks the pop's happiness percentage
 alias[trigger:happiness] == value_field[0.0..1.0]
-###Checks the country's number of vassals
+###Checks the country's number of subjects with agreement preset 'preset_vassal'
 alias[trigger:vassals] == int_value_field
 ###Checks the country's number of subjects
 alias[trigger:subjects] == int_value_field
@@ -902,7 +902,7 @@ alias[trigger:galaxy_percentage] == value_field[0.0..1.0]
 alias[trigger:graphical_culture] = <graphical_culture>
 
 ### Checks the average happiness on the planet
-alias[trigger:happiness_planet] == value_field
+alias[trigger:happiness_planet] == value_field[0.0..1.0]
 
 ### Checks if the target country is allowed to enter the system
 alias[trigger:has_access_fleet] = scope_group[target_country]
@@ -1420,6 +1420,7 @@ alias[trigger:count_starbase_modules] =  {
 	## cardinality = 0..1
 	include_being_constructed = bool
 }
+### Checks the number of starbase modules that are of the specified type or not
 alias[trigger:count_starbase_buildings] =  {
 	count = int_value_field
 	## cardinality = 0..1
@@ -1647,6 +1648,9 @@ alias[trigger:has_rival] = scope_group[target_country]
 ###Checks if the target country is the country's overlord
 alias[trigger:has_overlord] = scope_group[target_country]
 
+###Checks if the target country is the country's subject
+alias[trigger:has_subject] = scope_group[target_country]
+
 ###Counts the number of sectors owned by the scoped country
 alias[trigger:num_sectors] == int_value_field
 
@@ -1841,7 +1845,7 @@ alias[trigger:has_origin] = <civic_or_origin.origin>
 ###Checks if the provided Resolution is active in the Community
 alias[trigger:is_active_resolution] = <resolution>
 
-###Checks if an empire is in breach of any galactic resolution. Warning: quite performance intensive
+###Checks if an empire is in breach of any galactic resolution.
 alias[trigger:is_in_breach_of_any] = bool
 
 ###Checks if the scoped country is in breach of the specified resolution (or would be, were it to be enacted).
@@ -2423,14 +2427,13 @@ alias[trigger:check_economic_production_modifier_for_job] = {
 	job = <job>
 	resource = <resource>
 	resource = {
-		## cardinality == 1..inf
+		## cardinality = 1..inf
 		<resource> = float
 	}
-	## cardinality == 0..1
+	## cardinality = 0..1
 	species_modifiers_only = bool
 	value = value_field
 }
-
 
 ###Checks if the planet has any, or a specific, holding
 alias[trigger:has_holding] = {
@@ -2440,3 +2443,81 @@ alias[trigger:has_holding] = {
 	holding = <building.holding>
 	owner = scope_group[target_country]
 }
+
+###Checks if the agreement has the specified preset
+alias[trigger:agreement_preset] = <agreement_preset>
+
+###Checks if the scoped fleet is leased.
+alias[trigger:is_leased] = bool
+
+###Checks the number of days left before fleet lease contract is finished
+alias[trigger:lease_days] == int_value_field
+
+###Checks the subject's current loyalty to its overlord.
+alias[trigger:has_loyalty] == int_value_field[-100..100]
+
+###Checks the subject's current monthly loyalty gain/loss.
+alias[trigger:has_monthly_loyalty] == int_value_field[-100..100]
+
+###Checks if the country has a ai behavior towards another country
+alias[trigger:has_attitude_behavior] = {
+	target = scope_group[target_country]
+	behavior = enum[ai_attitude_behaviours]
+}
+
+###Checks if the agreement has a specific specialist perk active
+alias[trigger:has_specialist_perk] = <subject_specialist_perk>
+
+###Checks if the agreement has an active specialization of the specified type, or of any type if 'any' is specified
+alias[trigger:has_active_specialization] = <agreement_term_value.specialist_type>
+alias[trigger:has_active_specialization] = any
+
+###Checks the specialization tier of the subject of the agreement.
+alias[trigger:specialist_tier] == int_value_field
+
+###Checks if the country has a secret fealty with the other country (in either direction)
+alias[trigger:has_secret_fealty_with] = scope_group[target_country]
+
+###Checks if current country's capital is connected to target's capital through hyper relay network
+alias[trigger:is_capitals_connected_through_relay_network] = scope_group[target_country]
+
+###Checks if current system is connected to its owner's capital through hyper relay network
+alias[trigger:is_system_connected_to_relay_network] = bool
+
+###Checks if the country AI wants to renegotiate any existing agreements
+alias[trigger:ai_wants_to_negotiate_agreement] = bool
+
+###Checks if the country has an overlord
+alias[trigger:has_any_overlord] = bool
+
+###Checks if the agreement has a specific term
+alias[trigger:has_term_value] = {
+	term = <agreement_term>
+	value = <agreement_term_value>
+}
+
+###Check if a trade action is already active in a trade deal with the specified empire (or with any empire if so specified)
+alias[trigger:is_action_active] = {
+	action = <action_key>
+	with_country = scope_group[target_country]
+	with_country = any
+}
+
+###Checks if terms of the special offer between scoped and target countries is not obsolete
+###Only works in certain parts of the script marked with ai_trade_facility.
+alias[trigger:is_offer_terms_actual] = {
+	target = scope_group[target_country]
+}
+
+###Checks if the scoped country can afford the offer given by the target country
+###Only works in certain parts of the script marked with ai_trade_facility.
+alias[trigger:can_afford_special_offer] = {
+	target = scope_group[target_country]
+}
+
+###Checks if the design has a specific flag
+###(note: one can use e.g. my_flag@from to track relationships between objects)
+alias[trigger:has_design_flag] = value_set[design_flag]
+
+###Checks the country's free enclave number capacity in absolute numbers
+alias[trigger:enclave_capacity_left] == int_value_field[0..inf]

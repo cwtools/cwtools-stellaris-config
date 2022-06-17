@@ -1034,15 +1034,18 @@ alias[effect:set_leader] = last_created_leader
 alias[effect:set_leader] = scope_group[target_leader]
 ###Forces scoped country to evaluate whether to create a specific faction type immediately, rather than monthly
 alias[effect:enable_faction_of_type] = <pop_faction>
-###Sets the scoped country to be a specific subject of target country
+###Sets the scoped country to be a subject of target country. If use_demanded_terms is set to yes, then the subject agreement will use terms that have previously been demanded in a diplomatic action. If allow_instant_negotiation is set to yes, then the subject and overlord can re-negotiate their agreement right away without having to way for the cooldown. If preset is specified, then the agreement will start as that preset
 alias[effect:set_subject_of] = {
-	who = none
-}
-
-###Sets the scoped country to be a specific subject of target country
-alias[effect:set_subject_of] = {
+	## cardinality = 0..1
 	who = scope_group[target_country]
-	subject_type = <subject_type>
+	## cardinality = 0..1
+	who = none
+	## cardinality = 0..1
+	use_demanded_terms = bool
+	## cardinality = 0..1
+	allow_instant_negotiation = bool
+	## cardinality = 0..1
+	preset = <agreement_preset>
 }
 
 ###Removes claims on target system
@@ -1062,7 +1065,7 @@ alias[effect:destroy_colony] = yes
 alias[effect:destroy_ambient_object] = scope[ambient_object]
 ###Removes the planet from the scope
 alias[effect:remove_planet] = yes
-###Removes a building from the scoped planet, this will also cancel construction and clear the queue
+###Removes a single instance of a building from the scoped planet, this will also cancel construction and clear the queue
 alias[effect:remove_building] = <building>
 ###Begins construction of a specific building
 alias[effect:add_building] = <building>
@@ -1792,7 +1795,9 @@ alias[effect:add_research_option] = <technology>
 ### Makes the scoped country remember that it has encountered the bypass
 alias[effect:add_seen_bypass] = scope_group[spatial_object] #megastructure or wormhole
 ### Adds a specific ship design to the scoped country
-alias[effect:add_ship_design] = last_created_design#TODO check this
+alias[effect:add_ship_design] = scope[design]
+### Adds a specific ship design to the scoped country
+alias[effect:add_ship_design] = last_created_design
 ### Adds a sum of experience points to the scoped leader
 alias[effect:add_skill] = int_value_field[-10..20]#check the interval
 ### Gives percentage progress (0.0-1.0) in a specific tech to the scoped country
@@ -2431,7 +2436,7 @@ alias[effect:set_city_graphical_culture] = <graphical_culture>
 ### Changes the country type of the scoped country
 alias[effect:set_country_type] = <country_type>
 ### Sets the crisis ambient loop to the current effect
-alias[effect:set_crisis_sound] = scalar#TODO sound
+alias[effect:set_crisis_sound] = scalar #TODO sound
 ### Sets a custom spatial object as custom country capital location.
 alias[effect:set_custom_capital_location] = scope_group[spatial_object]
 ### Sets the scoped ship to become disabled at a certain hull point percentage
@@ -2439,9 +2444,9 @@ alias[effect:set_disable_at_health] = value_field[0.0..1.0]
 ### Enables or disables the scoped ship
 alias[effect:set_disabled] = bool
 ### Sets the flag of the current Empire.
-alias[effect:set_empire_flag] = scalar#TODO
+alias[effect:set_empire_flag] = scalar #TODO
 ### Sets the name of the current Empire.
-alias[effect:set_empire_name] = scalar
+alias[effect:set_empire_name] = localisation
 ### Silently disables the scoped fleet to prevent player action, remember to unlock at the end of the event
 alias[effect:set_event_locked] = bool
 ### Sets the aggro state of the scoped faction-type country
@@ -3324,6 +3329,7 @@ alias[effect:export_trigger_value_to_variable] = {
 	###specify extra parameters for triggers with { }, e.g. resource = energy
 	parameters = {
 		## cardinality = 0..1
+		## push_scope = any
 		limit = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
@@ -3463,55 +3469,125 @@ alias[effect:start_situation] = {
 
 ###Destroys a situation in right hand side event target, use once situation is complete (on_fail/on_complete is not called)
 alias[effect:destroy_situation] = scope[situation]
-
 ###Adds a sum of progress scoped situation
 alias[effect:add_situation_progress] = value_field
-
 ###Sets the approach to the Situation. Respects allow and potential triggers.
 alias[effect:set_situation_approach] = enum[situation_approaches]
-
 ###Sets the planet's ascension tier to the specified value.
 alias[effect:set_planetary_ascension_tier] = int_value_field
-
 ###Disables a single instance of a specific building on the scoped planet
 alias[effect:disable_building] = <building>
-
 ###Ruins a single instance of a specific building on the scoped planet
 alias[effect:ruin_building] = <building>
-
 ###Locks the Situation so it will not progress until unlocked ("no" unlocks it).
 alias[effect:set_situation_locked] = bool
-
-###Changes the agreement term for wether the Subject can be integrated
+###Changes the agreement term for whether the Subject can be integrated
 alias[effect:set_rule_can_subject_be_integrated] = bool
-
 ###Changes the agreement term for whether the Subject can do diplomacy
 alias[effect:set_rule_can_subject_do_diplomacy] = bool
-
 ###Changes the agreement term for whether the Subject can expand
 alias[effect:set_rule_can_subject_expand] = enum[agreement_subject_expand]
-
 ###Changes the agreement term for whether the Subject can vote independently of its overlord in GalCom/federations
 alias[effect:set_rule_can_subject_vote] = bool
-
 ###Changes the agreement term for Subject to join Overlord wars
-alias[effect:set_rule_can_subject_expand] = enum[agreement_wars]
-
+alias[effect:set_rule_join_overlord_wars] = enum[agreement_wars]
 ###Changes the agreement term for Overlord to wars of its Subject
 alias[effect:set_rule_join_subject_wars] = enum[agreement_wars]
-
 ###Changes the agreement term for whether the Subject can access the overlord's territory (and territories the overlord has access to) despite closed borders
 alias[effect:set_rule_subject_has_access] = bool
-
 ###Changes the agreement term for whether the Subject gets sensors data from Overlord
 alias[effect:set_rule_subject_has_sensors] = bool
-
 ###Passes the scoped debris ownership to the specified country 
 alias[effect:pass_debris_ownership] = {
 	owner = scope_group[target_country]
 }
-
-#Todo: specialists
-#convert_to_specialist - Starts the process of converting the subject of the scoped agreement to the given specialist type
-#Can also be used to remove the specialization from a subject, by using 'none' as value
-#convert_to_specialist = <specialist_subject_type>
+###Removes a specific holding from the scoped planet
+alias[effect:remove_holding] = {
+	holding = <building.corporate>
+	holding = <building.holding>
+	owner = scope_group[target_country]
+}
+###Begins construction of a specific holding on the scoped planet
+alias[effect:add_holding] = {
+	holding = <building.corporate>
+	holding = <building.holding>
+	owner = scope_group[target_country]
+}
+###Removes a secret fealty pact between the scoped subject country and the target empire
+alias[effect:remove_secret_fealty] = scope_group[target_country]
+###Sets agreement terms of the agreement. Can be used to set multiple terms at once, including resource subsidies.
+alias[effect:set_agreement_term] = {
+	## cardinality = 0..inf
+	<agreement_term.discrete> = <agreement_term_value.discrete>
+	## cardinality = 0..inf
+	<agreement_term.discrete_number> = <agreement_term_value.discrete_number>
+	## cardinality = 0..inf
+	<agreement_term.specialist_type> = <agreement_term_value.specialist_type>
+	## cardinality = 0..inf
+	<agreement_term.resource> = value_field[-1.0..1.0]
+}
+###Sets the preset of an agreement and applies its terms on the agreement if 'apply_terms' is 'yes'.
+alias[effect:set_agreement_preset] = {
+	preset = <agreement_preset>
+	###Defaults to 'yes'
+	apply_terms = bool
+}
+###Adds a ship component to a starbase, standalone from any module or building
+alias[effect:add_starbase_component] = {
+	component = <component_template.starbase>
+}
+###Removes the specified ship component to a starbase. Only works for components that are standalone from any module or building.
+alias[effect:remove_starbase_component] = {
+	component = <component_template.starbase>
+}
+###Add loyalty to subject of an agreement
+alias[effect:add_loyalty] = int_value_field
+## severity = warning
+###Sets an arbitrarily-named flag on the scoped design
+###(note: one can use e.g. my_flag@from to track relationships between objects)
+alias[effect:set_design_flag] = value_set[design_flag]
+## severity = warning
+###Removes a flag from the scoped design
+###(note: one can use e.g. my_flag@from to track relationships between objects)
+alias[effect:remove_design_flag] = value_set[design_flag]
+## severity = warning
+###Sets an arbitrarily-named flag on the scoped country for a set duration
+alias[effect:set_timed_design_flag] = {
+	flag = value_set[design_flag]
+	enum[days_months_years] = int_value_field
+}
+###Destroys a situation in right hand side event target, firing on_abort (use to cancel and fire that effect)
+alias[effect:abort_situation] = scope[situation]
+###Starts the process of converting the subject of the scoped agreement to the given specialist type
+###Can also be used to remove the specialization from a subject, by using 'none' as value
+alias[effect:convert_to_specialist] = <agreement_term_value.specialist_type>
+###Starts the process of converting the subject of the scoped agreement to the given specialist type
+###Can also be used to remove the specialization from a subject, by using 'none' as value
+alias[effect:convert_to_specialist] = none
+###Removes a specific ship design from the scoped country
+alias[effect:remove_ship_design] = scope[design]
+###Removes a specific ship design from the scoped country
+alias[effect:remove_ship_design] = last_created_design
+###Removes a specific global design from the game
+alias[effect:remove_global_ship_design] = <global_ship_design>
+###Passes special trade offer data from the target enclave country to the scoped country.
+###Only works inside certain parts of the script marked as ai_trade_facility.
+alias[effect:get_trade_data] = {
+	target = scope_group[target_country]
+}
+###Makes special trade deal between the target enclave country and the scoped country.
+###Only works inside certain parts of the script marked as ai_trade_facility.
+alias[effect:make_special_trade] = {
+	target = scope_group[target_country]
+}
+###Leases fleet out to the new controller country for a numbed of days 
+alias[effect:give_fleet] = {
+	controller = scope_group[target_country]
+	days = int_value_field
+}
+###Breaks fleet lease contract 
+alias[effect:break_fleet_contract] = bool
+###Prolongs fleet's lease contract for a numbed of days 
+alias[effect:prolong_fleet_contract] = {
+	days = int_value_field
+}
