@@ -1424,7 +1424,7 @@ alias[trigger:count_starbase_modules] =  {
 alias[trigger:count_starbase_buildings] =  {
 	count = int_value_field
 	## cardinality = 0..1
-	type = <starbase_module>
+	type = <starbase_building>
 	## cardinality = 0..1
 	include_being_constructed = bool
 }
