@@ -234,6 +234,8 @@ alias[moon_initializer:moon] = {
 	class = star
 	## cardinality = 0..1
 	class = enum[solar_sys_init_planet_class]
+	## cardinality = 0..1
+	class = ideal_design_class
 
 	## cardinality = 0..1
 	orbit_distance = float
