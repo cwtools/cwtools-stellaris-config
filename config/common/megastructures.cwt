@@ -106,7 +106,7 @@ megastructure = {
 	}
 
 	## cardinality = 0..1
-	## replace_scope = { this = starbase root = starbase }
+	## replace_scope = { this = megastructure root = megastructure }
 	station_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
