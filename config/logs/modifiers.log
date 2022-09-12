@@ -175,6 +175,8 @@ Printing Modifier Definitions:
 - country_subject_integration_speed_add, Category: Countries
 - country_integration_cooldown_mult, Category: Countries
 - country_vassal_naval_capacity_contribution_mult, Category: Countries
+- country_naval_capacity_contribution_from_subjects_mult, Category: Countries
+- country_naval_capacity_contribution_to_overlord_mult, Category: Countries
 - subject_tribute_mult, Category: Countries
 - country_subject_technology_sharing_mult, Category: Countries
 - species_leader_exp_gain, Category: Leaders

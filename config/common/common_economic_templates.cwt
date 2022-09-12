@@ -26,6 +26,10 @@ economic_category = {
 
 	## cardinality = 0..1
 	hidden = bool
+	
+	## cardinality = 0..1
+	###sets the modifier category, which is sometimes used to determine whether it is applied to a certain object (so make sure this is set to what you want)
+	category = enum[scripted_modifier_categories]
 
 	## cardinality = 0..inf
 	triggered_produces_modifier = {

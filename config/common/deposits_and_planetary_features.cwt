@@ -162,6 +162,11 @@ deposit = {
 #			}
 #		}
 #	}
+
+	## cardinality = 0..1
+	custom_tooltip = localisation
+	## cardinality = 0..1
+	custom_tooltip_short = localisation
 }
 
 

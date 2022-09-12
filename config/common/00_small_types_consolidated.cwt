@@ -401,18 +401,18 @@ ai_budget = {
 	}
 
 	## cardinality = 0..1
-	fraction = {
+	weight = {
 		enum[weight_or_base] = float
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 
 	## cardinality = 0..1
-	static_max = {
+	desired_max = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 
 	## cardinality = 0..1
-	static_min = {
+	desired_min = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 }
@@ -465,6 +465,8 @@ economic_plan = {
 		pops = int
 		## cardinality = 0..1
 		empire_size = float
+		## cardinality = 0..1
+		naval_cap = int
 
 		## cardinality = 0..1
 		set_name = scalar
@@ -478,6 +480,8 @@ economic_plan = {
 	pops = int
 	## cardinality = 0..1
 	empire_size = float
+	## cardinality = 0..1
+	naval_cap = int
 
 	## replace_scope = { this = country root = country }
 	ai_weight = {

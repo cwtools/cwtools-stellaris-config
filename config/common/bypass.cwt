@@ -21,6 +21,12 @@ bypass = {
 	## cardinality = 0..1
 	### whether this bypass type needs to be 'seen' before it can be used
 	requires_exploration = bool
+	## cardinality = 0..1
+	### whether use of this bypass type is blocked if the destination country has closed borders to you (default: no)
+	respect_closed_borders = bool
+	## cardinality = 0..1
+	### whether use of this bypass type is blocked if the destination country is hostile to you (default: no)
+	block_access_if_hostile = bool
 	### whether this type needs an action or can be used automagically
 	uses_action = bool
 	### whether bypasses of these types are automatically active on creation, or if they need to be researched/upgraded to be activated

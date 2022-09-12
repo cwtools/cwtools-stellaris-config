@@ -147,6 +147,10 @@ planet_modifier = {
 	## cardinality = 0..1
 	is_null = bool
 
+	## cardinality = 0..1
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 	spawn_chance = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}

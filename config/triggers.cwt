@@ -464,6 +464,8 @@ alias[trigger:fleet_power] == value_field
 alias[trigger:is_megastructure_type] = <megastructure>
 ###is_upgrading = <yes/no>. Checks if the scope's fleet or mega structure is currently upgrading
 alias[trigger:is_upgrading] = bool
+###Checks if the scope's fleet, ship or megastructure can be upgraded
+alias[trigger:can_be_upgraded] = bool
 ###Checks if the planet has a planetary ring
 alias[trigger:has_ring] = bool
 ###Checks if the planet is the moon of another planet
@@ -1482,7 +1484,7 @@ alias[trigger:resource_stockpile_compare] = {
 	multiplier = value[variable]
 }
 
-###Checks specific resource income value for the country scope (note: checks profit/loss, not revenue)
+###Checks specific resource income value for the country scope (note: checks profit minus loss, not revenue)
 alias[trigger:resource_income_compare] = {
 	resource = <resource>
 	value = value_field
@@ -2374,7 +2376,7 @@ alias[trigger:has_civic_in_slot] = {
 ###Checks the country's number of owned (recruited) non-envoy leaders (includes the ruler)
 alias[trigger:num_owned_leaders] == int_value_field
 
-###Checks if scoped starbase would evaluate to be a certain starbase_type for its current owner. Warning: expensive trigger.
+###Checks if scoped starbase would evaluate to be a certain starbase_type for its current owner.
 alias[trigger:is_starbase_type] = <starbase_type>
 
 ###Checks if the planet's ascension tier is as specified.

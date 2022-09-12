@@ -34,6 +34,8 @@ observation_station_mission = {
 	monthly_progress = float[0.0..1.0]
 	## cardinality = 0..1
 	completion_event = <event.country>
+	## cardinality = 0..1
+	completion_sound = <sound_effect>
 
 	ai_weight = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]

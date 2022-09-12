@@ -2757,6 +2757,8 @@ alias[effect:create_half_species] = {
 	species_one = scope_group[target_species]
 	species_two = scope_group[target_species]
 	## cardinality = 0..1
+	country = scope_group[target_country]
+	## cardinality = 0..1
 	## push_scope = species
 	effect = {
 		alias_name[effect] = alias_match_left[effect]
@@ -3501,6 +3503,7 @@ alias[effect:set_rule_subject_has_sensors] = bool
 alias[effect:pass_debris_ownership] = {
 	owner = scope_group[target_country]
 }
+
 ###Removes a specific holding from the scoped planet
 alias[effect:remove_holding] = {
 	holding = <building.corporate>
@@ -3591,3 +3594,9 @@ alias[effect:break_fleet_contract] = bool
 alias[effect:prolong_fleet_contract] = {
 	days = int_value_field
 }
+
+
+#3.5
+###Multiplies crisis strength by this factor.
+alias[effect:multiply_crisis_strength] = value_field
+

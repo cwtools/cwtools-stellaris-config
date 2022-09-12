@@ -262,6 +262,9 @@ starbase_type = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	## cardinality = 0..1
+	###Set it so that the AI will build defense platforms (note: it will always build them in the capital system). Default: no
+	ai_use_defense_platforms = bool
+	## cardinality = 0..1
 	ai_design = {
 		#one of these is required
 		## cardinality = 0..1

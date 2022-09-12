@@ -200,7 +200,7 @@ alias[trigger:any_owned_pop_species] = {
 }
 
 ## push_scope = starbase
-###Iterate through every owned starbase
+###Iterate through every owned primary starbase
 alias[trigger:any_owned_starbase] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
@@ -342,7 +342,7 @@ alias[trigger:count_owned_pop_species] =  {
 }
 
 ## push_scope = starbase
-### Iterate through every owned starbase
+### Iterate through every owned primary starbase
 alias[trigger:count_owned_starbase] =  {
 	count = all
 	count = int_value_field
@@ -800,7 +800,7 @@ alias[effect:random_system_within_border] = {
 }
 
 ## push_scope = starbase
-###Iterate through every owned starbase
+###Iterate through every owned primary starbase
 alias[effect:every_owned_starbase] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
@@ -808,7 +808,7 @@ alias[effect:every_owned_starbase] = {
 }
 
 ## push_scope = starbase
-###Iterate through every owned starbase - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+###Iterate through every owned primary starbase - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
 alias[effect:ordered_owned_starbase] = {
 	position = int
 	order_by = value_field
@@ -3524,6 +3524,55 @@ alias[trigger:any_available_debris] = {
 ## push_scope = debris
 ###Iterate through all debris belong to available special projects of the scoped country - checks whether the enclosed triggers return true for X/all of them
 alias[trigger:count_available_debris] = {
+	count = all
+	count = int_value_field
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+
+## push_scope = starbase
+###Iterate through every owned non-primary starbase (e.g. orbital rings), not including juggernauts - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_owned_nonprimary_starbase] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = starbase
+###Iterate through every owned non-primary starbase (e.g. orbital rings), not including juggernauts - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_owned_nonprimary_starbase] = {
+	position = int
+	order_by = value_field
+	##cardinality = 0..1
+	inverse = bool
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = starbase
+###Iterate through every owned non-primary starbase (e.g. orbital rings), not including juggernauts - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_owned_nonprimary_starbase] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+## push_scope = starbase
+###Iterate through every owned non-primary starbase (e.g. orbital rings), not including juggernauts - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_owned_nonprimary_starbase] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+## push_scope = starbase
+###Iterate through every owned non-primary starbase (e.g. orbital rings), not including juggernauts - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_owned_nonprimary_starbase] = {
 	count = all
 	count = int_value_field
 	## cardinality = 0..1
