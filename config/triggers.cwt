@@ -180,7 +180,7 @@ alias[trigger:is_same_value] = scope[any]
 
 
 #should check for <> too
-## replace_scope = { this = pop }
+## push_scope = pop
 ###Checks the percentage of pops in the scope that fulfill the specified criteria
 alias[trigger:pop_percentage] = {
 	limit = {
@@ -206,6 +206,10 @@ alias[trigger:has_ethic] = <ethos>
 ###Checks if the pop has a specific ethos
 alias[trigger:pop_has_ethic] = <ethos>
 
+###Checks the country's used starbase capacity in relative terms (0.00-1.00)
+alias[trigger:used_starbase_capacity_percent] == value_field
+### Checks the country's used starbase capacity in absolute numbers
+alias[trigger:used_starbase_capacity_integer] == int_value_field
 
 #country only
 ###Checks if the country has an angry attitude towards target country
@@ -1214,6 +1218,8 @@ alias[trigger:logged_in_to_pdx_account] = bool
 ### Checks the country's max naval capacity in absolute numbers
 alias[trigger:max_naval_capacity] == int_value_field
 
+### Checks the country's max starbase capacity
+alias[trigger:max_starbase_capacity] == int_value_field
 
 
 ### Checks if the observation post has achieved specific progress in a mission
@@ -1409,8 +1415,6 @@ alias[trigger:would_join_war] = {
 	side = scope_group[target_country]
 }
 
-
-## scope = country
 alias[trigger:is_researching_special_project] = <special_project>
 
 
@@ -1991,7 +1995,6 @@ alias[trigger:species_has_happiness_with_owner] = scope_group[target_country]
 
 # 2.8
 
-## scope = { planet country }
 ###Checks the number of pops the planet or country has that work a specific job.
 alias[trigger:num_assigned_jobs] = {
 	job = <job>
@@ -1999,7 +2002,6 @@ alias[trigger:num_assigned_jobs] = {
 	value = int_value_field
 }
 
-## scope = ambient_object
 ###Checks if the ambient object is a specific type.
 alias[trigger:is_ambient_object_type] = <ambient_object>
 
@@ -2024,7 +2026,6 @@ alias[trigger:can_set_policy] = {
 	option = enum[policy_option]
 }
 
-## scope = pop
 ###Checks if the pop can work a specific job if a vacancy becomes available
 alias[trigger:can_work_specific_job] = <job>
 
@@ -2097,7 +2098,6 @@ alias[trigger:is_current_first_contact_stage] = <first_contact_stage>
 ###Checks whether the current country is allowed to have the specified technology, i.e. does it fulfil the potential = { } field for that tech.
 alias[trigger:can_research_technology] = <technology>
 
-## scope = country
 ###Checks whether the target country has a technology the current country can steal via copy_random_tech_from effect
 alias[trigger:can_copy_random_tech_from] = {
 	who = scope_group[target_country]
@@ -2320,15 +2320,12 @@ alias[trigger:is_ideal] = bool
 ###Checks if the specified ship, fleet, planet or system is within sensor range of the scoped country.
 alias[trigger:is_in_sensor_range] = scope[ship]
 
-## scope = country
 ###Checks if the specified ship, fleet, planet or system is within sensor range of the scoped country.
 alias[trigger:is_in_sensor_range] = scope[fleet]
 
-## scope = country
 ###Checks if the specified ship, fleet, planet or system is within sensor range of the scoped country.
 alias[trigger:is_in_sensor_range] = scope[planet]
 
-## scope = country
 ###Checks if the specified ship, fleet, planet or system is within sensor range of the scoped country.
 alias[trigger:is_in_sensor_range] = scope[galactic_object]
 
@@ -2520,6 +2517,9 @@ alias[trigger:can_afford_special_offer] = {
 ###Checks if the design has a specific flag
 ###(note: one can use e.g. my_flag@from to track relationships between objects)
 alias[trigger:has_design_flag] = value_set[design_flag]
+
+###Checks if the leader is immortal (either by script effect or species characteristics)
+alias[trigger:is_immortal] = bool
 
 ###Checks the country's free enclave number capacity in absolute numbers
 alias[trigger:enclave_capacity_left] == int_value_field[0..inf]

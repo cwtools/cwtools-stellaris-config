@@ -2724,7 +2724,6 @@ alias[effect:remove_deposit] = <deposit>
 alias[effect:unemploy_pop] = yes
 ###Immediately runs a job evaluation on the planet, firing and employing pops as needed
 alias[effect:check_planet_employment] = yes
-## scope = pop
 ###Resets category of a pop
 alias[effect:clear_pop_category] = yes
 ###Adds random non-blocker resource deposit to the scoped planet
@@ -2739,7 +2738,6 @@ alias[effect:downgrade_all_buildings] = yes
 alias[effect:downgrade_buildings_of_type] = <building>
 ###Instantly adds devastation to scoped planet
 alias[effect:add_planet_devastation] = value_field[-100..100]
-## scope = any
 ###Creates a new pop from a half-species on the planet
 alias[effect:create_half_species] = {
 	species_one = scope_group[target_species]
@@ -3593,4 +3591,7 @@ alias[effect:set_agreement_terms] = {
 #3.5
 ###Multiplies crisis strength by this factor.
 alias[effect:multiply_crisis_strength] = value_field
+
+###Sets the scoped leader immortal. The 'no' case will not override immortality granted by species characteristics (but will disable immortality granted by this effect).
+alias[effect:set_immortal] = bool
 
