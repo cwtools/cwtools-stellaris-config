@@ -3532,6 +3532,7 @@ alias[effect:set_agreement_term] = {
 ###Sets the preset of an agreement and applies its terms on the agreement if 'apply_terms' is 'yes'.
 alias[effect:set_agreement_preset] = {
 	preset = <agreement_preset>
+	## cardinality = 0..1
 	###Defaults to 'yes'
 	apply_terms = bool
 }
@@ -3595,6 +3596,11 @@ alias[effect:prolong_fleet_contract] = {
 	days = int_value_field
 }
 
+###Sets agreement terms of the agreement. Can be used to set multiple terms at once, including resource subsidies.
+alias[effect:set_agreement_terms] = {
+	## cardinality = 0..inf
+	<agreement_term> = scalar
+}
 
 #3.5
 ###Multiplies crisis strength by this factor.
