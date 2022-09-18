@@ -251,6 +251,8 @@ trait = {
 	initial = bool
 	## cardinality = 0..1
 	randomized = bool
+	## cardinality = 0..1
+	modification = bool
 
 	## cardinality = 0..1
 	custom_tooltip = localisation
