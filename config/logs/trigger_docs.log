@@ -1,4 +1,4 @@
-[16:38:06][game_application.cpp:2024]: 
+[13:13:05][game_application.cpp:2032]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -110,6 +110,10 @@ num_favors = {
 	value ><= <value>/<variable>
 }
 Supported Scopes: country
+
+num_ships_in_debris - Checks the number of ships of a ship size in debris
+num_ships_in_debris = { ship_size = corvette value > 15 }
+Supported Scopes: debris
 
 last_building_changed - Checks if the last building queued/unqueued/built/demolished/upgraded was the specified building
 last_building_changed = building_capitol
@@ -417,6 +421,10 @@ is_alliance_fleet - Checks if the scoped fleet is an alliance fleet.
 is_alliance_fleet = <yes/no>
 Supported Scopes: fleet
 
+has_forbidden_jobs - Check that you have forbidden job of a specific type
+has_forbidden_jobs = "miner"
+Supported Scopes: planet
+
 is_researching_special_project - Checks if the country is currently researching a specific special project
 is_researching_special_project = special_project_name
 Supported Scopes: country leader
@@ -425,7 +433,7 @@ last_activated_relic - Checks if the specified relic was the last activated one
 last_activated_relic = <relic_key>
 Supported Scopes: country
 
-any_system_planet - Iterate through each planet in the current system - checks whether the enclosed triggers return true for any of them
+any_system_planet - Iterate through each planet (colony or not) in the current system - checks whether the enclosed triggers return true for any of them
 any_system_planet = { <triggers> }
 Supported Scopes: galactic_object
 
@@ -595,6 +603,10 @@ Supported Scopes: country pop dlc_recommendation
 is_owned_by - Checks if the planet/system/army/ship is owned by the target country
 is_owned_by = <target>
 Supported Scopes: megastructure planet ship pop fleet galactic_object leader army pop_faction starbase deposit sector archaeological_site first_contact spy_network espionage_operation agreement situation
+
+is_immortal - Checks if the leader is immortal (either by script effect or species characteristics)
+is_immortal = yes/no
+Supported Scopes: leader
 
 can_live_on_planet - Checks if the pop or species is allowed to live on a specified planet
 can_live_on_planet = from.capital_scope
@@ -1377,7 +1389,7 @@ situation_progress - Checks if the scoped situation's progress is a certain valu
 situation_progress > 15
 Supported Scopes: situation
 
-situation_monthly_progress - Checks if the scoped situation's monthly progress is a certain value.
+situation_monthly_progress - Checks if the scoped situation's monthly progress is a certain value. Returns the cached value from the last monthly tick.
 situation_monthly_progress > 1
 Supported Scopes: situation
 
@@ -1532,10 +1544,6 @@ Supported Scopes: ambient_object
 is_ambient_object_type - Checks if the ambient object is a specific type.
 is_ambient_object_type = caravaneer_billboard_1
 Supported Scopes: ambient_object
-
-any_bordering_country - Iterate through all bordering countries of a system - checks whether the enclosed triggers return true for any of them
-any_bordering_country = { <triggers> }
-Supported Scopes: galactic_object
 
 galaxy_percentage - Checks if the country has a specific percentage (0.00-1.00) of the galaxy within its borders
 galaxy_percentage > 0.40
@@ -1729,11 +1737,11 @@ has_auto_move_target = yes
 Supported Scopes: ship fleet
 
 count_starbase_modules - Checks the number of starbase modules that are of the specified type or not
-count_starbase_modules = { type = anchorage include_being_constructed = yes/no count < 12/variable }
+count_starbase_modules = { type = anchorage (optional) include_being_constructed = yes/no count < 12/variable }
 Supported Scopes: galactic_object starbase
 
-count_starbase_buildings - Checks the number of starbase modules that are of the specified type or not
-count_starbase_modules = { type = anchorage include_being_constructed = yes/no count < 12/variable }
+count_starbase_buildings - Checks the number of starbase buildings that are of the specified type or not
+count_starbase_buildings = { type = command_center (optional) include_being_constructed = yes/no count < 12/variable }
 Supported Scopes: galactic_object starbase
 
 is_belligerent_to - Checks if the country has a belligerent attitude towards target country
@@ -1831,6 +1839,18 @@ Supported Scopes: country
 
 used_naval_capacity_percent - Checks the country's used naval capacity in relative terms (0.00-1.00)
 used_naval_capacity_percent < 0.75
+Supported Scopes: country
+
+max_starbase_capacity - Checks the country's max starbase capacity
+max_starbase_capacity = 15
+Supported Scopes: country
+
+used_starbase_capacity_integer - Checks the country's used starbase capacity in absolute numbers
+used_starbase_capacity_integer = 15
+Supported Scopes: country
+
+used_starbase_capacity_percent - Checks the country's used starbase capacity in relative terms (0.00-1.00)
+used_starbase_capacity_percent < 0.75
 Supported Scopes: country
 
 war_begun_num_fleets_gone_mia - Checks amount of target country's fleets that went MIA when the war began
@@ -2012,7 +2032,7 @@ planet_resource_compare = {
 }
 Supported Scopes: planet
 
-resource_income_compare - Checks specific resource income value for the country scope (note: checks profit/loss, not revenue):
+resource_income_compare - Checks specific resource income value for the country scope (note: checks profit minus loss, not revenue):
 resource_income_compare = {
 	resource = <resource_name>
 	value ><= <value>
@@ -2065,11 +2085,17 @@ has_presence - Checks if a system contains any fleets, stations, mega structures
 has_presence = yes
 Supported Scopes: galactic_object
 
-is_megastructure_type - is_megastructure_type = <name of type>. Compares the type of scope's mega structure to a type from the database
+is_megastructure_type - Compares the type of scope's mega structure to a type from the database.
+is_megastructure_type = <name of type>
 Supported Scopes: megastructure
 
-is_upgrading - is_upgrading = <yes/no>. Checks if the scope's fleet or mega structure is currently upgrading
+is_upgrading - Checks if the scope's fleet or mega structure is currently upgrading.
+is_upgrading = <yes/no>
 Supported Scopes: megastructure fleet
+
+can_be_upgraded - Checks if the scope's fleet, ship, starbase or megastructure can be upgraded.
+can_be_upgraded = <yes/no>. 
+Supported Scopes: megastructure ship fleet starbase
 
 relative_power - Compares relative power between two countries. relative_power = { who = <target country> category = <fleet/economy/technology/all> value ><= <pathetic/inferior/equivalent/superior/overwhelming>
 Supported Scopes: country federation
@@ -2081,6 +2107,10 @@ Supported Scopes: country
 any_relation - Iterate through all relations - checks whether the enclosed triggers return true for any of them
 any_relation = { <triggers> }
 Supported Scopes: country
+
+is_job_of_pop_category - Checks if a job is of a certain pop category. Note that the result for this trigger is not dependent on where it is used - so it's for use in e.g. templated script values.
+is_job_of_category = { job = <job> category = <category> }
+Supported Scopes: all
 
 has_megastructure_flag - Checks if the mega structure has a specific flag
 has_megastructure_flag = <flag> (note: one can use e.g. my_flag@from to track relationships between objects)
@@ -2347,7 +2377,7 @@ count_starbase_sizes = {
 }
 Supported Scopes: country
 
-is_starbase_type - Checks if scoped starbase would evaluate to be a certain starbase_type for its current owner. Warning: expensive trigger
+is_starbase_type - Checks if scoped starbase would evaluate to be a certain starbase_type for its current owner. 
 is_starbase_type = sfortress
 Supported Scopes: starbase
 
@@ -2396,6 +2426,10 @@ has_climate - Checks if the planet's climate is set to a specified string in pla
 has_climate = dry
 Supported Scopes: planet
 
+built_on_planet - Checks if the scoped megastructure is built on a planet
+built_on_planet = yes
+Supported Scopes: megastructure
+
 last_changed_species_rights_type - Check if the last species rights type changed for the pop or leader is of type type 
 last_changed_species_rights_type = <living_standard/citizenship/military_service/slavery/purge/colonization_control/population_control/migration_control/none>
 Supported Scopes: pop leader
@@ -2443,6 +2477,10 @@ has_rival - Checks if the target country is the country's rival
 has_rival = <target>
 Supported Scopes: country
 
+has_subject - Checks if the target country is the a subject of the current country.
+has_subject = <target>
+Supported Scopes: country
+
 has_overlord - Checks if the target country is the country's overlord
 has_overlord = <target>
 Supported Scopes: country
@@ -2473,8 +2511,15 @@ Supported Scopes: all
 xeno_compatibility_enabled - Checks if Xeno Compatibility are enabled in game setup
 Supported Scopes: all
 
+lgate_enabled - Checks if L-Gates are enabled in game setup
+Supported Scopes: all
+
 num_housing - Checks the planet's total housing
 num_housing > 5
+Supported Scopes: planet
+
+num_deposits - Checks the planet's total number of deposits
+num_deposits > 5
 Supported Scopes: planet
 
 is_sector_capital - Checks if the planet is its sector's capital
@@ -2926,6 +2971,17 @@ count_system_ambient_object = {
 }
 Supported Scopes: galactic_object
 
+any_archaeological_site - Iterate through every archaeological sites - checks whether the enclosed triggers return true for any of them
+any_archaeological_site = { <triggers> }
+Supported Scopes: all
+
+count_archaeological_site - Iterate through every archaeological sites - checks whether the enclosed triggers return true for X/all of them
+count_archaeological_site = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: all
+
 any_owned_army - Iterate through each army that is owned by the country - checks whether the enclosed triggers return true for any of them
 any_owned_army = { <triggers> }
 Supported Scopes: country
@@ -2995,8 +3051,12 @@ count_neighbor_country = {
 }
 Supported Scopes: country
 
-count_bordering_country - Iterate through all bordering countries of a system - checks whether the enclosed triggers return true for X/all of them
-count_bordering_country = {
+any_country_neighbor_to_system - Iterate through all countries that own system 1 jump away from current system (bypasses included) - checks whether the enclosed triggers return true for any of them
+any_country_neighbor_to_system = { <triggers> }
+Supported Scopes: galactic_object
+
+count_country_neighbor_to_system - Iterate through all countries that own system 1 jump away from current system (bypasses included) - checks whether the enclosed triggers return true for X/all of them
+count_country_neighbor_to_system = {
 	count = <num/all/variable>
 	limit = { <triggers> }
 }
@@ -3293,8 +3353,19 @@ count_associate = {
 }
 Supported Scopes: federation
 
-count_system_planet - Iterate through each planet in the current system - checks whether the enclosed triggers return true for X/all of them
+count_system_planet - Iterate through each planet (colony or not) in the current system - checks whether the enclosed triggers return true for X/all of them
 count_system_planet = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: galactic_object
+
+any_system_colony - Iterate through each colony in the current system - checks whether the enclosed triggers return true for any of them
+any_system_colony = { <triggers> }
+Supported Scopes: galactic_object
+
+count_system_colony - Iterate through each colony in the current system - checks whether the enclosed triggers return true for X/all of them
+count_system_colony = {
 	count = <num/all/variable>
 	limit = { <triggers> }
 }
@@ -3499,6 +3570,17 @@ count_owned_starbase = {
 }
 Supported Scopes: country
 
+any_owned_nonprimary_starbase - Iterate through every owned non-primary starbase (e.g. orbital rings), not including juggernauts - checks whether the enclosed triggers return true for any of them
+any_owned_nonprimary_starbase = { <triggers> }
+Supported Scopes: country
+
+count_owned_nonprimary_starbase - Iterate through every owned non-primary starbase (e.g. orbital rings), not including juggernauts - checks whether the enclosed triggers return true for X/all of them
+count_owned_nonprimary_starbase = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: country
+
 any_system - Iterate through all systems - checks whether the enclosed triggers return true for any of them
 any_system = { <triggers> }
 Supported Scopes: all
@@ -3580,8 +3662,7 @@ Supported Scopes: country
 
 
 =================
-
-[16:38:06][game_application.cpp:2027]: 
+[13:13:06][game_application.cpp:2035]: 
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -3682,7 +3763,7 @@ add_building = <key>
 Supported Scopes: planet
 
 ruin_building - Ruins a single instance of a specific building on the scoped planet
-ruin_building = <key>
+ruin_building = <key>/random_no_capital
 Supported Scopes: planet
 
 disable_building - Disables a single instance of a specific building on the scoped planet
@@ -3694,12 +3775,16 @@ add_planet_devastation = 5
 Supported Scopes: planet
 
 create_half_species - Creates a new pop from a half-species on the planet
-create_half_species = { species_one = <target> species_two = <target> }
+create_half_species = { species_one = <target> species_two = <target> country = <target> (used for triggered costs) }
 Supported Scopes: all
+
+set_immortal - Sets the scoped leader immortal. The 'no' case will not override immortality granted by species characteristics (but will disable immortality granted by this effect).
+set_immortal = yes
+Supported Scopes: leader
 
 calculate_modifier - Forces target planet or country to calculate its internal modifier
 calculate_modifier = yes
-Supported Scopes: planet
+Supported Scopes: planet country
 
 establish_branch_office - Establish branch office on scoped planet for target country
 establish_branch_office = <target>
@@ -4183,7 +4268,7 @@ Supported Scopes: megastructure planet ship fleet galactic_object starbase no_sc
 
 create_nebula - Creates a new Nebula with a given radius centered around the current system.
 create_nebula = {
-	name = <name> (loc, optional - default is random)
+	name = <name> (loc synced, optional - default is random)
 	radius = 100
 	effect = { <effects on every system in the new nebula> }
 }
@@ -4198,15 +4283,15 @@ set_advisor_active = no
 Supported Scopes: country
 
 save_event_target_as - Saves the current scope as an arbitrarily-named target to be referenced later in the (unbroken) event chain
-save_event_target_as = <string>
+save_event_target_as = <string>/<string@scope> (avoid using chains e.g. @scope.scope)
 Supported Scopes: all
 
 save_global_event_target_as - Saves the current scope as an arbitrarily-named target to be referenced later, accessible globally until cleared
-save_global_event_target_as = <string>
+save_global_event_target_as = <string>/<string@scope> (avoid using chains e.g. @scope.scope)
 Supported Scopes: all
 
 clear_global_event_target - Deletes the specified saved global target reference
-clear_global_event_target = <string>
+clear_global_event_target = <string>/<string@scope>
 Supported Scopes: all
 
 clear_global_event_targets - Deletes all saved global target references
@@ -4337,7 +4422,7 @@ Supported Scopes: country
 set_market_leader - Set scoped country as the current Galactic Market leader. set_market_leader = <yes/no> 
 Supported Scopes: country
 
-random_system_planet - Iterate through each planet in the current system - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_system_planet - Iterate through each planet (colony or not) in the current system - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
 random_system_planet = {
 	limit = { <triggers> }
 	weights = { (optional - adds weights to affect the chance a specific object is selected)
@@ -4941,6 +5026,10 @@ Supported Scopes: all
 
 stop_crisis_sound - Stops the crisis ambient loop
 stop_crisis_sound = yes
+Supported Scopes: all
+
+multiply_crisis_strength - Multiplies crisis strength by this factor.
+multiply_crisis_strength = 1.5
 Supported Scopes: all
 
 force_add_civic - Adds civic to a government without checking the restrictions
@@ -6051,6 +6140,10 @@ pass_debris_ownership - Passes the scoped debris ownership to the specified coun
 pass_debris_ownership = { owner = <target country> }
 Supported Scopes: debris
 
+end_fleet_contract - Breaks fleet lease contract 
+end_fleet_contract = yes
+Supported Scopes: fleet
+
 validate_planet_buildings_and_districts - Checks whether the planets and districts on the planet are valid (their potential triggers are fulfilled), removes or replaces them if not.
 validate_planet_buildings_and_districts = yes
 Supported Scopes: planet
@@ -6441,7 +6534,7 @@ add_spy_network_level - Adds levels to the current Spy Network
 add_spy_network_level = <int>
 Supported Scopes: spy_network
 
-every_system_planet - Iterate through each planet in the current system - executes the enclosed effects on all of them for which the limit triggers return true
+every_system_planet - Iterate through each planet (colony or not) in the current system - executes the enclosed effects on all of them for which the limit triggers return true
 every_system_planet = { limit = { <triggers> } <effects> }
 Supported Scopes: galactic_object
 
@@ -6461,12 +6554,12 @@ give_fleet = { controller = <target country>
  days = <number of days> }
 Supported Scopes: fleet
 
-break_fleet_contract - Breaks fleat lease contract 
-break_fleet_contract = yes
-Supported Scopes: fleet
-
 prolong_fleet_contract - Prolongs fleet's lease contract for a numbed of days 
 prolong_fleet_contract = { days = <number of days> }
+Supported Scopes: fleet
+
+set_fleet_settings - Set fleet's settings, any unspecified setting will set to default value.
+set_fleet_settings = { can_upgrade = no can_change_leader = no ... }
 Supported Scopes: fleet
 
 create_leader - Creates a new leader for the scoped country
@@ -6550,6 +6643,31 @@ ordered_system_ambient_object = {
 	<effects>
 }
 Supported Scopes: galactic_object
+
+random_archaeological_site - Iterate through every archaeological sites - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_archaeological_site = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: all
+
+ordered_archaeological_site - Iterate through every archaeological sites - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+ordered_archaeological_site = {
+	limit = { <triggers> }
+	position = <integer, starting with 0>
+	order_by = <variable>/trigger:<trigger>
+	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
+	<effects>
+}
+Supported Scopes: all
+
+every_archaeological_site - Iterate through every archaeological sites - executes the enclosed effects on all of them for which the limit triggers return true
+every_archaeological_site = { limit = { <triggers> } <effects> }
+Supported Scopes: all
 
 random_owned_army - Iterate through each army that is owned by the country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
 random_owned_army = {
@@ -6711,8 +6829,8 @@ every_neighbor_country - Iterate through all neighbor countries - executes the e
 every_neighbor_country = { limit = { <triggers> } <effects> }
 Supported Scopes: country
 
-random_bordering_country - Iterate through all bordering countries of a system - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
-random_bordering_country = {
+random_country_neighbor_to_system - Iterate through all countries that own system 1 jump away from current system (bypasses included) - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_country_neighbor_to_system = {
 	limit = { <triggers> }
 	weights = { (optional - adds weights to affect the chance a specific object is selected)
 		base = float
@@ -6722,8 +6840,8 @@ random_bordering_country = {
 }
 Supported Scopes: galactic_object
 
-ordered_bordering_country - Iterate through all bordering countries of a system - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
-ordered_bordering_country = {
+ordered_country_neighbor_to_system - Iterate through all countries that own system 1 jump away from current system (bypasses included) - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+ordered_country_neighbor_to_system = {
 	limit = { <triggers> }
 	position = <integer, starting with 0>
 	order_by = <variable>/trigger:<trigger>
@@ -6732,8 +6850,8 @@ ordered_bordering_country = {
 }
 Supported Scopes: galactic_object
 
-every_bordering_country - Iterate through all bordering countries of a system - executes the enclosed effects on all of them for which the limit triggers return true
-every_bordering_country = { limit = { <triggers> } <effects> }
+every_country_neighbor_to_system - Iterate through all countries that own system 1 jump away from current system (bypasses included) - executes the enclosed effects on all of them for which the limit triggers return true
+every_country_neighbor_to_system = { limit = { <triggers> } <effects> }
 Supported Scopes: galactic_object
 
 random_rival_country - Iterate through all countries rivalled by the scoped country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
@@ -7386,7 +7504,7 @@ every_associate - Iterate through each associate member of the federation - exec
 every_associate = { limit = { <triggers> } <effects> }
 Supported Scopes: federation
 
-ordered_system_planet - Iterate through each planet in the current system - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+ordered_system_planet - Iterate through each planet (colony or not) in the current system - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
 ordered_system_planet = {
 	limit = { <triggers> }
 	position = <integer, starting with 0>
@@ -7394,6 +7512,31 @@ ordered_system_planet = {
 	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
 	<effects>
 }
+Supported Scopes: galactic_object
+
+random_system_colony - Iterate through each colony in the current system - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_system_colony = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: galactic_object
+
+ordered_system_colony - Iterate through each colony in the current system - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+ordered_system_colony = {
+	limit = { <triggers> }
+	position = <integer, starting with 0>
+	order_by = <variable>/trigger:<trigger>
+	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
+	<effects>
+}
+Supported Scopes: galactic_object
+
+every_system_colony - Iterate through each colony in the current system - executes the enclosed effects on all of them for which the limit triggers return true
+every_system_colony = { limit = { <triggers> } <effects> }
 Supported Scopes: galactic_object
 
 ordered_planet_within_border - Iterate through each planet within the current empire's borders - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
@@ -7829,6 +7972,31 @@ Supported Scopes: country
 
 every_owned_starbase - Iterate through every owned primary starbase - executes the enclosed effects on all of them for which the limit triggers return true
 every_owned_starbase = { limit = { <triggers> } <effects> }
+Supported Scopes: country
+
+random_owned_nonprimary_starbase - Iterate through every owned non-primary starbase (e.g. orbital rings), not including juggernauts - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_owned_nonprimary_starbase = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: country
+
+ordered_owned_nonprimary_starbase - Iterate through every owned non-primary starbase (e.g. orbital rings), not including juggernauts - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+ordered_owned_nonprimary_starbase = {
+	limit = { <triggers> }
+	position = <integer, starting with 0>
+	order_by = <variable>/trigger:<trigger>
+	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
+	<effects>
+}
+Supported Scopes: country
+
+every_owned_nonprimary_starbase - Iterate through every owned non-primary starbase (e.g. orbital rings), not including juggernauts - executes the enclosed effects on all of them for which the limit triggers return true
+every_owned_nonprimary_starbase = { limit = { <triggers> } <effects> }
 Supported Scopes: country
 
 random_system - Iterate through all systems - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.

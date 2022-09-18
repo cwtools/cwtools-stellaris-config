@@ -52,7 +52,7 @@ trait = {
 		## cardinality = 0..1
 		valid_for_all_ethics = bool
 		## cardinality = 0..1
-		valid_for_origins = bool
+		valid_for_all_origins = bool
 		## cardinality = 0..1
 		###This only does something if valid_for_all_ethics is set to no
 		allowed_ethics = {

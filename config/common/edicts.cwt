@@ -21,7 +21,9 @@ edict = {
 	length = int
 
 	icon = <sprite>
-
+	
+	## cardinality = 0..1
+	edict_lock_in_months = int
 	## cardinality = 0..1
 	edict_cap_usage = int
 

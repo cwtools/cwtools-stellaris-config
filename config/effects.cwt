@@ -940,8 +940,7 @@ alias[effect:set_closed_borders] = {
 alias[effect:declare_war] = {
 	target = scope_group[target_country]
 	attacker_war_goal = <war_goal>
-	## cardinality = 0..1
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	## push_scope = war
 	effect = {
@@ -1092,11 +1091,10 @@ alias[effect:set_graphical_culture] = scope[any]
 ###Creates a new species
 alias[effect:create_species] = {
 	## cardinality = 0..1
-	name = localisation
-	## cardinality = 0..1
 	name = scope[any]
 	## cardinality = 0..1
 	name = random
+	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	namelist = <name_list>
 	## cardinality = 0..1
@@ -1260,8 +1258,7 @@ alias[effect:create_country] = {
 	name = scope[any]
 	## cardinality = 0..1
 	name = random
-	## cardinality = 0..1
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	adjective = scope[any]
 	## cardinality = 0..1
@@ -1372,7 +1369,7 @@ alias[effect:create_country] = {
 
 ###Creates a rebellion on this planet
 alias[effect:create_rebels] = {
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 	name = scope[any]
 	name = random
 	authority = random
@@ -1445,8 +1442,7 @@ alias[effect:create_rebels] = {
 
 ###Creates a new army
 alias[effect:create_army] = {
-	## cardinality = 0..1
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	name = random
 	owner = scope_group[target_country]
@@ -1466,8 +1462,7 @@ alias[effect:create_army] = {
 
 ###Creates a new leader for the scoped country
 alias[effect:create_leader] = {
-	## cardinality = 0..1
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	name = random
 	class = enum[leader_classes]
@@ -1518,8 +1513,7 @@ alias[effect:create_leader] = {
 ### Clones the last created leader for the scoped country
 alias[effect:clone_leader] = {
 	target = scope_group[target_leader]
-	## cardinality = 0..1
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	name = random
 	## cardinality = 0..1
@@ -2030,8 +2024,7 @@ alias[effect:create_colony] = {
 #create_fleet = { name = <string> effect = { <create_ship, set_owner, set_location etc effects go here> } }
 ### Creates a new fleet
 alias[effect:create_fleet] = {
-	## cardinality = 0..1
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	name = scope[fleet]
 	## cardinality = 0..1
@@ -2172,8 +2165,7 @@ alias[effect:create_saved_leader] = {
 	creator = scope_group[target_country]
 	## cardinality = 0..1
 	name = random
-	## cardinality = 0..1
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	gender = enum[genders]
 	class = random
@@ -2210,8 +2202,7 @@ alias[effect:create_saved_leader] = {
 alias[effect:create_ship] = {
 	## cardinality = 0..1
 	name = random
-	## cardinality = 0..1
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	name = scope[ship]
 	## severity = warning
@@ -2309,8 +2300,7 @@ alias[effect:inverted_switch] = {
 alias[effect:join_alliance] = {
 	who = scope_group[target_country]
 	override_requirements = bool
-	## cardinality = 0..1
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 }
 
 ### Removes scoped country from any alliances it is in
@@ -2331,8 +2321,7 @@ alias[effect:log] = scalar
 alias[effect:modify_army] = {
 	## cardinality = 0..1
 	name = random
-	## cardinality = 0..1
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	owner = scope_group[target_country]
 	## cardinality = 0..1
@@ -2493,9 +2482,7 @@ alias[effect:set_planet_entity] = {
 	## cardinality = 0..1
 	graphical_culture = <graphical_culture>
 	## cardinality = 0..1
-	graphical_culture = scope[country]
-	## cardinality = 0..1
-	graphical_culture = scope[ship]
+	graphical_culture = scope_group[target_country]
 	## cardinality = 0..1
 	picture = scalar	#filepath #TODO picture
 	## cardinality = 0..1
@@ -2582,8 +2569,7 @@ alias[effect:spawn_megastructure] = {
 	planet = scope_group[target_planet]
 	## cardinality = 0..1
 	coords_from = scope_group[spatial_object]
-	## cardinality = 0..1
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	orbit_angle = random
 	## cardinality = 0..1
@@ -2736,7 +2722,6 @@ alias[effect:remove_deposit] = <deposit>
 alias[effect:unemploy_pop] = yes
 ###Immediately runs a job evaluation on the planet, firing and employing pops as needed
 alias[effect:check_planet_employment] = yes
-## scope = pop
 ###Resets category of a pop
 alias[effect:clear_pop_category] = yes
 ###Adds random non-blocker resource deposit to the scoped planet
@@ -2751,7 +2736,6 @@ alias[effect:downgrade_all_buildings] = yes
 alias[effect:downgrade_buildings_of_type] = <building>
 ###Instantly adds devastation to scoped planet
 alias[effect:add_planet_devastation] = value_field[-100..100]
-## scope = any
 ###Creates a new pop from a half-species on the planet
 alias[effect:create_half_species] = {
 	species_one = scope_group[target_species]
@@ -3076,6 +3060,8 @@ alias[effect:remove_starbase_building] = {
 	## cardinality = 0..1
 	###Optional, default = all
 	slot = int #no variables here atm
+	## cardinality = 0..1
+	slot = all
 	## cardinality = 0..1
 	building = <starbase_building>
 }
@@ -3532,6 +3518,7 @@ alias[effect:set_agreement_term] = {
 ###Sets the preset of an agreement and applies its terms on the agreement if 'apply_terms' is 'yes'.
 alias[effect:set_agreement_preset] = {
 	preset = <agreement_preset>
+	## cardinality = 0..1
 	###Defaults to 'yes'
 	apply_terms = bool
 }
@@ -3595,8 +3582,16 @@ alias[effect:prolong_fleet_contract] = {
 	days = int_value_field
 }
 
+###Sets agreement terms of the agreement. Can be used to set multiple terms at once, including resource subsidies.
+alias[effect:set_agreement_terms] = {
+	## cardinality = 0..inf
+	<agreement_term> = scalar
+}
 
 #3.5
 ###Multiplies crisis strength by this factor.
 alias[effect:multiply_crisis_strength] = value_field
+
+###Sets the scoped leader immortal. The 'no' case will not override immortality granted by species characteristics (but will disable immortality granted by this effect).
+alias[effect:set_immortal] = bool
 

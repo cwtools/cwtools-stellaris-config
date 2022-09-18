@@ -113,6 +113,10 @@ country_type = {
 	## cardinality = 0..1
 	has_difficulty_bonuses = bool
 	## cardinality = 0..1
+	has_deficits = yes
+	## cardinality = 0..1
+	is_mercenary = yes
+	## cardinality = 0..1
 	pop_growth = bool
 	## cardinality = 0..1
 	share_survey_data = bool
@@ -296,7 +300,7 @@ enums = {
 		machine_military_minister_module
 		mercenary_buyer_minister_module
 		military_minister_module
-		space_monsters_modules
+		space_monsters_module
 		standard_species_rights_module
 		swarm_interior_minister_module
 		swarm_military_minister_module

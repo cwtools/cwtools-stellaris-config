@@ -438,6 +438,7 @@ economic_plan = {
 		<resource> = int
 	}
 
+	## cardinality = 0..1
 	focus = {
 		## cardinality = 1..inf
 		<resource> = int

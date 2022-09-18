@@ -210,3 +210,10 @@ localisation_links = {
         output_scope = country #any, but good enough
 	}
 }
+
+alias[name:name] = localisation
+alias[name:name] = {
+	key = localisation
+	## cardinality = 0..inf
+	variable_string = scalar
+}

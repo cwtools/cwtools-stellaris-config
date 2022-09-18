@@ -3,7 +3,7 @@ types = {
 	## graph_related_types = { technology }
 	type[building] = {
 		path = "game/common/buildings"
-		subtype[branch_office_building] = {
+		subtype[corporate] = {
 			owner_type = corporate
 		}
 		subtype[holding] = {
@@ -78,8 +78,6 @@ building = {
 	add_to_first_building_slot = yes
 	## cardinality = 0..1
 	is_capped_by_modifier = bool
-	## cardinality = 0..1
-	branch_office_building = bool
 	## cardinality = 0..1
 	planetary_ftl_inhibitor = bool
 	## cardinality = 0..1

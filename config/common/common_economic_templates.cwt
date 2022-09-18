@@ -15,7 +15,7 @@ economic_category = {
 	## cardinality = 0..1
     parent = <economic_category>
 	## cardinality = 0..1
-	use_for_ai_budget = yes
+	use_for_ai_budget = bool
 	subtype[!hidden] = {
 		# TODO: icons
 		icon = scalar
@@ -23,6 +23,9 @@ economic_category = {
 	subtype[hidden] = {
 		hidden = yes
 	}
+
+	## cardinality = 0..1
+	modifier_category = enum[scripted_modifier_categories]
 
 	## cardinality = 0..1
 	hidden = bool
@@ -37,7 +40,9 @@ economic_category = {
 			## cardinality = 0..1
 			use_parent_icon = yes
 		}
-		key = localisation
+		key = scalar
+		## cardinality = 0..1
+		use_parent_icon = yes
 		## cardinality = 0..1
 		trigger = {
 			alias_name[trigger] = alias_match_left[trigger]
@@ -49,7 +54,9 @@ economic_category = {
 	}
 	## cardinality = 0..inf
 	triggered_cost_modifier = {
-		key = localisation
+		key = scalar
+		## cardinality = 0..1
+		use_parent_icon = yes
 		## cardinality = 0..1
 		trigger = {
 			alias_name[trigger] = alias_match_left[trigger]
@@ -66,6 +73,8 @@ economic_category = {
 	triggered_upkeep_modifier = {
 		key = scalar
 		## cardinality = 0..1
+		use_parent_icon = yes
+		## cardinality = 0..1
 		trigger = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
@@ -77,6 +86,7 @@ economic_category = {
 	}
 	## cardinality = 0..1
 	ai_use_parent_for_resources_upkeep = {
+		## cardinality = 1..inf
 		<resource>
 	}
 	## cardinality = 0..1
@@ -203,10 +213,9 @@ alias[triggered_planet_modifier:triggered_planet_modifier] = {
 	## cardinality = 0..1
 	multiplier = value_field
 }
-## replace_scope = { this = planet root = planet }
+## replace_scope = { this = planet root = planet from = species fromfrom = country }
 alias[triggered_planet_growth_habitability_modifier:triggered_planet_growth_habitability_modifier] = {
 	## cardinality = 0..1
-	## replace_scope = { this = pop root = pop }
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
@@ -246,6 +255,24 @@ alias[triggered_planet_modifier_direct:triggered_planet_modifier] = {
 	## cardinality = 0..inf
 	alias_name[modifier] = alias_match_left[modifier]
 	## cardinality = 0..inf
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	## cardinality = 0..1
+	mult = value_field
+	## cardinality = 0..1
+	multiplier = value_field
+}
+
+## replace_scope = { this = planet root = planet }
+alias[triggered_planet_modifier_starbase:triggered_planet_modifier_starbase] = {
+	## cardinality = 0..1
+	## replace_scope = { this = starbase root = starbase }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	alias_name[modifier] = alias_match_left[modifier]
+	## cardinality = 0..1
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
