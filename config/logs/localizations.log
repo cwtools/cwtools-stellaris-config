@@ -1,4 +1,4 @@
-[16:38:06][game_application.cpp:2059]: 
+[13:13:06][game_application.cpp:2067]: 
 == LOCALIZATION DOCUMENTATION ==
 This is a list of all hardcoded scoped localization commands in the game. It does not include scripted locs (see game/customizable_localization).
 In most cases, it is also possible to get the value of variables with '[Scope.my_variable]' and saved dates with '[Scope.my_date_flag]'.
@@ -34,6 +34,7 @@ Promotions:
  Federation
 Properties
  GetName
+ GetNamePersistent
  GetAdj
  GetAdjective
  GetAdjPersistent
@@ -80,6 +81,7 @@ Properties
  GetGovernmentName
  GetRealName
  GetCountryType
+ GetOriginName
 
 --Planet--
 Promotions:
@@ -107,13 +109,18 @@ Promotions:
  Fleet
 Properties
  GetName
+ GetNamePersistent
  GetNebula
  GetFleetName
+ GetFleetNamePersistent
  GetLeaderName
+ GetLeaderNamePersistent
  GetStarName
+ GetStarNamePersistent
  GetShipSizeName
  GetShipSizeNamePlural
  GetDesignName
+ GetDesignNamePersistent
 
 --Pop--
 Promotions:
@@ -146,11 +153,17 @@ Promotions:
  System
 Properties
  GetName
+ GetNamePersistent
  GetFleetName
+ GetFleetNamePersistent
  GetLeaderName
+ GetLeaderNamePersistent
  GetStarName
+ GetStarNamePersistent
  GetRulerName
+ GetRulerNamePersistent
  GetAdj
+ GetAdjPersistent
 
 --Leader--
 Promotions:
@@ -158,7 +171,9 @@ Promotions:
  Species
 Properties
  GetName
+ GetNamePersistent
  GetRegnalName
+ GetRegnalNamePersistent
  GetPopFactionName
  GetSubjectPronoun
  GetSheHe
@@ -179,11 +194,15 @@ Properties
  GetHerselfHimself
  GetHimselfHerself
  GetRulerTitle
+ GetRulerTitlePersistent
  GetTitle
  GetRulerName
+ GetRulerNamePersistent
  GetFirstName
+ GetFirstNamePersistent
  GetFirstNameFull
  GetSecondName
+ GetSecondNamePersistent
  GetAge
 
 --Army--
@@ -194,6 +213,7 @@ Promotions:
  Species
 Properties
  GetName
+ GetNamePersistent
  GetRulerName
 
 --Ambient Object--
@@ -249,6 +269,7 @@ Promotions:
  Leader
 Properties
  GetName
+ GetNamePersistent
 
 --Archaeological Site--
 Promotions:
@@ -316,6 +337,7 @@ Promotions:
  Leader
 Properties
  GetName
+ GetNamePersistent
  GetFocus
  GetType
 
