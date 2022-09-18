@@ -940,8 +940,7 @@ alias[effect:set_closed_borders] = {
 alias[effect:declare_war] = {
 	target = scope_group[target_country]
 	attacker_war_goal = <war_goal>
-	## cardinality = 0..1
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	## push_scope = war
 	effect = {
@@ -1092,11 +1091,10 @@ alias[effect:set_graphical_culture] = scope[any]
 ###Creates a new species
 alias[effect:create_species] = {
 	## cardinality = 0..1
-	name = localisation
-	## cardinality = 0..1
 	name = scope[any]
 	## cardinality = 0..1
 	name = random
+	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	namelist = <name_list>
 	## cardinality = 0..1
@@ -1260,8 +1258,7 @@ alias[effect:create_country] = {
 	name = scope[any]
 	## cardinality = 0..1
 	name = random
-	## cardinality = 0..1
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	adjective = scope[any]
 	## cardinality = 0..1
@@ -1372,7 +1369,7 @@ alias[effect:create_country] = {
 
 ###Creates a rebellion on this planet
 alias[effect:create_rebels] = {
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 	name = scope[any]
 	name = random
 	authority = random
@@ -1445,8 +1442,7 @@ alias[effect:create_rebels] = {
 
 ###Creates a new army
 alias[effect:create_army] = {
-	## cardinality = 0..1
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	name = random
 	owner = scope_group[target_country]
@@ -1466,8 +1462,7 @@ alias[effect:create_army] = {
 
 ###Creates a new leader for the scoped country
 alias[effect:create_leader] = {
-	## cardinality = 0..1
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	name = random
 	class = enum[leader_classes]
@@ -1518,8 +1513,7 @@ alias[effect:create_leader] = {
 ### Clones the last created leader for the scoped country
 alias[effect:clone_leader] = {
 	target = scope_group[target_leader]
-	## cardinality = 0..1
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	name = random
 	## cardinality = 0..1
@@ -2030,8 +2024,7 @@ alias[effect:create_colony] = {
 #create_fleet = { name = <string> effect = { <create_ship, set_owner, set_location etc effects go here> } }
 ### Creates a new fleet
 alias[effect:create_fleet] = {
-	## cardinality = 0..1
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	name = scope[fleet]
 	## cardinality = 0..1
@@ -2172,8 +2165,7 @@ alias[effect:create_saved_leader] = {
 	creator = scope_group[target_country]
 	## cardinality = 0..1
 	name = random
-	## cardinality = 0..1
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	gender = enum[genders]
 	class = random
@@ -2210,8 +2202,7 @@ alias[effect:create_saved_leader] = {
 alias[effect:create_ship] = {
 	## cardinality = 0..1
 	name = random
-	## cardinality = 0..1
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	name = scope[ship]
 	## severity = warning
@@ -2309,8 +2300,7 @@ alias[effect:inverted_switch] = {
 alias[effect:join_alliance] = {
 	who = scope_group[target_country]
 	override_requirements = bool
-	## cardinality = 0..1
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 }
 
 ### Removes scoped country from any alliances it is in
@@ -2331,8 +2321,7 @@ alias[effect:log] = scalar
 alias[effect:modify_army] = {
 	## cardinality = 0..1
 	name = random
-	## cardinality = 0..1
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	owner = scope_group[target_country]
 	## cardinality = 0..1
@@ -2582,8 +2571,7 @@ alias[effect:spawn_megastructure] = {
 	planet = scope_group[target_planet]
 	## cardinality = 0..1
 	coords_from = scope_group[spatial_object]
-	## cardinality = 0..1
-	name = localisation
+	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	orbit_angle = random
 	## cardinality = 0..1
