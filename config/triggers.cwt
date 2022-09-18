@@ -2518,8 +2518,14 @@ alias[trigger:can_afford_special_offer] = {
 ###(note: one can use e.g. my_flag@from to track relationships between objects)
 alias[trigger:has_design_flag] = value_set[design_flag]
 
+###Checks if L-Gates are enabled in game setup
+alias[trigger:lgate_enabled] = bool
+
 ###Checks if the leader is immortal (either by script effect or species characteristics)
 alias[trigger:is_immortal] = bool
+
+###Checks the planet's total number of deposits
+alias[trigger:num_deposits] == int_value_field
 
 ###Checks the country's free enclave number capacity in absolute numbers
 alias[trigger:enclave_capacity_left] == int_value_field[0..inf]

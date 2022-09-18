@@ -115,9 +115,30 @@ starbase_building = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 
+	## cardinality = 0..1
+	###planet modifiers (orbital ring)
+	## replace_scope = { this = planet root = planet }
+	planet_modifier = {
+		## cardinality = 0..inf
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	alias_name[triggered_planet_modifier_starbase] = alias_match_left[triggered_planet_modifier_starbase]
 	alias_name[triggered_system_modifier_starbase] = alias_match_left[triggered_system_modifier_starbase]
 	alias_name[triggered_country_modifier_starbase] = alias_match_left[triggered_country_modifier_starbase]
 	alias_name[triggered_station_modifier_starbase] = alias_match_left[triggered_station_modifier_starbase]
+
+	## cardinality = 0..1
+	replaceable = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	on_finished = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+	## cardinality = 0..1
+	on_destroyed = {
+		alias_name[effect] = alias_match_left[effect]
+	}
 }
 
 #Done based on educated guesswork
@@ -201,6 +222,14 @@ starbase_module = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 
+	## cardinality = 0..1
+	###planet modifiers (orbital ring)
+	## replace_scope = { this = planet root = planet }
+	planet_modifier = {
+		## cardinality = 0..inf
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	alias_name[triggered_planet_modifier_starbase] = alias_match_left[triggered_planet_modifier_starbase]
 	alias_name[triggered_system_modifier_starbase] = alias_match_left[triggered_system_modifier_starbase]
 	alias_name[triggered_country_modifier_starbase] = alias_match_left[triggered_country_modifier_starbase]
 	alias_name[triggered_station_modifier_starbase] = alias_match_left[triggered_station_modifier_starbase]
@@ -208,6 +237,19 @@ starbase_module = {
 	## cardinality = 0..1
 	ai_weight = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	## cardinality = 0..1
+	replaceable = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	on_finished = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+	## cardinality = 0..1
+	on_destroyed = {
+		alias_name[effect] = alias_match_left[effect]
 	}
 }
 
@@ -245,7 +287,9 @@ starbase_level = {
 	upgrade_possible = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## cardinality = 0..1
 	portrait = <sprite>
+	## cardinality = 0..1
 	## replace_scope = { root = starbase this = starbase }
 	downgrade_potential = {
 		alias_name[trigger] = alias_match_left[trigger]

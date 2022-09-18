@@ -129,7 +129,7 @@ alias[trigger:any_system_ambient_object] = {
 
 ## push_scope = country
 ###Iterate through all bordering countries of a system
-alias[trigger:any_bordering_country] = {
+alias[trigger:any_country_neighbor_to_system] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
@@ -256,7 +256,7 @@ alias[trigger:count_owned_sector] = {
 
 ## push_scope = country
 ### Iterate through all bordering countries of a system
-alias[trigger:count_bordering_country] = {
+alias[trigger:count_country_neighbor_to_system] = {
 	count = all
 	count = int_value_field
 	## cardinality = 0..1
@@ -1707,7 +1707,7 @@ alias[effect:ordered_system] = {
 
 ## push_scope = country
 ### Iterate through all bordering countries of a system
-alias[effect:every_bordering_country] = {
+alias[effect:every_country_neighbor_to_system] = {
 	## cardinality = 0..1
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
@@ -1717,7 +1717,7 @@ alias[effect:every_bordering_country] = {
 
 ## push_scope = country
 ###Iterate through all bordering countries of a system - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
-alias[effect:ordered_bordering_country] = {
+alias[effect:ordered_country_neighbor_to_system] = {
 	position = int
 	order_by = value_field
 	##cardinality = 0..1
@@ -1795,7 +1795,7 @@ alias[effect:ordered_planet_army] = {
 
 ## push_scope = country
 ### Iterate through all bordering countries of a system
-alias[effect:random_bordering_country] = {
+alias[effect:random_country_neighbor_to_system] = {
 	## cardinality = 0..1
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]

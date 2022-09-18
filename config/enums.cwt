@@ -95,6 +95,8 @@ enums = {
 		spy_network
 		espionage_operation
 		espionage_asset
+		agreement
+		situation
 	}
 	enum[intel_level] = {
 		none
@@ -255,6 +257,7 @@ enums = {
 		prethoryn
 		unbidden
 		contingency
+		all
 	}
 	enum[ship_owner_types] = {
 		country

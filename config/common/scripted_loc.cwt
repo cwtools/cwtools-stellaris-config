@@ -18,6 +18,8 @@ scripted_loc = {
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		}
 		## cardinality = 0..1
+		weight = float
+		## cardinality = 0..1
 		trigger = { alias_name[trigger] = alias_match_left[trigger] }
 		localization_key = localisation
 	}

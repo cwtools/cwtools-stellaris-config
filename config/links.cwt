@@ -58,7 +58,7 @@ links = {
 		output_scope = System
 	}
 	planet = {
-		input_scopes = { Pop Planet System Army Megastructure Deposit archaeological_site }
+		input_scopes = { Pop Planet System Army Megastructure Deposit archaeological_site Starbase }
 		output_scope = Planet
 	}
 	capital_scope = {
@@ -297,7 +297,7 @@ links = {
 	}
 	orbital_defence = {
 		input_scopes = { planet }
-		output_scope = starbase
+		output_scope = fleet
 	}
 	script_value = {
 		from_data = yes

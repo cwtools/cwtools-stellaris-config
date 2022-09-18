@@ -201,6 +201,8 @@ planet_class = {
 	show_city = no
 	## cardinality = 0..1
 	default_planet_selection = bool
+	## cardinality = 0..1
+	planet_custom_label_offset = int
 }
 
 planet_class_random_list = {
