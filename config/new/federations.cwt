@@ -94,6 +94,8 @@ federation_law = {
 
 federation_perk = {
 	## cardinality = 0..1
+	custom_tooltip = localisation
+	## cardinality = 0..1
 	## replace_scopes = { this = federation root = federation }
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
@@ -122,7 +124,7 @@ federation_perk = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
-	## replace_scopes = { this = country root = country }
+	## replace_scopes = { this = federation root = federation }
 	envoy_modifier = {
 		## cardinality = 0..1
 		description = localisation
@@ -150,12 +152,17 @@ federation_perk = {
 federation_type = {
 	icon = <sprite>
 	base_intel = int
+	## cardinality = 0..1
 	## replace_scopes = { this = country root = country }
+	valid_leader = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## replace_scopes = { this = country root = country from = country }
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
-	## replace_scopes = { this = country root = country }
+	## replace_scopes = { this = country root = country from = country }
 	allow = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}

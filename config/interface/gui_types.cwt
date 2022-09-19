@@ -44,6 +44,18 @@ enums = {
 		BOTTOM
 		TOP
 	}
+	enum[standard_format] = {
+		center
+		centre
+		left
+		right
+	}
+	enum[vertical_alignment] = {
+		centre
+		center
+		top
+		bottom
+	}
 	# Available actions
 	enum[actionshortcut] = {
 	    accept
@@ -663,7 +675,8 @@ alias[gui_standard_element:borderSize] = {
 }
 alias[gui_standard_element:orientation] = enum[direction]
 alias[gui_standard_element:format] = enum[direction]
-alias[gui_standard_element:vertical_alignment] = enum[direction]
+alias[gui_standard_element:format] = enum[standard_format]
+alias[gui_standard_element:vertical_alignment] = enum[vertical_alignment]
 alias[gui_standard_element:id] = scalar
 alias[gui_standard_element:horizontal] = int[0..1]
 alias[gui_standard_element:horizontal] = bool

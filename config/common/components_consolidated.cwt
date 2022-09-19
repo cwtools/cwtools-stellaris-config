@@ -119,6 +119,10 @@ component_template = {
 		null
 	}
 	## cardinality = 0..1
+	custom_tooltip = localisation
+	## replace_scope = { root = ship this = ship }
+	alias_name[triggered_ship_modifier] = alias_match_left[triggered_ship_modifier]
+	## cardinality = 0..1
 	should_ai_use = bool
 	## cardinality = 0..1
 	## replace_scope = { root = country this = country }
