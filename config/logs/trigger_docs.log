@@ -119,7 +119,7 @@ last_building_changed - Checks if the last building queued/unqueued/built/demoli
 last_building_changed = building_capitol
 Supported Scopes: planet
 
-empire_size - Checks the empire's size. Identical to empire_spraw trigger.
+empire_size - Checks the empire's size. Identical to empire_sprawl trigger.
 empire_size < 20
 Supported Scopes: country
 
@@ -127,7 +127,7 @@ empire_sprawl - Checks the empire's sprawl. Identical to empire_size trigger.
 empire_sprawl < 20
 Supported Scopes: country
 
-empire_sprawl_over_cap - Checks how much the empire sprawl is over its admin capacity
+empire_sprawl_over_cap - Checks how much the empire's sprawl is over its admin capacity
 empire_sprawl_over_cap < 5
 Supported Scopes: country
 
@@ -1102,6 +1102,7 @@ has_army = yes
 Supported Scopes: planet
 
 is_advisor_active - checks if a country has an advisor
+is_advisor_active = yes
 Supported Scopes: country
 
 count_pops - Checks the number of pops in the scope that fulfill the specified criteria. Warning: deprecated, use count_owned_pop/count_species_pop
@@ -1302,7 +1303,8 @@ colony_age - Checks the planet's (colony's) age in months
 colony_age > 12
 Supported Scopes: planet
 
-is_bottleneck_system - Checks if the system is bottleneck within the range NDefines::NGameplay::SYSTEM_BOTTLENECK_RADIUSis_bottleneck_system = yes
+is_bottleneck_system - Checks if the system is bottleneck within the range NDefines::NGameplay::SYSTEM_BOTTLENECK_RADIUS
+is_bottleneck_system = yes
 Supported Scopes: galactic_object
 
 is_rim_system - Checks if the system is on the galactic rim
@@ -3964,7 +3966,7 @@ Supported Scopes: fleet starbase
 create_pop - Creates a new pop on the scoped planet
 create_pop = {
 	species = <target / key>
-ethos = <random / target / { ethic = <key> ethic = <key> }>
+	ethos = <random / target / { ethic = <key> ethic = <key> }>
 }
 Supported Scopes: planet
 
@@ -4254,8 +4256,7 @@ remove_espionage_asset_flag - Removes a flag from the scoped espionage asset
 remove_espionage_asset_flag = <key> (note: one can use e.g. my_flag@from to track relationships between objects)
 Supported Scopes: espionage_asset
 
-set_spawn_system_batch - Optimizes the calls for spawn_system effect.
-Spawn system should be located in a block between Begin and End.
+set_spawn_system_batch - Optimizes the calls for spawn_system effect. Spawn system should be located in a block between Begin and End.
 Begin: set_spawn_system_batch = begin
 End: set_spawn_system_batch = end
 Supported Scopes: all
@@ -4298,11 +4299,11 @@ Supported Scopes: all
 
 store_country_backup_data - Stores a copy of the specified data of the scoped country. The values default to 'no'.
 store_country_backup_data = {
-flag = <yes/no>
-room = <yes/no>
-name = <yes/no
-ethics = <yes/no>
-government = <yes/no>
+	flag = <yes/no>
+	room = <yes/no>
+	name = <yes/no
+	ethics = <yes/no>
+	government = <yes/no>
 }
 Supported Scopes: country
 
@@ -4417,7 +4418,8 @@ set_faction_hostility - Sets the aggro state of the scoped faction-type country
 set_faction_hostility = { target = country set_hostile = yes set_neutral = no set_friendly = no }
 Supported Scopes: country
 
-set_market_leader - Set scoped country as the current Galactic Market leader. set_market_leader = <yes/no>
+set_market_leader - Set scoped country as the current Galactic Market leader.
+set_market_leader = <yes/no>
 Supported Scopes: country
 
 random_system_planet - Iterate through each planet (colony or not) in the current system - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
@@ -4436,9 +4438,7 @@ add_event_chain_counter = { event_chain = <key> counter = <key> amount = <int>/<
 Supported Scopes: country
 
 add_anomaly - Adds a specific anomaly category to the scoped planet
-add_anomaly = {
-	category = <key>
-	target = target:country }
+add_anomaly = { category = <key> target = target:country }
 Supported Scopes: all
 
 set_disable_at_health - Sets the scoped ship to become disabled at a certain hull point percentage
@@ -4910,9 +4910,8 @@ set_fleet_stance - Sets the stance of the scoped fleet
 set_fleet_stance = <key, aggressive/passive/evasive>
 Supported Scopes: fleet
 
-add_favors - Add <value> favors for scoped country to use on target country. add_favor = {
-	target = <target>
-	value = 2/variable }
+add_favors - Add <value> favors for scoped country to use on target country.
+add_favor = { target = <target> value = 2/variable }
 Supported Scopes: country
 
 remove_favors - Remove <value/all> favors that scoped country have on target country:
@@ -5136,6 +5135,7 @@ repair_percentage = yes
 Supported Scopes: ship fleet
 
 endgame_telemetry - Send endgame telemetry event
+endgame_telemetry = ai_revolt
 Supported Scopes: all
 
 set_deposit - Replaces resource deposit on the scoped planet
@@ -5211,7 +5211,8 @@ add_trust - Adds trust on scope country towards target country
 add_trust = { amount = <amount>/<variable> who = <target> }
 Supported Scopes: country
 
-add_tradition - Adds the specified tradition to the scoped country. add_tradition = <tradition_key>
+add_tradition - Adds the specified tradition to the scoped country.
+add_tradition = <tradition_key>
 Supported Scopes: country
 
 join_war - Joins wars on the side of target country
@@ -5588,10 +5589,12 @@ activate_saved_leader = {
 }
 Supported Scopes: country
 
-add_relic - Adds the specified relic to the scoped country. add_relic = <relic_key>
+add_relic - Adds the specified relic to the scoped country.
+add_relic = <relic_key>
 Supported Scopes: country
 
-remove_relic - Removes the specified relic from the scoped country. remove_relic = <relic_key>
+remove_relic - Removes the specified relic from the scoped country.
+remove_relic = <relic_key>
 Supported Scopes: country
 
 delete_megastructure - Deletes the target mega structure (no death graphics)
@@ -5657,7 +5660,8 @@ enable_on_market - Enables a resource on the Galactic Market
 enable_on_market = <resource_key>
 Supported Scopes: all
 
-enable_galactic_market - Enables the galactic market. enable_galactic_market = <yes/no>
+enable_galactic_market - Enables the galactic market.
+enable_galactic_market = <yes/no>
 Supported Scopes: country
 
 add_timed_trait - Adds a specific trait to the scoped leader for a specific duration
@@ -5706,7 +5710,7 @@ country = use this country instead of excavator, no stage complete will be trigg
 Supported Scopes: archaeological_site
 
 finish_site - Finish the whole archaeological site
-finish_site	 = yes/no/<country>
+finish_site = yes/no/<country>
 yes = trigger stage completed for each stage and current excavator.
 no = do not trigger any stage completed
 country = use this country instead of excavator, no stage complete will be triggered.
@@ -5810,9 +5814,7 @@ Supported Scopes: federation
 set_diplomacy_action_setting - Sets diplomatic action custom setting. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
 set_diplomacy_action_setting = {
 	action = <action_key>
-	settings = {
-	tvote_type = default
-	}
+	settings = { vote_type = default }
 }
 Supported Scopes: federation
 
@@ -5918,7 +5920,8 @@ Supported Scopes: planet
 log_error - Prints a message to error.log for debugging purposes.
 Supported Scopes: all
 
-add_intel - Adds the defined amount of intel toward the target empire add_intel = { amount = <float>/<variable> who = <target> }
+add_intel - Adds the defined amount of intel toward the target empire
+add_intel = { amount = <float>/<variable> who = <target> }
 Supported Scopes: country
 
 fire_on_action - Fires a made-up on_action.
@@ -6165,8 +6168,8 @@ or
 change_government = {
 	authority = random / <key>
 	civics = random / { civic = <key> civic = random }
-cooldown = no (default: yes)
-remove_invalid_civics = yes (default: no)
+	cooldown = no (default: yes)
+	remove_invalid_civics = yes (default: no)
 }
 Supported Scopes: country
 
