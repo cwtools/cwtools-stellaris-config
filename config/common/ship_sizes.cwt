@@ -246,6 +246,8 @@ ship_size = {
 		fraction = {
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		}
+		## cardinality = 0..1
+		## replace_scope = { this = country root = country }
 		fraction = float
 	}
 }
