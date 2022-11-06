@@ -15,6 +15,8 @@ country_type = {
 	## cardinality = 0..1
 	can_receive_envoys = bool
 	## cardinality = 0..1
+	ownership_limits = default
+	## cardinality = 0..1
 	can_own_empty_planets = bool
 	## cardinality = 0..1
 	playable = bool
@@ -201,13 +203,38 @@ country_type = {
 		can_use_market = bool
 		## cardinality = 0..1
 		espionage = bool
-		
+		## cardinality = 0..1
+		limited_military_construction = bool
+		## cardinality = 0..1
+		limited_leaders = bool
 		## cardinality = 0..1
 		modules = {
 			## cardinality = 0..inf
 			enum[country_type_module]
 		}
 	}
+
+	### used with enclave_mercenary
+	## cardinality = 0..1
+	fleet_manager = {
+		on_contract_started = {
+			## cardinality = 0..1
+			alias_name[effect] = alias_match_left[effect]
+		}
+		on_contract_expired = {
+			## cardinality = 0..1
+			remove_fleet_contract_modifiers = bool
+		}
+		on_contract_cancelled = {
+			## cardinality = 0..1
+			remove_fleet_contract_modifiers = bool
+		}
+		on_contract_broken = {
+			## cardinality = 0..1
+			remove_fleet_contract_modifiers = bool
+		}
+	}
+	
 	### used with extradimensional invaders
 	## cardinality = 0..1
 	targets = {
@@ -253,11 +280,15 @@ country_type = {
 			can_receive = {
 				## cardinality = 0..inf
 				<diplomatic_action>
+				## cardinality = 0..inf
+				enum[diplo_canreceive]
 			}
 			## cardinality = 0..1
 			can_send = {
 				## cardinality = 0..inf
 				<diplomatic_action>
+				## cardinality = 0..inf
+				enum[diplo_cansend]
 			}
 		}
 		## cardinality = 0..1
@@ -304,5 +335,19 @@ enums = {
 		standard_species_rights_module
 		swarm_interior_minister_module
 		swarm_military_minister_module
+		space_monsters_modules
+	}
+	enum[diplo_cansend] = {
+		action_demand_thrall
+		action_demand_dominion
+		action_demand_satellite
+		action_demand_signatory
+	}
+	enum[diplo_canreceive] = {
+		action_ask_to_become_thrall
+		action_ask_to_become_dominion
+		action_ask_to_become_satellite  
+		action_ask_to_become_signatory
 	}
 }
+
