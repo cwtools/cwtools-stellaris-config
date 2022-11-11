@@ -226,15 +226,15 @@ country_type = {
 		}
 		on_contract_expired = {
 			## cardinality = 0..1
-			remove_fleet_contract_modifiers = bool
+			alias_name[effect] = alias_match_left[effect]
 		}
 		on_contract_cancelled = {
 			## cardinality = 0..1
-			remove_fleet_contract_modifiers = bool
+			alias_name[effect] = alias_match_left[effect]
 		}
 		on_contract_broken = {
 			## cardinality = 0..1
-			remove_fleet_contract_modifiers = bool
+			alias_name[effect] = alias_match_left[effect]
 		}
 	}
 	
@@ -341,4 +341,3 @@ enums = {
 		space_monsters_modules
 	}
 }
-
