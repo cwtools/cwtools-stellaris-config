@@ -3595,3 +3595,5 @@ alias[effect:multiply_crisis_strength] = value_field
 ###Sets the scoped leader immortal. The 'no' case will not override immortality granted by species characteristics (but will disable immortality granted by this effect).
 alias[effect:set_immortal] = bool
 
+### Used with enclave_mercenary to remove fleet contract modifiers. 
+alias[effect:remove_fleet_contract_modifiers] = bool
