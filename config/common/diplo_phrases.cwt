@@ -3,9 +3,17 @@ types = {
 		path = "game/common/diplo_phrases"
 
 		type_per_file = yes
-
+		
 		## type_key_filter = greetings
 		subtype[greetings] = {
+		}
+		
+		## type_key_filter = action_ask_to_become
+		subtype[action_ask] = {
+		}
+		
+		## type_key_filter = action_demand_
+		subtype[action_demand] = {
 		}
 
 		## type_key_filter = action_offer_trade_deal
@@ -15,6 +23,7 @@ types = {
 		## type_key_filter = action_declare_war
 		subtype[declare_war] = {
 		}
+		
 	}
 }
 
@@ -39,6 +48,46 @@ diplo_phrase = {
 			}
 		}
 	}
+	action_ask = ## cardinality = 0..inf
+		enum[diplo_phrase_types] = {
+			## cardinality = 0..inf
+			localisation = {
+				## replace_scope = { root = country this = country from = country }
+				trigger = { alias_name[trigger] = alias_match_left[trigger] }
+				## cardinality = 0..1
+				weight = {
+					alias_name[modifier_rule] = alias_match_left[modifier_rule]
+				}
+				## cardinality = 0..1
+				###Only with action_offer_trade_deal
+				only_for_trade = yes
+				## cardinality = 0..1
+				###Only with action_offer_trade_deal
+				only_for_gift = yes
+			}
+		}
+	}
+	action_demand = ## cardinality = 0..inf
+		enum[diplo_phrase_types] = {
+			## cardinality = 0..inf
+			localisation = {
+				## replace_scope = { root = country this = country from = country }
+				trigger = { alias_name[trigger] = alias_match_left[trigger] }
+				## cardinality = 0..1
+				weight = {
+					alias_name[modifier_rule] = alias_match_left[modifier_rule]
+				}
+				## cardinality = 0..1
+				###Only with action_offer_trade_deal
+				only_for_trade = yes
+				## cardinality = 0..1
+				###Only with action_offer_trade_deal
+				only_for_gift = yes
+			}
+		}
+	}
+	
+	
 	## cardinality = 0..inf
 	<diplomatic_action> = {
 		## cardinality = 0..inf
@@ -60,6 +109,7 @@ diplo_phrase = {
 			}
 		}
 	}
+	
 }
 
 enums = {
