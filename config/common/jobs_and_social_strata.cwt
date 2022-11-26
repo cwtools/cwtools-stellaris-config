@@ -107,6 +107,8 @@ job = {
 	possible_precalc = can_fill_drone_job
 	## cardinality = 0..1
 	possible_precalc = enum[job_triggers]
+	## cardinality = 0..inf
+	inline_script = filepath[common/inline_scripts/,.txt]
 
 	## cardinality = 0..1
 	possible = {
@@ -120,11 +122,15 @@ job = {
 	resources = {
 		category = <economic_category>
 		alias_name[economic_template] = alias_match_left[economic_template]
+		## cardinality = 0..inf
+		inline_script = filepath[common/inline_scripts/,.txt]
 	}
 	## cardinality = 0..1
 	overlord_resources = {
 		category = <economic_category>
 		alias_name[economic_template] = alias_match_left[economic_template]
+		## cardinality = 0..inf
+		inline_script = filepath[common/inline_scripts/,.txt]
 	}
 
 	## cardinality = 0..1
@@ -220,6 +226,8 @@ social_strata = {
 	resources = {
 		category = <economic_category>
 		alias_name[economic_template] = alias_match_left[economic_template]
+		## cardinality = 0..inf
+		inline_script = filepath[common/inline_scripts/,.txt]
 	}
 
 	## cardinality = 0..1
@@ -232,6 +240,8 @@ social_strata = {
 	display_category = <social_strata>
 	## cardinality = 0..1
 	display_unemployment = bool
+	## cardinality = 0..inf
+	inline_script = filepath[common/inline_scripts/,.txt]
 
 	## cardinality = 0..inf
 	alias_name[triggered_planet_modifier_pop] = alias_match_left[triggered_planet_modifier_pop]
