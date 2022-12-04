@@ -42,6 +42,7 @@ Printing Modifier Definitions:
 - ship_armor_regen_add_static, Category: Ships
 - ship_armor_damage_mult, Category: Ships
 - ship_armor_penetration_mult, Category: Ships
+- ship_armor_hardening_add, Category: Ships
 - ship_shield_add, Category: Ships
 - ship_shield_mult, Category: Ships
 - ship_shield_reduction, Category: Ships
@@ -49,6 +50,7 @@ Printing Modifier Definitions:
 - ship_shield_regen_add_static, Category: Ships
 - ship_shield_damage_mult, Category: Ships
 - ship_shield_penetration_mult, Category: Ships
+- ship_shield_hardening_add, Category: Ships
 - ship_weapon_damage, Category: Ships
 - ship_weapon_range_mult, Category: Ships
 - ship_engagement_range_mult, Category: Ships
