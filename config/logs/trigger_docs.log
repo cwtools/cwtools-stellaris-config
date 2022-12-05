@@ -1,6 +1,6 @@
 [13:13:05][game_application.cpp:2032]:
 == TRIGGER DOCUMENTATION ==
-text - For 'desc = {trigger = {' use. Shows custom text
+text - For 'desc={trigger={' use. Shows custom text
 text = <text>
 Supported Scopes: all
 
@@ -417,6 +417,10 @@ former_migration_control_type - Compares the former migration control type with 
 former_migration_control_type = migration_control_yes
 Supported Scopes: pop
 
+additional_crisis_strength - Checks the degree to which multiply_crisis_strength effect is increasing the strength of endgame crises
+additional_crisis_strength > 1.4
+Supported Scopes: all
+
 is_alliance_fleet - Checks if the scoped fleet is an alliance fleet.
 is_alliance_fleet = <yes/no>
 Supported Scopes: fleet
@@ -744,6 +748,10 @@ has_planetary_ascension_tier - Checks if the planet's ascension tier is as speci
 has_planetary_ascension_tier >= 1
 Supported Scopes: planet
 
+num_planetary_ascension_tiers - Checks if the empire has activated as many ascension tiers as specified:
+num_planetary_ascension_tiers >= 15
+Supported Scopes: country
+
 has_job - Checks if the pop has a specific job, or any job if set to yes
 has_job = <key/yes>
 Supported Scopes: pop
@@ -997,14 +1005,14 @@ is_variable_set = my_var
 Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army ambient_object species pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation
 
 check_variable - Checks a variable for the country/leader/planet/system/fleet
-check_variable = { which = <variable> value ><= <float>/<variable>/<scope.variable>/trigger:<trigger> }
+check_variable = { which = <variable> value >=< <float>/<variable>/<scope.variable>/trigger:<trigger> }
 Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army ambient_object species pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation
 
 check_variable_arithmetic - Checks a variable for the scope if a certain amount of arithmetic is done to it (note: the variable's value is not changed by this trigger)
 check_variable_arithmetic = {
 	which = <variable>
 	add/subtract/multiply/divide/modulo = <float>/<variable>/<scope.variable>/trigger:<trigger> (note: this line can be repeated as many times as desired)
-	value ><= <float>/<variable>/<scope.variable>/trigger:<trigger> (the value to compare against)
+	value <=> <float>/<variable>/<scope.variable>/trigger:<trigger> (the value to compare against)
 }
 Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army ambient_object species pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation
 
@@ -1023,7 +1031,7 @@ check_economic_production_modifier_for_job = {
 Supported Scopes: pop
 
 check_galaxy_setup_value - Checks the value for a specific option from the galaxy setup
-check_galaxy_setup_value = { setting = <string> value ><= <float>/<variable> }
+check_galaxy_setup_value = { setting = <string> value >=< <float>/<variable> }
 possible values: num_empires, num_advanced_empires, num_fallen_empires, num_marauder_empires, mid_game_year, end_game_year, victory_year, num_guaranteed_colonies, num_gateways, num_wormhole_pairs, num_hyperlanes, habitable_worlds_scale, primitive_worlds_scale, crisis_strength_scale, tech_costs_scale
 Supported Scopes: all
 
@@ -2122,12 +2130,16 @@ has_citizenship_type - Checks if a species/pop/leader has a particular citizensh
 has_citizenship_type = { country = <who> type = <type> }
 Supported Scopes: pop leader species
 
+former_colonization_control_type - Compares the former migration control type with the given one.
+former_colonization_control_type = colonization_control_yes
+Supported Scopes: pop
+
 has_population_control - Checks if the pop is prevented from reproducing
-has_population_control = { value = bool country = scope }
+has_population_control = { value = bool/<type> country = scope }
 Supported Scopes: pop leader species
 
 has_migration_control - Checks if the pop is prevented from migrating
-has_migration_control = { value = bool country = scope }
+has_migration_control = { value = bool/<type> country = scope }
 Supported Scopes: pop leader species
 
 species_planet_slave_percentage - Checks if a pop's planet has a specific percentage (0.00-1.00) of the same species enslaved
@@ -2191,7 +2203,7 @@ has_invalid_civic = my_test_civic_1
 Supported Scopes: country
 
 has_colonization_control - Checks if the pop is prevented from migrating
-has_colonization_control = { value = bool country = scope }
+has_colonization_control = { type = bool/<type> country = scope }
 Supported Scopes: pop leader species
 
 has_trade_route - Checks if a system has trade route going through.
@@ -2199,7 +2211,7 @@ has_trade_route = <yes/no>
 Supported Scopes: galactic_object
 
 trade_route_value - Checks the trade value going through the system.
-trade_route_value ><= 40
+trade_route_value >=< 40
 Supported Scopes: galactic_object
 
 trade_intercepted_percentage - Checks the intercepted trade value ratio going through the system.
@@ -2207,11 +2219,11 @@ trade_intercepted_percentage >=< 40
 Supported Scopes: galactic_object
 
 trade_intercepted_value - Checks the intercepted trade value going through the system.
-trade_intercepted_value ><= 40
+trade_intercepted_value >=< 40
 Supported Scopes: galactic_object
 
 trade_protected_value - Checks the protected trade value going through the system.
-trade_protected_value ><= 40
+trade_protected_value >=< 40
 Supported Scopes: galactic_object
 
 trade_protected_percentage - Checks the protected trade value ratio going through the system.
@@ -2632,6 +2644,18 @@ is_proposing_resolution - Checks if the scoped country is currently proposing an
 is_proposing_resolution = <resolution/any>
 Supported Scopes: country
 
+last_resolution_changed - Checks if the last resolution the Galactic Community voted on or otherwise passed or failed is as specified.
+last_resolution_changed = <resolution>
+Supported Scopes: all
+
+position_on_current_resolution - Checks if the current country is supporting, opposing or abstaining from the currently proposed galcom resolution.
+position_on_current_resolution = support/oppose/abstain
+Supported Scopes: country
+
+position_on_last_resolution - Checks if the current country was supporting, opposing or abstaining from the last proposed galcom resolution.
+position_on_last_resolution = support/oppose/abstain
+Supported Scopes: country
+
 is_years_since_community_formation - Compare with number of years since the formation of the Galactic Community. NOTE: A negative value means it hasn't been formed yet!
 is_years_since_community_formationn >= <int32>
 Supported Scopes: all
@@ -2758,6 +2782,10 @@ Supported Scopes: country
 
 galaxy_size - Checks whether the galaxy size if of a certain type
 galaxy_size = medium
+Supported Scopes: all
+
+galaxy_shape - Checks whether the galaxy shape if of a certain shape
+galaxy_shape = spiral_2
 Supported Scopes: all
 
 pop_has_happiness - Checks if the current pop has happiness or not.
@@ -4128,6 +4156,10 @@ Supported Scopes: country
 export_resource_income_to_variable - Exports the value of the current country's monthly income of the specified resource to a variable.
 export_resource_income_to_variable = { resource = energy variable = <string> }
 Supported Scopes: country
+
+set_variable_to_random_value - Sets a variable to a random value within the specified bounds.
+set_variable_to_random_value = { which = <some_variable> min = -100 max = 100 rounded = yes/no }
+Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army ambient_object species pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation
 
 remove_global_flag - Removes a global flag
 remove_global_flag = <key> (note: one can use e.g. my_flag@from to track relationships between objects)
