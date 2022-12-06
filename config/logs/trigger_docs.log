@@ -1940,7 +1940,7 @@ has_closed_borders - Check if the country has closed its borders to target count
 has_closed_borders = <target>
 Supported Scopes: country
 
-is_difficulty - Checks the game's difficulty level (0 to 5, with 0 as Cadet and 5 as Grand Admiral
+is_difficulty - Checks the game's difficulty level (0 to 6, with 0 as Cadet and 6 as Grand Admiral
 is_difficulty = 2
 Supported Scopes: all
 
@@ -2135,11 +2135,11 @@ former_colonization_control_type = colonization_control_yes
 Supported Scopes: pop
 
 has_population_control - Checks if the pop is prevented from reproducing
-has_population_control = { value = bool/<type> country = scope }
+has_population_control = { type = bool/<type> country = scope }
 Supported Scopes: pop leader species
 
 has_migration_control - Checks if the pop is prevented from migrating
-has_migration_control = { value = bool/<type> country = scope }
+has_migration_control = { type = bool/<type> country = scope }
 Supported Scopes: pop leader species
 
 species_planet_slave_percentage - Checks if a pop's planet has a specific percentage (0.00-1.00) of the same species enslaved
@@ -4943,7 +4943,7 @@ set_fleet_stance = <key, aggressive/passive/evasive>
 Supported Scopes: fleet
 
 add_favors - Add <value> favors for scoped country to use on target country.
-add_favor = { target = <target> value = 2/variable }
+add_favors = { target = <target> value = 2/variable }
 Supported Scopes: country
 
 remove_favors - Remove <value/all> favors that scoped country have on target country:
