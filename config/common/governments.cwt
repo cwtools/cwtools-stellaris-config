@@ -238,6 +238,7 @@ civic_or_origin = {
 	starting_colony = <planet_class>
 	## cardinality = 0..1
 	swap_type = {
+		## cardinality = 0..1
 		name = localisation
 		description = localisation
 		### In empire creation / galaxy setup, this has no scope. During the game, when there are actual countries existing, it is set to country scope.

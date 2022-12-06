@@ -52,6 +52,9 @@ megastructure = {
 	## cardinality = 0..1
 	show_galactic_map_icon = bool
 	## cardinality = 0..1
+	### Default yes, if yes megastructure will be shown in outliner
+	show_in_outliner = bool
+	## cardinality = 0..1
 	bypass_type = <bypass>
 	## cardinality = 0..1
 	###also possible to use here upgrade_desc = hide, and localisations are not required in that case

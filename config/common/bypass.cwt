@@ -35,6 +35,7 @@ bypass = {
 	windup_time = int
 	### time spent "recovering" in the system after going through the bypass
 	winddown_time = int
+	## cardinality = 0..1
 	### 0 means instant
 	ftl_multiplier = float
 	## cardinality = 0..1
@@ -106,5 +107,6 @@ enums = {
 		one_to_one
 		scripted_connection
 		hyper_relay
+		to_any_system
 	}
 }
