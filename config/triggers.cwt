@@ -2529,3 +2529,6 @@ alias[trigger:num_deposits] == int_value_field
 
 ###Checks the country's free enclave number capacity in absolute numbers
 alias[trigger:enclave_capacity_left] == int_value_field[0..inf]
+
+###Checks the country's free enclave number capacity in absolute numbers
+alias[trigger:additional_crisis_strength] == int_value_field[0..inf]
