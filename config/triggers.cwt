@@ -661,21 +661,24 @@ alias[trigger:has_slavery_type] = {
 
 ###Checks if the pop is prevented from reproducing
 alias[trigger:has_population_control] = {
-	value = bool
+	type = bool
+	type = enum[population_controls]
 	## cardinality = 0..1
 	country = scope_group[target_country]
 }
 
 ###Checks if the pop is prevented from migrating
 alias[trigger:has_migration_control] = {
-	value = bool
+	type = bool
+	type = enum[migration_controls]
 	## cardinality = 0..1
 	country = scope_group[target_country]
 }
 
 ### Checks if the pop is prevented from migrating
 alias[trigger:has_colonization_control] = {
-	value = bool
+	type = bool
+	type = enum[colonization_controls]
 	## cardinality = 0..1
 	country = scope_group[target_country]
 }
