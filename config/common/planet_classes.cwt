@@ -124,6 +124,9 @@ planet_class = {
 	## cardinality = 0..1
 	ringworld = bool
 	## cardinality = 0..1
+	### (default: no)
+	can_have_no_pop_colony = bool
+	## cardinality = 0..1
 	can_be_invaded = bool
 	## cardinality = 0..1
 	orbit_lines = bool
@@ -152,6 +155,7 @@ planet_class = {
 		<species_archetype>
 	}
 	## cardinality = 0..1
+	### (default: no)
 	uses_alternative_skies_for_moons = bool
 	## cardinality = 0..1
 	uses_alternative_skies_if_has_orbital_ring = bool
