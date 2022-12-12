@@ -223,7 +223,6 @@ species_class = {
 #sub-types don't work here as all sorts of things are bundled into one file without coding divisions between them. But afaik there is no way of adding new ones, they are all hardcoded, so the enums are sufficient.
 
 species_rights = {
-	token = scalar
 	#localisation is complicated. I guess there is a default unless there is a name defined
 	## cardinality = 0..1
 	name = localisation
