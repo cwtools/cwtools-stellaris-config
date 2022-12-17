@@ -72,9 +72,16 @@ types = {
 	## replace_scope = { root = sector this = sector }
 	type[sector_focus] = {
 		path = "game/common/sector_focuses"
+		subtype[hidden] = {
+			hidden = yes
+		}
 		localisation = {
-			## required
-			name = "$"
+			subtype[!hidden] = {
+				## required
+				name = "st_$"
+				## required
+				desc = "st_$_desc"
+			}
 		}
 	}
 	type[map_mode] = {
