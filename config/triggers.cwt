@@ -661,21 +661,21 @@ alias[trigger:has_slavery_type] = {
 
 ###Checks if the pop is prevented from reproducing
 alias[trigger:has_population_control] = {
-	value = bool
+	type = bool
 	## cardinality = 0..1
 	country = scope_group[target_country]
 }
 
 ###Checks if the pop is prevented from migrating
 alias[trigger:has_migration_control] = {
-	value = bool
+	type = bool
 	## cardinality = 0..1
 	country = scope_group[target_country]
 }
 
 ### Checks if the pop is prevented from migrating
 alias[trigger:has_colonization_control] = {
-	value = bool
+	type = bool
 	## cardinality = 0..1
 	country = scope_group[target_country]
 }
@@ -710,7 +710,7 @@ alias[trigger:years_of_peace] = {
 alias[trigger:fleet_size] == int_value_field
 
 ###Checks the game's difficulty level (0 normal, 1 hard, 2 insane)
-alias[trigger:is_difficulty] == int_value_field[0..5]
+alias[trigger:is_difficulty] == int_value_field[0..6]
 
 ###Checks if the planet has any, or a specific, building
 alias[trigger:has_building] = bool
@@ -2364,7 +2364,7 @@ alias[trigger:resource_revenue_compare] = {
 	value = value_field
 }
 
-###Checks if the country has a civic in a slot 
+###Checks if the country has a civic in a slot
 alias[trigger:has_civic_in_slot] = {
 	civic = <civic_or_origin.civic>
 	index = int_value_field
@@ -2529,3 +2529,6 @@ alias[trigger:num_deposits] == int_value_field
 
 ###Checks the country's free enclave number capacity in absolute numbers
 alias[trigger:enclave_capacity_left] == int_value_field[0..inf]
+
+###Checks the country's free enclave number capacity in absolute numbers
+alias[trigger:additional_crisis_strength] == int_value_field[0..inf]

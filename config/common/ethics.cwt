@@ -1,6 +1,5 @@
 
 types = {
-	## type_key_filter <> ethic_categories
 	type[ethos] = {
 		path = "game/common/ethics"
 		localisation = {
@@ -10,26 +9,27 @@ types = {
 			Description = "$_desc"
 		}
 	}
-	## type_key_filter = ethic_categories
-	type[ethic_categories] = {
-		path = "game/common/ethics"
+	type[ethic_category] = {
+		path = "game/common/ethic_categories"
 	}
 }
 
-# TODO Confirm
-# TODO Document
-
-ethic_categories = {
-	## cardinality = 0..100
-	scalar = {}
+ethic_category = {
 }
+
 ethos = {
 	cost = int
 
 	#theoretically this should link to the ethic categories, not sure how to do that though (or whether it is worth it)
-	category = scalar
+	category = <ethic_category>
 	category_value = int[0..20]
 
+	## cardinality = 0..1
+	###Used for hardcoded checks (mainly in tooltips)
+	xenophobe = bool
+	## cardinality = 0..1
+	###Used for hardcoded checks (mainly in tooltips)
+	xenophile = bool
 	## cardinality = 0..1
 	###Yes by default
 	use_for_pops = bool

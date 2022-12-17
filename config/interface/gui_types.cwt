@@ -44,6 +44,18 @@ enums = {
 		BOTTOM
 		TOP
 	}
+	enum[standard_format] = {
+		center
+		centre
+		left
+		right
+	}
+	enum[vertical_alignment] = {
+		centre
+		center
+		top
+		bottom
+	}
 	# Available actions
 	enum[actionshortcut] = {
 	    accept
@@ -179,6 +191,17 @@ alias[gui:smoothListboxType] = {
 		alias_name[gui] = alias_match_left[gui]
 	}
 
+	## cardinality = 0..inf
+	if_scaled_resolution = {
+		## cardinality = 0..1
+		max_height = int
+		## cardinality = 0..1
+		min_height = int
+		alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
+		alias_name[gui_background] = alias_match_left[gui_background]
+		alias_name[gui] = alias_match_left[gui]
+	}
+
 	## cardinality = 0..1
 	autohide_scrollbar = bool
 	## cardinality = 0..1
@@ -208,6 +231,16 @@ alias[gui:containerWindowType] = {
 	click_to_front = bool
 	## cardinality = 0..inf
 	if_resolution = {
+		## cardinality = 0..1
+		max_height = int
+		## cardinality = 0..1
+		min_height = int
+		alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
+		alias_name[gui_background] = alias_match_left[gui_background]
+		alias_name[gui] = alias_match_left[gui]
+	}
+	## cardinality = 0..inf
+	if_scaled_resolution = {
 		## cardinality = 0..1
 		max_height = int
 		## cardinality = 0..1
@@ -296,6 +329,17 @@ alias[gui:iconType] = {
 		alias_name[gui_background] = alias_match_left[gui_background]
 		alias_name[gui] = alias_match_left[gui]
 	}
+
+	## cardinality = 0..inf
+	if_scaled_resolution = {
+		## cardinality = 0..1
+		max_height = int
+		## cardinality = 0..1
+		min_height = int
+		alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
+		alias_name[gui_background] = alias_match_left[gui_background]
+		alias_name[gui] = alias_match_left[gui]
+	}
 	
 	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
 	alias_name[gui_localisation] = alias_match_left[gui_localisation]
@@ -314,6 +358,17 @@ alias[gui_button:buttonType] = {
 
 	## cardinality = 0..inf
 	if_resolution = {
+		## cardinality = 0..1
+		max_height = int
+		## cardinality = 0..1
+		min_height = int
+		alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
+		alias_name[gui_background] = alias_match_left[gui_background]
+		alias_name[gui] = alias_match_left[gui]
+	}
+
+	## cardinality = 0..inf
+	if_scaled_resolution = {
 		## cardinality = 0..1
 		max_height = int
 		## cardinality = 0..1
@@ -663,7 +718,8 @@ alias[gui_standard_element:borderSize] = {
 }
 alias[gui_standard_element:orientation] = enum[direction]
 alias[gui_standard_element:format] = enum[direction]
-alias[gui_standard_element:vertical_alignment] = enum[direction]
+alias[gui_standard_element:format] = enum[standard_format]
+alias[gui_standard_element:vertical_alignment] = enum[vertical_alignment]
 alias[gui_standard_element:id] = scalar
 alias[gui_standard_element:horizontal] = int[0..1]
 alias[gui_standard_element:horizontal] = bool

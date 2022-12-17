@@ -1,6 +1,6 @@
 [13:13:05][game_application.cpp:2032]:
 == TRIGGER DOCUMENTATION ==
-text - For 'desc={trigger={' use. Shows custom text
+text - For 'desc = {trigger = {' use. Shows custom text
 text = <text>
 Supported Scopes: all
 
@@ -1940,7 +1940,7 @@ has_closed_borders - Check if the country has closed its borders to target count
 has_closed_borders = <target>
 Supported Scopes: country
 
-is_difficulty - Checks the game's difficulty level (0 to 6, with 0 as Cadet and 6 as Grand Admiral
+is_difficulty - Checks the game's difficulty level (0 to 6, with 0 as Civilian and 6 as Grand Admiral
 is_difficulty = 2
 Supported Scopes: all
 

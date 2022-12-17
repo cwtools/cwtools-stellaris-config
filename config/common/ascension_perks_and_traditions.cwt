@@ -136,6 +136,10 @@ tradition = {
 		## cardinality = 0..inf
 		alias_name[effect] = alias_match_left[effect]
 	}
+	## cardinality = 0..1
+	custom_tooltip = localisation
+	## cardinality = 0..1
+	custom_tooltip_with_modifiers = localisation
 
 	## cardinality = 0..inf
 	tradition_swap = {
@@ -146,6 +150,10 @@ tradition = {
 		inherit_name = bool
 		## cardinality = 0..1
 		inherit_effects = bool
+		## cardinality = 0..1
+		custom_tooltip = localisation
+		## cardinality = 0..1
+		custom_tooltip_with_modifiers = localisation
 	
 		#Should be only if not inheriting effects
 		## cardinality = 0..1
