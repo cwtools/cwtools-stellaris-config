@@ -3,8 +3,8 @@ types = {
 	type[district] = {
 		path = "game/common/districts"
 		modifiers = {
-            "planet_$_build_speed_mult" = Planets
-        }
+			"planet_$_build_speed_mult" = Planets
+		}
 		subtype[capped] = {
 			## cardinality = 0..1
 			is_capped_by_modifier = yes
@@ -74,7 +74,7 @@ district = {
 	allow = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	
+
 	## cardinality = 0..1
 	on_queued = {
 		alias_name[effect] = alias_match_left[effect]

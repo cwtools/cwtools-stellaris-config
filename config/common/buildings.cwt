@@ -4,8 +4,8 @@ types = {
 	type[building] = {
 		path = "game/common/buildings"
 		modifiers = {
-            "planet_$_build_speed_mult" = Planets
-        }
+			"planet_$_build_speed_mult" = Planets
+		}
 		subtype[corporate] = {
 			owner_type = corporate
 		}
@@ -202,13 +202,13 @@ building = {
 	country_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	
+
 	## cardinality = 0..1
 	## replace_scope = { this = army root = army }
 	army_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	
+
 	## cardinality = 0..1
 	### Property on buildings which when added to the AI build queue will remove all non essential build tasks.
 	is_essential = bool
