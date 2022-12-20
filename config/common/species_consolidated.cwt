@@ -73,6 +73,30 @@ types = {
 	}
 	type[species_rights] = {
 		path = "game/common/species_rights"
+		## starts_with = citizenship_
+		subtype[citizenship] = {
+		}
+		## starts_with = colonization_control_
+		subtype[colonization_control] = {
+		}
+		## starts_with = living_standard_
+		subtype[living_standard] = {
+		}
+		## starts_with = migration_control_
+		subtype[migration_control] = {
+		}
+		## starts_with = military_service_
+		subtype[military_service] = {
+		}
+		## starts_with = population_control_
+		subtype[population_control] = {
+		}
+		## starts_with = purge_
+		subtype[purge] = {
+		}
+		## starts_with = slavery_
+		subtype[slavery] = {
+		}
 		localisation = {
 			## required
 			Name = "$"
@@ -83,7 +107,6 @@ types = {
 		}
 	}
 }
-
 
 #make sure trait points cannot be above max, ideally
 species_archetype = {
@@ -103,9 +126,7 @@ species_archetype = {
 	uses_modifiers = bool
 }
 
-
 #TODO Document
-
 species_class = {
 	## cardinality = 0..1
 	archetype = <species_archetype>
@@ -218,10 +239,7 @@ species_class = {
 	trait = <trait>
 }
 
-
-
 #sub-types don't work here as all sorts of things are bundled into one file without coding divisions between them. But afaik there is no way of adding new ones, they are all hardcoded, so the enums are sufficient.
-
 species_rights = {
 	#localisation is complicated. I guess there is a default unless there is a name defined
 	## cardinality = 0..1
@@ -240,15 +258,42 @@ species_rights = {
 		}
 	}
 
-	## cardinality = 0..1
-	###For purge types. Divide by 100 for monthy reduction
-	pop_decline_rate = int
-
-	## cardinality = 0..1
-	new_pop_weight = float
-
-	## cardinality = 0..1
-	pop_escape_chance = float
+	subtype[citizenship] = {
+		## cardinality = 0..1
+		is_full_citizenship = yes
+		## cardinality = 0..1
+		is_assimilation = yes
+		## cardinality = 0..1
+		is_slavery = yes
+		## cardinality = 0..1
+		is_robot_servant = yes
+		## cardinality = 0..1
+		is_purge = yes
+		## cardinality = 0..1
+		new_pop_weight = float
+	}
+	subtype[colonization_control] = {
+		## cardinality = 0..1
+		can_colonize = no
+	}
+	subtype[migration_control] = {
+		## cardinality 0..1
+		can_migrate = no
+	}
+	subtype[population_control] = {
+		## cardinality 0..1
+		can_reproduce = no
+	}
+	subtype[purge] = {
+		pop_escape_chance = float
+		### Divide by 100 for monthy reduction, overrides BASE_POP_DECLINE
+		pop_decline_rate = int
+	}
+	subtype[slavery] = {
+		## cardinality 0..1
+		### otherwise, AI will not colonise with enslaved species
+		ai_can_colonize = yes
+	}
 
 	## cardinality = 0..1
 	## replace_scope = { this = army root = army }
@@ -269,6 +314,13 @@ species_rights = {
 	free_pop_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
+
+	## cardinality = 0..1
+	### tooltip that appears on each Pop with this species right
+	pop_tooltip = localisation
+	## cardinality = 0..1
+	### from of the sprite "" that is overlaid on each Pop's icon
+	pop_status_frame = int
 
 	## cardinality = 0..1
 	## replace_scope = { this = species root = species from = country }
@@ -293,72 +345,6 @@ species_rights = {
 }
 
 enums = {
-	enum[citizenship_types] = {
-		citizenship_full
-		citizenship_full_machine
-		citizenship_assimilation
-		citizenship_organic_trophy
-		citizenship_limited
-		citizenship_caste_system
-		citizenship_caste_system_limited
-		citizenship_slavery
-		citizenship_purge
-		citizenship_purge_machine
-		citizenship_robot_servitude
-	}
-	enum[military_service_types] = {
-		military_service_full
-		military_service_limited
-		military_service_none
-	}
-	enum[slavery_types] = {
-		slavery_normal
-		slavery_domestic
-		slavery_military
-		slavery_matrix
-		slavery_livestock
-		slavery_indentured
-	}
-	enum[purge_types] = {
-		purge_matrix
-		purge_normal
-		purge_neutering
-		purge_displacement
-		purge_labor_camps
-		purge_processing
-		purge_necrophage
-	}
-	enum[living_standards] = {
-		living_standard_deassimilation
-		living_standard_ego_assimilation
-		living_standard_tech_assimilation
-		living_standard_psi_assimilation
-		living_standard_organic_trophy
-		living_standard_chemical_bliss
-		living_standard_academic_privilege
-		living_standard_utopian
-		living_standard_good
-		living_standard_normal
-		living_standard_subsistence
-		living_standard_servitude
-		living_standard_hive_mind
-		living_standard_none
-		living_standard_shared_burden
-		living_standard_stratified
-		living_standard_decadent
-	}
-	enum[migration_controls] = {
-		migration_control_yes
-		migration_control_no
-	}
-	enum[population_controls] = {
-		population_control_yes
-		population_control_no
-	}
-	enum[colonization_controls] = {
-		colonization_control_yes
-		colonization_control_no
-	}
 	enum[species_rights_type] = {
 		citizenship
 		military_service
@@ -371,6 +357,3 @@ enums = {
 		none
 	}
 }
-
-
-

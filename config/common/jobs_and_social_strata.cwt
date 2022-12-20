@@ -85,7 +85,7 @@ job = {
 	## cardinality = 0..1
 	ignores_favorite = bool
 	## cardinality = 0..1
-	purge = enum[purge_types]
+	purge = <species_rights.purge>
 
 	## cardinality = 0..1
 	###Sets whether the job contributes to diplo weight. Default = yes
