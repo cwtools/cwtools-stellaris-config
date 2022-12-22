@@ -6,6 +6,11 @@ types = {
 			## cardinality = 0..1
 			is_capped_by_modifier = yes
 		}
+		modifiers = {
+			"job_$_add" = Planets
+			"job_$_per_pop" = Planets
+			"job_$_per_crime" = Planets
+		}
 		localisation = {
 			## required
 			name = "job_$"
@@ -25,6 +30,10 @@ types = {
 	}
 	type[social_strata] = {
 		path = "game/common/pop_categories"
+		modifiers = {
+			"pop_cat_$_happiness" = Pops
+			"pop_cat_$_political_power" = Pops
+		}
 		localisation = {
 			## required
 			name = "pop_cat_$"
