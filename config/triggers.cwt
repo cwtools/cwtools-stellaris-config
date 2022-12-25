@@ -713,7 +713,7 @@ alias[trigger:years_of_peace] = {
 alias[trigger:fleet_size] == int_value_field
 
 ###Checks the game's difficulty level (0 normal, 1 hard, 2 insane)
-alias[trigger:is_difficulty] == int_value_field[0..5]
+alias[trigger:is_difficulty] == int_value_field[0..6]
 
 ###Checks if the planet has any, or a specific, building
 alias[trigger:has_building] = bool
@@ -2367,7 +2367,7 @@ alias[trigger:resource_revenue_compare] = {
 	value = value_field
 }
 
-###Checks if the country has a civic in a slot 
+###Checks if the country has a civic in a slot
 alias[trigger:has_civic_in_slot] = {
 	civic = <civic_or_origin.civic>
 	index = int_value_field
