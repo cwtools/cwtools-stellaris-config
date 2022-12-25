@@ -242,6 +242,8 @@ alias[triggered_planet_modifier_pop:triggered_planet_modifier] = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
+	key = <trait>
+	## cardinality = 0..1
 	mult = value_field
 	## cardinality = 0..1
 	multiplier = value_field
@@ -384,6 +386,8 @@ alias[triggered_pop_modifier:triggered_pop_modifier] = {
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
+	## cardinality = 0..1
+	key = <trait>
 	## cardinality = 0..1
 	mult = value_field
 	## cardinality = 0..1

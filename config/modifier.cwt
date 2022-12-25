@@ -4,3 +4,6 @@ alias[modifier:<static_modifier>] = float
 
 ###Applies the value of a scripted modifier from common/scripted_modifiers
 alias[modifier:<scripted_modifier>] = float
+
+###Merges in the CWT-generated modifiers
+alias[modifier:<modifier>] = float

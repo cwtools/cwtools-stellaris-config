@@ -66,13 +66,16 @@ empire_name_format = {
 		}
 	}
 
-	### Reference to localisation string for generating random name
-	format = localisation
+	### Format string for generating random name (proper noun form)
+	format = stellaris_name_format[empire_name_parts]
 	### String used to determine prefix for empire's ship. (Default being ISS). Usually matches name format. Optional for countries that would not ever have ships, e. g. Primitives.
 	## cardinality = 0..1
 	prefix_format = scalar
+	## cardinality = 0..1
 	noun = stellaris_name_format[empire_name_parts]
-	lookups = scalar
+	### Format string for generating random name (adjective form)
+	## cardinality = 0..1
+	adjective = stellaris_name_format[empire_name_parts]
 }
 
 pop_faction_name_parts_list = {
@@ -119,8 +122,6 @@ pre_communications_name_format = {
 		}
 	}
 	format = stellaris_name_format[pre_communications_name_parts]
-	## cardinality = 0..1
-	lookups = scalar
 }
 
 war_name_parts_list = {
@@ -145,6 +146,4 @@ war_name_format = {
 		}
 	}
 	format = stellaris_name_format[war_name_parts]
-	## cardinality = 0..1
-	lookups = scalar
 }

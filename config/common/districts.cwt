@@ -2,6 +2,9 @@
 types = {
 	type[district] = {
 		path = "game/common/districts"
+		modifiers = {
+			"planet_$_build_speed_mult" = Planets
+		}
 		subtype[capped] = {
 			## cardinality = 0..1
 			is_capped_by_modifier = yes
@@ -23,7 +26,8 @@ types = {
 ## push_scope = planet
 district = {
 	base_buildtime = int
-
+	## cardinality = 0..inf
+	desc = localisation
 	## cardinality = 0..inf
 	desc = {
 		trigger = {
@@ -70,7 +74,7 @@ district = {
 	allow = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	
+
 	## cardinality = 0..1
 	on_queued = {
 		alias_name[effect] = alias_match_left[effect]

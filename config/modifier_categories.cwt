@@ -47,6 +47,9 @@ modifier_categories = {
     "Economic Units" = {
         supported_scopes = { any }
     }
+    "AI Economy" = {
+        supported_scopes = { any }
+    }
     "Star Systems" = {
         supported_scopes = { galacticobject }
     }

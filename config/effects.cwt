@@ -855,7 +855,7 @@ alias[effect:resettle_pop] = {
 alias[effect:set_citizenship_type] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
-	type = enum[citizenship_types]
+	type = <citizenship_type>
 	## cardinality = 0..1
 	cooldown = bool
 }
@@ -864,7 +864,7 @@ alias[effect:set_citizenship_type] = {
 alias[effect:set_military_service_type] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
-	type = enum[military_service_types]
+	type = <military_service_type>
 	## cardinality = 0..1
 	cooldown = bool
 }
@@ -873,7 +873,7 @@ alias[effect:set_military_service_type] = {
 alias[effect:set_purge_type] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
-	type = enum[purge_types]
+	type = <purge_type>
 	## cardinality = 0..1
 	cooldown = bool
 }
@@ -882,7 +882,7 @@ alias[effect:set_purge_type] = {
 alias[effect:set_slavery_type] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
-	type = enum[slavery_types]
+	type = <slavery_type>
 	## cardinality = 0..1
 	cooldown = bool
 }
@@ -892,7 +892,7 @@ alias[effect:set_population_controls] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
 	type = bool
-	type = enum[population_controls]
+	type = <population_control>
 	## cardinality = 0..1
 	cooldown = bool
 }
@@ -902,7 +902,7 @@ alias[effect:set_colonization_controls] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
 	type = bool
-	type = enum[colonization_controls]
+	type = <colonization_control>
 	## cardinality = 0..1
 	cooldown = bool
 }
@@ -912,7 +912,7 @@ alias[effect:set_migration_controls] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
 	type = bool
-	type = enum[migration_controls]
+	type = <migration_control>
 	## cardinality = 0..1
 	cooldown = bool
 }
@@ -921,7 +921,7 @@ alias[effect:set_migration_controls] = {
 alias[effect:set_living_standard] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
-	type = enum[living_standards]
+	type = <living_standard>
 	## cardinality = 0..1
 	cooldown = bool
 }
@@ -1573,11 +1573,11 @@ alias[effect:modify_species] = {
 	base = auto
 	## cardinality = 0..1
 	base = none
-	## cardinality = 0..10
+	## cardinality = 0..inf
 	add_trait = <trait>
 	## cardinality = 0..1
 	add_traits_at_start_of_list = bool
-	## cardinality = 0..10
+	## cardinality = 0..inf
 	remove_trait = <trait>
 	## cardinality = 0..1
 	ideal_planet_class = scope[planet]
