@@ -71,32 +71,88 @@ types = {
 	type[species_archetype] = {
 		path = "game/common/species_archetypes"
 	}
-	type[species_rights] = {
-		path = "game/common/species_rights"
-		## starts_with = citizenship_
-		subtype[citizenship] = {
+	type[species_archetype] = {
+		path = "game/common/species_archetypes"
+	}
+	type[citizenship_type] = {
+		path = "game/common/species_rights/citizenship_types"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Tooltip = "$_tooltip"
+			## required
+			"Delayed tooltip" = "$_tooltip_delayed"
 		}
-		## starts_with = colonization_control_
-		subtype[colonization_control] = {
+	}
+	type[colonization_control] = {
+		path = "game/common/species_rights/colonization_controls"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Tooltip = "$_tooltip"
+			## required
+			"Delayed tooltip" = "$_tooltip_delayed"
 		}
-		## starts_with = living_standard_
-		subtype[living_standard] = {
+	}
+	type[living_standard] = {
+		path = "game/common/species_rights/living_standards"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Tooltip = "$_tooltip"
+			## required
+			"Delayed tooltip" = "$_tooltip_delayed"
 		}
-		## starts_with = migration_control_
-		subtype[migration_control] = {
+	}
+	type[migration_control] = {
+		path = "game/common/species_rights/migration_controls"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Tooltip = "$_tooltip"
+			## required
+			"Delayed tooltip" = "$_tooltip_delayed"
 		}
-		## starts_with = military_service_
-		subtype[military_service] = {
+	}
+	type[military_service_type] = {
+		path = "game/common/species_rights/military_service_types"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Tooltip = "$_tooltip"
+			## required
+			"Delayed tooltip" = "$_tooltip_delayed"
 		}
-		## starts_with = population_control_
-		subtype[population_control] = {
+	}
+	type[population_control] = {
+		path = "game/common/species_rights/population_controls"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Tooltip = "$_tooltip"
+			## required
+			"Delayed tooltip" = "$_tooltip_delayed"
 		}
-		## starts_with = purge_
-		subtype[purge] = {
+	}
+	type[purge_type] = {
+		path = "game/common/species_rights/purge_types"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Tooltip = "$_tooltip"
+			## required
+			"Delayed tooltip" = "$_tooltip_delayed"
 		}
-		## starts_with = slavery_
-		subtype[slavery] = {
-		}
+	}
+	type[slavery_type] = {
+		path = "game/common/species_rights/slavery_types"
 		localisation = {
 			## required
 			Name = "$"
@@ -239,9 +295,7 @@ species_class = {
 	trait = <trait>
 }
 
-#sub-types don't work here as all sorts of things are bundled into one file without coding divisions between them. But afaik there is no way of adding new ones, they are all hardcoded, so the enums are sufficient.
-species_rights = {
-	#localisation is complicated. I guess there is a default unless there is a name defined
+citizenship_type = {
 	## cardinality = 0..1
 	name = localisation
 
@@ -258,43 +312,498 @@ species_rights = {
 		}
 	}
 
-	subtype[citizenship] = {
-		## cardinality = 0..1
-		is_full_citizenship = yes
-		## cardinality = 0..1
-		is_assimilation = yes
-		## cardinality = 0..1
-		is_slavery = yes
-		## cardinality = 0..1
-		is_robot_servant = yes
-		## cardinality = 0..1
-		is_purge = yes
-		## cardinality = 0..1
-		new_pop_weight = float
-	}
-	subtype[colonization_control] = {
-		## cardinality = 0..1
-		can_colonize = no
-	}
-	subtype[migration_control] = {
-		## cardinality 0..1
-		can_migrate = no
-	}
-	subtype[population_control] = {
-		## cardinality 0..1
-		can_reproduce = no
-	}
-	subtype[purge] = {
-		pop_escape_chance = float
-		### Divide by 100 for monthy reduction, overrides BASE_POP_DECLINE
-		pop_decline_rate = int
-	}
-	subtype[slavery] = {
-		## cardinality 0..1
-		### otherwise, AI will not colonise with enslaved species
-		ai_can_colonize = yes
+	## cardinality = 0..1
+	is_full_citizenship = yes
+	## cardinality = 0..1
+	is_assimilation = yes
+	## cardinality = 0..1
+	is_slavery = yes
+	## cardinality = 0..1
+	is_robot_servant = yes
+	## cardinality = 0..1
+	is_purge = yes
+	## cardinality = 0..1
+	new_pop_weight = float
+
+	## cardinality = 0..1
+	## replace_scope = { this = army root = army }
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
 	}
 
+	## cardinality = 0..1
+	## replace_scope = { this = pop root = pop }
+	pop_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+		## cardinality = 0..1
+		custom_tooltip = localisation
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = pop root = pop }
+	free_pop_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	## cardinality = 0..1
+	### tooltip that appears on each Pop with this species right
+	pop_tooltip = localisation
+	## cardinality = 0..1
+	### from of the sprite "" that is overlaid on each Pop's icon
+	pop_status_frame = int
+
+	## cardinality = 0..1
+	## replace_scope = { this = species root = species from = country }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = species root = species from = country }
+	allow = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## replace_scope = { this = species root = species from = country }
+	ai_will_do = {
+		factor = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	## cardinality = 0..1
+	alias_name[triggered_pop_modifier] = alias_match_left[triggered_pop_modifier]
+}
+
+colonization_control = {
+	## cardinality = 0..1
+	name = localisation
+
+	## cardinality = 0..inf
+	in_breach_of = {
+		## cardinality = 0..inf
+		{
+			## cardinality = 0..1
+			## replace_scope = { this = country root = country }
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			key = <resolution>
+		}
+	}
+
+	## cardinality = 0..1
+	can_colonize = no
+
+	## cardinality = 0..1
+	## replace_scope = { this = army root = army }
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = pop root = pop }
+	pop_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+		## cardinality = 0..1
+		custom_tooltip = localisation
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = pop root = pop }
+	free_pop_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	## cardinality = 0..1
+	### tooltip that appears on each Pop with this species right
+	pop_tooltip = localisation
+	## cardinality = 0..1
+	### from of the sprite "" that is overlaid on each Pop's icon
+	pop_status_frame = int
+
+	## cardinality = 0..1
+	## replace_scope = { this = species root = species from = country }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = species root = species from = country }
+	allow = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## replace_scope = { this = species root = species from = country }
+	ai_will_do = {
+		factor = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	## cardinality = 0..1
+	alias_name[triggered_pop_modifier] = alias_match_left[triggered_pop_modifier]
+}
+
+living_standard = {
+	## cardinality = 0..1
+	name = localisation
+
+	## cardinality = 0..inf
+	in_breach_of = {
+		## cardinality = 0..inf
+		{
+			## cardinality = 0..1
+			## replace_scope = { this = country root = country }
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			key = <resolution>
+		}
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = army root = army }
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = pop root = pop }
+	pop_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+		## cardinality = 0..1
+		custom_tooltip = localisation
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = pop root = pop }
+	free_pop_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	## cardinality = 0..1
+	### tooltip that appears on each Pop with this species right
+	pop_tooltip = localisation
+	## cardinality = 0..1
+	### from of the sprite "" that is overlaid on each Pop's icon
+	pop_status_frame = int
+
+	## cardinality = 0..1
+	## replace_scope = { this = species root = species from = country }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = species root = species from = country }
+	allow = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## replace_scope = { this = species root = species from = country }
+	ai_will_do = {
+		factor = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	## cardinality = 0..1
+	alias_name[triggered_pop_modifier] = alias_match_left[triggered_pop_modifier]
+}
+
+migration_control = {
+	## cardinality = 0..1
+	name = localisation
+
+	## cardinality = 0..inf
+	in_breach_of = {
+		## cardinality = 0..inf
+		{
+			## cardinality = 0..1
+			## replace_scope = { this = country root = country }
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			key = <resolution>
+		}
+	}
+
+	## cardinality 0..1
+	can_migrate = no
+
+	## cardinality = 0..1
+	## replace_scope = { this = army root = army }
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = pop root = pop }
+	pop_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+		## cardinality = 0..1
+		custom_tooltip = localisation
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = pop root = pop }
+	free_pop_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	## cardinality = 0..1
+	### tooltip that appears on each Pop with this species right
+	pop_tooltip = localisation
+	## cardinality = 0..1
+	### from of the sprite "" that is overlaid on each Pop's icon
+	pop_status_frame = int
+
+	## cardinality = 0..1
+	## replace_scope = { this = species root = species from = country }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = species root = species from = country }
+	allow = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## replace_scope = { this = species root = species from = country }
+	ai_will_do = {
+		factor = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	## cardinality = 0..1
+	alias_name[triggered_pop_modifier] = alias_match_left[triggered_pop_modifier]
+}
+
+military_service_type = {
+	## cardinality = 0..1
+	name = localisation
+
+	## cardinality = 0..inf
+	in_breach_of = {
+		## cardinality = 0..inf
+		{
+			## cardinality = 0..1
+			## replace_scope = { this = country root = country }
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			key = <resolution>
+		}
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = army root = army }
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = pop root = pop }
+	pop_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+		## cardinality = 0..1
+		custom_tooltip = localisation
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = pop root = pop }
+	free_pop_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	## cardinality = 0..1
+	### tooltip that appears on each Pop with this species right
+	pop_tooltip = localisation
+	## cardinality = 0..1
+	### from of the sprite "" that is overlaid on each Pop's icon
+	pop_status_frame = int
+
+	## cardinality = 0..1
+	## replace_scope = { this = species root = species from = country }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = species root = species from = country }
+	allow = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## replace_scope = { this = species root = species from = country }
+	ai_will_do = {
+		factor = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	## cardinality = 0..1
+	alias_name[triggered_pop_modifier] = alias_match_left[triggered_pop_modifier]
+}
+
+population_control = {
+	## cardinality = 0..1
+	name = localisation
+
+	## cardinality = 0..inf
+	in_breach_of = {
+		## cardinality = 0..inf
+		{
+			## cardinality = 0..1
+			## replace_scope = { this = country root = country }
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			key = <resolution>
+		}
+	}
+
+	## cardinality 0..1
+	can_reproduce = no
+
+	## cardinality = 0..1
+	## replace_scope = { this = army root = army }
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = pop root = pop }
+	pop_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+		## cardinality = 0..1
+		custom_tooltip = localisation
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = pop root = pop }
+	free_pop_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	## cardinality = 0..1
+	### tooltip that appears on each Pop with this species right
+	pop_tooltip = localisation
+	## cardinality = 0..1
+	### from of the sprite "" that is overlaid on each Pop's icon
+	pop_status_frame = int
+
+	## cardinality = 0..1
+	## replace_scope = { this = species root = species from = country }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = species root = species from = country }
+	allow = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## replace_scope = { this = species root = species from = country }
+	ai_will_do = {
+		factor = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	## cardinality = 0..1
+	alias_name[triggered_pop_modifier] = alias_match_left[triggered_pop_modifier]
+}
+
+purge_type = {
+	## cardinality = 0..1
+	name = localisation
+
+	## cardinality = 0..inf
+	in_breach_of = {
+		## cardinality = 0..inf
+		{
+			## cardinality = 0..1
+			## replace_scope = { this = country root = country }
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			key = <resolution>
+		}
+	}
+	
+	pop_escape_chance = float
+	### Divide by 100 for monthy reduction, overrides BASE_POP_DECLINE
+	pop_decline_rate = float
+
+	## cardinality = 0..1
+	## replace_scope = { this = army root = army }
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = pop root = pop }
+	pop_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+		## cardinality = 0..1
+		custom_tooltip = localisation
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = pop root = pop }
+	free_pop_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	## cardinality = 0..1
+	### tooltip that appears on each Pop with this species right
+	pop_tooltip = localisation
+	## cardinality = 0..1
+	### from of the sprite "" that is overlaid on each Pop's icon
+	pop_status_frame = int
+
+	## cardinality = 0..1
+	## replace_scope = { this = species root = species from = country }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = species root = species from = country }
+	allow = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## replace_scope = { this = species root = species from = country }
+	ai_will_do = {
+		factor = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	## cardinality = 0..1
+	alias_name[triggered_pop_modifier] = alias_match_left[triggered_pop_modifier]
+}
+
+slavery_type = {
+	## cardinality = 0..1
+	name = localisation
+
+	## cardinality = 0..inf
+	in_breach_of = {
+		## cardinality = 0..inf
+		{
+			## cardinality = 0..1
+			## replace_scope = { this = country root = country }
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			key = <resolution>
+		}
+	}
+
+	## cardinality 0..1
+	### otherwise, AI will not colonise with enslaved species
+	ai_can_colonize = yes
+	
 	## cardinality = 0..1
 	## replace_scope = { this = army root = army }
 	modifier = {

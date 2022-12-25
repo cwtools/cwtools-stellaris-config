@@ -94,7 +94,7 @@ job = {
 	## cardinality = 0..1
 	ignores_favorite = bool
 	## cardinality = 0..1
-	purge = <species_rights.purge>
+	purge = <purge_type>
 
 	## cardinality = 0..1
 	###Sets whether the job contributes to diplo weight. Default = yes

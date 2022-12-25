@@ -638,31 +638,31 @@ alias[trigger:has_ruler_trait] = <trait.leader_trait>
 alias[trigger:has_citizenship_type] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
-	type = <species_rights.citizenship>
+	type = <citizenship_type>
 }
 ###Checks if a species/pop/leader has a particular military service type in their country
 alias[trigger:has_military_service_type] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
-	type = <species_rights.military_service>
+	type = <military_service_type>
 }
 ###Checks if a species/pop/leader has a particular purge type in their country
 alias[trigger:has_purge_type] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
-	type = <species_rights.purge>
+	type = <purge_type>
 }
 ###Checks if a species/pop/leader has a particular slavery type in their country
 alias[trigger:has_slavery_type] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
-	type = <species_rights.slavery>
+	type = <slavery_type>
 }
 
 ###Checks if the pop is prevented from reproducing
 alias[trigger:has_population_control] = {
 	type = bool
-	type = <species_rights.population_control>
+	type = <population_control>
 	## cardinality = 0..1
 	country = scope_group[target_country]
 }
@@ -670,7 +670,7 @@ alias[trigger:has_population_control] = {
 ###Checks if the pop is prevented from migrating
 alias[trigger:has_migration_control] = {
 	type = bool
-	type = <species_rights.migration_control>
+	type = <migration_control>
 	## cardinality = 0..1
 	country = scope_group[target_country]
 }
@@ -678,7 +678,7 @@ alias[trigger:has_migration_control] = {
 ### Checks if the pop is prevented from migrating
 alias[trigger:has_colonization_control] = {
 	type = bool
-	type = <species_rights.colonization_control>
+	type = <colonization_control>
 	## cardinality = 0..1
 	country = scope_group[target_country]
 }
@@ -687,7 +687,7 @@ alias[trigger:has_colonization_control] = {
 alias[trigger:has_living_standard] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
-	type = <species_rights.living_standard>
+	type = <living_standard>
 }
 
 ###Gives a custom localisation string. When used with { }, replaces the tooltips for the enclosed triggers with a custom text
@@ -884,25 +884,25 @@ alias[trigger:fail_text] = {
 }
 
 ### Compares the former citizenship type with the given one.
-alias[trigger:former_citizenship_type] = <species_rights.citizenship>
+alias[trigger:former_citizenship_type] = <citizenship_type>
 
 ### Compares the former living standard type with the given one.
-alias[trigger:former_living_standard_type] = <species_rights.living_standard>
+alias[trigger:former_living_standard_type] = <living_standard>
 
 ### Compares the former migration control type with the given one.
-alias[trigger:former_migration_control_type] = <species_rights.migration_control>
+alias[trigger:former_migration_control_type] = <migration_control>
 
 ### Compares the former military service type with the given one.
-alias[trigger:former_military_service_type] = <species_rights.military_service>
+alias[trigger:former_military_service_type] = <military_service_type>
 
 ### Compares the former population control type with the given one.
-alias[trigger:former_population_control_type] = <species_rights.population_control>
+alias[trigger:former_population_control_type] = <population_control>
 
 ### Compares the former purge type with the given one.
-alias[trigger:former_purge_type] = <species_rights.purge>
+alias[trigger:former_purge_type] = <purge_type>
 
 ### Compares the former slavery type with the given one.
-alias[trigger:former_slavery_type] = <species_rights.slavery>
+alias[trigger:former_slavery_type] = <slavery_type>
 
 ### Checks if the country has a specific percentage (0.00-1.00) of the galaxy within its borders
 alias[trigger:galaxy_percentage] == value_field[0.0..1.0]
