@@ -71,9 +71,6 @@ types = {
 	type[species_archetype] = {
 		path = "game/common/species_archetypes"
 	}
-	type[species_archetype] = {
-		path = "game/common/species_archetypes"
-	}
 	type[citizenship_type] = {
 		path = "game/common/species_rights/citizenship_types"
 		localisation = {
