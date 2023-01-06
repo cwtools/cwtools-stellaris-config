@@ -293,9 +293,6 @@ species_class = {
 }
 
 citizenship_type = {
-	## cardinality = 0..1
-	name = localisation
-
 	## cardinality = 0..inf
 	in_breach_of = {
 		## cardinality = 0..inf
@@ -372,9 +369,6 @@ citizenship_type = {
 }
 
 colonization_control = {
-	## cardinality = 0..1
-	name = localisation
-
 	## cardinality = 0..inf
 	in_breach_of = {
 		## cardinality = 0..inf
@@ -441,9 +435,6 @@ colonization_control = {
 }
 
 living_standard = {
-	## cardinality = 0..1
-	name = localisation
-
 	## cardinality = 0..inf
 	in_breach_of = {
 		## cardinality = 0..inf
@@ -507,9 +498,6 @@ living_standard = {
 }
 
 migration_control = {
-	## cardinality = 0..1
-	name = localisation
-
 	## cardinality = 0..inf
 	in_breach_of = {
 		## cardinality = 0..inf
@@ -576,9 +564,6 @@ migration_control = {
 }
 
 military_service_type = {
-	## cardinality = 0..1
-	name = localisation
-
 	## cardinality = 0..inf
 	in_breach_of = {
 		## cardinality = 0..inf
@@ -642,9 +627,6 @@ military_service_type = {
 }
 
 population_control = {
-	## cardinality = 0..1
-	name = localisation
-
 	## cardinality = 0..inf
 	in_breach_of = {
 		## cardinality = 0..inf
@@ -711,9 +693,6 @@ population_control = {
 }
 
 purge_type = {
-	## cardinality = 0..1
-	name = localisation
-
 	## cardinality = 0..inf
 	in_breach_of = {
 		## cardinality = 0..inf
@@ -781,9 +760,6 @@ purge_type = {
 }
 
 slavery_type = {
-	## cardinality = 0..1
-	name = localisation
-
 	## cardinality = 0..inf
 	in_breach_of = {
 		## cardinality = 0..inf
