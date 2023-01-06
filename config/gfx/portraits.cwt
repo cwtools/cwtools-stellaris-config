@@ -21,6 +21,13 @@ portrait = {
 	## cardinality = 0..1
 	custom_attachment_label = localisation
 	## cardinality = 0..1
+	custom_close_up_position_offset = {
+		x = int
+		y = int
+	}
+	## cardinality = 0..1
+	custom_close_up_scale = float
+	## cardinality = 0..1
 	greeting_sound = <sound_effect>
 	## cardinality = 0..1
 	character_textures = {
