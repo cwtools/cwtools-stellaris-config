@@ -1536,6 +1536,8 @@ alias[effect:clone_leader] = {
 	## cardinality = 0..1
 	skill = int[1..20]
 	## cardinality = 0..1
+	immortal = bool
+	## cardinality = 0..1
 	event_leader = bool
 	#Not sure what other types there are
 	## cardinality = 0..1
@@ -2172,6 +2174,8 @@ alias[effect:create_saved_leader] = {
 	class = enum[leader_classes]
 	species = scope_group[target_species]
 	species = enum[buildable_pop_species]
+	## cardinality = 0..1
+	immortal = bool
 	## cardinality = 0..1
 	event_leader = bool
 	## cardinality = 0..1
