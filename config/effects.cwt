@@ -2608,7 +2608,13 @@ alias[effect:spawn_megastructure] = {
 
 ### Spawns a planet in a system.
 alias[effect:spawn_planet] = {
+	## cardinality = 0..1
+	name = localisation
+	## cardinality = 0..1
+	class = random
+	## cardinality = 0..1
 	class = <planet_class>
+	## cardinality = 0..1
 	class = <planet_class_random_list>
 	## cardinality = 0..1
 	location = scope_group[celestial_coordinate]
@@ -2619,11 +2625,20 @@ alias[effect:spawn_planet] = {
 	## cardinality = 0..1
 	orbit_distance_offset = float
 	## cardinality = 0..1
+	flags = { #planet flags
+		## cardinality = 0..inf
+		value_set[planet_flag]
+	}
+	## cardinality = 0..1
 	size = int
 	##cardinality = 0..1
 	size = random
 	## cardinality = 0..1
 	has_ring = bool
+	## cardinality = 0..1
+	modifiers = none
+	## cardinality = 0..1
+	deposit_blockers = none
 	## cardinality = 0..1
 	orbit_angle = random
 	## cardinality = 0..1
