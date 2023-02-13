@@ -161,8 +161,6 @@ alias[planet_initializer:planet] = {
 	orbit_angle = int
 	## cardinality = 0..inf
 	orbit_angle = { min = int max = int }
-	## cardinality = 0..inf
-	orbit_angle = random
 
 	## cardinality = 0..inf
 	size = int
