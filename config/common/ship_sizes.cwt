@@ -139,6 +139,11 @@ ship_size = {
 	## cardinality = 0..1
 	default_behavior = <ship_behavior>
 	## cardinality = 0..1
+	ship_roles = {
+		## cardinality = 0..inf
+		enum[ship_size_ship_roles]
+	}
+	## cardinality = 0..1
 	prerequisites = {
 		## cardinality = 0..inf
 		<technology>
@@ -291,5 +296,13 @@ enums = {
 			}
 		}
 	}
+	enum[ship_size_ship_roles] = {
+		artillery
+		brawler
+		carrier
+		energy_torpedoes
+		explosive
+		gunship
+		screen
+	}
 }
-
