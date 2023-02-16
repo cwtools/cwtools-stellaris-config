@@ -272,8 +272,11 @@ agreement_preset = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
-	### Whether the term should show up on the agreement negotiation screen (default: no)
+	### Whether this preset will be hidden from UI but the AI will be able to use it (default: no)
 	hidden = bool
+	## cardinality = 0..1
+	### Whether ai will skip this when trying to find best/preferred agreement preset to negotiate existing or propose new agreement (default: no)
+	should_ai_use_for_proposals = bool
 }
 
 agreement_resource = {
