@@ -123,6 +123,8 @@ types = {
 
 event = {
 	id = scalar
+	## cardinality = 0..1
+	is_test_event = yes
 
 	subtype[inherited] = {
 		base = <event>
