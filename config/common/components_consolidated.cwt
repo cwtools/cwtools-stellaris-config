@@ -115,6 +115,8 @@ component_template = {
 		enum[component_tags]
 	}
 	## cardinality = 0..1
+	ai_tag_weight = int
+	## cardinality = 0..1
 	point_defence_targets = {
 		## cardinality = 0..inf
 		enum[component_pd_targets]
