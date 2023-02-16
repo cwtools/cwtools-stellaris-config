@@ -51,6 +51,10 @@ enums = {
 		}
 		start_from_root = yes
 	}
+	enum[component_pd_targets] = {
+		strike_craft
+		missile
+	}
 }
 
 
@@ -109,6 +113,11 @@ component_template = {
 	ai_tags = {
 		## cardinality = 0..inf
 		enum[component_tags]
+	}
+	## cardinality = 0..1
+	point_defence_targets = {
+		## cardinality = 0..inf
+		enum[component_pd_targets]
 	}
 	## cardinality = 0..1
 	size_restriction = {
