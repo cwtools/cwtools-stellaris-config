@@ -257,6 +257,8 @@ agreement_preset = {
 		}
 	}
 	## cardinality = 0..1
+	should_ai_use_for_proposals = bool
+	## cardinality = 0..1
 	## replace_scope = { this = country root = country from = country }
 	overlord_weight = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
