@@ -354,6 +354,34 @@ types = {
 		## replace_scope = { this = planet }
 		subtype[should_planetary_automate] = {
 		}
+		## type_key_filter = can_be_renamed_by
+		## replace_scope = { this = country root = country from = planet }
+		subtype[can_be_renamed_by] = {
+		}
+		## type_key_filter = can_build_station_around
+		## replace_scope = { this = country from = planet root = country }
+		subtype[can_build_station_around] = {
+		}
+		## type_key_filter = can_build_mining_station_around
+		## replace_scope = { this = country from = planet root = country }
+		subtype[can_build_mining_station_around] = {
+		}
+		## type_key_filter = can_build_research_station_around
+		## replace_scope = { this = country from = planet root = country }
+		subtype[can_build_research_station_around] = {
+		}
+		## type_key_filter = can_build_military_station_around
+		## replace_scope = { this = country from = planet root = country }
+		subtype[can_build_military_station_around] = {
+		}
+		## type_key_filter = can_build_observation_station_around
+		## replace_scope = { this = country from = planet root = country }
+		subtype[can_build_observation_station_around] = {
+		}
+		## type_key_filter = can_build_starbase_around
+		## replace_scope = { this = country from = planet root = country }
+		subtype[can_build_starbase_around] = {
+		}
 	}
 }
 
