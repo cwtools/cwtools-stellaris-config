@@ -394,6 +394,23 @@ alias[triggered_pop_modifier:triggered_pop_modifier] = {
 	multiplier = value_field
 }
 
+## replace_scope = { this = leader root = leader }
+alias[triggered_leader_modifier:triggered_leader_modifier] = {
+	## cardinality = 0..1
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	alias_name[modifier] = alias_match_left[modifier]
+	## cardinality = 0..1
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	## cardinality = 0..1
+	mult = value_field
+	## cardinality = 0..1
+	multiplier = value_field
+}
+
 ## replace_scope = { this = starbase root = starbase }
 alias[triggered_station_modifier:triggered_station_modifier] = {
 	## cardinality = 0..1

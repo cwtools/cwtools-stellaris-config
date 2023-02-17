@@ -71,9 +71,6 @@ types = {
 	type[species_archetype] = {
 		path = "game/common/species_archetypes"
 	}
-	type[species_archetype] = {
-		path = "game/common/species_archetypes"
-	}
 	type[citizenship_type] = {
 		path = "game/common/species_rights/citizenship_types"
 		localisation = {
@@ -296,9 +293,6 @@ species_class = {
 }
 
 citizenship_type = {
-	## cardinality = 0..1
-	name = localisation
-
 	## cardinality = 0..inf
 	in_breach_of = {
 		## cardinality = 0..inf
@@ -375,9 +369,6 @@ citizenship_type = {
 }
 
 colonization_control = {
-	## cardinality = 0..1
-	name = localisation
-
 	## cardinality = 0..inf
 	in_breach_of = {
 		## cardinality = 0..inf
@@ -444,9 +435,6 @@ colonization_control = {
 }
 
 living_standard = {
-	## cardinality = 0..1
-	name = localisation
-
 	## cardinality = 0..inf
 	in_breach_of = {
 		## cardinality = 0..inf
@@ -510,9 +498,6 @@ living_standard = {
 }
 
 migration_control = {
-	## cardinality = 0..1
-	name = localisation
-
 	## cardinality = 0..inf
 	in_breach_of = {
 		## cardinality = 0..inf
@@ -526,7 +511,7 @@ migration_control = {
 		}
 	}
 
-	## cardinality 0..1
+	## cardinality = 0..1
 	can_migrate = no
 
 	## cardinality = 0..1
@@ -579,9 +564,6 @@ migration_control = {
 }
 
 military_service_type = {
-	## cardinality = 0..1
-	name = localisation
-
 	## cardinality = 0..inf
 	in_breach_of = {
 		## cardinality = 0..inf
@@ -645,9 +627,6 @@ military_service_type = {
 }
 
 population_control = {
-	## cardinality = 0..1
-	name = localisation
-
 	## cardinality = 0..inf
 	in_breach_of = {
 		## cardinality = 0..inf
@@ -661,7 +640,7 @@ population_control = {
 		}
 	}
 
-	## cardinality 0..1
+	## cardinality = 0..1
 	can_reproduce = no
 
 	## cardinality = 0..1
@@ -714,9 +693,6 @@ population_control = {
 }
 
 purge_type = {
-	## cardinality = 0..1
-	name = localisation
-
 	## cardinality = 0..inf
 	in_breach_of = {
 		## cardinality = 0..inf
@@ -784,9 +760,6 @@ purge_type = {
 }
 
 slavery_type = {
-	## cardinality = 0..1
-	name = localisation
-
 	## cardinality = 0..inf
 	in_breach_of = {
 		## cardinality = 0..inf
@@ -800,7 +773,7 @@ slavery_type = {
 		}
 	}
 
-	## cardinality 0..1
+	## cardinality = 0..1
 	### otherwise, AI will not colonise with enslaved species
 	ai_can_colonize = yes
 	
