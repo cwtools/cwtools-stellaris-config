@@ -1899,8 +1899,11 @@ alias[trigger:num_favors] = {
 	value = int_value_field
 }
 
-###Checks whether the galaxy size if of a certain type
+###Checks whether the galaxy size is of a certain type
 alias[trigger:galaxy_size] = <map_setup_scenario>
+
+###Checks whether the galaxy shape is of a certain shape
+alias[trigger:galaxy_shape] = <map_galaxy_shape>
 
 ###Checks the countrys diplomacy weight
 alias[trigger:diplomacy_weight] == value_field

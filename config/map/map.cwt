@@ -1,25 +1,22 @@
 types = {
-	type[map_galaxy_setting] = {
-		path = "game/map/galaxy" #no key! read the note.
+	type[map_galaxy_shape] = {
+		path = "game/map/galaxy"
 	}
 	type[map_setup_scenario] = {
 		path = "game/map/setup_scenarios"
 		name_field = name
+
+		## type_key_filter = static_galaxy_scenario
+		subtype[static] = {
+		}
+		## type_key_filter = setup_scenario
+		subtype[random] = {
+		}
 	}
 }
 
-#NOTE 1
-#the map component has two sub-folders. With the setup_scenarios folder there should be no problem as it is.
-#but the game/map/galaxy folder poses two problems: there is one file there called base.txt
-#this was formarly a lua file - so its a sort of defines file. The way it works is that it has overwrites within the same folder
-#each file - elliptical.txt, ring.txt, spiral_2.txt and spiral_4.txt has a value, and potentially more
-#that overwrites the values in base.txt. It seems to me that the filename for these acts as a key, and that key is loaded from a setup scenario
-#in what i so far defined as an enum[galaxy_shapes]. Thus there is a different verification procedure necessary for this folder.
 
-#NOTE 2
-#some settings in this folder have no containers at all. This poses a problem.
-
-map_galaxy_setting = { #this one is just a dummy container. In effect there is no container in these files! Container is filename.
+map_galaxy_shape = {
 	### Core radius is x% of the galaxy radius
 	##cardinality = 0..1
 	core_radius_perc = float
@@ -48,35 +45,32 @@ map_galaxy_setting = { #this one is just a dummy container. In effect there is n
 	
 	##cardinality = 0..1
     num_arms = int
+	
 	##cardinality = 0..1
-	alias_name[galaxy_shape] = alias_match_left[galaxy_shape]
-}
-
-alias[galaxy_shape:ring] = {
-	### Percentage of radius to use as the width of the ring
-	width = float
-	### Percentage of radius to use as the offset from center for the ring
-	offset = float
-}
-
-alias[galaxy_shape:arms] = {
-	### Tightness of winding
-	tightness_winding = float
-	### Arm width in degrees
-	width = float
-	### Maximum outliers distance from arms
-	fuzz = float
-	### Separation (in degrees) between each arm
-	seperation = float
+	ring = {
+		### Percentage of radius to use as the width of the ring
+		width = float
+		### Percentage of radius to use as the offset from center for the ring
+		offset = float
+	}
+	
+	##cardinality = 0..1
+	arms = {
+		### Tightness of winding
+		tightness_winding = float
+		### Arm width in degrees
+		width = float
+		### Maximum outliers distance from arms
+		fuzz = float
+		### Separation (in degrees) between each arm
+		seperation = float
+	}
 }
 
 map_setup_scenario = {
 	name = localisation
 	### priority decides in which order the scenarios are listed
 	priority = int
-	num_stars = int
-	### should be less than 500, preferably less than ~460
-	radius = float
 	### limits player customization
 	num_empires = {
 		min = int
@@ -97,15 +91,6 @@ map_setup_scenario = {
 	}
 	##cardinality = 0..1
 	default = bool
-
-	cluster_count = {
-		method = enum[cluster_method]
-		value = int
-		##cardinality = 0..1
-		max = int
-	}
-	cluster_radius = float
-	cluster_distance_from_core = float
 
 	max_hyperlane_distance = float
 
@@ -129,10 +114,6 @@ map_setup_scenario = {
 		method = enum[open_space_method]
 	}
 
-	num_nebulas	= int
-	nebula_size = float
-	nebula_min_dist = float
-
 	num_wormhole_pairs = {
 		min = float
 		max = float
@@ -150,7 +131,94 @@ map_setup_scenario = {
 	num_hyperlanes_default = float
 
 	##cardinality = 1..inf
-	supports_shape = enum[galaxy_shapes]
+	supports_shape = <map_galaxy_shape>
+
+	subtype[random] = {
+		num_stars = int
+		### should be less than 500, preferably less than ~460
+		radius = float
+		num_nebulas	= int
+		nebula_size = float
+		nebula_min_dist = float
+		cluster_count = {
+			method = enum[cluster_method]
+			value = int
+			##cardinality = 0..1
+			max = int
+		}
+		cluster_radius = float
+		cluster_distance_from_core = float
+	}
+	subtype[static] = {
+		core_radius = float[0.0..1.0]
+		## cardinality = 0..1
+		random_hyperlanes = bool
+
+		## cardinality = 0..inf
+		add_hyperlane = {
+			from = int
+			to = int
+		}
+		## cardinality = 0..inf
+		remove_hyperlane = {
+			from = int
+			to = int
+		}
+
+		system = {
+			id = int
+			name = localisation
+			position = {
+				x = int
+				y = int
+				## cardinality = 0..1
+				z = int
+			}
+			## cardinality = 0..1
+			initializer = <solar_system_initializer>
+			## cardinality = 0..1
+			###Weight for whether an empire should spawn in this system
+			## replace_scope = { this = country root = country }
+			spawn_weight = {
+				alias_name[modifier_rule] = alias_match_left[modifier_rule]
+			}
+			## cardinality = 0..1
+			## replace_scope = { this = system root = system }
+			effect = {
+				alias_name[effect] = alias_match_left[effect]
+			}
+		}
+
+		## cardinality = 0..inf
+		nebula = {
+			name = localisation
+			position = {
+				x = int
+				y = int
+				## cardinality = 0..1
+				z = int
+			}
+			radius = float
+		}
+
+		coordinate_transform = {
+			## cardinality = 0..1
+			x = {
+				## cardinality = 1..inf
+				enum[coordinate_transform_method] = float
+			}
+			## cardinality = 0..1
+			y = {
+				## cardinality = 1..inf
+				enum[coordinate_transform_method] = float
+			}
+			## cardinality = 0..1
+			z = {
+				## cardinality = 1..inf
+				enum[coordinate_transform_method] = float
+			}
+		}
+	}
 }
 
 enums = {
@@ -164,16 +232,10 @@ enums = {
 	enum[open_space_method] = {
 		depth_first
 	}
-	enum[galaxy_shapes] = {
-	    bar
-		cartwheel
-		elliptical
-		ring
-		spiral_2
-		spiral_3
-		spiral_4
-		spiral_6
-		spoked
-		starburst
+	enum[coordinate_transform_method] = {
+		add
+		sub
+		mul
+		div
 	}
 }
