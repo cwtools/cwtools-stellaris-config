@@ -44,11 +44,10 @@ map_galaxy_setting = { #this one is just a dummy container. In effect there is n
 		ideal_sq_dist_between = int
 		### int*int Min square distance between countries
 		min_sq_dist_between = int
-		### Number of military fleets the empire will start with
-		max_military_fleet_count = int
-		ships_per_fleet = int
 	}
-
+	
+	##cardinality = 0..1
+    num_arms = int
 	##cardinality = 0..1
 	alias_name[galaxy_shape] = alias_match_left[galaxy_shape]
 }
@@ -92,12 +91,17 @@ map_setup_scenario = {
 	colonizable_planet_odds = float
 	primitive_odds = float
 	crisis_strength = float
+	extra_crisis_strength = {
+		##cardinality = 1..2
+		int
+	}
 	##cardinality = 0..1
 	default = bool
 
 	cluster_count = {
 		method = enum[cluster_method]
 		value = int
+		##cardinality = 0..1
 		max = int
 	}
 	cluster_radius = float
@@ -161,9 +165,15 @@ enums = {
 		depth_first
 	}
 	enum[galaxy_shapes] = {
+	    bar
+		cartwheel
 		elliptical
-		spiral_2
-		spiral_4
 		ring
+		spiral_2
+		spiral_3
+		spiral_4
+		spiral_6
+		spoked
+		starburst
 	}
 }
