@@ -272,7 +272,11 @@ enums = {
 	}
 	enum[section_template_tags] = {
 		artillery
+		brawler
 		carrier
+		energy_torpedoes
+		explosive
 		gunship
+		screen
 	}
 }
