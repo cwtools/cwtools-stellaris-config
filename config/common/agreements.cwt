@@ -242,7 +242,7 @@ agreement_preset = {
 				### The term value to use, as defined in agreement_term_values
 				value = <agreement_term_value.discrete>
 				value = <agreement_term_value.discrete_number>
-				value = <subject_specialist_type>
+				value = <agreement_term_value.specialist_type>
 			}
 		}
 		## cardinality = 0..1
