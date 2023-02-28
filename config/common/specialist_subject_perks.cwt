@@ -1,6 +1,6 @@
 types = {
 	type[subject_specialist_perk] = {
-		path = "game/common/subject_specialist_perks"
+		path = "game/common/specialist_subject_perks"
 		subtype[main] = {
 			main_perk = yes
 		}
