@@ -81,8 +81,7 @@ subject_specialist_type = {
     preferred_ethic = <ethos>
     ### The number of days to convert to this subject specialist type
     base_conversion_time = int
-    # unclear what scope(s) this has
-    ## replace_scope = { this = country root = country }
+    ## replace_scope = { this = agreement root = agreement }
     on_progress_complete = {
         alias_name[effect] = alias_match_left[effect]
     }
