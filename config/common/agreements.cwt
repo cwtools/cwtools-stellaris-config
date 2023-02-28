@@ -55,7 +55,7 @@ types = {
 	type[agreement_preset] = {
 		path = "game/common/agreement_presets"
 		subtype[specialist_type] = {
-			specialist_type = <agreement_term_value.specialist_type>
+			specialist_type = <subject_specialist_type>
 		}
 		subtype[hidden] = {
 			hidden = yes
@@ -222,7 +222,7 @@ agreement_preset = {
 	## cardinality = 0..1
 	icon = <sprite>
 	## cardinality = 0..1
-	specialist_type = <agreement_term_value.specialist_type>
+	specialist_type = <subject_specialist_type>
 	## cardinality = 1..1
 	term_data = {
 		## cardinality = 0..1
@@ -242,7 +242,7 @@ agreement_preset = {
 				### The term value to use, as defined in agreement_term_values
 				value = <agreement_term_value.discrete>
 				value = <agreement_term_value.discrete_number>
-				value = <agreement_term_value.specialist_type>
+				value = <subject_specialist_type>
 			}
 		}
 		## cardinality = 0..1

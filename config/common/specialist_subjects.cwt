@@ -1,62 +1,104 @@
 types = {
-	type[subject_specialist_perk] = {
-		path = "game/common/specialist_subject_perks"
-		subtype[main] = {
-			main_perk = yes
-		}
+    type[subject_specialist_perk] = {
+        path = "game/common/specialist_subject_perks"
+        subtype[main] = {
+            main_perk = yes
+        }
         subtype[non_main] = {
             ## cardinality = 0..1
-			main_perk = no
-		}
-		localisation = {
+            main_perk = no
+        }
+        localisation = {
             ## required
             Name = "$"
             ## optional
             Description = "$_desc"
-		}
-	}
+        }
+    }
+    type[subject_specialist_type] = {
+        path = "game/common/specialist_subject_types"
+        localisation = {
+            ## required
+            Name = "$"
+            ## optional
+            Description = "$_desc"
+            ## required
+            "Subject Level Up" = "MESSAGE_SUBJECT_LEVEL_UP_$_TITLE"
+            ## required
+            "We Level Up" = "MESSAGE_WE_LEVEL_UP_$_TITLE"
+        }
+    }
 }
 
 subject_specialist_perk = {
     ## cardinality = 0..1
-	main_perk = bool
+    main_perk = bool
     subtype[non_main] = {
         icon = <sprite>
     }
     ## cardinality = 0..1
     ## replace_scope = { this = country root = country }
-	subject_modifier = {
+    subject_modifier = {
         alias_name[modifier] = alias_match_left[modifier]
         ## cardinality = 0..1
         description = localisation
-	}
+    }
     ## cardinality = 0..1
     ## replace_scope = { this = country root = country }
     overlord_modifier = {
         alias_name[modifier] = alias_match_left[modifier]
         ## cardinality = 0..1
         description = localisation
-	}
+    }
     ## cardinality = 0..1
     ## replace_scope = { this = country root = country target = country }
-	### Invoked when the perk is activated (target is the specialist subject)
-	activate_effect = {
+    ### Invoked when the perk is activated (target is the specialist subject)
+    activate_effect = {
         alias_name[effect] = alias_match_left[effect]
-	}
+    }
     ## cardinality = 0..1
     ## replace_scope = { this = country root = country target = country }
-	### Invoked when the perk is deactivated (target is the specialist subject)
-	deactivate_effect = {
+    ### Invoked when the perk is deactivated (target is the specialist subject)
+    deactivate_effect = {
         alias_name[effect] = alias_match_left[effect]
-	}
+    }
     ## cardinality = 0..1
-	### Static modifiers that are applied to the overlord's planets if the capitals of both empires are connected via the hyperlane network
+    ### Static modifiers that are applied to the overlord's planets if the capitals of both empires are connected via the hyperlane network
     overlord_relay_network_modifier = {
         ## cardinality = 0..inf
-		<static_modifier.planet> = float
-	}
+        <static_modifier.planet> = float
+    }
+    ## cardinality = 0..1
+    ### Additional description text for this subject specialist perk
+    desc = {
+        description = localisation
+    }
+}
 
-	desc = {
-		description = localisation
-	}
+subject_specialist_type = {
+    icon = <sprite>
+    icon_large = <sprite>
+    preferred_ethic = <ethos>
+    ### The number of days to convert to this subject specialist type
+    base_conversion_time = int
+    # unclear what scope(s) this has
+    ## replace_scope = { this = country root = country }
+    on_progress_complete = {
+        alias_name[effect] = alias_match_left[effect]
+    }
+    ### The levels for this subject specialist type; the order is the order in which subjects will progres through the levels
+    levels = {
+        ## cardinality = 1..inf
+        ### A level for this subject specialist
+        {
+            ## cardinality = 0..1
+            ### The experience required to advance from this level to the next one - should be omitted from the final level
+            experience_needed_for_next_level = int
+            ### The subject specialist perks(s) added by this level
+            perks = {
+                ## cardinality = 0..inf
+                <subject_specialist_perk>
+            }
+        }
+    }
 }

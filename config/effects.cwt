@@ -3532,7 +3532,7 @@ alias[effect:set_agreement_term] = {
 	## cardinality = 0..inf
 	<agreement_term.discrete_number> = <agreement_term_value.discrete_number>
 	## cardinality = 0..inf
-	<agreement_term.specialist_type> = <agreement_term_value.specialist_type>
+	<agreement_term.specialist_type> = <subject_specialist_type>
 	## cardinality = 0..inf
 	<agreement_term.resource> = value_field[-1.0..1.0]
 }
@@ -3571,7 +3571,7 @@ alias[effect:set_timed_design_flag] = {
 alias[effect:abort_situation] = scope[situation]
 ###Starts the process of converting the subject of the scoped agreement to the given specialist type
 ###Can also be used to remove the specialization from a subject, by using 'none' as value
-alias[effect:convert_to_specialist] = <agreement_term_value.specialist_type>
+alias[effect:convert_to_specialist] = <subject_specialist_type>
 ###Starts the process of converting the subject of the scoped agreement to the given specialist type
 ###Can also be used to remove the specialization from a subject, by using 'none' as value
 alias[effect:convert_to_specialist] = none
