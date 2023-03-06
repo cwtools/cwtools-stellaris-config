@@ -2474,7 +2474,7 @@ alias[trigger:has_attitude_behavior] = {
 alias[trigger:has_specialist_perk] = <subject_specialist_perk>
 
 ###Checks if the agreement has an active specialization of the specified type, or of any type if 'any' is specified
-alias[trigger:has_active_specialization] = <agreement_term_value.specialist_type>
+alias[trigger:has_active_specialization] = <subject_specialist_type>
 alias[trigger:has_active_specialization] = any
 
 ###Checks the specialization tier of the subject of the agreement.
