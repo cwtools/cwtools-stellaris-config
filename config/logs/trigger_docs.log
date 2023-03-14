@@ -1,4 +1,4 @@
-[13:13:05][game_application.cpp:2032]:
+[08:54:36][game_application.cpp:2091]:
 == TRIGGER DOCUMENTATION ==
 text - For 'desc = {trigger = {' use. Shows custom text
 text = <text>
@@ -543,6 +543,22 @@ Supported Scopes: country
 name_list_category - Checks if a specific name list is used for the a species during empire creation
 Supported Scopes: dlc_recommendation
 
+is_under_societal_enlightenment - Checks if country is under societal enlightenment
+is_under_societal_enlightenment = <target>
+Supported Scopes: country
+
+is_under_open_technological_enlightenment - Checks if country is under open technological enlightenment
+is_under_open_technological_enlightenment = <target>
+Supported Scopes: country
+
+is_under_stratified_technological_enlightenment - Checks if country is under stratified technological enlightenment
+is_under_stratified_technological_enlightenment = <target>
+Supported Scopes: country
+
+has_pre_ftl_trade - Checks if country has pre-ftl trade
+has_pre_ftl_trade = <target>
+Supported Scopes: country
+
 current_stage - Checks if the specified stage is currently active in the scoped situation.
 current_stage = <stage> (name defined in situation's stages)
 Supported Scopes: situation
@@ -1077,11 +1093,11 @@ is_mobile - Checks if the scoped fleet can move.
 is_mobile = <yes/no>
 Supported Scopes: fleet
 
-is_in_sensor_range - Checks if the specified ship, fleet, planet or system is within sensor range of the scoped country.
+is_in_sensor_range - Checks if the specified ship, fleet, planet or system can be seen by the scoped country.
 is_in_sensor_range = <ship/fleet/system>
 Supported Scopes: country
 
-is_in_sensor_range_of_country - Checks if the scoped ship, fleet, planet or system is within sensor range of the specified country.
+is_in_sensor_range_of_country - Checks if the scoped ship, fleet, planet or system can be seen by the specified country.
 is_in_sensor_range_of_country = root.owner
 Supported Scopes: planet ship fleet galactic_object
 
@@ -1800,6 +1816,26 @@ num_rare_techs - Checks the country's number of researched rare technologies
 num_rare_techs < 4
 Supported Scopes: country
 
+num_dangerous_techs - Checks the country's number of researched dangerous technologies
+num_dangerous_techs < 4
+Supported Scopes: country
+
+num_insight_techs - Checks the country's number of researched insight technologies
+num_insight_techs < 4
+Supported Scopes: country
+
+num_custom_1_techs - Checks the country's number of researched custom_1 technologies
+num_custom_1_techs < 4
+Supported Scopes: country
+
+num_custom_2_techs - Checks the country's number of researched custom_2 technologies
+num_custom_2_techs < 4
+Supported Scopes: country
+
+num_custom_3_techs - Checks the country's number of researched custom_3 technologies
+num_custom_3_techs < 4
+Supported Scopes: country
+
 num_repeatable_techs - Checks the country's number of researched repeatable technologies
 num_repeatable_techs < 4
 Supported Scopes: country
@@ -2483,7 +2519,7 @@ can_buy_on_market - Checks if the current country can buy the specified resource
 can_buy_on_market = <resource_name>
 Supported Scopes: country
 
-highest_threat - Checks the countrys' highest threat against it
+highest_threat - Checks the countries' highest threat against it
 highest_threat > 100
 Supported Scopes: country
 
@@ -2491,7 +2527,7 @@ has_rival - Checks if the target country is the country's rival
 has_rival = <target>
 Supported Scopes: country
 
-has_subject - Checks if the target country is the a subject of the current country.
+has_subject - Checks if the target country is the subject of the current country.
 has_subject = <target>
 Supported Scopes: country
 
@@ -2932,7 +2968,7 @@ is_spynetwork_max_level >= <int>
 Supported Scopes: spy_network
 
 is_starbase_building_module - Checks if the starbase is currently building a specific module
-iss_starbase_building_module = <starbase module>
+is_starbase_building_module = <starbase module>
 Supported Scopes: starbase
 
 is_starbase_building_building - Checks if the starbase is currently building a specific building
@@ -2972,6 +3008,34 @@ Supported Scopes: design
 
 enclave_capacity_left - Checks the country's free enclave number capacity in absolute numbers
 enclave_capacity_left > 1
+Supported Scopes: country
+
+is_cloaked - Checks if a fleet or ship is cloaked.
+is_cloaked = <yes/no>
+Supported Scopes: ship fleet
+
+has_cloaking_strength - Compares cloaking strength value of the scoped fleet or ship.
+has_cloaking_strength >= <value>
+Supported Scopes: ship fleet
+
+has_cloaking_detection - Compares cloaking detection value of the scoped fleet or ship.
+has_cloaking_detection >= <value>
+Supported Scopes: ship fleet
+
+has_awareness - Checks the country's awareness if it's pre-FTL
+has_awareness < 90
+Supported Scopes: country
+
+current_awareness_level - Checks the country's awareness level if it's pre-FTL
+current_awareness_level > none/low/medium/high/full
+Supported Scopes: country
+
+has_next_pre_ftl_age - Checks if the country is a pre-FTL civilization and has another pre-FTL tech age after its current one
+has_next_pre_ftl_age = yes
+Supported Scopes: country
+
+has_pre_ftl_age - Checks if the country is a pre-FTL civilization and is in the specified age
+has_pre_ftl_age = <age_key>
 Supported Scopes: country
 
 any_agreement - Iterate through each agreement - checks whether the enclosed triggers return true for any of them
@@ -3136,6 +3200,28 @@ count_available_debris = {
 	limit = { <triggers> }
 }
 Supported Scopes: country
+
+any_pre_ftl_within_border - Iterate through all pre-ftl countries within the country's or sector's borders - checks whether the enclosed triggers return true for any of them
+any_pre_ftl_within_border = { <triggers> }
+Supported Scopes: country sector
+
+count_pre_ftl_within_border - Iterate through all pre-ftl countries within the country's or sector's borders - checks whether the enclosed triggers return true for X/all of them
+count_pre_ftl_within_border = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: country sector
+
+any_observed_pre_ftl_within_border - Iterate through all pre-ftl countries with an observation post around their capital within the country's or sector's borders - checks whether the enclosed triggers return true for any of them
+any_observed_pre_ftl_within_border = { <triggers> }
+Supported Scopes: country sector
+
+count_observed_pre_ftl_within_border - Iterate through all pre-ftl countries with an observation post around their capital within the country's or sector's borders - checks whether the enclosed triggers return true for X/all of them
+count_observed_pre_ftl_within_border = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: country sector
 
 any_owned_design - Iterate through all designs owned by the current country - checks whether the enclosed triggers return true for any of them
 any_owned_design = { <triggers> }
@@ -3690,7 +3776,7 @@ Supported Scopes: country
 
 
 =================
-[13:13:06][game_application.cpp:2035]:
+[08:54:36][game_application.cpp:2094]:
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -3766,6 +3852,10 @@ remove_all_buildings - Removes all buildings from the scoped planet
 remove_all_buildings = yes
 Supported Scopes: planet
 
+repair_all_buildings - Repairs all ruined buildings on the scoped planet
+repair_all_buildings = yes
+Supported Scopes: planet
+
 downgrade_all_buildings - Downgrades all non-capital buildings on the scoped planet/country. Leaves tier 1 buildings untouched.
 downgrade_all_buildings = yes
 Supported Scopes: planet country
@@ -3773,6 +3863,10 @@ Supported Scopes: planet country
 downgrade_buildings_of_type - Downgrades all buildings of a specified type on the planet/country.
 downgrade_buildings_of_type = yes
 Supported Scopes: planet country
+
+validate_and_repair_planet_buildings_and_districts - Replace/removes all invalid (potential trigger not fulfilled) buildings and districts, then repairs all ruined buildings on the scoped planet
+validate_and_repair_planet_buildings_and_districts = yes
+Supported Scopes: planet
 
 remove_holding - Removes a specific holding from the scoped planet
 remove_holding = { holding = <key> owner = <owner> }
@@ -3990,6 +4084,14 @@ create_ship = {
 	colonizer_species = <species, default: fleet owner founder species>
 }
 Supported Scopes: fleet starbase
+
+set_awareness - Sets awareness for the scoped (pre-FTL) country
+set_awareness = 52.3
+Supported Scopes: country
+
+add_awareness - Adds awareness to the scoped (pre-FTL) country
+add_awareness = 12.3
+Supported Scopes: country
 
 create_pop - Creates a new pop on the scoped planet
 create_pop = {
@@ -5428,6 +5530,13 @@ remove_secret_fealty - Removes a secret fealty pact between the scoped subject c
 remove_secret_fealty = <target>
 Supported Scopes: country
 
+clear_relations - Clears relations between scoped and target countries
+clear_relations = {
+	 target = <target country>
+	 relations = { <> }
+ }
+Supported Scopes: country
+
 set_agreement_terms - Sets agreement terms of the agreement. Can be used to set multiple terms at once, including resource subsidies.
 set_agreement_terms = {
 	subject_diplomacy = subject_can_not_do_diplomacy
@@ -5732,6 +5841,10 @@ reset_current_stage - Resets the current stage
 reset_current_stage = yes/no
 yes = also randomize new difficulty if stage allows that.
 no = does not change difficulty
+Supported Scopes: archaeological_site
+
+set_current_stage - Sets the current stage for this arc site (first chapter is index 0).
+set_current_stage = <stage number>
 Supported Scopes: archaeological_site
 
 finish_current_stage - Finish the current stage
@@ -6164,6 +6277,30 @@ end_fleet_contract - Breaks fleet lease contract
 end_fleet_contract = yes
 Supported Scopes: fleet
 
+set_cloaking_active - Sets current fleet's cloaking status
+set_cloaking_active = yes|no
+Supported Scopes: fleet
+
+go_to_next_pre_ftl_age - Advances country to next pre-FTL technology level if possible. Does nothing if has_next_pre_ftl_age would be false, or if argument is 'no'.
+go_to_next_pre_ftl_age = <yes/no>
+Supported Scopes: country
+
+set_pre_ftl_age - Set pre-FTL technology level. Does nothing if the country is not pre-FTL.
+set_pre_ftl_age = <age>
+Supported Scopes: country
+
+remove_communications - Remove communications between scoped country and target country
+remove_communications = <target>
+Supported Scopes: country
+
+remove_envoys_to - Removes any envoys from scoped country assigned to target country
+remove_envoys_to = <country>
+Supported Scopes: country
+
+remove_from_federation - The scoped country is removed from any federation its in
+remove_from_federation = yes
+Supported Scopes: country
+
 validate_planet_buildings_and_districts - Checks whether the planets and districts on the planet are valid (their potential triggers are fulfilled), removes or replaces them if not.
 validate_planet_buildings_and_districts = yes
 Supported Scopes: planet
@@ -6274,10 +6411,6 @@ cancel_terraformation - Cancels terraformation of the scoped planet
 cancel_terraformation = yes
 Supported Scopes: planet
 
-set_primitive_age - Sets a 'primitive age' for the scoped (primitive, pre-FTL) country
-set_primitive_age = renaissance_age
-Supported Scopes: country
-
 while - Repeats enclosed effects while limit criteria are met or until set iteration count is reached
 while = { limit = { <triggers> } <effects> }
 while = { count = [3|Variable] <effects> }
@@ -6316,7 +6449,7 @@ prevent_anomaly = yes
 Supported Scopes: planet
 
 add_deposit - Adds resource deposit to the scoped planet (note: if you add a blocker, it will add a random deposit that can be blocked by that deposit)
-add_deposit = <key/random>
+add_deposit = <key/random/random_blocker/random_nonblocker>
 Supported Scopes: planet
 
 clear_deposits - Removes all deposits from the scoped planet
@@ -6362,6 +6495,10 @@ Supported Scopes: pop pop_faction
 add_tech_progress - Gives percentage progress (0.0-1.0) in a specific tech to the scoped country
 add_tech_progress = { tech = <key> progress = <float>/<variable> }
 Supported Scopes: country
+
+repair_building - Repairs a single instance of a specific building on the scoped planet
+repair_building = <key>
+Supported Scopes: planet
 
 abort_special_project - Aborts a specific special project for the country, removing it from the situation log
 abort_special_project = { type = <project key> location = <target> }
@@ -6967,6 +7104,56 @@ Supported Scopes: country
 every_available_debris - Iterate through all debris belong to available special projects of the scoped country - executes the enclosed effects on all of them for which the limit triggers return true
 every_available_debris = { limit = { <triggers> } <effects> }
 Supported Scopes: country
+
+random_pre_ftl_within_border - Iterate through all pre-ftl countries within the country's or sector's borders - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_pre_ftl_within_border = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: country sector
+
+ordered_pre_ftl_within_border - Iterate through all pre-ftl countries within the country's or sector's borders - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+ordered_pre_ftl_within_border = {
+	limit = { <triggers> }
+	position = <integer, starting with 0>
+	order_by = <variable>/trigger:<trigger>
+	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
+	<effects>
+}
+Supported Scopes: country sector
+
+every_pre_ftl_within_border - Iterate through all pre-ftl countries within the country's or sector's borders - executes the enclosed effects on all of them for which the limit triggers return true
+every_pre_ftl_within_border = { limit = { <triggers> } <effects> }
+Supported Scopes: country sector
+
+random_observed_pre_ftl_within_border - Iterate through all pre-ftl countries with an observation post around their capital within the country's or sector's borders - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_observed_pre_ftl_within_border = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: country sector
+
+ordered_observed_pre_ftl_within_border - Iterate through all pre-ftl countries with an observation post around their capital within the country's or sector's borders - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+ordered_observed_pre_ftl_within_border = {
+	limit = { <triggers> }
+	position = <integer, starting with 0>
+	order_by = <variable>/trigger:<trigger>
+	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
+	<effects>
+}
+Supported Scopes: country sector
+
+every_observed_pre_ftl_within_border - Iterate through all pre-ftl countries with an observation post around their capital within the country's or sector's borders - executes the enclosed effects on all of them for which the limit triggers return true
+every_observed_pre_ftl_within_border = { limit = { <triggers> } <effects> }
+Supported Scopes: country sector
 
 random_owned_design - Iterate through all designs owned by the current country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
 random_owned_design = {
