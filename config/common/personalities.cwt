@@ -30,6 +30,7 @@ enums = {
 		holy_planets
 		demands_clear_borders
 		wants_tribute
+		sneak_attacker
 		decadent
 		isolationist
 		attack_neutrals
@@ -41,108 +42,152 @@ enums = {
 	}
 }
 
-
-
-#needs checking
 ai_personality = {
 	## cardinality = 0..1
+	### Affects chance of declaring wars, chance of sending insults, and how much % of fleet power is committed to offense (at 0, 50% is committed, at 1 it is more like 75%, at 2 it is 100%; higher values still count extra towards war dec and insult chance)
 	aggressiveness = float
 	## cardinality = 0..1
+	### At 1.0 willingness they will accept a deal that is equally good for both sides
 	trade_willingness = float
 	## cardinality = 0..1
+	### Affects the chance that they will pick rivals & war targets of similar strength instead of picking on the weak
 	bravery = float
 	## cardinality = 0..1
 	combat_bravery = float
 
 	## cardinality = 0..1
+	### Affects mineral & energy budget that goes to navies and armies
 	military_spending = float
 	## cardinality = 0..1
+	### Affects mineral & energy budget that goes to new colonies
 	colony_spending = float
 
 	## cardinality = 0..1
+	### Added directly to chance of accepting to form/join a federation
 	federation_acceptance = int
 	## cardinality = 0..1
+	### Added directly to chance of accepting to form a non-aggression pact
 	nap_acceptance = int
 	## cardinality = 0..1
+	### Added directly to chance of accepting to form a commercial pact
 	commercial_pact_acceptance = int
 	## cardinality = 0..1
+	### Added directly to chance of accepting to form a research agreement
 	research_agreement_acceptance = int
 	## cardinality = 0..1
+	### Added directly to chance of accepting to form a defensive pact
 	defensive_pact_acceptance = int
 	## cardinality = 0..1
+	### Added directly to chance of accepting to form a migration pact
 	migration_pact_acceptance = int
+	## cardinality = 0..1
+	### As overlord, multiplied by subject loyalty change and added to acceptance of a deal; Low values mean we don't care if subjects are loyal or not, high means we like loyal subjects
+	migration_pact_acceptance = float
 
 	## cardinality = 0..1
+	### Likelyhood of this empire being an advanced start (higher = better chance of being one of empires selected for advanced start)
 	advanced_start_chance = int
 
 	## cardinality = 0..1
 	weapon_preferences = enum[component_tags]
 
-
-	#these three are fractions
+	# these three are fractions
 	## cardinality = 0..1
+	### Amount of armor they should aim for on ships
 	armor_ratio = float
 	## cardinality = 0..1
+	### Amount of shields they should aim for on ships
 	shields_ratio = float
 	## cardinality = 0..1
+	### Amount of hull boosters they should aim for on ships (if available)
 	hull_ratio = float
 
 	## cardinality = 0..1
+	### List of "<ship_size> = <role>" statements; AI will use the corresponding role for that size
+	ship_roles = {
+		## cardinality = 0..inf
+		<ship_size> = enum[ship_size_ship_roles]
+	}
+
+	## cardinality = 0..1
+	### Affects how much threat is generated for this empire when others are conquered
 	threat_modifier = float
 	## cardinality = 0..1
+	### Affects how much threat is generated for other empires when this empire is conquered
 	threat_others_modifier = float
 	## cardinality = 0..1
+	### Affects border friction
 	friction_modifier = float
 	## cardinality = 0..1
+	### Affects opinion penalty from claims
 	claims_modifier = float
 
 	behaviour = {
 		## cardinality = 0..1
+		### Will they conquer planets from other empires?
 		conqueror = bool
 		## cardinality = 0..1
+		### Will they vassalise other empires?
 		subjugator = bool
 		## cardinality = 0..1
+		### Will they liberate conquered empires?
 		liberator = bool
 		## cardinality = 0..1
+		### Are they more likely to attack someone already embroiled in war?
 		opportunist = bool
 		## cardinality = 0..1
+		### Will they enslave pops?
 		slaver = bool
 		## cardinality = 0..1
 		caste_system = bool
 		## cardinality = 0..1
+		### Will they uplift and enlighten other species?
 		uplifter = bool
 		## cardinality = 0..1
+		### Will they purge alien pops?
 		purger = bool
 		## cardinality = 0..1
 		displacer = bool
 		## cardinality = 0..1
+		### Will they infiltrate primitives?
 		infiltrator = bool
 		## cardinality = 0..1
+		### Will they invade primitives?
 		dominator = bool
 		## cardinality = 0..1
+		### Will they use robots for menial labor?
 		robot_exploiter = bool
 		## cardinality = 0..1
+		### Will they give rights to robots?
 		robot_liberator = bool
 		## cardinality = 0..1
+		### Will they only get aggressive once boxed in?
 		propagator = bool
 		## cardinality = 0..1
+		### Will they give rights to aliens?
 		multispecies = bool
 		## cardinality = 0..1
+		### Will they consider fighting the crisis? (If 'no' they will only care about themselves.)
 		crisis_fighter = bool
 		## cardinality = 0..1
 		wants_tribute = bool
 		## cardinality = 0..1
+		### Will they use cloaked fleets to attack their enemies?
+		sneak_attacker = alias_name[modifier]
+		## cardinality = 0..1
 		decadent = bool
 		## cardinality = 0..1
+		### Always keep borders closed?
 		isolationist = bool
 		## cardinality = 0..1
 		attack_neutrals = bool
 		## cardinality = 0..1
+		### special for spiritualist FE
 		holy_planets = bool
 		## cardinality = 0..1
 		demands_clear_borders = bool
 		## cardinality = 0..1
-		### special for awakened fallen empires
+		### Will they fight the crisis and invite others to do so (Fallen Empires special behaviour. Emperor/Custodian will behave the same way regardless of this flag.)
 		crisis_leader = bool
 		## cardinality = 0..1
 		### special for awakened machine fallen empires, prevents colonization & locks attitude
@@ -164,6 +209,7 @@ ai_personality = {
 	}
 
 	## cardinality = 0..1
+	### NOTE: Weight is additive for personalities!
 	weight_modifier = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
