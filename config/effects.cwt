@@ -2370,7 +2370,7 @@ alias[effect:pop_remove_ethic] = <ethos>
 alias[effect:prevent_anomaly] = bool
 #randomize_flag_symbol = pirate
 ### Randomizes a country's flag symbol within the selected category
-alias[effect:randomize_flag_symbol] = scalar#TODO pirate
+alias[effect:randomize_flag_symbol] = scalar #TODO pirate
 ### Removes all armies on scoped planet
 alias[effect:remove_all_armies] = yes
 ### Removes the scoped army
@@ -3141,7 +3141,7 @@ alias[effect:fire_on_action] = {
 }
 
 ###Sets the current fleet to go missing in action and return home.
-alias[effect:set_mia] = <mia_type> # TODO
+alias[effect:set_mia] = enum[mia_types]
 
 ###Sets the first contact site to using a specified stage
 alias[effect:set_first_contact_stage] = <first_contact_stage>
@@ -3643,7 +3643,7 @@ alias[effect:clear_relations] = {
 	target = scope_group[target_country]
 	relations = {
 	   ## cardinality = 1..inf
-	   enum[relationship_type] #TODO
+	   enum[pre_ftl_relationship_types]
 	}
 }
 
@@ -3657,7 +3657,7 @@ alias[effect:set_cloaking_active] = bool
 alias[effect:go_to_next_pre_ftl_age] = bool
 
 ###Set pre-FTL technology level. Does nothing if the country is not pre-FTL.
-alias[effect:set_pre_ftl_age] = <pre_ftl_age> # TODO
+alias[effect:set_pre_ftl_age] = <pre_ftl_age>
 
 ###Remove communications between scoped country and target country
 alias[effect:remove_communications] = scope_group[target_country]

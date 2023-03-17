@@ -2593,10 +2593,10 @@ alias[trigger:has_cloaking_detection] == <value>
 alias[trigger:has_awareness] == int_value_field
 
 ###Checks the country's awareness level if it's pre-FTL
-alias[trigger:current_awareness_level] == none/low/medium/high/full # TODO: enum
+alias[trigger:current_awareness_level] == enum[awareness_levels]
 
 ###Checks if the country is a pre-FTL civilization and has another pre-FTL tech age after its current one 
 alias[trigger:has_next_pre_ftl_age] = bool
 
 ###Checks if the country is a pre-FTL civilization and is in the specified age 
-alias[trigger:has_pre_ftl_age] = <age_key> # TODO dynamic enum
+alias[trigger:has_pre_ftl_age] = <pre_ftl_age>

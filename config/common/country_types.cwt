@@ -9,7 +9,6 @@ types = {
 }
 
 country_type = {
-
 	## cardinality = 0..1
 	has_pulse_events = bool
 	## cardinality = 0..1
@@ -158,7 +157,7 @@ country_type = {
 		## cardinality = 0..1
 		primitive = bool
 		## cardinality = 0..1
-		primitive_age = localisation
+		primitive_age = <pre_ftl_age>
 		## cardinality = 0..1
 		hostile_when_attacked = bool
 		## cardinality = 0..1
