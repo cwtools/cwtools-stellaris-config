@@ -3629,3 +3629,69 @@ alias[trigger:count_observed_pre_ftl_within_border] = {
 	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
+
+## push_scope = country
+###Iterate through all pre-ftl countries within the country's or sector's borders - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_pre_ftl_within_border] = {
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+	## cardinality = 0..1
+	###(optional - adds weights to affect the chance a specific object is selected)
+	weights = { alias_name[modifier_rule] = alias_match_left[modifier_rule] }
+}
+
+## push_scope = country
+###Iterate through all pre-ftl countries within the country's or sector's borders - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_pre_ftl_within_border] = {
+	###starting with 0
+	position = int
+	order_by = value_field
+	## cardinality = 0..1
+	###(default: no - if yes, then 0 is lowest rather than highest)
+	inverse = bool
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = country
+###Iterate through all pre-ftl countries within the country's or sector's borders - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_pre_ftl_within_border] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = country
+###Iterate through all pre-ftl countries with an observation post around their capital within the country's or sector's borders - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_observed_pre_ftl_within_border] = {
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+	## cardinality = 0..1
+	###(optional - adds weights to affect the chance a specific object is selected)
+	weights = { alias_name[modifier_rule] = alias_match_left[modifier_rule] }
+}
+
+## push_scope = country
+###Iterate through all pre-ftl countries with an observation post around their capital within the country's or sector's borders - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_observed_pre_ftl_within_border] = {
+	###starting with 0
+	position = int
+	order_by = value_field
+	## cardinality = 0..1
+	###(default: no - if yes, then 0 is lowest rather than highest)
+	inverse = bool
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = country
+###Iterate through all pre-ftl countries with an observation post around their capital within the country's or sector's borders - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_observed_pre_ftl_within_border] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}

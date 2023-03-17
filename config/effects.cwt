@@ -1641,8 +1641,14 @@ alias[effect:change_pc] = {
 
 ###Adds/Removes district slots to/from the scoped planet to adjust its planet size
 alias[effect:set_planet_size] = int_value_field
-###Adds a specific deposit to the scoped planet
+### Adds resource deposit to the scoped planet (note: if you add a blocker, it will add a random deposit that can be blocked by that deposit)
 alias[effect:add_deposit] = <deposit>
+### Adds resource deposit to the scoped planet (note: if you add a blocker, it will add a random deposit that can be blocked by that deposit)
+alias[effect:add_deposit] = random
+### Adds resource deposit to the scoped planet (note: if you add a blocker, it will add a random deposit that can be blocked by that deposit)
+alias[effect:add_deposit] = random_blocker
+### Adds resource deposit to the scoped planet (note: if you add a blocker, it will add a random deposit that can be blocked by that deposit)
+alias[effect:add_deposit] = random_nonblocker
 ###Replaces resource deposit on the scoped planet
 alias[effect:set_deposit] = <deposit>
 ###Removes all deposits from the scoped planet
@@ -2522,23 +2528,6 @@ alias[effect:set_policy] = {
 ### Sets the scoped pop to belong to a specific pop faction
 alias[effect:set_pop_faction] = <pop_faction>
 
-### Sets a 'primitive age' for the scoped (primitive, pre-FTL) country
-alias[effect:set_primitive_age] = localisation
-enums = {
-	enum[primitive_ages] = {
-		stone_age
-		bronze_age
-		iron_age
-		late_medieval_age
-		renaissance_age
-		steam_age
-		industrial_age
-		machine_age
-		atomic_age
-		early_space_age
-	}
-}
-
 ### Adds or removes a planetary ring around the scoped planet
 alias[effect:set_ring] = bool
 ### Sets the scoped leader's level
@@ -3152,7 +3141,7 @@ alias[effect:fire_on_action] = {
 }
 
 ###Sets the current fleet to go missing in action and return home.
-alias[effect:set_mia] = yes
+alias[effect:set_mia] = <mia_type> # TODO
 
 ###Sets the first contact site to using a specified stage
 alias[effect:set_first_contact_stage] = <first_contact_stage>
@@ -3625,6 +3614,7 @@ alias[effect:set_agreement_terms] = {
 }
 
 #3.5
+
 ###Multiplies crisis strength by this factor.
 alias[effect:multiply_crisis_strength] = value_field
 
@@ -3633,3 +3623,50 @@ alias[effect:set_immortal] = bool
 
 ### Used with enclave_mercenary to remove fleet contract modifiers.
 alias[effect:remove_fleet_contract_modifiers] = bool
+
+# 3.7
+
+###Repairs all ruined buildings on the scoped planet
+alias[effect:repair_all_buildings] = yes
+
+###Replace/removes all invalid (potential trigger not fulfilled) buildings and districts, then repairs all ruined buildings on the scoped planet
+alias[effect:validate_and_repair_planet_buildings_and_districts] = yes
+
+###Sets awareness for the scoped (pre-FTL) country
+alias[effect:set_awareness = value_field
+
+###Adds awareness to the scoped (pre-FTL) country
+alias[effect:add_awareness = value_field
+
+###Clears relations between scoped and target countries
+alias[effect:clear_relations] = {
+	target = scope_group[target_country]
+	relations = {
+	   ## cardinality = 1..inf
+	   enum[relationship_type] #TODO
+	}
+}
+
+###Sets the current stage for this arc site (first chapter is index 0).
+alias[effect:set_current_stage] = int
+
+###Sets current fleet's cloaking status
+alias[effect:set_cloaking_active] = bool
+
+###Advances country to next pre-FTL technology level if possible. Does nothing if has_next_pre_ftl_age would be false, or if argument is 'no'.
+alias[effect:go_to_next_pre_ftl_age] = bool
+
+###Set pre-FTL technology level. Does nothing if the country is not pre-FTL.
+alias[effect:set_pre_ftl_age] = <pre_ftl_age> # TODO
+
+###Remove communications between scoped country and target country
+alias[effect:remove_communications] = scope_group[target_country]
+
+###Removes any envoys from scoped country assigned to target country
+alias[effect:remove_envoys_to] = scope_group[target_country]
+
+###The scoped country is removed from any federation its in
+alias[effect:remove_from_federation] = yes
+
+###Repairs a single instance of a specific building on the scoped planet
+alias[effect:repair_building] = <building>
