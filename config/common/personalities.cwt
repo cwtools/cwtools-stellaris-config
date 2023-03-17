@@ -82,7 +82,7 @@ ai_personality = {
 	migration_pact_acceptance = int
 	## cardinality = 0..1
 	### As overlord, multiplied by subject loyalty change and added to acceptance of a deal; Low values mean we don't care if subjects are loyal or not, high means we like loyal subjects
-	migration_pact_acceptance = float
+	loyalty_acceptance = float
 
 	## cardinality = 0..1
 	### Likelyhood of this empire being an advanced start (higher = better chance of being one of empires selected for advanced start)
