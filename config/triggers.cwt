@@ -712,8 +712,8 @@ alias[trigger:years_of_peace] = {
 ###Checks the fleet's fleet size
 alias[trigger:fleet_size] == int_value_field
 
-###Checks the game's difficulty level (0 normal, 1 hard, 2 insane)
-alias[trigger:is_difficulty] == int_value_field[0..6]
+###Checks the game's difficulty level (0 to 5, with 0 as Cadet and 5 as Grand Admiral
+alias[trigger:is_difficulty] == int_value_field[0..5]
 
 ###Checks if the planet has any, or a specific, building
 alias[trigger:has_building] = bool
@@ -1094,7 +1094,7 @@ alias[trigger:is_advisor_active] = bool
 ### Checks if the ship/fleet is being repaired
 alias[trigger:is_being_repaired] = bool
 
-### Checks if the system is bottleneck within the range NDefines::NGameplay::SYSTEM_BOTTLENECK_RADIUSis_bottleneck_system = yes
+### Checks if the system is bottleneck within the range NDefines::NGameplay::SYSTEM_BOTTLENECK_RADIUS
 alias[trigger:is_bottleneck_system] = bool
 
 ### Checks if a system has the bridge flag or not.
@@ -1459,7 +1459,7 @@ alias[trigger:is_half_species] = any
 ###Checks if the last building queued/unqueued/built/demolished/upgraded was the specified building
 alias[trigger:last_building_changed] = <building>
 
-###Checks the empire's size
+###Checks the empire's size. Identical to empire_spraw trigger.
 alias[trigger:empire_size] == int_value_field
 
 ###Checks the empire's sprawl
@@ -1905,7 +1905,7 @@ alias[trigger:galaxy_size] = <map_setup_scenario>
 ###Checks whether the galaxy shape is of a certain shape
 alias[trigger:galaxy_shape] = <map_galaxy_shape>
 
-###Checks the countrys diplomacy weight
+###Checks the country's diplomacy weight
 alias[trigger:diplomacy_weight] == value_field
 
 ###Checks the number of fallen empires defined in setup
@@ -2101,7 +2101,7 @@ alias[trigger:has_first_contact_flag] = value[first_contact_flag]
 ###Checks if the scoped first contact is at the specified stage.
 alias[trigger:is_current_first_contact_stage] = <first_contact_stage>
 
-###Checks whether the current country is allowed to have the specified technology, i.e. does it fulfil the potential = { } field for that tech.
+###Checks whether the current country is allowed to have the specified technology, i.e. does it fulfil the potential = { } field for that tech, and for any prereq techs that tech has.
 alias[trigger:can_research_technology] = <technology>
 
 ###Checks whether the target country has a technology the current country can steal via copy_random_tech_from effect
@@ -2323,19 +2323,19 @@ alias[trigger:has_embassy] = scope_group[target_country]
 ###Checks if the planet is ideal (as set in planet_classes)
 alias[trigger:is_ideal] = bool
 
-###Checks if the specified ship, fleet, planet or system is within sensor range of the scoped country.
+###Checks if the specified ship, fleet, planet or system can be seen by the scoped country.
 alias[trigger:is_in_sensor_range] = scope[ship]
 
-###Checks if the specified ship, fleet, planet or system is within sensor range of the scoped country.
+###Checks if the specified ship, fleet, planet or system can be seen by the scoped country.
 alias[trigger:is_in_sensor_range] = scope[fleet]
 
-###Checks if the specified ship, fleet, planet or system is within sensor range of the scoped country.
+###Checks if the specified ship, fleet, planet or system can be seen by the scoped country.
 alias[trigger:is_in_sensor_range] = scope[planet]
 
-###Checks if the specified ship, fleet, planet or system is within sensor range of the scoped country.
+###Checks if the specified ship, fleet, planet or system can be seen by the scoped country.
 alias[trigger:is_in_sensor_range] = scope[galactic_object]
 
-###Checks if the scoped ship, fleet, planet or system is within sensor range of the specified country.
+### Checks if the scoped ship, fleet, planet or system can be seen by the specified country.
 alias[trigger:is_in_sensor_range_of_country] = scope_group[target_country]
 
 #3.3
@@ -2464,7 +2464,7 @@ alias[trigger:has_loyalty] == int_value_field[-100..100]
 ###Checks the subject's current monthly loyalty gain/loss.
 alias[trigger:has_monthly_loyalty] == int_value_field[-100..100]
 
-###Checks if the country has a ai behavior towards another country
+###Checks if the country has the specified ai behavior towards another country
 alias[trigger:has_attitude_behavior] = {
 	target = scope_group[target_country]
 	behavior = enum[ai_attitude_behaviours]
@@ -2538,3 +2538,65 @@ alias[trigger:enclave_capacity_left] == int_value_field[0..inf]
 
 ###Checks the country's free enclave number capacity in absolute numbers
 alias[trigger:additional_crisis_strength] == int_value_field[0..inf]
+
+###Checks if a job is of a certain pop category. Note that the result for this trigger is not dependent on where it is used - so it's for use in e.g. templated script values.
+is_job_of_pop_category = {
+	job = <job>
+	category = <social_strata>
+}
+
+# 3.7 "Canis Minor"
+
+###Checks if country is under societal enlightenment
+alias[trigger:is_under_societal_enlightenment] = scope_group[target_country]
+
+###Checks if country is under open technological enlightenment
+alias[trigger:is_under_open_technological_enlightenment] = scope_group[target_country]
+
+###Checks if country is under stratified technological enlightenment
+alias[trigger:is_under_stratified_technological_enlightenment] = scope_group[target_country]
+
+###Checks if country has pre-ftl trade
+alias[trigger:has_pre_ftl_trade = scope_group[target_country]
+
+###Checks ship design has a certain role.
+alias[trigger:has_role] = enum[ship_size_ship_roles]
+
+###Checks the country's number of researched dangerous technologies
+num_dangerous_techs == int_value_field
+
+###Checks the country's number of researched insight technologies
+num_insight_techs == int_value_field
+
+###Checks the country's number of researched custom_1 technologies
+num_custom_1_techs == int_value_field
+
+###Checks the country's number of researched custom_2 technologies
+num_custom_2_techs == int_value_field
+
+###Checks the country's number of researched custom_3 technologies
+num_custom_3_techs == int_value_field
+
+###Checks if scoped espionage operation accepts events automatically when they are ready
+is_espionage_operation_auto_accept_events = bool
+
+###Checks if a fleet or ship is cloaked.
+is_cloaked = bool
+
+###Compares cloaking strength value of the scoped fleet or ship.
+has_cloaking_strength == <value>
+
+###Compares cloaking detection value of the scoped fleet or ship.
+has_cloaking_detection == <value>
+
+###Checks the country's awareness if it's pre-FTL
+has_awareness == int_value_field
+
+###Checks the country's awareness level if it's pre-FTL
+current_awareness_level == none/low/medium/high/full # TODO: enum
+
+###Checks if the country is a pre-FTL civilization and has another pre-FTL tech age after its current one 
+has_next_pre_ftl_age = bool
+
+###Checks if the country is a pre-FTL civilization and is in the specified age 
+has_pre_ftl_age = <age_key> # TODO dynamic enum
