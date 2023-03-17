@@ -25,6 +25,8 @@ types = {
 
 ## push_scope = planet
 district = {
+	## cardinality = 0..1
+	expansion_planner = bool
 	base_buildtime = int
 	## cardinality = 0..inf
 	desc = localisation
