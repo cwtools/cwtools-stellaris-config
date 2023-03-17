@@ -2540,7 +2540,7 @@ alias[trigger:enclave_capacity_left] == int_value_field[0..inf]
 alias[trigger:additional_crisis_strength] == int_value_field[0..inf]
 
 ###Checks if a job is of a certain pop category. Note that the result for this trigger is not dependent on where it is used - so it's for use in e.g. templated script values.
-is_job_of_pop_category = {
+alias[trigger:is_job_of_pop_category] = {
 	job = <job>
 	category = <social_strata>
 }
@@ -2557,46 +2557,46 @@ alias[trigger:is_under_open_technological_enlightenment] = scope_group[target_co
 alias[trigger:is_under_stratified_technological_enlightenment] = scope_group[target_country]
 
 ###Checks if country has pre-ftl trade
-alias[trigger:has_pre_ftl_trade = scope_group[target_country]
+alias[trigger:has_pre_ftl_trade] = scope_group[target_country]
 
 ###Checks ship design has a certain role.
 alias[trigger:has_role] = enum[ship_size_ship_roles]
 
 ###Checks the country's number of researched dangerous technologies
-num_dangerous_techs == int_value_field
+alias[trigger:num_dangerous_techs] == int_value_field
 
 ###Checks the country's number of researched insight technologies
-num_insight_techs == int_value_field
+alias[trigger:num_insight_techs] == int_value_field
 
 ###Checks the country's number of researched custom_1 technologies
-num_custom_1_techs == int_value_field
+alias[trigger:num_custom_1_techs] == int_value_field
 
 ###Checks the country's number of researched custom_2 technologies
-num_custom_2_techs == int_value_field
+alias[trigger:num_custom_2_techs] == int_value_field
 
 ###Checks the country's number of researched custom_3 technologies
-num_custom_3_techs == int_value_field
+alias[trigger:num_custom_3_techs] == int_value_field
 
 ###Checks if scoped espionage operation accepts events automatically when they are ready
-is_espionage_operation_auto_accept_events = bool
+alias[trigger:is_espionage_operation_auto_accept_events] = bool
 
 ###Checks if a fleet or ship is cloaked.
-is_cloaked = bool
+alias[trigger:is_cloaked] = bool
 
 ###Compares cloaking strength value of the scoped fleet or ship.
-has_cloaking_strength == <value>
+alias[trigger:has_cloaking_strength] == <value>
 
 ###Compares cloaking detection value of the scoped fleet or ship.
-has_cloaking_detection == <value>
+alias[trigger:has_cloaking_detection] == <value>
 
 ###Checks the country's awareness if it's pre-FTL
-has_awareness == int_value_field
+alias[trigger:has_awareness] == int_value_field
 
 ###Checks the country's awareness level if it's pre-FTL
-current_awareness_level == none/low/medium/high/full # TODO: enum
+alias[trigger:current_awareness_level] == none/low/medium/high/full # TODO: enum
 
 ###Checks if the country is a pre-FTL civilization and has another pre-FTL tech age after its current one 
-has_next_pre_ftl_age = bool
+alias[trigger:has_next_pre_ftl_age] = bool
 
 ###Checks if the country is a pre-FTL civilization and is in the specified age 
-has_pre_ftl_age = <age_key> # TODO dynamic enum
+alias[trigger:has_pre_ftl_age] = <age_key> # TODO dynamic enum

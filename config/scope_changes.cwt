@@ -3602,13 +3602,13 @@ alias[trigger:count_system_colony] = {
 
 ## push_scope = country
 ###Iterate through all pre-ftl countries within the country's or sector's borders - checks whether the enclosed triggers return true for any of them
-any_pre_ftl_within_border = {
+alias[trigger:any_pre_ftl_within_border] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
 ## push_scope = country
 ###Iterate through all pre-ftl countries within the country's or sector's borders - checks whether the enclosed triggers return true for X/all of them
-count_pre_ftl_within_border = {
+alias[trigger:count_pre_ftl_within_border] = {
 	count = all
 	count = int_value_field
 	## cardinality = 0..1
@@ -3617,13 +3617,13 @@ count_pre_ftl_within_border = {
 
 ## push_scope = country
 ###Iterate through all pre-ftl countries with an observation post around their capital within the country's or sector's borders - checks whether the enclosed triggers return true for any of them
-any_observed_pre_ftl_within_border = {
+alias[trigger:any_observed_pre_ftl_within_border] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
 ## push_scope = country
 ###Iterate through all pre-ftl countries with an observation post around their capital within the country's or sector's borders - checks whether the enclosed triggers return true for X/all of them
-count_observed_pre_ftl_within_border = {
+alias[trigger:count_observed_pre_ftl_within_border] = {
 	count = all
 	count = int_value_field
 	## cardinality = 0..1
