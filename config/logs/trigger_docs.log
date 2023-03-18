@@ -1,6 +1,6 @@
 [08:54:36][game_application.cpp:2091]:
 == TRIGGER DOCUMENTATION ==
-text - For 'desc = {trigger = {' use. Shows custom text
+text - For 'desc={trigger={' use. Shows custom text
 text = <text>
 Supported Scopes: all
 
@@ -647,6 +647,10 @@ Supported Scopes: country
 has_commercial_pact - Check if the country has a commercial pact with target country
 has_commercial_pact = <target>
 Supported Scopes: country
+
+has_role - Checks ship design has a certain role.
+has_role = gunship
+Supported Scopes: design
 
 is_being_assimilated - Checks if the pop is being purged
 is_being_assimilated = yes
@@ -2933,6 +2937,10 @@ Supported Scopes: espionage_operation
 
 is_espionage_operation_last_die_result - Compares the last dice roll.
 is_espionage_operation_last_die_result >= <int>
+Supported Scopes: espionage_operation
+
+is_espionage_operation_auto_accept_events - Checks if scoped espionage operation accepts events automatically when they are ready
+is_espionage_operation_auto_accept_events = <bool>
 Supported Scopes: espionage_operation
 
 num_espionage_assets - Compares the number of assets associated with the scope object.
@@ -6083,8 +6091,8 @@ yes = trigger stage completed for each stage and current excavator.
 no = do not trigger any stage completed
 Supported Scopes: espionage_operation
 
-set_mia - Sets the current fleet to go missing in action and return home.
-set_mia = yes
+set_mia - Sets the current fleet to go missing in action with the MIA type defided by <key>
+set_mia = <key>
 Supported Scopes: fleet
 
 create_espionage_asset - Creates espionage asset within a given spy network

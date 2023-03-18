@@ -809,6 +809,17 @@ alias[effect:round_variable_to_closest] = {
 	value = value_field
 }
 
+###Sets a variable to a random value within the specified bounds
+alias[effect:set_variable_to_random_value] = {
+	which = value[variable]
+    ## cardinality = 0..1
+	min = int
+	## cardinality = 0..1
+	max = int
+    ## cardinality = 0..1
+    rounded = bool
+}
+
 ###Removes a previously-set variable from the scope
 alias[effect:clear_variable] = value[variable]
 
@@ -3506,7 +3517,7 @@ alias[effect:set_rule_join_subject_wars] = enum[agreement_wars]
 alias[effect:set_rule_subject_has_access] = bool
 ###Changes the agreement term for whether the Subject gets sensors data from Overlord
 alias[effect:set_rule_subject_has_sensors] = bool
-###Passes the scoped debris ownership to the specified country 
+###Passes the scoped debris ownership to the specified country
 alias[effect:pass_debris_ownership] = {
 	owner = scope_group[target_country]
 }
@@ -3591,14 +3602,14 @@ alias[effect:get_trade_data] = {
 alias[effect:make_special_trade] = {
 	target = scope_group[target_country]
 }
-###Leases fleet out to the new controller country for a numbed of days 
+###Leases fleet out to the new controller country for a numbed of days
 alias[effect:give_fleet] = {
 	controller = scope_group[target_country]
 	days = int_value_field
 }
-###Breaks fleet lease contract 
+###Breaks fleet lease contract
 alias[effect:break_fleet_contract] = bool
-###Prolongs fleet's lease contract for a numbed of days 
+###Prolongs fleet's lease contract for a numbed of days
 alias[effect:prolong_fleet_contract] = {
 	days = int_value_field
 }
@@ -3616,5 +3627,5 @@ alias[effect:multiply_crisis_strength] = value_field
 ###Sets the scoped leader immortal. The 'no' case will not override immortality granted by species characteristics (but will disable immortality granted by this effect).
 alias[effect:set_immortal] = bool
 
-### Used with enclave_mercenary to remove fleet contract modifiers. 
+### Used with enclave_mercenary to remove fleet contract modifiers.
 alias[effect:remove_fleet_contract_modifiers] = bool
