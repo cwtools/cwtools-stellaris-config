@@ -173,7 +173,7 @@ ai_personality = {
 		wants_tribute = bool
 		## cardinality = 0..1
 		### Will they use cloaked fleets to attack their enemies?
-		sneak_attacker = alias_name[modifier]
+		sneak_attacker = bool
 		## cardinality = 0..1
 		decadent = bool
 		## cardinality = 0..1
