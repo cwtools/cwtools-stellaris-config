@@ -334,7 +334,10 @@ enums = {
 		coexist
 	}
 	enum[mia_types] = {
+		mia_emergency_ftl
 		mia_return_home
+		mia_reinforce
+		mia_forced_to_decloak
 	}
 	enum[pre_ftl_relationship_types] = {
 		defensive_pact
