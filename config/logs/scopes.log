@@ -1,4 +1,4 @@
-[13:13:06][game_application.cpp:2047]: 
+[08:54:36][game_application.cpp:2106]: 
 == SCOPE DOCUMENTATION ==
 These work as context switches (links) in triggers and effects (e.g. 'owner = { <triggers/effects> }'), or as targets of triggers and effects (e.g. 'is_owned_by = from'). Dot scoping (e.g. root.owner.capital_scope) is allowed.
 Complete list of scope changes:
@@ -18,6 +18,10 @@ Output Scope: planet
 star - Scopes from an object to the primary star (planet scope) of the system it is in. Works on all objects visible in star system view.
 Supported Scopes: megastructure planet ship fleet galactic_object ambient_object starbase archaeological_site first_contact debris
 Output Scope: planet
+
+last_added_deposit - Scopes to the last deposit added to the current planet
+Supported Scopes: planet
+Output Scope: deposit
 
 branch_office_owner - Scopes from a planet to the owner of a branch office.
 Supported Scopes: planet
@@ -46,6 +50,10 @@ Output Scope: species
 fleet - Scopes from a ship, starbase or leader to its fleet, or from an army to the fleet its army transport is part of.
 Supported Scopes: ship fleet leader army starbase
 Output Scope: fleet
+
+design - Scopes to the ship's design
+Supported Scopes: ship
+Output Scope: design
 
 from - Scopes to the ROOT of the previous event, or the preset hardcoded FROM scope.
 Supported Scopes: all
