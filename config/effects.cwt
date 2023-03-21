@@ -811,13 +811,13 @@ alias[effect:round_variable_to_closest] = {
 
 ###Sets a variable to a random value within the specified bounds
 alias[effect:set_variable_to_random_value] = {
-	which = value[variable]
-    ## cardinality = 0..1
+	which = value_set[variable]
+	## cardinality = 0..1
 	min = int
 	## cardinality = 0..1
 	max = int
-    ## cardinality = 0..1
-    rounded = bool
+	## cardinality = 0..1
+	rounded = bool
 }
 
 ###Removes a previously-set variable from the scope
