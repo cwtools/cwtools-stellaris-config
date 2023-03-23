@@ -298,11 +298,18 @@ enums = {
 	}
 	enum[ship_size_ship_roles] = {
 		artillery
+		artillery_stealth
 		brawler
+		brawler_stealth
 		carrier
+		carrier_stealth
 		energy_torpedoes
+		energy_torpedoes_stealth
 		explosive
+		explosive_stealth
 		gunship
+		gunship_stealth
 		screen
+		screen_stealth
 	}
 }
