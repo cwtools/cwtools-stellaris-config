@@ -2584,10 +2584,10 @@ alias[trigger:is_espionage_operation_auto_accept_events] = bool
 alias[trigger:is_cloaked] = bool
 
 ###Compares cloaking strength value of the scoped fleet or ship.
-alias[trigger:has_cloaking_strength] == <value>
+alias[trigger:has_cloaking_strength] == int_value_field
 
 ###Compares cloaking detection value of the scoped fleet or ship.
-alias[trigger:has_cloaking_detection] == <value>
+alias[trigger:has_cloaking_detection] == int_value_field
 
 ###Checks the country's awareness if it's pre-FTL
 alias[trigger:has_awareness] == int_value_field
