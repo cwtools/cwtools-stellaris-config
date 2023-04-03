@@ -166,4 +166,8 @@ war_goal = {
 	## cardinality = 0..1
 	###Starbases are destroyed instead of ownership being transferred
 	destroy_starbases = yes
+
+	# used only by wg_independence
+	## cardinality = 0..1
+	should_ignore_federations = bool
 }

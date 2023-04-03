@@ -188,6 +188,10 @@ links = {
 		input_scopes = { all }
 		output_scope = Design
 	}
+	design = {
+		input_scopes = { Ship }
+		output_scope = Design
+	}
 	starbase = {
 		input_scopes = { System Planet Ship Fleet Starbase }
 		output_scope = Starbase

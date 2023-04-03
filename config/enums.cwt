@@ -333,4 +333,25 @@ enums = {
 		trade
 		coexist
 	}
+	enum[mia_types] = {
+		mia_emergency_ftl
+		mia_return_home
+		mia_reinforce
+		mia_forced_to_decloak
+	}
+	enum[pre_ftl_relationship_types] = {
+		defensive_pact
+		migration_access
+		is_under_societal_enlightenment
+		is_under_open_technological_enlightenment
+		is_under_stratified_technological_enlightenment
+		has_pre_ftl_trade
+	}
+	enum[awareness_levels] = {
+		none
+		low
+		medium
+		high
+		full
+	}
 }

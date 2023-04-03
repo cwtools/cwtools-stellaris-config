@@ -31,10 +31,16 @@ types = {
 			Description = "$_desc"
 		}
 	}
+	type[pre_ftl_age] = {
+		path = "game/common/technology_ages/preftl"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Description = "$_desc"
+		}
+	}
 }
-
-
-
 
 technology = {
 	area = enum[research_areas]
@@ -203,7 +209,6 @@ enums = {
 	}
 }
 
-
 # Should actually be a number
 ### This should be a number
 technology_tier = {
@@ -216,12 +221,18 @@ technology_tier = {
 	}
 }
 
-
 technology_category = {
-  icon = filepath
-  ## cardinality = 0..1
+	icon = filepath
+	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
 	weight_modifier = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
+}
+
+### All ages must be reachable thru "next_age" entries from the first age entry, for the UI code to be able to determine which "age number" it is.
+pre_ftl_age = {
+	## cardinality = 0..1
+	###
+	next_age = <pre_ftl_age>
 }

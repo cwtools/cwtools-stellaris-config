@@ -139,9 +139,22 @@ ship_size = {
 	## cardinality = 0..1
 	default_behavior = <ship_behavior>
 	## cardinality = 0..1
+	####Show up as selectable roles in the ship designer
 	ship_roles = {
 		## cardinality = 0..inf
 		enum[ship_size_ship_roles]
+	}
+	## cardinality = 0..1
+	###List of triggered ship roles, show up in the ship designer when the trigger is true, executes on country scope
+	triggered_ship_roles = {
+		## cardinality = 1..inf
+		{
+			name = enum[ship_size_ship_roles]
+			## replace_scope = { this = country root = country }
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+		}
 	}
 	## cardinality = 0..1
 	prerequisites = {
@@ -298,11 +311,18 @@ enums = {
 	}
 	enum[ship_size_ship_roles] = {
 		artillery
+		artillery_stealth
 		brawler
+		brawler_stealth
 		carrier
+		carrier_stealth
 		energy_torpedoes
+		energy_torpedoes_stealth
 		explosive
+		explosive_stealth
 		gunship
+		gunship_stealth
 		screen
+		screen_stealth
 	}
 }
