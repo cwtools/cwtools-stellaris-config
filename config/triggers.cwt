@@ -712,7 +712,7 @@ alias[trigger:years_of_peace] = {
 ###Checks the fleet's fleet size
 alias[trigger:fleet_size] == int_value_field
 
-###Checks the game's difficulty level (0 to 5, with 0 as Cadet and 5 as Grand Admiral
+###Checks the game's difficulty level (0 to 5, with 0 as Cadet and 5 as Grand Admiral)
 alias[trigger:is_difficulty] == int_value_field[0..5]
 
 ###Checks if the planet has any, or a specific, building

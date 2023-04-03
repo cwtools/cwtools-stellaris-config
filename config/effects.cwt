@@ -3629,10 +3629,10 @@ alias[effect:repair_all_buildings] = yes
 alias[effect:validate_and_repair_planet_buildings_and_districts] = yes
 
 ###Sets awareness for the scoped (pre-FTL) country
-alias[effect:set_awareness = value_field
+alias[effect:set_awareness] = value_field
 
 ###Adds awareness to the scoped (pre-FTL) country
-alias[effect:add_awareness = value_field
+alias[effect:add_awareness] = value_field
 
 ###Clears relations between scoped and target countries
 alias[effect:clear_relations] = {
