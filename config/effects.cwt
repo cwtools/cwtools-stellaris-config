@@ -1121,6 +1121,7 @@ alias[effect:create_species] = {
 	## cardinality = 0..1
 	adjective = scalar
 	class = <species_class>
+	class = random_pre_ftl
 	class = random_non_machine
 	class = random
 	class = scope_group[target_species]

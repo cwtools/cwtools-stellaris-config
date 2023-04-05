@@ -48,7 +48,7 @@ section_template = {
   ## cardinality = 0..1
   ai_tags = {
 		## cardinality = 0..inf
-		enum[section_template_tags]
+		enum[component_tags]
   }
   ## cardinality = 0..1
   should_draw_components = bool
@@ -269,14 +269,5 @@ enums = {
 		AUX_UTILITY_28
 		AUX_UTILITY_29
 		AUX_UTILITY_30
-	}
-	enum[section_template_tags] = {
-		artillery
-		brawler
-		carrier
-		energy_torpedoes
-		explosive
-		gunship
-		screen
 	}
 }

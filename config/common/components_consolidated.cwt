@@ -90,7 +90,7 @@ component_template = {
 	icon_frame = int
 	## cardinality = 0..1
 	prerequisites = {
-		## cardinality = 1..inf
+		## cardinality = 0..inf
 		<technology>
 	}
 	## cardinality = 0..1
@@ -120,6 +120,13 @@ component_template = {
 	point_defence_targets = {
 		## cardinality = 0..inf
 		enum[component_pd_targets]
+	}
+	## cardinality = 0..1
+	ship_limit = int
+	## cardinality = 0..1
+	blocked_by = {
+		## cardinality = 0..inf
+		<component_template>
 	}
 	## cardinality = 0..1
 	size_restriction = {
@@ -162,6 +169,7 @@ component_template = {
 		ship_modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
+		
 		## cardinality = 0..1
 		ftl = bool
 		## cardinality = 0..1
