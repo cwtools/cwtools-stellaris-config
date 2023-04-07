@@ -606,6 +606,7 @@ alias[effect:set_timed_agreement_flag] = {
 
 ###Removes a megastructure.
 alias[effect:remove_megastructure] = scope[megastructure]
+
 ###Sets a relation flag for the scoped country towards target country
 alias[effect:set_relation_flag] = {
 	who = scope_group[target_country]
@@ -618,6 +619,7 @@ alias[effect:set_timed_relation_flag] = {
 	flag = value_set[relation_flag]
 	enum[days_months_years] = int_value_field
 }
+
 ## severity = warning
 ###Removes a specific relation flag towards target country from the scoped country
 alias[effect:remove_relation_flag] = {
@@ -3206,7 +3208,7 @@ alias[effect:assign_espionage_asset] = <espionage_asset>
 
 ###Sets an arbitrarily-named flag on the scoped espionage operation
 alias[effect:set_espionage_operation_flag] = value_set[espionage_operation_flag]
-
+## severity = warning
 ###Removes a flag from the scoped espionage operation
 alias[effect:remove_espionage_operation_flag] = value[espionage_operation_flag]
 ## severity = warning
@@ -3561,7 +3563,7 @@ alias[effect:set_design_flag] = value_set[design_flag]
 ## severity = warning
 ###Removes a flag from the scoped design
 ###(note: one can use e.g. my_flag@from to track relationships between objects)
-alias[effect:remove_design_flag] = value_set[design_flag]
+alias[effect:remove_design_flag] = value[design_flag]
 ## severity = warning
 ###Sets an arbitrarily-named flag on the scoped country for a set duration
 alias[effect:set_timed_design_flag] = {
