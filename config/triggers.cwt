@@ -904,6 +904,9 @@ alias[trigger:former_purge_type] = <purge_type>
 ### Compares the former slavery type with the given one.
 alias[trigger:former_slavery_type] = <slavery_type>
 
+### Compares the former colonization control type with the given one.
+alias[trigger:former_colonization_control_type] = <colonization_control>
+
 ### Checks if the country has a specific percentage (0.00-1.00) of the galaxy within its borders
 alias[trigger:galaxy_percentage] == value_field[0.0..1.0]
 
