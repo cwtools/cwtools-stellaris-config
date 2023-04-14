@@ -1489,9 +1489,9 @@ alias[trigger:resource_stockpile_compare] = {
 	resource = <resource>
 	value = float #no variables here atm
 	## cardinality = 0..1
-	mult = value[variable]
+	mult = value_field
 	## cardinality = 0..1
-	multiplier = value[variable]
+	multiplier = value_field
 }
 
 ###Checks specific resource income value for the country scope (note: checks profit minus loss, not revenue)
@@ -2082,7 +2082,7 @@ alias[trigger:galactic_defense_force_exists] = bool
 
 ###Checks a variable for the scope if a certain amount of arithmetic is done to it (note: the variable's value is not changed by this trigger)
 alias[trigger:check_variable_arithmetic] = {
-	which = value_field
+	which = value[variable]
 	## cardinality = 0..inf
 	enum[maths] = value_field
 	###Specify >/< on the value or variable fields
