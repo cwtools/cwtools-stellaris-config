@@ -1206,6 +1206,9 @@ alias[effect:create_species] = {
 	###determines if the species can be modified
 	can_be_modified = bool
 	## cardinality = 0..1
+	###determines if the species can be modified
+	can_be_modified = scope_group[target_species]
+	## cardinality = 0..1
 	###speed at which the pops from that species grow automatically
 	pops_auto_growth = float[0.0..1.0]
 	## cardinality = 0..1
@@ -1218,12 +1221,6 @@ alias[effect:create_species] = {
 		type = scalar
 		value = float
 	}
-	## cardinality = 0..1
-	###Limits species to this gender
-	gender = enum[genders_not_set]
-	## cardinality = 0..1
-	###Limits species to this gender
-	gender = scope[species]
 	## cardinality = 0..1
 	###(default: no)
 	clear_parent_species_link = bool
