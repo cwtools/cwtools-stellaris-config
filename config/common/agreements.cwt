@@ -141,6 +141,12 @@ agreement_term_value = {
 		}
 	}
 	## cardinality = 0..1
+	subject_resources = {
+		category = <economic_category>
+		## cardinality = 0..inf
+		alias_name[economic_template] = alias_match_left[economic_template]
+	}
+	## cardinality = 0..1
 	overlord_resources = {
 		category = <economic_category>
 		## cardinality = 0..inf
