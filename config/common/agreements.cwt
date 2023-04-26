@@ -131,14 +131,14 @@ agreement_term_value = {
 		subsidy_multiplier = float
 		## cardinality = 0..1
 		subsidy_monthly_multiplier = float
-	}
-	## cardinality = 0..1
-	resource_min = {
-		alias_name[modifier_rule] = alias_match_left[modifier_rule]
-	}
-	## cardinality = 0..1
-	resource_max = {
-		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		## cardinality = 0..1
+		resource_min = {
+			alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		}
+		## cardinality = 0..1
+		resource_max = {
+			alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		}
 	}
 	## cardinality = 0..1
 	overlord_resources = {
@@ -300,6 +300,7 @@ agreement_preset = {
 }
 
 agreement_resource = {
+	## replace_scope = { this = agreement root = agreement }
 	## cardinality = 1..1
 	resources = {
 		category = <economic_category>
