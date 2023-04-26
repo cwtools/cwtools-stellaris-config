@@ -3271,7 +3271,7 @@ alias[effect:restore_country_backup_data] = bool
 alias[effect:activate_crisis_progression] = yes
 
 ##Sets the room background of the empire. Provide an empty string to remove the override.
-alias[effect:room_name_override] = <asset_selector.room>
+alias[effect:room_name_override] = icon[gfx/portraits/city_sets]
 alias[effect:room_name_override] = ""
 
 ###Sets the AI personality of a country to a new one
