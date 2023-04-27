@@ -904,6 +904,9 @@ alias[trigger:former_purge_type] = <purge_type>
 ### Compares the former slavery type with the given one.
 alias[trigger:former_slavery_type] = <slavery_type>
 
+### Compares the former colonization control type with the given one.
+alias[trigger:former_colonization_control_type] = <colonization_control>
+
 ### Checks if the country has a specific percentage (0.00-1.00) of the galaxy within its borders
 alias[trigger:galaxy_percentage] == value_field[0.0..1.0]
 
@@ -1486,9 +1489,9 @@ alias[trigger:resource_stockpile_compare] = {
 	resource = <resource>
 	value = float #no variables here atm
 	## cardinality = 0..1
-	mult = value[variable]
+	mult = value_field
 	## cardinality = 0..1
-	multiplier = value[variable]
+	multiplier = value_field
 }
 
 ###Checks specific resource income value for the country scope (note: checks profit minus loss, not revenue)

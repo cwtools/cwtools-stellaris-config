@@ -4,11 +4,13 @@ types = {
 		path = "game/common/situations"
 		localisation = {
 			## required
-			name = "$"
+			Name = "$"
 			## required
-			type_name = "$_type"
-			## optional
-			description = "$_desc"
+			"Type Name" = "$_type"
+			## required
+			Description = "$_desc"
+			## required
+			"Monthly Change Tooltip" = "$_monthly_change_tooltip"
 		}
 	}
 }
