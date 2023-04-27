@@ -2082,7 +2082,7 @@ alias[trigger:galactic_defense_force_exists] = bool
 
 ###Checks a variable for the scope if a certain amount of arithmetic is done to it (note: the variable's value is not changed by this trigger)
 alias[trigger:check_variable_arithmetic] = {
-	which = value[variable]
+	which = value_field
 	## cardinality = 0..inf
 	enum[maths] = value_field
 	###Specify >/< on the value or variable fields
