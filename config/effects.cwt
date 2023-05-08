@@ -777,13 +777,13 @@ alias[effect:set_variable] = {
 #presumably need to check the variable exists first for these, somehow
 ###Increments a previously-set variable by a specific amount
 alias[effect:change_variable] = {
-	which = value[variable]
+	which = value_set[variable] #do not change to `value[variable]`, it does not need to be set for this
 	value = value_field
 }
 
 ###Decrements a previously-set variable by a specific amount
 alias[effect:subtract_variable] = {
-	which = value[variable]
+	which = value_set[variable]
 	value = value_field
 }
 
