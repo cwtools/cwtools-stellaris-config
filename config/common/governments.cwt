@@ -64,6 +64,21 @@ types = {
 			civic = <civic_or_origin.civic>
 		}
 	}
+	type[council_agenda] = {
+		path = "game/common/council_agendas"
+		localisation = {
+			## required
+			Name = "council_agenda_$"
+			## required
+			Description = "council_agenda_$_desc"
+			## required
+			"Alternate Description (Hive)" = "council_agenda_$_desc_hive"
+			## required
+			"Alternate Description (Machine)" = "council_agenda_$_desc_machine"
+			## optional
+			Effect = "council_agenda_$_effect"
+		}
+	}
 }
 
 authority = {
@@ -382,6 +397,34 @@ councilor = {
 	## cardinality = 0..1
 	### Custom tooltip text shown for the requirements of the council position.
 	conditional_tooltip = localisation
+}
+
+## replace_scope = { this = country root = country }
+council_agenda = {
+	agenda_cost = int[0..inf]
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	allow = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	###Modifiers applied while the agenda is active (being prepared); usually similar but smaller modifiers compared to the finish_modifier
+	modifiers = {
+		{
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+	}
+	###Static modifier applied to the country upon finishing (launching) the agenda
+	finish_modifier = <static_modifier>
+	## cardinality = 0..1
+	###Effects executed once the agenda is finished (launched); displayed in the agenda tooltip
+	effect = {
+		unlock_council_slots = 1
+	}
+	## cardinality = 0..1
+	ai_weight = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
 }
 
 #aliases - used in species_classes and perhaps other places.
