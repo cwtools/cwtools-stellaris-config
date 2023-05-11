@@ -1494,12 +1494,12 @@ alias[effect:create_leader] = {
 	event_leader = bool
 	## cardinality = 0..1
 	sub_type = enum[trait_ai_classes]
-
 	## cardinality = 0..1
 	###Default = no
 	hide_age = bool
 	## cardinality = 0..1
 	background_ethic = <ethos>
+	## cardinality = 0..1
 	background_ethic = random
 	## cardinality = 0..1
 	###Default = no
@@ -1517,16 +1517,17 @@ alias[effect:create_leader] = {
 	## cardinality = 0..1
 	###Default = yes
 	can_see_in_list = bool
-
 	## cardinality = 0..1
 	traits = {
 		## cardinality = 0..5
 		add_trait = <trait.leader_trait>
+		## cardinality = 0..5
 		add_trait = random_trait
 		## cardinality = 0..5
 		trait = <trait.leader_trait>
-		trait = random_trait
 		## cardinality = 0..5
+		trait = random_trait
+		## cardinality = 0..inf
 		int = <trait.leader_trait>
 	}
 	## cardinality = 0..1
@@ -1569,11 +1570,12 @@ alias[effect:clone_leader] = {
 	#Not sure what other types there are
 	## cardinality = 0..1
 	sub_type = survey
-		## cardinality = 0..1
+	## cardinality = 0..1
 	###Default = no
 	hide_age = bool
 	## cardinality = 0..1
 	background_ethic = <ethos>
+	## cardinality = 0..1
 	background_ethic = random
 	## cardinality = 0..1
 	###Default = no
@@ -1595,10 +1597,13 @@ alias[effect:clone_leader] = {
 	traits = {
 		## cardinality = 0..5
 		add_trait = <trait.leader_trait>
+		## cardinality = 0..5
 		add_trait = random_trait
 		## cardinality = 0..5
 		trait = <trait.leader_trait>
+		## cardinality = 0..5
 		trait = random_trait
+		## cardinality = 0..inf
 		int = <trait.leader_trait>
 	}
 	## cardinality = 0..1
@@ -2284,6 +2289,7 @@ alias[effect:create_saved_leader] = {
 	hide_age = bool
 	## cardinality = 0..1
 	background_ethic = <ethos>
+	## cardinality = 0..1
 	background_ethic = random
 	## cardinality = 0..1
 	###Default = no
@@ -2305,10 +2311,13 @@ alias[effect:create_saved_leader] = {
 	traits = {
 		## cardinality = 0..5
 		add_trait = <trait.leader_trait>
+		## cardinality = 0..5
 		add_trait = random_trait
 		## cardinality = 0..5
 		trait = <trait.leader_trait>
+		## cardinality = 0..5
 		trait = random_trait
+		## cardinality = 0..inf
 		int = <trait.leader_trait>
 	}
 	## push_scope = leader
@@ -2756,7 +2765,9 @@ alias[effect:spawn_system] = {
 	min_jumps = int[0..1000]
 	## cardinality = 0..1
 	max_jumps = int[0..1000]
+	## cardinality = 0..1
 	initializer = <solar_system_initializer>
+	## cardinality = 0..1
 	initializer = random
 	## cardinality = 0..1
 	hyperlane = bool
@@ -3776,13 +3787,16 @@ alias[effect:start_terraform_process] = <planet_class_random_list>
 alias[effect:start_terraform_process] = {
 	## cardinality = 0..1
 	class = <planet_class>
+	## cardinality = 0..1
 	class = <planet_class_random_list>
 	## cardinality = 0..1
 	inherit_entity = bool
 }
 
-###Adds a specific trait to the scoped leader or a random common/negative trait 
-alias[effect:add_trait_no_notify] = <trait/random_common/random_negative>. Does not give a notification.
+###Adds a specific trait to the scoped leader or a random common/negative trait Does not give a notification.
+alias[effect:add_trait_no_notify] = <trait.leader_trait>
+alias[effect:add_trait_no_notify] = random_common
+alias[effect:add_trait_no_notify] = random_negative
 
 ###Removes all negative traits from the scoped leader
 alias[effect:remove_all_negative_traits] = yes
