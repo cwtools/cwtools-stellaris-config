@@ -365,10 +365,14 @@ councilor = {
 	## cardinality = 0..1
 	### Civic that is required for this council position. Also used by UI. Default = none.
 	civic = none
+	## cardinality = 0..1
+	### Civic that is required for this council position. Also used by UI. Default = none.
 	civic = <civic_or_origin.civic>
 	## cardinality = 0..1
 	### Which leader classes can have this council position. Currently only used for the Recruit New Leader buttons. (Default = none)
 	leader_class = none
+	## cardinality = 0..1
+	### Which leader classes can have this council position. Currently only used for the Recruit New Leader buttons. (Default = none)
 	leader_class = {
 		## cardinality = 1..5
 		enum[leader_classes]
@@ -419,7 +423,7 @@ council_agenda = {
 	## cardinality = 0..1
 	###Effects executed once the agenda is finished (launched); displayed in the agenda tooltip
 	effect = {
-		unlock_council_slots = 1
+		alias_name[effect] = alias_match_left[effect]
 	}
 	## cardinality = 0..1
 	ai_weight = {
