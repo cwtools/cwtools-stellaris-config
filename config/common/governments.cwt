@@ -112,12 +112,11 @@ authority = {
 	max_election_candidates = int
 	## cardinality = 0..1
 	can_reform = bool
-	### is tied to the agena files if = yes
+	### is tied to the agenda files if = yes
+	### (note: this property has not been removed from existing authorities, although agendas have been removed as objects)
 	## cardinality = 0..1
 	has_agendas = bool
-	### is tied to the mandate files if = yes
-	## cardinality = 0..1
-	uses_mandates = bool
+	ruler_council_position = <councilor>
 	## cardinality = 0..1
 	has_factions = bool
 	## cardinality = 0..1
@@ -165,13 +164,14 @@ government = {
 	## cardinality = 0..1
 	heir_title_female = localisation
 	## cardinality = 0..1
+	### (Default = no)
 	use_regnal_names = bool
 	## cardinality = 0..1
+	### (Default = no)
 	dynastic_last_names = bool
 	## cardinality = 0..1
+	### if set to yes, empires changing to or from this government will be renamed even if authority type does not change (Default = no)
 	should_force_rename = bool
-	## cardinality = 0..1
-	leader_class = enum[leader_classes]
 }
 
 civic_or_origin = {
