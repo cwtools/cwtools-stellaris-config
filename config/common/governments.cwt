@@ -185,7 +185,11 @@ civic_or_origin = {
 	ai_playable = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-
+	## cardinality = 0..1
+	leader_background_job_weight = {
+		## cardinality = 1..inf
+		<job> = int
+	}
 	## cardinality = 0..1
 	### requirements list, supports country_type, ethics, authority and civics. See ../readme_requirements.txt
 	possible = {
