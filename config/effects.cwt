@@ -1,7 +1,6 @@
 #scripted effects
 alias[effect:<scripted_effect>] = yes
 ###The scripted effect will draw the value of the right clause via $left_clause$.
-#Todo: Make sure this works
 alias[effect:<scripted_effect>] = {
 	## cardinality = 1..inf
 	enum[scripted_effect_params] = scalar
@@ -1337,7 +1336,6 @@ alias[effect:create_country] = {
 	## cardinality = 0..1
 	flag = {
 		#TODO - this is connected to game/flags.
-		#I already created an entry for flag colors etc, you should work on connecting these.
 		## cardinality = 0..1
 		icon = {
 			category = scalar			#should be some sort of key
@@ -1410,7 +1408,6 @@ alias[effect:create_rebels] = {
 	## cardinality = 0..1
 	flag = {
 		#TODO - this is connected to game/flags.
-		#I already created an entry for flag colors etc, you should work on connecting these.
 		## cardinality = 0..1
 		icon = {
 			category = scalar			#should be some sort of key
@@ -1525,15 +1522,12 @@ alias[effect:create_leader] = {
 	traits = {
 		## cardinality = 0..5
 		add_trait = <trait.leader_trait>
-		## cardinality = 0..5
 		add_trait = random_trait
 		## cardinality = 0..5
 		trait = <trait.leader_trait>
-		## cardinality = 0..5
 		trait = random_trait
-
-
-		# TODO: new trait syntax w/numbers
+		## cardinality = 0..5
+		int = <trait.leader_trait>
 	}
 	## cardinality = 0..1
 	## push_scope = leader
@@ -1601,14 +1595,11 @@ alias[effect:clone_leader] = {
 	traits = {
 		## cardinality = 0..5
 		add_trait = <trait.leader_trait>
-		## cardinality = 0..5
 		add_trait = random_trait
 		## cardinality = 0..5
 		trait = <trait.leader_trait>
-		## cardinality = 0..5
 		trait = random_trait
-
-		# TODO: new syntax
+		int = <trait.leader_trait>
 	}
 	## cardinality = 0..1
 	## push_scope = leader
@@ -2172,7 +2163,7 @@ alias[effect:create_message] = {
 		value = <trait>
 	}
 	## cardinality = 0..inf
-	### supply a sprite to use to the border for the toast's icon (should be 32x32 pixels)
+	### supply a sprite to use to the border of a toast notification - usually 319x100
 	variable = {
 		key = border
 		value = <sprite>
@@ -2318,10 +2309,7 @@ alias[effect:create_saved_leader] = {
 		## cardinality = 0..5
 		trait = <trait.leader_trait>
 		trait = random_trait
-
 		int = <trait.leader_trait>
-
-		# TODO: some new syntax with num = { }
 	}
 	## push_scope = leader
 	## cardinality = 0..1
@@ -2519,7 +2507,6 @@ alias[effect:rename_species] = {
 ### Restores the hull points of the scoped ship by a relative amount
 alias[effect:repair_percentage] = value_field[0.0..1.0]
 
-# TODO
 ### Restores all hull points to the scoped ship
 alias[effect:repair_ship] = yes
 ### Resets years of peace for a country.
@@ -2555,7 +2542,7 @@ alias[effect:set_city_graphical_culture] = <graphical_culture>
 ### Changes the country type of the scoped country
 alias[effect:set_country_type] = <country_type>
 ### Sets the crisis ambient loop to the current effect
-alias[effect:set_crisis_sound] = scalar #TODO sound
+alias[effect:set_crisis_sound] = <sound_effect>
 ### Sets a custom spatial object as custom country capital location.
 alias[effect:set_custom_capital_location] = scope_group[spatial_object]
 ### Sets the scoped ship to become disabled at a certain hull point percentage
@@ -2581,7 +2568,7 @@ alias[effect:set_faction_hostility] = {
 }
 
 ### Sets a country to lead a federation
-alias[effect:set_federation_leader] = scalar #TODO unknown unsage
+alias[effect:set_federation_leader] = scope_group[target_country]
 ### Sets the bombardment stance of the scoped fleet
 alias[effect:set_fleet_bombardment_stance] = <bombardment_stance>
 ### Sets a custom fleet formation on a fleet. set_fleet_formation = { position = { x = 1 y = 1 } position = { x = 2 y = 1 } }
