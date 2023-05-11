@@ -1,4 +1,4 @@
-[13:31:50][modifier.cpp:1415]: 
+[08:15:25][modifier.cpp:1415]: 
  == MODIFIER DOCUMENTATION ==
 Note on Modifier Categories:
 -- These are used internally as a tag to suggest where they are intended to be used, but exact behavior depends upon individual implementation.
@@ -2753,27 +2753,26 @@ Printing Modifier Definitions:
 - planet_metallurgists_menace_upkeep_mult, Category: Pops, AI Economy
 - planet_metallurgists_produces_mult, Category: Pops, AI Economy
 - planet_metallurgists_upkeep_mult, Category: Pops, AI Economy
-- planet_entertainers_time_produces_mult, Category: Economic Units, AI Economy
-- planet_entertainers_energy_produces_mult, Category: Economic Units, AI Economy
-- planet_entertainers_minerals_produces_mult, Category: Economic Units, AI Economy
-- planet_entertainers_food_produces_mult, Category: Economic Units, AI Economy
-- planet_entertainers_physics_research_produces_mult, Category: Economic Units, AI Economy
-- planet_entertainers_society_research_produces_mult, Category: Economic Units, AI Economy
-- planet_entertainers_engineering_research_produces_mult, Category: Economic Units, AI Economy
-- planet_entertainers_influence_produces_mult, Category: Economic Units, AI Economy
-- planet_entertainers_unity_produces_mult, Category: Economic Units, AI Economy
-- planet_entertainers_consumer_goods_produces_mult, Category: Economic Units, AI Economy
-- planet_entertainers_alloys_produces_mult, Category: Economic Units, AI Economy
-- planet_entertainers_volatile_motes_produces_mult, Category: Economic Units, AI Economy
-- planet_entertainers_exotic_gases_produces_mult, Category: Economic Units, AI Economy
-- planet_entertainers_rare_crystals_produces_mult, Category: Economic Units, AI Economy
-- planet_entertainers_sr_living_metal_produces_mult, Category: Economic Units, AI Economy
-- planet_entertainers_sr_zro_produces_mult, Category: Economic Units, AI Economy
-- planet_entertainers_sr_dark_matter_produces_mult, Category: Economic Units, AI Economy
-- planet_entertainers_nanites_produces_mult, Category: Economic Units, AI Economy
-- planet_entertainers_minor_artifacts_produces_mult, Category: Economic Units, AI Economy
-- planet_entertainers_menace_produces_mult, Category: Economic Units, AI Economy
-- planet_entertainers_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_time_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_energy_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_minerals_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_food_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_physics_research_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_society_research_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_engineering_research_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_influence_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_unity_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_consumer_goods_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_alloys_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_volatile_motes_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_exotic_gases_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_rare_crystals_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_sr_living_metal_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_sr_zro_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_sr_dark_matter_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_nanites_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_minor_artifacts_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_menace_produces_add, Category: Economic Units, AI Economy
 - planet_soldiers_time_produces_add, Category: Pops, AI Economy
 - planet_soldiers_time_upkeep_add, Category: Pops, AI Economy
 - planet_soldiers_energy_produces_add, Category: Pops, AI Economy
