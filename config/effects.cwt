@@ -264,7 +264,7 @@ alias[effect:situation_event] = {
 
 ###Fires a agreement event for the scoped agreement, with optional DAYS and RANDOM delay
 alias[effect:agreement_event] = {
-	id = <event.agreements>
+	id = <event.agreement>
 	id = <event.scopeless>
 	## cardinality = 0..1
 	days = int
