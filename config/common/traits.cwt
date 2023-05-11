@@ -346,6 +346,9 @@ trait = {
 			enum[weight_or_factor] = float
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		}
+		## cardinality 0..1
+		### (Default: yes)
+		notify_on_gained = bool
 	}
 	## cardinality = 0..1
 	ai_categories = {
