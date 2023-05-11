@@ -484,8 +484,6 @@ alias[trigger:is_designable] = bool
 
 ###Checks if the leader is of a specific class
 alias[trigger:leader_class] = enum[leader_classes]
-###Checks the rulers previous leader class
-alias[trigger:pre_ruler_leader_class] = enum[leader_classes_no_ruler]
 
 ###Checks if the observation post has a specific mission
 alias[trigger:has_mission] = <observation_station_mission>

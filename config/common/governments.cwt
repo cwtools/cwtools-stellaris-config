@@ -171,13 +171,7 @@ government = {
 	## cardinality = 0..1
 	should_force_rename = bool
 	## cardinality = 0..1
-	leader_class = enum[leader_classes_no_ruler]
-
-	## cardinality = 0..1
-	## replace_scope = { this = leader root = leader }
-	election_candidates = {
-		alias_name[modifier_rule] = alias_match_left[modifier_rule]
-	}
+	leader_class = enum[leader_classes]
 }
 
 civic_or_origin = {
@@ -202,7 +196,6 @@ civic_or_origin = {
 
 		alias_name[government_trigger] = alias_match_left[government_trigger]
 	}
-
 	## cardinality = 0..1
 	### requirements list, supports country_type, ethics, authority and civics. See ../readme_requirements.txt
 	potential = {
@@ -213,7 +206,6 @@ civic_or_origin = {
 
 		alias_name[government_trigger] = alias_match_left[government_trigger]
 	}
-
 	## cardinality = 0..1
 	icon = filepath
 	## cardinality = 0..1
@@ -227,7 +219,6 @@ civic_or_origin = {
 	random_weight = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
-
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
 	### modifier added to the country if the civic is selected and valid
@@ -235,7 +226,6 @@ civic_or_origin = {
 		## cardinality = 0..1
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-
 	## cardinality = 0..1
 	starting_colony = <planet_class>
 	## cardinality = 0..1
@@ -254,7 +244,6 @@ civic_or_origin = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
 	}
-	
 	subtype[origin] = {
 		is_origin = yes
 		picture = <sprite>
@@ -280,7 +269,6 @@ civic_or_origin = {
 		## cardinality = 0..1
 		###Such a descriptive tag, this.
 		non_colonizable_planet_class_neighbor = yes
-
 		## cardinality = 0..1
 		### default: none; if present, will enable secondary species customization in empire designer and will create secondary species & pops at galaxy generation time (see empire_init_create_capital_secondary_pops)
 		has_secondary_species = {
@@ -291,38 +279,31 @@ civic_or_origin = {
 				trait = <trait>
 			}
 		}
-
 		## cardinality = 0..1
 		habitability_preference = <planet_class>
 		## cardinality = 0..1
 		preferred_planet_class_neighbor = no
-
 	}
 	subtype[civic] = {
 		## cardinality = 0..1
 		playable = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
-		
 		## cardinality = 0..1
 		###default: yes
 		pickable_at_start = bool
-
 		## cardinality = 0..1
 		###default: yes, set to no to prevent adding or removing this after creation of the empire
 		modification = bool
-
 		## cardinality = 0..1
 		###default: no
 		can_build_ruler_ship = bool
-		
 		## cardinality = 0..1
 		### default: empty; trait set to enforce on the primary species
 		traits = {
 			## cardinality = 0..inf
 			trait = <trait.species_trait>
 		}
-
 		## cardinality = 0..1
 		### default: none; if present, will enable secondary species customization in empire designer and will create secondary species & pops at galaxy generation time (see empire_init_create_capital_secondary_pops)
 		has_secondary_species = {
@@ -333,11 +314,10 @@ civic_or_origin = {
 				trait = <trait>
 			}
 		}
-
 		## cardinality = 0..1
 		## replace_scope = { this = country root = country }
 		### Scriptable weight for AI picking civics in-game (when unlocking a new slot)
-		### Note: If omitted, a default weight of 1 is used. Not needed when "modification = no" 
+		### Note: If omitted, a default weight of 1 is used. Not needed when "modification = no"
 		ai_weight = {
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		}
