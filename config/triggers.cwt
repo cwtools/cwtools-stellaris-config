@@ -620,8 +620,6 @@ alias[trigger:has_trait] = <trait>
 
 ###Checks if the pop has a specific trait
 alias[trigger:pop_has_trait] = <trait.species_trait>
-###Checks if a leader has a certain leader trait in their ruler traits, even if they are not currently ruler
-alias[trigger:has_ruler_trait] = <trait.leader_trait>
 
 ###Checks if a species/pop/leader has a particular citizenship type in their country
 alias[trigger:has_citizenship_type] = {
