@@ -46,6 +46,24 @@ types = {
 			Description = "$_desc"
 		}
 	}
+	type[councilor] = {
+		path = "game/common/governments/councilors"
+		localisation = {
+			## required
+			Title = "$"
+			## required
+			"Title (Female)" = "$_female"
+			## required
+			Description = "$_desc"
+		}
+		subtype[unbound] = {
+			## cardinality = 0..1
+			civic = none
+		}
+		subtype[civic] = {
+			civic = <civic_or_origin.civic>
+		}
+	}
 }
 
 authority = {
@@ -326,6 +344,44 @@ civic_or_origin = {
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		}
 	}
+}
+
+councilor = {
+	## cardinality = 0..1
+	### Civic that is required for this council position. Also used by UI. Default = none.
+	civic = none
+	civic = <civic_or_origin.civic>
+	## cardinality = 0..1
+	### Which leader classes can have this council position. Currently only used for the Recruit New Leader buttons. (Default = none)
+	leader_class = none
+	leader_class = {
+		## cardinality = 1..5
+		enum[leader_classes]
+	}
+	## cardinality = 0..1
+	## replace_scope = { this = country root = country }
+	### Determines whether a councilor position is available for an empire
+	possible = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	## replace_scope = { this = leader root = leader }
+	### Can a leader have this council position. Used to filter leaders.
+	is_leader_possible = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	## replace_scope = { this = country root = country }
+	### Country modifier, that is multiplied by assigned Leader's level.
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	## cardinality = 0..1
+	### Custom tooltip text shown for the modifier of the council position.
+	custom_tooltip = localisation
+	## cardinality = 0..1
+	### Custom tooltip text shown for the requirements of the council position.
+	conditional_tooltip = localisation
 }
 
 #aliases - used in species_classes and perhaps other places.
