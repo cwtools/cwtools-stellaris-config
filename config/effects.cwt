@@ -2084,14 +2084,47 @@ alias[effect:create_message] = {
 	localization = localisation
 	days = int #no variables here atm
 	target = scope[any]
-	## cardinality = 0..100
+	# note: the variable sections were split apart to help enforce which properties go with which other ones
+	## cardinality = 0..inf
+	### insert the name (equivalent to[GetName]) of the target scope into the message's localisation
 	variable = {
 		type = name
-		type = variable
+		### the key to replace in the message localisation (not a localisation key)
+		localization = scalar
 		## cardinality = 0..1
-		varname = value[variable]
-		localization = scalar		#not localisation, but rather something that can be used in localisation
+		### default: this
 		scope = scope[any]
+	}
+	## cardinality = 0..inf
+	### insert the value of a variable from the target scope into the message's localisation
+	variable = {
+		type = variable
+		varname = value[variable]
+		### the key to replace in the message localisation (not a localisation key)
+		localization = scalar
+		## cardinality = 0..1
+		### default: this
+		scope = scope[any]
+	}
+	## cardinality = 0..inf
+	### retrieve a localisation key and format it into the message's localisation
+	variable = {
+		type = key
+		value = localisation
+		### the key to replace in the message localisation (not a localisation key)
+		localization = scalar
+	}
+	## cardinality = 0..inf
+	### supply a trait to display as the icon in the toast
+	variable = {
+		key = TRAIT_KEY
+		value = <trait>
+	}
+	## cardinality = 0..inf
+	### supply a sprite to use to the border for the toast's icon (should be 32x32 pixels)
+	variable = {
+		key = border
+		value = <sprite>
 	}
 }
 
