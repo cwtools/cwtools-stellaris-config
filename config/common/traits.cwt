@@ -349,6 +349,12 @@ trait = {
 		## cardinality 0..1
 		### (Default: yes)
 		notify_on_gained = bool
+		## cardinality 0..1
+		## replace_scope = { this = leader root = leader }
+		### Effects in this block fire when trait is acquired.
+		on_gained_effect = {
+			alias_name[effect] = alias_match_left[effect]
+		}
 	}
 	## cardinality = 0..1
 	ai_categories = {
