@@ -31,6 +31,24 @@ trait = {
 	### Default = no
 	immortal_leaders = bool
 
+	# Layered icon format introduced in Paragon.
+	icon = {
+		## cardinality = 1..inf
+		### There are no limits to the amount of layers that can be used.
+		layer = {
+			### Texture name defined in "interface" folder. Default trait icons are in "interface\icons\traits" folder.
+			icon = <sprite>
+			### Layer color tint. Color name defined in "common\named_colors" folder.
+			color = <named_color>
+			## cardinality = 0..1
+			## replace_scope = { this = leader root = leader }
+			### Scripted trigger. If false, hide layer.
+			visible = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+		}
+	}
+
 	subtype[species_trait] = {
 		## cardinality = 0..1
 		cost = int
@@ -199,22 +217,6 @@ trait = {
 		### This trait costs/gives this amount of points when selected in ruler creation.
 		cost = {
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
-		}
-		# Layered icon format introduced in Paragon.
-		icon = {
-			## cardinality = 1..inf
-			### There are no limits to the amount of layers that can be used.
-			layer = {
-				### Texture name defined in "interface" folder. Default trait icons are in "interface\icons\traits" folder.
-				icon = <sprite>
-				### Layer color tint. Color name defined in "common\named_colors" folder.
-				color = <named_color>
-				## replace_scope = { this = leader root = leader }
-				### Scripted trigger. If false, hide layer.
-				visible = {
-					alias_name[trigger] = alias_match_left[trigger]
-				}
-			}
 		}
 		## cardinality = 0..1
 		### Is this trait only active if the leader is on the Council? (Default: no)
