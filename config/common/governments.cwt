@@ -421,6 +421,7 @@ council_agenda = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
 	}
+	## cardinality = 0..1
 	###Static modifier applied to the country upon finishing (launching) the agenda
 	finish_modifier = <static_modifier>
 	## cardinality = 0..1
