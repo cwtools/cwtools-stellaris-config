@@ -2589,6 +2589,9 @@ alias[trigger:has_pre_ftl_age] = <pre_ftl_age>
 
 # 3.8 "Gemini"
 
+###Checks the country's number of civics
+alias[trigger:civics_count] == int
+
 ###Checks the scope leader's years of service
 alias[trigger:leader_years_of_service == int
 
