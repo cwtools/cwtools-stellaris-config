@@ -304,7 +304,7 @@ sector_focus = {
 	hidden = yes
 	## cardinality = 0..1
 	clear_blockers = bool
-	
+
 	## cardinality = 0..1
 	ai_weight = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
@@ -463,7 +463,7 @@ economic_plan = {
 			## cardinality = 1..inf
 			<resource> = int
 		}
-	
+
 		## cardinality = 0..1
 		focus = {
 			## cardinality = 1..inf
@@ -530,16 +530,56 @@ diplomacy_economy = {
 message_type = {
 	icon =	<sprite>
 	icon_frame = int
+	### Message key, used from code.
 	key = scalar
 	## cardinality = 0..1
+	### Localization key to use for title, if empty it will use "MESSAGE_<key>_TITLE" instead.
 	name = localisation
 	## cardinality = 0..1
 	sound = <sound_effect>
 	## cardinality = 0..1
+	### Deprecated and does nothing.
 	sound_is_advisor = bool
 	ping = <pingmap>
 	## cardinality = 0..1
-	auto_opens = scalar
+	### Specifies if the message should be auto opened or not (default: player)
+	### Some messages as events ignore this since they have their own option.
+	auto_opens = enum[auto_open_type]
+	## cardinality = 0..1
+	### Should the message displayed as a toast? (default: no)
+	default_toast = bool
+	## cardinality = 0..1
+	# Should the message type be hidden in the message settings UI? (default: no)
+	hidden_in_message_settings = bool
+	## cardinality = 0..1
+	### Localization key to use in message settings, if empty it will use name instead.
+	message_setting_key = localisation
+	## cardinality = 0..1
+	### Filter category in message settings (default: other)
+	category = enum[message_setting_category]
+	## cardinality = 0..1
+	### Is the message disabled in message settings by default? (default: no)
+	default_disabled = bool
+}
+
+enums = {
+	enum[auto_open_type] = {
+		none
+		player
+		others
+		all
+	}
+	enum[message_setting_category] = {
+		diplomacy
+		military
+		economy
+		government
+		science
+		fleets
+		planets
+		leaders
+		other
+	}
 }
 
 scripted_modifier = {
