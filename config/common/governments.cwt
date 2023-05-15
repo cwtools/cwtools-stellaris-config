@@ -401,6 +401,9 @@ councilor = {
 	## cardinality = 0..1
 	### Custom tooltip text shown for the requirements of the council position.
 	conditional_tooltip = localisation
+	## cardinality = 0..1
+	###Default: uses the graphic for the corresponding civic
+	icon = <sprite>
 }
 
 ## replace_scope = { this = country root = country }
