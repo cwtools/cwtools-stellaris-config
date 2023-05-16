@@ -68,12 +68,12 @@ types = {
 		path = "game/common/council_agendas"
 		localisation = {
 			## required
-			Name = "council_agenda_$"
+			Name = "council_agenda_$_name"
 			## required
 			Description = "council_agenda_$_desc"
-			## required
+			## optional
 			"Alternate Description (Hive)" = "council_agenda_$_desc_hive"
-			## required
+			## optional
 			"Alternate Description (Machine)" = "council_agenda_$_desc_machine"
 			## optional
 			Effect = "council_agenda_$_effect"
