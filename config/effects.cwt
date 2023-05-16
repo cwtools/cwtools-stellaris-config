@@ -660,6 +660,8 @@ alias[effect:kill_leader] = {
 	##cardinality = 0..1
 	show_notification = bool
 	##cardinality = 0..1
+	ruler = bool
+	##cardinality = 0..1
 	heir = bool
 	##cardinality = 0..1
 	###default: no; if yes, fires on_leader_fired instead of on_leader_death
