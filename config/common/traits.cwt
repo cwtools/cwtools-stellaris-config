@@ -32,6 +32,7 @@ trait = {
 	immortal_leaders = bool
 
 	## cardinality = 0..1
+	### If omitted, the default icon is gfx/interface/icons/traits/<trait_name>.dds
 	icon = filepath
 	## cardinality = 0..1
 	### Layered icon format introduced in Paragon.
@@ -39,7 +40,7 @@ trait = {
 		## cardinality = 1..inf
 		### There are no limits to the amount of layers that can be used.
 		layer = {
-			### Texture name defined in "interface" folder. Default trait icons are in "interface\icons\traits" folder.
+			### Texture name defined in "interface" folder. Default trait icons are in "interface/icons/traits" folder.
 			icon = <sprite>
 			### Layer color tint. Color name defined in "common\named_colors" folder.
 			color = <named_color>
