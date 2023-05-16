@@ -31,7 +31,10 @@ trait = {
 	### Default = no
 	immortal_leaders = bool
 
-	# Layered icon format introduced in Paragon.
+	## cardinality = 0..1
+	icon = filepath
+	## cardinality = 0..1
+	### Layered icon format introduced in Paragon.
 	icon = {
 		## cardinality = 1..inf
 		### There are no limits to the amount of layers that can be used.
@@ -48,21 +51,21 @@ trait = {
 			}
 		}
 	}
+	## cardinality = 0..1
+	### This trait costs/gives this amount of points when selected in species/ruler creation.
+	cost = int
+	## cardinality = 0..1
+	### This trait costs/gives this amount of points when selected in species/ruler creation.
+	cost = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
 
 	subtype[species_trait] = {
-		## cardinality = 0..1
-		cost = int
-		## cardinality = 0..1
-		cost = {
-			alias_name[modifier_rule] = alias_match_left[modifier_rule]
-		}
 		## cardinality = 0..1
 		## replace_scope = { this = species root = species from = planet }
 		assembly_score = {
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		}
-		## cardinality = 0..1
-		icon = filepath
 		## cardinality = 0..1
 		valid_for_all_ethics = bool
 		## cardinality = 0..1
@@ -211,12 +214,6 @@ trait = {
 		forbidden_origins = {
 			## cardinality = 1..inf
 			<civic_or_origin.origin>
-		}
-		### This trait costs/gives this amount of points when selected in ruler creation.
-		cost = int
-		### This trait costs/gives this amount of points when selected in ruler creation.
-		cost = {
-			alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		}
 		## cardinality = 0..1
 		### Is this trait only active if the leader is on the Council? (Default: no)
