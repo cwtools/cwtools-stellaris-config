@@ -836,7 +836,7 @@ alias[effect:add_monthly_resource_mult] = {
 	max = int
 }
 
-###Adds a specific trait to the scoped leader or a random common/negative trait 
+###Adds a specific trait to the scoped leader or a random common/negative trait
 alias[effect:add_trait] = <trait.leader_trait>
 alias[effect:add_trait] = random_common
 alias[effect:add_trait] = random_negative
@@ -1862,7 +1862,6 @@ alias[effect:add_research_option] = <technology>
 alias[effect:add_seen_bypass] = scope_group[spatial_object] #megastructure or wormhole
 ### Adds a specific ship design to the scoped country
 alias[effect:add_ship_design] = scope[design]
-### Adds a specific ship design to the scoped country
 alias[effect:add_ship_design] = last_created_design
 ### Adds a sum of experience points to the scoped leader
 alias[effect:add_skill] = int_value_field[-10..20]#check the interval
@@ -2378,6 +2377,9 @@ alias[effect:create_ship] = {
 ### Creates a new ship design for use with last_created_design target
 alias[effect:create_ship_design] = {
 	design = localisation
+	## cardinality = 0..1
+	### Sets FTL drive to target country's (optional)
+	ftl = scope_group[target_country]
 }
 
 ### Trigger an assertion to stop the debugger when encountering this effect; argument is ignored
@@ -2879,6 +2881,7 @@ alias[effect:create_half_species] = {
 	species_one = scope_group[target_species]
 	species_two = scope_group[target_species]
 	## cardinality = 0..1
+	###used for triggered costs
 	country = scope_group[target_country]
 	## cardinality = 0..1
 	## push_scope = species
@@ -3605,6 +3608,7 @@ alias[effect:set_planetary_ascension_tier] = int_value_field
 alias[effect:disable_building] = <building>
 ###Ruins a single instance of a specific building on the scoped planet
 alias[effect:ruin_building] = <building>
+alias[effect:ruin_building] = random_no_capital
 ###Locks the Situation so it will not progress until unlocked ("no" unlocks it).
 alias[effect:set_situation_locked] = bool
 ###Changes the agreement term for whether the Subject can be integrated
@@ -3689,12 +3693,9 @@ alias[effect:abort_situation] = scope[situation]
 ###Starts the process of converting the subject of the scoped agreement to the given specialist type
 ###Can also be used to remove the specialization from a subject, by using 'none' as value
 alias[effect:convert_to_specialist] = <subject_specialist_type>
-###Starts the process of converting the subject of the scoped agreement to the given specialist type
-###Can also be used to remove the specialization from a subject, by using 'none' as value
 alias[effect:convert_to_specialist] = none
 ###Removes a specific ship design from the scoped country
 alias[effect:remove_ship_design] = scope[design]
-###Removes a specific ship design from the scoped country
 alias[effect:remove_ship_design] = last_created_design
 ###Removes a specific global design from the game
 alias[effect:remove_global_ship_design] = <global_ship_design>
@@ -3713,8 +3714,7 @@ alias[effect:give_fleet] = {
 	controller = scope_group[target_country]
 	days = int_value_field
 }
-###Breaks fleet lease contract
-alias[effect:break_fleet_contract] = bool
+
 ###Prolongs fleet's lease contract for a numbed of days
 alias[effect:prolong_fleet_contract] = {
 	days = int_value_field
@@ -3737,6 +3737,33 @@ alias[effect:set_immortal] = bool
 ### Used with enclave_mercenary to remove fleet contract modifiers.
 alias[effect:remove_fleet_contract_modifiers] = bool
 
+# 3.6 "Orion"
+
+###Breaks fleet lease contract
+alias[effect:end_fleet_contract] = yes
+
+###Set fleet's settings, any unspecified setting will set to default value.
+alias[effect:set_fleet_settings] = {
+	## cardinality = 0..1
+	spawn_debris = bool
+	## cardinality = 0..1
+	garrison = bool
+	## cardinality = 0..1
+	can_upgrade = bool
+	## cardinality = 0..1
+	can_disband = bool
+	## cardinality = 0..1
+	can_change_composition = bool
+	## cardinality = 0..1
+	can_change_leader = bool
+	## cardinality = 0..1
+	uses_naval_capacity = bool
+	## cardinality = 0..1
+	is_boss = bool
+	## cardinality = 0..1
+	ai_ignore_strength = bool
+}
+
 # 3.7 "Canis Minor"
 
 ###Repairs all ruined buildings on the scoped planet
@@ -3755,8 +3782,8 @@ alias[effect:add_awareness] = value_field
 alias[effect:clear_relations] = {
 	target = scope_group[target_country]
 	relations = {
-	   ## cardinality = 1..inf
-	   enum[pre_ftl_relationship_types]
+		## cardinality = 1..inf
+		enum[pre_ftl_relationship_types]
 	}
 }
 
@@ -3855,7 +3882,7 @@ alias[effect:add_council_agenda_progress] = int_value_field
 ###Unlocks council slots
 alias[effect:unlock_council_slots] = int_value_field
 
-###Set the Country's council agenda 
+###Set the Country's council agenda
 alias[effect:set_council_agenda] = <council_agenda>
 
 ###Adds the age of the scoped leader

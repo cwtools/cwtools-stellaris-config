@@ -198,7 +198,7 @@ alias[trigger:has_ethic] = <ethos>
 alias[trigger:pop_has_ethic] = <ethos>
 
 ###Checks the country's used starbase capacity in relative terms (0.00-1.00)
-alias[trigger:used_starbase_capacity_percent] == value_field
+alias[trigger:used_starbase_capacity_percent] == value_field[0..1.0]
 ###Checks the country's used starbase capacity in absolute numbers
 alias[trigger:used_starbase_capacity_integer] == int_value_field
 
@@ -856,8 +856,10 @@ alias[trigger:distance_to_empire] = {
 	who = scope_group[target_country]
 	distance = int_value_field
 	## cardinality = 0..1
+	###(default: yes)
 	use_bypasses = bool
 	## cardinality = 0..1
+	###(default: hyperlane)
 	type = enum[hyperlane_euclidean]
 }
 
@@ -1210,7 +1212,6 @@ alias[trigger:max_naval_capacity] == int_value_field
 ### Checks the country's max starbase capacity
 alias[trigger:max_starbase_capacity] == int_value_field
 
-
 ### Checks if the observation post has achieved specific progress in a mission
 alias[trigger:mission_progress] == value_field[0.0..1.0]
 
@@ -1406,7 +1407,6 @@ alias[trigger:would_join_war] = {
 
 alias[trigger:is_researching_special_project] = <special_project>
 
-
 ### Checks the number of starbase modules that are of the specified type
 alias[trigger:count_starbase_modules] =  {
 	count = int_value_field
@@ -1415,7 +1415,8 @@ alias[trigger:count_starbase_modules] =  {
 	## cardinality = 0..1
 	include_being_constructed = bool
 }
-### Checks the number of starbase modules that are of the specified type or not
+
+### Checks the number of starbase buildings that are of the specified type or not
 alias[trigger:count_starbase_buildings] =  {
 	count = int_value_field
 	## cardinality = 0..1
@@ -1429,7 +1430,6 @@ alias[trigger:count_starbase_sizes] =  {
 	count = int_value_field
 	starbase_size = <ship_size.starbase>
 }
-
 
 #2.2
 
@@ -2329,7 +2329,7 @@ alias[trigger:is_in_sensor_range_of_country] = scope_group[target_country]
 ###Checks if the scoped situation's progress is a certain value.
 alias[trigger:situation_progress] == value_field
 
-###Checks if the scoped situation's monthly progress is a certain value.
+###Checks if the scoped situation's monthly progress is a certain value. Returns the cached value from the last monthly tick.
 alias[trigger:situation_monthly_progress] == value_field
 
 ###Checks if the specified approach has been picked on the scoped situation.
@@ -2338,7 +2338,7 @@ alias[trigger:current_situation_approach] = enum[situation_approaches]
 ###Checks if the specified approach is allowed to be picked (according to potential and allow triggers) on the scoped situation.
 alias[trigger:can_set_situation_approach] = enum[situation_approaches]
 
-# ###Checks if the specified severity level is currently active in the scoped situation.
+###Checks if the specified stage is currently active in the scoped situation.
 alias[trigger:current_stage] = enum[situation_stages]
 
 ###Checks if the scoped situation is a certain type.
@@ -2377,7 +2377,7 @@ alias[trigger:num_galaxy_systems] == int_value_field
 ###Checks if the planet has an unemployed pop of a category
 alias[trigger:has_unemployed_pop_of_category] = <social_strata>
 
-#3.4
+# 3.4 "Cepheus"
 
 ###Checks if the planet's ascension tier is as specified.
 alias[trigger:check_economic_modifier_for_job] = {
@@ -2523,13 +2523,25 @@ alias[trigger:num_deposits] == int_value_field
 alias[trigger:enclave_capacity_left] == int_value_field[0..inf]
 
 ###Checks the country's free enclave number capacity in absolute numbers
-alias[trigger:additional_crisis_strength] == int_value_field[0..inf]
+alias[trigger:additional_crisis_strength] == value_field[0..inf]
 
 ###Checks if a job is of a certain pop category. Note that the result for this trigger is not dependent on where it is used - so it's for use in e.g. templated script values.
 alias[trigger:is_job_of_pop_category] = {
 	job = <job>
 	category = <social_strata>
 }
+
+# 3.6 "Orion"
+
+###Checks the number of ships of a ship size in debris
+alias[trigger:num_ships_in_debris] = {
+	## cardinality = 0..1
+	ship_size = <ship_size>
+	value = int_value_field
+}
+
+###Checks if the empire has activated as many ascension tiers as specified:
+alias[trigger:num_planetary_ascension_tiers] == int_value_field
 
 # 3.7 "Canis Minor"
 
@@ -2597,7 +2609,7 @@ alias[trigger:leader_years_of_service == int
 
 ###num_leader_traits - Checks the number of leader traits or total tiers of traits for a specific leader
 alias[trigger:num_leader_traits] = {
-	value == int_value_field
+	value = int_value_field
 	## cardinality = 0..1
 	###(Default = any)
 	is_councilor = any
@@ -2615,13 +2627,13 @@ alias[trigger:num_leader_traits] = {
 	count_tiers = bool
 }
 
-###Checks if scoped leader is the Ruler of the Empire 
+###Checks if scoped leader is the Ruler of the Empire
 alias[trigger:is_ruler] = bool
 
-###Checks if scoped leader is the Heir of the Empire 
+###Checks if scoped leader is the Heir of the Empire
 alias[trigger:is_heir] = bool
 
-###Get the level of a specific councilor 
+###Get the level of a specific councilor
 alias[trigger:get_councilor_level] = {
 	type = <councilor>
 }
@@ -2660,7 +2672,7 @@ alias[trigger:has_background_job] = yes
 ###Checks if the army is currently in the frontline of a combat
 alias[trigger:is_in_frontline] = bool
 
-###Check if a planet is the background planet of a leader 
+###Check if a planet is the background planet of a leader
 alias[trigger:is_background_planet] = scope_group[target_planet]
 
 ###Checks if scoped leader is a member of the Empire Council or the Ruler
