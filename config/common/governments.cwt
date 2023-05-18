@@ -138,9 +138,6 @@ authority = {
 	## cardinality = 0..1
 	can_have_emergency_elections = bool
 	## cardinality = 0..1
-	### influence cost!
-	emergency_election_cost = int
-	## cardinality = 0..1
 	### default = -1, which equals limitless
 	max_election_candidates = int
 	## cardinality = 0..1
