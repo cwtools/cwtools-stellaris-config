@@ -3503,7 +3503,7 @@ alias[trigger:count_available_debris] = {
 
 ## push_scope = design
 ###Iterate through all designs owned by the current country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
-random_owned_design = {
+alias[effect:random_owned_design] = {
 	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	## cardinality = 0..1
@@ -3514,7 +3514,7 @@ random_owned_design = {
 
 ## push_scope = design
 ###Iterate through all designs owned by the current country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
-ordered_owned_design = {
+alias[effect:ordered_owned_design] = {
 	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	###starting with 0
@@ -3528,7 +3528,7 @@ ordered_owned_design = {
 
 ## push_scope = design
 ###Iterate through all designs owned by the current country - executes the enclosed effects on all of them for which the limit triggers return true
-every_owned_design = {
+alias[effect:every_owned_design] = {
 	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
