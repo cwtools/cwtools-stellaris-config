@@ -801,7 +801,7 @@ alias[effect:random_system_within_border] = {
 }
 
 ## push_scope = starbase
-###Iterate through every owned primary starbase
+###Iterate through every owned primary starbase - executes the enclosed effects on all of them for which the limit triggers return true
 alias[effect:every_owned_starbase] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
@@ -821,7 +821,7 @@ alias[effect:ordered_owned_starbase] = {
 }
 
 ## push_scope = starbase
-###Iterate through every owned starbase
+###Iterate through every owned primary starbase - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
 alias[effect:random_owned_starbase] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
