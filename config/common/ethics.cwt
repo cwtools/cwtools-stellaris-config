@@ -87,4 +87,10 @@ ethos = {
 	pop_attraction = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
+
+	## cardinality = 0..1
+	leader_background_job_weight = {
+		## cardinality = 1..inf
+		<job> = int
+	}
 }

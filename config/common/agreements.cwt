@@ -249,7 +249,7 @@ agreement_preset = {
 	icon = <sprite>
 	## cardinality = 0..1
 	specialist_type = <subject_specialist_type>
-	## cardinality = 1..1
+	## cardinality = 0..1
 	term_data = {
 		## cardinality = 0..1
 		### default: yes

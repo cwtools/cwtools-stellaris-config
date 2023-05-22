@@ -109,6 +109,12 @@ types = {
 			## cardinality = 0..1
 			diplomatic = no
 		}
+		subtype[leader_recruit] = {
+			event_window_type = leader_recruit
+		}
+		subtype[leader_story] = {
+			event_window_type = leader_story
+		}
 		subtype[triggered] = {
 			is_triggered_only = yes
 		}
@@ -137,6 +143,7 @@ event = {
 		## cardinality = 0..1
 		show_sound_clear = yes
 	}
+
 	subtype[!hidden] = {
 		title = localisation
 		desc = localisation
@@ -260,7 +267,6 @@ event = {
 		## cardinality = 0..1
 		is_test_event = bool
 
-
 		## cardinality = 0..inf
 		option = {
 			## cardinality = 1..inf
@@ -312,30 +318,35 @@ event = {
 			}
 
 			subtype[diplomatic] = {
-
 				## cardinality = 0..1
 				response_text = localisation
-
 				## cardinality = 0..1
 				is_dialog_only = bool
+			}
 
+			subtype[leader_recruit] = {
 				## cardinality = 0..1
-				custom_gui = scalar #points to a gui_type, currently all are defined as aliases but this needs to be updated
+				tag = enum[leader_recruit_tag_type]
+				## cardinality = 0..1
+				response_text = localisation
+				## cardinality = 0..1
+				is_dialog_only = bool
+			}
 
+			subtype[leader_story] = {
 				## cardinality = 0..1
-				### Binds this option to the "dismiss" action
-				default_hide_option = bool
+				response_text = localisation
+				## cardinality = 0..1
+				is_dialog_only = bool
 			}
 
 			## cardinality = 0..1
+			### Binds this option to the "dismiss" action
 			default_hide_option = bool
 			## cardinality = 0..1
 			custom_gui = scalar #points to a gui_type, currently all are defined as aliases but this needs to be updated
-
 			## cardinality = 0..1
 			alias_name[effect] = alias_match_left[effect]
-
-
 		}
 	}
 
@@ -357,7 +368,6 @@ event = {
 		## cardinality = 0..0
 		show_sound = scalar
 	}
-
 
 	subtype[default] = {
 		picture = <sprite>
@@ -417,7 +427,6 @@ event = {
 	## cardinality = 0..1
 	is_advisor_event = bool
 
-
 	## cardinality = 0..1
 	auto_select = bool
 
@@ -442,49 +451,23 @@ event = {
 		## cardinality = 0..1
 		###The title that shows at the top of the diplomatic screen (above the portrait/room, not above the event text)
 		diplomatic_title = localisation
-		picture_event_data = {
-			#only one of each of these!
-			## cardinality = 0..1
-			room = scope[country]
-			## cardinality = 0..1
-			room = scope[species]
-			## cardinality = 0..1
-			room = scope[leader]
-			## cardinality = 0..1
-			room = icon[gfx/portraits/city_sets]
-			## cardinality = 0..1
-			portrait = <portrait>
-			## cardinality = 0..1
-			portrait = scope[country]
-			## cardinality = 0..1
-			portrait = scope[species]
-			## cardinality = 0..1
-			portrait = scope[leader]
-			## cardinality = 0..1
-			planet_background = scope[country]
-			## cardinality = 0..1
-			planet_background = scope[species]
-			## cardinality = 0..1
-			planet_background = scope[planet]
-			## cardinality = 0..1
-			planet_background = <planet_class>
-			## cardinality = 0..1
-			graphical_culture = <graphical_culture>
-			## cardinality = 0..1
-			graphical_culture = scope[country]
-			## cardinality = 0..1
-			graphical_culture = scope[species]
-			## cardinality = 0..1
-			city_level = scope[country]
-			## cardinality = 0..1
-			city_level = scope[species]
-			## cardinality = 0..1
-			city_level = scope[planet]
-		}
+		alias_name[picture_event_data] = alias_match_left[picture_event_data]
 		## cardinality = 0..1
 		custom_gui = scalar #same as previous, needs to be gui_type
 		## cardinality = 0..1
 		custom_gui_option = scalar #same as previous, needs to be gui_type
+	}
+
+	subtype[leader_recruit] = {
+		event_window_type = leader_recruit
+		## cardinality = 0..1
+		notification_event_icon = <sprite>
+		alias_name[picture_event_data] = alias_match_left[picture_event_data]
+	}
+
+	subtype[leader_story] = {
+		event_window_type = leader_story
+		alias_name[picture_event_data] = alias_match_left[picture_event_data]
 	}
 
 	subtype[planet] = {
@@ -520,9 +503,55 @@ event = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 
-
 	## cardinality = 0..1
 	after = {
 		alias_name[effect] = alias_match_left[effect]
+	}
+}
+
+alias[picture_event_data:picture_event_data] = {
+	# only one of each of these!
+	## cardinality = 0..1
+	room = scope[country]
+	## cardinality = 0..1
+	room = scope[species]
+	## cardinality = 0..1
+	room = scope[leader]
+	## cardinality = 0..1
+	room = icon[gfx/portraits/city_sets]
+	## cardinality = 0..1
+	portrait = <portrait>
+	## cardinality = 0..1
+	portrait = scope[country]
+	## cardinality = 0..1
+	portrait = scope[species]
+	## cardinality = 0..1
+	portrait = scope[leader]
+	## cardinality = 0..1
+	planet_background = scope[country]
+	## cardinality = 0..1
+	planet_background = scope[species]
+	## cardinality = 0..1
+	planet_background = scope[planet]
+	## cardinality = 0..1
+	planet_background = <planet_class>
+	## cardinality = 0..1
+	graphical_culture = <graphical_culture>
+	## cardinality = 0..1
+	graphical_culture = scope[country]
+	## cardinality = 0..1
+	graphical_culture = scope[species]
+	## cardinality = 0..1
+	city_level = scope[country]
+	## cardinality = 0..1
+	city_level = scope[species]
+	## cardinality = 0..1
+	city_level = scope[planet]
+}
+
+enums = {
+	enum[leader_recruit_tag_type] = {
+		hire_leader
+		dismiss_leader
 	}
 }

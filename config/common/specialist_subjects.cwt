@@ -51,14 +51,14 @@ subject_specialist_perk = {
         description = localisation
     }
     ## cardinality = 0..1
-    ## replace_scope = { this = country root = country target = country }
-    ### Invoked when the perk is activated (target is the specialist subject)
+    ## replace_scope = { this = agreement root = agreement }
+    ### Invoked when the perk is activated
     activate_effect = {
         alias_name[effect] = alias_match_left[effect]
     }
     ## cardinality = 0..1
-    ## replace_scope = { this = country root = country target = country }
-    ### Invoked when the perk is deactivated (target is the specialist subject)
+    ## replace_scope = { this = agreement root = agreement }
+    ### Invoked when the perk is deactivated
     deactivate_effect = {
         alias_name[effect] = alias_match_left[effect]
     }

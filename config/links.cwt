@@ -1,6 +1,6 @@
 links = {
 	space_owner = {
-		input_scopes = { Ship Fleet System Planet Megastructure Starbase Country archaeological_site first_contact spy_network debris }
+		input_scopes = { megastructure planet country ship fleet galactic_object army ambient_object starbase archaeological_site spy_network debris }
 		output_scope = Country
 	}
 	overlord = {
@@ -27,7 +27,7 @@ links = {
 		output_scope = Country
 	}
 	planet_owner = {
-		input_scopes = { Planet Army Megastructure Deposit archaeological_site }
+		input_scopes = { megastructure planet pop leader army starbase deposit archaeological_site }
 		output_scope = Country
 	}
 	last_created_country = {
@@ -39,8 +39,8 @@ links = {
 		output_scope = Country
 	}
 	leader = {
-		input_scopes = { Ship Planet Country PopFaction Fleet Sector Army first_contact archaeological_site spy_network espionage_operation }
-		output_scope = Leader
+		input_scopes = { planet country ship fleet leader army pop_faction federation archaeological_site first_contact spy_network espionage_operation }
+		output_scope = leader
 	}
 	last_created_leader = {
 		input_scopes = { all }
@@ -58,8 +58,8 @@ links = {
 		output_scope = System
 	}
 	planet = {
-		input_scopes = { Pop Planet System Army Megastructure Deposit archaeological_site Starbase }
-		output_scope = Planet
+		input_scopes = { megastructure planet pop leader army starbase deposit archaeological_site }
+		output_scope = planet
 	}
 	capital_scope = {
 		input_scopes = { Country Sector }
@@ -276,8 +276,12 @@ links = {
 		output_scope = spy_network
 	}
 	target = {
-		input_scopes = { espionage_operation spy_network situation agreement }
+		input_scopes = { espionage_operation spy_network situation }
 		output_scope = any
+	}
+	target = {
+		input_scopes = { agreement } # agreements always have country as the target
+		output_scope = country
 	}
 	growing_species = {
 		input_scopes = { planet }
@@ -303,16 +307,24 @@ links = {
 		input_scopes = { planet }
 		output_scope = fleet
 	}
+	army_leader = {
+		input_scopes = { planet }
+		output_scope = leader
+	}
+	creator = {
+		input_scopes = { leader }
+		output_scope = leader
+	}
 	script_value = {
 		from_data = yes
 		type = value
 		prefix = value:
 		data_source = <script_value>
-    }
+	}
 	modifier = {
 		from_data = yes
 		type = value
 		prefix = modifier:
 		data_source = alias_keys_field[modifier]
-    }
+	}
 }
