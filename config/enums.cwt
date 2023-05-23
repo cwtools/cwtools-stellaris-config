@@ -294,6 +294,7 @@ enums = {
 		trade
 		federation
 		espionage
+		species
 	}
 	enum[job_triggers] = {
 		can_fill_drone_job
