@@ -28,6 +28,7 @@ solar_system_initializer = {
 	asteroid_belt = {
 		type = <asteroid_belt_type> #this is defined in under common/asteroid_belts
 		radius = int
+		radius = { min = int max = int }
 	}
 	## cardinality = 0..inf
 	usage = enum[usage_type]
