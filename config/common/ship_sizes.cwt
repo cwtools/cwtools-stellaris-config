@@ -13,7 +13,7 @@ types = {
 		}
 		subtype[designable] = {
 			## cardinality = 0..1
-			designable = yes
+			is_designable = yes
 		}
 		localisation = {
 			## required
@@ -69,6 +69,9 @@ ship_size = {
 	build_time = int
 	## cardinality = 0..1
 	is_civilian = bool
+	## cardinality = 0..1
+	###hides the cloaking button
+	cloaking_forbidden = yes
 	## cardinality = 0..1
 	build_block_radius = int
 	## cardinality = 0..1
