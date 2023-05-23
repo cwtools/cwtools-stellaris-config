@@ -151,7 +151,7 @@ building = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
-	alias_name[triggered_planet_modifier] = alias_match_left[triggered_planet_modifier]
+	alias_name[triggered_planet_modifier_planet] = alias_match_left[triggered_planet_modifier_planet]
 	alias_name[triggered_desc] = alias_match_left[triggered_desc]
 	alias_name[triggered_country_modifier_planet] = alias_match_left[triggered_country_modifier_planet]
 

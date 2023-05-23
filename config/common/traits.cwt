@@ -149,7 +149,7 @@ trait = {
 		alias_name[triggered_planet_growth_habitability_modifier] = alias_match_left[triggered_planet_growth_habitability_modifier]
 		## cardinality = 0..inf
 		###won't show in trait tooltips, use custom_tooltip/custom_tooltip_with_modifiers
-		alias_name[triggered_leader_modifier] = alias_match_left[triggered_leader_modifier]
+		alias_name[triggered_leader_modifier_pop] = alias_match_left[triggered_leader_modifier_pop]
 		## cardinality = 0..1
 		### Default = yes
 		sapient = bool
@@ -273,6 +273,7 @@ trait = {
 		can_retreat = bool #admiral
 		## cardinality = 0..1
 		## replace_scope = { this = leader root = leader }
+		### Modifier applied to leader itself.
 		self_modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
@@ -302,7 +303,7 @@ trait = {
 		}
 		## cardinality = 0..inf
 		### Modifier applied to the leader itself if the given condition is fulfilled.
-		alias_name[triggered_self_modifier] = alias_match_left[triggered_self_modifier]
+		alias_name[triggered_leader_modifier_leader] = alias_match_left[triggered_leader_modifier_leader]
 		## cardinality = 0..inf
 		### Modifier applied to location the leader is assigned to if the given condition is fulfilled.
 		alias_name[triggered_modifier_planet] = alias_match_left[triggered_modifier_planet]
@@ -313,7 +314,7 @@ trait = {
 		### Modifier applied to location the leader is assigned to if the given condition is fulfilled.
 		alias_name[triggered_modifier_country] = alias_match_left[triggered_modifier_country]
 		## cardinality = 0..inf
-		### Modifier applied to the planet on which the General is assigned to defend if the given condition is fulfilled.
+		### Modifier applied to the planet to which the General is assigned to defend if the given condition is fulfilled.
 		alias_name[triggered_planet_modifier_leader] = alias_match_left[triggered_planet_modifier_leader]
 		## cardinality = 0..inf
 		## replace_scope = { this = leader root = leader }

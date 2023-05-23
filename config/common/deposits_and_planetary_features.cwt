@@ -123,7 +123,7 @@ deposit = {
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	
+
 	subtype[!not_dropped] = {
 		drop_weight = {
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
@@ -135,7 +135,7 @@ deposit = {
 			weight = 0
 		}
 	}
-	
+
 	subtype[orbital] = {
 		station = shipclass_mining_station
 		station = shipclass_research_station
@@ -146,22 +146,9 @@ deposit = {
 		}
 	}
 
-	alias_name[triggered_planet_modifier] = alias_match_left[triggered_planet_modifier]
+	alias_name[triggered_planet_modifier_planet] = alias_match_left[triggered_planet_modifier_planet]
 
 	alias_name[resources_template_optional] = alias_match_left[resources_template_optional]
-#	## cardinality = 0..1
-#	resources = {
-#		category = <economic_category>
-#
-#		alias_name[economic_template] = alias_match_left[economic_template]
-#
-#		#to be analysed whether you can have cost, upkeep, produces everywhere
-#		subtype[!blocker] = {
-#			## cardinality = 0..0
-#			cost = {
-#			}
-#		}
-#	}
 
 	## cardinality = 0..1
 	custom_tooltip = localisation
@@ -169,13 +156,9 @@ deposit = {
 	custom_tooltip_short = localisation
 }
 
-
-
 deposit_category = {
 	## cardinality = 0..1
 	blocker = yes
 	## cardinality = 0..1
 	important = yes
 }
-
-
