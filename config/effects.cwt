@@ -2637,6 +2637,7 @@ alias[effect:set_planet_name] = scalar
 alias[effect:set_policy] = {
 	policy = <policy>
 	option = enum[policy_option]
+	## cardinality = 0..1
 	cooldown = bool
 }
 
