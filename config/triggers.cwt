@@ -1468,7 +1468,7 @@ alias[trigger:has_commercial_pact] = scope_group[target_country]
 ###Checks specific resource stockpile for the country scope
 alias[trigger:resource_stockpile_compare] = {
 	resource = <resource>
-	value = float #no variables here atm
+	value = value_field
 	## cardinality = 0..1
 	mult = value_field
 	## cardinality = 0..1
