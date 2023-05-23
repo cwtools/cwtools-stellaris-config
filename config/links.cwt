@@ -276,11 +276,11 @@ links = {
 		output_scope = spy_network
 	}
 	target = {
-		input_scopes = { espionage_operation spy_network situation }
+		input_scopes = { espionage_operation situation }
 		output_scope = any
 	}
 	target = {
-		input_scopes = { agreement } # agreements always have country as the target
+		input_scopes = { agreement spy_network } # agreements and spy_networks always have country as the target
 		output_scope = country
 	}
 	growing_species = {
