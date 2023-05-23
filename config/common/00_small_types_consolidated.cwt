@@ -18,19 +18,6 @@ types = {
 			selectable = yes
 		}
 	}
-#	type[country_color] = { #commented out as it threw errors anyway
-#		path = "game/common/colors"
-#		## type_key_filter = country
-#		subtype[default] = {}
-#		## type_key_filter = fallen_empire
-#		subtype[fallen_empire] = {}
-#		## type_key_filter = faction
-#		subtype[faction] = {}
-#		## type_key_filter = pirate
-#		subtype[pirate] = {}
-#		## type_key_filter = species
-#		subtype[species] = {}
-#	}
 	type[asteroid_belt_type] = { #reason for this rename is the way vanilla names stuff, creating ambiguity.
 		path = "game/common/asteroid_belts"
 	}
@@ -104,7 +91,6 @@ types = {
 	}
 	type[diplomacy_economy] = {
         path = "game/common/diplomacy_economy"
-#        name_from_file = yes
         type_per_file = yes
 	}
 	type[message_type] = {
@@ -132,44 +118,19 @@ ambient_object = {
 		description = localisation
 		tooltip = localisation
 	}
+	subtype[!selectable] = {
+		## cardinality = 0..1
+		description = localisation
+		## cardinality = 0..1
+		tooltip = localisation
+	}
 	entity = <model_entity>
+	## cardinality = 0..1
 	selectable = bool
+	## cardinality = 0..1
 	###Determines whether you can read the name of the object ingame.
 	show_name = bool
 }
-
-#country_color = { #commented out as it threw errors on every line anyway
-#	subtype[default] = {
-#		##cardinality = 0..inf
-#		colour[rgb]
-#		##cardinality = 0..inf
-#		colour[hsv]
-#	}
-#	subtype[fallen_empire] = {
-#		##cardinality = 0..inf
-#		colour[rgb]
-#		##cardinality = 0..inf
-#		colour[hsv]
-#	}
-#	subtype[faction] = {
-#		##cardinality = 0..inf
-#		colour[rgb]
-#		##cardinality = 0..inf
-#		colour[hsv]
-#	}
-#	subtype[pirate] = {
-#		##cardinality = 0..inf
-#		colour[rgb]
-#		##cardinality = 0..inf
-#		colour[hsv]
-#	}
-#	subtype[species] = {
-#		##cardinality = 0..inf
-#		colour[rgb]
-#		##cardinality = 0..inf
-#		colour[hsv]
-#	}
-#}
 
 #TODO Confirm
 #TODO Add mesh/shader references
