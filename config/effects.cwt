@@ -1273,6 +1273,8 @@ alias[effect:create_country] = {
 	adjective = random
 	## cardinality = 0..1
 	adjective = localisation
+	## cardinality = 0..1
+	###default is in fact, the default
 	type = <country_type>
 	## cardinality = 0..1
 	auto_delete = bool
@@ -2687,7 +2689,7 @@ alias[effect:spawn_megastructure] = {
 	## cardinality = 0..1
 	orbit_angle = random
 	## cardinality = 0..1
-	orbit_angle = int[0..360]
+	orbit_angle = int[-360..360]
 	## cardinality = 0..1
 	orbit_angle = {
 		min = int[0..360]
