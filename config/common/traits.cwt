@@ -419,6 +419,8 @@ trait = {
 	custom_tooltip_with_modifiers = localisation
 
 	## cardinality = 0..1
+	ai_weight = int
+	## cardinality = 0..1
 	ai_weight = {
 		enum[weight_or_factor] = int
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
