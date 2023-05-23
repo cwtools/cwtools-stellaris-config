@@ -467,6 +467,8 @@ event = {
 
 	subtype[leader_story] = {
 		event_window_type = leader_story
+		## cardinality = 0..1
+		event_picture_background = <sprite>
 		alias_name[picture_event_data] = alias_match_left[picture_event_data]
 	}
 
