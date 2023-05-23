@@ -3691,7 +3691,8 @@ alias[trigger:any_archaeological_site] = {
 ## push_scope = archaeological_site
 ###Iterate through every archaeological sites - checks whether the enclosed triggers return true for X/all of them
 alias[trigger:count_archaeological_site] = {
-	count = <num/all/variable>
+	count = all
+	count = int_value_field
 	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
