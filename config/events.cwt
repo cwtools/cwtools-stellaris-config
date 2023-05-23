@@ -231,6 +231,9 @@ event = {
 		## cardinality = 0..inf
 		show_sound = {
 			sound = <sound_effect>
+			## cardinality = 0..1
+			sound_is_advisor = bool
+			## cardinality = 0..1
 			trigger = {
 				alias_name[trigger] = alias_match_left[trigger]
 			}
