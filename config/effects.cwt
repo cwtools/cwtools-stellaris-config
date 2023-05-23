@@ -630,7 +630,7 @@ alias[effect:remove_relation_flag] = {
 
 ###Change the scoped country's government authority and/or civics
 alias[effect:change_government] = random
-###Change the scoped country's government authority and/or civics
+alias[effect:change_government] = <authority>
 alias[effect:change_government] = {
 	## cardinality = 0..1
 	authority = random
