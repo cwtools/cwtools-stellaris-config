@@ -524,6 +524,46 @@ alias[triggered_modifier_country:triggered_modifier] = {
 	multiplier = value_field
 }
 
+## replace_scope = { this = country root = country }
+alias[triggered_modifier_situation:triggered_modifier] = {
+	## cardinality = 0..1
+	## replace_scope = { this = situation root = situation }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	alias_name[modifier] = alias_match_left[modifier]
+	## cardinality = 0..1
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	## cardinality = 0..1
+	mult = value_field
+	## cardinality = 0..1
+	multiplier = value_field
+}
+
+## replace_scope = { this = planet root = planet }
+alias[triggered_target_modifier_situation:triggered_target_modifier] = {
+	## cardinality = 0..1
+	## replace_scope = { this = situation root = situation }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	alias_name[modifier] = alias_match_left[modifier]
+	## cardinality = 0..1
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	## cardinality = 0..1
+	custom_tooltip = localisation
+	## cardinality = 0..1
+	show_only_custom_tooltip = no
+	## cardinality = 0..1
+	mult = value_field
+	## cardinality = 0..1
+	multiplier = value_field
+}
+
 ## replace_scope = { this = starbase root = starbase }
 alias[triggered_station_modifier_starbase:triggered_station_modifier] = {
 	## cardinality = 0..1
