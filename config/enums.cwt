@@ -346,6 +346,11 @@ enums = {
 		high
 		full
 	}
+	enum[galcom_resolution_position] = {
+		support
+		oppose
+		abstain
+	}
 	enum[end_fleet_contract_reason] = {
 		expired
 		broken
