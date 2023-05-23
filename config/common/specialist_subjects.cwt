@@ -66,7 +66,7 @@ subject_specialist_perk = {
     ### Static modifiers that are applied to the overlord's planets if the capitals of both empires are connected via the hyperlane network
     overlord_relay_network_modifier = {
         ## cardinality = 0..inf
-        <static_modifier.planet> = float
+        <static_modifier> = float
     }
     ## cardinality = 0..1
     ### Additional description text for this subject specialist perk
@@ -82,6 +82,7 @@ subject_specialist_type = {
     ### The number of days to convert to this subject specialist type
     base_conversion_time = int
     ## replace_scope = { this = agreement root = agreement }
+    ## cardinality = 0..1
     on_progress_complete = {
         alias_name[effect] = alias_match_left[effect]
     }
