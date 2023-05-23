@@ -175,6 +175,19 @@ alias[economic_template_no_produce:upkeep] = {
 	mult = value_field
 }
 
+alias[ai_resource_production:ai_resource_production] = {
+	## cardinality = 0..1
+	trigger = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..inf
+	<resource> = float
+	## cardinality = 0..1
+	multiplier = value_field
+	## cardinality = 0..1
+	mult = value_field
+}
+
 ## cardinality = 0..1
 alias[resources_template_optional:resources] = {
 	category = <economic_category>
@@ -208,6 +221,10 @@ alias[triggered_planet_modifier:triggered_planet_modifier] = {
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
+	## cardinality = 0..1
+	custom_tooltip = localisation
+	## cardinality = 0..1
+	show_only_custom_tooltip = no
 	## cardinality = 0..1
 	mult = value_field
 	## cardinality = 0..1
@@ -362,7 +379,6 @@ alias[triggered_country_modifier_planet:triggered_country_modifier] = {
 ## replace_scope = { this = country root = country }
 alias[triggered_country_modifier_country:triggered_country_modifier] = {
 	## cardinality = 0..1
-	## replace_scope = { this = country root = country }
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
