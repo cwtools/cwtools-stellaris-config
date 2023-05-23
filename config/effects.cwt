@@ -51,8 +51,10 @@ alias[effect:else] = {
 
 ###Saves the current scope as an arbitrarily-named target to be referenced later in the (unbroken) event chain
 alias[effect:save_event_target_as] = value_set[event_target]
+
 ###Saves the current scope as an arbitrarily-named target to be referenced later, accessible globally until cleared
 alias[effect:save_global_event_target_as] = value_set[global_event_target]
+
 ###Fires a ship event for the scoped ship, with optional DAYS and RANDOM delay
 alias[effect:ship_event] = {
 	id = <event.ship>
@@ -3171,6 +3173,7 @@ alias[effect:force_add_civic] = <civic_or_origin.civic>
 
 ###Removes civic from a goverment without checking the restrictions.
 alias[effect:force_remove_civic] = <civic_or_origin.civic>
+alias[effect:force_remove_civic] = int[1..inf]
 
 ###Completes a specific special project for the country, firing the on_success effects
 alias[effect:complete_special_project] = {
