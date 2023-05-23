@@ -132,13 +132,15 @@ ambient_object = {
 	show_name = bool
 }
 
-#TODO Confirm
-#TODO Add mesh/shader references
 asteroid_belt_type = {
 	## cardinality = 1..inf
 	mesh = scalar
 	## cardinality = 0..1
 	shader = scalar
+	## cardinality = 0..1
+	width = float
+	## cardinality = 0..1
+	density = float
 }
 
 ##TODO confirm and refine
