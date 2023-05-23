@@ -1969,6 +1969,9 @@ alias[trigger:has_any_federation_law_in_category] = <federation_law_category>
 ###Check that the planet has available jobs of a specific type
 alias[trigger:has_available_jobs] = <job>
 
+###Check that you have forbidden job of a specific type
+alias[trigger:has_forbidden_jobs] = <job>
+
 ###Checks if Xeno Compatibility are enabled in game setup
 alias[trigger:xeno_compatibility_enabled] = bool
 
