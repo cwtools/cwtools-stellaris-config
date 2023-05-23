@@ -210,6 +210,9 @@ alias[resources_template_optional:resources] = {
 	}
 }
 
+### Templated Modifier Blocks ###
+# alias[cwt_alias_key:stellaris_object_key]
+
 ## replace_scope = { this = planet root = planet }
 alias[triggered_planet_modifier_planet:triggered_planet_modifier] = {
 	## cardinality = 0..1
@@ -263,6 +266,10 @@ alias[triggered_planet_modifier_pop:triggered_planet_modifier] = {
 	## cardinality = 0..1
 	key = <trait>
 	## cardinality = 0..1
+	custom_tooltip = localisation
+	## cardinality = 0..1
+	show_only_custom_tooltip = no
+	## cardinality = 0..1
 	mult = value_field
 	## cardinality = 0..1
 	multiplier = value_field
@@ -281,6 +288,10 @@ alias[triggered_planet_modifier_starbase:triggered_planet_modifier] = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
+	custom_tooltip = localisation
+	## cardinality = 0..1
+	show_only_custom_tooltip = no
+	## cardinality = 0..1
 	mult = value_field
 	## cardinality = 0..1
 	multiplier = value_field
@@ -298,6 +309,10 @@ alias[triggered_planet_modifier_leader:triggered_planet_modifier] = {
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
+	## cardinality = 0..1
+	custom_tooltip = localisation
+	## cardinality = 0..1
+	show_only_custom_tooltip = no
 	## cardinality = 0..1
 	mult = value_field
 	## cardinality = 0..1
@@ -410,6 +425,10 @@ alias[triggered_pop_modifier:triggered_pop_modifier] = {
 	}
 	## cardinality = 0..1
 	key = <trait>
+	## cardinality = 0..1
+	custom_tooltip = localisation
+	## cardinality = 0..1
+	show_only_custom_tooltip = no
 	## cardinality = 0..1
 	mult = value_field
 	## cardinality = 0..1
