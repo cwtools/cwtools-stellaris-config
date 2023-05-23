@@ -1839,6 +1839,7 @@ alias[effect:add_random_research_option] = {
 	area = enum[technology_areas]
 	## cardinality = 0..1
 	tier = <technology_tier>
+	## cardinality = 0..1
 	add_progress = value_field[0.1..1.0]
 	## cardinality = 0..1
 	fail_effects = {
@@ -1884,6 +1885,7 @@ alias[effect:add_trust] = {
 ### Makes a fleet or ship auto-move to target fleet and potentially attack it
 alias[effect:auto_follow_fleet] = {
 	target = scope[fleet]
+	## cardinality = 0..1
 	attack_fleet = bool
 }
 
