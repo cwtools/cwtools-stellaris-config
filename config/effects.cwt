@@ -3745,6 +3745,10 @@ alias[effect:remove_fleet_contract_modifiers] = bool
 
 ###Breaks fleet lease contract
 alias[effect:end_fleet_contract] = yes
+alias[effect:end_fleet_contract] = {
+	initiator = scope_group[target_country]
+	reason = enum[end_fleet_contract_reason]
+}
 
 ###Set fleet's settings, any unspecified setting will set to default value.
 alias[effect:set_fleet_settings] = {
