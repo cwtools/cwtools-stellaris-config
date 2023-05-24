@@ -575,13 +575,12 @@ alias[trigger:has_technology] = <technology>
 alias[trigger:has_active_tradition] = <tradition>
 alias[trigger:has_active_tradition] = enum[tradition_swap]
 
-
 ###Checks a variable for the country/leader/planet/system/fleet against a specified value or another variable on the same scope
 alias[trigger:check_variable] = {
 	which = value[variable]
+	## cardinality = 1..inf
 	value = value_field
 }
-
 
 ###Checks the ship/fleet/planet/leader/pop/system's galaxy map distance to target in absolute units
 alias[trigger:distance] = {
