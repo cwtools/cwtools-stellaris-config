@@ -107,7 +107,7 @@ federation_perk = {
 		description = localisation
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	## replace_scopes = { this = country root = country }
 	member_triggered_modifier = {
 		## cardinality = 0..1
@@ -125,7 +125,7 @@ federation_perk = {
 		description = localisation
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	## replace_scopes = { this = country root = country }
 	leader_triggered_modifier = {
 		## cardinality = 0..1
@@ -150,7 +150,7 @@ federation_perk = {
 		description = localisation
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	## replace_scopes = { this = federation root = federation }
 	federation_triggered_modifier = {
 		## cardinality = 0..1
