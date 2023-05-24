@@ -110,7 +110,9 @@ federation_perk = {
 	## cardinality = 0..1
 	## replace_scopes = { this = country root = country }
 	member_triggered_modifier = {
-		key = localisation
+		## cardinality = 0..1
+		key = scalar
+		## cardinality = 0..1
 		potential = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
@@ -121,6 +123,17 @@ federation_perk = {
 	leader_modifier = {
 		## cardinality = 0..1
 		description = localisation
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	## cardinality = 0..1
+	## replace_scopes = { this = country root = country }
+	leader_triggered_modifier = {
+		## cardinality = 0..1
+		key = scalar
+		## cardinality = 0..1
+		potential = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
@@ -135,6 +148,15 @@ federation_perk = {
 	federation_modifier = {
 		## cardinality = 0..1
 		description = localisation
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	## cardinality = 0..1
+	## replace_scopes = { this = federation root = federation }
+	federation_triggered_modifier = {
+		## cardinality = 0..1
+		potential = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
@@ -157,6 +179,8 @@ federation_type = {
 	valid_leader = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## cardinality = 0..1
+	ownership_limits = enum[federation_ownership_limit_type]
 	## replace_scopes = { this = country root = country from = country }
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
@@ -185,5 +209,11 @@ federation_type = {
 	## replace_scopes = { this = country root = country from = country }
 	ai_weight = {
 		alias_name[modifier_rule_with_loc] = alias_match_left[modifier_rule_with_loc]
+	}
+}
+
+enums = {
+	enum[federation_ownership_limit_type] = {
+		default
 	}
 }
