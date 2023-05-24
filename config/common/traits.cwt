@@ -99,6 +99,8 @@ trait = {
 		## cardinality = 1..inf
 		<civic_or_origin.origin>
 	}
+	## cardinality = 0..1
+	sorting_priority = int
 
 	subtype[species_trait] = {
 		## cardinality = 0..1
@@ -157,8 +159,6 @@ trait = {
 		## cardinality = 0..1
 		### Default = no
 		forced_happiness = bool
-		## cardinality = 0..1
-		sorting_priority = int
 		## cardinality = 0..1
 		### Default = no
 		improves_leaders = bool
