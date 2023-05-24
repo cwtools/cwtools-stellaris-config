@@ -403,6 +403,7 @@ trade_conversion = {
 }
 
 economic_plan = {
+	## cardinality = 0..1
 	income = {
 		## cardinality = 1..inf
 		<resource> = int
@@ -454,6 +455,7 @@ economic_plan = {
 	## cardinality = 0..1
 	naval_cap = int
 
+	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
 	ai_weight = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
