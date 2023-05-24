@@ -422,6 +422,7 @@ trait = {
 	ai_weight = int
 	## cardinality = 0..1
 	ai_weight = {
+		## cardinality = 0..1
 		enum[weight_or_factor] = int
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
