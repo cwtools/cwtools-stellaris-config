@@ -39,11 +39,16 @@ types = {
 		path = "game/common/governments/civics"
 		skip_root_key = any
 		name_field = "name"
+		subtype[localised] = {
+			name = scalar
+		}
 		localisation = {
-			## required
-			Name = "$"
-			## required
-			Description = "$_desc"
+			subtype[localised] = {
+				## required
+				Name = "$"
+				## required
+				Description = "$_desc"
+			}
 		}
 	}
 	type[councilor] = {
@@ -118,6 +123,10 @@ authority = {
 	## replace_scope = { this = country root = country }
 	country_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
+		## cardinality = 0..1
+		custom_tooltip = localisation
+		## cardinality = 0..1
+		show_only_custom_tooltip = no
 	}
 	## cardinality = 0..1
 	playable = {
@@ -264,8 +273,12 @@ civic_or_origin = {
 	starting_colony = <planet_class>
 	## cardinality = 0..1
 	swap_type = {
+		subtype[localised] = {
+			name = scalar
+		}
 		## cardinality = 0..1
-		name = localisation
+		name = scalar
+		## cardinality = 0..1
 		description = localisation
 		### In empire creation / galaxy setup, this has no scope. During the game, when there are actual countries existing, it is set to country scope.
 		### If you want to use country scope here, you must always check is_scope_valid first (see civic_devouring_swarm), or you will get errors or it won't work as intended.
