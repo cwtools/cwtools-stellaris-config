@@ -1114,6 +1114,8 @@ alias[effect:create_species] = {
 	## cardinality = 0..1
 	namelist = random
 	## cardinality = 0..1
+	namelist = random_class
+	## cardinality = 0..1
 	plural = scalar
 	## cardinality = 0..1
 	species_bio = scalar
@@ -1374,6 +1376,8 @@ alias[effect:create_country] = {
 	government_restrictions = {
 		alias_name[government_trigger] = alias_match_left[government_trigger]
 	}
+	## cardinality = 0..1
+	contact_rule = enum[contact_rule]
 }
 
 ###Creates a rebellion on this planet
@@ -1395,6 +1399,8 @@ alias[effect:create_rebels] = {
 	civics = {
 		## cardinality = 2..3
 		civic = <civic_or_origin.civic>
+		## cardinality = 2..3
+		civic = random
 	}
 	species = scope_group[target_species]
 	## cardinality = 0..1
