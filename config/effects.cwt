@@ -2048,6 +2048,13 @@ alias[effect:create_ambient_object] = {
 	}
 }
 
+enums = {
+	enum[scripted_scale_type] = {
+		effect_size_var
+		beam_size_var
+	}
+}
+
 ### Creates a new army in a new transport ship
 alias[effect:create_army_transport] = {
 	##cardinality = 0..1
