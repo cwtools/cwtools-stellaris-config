@@ -50,13 +50,9 @@ technology = {
 	## cardinality = 0..1
 	icon = icon[gfx/interface/icons/technologies]
 
-	subtype[start_tech] = {
-		## cardinality = 0..1
-		cost = 0
-	}
+	cost = int
 
 	subtype[!start_tech] = {
-		cost = int
 		## cardinality = 0..1
 		is_rare = bool
 		## cardinality = 0..1
@@ -98,7 +94,6 @@ technology = {
 		value[tech_weight_group] = float
 	}
 
-
 	## cardinality = 0..1
 	start_tech = bool
 	## cardinality = 0..1
@@ -107,7 +102,9 @@ technology = {
 	## cardinality = 0..1
 	ai_update_type = enum[tech_ai_type]
 
-
+	## cardinality = 0..1
+	###default = no
+	is_insight = bool
 
 	## cardinality = 0..1
 	feature_flags = {
@@ -142,6 +139,7 @@ technology = {
 		## cardinality = 0..4
 		enum[prereq_for_categories] = {
 			title = localisation
+			## cardinality = 0..1
 			desc = localisation
 		}
 	}
@@ -157,7 +155,7 @@ technology = {
 	ai_weight = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
-	
+
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
 	starting_potential = {
@@ -206,6 +204,8 @@ enums = {
 		unlock_arcane_deciphering
 		unlocks_auto_research
 		hyper_relay_construction
+		active_reconnaissance_unlocked
+		assist_cloaking_detection_unlocked
 	}
 	enum[technology_areas] = {
 		engineering
