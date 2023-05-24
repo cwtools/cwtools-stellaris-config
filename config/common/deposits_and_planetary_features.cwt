@@ -12,9 +12,8 @@ types = {
 				Description = "$_desc"
 			}
 		}
-
-		#some guesswork here...
 		subtype[colonisable] = {
+			## cardinality = 0..1
 			is_for_colonizable = yes
 		}
 		subtype[orbital] = {
