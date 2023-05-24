@@ -108,9 +108,9 @@ alias[economic_template:cost] = {
 	}
 	## cardinality = 0..inf
 	<resource> = float
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	multiplier = value_field
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	mult = value_field
 }
 
@@ -121,9 +121,9 @@ alias[economic_template:produces] = {
 	}
 	## cardinality = 0..inf
 	<resource> = float
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	multiplier = value_field
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	mult = value_field
 }
 
@@ -134,9 +134,9 @@ alias[economic_template:upkeep] = {
 	}
 	## cardinality = 0..inf
 	<resource> = float
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	multiplier = value_field
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	mult = value_field
 }
 
@@ -156,9 +156,9 @@ alias[economic_template_no_produce:cost] = {
 	}
 	## cardinality = 0..inf
 	<resource> = float
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	multiplier = value_field
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	mult = value_field
 }
 
@@ -169,9 +169,9 @@ alias[economic_template_no_produce:upkeep] = {
 	}
 	## cardinality = 0..inf
 	<resource> = float
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	multiplier = value_field
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	mult = value_field
 }
 
@@ -182,9 +182,9 @@ alias[ai_resource_production:ai_resource_production] = {
 	}
 	## cardinality = 0..inf
 	<resource> = float
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	multiplier = value_field
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	mult = value_field
 }
 
@@ -203,9 +203,9 @@ alias[resources_template_optional:resources] = {
 		}
 		## cardinality = 0..inf
 		<resource> = float
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		multiplier = value_field
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		mult = value_field
 	}
 }
