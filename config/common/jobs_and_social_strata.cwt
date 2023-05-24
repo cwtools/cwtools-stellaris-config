@@ -6,6 +6,13 @@ types = {
 			## cardinality = 0..1
 			is_capped_by_modifier = yes
 		}
+		subtype[possible] = {
+			## cardinality = 0..1
+			possible = {
+				## cardinality = 0..0
+				always = no
+			}
+		}
 		modifiers = {
 			"job_$_add" = Planets
 			"job_$_per_pop" = Planets
@@ -13,18 +20,24 @@ types = {
 		}
 		localisation = {
 			## required
-			name = "job_$"
-			## required
-			plural = "job_$_plural"
-			## required
-			desc = "job_$_desc"
+			Name = "job_$"
+			## optional
+			Plural = "job_$_plural"
+			## optional
+			Desc = "job_$_desc"
 			subtype[uncapped_by_modifier] = {
 				## required
-				modifier = mod_job_$_add
+				Modifier = "mod_job_$_add"
 				## optional
-				per_pop_modifier = mod_job_$_per_pop
+				"Per Pop Modifier" = "mod_job_$_per_pop"
 				## optional
-				per_pop_modifier_short = mod_job_$_per_pop_short
+				"Per Pop Modifier (short)" = "mod_job_$_per_pop_short"
+			}
+			subtype[possible] = {
+				## required
+				Plural = "job_$_plural"
+				## required
+				Desc = "job_$_desc"
 			}
 		}
 	}
@@ -36,11 +49,11 @@ types = {
 		}
 		localisation = {
 			## required
-			name = "pop_cat_$"
+			Name = "pop_cat_$"
 			## required
-			plural = "pop_cat_$_plural"
+			Plural = "pop_cat_$_plural"
 			## required
-			desc = "pop_cat_$_desc"
+			Desc = "pop_cat_$_desc"
 		}
 	}
 }
