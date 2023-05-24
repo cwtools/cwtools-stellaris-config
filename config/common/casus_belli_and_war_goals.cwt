@@ -113,12 +113,16 @@ war_goal = {
 
 	## cardinality = 0..1
 	release_occupied_systems_on_status_quo = bool
+	## cardinality = 0..1
+	###If set to 'yes', then the default agreement terms will be shown in a tooltip when hovering over the war goal description
+	show_agreement_terms = bool
 
 	## replace_scope = { this = country root = country from = country }
 	###FROM = The targeted country, THIS = The acting country
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## cardinality = 0..1
 	## replace_scope = { this = country root = country from = country }
 	###FROM = The targeted country, THIS = The acting country
 	possible = {
@@ -151,6 +155,7 @@ war_goal = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 
+	## cardinality = 0..1
 	## replace_scope = { this = country root = country from = country }
 	###FROM = The targeted country, THIS = The acting country
 	ai_weight = {
