@@ -1144,6 +1144,9 @@ alias[effect:create_species] = {
 	###Limits species to this gender
 	gender = scope_group[target_species]
 	## cardinality = 0..1
+	###Limits species to this gender
+	gender = random
+	## cardinality = 0..1
 	homeworld = scope_group[target_planet]
 	## cardinality = 0..1
 	homeworld = scope[species]
@@ -2033,6 +2036,8 @@ alias[effect:create_ambient_object] = {
 	## cardinality = 0..1
 	entity_scale_to_size = bool
 	## cardinality = 0..1
+	scripted_scale = enum[scripted_scale_type]
+	## cardinality = 0..1
 	play_animation_once = bool
 	## cardinality = 0..1
 	duration = int
@@ -2137,6 +2142,10 @@ alias[effect:create_message] = {
 	## cardinality = 0..1
 	### Default = this
 	target = scope[any]
+	## cardinality = 0..1
+	custom_toast_content_text = localisation
+	## cardinality = 0..1
+	custom_toast_content_icon = <sprite>
 	# note: the variable sections were split apart to help enforce which properties go with which other ones
 	## cardinality = 0..inf
 	### insert the name (equivalent to[GetName]) of the target scope into the message's localisation
