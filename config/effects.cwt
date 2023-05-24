@@ -1380,7 +1380,7 @@ alias[effect:create_country] = {
 		alias_name[government_trigger] = alias_match_left[government_trigger]
 	}
 	## cardinality = 0..1
-	contact_rule = enum[contact_rule]
+	contact_rule = enum[contact_rules]
 }
 
 ###Creates a rebellion on this planet
