@@ -55,7 +55,6 @@ deposit = {
 	## cardinality = 0..1
 	use_for_min_max_adjustments = bool
 
-	#blocker?
 	## cardinality = 0..1
 	icon = icon[gfx/interface/icons/deposits]
 
@@ -98,10 +97,6 @@ deposit = {
 		country_modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
-		## replace_scope = { this = planet root = planet }
-		planet_modifier = {
-			alias_name[modifier] = alias_match_left[modifier]
-		}
 		## cardinality = 0..1
 		use_weights_for_terraforming_swap_types = bool
 		## cardinality = 0..1
@@ -120,6 +115,12 @@ deposit = {
 	}
 
 	## cardinality = 0..1
+	## replace_scope = { this = planet root = planet }
+	planet_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	## cardinality = 0..1
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
@@ -130,7 +131,7 @@ deposit = {
 		}
 	}
 	subtype[not_dropped] = {
-	## cardinality = 0..1
+		## cardinality = 0..1
 		drop_weight = {
 			weight = 0
 		}
@@ -139,11 +140,6 @@ deposit = {
 	subtype[orbital] = {
 		station = shipclass_mining_station
 		station = shipclass_research_station
-		## cardinality = 0..1
-		## replace_scope = { this = planet root = planet }
-		planet_modifier = {
-			alias_name[modifier] = alias_match_left[modifier]
-		}
 	}
 
 	alias_name[triggered_planet_modifier_planet] = alias_match_left[triggered_planet_modifier_planet]
