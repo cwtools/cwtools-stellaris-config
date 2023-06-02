@@ -3,8 +3,11 @@ types = {
 	type[country_type] = {
 		path = "game/common/country_types"
 	}
-	type[dp_diplo_phrase] = {
-		path = "game/common/diplo_phrases"
+	type[ownership_limit] = {
+		path = "game/common/country_limits/ownership_limits"
+	}
+	type[ship_of_size_limit] = {
+		path = "game/common/country_limits/ship_of_size_limits"
 	}
 }
 
@@ -13,11 +16,10 @@ country_type = {
 	has_pulse_events = bool
 	## cardinality = 0..1
 	can_use_invalid_technology = bool
-
 	## cardinality = 0..1
 	can_receive_envoys = bool
 	## cardinality = 0..1
-	ownership_limits = default
+	ownership_limits = <ownership_limit>
 	## cardinality = 0..1
 	can_own_empty_planets = bool
 	## cardinality = 0..1
@@ -238,14 +240,14 @@ country_type = {
 			alias_name[effect] = alias_match_left[effect]
 		}
 	}
-	
+
 	### used with extradimensional invaders
 	## cardinality = 0..1
 	targets = {
 		## cardinality = 0..inf
 		<country_type>
 	}
-	
+
 	## cardinality = 0..1
 	replace_scope = { this = country root = country }
 	## cardinality = 0..1
@@ -285,14 +287,14 @@ country_type = {
 				## cardinality = 0..inf
 				<diplomatic_action>
 				## cardinality = 0..inf
-				<dp_diplo_phrase>
+				<diplo_phrase>
 			}
 			## cardinality = 0..1
 			can_send = {
 				## cardinality = 0..inf
 				<diplomatic_action>
 				## cardinality = 0..inf
-				<dp_diplo_phrase>
+				<diplo_phrase>
 			}
 		}
 		## cardinality = 0..1
@@ -314,6 +316,44 @@ country_type = {
 	branch_office_resources = {
 		category = planet_branch_offices
 		alias_name[economic_template] = alias_match_left[economic_template]
+	}
+}
+
+
+### Note for overwriting: ownership_limits are extendable/additive. So if you make a second "default" and
+### add a single ship_of_size_limit inside it, it will apply both the limits described here, and the one
+### that you specified.
+### To do a full overwrite, you need to overwrite 00_ownership_limits.txt instead.
+ownership_limit = {
+	## cardinality = 0..1
+	ship_of_size_limits = {
+		## cardinality = 1..inf
+		<ship_of_size_limit>
+	}
+}
+
+### Defines the shared capacity of the specified ships that country is allowed to own
+### capacity = min( max, base + naval_cap_fraction * current_naval_cap )
+### where current_naval_cap is current naval capacity of the country
+ship_of_size_limit = {
+	### list of keys to ship_sizes database, these ship_sizes will share the calculated capacity
+	ship_types = {
+		## cardinality = 1..inf
+		<ship_size>
+	}
+	### Base (minimal) shared capacity of ships
+	base = int[0..inf]
+	## cardinality = 0..1
+	### Maximal shared capacity of ships
+	max = int[0..inf]
+	## cardinality = 0..1
+	### Fraction of current naval capacity of the country
+	naval_cap_fraction = float[0.0..1.0]
+	### Trigger that defines if tooltip for naval capacity icon on the top bar should be shown
+	### Recommended to include "is_scope_valid = yes" as the first line
+	## replace_scope = { this = country root = country from = federation }
+	show = {
+		alias_name[trigger] = alias_match_left[trigger]
 	}
 }
 
