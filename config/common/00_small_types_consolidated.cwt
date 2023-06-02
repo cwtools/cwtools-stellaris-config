@@ -1,4 +1,3 @@
-
 #I got frustrated at there being SO MANY files, so I have thrown a whole lot together in here -Caligula
 
 types = {
@@ -102,6 +101,32 @@ types = {
 		localisation = {
 			## required
 			name = "mod_$"
+		}
+	}
+	type[concept] = {
+		path = "game/common/game_concepts"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Desc = "$_desc"
+		}
+	}
+	type[leader_class] = {
+		path = "game/common/leader_classes"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			"Name w/Icon" = "$_with_icon"
+			## optional
+			Plural = "$_plural"
+			## optional
+			"Plural w/Icon" = "$_plural_with_icon"
+			## optional
+			Desc = "$_description"
+			## optional
+			"Desc w/Icon" = "$_description_with_icon"
 		}
 	}
 }
@@ -580,4 +605,63 @@ scripted_modifier = {
 	localize_with_value_key = bool
 	###sets the modifier category, which is sometimes used to determine whether it is applied to a certain object (so make sure this is set to what you want)
 	category = enum[scripted_modifier_categories]
+}
+
+concept = {
+	## cardinality = 0..1
+	icon = filepath
+	## cardinality = 0..1
+	###Aliases that display the same concept
+	###Used by the base game to add singular/plural variations
+	alias = {
+		## cardinality = 1..inf
+		localisation
+	}
+}
+
+leader_class = {
+	name = localisation
+	name_plural = localisation
+	description = localisation
+	## cardinality = 0..1
+	###default = no
+	can_lead_navy = bool
+	## cardinality = 0..1
+	###default = no
+	can_lead_army = bool
+	## cardinality = 0..1
+	###default = no
+	can_research = bool
+	## cardinality = 0..1
+	###default = no
+	can_govern_planet = bool
+	## cardinality = 0..1
+	###default = no
+	can_be_envoy = bool
+	## cardinality = 0..1
+	###default = 0
+	assignment_cooldown = 360
+	## cardinality = 0..1
+	max_trait_points = int[0..inf]
+	can_have_traits = bool
+	## cardinality = 0..1
+	## replace_scope = { this = leader root = leader }
+	resources = {
+		## cardinality = 0..1
+		category = <economic_category>
+		alias_name[economic_template] = alias_match_left[economic_template]
+	}
+	default_category = enum[leader_classes]
+	## cardinality = 0..1
+	## replace_scope = { this = country root = country }
+	ai_weight = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	## cardinality = 0..1
+	minimum_ai_target = int[0..inf]
+	## cardinality = 0..1
+	leader_background_job_weight = {
+		## cardinality = 1..inf
+		<job> = int
+	}
 }
