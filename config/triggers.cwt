@@ -14,12 +14,14 @@ alias[trigger:<scripted_trigger>] = {
 
 ###Evaluates the triggers if the display_triggers of the limit are met
 alias[trigger:if] = {
+	## severity = warning
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
 ###Evaluates the enclosed triggers if the display_triggers of the preceding `if` or `else_if` is not met and its own display_trigger of the limit is met
 alias[trigger:else_if] = {
+	## severity = warning
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}

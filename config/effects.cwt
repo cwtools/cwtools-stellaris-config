@@ -29,6 +29,7 @@ alias[effect:create_starbase] = {
 alias[effect:hidden_effect] = { alias_name[effect] = alias_match_left[effect] }
 ###Executes enclosed effects if limit criteria are met
 alias[effect:if] = {
+	## severity = warning
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
@@ -37,14 +38,14 @@ alias[effect:if] = {
 
 ###Executes enclosed effects if limit criteria of both it and preceding 'if' or 'else_if' is not met, and its own limit is met
 alias[effect:else_if] = {
-	## severity = info
+	## severity = warning
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	alias_name[effect] = alias_match_left[effect]
 }
 
-###Executes enclosed effects if limit criteria of preceding 'if' or 'else_if' is not met, and its own limit is met
+###Executes enclosed effects if limit criteria of preceding 'if' or 'else_if' is not met
 alias[effect:else] = {
 	alias_name[effect] = alias_match_left[effect]
 }
