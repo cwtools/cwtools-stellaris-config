@@ -144,14 +144,27 @@ event = {
 	subtype[!hidden] = {
 		title = localisation
 		desc = localisation
-
 		desc = {
 			## cardinality = 0..1
 			trigger = {
 				alias_name[trigger] = alias_match_left[trigger]
-
+				## cardinality = 0..1
+				switch = {
+					trigger = scalar
+					## cardinality = 2..inf
+					scalar = {
+						## cardinality = 0..1
+						if = {
+							limit = { alias_name[trigger] = alias_match_left[trigger] }
+							text = localisation
+						}
+						## cardinality = 0..1
+						text = localisation
+					}
+				}
 				## cardinality = 0..inf
 				scope[any] = {
+					alias_name[trigger] = alias_match_left[trigger]
 					## cardinality = 0..1
 					switch = {
 						trigger = scalar
@@ -165,28 +178,29 @@ event = {
 							## cardinality = 0..1
 							text = localisation
 						}
-					}
-				}
-				## cardinality = 0..1
-				switch = {
-					trigger = scalar
-					## cardinality = 2..inf
-					scalar = {
-						## cardinality = 0..1
-						if = {
-							limit = { alias_name[trigger] = alias_match_left[trigger] }
-							text = localisation
-						}
-						## cardinality = 0..1
-						text = localisation
 					}
 				}
 			}
 			## cardinality = 0..1
 			exclusive_trigger = {
 				alias_name[trigger] = alias_match_left[trigger]
+				## cardinality = 0..1
+				switch = {
+					trigger = scalar
+					## cardinality = 2..inf
+					scalar = {
+						## cardinality = 0..1
+						if = {
+							limit = { alias_name[trigger] = alias_match_left[trigger] }
+							text = localisation
+						}
+						## cardinality = 0..1
+						text = localisation
+					}
+				}
 				## cardinality = 0..inf
 				scope[any] = {
+					alias_name[trigger] = alias_match_left[trigger]
 					## cardinality = 0..1
 					switch = {
 						trigger = scalar
@@ -200,20 +214,6 @@ event = {
 							## cardinality = 0..1
 							text = localisation
 						}
-					}
-				}
-				## cardinality = 0..1
-				switch = {
-					trigger = scalar
-					## cardinality = 2..inf
-					scalar = {
-						## cardinality = 0..1
-						if = {
-							limit = { alias_name[trigger] = alias_match_left[trigger] }
-							text = localisation
-						}
-						## cardinality = 0..1
-						text = localisation
 					}
 				}
 			}
@@ -267,6 +267,20 @@ event = {
 		## cardinality = 0..1
 		is_test_event = bool
 
+		subtype[leader_recruit] = {
+			event_window_type = leader_recruit
+			## cardinality = 0..1
+			notification_event_icon = <sprite>
+			alias_name[picture_event_data] = alias_match_left[picture_event_data]
+		}
+	
+		subtype[leader_story] = {
+			event_window_type = leader_story
+			## cardinality = 0..1
+			event_picture_background = <sprite>
+			alias_name[picture_event_data] = alias_match_left[picture_event_data]
+		}
+
 		## cardinality = 0..inf
 		option = {
 			## cardinality = 1..inf
@@ -275,7 +289,40 @@ event = {
 			name = {
 				trigger = {
 					alias_name[trigger] = alias_match_left[trigger]
+					## cardinality = 0..1
+					switch = {
+						trigger = scalar
+						## cardinality = 2..inf
+						scalar = {
+							## cardinality = 0..1
+							if = {
+								limit = { alias_name[trigger] = alias_match_left[trigger] }
+								text = localisation
+							}
+							## cardinality = 0..1
+							text = localisation
+						}
+					}
+					## cardinality = 0..inf
+					scope[any] = {
+						alias_name[trigger] = alias_match_left[trigger]
+						## cardinality = 0..1
+						switch = {
+							trigger = scalar
+							## cardinality = 2..inf
+							scalar = {
+								## cardinality = 0..1
+								if = {
+									limit = { alias_name[trigger] = alias_match_left[trigger] }
+									text = localisation
+								}
+								## cardinality = 0..1
+								text = localisation
+							}
+						}
+					}
 				}
+				## cardinality = 0..1
 				text = localisation
 			}
 			## cardinality = 1..inf
@@ -285,7 +332,6 @@ event = {
 				}
 				text = localisation
 			}
-
 			## cardinality = 0..1
 			icon = {
 				icon = <sprite>
@@ -446,20 +492,6 @@ event = {
 		custom_gui = scalar #same as previous, needs to be gui_type
 		## cardinality = 0..1
 		custom_gui_option = scalar #same as previous, needs to be gui_type
-	}
-
-	subtype[leader_recruit] = {
-		event_window_type = leader_recruit
-		## cardinality = 0..1
-		notification_event_icon = <sprite>
-		alias_name[picture_event_data] = alias_match_left[picture_event_data]
-	}
-
-	subtype[leader_story] = {
-		event_window_type = leader_story
-		## cardinality = 0..1
-		event_picture_background = <sprite>
-		alias_name[picture_event_data] = alias_match_left[picture_event_data]
 	}
 
 	subtype[planet] = {
