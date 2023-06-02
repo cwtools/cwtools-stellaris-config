@@ -390,7 +390,7 @@ component_template = {
 	subtype[scripted_action] = {
 		scripted_action_name = <on_action>
 		scripted_action_tooltip = localisation
-		scripted_action_icon = sprite
+		scripted_action_icon = <sprite>
 		scripted_action_activity_key = localisation
 		## cardinality = 0..1
 		## replace_scope = { root = planet this = planet }
