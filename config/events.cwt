@@ -118,9 +118,6 @@ types = {
 		subtype[triggered] = {
 			is_triggered_only = yes
 		}
-		subtype[major] = {
-			major = yes
-		}
 		subtype[inherited] = {
 			base = <event>
 		}
@@ -398,16 +395,6 @@ event = {
 			factor = float
 			## cardinality = 0..100
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
-		}
-	}
-	## cardinality = 0..1
-	###Event will show for other countries if this is set to yes. Those countries can be narrowed down with major_trigger.
-	major = yes
-	subtype[major] = {
-		## cardinality = 0..1
-		###Triggers for other countries on whether a major event should show for them. I.e. if it reads has_ethic = ethic_materialist, then all materialist countries will see the event.
-		major_trigger = {
-			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
 	## cardinality = 0..1
