@@ -83,13 +83,13 @@ types = {
 		## type_key_filter = situation_event
 		## push_scope = situation
 		## display_name = Situation Event
-		## abbreviation = LE
+		## abbreviation = SiE
 		subtype[situation] = {
 		}
 		## type_key_filter = agreement_event
 		## push_scope = agreement
 		## display_name = Agreement Event
-		## abbreviation = LE
+		## abbreviation = AE
 		subtype[agreement] = {
 		}
 		## type_key_filter = event
