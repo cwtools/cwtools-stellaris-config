@@ -132,8 +132,6 @@ types = {
 			"Plural w/Icon" = "$_plural_with_icon"
 			## optional
 			Desc = "$_description"
-			## optional
-			"Desc w/Icon" = "$_description_with_icon"
 		}
 	}
 }
