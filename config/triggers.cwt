@@ -14,12 +14,14 @@ alias[trigger:<scripted_trigger>] = {
 
 ###Evaluates the triggers if the display_triggers of the limit are met
 alias[trigger:if] = {
+	## severity = warning
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
 ###Evaluates the enclosed triggers if the display_triggers of the preceding `if` or `else_if` is not met and its own display_trigger of the limit is met
 alias[trigger:else_if] = {
+	## severity = warning
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
@@ -575,16 +577,16 @@ alias[trigger:has_technology] = <technology>
 alias[trigger:has_active_tradition] = <tradition>
 alias[trigger:has_active_tradition] = enum[tradition_swap]
 
-
 ###Checks a variable for the country/leader/planet/system/fleet against a specified value or another variable on the same scope
 alias[trigger:check_variable] = {
 	which = value[variable]
+	## cardinality = 1..inf
 	value = value_field
 }
 
-
 ###Checks the ship/fleet/planet/leader/pop/system's galaxy map distance to target in absolute units
 alias[trigger:distance] = {
+	## cardinality = 0..1
 	source = scope_group[celestial_coordinate]
 	## cardinality = 0..1
 	###Must use >= or will create error log entry
@@ -1468,7 +1470,7 @@ alias[trigger:has_commercial_pact] = scope_group[target_country]
 ###Checks specific resource stockpile for the country scope
 alias[trigger:resource_stockpile_compare] = {
 	resource = <resource>
-	value = float #no variables here atm
+	value = value_field
 	## cardinality = 0..1
 	mult = value_field
 	## cardinality = 0..1
@@ -1655,6 +1657,7 @@ alias[trigger:has_ai_expansion_plan] = bool
 
 ###Checks if the planet has any, or a specific, district
 alias[trigger:has_district] = <district>
+alias[trigger:has_district] = yes
 
 ###Checks if country has active events
 alias[trigger:has_active_event] = {
@@ -1810,15 +1813,20 @@ alias[trigger:federation_level] == int_value_field
 
 ###Checks if the Galactic Community is currently voting on any, or a specific, resolution.
 alias[trigger:is_voting_on_resolution] = any
-
-###Checks if the Galactic Community is currently voting on any, or a specific, resolution.
 alias[trigger:is_voting_on_resolution] = <resolution>
 
 ###Checks if the scoped country is currently proposing any, or a specific, resolution.
 alias[trigger:is_proposing_resolution] = any
-
-###Checks if the scoped country is currently proposing any, or a specific, resolution.
 alias[trigger:is_proposing_resolution] = <resolution>
+
+###Checks if the last resolution the Galactic Community voted on or otherwise passed or failed is as specified.
+alias[trigger:last_resolution_changed] = <resolution>
+
+###Checks if the current country is supporting, opposing or abstaining from the currently proposed galcom resolution.
+alias[trigger:position_on_current_resolution] = enum[galcom_resolution_position]
+
+###Checks if the current country was supporting, opposing or abstaining from the last proposed galcom resolution.
+alias[trigger:position_on_last_resolution] = enum[galcom_resolution_position]
 
 ###Compare with number of years since the formation of the Galactic Community. NOTE: A negative value means it hasn't been formed yet!
 alias[trigger:is_years_since_community_formation] == int_value_field
@@ -1962,6 +1970,9 @@ alias[trigger:has_any_federation_law_in_category] = <federation_law_category>
 
 ###Check that the planet has available jobs of a specific type
 alias[trigger:has_available_jobs] = <job>
+
+###Check that you have forbidden job of a specific type
+alias[trigger:has_forbidden_jobs] = <job>
 
 ###Checks if Xeno Compatibility are enabled in game setup
 alias[trigger:xeno_compatibility_enabled] = bool
@@ -2603,7 +2614,7 @@ alias[trigger:has_pre_ftl_age] = <pre_ftl_age>
 alias[trigger:civics_count] == int
 
 ###Checks the scope leader's years of service
-alias[trigger:leader_years_of_service == int
+alias[trigger:leader_years_of_service] == int
 
 ###num_leader_traits - Checks the number of leader traits or total tiers of traits for a specific leader
 alias[trigger:num_leader_traits] = {

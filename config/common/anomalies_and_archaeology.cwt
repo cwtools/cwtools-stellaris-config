@@ -107,19 +107,16 @@ anomaly_category = {
 	}
 }
 
-
-
-
 relic = {
+	## cardinality = 0..1
 	activation_duration = int[0..inf]
 	portrait = <sprite>
+	## cardinality = 0..1
 	sound = <sound_effect>
-
 	resources = {
 		category = <economic_category>
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}
-
 
 	## cardinality = 0..1
 	ai_weight = {
@@ -128,8 +125,10 @@ relic = {
 
 	alias_name[triggered_country_modifier_country] = alias_match_left[triggered_country_modifier_country]
 
+	## cardinality = 0..1
 	score = int[0..inf]
 
+	## cardinality = 0..1
 	## replace_scope = { root = country this = country }
 	active_effect = {
 		alias_name[effect] = alias_match_left[effect]

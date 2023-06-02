@@ -69,6 +69,7 @@ megastructure = {
 	}
 	## cardinality = 0..1
 	prerequisites = {
+		## cardinality = 1..inf
 		<technology>
 	}
 	subtype[has_prereqs] = {
@@ -87,6 +88,8 @@ megastructure = {
 	possible = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## cardinality = 0..1
+	starbase = <starbase_level>
 	## cardinality = 0..1
 	build_time = int
 	## cardinality = 0..1

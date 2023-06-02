@@ -29,6 +29,7 @@ alias[effect:create_starbase] = {
 alias[effect:hidden_effect] = { alias_name[effect] = alias_match_left[effect] }
 ###Executes enclosed effects if limit criteria are met
 alias[effect:if] = {
+	## severity = warning
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
@@ -37,22 +38,24 @@ alias[effect:if] = {
 
 ###Executes enclosed effects if limit criteria of both it and preceding 'if' or 'else_if' is not met, and its own limit is met
 alias[effect:else_if] = {
-	## severity = info
+	## severity = warning
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	alias_name[effect] = alias_match_left[effect]
 }
 
-###Executes enclosed effects if limit criteria of preceding 'if' or 'else_if' is not met, and its own limit is met
+###Executes enclosed effects if limit criteria of preceding 'if' or 'else_if' is not met
 alias[effect:else] = {
 	alias_name[effect] = alias_match_left[effect]
 }
 
 ###Saves the current scope as an arbitrarily-named target to be referenced later in the (unbroken) event chain
 alias[effect:save_event_target_as] = value_set[event_target]
+
 ###Saves the current scope as an arbitrarily-named target to be referenced later, accessible globally until cleared
 alias[effect:save_global_event_target_as] = value_set[global_event_target]
+
 ###Fires a ship event for the scoped ship, with optional DAYS and RANDOM delay
 alias[effect:ship_event] = {
 	id = <event.ship>
@@ -628,7 +631,7 @@ alias[effect:remove_relation_flag] = {
 
 ###Change the scoped country's government authority and/or civics
 alias[effect:change_government] = random
-###Change the scoped country's government authority and/or civics
+alias[effect:change_government] = <authority>
 alias[effect:change_government] = {
 	## cardinality = 0..1
 	authority = random
@@ -1112,6 +1115,8 @@ alias[effect:create_species] = {
 	## cardinality = 0..1
 	namelist = random
 	## cardinality = 0..1
+	namelist = random_class
+	## cardinality = 0..1
 	plural = scalar
 	## cardinality = 0..1
 	species_bio = scalar
@@ -1139,6 +1144,9 @@ alias[effect:create_species] = {
 	## cardinality = 0..1
 	###Limits species to this gender
 	gender = scope_group[target_species]
+	## cardinality = 0..1
+	###Limits species to this gender
+	gender = random
 	## cardinality = 0..1
 	homeworld = scope_group[target_planet]
 	## cardinality = 0..1
@@ -1271,6 +1279,8 @@ alias[effect:create_country] = {
 	adjective = random
 	## cardinality = 0..1
 	adjective = localisation
+	## cardinality = 0..1
+	###default is in fact, the default
 	type = <country_type>
 	## cardinality = 0..1
 	auto_delete = bool
@@ -1370,6 +1380,8 @@ alias[effect:create_country] = {
 	government_restrictions = {
 		alias_name[government_trigger] = alias_match_left[government_trigger]
 	}
+	## cardinality = 0..1
+	contact_rule = enum[contact_rules]
 }
 
 ###Creates a rebellion on this planet
@@ -1391,9 +1403,10 @@ alias[effect:create_rebels] = {
 	civics = {
 		## cardinality = 2..3
 		civic = <civic_or_origin.civic>
+		## cardinality = 2..3
+		civic = random
 	}
 	species = scope_group[target_species]
-	species = enum[buildable_pop_species]
 	## cardinality = 0..1
 	ethos = random
 	## cardinality = 0..1
@@ -1454,9 +1467,10 @@ alias[effect:create_army] = {
 	## cardinality = 0..1
 	species = scope_group[target_species]
 	## cardinality = 0..1
-	species = enum[buildable_pop_species]
-	## cardinality = 0..1
 	leader = scope_group[target_leader]
+	## cardinality = 0..1
+	###Whether the army should land on the currently-scoped planet (default = no)
+	land_army = bool
 	## cardinality = 0..1
 	## push_scope = army
 	effect = {
@@ -1476,15 +1490,12 @@ alias[effect:create_leader] = {
 	###Other scopes will simply default to this.owner_main_species
 	species = scope_group[target_species]
 	## cardinality = 0..1
-	species = enum[buildable_pop_species]
-	## cardinality = 0..1
 	leader_age_min = int
 	## cardinality = 0..1
 	leader_age_max = int	#should not be less than min...
 	## cardinality = 0..1
 	gender = enum[genders]
 	## cardinality = 0..1
-	###Warning: This is in trigger_docs but is not used in this place in Vanilla, and likely does not work
 	set_age = int
 	## cardinality = 0..1
 	skill = random
@@ -1553,8 +1564,6 @@ alias[effect:clone_leader] = {
 	class = enum[leader_classes]
 	## cardinality = 0..1
 	species = scope_group[target_species]
-	## cardinality = 0..1
-	species = enum[buildable_pop_species]
 	## cardinality = 0..1
 	leader_age_min = int
 	## cardinality = 0..1
@@ -1628,8 +1637,6 @@ alias[effect:modify_species] = {
 	## cardinality = 0..1
 	species = scope_group[target_species]
 	## cardinality = 0..1
-	species = enum[buildable_pop_species]
-	## cardinality = 0..1
 	###new base species; default: auto (uses species)
 	base = scope_group[target_species]
 	## cardinality = 0..1
@@ -1671,7 +1678,6 @@ alias[effect:change_species] = scope_group[target_species]
 ###Changes the dominant species of the current Country, change_all also changes all usage of that species (Pops etc) in the empire
 alias[effect:change_dominant_species] = {
 	species = scope_group[target_species]
-	species = enum[buildable_pop_species]
 	## cardinality = 0..1
 	change_all = yes
 }
@@ -1840,6 +1846,7 @@ alias[effect:add_random_research_option] = {
 	area = enum[technology_areas]
 	## cardinality = 0..1
 	tier = <technology_tier>
+	## cardinality = 0..1
 	add_progress = value_field[0.1..1.0]
 	## cardinality = 0..1
 	fail_effects = {
@@ -1885,6 +1892,7 @@ alias[effect:add_trust] = {
 ### Makes a fleet or ship auto-move to target fleet and potentially attack it
 alias[effect:auto_follow_fleet] = {
 	target = scope[fleet]
+	## cardinality = 0..1
 	attack_fleet = bool
 }
 
@@ -2032,6 +2040,8 @@ alias[effect:create_ambient_object] = {
 	## cardinality = 0..1
 	entity_scale_to_size = bool
 	## cardinality = 0..1
+	scripted_scale = enum[scripted_scale_type]
+	## cardinality = 0..1
 	play_animation_once = bool
 	## cardinality = 0..1
 	duration = int
@@ -2039,6 +2049,13 @@ alias[effect:create_ambient_object] = {
 	## push_scope = ambient_object
 	effect = {
 		alias_name[effect] = alias_match_left[effect]
+	}
+}
+
+enums = {
+	enum[scripted_scale_type] = {
+		effect_size_var
+		beam_size_var
 	}
 }
 
@@ -2053,8 +2070,6 @@ alias[effect:create_army_transport] = {
 	army_name = localisation
 	##cardinality = 0..1
 	species = scope_group[target_species]
-	##cardinality = 0..1
-	species = enum[buildable_pop_species]
 	## cardinality = 0..1
 	## push_scope = ship
 	effect = {
@@ -2077,8 +2092,6 @@ alias[effect:create_colony] = {
 	##cardinality = 0..1
 	species = scope_group[target_species]
 	##cardinality = 0..1
-	species = enum[buildable_pop_species]
-	##cardinality = 0..1
 	species = scalar	#key
 	##cardinality = 0..1
 	ethos = random
@@ -2096,6 +2109,8 @@ alias[effect:create_colony] = {
 ### Creates a new fleet
 alias[effect:create_fleet] = {
 	alias_name[name] = alias_match_left[name]
+	## cardinality = 0..1
+	name = random
 	## cardinality = 0..1
 	name = scope[fleet]
 	## cardinality = 0..1
@@ -2138,6 +2153,10 @@ alias[effect:create_message] = {
 	## cardinality = 0..1
 	### Default = this
 	target = scope[any]
+	## cardinality = 0..1
+	custom_toast_content_text = localisation
+	## cardinality = 0..1
+	custom_toast_content_icon = <sprite>
 	# note: the variable sections were split apart to help enforce which properties go with which other ones
 	## cardinality = 0..inf
 	### insert the name (equivalent to[GetName]) of the target scope into the message's localisation
@@ -2236,7 +2255,6 @@ alias[effect:create_point_of_interest] = {
 ### Creates a new pop on the scoped tile/planet
 alias[effect:create_pop] = {
 	species = scope_group[target_species]
-	species = enum[buildable_pop_species]
 	species = scalar	#key
 	## cardinality = 0..1
 	ethos = random
@@ -2278,10 +2296,12 @@ alias[effect:create_saved_leader] = {
 	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	gender = enum[genders]
+	## cardinality = 0..1
 	class = random
+	## cardinality = 0..1
 	class = enum[leader_classes]
+	## cardinality = 0..1
 	species = scope_group[target_species]
-	species = enum[buildable_pop_species]
 	## cardinality = 0..1
 	immortal = bool
 	## cardinality = 0..1
@@ -2290,6 +2310,7 @@ alias[effect:create_saved_leader] = {
 	set_age = int
 	## cardinality = 0..1
 	skill = random
+	## cardinality = 0..1
 	skill = int[1..20]
 	## cardinality = 0..1
 	###Default = no
@@ -2344,12 +2365,12 @@ alias[effect:create_ship] = {
 	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
 	name = scope[ship]
-	## severity = warning
 	## cardinality = 0..1
 	design = last_created_design
-	## severity = warning
 	## cardinality = 0..1
 	design = <global_ship_design>
+	## cardinality = 0..1
+	design = scope[design]
 	## severity = warning
 	## cardinality = 0..1
 	# Hack to handle named designs
@@ -2468,8 +2489,6 @@ alias[effect:modify_army] = {
 	owner = scope_group[target_country]
 	## cardinality = 0..1
 	species = scope_group[target_species]
-	## cardinality = 0..1
-	species = enum[buildable_pop_species]
 	## cardinality = 0..1
 	type = <army>
 }
@@ -2638,6 +2657,7 @@ alias[effect:set_planet_name] = scalar
 alias[effect:set_policy] = {
 	policy = <policy>
 	option = enum[policy_option]
+	## cardinality = 0..1
 	cooldown = bool
 }
 
@@ -2695,7 +2715,7 @@ alias[effect:spawn_megastructure] = {
 	## cardinality = 0..1
 	orbit_angle = random
 	## cardinality = 0..1
-	orbit_angle = int[0..360]
+	orbit_angle = int[-360..360]
 	## cardinality = 0..1
 	orbit_angle = {
 		min = int[0..360]
@@ -2805,8 +2825,6 @@ alias[effect:start_colony] = {
 	owner = scope_group[target_country]
 	## cardinality = 0..1
 	species = scope_group[target_species]
-	## cardinality = 0..1
-	species = enum[buildable_pop_species]
 	## cardinality = 0..1
 	species = scalar	#key
 	## cardinality = 0..1
@@ -3167,6 +3185,7 @@ alias[effect:force_add_civic] = <civic_or_origin.civic>
 
 ###Removes civic from a goverment without checking the restrictions.
 alias[effect:force_remove_civic] = <civic_or_origin.civic>
+alias[effect:force_remove_civic] = int[1..inf]
 
 ###Completes a specific special project for the country, firing the on_success effects
 alias[effect:complete_special_project] = {
@@ -3741,6 +3760,10 @@ alias[effect:remove_fleet_contract_modifiers] = bool
 
 ###Breaks fleet lease contract
 alias[effect:end_fleet_contract] = yes
+alias[effect:end_fleet_contract] = {
+	initiator = scope_group[target_country]
+	reason = enum[end_fleet_contract_reason]
+}
 
 ###Set fleet's settings, any unspecified setting will set to default value.
 alias[effect:set_fleet_settings] = {
@@ -3890,3 +3913,6 @@ alias[effect:add_age] = int_value_field
 
 ###Adds to the scoped leader's skill level but does not select any traits
 alias[effect:add_skill_without_trait_selection] = int_value_field
+
+###Unlocks council selection
+alias[effect:unlock_council_selection] = yes

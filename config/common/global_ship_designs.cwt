@@ -47,18 +47,13 @@ global_ship_design = {
 		component = {
 			#one slot, of one type! so one of the these two varients- and these need to match the component template as it is defined!
 			## cardinality = 0..1
-			#TODO check slot sizes
 			slot = enum[component_slots]
 			## cardinality = 0..1
 			slot = enum[utility_component_slots]
-			# cardinality = 0..1
-			#TODO check slot sizes
-			#slot = <weapon_slot_size>
-			## cardinality = 1..1
+			## cardinality = 0..1
 			template = <component_template>
 		}
 	}
-	#TODO Check this
 	## cardinality = 0..inf
 	required_component = <component_template.utility_component_template>
 }

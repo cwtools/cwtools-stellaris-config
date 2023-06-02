@@ -1,16 +1,26 @@
 types = { #these are all connected. I added the others so whoever does these in the end knows where to look.
 	type[name_list] = {
 		path = "game/common/name_lists"
-
 		subtype[random] = {
 			## cardinality = 0..0
 			randomized = bool
 		}
+		subtype[selectable] = {
+			## cardinality = 0..1
+			selectable = {
+				## cardinality = 0..0
+				always = no
+			}
+		}
 		localisation = {
-			## required
-			name = "name_list_$"
 			## optional
-			desc = "name_list_$_desc"
+			Name = "name_list_$"
+			## optional
+			Desc = "name_list_$_desc"
+			subtype[selectable] = {
+				## required
+				Name = "name_list_$"
+			}
 		}
 	}
 	## type_key_filter <> named_lists
@@ -38,10 +48,8 @@ enums = {
 name_list = {
 	## cardinality = 0..1
 	language = scalar
-
 	## cardinality = 0..1
 	category = scalar
-
 	## cardinality = 0..1
 	selectable = {
 		## replace_scope = { this = country root = country } #i think, might be no_scope though
@@ -339,14 +347,14 @@ species_name = {
 		name = localisation
 		### Plural for the species name, e. g. Humans
 		plural = localisation
+		## cardinality = 0..1
 		### Name of the home planet, if this entry is used when generating random playable empire on game start, e. g. Earth
 		home_planet = localisation
+		## cardinality = 0..1
 		### Name of the home system, if this entry is used when generating random playable empire on game start, e. g. Sol
 		home_system = localisation
 		### ID of the name list picked if this entry is used when generating random player empire on game start, e. g. HUMAN1. It cannot be a non-randomizable name list (creates species with blank names). It is unclear whether selectable = { always = no } will also avoid this bug, let Dayshine and Caligula know if it does.
 		name_list = <name_list>
-		## cardinality = 0..1
-		language = scalar
 	}
 }
 
@@ -355,7 +363,5 @@ species_named_list = {
 	scalar = {
 		name = localisation
 		plural = localisation
-		## cardinality = 0..1
-		language = scalar
 	}
 }

@@ -53,6 +53,10 @@ ethos = {
 	## replace_scope = { this = country root = country }
 	country_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
+		## cardinality = 0..1
+		custom_tooltip = localisation
+		## cardinality = 0..1
+		show_only_custom_tooltip = no
 	}
 
 	## cardinality = 0..1

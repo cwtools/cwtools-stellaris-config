@@ -121,7 +121,7 @@ ai_personality = {
 	## cardinality = 0..1
 	### Affects opinion penalty from claims
 	claims_modifier = float
-
+	## cardinality = 0..1
 	behaviour = {
 		## cardinality = 0..1
 		### Will they conquer planets from other empires?

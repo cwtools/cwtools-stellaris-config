@@ -59,13 +59,13 @@ empire_name_format = {
 	## replace_scope = { root = country this = country }
 	### Conditional weight for choosing this format
 	random_weight = {
-		factor = 0
+		factor = float
+		## cardinality = 0..inf
 		modifier = {
 			add = float
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
-
 	### Format string for generating random name (proper noun form)
 	format = stellaris_name_format[empire_name_parts]
 	### String used to determine prefix for empire's ship. (Default being ISS). Usually matches name format. Optional for countries that would not ever have ships, e. g. Primitives.
@@ -90,7 +90,8 @@ pop_faction_name_parts_list = {
 
 pop_faction_name_format = {
 	random_weight = {
-		factor = 0
+		factor = float
+		## cardinality = 0..inf
 		modifier = {
 			add = float
 			alias_name[trigger] = alias_match_left[trigger]
@@ -115,7 +116,8 @@ pre_communications_name_parts_list = {
 
 pre_communications_name_format = {
 	random_weight = {
-		factor = 0
+		factor = float
+		## cardinality = 0..inf
 		modifier = {
 			add = float
 			alias_name[trigger] = alias_match_left[trigger]
@@ -136,10 +138,8 @@ war_name_parts_list = {
 
 war_name_format = {
 	random_weight = {
-		factor = 1
-	}
-	random_weight = {
-		factor = 0
+		factor = float
+		## cardinality = 0..inf
 		modifier = {
 			add = float
 			alias_name[trigger] = alias_match_left[trigger]

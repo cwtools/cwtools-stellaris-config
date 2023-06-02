@@ -35,7 +35,6 @@ enums = {
 	}
 }
 
-
 ## push_scope = planet
 building = {
 	## cardinality = 0..inf
@@ -122,6 +121,11 @@ building = {
 	}
 
 	## cardinality = 0..1
+	on_repaired = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+
+	## cardinality = 0..1
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
@@ -147,9 +151,8 @@ building = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
-	alias_name[triggered_planet_modifier] = alias_match_left[triggered_planet_modifier]
+	alias_name[triggered_planet_modifier_planet] = alias_match_left[triggered_planet_modifier_planet]
 	alias_name[triggered_desc] = alias_match_left[triggered_desc]
-
 	alias_name[triggered_country_modifier_planet] = alias_match_left[triggered_country_modifier_planet]
 
 	## cardinality = 0..1
@@ -182,14 +185,7 @@ building = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 
-	## cardinality = 0..inf
-	ai_resource_production = {
-		## cardinality = 1..inf
-		<resource> = int
-		trigger = {
-			alias_name[trigger] = alias_match_left[trigger]
-		}
-	}
+	alias_name[ai_resource_production] = alias_match_left[ai_resource_production]
 
 	## cardinality = 0..1
 	convert_to = {
@@ -212,4 +208,8 @@ building = {
 	## cardinality = 0..1
 	### Property on buildings which when added to the AI build queue will remove all non essential build tasks.
 	is_essential = bool
+
+	## cardinality = 0..1
+	### Default = no
+	ai_estimate_without_unemployment = bool
 }

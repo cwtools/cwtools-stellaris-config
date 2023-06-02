@@ -39,11 +39,16 @@ types = {
 		path = "game/common/governments/civics"
 		skip_root_key = any
 		name_field = "name"
+		subtype[localised] = {
+			name = scalar
+		}
 		localisation = {
-			## required
-			Name = "$"
-			## required
-			Description = "$_desc"
+			subtype[localised] = {
+				## required
+				Name = "$"
+				## required
+				Description = "$_desc"
+			}
 		}
 	}
 	type[councilor] = {
@@ -118,6 +123,10 @@ authority = {
 	## replace_scope = { this = country root = country }
 	country_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
+		## cardinality = 0..1
+		custom_tooltip = localisation
+		## cardinality = 0..1
+		show_only_custom_tooltip = no
 	}
 	## cardinality = 0..1
 	playable = {
@@ -264,8 +273,12 @@ civic_or_origin = {
 	starting_colony = <planet_class>
 	## cardinality = 0..1
 	swap_type = {
+		subtype[localised] = {
+			name = scalar
+		}
 		## cardinality = 0..1
-		name = localisation
+		name = scalar
+		## cardinality = 0..1
 		description = localisation
 		### In empire creation / galaxy setup, this has no scope. During the game, when there are actual countries existing, it is set to country scope.
 		### If you want to use country scope here, you must always check is_scope_valid first (see civic_devouring_swarm), or you will get errors or it won't work as intended.
@@ -360,10 +373,10 @@ civic_or_origin = {
 
 councilor = {
 	## cardinality = 0..1
-	### Civic that is required for this council position. Also used by UI. Default = none.
+	### Civic that is required for this council position. Also used by UI. (Default = none)
 	civic = none
 	## cardinality = 0..1
-	### Civic that is required for this council position. Also used by UI. Default = none.
+	### Civic that is required for this council position. Also used by UI. (Default = none)
 	civic = <civic_or_origin.civic>
 	## cardinality = 0..1
 	### Which leader classes can have this council position. Currently only used for the Recruit New Leader buttons. (Default = none)
@@ -376,13 +389,13 @@ councilor = {
 	}
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
-	### Determines whether a councilor position is available for an empire
+	### Country scope triggers to evaluate if the council position is allowed.
 	possible = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
 	## replace_scope = { this = leader root = leader }
-	### Can a leader have this council position. Used to filter leaders.
+	### Leader scope triggers to evaluate if a leader can be assigned to this position.
 	is_leader_possible = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
@@ -393,14 +406,23 @@ councilor = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
-	### Custom tooltip text shown for the modifier of the council position.
+	### Custom tooltip text shown instead of the auto-generated modifier tooltip text of the council position.
 	custom_tooltip = localisation
+	## cardinality = 0..1
+	### Custom tooltip text shown in addition to the auto-generated modifier tooltip text of the council position.
+	custom_tooltip_with_modifiers = localisation
+	## cardinality = 0..1
+	### Custom text shown instead of "UNLOCK_COUNCIL_POSITION_TOOLTIP" for council positions without a civic.
+	custom_unlock_title = localisation
 	## cardinality = 0..1
 	### Custom tooltip text shown for the requirements of the council position.
 	conditional_tooltip = localisation
 	## cardinality = 0..1
-	###Default: uses the graphic for the corresponding civic
+	### Icon used for the council position, if a civic is not specified. (Default = icon for the corresponding civic)
 	icon = <sprite>
+	## cardinality = 0..1
+	### Is this position forced to be on the council. (Default = no)
+	required = bool
 }
 
 ## replace_scope = { this = country root = country }

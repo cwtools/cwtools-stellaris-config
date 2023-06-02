@@ -29,20 +29,16 @@ types = {
 			## cardinality = 0..0
 			inherit_name = yes
 		}
-		subtype[not_inheriting_effects] = {
-			## cardinality = 0..0
-			inherit_effects = yes
-		}
 		localisation = {
+			## optional
+			Name = "$"
+			## optional
+			Effects = "$_desc"
+			## optional
+			Flavor = "$_delayed"
 			subtype[not_inheriting_name] = {
 				## required
 				Name = "$"
-				## optional
-				Flavor = "$_delayed"
-			}
-			subtype[not_inheriting_effects] = {
-				## optional
-				Effects = "$_desc"
 			}
 		}
 	}
@@ -98,8 +94,12 @@ ascension_perk = {
 			### Any value can go here to be used in localisation
 			scalar = float
 		}
-
+		## cardinality = 0..1
 		alias_name[modifier] = alias_match_left[modifier]
+		## cardinality = 0..1
+		custom_tooltip = localisation
+		## cardinality = 0..1
+		show_only_custom_tooltip = no
 	}
 
 	## cardinality = 0..1
@@ -107,14 +107,82 @@ ascension_perk = {
 	ai_weight = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
+
+	# yes it is really called tradition_swap - see ap_enigmatic_engineering
+	## cardinality = 0..inf
+	tradition_swap = {
+		name = scalar
+		## cardinality = 0..1
+		inherit_icon = bool
+		## cardinality = 0..1
+		inherit_name = bool
+		## cardinality = 0..1
+		inherit_effects = bool
+		## cardinality = 0..1
+		custom_tooltip = localisation
+		## cardinality = 0..1
+		custom_tooltip_with_modifiers = localisation
+	
+		#Should be only if not inheriting effects
+		## cardinality = 0..1
+		###accepts only country modifiers
+		## replace_scope = { this = country root = country }
+		modifier = {
+			## cardinality = 0..1
+			description = localisation
+			## cardinality = 0..1
+			description_parameters = {
+				## cardinality = 0..inf
+				### Any value can go here to be used in localisation
+				scalar = float
+			}
+			## cardinality = 0..1
+			alias_name[modifier] = alias_match_left[modifier]
+			## cardinality = 0..1
+			custom_tooltip = localisation
+			## cardinality = 0..1
+			show_only_custom_tooltip = no
+		}
+		#Should be only if not inheriting effects
+		## replace_scope = { this = country root = country }
+		## cardinality = 0..1
+		on_enabled = {
+			## cardinality = 0..inf
+			alias_name[effect] = alias_match_left[effect]
+		}
+		
+		## replace_scope = { this = country root = country }
+		## cardinality = 0..1
+		###this determines the chances of an ascension perk swap appearing for a given empire IF multiple swaps are potential.
+		weight = {
+			alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		}
+		## cardinality = 0..1
+		## replace_scope = { this = country root = country }
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
 
 tradition = {
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
 	modifier = { ###accepts only country modifiers
-		## cardinality = 0..inf
+		## cardinality = 0..1
+		description = localisation
+		## cardinality = 0..1
+		description_parameters = {
+			## cardinality = 0..inf
+			### Any value can go here to be used in localisation
+			scalar = float
+		}
+		## cardinality = 0..1
 		alias_name[modifier] = alias_match_left[modifier]
+		## cardinality = 0..1
+		custom_tooltip = localisation
+		## cardinality = 0..1
+		show_only_custom_tooltip = no
 	}
 	## replace_scope = { this = country root = country }
 	### the ai_weight in traditions applies both to the main traditions and the tradition swaps, there are no seperate fields.
@@ -143,7 +211,7 @@ tradition = {
 
 	## cardinality = 0..inf
 	tradition_swap = {
-		name = localisation
+		name = scalar
 		## cardinality = 0..1
 		inherit_icon = bool
 		## cardinality = 0..1
@@ -161,7 +229,19 @@ tradition = {
 		## replace_scope = { this = country root = country }
 		modifier = {
 			## cardinality = 0..1
+			description = localisation
+			## cardinality = 0..1
+			description_parameters = {
+				## cardinality = 0..inf
+				### Any value can go here to be used in localisation
+				scalar = float
+			}
+			## cardinality = 0..1
 			alias_name[modifier] = alias_match_left[modifier]
+			## cardinality = 0..1
+			custom_tooltip = localisation
+			## cardinality = 0..1
+			show_only_custom_tooltip = no
 		}
 		#Should be only if not inheriting effects
 		## replace_scope = { this = country root = country }

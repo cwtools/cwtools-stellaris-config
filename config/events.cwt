@@ -83,13 +83,13 @@ types = {
 		## type_key_filter = situation_event
 		## push_scope = situation
 		## display_name = Situation Event
-		## abbreviation = LE
+		## abbreviation = SiE
 		subtype[situation] = {
 		}
 		## type_key_filter = agreement_event
 		## push_scope = agreement
 		## display_name = Agreement Event
-		## abbreviation = LE
+		## abbreviation = AE
 		subtype[agreement] = {
 		}
 		## type_key_filter = event
@@ -108,6 +108,9 @@ types = {
 
 			## cardinality = 0..1
 			diplomatic = no
+
+			## cardinality = 0..0
+			event_window_type = enum[event_window_type]
 		}
 		subtype[leader_recruit] = {
 			event_window_type = leader_recruit
@@ -117,9 +120,6 @@ types = {
 		}
 		subtype[triggered] = {
 			is_triggered_only = yes
-		}
-		subtype[major] = {
-			major = yes
 		}
 		subtype[inherited] = {
 			base = <event>
@@ -147,14 +147,27 @@ event = {
 	subtype[!hidden] = {
 		title = localisation
 		desc = localisation
-
 		desc = {
 			## cardinality = 0..1
 			trigger = {
 				alias_name[trigger] = alias_match_left[trigger]
-
+				## cardinality = 0..1
+				switch = {
+					trigger = scalar
+					## cardinality = 2..inf
+					scalar = {
+						## cardinality = 0..1
+						if = {
+							limit = { alias_name[trigger] = alias_match_left[trigger] }
+							text = localisation
+						}
+						## cardinality = 0..1
+						text = localisation
+					}
+				}
 				## cardinality = 0..inf
 				scope[any] = {
+					alias_name[trigger] = alias_match_left[trigger]
 					## cardinality = 0..1
 					switch = {
 						trigger = scalar
@@ -170,6 +183,10 @@ event = {
 						}
 					}
 				}
+			}
+			## cardinality = 0..1
+			exclusive_trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
 				## cardinality = 0..1
 				switch = {
 					trigger = scalar
@@ -184,13 +201,10 @@ event = {
 						text = localisation
 					}
 				}
-			}
-			## cardinality = 0..1
-			exclusive_trigger = {
-				alias_name[trigger] = alias_match_left[trigger]
-
 				## cardinality = 0..inf
 				scope[any] = {
+					alias_name[trigger] = alias_match_left[trigger]
+					## cardinality = 0..1
 					switch = {
 						trigger = scalar
 						## cardinality = 2..inf
@@ -205,25 +219,17 @@ event = {
 						}
 					}
 				}
-				## cardinality = 0..1
-				switch = {
-					trigger = scalar
-					## cardinality = 2..inf
-					scalar = {
-						## cardinality = 0..1
-						if = {
-							limit = { alias_name[trigger] = alias_match_left[trigger] }
-							text = localisation
-						}
-						## cardinality = 0..1
-						text = localisation
-					}
-				}
 			}
 			## cardinality = 0..inf
 			text = localisation
 			## cardinality = 0..1
 			show_sound = <sound_effect>
+		}
+		picture = <sprite>
+		picture = {
+			picture = <sprite>
+			## cardinality = 0..1
+			trigger = { alias_name[trigger] = alias_match_left[trigger] }
 		}
 
 		## cardinality = 0..inf
@@ -231,6 +237,9 @@ event = {
 		## cardinality = 0..inf
 		show_sound = {
 			sound = <sound_effect>
+			## cardinality = 0..1
+			sound_is_advisor = bool
+			## cardinality = 0..1
 			trigger = {
 				alias_name[trigger] = alias_match_left[trigger]
 			}
@@ -261,6 +270,9 @@ event = {
 		diplomatic = bool
 
 		## cardinality = 0..1
+		event_window_type = enum[event_window_type]
+
+		## cardinality = 0..1
 		###Forces the event to pop-up even if player has supressed pop ups
 		auto_opens = bool
 
@@ -275,7 +287,40 @@ event = {
 			name = {
 				trigger = {
 					alias_name[trigger] = alias_match_left[trigger]
+					## cardinality = 0..1
+					switch = {
+						trigger = scalar
+						## cardinality = 2..inf
+						scalar = {
+							## cardinality = 0..1
+							if = {
+								limit = { alias_name[trigger] = alias_match_left[trigger] }
+								text = localisation
+							}
+							## cardinality = 0..1
+							text = localisation
+						}
+					}
+					## cardinality = 0..inf
+					scope[any] = {
+						alias_name[trigger] = alias_match_left[trigger]
+						## cardinality = 0..1
+						switch = {
+							trigger = scalar
+							## cardinality = 2..inf
+							scalar = {
+								## cardinality = 0..1
+								if = {
+									limit = { alias_name[trigger] = alias_match_left[trigger] }
+									text = localisation
+								}
+								## cardinality = 0..1
+								text = localisation
+							}
+						}
+					}
 				}
+				## cardinality = 0..1
 				text = localisation
 			}
 			## cardinality = 1..inf
@@ -285,7 +330,6 @@ event = {
 				}
 				text = localisation
 			}
-
 			## cardinality = 0..1
 			icon = {
 				icon = <sprite>
@@ -369,15 +413,6 @@ event = {
 		show_sound = scalar
 	}
 
-	subtype[default] = {
-		picture = <sprite>
-		picture = {
-			picture = <sprite>
-			## cardinality = 0..1
-			trigger = { alias_name[trigger] = alias_match_left[trigger] }
-		}
-	}
-
 	## cardinality = 0..1
 	message_desc = localisation
 
@@ -395,16 +430,6 @@ event = {
 			factor = float
 			## cardinality = 0..100
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
-		}
-	}
-	## cardinality = 0..1
-	###Event will show for other countries if this is set to yes. Those countries can be narrowed down with major_trigger.
-	major = yes
-	subtype[major] = {
-		## cardinality = 0..1
-		###Triggers for other countries on whether a major event should show for them. I.e. if it reads has_ethic = ethic_materialist, then all materialist countries will see the event.
-		major_trigger = {
-			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
 	## cardinality = 0..1
@@ -459,14 +484,14 @@ event = {
 	}
 
 	subtype[leader_recruit] = {
-		event_window_type = leader_recruit
 		## cardinality = 0..1
 		notification_event_icon = <sprite>
 		alias_name[picture_event_data] = alias_match_left[picture_event_data]
 	}
 
 	subtype[leader_story] = {
-		event_window_type = leader_story
+		## cardinality = 0..1
+		event_picture_background = <sprite>
 		alias_name[picture_event_data] = alias_match_left[picture_event_data]
 	}
 
@@ -550,6 +575,10 @@ alias[picture_event_data:picture_event_data] = {
 }
 
 enums = {
+	enum[event_window_type] = {
+		leader_recruit
+		leader_story
+	}
 	enum[leader_recruit_tag_type] = {
 		hire_leader
 		dismiss_leader

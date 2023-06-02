@@ -22,14 +22,8 @@ types = {
 		localisation = {
 			## required
 			Name = "$"
-			subtype[planet] = {
-				## required
-				Description = "$_desc"
-			}
-			subtype[!planet] = {
-				## optional
-				Description = "$_desc"
-			}
+			## optional
+			Description = "$_desc"
 		}
 	}
 	type[planet_modifier] = {

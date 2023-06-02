@@ -40,7 +40,7 @@ starbase_building = {
 	ai_build_at_chokepoint = bool
 	## cardinality = 0..1
 	ai_build_outside_chokepoint = bool
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	show_in_tech = <technology>
 
 	## cardinality = 0..1
@@ -53,12 +53,27 @@ starbase_building = {
 	possible = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+
+	## cardinality = 0..1
+	abort_construction_trigger = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## cardinality = 0..1
+	abort_trigger = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## cardinality = 0..1
+	destroy_trigger = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
 	## cardinality = 0..1
 	equipped_component = <component_template>
 
 	## cardinality = 0..inf
 	custom_tooltip = localisation
-
 
 	resources = {
 		category = <economic_category>
@@ -106,6 +121,10 @@ starbase_building = {
 	system_modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
+		## cardinality = 0..1
+		custom_tooltip = localisation
+		## cardinality = 0..1
+		show_only_custom_tooltip = no
 	}
 	## cardinality = 0..1
 	###country modifiers
@@ -121,6 +140,10 @@ starbase_building = {
 	planet_modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
+		## cardinality = 0..1
+		custom_tooltip = localisation
+		## cardinality = 0..1
+		show_only_custom_tooltip = no
 	}
 	alias_name[triggered_planet_modifier_starbase] = alias_match_left[triggered_planet_modifier_starbase]
 	alias_name[triggered_system_modifier_starbase] = alias_match_left[triggered_system_modifier_starbase]
@@ -156,7 +179,7 @@ starbase_module = {
 	ai_build_at_chokepoint = bool
 	## cardinality = 0..1
 	ai_build_outside_chokepoint = bool
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	show_in_tech = <technology>
 
 	resources = {
@@ -213,6 +236,10 @@ starbase_module = {
 	system_modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
+		## cardinality = 0..1
+		custom_tooltip = localisation
+		## cardinality = 0..1
+		show_only_custom_tooltip = no
 	}
 	## cardinality = 0..1
 	###country modifiers
@@ -228,6 +255,10 @@ starbase_module = {
 	planet_modifier = {
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
+		## cardinality = 0..1
+		custom_tooltip = localisation
+		## cardinality = 0..1
+		show_only_custom_tooltip = no
 	}
 	alias_name[triggered_planet_modifier_starbase] = alias_match_left[triggered_planet_modifier_starbase]
 	alias_name[triggered_system_modifier_starbase] = alias_match_left[triggered_system_modifier_starbase]
@@ -281,7 +312,9 @@ starbase_level = {
 	## cardinality = 0..1
 	### Default yes, if no then starbase_trade_collection_range_add and starbase_trade_protection_range_add will have no effect on starbases of this level
 	collects_trade = bool
-
+	## cardinality = 0..1
+	### Default no, basically this tells the country that it is not an outpost despite being level 1 (having nothing to downgrade it to)
+	special_construction = bool
 	## cardinality = 0..1
 	## replace_scope = { root = starbase this = starbase }
 	upgrade_possible = {
