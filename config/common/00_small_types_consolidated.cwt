@@ -524,13 +524,8 @@ diplomacy_economy = {
 
 message_type = {
 	icon =	<sprite>
-	subtype[message] = {
-		icon_frame = int
-	}
-	subtype[toast] = {
-		## cardinality = 0..1
-		icon_frame = int
-	}
+	## cardinality = 0..1
+	icon_frame = int
 	### Message key, used from code.
 	key = scalar
 	## cardinality = 0..1
