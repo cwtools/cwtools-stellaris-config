@@ -95,6 +95,13 @@ types = {
 	type[message_type] = {
 		name_field = key
 		path = "game/common/message_types"
+		subtype[message] = {
+			## cardinality = 0..1
+			default_toast = no
+		}
+		subtype[toast] = {
+			default_toast = yes
+		}
 	}
 	type[scripted_modifier] = {
 		path = "game/common/scripted_modifiers"
@@ -519,7 +526,13 @@ diplomacy_economy = {
 
 message_type = {
 	icon =	<sprite>
-	icon_frame = int
+	subtype[message] = {
+		icon_frame = int
+	}
+	subtype[toast] = {
+		## cardinality = 0..1
+		icon_frame = int
+	}
 	### Message key, used from code.
 	key = scalar
 	## cardinality = 0..1
