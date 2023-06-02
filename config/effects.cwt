@@ -3909,3 +3909,6 @@ alias[effect:add_age] = int_value_field
 
 ###Adds to the scoped leader's skill level but does not select any traits
 alias[effect:add_skill_without_trait_selection] = int_value_field
+
+###Unlocks council selection
+alias[effect:unlock_council_selection] = yes
