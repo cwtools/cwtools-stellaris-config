@@ -108,6 +108,9 @@ types = {
 
 			## cardinality = 0..1
 			diplomatic = no
+
+			## cardinality = 0..0
+			event_window_type = enum[event_window_type]
 		}
 		subtype[leader_recruit] = {
 			event_window_type = leader_recruit
@@ -222,6 +225,12 @@ event = {
 			## cardinality = 0..1
 			show_sound = <sound_effect>
 		}
+		picture = <sprite>
+		picture = {
+			picture = <sprite>
+			## cardinality = 0..1
+			trigger = { alias_name[trigger] = alias_match_left[trigger] }
+		}
 
 		## cardinality = 0..inf
 		show_sound = <sound_effect>
@@ -261,25 +270,14 @@ event = {
 		diplomatic = bool
 
 		## cardinality = 0..1
+		event_window_type = enum[event_window_type]
+
+		## cardinality = 0..1
 		###Forces the event to pop-up even if player has supressed pop ups
 		auto_opens = bool
 
 		## cardinality = 0..1
 		is_test_event = bool
-
-		subtype[leader_recruit] = {
-			event_window_type = leader_recruit
-			## cardinality = 0..1
-			notification_event_icon = <sprite>
-			alias_name[picture_event_data] = alias_match_left[picture_event_data]
-		}
-	
-		subtype[leader_story] = {
-			event_window_type = leader_story
-			## cardinality = 0..1
-			event_picture_background = <sprite>
-			alias_name[picture_event_data] = alias_match_left[picture_event_data]
-		}
 
 		## cardinality = 0..inf
 		option = {
@@ -415,15 +413,6 @@ event = {
 		show_sound = scalar
 	}
 
-	subtype[default] = {
-		picture = <sprite>
-		picture = {
-			picture = <sprite>
-			## cardinality = 0..1
-			trigger = { alias_name[trigger] = alias_match_left[trigger] }
-		}
-	}
-
 	## cardinality = 0..1
 	message_desc = localisation
 
@@ -492,6 +481,18 @@ event = {
 		custom_gui = scalar #same as previous, needs to be gui_type
 		## cardinality = 0..1
 		custom_gui_option = scalar #same as previous, needs to be gui_type
+	}
+
+	subtype[leader_recruit] = {
+		## cardinality = 0..1
+		notification_event_icon = <sprite>
+		alias_name[picture_event_data] = alias_match_left[picture_event_data]
+	}
+
+	subtype[leader_story] = {
+		## cardinality = 0..1
+		event_picture_background = <sprite>
+		alias_name[picture_event_data] = alias_match_left[picture_event_data]
 	}
 
 	subtype[planet] = {
@@ -574,6 +575,10 @@ alias[picture_event_data:picture_event_data] = {
 }
 
 enums = {
+	enum[event_window_type] = {
+		leader_recruit
+		leader_story
+	}
 	enum[leader_recruit_tag_type] = {
 		hire_leader
 		dismiss_leader
