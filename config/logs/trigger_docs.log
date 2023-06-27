@@ -4746,7 +4746,9 @@ kill_leader - Kills the scoped leader or leader of the scoped country/fleet/ship
 kill_leader = { type = general type = scientist etc. }
 kill_leader = {
 	type = <key, optional, if left out will kill scoped leader> 
-	show_notification = <yes/no> heir = <yes, optional, if added to type = ruler, will kill heir instead>
+	show_notification = <yes/no>
+	heir = <yes/no, optional will kill heir>
+	ruler = <yes/no, optional will kill ruler>
 	fire = yes (default: no; if yes, fires on_leader_fired instead of on_leader_death
 }
 Supported Scopes: planet country ship fleet leader army
