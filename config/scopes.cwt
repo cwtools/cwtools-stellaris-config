@@ -95,7 +95,7 @@ scope_groups = {
         deposit pop army country leader debris
     }
     spatial_object = {
-        planet ship fleet ambient_object megastructure starbase archaeological_site debris
+        planet ship fleet ambient_object megastructure starbase archaeological_site debris galactic_object
     }
     target_species = {
         country pop leader planet ship fleet army species first_contact
@@ -105,7 +105,7 @@ scope_groups = {
     }
     target_country = {
         planet fleet system ship pop army leader pop_faction country megastructure starbase deposit
-        sector archaeological_site first_contact spy_network agreement debris
+        sector archaeological_site first_contact spy_network agreement debris situation
     }
     target_leader = {
         country fleet ship pop_faction army leader sector archaeological_site first_contact

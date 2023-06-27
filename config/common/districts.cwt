@@ -27,6 +27,8 @@ types = {
 district = {
 	## cardinality = 0..1
 	expansion_planner = bool
+	## cardinality = 0..1
+	###Default = 0
 	base_buildtime = int
 	## cardinality = 0..inf
 	desc = localisation
@@ -118,7 +120,7 @@ district = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 
-	alias_name[triggered_planet_modifier] = alias_match_left[triggered_planet_modifier]
+	alias_name[triggered_planet_modifier_planet] = alias_match_left[triggered_planet_modifier_planet]
 	alias_name[triggered_desc] = alias_match_left[triggered_desc]
 
 	## cardinality = 0..1
@@ -126,11 +128,5 @@ district = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 
-	## cardinality = 0..inf
-	ai_resource_production = {
-		<resource> = int
-		trigger = {
-			alias_name[trigger] = alias_match_left[trigger]
-		}
-	}
+	alias_name[ai_resource_production] = alias_match_left[ai_resource_production]
 }

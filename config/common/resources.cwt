@@ -2,7 +2,6 @@
 types = {
 	type[resource] = {
 		path = "game/common/strategic_resources"
-
 		subtype[tradable] = {
 			tradable = yes
 		}
@@ -18,17 +17,19 @@ types = {
 	}
 }
 
-
 ## push_scope = country
 resource = {
 	## cardinality = 0..1
 	tradable = bool
 
 	subtype[tradable] = {
+		### default -1, if non-positive, resource cannot be traded in the Market
 		market_amount = int
+		### default -1, if non-positive, resource cannot be traded in the Market
 		market_price = int
 		max = int
 	}
+
 	## cardinality = 0..1
 	max = int
 
@@ -63,6 +64,31 @@ resource = {
 
 	subtype[max] = {
 		## cardinality = 0..1
-		fixed_max_amount = yes
+		### default no, if yes maximum storage capacity of the resource is fixed to the amount specified in max = INT
+		fixed_max_amount = bool
+		## cardinality = 0..1
+		### default no, if yes maximum storage capacity of the resource is fixed to the amount specified in max = INT + country_resource_max_RESOURCE_NAME_add modifiers
+		### This explicitly ignores MOD_COUNTRY_RESOURCE_MAX_ADD modifiers.
+		special_max_amount = bool
+	}
+
+	## cardinality = 0..1
+	category = enum[resource_type]
+
+	## cardinality = 0..1
+	### default yes, only implemented for tech resources
+	allow_deficit = bool
+
+	## cardinality = 0..1
+	intangible_weight = float
+}
+
+enums = {
+	enum[resource_type] = {
+		basic
+		advanced
+		strategic
+		rare
+		other
 	}
 }

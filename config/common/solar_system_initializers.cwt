@@ -28,6 +28,7 @@ solar_system_initializer = {
 	asteroid_belt = {
 		type = <asteroid_belt_type> #this is defined in under common/asteroid_belts
 		radius = int
+		radius = { min = int max = int }
 	}
 	## cardinality = 0..inf
 	usage = enum[usage_type]
@@ -70,6 +71,12 @@ solar_system_initializer = {
 	change_orbit = int
 	## cardinality = 0..inf
 	change_orbit = { min = int max = int }
+	## cardinality = 0..inf
+	### creates a standalone orbital line, unrelated to any other object
+	orbital_line = {
+		### distance from the center, *not* relative to the previous planet or orbital line's orbit distance
+		orbit_distance_from_parent = float
+	}
 
 	subtype[!fallen_empire_initializer] = {
 		###the scope here is galactic_object scope, with prev being set to the previous system that was initialized by this tree ( if any ). Root will point to the first system in the tree or the root of the calling event.
@@ -115,6 +122,7 @@ solar_system_initializer = {
 		}
 	}
 }
+
 alias[planet_initializer:planet] = {
 	## cardinality = 0..1
 	name = localisation
@@ -125,7 +133,6 @@ alias[planet_initializer:planet] = {
 	count = { min = int max = int }
 	## cardinality = 0..1
 	entity = scalar
-
 
 	### the class in planet init represents planet_class, not star_class. class = star means the planet class of this star is star.
 	## cardinality = 0..1
@@ -146,13 +153,24 @@ alias[planet_initializer:planet] = {
 	## cardinality = 0..1
 	orbit_distance = { min = int max = int }
 
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	change_orbit = int
 	#everything below this point is optional
 	## cardinality = 0..1
 	flags = { #planet flags
 		## cardinality = 0..inf
 		value_set[planet_flag]
+	}
+
+	## cardinality = 0..1
+	### makes the graphical orbital line exist independently from the planet itself, so that if the planet is destroyed the orbital line stays
+	has_independent_orbital_line = bool
+
+	## cardinality = 0..inf
+	### creates a standalone orbital line around this planet (will stay if the planet gets deleted)
+	orbital_line = {
+		### distance from the position of the planet it's around, *not* relative to the previous planet or orbital line's orbit distance
+		orbit_distance_from_parent = float
 	}
 
 	## cardinality = 0..inf
@@ -173,8 +191,6 @@ alias[planet_initializer:planet] = {
 	home_planet = bool
 	## cardinality = 0..1
 	starting_planet = bool
-#	## cardinality = 0..1
-#	tile_blockers = none
 	## cardinality = 0..inf
 	tile_blocker = <deposit.blocker>
 	## cardinality = 0..1
@@ -209,6 +225,7 @@ alias[planet_initializer:planet] = {
 	alias_name[moon_initializer] = alias_match_left[moon_initializer]
 
 }
+
 alias[moon_initializer:moon] = {
 	## cardinality = 0..1
 	name = localisation
@@ -247,6 +264,17 @@ alias[moon_initializer:moon] = {
 	flags = { #planet flags
 		## cardinality = 0..inf
 		value_set[planet_flag]
+	}
+
+	## cardinality = 0..1
+	### makes the graphical orbital line exist independently from the planet itself, so that if the planet is destroyed the orbital line stays
+	has_independent_orbital_line = bool
+
+	## cardinality = 0..inf
+	### creates a standalone orbital line around this moon (will stay if the moon gets deleted)
+	orbital_line = {
+		### distance from the position of the planet it's around, *not* relative to the previous moon or orbital line's orbit distance
+		orbit_distance_from_parent = float
 	}
 
 	## cardinality = 0..inf
@@ -293,10 +321,9 @@ alias[moon_initializer:moon] = {
 
 	## cardinality = 0..1
 	deposit_blockers = none
-	
+
 	## push_scope = planet
 	alias_name[moon_initializer] = alias_match_left[moon_initializer]
-
 }
 
 solar_system_initializer_random_list = {

@@ -10,23 +10,36 @@ types = {
 	}
 }
 
-# TODO Confirm
-# TODO Refine
-# TODO Document
 bombardment_stance = {
 	## replace_scope = { root = fleet this = fleet }
 	trigger = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	### Is this the default stance that new fleets will use?
 	default = bool
+	## cardinality = 0..1
+	### Will this stance continue to bombard planets where all defensive armies are dead? default = no
 	stop_when_armies_dead = bool
+	## cardinality = 0..1
+	### Will this stance attempt to abduct pops to your own planets instead of killing them? default = no
 	abduct_pops = bool
+	## cardinality = 0..1
+	### Will fleets in this stance consider accepting surrender? default = no
+	accept_surrender = bool
+	## cardinality = 0..1
+	### General scale of damage to planet, default = 1.0
 	planet_damage = float
+	## cardinality = 0..1
+	### General scale of damage to armies, default = 1.0
 	army_damage = float
+	## cardinality = 0..1
+	### Chance that a pop is killed when planetary damage reaches 100%, default = 0
 	kill_pop_chance = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
-	min_pops_to_kill_pop = int
+	### Will not kill/abduct pops if pops <= this number already, default = 0.
+	### Doesn't work for nations that doesn't have diplomatic wars!
+	min_pops_to_kill_pop = int[0..inf]
 #	add_blocker_chance = float
 #	max_blockers = int
 	## replace_scope = { root = fleet this = fleet from = planet }

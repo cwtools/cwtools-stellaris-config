@@ -1,4 +1,4 @@
-[08:54:36][game_application.cpp:2106]: 
+[13:31:50][game_application.cpp:2112]: 
 == SCOPE DOCUMENTATION ==
 These work as context switches (links) in triggers and effects (e.g. 'owner = { <triggers/effects> }'), or as targets of triggers and effects (e.g. 'is_owned_by = from'). Dot scoping (e.g. root.owner.capital_scope) is allowed.
 Complete list of scope changes:
@@ -7,12 +7,16 @@ target - Scopes from a spy network to its target country, or from an espionage o
 Supported Scopes: spy_network espionage_operation agreement situation
 Output Scope: various
 
+army_leader - Scopes from an object to its army leader, e.g. planet->general
+Supported Scopes: planet
+Output Scope: leader
+
 orbit - Scopes to the planet the current object is in orbit of. Works on ships, fleets, starbases, armies (when in military transports) and moons (scopes to the planet that a moon orbits).
 Supported Scopes: planet ship fleet army starbase
 Output Scope: planet
 
 planet - Scopes from an object to the planet it is on. Works from army, megastructure, deposit and arc site scopes.
-Supported Scopes: megastructure planet pop army starbase deposit archaeological_site
+Supported Scopes: megastructure planet pop leader army starbase deposit archaeological_site
 Output Scope: planet
 
 star - Scopes from an object to the primary star (planet scope) of the system it is in. Works on all objects visible in star system view.
@@ -148,7 +152,7 @@ Supported Scopes: all
 Output Scope: galactic_object
 
 planet_owner - Scopes from an object to the owner of the planet it is on. Works from army, megastructure, deposit and arc site scopes.
-Supported Scopes: megastructure planet pop army starbase deposit archaeological_site
+Supported Scopes: megastructure planet pop leader army starbase deposit archaeological_site
 Output Scope: country
 
 last_created_ambient_object - Scopes to the last ambient object that was created anywhere in the game.
@@ -251,6 +255,10 @@ system_star - Scopes from an object to the primary star (planet scope) of the sy
 Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army ambient_object starbase deposit archaeological_site first_contact debris
 Output Scope: planet
 
+creator - Scopes to the leader's country of origin
+Supported Scopes: leader
+Output Scope: country
+
 no_scope - Sets the scope to no scope (empty scope used for certain generalized behavior).
 Supported Scopes: all
 Output Scope: no_scope
@@ -296,7 +304,7 @@ Supported Scopes: war
 Output Scope: country
 
 leader - Scopes from an object to its leader, e.g. country->ruler, fleet->admiral/scientist, sector->governor, army->general, arc site->scientist...
-Supported Scopes: country ship fleet leader army pop_faction federation sector archaeological_site first_contact spy_network espionage_operation
+Supported Scopes: planet country ship fleet leader army pop_faction federation archaeological_site first_contact spy_network espionage_operation
 Output Scope: leader
 
 solar_system - Scopes from an object to the solar system it is in. Works on all objects visible in star system view.

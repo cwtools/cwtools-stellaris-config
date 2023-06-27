@@ -113,6 +113,8 @@ diplomatic_action = {
 	## cardinality = 0..1
 	AI_acceptance_base_value = int
 
+	## cardinality = 0..1
+	sound = <sound_effect>
 
 	## cardinality = 0..1
 	## replace_scope = { root = country this = country from = country }

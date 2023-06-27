@@ -5,6 +5,7 @@ types = {
 	}
 }
 
+## replace_scope = { root = any this = any }
 script_value = {
 	alias_name[modifier_rule] = alias_match_left[modifier_rule]
 }
@@ -53,10 +54,16 @@ alias[modifier_rule:complex_trigger_modifier] = {
 		}
 		## cardinality = 0..inf
 		scalar = scalar
+		## cardinality = 0..1
+		limit = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
 	}
 	mode = enum[complex_maths_enum]
 	## cardinality = 0..1
 	mult = float
+	## cardinality = 0..1
+	multiplier = float
 	## cardinality = 0..1
 	desc = localisation
 	## cardinality = 0..1
@@ -67,7 +74,9 @@ alias[modifier_rule:complex_trigger_modifier] = {
 
 #modifier_rule_with_loc is deliberately more restrictive because of what we can make good tooltips with
 alias[modifier_rule_with_loc:base] = float
+
 alias[modifier_rule_with_loc:factor] = float
+
 alias[modifier_rule_with_loc:modifier] = {
 	## cardinality = 0..1
 	enum[complex_maths_enum] = value_field
@@ -76,6 +85,7 @@ alias[modifier_rule_with_loc:modifier] = {
 	desc = localisation
 	alias_name[trigger] = alias_match_left[trigger]
 }
+
 alias[modifier_rule_with_loc:complex_trigger_modifier] = {
 	trigger = alias_keys_field[trigger]
 	## cardinality = 0..1
@@ -89,10 +99,16 @@ alias[modifier_rule_with_loc:complex_trigger_modifier] = {
 		}
 		## cardinality = 0..inf
 		scalar = scalar
+		## cardinality = 0..1
+		limit = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
 	}
 	mode = enum[complex_maths_enum]
 	## cardinality = 0..1
 	mult = float
+	## cardinality = 0..1
+	multiplier = float
 	desc = localisation
 	## cardinality = 0..1
 	potential = {
