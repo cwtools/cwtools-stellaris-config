@@ -17,6 +17,15 @@ modifier_categories = {
     "Pop Factions" = {
         supported_scopes = { popfaction country }
     }
+    "Deposits" = {
+        supported_scopes = { deposit planet country }
+    }
+    "Orbital Stations" = {
+        supported_scopes = { galactic_object country }
+    }
+    "Space Stations" = {
+        supported_scopes = { starbase country }
+    }
 	"Military Ships" = {
         supported_scopes = { ship starbase fleet country }
     }
