@@ -48,7 +48,8 @@ diplo_phrase = {
 			}
 		}
 	}
-	action_ask = ## cardinality = 0..inf
+	## cardinality = 0..inf
+	action_ask = {
 		enum[diplo_phrase_types] = {
 			## cardinality = 0..inf
 			localisation = {
@@ -67,7 +68,8 @@ diplo_phrase = {
 			}
 		}
 	}
-	action_demand = ## cardinality = 0..inf
+	## cardinality = 0..inf
+	action_demand = {
 		enum[diplo_phrase_types] = {
 			## cardinality = 0..inf
 			localisation = {
