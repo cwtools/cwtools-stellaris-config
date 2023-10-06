@@ -1,4 +1,4 @@
-[07:34:35][modifier.cpp:1416]: 
+[14:56:26][modifier.cpp:1512]: 
  == MODIFIER DOCUMENTATION ==
 Note on Modifier Categories:
 -- These are used internally as a tag to suggest where they are intended to be used, but exact behavior depends upon individual implementation.
@@ -30,28 +30,28 @@ Printing Modifier Definitions:
 - pop_citizen_happiness, Category: Pops
 - force_disparity_fire_rate_mult, Category: Ships
 - create_debris_chance, Category: Fleets
-- ship_hull_add, Category: Ships
-- ship_hull_mult, Category: Ships
-- ship_hull_regen_add_perc, Category: Ships
-- ship_hull_regen_add_static, Category: Ships
+- ship_hull_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- ship_hull_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- ship_hull_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- ship_hull_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
 - ship_hull_damage_mult, Category: Ships
-- ship_armor_add, Category: Ships
-- ship_armor_mult, Category: Ships
+- ship_armor_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- ship_armor_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
 - ship_armor_reduction, Category: Ships
-- ship_armor_regen_add_perc, Category: Ships
-- ship_armor_regen_add_static, Category: Ships
+- ship_armor_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- ship_armor_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
 - ship_armor_damage_mult, Category: Ships
 - ship_armor_penetration_mult, Category: Ships
 - ship_armor_hardening_add, Category: Ships
-- ship_shield_add, Category: Ships
-- ship_shield_mult, Category: Ships
+- ship_shield_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- ship_shield_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
 - ship_shield_reduction, Category: Ships
-- ship_shield_regen_add_perc, Category: Ships
-- ship_shield_regen_add_static, Category: Ships
+- ship_shield_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- ship_shield_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
 - ship_shield_damage_mult, Category: Ships
 - ship_shield_penetration_mult, Category: Ships
 - ship_shield_hardening_add, Category: Ships
-- ship_weapon_damage, Category: Ships
+- ship_weapon_damage, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
 - ship_weapon_range_mult, Category: Ships
 - ship_engagement_range_mult, Category: Ships
 - ship_orbital_bombardment_mult, Category: Ships
@@ -59,8 +59,8 @@ Printing Modifier Definitions:
 - ship_orbital_bombardment_pop_damage_mult, Category: Ships
 - ship_fire_rate_mult, Category: Ships
 - ship_home_territory_fire_rate_mult, Category: Ships
-- ship_piracy_suppression_add, Category: Ships
-- ship_piracy_suppression_mult, Category: Ships
+- ship_piracy_suppression_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- ship_piracy_suppression_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
 - ship_hyperlane_range_add, Category: Ships
 - ship_ftl_jumpdrive_range_mult, Category: Ships
 - ship_emergency_ftl_min_days_add, Category: Ships
@@ -68,14 +68,14 @@ Printing Modifier Definitions:
 - ship_disengage_chance_mult, Category: Ships
 - ship_disengage_chance_reduction, Category: Ships
 - ship_disengage_opportunities_add, Category: Ships
-- ship_evasion_add, Category: Ships
-- ship_evasion_mult, Category: Ships
+- ship_evasion_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- ship_evasion_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
 - ship_accuracy_add, Category: Ships
 - ship_accuracy_mult, Category: Ships
 - ship_tracking_add, Category: Ships
 - ship_tracking_mult, Category: Ships
-- ship_base_speed_mult, Category: Ships
-- ship_speed_mult, Category: Ships
+- ship_base_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- ship_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
 - ship_speed_reduction, Category: Ships
 - ship_landing_time_mult, Category: Ships
 - ship_orbit_upkeep_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
@@ -97,8 +97,8 @@ Printing Modifier Definitions:
 - owned_ship_evasion_mult, Category: Ships
 - owned_ship_fire_rate_mult, Category: Ships
 - owned_ship_accuracy_mult, Category: Ships
-- ship_cloaking_strength_add, Category: Ships
-- ship_cloaking_detection_add, Category: Ships
+- ship_cloaking_strength_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- ship_cloaking_detection_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
 - army_disengage_chance_mult, Category: Armies
 - army_starting_experience_add, Category: Armies
 - army_health, Category: Armies
@@ -289,6 +289,9 @@ Printing Modifier Definitions:
 - diplo_weight_technology_mult, Category: Countries
 - diplo_weight_envoys_mult, Category: Countries
 - diplo_weight_council_mult, Category: Countries
+- diplo_weight_opposing_mult, Category: Countries
+- diplo_weight_supporting_mult, Category: Countries
+- diplo_weight_rivals_mult, Category: Countries
 - diplo_weight_mult, Category: Countries
 - council_agenda_progress_speed, Category: Countries, Leaders
 - council_agenda_finishing_effect_duration_mult, Category: Countries
@@ -372,6 +375,8 @@ Printing Modifier Definitions:
 - ship_repair_armor_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
 - monthly_loyalty, Category: Countries, Planets
 - monthly_loyalty_from_subjects, Category: Countries
+- ship_friendly_territory_armor_add, Category: Ships
+- ship_friendly_territory_armor_mult, Category: Ships
 - ship_friendly_territory_shield_add, Category: Ships
 - ship_friendly_territory_shield_mult, Category: Ships
 - ship_friendly_territory_evasion_add, Category: Ships
@@ -435,6 +440,12 @@ Printing Modifier Definitions:
 - shipclass_military_station_damage_mult, Category: Ships
 - shipclass_military_station_evasion_add, Category: Ships
 - shipclass_military_station_disengage_mult, Category: Ships
+- shipclass_habitat_station_build_cost_mult, Category: Planets, Megastructures, Starbases
+- shipclass_habitat_station_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipclass_habitat_station_hull_mult, Category: Ships
+- shipclass_habitat_station_damage_mult, Category: Ships
+- shipclass_habitat_station_evasion_add, Category: Ships
+- shipclass_habitat_station_disengage_mult, Category: Ships
 - shipclass_observation_station_build_cost_mult, Category: Planets, Megastructures, Starbases
 - shipclass_observation_station_build_speed_mult, Category: Planets, Megastructures, Starbases
 - shipclass_observation_station_hull_mult, Category: Ships
@@ -704,6 +715,27 @@ Printing Modifier Definitions:
 - country_base_nanites_produces_add, Category: Countries, AI Economy
 - country_base_minor_artifacts_produces_add, Category: Countries, AI Economy
 - country_base_menace_produces_add, Category: Countries, AI Economy
+- trade_routes_time_produces_mult, Category: Economic Units, AI Economy
+- trade_routes_energy_produces_mult, Category: Economic Units, AI Economy
+- trade_routes_minerals_produces_mult, Category: Economic Units, AI Economy
+- trade_routes_food_produces_mult, Category: Economic Units, AI Economy
+- trade_routes_physics_research_produces_mult, Category: Economic Units, AI Economy
+- trade_routes_society_research_produces_mult, Category: Economic Units, AI Economy
+- trade_routes_engineering_research_produces_mult, Category: Economic Units, AI Economy
+- trade_routes_influence_produces_mult, Category: Economic Units, AI Economy
+- trade_routes_unity_produces_mult, Category: Economic Units, AI Economy
+- trade_routes_consumer_goods_produces_mult, Category: Economic Units, AI Economy
+- trade_routes_alloys_produces_mult, Category: Economic Units, AI Economy
+- trade_routes_volatile_motes_produces_mult, Category: Economic Units, AI Economy
+- trade_routes_exotic_gases_produces_mult, Category: Economic Units, AI Economy
+- trade_routes_rare_crystals_produces_mult, Category: Economic Units, AI Economy
+- trade_routes_sr_living_metal_produces_mult, Category: Economic Units, AI Economy
+- trade_routes_sr_zro_produces_mult, Category: Economic Units, AI Economy
+- trade_routes_sr_dark_matter_produces_mult, Category: Economic Units, AI Economy
+- trade_routes_nanites_produces_mult, Category: Economic Units, AI Economy
+- trade_routes_minor_artifacts_produces_mult, Category: Economic Units, AI Economy
+- trade_routes_menace_produces_mult, Category: Economic Units, AI Economy
+- trade_routes_produces_mult, Category: Economic Units, AI Economy
 - resolutions_time_cost_mult, Category: Economic Units, AI Economy
 - resolutions_energy_cost_mult, Category: Economic Units, AI Economy
 - resolutions_minerals_cost_mult, Category: Economic Units, AI Economy
@@ -767,27 +799,69 @@ Printing Modifier Definitions:
 - edicts_menace_upkeep_mult, Category: Countries, AI Economy
 - edicts_cost_mult, Category: Countries, AI Economy
 - edicts_upkeep_mult, Category: Countries, AI Economy
+- megastructures_time_cost_mult, Category: Megastructures, AI Economy
+- megastructures_energy_cost_mult, Category: Megastructures, AI Economy
+- megastructures_minerals_cost_mult, Category: Megastructures, AI Economy
+- megastructures_food_cost_mult, Category: Megastructures, AI Economy
+- megastructures_physics_research_cost_mult, Category: Megastructures, AI Economy
+- megastructures_society_research_cost_mult, Category: Megastructures, AI Economy
+- megastructures_engineering_research_cost_mult, Category: Megastructures, AI Economy
+- megastructures_influence_cost_mult, Category: Megastructures, AI Economy
+- megastructures_unity_cost_mult, Category: Megastructures, AI Economy
+- megastructures_consumer_goods_cost_mult, Category: Megastructures, AI Economy
+- megastructures_alloys_cost_mult, Category: Megastructures, AI Economy
+- megastructures_volatile_motes_cost_mult, Category: Megastructures, AI Economy
+- megastructures_exotic_gases_cost_mult, Category: Megastructures, AI Economy
+- megastructures_rare_crystals_cost_mult, Category: Megastructures, AI Economy
+- megastructures_sr_living_metal_cost_mult, Category: Megastructures, AI Economy
+- megastructures_sr_zro_cost_mult, Category: Megastructures, AI Economy
+- megastructures_sr_dark_matter_cost_mult, Category: Megastructures, AI Economy
+- megastructures_nanites_cost_mult, Category: Megastructures, AI Economy
+- megastructures_minor_artifacts_cost_mult, Category: Megastructures, AI Economy
+- megastructures_menace_cost_mult, Category: Megastructures, AI Economy
+- megastructures_cost_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_time_cost_mult, Category: Megastructures, AI Economy
+- megastructures_habitat_time_upkeep_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_energy_cost_mult, Category: Megastructures, AI Economy
+- megastructures_habitat_energy_upkeep_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_minerals_cost_mult, Category: Megastructures, AI Economy
+- megastructures_habitat_minerals_upkeep_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_food_cost_mult, Category: Megastructures, AI Economy
+- megastructures_habitat_food_upkeep_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_physics_research_cost_mult, Category: Megastructures, AI Economy
+- megastructures_habitat_physics_research_upkeep_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_society_research_cost_mult, Category: Megastructures, AI Economy
+- megastructures_habitat_society_research_upkeep_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_engineering_research_cost_mult, Category: Megastructures, AI Economy
+- megastructures_habitat_engineering_research_upkeep_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_influence_cost_mult, Category: Megastructures, AI Economy
+- megastructures_habitat_influence_upkeep_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_unity_cost_mult, Category: Megastructures, AI Economy
+- megastructures_habitat_unity_upkeep_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_consumer_goods_cost_mult, Category: Megastructures, AI Economy
+- megastructures_habitat_consumer_goods_upkeep_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_alloys_cost_mult, Category: Megastructures, AI Economy
+- megastructures_habitat_alloys_upkeep_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_volatile_motes_cost_mult, Category: Megastructures, AI Economy
+- megastructures_habitat_volatile_motes_upkeep_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_exotic_gases_cost_mult, Category: Megastructures, AI Economy
+- megastructures_habitat_exotic_gases_upkeep_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_rare_crystals_cost_mult, Category: Megastructures, AI Economy
+- megastructures_habitat_rare_crystals_upkeep_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_sr_living_metal_cost_mult, Category: Megastructures, AI Economy
+- megastructures_habitat_sr_living_metal_upkeep_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_sr_zro_cost_mult, Category: Megastructures, AI Economy
+- megastructures_habitat_sr_zro_upkeep_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_sr_dark_matter_cost_mult, Category: Megastructures, AI Economy
+- megastructures_habitat_sr_dark_matter_upkeep_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_nanites_cost_mult, Category: Megastructures, AI Economy
+- megastructures_habitat_nanites_upkeep_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_minor_artifacts_cost_mult, Category: Megastructures, AI Economy
+- megastructures_habitat_minor_artifacts_upkeep_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_menace_cost_mult, Category: Megastructures, AI Economy
+- megastructures_habitat_menace_upkeep_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_cost_mult, Category: Megastructures, AI Economy
+- megastructures_habitat_upkeep_mult, Category: Megastructures, AI Economy
 - megastructures_hyper_relay_time_produces_add, Category: Megastructures, AI Economy
 - megastructures_hyper_relay_time_upkeep_add, Category: Megastructures, AI Economy
 - megastructures_hyper_relay_energy_produces_add, Category: Megastructures, AI Economy
@@ -1100,25 +1174,45 @@ Printing Modifier Definitions:
 - ships_menace_upkeep_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - ships_upkeep_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - ship_colonizer_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
+- ship_colonizer_time_cost_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - ship_colonizer_time_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
+- ship_colonizer_energy_cost_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - ship_colonizer_energy_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
+- ship_colonizer_minerals_cost_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - ship_colonizer_minerals_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
+- ship_colonizer_food_cost_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - ship_colonizer_food_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
+- ship_colonizer_physics_research_cost_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - ship_colonizer_physics_research_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
+- ship_colonizer_society_research_cost_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - ship_colonizer_society_research_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
+- ship_colonizer_engineering_research_cost_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - ship_colonizer_engineering_research_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
+- ship_colonizer_influence_cost_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - ship_colonizer_influence_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
+- ship_colonizer_unity_cost_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - ship_colonizer_unity_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
+- ship_colonizer_consumer_goods_cost_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - ship_colonizer_consumer_goods_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
+- ship_colonizer_alloys_cost_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - ship_colonizer_alloys_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
+- ship_colonizer_volatile_motes_cost_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - ship_colonizer_volatile_motes_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
+- ship_colonizer_exotic_gases_cost_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - ship_colonizer_exotic_gases_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
+- ship_colonizer_rare_crystals_cost_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - ship_colonizer_rare_crystals_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
+- ship_colonizer_sr_living_metal_cost_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - ship_colonizer_sr_living_metal_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
+- ship_colonizer_sr_zro_cost_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - ship_colonizer_sr_zro_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
+- ship_colonizer_sr_dark_matter_cost_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - ship_colonizer_sr_dark_matter_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
+- ship_colonizer_nanites_cost_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - ship_colonizer_nanites_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
+- ship_colonizer_minor_artifacts_cost_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - ship_colonizer_minor_artifacts_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
+- ship_colonizer_menace_cost_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - ship_colonizer_menace_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, AI Economy
 - stations_time_cost_mult, Category: Deposits, AI Economy
 - stations_time_produces_mult, Category: Deposits, AI Economy
@@ -1681,6 +1775,27 @@ Printing Modifier Definitions:
 - planet_districts_generator_nanites_produces_add, Category: Planets, AI Economy
 - planet_districts_generator_minor_artifacts_produces_add, Category: Planets, AI Economy
 - planet_districts_generator_menace_produces_add, Category: Planets, AI Economy
+- planet_districts_hab_time_upkeep_mult, Category: Economic Units, AI Economy
+- planet_districts_hab_energy_upkeep_mult, Category: Economic Units, AI Economy
+- planet_districts_hab_minerals_upkeep_mult, Category: Economic Units, AI Economy
+- planet_districts_hab_food_upkeep_mult, Category: Economic Units, AI Economy
+- planet_districts_hab_physics_research_upkeep_mult, Category: Economic Units, AI Economy
+- planet_districts_hab_society_research_upkeep_mult, Category: Economic Units, AI Economy
+- planet_districts_hab_engineering_research_upkeep_mult, Category: Economic Units, AI Economy
+- planet_districts_hab_influence_upkeep_mult, Category: Economic Units, AI Economy
+- planet_districts_hab_unity_upkeep_mult, Category: Economic Units, AI Economy
+- planet_districts_hab_consumer_goods_upkeep_mult, Category: Economic Units, AI Economy
+- planet_districts_hab_alloys_upkeep_mult, Category: Economic Units, AI Economy
+- planet_districts_hab_volatile_motes_upkeep_mult, Category: Economic Units, AI Economy
+- planet_districts_hab_exotic_gases_upkeep_mult, Category: Economic Units, AI Economy
+- planet_districts_hab_rare_crystals_upkeep_mult, Category: Economic Units, AI Economy
+- planet_districts_hab_sr_living_metal_upkeep_mult, Category: Economic Units, AI Economy
+- planet_districts_hab_sr_zro_upkeep_mult, Category: Economic Units, AI Economy
+- planet_districts_hab_sr_dark_matter_upkeep_mult, Category: Economic Units, AI Economy
+- planet_districts_hab_nanites_upkeep_mult, Category: Economic Units, AI Economy
+- planet_districts_hab_minor_artifacts_upkeep_mult, Category: Economic Units, AI Economy
+- planet_districts_hab_menace_upkeep_mult, Category: Economic Units, AI Economy
+- planet_districts_hab_upkeep_mult, Category: Economic Units, AI Economy
 - planet_districts_hab_energy_time_produces_add, Category: Economic Units, AI Economy
 - planet_districts_hab_energy_energy_produces_add, Category: Economic Units, AI Economy
 - planet_districts_hab_energy_minerals_produces_add, Category: Economic Units, AI Economy
@@ -1803,6 +1918,27 @@ Printing Modifier Definitions:
 - planet_psionic_jobs_nanites_produces_mult, Category: Pops, AI Economy
 - planet_psionic_jobs_minor_artifacts_produces_mult, Category: Pops, AI Economy
 - planet_psionic_jobs_menace_produces_mult, Category: Pops, AI Economy
+- planet_worker_ownership_jobs_produces_mult, Category: Pops, AI Economy
+- planet_worker_ownership_jobs_time_produces_mult, Category: Pops, AI Economy
+- planet_worker_ownership_jobs_energy_produces_mult, Category: Pops, AI Economy
+- planet_worker_ownership_jobs_minerals_produces_mult, Category: Pops, AI Economy
+- planet_worker_ownership_jobs_food_produces_mult, Category: Pops, AI Economy
+- planet_worker_ownership_jobs_physics_research_produces_mult, Category: Pops, AI Economy
+- planet_worker_ownership_jobs_society_research_produces_mult, Category: Pops, AI Economy
+- planet_worker_ownership_jobs_engineering_research_produces_mult, Category: Pops, AI Economy
+- planet_worker_ownership_jobs_influence_produces_mult, Category: Pops, AI Economy
+- planet_worker_ownership_jobs_unity_produces_mult, Category: Pops, AI Economy
+- planet_worker_ownership_jobs_consumer_goods_produces_mult, Category: Pops, AI Economy
+- planet_worker_ownership_jobs_alloys_produces_mult, Category: Pops, AI Economy
+- planet_worker_ownership_jobs_volatile_motes_produces_mult, Category: Pops, AI Economy
+- planet_worker_ownership_jobs_exotic_gases_produces_mult, Category: Pops, AI Economy
+- planet_worker_ownership_jobs_rare_crystals_produces_mult, Category: Pops, AI Economy
+- planet_worker_ownership_jobs_sr_living_metal_produces_mult, Category: Pops, AI Economy
+- planet_worker_ownership_jobs_sr_zro_produces_mult, Category: Pops, AI Economy
+- planet_worker_ownership_jobs_sr_dark_matter_produces_mult, Category: Pops, AI Economy
+- planet_worker_ownership_jobs_nanites_produces_mult, Category: Pops, AI Economy
+- planet_worker_ownership_jobs_minor_artifacts_produces_mult, Category: Pops, AI Economy
+- planet_worker_ownership_jobs_menace_produces_mult, Category: Pops, AI Economy
 - planet_cyborg_jobs_produces_mult, Category: Pops, AI Economy
 - planet_cyborg_jobs_time_produces_mult, Category: Pops, AI Economy
 - planet_cyborg_jobs_energy_produces_mult, Category: Pops, AI Economy
@@ -2160,27 +2296,6 @@ Printing Modifier Definitions:
 - planet_jobs_productive_menace_upkeep_mult, Category: Pops, AI Economy
 - planet_jobs_productive_produces_mult, Category: Pops, AI Economy
 - planet_jobs_productive_upkeep_mult, Category: Pops, AI Economy
-- planet_bio_trophies_time_produces_mult, Category: Pops, AI Economy
-- planet_bio_trophies_energy_produces_mult, Category: Pops, AI Economy
-- planet_bio_trophies_minerals_produces_mult, Category: Pops, AI Economy
-- planet_bio_trophies_food_produces_mult, Category: Pops, AI Economy
-- planet_bio_trophies_physics_research_produces_mult, Category: Pops, AI Economy
-- planet_bio_trophies_society_research_produces_mult, Category: Pops, AI Economy
-- planet_bio_trophies_engineering_research_produces_mult, Category: Pops, AI Economy
-- planet_bio_trophies_influence_produces_mult, Category: Pops, AI Economy
-- planet_bio_trophies_unity_produces_mult, Category: Pops, AI Economy
-- planet_bio_trophies_consumer_goods_produces_mult, Category: Pops, AI Economy
-- planet_bio_trophies_alloys_produces_mult, Category: Pops, AI Economy
-- planet_bio_trophies_volatile_motes_produces_mult, Category: Pops, AI Economy
-- planet_bio_trophies_exotic_gases_produces_mult, Category: Pops, AI Economy
-- planet_bio_trophies_rare_crystals_produces_mult, Category: Pops, AI Economy
-- planet_bio_trophies_sr_living_metal_produces_mult, Category: Pops, AI Economy
-- planet_bio_trophies_sr_zro_produces_mult, Category: Pops, AI Economy
-- planet_bio_trophies_sr_dark_matter_produces_mult, Category: Pops, AI Economy
-- planet_bio_trophies_nanites_produces_mult, Category: Pops, AI Economy
-- planet_bio_trophies_minor_artifacts_produces_mult, Category: Pops, AI Economy
-- planet_bio_trophies_menace_produces_mult, Category: Pops, AI Economy
-- planet_bio_trophies_produces_mult, Category: Pops, AI Economy
 - planet_pop_assemblers_time_produces_add, Category: Pops, AI Economy
 - planet_pop_assemblers_time_upkeep_mult, Category: Pops, AI Economy
 - planet_pop_assemblers_energy_produces_add, Category: Pops, AI Economy
@@ -2672,6 +2787,26 @@ Printing Modifier Definitions:
 - planet_researchers_menace_upkeep_mult, Category: Pops, AI Economy
 - planet_researchers_produces_mult, Category: Pops, AI Economy
 - planet_researchers_upkeep_mult, Category: Pops, AI Economy
+- planet_rangers_time_produces_add, Category: Pops, AI Economy
+- planet_rangers_energy_produces_add, Category: Pops, AI Economy
+- planet_rangers_minerals_produces_add, Category: Pops, AI Economy
+- planet_rangers_food_produces_add, Category: Pops, AI Economy
+- planet_rangers_physics_research_produces_add, Category: Pops, AI Economy
+- planet_rangers_society_research_produces_add, Category: Pops, AI Economy
+- planet_rangers_engineering_research_produces_add, Category: Pops, AI Economy
+- planet_rangers_influence_produces_add, Category: Pops, AI Economy
+- planet_rangers_unity_produces_add, Category: Pops, AI Economy
+- planet_rangers_consumer_goods_produces_add, Category: Pops, AI Economy
+- planet_rangers_alloys_produces_add, Category: Pops, AI Economy
+- planet_rangers_volatile_motes_produces_add, Category: Pops, AI Economy
+- planet_rangers_exotic_gases_produces_add, Category: Pops, AI Economy
+- planet_rangers_rare_crystals_produces_add, Category: Pops, AI Economy
+- planet_rangers_sr_living_metal_produces_add, Category: Pops, AI Economy
+- planet_rangers_sr_zro_produces_add, Category: Pops, AI Economy
+- planet_rangers_sr_dark_matter_produces_add, Category: Pops, AI Economy
+- planet_rangers_nanites_produces_add, Category: Pops, AI Economy
+- planet_rangers_minor_artifacts_produces_add, Category: Pops, AI Economy
+- planet_rangers_menace_produces_add, Category: Pops, AI Economy
 - planet_metallurgists_time_produces_add, Category: Pops, AI Economy
 - planet_metallurgists_time_produces_mult, Category: Pops, AI Economy
 - planet_metallurgists_time_upkeep_add, Category: Pops, AI Economy
@@ -2754,6 +2889,68 @@ Printing Modifier Definitions:
 - planet_metallurgists_menace_upkeep_mult, Category: Pops, AI Economy
 - planet_metallurgists_produces_mult, Category: Pops, AI Economy
 - planet_metallurgists_upkeep_mult, Category: Pops, AI Economy
+- planet_culture_workers_time_produces_mult, Category: Economic Units, AI Economy
+- planet_culture_workers_energy_produces_mult, Category: Economic Units, AI Economy
+- planet_culture_workers_minerals_produces_mult, Category: Economic Units, AI Economy
+- planet_culture_workers_food_produces_mult, Category: Economic Units, AI Economy
+- planet_culture_workers_physics_research_produces_mult, Category: Economic Units, AI Economy
+- planet_culture_workers_society_research_produces_mult, Category: Economic Units, AI Economy
+- planet_culture_workers_engineering_research_produces_mult, Category: Economic Units, AI Economy
+- planet_culture_workers_influence_produces_mult, Category: Economic Units, AI Economy
+- planet_culture_workers_unity_produces_mult, Category: Economic Units, AI Economy
+- planet_culture_workers_consumer_goods_produces_mult, Category: Economic Units, AI Economy
+- planet_culture_workers_alloys_produces_mult, Category: Economic Units, AI Economy
+- planet_culture_workers_volatile_motes_produces_mult, Category: Economic Units, AI Economy
+- planet_culture_workers_exotic_gases_produces_mult, Category: Economic Units, AI Economy
+- planet_culture_workers_rare_crystals_produces_mult, Category: Economic Units, AI Economy
+- planet_culture_workers_sr_living_metal_produces_mult, Category: Economic Units, AI Economy
+- planet_culture_workers_sr_zro_produces_mult, Category: Economic Units, AI Economy
+- planet_culture_workers_sr_dark_matter_produces_mult, Category: Economic Units, AI Economy
+- planet_culture_workers_nanites_produces_mult, Category: Economic Units, AI Economy
+- planet_culture_workers_minor_artifacts_produces_mult, Category: Economic Units, AI Economy
+- planet_culture_workers_menace_produces_mult, Category: Economic Units, AI Economy
+- planet_culture_workers_produces_mult, Category: Economic Units, AI Economy
+- planet_bio_trophies_time_produces_mult, Category: Pops, AI Economy
+- planet_bio_trophies_energy_produces_mult, Category: Pops, AI Economy
+- planet_bio_trophies_minerals_produces_mult, Category: Pops, AI Economy
+- planet_bio_trophies_food_produces_mult, Category: Pops, AI Economy
+- planet_bio_trophies_physics_research_produces_mult, Category: Pops, AI Economy
+- planet_bio_trophies_society_research_produces_mult, Category: Pops, AI Economy
+- planet_bio_trophies_engineering_research_produces_mult, Category: Pops, AI Economy
+- planet_bio_trophies_influence_produces_mult, Category: Pops, AI Economy
+- planet_bio_trophies_unity_produces_mult, Category: Pops, AI Economy
+- planet_bio_trophies_consumer_goods_produces_mult, Category: Pops, AI Economy
+- planet_bio_trophies_alloys_produces_mult, Category: Pops, AI Economy
+- planet_bio_trophies_volatile_motes_produces_mult, Category: Pops, AI Economy
+- planet_bio_trophies_exotic_gases_produces_mult, Category: Pops, AI Economy
+- planet_bio_trophies_rare_crystals_produces_mult, Category: Pops, AI Economy
+- planet_bio_trophies_sr_living_metal_produces_mult, Category: Pops, AI Economy
+- planet_bio_trophies_sr_zro_produces_mult, Category: Pops, AI Economy
+- planet_bio_trophies_sr_dark_matter_produces_mult, Category: Pops, AI Economy
+- planet_bio_trophies_nanites_produces_mult, Category: Pops, AI Economy
+- planet_bio_trophies_minor_artifacts_produces_mult, Category: Pops, AI Economy
+- planet_bio_trophies_menace_produces_mult, Category: Pops, AI Economy
+- planet_bio_trophies_produces_mult, Category: Pops, AI Economy
+- planet_evaluators_time_produces_add, Category: Economic Units, AI Economy
+- planet_evaluators_energy_produces_add, Category: Economic Units, AI Economy
+- planet_evaluators_minerals_produces_add, Category: Economic Units, AI Economy
+- planet_evaluators_food_produces_add, Category: Economic Units, AI Economy
+- planet_evaluators_physics_research_produces_add, Category: Economic Units, AI Economy
+- planet_evaluators_society_research_produces_add, Category: Economic Units, AI Economy
+- planet_evaluators_engineering_research_produces_add, Category: Economic Units, AI Economy
+- planet_evaluators_influence_produces_add, Category: Economic Units, AI Economy
+- planet_evaluators_unity_produces_add, Category: Economic Units, AI Economy
+- planet_evaluators_consumer_goods_produces_add, Category: Economic Units, AI Economy
+- planet_evaluators_alloys_produces_add, Category: Economic Units, AI Economy
+- planet_evaluators_volatile_motes_produces_add, Category: Economic Units, AI Economy
+- planet_evaluators_exotic_gases_produces_add, Category: Economic Units, AI Economy
+- planet_evaluators_rare_crystals_produces_add, Category: Economic Units, AI Economy
+- planet_evaluators_sr_living_metal_produces_add, Category: Economic Units, AI Economy
+- planet_evaluators_sr_zro_produces_add, Category: Economic Units, AI Economy
+- planet_evaluators_sr_dark_matter_produces_add, Category: Economic Units, AI Economy
+- planet_evaluators_nanites_produces_add, Category: Economic Units, AI Economy
+- planet_evaluators_minor_artifacts_produces_add, Category: Economic Units, AI Economy
+- planet_evaluators_menace_produces_add, Category: Economic Units, AI Economy
 - planet_entertainers_time_produces_add, Category: Economic Units, AI Economy
 - planet_entertainers_energy_produces_add, Category: Economic Units, AI Economy
 - planet_entertainers_minerals_produces_add, Category: Economic Units, AI Economy
@@ -3511,6 +3708,69 @@ Printing Modifier Definitions:
 - pop_category_rulers_menace_upkeep_add, Category: Pops, AI Economy
 - pop_category_rulers_menace_upkeep_mult, Category: Pops, AI Economy
 - pop_category_rulers_upkeep_mult, Category: Pops, AI Economy
+- hab_deposits_time_produces_mult, Category: Economic Units, AI Economy
+- hab_deposits_energy_produces_mult, Category: Economic Units, AI Economy
+- hab_deposits_minerals_produces_mult, Category: Economic Units, AI Economy
+- hab_deposits_food_produces_mult, Category: Economic Units, AI Economy
+- hab_deposits_physics_research_produces_mult, Category: Economic Units, AI Economy
+- hab_deposits_society_research_produces_mult, Category: Economic Units, AI Economy
+- hab_deposits_engineering_research_produces_mult, Category: Economic Units, AI Economy
+- hab_deposits_influence_produces_mult, Category: Economic Units, AI Economy
+- hab_deposits_unity_produces_mult, Category: Economic Units, AI Economy
+- hab_deposits_consumer_goods_produces_mult, Category: Economic Units, AI Economy
+- hab_deposits_alloys_produces_mult, Category: Economic Units, AI Economy
+- hab_deposits_volatile_motes_produces_mult, Category: Economic Units, AI Economy
+- hab_deposits_exotic_gases_produces_mult, Category: Economic Units, AI Economy
+- hab_deposits_rare_crystals_produces_mult, Category: Economic Units, AI Economy
+- hab_deposits_sr_living_metal_produces_mult, Category: Economic Units, AI Economy
+- hab_deposits_sr_zro_produces_mult, Category: Economic Units, AI Economy
+- hab_deposits_sr_dark_matter_produces_mult, Category: Economic Units, AI Economy
+- hab_deposits_nanites_produces_mult, Category: Economic Units, AI Economy
+- hab_deposits_minor_artifacts_produces_mult, Category: Economic Units, AI Economy
+- hab_deposits_menace_produces_mult, Category: Economic Units, AI Economy
+- hab_deposits_produces_mult, Category: Economic Units, AI Economy
+- hab_mining_deposits_time_produces_mult, Category: Economic Units, AI Economy
+- hab_mining_deposits_energy_produces_mult, Category: Economic Units, AI Economy
+- hab_mining_deposits_minerals_produces_mult, Category: Economic Units, AI Economy
+- hab_mining_deposits_food_produces_mult, Category: Economic Units, AI Economy
+- hab_mining_deposits_physics_research_produces_mult, Category: Economic Units, AI Economy
+- hab_mining_deposits_society_research_produces_mult, Category: Economic Units, AI Economy
+- hab_mining_deposits_engineering_research_produces_mult, Category: Economic Units, AI Economy
+- hab_mining_deposits_influence_produces_mult, Category: Economic Units, AI Economy
+- hab_mining_deposits_unity_produces_mult, Category: Economic Units, AI Economy
+- hab_mining_deposits_consumer_goods_produces_mult, Category: Economic Units, AI Economy
+- hab_mining_deposits_alloys_produces_mult, Category: Economic Units, AI Economy
+- hab_mining_deposits_volatile_motes_produces_mult, Category: Economic Units, AI Economy
+- hab_mining_deposits_exotic_gases_produces_mult, Category: Economic Units, AI Economy
+- hab_mining_deposits_rare_crystals_produces_mult, Category: Economic Units, AI Economy
+- hab_mining_deposits_sr_living_metal_produces_mult, Category: Economic Units, AI Economy
+- hab_mining_deposits_sr_zro_produces_mult, Category: Economic Units, AI Economy
+- hab_mining_deposits_sr_dark_matter_produces_mult, Category: Economic Units, AI Economy
+- hab_mining_deposits_nanites_produces_mult, Category: Economic Units, AI Economy
+- hab_mining_deposits_minor_artifacts_produces_mult, Category: Economic Units, AI Economy
+- hab_mining_deposits_menace_produces_mult, Category: Economic Units, AI Economy
+- hab_mining_deposits_produces_mult, Category: Economic Units, AI Economy
+- hab_research_deposits_time_produces_mult, Category: Economic Units, AI Economy
+- hab_research_deposits_energy_produces_mult, Category: Economic Units, AI Economy
+- hab_research_deposits_minerals_produces_mult, Category: Economic Units, AI Economy
+- hab_research_deposits_food_produces_mult, Category: Economic Units, AI Economy
+- hab_research_deposits_physics_research_produces_mult, Category: Economic Units, AI Economy
+- hab_research_deposits_society_research_produces_mult, Category: Economic Units, AI Economy
+- hab_research_deposits_engineering_research_produces_mult, Category: Economic Units, AI Economy
+- hab_research_deposits_influence_produces_mult, Category: Economic Units, AI Economy
+- hab_research_deposits_unity_produces_mult, Category: Economic Units, AI Economy
+- hab_research_deposits_consumer_goods_produces_mult, Category: Economic Units, AI Economy
+- hab_research_deposits_alloys_produces_mult, Category: Economic Units, AI Economy
+- hab_research_deposits_volatile_motes_produces_mult, Category: Economic Units, AI Economy
+- hab_research_deposits_exotic_gases_produces_mult, Category: Economic Units, AI Economy
+- hab_research_deposits_rare_crystals_produces_mult, Category: Economic Units, AI Economy
+- hab_research_deposits_sr_living_metal_produces_mult, Category: Economic Units, AI Economy
+- hab_research_deposits_sr_zro_produces_mult, Category: Economic Units, AI Economy
+- hab_research_deposits_sr_dark_matter_produces_mult, Category: Economic Units, AI Economy
+- hab_research_deposits_nanites_produces_mult, Category: Economic Units, AI Economy
+- hab_research_deposits_minor_artifacts_produces_mult, Category: Economic Units, AI Economy
+- hab_research_deposits_menace_produces_mult, Category: Economic Units, AI Economy
+- hab_research_deposits_produces_mult, Category: Economic Units, AI Economy
 - deposit_blockers_time_cost_mult, Category: Deposits, AI Economy
 - deposit_blockers_energy_cost_mult, Category: Deposits, AI Economy
 - deposit_blockers_minerals_cost_mult, Category: Deposits, AI Economy
@@ -4487,25 +4747,45 @@ Printing Modifier Definitions:
 - federation_nanites_produces_add, Category: Countries, AI Economy
 - federation_minor_artifacts_produces_add, Category: Countries, AI Economy
 - federation_menace_produces_add, Category: Countries, AI Economy
+- rivalries_time_produces_add, Category: Economic Units, AI Economy
 - rivalries_time_produces_mult, Category: Economic Units, AI Economy
+- rivalries_energy_produces_add, Category: Economic Units, AI Economy
 - rivalries_energy_produces_mult, Category: Economic Units, AI Economy
+- rivalries_minerals_produces_add, Category: Economic Units, AI Economy
 - rivalries_minerals_produces_mult, Category: Economic Units, AI Economy
+- rivalries_food_produces_add, Category: Economic Units, AI Economy
 - rivalries_food_produces_mult, Category: Economic Units, AI Economy
+- rivalries_physics_research_produces_add, Category: Economic Units, AI Economy
 - rivalries_physics_research_produces_mult, Category: Economic Units, AI Economy
+- rivalries_society_research_produces_add, Category: Economic Units, AI Economy
 - rivalries_society_research_produces_mult, Category: Economic Units, AI Economy
+- rivalries_engineering_research_produces_add, Category: Economic Units, AI Economy
 - rivalries_engineering_research_produces_mult, Category: Economic Units, AI Economy
+- rivalries_influence_produces_add, Category: Economic Units, AI Economy
 - rivalries_influence_produces_mult, Category: Economic Units, AI Economy
+- rivalries_unity_produces_add, Category: Economic Units, AI Economy
 - rivalries_unity_produces_mult, Category: Economic Units, AI Economy
+- rivalries_consumer_goods_produces_add, Category: Economic Units, AI Economy
 - rivalries_consumer_goods_produces_mult, Category: Economic Units, AI Economy
+- rivalries_alloys_produces_add, Category: Economic Units, AI Economy
 - rivalries_alloys_produces_mult, Category: Economic Units, AI Economy
+- rivalries_volatile_motes_produces_add, Category: Economic Units, AI Economy
 - rivalries_volatile_motes_produces_mult, Category: Economic Units, AI Economy
+- rivalries_exotic_gases_produces_add, Category: Economic Units, AI Economy
 - rivalries_exotic_gases_produces_mult, Category: Economic Units, AI Economy
+- rivalries_rare_crystals_produces_add, Category: Economic Units, AI Economy
 - rivalries_rare_crystals_produces_mult, Category: Economic Units, AI Economy
+- rivalries_sr_living_metal_produces_add, Category: Economic Units, AI Economy
 - rivalries_sr_living_metal_produces_mult, Category: Economic Units, AI Economy
+- rivalries_sr_zro_produces_add, Category: Economic Units, AI Economy
 - rivalries_sr_zro_produces_mult, Category: Economic Units, AI Economy
+- rivalries_sr_dark_matter_produces_add, Category: Economic Units, AI Economy
 - rivalries_sr_dark_matter_produces_mult, Category: Economic Units, AI Economy
+- rivalries_nanites_produces_add, Category: Economic Units, AI Economy
 - rivalries_nanites_produces_mult, Category: Economic Units, AI Economy
+- rivalries_minor_artifacts_produces_add, Category: Economic Units, AI Economy
 - rivalries_minor_artifacts_produces_mult, Category: Economic Units, AI Economy
+- rivalries_menace_produces_add, Category: Economic Units, AI Economy
 - rivalries_menace_produces_mult, Category: Economic Units, AI Economy
 - rivalries_produces_mult, Category: Economic Units, AI Economy
 - monthly_trades_time_produces_add, Category: Countries, AI Economy
@@ -4968,6 +5248,12 @@ Printing Modifier Definitions:
 - shipsize_ghost_ship_evasion_mult, Category: Ships
 - shipsize_ghost_ship_disengage_chance_mult, Category: Ships
 - shipsize_ghost_ship_tracking_mult, Category: Ships
+- shipsize_star_mall_drone_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_star_mall_drone_hull_mult, Category: Ships
+- shipsize_star_mall_drone_hull_add, Category: Ships
+- shipsize_star_mall_drone_evasion_mult, Category: Ships
+- shipsize_star_mall_drone_disengage_chance_mult, Category: Ships
+- shipsize_star_mall_drone_tracking_mult, Category: Ships
 - shipsize_large_ship_swarm_build_speed_mult, Category: Planets, Megastructures, Starbases
 - shipsize_large_ship_swarm_hull_mult, Category: Ships
 - shipsize_large_ship_swarm_hull_add, Category: Ships
@@ -5910,9 +6196,46 @@ Printing Modifier Definitions:
 - shipsize_reanimated_space_whale_4_evasion_mult, Category: Ships
 - shipsize_reanimated_space_whale_4_disengage_chance_mult, Category: Ships
 - shipsize_reanimated_space_whale_4_tracking_mult, Category: Ships
+- shipsize_habitat_central_complex_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_habitat_central_complex_hull_mult, Category: Ships
+- shipsize_habitat_central_complex_hull_add, Category: Ships
+- shipsize_habitat_central_complex_evasion_mult, Category: Ships
+- shipsize_habitat_central_complex_disengage_chance_mult, Category: Ships
+- shipsize_habitat_central_complex_tracking_mult, Category: Ships
+- shipsize_major_orbital_resource_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_major_orbital_resource_hull_mult, Category: Ships
+- shipsize_major_orbital_resource_hull_add, Category: Ships
+- shipsize_major_orbital_resource_evasion_mult, Category: Ships
+- shipsize_major_orbital_resource_disengage_chance_mult, Category: Ships
+- shipsize_major_orbital_resource_tracking_mult, Category: Ships
+- shipsize_minor_orbital_resource_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_minor_orbital_resource_hull_mult, Category: Ships
+- shipsize_minor_orbital_resource_hull_add, Category: Ships
+- shipsize_minor_orbital_resource_evasion_mult, Category: Ships
+- shipsize_minor_orbital_resource_disengage_chance_mult, Category: Ships
+- shipsize_minor_orbital_resource_tracking_mult, Category: Ships
+- shipsize_major_orbital_generic_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_major_orbital_generic_hull_mult, Category: Ships
+- shipsize_major_orbital_generic_hull_add, Category: Ships
+- shipsize_major_orbital_generic_evasion_mult, Category: Ships
+- shipsize_major_orbital_generic_disengage_chance_mult, Category: Ships
+- shipsize_major_orbital_generic_tracking_mult, Category: Ships
+- shipsize_minor_orbital_generic_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_minor_orbital_generic_hull_mult, Category: Ships
+- shipsize_minor_orbital_generic_hull_add, Category: Ships
+- shipsize_minor_orbital_generic_evasion_mult, Category: Ships
+- shipsize_minor_orbital_generic_disengage_chance_mult, Category: Ships
+- shipsize_minor_orbital_generic_tracking_mult, Category: Ships
+- shipsize_major_orbital_knights_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_major_orbital_knights_hull_mult, Category: Ships
+- shipsize_major_orbital_knights_hull_add, Category: Ships
+- shipsize_major_orbital_knights_evasion_mult, Category: Ships
+- shipsize_major_orbital_knights_disengage_chance_mult, Category: Ships
+- shipsize_major_orbital_knights_tracking_mult, Category: Ships
 - damage_vs_country_type_default_mult, Category: Ships
 - damage_vs_country_type_global_event_mult, Category: Ships
 - damage_vs_country_type_faction_mult, Category: Ships
+- damage_vs_country_type_nice_faction_mult, Category: Ships
 - damage_vs_country_type_origin_dragon_mult, Category: Ships
 - damage_vs_country_type_dragon_dummy_mult, Category: Ships
 - damage_vs_country_type_clutch_of_whelps_mult, Category: Ships
@@ -5966,6 +6289,7 @@ Printing Modifier Definitions:
 - damage_vs_country_type_slavers_dummy_mult, Category: Ships
 - damage_vs_country_type_debt_collectors_mult, Category: Ships
 - damage_vs_country_type_jaunting_traveler_dummy_mult, Category: Ships
+- damage_vs_country_type_no_contact_neutral_faction_mult, Category: Ships
 - damage_vs_country_type_guardian_mult, Category: Ships
 - damage_vs_country_type_guardian_dragon_mult, Category: Ships
 - damage_vs_country_type_guardian_toxic_god_mult, Category: Ships
@@ -6092,6 +6416,9 @@ Printing Modifier Definitions:
 - district_generator_max, Category: Planets
 - district_mining_max, Category: Planets
 - district_farming_max, Category: Planets
+- district_hab_science_max, Category: Planets
+- district_hab_energy_max, Category: Planets
+- district_hab_mining_max, Category: Planets
 - planet_district_orders_demesne_build_speed_mult, Category: Planets
 - planet_district_crashed_slaver_ship_build_speed_mult, Category: Planets
 - planet_district_city_build_speed_mult, Category: Planets
@@ -6113,12 +6440,10 @@ Printing Modifier Definitions:
 - planet_district_mining_uncapped_build_speed_mult, Category: Planets
 - planet_district_farming_uncapped_build_speed_mult, Category: Planets
 - planet_district_hab_housing_build_speed_mult, Category: Planets
-- planet_district_hab_energy_build_speed_mult, Category: Planets
 - planet_district_hab_industrial_build_speed_mult, Category: Planets
 - planet_district_hab_science_build_speed_mult, Category: Planets
-- planet_district_hab_commercial_build_speed_mult, Category: Planets
+- planet_district_hab_energy_build_speed_mult, Category: Planets
 - planet_district_hab_mining_build_speed_mult, Category: Planets
-- planet_district_hab_cultural_build_speed_mult, Category: Planets
 - planet_district_rw_city_build_speed_mult, Category: Planets
 - planet_district_rw_hive_build_speed_mult, Category: Planets
 - planet_district_rw_nexus_build_speed_mult, Category: Planets
@@ -6509,9 +6834,6 @@ Printing Modifier Definitions:
 - job_knight_commander_add, Category: Planets
 - job_knight_commander_per_pop, Category: Planets
 - job_knight_commander_per_crime, Category: Planets
-- job_colonist_add, Category: Planets
-- job_colonist_per_pop, Category: Planets
-- job_colonist_per_crime, Category: Planets
 - job_researcher_add, Category: Planets
 - job_researcher_per_pop, Category: Planets
 - job_researcher_per_crime, Category: Planets
@@ -6560,9 +6882,18 @@ Printing Modifier Definitions:
 - job_healthcare_add, Category: Planets
 - job_healthcare_per_pop, Category: Planets
 - job_healthcare_per_crime, Category: Planets
+- job_trader_add, Category: Planets
+- job_trader_per_pop, Category: Planets
+- job_trader_per_crime, Category: Planets
+- job_numistic_priest_add, Category: Planets
+- job_numistic_priest_per_pop, Category: Planets
+- job_numistic_priest_per_crime, Category: Planets
 - job_manager_add, Category: Planets
 - job_manager_per_pop, Category: Planets
 - job_manager_per_crime, Category: Planets
+- job_steward_add, Category: Planets
+- job_steward_per_pop, Category: Planets
+- job_steward_per_crime, Category: Planets
 - job_necromancer_add, Category: Planets
 - job_necromancer_per_pop, Category: Planets
 - job_necromancer_per_crime, Category: Planets
@@ -6602,6 +6933,9 @@ Printing Modifier Definitions:
 - job_archaeoengineers_add, Category: Planets
 - job_archaeoengineers_per_pop, Category: Planets
 - job_archaeoengineers_per_crime, Category: Planets
+- job_colonist_add, Category: Planets
+- job_colonist_per_pop, Category: Planets
+- job_colonist_per_crime, Category: Planets
 - job_clerk_add, Category: Planets
 - job_clerk_per_pop, Category: Planets
 - job_clerk_per_crime, Category: Planets
@@ -6923,6 +7257,36 @@ Printing Modifier Definitions:
 - job_puddle_technician_drone_add, Category: Planets
 - job_puddle_technician_drone_per_pop, Category: Planets
 - job_puddle_technician_drone_per_crime, Category: Planets
+- job_stasis_warden_add, Category: Planets
+- job_stasis_warden_per_pop, Category: Planets
+- job_stasis_warden_per_crime, Category: Planets
+- job_stasis_warden_drone_add, Category: Planets
+- job_stasis_warden_drone_per_pop, Category: Planets
+- job_stasis_warden_drone_per_crime, Category: Planets
+- job_astrogarbage_collector_add, Category: Planets
+- job_astrogarbage_collector_per_pop, Category: Planets
+- job_astrogarbage_collector_per_crime, Category: Planets
+- job_astrogarbage_collector_gestalt_add, Category: Planets
+- job_astrogarbage_collector_gestalt_per_pop, Category: Planets
+- job_astrogarbage_collector_gestalt_per_crime, Category: Planets
+- job_myrmeku_power_farmer_add, Category: Planets
+- job_myrmeku_power_farmer_per_pop, Category: Planets
+- job_myrmeku_power_farmer_per_crime, Category: Planets
+- job_myrmeku_power_farmer_gestalt_add, Category: Planets
+- job_myrmeku_power_farmer_gestalt_per_pop, Category: Planets
+- job_myrmeku_power_farmer_gestalt_per_crime, Category: Planets
+- job_stratovent_researcher_add, Category: Planets
+- job_stratovent_researcher_per_pop, Category: Planets
+- job_stratovent_researcher_per_crime, Category: Planets
+- job_stratovent_refiner_add, Category: Planets
+- job_stratovent_refiner_per_pop, Category: Planets
+- job_stratovent_refiner_per_crime, Category: Planets
+- job_stratovent_refiner_upg_add, Category: Planets
+- job_stratovent_refiner_upg_per_pop, Category: Planets
+- job_stratovent_refiner_upg_per_crime, Category: Planets
+- job_stratovent_refiner_minerals_add, Category: Planets
+- job_stratovent_refiner_minerals_per_pop, Category: Planets
+- job_stratovent_refiner_minerals_per_crime, Category: Planets
 - job_fe_overseer_add, Category: Planets
 - job_fe_overseer_per_pop, Category: Planets
 - job_fe_overseer_per_crime, Category: Planets
@@ -7552,6 +7916,13 @@ Printing Modifier Definitions:
 - hostile_operation_consume_star_difficulty_mult, Category: Espionage
 - operation_consume_star_skill_add, Category: Espionage
 - operation_consume_star_skill_mult, Category: Espionage
+- operation_kaleidoscope_speed_mult, Category: Espionage
+- operation_kaleidoscope_difficulty_add, Category: Espionage
+- operation_kaleidoscope_difficulty_mult, Category: Espionage
+- hostile_operation_kaleidoscope_difficulty_add, Category: Espionage
+- hostile_operation_kaleidoscope_difficulty_mult, Category: Espionage
+- operation_kaleidoscope_skill_add, Category: Espionage
+- operation_kaleidoscope_skill_mult, Category: Espionage
 - operation_increase_awareness_speed_mult, Category: Espionage
 - operation_increase_awareness_difficulty_add, Category: Espionage
 - operation_increase_awareness_difficulty_mult, Category: Espionage
@@ -7602,14 +7973,35 @@ Printing Modifier Definitions:
 - pop_job_amenities_mult, Category: Pops
 - pop_job_trade_mult, Category: Pops
 - pop_lifestyle_trade_mult, Category: Pops
+- living_standard_trade_value_rulers_add, Category: Pops
+- living_standard_trade_value_specialists_add, Category: Pops
+- living_standard_trade_value_workers_add, Category: Pops
+- living_standard_trade_value_slaves_add, Category: Pops
+- living_standard_trade_value_criminals_add, Category: Pops
 - job_soldier_stability_add, Category: Planets
 - habitat_stability_add, Category: Planets
+- habitat_max_districts_mult, Category: Countries
+- habitat_max_districts_add, Category: Countries
+- habitat_districts_building_slots_add, Category: Countries
+- habitat_districts_housing_add, Category: Countries
+- habitat_district_jobs_add, Category: Countries
 - pop_non_noxious_happiness, Category: Pops
 - shroud_delve_cooldown, Category: Countries
+- shroud_delve_cost, Category: Countries
 - salvage_chance_add, Category: Countries
 - negative_traits_country, Category: Countries
 - negative_leader_traits_species, Category: None
 - negative_traits_leader, Category: Leaders
+- restored_node_bonus_skill, Category: Countries
+- restored_admiral_node_bonus_skill, Category: Countries
+- restored_general_node_bonus_skill, Category: Countries
+- restored_governor_node_bonus_skill, Category: Countries
+- restored_scientist_node_bonus_skill, Category: Countries
+- citizen_pop_same_species_class_happiness, Category: Pops
+- citizen_pop_different_species_class_happiness, Category: Pops
+- citizen_pop_political_power, Category: Pops
+- mining_district_housing_add, Category: Planets
+- mining_district_buildings_add, Category: Planets
 - councilor_ruler_democratic_exp_gain, Category: Leaders
 - councilor_ruler_oligarchic_exp_gain, Category: Leaders
 - councilor_ruler_dictatorial_exp_gain, Category: Leaders
@@ -7670,6 +8062,7 @@ Printing Modifier Definitions:
 - councilor_warrior_culture_exp_gain, Category: Leaders
 - councilor_heroic_tales_exp_gain, Category: Leaders
 - councilor_dystopian_society_exp_gain, Category: Leaders
+- councilor_selective_kinship_exp_gain, Category: Leaders
 - councilor_memory_vault_corporate_exp_gain, Category: Leaders
 - councilor_crusader_spirit_corporate_exp_gain, Category: Leaders
 - councilor_task_delegation_corporate_exp_gain, Category: Leaders
@@ -7698,6 +8091,7 @@ Printing Modifier Definitions:
 - councilor_public_relations_specialists_exp_gain, Category: Leaders
 - councilor_ruthless_competition_exp_gain, Category: Leaders
 - councilor_trading_posts_exp_gain, Category: Leaders
+- councilor_worker_coop_exp_gain, Category: Leaders
 - councilor_gestalt_governor_exp_gain, Category: Leaders
 - councilor_gestalt_scientist_exp_gain, Category: Leaders
 - councilor_gestalt_admiral_exp_gain, Category: Leaders
@@ -7709,3 +8103,7 @@ Printing Modifier Definitions:
 - councilor_great_khans_legacy_exp_gain, Category: Leaders
 - councilor_revanchist_fervor_exp_gain, Category: Leaders
 - councilor_ancient_caches_of_technology_exp_gain, Category: Leaders
+- councilor_shroudwalker_teacher_exp_gain, Category: Leaders
+- councilor_master_salvager_exp_gain, Category: Leaders
+- councilor_curator_archivist_exp_gain, Category: Leaders
+- councilor_enclave_trader_exp_gain, Category: Leaders
