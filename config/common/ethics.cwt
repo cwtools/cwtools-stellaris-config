@@ -53,6 +53,10 @@ ethos = {
 	## replace_scope = { this = country root = country }
 	country_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
+		## cardinality = 0..1
+		custom_tooltip = localisation
+		## cardinality = 0..1
+		show_only_custom_tooltip = no
 	}
 
 	## cardinality = 0..1
@@ -86,5 +90,11 @@ ethos = {
 	## replace_scope = { root = pop this = pop from = planet }
 	pop_attraction = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	## cardinality = 0..1
+	leader_background_job_weight = {
+		## cardinality = 1..inf
+		<job> = int
 	}
 }

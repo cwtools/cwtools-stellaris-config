@@ -18,8 +18,12 @@ types = {
 		localisation = {
 			## required
 			Name = "$"
-			## required
+			## optional
 			Desc = "$_desc"
+			subtype[buildable] = {
+				## required
+				Desc = "$_desc"
+			}
 		}
 	}
 }

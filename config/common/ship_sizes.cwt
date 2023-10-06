@@ -13,7 +13,7 @@ types = {
 		}
 		subtype[designable] = {
 			## cardinality = 0..1
-			designable = yes
+			is_designable = yes
 		}
 		localisation = {
 			## required
@@ -23,7 +23,6 @@ types = {
 		}
 	}
 }
-
 
 ship_size = {
 	## cardinality = 0..2
@@ -69,6 +68,9 @@ ship_size = {
 	build_time = int
 	## cardinality = 0..1
 	is_civilian = bool
+	## cardinality = 0..1
+	###hides the cloaking button
+	cloaking_forbidden = yes
 	## cardinality = 0..1
 	build_block_radius = int
 	## cardinality = 0..1
@@ -269,29 +271,6 @@ ship_size = {
 		fraction = float
 	}
 }
-
-#enums = { #you can change, mod, remove and add new shipclasses. This is not an enum!
-#	enum[shipsize_classes] = {
-#		shipclass_military
-#		shipclass_military_station
-#		shipclass_military_special
-#		shipclass_mining_station
-#		shipclass_research_station
-#		shipclass_terraform_station
-#		shipclass_observation_station
-#		shipclass_outpost_station
-#		shipclass_orbital_station
-#		shipclass_transport
-#		shipclass_starbase
-#		shipclass_constructor
-#		shipclass_colonizer
-#		shipclass_science_ship
-#	}
-#}
-
-#ship_class = {
-#	name = key #i dunno how to do this, but a shipclass entry is a must.
-#}
 
 enums = {
 	complex_enum[shipsize_classes] = {

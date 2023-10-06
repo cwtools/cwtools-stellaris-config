@@ -14,12 +14,14 @@ alias[trigger:<scripted_trigger>] = {
 
 ###Evaluates the triggers if the display_triggers of the limit are met
 alias[trigger:if] = {
+	## severity = warning
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
 ###Evaluates the enclosed triggers if the display_triggers of the preceding `if` or `else_if` is not met and its own display_trigger of the limit is met
 alias[trigger:else_if] = {
+	## severity = warning
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
@@ -166,15 +168,6 @@ alias[trigger:has_invalid_civic] = <civic_or_origin.civic>
 ###Checks if the country has a specific policy
 alias[trigger:has_policy_flag] = enum[policy_flag]
 
-###Checks if the leader is the leader of a faction
-alias[trigger:leader_of_faction] = <pop_faction>
-
-###Checks if the leader is the leader of a faction
-alias[trigger:leader_of_faction] = scope[pop_faction]
-
-###Checks if the leader is the leader of a faction
-alias[trigger:leader_of_faction] = bool
-
 ###Checks if the current scope and the target scope are the same thing
 alias[trigger:is_same_value] = scope[any]
 
@@ -195,20 +188,20 @@ alias[trigger:pop_percentage] = {
 }
 
 #should check for <> too
-###Checks the faction's support level
+###Checks the support level of a faction, or that of a leader's faction(s)
 alias[trigger:support] == value_field[0.0..1.0]
 ###Checks the country's used naval capacity in relative terms (0.00-1.00)
 alias[trigger:used_naval_capacity_percent] == value_field
 ###Checks if the country is a specific type
 alias[trigger:is_country_type] = <country_type>
-###Checks if a country has a certain ethos
+###Checks if a country/pop/leader/faction has a certain ethos
 alias[trigger:has_ethic] = <ethos>
 ###Checks if the pop has a specific ethos
 alias[trigger:pop_has_ethic] = <ethos>
 
 ###Checks the country's used starbase capacity in relative terms (0.00-1.00)
-alias[trigger:used_starbase_capacity_percent] == value_field
-### Checks the country's used starbase capacity in absolute numbers
+alias[trigger:used_starbase_capacity_percent] == value_field[0..1.0]
+###Checks the country's used starbase capacity in absolute numbers
 alias[trigger:used_starbase_capacity_integer] == int_value_field
 
 #country only
@@ -484,8 +477,6 @@ alias[trigger:is_designable] = bool
 
 ###Checks if the leader is of a specific class
 alias[trigger:leader_class] = enum[leader_classes]
-###Checks the rulers previous leader class
-alias[trigger:pre_ruler_leader_class] = enum[leader_classes_no_ruler]
 
 ###Checks if the observation post has a specific mission
 alias[trigger:has_mission] = <observation_station_mission>
@@ -528,8 +519,6 @@ alias[trigger:count_tech_options] = {
 ## push_scope = leader
 ###Checks if the country's researcher in a specific field meets the specified criteria
 alias[trigger:research_leader] = {
-	area = enum[research_areas]
-	## cardinality = 1..100
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
@@ -588,16 +577,16 @@ alias[trigger:has_technology] = <technology>
 alias[trigger:has_active_tradition] = <tradition>
 alias[trigger:has_active_tradition] = enum[tradition_swap]
 
-
 ###Checks a variable for the country/leader/planet/system/fleet against a specified value or another variable on the same scope
 alias[trigger:check_variable] = {
 	which = value[variable]
+	## cardinality = 1..inf
 	value = value_field
 }
 
-
 ###Checks the ship/fleet/planet/leader/pop/system's galaxy map distance to target in absolute units
 alias[trigger:distance] = {
+	## cardinality = 0..1
 	source = scope_group[celestial_coordinate]
 	## cardinality = 0..1
 	###Must use >= or will create error log entry
@@ -631,8 +620,6 @@ alias[trigger:has_trait] = <trait>
 
 ###Checks if the pop has a specific trait
 alias[trigger:pop_has_trait] = <trait.species_trait>
-###Checks if a leader has a certain leader trait in their ruler traits, even if they are not currently ruler
-alias[trigger:has_ruler_trait] = <trait.leader_trait>
 
 ###Checks if a species/pop/leader has a particular citizenship type in their country
 alias[trigger:has_citizenship_type] = {
@@ -869,8 +856,10 @@ alias[trigger:distance_to_empire] = {
 	who = scope_group[target_country]
 	distance = int_value_field
 	## cardinality = 0..1
+	###(default: yes)
 	use_bypasses = bool
 	## cardinality = 0..1
+	###(default: hyperlane)
 	type = enum[hyperlane_euclidean]
 }
 
@@ -903,6 +892,9 @@ alias[trigger:former_purge_type] = <purge_type>
 
 ### Compares the former slavery type with the given one.
 alias[trigger:former_slavery_type] = <slavery_type>
+
+### Compares the former colonization control type with the given one.
+alias[trigger:former_colonization_control_type] = <colonization_control>
 
 ### Checks if the country has a specific percentage (0.00-1.00) of the galaxy within its borders
 alias[trigger:galaxy_percentage] == value_field[0.0..1.0]
@@ -965,10 +957,6 @@ alias[trigger:has_fleet_order] = enum[fleet_orders]
 ### Checks if the system has a hyperlane connection to target system
 alias[trigger:has_hyperlane_to] = scope[galactic_object]
 alias[trigger:has_hyperlane_to] = scope_group[target_country]
-
-### Checks if the leader has any, or a specific, mandate
-alias[trigger:has_mandate] = bool
-alias[trigger:has_mandate] = <mandate>
 
 ### Checks if a country or star has a megastructure. Does not accept boolean.
 alias[trigger:has_megastructure] = <megastructure>
@@ -1224,7 +1212,6 @@ alias[trigger:max_naval_capacity] == int_value_field
 ### Checks the country's max starbase capacity
 alias[trigger:max_starbase_capacity] == int_value_field
 
-
 ### Checks if the observation post has achieved specific progress in a mission
 alias[trigger:mission_progress] == value_field[0.0..1.0]
 
@@ -1420,7 +1407,6 @@ alias[trigger:would_join_war] = {
 
 alias[trigger:is_researching_special_project] = <special_project>
 
-
 ### Checks the number of starbase modules that are of the specified type
 alias[trigger:count_starbase_modules] =  {
 	count = int_value_field
@@ -1429,7 +1415,8 @@ alias[trigger:count_starbase_modules] =  {
 	## cardinality = 0..1
 	include_being_constructed = bool
 }
-### Checks the number of starbase modules that are of the specified type or not
+
+### Checks the number of starbase buildings that are of the specified type or not
 alias[trigger:count_starbase_buildings] =  {
 	count = int_value_field
 	## cardinality = 0..1
@@ -1443,7 +1430,6 @@ alias[trigger:count_starbase_sizes] =  {
 	count = int_value_field
 	starbase_size = <ship_size.starbase>
 }
-
 
 #2.2
 
@@ -1484,11 +1470,11 @@ alias[trigger:has_commercial_pact] = scope_group[target_country]
 ###Checks specific resource stockpile for the country scope
 alias[trigger:resource_stockpile_compare] = {
 	resource = <resource>
-	value = float #no variables here atm
+	value = value_field
 	## cardinality = 0..1
-	mult = value[variable]
+	mult = value_field
 	## cardinality = 0..1
-	multiplier = value[variable]
+	multiplier = value_field
 }
 
 ###Checks specific resource income value for the country scope (note: checks profit minus loss, not revenue)
@@ -1657,7 +1643,7 @@ alias[trigger:has_rival] = scope_group[target_country]
 ###Checks if the target country is the country's overlord
 alias[trigger:has_overlord] = scope_group[target_country]
 
-###Checks if the target country is the country's subject
+###Checks if the target country is the subject of the current country.
 alias[trigger:has_subject] = scope_group[target_country]
 
 ###Counts the number of sectors owned by the scoped country
@@ -1671,6 +1657,7 @@ alias[trigger:has_ai_expansion_plan] = bool
 
 ###Checks if the planet has any, or a specific, district
 alias[trigger:has_district] = <district>
+alias[trigger:has_district] = yes
 
 ###Checks if country has active events
 alias[trigger:has_active_event] = {
@@ -1826,15 +1813,20 @@ alias[trigger:federation_level] == int_value_field
 
 ###Checks if the Galactic Community is currently voting on any, or a specific, resolution.
 alias[trigger:is_voting_on_resolution] = any
-
-###Checks if the Galactic Community is currently voting on any, or a specific, resolution.
 alias[trigger:is_voting_on_resolution] = <resolution>
 
 ###Checks if the scoped country is currently proposing any, or a specific, resolution.
 alias[trigger:is_proposing_resolution] = any
-
-###Checks if the scoped country is currently proposing any, or a specific, resolution.
 alias[trigger:is_proposing_resolution] = <resolution>
+
+###Checks if the last resolution the Galactic Community voted on or otherwise passed or failed is as specified.
+alias[trigger:last_resolution_changed] = <resolution>
+
+###Checks if the current country is supporting, opposing or abstaining from the currently proposed galcom resolution.
+alias[trigger:position_on_current_resolution] = enum[galcom_resolution_position]
+
+###Checks if the current country was supporting, opposing or abstaining from the last proposed galcom resolution.
+alias[trigger:position_on_last_resolution] = enum[galcom_resolution_position]
 
 ###Compare with number of years since the formation of the Galactic Community. NOTE: A negative value means it hasn't been formed yet!
 alias[trigger:is_years_since_community_formation] == int_value_field
@@ -1978,6 +1970,9 @@ alias[trigger:has_any_federation_law_in_category] = <federation_law_category>
 
 ###Check that the planet has available jobs of a specific type
 alias[trigger:has_available_jobs] = <job>
+
+###Check that you have forbidden job of a specific type
+alias[trigger:has_forbidden_jobs] = <job>
 
 ###Checks if Xeno Compatibility are enabled in game setup
 alias[trigger:xeno_compatibility_enabled] = bool
@@ -2343,7 +2338,7 @@ alias[trigger:is_in_sensor_range_of_country] = scope_group[target_country]
 ###Checks if the scoped situation's progress is a certain value.
 alias[trigger:situation_progress] == value_field
 
-###Checks if the scoped situation's monthly progress is a certain value.
+###Checks if the scoped situation's monthly progress is a certain value. Returns the cached value from the last monthly tick.
 alias[trigger:situation_monthly_progress] == value_field
 
 ###Checks if the specified approach has been picked on the scoped situation.
@@ -2352,7 +2347,7 @@ alias[trigger:current_situation_approach] = enum[situation_approaches]
 ###Checks if the specified approach is allowed to be picked (according to potential and allow triggers) on the scoped situation.
 alias[trigger:can_set_situation_approach] = enum[situation_approaches]
 
-# ###Checks if the specified severity level is currently active in the scoped situation.
+###Checks if the specified stage is currently active in the scoped situation.
 alias[trigger:current_stage] = enum[situation_stages]
 
 ###Checks if the scoped situation is a certain type.
@@ -2391,7 +2386,7 @@ alias[trigger:num_galaxy_systems] == int_value_field
 ###Checks if the planet has an unemployed pop of a category
 alias[trigger:has_unemployed_pop_of_category] = <social_strata>
 
-#3.4
+# 3.4 "Cepheus"
 
 ###Checks if the planet's ascension tier is as specified.
 alias[trigger:check_economic_modifier_for_job] = {
@@ -2537,13 +2532,25 @@ alias[trigger:num_deposits] == int_value_field
 alias[trigger:enclave_capacity_left] == int_value_field[0..inf]
 
 ###Checks the country's free enclave number capacity in absolute numbers
-alias[trigger:additional_crisis_strength] == int_value_field[0..inf]
+alias[trigger:additional_crisis_strength] == value_field[0..inf]
 
 ###Checks if a job is of a certain pop category. Note that the result for this trigger is not dependent on where it is used - so it's for use in e.g. templated script values.
 alias[trigger:is_job_of_pop_category] = {
 	job = <job>
 	category = <social_strata>
 }
+
+# 3.6 "Orion"
+
+###Checks the number of ships of a ship size in debris
+alias[trigger:num_ships_in_debris] = {
+	## cardinality = 0..1
+	ship_size = <ship_size>
+	value = int_value_field
+}
+
+###Checks if the empire has activated as many ascension tiers as specified:
+alias[trigger:num_planetary_ascension_tiers] == int_value_field
 
 # 3.7 "Canis Minor"
 
@@ -2595,8 +2602,87 @@ alias[trigger:has_awareness] == int_value_field
 ###Checks the country's awareness level if it's pre-FTL
 alias[trigger:current_awareness_level] == enum[awareness_levels]
 
-###Checks if the country is a pre-FTL civilization and has another pre-FTL tech age after its current one 
+###Checks if the country is a pre-FTL civilization and has another pre-FTL tech age after its current one
 alias[trigger:has_next_pre_ftl_age] = bool
 
-###Checks if the country is a pre-FTL civilization and is in the specified age 
+###Checks if the country is a pre-FTL civilization and is in the specified age
 alias[trigger:has_pre_ftl_age] = <pre_ftl_age>
+
+# 3.8 "Gemini"
+
+###Checks the country's number of civics
+alias[trigger:civics_count] == int
+
+###Checks the scope leader's years of service
+alias[trigger:leader_years_of_service] == int
+
+###num_leader_traits - Checks the number of leader traits or total tiers of traits for a specific leader
+alias[trigger:num_leader_traits] = {
+	value = int_value_field
+	## cardinality = 0..1
+	###(Default = any)
+	is_councilor = any
+	## cardinality = 0..1
+	###(Default = any)
+	is_councilor = bool
+	## cardinality = 0..1
+	###(Default = any)
+	negative = any
+	## cardinality = 0..1
+	###(Default = any)
+	negative = bool
+	## cardinality = 0..1
+	###(Default = no)
+	count_tiers = bool
+}
+
+###Checks if scoped leader is the Ruler of the Empire
+alias[trigger:is_ruler] = bool
+
+###Checks if scoped leader is the Heir of the Empire
+alias[trigger:is_heir] = bool
+
+###Get the level of a specific councilor
+alias[trigger:get_councilor_level] = {
+	type = <councilor>
+}
+
+###Checks if the leader holds a specific Councilor type
+alias[trigger:is_councilor_type] = <councilor>
+
+###Checks if any Councilor has a given ethic.
+alias[trigger:is_ethic_represented_on_council] = <ethos>
+
+###Compares the amount of total civic points.
+alias[trigger:has_total_civic_points] == int_value_field
+
+###Compares the amount of unused civic points.
+alias[trigger:has_unused_civic_points] == int_value_field
+
+###Compares the number of times an election candidate was supported.
+alias[trigger:num_candidate_supported] == int_value_field
+
+###Compares the progress (0-1) of the current Agenda.
+alias[trigger:council_agenda_progress_percent] == float[0..1]
+
+###Checks if the country has a specific Council Agenda selected, or any at all
+alias[trigger:has_agenda_selected] = bool
+alias[trigger:has_agenda_selected] = any
+alias[trigger:has_agenda_selected] = none
+alias[trigger:has_agenda_selected] = <council_agenda>
+
+###Compares the amount of unlocked council positions, typically from 'unlock_council_slots'
+alias[trigger:has_unlocked_council_positions] == int_value_field
+
+###Checks if the leader's background contains a specific previous job, or any job if set to yes
+alias[trigger:has_background_job] = <job>
+alias[trigger:has_background_job] = yes
+
+###Checks if the army is currently in the frontline of a combat
+alias[trigger:is_in_frontline] = bool
+
+###Check if a planet is the background planet of a leader
+alias[trigger:is_background_planet] = scope_group[target_planet]
+
+###Checks if scoped leader is a member of the Empire Council or the Ruler
+alias[trigger:is_councilor] = bool

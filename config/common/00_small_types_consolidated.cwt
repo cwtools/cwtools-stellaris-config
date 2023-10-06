@@ -1,4 +1,3 @@
-
 #I got frustrated at there being SO MANY files, so I have thrown a whole lot together in here -Caligula
 
 types = {
@@ -18,19 +17,6 @@ types = {
 			selectable = yes
 		}
 	}
-#	type[country_color] = { #commented out as it threw errors anyway
-#		path = "game/common/colors"
-#		## type_key_filter = country
-#		subtype[default] = {}
-#		## type_key_filter = fallen_empire
-#		subtype[fallen_empire] = {}
-#		## type_key_filter = faction
-#		subtype[faction] = {}
-#		## type_key_filter = pirate
-#		subtype[pirate] = {}
-#		## type_key_filter = species
-#		subtype[species] = {}
-#	}
 	type[asteroid_belt_type] = { #reason for this rename is the way vanilla names stuff, creating ambiguity.
 		path = "game/common/asteroid_belts"
 	}
@@ -104,18 +90,48 @@ types = {
 	}
 	type[diplomacy_economy] = {
         path = "game/common/diplomacy_economy"
-#        name_from_file = yes
         type_per_file = yes
 	}
 	type[message_type] = {
 		name_field = key
 		path = "game/common/message_types"
+		subtype[message] = {
+			## cardinality = 0..1
+			default_toast = no
+		}
+		subtype[toast] = {
+			default_toast = yes
+		}
 	}
 	type[scripted_modifier] = {
 		path = "game/common/scripted_modifiers"
 		localisation = {
 			## required
 			name = "mod_$"
+		}
+	}
+	type[concept] = {
+		path = "game/common/game_concepts"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Desc = "$_desc"
+		}
+	}
+	type[leader_class] = {
+		path = "game/common/leader_classes"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			"Name w/Icon" = "$_with_icon"
+			## optional
+			Plural = "$_plural"
+			## optional
+			"Plural w/Icon" = "$_plural_with_icon"
+			## optional
+			Desc = "$_description"
 		}
 	}
 }
@@ -132,52 +148,29 @@ ambient_object = {
 		description = localisation
 		tooltip = localisation
 	}
+	subtype[!selectable] = {
+		## cardinality = 0..1
+		description = localisation
+		## cardinality = 0..1
+		tooltip = localisation
+	}
 	entity = <model_entity>
+	## cardinality = 0..1
 	selectable = bool
+	## cardinality = 0..1
 	###Determines whether you can read the name of the object ingame.
 	show_name = bool
 }
 
-#country_color = { #commented out as it threw errors on every line anyway
-#	subtype[default] = {
-#		##cardinality = 0..inf
-#		colour[rgb]
-#		##cardinality = 0..inf
-#		colour[hsv]
-#	}
-#	subtype[fallen_empire] = {
-#		##cardinality = 0..inf
-#		colour[rgb]
-#		##cardinality = 0..inf
-#		colour[hsv]
-#	}
-#	subtype[faction] = {
-#		##cardinality = 0..inf
-#		colour[rgb]
-#		##cardinality = 0..inf
-#		colour[hsv]
-#	}
-#	subtype[pirate] = {
-#		##cardinality = 0..inf
-#		colour[rgb]
-#		##cardinality = 0..inf
-#		colour[hsv]
-#	}
-#	subtype[species] = {
-#		##cardinality = 0..inf
-#		colour[rgb]
-#		##cardinality = 0..inf
-#		colour[hsv]
-#	}
-#}
-
-#TODO Confirm
-#TODO Add mesh/shader references
 asteroid_belt_type = {
 	## cardinality = 1..inf
 	mesh = scalar
 	## cardinality = 0..1
 	shader = scalar
+	## cardinality = 0..1
+	width = float
+	## cardinality = 0..1
+	density = float
 }
 
 ##TODO confirm and refine
@@ -304,7 +297,7 @@ sector_focus = {
 	hidden = yes
 	## cardinality = 0..1
 	clear_blockers = bool
-	
+
 	## cardinality = 0..1
 	ai_weight = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
@@ -440,6 +433,7 @@ trade_conversion = {
 }
 
 economic_plan = {
+	## cardinality = 0..1
 	income = {
 		## cardinality = 1..inf
 		<resource> = int
@@ -463,7 +457,7 @@ economic_plan = {
 			## cardinality = 1..inf
 			<resource> = int
 		}
-	
+
 		## cardinality = 0..1
 		focus = {
 			## cardinality = 1..inf
@@ -491,6 +485,7 @@ economic_plan = {
 	## cardinality = 0..1
 	naval_cap = int
 
+	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
 	ai_weight = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
@@ -529,17 +524,58 @@ diplomacy_economy = {
 
 message_type = {
 	icon =	<sprite>
+	## cardinality = 0..1
 	icon_frame = int
+	### Message key, used from code.
 	key = scalar
 	## cardinality = 0..1
+	### Localization key to use for title, if empty it will use "MESSAGE_<key>_TITLE" instead.
 	name = localisation
 	## cardinality = 0..1
 	sound = <sound_effect>
 	## cardinality = 0..1
+	### Deprecated and does nothing.
 	sound_is_advisor = bool
 	ping = <pingmap>
 	## cardinality = 0..1
-	auto_opens = scalar
+	### Specifies if the message should be auto opened or not (default: player)
+	### Some messages as events ignore this since they have their own option.
+	auto_opens = enum[auto_open_type]
+	## cardinality = 0..1
+	### Should the message displayed as a toast? (default: no)
+	default_toast = bool
+	## cardinality = 0..1
+	# Should the message type be hidden in the message settings UI? (default: no)
+	hidden_in_message_settings = bool
+	## cardinality = 0..1
+	### Localization key to use in message settings, if empty it will use name instead.
+	message_setting_key = localisation
+	## cardinality = 0..1
+	### Filter category in message settings (default: other)
+	category = enum[message_setting_category]
+	## cardinality = 0..1
+	### Is the message disabled in message settings by default? (default: no)
+	default_disabled = bool
+}
+
+enums = {
+	enum[auto_open_type] = {
+		none
+		player
+		others
+		all
+	}
+	enum[message_setting_category] = {
+		diplomacy
+		military
+		economy
+		government
+		science
+		fleets
+		planets
+		leaders
+		other
+	}
 }
 
 scripted_modifier = {
@@ -575,4 +611,63 @@ scripted_modifier = {
 	localize_with_value_key = bool
 	###sets the modifier category, which is sometimes used to determine whether it is applied to a certain object (so make sure this is set to what you want)
 	category = enum[scripted_modifier_categories]
+}
+
+concept = {
+	## cardinality = 0..1
+	icon = filepath
+	## cardinality = 0..1
+	###Aliases that display the same concept
+	###Used by the base game to add singular/plural variations
+	alias = {
+		## cardinality = 1..inf
+		localisation
+	}
+}
+
+leader_class = {
+	name = localisation
+	name_plural = localisation
+	description = localisation
+	## cardinality = 0..1
+	###default = no
+	can_lead_navy = bool
+	## cardinality = 0..1
+	###default = no
+	can_lead_army = bool
+	## cardinality = 0..1
+	###default = no
+	can_research = bool
+	## cardinality = 0..1
+	###default = no
+	can_govern_planet = bool
+	## cardinality = 0..1
+	###default = no
+	can_be_envoy = bool
+	## cardinality = 0..1
+	###default = 0
+	assignment_cooldown = 360
+	## cardinality = 0..1
+	max_trait_points = int[0..inf]
+	can_have_traits = bool
+	## cardinality = 0..1
+	## replace_scope = { this = leader root = leader }
+	resources = {
+		## cardinality = 0..1
+		category = <economic_category>
+		alias_name[economic_template] = alias_match_left[economic_template]
+	}
+	default_category = enum[leader_classes]
+	## cardinality = 0..1
+	## replace_scope = { this = country root = country }
+	ai_weight = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	## cardinality = 0..1
+	minimum_ai_target = int[0..inf]
+	## cardinality = 0..1
+	leader_background_job_weight = {
+		## cardinality = 1..inf
+		<job> = int
+	}
 }

@@ -46,17 +46,11 @@ technology = {
 	area = enum[research_areas]
 	tier = <technology_tier>
 	category = { <technology_category> }
-
 	## cardinality = 0..1
 	icon = icon[gfx/interface/icons/technologies]
-
-	subtype[start_tech] = {
-		## cardinality = 0..1
-		cost = 0
-	}
-
+	## cardinality = 0..1
+	cost = int
 	subtype[!start_tech] = {
-		cost = int
 		## cardinality = 0..1
 		is_rare = bool
 		## cardinality = 0..1
@@ -72,20 +66,16 @@ technology = {
 		## cardinality = 0..100
 		<technology>
 	}
-
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-
 	## cardinality = 0..1
 	gateway = scalar #can be any string
-
 	subtype[repeatable] = {
 		cost_per_level = int
 	}
-
 	## cardinality = 0..1
 	### a weight group increases the chances of a technology appearing - if another tech of a similar group is picked.
 	weight_groups = {
@@ -97,44 +87,36 @@ technology = {
 		## cardinality = 0..inf
 		value[tech_weight_group] = float
 	}
-
-
 	## cardinality = 0..1
 	start_tech = bool
 	## cardinality = 0..1
 	is_reverse_engineerable = bool
-
 	## cardinality = 0..1
 	ai_update_type = enum[tech_ai_type]
-
-
-
+	## cardinality = 0..1
+	###default = no
+	is_insight = bool
 	## cardinality = 0..1
 	feature_flags = {
 		## cardinality = 0..100
 		enum[feature_flags]
 	}
-
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
 	modifier = {
 		## cardinality = 0..1
 		description = localisation
-
 		## cardinality = 0..1
 		description_parameters = {
 			POINTS = int
 		}
-
 		## cardinality = 0..1
 		alias_name[modifier] = alias_match_left[modifier]
-
 		## cardinality = 0..1
 		show_only_custom_tooltip = no
 		## cardinality = 0..1
 		custom_tooltip = localisation
 	}
-
 	## cardinality = 0..1
 	prereqfor_desc = {
 		## cardinality = 0..4
@@ -142,22 +124,20 @@ technology = {
 		## cardinality = 0..4
 		enum[prereq_for_categories] = {
 			title = localisation
+			## cardinality = 0..1
 			desc = localisation
 		}
 	}
-
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
 	weight_modifier = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
-
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
 	ai_weight = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
-	
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
 	starting_potential = {
@@ -206,6 +186,8 @@ enums = {
 		unlock_arcane_deciphering
 		unlocks_auto_research
 		hyper_relay_construction
+		active_reconnaissance_unlocked
+		assist_cloaking_detection_unlocked
 	}
 	enum[technology_areas] = {
 		engineering

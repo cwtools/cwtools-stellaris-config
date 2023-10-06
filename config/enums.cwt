@@ -1,18 +1,10 @@
-
 enums = {
 	enum[leader_classes] = {
-		ruler
 		scientist
 		admiral
 		governor
 		general
 		envoy
-	}
-	enum[leader_classes_no_ruler] = {
-		scientist
-		admiral
-		governor
-		general
 	}
 	enum[days_months_years] = {
 		days
@@ -302,6 +294,7 @@ enums = {
 		trade
 		federation
 		espionage
+		species
 	}
 	enum[job_triggers] = {
 		can_fill_drone_job
@@ -353,5 +346,15 @@ enums = {
 		medium
 		high
 		full
+	}
+	enum[galcom_resolution_position] = {
+		support
+		oppose
+		abstain
+	}
+	enum[end_fleet_contract_reason] = {
+		expired
+		broken
+		cancelled
 	}
 }

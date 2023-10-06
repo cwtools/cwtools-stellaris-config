@@ -1,4 +1,4 @@
-[08:54:36][game_application.cpp:2126]: 
+[13:31:50][game_application.cpp:2132]: 
 == LOCALIZATION DOCUMENTATION ==
 This is a list of all hardcoded scoped localization commands in the game. It does not include scripted locs (see game/customizable_localization).
 In most cases, it is also possible to get the value of variables with '[Scope.my_variable]' and saved dates with '[Scope.my_date_flag]'.
@@ -177,6 +177,7 @@ Properties
  GetRegnalName
  GetRegnalNamePersistent
  GetPopFactionName
+ GetPopFactionSupport
  GetSubjectPronoun
  GetSheHe
  GetHeShe
@@ -198,6 +199,7 @@ Properties
  GetRulerTitle
  GetRulerTitlePersistent
  GetTitle
+ GetYearsOfService
  GetRulerName
  GetRulerNamePersistent
  GetFirstName
@@ -206,6 +208,17 @@ Properties
  GetSecondName
  GetSecondNamePersistent
  GetAge
+ GetBackgroundPlanet
+ GetHomeWorldBiome
+ GetBackgroundJob
+ GetBackgroundEthic
+ GetClass
+ GetSubclass
+ GetCost
+ GetUpkeep
+ GetCouncilorPerSkillModifierDesc
+ GetSkill
+ GetAgendaProgress
 
 --Army--
 Promotions:
@@ -268,7 +281,6 @@ Properties
 --Pop Faction--
 Promotions:
  Owner
- Leader
 Properties
  GetName
  GetNamePersistent
@@ -336,7 +348,6 @@ Properties
 Promotions:
  Owner
  Capital
- Leader
 Properties
  GetName
  GetNamePersistent

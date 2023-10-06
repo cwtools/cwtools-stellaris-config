@@ -1,14 +1,23 @@
 
 types = {
 	type[situation_type] = {
+		subtype[monodirectional] = {
+			## cardinality = 0..1
+			progress_direction = monodirectional
+		}
+		subtype[bidirectional] = {
+			progress_direction = bidirectional
+		}
 		path = "game/common/situations"
 		localisation = {
 			## required
-			name = "$"
+			Name = "$"
 			## required
-			type_name = "$_type"
-			## optional
-			description = "$_desc"
+			"Type Name" = "$_type"
+			## required
+			Description = "$_desc"
+			## required
+			"Monthly Change Tooltip" = "$_monthly_change_tooltip"
 		}
 	}
 }
@@ -26,8 +35,8 @@ situation_type = {
 		}
 	}
 	## cardinality = 0..1
-	category = enum[situation_categories]
-
+	###Affects the tone of various UI elements
+	category = enum[situation_category]
 	## cardinality = 0..inf
 	## replace_scope = { root = situation this = situation }
 	desc = {
@@ -35,59 +44,45 @@ situation_type = {
 		text = localisation
 	}
 	## cardinality = 0..1
+	###Effects when the Situation is created
 	on_start = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 	## cardinality = 0..1
+	###Effects when Situation's total progress is below 0
+	###You should always call destroy_situation = this from here or from an event fired by here
 	on_fail = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 	## cardinality = 0..1
+	###Effects when Situation is cancelled via abort_trigger trigger
 	on_abort = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 	## cardinality = 0..1
+	###Trigger for when a Situation should abort, firing on_abort
 	abort_trigger = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
 	## push_scope = country
+	###Modifier applying to the country experiencing the situation
 	modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	## cardinality = 0..inf
-	triggered_modifier = {
-		potential = {
-			alias_name[trigger] = alias_match_left[trigger]
-		}
-		## push_scope = country
-		modifier = {
-			alias_name[modifier] = alias_match_left[modifier]
-		}
-		## push_scope = country
-		alias_name[modifier] = alias_match_left[modifier]
-	}
+	###Triggered modifier applying to the country experiencing the situation, if the triggers are true
+	alias_name[triggered_modifier_situation] = alias_match_left[triggered_modifier_situation]
 	## cardinality = 0..1
 	## push_scope = planet
+	###Modifier applying to the target planet of a Situation. Does not work on other scope types!
 	target_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	## cardinality = 0..inf
-	triggered_target_modifier = {
-		potential = {
-			alias_name[trigger] = alias_match_left[trigger]
-		}
-		## push_scope = planet
-		modifier = {
-			alias_name[modifier] = alias_match_left[modifier]
-		}
-		## push_scope = planet
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-
+	###Modifier applying to the target planet of a Situation, if the triggers are true. Does not work on other scope types!
+	alias_name[triggered_target_modifier_situation] = alias_match_left[triggered_target_modifier_situation]
 	## cardinality = 0..1
+	###Note: technically, this is an on_action called test_situation. So don't call your situation "on_monthly_pulse"!
 	on_monthly = {
 		## cardinality = 0..1
 		events = {
@@ -102,26 +97,33 @@ situation_type = {
 			int = <event>
 		}
 	}
-
+	###Every month, progress ticks up or down based on factors defined here
 	monthly_progress = {
 		alias_name[modifier_rule_with_loc] = alias_match_left[modifier_rule_with_loc]
 	}
+	###Effects when Situation's progress has reached its completion
+	###You should always call destroy_situation = this from here or from an event fired by here
 	on_progress_complete = {
 		alias_name[effect] = alias_match_left[effect]
 	}
-
 	## cardinality = 0..inf
 	approach = {
+		###This is localised. If you add a loc key "approach_a_desc", it will also show, but this is optional.
 		name = localisation
 		icon = <sprite>
 		icon_background = <sprite>
 		## cardinality = 0..1
+		###Sets the Approach to be the Situation's default. This means that it will be picked when the Situation starts, and if the current
+		###Approach is invalidated (fails potential or allow check). This won't happen while the Situation is locked, so events which demand
+		###a choice of Approach can lock the situation (set_situation_locked) in immediate (or the Situation's on_start) and unlock them in after.
 		default = yes
 		## cardinality = 0..1
+		###If this fails, the Approach is greyed out
 		allow = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 		## cardinality = 0..1
+		###If this fails, the Approach is not shown
 		potential = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
@@ -130,75 +132,65 @@ situation_type = {
 		modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
-		## cardinality = 0..inf
-		triggered_modifier = {
-			potential = {
-				alias_name[trigger] = alias_match_left[trigger]
-			}
-			## push_scope = country
-			modifier = {
-				alias_name[modifier] = alias_match_left[modifier]
-			}
-			## push_scope = country
-			alias_name[modifier] = alias_match_left[modifier]
-		}
+		alias_name[triggered_modifier_situation] = alias_match_left[triggered_modifier_situation]
 		## cardinality = 0..1
 		## push_scope = planet
 		target_modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
-		## cardinality = 0..inf
-		triggered_target_modifier = {
-			potential = {
-				alias_name[trigger] = alias_match_left[trigger]
-			}
-			## push_scope = planet
-			modifier = {
-				alias_name[modifier] = alias_match_left[modifier]
-			}
-			## push_scope = planet
-			alias_name[modifier] = alias_match_left[modifier]
-		}
+		alias_name[triggered_target_modifier_situation] = alias_match_left[triggered_target_modifier_situation]
 		## cardinality = 0..1
 		resources = {
 			category = <economic_category>
 			alias_name[economic_template] = alias_match_left[economic_template]
 		}
 		## cardinality = 0..1
+		###Effect when you pick the Approach.
 		on_select = {
 			alias_name[effect] = alias_match_left[effect]
 		}
+		## cardinality = 0..1
+		ai_weight = int
 		## cardinality = 0..1
 		ai_weight = {
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		}
 	}
-
 	## cardinality = 0..1
-	start_value = int
-	
+	###Situation will start at this number. Default is 0
+	start_value = float
 	## cardinality = 0..1
-	progress_direction = monodirectional
-	## cardinality = 0..1
-	progress_direction = bidirectional
-
+	###(defaults to monodirectional)
+	progress_direction = enum[progress_direction]
+	subtype[bidirectional] = {
+		## cardinality = 0..1
+		###Only for progress_direction = bidirectional - only affects progress towards completetion (right)
+		complete_category = enum[situation_category]
+		## cardinality = 0..1
+		###Only for progress_direction = bidirectional - only affects progress towards fail (left)
+		fail_category = enum[situation_category]
+	}
+	###Defines icon that will appear on the right side of the bar
 	complete_icon = <sprite>
 	complete_icon_frame = <sprite>
 	## cardinality = 0..1
+	###Defines icon that will appear on the left side of the bar
 	fail_icon = <sprite>
 	## cardinality = 0..1
 	fail_icon_frame = <sprite>
-	
 	## cardinality = 0..1
 	stages = {
 		## cardinality = 1..inf
+		###Expects the key to be localised. You can also define <key>_desc and it will show on the tooltip, but this is optional.
 	 	scalar = {
+			###Where the stage ends and a new one starts. Determines the end value of the Situation, if it is the final stage.
 	 		end = int
 			icon = <sprite>
 			icon_background = <sprite>
 			## cardinality = 0..1
 			custom_tooltip = localisation
 			## cardinality = 0..1
+			###Effect for the first time this stage fires (hidden in the UI)
 			on_first_enter = {
 				alias_name[effect] = alias_match_left[effect]
 			}
@@ -211,35 +203,13 @@ situation_type = {
 			modifier = {
 				alias_name[modifier] = alias_match_left[modifier]
 			}
-			## cardinality = 0..inf
-			triggered_modifier = {
-				potential = {
-					alias_name[trigger] = alias_match_left[trigger]
-				}
-				## push_scope = country
-				modifier = {
-					alias_name[modifier] = alias_match_left[modifier]
-				}
-				## push_scope = country
-				alias_name[modifier] = alias_match_left[modifier]
-			}
+			alias_name[triggered_modifier_situation] = alias_match_left[triggered_modifier_situation]
 			## cardinality = 0..1
 			## push_scope = planet
 			target_modifier = {
 				alias_name[modifier] = alias_match_left[modifier]
 			}
-			## cardinality = 0..inf
-			triggered_target_modifier = {
-				potential = {
-					alias_name[trigger] = alias_match_left[trigger]
-				}
-				## push_scope = planet
-				modifier = {
-					alias_name[modifier] = alias_match_left[modifier]
-				}
-				## push_scope = planet
-				alias_name[modifier] = alias_match_left[modifier]
-			}
+			alias_name[triggered_target_modifier_situation] = alias_match_left[triggered_target_modifier_situation]
 	    }
 	}
 }
@@ -261,9 +231,13 @@ enums = {
 			}
 		}
 	}
-	enum[situation_categories] = {
+	enum[situation_category] = {
 		positive
 		negative
 		neutral
+	}
+	enum[progress_direction] = {
+		monodirectional
+		bidirectional
 	}
 }

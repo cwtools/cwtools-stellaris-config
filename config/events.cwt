@@ -83,13 +83,13 @@ types = {
 		## type_key_filter = situation_event
 		## push_scope = situation
 		## display_name = Situation Event
-		## abbreviation = LE
+		## abbreviation = SiE
 		subtype[situation] = {
 		}
 		## type_key_filter = agreement_event
 		## push_scope = agreement
 		## display_name = Agreement Event
-		## abbreviation = LE
+		## abbreviation = AE
 		subtype[agreement] = {
 		}
 		## type_key_filter = event
@@ -108,12 +108,18 @@ types = {
 
 			## cardinality = 0..1
 			diplomatic = no
+
+			## cardinality = 0..0
+			event_window_type = enum[event_window_type]
+		}
+		subtype[leader_recruit] = {
+			event_window_type = leader_recruit
+		}
+		subtype[leader_story] = {
+			event_window_type = leader_story
 		}
 		subtype[triggered] = {
 			is_triggered_only = yes
-		}
-		subtype[major] = {
-			major = yes
 		}
 		subtype[inherited] = {
 			base = <event>
@@ -137,17 +143,31 @@ event = {
 		## cardinality = 0..1
 		show_sound_clear = yes
 	}
+
 	subtype[!hidden] = {
 		title = localisation
 		desc = localisation
-
 		desc = {
 			## cardinality = 0..1
 			trigger = {
 				alias_name[trigger] = alias_match_left[trigger]
-
+				## cardinality = 0..1
+				switch = {
+					trigger = scalar
+					## cardinality = 2..inf
+					scalar = {
+						## cardinality = 0..1
+						if = {
+							limit = { alias_name[trigger] = alias_match_left[trigger] }
+							text = localisation
+						}
+						## cardinality = 0..1
+						text = localisation
+					}
+				}
 				## cardinality = 0..inf
 				scope[any] = {
+					alias_name[trigger] = alias_match_left[trigger]
 					## cardinality = 0..1
 					switch = {
 						trigger = scalar
@@ -163,6 +183,10 @@ event = {
 						}
 					}
 				}
+			}
+			## cardinality = 0..1
+			exclusive_trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
 				## cardinality = 0..1
 				switch = {
 					trigger = scalar
@@ -177,13 +201,10 @@ event = {
 						text = localisation
 					}
 				}
-			}
-			## cardinality = 0..1
-			exclusive_trigger = {
-				alias_name[trigger] = alias_match_left[trigger]
-
 				## cardinality = 0..inf
 				scope[any] = {
+					alias_name[trigger] = alias_match_left[trigger]
+					## cardinality = 0..1
 					switch = {
 						trigger = scalar
 						## cardinality = 2..inf
@@ -198,25 +219,17 @@ event = {
 						}
 					}
 				}
-				## cardinality = 0..1
-				switch = {
-					trigger = scalar
-					## cardinality = 2..inf
-					scalar = {
-						## cardinality = 0..1
-						if = {
-							limit = { alias_name[trigger] = alias_match_left[trigger] }
-							text = localisation
-						}
-						## cardinality = 0..1
-						text = localisation
-					}
-				}
 			}
 			## cardinality = 0..inf
 			text = localisation
 			## cardinality = 0..1
 			show_sound = <sound_effect>
+		}
+		picture = <sprite>
+		picture = {
+			picture = <sprite>
+			## cardinality = 0..1
+			trigger = { alias_name[trigger] = alias_match_left[trigger] }
 		}
 
 		## cardinality = 0..inf
@@ -224,6 +237,9 @@ event = {
 		## cardinality = 0..inf
 		show_sound = {
 			sound = <sound_effect>
+			## cardinality = 0..1
+			sound_is_advisor = bool
+			## cardinality = 0..1
 			trigger = {
 				alias_name[trigger] = alias_match_left[trigger]
 			}
@@ -254,12 +270,14 @@ event = {
 		diplomatic = bool
 
 		## cardinality = 0..1
+		event_window_type = enum[event_window_type]
+
+		## cardinality = 0..1
 		###Forces the event to pop-up even if player has supressed pop ups
 		auto_opens = bool
 
 		## cardinality = 0..1
 		is_test_event = bool
-
 
 		## cardinality = 0..inf
 		option = {
@@ -269,7 +287,40 @@ event = {
 			name = {
 				trigger = {
 					alias_name[trigger] = alias_match_left[trigger]
+					## cardinality = 0..1
+					switch = {
+						trigger = scalar
+						## cardinality = 2..inf
+						scalar = {
+							## cardinality = 0..1
+							if = {
+								limit = { alias_name[trigger] = alias_match_left[trigger] }
+								text = localisation
+							}
+							## cardinality = 0..1
+							text = localisation
+						}
+					}
+					## cardinality = 0..inf
+					scope[any] = {
+						alias_name[trigger] = alias_match_left[trigger]
+						## cardinality = 0..1
+						switch = {
+							trigger = scalar
+							## cardinality = 2..inf
+							scalar = {
+								## cardinality = 0..1
+								if = {
+									limit = { alias_name[trigger] = alias_match_left[trigger] }
+									text = localisation
+								}
+								## cardinality = 0..1
+								text = localisation
+							}
+						}
+					}
 				}
+				## cardinality = 0..1
 				text = localisation
 			}
 			## cardinality = 1..inf
@@ -279,7 +330,6 @@ event = {
 				}
 				text = localisation
 			}
-
 			## cardinality = 0..1
 			icon = {
 				icon = <sprite>
@@ -312,30 +362,35 @@ event = {
 			}
 
 			subtype[diplomatic] = {
-
 				## cardinality = 0..1
 				response_text = localisation
-
 				## cardinality = 0..1
 				is_dialog_only = bool
+			}
 
+			subtype[leader_recruit] = {
 				## cardinality = 0..1
-				custom_gui = scalar #points to a gui_type, currently all are defined as aliases but this needs to be updated
+				tag = enum[leader_recruit_tag_type]
+				## cardinality = 0..1
+				response_text = localisation
+				## cardinality = 0..1
+				is_dialog_only = bool
+			}
 
+			subtype[leader_story] = {
 				## cardinality = 0..1
-				### Binds this option to the "dismiss" action
-				default_hide_option = bool
+				response_text = localisation
+				## cardinality = 0..1
+				is_dialog_only = bool
 			}
 
 			## cardinality = 0..1
+			### Binds this option to the "dismiss" action
 			default_hide_option = bool
 			## cardinality = 0..1
 			custom_gui = scalar #points to a gui_type, currently all are defined as aliases but this needs to be updated
-
 			## cardinality = 0..1
 			alias_name[effect] = alias_match_left[effect]
-
-
 		}
 	}
 
@@ -358,16 +413,6 @@ event = {
 		show_sound = scalar
 	}
 
-
-	subtype[default] = {
-		picture = <sprite>
-		picture = {
-			picture = <sprite>
-			## cardinality = 0..1
-			trigger = { alias_name[trigger] = alias_match_left[trigger] }
-		}
-	}
-
 	## cardinality = 0..1
 	message_desc = localisation
 
@@ -385,16 +430,6 @@ event = {
 			factor = float
 			## cardinality = 0..100
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
-		}
-	}
-	## cardinality = 0..1
-	###Event will show for other countries if this is set to yes. Those countries can be narrowed down with major_trigger.
-	major = yes
-	subtype[major] = {
-		## cardinality = 0..1
-		###Triggers for other countries on whether a major event should show for them. I.e. if it reads has_ethic = ethic_materialist, then all materialist countries will see the event.
-		major_trigger = {
-			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
 	## cardinality = 0..1
@@ -416,7 +451,6 @@ event = {
 
 	## cardinality = 0..1
 	is_advisor_event = bool
-
 
 	## cardinality = 0..1
 	auto_select = bool
@@ -442,55 +476,23 @@ event = {
 		## cardinality = 0..1
 		###The title that shows at the top of the diplomatic screen (above the portrait/room, not above the event text)
 		diplomatic_title = localisation
-		picture_event_data = {
-			#only one of each of these!
-			## cardinality = 0..1
-			room = <asset_selector.room>
-			## cardinality = 0..1
-			room = scope[country]
-			## cardinality = 0..1
-			room = scope[species]
-			## cardinality = 0..1
-			room = scope[leader]
-			## cardinality = 0..1
-			room = icon[gfx/portraits/city_sets]
-			## cardinality = 0..1
-			room = icon[gfx/portraits/city_sets]
-			## cardinality = 0..1
-			room = no_video_feed_room
-			## cardinality = 0..1
-			portrait = <portrait>
-			## cardinality = 0..1
-			portrait = scope[country]
-			## cardinality = 0..1
-			portrait = scope[species]
-			## cardinality = 0..1
-			portrait = scope[leader]
-			## cardinality = 0..1
-			planet_background = scope[country]
-			## cardinality = 0..1
-			planet_background = scope[species]
-			## cardinality = 0..1
-			planet_background = scope[planet]
-			## cardinality = 0..1
-			planet_background = <planet_class>
-			## cardinality = 0..1
-			graphical_culture = <graphical_culture>
-			## cardinality = 0..1
-			graphical_culture = scope[country]
-			## cardinality = 0..1
-			graphical_culture = scope[species]
-			## cardinality = 0..1
-			city_level = scope[country]
-			## cardinality = 0..1
-			city_level = scope[species]
-			## cardinality = 0..1
-			city_level = scope[planet]
-		}
+		alias_name[picture_event_data] = alias_match_left[picture_event_data]
 		## cardinality = 0..1
 		custom_gui = scalar #same as previous, needs to be gui_type
 		## cardinality = 0..1
 		custom_gui_option = scalar #same as previous, needs to be gui_type
+	}
+
+	subtype[leader_recruit] = {
+		## cardinality = 0..1
+		notification_event_icon = <sprite>
+		alias_name[picture_event_data] = alias_match_left[picture_event_data]
+	}
+
+	subtype[leader_story] = {
+		## cardinality = 0..1
+		event_picture_background = <sprite>
+		alias_name[picture_event_data] = alias_match_left[picture_event_data]
 	}
 
 	subtype[planet] = {
@@ -526,9 +528,59 @@ event = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 
-
 	## cardinality = 0..1
 	after = {
 		alias_name[effect] = alias_match_left[effect]
+	}
+}
+
+alias[picture_event_data:picture_event_data] = {
+	# only one of each of these!
+	## cardinality = 0..1
+	room = scope[country]
+	## cardinality = 0..1
+	room = scope[species]
+	## cardinality = 0..1
+	room = scope[leader]
+	## cardinality = 0..1
+	room = icon[gfx/portraits/city_sets]
+	## cardinality = 0..1
+	portrait = <portrait>
+	## cardinality = 0..1
+	portrait = scope[country]
+	## cardinality = 0..1
+	portrait = scope[species]
+	## cardinality = 0..1
+	portrait = scope[leader]
+	## cardinality = 0..1
+	planet_background = scope[country]
+	## cardinality = 0..1
+	planet_background = scope[species]
+	## cardinality = 0..1
+	planet_background = scope[planet]
+	## cardinality = 0..1
+	planet_background = <planet_class>
+	## cardinality = 0..1
+	graphical_culture = <graphical_culture>
+	## cardinality = 0..1
+	graphical_culture = scope[country]
+	## cardinality = 0..1
+	graphical_culture = scope[species]
+	## cardinality = 0..1
+	city_level = scope[country]
+	## cardinality = 0..1
+	city_level = scope[species]
+	## cardinality = 0..1
+	city_level = scope[planet]
+}
+
+enums = {
+	enum[event_window_type] = {
+		leader_recruit
+		leader_story
+	}
+	enum[leader_recruit_tag_type] = {
+		hire_leader
+		dismiss_leader
 	}
 }

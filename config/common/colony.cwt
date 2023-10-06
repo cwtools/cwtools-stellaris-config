@@ -43,7 +43,6 @@ colony_automation = {
 
 		}
 	}
-
 }
 
 colony_type = {
@@ -86,10 +85,9 @@ colony_type = {
 	}
 
 	## replace_scope = { this = planet root = planet }
-	alias_name[triggered_planet_modifier] = alias_match_left[triggered_planet_modifier]
+	alias_name[triggered_planet_modifier_planet] = alias_match_left[triggered_planet_modifier_planet]
 
 	weight_modifier = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
-
 }
