@@ -357,11 +357,4 @@ enums = {
 		broken
 		cancelled
 	}
-	enum[inline_script_enum] = {
-		ship_components/cloaking_ship_shield_reduction
-		ship_components/dark_matter_cloaking_ship_shield_reduction
-		ship_components/psi_cloaking_ship_shield_reduction
-		ship_components/weights/roles_cloaking_devices
-		ship_components/weights/roles_stealth
-	}
 }
