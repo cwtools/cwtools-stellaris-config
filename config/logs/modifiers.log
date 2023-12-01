@@ -4222,7 +4222,7 @@ Printing Modifier Definitions:
 - leader_governors_menace_produces_add, Category: Economic Units, AI Economy
 - leader_governors_menace_upkeep_add, Category: Economic Units, AI Economy
 - leader_governors_menace_upkeep_mult, Category: Economic Units, AI Economy
-- leader_governors_cost_mult, Category: Economic Units, AI Economy
+- leader_officials_cost_mult, Category: Economic Units, AI Economy
 - leader_governors_upkeep_mult, Category: Economic Units, AI Economy
 - diplomacy_time_upkeep_mult, Category: Countries, AI Economy
 - diplomacy_energy_upkeep_mult, Category: Countries, AI Economy

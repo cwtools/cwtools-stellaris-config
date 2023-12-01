@@ -733,6 +733,7 @@ alias[effect:reduce_hp_percent] = int_value_field[0..100]
 alias[effect:exile_leader_as] = value_set[exiled_leader]
 ###Adds a sum of experience points to the scoped leader
 alias[effect:add_experience] = int_value_field
+
 ###Sets scoped leader as non/recruitable
 alias[effect:recruitable] = bool
 ###Assigns target leader to the scoped planet/country/fleet/army
@@ -2802,6 +2803,7 @@ alias[effect:spawn_system] = {
 	max_jumps = int[0..1000]
 	## cardinality = 0..1
 	initializer = <solar_system_initializer>
+	initializer = random
 	## cardinality = 0..1
 	initializer = random
 	## cardinality = 0..1
@@ -3321,6 +3323,9 @@ alias[effect:add_intel] = {
 	who = scope_group[target_country]
 	amount = value_field
 }
+
+###Copies all script flags and variables from the specified scope to the current one.
+alias[effect:copy_flags_and_variables_from] = scope[any]
 
 ###Creates espionage asset within a given spy network
 alias[effect:create_espionage_asset] = {

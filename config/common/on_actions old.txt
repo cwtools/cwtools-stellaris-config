@@ -264,8 +264,6 @@ types = {
         subtype[on_leader_level_up] = { }
         ## type_key_filter = on_ruler_removed
         subtype[on_ruler_removed] = { }
-        ## type_key_filter = on_ruler_back_to_pre_ruler_class
-        subtype[on_ruler_back_to_pre_ruler_class] = { }
         ## type_key_filter = on_leader_spawned
         subtype[on_leader_spawned] = { }
         ## type_key_filter = on_ship_order
@@ -2303,21 +2301,6 @@ on_action = {
     }
     ## replace_scope = { this = country root = country from = leader }
     subtype[on_ruler_removed] = {
-        ## cardinality = 0..1
-        events = {
-            ## cardinality = 0..inf
-            <event.country>
-        }
-        ## cardinality = 0..1
-        random_events = {
-            ## cardinality = 0..inf
-            int = 0
-            ## cardinality = 0..inf
-            int = <event.country>
-        }
-    }
-    ## replace_scope = { this = country root = country from = leader }
-    subtype[on_ruler_back_to_pre_ruler_class] = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf

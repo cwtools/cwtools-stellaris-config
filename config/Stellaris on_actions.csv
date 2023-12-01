@@ -151,7 +151,6 @@ on_pop_rights_change,this = pop root = pop,pop
 on_leader_death,this = country root = country from = leader,country
 on_leader_level_up,this = country root = country from = leader,country
 on_ruler_removed,this = country root = country from = leader,country
-on_ruler_back_to_pre_ruler_class,this = country root = country from = leader,country
 on_leader_spawned,this = country root = country from = leader,country
 ,,
 on_ship_order,this = ship root = ship from = country,ship
