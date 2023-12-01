@@ -1,4 +1,4 @@
-[10:54:38][game_application.cpp:2110]: 
+[19:13:38][game_application.cpp:2121]: 
 == SCOPE DOCUMENTATION ==
 These work as context switches (links) in triggers and effects (e.g. 'owner = { <triggers/effects> }'), or as targets of triggers and effects (e.g. 'is_owned_by = from'). Dot scoping (e.g. root.owner.capital_scope) is allowed.
 Complete list of scope changes:
@@ -6,6 +6,10 @@ Complete list of scope changes:
 target - Scopes from a spy network to its target country, or from an espionage operation to its target (can be various objects, as set in common/espionage_operation_types).
 Supported Scopes: spy_network espionage_operation agreement situation
 Output Scope: various
+
+background_planet - Scopes from a leader to their background planet
+Supported Scopes: leader
+Output Scope: planet
 
 army_leader - Scopes from an object to its army leader, e.g. planet->general
 Supported Scopes: planet
@@ -20,7 +24,7 @@ Supported Scopes: megastructure planet pop leader army starbase deposit archaeol
 Output Scope: planet
 
 star - Scopes from an object to the primary star (planet scope) of the system it is in. Works on all objects visible in star system view.
-Supported Scopes: megastructure planet ship fleet galactic_object ambient_object starbase archaeological_site first_contact debris
+Supported Scopes: megastructure planet ship fleet galactic_object ambient_object bypass starbase archaeological_site first_contact debris astral_rift
 Output Scope: planet
 
 last_added_deposit - Scopes to the last deposit added to the current planet
@@ -51,8 +55,8 @@ declining_species - Scopes from a planet to the species currently declining on i
 Supported Scopes: planet
 Output Scope: species
 
-fleet - Scopes from a ship, starbase or leader to its fleet, or from an army to the fleet its army transport is part of.
-Supported Scopes: ship fleet leader army starbase
+fleet - Scopes from a ship, starbase, astral rift or leader to its fleet, or from an army to the fleet its army transport is part of.
+Supported Scopes: ship fleet leader army starbase astral_rift
 Output Scope: fleet
 
 design - Scopes to the ship's design
@@ -80,7 +84,7 @@ Supported Scopes: country
 Output Scope: planet
 
 owner - Scopes to the owner of the current object. Works on any object that could be construed as being owned by a country (incl. planets, ships, fleets, leaders, pops, solar systems, pop factions, megastructures, first contacts, spy networks, espionage operations, armies, starbases, deposits, sectors, arc sites)
-Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army pop_faction starbase deposit sector archaeological_site first_contact spy_network espionage_operation agreement situation debris
+Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army bypass pop_faction starbase deposit sector archaeological_site first_contact spy_network espionage_operation agreement situation debris astral_rift
 Output Scope: country
 
 controller - Scopes from a planet (or starbase) to the empire controlling it (not necessarily the owner: a country occupying a planet is its controller).
@@ -112,7 +116,7 @@ Supported Scopes: all
 Output Scope: fleet
 
 owner_main_species - Scopes to the main species of the owner of the current object. Works in every scope that 'owner' would work in.
-Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army species pop_faction starbase deposit sector archaeological_site first_contact spy_network espionage_operation agreement situation debris
+Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army species bypass pop_faction starbase deposit sector archaeological_site first_contact spy_network espionage_operation agreement situation debris astral_rift
 Output Scope: species
 
 last_created_country - Scopes to the last country that was created anywhere in the game.
@@ -172,7 +176,7 @@ Supported Scopes: all
 Output Scope: leader
 
 owner_species - Scopes to the main species of the owner of the current object. Works in every scope that 'owner' would work in.
-Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army species pop_faction starbase deposit sector archaeological_site first_contact spy_network espionage_operation agreement situation debris
+Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army species bypass pop_faction starbase deposit sector archaeological_site first_contact spy_network espionage_operation agreement situation debris astral_rift
 Output Scope: species
 
 fromfromfrom - Scopes to the FROM of the FROMFROM scope (ROOT of three events ago, or the preset hardcoded FROMFROMFROM scope)
@@ -216,7 +220,7 @@ Supported Scopes: country
 Output Scope: federation
 
 sector - Scopes from an object to the sector it is in. Works on all objects visible objects visible in star system view, plus star systems themselves and leaders (scopes to the sector the leader is currently located in, not necessarily the one they are assigned to as a governor).
-Supported Scopes: megastructure planet ship pop fleet galactic_object leader army ambient_object starbase deposit sector archaeological_site first_contact debris
+Supported Scopes: megastructure planet ship pop fleet galactic_object leader army ambient_object bypass starbase deposit sector archaeological_site first_contact debris
 Output Scope: sector
 
 pop_faction - Scopes from a pop or leader to its pop faction.
@@ -232,8 +236,12 @@ Supported Scopes: planet country
 Output Scope: pop
 
 heir - Scopes to the heir of a country (or the heir of the object's owner).
-Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army pop_faction starbase deposit sector archaeological_site first_contact spy_network espionage_operation agreement situation debris
+Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army bypass pop_faction starbase deposit sector archaeological_site first_contact spy_network espionage_operation agreement situation debris astral_rift
 Output Scope: leader
+
+explorer - Scopes from an astral rift to the country whose leader is exploring, or has explored it.
+Supported Scopes: astral_rift
+Output Scope: country
 
 fromfromfromfrom - Scopes to the FROM of the FROMFROMFROM scope (ROOT of four events ago, or the preset hardcoded FROMFROMFROMFROM scope)
 Supported Scopes: all
@@ -252,7 +260,7 @@ Supported Scopes: country
 Output Scope: planet
 
 system_star - Scopes from an object to the primary star (planet scope) of the system it is in. Works on all objects visible in star system view.
-Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army ambient_object starbase deposit archaeological_site first_contact debris
+Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army ambient_object bypass starbase deposit archaeological_site first_contact debris astral_rift
 Output Scope: planet
 
 creator - Scopes to the leader's country of origin
@@ -304,11 +312,11 @@ Supported Scopes: war
 Output Scope: country
 
 leader - Scopes from an object to its leader, e.g. country->ruler, fleet->admiral/scientist, sector->governor, army->general, arc site->scientist...
-Supported Scopes: planet country ship fleet leader army pop_faction federation archaeological_site first_contact spy_network espionage_operation
+Supported Scopes: planet country ship fleet leader army pop_faction federation archaeological_site first_contact spy_network espionage_operation astral_rift
 Output Scope: leader
 
 solar_system - Scopes from an object to the solar system it is in. Works on all objects visible in star system view.
-Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army ambient_object starbase deposit archaeological_site first_contact debris
+Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army ambient_object bypass starbase deposit archaeological_site first_contact debris astral_rift
 Output Scope: galactic_object
 
 space_owner - Scopes from an object to the owner of the space it is in. Works on all objects visible in star system view.
@@ -316,7 +324,15 @@ Supported Scopes: megastructure planet country ship fleet galactic_object army a
 Output Scope: country
 
 ruler - Scopes to the ruler of a country (or the ruler of the object's owner).
-Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army pop_faction starbase deposit sector archaeological_site first_contact spy_network espionage_operation agreement situation debris
+Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army bypass pop_faction starbase deposit sector archaeological_site first_contact spy_network espionage_operation agreement situation debris astral_rift
 Output Scope: leader
+
+astral_rift - Scopes to the astral rift in the same system.
+Supported Scopes: galactic_object leader
+Output Scope: astral_rift
+
+lock_country - Scopes from a bypass to the country who locked it.
+Supported Scopes: bypass
+Output Scope: bypass
 
 =================
