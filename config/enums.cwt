@@ -89,6 +89,7 @@ enums = {
 		espionage_asset
 		agreement
 		situation
+		astral_rift
 	}
 	enum[intel_level] = {
 		none
