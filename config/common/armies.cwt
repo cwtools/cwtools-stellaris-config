@@ -38,7 +38,11 @@ army = {
 		category = <economic_category>
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}
-
+	
+	## cardinality = 0..1
+	army_modifier = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]	
+	}
 	## cardinality = 0..1
 	###Specify another army type to use names from, instead of having to copy them for each name list.
 	use_armynames_from = <army>
