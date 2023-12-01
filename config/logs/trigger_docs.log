@@ -139,7 +139,7 @@ last_building_changed - Checks if the last building queued/unqueued/built/demoli
 last_building_changed = building_capitol
 Supported Scopes: planet
 
-empire_size - Checks the empire's size. Identical to empire_spraw trigger.
+empire_size - Checks the empire's size. Identical to empire_sprawl trigger.
 empire_size < 20
 Supported Scopes: country
 
@@ -330,7 +330,7 @@ any_attacker = { <triggers> }
 Supported Scopes: war
 
 original_owner - Checks if the planet is still owned by its first colonizer
-original owner = yes
+original_owner = yes
 Supported Scopes: planet
 
 subjects - Checks the country's number of subjects
@@ -535,7 +535,7 @@ imperial_authority >=< 40
 Supported Scopes: all
 
 has_stage_modifier - Checks if the espionage operation has a certain modifier specific for the current stage
-has_modifier = <modifier>
+has_stage_modifier = <modifier>
 Supported Scopes: espionage_operation astral_rift
 
 galactic_defense_force_exists - Checks if the Galactic Defense Force or Imperial Armada exists
@@ -713,7 +713,7 @@ is_being_assimilated = yes
 Supported Scopes: pop
 
 has_unemployed_pop_of_category - Checks if the planet has an unemployed pop of a category 
- has_unemployed_of_pop_category = bio_trophy
+has_unemployed_of_pop_category = bio_trophy
 Supported Scopes: planet
 
 num_guaranteed_colonies - Checks the number of guaranteed colonies defined in setup
@@ -1165,7 +1165,7 @@ has_holding = { holding = any/none/<holding> owner = <owner> }
 Supported Scopes: planet
 
 has_active_building - Checks if the planet has a specific building, and that that building is not disabled or ruined.
-has_building = yes
+has_active_building = yes
 has_active_building = building_capital_3
 Supported Scopes: planet
 
@@ -1194,7 +1194,7 @@ is_in_sensor_range = <ship/fleet/system>
 Supported Scopes: country
 
 is_in_sensor_range_of_country - Checks if the scoped ship, fleet, planet or system can be seen by the specified country.
-is_in_sensor_rangeof_country = root.owner
+is_in_sensor_range_of_country = root.owner
 Supported Scopes: planet ship fleet galactic_object
 
 has_star_flag - Checks if the solar system has a specific flag
@@ -1222,6 +1222,7 @@ has_army = yes
 Supported Scopes: planet
 
 is_advisor_active - checks if a country has an advisor
+is_advisor_active = yes
 Supported Scopes: country
 
 count_pops - Checks the number of pops in the scope that fulfill the specified criteria. Warning: deprecated, use count_owned_pop/count_species_pop
@@ -1253,7 +1254,7 @@ num_uncleared_blockers > 3
 Supported Scopes: planet
 
 local_human_species_class - Checks if local humans founder species is a specific species class
-is_species_class = MAM
+local_human_species_class = MAM
 Supported Scopes: all
 
 num_envoys_to_federation - Checks the country's number of envoys sent to its federation
@@ -1427,6 +1428,7 @@ colony_age > 12
 Supported Scopes: planet
 
 is_bottleneck_system - Checks if the system is bottleneck within the range NDefines::NGameplay::SYSTEM_BOTTLENECK_RADIUSis_bottleneck_system = yes
+is_bottleneck_system = yes
 Supported Scopes: galactic_object
 
 is_rim_system - Checks if the system is on the galactic rim
@@ -2252,7 +2254,7 @@ any_relation = { <triggers> }
 Supported Scopes: country
 
 is_job_of_pop_category - Checks if a job is of a certain pop category. Note that the result for this trigger is not dependent on where it is used - so it's for use in e.g. templated script values.
-is_job_of_category = { job = <job> category = <category> }
+is_job_of_pop_category = { job = <job> category = <category> }
 Supported Scopes: all
 
 has_megastructure_flag - Checks if the mega structure has a specific flag
@@ -2268,11 +2270,11 @@ former_colonization_control_type = colonization_control_yes
 Supported Scopes: pop
 
 has_population_control - Checks if the pop is prevented from reproducing
-has_population_control = { value = bool/<type> country = scope }
+has_population_control = { type = bool/<type> country = scope }
 Supported Scopes: pop leader species
 
 has_migration_control - Checks if the pop is prevented from migrating
-has_migration_control = { value = bool/<type> country = scope }
+has_migration_control = { type = bool/<type> country = scope }
 Supported Scopes: pop leader species
 
 species_planet_slave_percentage - Checks if a pop's planet has a specific percentage (0.00-1.00) of the same species enslaved
@@ -2328,7 +2330,7 @@ has_civic = my_test_civic_1
 Supported Scopes: country dlc_recommendation
 
 has_authority - Checks if the current country has the specified government authority
-has_authority = democratic
+has_authority = auth_democratic
 Supported Scopes: country dlc_recommendation
 
 has_invalid_civic - Checks if the current country has a certain civic and if its invalidated
@@ -2392,7 +2394,7 @@ has_ruler_trait = leader_trait_carefree
 Supported Scopes: leader
 
 num_trait_points - Checks the country/pop/leader/species' number of traits points spent
-num_traits < 3
+num_trait_points < 3
 Supported Scopes: country pop leader species
 
 has_component - Checks if a ship has a certain component
@@ -2766,7 +2768,7 @@ has_federation_perk = <federation perk>
 Supported Scopes: federation
 
 has_federation_type - Checks if federation has specific federation type
-has_federation_type = <federation trype>
+has_federation_type = <federation type>
 Supported Scopes: federation
 
 federation_level - Checks federation level in comparison to given value in scoped federation
@@ -3079,7 +3081,7 @@ is_spynetwork_max_level >= <int>
 Supported Scopes: spy_network
 
 is_starbase_building_module - Checks if the starbase is currently building a specific module
-iss_starbase_building_module = <starbase module>
+is_starbase_building_module = <starbase module>
 Supported Scopes: starbase
 
 is_starbase_building_building - Checks if the starbase is currently building a specific building
@@ -4780,6 +4782,7 @@ set_faction_hostility = { target = country set_hostile = yes set_neutral = no se
 Supported Scopes: country
 
 set_market_leader - Set scoped country as the current Galactic Market leader. set_market_leader = <yes/no> 
+set_market_leader = <yes/no>
 Supported Scopes: country
 
 random_system_planet - Iterate through each planet (colony or not) in the current system - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
@@ -5512,6 +5515,7 @@ repair_percentage = 0.1
 Supported Scopes: ship fleet
 
 endgame_telemetry - Send endgame telemetry event
+endgame_telemetry = ai_revolt
 Supported Scopes: all
 
 set_deposit - Replaces resource deposit on the scoped planet
@@ -5595,6 +5599,7 @@ add_trust = { amount = <amount>/<variable> who = <target> }
 Supported Scopes: country
 
 add_tradition - Adds the specified tradition to the scoped country. add_tradition = <tradition_key>
+add_tradition = <tradition_key>
 Supported Scopes: country
 
 join_war - Joins wars on the side of target country
@@ -5977,9 +5982,11 @@ activate_saved_leader = {
 Supported Scopes: country
 
 add_relic - Adds the specified relic to the scoped country. add_relic = <relic_key>
+add_relic = <relic_key>
 Supported Scopes: country
 
 remove_relic - Removes the specified relic from the scoped country. remove_relic = <relic_key>
+remove_relic = <relic_key>
 Supported Scopes: country
 
 delete_megastructure - Deletes the target mega structure (no death graphics)
@@ -6050,6 +6057,7 @@ enable_on_market = <resource_key>
 Supported Scopes: all
 
 enable_galactic_market - Enables the galactic market. enable_galactic_market = <yes/no> 
+enable_galactic_market = <yes/no>
 Supported Scopes: country
 
 add_timed_trait - Adds a specific trait to the scoped leader for a specific duration
@@ -6080,7 +6088,7 @@ add_stage_clues - Adds clues to the current stage of an archaeological or first 
 add_stage_clues = <int>
 Supported Scopes: archaeological_site first_contact astral_rift
 
-add_expedition_log_entry - Adds clues to the current stage of a archaeological site
+add_stage_clues - Adds clues to the current stage of a archaeological site
 add_stage_clues = <int>
 Supported Scopes: archaeological_site
 
@@ -6189,7 +6197,7 @@ Supported Scopes: federation
 
 set_federation_succession_term - Sets federation succession term to the scoped federation
 Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
-set_federation_succession_type = <federation succession term>
+set_federation_succession_term = <federation succession term>
 Federation succession terms: status_change/years_10/years_20/years_30/years_40
 Supported Scopes: federation
 
@@ -6213,7 +6221,7 @@ Please don't use outside law on_enact, functional effect! Use set_federation_law
 set_diplomacy_action_setting = {
 	action = <action_key>
 	settings = {
-	tvote_type = default
+	vote_type = default
 	}
 }
 Supported Scopes: federation
@@ -6319,6 +6327,7 @@ log_error - Prints a message to error.log for debugging purposes.
 Supported Scopes: all
 
 add_intel - Adds the defined amount of intel toward the target empire add_intel = { amount = <float>/<variable> who = <target> }
+add_intel = { amount = <float>/<variable> who = <target> }
 Supported Scopes: country
 
 fire_on_action - Fires a made-up on_action.
@@ -6347,7 +6356,7 @@ create_espionage_asset = {
 Supported Scopes: spy_network
 
 destroy_espionage_asset - Destroys espionage asset within a given spy network/operation
-destroy_espionage_asset = <esspionage asset type>
+destroy_espionage_asset = <espionage asset type>
 Supported Scopes: spy_network espionage_operation
 
 set_espionage_operation_progress_locked - Locks or unlocks the progress of an espionage operation
@@ -6355,11 +6364,11 @@ set_espionage_operation_progress_locked = yes/no
 Supported Scopes: espionage_operation
 
 unassign_espionage_asset - Unassignes espionage asset from the scope operation to owning spy network
-unassign_espionage_asset = <esspionage asset type>
+unassign_espionage_asset = <espionage asset type>
 Supported Scopes: espionage_operation
 
 assign_espionage_asset - Assigns espionage asset to the scope operation from owning spy network
-assign_espionage_asset = <esspionage asset type>
+assign_espionage_asset = <espionage asset type>
 Supported Scopes: espionage_operation
 
 set_espionage_operation_flag - Sets an arbitrarily-named flag on the scoped espionage operation
