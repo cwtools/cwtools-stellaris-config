@@ -101,8 +101,12 @@ anomaly_category = {
 			max_once_global = bool
 
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
-
+			
+			## cardinality = 0..1
 			anomaly_event = <event.ship>
+			
+			## cardinality = 0..1
+			ship_event = <event.ship>
 		}
 	}
 }
@@ -157,6 +161,8 @@ archaeological_site_type = {
 	}
 	## cardinality = 0..1
 	max_instances = int[1..inf]
+	## cardinality = 0..1
+	notification_duration = int
 	## cardinality = 0..1
 	## replace_scope = { root = planet this = planet }
 	weight = {
