@@ -1,4 +1,4 @@
-[07:34:35][modifier.cpp:1416]: 
+[07:34:35][modifier.cpp:1416]:
  == MODIFIER DOCUMENTATION ==
 Note on Modifier Categories:
 -- These are used internally as a tag to suggest where they are intended to be used, but exact behavior depends upon individual implementation.
@@ -3962,7 +3962,7 @@ Printing Modifier Definitions:
 - leader_governors_menace_produces_add, Category: Economic Units, AI Economy
 - leader_governors_menace_upkeep_add, Category: Economic Units, AI Economy
 - leader_governors_menace_upkeep_mult, Category: Economic Units, AI Economy
-- leader_governors_cost_mult, Category: Economic Units, AI Economy
+- leader_officials_cost_mult, Category: Economic Units, AI Economy
 - leader_governors_upkeep_mult, Category: Economic Units, AI Economy
 - diplomacy_time_upkeep_mult, Category: Countries, AI Economy
 - diplomacy_energy_upkeep_mult, Category: Countries, AI Economy
@@ -7698,10 +7698,10 @@ Printing Modifier Definitions:
 - councilor_public_relations_specialists_exp_gain, Category: Leaders
 - councilor_ruthless_competition_exp_gain, Category: Leaders
 - councilor_trading_posts_exp_gain, Category: Leaders
-- councilor_gestalt_governor_exp_gain, Category: Leaders
-- councilor_gestalt_scientist_exp_gain, Category: Leaders
-- councilor_gestalt_admiral_exp_gain, Category: Leaders
-- councilor_gestalt_general_exp_gain, Category: Leaders
+- councilor_gestalt_growth_exp_gain, Category: Leaders
+- councilor_gestalt_cognitive_exp_gain, Category: Leaders
+- councilor_gestalt_legion_exp_gain, Category: Leaders
+- councilor_gestalt_regulatory_exp_gain, Category: Leaders
 - councilor_psionic_sovereign_exp_gain, Category: Leaders
 - councilor_galactic_sovereign_exp_gain, Category: Leaders
 - councilor_galactic_sovereign_megacorp_exp_gain, Category: Leaders

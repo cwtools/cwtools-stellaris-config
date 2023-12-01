@@ -8,47 +8,47 @@ types = {
  	## type_key_filter = NGraphics
 	type[NGraphics] = {
 		path = "game/common/defines"
-	}		
+	}
  	## type_key_filter = NInterface
 	type[NInterface] = {
 		path = "game/common/defines"
-	}				
+	}
  	## type_key_filter = NGameplay
 	type[NGameplay] = {
 		path = "game/common/defines"
-	}		
+	}
  	## type_key_filter = NSpecies
 	type[NSpecies] = {
 		path = "game/common/defines"
-	}	
+	}
  	## type_key_filter = NShip
 	type[NShip] = {
 		path = "game/common/defines"
-	}			
+	}
  	## type_key_filter = NEngine
 	type[NEngine] = {
 		path = "game/common/defines"
-	}	
+	}
  	## type_key_filter = NCombat
 	type[NCombat] = {
 		path = "game/common/defines"
-	}	
+	}
  	## type_key_filter = NPop
 	type[NPop] = {
 		path = "game/common/defines"
-	}	
+	}
  	## type_key_filter = NArmy
 	type[NArmy] = {
 		path = "game/common/defines"
-	}	
+	}
  	## type_key_filter = NEconomy
 	type[NEconomy] = {
 		path = "game/common/defines"
-	}	
+	}
  	## type_key_filter = NAI
 	type[NAI] = {
 		path = "game/common/defines"
-	}		
+	}
 }
 
 NCamera = {
@@ -58,60 +58,60 @@ NCamera = {
 	ENTITY_SPRITE_DESIGN_ENTRY_CAM_DIR = {
 		## cardinality = 3..3
 		float
-	}	
+	}
 	## cardinality = 0..1
 	ENTITY_SPRITE_DESIGN_ENTRY_CAM_LOOK_AT = {
 		## cardinality = 3..3
 		float
-	}	
+	}
 	## cardinality = 0..1
 	ENTITY_SPRITE_DESIGN_ENTRY_ZOOM_SCALE = float
 	## cardinality = 0..1
 	ENTITY_SPRITE_SHIP_SECTION_CAM_DIR = {
 		## cardinality = 3..3
 		float
-	}	
+	}
 	## cardinality = 0..1
 	ENTITY_SPRITE_SHIP_SECTION_CAM_LOOK_AT = {
 		## cardinality = 3..3
 		float
-	}	
+	}
 	## cardinality = 0..1
 	ENTITY_SPRITE_SHIP_SECTION_ZOOM_SCALE = float
 	## cardinality = 0..1
 	ENTITY_SPRITE_SYSTEM_VIEW_CAM_DIR = {
 		## cardinality = 3..3
 		float
-	}	
+	}
 	## cardinality = 0..1
 	ENTITY_SPRITE_SYSTEM_VIEW_CAM_LOOK_AT = {
 		## cardinality = 3..3
 		float
-	}	
+	}
 	## cardinality = 0..1
 	ENTITY_SPRITE_SYSTEM_VIEW_ZOOM_SCALE = float
 	## cardinality = 0..1
 	ENTITY_SPRITE_CUSTOMIZE_SPECIES_VIEW_CAM_DIR = {
 		## cardinality = 3..3
 		float
-	}	
+	}
 	## cardinality = 0..1
 	ENTITY_SPRITE_CUSTOMIZE_SPECIES_VIEW_CAM_LOOK_AT = {
 		## cardinality = 3..3
 		float
-	}	
+	}
 	## cardinality = 0..1
 	ENTITY_SPRITE_CUSTOMIZE_SPECIES_VIEW_ZOOM_SCALE = float
 	## cardinality = 0..1
 	ENTITY_SPRITE_FRONTEND_BG_CAM_DIR = {
 		## cardinality = 3..3
 		float
-	}	
+	}
 	## cardinality = 0..1
 	ENTITY_SPRITE_FRONTEND_BG_CAM_LOOK_AT = {
 		## cardinality = 3..3
 		float
-	}	
+	}
 	## cardinality = 0..1
 	ENTITY_SPRITE_FRONTEND_BG_ZOOM_SCALE = float
 	## cardinality = 0..1
@@ -128,17 +128,17 @@ NCamera = {
 	ZOOM_STEPS_GALAXY  = {
 		## cardinality = 7..7
 		float
-	}	
+	}
 	## cardinality = 0..1
 	ZOOM_STEPS_SYSTEM_PERCENTAGES = {
 		## cardinality = 7..7
 		float
-	}	
+	}
 	## cardinality = 0..1
 	ZOOM_STEPS_SHOW_FLEET_HEALTH_BARS = {
 		## cardinality = 4..4
 		int
-	}	
+	}
 	## cardinality = 0..1
 	LEAVE_SYSTEM_BIAS = float
 	## cardinality = 0..1
@@ -229,29 +229,29 @@ NGraphics = {
 	## cardinality = 0..1
 	DEAD_SHIP_DRAG	= float
 	## cardinality = 0..1
-	ORBIT_HSV = { 
-		## cardinality = 3..3	
+	ORBIT_HSV = {
+		## cardinality = 3..3
 		float
 	}
 	## cardinality = 0..1
-	SYSTEM_INNER_BORDER_HSV = { 
-		## cardinality = 3..3	
+	SYSTEM_INNER_BORDER_HSV = {
+		## cardinality = 3..3
 		float
 	}
 	## cardinality = 0..1
-	SYSTEM_OUTER_BORDER_HSV = { 
-		## cardinality = 3..3	
+	SYSTEM_OUTER_BORDER_HSV = {
+		## cardinality = 3..3
 		float
 	}
 
 	## cardinality = 0..1
-	SYSTEM_LINE_ALPHA_FADE_STEP = { 
-		## cardinality = 2..2	
+	SYSTEM_LINE_ALPHA_FADE_STEP = {
+		## cardinality = 2..2
 		int
 	}
 	## cardinality = 0..1
-	SYSTEM_LINE_ALPHA_FADE_VALUE = { 
-		## cardinality = 2..2	
+	SYSTEM_LINE_ALPHA_FADE_VALUE = {
+		## cardinality = 2..2
 		float
 	}
 	## cardinality = 0..1
@@ -259,35 +259,35 @@ NGraphics = {
 	## cardinality = 0..1
 	MOON_SCALE = float
 	## cardinality = 0..1
-	PLANET_SCALE_SYSTEM = { 
-		## cardinality = 7..7	
+	PLANET_SCALE_SYSTEM = {
+		## cardinality = 7..7
 		float
 	}
 	## cardinality = 0..1
 	PLANET_DESTRUCTION_HIT_ENTITY_SCALE = float
 	## cardinality = 0..1
-	RELATION_COLOR_PLAYER_HSV = { 
-		## cardinality = 3..3	
+	RELATION_COLOR_PLAYER_HSV = {
+		## cardinality = 3..3
 		float
 	}
 	## cardinality = 0..1
-	RELATION_COLOR_ALLIED_HSV = { 
-		## cardinality = 3..3	
+	RELATION_COLOR_ALLIED_HSV = {
+		## cardinality = 3..3
 		float
 	}
 	## cardinality = 0..1
-	RELATION_COLOR_NEUTRAL_HSV = { 
-		## cardinality = 3..3	
+	RELATION_COLOR_NEUTRAL_HSV = {
+		## cardinality = 3..3
 		float
 	}
 	## cardinality = 0..1
-	RELATION_COLOR_HOSTILE_HSV = { 
-		## cardinality = 3..3	
+	RELATION_COLOR_HOSTILE_HSV = {
+		## cardinality = 3..3
 		float
 	}
 	## cardinality = 0..1
-	RELATION_COLOR_SELECTED_RGB = { 
-		## cardinality = 3..3	
+	RELATION_COLOR_SELECTED_RGB = {
+		## cardinality = 3..3
 		float
 	}
 	## cardinality = 0..1
@@ -343,7 +343,7 @@ NGraphics = {
 	## cardinality = 0..1
 	TRAILS_MISSILE_BASE_WIDTH = float
 	## cardinality = 0..1
-	TRAILS_LOCATOR_NAME	= scalar #<locator> 
+	TRAILS_LOCATOR_NAME	= scalar #<locator>
 	## cardinality = 0..1
 	STRIKE_CRAFT_TRAIL_FADE_RATE = float
 	## cardinality = 0..1
@@ -375,8 +375,8 @@ NGraphics = {
 	## cardinality = 0..1
 	STAR_PIN_ENABLE_NEUTRAL	= bool
 	## cardinality = 0..1
-	STAR_PIN_NEUTRAL_COLOR = { 
-		## cardinality = 4..4	
+	STAR_PIN_NEUTRAL_COLOR = {
+		## cardinality = 4..4
 		float
 	}
 	## cardinality = 0..1
@@ -415,7 +415,7 @@ NGraphics = {
 	CONSTRUCTION_SHIP_TERRAFORMING_BEAM_ENTITY_SCALE_Z = float
 	## cardinality = 0..1
 	CONSTRUCTION_SHIP_TERRAFORMING_PLANET_ENTITY_SCALE_R = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	NAVIGATION_ARROW_ENTITY	= <model_entity>
 	## cardinality = 0..1
 	NAVIGATION_ARROW_OFFSET = float
@@ -434,23 +434,23 @@ NGraphics = {
 	## cardinality = 0..1
 	NAVIGATION_ARROW_TEXT_KERNING = int
 	## cardinality = 0..1
-	SHIP_HEALTH_BAR_COLOR = { 
-		## cardinality = 4..4	
+	SHIP_HEALTH_BAR_COLOR = {
+		## cardinality = 4..4
 		float
 	}
 	## cardinality = 0..1
-	SHIP_HEALTH_BAR_BG_COLOR = { 
-		## cardinality = 4..4	
+	SHIP_HEALTH_BAR_BG_COLOR = {
+		## cardinality = 4..4
 		float
 	}
 	## cardinality = 0..1
-	SHIP_SHIELD_BAR_COLOR = { 
-		## cardinality = 4..4	
+	SHIP_SHIELD_BAR_COLOR = {
+		## cardinality = 4..4
 		float
 	}
 	## cardinality = 0..1
-	SHIP_SHIELD_BAR_BG_COLOR = { 
-		## cardinality = 4..4	
+	SHIP_SHIELD_BAR_BG_COLOR = {
+		## cardinality = 4..4
 		float
 	}
 	## cardinality = 0..1
@@ -476,13 +476,13 @@ NGraphics = {
 	## cardinality = 0..1
 	SHIELD_EFFECT_LOOP_INTERVAL = float
 	## cardinality = 0..1
-	SHIELD_DISTANCE_FROM_SHIP = { 
-		## cardinality = 3..3	
+	SHIELD_DISTANCE_FROM_SHIP = {
+		## cardinality = 3..3
 		float
 	}
 	## cardinality = 0..1
-	SHIELD_DISTANCE_FROM_SHIP_MULT = { 
-		## cardinality = 3..3	
+	SHIELD_DISTANCE_FROM_SHIP_MULT = {
+		## cardinality = 3..3
 		float
 	}
 	## cardinality = 0..1
@@ -528,12 +528,12 @@ NGraphics = {
 	## cardinality = 0..1
 	BYPASS_ARROW_GALAXY_TARGET_ENTITY = <model_entity>
 	## cardinality = 0..1
-	GUI_PLANET_RING_DIR = { 
-		## cardinality = 3..3	
+	GUI_PLANET_RING_DIR = {
+		## cardinality = 3..3
 		float
 	}
 	## cardinality = 0..1
-	TI_TEXTURE_GROW_AMOUNT = int	
+	TI_TEXTURE_GROW_AMOUNT = int
 	## cardinality = 0..1
 	FLEET_EFFECT_ENTITIES = {
 		## cardinality = 1..inf
@@ -554,33 +554,33 @@ NGraphics = {
 	## cardinality = 0..1
 	FTL_WINDUP_ENTITY_JUMP = <model_entity>
 	## cardinality = 0..1
-	ALIENFX_DEFAULT_COLOR = { 
-		## cardinality = 3..3	
+	ALIENFX_DEFAULT_COLOR = {
+		## cardinality = 3..3
 		float
 	}
 	## cardinality = 0..1
 	RUINED_BUILDING = filepath
 	## cardinality = 0..1
-	AURA_EFFECT_COLOR_ALLIED_FRIENDLY = { 
-		## cardinality = 4..4	
+	AURA_EFFECT_COLOR_ALLIED_FRIENDLY = {
+		## cardinality = 4..4
 		float
 	}
 	## cardinality = 0..1
-	AURA_EFFECT_COLOR_ALLIED_HOSTILE = { 
-		## cardinality = 4..4	
+	AURA_EFFECT_COLOR_ALLIED_HOSTILE = {
+		## cardinality = 4..4
 		float
 	}
 	## cardinality = 0..1
-	AURA_EFFECT_COLOR_ENEMY_FRIENDLY = { 
-		## cardinality = 4..4	
+	AURA_EFFECT_COLOR_ENEMY_FRIENDLY = {
+		## cardinality = 4..4
 		float
 	}
 	## cardinality = 0..1
-	AURA_EFFECT_COLOR_ENEMY_HOSTILE = { 
-		## cardinality = 4..4	
+	AURA_EFFECT_COLOR_ENEMY_HOSTILE = {
+		## cardinality = 4..4
 		float
-	} 
-	## cardinality = 0..1	
+	}
+	## cardinality = 0..1
 	MAX_GFX_PROJECTILES = int
 	## cardinality = 0..1
 	MAX_GFX_PRIO_PROJECTILES = int
@@ -591,33 +591,33 @@ NGraphics = {
 	## cardinality = 0..1
 	MUZZLE_FLASH_DURATION = float
 	## cardinality = 0..1
-	MAP_MODE_NEUTRAL_COLOR = { 
-		## cardinality = 4..4	
+	MAP_MODE_NEUTRAL_COLOR = {
+		## cardinality = 4..4
 		float
 	}
 	## cardinality = 0..1
-	COUNTRY_BORDER_COLOR_RANDOM_SATURATION_OFFSETS = { 
-		## cardinality = 7..7	
+	COUNTRY_BORDER_COLOR_RANDOM_SATURATION_OFFSETS = {
+		## cardinality = 7..7
 		float
 	}
 	## cardinality = 0..1
-	COUNTRY_BORDER_COLOR_RANDOM_VALUE_OFFSETS = { 
-		## cardinality = 7..7	
-		float
-	}
-	## cardinality = 0..1	
-	CONSTRUCTION_COLOR_VALID = { 
-		## cardinality = 4..4	
+	COUNTRY_BORDER_COLOR_RANDOM_VALUE_OFFSETS = {
+		## cardinality = 7..7
 		float
 	}
 	## cardinality = 0..1
-	CONSTRUCTION_COLOR_INVALID = { 
-		## cardinality = 4..4	
+	CONSTRUCTION_COLOR_VALID = {
+		## cardinality = 4..4
 		float
 	}
 	## cardinality = 0..1
-	CONSTRUCTION_COLOR_IN_PROGRESS = { 
-		## cardinality = 4..4	
+	CONSTRUCTION_COLOR_INVALID = {
+		## cardinality = 4..4
+		float
+	}
+	## cardinality = 0..1
+	CONSTRUCTION_COLOR_IN_PROGRESS = {
+		## cardinality = 4..4
 		float
 	}
 	## cardinality = 0..1
@@ -627,13 +627,13 @@ NGraphics = {
 	## cardinality = 0..1
 	HIDE_HYPERLANES_OUTSIDE_TERRA_INCOGNITA = bool
 	## cardinality = 0..1
-	HYPERLANE_DEFAULT_COLOR = { 
-		## cardinality = 3..3	
+	HYPERLANE_DEFAULT_COLOR = {
+		## cardinality = 3..3
 		float
 	}
 	## cardinality = 0..1
-	HYPERLANE_NO_ACCESS_COLOR = { 
-		## cardinality = 3..3	
+	HYPERLANE_NO_ACCESS_COLOR = {
+		## cardinality = 3..3
 		float
 	}
 }
@@ -647,12 +647,12 @@ NInterface = {
 	## cardinality = 0..1
 	TOOLTIP_DELAYED_TIME = float
 	## cardinality = 0..1
-	TOOLTIP_POSITION_OFFSET = { 
+	TOOLTIP_POSITION_OFFSET = {
 		## cardinality = 2..2
 		int
 	}
 	## cardinality = 0..1
-	TOOLTIP_POSITION_OFFSET_STAR = { 
+	TOOLTIP_POSITION_OFFSET_STAR = {
 		## cardinality = 2..2
 		float
 	}
@@ -677,7 +677,7 @@ NInterface = {
 	## cardinality = 0..1
 	NOTIFICATION_MESSAGE_DURATION_STANDARD = int
 	## cardinality = 0..1
-	TECH_VIEW_ZOOM_STEPS = { 
+	TECH_VIEW_ZOOM_STEPS = {
 		## cardinality = 4..4
 		float
 	}
@@ -700,7 +700,7 @@ NInterface = {
 	## cardinality = 0..1
 	HIGH_PIRACY_RISK = float
 	## cardinality = 0..1
-	BUILDINGS_TO_SHOW_CITY_LEVEL = { 
+	BUILDINGS_TO_SHOW_CITY_LEVEL = {
 		## cardinality = 5..5
 		int
 	}
@@ -729,10 +729,10 @@ NInterface = {
 	## cardinality = 0..1
 	ADVISOR_ANNOYED_COUNT = int
 	## cardinality = 0..1
-	ADVISOR_ANNOYED_SOUNDS = { 
+	ADVISOR_ANNOYED_SOUNDS = {
 		## cardinality = 1..inf
 		<sound_effect>
-	}	
+	}
 	## cardinality = 0..1
 	ADVISOR_SOUND_MIN_WAIT = float
 	## cardinality = 0..1
@@ -774,16 +774,16 @@ NInterface = {
 	## cardinality = 0..1
 	INGAME_HELP_URL_TGP = scalar
 	## cardinality = 0..1
-	TOPBAR_BUTTONS_SHORTCUTS = { 
+	TOPBAR_BUTTONS_SHORTCUTS = {
 		## cardinality = 1..inf
 		scalar #keyboard shortcuts! "contacts" "F2" "situation" "F3" "technology" "F4" "empire" "F5" "policies" "F6" "factions" "F7" "traditions" "F8" "expansion_planner" "F9" "ship_designer" "F10"
 	}
-		
+
 	## cardinality = 0..1
-	TOPBAR_BUTTONS_PRIORITY	= { 
+	TOPBAR_BUTTONS_PRIORITY	= {
 		## cardinality = 1..inf
-		<gui_type> #these refer to buttons of various kinds: "contacts" "situation" "technology" "empire" "policies" "factions" "claims" "strategic_resource" "species" "leaders" "traditions" "expansion_planner" "ship_designer" "fleet_manager" 
-	}	
+		<gui_type> #these refer to buttons of various kinds: "contacts" "situation" "technology" "empire" "policies" "factions" "claims" "strategic_resource" "species" "leaders" "traditions" "expansion_planner" "ship_designer" "fleet_manager"
+	}
 	## cardinality = 0..1
 	TOPBAR_BUTTONS = int
 	## cardinality = 0..1
@@ -803,7 +803,7 @@ NInterface = {
 }
 
 NGameplay = {
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	MID_GAME_START_DEFAULT = int
 	## cardinality = 0..1
 	MID_GAME_START_MAX = int
@@ -817,23 +817,23 @@ NGameplay = {
 	END_GAME_START_MIN = int
 	## cardinality = 0..1
 	START_YEAR_SLIDER_INTERVAL = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	PIRACY_BASE_DEFENSE = int
 	## cardinality = 0..1
 	PIRACY_OWNED_SYSTEM_SCORE = float
 	## cardinality = 0..1
 	PIRACY_STARBASE_SCORE = int
 	## cardinality = 0..1
-	PIRACY_STARBASE_LEVEL_SCORE = int	
+	PIRACY_STARBASE_LEVEL_SCORE = int
 	## cardinality = 0..1
 	PIRACY_BASE_SCORE = int
 	## cardinality = 0..1
-	PIRACY_LAWLESS_SYSTEM_SCORE = int	
+	PIRACY_LAWLESS_SYSTEM_SCORE = int
 	## cardinality = 0..1
 	PIRACY_CUT_OFF_SYSTEM_SCORE = int
 	## cardinality = 0..1
 	PIRATE_SPAWN_INTERVAL = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	TECH_COST_DEFAULT = float
 	## cardinality = 0..1
 	TECH_COST_MIN = float
@@ -848,7 +848,7 @@ NGameplay = {
 	## cardinality = 0..1
 	SHIPYARD_REINFORCE_MAX_DISTANCE = int
 	## cardinality = 0..1
-	LIMITED_EXPLORATION = int	
+	LIMITED_EXPLORATION = int
 	## cardinality = 0..1
 	RANDOM_START_DISTANCE = int
 	## cardinality = 0..1
@@ -877,9 +877,9 @@ NGameplay = {
 	VICTORY_CONDITION_DOMINATION = float
 	## cardinality = 0..1
 	VICTORY_CONDITION_FEDERATION = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	MIN_RESOURCE_STORAGE = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	SCALED_DIFFICULTY_MAX_GALAXY_SIZE = int
 	## cardinality = 0..1
 	SCALED_DIFFICULTY_GALAXY_SIZE_MULT = float
@@ -926,10 +926,10 @@ NGameplay = {
 	## cardinality = 0..1
 	SHIP_DESIGN_SAME_NAME_FACTOR = int
 	## cardinality = 0..1
-	FTL_MIN_DIST = int	
+	FTL_MIN_DIST = int
 	## cardinality = 0..1
 	JUMP_DRIVE_COOLDOWN = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	RELEVANT_DISTANCE = int
 	## cardinality = 0..1
 	CONSTRUCTION_SHIP_WORK_SPEED_MULT = int
@@ -940,7 +940,7 @@ NGameplay = {
 	## cardinality = 0..1
 	SCIENCE_SHIP_SURVEY_SPEED_MULT = float
 	## cardinality = 0..1
-	SCIENCE_SHIP_ANOMALY_RESEARCH_DAYS = { 
+	SCIENCE_SHIP_ANOMALY_RESEARCH_DAYS = {
 		## cardinality = 1..inf
 		int
 	}
@@ -952,8 +952,8 @@ NGameplay = {
 	HYPERLANE_GEN_REMOVED_MAX_DIST = int
 	## cardinality = 0..1
 	HYPERLANE_GEN_REMOVE_TOO_MANY_EDGES = int
-	## cardinality = 0..1	
-	GALAXY_GENERATION_RELAX_ITERATIONS = int	
+	## cardinality = 0..1
+	GALAXY_GENERATION_RELAX_ITERATIONS = int
 	## cardinality = 0..1
 	GALAXY_GENERATION_CENTER_DUMMY_POINTS = int
 	## cardinality = 0..1
@@ -969,7 +969,7 @@ NGameplay = {
 	## cardinality = 0..1
 	STARBASE_ORBIT_DISTANCE = float
 	## cardinality = 0..1
-	PLANET_DESTROYER_OFFENSIVE_SHIP_OFFSET = { 
+	PLANET_DESTROYER_OFFENSIVE_SHIP_OFFSET = {
 		## cardinality = 3..3
 		float
 	}
@@ -1006,7 +1006,7 @@ NGameplay = {
 	## cardinality = 0..1
 	LEADER_AGE_MAX = int
 	## cardinality = 0..1
-	LEADER_SKILL_LEVEL_START = int		
+	LEADER_SKILL_LEVEL_START = int
 	## cardinality = 0..1
 	LEADER_EXPERIENCE_REQUIREMENT_BASE_VALUE = int
 	## cardinality = 0..1
@@ -1052,17 +1052,17 @@ NGameplay = {
 	## cardinality = 0..1
 	LEADER_AGE_DEATH_CHANCE_AGE = int
 	## cardinality = 0..1
-	LEADER_AGE_DEATH_CHANCE_INC = float
+	LEADER_LIFESPAN_DEATH_CHANCE_INC = float
 	## cardinality = 0..1
-	LEADER_AGE_HIGH_DEATH_CHANCE_AGE = int
+	LEADER_LIFESPAN_HIGH_DEATH_CHANCE_AGE = int
 	## cardinality = 0..1
-	LEADER_AGE_HIGH_DEATH_CHANCE_INC = float
-	## cardinality = 0..1	
-	GENERAL_DAMAGE_EXP_MULT	= float				
+	LEADER_LIFESPAN_HIGH_DEATH_CHANCE_INC = float
 	## cardinality = 0..1
-	GENERAL_DEFENSE_EXP_MULT = float				
+	GENERAL_DAMAGE_EXP_MULT	= float
 	## cardinality = 0..1
-	HABITABILITY_IDEAL_PLANET = float			
+	GENERAL_DEFENSE_EXP_MULT = float
+	## cardinality = 0..1
+	HABITABILITY_IDEAL_PLANET = float
 	## cardinality = 0..1
 	HABITABILITY_WRONG_PLANET = float
 	## cardinality = 0..1
@@ -1084,13 +1084,13 @@ NGameplay = {
 	## cardinality = 0..1
 	WAR_EXHAUSTION_PASSIVE_WAR_SIZE_DIV = float
 	## cardinality = 0..1
-	WAR_EXHAUSTION_PASSIVE_GAIN_CUTOFF = float		
+	WAR_EXHAUSTION_PASSIVE_GAIN_CUTOFF = float
 	## cardinality = 0..1
-	WAR_EXHAUSTION_FROM_UNITS_CUTOFF = float		
+	WAR_EXHAUSTION_FROM_UNITS_CUTOFF = float
 	## cardinality = 0..1
-	WAR_EXHAUSTION_HIGH_THRESHOLD = float		
+	WAR_EXHAUSTION_HIGH_THRESHOLD = float
 	## cardinality = 0..1
-	ENFORCE_STATUS_QUO_ENABLED = bool		
+	ENFORCE_STATUS_QUO_ENABLED = bool
 	## cardinality = 0..1
 	ENFORCE_STATUS_QUO_MONTHS = int
 	## cardinality = 0..1
@@ -1157,7 +1157,7 @@ NGameplay = {
 	FEDERATION_USES_LEADER_ROTATION = int
 	## cardinality = 0..1
 	FEDERATION_MIN_MEMBERS_TO_KICK = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	FEDERATION_MIN_TOTAL_PLANETS_FOR_LEADERSHIP = float
 	## cardinality = 0..1
 	FEDERATION_MIN_RELATIVE_PLANETS_FOR_LEADERSHIP = float
@@ -1182,7 +1182,7 @@ NGameplay = {
 	## cardinality = 0..1
 	SCIENCE_SHIP_SPECIAL_PROJECT_DIST = float
 	## cardinality = 0..1
-	PLANET_SENSOR_RANGE	= int	
+	PLANET_SENSOR_RANGE	= int
 	## cardinality = 0..1
 	PLANET_HYPERLANE_RANGE = int
 	## cardinality = 0..1
@@ -1197,11 +1197,11 @@ NGameplay = {
 	INSULT_COOLDOWN_DAYS = int
 	## cardinality = 0..1
 	AUTO_DECLINE_DIPLOMACY_DAYS = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	FEDERATION_FLEET_SIZE = float
 	## cardinality = 0..1
 	FEDERATION_MAX_FLEET_SIZE = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	MIN_RIVAL_YEARS = int
 	## cardinality = 0..1
 	DEFENSIVE_PACT_INFLUENCE_COST = int
@@ -1209,14 +1209,14 @@ NGameplay = {
 	GUARANTEE_INFLUENCE_COST = float
 	## cardinality = 0..1
 	FEDERATION_INFLUENCE_COST = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	RIVALRY_INFLUENCE_GAIN = float
 	## cardinality = 0..1
 	MAX_FRICTION = int
 	## cardinality = 0..1
 	FRICTION_FROM_BORDERING_SYSTEM = int
 	## cardinality = 0..1
-	CUSTOM_EMPIRE_SPAWN_CHANCE = int 
+	CUSTOM_EMPIRE_SPAWN_CHANCE = int
 	## cardinality = 0..1
 	FALLEN_CUSTOM_EMPIRE_SPAWN_CHANCE = int
 	## cardinality = 0..1
@@ -1264,7 +1264,7 @@ NGameplay = {
 	## cardinality = 0..1
 	MATURE_GALAXY_TECH_TIER = int
 	## cardinality = 0..1
-	MATURE_GALAXY_NAVY_SIZE = float 
+	MATURE_GALAXY_NAVY_SIZE = float
 	## cardinality = 0..1
 	MATURE_GALAXY_EXTRA_MINERALS = int
 	## cardinality = 0..1
@@ -1293,7 +1293,7 @@ NGameplay = {
 	MATURE_GALAXY_COLONY_LAB = <building>
 	## cardinality = 0..1
 	MATURE_GALAXY_ARMY = <army>
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	ADVANCED_GALAXY_YEARS = int
 	## cardinality = 0..1
 	ADVANCED_GALAXY_COLONY_DISTANCE_FIXED = int
@@ -1304,7 +1304,7 @@ NGameplay = {
 	## cardinality = 0..1
 	ADVANCED_GALAXY_TECH_TIER = int
 	## cardinality = 0..1
-	ADVANCED_GALAXY_NAVY_SIZE = float 
+	ADVANCED_GALAXY_NAVY_SIZE = float
 	## cardinality = 0..1
 	ADVANCED_GALAXY_EXTRA_MINERALS = int
 	## cardinality = 0..1
@@ -1325,7 +1325,7 @@ NGameplay = {
 	ADVANCED_GALAXY_COLONY_CAPITAL = <building>
 	## cardinality = 0..1
 	ADVANCED_GALAXY_COLONY_POWER_PLANT = <building>
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	ADVANCED_GALAXY_COLONY_FARM = <building>
 	## cardinality = 0..1
 	ADVANCED_GALAXY_COLONY_MINE = <building>
@@ -1333,27 +1333,27 @@ NGameplay = {
 	ADVANCED_GALAXY_COLONY_LAB = <building>
 	## cardinality = 0..1
 	ADVANCED_GALAXY_ARMY = <army>
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	ORBITAL_BOMBARDMENT_PLANET_DMG_SCALE = float
 	## cardinality = 0..1
 	ORBITAL_BOMBARDMENT_ARMY_DMG_SCALE = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	MIN_FLEET_BOMBARD_SIZE = int
 	## cardinality = 0..1
 	MAX_FLEET_BOMBARD_SIZE = int
-	## cardinality = 0..1		
-	ORBITAL_BOMBARDMENT_TILE_POP_SCORE = int		
+	## cardinality = 0..1
+	ORBITAL_BOMBARDMENT_TILE_POP_SCORE = int
 	## cardinality = 0..1
 	ORBITAL_BOMBARDMENT_TILE_BUILDING_SCORE = int
 	## cardinality = 0..1
-	ORBITAL_BOMBARDMENT_TILE_FORTIFICATION_SCORE = int		
+	ORBITAL_BOMBARDMENT_TILE_FORTIFICATION_SCORE = int
 	## cardinality = 0..1
 	ORBITAL_BOMBARDMENT_TILE_CAPITAL_SCORE = int
 	## cardinality = 0..1
-	ORBITAL_BOMBARDMENT_TILE_RANDOM_FACTOR = float	
+	ORBITAL_BOMBARDMENT_TILE_RANDOM_FACTOR = float
 	## cardinality = 0..1
 	ORBITAL_BOMBARDMENT_ASSAULT_ARMY_DAMAGE_MULT = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	COLLATERAL_DAMAGE_CHANCE = float
 	## cardinality = 0..1
 	COLLATERAL_DAMAGE_BASE_SCALE = float
@@ -1369,7 +1369,7 @@ NGameplay = {
 	COLLATERAL_DAMAGE_MAX_BLOCKERS = int
 	## cardinality = 0..1
 	COLLATERAL_DAMAGE_MAX_PER_DAY = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	ORBITAL_BOMBARDMENT_TILE_BLOCKER = <deposit.blocker>
 	## cardinality = 0..1
 	COLLATERAL_DAMAGE_TILE_BLOCKER = <deposit.blocker>
@@ -1429,7 +1429,7 @@ NGameplay = {
 	TECH_COST_MULT_NUM_POPS = float
 	## cardinality = 0..1
 	TECH_WEIGHT_PREVIOUS_OPTION = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	TRADITION_COST_TRADITION = int
 	## cardinality = 0..1
 	TRADITION_COST_TRADITION_EXP = float
@@ -1491,7 +1491,7 @@ NGameplay = {
 	PEACE_OFFER_DECLINE_THRESHOLD = float
 	## cardinality = 0..1
 	PEACE_OFFER_DECLINE_COST = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	OCCUPATION_BASE_VALUE = int
 	## cardinality = 0..1
 	OCCUPATION_PLANET_VALUE = int
@@ -1547,7 +1547,7 @@ NGameplay = {
 	STARBASE_BASE_LEVEL	= <starbase_level>
 	## cardinality = 0..1
 	UPGRADED_STARBASE_BASE_LEVEL = <starbase_level>
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	ASCENSION_PERKS_SLOTS = int
 	## cardinality = 0..1
 	PLANET_UNREST_MAX = int
@@ -1561,7 +1561,7 @@ NGameplay = {
 	PLANET_UNREST_HAPPY_SLAVE = int
 	## cardinality = 0..1
 	PLANET_UNREST_UNHAPPY_SLAVE = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	EVADE_HOSTILE_CANCEL_ORDERS_THRESHOLD_DAYS = int
 	## cardinality = 0..1
 	GATEWAYS_MIN_DISTANCE = int
@@ -1574,68 +1574,68 @@ NGameplay = {
 }
 NSpecies = {
 	## cardinality = 0..1
-	MIN_ETHIC_POINTS = int	
+	MIN_ETHIC_POINTS = int
 	## cardinality = 0..1
-	MAX_ETHIC_POINTS = int	
+	MAX_ETHIC_POINTS = int
 	## cardinality = 0..1
-	MAX_TRAIT_POINTS_LEADER = int	
+	MAX_TRAIT_POINTS_LEADER = int
 	## cardinality = 0..1
-	MAX_TRAIT_POINTS_RULER = int	
+	MAX_TRAIT_POINTS_RULER = int
 	## cardinality = 0..1
-	TRAIT_MODIFICATION_BASE_COST = int	
+	TRAIT_MODIFICATION_BASE_COST = int
 	## cardinality = 0..1
-	TRAIT_CLIMATE_MODIFICATION_COST = int	
+	TRAIT_CLIMATE_MODIFICATION_COST = int
 	## cardinality = 0..1
-	TRAIT_MODIFICATION_COST_MULT = int	
+	TRAIT_MODIFICATION_COST_MULT = int
 	## cardinality = 0..1
-	MODIFICATION_COST_MULT = int	
+	MODIFICATION_COST_MULT = int
 	## cardinality = 0..1
-	ROBO_TRAIT_MODIFICATION_BASE_COST = int	
+	ROBO_TRAIT_MODIFICATION_BASE_COST = int
 	## cardinality = 0..1
-	ROBO_TRAIT_MODIFICATION_COST_MULT = int	
+	ROBO_TRAIT_MODIFICATION_COST_MULT = int
 	## cardinality = 0..1
-	ROBO_MODIFICATION_COST_MULT = int	
+	ROBO_MODIFICATION_COST_MULT = int
 	## cardinality = 0..1
 	UPLIFT_COST_BASE = float
 	## cardinality = 0..1
-	TRAIT_MODIFICATION_TIME_LIMIT = int	
+	TRAIT_MODIFICATION_TIME_LIMIT = int
 	## cardinality = 0..1
 	HOMEWORLD_HABITABILITY = float
 	## cardinality = 0..1
-	MUTATION_REMOVE_CHANCE = int	
+	MUTATION_REMOVE_CHANCE = int
 	## cardinality = 0..1
-	MUTATION_ADD_CHANCE = int	
+	MUTATION_ADD_CHANCE = int
 	## cardinality = 0..1
-	MUTATION_MIN_TRAITS = int	
+	MUTATION_MIN_TRAITS = int
 	## cardinality = 0..1
-	MUTATION_MAX_TRAITS = int	
+	MUTATION_MAX_TRAITS = int
 }
 
-NShip = {	
+NShip = {
 	## cardinality = 0..1
-	AGGRESSIVE_STANCE_INVASION_ODDS_MULT = float			
+	AGGRESSIVE_STANCE_INVASION_ODDS_MULT = float
 	## cardinality = 0..1
-	AGGRESSIVE_STANCE_MIN_POWER_MULT = float			
+	AGGRESSIVE_STANCE_MIN_POWER_MULT = float
 	## cardinality = 0..1
-	DESIGNER_WEAPON_PREF_MUL = float			
+	DESIGNER_WEAPON_PREF_MUL = float
 	## cardinality = 0..1
-	DESIGNER_WEAPON_STACKING_DIV = float			
+	DESIGNER_WEAPON_STACKING_DIV = float
 	## cardinality = 0..1
-	ENERGY_MAINTENANCE_MUL = float			
+	ENERGY_MAINTENANCE_MUL = float
 	## cardinality = 0..1
-	MINERAL_MAINTENANCE_MUL = float			
+	MINERAL_MAINTENANCE_MUL = float
 	## cardinality = 0..1
-	ABANDONED_STATION_DECAY_RATE = float			
+	ABANDONED_STATION_DECAY_RATE = float
 	## cardinality = 0..1
-	POOR_MAINTENANCE_PENALTY = float			
+	POOR_MAINTENANCE_PENALTY = float
 	## cardinality = 0..1
-	FALLEN_EMPIRE_MAINTENANCE_MULT = float			
+	FALLEN_EMPIRE_MAINTENANCE_MULT = float
 	## cardinality = 0..1
-	AWAKENED_FALLEN_EMPIRE_MAINTENANCE_MULT = float			
+	AWAKENED_FALLEN_EMPIRE_MAINTENANCE_MULT = float
 	## cardinality = 0..1
 	AWAKENED_FALLEN_EMPIRE_NAVAL_PLANET_MIN = int
-	## cardinality = 0..1	
-	STRIKE_CRAFT_COMBAT_REGEN = float			
+	## cardinality = 0..1
+	STRIKE_CRAFT_COMBAT_REGEN = float
 	## cardinality = 0..1
 	MOVE_SHIP_TO_FLEET_MAX_DIST = float
 	## cardinality = 0..1
@@ -1680,7 +1680,7 @@ NShip = {
 	FLEET_BASE_FORMATION_DIV = int
 	## cardinality = 0..1
 	FLEET_FORMATION_CIRCLE_SHIPS_PER_LAYER_MULT = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	FLEET_FORMATION_CIRCLE_RADIUS_PER_LAYER_MULT = float
 	## cardinality = 0..1
 	LANDING_TIME_DAYS = int
@@ -1693,7 +1693,7 @@ NShip = {
 	## cardinality = 0..1
 	HYPERLANE_WINDUP_OUTSIDE_BORDER = float
 	## cardinality = 0..1
-	HYPERDRIVE_INTERSTELLAR_TRAVEL_SPEED = float 
+	HYPERDRIVE_INTERSTELLAR_TRAVEL_SPEED = float
 	## cardinality = 0..1
 	RULER_SHIP_SCALE_MULT = float
 	## cardinality = 0..1
@@ -1702,19 +1702,19 @@ NShip = {
 	JUMP_DRIVE_RANGE = int
 	## cardinality = 0..1
 	SHIELD_RECHARGE_TICKS = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	MILITARY_POWER_HEALTH_WEIGHT = float
 	## cardinality = 0..1
-	MILITARY_POWER_ARMOR_WEIGHT	= float	
+	MILITARY_POWER_ARMOR_WEIGHT	= float
 	## cardinality = 0..1
-	MILITARY_POWER_SHIELD_WEIGHT = float	
+	MILITARY_POWER_SHIELD_WEIGHT = float
 	## cardinality = 0..1
 	MILITARY_POWER_DAMAGE_WEIGHT = float
 	## cardinality = 0..1
 	MILITARY_POWER_SCALE = float
 	## cardinality = 0..1
 	MILITARY_POWER_EXPONENT = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	MILITARY_POWER_ARMOR_PENETRATION_WEIGHT = float
 	## cardinality = 0..1
 	MILITARY_POWER_SHIELD_PENETRATION_WEIGHT = float
@@ -1751,11 +1751,11 @@ NShip = {
 	## cardinality = 0..1
 	SHIP_EXP_ELITE = float
 	## cardinality = 0..1
-	CAN_TRAVEL_BETWEEN_UNEXPLORED_SYSTEMS = bool		
+	CAN_TRAVEL_BETWEEN_UNEXPLORED_SYSTEMS = bool
 }
 NEngine = {
 	## cardinality = 0..1
-	EVENT_PROCESS_OFFSET = int 			
+	EVENT_PROCESS_OFFSET = int
 }
 
 NCombat = {
@@ -1773,9 +1773,9 @@ NCombat = {
 	COMBAT_TARGET_STICKYNESS_FACTOR = float
 	## cardinality = 0..1
 	RANDOM_TARGETING_WEIGHT = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	ADMIRAL_DEATH_CHANCE = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	COMBAT_SHIP_TARGETING_SIZE_MULT = float
 	## cardinality = 0..1
 	COMBAT_SHIP_TARGETING_SIZE_MAX = int
@@ -1929,10 +1929,10 @@ NPop = {
 	## cardinality = 0..1
 	RECENTLY_CONQUERED_DAYS = int
 	## cardinality = 0..1
-	FACTION_SUPPORT_LEVELS = { 
+	FACTION_SUPPORT_LEVELS = {
 		## cardinality = 8..8
 		float
-	}	
+	}
 }
 NArmy = {
 	## cardinality = 0..1
@@ -1964,7 +1964,7 @@ NArmy = {
 	## cardinality = 0..1
 	ARMY_EXP_GAIN_DAMAGE_DEALT = float
 	## cardinality = 0..1
-	ARMY_EXP_GAIN_DAMAGE_TAKEN = float				
+	ARMY_EXP_GAIN_DAMAGE_TAKEN = float
 	## cardinality = 0..1
 	ARMY_EXP_EXPERIENCED = int
 	## cardinality = 0..1
@@ -1978,7 +1978,7 @@ NArmy = {
 	## cardinality = 0..1
 	RETREAT_UNIT_LOST_MAX_CHANCE = float
 	## cardinality = 0..1
-	GROUND_COMBAT_RANDOM_TARGETING_WEIGHT = float		
+	GROUND_COMBAT_RANDOM_TARGETING_WEIGHT = float
 	## cardinality = 0..1
 	GROUND_COMBAT_LOW_HEALTH_THRESHOLD = float
 	## cardinality = 0..1
@@ -2050,16 +2050,16 @@ NEconomy = {
 	BUILDING_REPARATION_DEFAULT_TIME = int
 	## cardinality = 0..1
 	BUILDING_REPARATION_DEFAULT_COST = int
-	## cardinality = 0..1	
-	RESETTLEMENT_COST_RESOURCES	= { 
-		## cardinality = 1..inf
-		<resource> 	
-	} 
 	## cardinality = 0..1
-	RESETTLEMENT_COST_AMOUNTS = { 
+	RESETTLEMENT_COST_RESOURCES	= {
 		## cardinality = 1..inf
-		float 
-	} 	 
+		<resource>
+	}
+	## cardinality = 0..1
+	RESETTLEMENT_COST_AMOUNTS = {
+		## cardinality = 1..inf
+		float
+	}
 	## cardinality = 0..1
 	EXPANSION_COST_MAX = float
 	## cardinality = 0..1
@@ -2081,26 +2081,26 @@ NEconomy = {
 	## cardinality = 0..1
 	CLAIM_COST_RIVAL_DISCOUNT = float
 	## cardinality = 0..1
-	TRADITION_COST_RESOURCES = { 
+	TRADITION_COST_RESOURCES = {
 		## cardinality = 1..inf
-		<resource> 
-	} 
+		<resource>
+	}
 	## cardinality = 0..1
-	TRADITION_COST_AMOUNTS = { 
+	TRADITION_COST_AMOUNTS = {
 		## cardinality = 1..inf
 		float
-	}	
+	}
 }
 NAI = {
 	## cardinality = 0..1
 	AI_MAX_DISTANCE = float
 	## cardinality = 0..1
 	AI_POP_MODIFICATION_DISCOUNT = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	MIN_DISTANCE_TO_JUMP = float
 	## cardinality = 0..1
 	AI_JUMP_DRIVE_BRAVERY = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	STARBASE_COLONY_SCORE = float
 	## cardinality = 0..1
 	STARBASE_HABITABLE_PLANET_SCORE = float
@@ -2112,7 +2112,7 @@ NAI = {
 	STARBASE_CHOKEPOINT_SCORE = float
 	## cardinality = 0..1
 	STARBASE_HAZARD_CHOKEPOINT_SCORE_MULT = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	WAR_DISTANCE_FACTOR = float
 	## cardinality = 0..1
 	WAR_OCCUPIED_BORDER_PRIO = float
@@ -2140,23 +2140,23 @@ NAI = {
 	WAR_ATTACK_MILITARY_FLEET_PRIO = float
 	## cardinality = 0..1
 	WAR_ATTACK_JUMP_DRIVE_FLEET_PRIO = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	SPACE_MONSTER_MOVE_CHANCE = float
 	## cardinality = 0..1
 	SPACE_MONSTER_WANDER_FACTOR	= float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	TERRAFORM_SAVE_CREDITS = int
 	## cardinality = 0..1
 	BLOCKERS_SAVE_CREDITS = int
 	## cardinality = 0..1
 	MEGASTRUCTURE_SAVE_INFLUENCE = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	DOCKED_FLEET_MAINTENANCE_REDUCTION = float
 	## cardinality = 0..1
 	EXPANSION_MIN_PLANETS = int
  	## cardinality = 0..1
 	EXTRADIMENSIONAL_MIN_FLEETS = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	AI_NO_RETREAT_LIMIT = float
 	## cardinality = 0..1
 	CRISIS_THREAT_THRESHOLD_UPPER = int
@@ -2174,29 +2174,29 @@ NAI = {
 	CRISIS_MILITARY_POWER_MULT_OWN_SYSTEM = float
 	## cardinality = 0..1
 	CRISIS_MILITARY_POWER_MULT_DESPERATION = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	BOSS_MILITARY_POWER = int
 	## cardinality = 0..1
 	FALLEN_EMPIRE_FLEET_SIZE = int
 	## cardinality = 0..1
 	WAS_HUMAN_MONTHS = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	MAX_SHIPS_BUILD_PER_WEEK = int
 	## cardinality = 0..1
 	MAX_SHIPS_DISBAND_PER_WEEK = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	MIN_FLEET_FOR_OFFENSIVE = int
 	## cardinality = 0..1
 	MIN_FLEET_TO_RESTRICT_SYSTEM = int
 	## cardinality = 0..1
 	MIN_FLEET_THREAT_TO_CRISIS = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	MIN_GIFT_SIZE = int
 	## cardinality = 0..1
 	MAX_GIFT_SIZE = int
 	## cardinality = 0..1
 	AI_TRADE_INTERVAL = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	MAX_TRUST = int
 	## cardinality = 0..1
 	MAX_TRUST_DEFENSIVE_PACT = int
@@ -2228,7 +2228,7 @@ NAI = {
 	MONTHLY_TRUST_AT_WAR = float
 	## cardinality = 0..1
 	MONTHLY_TRUST_RIVAL = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	WARLEADER_WARGOAL_FACTOR = float
 	## cardinality = 0..1
 	DEFICIT_SPENDING_START_WAR = float
@@ -2250,7 +2250,7 @@ NAI = {
 	THREAT_STARBASE_MULT = float
 	## cardinality = 0..1
 	THREAT_SYSTEM_MULT = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	HIGH_THREAT_THRESHOLD = int
 	## cardinality = 0..1
 	SHARED_THREAT_MULT = float
@@ -2278,7 +2278,7 @@ NAI = {
 	THREAT_OPINION_MAX = float
 	## cardinality = 0..1
 	THREAT_OPINION_MIN = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	COLONIZE_NON_ADJACENT_DIV = float
 	## cardinality = 0..1
 	AI_AGGRESSIVENESS_LOW_MULT = float
@@ -2286,7 +2286,7 @@ NAI = {
 	AI_AGGRESSIVENESS_HIGH_MULT = float
 	## cardinality = 0..1
 	AI_AGGRESSIVENESS_BASE = int
-	## cardinality = 0..1		
+	## cardinality = 0..1
 	AI_AGGRESSIVENESS_PROPAGATOR_BOXED_IN_MULT = float
 	## cardinality = 0..1
 	AI_AGGRESSIVENESS_BOXED_IN_MULT = float
@@ -2308,15 +2308,15 @@ NAI = {
 	INSTANT_AI_DIPLOMACY = float
 	## cardinality = 0..1
 	DIPLO_BREAK_THRESHOLD = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	ACCEPTANCE_DEAL_BREAKER = int
 	## cardinality = 0..1
 	ACCEPTANCE_DEAL_ALWAYS = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	MAX_GUARANTEES = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	FEDERATION_ACCEPTANCE_CRISIS_FACTOR = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	FEDERATION_ACCEPTANCE_OPINION_FACTOR = float
 	## cardinality = 0..1
 	FEDERATION_ACCEPTANCE_VOTED_DOWN_PROPOSAL = float
@@ -2348,7 +2348,7 @@ NAI = {
 	FEDERATION_ACCEPTANCE_ASSOCIATION_VOTE = float
 	## cardinality = 0..1
 	FEDERATION_ACCEPTANCE_DISTANCE_MULT = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	DEFENSIVE_PACT_ACCEPTANCE_OPINION_FACTOR = float
 	## cardinality = 0..1
 	DEFENSIVE_PACT_ACCEPTANCE_ATTITUDE_ALLIANCE = float
@@ -2370,7 +2370,7 @@ NAI = {
 	DEFENSIVE_PACT_ACCEPTANCE_RELATIVE_STRENGTH_MAX = float
 	## cardinality = 0..1
 	DEFENSIVE_PACT_ACCEPTANCE_DISTANCE_MULT = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	NON_AGGRESSION_PACT_ACCEPTANCE_OPINION_FACTOR = float
 	## cardinality = 0..1
 	NON_AGGRESSION_PACT_ACCEPTANCE_ATTITUDE_ALLIANCE = float
@@ -2389,7 +2389,7 @@ NAI = {
 	## cardinality = 0..1
 	NON_AGGRESSION_PACT_ACCEPTANCE_DISTANCE_MULT = float
 	## cardinality = 0..1
-	
+
 	MIGRATION_PACT_ACCEPTANCE_OPINION_FACTOR = float
 	## cardinality = 0..1
 	MIGRATION_PACT_ACCEPTANCE_ATTITUDE_ALLIANCE = float
@@ -2401,7 +2401,7 @@ NAI = {
 	MIGRATION_PACT_ACCEPTANCE_OTHER_ATTITUDE = float
 	## cardinality = 0..1
 	MIGRATION_PACT_ACCEPTANCE_DISTANCE_MULT = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	VASSALIZATION_ACCEPTANCE_PROTECTORATE_MULT = float
 	## cardinality = 0..1
 	VASSALIZATION_ACCEPTANCE_PROTECTORATE_MAX = float
@@ -2427,23 +2427,23 @@ NAI = {
 	VASSALIZATION_ACCEPTANCE_OTHER_THREAT_MAX = float
 	## cardinality = 0..1
 	VASSALIZATION_ACCEPTANCE_DISTANCE_MULT = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	OFFER_VASSALIZATION_ACCEPTANCE_ATTITUDE_VASSALIZE = float
 	## cardinality = 0..1
 	OFFER_VASSALIZATION_ACCEPTANCE_OTHER_ATTITUDE = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	OFFER_TRADE_ACCEPTANCE_ATTITUDE_FACTOR = float
 	## cardinality = 0..1
 	OFFER_TRADE_ACCEPTANCE_ATTITUDE = float
 	## cardinality = 0..1
 	OFFER_TRADE_MIN_RESOURCE_THRESHOLD = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	TRADE_MAX_RESOURCE_PERCENT = float
 	## cardinality = 0..1
 	TRADE_MIN_RESOURCE_DELTA = float
 	## cardinality = 0..1
 	TRADE_MIN_RESOURCE_STOCKPILE = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	TRADE_RESOURCE_STOCKPILE_UNDER = float
 	## cardinality = 0..1
 	TRADE_RESOURCE_STOCKPILE_OVER = float
@@ -2451,9 +2451,9 @@ NAI = {
 	TRADE_RESOURCE_FRACTION_MIN = float
 	## cardinality = 0..1
 	TRADE_RESOURCE_FRACTION_MAX = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	MIN_WILLINGNESS_TO_OFFER_TRADE = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	CAPITAL_RESOURCE_IMPORTANCE = float
 	## cardinality = 0..1
 	CAPITAL_WRONG_RESOURCE_IMPORTANCE = float
@@ -2507,11 +2507,11 @@ NAI = {
 	TRADE_VALUE_RESEARCH_AGREEMENT = float
 	## cardinality = 0..1
 	TRADE_VALUE_RESEARCH_AGREEMENT_MAX = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	NON_MINED_RESOURCES_ENERGY_WANT_FACTOR = float
 	## cardinality = 0..1
 	AI_BUDGETING_START_YEARS = int
-	## cardinality = 0..1				
+	## cardinality = 0..1
 	AI_BUDGETING_MID_YEARS = int
 	## cardinality = 0..1
 	AI_BUDGETING_LATE_YEARS = int
@@ -2523,7 +2523,7 @@ NAI = {
 	BASE_ROBOT_BUDGET = int
 	## cardinality = 0..1
 	BASE_ARMY_BUDGET = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	SAVINGS_BUDGET_FRACTION = float
 	## cardinality = 0..1
 	ARMY_BUDGET_FRACTION = float
@@ -2537,7 +2537,7 @@ NAI = {
 	ROBOT_BUDGET_FRACTION = float
 	## cardinality = 0..1
 	STARBASE_BUDGET_FRACTION = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	DANGER_BUDGET_FACTOR = float
 	## cardinality = 0..1
 	SHIPSIZE_BUDGET_FACTOR = float
@@ -2569,15 +2569,15 @@ NAI = {
 	MINERAL_EDICTS_BUDGET_FRACTION = float
 	## cardinality = 0..1
 	MINERAL_MEGASTRUCTURE_BUDGET_FRACTION = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	ROBOT_EMPIRE_EXTRA_ROBOT_BUDGET = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	DISBAND_THRESHOLD = float
 	## cardinality = 0..1
 	MIN_NAVY_BUDGET = int
 	## cardinality = 0..1
 	MIN_ARMY_BUDGET = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	ABS_MAX_MINERALS_STORED_NAVY = int
 	## cardinality = 0..1
 	MAX_MINERALS_STORED_NAVY = int
@@ -2625,7 +2625,7 @@ NAI = {
 	MAX_MINERALS_STORED_ROBOTS = int
 	## cardinality = 0..1
 	MIN_MINERALS_STORED_ROBOTS = int
-	## cardinality = 0..1			
+	## cardinality = 0..1
 	MINERALS_STORED_EDICTS = int
 	## cardinality = 0..1
 	MINERALS_STORED_MEGASTRUCTURES = int
@@ -2635,7 +2635,7 @@ NAI = {
 	AI_DESIRED_ARMY_MINERALS_AT_WAR = int
 	## cardinality = 0..1
 	MAX_STORED_ENERGY_POST = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	MAX_MINERALS_STORED_SECTOR_POST = int
 	## cardinality = 0..1
 	MAX_MINERALS_STORED_SECTOR_POST_BUILDINGS = int
@@ -2665,7 +2665,7 @@ NAI = {
 	EXPECTED_ENERGY_PER_POP = int
 	## cardinality = 0..1
 	EXPECTED_ENERGY_SURPLUS = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	EXPECTED_SECTOR_ENERGY_SURPLUS = int
 	## cardinality = 0..1
 	EXPECTED_SECTOR_MINERAL_SURPLUS = int
@@ -2675,9 +2675,9 @@ NAI = {
 	AI_SECTOR_MINERAL_BOOST_THRESHOLD = int
 	## cardinality = 0..1
 	RESOURCES_FOR_HIGH_SECTOR_SHARE = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	MIN_RESOURCES_TO_BUILD_ORBITAL_STATION = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	ENERGY_COLONY_BUDGET_FRACTION = float
 	## cardinality = 0..1
 	ENERGY_TILE_BLOCKER_BUDGET_FRACTION = float
@@ -2693,7 +2693,7 @@ NAI = {
 	ENERGY_SAVINGS_BUDGET_FRACTION = float
 	## cardinality = 0..1
 	MAX_ARMY_MAINTENANCE = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	EXPAND_NAVY_LIMIT_FACTOR = int
 	## cardinality = 0..1
 	CONSTRUCTOR_SHIPS_MUL = float
@@ -2705,7 +2705,7 @@ NAI = {
 	RESEARCH_SHIPS_MAX = int
 	## cardinality = 0..1
 	CONSTRUCTOR_SHIPS_MAX = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	MIN_NAVY_SIZE_FOR_ADMIRAL = int
 	## cardinality = 0..1
 	LEADER_FRACTION_SCIENTIST = float
@@ -2721,7 +2721,7 @@ NAI = {
 	ABORT_MISSION_LIMIT = float
 	## cardinality = 0..1
 	WAR_EXHAUSTION_TO_INTERVENE = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	PEACE_WAR_EXHAUSTION_FACTOR = float
 	## cardinality = 0..1
 	PEACE_OCCUPATION_FACTOR = float
@@ -2743,7 +2743,7 @@ NAI = {
 	TECH_NEED_MULT_VALUE = float
 	## cardinality = 0..1
 	MIN_WANTED_SCIENTISTS = int
-	## cardinality = 0..1			
+	## cardinality = 0..1
 	INFLUENCE_FRACTION_EDICTS = float
 	## cardinality = 0..1
 	INFLUENCE_FRACTION_STARBASES = float
@@ -2751,7 +2751,7 @@ NAI = {
 	INFLUENCE_FRACTION_CLAIMS = float
 	## cardinality = 0..1
 	INFLUENCE_FRACTION_RESETTLEMENT = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	INFLUENCE_MAX_EDICTS = int
 	## cardinality = 0..1
 	INFLUENCE_MAX_STARBASES = int
@@ -2797,13 +2797,13 @@ NAI = {
 	ANTI_CRISIS_NAVY_SIZE_LIMIT = float
 	## cardinality = 0..1
 	CONTINGENCY_IGNORE_HUBS_THRESHOLD = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	SECTOR_SYSTEM_CAP_MIN = int
 	## cardinality = 0..1
 	SECTOR_FOCUS_EFFECT = float
 	## cardinality = 0..1
 	SECTOR_IGNORE_TILE_RESOURCE = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	SECTOR_TILE_BLOCKER_ENERGY_BUDGET_FRACTION = float
 	## cardinality = 0..1
 	SECTOR_ROBOT_ENERGY_BUDGET_FRACTION = float
@@ -2837,7 +2837,7 @@ NAI = {
 	ATTITUDE_CHANGE_BUFFER = float
 	## cardinality = 0..1
 	AI_COMMUNICATIONS_RANDOM_VALUE = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	OUTPOST_STATION_RESOURCES_BUILD = int
 	## cardinality = 0..1
 	OUTPOST_STATION_RESOURCES_NEIGHBORS_BUILD = int
@@ -2845,74 +2845,74 @@ NAI = {
 	OUTPOST_STATION_DISTANCE_MAX = int
 	## cardinality = 0..1
 	OUTPOST_STATION_RANGE = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	MAX_CAPITAL_UPGRADE_BEFORE_PLANET_FULL = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	TRANSPORT_FLEET_SIZE = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	ARSENAL_FLEET_SIZE = int
-	## cardinality = 0..1		
+	## cardinality = 0..1
 	POP_RESETTLEMENT_PRIO = float
-	## cardinality = 0..1		
+	## cardinality = 0..1
 	DISTANCE_STARS_RESEARCH = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	AUTO_EXPLORE_ATTRACTION_SCORE = int
-	## cardinality = 0..1		
+	## cardinality = 0..1
 	MAX_EXPANSION_DISTANCE = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	MAX_EXPANSION_DISTANCE_SUBJECT = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	EXPANSION_OWN_PRIORITY = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	EXPANSION_CUT_OFF_SYSTEM_PRIORITY = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	EXPANSION_BORDERING_PRIORITY = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	EXPANSION_RESOURCE_PRIORITY = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	EXPANSION_COLONY_PRIORITY = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	EXPANSION_BYPASS_PRIORITY = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	EXPANSION_MIN_VALUE_FOR_HIGH_PRIO = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	EXPANSION_RANDOM_AMOUNT	= int
-	## cardinality = 0..1		
+	## cardinality = 0..1
 	MAX_CLAIM_DISTANCE = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	MAX_CLAIM_DISTANCE_SUBJECT = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	CLAIM_BASE_VALUE = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	CLAIM_RESOURCE_FACTOR = int
- 	## cardinality = 0..1	
+ 	## cardinality = 0..1
 	CLAIM_BYPASS_FACTOR = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	CLAIM_RELATIONS_FACTOR = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	CLAIM_COST_FACTOR = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	CLAIM_COLONY_FACTOR = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	CLAIM_BORDERING_FACTOR = int
-	## cardinality = 0..1		
+	## cardinality = 0..1
 	NO_WARS_FLAG = scalar
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	NO_LEAVE_FED_FLAG = scalar
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	EMPIRE_RICH_FACTOR = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	SECTOR_RICH_FACTOR = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	EMPIRE_POOR_FACTOR = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	SECTOR_POOR_FACTOR = float
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	SURRENDER_ACCEPTANCE_HIGHEST = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	SURRENDER_ACCEPTANCE_HIGH = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	SURRENDER_ACCEPTANCE_LOW = int
-	## cardinality = 0..1	
+	## cardinality = 0..1
 	SURRENDER_ACCEPTANCE_LOWEST = int
 }

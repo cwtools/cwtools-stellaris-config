@@ -427,32 +427,41 @@ councilor = {
 
 ## replace_scope = { this = country root = country }
 council_agenda = {
-	agenda_cost = int[0..inf]
+	agenda_cost = value_field
+	## cardinality = 0..1
+	### Optional, Overrides COUNCIL_AGENDA_COOLDOWN define, how many days until the agenda can be selected again
+	agenda_cooldown = value_field
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	allow = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	###Modifiers applied while the agenda is active (being prepared); usually similar but smaller modifiers compared to the finish_modifier
-	modifiers = {
-		{
-			alias_name[modifier] = alias_match_left[modifier]
-		}
-	}
 	## cardinality = 0..1
-	###Static modifier applied to the country upon finishing (launching) the agenda
-	finish_modifier = <static_modifier>
+	### Custom localization for the initial effect, if you're using weird on_actions to have one
+	initial_effect_custom_loc = localisation
+	## cardinality = 0..1
+	###Modifiers applied while the agenda is active (being prepared); usually similar but smaller modifiers compared to the finish_modifier
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
 	## cardinality = 0..1
 	###Effects executed once the agenda is finished (launched); displayed in the agenda tooltip
 	effect = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 	## cardinality = 0..1
+	### Optional, Overrides COUNCIL_AGENDA_FINISH_MODIFIER_DURATION define how many days the agenda's finish_modifier lasts for
+	agenda_finish_modifier_duration = value_field
+	## cardinality = 0..1
+	###Static modifier applied to the country upon finishing (launching) the agenda
+	finish_modifier = <static_modifier>
+	## cardinality = 0..1
 	ai_weight = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 }
+
 
 #aliases - used in species_classes and perhaps other places.
 
