@@ -41,7 +41,7 @@ army = {
 	
 	## cardinality = 0..1
 	army_modifier = {
-		alias_name[modifier_rule] = alias_match_left[modifier_rule]	
+		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
 	###Specify another army type to use names from, instead of having to copy them for each name list.
