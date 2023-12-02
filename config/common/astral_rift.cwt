@@ -1,0 +1,51 @@
+types = {
+	type[astral_rift] = {
+		path = "game/common/astral_rift"
+		subtype[scripted] = {
+			connection_type = scripted_connection
+		}
+	}
+}
+
+astral_rift = {
+	### the localization key used in triggers and effects for the type
+	name = localisation
+	## cardinality = 0..1
+	randomized = bool
+	## cardinality = 0..1
+	## severity = warning
+	flags = {
+		## cardinality = 0..inf
+		value_set[astral_rift_flag]
+	}
+	## cardinality = 0..1
+	event = <event.astral>
+	## cardinality = 0..1
+	on_roll_failed = {
+		enum[astral_rift_on_roll_failed] = bool
+	}
+	## cardinality = 0..inf
+	event_weight = {
+		weight = float
+		## cardinality = 0..1
+		modifier = {
+			## cardinality = 0..1
+			factor = int
+			## cardinality = 0..inf
+			## replace_scope = { root = country this = country }
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..1
+		inline_script = {
+			## cardinality = 0..inf
+			scalar = scalar
+		}
+	}
+	
+}	
+
+enums = {
+	enum[astral_rift_on_roll_failed] = {
+		standard_astral_rift_on_roll_failed
+	}
+}
