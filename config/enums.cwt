@@ -1,9 +1,8 @@
 enums = {
 	enum[leader_classes] = {
+		official
+		commander
 		scientist
-		admiral
-		governor
-		general
 		envoy
 	}
 	enum[days_months_years] = {
