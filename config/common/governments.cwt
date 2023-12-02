@@ -446,6 +446,10 @@ council_agenda = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
+	init_effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+	## cardinality = 0..1
 	###Effects executed once the agenda is finished (launched); displayed in the agenda tooltip
 	effect = {
 		alias_name[effect] = alias_match_left[effect]
