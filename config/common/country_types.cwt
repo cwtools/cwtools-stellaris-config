@@ -287,14 +287,14 @@ country_type = {
 				## cardinality = 0..inf
 				<diplomatic_action>
 				## cardinality = 0..inf
-				<diplo_phrase>
+				enum[exclusive_diplomacy_ask]
 			}
 			## cardinality = 0..1
 			can_send = {
 				## cardinality = 0..inf
 				<diplomatic_action>
 				## cardinality = 0..inf
-				<diplo_phrase>
+				enum[exclusive_diplomacy_demand]
 			}
 		}
 		## cardinality = 0..1
@@ -380,5 +380,20 @@ enums = {
 		swarm_interior_minister_module
 		swarm_military_minister_module
 		space_monsters_modules
+		formless_military_minister_module
+	}
+	enum[exclusive_diplomacy_ask] = {
+		action_ask_to_become_thrall
+		action_ask_to_become_dominion
+		action_ask_to_become_satellite
+		action_ask_to_become_signatory
+		action_stratified_technological_enlightenment
+		action_stop_stratified_technological_enlightenment
+	}
+	enum[exclusive_diplomacy_demand] = {
+		action_demand_thrall
+		action_demand_dominion
+		action_demand_satellite
+		action_demand_signatory
 	}
 }
