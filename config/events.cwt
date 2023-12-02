@@ -44,6 +44,12 @@ types = {
 		## abbreviation = FCE
 		subtype[first_contact] = {
 		}
+		## type_key_filter = astral_rift_event
+		## push_scope = astral_rift
+		## display_name = Astral Event
+		## abbreviation = ARE
+		subtype[astral] = {
+		}
 		## type_key_filter = ship_event
 		## push_scope = ship
 		## display_name = Ship Event
