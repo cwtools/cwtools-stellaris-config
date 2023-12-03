@@ -50,6 +50,12 @@ types = {
 		## abbreviation = ARE
 		subtype[astral] = {
 		}
+		## type_key_filter = bypass_event
+		## push_scope = bypass
+		## display_name = Bypass Event
+		## abbreviation = BPE
+		subtype[bypass] = {
+		}
 		## type_key_filter = ship_event
 		## push_scope = ship
 		## display_name = Ship Event
