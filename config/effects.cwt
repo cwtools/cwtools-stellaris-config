@@ -654,7 +654,7 @@ alias[effect:change_government] = {
 }
 
 #ideally, "heir" should only be if type = ruler
-###Kills the scoped leader or leader of the scoped country/fleet/ship/planet/army
+###Kills the scoped leader or leader of the scoped country/fleet/ship/planet/army/first contact system/spy network
 alias[effect:kill_leader] = {
 	##cardinality = 0..1
 	type = enum[leader_classes]
@@ -1385,6 +1385,8 @@ alias[effect:create_country] = {
 	}
 	## cardinality = 0..1
 	contact_rule = enum[contact_rules]
+	## cardinality = 0..1
+	set_capital_from_species = bool
 }
 
 ###Creates a rebellion on this planet
@@ -1864,6 +1866,8 @@ alias[effect:add_random_research_option] = {
 	## cardinality = 0..1
 	###default yes
 	ignore_insight = bool
+	## cardinality = 0..1
+	only_rare = bool
 }
 
 ### Adds a tech research option to the scoped country's tech view list, permanent until researched
@@ -2269,6 +2273,8 @@ alias[effect:create_pop] = {
 	ethos = {
 		## cardinality = 1..1
 		ethic = <ethos>
+		## cardinality = 0..1
+		count = int
 	}
 	## cardinality = 0..1
 	## push_scope = pop
@@ -2964,7 +2970,7 @@ alias[effect:destroy_archaeological_site] = scope[archaeological_site]
 alias[effect:add_stage_clues] = int_value_field
 alias[effect:add_stage_clues] = lower_insight_reward
 alias[effect:add_stage_clues] = higher_insight_reward
-alias[effect:add_expedition_log_entry] = who_knows_tell_us_please
+alias[effect:add_stage_clues] = int
 ###Resets the current stage
 alias[effect:reset_current_stage] = yes
 ###Finish the current stage
@@ -3923,3 +3929,203 @@ alias[effect:add_skill_without_trait_selection] = int_value_field
 
 ###Unlocks council selection
 alias[effect:unlock_council_selection] = yes
+
+###Freezes the scoped leader's age. The 'no' case will disable the freeze granted by this effect
+alias[effect:freeze_leader_age] = yes
+
+###Sets an arbitrarily-named flag on the scoped astral rift
+alias[effect:set_astral_rift_flag] = value[astral_rift_flag]
+
+###Removes a flag from the scoped astral rift
+alias[effect:remove_astral_rift_flag] = value[astral_rift_flag]
+
+###Exports the remaining duration of a specified modifier in the current scope to a specified variable
+alias[effect:export_modifier_duration_to_variable] = {
+	modifier = alias_keys_field[modifier]
+	variable = value_set[variable] 
+}
+
+###Deletes the target dimensional fleet
+alias[effect:delete_dimensional_fleet] = scope[any]
+
+###Spawns a new astral rift in the scoped system.
+alias[effect:spawn_astral_rift] = {
+	## cardinality = 0..1
+	relative_to = prev
+	## cardinality = 0..1
+	in_place_of = prev
+	## cardinality = 0..1
+	random_pos = bool
+	## cardinality = 0..1
+	orbit_distance = int
+	## cardinality = 0..1
+	orbit_angle = int
+	## cardinality = 0..1
+	tolerance = int
+	## cardinality = 0..1
+	id = <astral_rift>
+	## cardinality = 0..1
+	spawn_sound = bool
+	## cardinality = 0..1
+	graphics_entity_name = scalar
+	## cardinality = 0..1
+	## push_scope = astral_rift
+	init_effect = {
+		## cardinality = 0..inf
+		alias_name[effect] = alias_match_left[effect]
+	}
+}
+
+###Destroys target Astral Rift
+alias[effect:destroy_astral_rift] = scope[any]
+
+###Changes the target of a Situation
+alias[effect:change_situation_target] = none
+alias[effect:change_situation_target] = scope[situation]
+
+###Assigns a council position to the country's council, if possible
+alias[effect:set_council_position_to_council] = <councilor>
+
+###Renew a Bypass Lock's duration as if it was just built
+alias[effect:renew_bypass_lock] = yes
+
+###Lock a Bypass for exclusive access for a given country
+alias[effect:lock_bypass] = {
+	country = owner
+	duration = int
+}
+
+###Starts the cooldown of an astral action defined with uses_custom_cooldown = yes
+alias[effect:start_astral_action_cooldown] = scalar
+
+###Unlocks Astral Actions that have become unlockable since the last time this effect was called
+alias[effect:perform_astral_action_unlock_check] = yes
+
+###Fires an astral rift event with optional DAYS and RANDOM delay
+alias[effect:astral_rift_event] = {
+	id = <event.astral>
+	## cardinality = 0..1
+	days = int
+	## cardinality = 0..1
+	random = int
+}
+
+###Fills the astral rift event pool for every playable country
+alias[effect:fill_astral_rift_event_pool] = yes
+
+###Fires an astral rift event with optional DAYS and RANDOM delay
+alias[effect:bypass_event] = {
+	id = <event.bypass>
+	## cardinality = 0..1
+	days = int
+	## cardinality = 0..1
+	random = int
+}
+
+###Ends the Astral Rift exploration
+alias[effect:finish_astral_rift] = yes
+
+###Sets next Astral Rift event through an astral rift event ID, and another astral rift event ID to be called in case of a roll failed, alongside a trigger probability.  To fire an Astral Rift event immediately, use astral_rift_event instead
+alias[effect:set_next_astral_rift_event] = {
+	id = <event.astral>
+	## cardinality = 0..1
+	on_roll_failed = <event.astral>
+	## cardinality = 0..1
+	fail_probability = float
+}
+
+### Iterate through every astral rift - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly
+alias[effect:random_astral_rift] = {
+	limit = {
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..inf
+	weights = {
+		base = float
+		modfier = {
+			add/factor = float
+			## cardinality = 0..inf
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
+	## cardinality = 0..inf
+	alias_name[effect] = alias_match_left[effect] 
+	
+}
+
+### Iterate through every astral rift - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_astral_rift] = {
+	limit = {
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	position = int
+	## cardinality = 0..1
+	order_by = trigger:<trigger>
+	## cardinality = 0..1
+	order_by = value[variable]
+	## cardinality = 0..1
+	inverse = bool
+	# cardinality = 0..inf
+	alias_name[effect] = alias_match_left[effect] 
+}
+
+### Iterate through every astral rift - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_astral_rift] = {
+	limit = {
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	# cardinality = 0..inf
+	alias_name[effect] = alias_match_left[effect] 
+}
+
+### Iterate through every bypass - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_bypass] = {
+	limit = {
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..inf
+	weights = {
+		base = float
+		modfier = {
+			add/factor = float
+			## cardinality = 0..inf
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
+	## cardinality = 0..inf
+	alias_name[effect] = alias_match_left[effect] 
+	
+}
+
+### Iterate through every bypass - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_bypass] = {
+	limit = {
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	position = int
+	## cardinality = 0..1
+	order_by = trigger:<trigger>
+	## cardinality = 0..1
+	order_by = value[variable]
+	## cardinality = 0..1
+	inverse = bool
+	# cardinality = 0..inf
+	alias_name[effect] = alias_match_left[effect] 
+}
+
+### Iterate through every bypass - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_bypass] = {
+	limit = {
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	# cardinality = 0..inf
+	alias_name[effect] = alias_match_left[effect] 
+}
