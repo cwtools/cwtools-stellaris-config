@@ -111,6 +111,8 @@ deposit = {
 	subtype[!colonisable] = {
 		## cardinality = 0..1
 		category = deposit_cat_rare
+		## cardinality = 0..1
+		category = deposit_cat_blockers
 	}
 
 	## cardinality = 0..1
