@@ -4042,12 +4042,7 @@ alias[effect:random_astral_rift] = {
 	}
 	## cardinality = 0..inf
 	weights = {
-		base = float
-		modfier = {
-			add/factor = float
-			## cardinality = 0..inf
-			alias_name[trigger] = alias_match_left[trigger]
-		}
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	## cardinality = 0..inf
 	alias_name[effect] = alias_match_left[effect] 
@@ -4090,12 +4085,7 @@ alias[effect:random_bypass] = {
 	}
 	## cardinality = 0..inf
 	weights = {
-		base = float
-		modfier = {
-			add/factor = float
-			## cardinality = 0..inf
-			alias_name[trigger] = alias_match_left[trigger]
-		}
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	## cardinality = 0..inf
 	alias_name[effect] = alias_match_left[effect] 
