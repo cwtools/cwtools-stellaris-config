@@ -1,9 +1,8 @@
 enums = {
 	enum[leader_classes] = {
+		official
+		commander
 		scientist
-		admiral
-		governor
-		general
 		envoy
 	}
 	enum[days_months_years] = {
@@ -89,6 +88,7 @@ enums = {
 		espionage_asset
 		agreement
 		situation
+		astral_rift
 	}
 	enum[intel_level] = {
 		none

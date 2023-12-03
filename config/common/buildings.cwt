@@ -172,6 +172,12 @@ building = {
 	planet_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
+	
+	## cardinality = 0..1
+	inline_script = {
+		## cardinality = 0..inf
+		scalar = scalar
+	}
 
 	## cardinality = 0..1
 	prerequisites = {
