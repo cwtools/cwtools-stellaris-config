@@ -951,7 +951,7 @@ alias[trigger:has_existing_ship_design] = <ship_size>
 ### Checks if the leader has a specific amount of experience
 alias[trigger:has_experience] == int_value_field
 
-### Checks if the ship/fleet has a specific fleet order. survey_planet_order is a valid entry, I (Caligula) don't know any others but there are likely some
+### Checks if the ship/fleet has a specific fleet order
 alias[trigger:has_fleet_order] = enum[fleet_orders]
 
 ### Checks if the system has a hyperlane connection to target system
@@ -2686,3 +2686,102 @@ alias[trigger:is_background_planet] = scope_group[target_planet]
 
 ###Checks if scoped leader is a member of the Empire Council or the Ruler
 alias[trigger:is_councilor] = bool
+
+###Checks the scope leader's lifespan
+alias[trigger:leader_lifespan] > int
+
+###Checks if the specified relic was the last lost one 
+alias[trigger:last_lost_relic] = <relic>
+
+###Checks if the specified relic was the last received one 
+alias[trigger:last_received_relic] = <relic>
+
+###Checks if the planet is an astral scar
+alias[trigger:is_astral_scar] = bool
+
+###Returns true if the Bypass Lock can be renewed
+alias[trigger:can_lock_be_renewed] = bool
+
+###Checks current value for council legitimacy for the scoped country
+alias[trigger:council_legitimacy] = int
+
+## severity = warning
+###Checks if the astral rift has a specific flag
+alias[trigger:has_astral_rift_flag] = value[astral_rift_flag]
+
+## severity = warning
+###Checks if the country has completed a specific event chain
+alias[trigger:has_completed_event_chain] = value[event_chain_key]
+
+###Checks the distance of a controlled system to its owner's capital
+alias[trigger:distance_to_capital] = int
+
+###Returns true if the astral rift starting event pool is empty
+alias[trigger:is_astral_rift_pool_empty] = bool
+
+###Returns true if the scopes system contains at least one astral rift
+alias[trigger:has_astral_rift] = bool
+
+###Checks if an archaeological site has progression locked or not
+alias[trigger:is_site_locked] = bool
+
+###Checks the number of days left for the Relics Triumph
+alias[trigger:triumph_days_left] = int
+
+###Checks the difference between an explorer's level and an Astral Rift current difficulty
+alias[trigger:astral_rift_relative_difficulty] = int
+
+###Return how many Astral Rifts were completed by the country
+alias[trigger:astral_rifts_completed] = int
+
+###Returns true if the astral rift with the given id is or was explored by the scoped country
+alias[trigger:is_astral_rift_explored] = <astral_rift>
+
+###Returns true if the scope bypass is of type
+alias[trigger:is_bypass_type] = <bypass>
+
+###Returns true if the bypass is locked by a dimensional lock
+alias[trigger:has_lock] = bool
+
+###Checks if the scoped fleet can go MIA
+alias[trigger:can_go_mia] = bool
+
+###Iterate through every astral rift - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_astral_rift] = {
+	## cardinality = 1..inf
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+###Iterate through every astral rift - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_astral_rift] = {
+	## cardinality = 1..1
+	count = int
+	## cardinality = 1..1
+	count = all
+	## cardinality = 1..1
+	count = value[variable]
+	limit = {
+		## cardinality = 1..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+###Iterate through every bypass - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_bypass] = {
+	## cardinality = 1..inf
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+###Iterate through every bypass - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_bypass] = {
+	## cardinality = 1..1
+	count = int
+	## cardinality = 1..1
+	count = all
+	## cardinality = 1..1
+	count = value[variable]
+	limit = {
+		## cardinality = 1..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
