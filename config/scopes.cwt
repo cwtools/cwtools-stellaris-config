@@ -18,10 +18,7 @@ scopes = {
     Fleet = {
         aliases = { fleet }
     }
-	Explorer = {
-        aliases = { explorer }
-    }
-    Pop = {
+	Pop = {
         aliases = { pop }
     }
     "Ambient Object" = {
@@ -90,6 +87,9 @@ scopes = {
 	Debris = {
 		aliases = { debris }
 	}
+	Explorer = {
+        aliases = { explorer }
+    }
 	"Background Planet" = {
         aliases = { "backgroundplanet" "background_planet" }
     }
@@ -98,6 +98,9 @@ scopes = {
 	}
 	"Lock Country" = {
 		aliases = { "lockcountry"  "lock_country" }
+	}
+	Bypass = {
+		aliases = { bypass }
 	}
 }
 
