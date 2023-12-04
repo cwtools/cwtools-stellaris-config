@@ -339,8 +339,4 @@ links = {
 		input_scopes = { bypass }
 		output_scope = Country
 	}
-	bypass = {
-		input_scopes = { galactic_object leader }
-		output_scope = bypass	
-	}
 }
