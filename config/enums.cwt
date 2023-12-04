@@ -5,6 +5,11 @@ enums = {
 		scientist
 		envoy
 	}
+	enum[old_leader_classes] = {
+		governor
+		admiral
+		general
+	}
 	enum[days_months_years] = {
 		days
 		months
