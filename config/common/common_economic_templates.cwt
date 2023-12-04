@@ -89,16 +89,20 @@ economic_category = {
 		## cardinality = 1..inf
 		<resource>
 	}
-	## cardinality = 0..1
+	## cardinality = 0..2
 	generate_mult_modifiers = {
 		## cardinality = 1..3
 		enum[economic_modifier_categories]
 	}
-	## cardinality = 0..1
+	## cardinality = 0..2
 	generate_add_modifiers = {
 		## cardinality = 1..3
 		enum[economic_modifier_categories]
 	}
+	## cardinality = 0..1
+	add_unscaled_value_to_tooltip = bool
+	## cardinality = 0..1
+	scaled_value_key = localisation
 }
 
 alias[economic_template:cost] = {
