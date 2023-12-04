@@ -6487,7 +6487,7 @@ Supported Scopes: situation
 
 change_situation_target - Changes the target of a Situation.
 change_situation_target = none/scope
-Supported Scopes: situation
+Supported Scopes: any
 
 pass_targeted_resolution - Immediately passes the first found (oldest) proposed/voting for/failed resolution OR a new resolution of this type that has the specified target. Ignores whether the target is valid or not.
 pass_targeted_resolution = { resolution = <resolution type> target = <target>
