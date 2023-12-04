@@ -323,4 +323,24 @@ links = {
 		prefix = modifier:
 		data_source = alias_keys_field[modifier]
 	}
+	explorer = {
+		input_scopes = { astral_rift }
+		output_scope = Country
+	}
+	background_planet = {
+		input_scopes = { leader }
+		output_scope = planet
+	}
+	astral_rift = {
+		input_scopes = { galactic_object leader }
+		output_scope = astral_rift
+	}
+	lock_country = {
+		input_scopes = { bypass }
+		output_scope = Country
+	}
+	bypass = {
+		input_scopes = { galactic_object leader }
+		output_scope = bypass	
+	}
 }
