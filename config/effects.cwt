@@ -3184,9 +3184,6 @@ alias[effect:set_cooldown] = int_value_field
 ###Sets the current planet as the capital of its sector.
 alias[effect:set_sector_capital] = yes
 
-###Sets the current sector's focus.
-alias[effect:set_sector_focus] = <sector_focus>
-
 ###Sets the current planet to have the specified type designation.
 alias[effect:set_colony_type] = <colony_type>
 
