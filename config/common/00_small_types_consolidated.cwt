@@ -649,6 +649,7 @@ leader_class = {
 	assignment_cooldown = 360
 	## cardinality = 0..1
 	max_trait_points = int[0..inf]
+	## cardinality = 0..1
 	can_have_traits = bool
 	## cardinality = 0..1
 	## replace_scope = { this = leader root = leader }
@@ -657,6 +658,7 @@ leader_class = {
 		category = <economic_category>
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}
+	## cardinality = 0..1
 	default_category = enum[leader_classes]
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
@@ -670,4 +672,36 @@ leader_class = {
 		## cardinality = 1..inf
 		<job> = int
 	}
+	## cardinality = 0..1
+	can_be_assigned_to_federation = bool
+	## cardinality = 0..1
+	can_be_assigned_to_galactic_community = bool
+	## cardinality = 0..1
+	leader_capacity = @base_leader_cap
+	## cardinality = 0..1
+	replaces_old_class = enum[old_leader_classes]
+	## cardinality = 0..1
+	icon = int
+	## cardinality = 0..1
+	can_research_tech = bool
+	## cardinality = 0..1
+	can_research_special_projects = bool
+	## cardinality = 0..1
+	can_crew_science_ship = bool
+	## cardinality = 0..1
+	can_research_anomalies = bool
+	## cardinality = 0..1
+	can_survey = bool
+	## cardinality = 0..1
+	can_boost_cloaking_detection = bool
+	## cardinality = 0..1
+	can_research_archaeology_site = bool
+	## cardinality = 0..1
+	can_explore_rifts = bool
+	## cardinality = 0..1
+	can_conduct_active_reconnaissance = bool
+	## cardinality = 0..1
+	recruitable = bool
+	## cardinality = 0..1
+	can_rule_empire = bool
 }
