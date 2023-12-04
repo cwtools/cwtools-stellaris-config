@@ -2785,3 +2785,6 @@ alias[trigger:count_bypass] = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 }
+
+###Checks if the leader is hidden from the player
+alias[trigger:is_hidden] = bool
