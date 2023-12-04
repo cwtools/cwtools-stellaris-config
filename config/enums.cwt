@@ -161,6 +161,7 @@ enums = {
 		jumpdrive_windup
 		experimental_subspace_navigation_fleet_order
 		excavate_archaeological_site_fleet_order
+		explore_astral_rift_fleet_order
 	}
 	enum[galaxy_setup_values] = {
 		num_empires
