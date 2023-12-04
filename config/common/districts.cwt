@@ -105,7 +105,7 @@ district = {
 	conversion_ratio = float
 	## cardinality = 0..1
 	convert_to = {
-		## cardinality = 1..inf
+		## cardinality = 0..inf
 		<district>
 	}
 
