@@ -4116,3 +4116,22 @@ alias[effect:every_bypass] = {
 	# cardinality = 0..inf
 	alias_name[effect] = alias_match_left[effect] 
 }
+
+### Sets the scoped country's male ruler's title
+alias[effect:set_ruler_title_male] = localisation
+
+### Sets the scoped country's female ruler's title
+alias[effect:set_ruler_title_female] = localisation
+
+### Sets the scoped country's council position's male title
+alias[effect:set_council_position_title_male] = { 
+	position_tag = localisation
+	title = localisation
+}
+
+### Sets the scoped country's council position's female title
+alias[effect:set_council_position_title_female] = { 
+	position_tag = localisation
+	title = localisation
+}
+
