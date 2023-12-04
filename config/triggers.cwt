@@ -1,4 +1,5 @@
 
+
 #value_field/int_value_field: use == if the left hand side works in trigger:<trigger>, otherwise use =
 
 #scripted triggers
@@ -1946,12 +1947,6 @@ alias[trigger:num_planets_in_system] == int_value_field
 ###Checks if the current planet is the capital of its sector.
 alias[trigger:is_sector_capital] = bool
 
-###Checks if the current sector has the specified focus.
-alias[trigger:has_sector_focus] = <sector_focus>
-
-###Checks if the sector has any focus
-alias[trigger:has_any_sector_focus] = bool
-
 ## severity = warning
 ###Checks if the planet uses the specified district set.
 alias[trigger:uses_district_set] = enum[district_sets]
@@ -2788,3 +2783,18 @@ alias[trigger:count_bypass] = {
 
 ###Checks if the leader is hidden from the player
 alias[trigger:is_hidden] = bool
+
+###Checks if the scoped fleet is a garrison
+alias[trigger:is_garrison] = bool
+
+###Checks the country/pop/leader/species' number of positive traits (traits with a cost strictly greater than 0 count as positive)
+alias[trigger:num_positive_traits] < int
+
+###Checks the country/pop/leader/species' number of negative traits (traits with a cost strictly lower than 0 count as negative)
+alias[trigger:num_negative_traits] < int
+
+###Checks if the current player is currently viewing the galaxy map
+alias[trigger:is_on_galaxy_map] = bool
+
+###Checks if the current player is currently paused
+alias[trigger:is_paused] = bool
