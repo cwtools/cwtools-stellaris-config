@@ -3981,7 +3981,7 @@ alias[effect:destroy_astral_rift] = scope[any]
 
 ###Changes the target of a Situation
 alias[effect:change_situation_target] = none
-alias[effect:change_situation_target] = scope[situation]
+alias[effect:change_situation_target] = scope[any]
 
 ###Assigns a council position to the country's council, if possible
 alias[effect:set_council_position_to_council] = <councilor>
