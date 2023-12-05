@@ -1,6 +1,4 @@
 
-
-
 #value_field/int_value_field: use == if the left hand side works in trigger:<trigger>, otherwise use =
 
 #scripted triggers
@@ -989,6 +987,10 @@ alias[trigger:has_planet_modifier] = <planet_modifier>
 ### Checks if the scoped country has a specific point of interest in its situation log
 alias[trigger:has_point_of_interest] = {
 	poi = value[point_of_interest]
+}
+### Checks if the scoped country has a specific point of interest in its situation log
+alias[trigger:has_point_of_interest] = {
+	poi = enum[enum_point_of_interest]
 }
 
 ### Checks if a system contains any fleets, stations, mega structures or colonized planets.
