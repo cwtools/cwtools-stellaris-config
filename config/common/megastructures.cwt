@@ -183,4 +183,7 @@ megastructure = {
 	
 	## cardinality = 0..1
 	build_megastructure_no_cost_localization_key = localisation
+	
+	## cardinality = 0..1
+	hide_name = bool
 }
