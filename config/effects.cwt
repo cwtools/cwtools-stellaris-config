@@ -4031,92 +4031,6 @@ alias[effect:set_next_astral_rift_event] = {
 	fail_probability = float
 }
 
-### Iterate through every astral rift - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly
-alias[effect:random_astral_rift] = {
-	limit = {
-		## cardinality = 0..inf
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## cardinality = 0..inf
-	weights = {
-		alias_name[modifier_rule] = alias_match_left[modifier_rule]
-	}
-	## cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
-	
-}
-
-### Iterate through every astral rift - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
-alias[effect:ordered_astral_rift] = {
-	limit = {
-		## cardinality = 0..inf
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## cardinality = 0..1
-	position = int
-	## cardinality = 0..1
-	order_by = trigger:<trigger>
-	## cardinality = 0..1
-	order_by = value[variable]
-	## cardinality = 0..1
-	inverse = bool
-	# cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
-}
-
-### Iterate through every astral rift - executes the enclosed effects on all of them for which the limit triggers return true
-alias[effect:every_astral_rift] = {
-	limit = {
-		## cardinality = 0..inf
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	# cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
-}
-
-### Iterate through every bypass - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
-alias[effect:random_bypass] = {
-	limit = {
-		## cardinality = 0..inf
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## cardinality = 0..inf
-	weights = {
-		alias_name[modifier_rule] = alias_match_left[modifier_rule]
-	}
-	## cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
-	
-}
-
-### Iterate through every bypass - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
-alias[effect:ordered_bypass] = {
-	limit = {
-		## cardinality = 0..inf
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## cardinality = 0..1
-	position = int
-	## cardinality = 0..1
-	order_by = trigger:<trigger>
-	## cardinality = 0..1
-	order_by = value[variable]
-	## cardinality = 0..1
-	inverse = bool
-	# cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
-}
-
-### Iterate through every bypass - executes the enclosed effects on all of them for which the limit triggers return true
-alias[effect:every_bypass] = {
-	limit = {
-		## cardinality = 0..inf
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	# cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
-}
-
 ### Sets the scoped country's male ruler's title
 alias[effect:set_ruler_title_male] = localisation
 
@@ -4134,4 +4048,3 @@ alias[effect:set_council_position_title_female] = {
 	position_tag = localisation
 	title = localisation
 }
-
