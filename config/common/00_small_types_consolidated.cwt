@@ -825,6 +825,8 @@ inlinescriptsfolder = {
 	## cardinality = 0..inf
 	alias_name[effect] = alias_match_left[effect]
 	## cardinality = 0..inf
+	alias_name[trigger] = alias_match_left[trigger]
+	## cardinality = 0..inf
 	layer = {
 		icon = <sprite>
 		## cardinality = 0..inf
@@ -854,4 +856,13 @@ inlinescriptsfolder = {
 		trigger = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
+	}
+	## cardinality = 0..1
+	sorting_priority = localisation
+	## cardinality = 0..1
+	upkeep = {
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 }
