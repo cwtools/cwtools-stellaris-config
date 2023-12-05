@@ -207,6 +207,12 @@ planet_class = {
 	default_planet_selection = bool
 	## cardinality = 0..1
 	planet_custom_label_offset = int
+	## cardinality = 0..1
+	astral_rift_gfx = yes
+	## cardinality = 0..1
+	astral_scar = yes
+	## cardinality = 0..1
+	ideal = yes
 }
 
 planet_class_random_list = {
