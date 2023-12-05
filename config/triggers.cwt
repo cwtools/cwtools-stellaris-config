@@ -1146,6 +1146,12 @@ alias[trigger:is_point_of_interest] = {
 	event_chain = <event_chain>
 	owner = scope_group[target_country]
 }
+### Checks if the planet/country/ship/system/ambient object has a specific point of interest for a specific event chain for a specific country
+alias[trigger:is_point_of_interest] = {
+	id = enum[enum_point_of_interest]
+	event_chain = <event_chain>
+	owner = scope_group[target_country]
+}
 
 ### Checks if the country's AI prefers weapons using this component tag
 alias[trigger:is_preferred_weapons] = enum[component_tags]
