@@ -1536,6 +1536,8 @@ alias[effect:create_leader] = {
 	###Default = yes
 	can_see_in_list = bool
 	## cardinality = 0..1
+	hide_leader = yes
+	## cardinality = 0..1
 	###Default = yes
 	can_assign_to_council = bool
 	## cardinality = 0..1
@@ -2206,6 +2208,8 @@ alias[effect:create_message] = {
 		key = border
 		value = <sprite>
 	}
+	## cardinality = 0..1
+	recipient = scope[country]
 }
 
 #
@@ -2790,6 +2794,8 @@ alias[effect:spawn_planet] = {
 	orbit_angle = float
 	## cardinality = 0..1
 	orbit_angle_offset = int
+	## cardinality = 0..1
+	spawn_beyond_gravity_well = yes
 	## cardinality = 0..1
 	## push_scope = planet
 	init_effect = {
@@ -3931,7 +3937,7 @@ alias[effect:unlock_council_selection] = yes
 alias[effect:freeze_leader_age] = yes
 
 ###Sets an arbitrarily-named flag on the scoped astral rift
-alias[effect:set_astral_rift_flag] = value[astral_rift_flag]
+alias[effect:set_astral_rift_flag] = value_set[astral_rift_flag]
 
 ###Removes a flag from the scoped astral rift
 alias[effect:remove_astral_rift_flag] = value[astral_rift_flag]
