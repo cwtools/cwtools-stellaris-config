@@ -135,8 +135,6 @@ component_template = {
 		null
 	}
 	## cardinality = 0..1
-	inline_script = scalar
-	## cardinality = 0..1
 	custom_tooltip = localisation
 	## replace_scope = { root = ship this = ship }
 	alias_name[triggered_ship_modifier] = alias_match_left[triggered_ship_modifier]
@@ -150,13 +148,6 @@ component_template = {
 	## cardinality = 0..1
 	ai_weight = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
-		## cardinality = 0..1
-		inline_script = scalar
-		## cardinality = 0..1
-		inline_script = {
-			script = scalar
-			MULT = float
-		}
 	}
 	subtype[utility_component_template] = {
 		power = int
