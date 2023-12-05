@@ -1,5 +1,6 @@
 
 
+
 #value_field/int_value_field: use == if the left hand side works in trigger:<trigger>, otherwise use =
 
 #scripted triggers
@@ -2741,12 +2742,6 @@ alias[trigger:has_lock] = bool
 ###Checks if the scoped fleet can go MIA
 alias[trigger:can_go_mia] = bool
 
-###Iterate through every astral rift - checks whether the enclosed triggers return true for any of them
-alias[trigger:any_astral_rift] = {
-	## cardinality = 1..inf
-	alias_name[trigger] = alias_match_left[trigger]
-}
-
 ###Iterate through every astral rift - checks whether the enclosed triggers return true for X/all of them
 alias[trigger:count_astral_rift] = {
 	## cardinality = 1..1
@@ -2759,12 +2754,6 @@ alias[trigger:count_astral_rift] = {
 		## cardinality = 1..inf
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-}
-
-###Iterate through every bypass - checks whether the enclosed triggers return true for any of them
-alias[trigger:any_bypass] = {
-	## cardinality = 1..inf
-	alias_name[trigger] = alias_match_left[trigger]
 }
 
 ###Iterate through every bypass - checks whether the enclosed triggers return true for X/all of them
