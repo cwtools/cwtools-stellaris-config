@@ -3893,14 +3893,6 @@ alias[effect:every_observed_pre_ftl_within_border] = {
 	alias_name[effect] = alias_match_left[effect]
 }
 
-## push_scope = country
-###Iterate through all pre-ftl countries with an observation post around their capital within the country's or sector's borders - executes the enclosed effects on all of them for which the limit triggers return true
-alias[effect:every_observed_pre_ftl_within_border] = {
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-	alias_name[effect] = alias_match_left[effect]
-}
-
 ## push_scope = bypass
 ### Iterate through every bypass - executes the enclosed effects on all of them for which the limit triggers return true
 alias[effect:every_bypass] = {
