@@ -2785,10 +2785,10 @@ alias[trigger:is_hidden] = bool
 alias[trigger:is_garrison] = bool
 
 ###Checks the country/pop/leader/species' number of positive traits (traits with a cost strictly greater than 0 count as positive)
-alias[trigger:num_positive_traits] < int
+alias[trigger:num_positive_traits] == int_value_field
 
 ###Checks the country/pop/leader/species' number of negative traits (traits with a cost strictly lower than 0 count as negative)
-alias[trigger:num_negative_traits] < int
+alias[trigger:num_negative_traits] == int_value_field
 
 ###Checks if the current player is currently viewing the galaxy map
 alias[trigger:is_on_galaxy_map] = bool
