@@ -3502,6 +3502,8 @@ alias[effect:export_trigger_value_to_variable] = {
 	}
 	trigger = alias_keys_field[trigger]
 	variable = value_set[variable]
+	## cardinality = 0..1
+	rounded = yes
 }
 
 ###Exports the value of the current country's stockpile of the specified resource to a variable.
