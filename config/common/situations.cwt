@@ -155,6 +155,15 @@ situation_type = {
 		ai_weight = {
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		}
+		## cardinality = 0..1
+		active_tooltip = localisation
+	}
+	## cardinality = 0..1
+	title = {
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		text = localisation
 	}
 	## cardinality = 0..1
 	###Situation will start at this number. Default is 0
