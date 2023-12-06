@@ -1,12 +1,3 @@
-types = {
-	type[astral_rift] = {
-		path = "game/common/astral_rift"
-		subtype[scripted] = {
-			connection_type = scripted_connection
-		}
-	}
-}
-
 astral_rift = {
 	### the localization key used in triggers and effects for the type
 	name = localisation
@@ -34,11 +25,6 @@ astral_rift = {
 			## cardinality = 0..inf
 			## replace_scope = { root = country this = country }
 			alias_name[trigger] = alias_match_left[trigger]
-		}
-		## cardinality = 0..1
-		inline_script = {
-			## cardinality = 0..inf
-			scalar = scalar
 		}
 	}
 	

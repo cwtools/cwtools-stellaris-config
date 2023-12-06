@@ -164,6 +164,8 @@ authority = {
 	localization_postfix = enum[authority_postfixes]
 	## cardinality = 0..1
 	localization_postfix = scalar
+	## cardinality = 0..1
+	uses_mandates = bool
 
 	## cardinality = 0..1
 	tags = {
@@ -250,10 +252,25 @@ civic_or_origin = {
 		alias_name[government_trigger] = alias_match_left[government_trigger]
 	}
 	## cardinality = 0..1
+	modification = {
+		## cardinality = 0..1
+		add = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..1
+		remove = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
+	## cardinality = 0..1
+	alternate_civic_version = <civic_or_origin.civic>
+	## cardinality = 0..1
 	icon = filepath
 	## cardinality = 0..1
 	### localisation of custom effects
 	description = localisation
+	## cardinality = 0..1
+	negative_description = localisation
 	## cardinality = 0..1
 	## replace_scope = { root = country this = country }
 	### Scriptable weight for randomizing a civic
@@ -269,6 +286,10 @@ civic_or_origin = {
 		## cardinality = 0..1
 		alias_name[modifier] = alias_match_left[modifier]
 	}
+	## cardinality = 0..1
+	hide_modifiers = bool
+	## cardinality = 0..1
+	custom_tooltip_with_modifiers = localisation
 	## cardinality = 0..1
 	starting_colony = <planet_class>
 	## cardinality = 0..1
@@ -423,6 +444,15 @@ councilor = {
 	## cardinality = 0..1
 	### Is this position forced to be on the council. (Default = no)
 	required = bool
+	## cardinality = 0..1
+	ai_hiring_weight = {
+	}
+	## cardinality = 0..1
+	ai_priority = int
+	## cardinality = 0..1
+	optional = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 }
 
 ## replace_scope = { this = country root = country }

@@ -3,7 +3,7 @@ scopes = {
     Country = {
         aliases = { country }
     }
-    Leader = {
+	Leader = {
         aliases = { leader }
     }
     System = {
@@ -12,13 +12,13 @@ scopes = {
     Planet = {
         aliases = { planet }
     }
-    Ship = {
+	Ship = {
         aliases = { ship }
     }
     Fleet = {
         aliases = { fleet }
     }
-    Pop = {
+	Pop = {
         aliases = { pop }
     }
     "Ambient Object" = {
@@ -54,7 +54,7 @@ scopes = {
     Star = {
         aliases = { star }
     }
-    Deposit = {
+	Deposit = {
         aliases = { deposit }
     }
 	"Archaeological Site" = {
@@ -86,6 +86,21 @@ scopes = {
 	}
 	Debris = {
 		aliases = { debris }
+	}
+	Explorer = {
+        aliases = { explorer }
+    }
+	"Background Planet" = {
+        aliases = { "backgroundplanet" "background_planet" }
+    }
+	"Astral Rift" = {
+		aliases = { "astralrift" "astral_rift" }
+	}
+	"Lock Country" = {
+		aliases = { "lockcountry"  "lock_country" }
+	}
+	Bypass = {
+		aliases = { bypass }
 	}
 }
 

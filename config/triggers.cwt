@@ -988,6 +988,10 @@ alias[trigger:has_planet_modifier] = <planet_modifier>
 alias[trigger:has_point_of_interest] = {
 	poi = value[point_of_interest]
 }
+### Checks if the scoped country has a specific point of interest in its situation log
+alias[trigger:has_point_of_interest] = {
+	poi = enum[enum_point_of_interest]
+}
 
 ### Checks if a system contains any fleets, stations, mega structures or colonized planets.
 alias[trigger:has_presence] = bool
@@ -1139,6 +1143,12 @@ alias[trigger:is_overlord_to] = scope_group[target_country]
 ### Checks if the planet/country/ship/system/ambient object has a specific point of interest for a specific event chain for a specific country
 alias[trigger:is_point_of_interest] = {
 	id = value[point_of_interest]
+	event_chain = <event_chain>
+	owner = scope_group[target_country]
+}
+### Checks if the planet/country/ship/system/ambient object has a specific point of interest for a specific event chain for a specific country
+alias[trigger:is_point_of_interest] = {
+	id = enum[enum_point_of_interest]
 	event_chain = <event_chain>
 	owner = scope_group[target_country]
 }
@@ -1946,12 +1956,6 @@ alias[trigger:num_planets_in_system] == int_value_field
 ###Checks if the current planet is the capital of its sector.
 alias[trigger:is_sector_capital] = bool
 
-###Checks if the current sector has the specified focus.
-alias[trigger:has_sector_focus] = <sector_focus>
-
-###Checks if the sector has any focus
-alias[trigger:has_any_sector_focus] = bool
-
 ## severity = warning
 ###Checks if the planet uses the specified district set.
 alias[trigger:uses_district_set] = enum[district_sets]
@@ -2746,12 +2750,6 @@ alias[trigger:has_lock] = bool
 ###Checks if the scoped fleet can go MIA
 alias[trigger:can_go_mia] = bool
 
-###Iterate through every astral rift - checks whether the enclosed triggers return true for any of them
-alias[trigger:any_astral_rift] = {
-	## cardinality = 1..inf
-	alias_name[trigger] = alias_match_left[trigger]
-}
-
 ###Iterate through every astral rift - checks whether the enclosed triggers return true for X/all of them
 alias[trigger:count_astral_rift] = {
 	## cardinality = 1..1
@@ -2764,12 +2762,6 @@ alias[trigger:count_astral_rift] = {
 		## cardinality = 1..inf
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-}
-
-###Iterate through every bypass - checks whether the enclosed triggers return true for any of them
-alias[trigger:any_bypass] = {
-	## cardinality = 1..inf
-	alias_name[trigger] = alias_match_left[trigger]
 }
 
 ###Iterate through every bypass - checks whether the enclosed triggers return true for X/all of them
@@ -2785,3 +2777,21 @@ alias[trigger:count_bypass] = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 }
+
+###Checks if the leader is hidden from the player
+alias[trigger:is_hidden] = bool
+
+###Checks if the scoped fleet is a garrison
+alias[trigger:is_garrison] = bool
+
+###Checks the country/pop/leader/species' number of positive traits (traits with a cost strictly greater than 0 count as positive)
+alias[trigger:num_positive_traits] < int
+
+###Checks the country/pop/leader/species' number of negative traits (traits with a cost strictly lower than 0 count as negative)
+alias[trigger:num_negative_traits] < int
+
+###Checks if the current player is currently viewing the galaxy map
+alias[trigger:is_on_galaxy_map] = bool
+
+###Checks if the current player is currently paused
+alias[trigger:is_paused] = bool

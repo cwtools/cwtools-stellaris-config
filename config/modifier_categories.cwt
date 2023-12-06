@@ -71,4 +71,7 @@ modifier_categories = {
     Espionage = {
         supported_scopes = { country spynetwork }
     }
+	"Ship Design Stats" = {
+		 supported_scopes = { ship starbase fleet country }
+	}
 }

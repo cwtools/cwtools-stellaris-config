@@ -1536,6 +1536,8 @@ alias[effect:create_leader] = {
 	###Default = yes
 	can_see_in_list = bool
 	## cardinality = 0..1
+	hide_leader = yes
+	## cardinality = 0..1
 	###Default = yes
 	can_assign_to_council = bool
 	## cardinality = 0..1
@@ -2206,6 +2208,8 @@ alias[effect:create_message] = {
 		key = border
 		value = <sprite>
 	}
+	## cardinality = 0..1
+	recipient = scope[country]
 }
 
 #
@@ -2791,6 +2795,8 @@ alias[effect:spawn_planet] = {
 	## cardinality = 0..1
 	orbit_angle_offset = int
 	## cardinality = 0..1
+	spawn_beyond_gravity_well = yes
+	## cardinality = 0..1
 	## push_scope = planet
 	init_effect = {
 		alias_name[effect] = alias_match_left[effect]
@@ -3184,9 +3190,6 @@ alias[effect:set_cooldown] = int_value_field
 ###Sets the current planet as the capital of its sector.
 alias[effect:set_sector_capital] = yes
 
-###Sets the current sector's focus.
-alias[effect:set_sector_focus] = <sector_focus>
-
 ###Sets the current planet to have the specified type designation.
 alias[effect:set_colony_type] = <colony_type>
 
@@ -3499,6 +3502,8 @@ alias[effect:export_trigger_value_to_variable] = {
 	}
 	trigger = alias_keys_field[trigger]
 	variable = value_set[variable]
+	## cardinality = 0..1
+	rounded = yes
 }
 
 ###Exports the value of the current country's stockpile of the specified resource to a variable.
@@ -3934,7 +3939,7 @@ alias[effect:unlock_council_selection] = yes
 alias[effect:freeze_leader_age] = yes
 
 ###Sets an arbitrarily-named flag on the scoped astral rift
-alias[effect:set_astral_rift_flag] = value[astral_rift_flag]
+alias[effect:set_astral_rift_flag] = value_set[astral_rift_flag]
 
 ###Removes a flag from the scoped astral rift
 alias[effect:remove_astral_rift_flag] = value[astral_rift_flag]
@@ -3981,7 +3986,7 @@ alias[effect:destroy_astral_rift] = scope[any]
 
 ###Changes the target of a Situation
 alias[effect:change_situation_target] = none
-alias[effect:change_situation_target] = scope[situation]
+alias[effect:change_situation_target] = scope[any]
 
 ###Assigns a council position to the country's council, if possible
 alias[effect:set_council_position_to_council] = <councilor>
@@ -4034,88 +4039,20 @@ alias[effect:set_next_astral_rift_event] = {
 	fail_probability = float
 }
 
-### Iterate through every astral rift - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly
-alias[effect:random_astral_rift] = {
-	limit = {
-		## cardinality = 0..inf
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## cardinality = 0..inf
-	weights = {
-		alias_name[modifier_rule] = alias_match_left[modifier_rule]
-	}
-	## cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
-	
+### Sets the scoped country's male ruler's title
+alias[effect:set_ruler_title_male] = localisation
+
+### Sets the scoped country's female ruler's title
+alias[effect:set_ruler_title_female] = localisation
+
+### Sets the scoped country's council position's male title
+alias[effect:set_council_position_title_male] = { 
+	position_tag = localisation
+	title = localisation
 }
 
-### Iterate through every astral rift - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
-alias[effect:ordered_astral_rift] = {
-	limit = {
-		## cardinality = 0..inf
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## cardinality = 0..1
-	position = int
-	## cardinality = 0..1
-	order_by = trigger:<trigger>
-	## cardinality = 0..1
-	order_by = value[variable]
-	## cardinality = 0..1
-	inverse = bool
-	# cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
-}
-
-### Iterate through every astral rift - executes the enclosed effects on all of them for which the limit triggers return true
-alias[effect:every_astral_rift] = {
-	limit = {
-		## cardinality = 0..inf
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	# cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
-}
-
-### Iterate through every bypass - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
-alias[effect:random_bypass] = {
-	limit = {
-		## cardinality = 0..inf
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## cardinality = 0..inf
-	weights = {
-		alias_name[modifier_rule] = alias_match_left[modifier_rule]
-	}
-	## cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
-	
-}
-
-### Iterate through every bypass - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
-alias[effect:ordered_bypass] = {
-	limit = {
-		## cardinality = 0..inf
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## cardinality = 0..1
-	position = int
-	## cardinality = 0..1
-	order_by = trigger:<trigger>
-	## cardinality = 0..1
-	order_by = value[variable]
-	## cardinality = 0..1
-	inverse = bool
-	# cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
-}
-
-### Iterate through every bypass - executes the enclosed effects on all of them for which the limit triggers return true
-alias[effect:every_bypass] = {
-	limit = {
-		## cardinality = 0..inf
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	# cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
+### Sets the scoped country's council position's female title
+alias[effect:set_council_position_title_female] = { 
+	position_tag = localisation
+	title = localisation
 }

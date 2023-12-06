@@ -333,6 +333,6 @@ Output Scope: astral_rift
 
 lock_country - Scopes from a bypass to the country who locked it.
 Supported Scopes: bypass
-Output Scope: bypass
+Output Scope: country
 
 =================

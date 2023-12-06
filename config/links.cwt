@@ -18,7 +18,7 @@ links = {
 	owner = {
 		input_scopes = {
 			Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System first_contact Megastructure Army
-			Deposit archaeological_site spy_network espionage_operation situation agreement debris
+			Deposit archaeological_site spy_network espionage_operation situation agreement debris bypass astral_rift
 		}
 		output_scope = Country
 	}
@@ -39,7 +39,7 @@ links = {
 		output_scope = Country
 	}
 	leader = {
-		input_scopes = { planet country ship fleet leader army pop_faction federation archaeological_site first_contact spy_network espionage_operation }
+		input_scopes = { planet country ship fleet leader army pop_faction federation archaeological_site first_contact spy_network espionage_operation astral_rift }
 		output_scope = leader
 	}
 	last_created_leader = {
@@ -49,7 +49,7 @@ links = {
 	solar_system = {
 		input_scopes = { #matches celestial_coordinate scope_group
 			planet ship fleet system ambient_object megastructure starbase archaeological_site first_contact
-			deposit pop army country leader debris
+			deposit pop army country leader debris bypass astral_rift
 		}
 		output_scope = System
 	}
@@ -90,7 +90,7 @@ links = {
 		output_scope = Fleet
 	}
 	fleet = {
-		input_scopes = { Ship Starbase Leader Army Fleet }
+		input_scopes = { Ship Starbase Leader Army Fleet astral_rift }
 		output_scope = Fleet
 	}
 	excavator_fleet = {
@@ -120,14 +120,14 @@ links = {
 	owner_species = {
 		input_scopes = { #matches owner
 			Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System first_contact Megastructure Army
-			Deposit archaeological_site spy_network espionage_operation situation agreement debris
+			Deposit archaeological_site spy_network espionage_operation situation agreement debris bypass astral_rift
 		}
 		output_scope = Species
 	}
 	owner_main_species = {
 		input_scopes = { #matches owner
 			Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System first_contact Megastructure Army
-			Deposit archaeological_site spy_network espionage_operation situation agreement debris
+			Deposit archaeological_site spy_network espionage_operation situation agreement debris bypass astral_rift
 		}
 		output_scope = Species
 	}
@@ -158,7 +158,7 @@ links = {
 	sector = {
 		input_scopes = {
 			Planet System Leader Ship Fleet ambient_object Megastructure Starbase archaeological_site first_contact
-			system sector pop army deposit debris
+			system sector pop army deposit debris bypass
 		}
 		output_scope = Sector
 	}
@@ -169,19 +169,19 @@ links = {
 	ruler = {
 		input_scopes = { #matches owner
 			Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System first_contact Megastructure Army
-			Deposit archaeological_site spy_network espionage_operation situation agreement debris
+			Deposit archaeological_site spy_network espionage_operation situation agreement debris bypass astral_rift
 		}
 		output_scope = Leader
 	}
 	heir = {
 		input_scopes = { #matches owner
 			Species Ship Pop Fleet Planet PopFaction Sector Leader Country Starbase System first_contact Megastructure Army
-			Deposit archaeological_site spy_network espionage_operation situation agreement debris
+			Deposit archaeological_site spy_network espionage_operation situation agreement debris bypass astral_rift
 		}
 		output_scope = Leader
 	}
 	star = {
-		input_scopes = { Planet Ship Fleet System ambient_object Megastructure Starbase archaeological_site first_contact debris }
+		input_scopes = { Planet Ship Fleet System ambient_object bypass Megastructure Starbase archaeological_site first_contact debris astral_rift }
 		output_scope = Planet
 	}
 	last_created_design = {
@@ -211,7 +211,7 @@ links = {
 	system_star = {
 		input_scopes = { #matches celestial_coordinate scope_group
 			planet ship fleet system ambient_object megastructure starbase archaeological_site first_contact
-			deposit pop army country leader debris
+			deposit pop army country leader debris bypass astral_rift
 		}
 		output_scope = Planet
 	}
@@ -322,5 +322,21 @@ links = {
 		type = value
 		prefix = modifier:
 		data_source = alias_keys_field[modifier]
+	}
+	explorer = {
+		input_scopes = { astral_rift }
+		output_scope = Country
+	}
+	background_planet = {
+		input_scopes = { leader }
+		output_scope = planet
+	}
+	astral_rift = {
+		input_scopes = { galactic_object leader }
+		output_scope = astral_rift
+	}
+	lock_country = {
+		input_scopes = { bypass }
+		output_scope = Country
 	}
 }

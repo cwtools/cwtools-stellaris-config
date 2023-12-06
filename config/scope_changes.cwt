@@ -1,5 +1,7 @@
 
 
+# Note every/random/ordered/any/count items go here instead of triggers or effects
+
 alias[trigger:scope_field] = { alias_name[trigger] = alias_match_left[trigger] }
 
 ###An inverted trigger, functionally the same as NOR
@@ -3889,4 +3891,118 @@ alias[effect:every_observed_pre_ftl_within_border] = {
 	## cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = country
+###Iterate through all pre-ftl countries with an observation post around their capital within the country's or sector's borders - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_observed_pre_ftl_within_border] = {
+	## cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = bypass
+### Iterate through every bypass - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_bypass] = {
+	limit = {
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	# cardinality = 0..inf
+	alias_name[effect] = alias_match_left[effect] 
+}
+
+## push_scope = bypass
+### Iterate through every bypass - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_bypass] = {
+	limit = {
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	position = int
+	## cardinality = 0..1
+	order_by = trigger:<trigger>
+	## cardinality = 0..1
+	order_by = value[variable]
+	## cardinality = 0..1
+	inverse = bool
+	# cardinality = 0..inf
+	alias_name[effect] = alias_match_left[effect] 
+}
+
+## push_scope = bypass
+### Iterate through every bypass - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_bypass] = {
+	limit = {
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..inf
+	weights = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	## cardinality = 0..inf
+	alias_name[effect] = alias_match_left[effect] 
+	
+}
+
+## push_scope = astral_rift
+### Iterate through every astral rift - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_astral_rift] = {
+	limit = {
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	# cardinality = 0..inf
+	alias_name[effect] = alias_match_left[effect] 
+}
+
+## push_scope = astral_rift
+### Iterate through every astral rift - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_astral_rift] = {
+	limit = {
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	position = int
+	## cardinality = 0..1
+	order_by = trigger:<trigger>
+	## cardinality = 0..1
+	order_by = value[variable]
+	## cardinality = 0..1
+	inverse = bool
+	# cardinality = 0..inf
+	alias_name[effect] = alias_match_left[effect] 
+}
+
+## push_scope = astral_rift
+### Iterate through every astral rift - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly
+alias[effect:random_astral_rift] = {
+	limit = {
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..inf
+	weights = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	## cardinality = 0..inf
+	alias_name[effect] = alias_match_left[effect] 
+	
+}
+
+## push_scope = astral_rift
+###Iterate through every astral rift - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_astral_rift] = {
+	## cardinality = 1..inf
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+## push_scope = bypass
+###Iterate through every bypass - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_bypass] = {
+	## cardinality = 1..inf
+	alias_name[trigger] = alias_match_left[trigger]
 }

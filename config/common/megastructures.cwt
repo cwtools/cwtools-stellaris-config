@@ -135,7 +135,19 @@ megastructure = {
 		}
 	}
 	## cardinality = 0..1
-	## replace_scope = { this = system root = system from = country fromfrom = megastructure }
+	## replace_scope = { this = system root = system from = country fromfrom = fleet }
+		on_build_queued = {
+		## cardinality = 0..inf
+		alias_name[effect] = alias_match_left[effect]
+	}
+	## cardinality = 0..1
+	## replace_scope = { this = system root = system from = country fromfrom = fleet }
+		on_build_unqueued = {
+		## cardinality = 0..inf
+		alias_name[effect] = alias_match_left[effect]
+	}
+	## cardinality = 0..1
+	## replace_scope = { this = system root = system from = country fromfrom = megastructure fromfromfrom = fleet }
 		on_build_start = {
 		## cardinality = 0..inf
 		alias_name[effect] = alias_match_left[effect]
@@ -147,7 +159,7 @@ megastructure = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 	## cardinality = 0..1
-	## replace_scope = { this = system root = system from = country fromfrom = megastructure }
+	## replace_scope = { this = system root = system from = country fromfrom = megastructure fromfromfrom = fleet }
 		on_build_complete = {
 		## cardinality = 0..inf
 		alias_name[effect] = alias_match_left[effect]
@@ -168,4 +180,10 @@ megastructure = {
 	
 	## cardinality = 0..1
 	victory_score = int
+	
+	## cardinality = 0..1
+	build_megastructure_no_cost_localization_key = localisation
+	
+	## cardinality = 0..1
+	hide_name = bool
 }

@@ -5,6 +5,11 @@ enums = {
 		scientist
 		envoy
 	}
+	enum[old_leader_classes] = {
+		governor
+		admiral
+		general
+	}
 	enum[days_months_years] = {
 		days
 		months
@@ -161,6 +166,7 @@ enums = {
 		jumpdrive_windup
 		experimental_subspace_navigation_fleet_order
 		excavate_archaeological_site_fleet_order
+		explore_astral_rift_fleet_order
 	}
 	enum[galaxy_setup_values] = {
 		num_empires
@@ -356,5 +362,18 @@ enums = {
 		expired
 		broken
 		cancelled
+	}
+	enum[enum_point_of_interest] = {
+		curator_poi_dragon
+		curator_poi_technosphere
+		curator_poi_wraith
+		curator_poi_horror
+		curator_poi_fortress
+		curator_poi_hiver
+		curator_poi_stellarite
+		curator_poi_dreadnought
+		curator_poi_hatchling
+		curator_poi_tiyanki
+		curator_poi_scavenger_bot
 	}
 }

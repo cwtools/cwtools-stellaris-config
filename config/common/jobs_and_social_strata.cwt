@@ -129,6 +129,8 @@ job = {
 	## cardinality = 0..1
 	possible_precalc = can_fill_drone_job
 	## cardinality = 0..1
+	possible_precalc = can_fill_precursor_job
+	## cardinality = 0..1
 	possible_precalc = enum[job_triggers]
 
 	## cardinality = 0..1
