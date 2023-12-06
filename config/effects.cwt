@@ -1775,14 +1775,20 @@ alias[effect:spawn_natural_wormhole] = {
 	## cardinality = 0..1
 	orbit_angle = random
 	## cardinality = 0..1
-	orbit_angle = int[0..360]
+	orbit_angle = int[-360..360]
 	## cardinality = 0..1
 	orbit_angle = {
-		min = int[0..360]
-		max = int[0..360]
+		min = int[-360..360]
+		max = int[-360..360]
 	}
 	## cardinality = 0..1
 	random_pos = bool
+	## cardinality = 0..1
+	graphics_entity_name = scalar
+	## cardinality = 0..1
+	init_effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
 }
 
 ###Link the wormhole from the scoped system to the wormhole in the target system.
