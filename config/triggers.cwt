@@ -1,4 +1,5 @@
 
+
 #value_field/int_value_field: use == if the left hand side works in trigger:<trigger>, otherwise use =
 
 #scripted triggers
@@ -2615,10 +2616,10 @@ alias[trigger:has_pre_ftl_age] = <pre_ftl_age>
 # 3.8 "Gemini"
 
 ###Checks the country's number of civics
-alias[trigger:civics_count] == int
+alias[trigger:civics_count] == int_value_field
 
 ###Checks the scope leader's years of service
-alias[trigger:leader_years_of_service] == int
+alias[trigger:leader_years_of_service] == int_value_field
 
 ###num_leader_traits - Checks the number of leader traits or total tiers of traits for a specific leader
 alias[trigger:num_leader_traits] = {
@@ -2692,7 +2693,7 @@ alias[trigger:is_background_planet] = scope_group[target_planet]
 alias[trigger:is_councilor] = bool
 
 ###Checks the scope leader's lifespan
-alias[trigger:leader_lifespan] > int
+alias[trigger:leader_lifespan] = int_value_field
 
 ###Checks if the specified relic was the last lost one 
 alias[trigger:last_lost_relic] = <relic>
@@ -2707,7 +2708,7 @@ alias[trigger:is_astral_scar] = bool
 alias[trigger:can_lock_be_renewed] = bool
 
 ###Checks current value for council legitimacy for the scoped country
-alias[trigger:council_legitimacy] = int
+alias[trigger:council_legitimacy] = value_field
 
 ## severity = warning
 ###Checks if the astral rift has a specific flag
@@ -2718,7 +2719,7 @@ alias[trigger:has_astral_rift_flag] = value[astral_rift_flag]
 alias[trigger:has_completed_event_chain] = value[event_chain_key]
 
 ###Checks the distance of a controlled system to its owner's capital
-alias[trigger:distance_to_capital] = int
+alias[trigger:distance_to_capital] = value_field
 
 ###Returns true if the astral rift starting event pool is empty
 alias[trigger:is_astral_rift_pool_empty] = bool
@@ -2730,13 +2731,13 @@ alias[trigger:has_astral_rift] = bool
 alias[trigger:is_site_locked] = bool
 
 ###Checks the number of days left for the Relics Triumph
-alias[trigger:triumph_days_left] = int
+alias[trigger:triumph_days_left] = int_value_field
 
 ###Checks the difference between an explorer's level and an Astral Rift current difficulty
-alias[trigger:astral_rift_relative_difficulty] = int
+alias[trigger:astral_rift_relative_difficulty] = value_field
 
 ###Return how many Astral Rifts were completed by the country
-alias[trigger:astral_rifts_completed] = int
+alias[trigger:astral_rifts_completed] = int_value_field
 
 ###Returns true if the astral rift with the given id is or was explored by the scoped country
 alias[trigger:is_astral_rift_explored] = <astral_rift>
@@ -2785,10 +2786,10 @@ alias[trigger:is_hidden] = bool
 alias[trigger:is_garrison] = bool
 
 ###Checks the country/pop/leader/species' number of positive traits (traits with a cost strictly greater than 0 count as positive)
-alias[trigger:num_positive_traits] == int_value_field
+alias[trigger:num_positive_traits] = int_value_field
 
 ###Checks the country/pop/leader/species' number of negative traits (traits with a cost strictly lower than 0 count as negative)
-alias[trigger:num_negative_traits] == int_value_field
+alias[trigger:num_negative_traits] = int_value_field
 
 ###Checks if the current player is currently viewing the galaxy map
 alias[trigger:is_on_galaxy_map] = bool
