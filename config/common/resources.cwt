@@ -74,7 +74,7 @@ resource = {
 	
 	## cardinality = 0..1
 	dynamic_capacity = {
-		base = @astral_threads_capacity_from_each_explored_rift
+		base = value[variable]
 		complex_trigger_modifier = {
 			trigger = alias_keys_field[trigger]
 			mode = mult
