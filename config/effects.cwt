@@ -3942,7 +3942,7 @@ alias[effect:add_skill_without_trait_selection] = int_value_field
 alias[effect:unlock_council_selection] = yes
 
 ###Freezes the scoped leader's age. The 'no' case will disable the freeze granted by this effect
-alias[effect:freeze_leader_age] = yes
+alias[effect:freeze_leader_age] = bool
 
 ###Sets an arbitrarily-named flag on the scoped astral rift
 alias[effect:set_astral_rift_flag] = value_set[astral_rift_flag]
