@@ -6088,7 +6088,7 @@ add_stage_clues - Adds clues to the current stage of an archaeological or first 
 add_stage_clues = <int>
 Supported Scopes: archaeological_site first_contact astral_rift
 
-add_stage_clues - Adds clues to the current stage of a archaeological site
+add_expedition_log_entry - Adds clues to the current stage of a archaeological site
 add_stage_clues = <int>
 Supported Scopes: archaeological_site
 
