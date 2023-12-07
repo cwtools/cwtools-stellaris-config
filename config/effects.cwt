@@ -1661,8 +1661,6 @@ alias[effect:modify_species] = {
 	## cardinality = 0..1
 	ideal_planet_class = <planet_class>
 	## cardinality = 0..1
-	ideal_planet_class = <planet_class.habitable_planet>
-	## cardinality = 0..1
 	###modify scoped pops/planet/leader/country; default: yes
 	change_scoped_species = bool
 	## cardinality = 0..1
