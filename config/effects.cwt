@@ -2546,6 +2546,8 @@ alias[effect:remove_notification_modifier] = <notification_modifier>
 #alias[effect:remove_orbital_deposit] = yes
 ### Removes a specific point of interest from the scoped country's situation log
 alias[effect:remove_point_of_interest] = value[point_of_interest]
+### Removes a specific point of interest from the scoped country's situation log
+alias[effect:remove_point_of_interest] = enum[enum_point_of_interest]
 ### Removes a saved leader for the scoped country with a lookup key
 alias[effect:remove_saved_leader] = value[saved_leader]
 #use one of the following:
