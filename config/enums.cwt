@@ -375,5 +375,6 @@ enums = {
 		curator_poi_hatchling
 		curator_poi_tiyanki
 		curator_poi_scavenger_bot
+		rubricator_coordinates_poi
 	}
 }
