@@ -4082,3 +4082,8 @@ alias[effect:set_ship_design] = {
 	## cardinality = 0..1
 	scope[design]
 }
+
+### Gives percentage progress (-1.0-1.0) in the current agenda to the scoped country
+alias[effect:add_council_agenda_progress_percent] = float
+### Gives percentage progress (-1.0-1.0) in the current agenda to the scoped country
+alias[effect:add_council_agenda_progress_percent] = value_field[0..100]
