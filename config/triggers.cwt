@@ -1,5 +1,4 @@
 
-
 #value_field/int_value_field: use == if the left hand side works in trigger:<trigger>, otherwise use =
 
 #scripted triggers
@@ -137,10 +136,10 @@ alias[trigger:has_situation_flag] = value[situation_flag]
 ###Checks if the agreement has a specific, arbitrarily-named, flag
 alias[trigger:has_agreement_flag] = value[agreement_flag]
 
-## severity = warning
 ###Checks if the country has a specific relation flag towards target country
 alias[trigger:has_relation_flag] = {
 	who = scope_group[target_country]
+	## severity = warning
 	flag = value[relation_flag]
 }
 
