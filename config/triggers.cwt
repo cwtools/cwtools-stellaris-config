@@ -146,6 +146,7 @@ alias[trigger:has_relation_flag] = {
 ###Checks if the target country has a specific relation flag towards the country
 alias[trigger:reverse_has_relation_flag] = {
 	who = scope_group[target_country]
+	## severity = warning
 	flag = value[relation_flag]
 }
 
