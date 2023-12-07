@@ -143,7 +143,9 @@ event = {
 	id = scalar
 	## cardinality = 0..1
 	is_test_event = yes
-
+	## cardinality = 0..1
+	diplomatic_title = localisation
+	
 	subtype[inherited] = {
 		base = <event>
 		## cardinality = 0..1
@@ -516,6 +518,7 @@ event = {
 		pre_triggers = {
 			alias_name[planet_pre_trigger] = alias_match_left[planet_pre_trigger]
 		}
+		alias_name[picture_event_data] = alias_match_left[picture_event_data]
 	}
 
 	subtype[fleet] = {
