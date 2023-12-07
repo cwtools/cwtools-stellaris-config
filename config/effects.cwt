@@ -2447,7 +2447,7 @@ alias[effect:get_galaxy_setup_value] = {
 	which = value_set[variable]
 	setting = enum[galaxy_setup_values]
 	## cardinality = 0..1
-	scale_by = int #no variables here atm
+	scale_by = float #no variables here atm
 }
 
 ### Makes a country guarantee another country
