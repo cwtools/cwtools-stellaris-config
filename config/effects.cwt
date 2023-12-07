@@ -4072,3 +4072,13 @@ alias[effect:set_council_position_title_female] = {
 	position_tag = localisation
 	title = localisation
 }
+
+### Changes which design a ship uses/all ships in a fleet use, to the target design
+alias[effect:set_ship_design] = { 
+	## cardinality = 0..1
+	random_existing_design = <ship_size>
+	## cardinality = 0..1
+	last_created_design
+	## cardinality = 0..1
+	scope[design]
+}
