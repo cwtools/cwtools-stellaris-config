@@ -276,7 +276,7 @@ event = {
 		location = scope[pop]
 		## cardinality = 0..1
 		location = scope[starbase]
-
+		
 		## cardinality = 0..1
 		event_chain = <event_chain>
 
@@ -400,7 +400,7 @@ event = {
 				## cardinality = 0..1
 				is_dialog_only = bool
 			}
-
+			
 			## cardinality = 0..1
 			### Binds this option to the "dismiss" action
 			default_hide_option = bool
@@ -408,6 +408,11 @@ event = {
 			custom_gui = scalar #points to a gui_type, currently all are defined as aliases but this needs to be updated
 			## cardinality = 0..1
 			alias_name[effect] = alias_match_left[effect]
+			
+			## cardinality = 0..1
+			response_text = localisation
+			## cardinality = 0..1
+			is_dialog_only = yes
 		}
 	}
 
@@ -428,6 +433,8 @@ event = {
 		## severity = info
 		## cardinality = 0..0
 		show_sound = scalar
+		## cardinality = 0..0
+		auto_opens = bool
 	}
 
 	## cardinality = 0..1
@@ -530,7 +537,19 @@ event = {
 		## cardinality = 0..1
 		first_contact = bool
 	}
-
+	
+	subtype[astral] = {
+		## cardinality = 0..1
+		difficulty = value[variable]
+		## cardinality = 0..1
+		astral_rift = yes
+	}
+	
+	subtype[situation] = {
+		## cardinality = 0..1
+		situation = scope[situation]
+	}
+	
 	subtype[espionage_operation] = {
 		## cardinality = 0..1
 		espionage_operation = bool
@@ -544,12 +563,15 @@ event = {
 	## cardinality = 0..1
 	immediate = {
 		alias_name[effect] = alias_match_left[effect]
+		## cardinality = 0..1
+		name = localisation
 	}
 
 	## cardinality = 0..1
 	after = {
 		alias_name[effect] = alias_match_left[effect]
 	}
+	
 }
 
 alias[picture_event_data:picture_event_data] = {
