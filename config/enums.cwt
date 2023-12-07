@@ -184,6 +184,7 @@ enums = {
 		primitive_worlds_scale
 		crisis_strength_scale
 		tech_costs_scale
+		num_stars
 	}
 	enum[federation_succession_types] = {
 		strongest
