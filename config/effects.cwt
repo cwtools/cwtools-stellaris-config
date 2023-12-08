@@ -2004,6 +2004,7 @@ alias[effect:check_casus_belli_valid] = {
 alias[effect:clear_ethos] = yes
 ### Clears all queued fleet actions for target fleet
 alias[effect:clear_fleet_actions] = scope[fleet]
+## severity = warning
 ### Deletes the specified saved global target reference
 alias[effect:clear_global_event_target] = value[global_event_target]
 ### Deletes all saved global target references
