@@ -377,5 +377,10 @@ enums = {
 		curator_poi_tiyanki
 		curator_poi_scavenger_bot
 		rubricator_coordinates_poi
+		hidden_planet_poi
+		ai_crisis_poi.1
+		ai_crisis_poi.2
+		ai_crisis_poi.3
+		ai_crisis_poi.4
 	}
 }
