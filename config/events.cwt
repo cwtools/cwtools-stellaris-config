@@ -603,6 +603,18 @@ event = {
 		## cardinality = 0..1
 		espionage_operation = bool
 	}
+	
+	subtype[pop] = {
+		## cardinality = 0..1
+		pre_triggers = {
+			alias_name[pop_pre_trigger] = alias_match_left[pop_pre_trigger]
+		}
+	}
+	
+	## cardinality = 0..1
+	pre_triggers = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 
 	## cardinality = 0..1
 	trigger = {
