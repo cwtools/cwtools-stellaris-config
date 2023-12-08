@@ -823,9 +823,9 @@ alias[effect:set_variable_to_random_value] = {
 	rounded = bool
 }
 
+## severity = warning
 ###Removes a previously-set variable from the scope
 alias[effect:clear_variable] = value[variable]
-
 
 #max should not be less than min...
 ###Adds a lump sum of a resource to the scoped country, defined as a multiple of the country's monthly income of that resource (clamped to max and min allowed values)
