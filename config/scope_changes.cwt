@@ -1,5 +1,4 @@
 
-
 # Note every/random/ordered/any/count items go here instead of triggers or effects
 
 alias[trigger:scope_field] = { alias_name[trigger] = alias_match_left[trigger] }

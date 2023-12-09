@@ -89,6 +89,8 @@ job = {
 	building_icon = <building>
 	## cardinality = 0..1
 	building_icon = icon[gfx/interface/icons/buildings]
+	## cardinality = 0..1
+	building_icon = icon[gfx/interface/icons/buildings/old_production]
 	#building_icon = <sprite>
 	## cardinality = 0..1
 	clothes_texture_index = int
@@ -163,18 +165,39 @@ job = {
 	country_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-
+	
 	## replace_scope = { this = planet root = planet }
 	## cardinality = 0..1
 	### Multiple planet_modifiers blocks result in only the last one applying
 	planet_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-
+	
+	#  Paradox made this one really non standard in several of the files with no potential etc
+	## cardinality = 0..inf
+	## replace_scope = { this = country root = country }
+	triggered_country_modifier = {
+		## cardinality = 0..1
+		potential = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..1
+		modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		## cardinality = 0..1
+		alias_name[modifier] = alias_match_left[modifier]
+		## cardinality = 0..1
+		mult = value_field
+	}
+	
 	## cardinality = 0..1
 	alias_name[triggered_planet_modifier_pop] = alias_match_left[triggered_planet_modifier_pop]
+	
+	
 	## cardinality = 0..1
 	alias_name[triggered_country_modifier_pop] = alias_match_left[triggered_country_modifier_pop]
+	
 	## cardinality = 0..1
 	alias_name[triggered_pop_modifier] = alias_match_left[triggered_pop_modifier]
 

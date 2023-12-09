@@ -184,6 +184,7 @@ enums = {
 		primitive_worlds_scale
 		crisis_strength_scale
 		tech_costs_scale
+		num_stars
 	}
 	enum[federation_succession_types] = {
 		strongest
@@ -375,5 +376,11 @@ enums = {
 		curator_poi_hatchling
 		curator_poi_tiyanki
 		curator_poi_scavenger_bot
+		rubricator_coordinates_poi
+		hidden_planet_poi
+		ai_crisis_poi.1
+		ai_crisis_poi.2
+		ai_crisis_poi.3
+		ai_crisis_poi.4
 	}
 }

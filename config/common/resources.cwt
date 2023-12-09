@@ -71,6 +71,15 @@ resource = {
 		### This explicitly ignores MOD_COUNTRY_RESOURCE_MAX_ADD modifiers.
 		special_max_amount = bool
 	}
+	
+	## cardinality = 0..1
+	dynamic_capacity = {
+		base = float
+		complex_trigger_modifier = {
+			trigger = alias_keys_field[trigger]
+			mode = mult
+		}
+	}
 
 	## cardinality = 0..1
 	category = enum[resource_type]

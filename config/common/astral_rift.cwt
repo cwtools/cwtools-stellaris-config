@@ -1,3 +1,12 @@
+types = {
+	type[astral_rift] = {
+		path = "game/common/astral_rift"
+		subtype[scripted] = {
+			connection_type = scripted_connection
+		}
+	}
+}
+
 astral_rift = {
 	### the localization key used in triggers and effects for the type
 	name = localisation

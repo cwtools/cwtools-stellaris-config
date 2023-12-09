@@ -188,6 +188,8 @@ enums = {
 		hyper_relay_construction
 		active_reconnaissance_unlocked
 		assist_cloaking_detection_unlocked
+		unlock_astral_rift_exploration
+		unlock_astral_threads_actions
 	}
 	enum[technology_areas] = {
 		engineering

@@ -123,6 +123,9 @@ types = {
 
 			## cardinality = 0..0
 			event_window_type = enum[event_window_type]
+			
+			## cardinality = 0..0
+			event_picture_background = <sprite>
 		}
 		subtype[leader_recruit] = {
 			event_window_type = leader_recruit
@@ -143,7 +146,9 @@ event = {
 	id = scalar
 	## cardinality = 0..1
 	is_test_event = yes
-
+	## cardinality = 0..1
+	diplomatic_title = localisation
+	
 	subtype[inherited] = {
 		base = <event>
 		## cardinality = 0..1
@@ -274,7 +279,7 @@ event = {
 		location = scope[pop]
 		## cardinality = 0..1
 		location = scope[starbase]
-
+		
 		## cardinality = 0..1
 		event_chain = <event_chain>
 
@@ -287,12 +292,23 @@ event = {
 		## cardinality = 0..1
 		event_window_type = enum[event_window_type]
 
+		## cardinality = 0..0
+		event_picture_background = <sprite>
+		
+		## cardinality = 0..0
+		alias_name[picture_event_data] = alias_match_left[picture_event_data]
+		
 		## cardinality = 0..1
 		###Forces the event to pop-up even if player has supressed pop ups
 		auto_opens = bool
 
 		## cardinality = 0..1
 		is_test_event = bool
+		
+		## cardinality = 0..1
+		desc_clear = yes
+		## cardinality = 0..1
+		option_clear = yes
 
 		## cardinality = 0..inf
 		option = {
@@ -398,7 +414,7 @@ event = {
 				## cardinality = 0..1
 				is_dialog_only = bool
 			}
-
+			
 			## cardinality = 0..1
 			### Binds this option to the "dismiss" action
 			default_hide_option = bool
@@ -406,6 +422,46 @@ event = {
 			custom_gui = scalar #points to a gui_type, currently all are defined as aliases but this needs to be updated
 			## cardinality = 0..1
 			alias_name[effect] = alias_match_left[effect]
+			
+			## cardinality = 0..1
+			response_text = localisation
+			## cardinality = 0..1
+			is_dialog_only = yes
+						
+			## cardinality = 0..1
+			ai_trade_facility = {
+				alias_name[effect] = alias_match_left[effect]
+				## cardinality = 0..1
+				offer_hire_mercenary_fleet = bool
+				## cardinality = 0..1
+				offer_prolong_fleet_contract = bool
+				## cardinality = 0..1
+				info_gathering = {
+					get_trade_data = { 
+						target = scope_group[target_country]
+					}
+				}
+				## cardinality = 0..1
+				option_selection = {
+					## cardinality = 0..1
+					if = {
+						limit = {
+							## cardinality = 0..1
+							is_offer_terms_actual = { target = scope_group[target_country] }
+							## cardinality = 0..1
+							alias_name[trigger] = alias_match_left[trigger]
+						}
+						alias_name[effect] = alias_match_left[effect]
+					}
+				}
+				## cardinality = 0..1
+				allow = {
+					## cardinality = 0..1
+					can_afford_special_offer = { target = scope_group[target_country] }
+					## cardinality = 0..1
+					alias_name[trigger] = alias_match_left[trigger]
+				}
+			}
 		}
 	}
 
@@ -426,6 +482,8 @@ event = {
 		## severity = info
 		## cardinality = 0..0
 		show_sound = scalar
+		## cardinality = 0..0
+		auto_opens = bool
 	}
 
 	## cardinality = 0..1
@@ -469,7 +527,7 @@ event = {
 
 	## cardinality = 0..1
 	auto_select = bool
-
+	
 	subtype[!triggered] = {
 		## cardinality = 0..1
 		mean_time_to_happen = {
@@ -516,6 +574,7 @@ event = {
 		pre_triggers = {
 			alias_name[planet_pre_trigger] = alias_match_left[planet_pre_trigger]
 		}
+		alias_name[picture_event_data] = alias_match_left[picture_event_data]
 	}
 
 	subtype[fleet] = {
@@ -527,10 +586,34 @@ event = {
 		## cardinality = 0..1
 		first_contact = bool
 	}
-
+	
+	subtype[astral] = {
+		## cardinality = 0..1
+		difficulty = value[variable]
+		## cardinality = 0..1
+		astral_rift = yes
+	}
+	
+	subtype[situation] = {
+		## cardinality = 0..1
+		situation = scope[situation]
+	}
+	
 	subtype[espionage_operation] = {
 		## cardinality = 0..1
 		espionage_operation = bool
+	}
+	
+	subtype[pop] = {
+		## cardinality = 0..1
+		pre_triggers = {
+			alias_name[pop_pre_trigger] = alias_match_left[pop_pre_trigger]
+		}
+	}
+	
+	## cardinality = 0..1
+	pre_triggers = {
+		alias_name[trigger] = alias_match_left[trigger]
 	}
 
 	## cardinality = 0..1
@@ -541,12 +624,51 @@ event = {
 	## cardinality = 0..1
 	immediate = {
 		alias_name[effect] = alias_match_left[effect]
+		## cardinality = 0..1
+		name = localisation
+		## cardinality = 0..1
+		ai_trade_facility = {
+			alias_name[effect] = alias_match_left[effect]
+			## cardinality = 0..1
+			offer_hire_mercenary_fleet = bool
+			## cardinality = 0..1
+			offer_prolong_fleet_contract = bool
+			## cardinality = 0..1
+			info_gathering = {
+				get_trade_data = { 
+					target = scope_group[target_country]
+				}
+			}
+			## cardinality = 0..1
+			option_selection = {
+				## cardinality = 0..1
+				if = {
+					limit = {
+						## cardinality = 0..1
+						is_offer_terms_actual = { target = scope_group[target_country] }
+						## cardinality = 0..1
+						alias_name[trigger] = alias_match_left[trigger]
+					}
+					alias_name[effect] = alias_match_left[effect]
+				}
+			}
+			## cardinality = 0..1
+			allow = {
+				## cardinality = 0..1
+				can_afford_special_offer = { target = scope_group[target_country] }
+				## cardinality = 0..1
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+		}
+		## cardinality = 0..1
+		run_in_ai_mode = bool
 	}
 
 	## cardinality = 0..1
 	after = {
 		alias_name[effect] = alias_match_left[effect]
 	}
+	
 }
 
 alias[picture_event_data:picture_event_data] = {

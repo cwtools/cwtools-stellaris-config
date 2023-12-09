@@ -101,7 +101,7 @@ trait = {
 	}
 	## cardinality = 0..1
 	sorting_priority = int
-
+	
 	subtype[species_trait] = {
 		## cardinality = 0..1
 		## replace_scope = { this = species root = species from = planet }
@@ -296,27 +296,9 @@ trait = {
 		assist_research_planet_modifier = {
 			alias_name[modifier] = alias_match_left[modifier]
 		}
-		## cardinality = 0..1
-		## replace_scope = { this = galactic_object root = galactic_object }
-		### Modifier applied to system if General or Governor is assigned to planet within it.
-		system_modifier = {
-			alias_name[modifier] = alias_match_left[modifier]
-		}
 		## cardinality = 0..inf
 		### Modifier applied to the leader itself if the given condition is fulfilled.
 		alias_name[triggered_leader_modifier_leader] = alias_match_left[triggered_leader_modifier_leader]
-		## cardinality = 0..inf
-		### Modifier applied to location the leader is assigned to if the given condition is fulfilled.
-		alias_name[triggered_modifier_planet] = alias_match_left[triggered_modifier_planet]
-		## cardinality = 0..inf
-		### Modifier applied to location the leader is assigned to if the given condition is fulfilled.
-		alias_name[triggered_modifier_fleet] = alias_match_left[triggered_modifier_fleet]
-		## cardinality = 0..inf
-		### Modifier applied to location the leader is assigned to if the given condition is fulfilled.
-		alias_name[triggered_modifier_country] = alias_match_left[triggered_modifier_country]
-		## cardinality = 0..inf
-		### Modifier applied to the planet to which the General is assigned to defend if the given condition is fulfilled.
-		alias_name[triggered_planet_modifier_leader] = alias_match_left[triggered_planet_modifier_leader]
 		## cardinality = 0..inf
 		## replace_scope = { this = leader root = leader }
 		### Show key if trigger/exclusive_trigger is true.
@@ -342,12 +324,180 @@ trait = {
 			## cardinality = 0..inf
 			<technology>
 		}
+		
+		### cardinality = 0..inf
+		## replace_scope = { this = leader root = leader from = country }
+		triggered_modifier = {
+			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			alias_name[modifier] = alias_match_left[modifier]
+			### cardinality = 0..1
+			mult = value_field
+		}
+		
+		### cardinality = 0..1
+		## replace_scope = { this = leader root = leader from = country }
+		councilor_modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		
+		### cardinality = 0..inf
+		## replace_scope = { this = leader root = leader from = country }
+		triggered_councilor_modifier = {
+			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			alias_name[modifier] = alias_match_left[modifier]
+			### cardinality = 0..1
+			mult = value_field
+		}
+		
+		### cardinality = 0..1
+		## replace_scope = { this = leader root = leader from = country }
+		fleet_modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		
+		### cardinality = 0..inf
+		## replace_scope = { this = leader root = leader from = country }
+		triggered_fleet_modifier = {
+			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			alias_name[modifier] = alias_match_left[modifier]
+			### cardinality = 0..1
+			mult = value_field
+		}
+		
+		### cardinality = 0..1
+		## replace_scope = { this = leader root = leader from = country }
+		army_modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		
+		### cardinality = 0..inf
+		## replace_scope = { this = leader root = leader from = country }
+		triggered_army_modifier = {
+			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			alias_name[modifier] = alias_match_left[modifier]
+			### cardinality = 0..1
+			mult = value_field
+		}
+				
+		### cardinality = 0..1
+		## replace_scope = { this = leader root = leader from = country }
+		sector_modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+				
+		### cardinality = 0..inf
+		## replace_scope = { this = leader root = leader from = country }
+		triggered_sector_modifier = {
+			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			alias_name[modifier] = alias_match_left[modifier]
+			### cardinality = 0..1
+			mult = value_field
+		}
+		
+		### cardinality = 0..1
+		## replace_scope = { this = leader root = leader from = planet }
+		planet_modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		
+		### cardinality = 0..inf
+		## replace_scope = { this = leader root = leader from = planet }
+		triggered_planet_modifier = {
+			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			alias_name[modifier] = alias_match_left[modifier]
+			### cardinality = 0..1
+			mult = value_field
+		}
+		
+		
+		### cardinality = 0..1
+		## replace_scope = { this = leader root = leader from = planet }
+		background_planet_modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		
+		### cardinality = 0..inf
+		## replace_scope = { this = leader root = leader from = planet }
+		triggered_background_planet_modifier = {
+			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			alias_name[modifier] = alias_match_left[modifier]
+			### cardinality = 0..1
+			mult = value_field
+		}
+		
+		### cardinality = 0..1
+		## replace_scope = { this = leader root = leader from = system }
+		system_modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		
+		### cardinality = 0..inf
+		## replace_scope = { this = leader root = leader from = system }
+		triggered_system_modifier = {
+			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			alias_name[modifier] = alias_match_left[modifier]
+			### cardinality = 0..1
+			mult = value_field
+		}
+		
+		### cardinality = 0..1
+		## replace_scope = { this = leader root = leader from = country }
+		federation_modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		
+		### cardinality = 0..inf
+		## replace_scope = { this = leader root = leader from = country }
+		triggered_federation_modifier = {
+			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			alias_name[modifier] = alias_match_left[modifier]
+			### cardinality = 0..1
+			mult = value_field
+		}
+		
+		
+		### cardinality = 0..1
+		## replace_scope = { this = leader root = leader from = country }
+		galcom_modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		
+		### cardinality = 0..inf
+		## replace_scope = { this = leader root = leader from = country }
+		triggered_galcom_modifier = {
+			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			alias_name[modifier] = alias_match_left[modifier]
+			### cardinality = 0..1
+			mult = value_field
+		}
+				
 		leader_class = all
 		leader_class = {
 			## cardinality = 1..5
 			enum[leader_classes]
 		}
 		leader_trait_rarity = enum[leader_trait_rarity]
+		
 		## cardinality = 0..1
 		## replace_scope = { this = leader root = leader from = country }
 		leader_potential_add = {
@@ -398,6 +548,14 @@ trait = {
 		### Effects in this block fire when trait is acquired.
 		on_gained_effect = {
 			alias_name[effect] = alias_match_left[effect]
+		}
+		## cardinality 0..1
+		background_icon = <sprite>
+		## cardinality 0..1
+		force_councilor_trait = yes
+		## cardinality 0..1
+		species_potential_add = {
+			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
 	## cardinality = 0..1

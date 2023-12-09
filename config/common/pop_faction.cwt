@@ -158,6 +158,10 @@ pop_faction = {
 		unfulfilled_effect = float
 
 		## cardinality = 0..1
+		### Council Demand
+		council_demand = bool
+
+		## cardinality = 0..1
 		### This = Pop faction.
 		potential = {
 			alias_name[trigger] = alias_match_left[trigger]
