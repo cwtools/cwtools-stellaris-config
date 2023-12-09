@@ -2694,7 +2694,7 @@ alias[trigger:is_background_planet] = scope_group[target_planet]
 alias[trigger:is_councilor] = bool
 
 ###Checks the scope leader's lifespan
-alias[trigger:leader_lifespan] = int_value_field
+alias[trigger:leader_lifespan] == int_value_field
 
 ###Checks if the specified relic was the last lost one 
 alias[trigger:last_lost_relic] = <relic>
@@ -2709,7 +2709,7 @@ alias[trigger:is_astral_scar] = bool
 alias[trigger:can_lock_be_renewed] = bool
 
 ###Checks current value for council legitimacy for the scoped country
-alias[trigger:council_legitimacy] = value_field
+alias[trigger:council_legitimacy] == value_field
 
 ## severity = warning
 ###Checks if the astral rift has a specific flag
@@ -2720,7 +2720,7 @@ alias[trigger:has_astral_rift_flag] = value[astral_rift_flag]
 alias[trigger:has_completed_event_chain] = value[event_chain_key]
 
 ###Checks the distance of a controlled system to its owner's capital
-alias[trigger:distance_to_capital] = value_field
+alias[trigger:distance_to_capital] == value_field
 
 ###Returns true if the astral rift starting event pool is empty
 alias[trigger:is_astral_rift_pool_empty] = bool
@@ -2732,13 +2732,13 @@ alias[trigger:has_astral_rift] = bool
 alias[trigger:is_site_locked] = bool
 
 ###Checks the number of days left for the Relics Triumph
-alias[trigger:triumph_days_left] = int_value_field
+alias[trigger:triumph_days_left] == int_value_field
 
 ###Checks the difference between an explorer's level and an Astral Rift current difficulty
-alias[trigger:astral_rift_relative_difficulty] = value_field
+alias[trigger:astral_rift_relative_difficulty] == value_field
 
 ###Return how many Astral Rifts were completed by the country
-alias[trigger:astral_rifts_completed] = int_value_field
+alias[trigger:astral_rifts_completed] == int_value_field
 
 ###Returns true if the astral rift with the given id is or was explored by the scoped country
 alias[trigger:is_astral_rift_explored] = <astral_rift>
@@ -2787,10 +2787,10 @@ alias[trigger:is_hidden] = bool
 alias[trigger:is_garrison] = bool
 
 ###Checks the country/pop/leader/species' number of positive traits (traits with a cost strictly greater than 0 count as positive)
-alias[trigger:num_positive_traits] = int_value_field
+alias[trigger:num_positive_traits] == int_value_field
 
 ###Checks the country/pop/leader/species' number of negative traits (traits with a cost strictly lower than 0 count as negative)
-alias[trigger:num_negative_traits] = int_value_field
+alias[trigger:num_negative_traits] == int_value_field
 
 ###Checks if the current player is currently viewing the galaxy map
 alias[trigger:is_on_galaxy_map] = bool
