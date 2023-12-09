@@ -184,15 +184,9 @@ tradition = {
 		## cardinality = 0..1
 		show_only_custom_tooltip = no
 	}
-	## cardinality = 0..1
-	triggered_modifier = {
-		potential = {
-			alias_name[trigger] = alias_match_left[trigger]	
-		}
-		alias_name[modifier] = alias_match_left[modifier]
-		## cardinality = 0..1
-		mult = value_field
-	}
+	## cardinality = 0..inf
+	alias_name[triggered_modifier_country] = alias_match_left[triggered_modifier_country]
+	
 	## replace_scope = { this = country root = country }
 	### the ai_weight in traditions applies both to the main traditions and the tradition swaps, there are no seperate fields.
 	## cardinality = 0..1

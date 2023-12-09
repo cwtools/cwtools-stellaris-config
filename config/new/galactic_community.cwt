@@ -86,14 +86,7 @@ resolution = {
 	}
 	## cardinality = 0..inf
 	###Modifier to be applied to all community members if passed and the potential trigger is true
-	triggered_modifier = {
-		potential = {
-			alias_name[trigger] = alias_match_left[trigger]
-		}
-		modifier = {
-			alias_name[modifier] = alias_match_left[modifier]
-		}
-	}
+	alias_name[triggered_modifier_country] = alias_match_left[triggered_modifier_country]
 	## cardinality = 0..1
 	###Effect to be applied if passed, scope is country
 	effect = {
