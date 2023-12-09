@@ -597,6 +597,11 @@ event = {
 	subtype[situation] = {
 		## cardinality = 0..1
 		situation = scope[situation]
+		## cardinality = 0..1
+		###Like trigger, but only uses certain simple triggers
+		pre_triggers = {
+			alias_name[situation_pre_trigger] = alias_match_left[situation_pre_trigger]
+		}
 	}
 	
 	subtype[espionage_operation] = {
@@ -606,14 +611,34 @@ event = {
 	
 	subtype[pop] = {
 		## cardinality = 0..1
+		###Like trigger, but only uses certain simple triggers
 		pre_triggers = {
 			alias_name[pop_pre_trigger] = alias_match_left[pop_pre_trigger]
 		}
 	}
-	
-	## cardinality = 0..1
-	pre_triggers = {
-		alias_name[trigger] = alias_match_left[trigger]
+
+	subtype[leader] = {
+		## cardinality = 0..1
+		###Like trigger, but only uses certain simple triggers
+		pre_triggers = {
+			alias_name[leader_pre_trigger] = alias_match_left[leader_pre_trigger]
+		}
+	}
+
+	subtype[starbase] = {
+		## cardinality = 0..1
+		###Like trigger, but only uses certain simple triggers
+		pre_triggers = {
+			alias_name[starbase_pre_trigger] = alias_match_left[starbase_pre_trigger]
+		}
+	}
+
+	subtype[system] = {
+		## cardinality = 0..1
+		###Like trigger, but only uses certain simple triggers
+		pre_triggers = {
+			alias_name[system_pre_trigger] = alias_match_left[system_pre_trigger]
+		}
 	}
 
 	## cardinality = 0..1

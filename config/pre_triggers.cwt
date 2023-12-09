@@ -43,3 +43,31 @@ alias[pop_pre_trigger:has_planet] = bool
 alias[pop_pre_trigger:is_sapient] = bool
 
 alias[pop_pre_trigger:is_robot_pop] = bool
+
+
+# system:
+#### whether the system belongs to anyone
+alias[system_pre_trigger:has_owner] = bool
+#### whether the system has an empire's capital in it
+alias[system_pre_trigger:is_capital] = bool
+#### whether the system is fully occupied
+alias[system_pre_trigger:is_occupied_flag] = bool
+
+
+# starbase:
+#### whether the starbase belongs to anyone
+alias[starbase_pre_trigger:has_owner] = bool
+#### whether the starbase's controller is not its owner
+alias[starbase_pre_trigger:is_occupied_flag] = bool
+
+
+# leader:
+#### whether the leader belongs to anyone
+alias[leader_pre_trigger:has_owner] = bool
+#### whether the leader is idle
+alias[leader_pre_trigger:is_idle] = bool
+
+
+# situation:
+#### whether the situation has a valid owner
+alias[situation_pre_trigger:has_owner] = bool
