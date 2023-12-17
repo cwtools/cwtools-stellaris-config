@@ -1,9 +1,6 @@
 types = {
 	type[astral_rift] = {
 		path = "game/common/astral_rift"
-		subtype[scripted] = {
-			connection_type = scripted_connection
-		}
 	}
 	type[astral_actions] = {
 		path = "game/common/astral_actions"
