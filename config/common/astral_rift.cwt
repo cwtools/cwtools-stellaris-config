@@ -5,6 +5,9 @@ types = {
 			connection_type = scripted_connection
 		}
 	}
+	type[astral_actions] = {
+		path = "game/common/astral_actions"
+	}
 }
 
 astral_rift = {
@@ -39,8 +42,91 @@ astral_rift = {
 	
 }	
 
+astral_actions = {
+
+	## cardinality = 0..1
+	sound = <sound>
+	## cardinality = 0..1
+	sound = <sound_effect>
+	
+	## cardinality = 0..1
+	unlock_threshold = int
+	
+	## cardinality = 0..1
+	usages = int
+	
+	## cardinality = 0..1
+	custom_usage_tooltip = localisation
+	
+	## cardinality = 0..1
+	upgrade = enum[astral_actions_upgrade]
+	
+	## cardinality = 0..1
+	activation_cost = {
+		cost = {
+			## cardinality = 0..1
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			astral_threads = int
+			## cardinality = 0..1
+			<resource> = int
+			## cardinality = 0..1
+			multiplier = value_field
+		}
+	}
+	
+	## cardinality = 0..1
+	cooldown = float
+	
+	## cardinality = 0..1
+	uses_custom_cooldown = bool
+	
+	## cardinality = 0..1
+	picture = <sprite>
+	
+	## cardinality = 0..1
+	allow_unlock = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	
+	## cardinality = 0..1
+	is_exhausted = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	
+	## cardinality = 0..1
+	potential = {
+		## cardinality = 0..inf	
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	
+	## cardinality = 0..1
+	allow = {
+		## cardinality = 0..inf	
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	
+	## cardinality = 0..1
+	effect = {
+		## cardinality = 0..inf	
+		alias_name[effect] = alias_match_left[effect]
+	}
+	## cardinality = 0..1
+	ai_weight = {
+		weight = float
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+
 enums = {
 	enum[astral_rift_on_roll_failed] = {
 		standard_astral_rift_on_roll_failed
+	}
+	enum[astral_actions_upgrade] = {
+		action_flash_forge_hyper_relay
+		action_quantum_catapult_insight_2
 	}
 }
