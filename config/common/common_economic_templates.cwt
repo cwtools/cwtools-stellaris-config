@@ -449,11 +449,7 @@ alias[triggered_pop_modifier:triggered_pop_modifier] = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
-	key = <trait>
-	## cardinality = 0..1
-	key = <opinion_modifier>
-	## cardinality = 0..1
-	key = <civic_or_origin>
+	key = localisation
 	## cardinality = 0..1
 	custom_tooltip = localisation
 	## cardinality = 0..1
