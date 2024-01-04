@@ -1895,7 +1895,8 @@ NGameplay = {
 	FALLEN_EMPIRE_INNER_BOUNDARY = int
 	
 	## cardinality = 0..1
-	COUNCIL_AGENDA_BASE_COUNCILOR_MONTHLY_PROGRESS = float		## cardinality = 0..1
+	COUNCIL_AGENDA_BASE_COUNCILOR_MONTHLY_PROGRESS = float
+	## cardinality = 0..1
 	COUNCIL_AGENDA_COUNCILOR_PROGRESS_PER_SKILL = float	
 	## cardinality = 0..1
 	COUNCIL_AGENDA_COOLDOWN = int
