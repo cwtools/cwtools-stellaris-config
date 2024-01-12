@@ -1518,6 +1518,8 @@ alias[effect:create_leader] = {
 	## cardinality = 0..1
 	background_ethic = random
 	## cardinality = 0..1
+	background_planet = scope[planet]
+	## cardinality = 0..1
 	###Default = no
 	skip_background_generation = bool
 	## cardinality = 0..1
@@ -3964,7 +3966,7 @@ alias[effect:remove_astral_rift_flag] = value[astral_rift_flag]
 ###Exports the remaining duration of a specified modifier in the current scope to a specified variable
 alias[effect:export_modifier_duration_to_variable] = {
 	modifier = alias_keys_field[modifier]
-	variable = value_set[variable] 
+	variable = value_set[variable]
 }
 
 ###Deletes the target dimensional fleet
@@ -4063,25 +4065,31 @@ alias[effect:set_ruler_title_male] = localisation
 alias[effect:set_ruler_title_female] = localisation
 
 ### Sets the scoped country's council position's male title
-alias[effect:set_council_position_title_male] = { 
+alias[effect:set_council_position_title_male] = {
 	position_tag = localisation
 	title = localisation
 }
 
 ### Sets the scoped country's council position's female title
-alias[effect:set_council_position_title_female] = { 
+alias[effect:set_council_position_title_female] = {
 	position_tag = localisation
 	title = localisation
 }
 
 ### Changes which design a ship uses/all ships in a fleet use, to the target design
-alias[effect:set_ship_design] = { 
+alias[effect:set_ship_design] = {
 	## cardinality = 0..1
 	random_existing_design = <ship_size>
 	## cardinality = 0..1
-	last_created_design
+	design = last_created_design
 	## cardinality = 0..1
-	scope[design]
+	design = <global_ship_design>
+	## cardinality = 0..1
+	design = scope[design]
+	## severity = warning
+	## cardinality = 0..1
+	# Hack to handle named designs
+	design = localisation
 }
 
 ### Gives percentage progress (-1.0-1.0) in the current agenda to the scoped country
