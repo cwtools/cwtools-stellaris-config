@@ -511,12 +511,6 @@ alias[trigger:is_ship_class] = enum[shipsize_classes]
 
 ###Checks the scientist's field of research
 alias[trigger:is_researching_area] = enum[research_areas]
-#should have < >
-###Checks the country's number available tech research options in a specific field
-alias[trigger:count_tech_options] = {
-	area = enum[research_areas]
-	count = int_value_field
-}
 
 ## push_scope = leader
 ###Checks if the country's researcher in a specific field meets the specified criteria
@@ -1418,30 +1412,6 @@ alias[trigger:would_join_war] = {
 }
 
 alias[trigger:is_researching_special_project] = <special_project>
-
-### Checks the number of starbase modules that are of the specified type
-alias[trigger:count_starbase_modules] =  {
-	count = int_value_field
-	## cardinality = 0..1
-	type = <starbase_module>
-	## cardinality = 0..1
-	include_being_constructed = bool
-}
-
-### Checks the number of starbase buildings that are of the specified type or not
-alias[trigger:count_starbase_buildings] =  {
-	count = int_value_field
-	## cardinality = 0..1
-	type = <starbase_building>
-	## cardinality = 0..1
-	include_being_constructed = bool
-}
-
-### Checks if the scoped country has a specified quantity of a starbase size
-alias[trigger:count_starbase_sizes] =  {
-	count = int_value_field
-	starbase_size = <ship_size.starbase>
-}
 
 #2.2
 
@@ -2751,34 +2721,6 @@ alias[trigger:has_lock] = bool
 
 ###Checks if the scoped fleet can go MIA
 alias[trigger:can_go_mia] = bool
-
-###Iterate through every astral rift - checks whether the enclosed triggers return true for X/all of them
-alias[trigger:count_astral_rift] = {
-	## cardinality = 1..1
-	count = int
-	## cardinality = 1..1
-	count = all
-	## cardinality = 1..1
-	count = value[variable]
-	limit = {
-		## cardinality = 1..inf
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-}
-
-###Iterate through every bypass - checks whether the enclosed triggers return true for X/all of them
-alias[trigger:count_bypass] = {
-	## cardinality = 1..1
-	count = int
-	## cardinality = 1..1
-	count = all
-	## cardinality = 1..1
-	count = value[variable]
-	limit = {
-		## cardinality = 1..inf
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-}
 
 ###Checks if the leader is hidden from the player
 alias[trigger:is_hidden] = bool
