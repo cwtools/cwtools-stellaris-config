@@ -75,10 +75,7 @@ resource = {
 	## cardinality = 0..1
 	dynamic_capacity = {
 		base = float
-		complex_trigger_modifier = {
-			trigger = alias_keys_field[trigger]
-			mode = mult
-		}
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 
 	## cardinality = 0..1

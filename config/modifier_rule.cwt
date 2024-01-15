@@ -55,6 +55,7 @@ alias[modifier_rule:complex_trigger_modifier] = {
 		## cardinality = 0..inf
 		scalar = scalar
 		## cardinality = 0..1
+		## push_scope = any
 		limit = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}

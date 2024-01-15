@@ -14,7 +14,7 @@ types = {
 			Name = "$"
 			## required
 			"Type Name" = "$_type"
-			## required
+			## optional
 			Description = "$_desc"
 			## required
 			"Monthly Change Tooltip" = "$_monthly_change_tooltip"
