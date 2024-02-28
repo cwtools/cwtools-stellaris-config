@@ -2896,12 +2896,12 @@ alias[effect:random_neighbor_system_euclidean] = {
 }
 
 ## push_scope = system
-###Checks if any of the system's neighboring systems (by closeness, not by hyperlanes) meet the specified criteria, bypasses not included
+###Iterate through all a system's neighboring systems (by closeness, not by hyperlanes) - checks whether the enclosed triggers return true for any of them
 alias[trigger:any_neighbor_system_euclidean] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
-###Checks if X of the system's neighboring systems (by closeness, not by hyperlanes) meet the specified criteria, bypasses not included
+###Iterate through all a system's neighboring systems (by closeness, not by hyperlanes) - checks whether the enclosed triggers return true for X/all of them
 alias[trigger:count_neighbor_system_euclidean] = {
 	count = all
 	count = int_value_field
