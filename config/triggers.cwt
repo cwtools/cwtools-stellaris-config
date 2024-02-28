@@ -453,7 +453,7 @@ alias[trigger:has_skill] == int_value_field[1..20]
 alias[trigger:defender_war_exhaustion] == value_field[0.0..1.0]
 ###Checks the country's total war exhaustion for all offensive wars
 alias[trigger:off_war_exhaustion_sum] == value_field
-###Checks the country's total war exhaustion for all defemsove wars
+###Checks the country's total war exhaustion for all defensive wars
 alias[trigger:def_war_exhaustion_sum] == value_field
 
 ###Checks the scope's total fleet power
@@ -695,8 +695,8 @@ alias[trigger:years_of_peace] = {
 ###Checks the fleet's fleet size
 alias[trigger:fleet_size] == int_value_field
 
-###Checks the game's difficulty level (0 to 5, with 0 as Cadet and 5 as Grand Admiral)
-alias[trigger:is_difficulty] == int_value_field[0..5]
+###Checks the game's difficulty level (0 to 6, with 0 as Civilian and 6 as Grand Admiral)
+alias[trigger:is_difficulty] == int_value_field[0..6]
 
 ###Checks if the planet has any, or a specific, building
 alias[trigger:has_building] = bool
@@ -1154,7 +1154,7 @@ alias[trigger:is_event_leader] = bool
 ### Checks if the country is the leader of their federation
 alias[trigger:is_federation_leader] = bool
 
-### Checks if the ship/fleet is idfle
+### Checks if the ship/fleet is idle
 alias[trigger:is_fleet_idle] = bool
 
 #is_in_cluster = resource_cluster_3
@@ -1336,7 +1336,7 @@ alias[trigger:can_live_on_planet] = scope_group[target_planet]
 # ### Checks if a pop, or the pops of a particular species can reproduce
 #alias[trigger:pop_can_reproduce] = bool
 
-### Checks the maintenace costs of a pop
+### Checks the maintenance costs of a pop
 alias[trigger:pop_maintenance_cost] = {
 	resource = <resource>
 	value = value_field
@@ -1468,7 +1468,7 @@ alias[trigger:is_half_species] = any
 ###Checks if the last building queued/unqueued/built/demolished/upgraded was the specified building
 alias[trigger:last_building_changed] = <building>
 
-###Checks the empire's size. Identical to empire_spraw trigger.
+###Checks the empire's size. Identical to empire_sprawl trigger.
 alias[trigger:empire_size] == int_value_field
 
 ###Checks the empire's sprawl
@@ -1666,7 +1666,7 @@ alias[trigger:has_rival] = scope_group[target_country]
 ###Checks if the target country is the country's overlord
 alias[trigger:has_overlord] = scope_group[target_country]
 
-###Checks if the target country is the subject of the current country.
+###Checks if the target country is a subject of the current country
 alias[trigger:has_subject] = scope_group[target_country]
 
 ###Counts the number of sectors owned by the scoped country
@@ -1816,7 +1816,7 @@ alias[trigger:has_federation_law] = <federation_law>
 ###Checks if scoped country is part of the Galactic Community.
 alias[trigger:is_galactic_community_member] = bool
 
-###Checks how much the empire sprawl is over its admin capacity.
+###Checks how much the empire's sprawl is over its admin capacity
 alias[trigger:empire_sprawl_over_cap] == int_value_field
 
 ###Checks the empire's sprawl compared to its admin level.
@@ -1844,6 +1844,9 @@ alias[trigger:is_proposing_resolution] = <resolution>
 
 ###Checks if the last resolution the Galactic Community voted on or otherwise passed or failed is as specified.
 alias[trigger:last_resolution_changed] = <resolution>
+
+###Checks if the last resolution the Galactic Community voted on or otherwise passed or failed is part of the specified category
+alias[trigger:last_resolution_category_changed] = <resolution_category>
 
 ###Checks if the current country is supporting, opposing or abstaining from the currently proposed galcom resolution.
 alias[trigger:position_on_current_resolution] = enum[galcom_resolution_position]
@@ -1920,7 +1923,7 @@ alias[trigger:galaxy_size] = <map_setup_scenario>
 ###Checks whether the galaxy shape is of a certain shape
 alias[trigger:galaxy_shape] = <map_galaxy_shape>
 
-###Checks the country's diplomacy weight
+###Checks the country's diplomatic weight
 alias[trigger:diplomacy_weight] == value_field
 
 ###Checks the number of fallen empires defined in setup
@@ -2193,7 +2196,7 @@ alias[trigger:has_espionage_operation_flag] = value[espionage_operation_flag]
 ###Checks if the scoped espionage operation is of a specific type
 alias[trigger:has_espionage_type] = <espionage_operation>
 
-###Divides the encryption value of the scope object with the decryption value of the target and compares with value. Target is only used for country scope.
+###Divides the encryption value of the scope object with the decryption value of the target and compares with value. 
 alias[trigger:relative_encryption_decryption] = {
 	## cardinality = 0..1
 	target = scope_group[target_country]
@@ -2526,8 +2529,7 @@ alias[trigger:is_offer_terms_actual] = {
 	target = scope_group[target_country]
 }
 
-###Checks if the scoped country can afford the offer given by the target country
-###Only works in certain parts of the script marked with ai_trade_facility.
+###Checks if the scoped country can afford the offer given by the target country. Only works in certain parts of the script marked with ai_trade_facility.
 alias[trigger:can_afford_special_offer] = {
 	target = scope_group[target_country]
 }
