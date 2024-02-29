@@ -2863,7 +2863,7 @@ alias[trigger:count_neighbor_system] = {
 }
 
 ## push_scope = system
-###Executes enclosed effects on every one of the scoped system's neighboring systems (by closeness, not by hyperlanes) that meet the limit criteria, bypasses not included
+###Iterate through all a system's neighboring systems (by closeness, not by hyperlanes) - executes the enclosed effects on all of them for which the limit triggers return true
 alias[effect:every_neighbor_system_euclidean] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
@@ -2871,7 +2871,7 @@ alias[effect:every_neighbor_system_euclidean] = {
 }
 
 ## push_scope = system
-###Executes enclosed effects on every one of the scoped system's neighboring systems (by closeness, not by hyperlanes) - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+###Iterate through all a system's neighboring systems (by closeness, not by hyperlanes) - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
 alias[effect:ordered_neighbor_system_euclidean] = {
 	position = int[0..inf]
 	order_by = value_field
@@ -2883,7 +2883,7 @@ alias[effect:ordered_neighbor_system_euclidean] = {
 }
 
 ## push_scope = system
-###Executes enclosed effects on a random system neigboring the scoped system (by closeness, not by hyperlanes) that meets the limit criteria, bypasses not included
+###Iterate through all a system's neighboring systems (by closeness, not by hyperlanes) - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
 alias[effect:random_neighbor_system_euclidean] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
