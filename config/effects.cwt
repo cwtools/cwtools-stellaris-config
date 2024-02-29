@@ -373,7 +373,7 @@ alias[effect:add_opinion_modifier] = {
 	modifier = <opinion_modifier>
 }
 
-###Removes a specific opinion modifier towards target country or any contry from the scoped country
+###Removes a specific opinion modifier towards target country or any country from the scoped country
 alias[effect:remove_opinion_modifier] = {
 	who = scope_group[target_country]
 	modifier = <opinion_modifier>
@@ -1029,6 +1029,7 @@ alias[effect:change_planet_size] = int_value_field
 alias[effect:set_name] = random
 alias[effect:set_name] = scope[any]
 alias[effect:set_name] = localisation
+alias[effect:set_name] = <target>
 alias[effect:set_name] = {
 	## required
 	## cardinality = 1..1
@@ -1119,6 +1120,8 @@ alias[effect:create_species] = {
 	namelist = random_class
 	## cardinality = 0..1
 	plural = scalar
+	## cardinality = 0..1
+	plural = scope_group[target_species]
 	## cardinality = 0..1
 	species_bio = scalar
 	## cardinality = 0..1
@@ -1896,7 +1899,7 @@ alias[effect:add_tech_progress] = {
 ###Create and sends an telemetry event keeping track of the tutorial steps for the current game
 alias[effect:complete_tutorial_step] = scalar
 
-### Adds the specified tradition to the scoped country. add_tradition = <tradition_key>
+### Adds the specified tradition to the scoped country.
 alias[effect:add_tradition] = <tradition>
 ### Adds trust on scope country towards target country
 alias[effect:add_trust] = {
@@ -2560,7 +2563,7 @@ alias[effect:remove_saved_leader] = value[saved_leader]
 # 	name = random
 # 	name_list = "key"
 # }
-### rename_species = {
+### rename_species
 alias[effect:rename_species] = {
 	## cardinality = 0..1
 	prompt_country = scope_group[target_country]
@@ -2694,8 +2697,7 @@ alias[effect:set_pop_faction] = <pop_faction>
 alias[effect:set_ring] = bool
 ### Sets the scoped leader's level
 alias[effect:set_skill] = int_value_field
-### Optimizes the calls for spawn_system effect.
-###Spawn system should be located in a block between Begin and End.
+### Optimizes the calls for spawn_system effect. Spawn system should be located in a block between Begin and End.
 ###Begin: set_spawn_system_batch = begin
 ###End: set_spawn_system_batch = end
 alias[effect:set_spawn_system_batch] = enum[optimisation_batch]
@@ -2967,7 +2969,7 @@ alias[effect:add_district] = {
 
 ###Enables a resource on the Galactic Market
 alias[effect:enable_on_market] = <resource>
-###Enables the galactic market. enable_galactic_market = <yes/no>
+###Enables the galactic market.
 alias[effect:enable_galactic_market] = bool
 ###Rebuild modifiers on target planet
 alias[effect:validate_planet_buildings_and_districts] = yes
@@ -2994,6 +2996,11 @@ alias[effect:add_stage_clues] = int_value_field
 alias[effect:add_stage_clues] = lower_insight_reward
 alias[effect:add_stage_clues] = higher_insight_reward
 alias[effect:add_stage_clues] = int
+###Adds a specific expedition log entry to an archaeological site chapter
+alias[effect:add_expedition_log_entry] = {
+	title = localisation
+	tooltip = localisation
+}
 ###Resets the current stage
 alias[effect:reset_current_stage] = yes
 ###Finish the current stage
@@ -3013,9 +3020,9 @@ alias[effect:custom_tooltip_with_params] = {
 	}
 }
 
-###Adds the specified relic to the scoped country. add_relic = <relic_key>
+###Adds the specified relic to the scoped country.
 alias[effect:add_relic] = <relic>
-###Removes the specified relic from the scoped country. remove_relic = <relic_key>
+###Removes the specified relic from the scoped country.
 alias[effect:remove_relic] = <relic>
 ###Makes the archaeological site event expire
 alias[effect:expire_site_event] = <event.fleet>
@@ -3089,16 +3096,16 @@ alias[effect:add_federation_experience] = value_field
 ###Sets federation type to the scoped federation.
 alias[effect:set_federation_type] = <federation_type>
 
-###Sets federation succession type to the scoped federation. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
+###Sets scoped federation's succession type to the specified value. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
 alias[effect:set_federation_succession_type] = enum[federation_succession_types]
 
-###Sets federation succession term to the scoped federation. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
+###Sets scoped federation's succession term to the specified value. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
 alias[effect:set_federation_succession_term] = enum[federation_succession_terms]
 
 ###Sets exclusive right to build fleets by federation leader. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
 alias[effect:set_only_leader_builds_fleets] = bool
 
-###Sets right for subjects to join federations. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
+###Sets right for subjects to join federation. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
 alias[effect:set_allow_subjects_to_join] = bool
 
 ###Sets different voting weight. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
@@ -3118,7 +3125,7 @@ alias[effect:set_diplomacy_action_setting] = {
 ###Sets unified migration flag for federation. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
 alias[effect:set_free_migration] = bool
 
-###Sets federation custom setting. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
+###Sets diplomatic action custom setting. Please don't use outside law on_enact, functional effect! Use set_federation_law and has_federation_law instead.
 alias[effect:set_federation_settings] = {
 	enum[federation_settings] = bool
 }
@@ -3344,7 +3351,7 @@ alias[effect:copy_random_tech_from] = {
 	progress = value_field[0.0..1.0]
 }
 
-###Adds the defined amount of intel toward the target empire.
+###Adds the defined amount of intel toward the target empire
 alias[effect:add_intel] = {
 	who = scope_group[target_country]
 	amount = value_field
@@ -3744,8 +3751,8 @@ alias[effect:set_timed_design_flag] = {
 }
 ###Destroys a situation in right hand side event target, firing on_abort (use to cancel and fire that effect)
 alias[effect:abort_situation] = scope[situation]
-###Starts the process of converting the subject of the scoped agreement to the given specialist type
-###Can also be used to remove the specialization from a subject, by using 'none' as value
+###Starts the process of converting the subject of the scoped agreement to the given specialist type.
+Can also be used to remove the specialization from a subject, by using 'none' as value.
 alias[effect:convert_to_specialist] = <subject_specialist_type>
 alias[effect:convert_to_specialist] = none
 ###Removes a specific ship design from the scoped country
