@@ -53,7 +53,7 @@ technology = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
     ## cardinality = 0..1
-	cost = float
+	cost = value_field
 	subtype[!start_tech] = {
 		## cardinality = 0..1
 		is_rare = bool
