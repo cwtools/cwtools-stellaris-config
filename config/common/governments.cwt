@@ -254,11 +254,17 @@ civic_or_origin = {
 	## cardinality = 0..1
 	modification = {
 		## cardinality = 0..1
+		moddable_conditions_custom_tooltip = localisation
+		## cardinality = 0..1
 		add = {
+			## cardinality = 1..inf
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 		## cardinality = 0..1
 		remove = {
+			## cardinality = 0..1
+			fail_text = localisation
+			## cardinality = 1..inf
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
