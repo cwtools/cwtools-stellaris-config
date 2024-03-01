@@ -7,3 +7,9 @@ alias[modifier:<scripted_modifier>] = float
 
 ###Merges in the CWT-generated modifiers
 alias[modifier:<modifier>] = float
+
+###Special for triggered modifiers: If potential is false, the trigger and modifier will be shown in the tooltip (the modifier will be grayed out).
+alias[modifier:show_if_not_potential] = yes
+
+###Special for triggered modifiers: Localization shown instead of the trigger if it is false (only used if show_if_not_potential = yes).
+alias[modifier:not_potential_override_text_key] = localisation
