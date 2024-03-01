@@ -102,6 +102,9 @@ trait = {
 	## cardinality = 0..1
 	sorting_priority = int
 	
+	## cardinality = 0..1
+	leader_trait_type = enum[leader_trait_rarity]
+	
 	subtype[species_trait] = {
 		## cardinality = 0..1
 		## replace_scope = { this = species root = species from = planet }
@@ -609,5 +612,6 @@ enums = {
 		paragon
 		free_or_veteran
 		negative
+		destiny
 	}
 }
