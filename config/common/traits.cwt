@@ -613,5 +613,6 @@ enums = {
 		free_or_veteran
 		negative
 		destiny
+		subclass
 	}
 }
