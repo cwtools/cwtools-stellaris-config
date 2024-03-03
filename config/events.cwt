@@ -427,6 +427,8 @@ event = {
 			response_text = localisation
 			## cardinality = 0..1
 			is_dialog_only = yes
+			## cardinality = 0..1
+			hide_option_if_not_allowed = bool
 						
 			## cardinality = 0..1
 			ai_trade_facility = {
@@ -616,7 +618,7 @@ event = {
 			alias_name[pop_pre_trigger] = alias_match_left[pop_pre_trigger]
 		}
 	}
-
+	
 	subtype[leader] = {
 		## cardinality = 0..1
 		###Like trigger, but only uses certain simple triggers
@@ -626,7 +628,7 @@ event = {
 	}
 
 	subtype[starbase] = {
-		## cardinality = 0..1
+	## cardinality = 0..1
 		###Like trigger, but only uses certain simple triggers
 		pre_triggers = {
 			alias_name[starbase_pre_trigger] = alias_match_left[starbase_pre_trigger]
@@ -636,7 +638,7 @@ event = {
 	subtype[system] = {
 		## cardinality = 0..1
 		###Like trigger, but only uses certain simple triggers
-		pre_triggers = {
+	pre_triggers = {
 			alias_name[system_pre_trigger] = alias_match_left[system_pre_trigger]
 		}
 	}
@@ -648,6 +650,10 @@ event = {
 
 	## cardinality = 0..1
 	immediate = {
+		## cardinality = 0..1
+		allow = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
 		alias_name[effect] = alias_match_left[effect]
 		## cardinality = 0..1
 		name = localisation

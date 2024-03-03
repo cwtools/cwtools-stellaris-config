@@ -671,6 +671,12 @@ leader_class = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	## cardinality = 0..1
+	## replace_scope = { this = country root = country }
+	ai_location_weight = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+		
+	## cardinality = 0..1
 	minimum_ai_target = int[0..inf]
 	## cardinality = 0..1
 	leader_background_job_weight = {
@@ -709,4 +715,6 @@ leader_class = {
 	recruitable = bool
 	## cardinality = 0..1
 	can_rule_empire = bool
+	## cardinality = 0..1
+	paragon_background_selector = scalar
 }

@@ -1,4 +1,4 @@
-[19:13:38][modifier.cpp:1568]: 
+[21:20:31][modifier.cpp:1569]: 
  == MODIFIER DOCUMENTATION ==
 Note on Modifier Categories:
 -- These are used internally as a tag to suggest where they are intended to be used, but exact behavior depends upon individual implementation.
@@ -366,6 +366,7 @@ Printing Modifier Definitions:
 - damage_vs_rival_mult, Category: Ships
 - damage_vs_superior_empires_mult, Category: Ships
 - ship_community_territory_speed_mult, Category: Ships
+- ship_military_speed_mult, Category: Ships
 - veto_cooldown_mult, Category: Countries
 - emergency_measures_cooldown_mult, Category: Countries
 - country_community_gdf_naval_capacity, Category: Countries
@@ -1449,6 +1450,135 @@ Printing Modifier Definitions:
 - megastructures_habitat_cost_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_produces_mult, Category: Megastructures, AI Economy
 - megastructures_habitat_upkeep_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_time_cost_add, Category: Megastructures, AI Economy
+- megastructures_gateways_time_cost_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_time_produces_add, Category: Megastructures, AI Economy
+- megastructures_gateways_time_produces_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_time_upkeep_add, Category: Megastructures, AI Economy
+- megastructures_gateways_time_upkeep_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_energy_cost_add, Category: Megastructures, AI Economy
+- megastructures_gateways_energy_cost_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_energy_produces_add, Category: Megastructures, AI Economy
+- megastructures_gateways_energy_produces_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_energy_upkeep_add, Category: Megastructures, AI Economy
+- megastructures_gateways_energy_upkeep_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_minerals_cost_add, Category: Megastructures, AI Economy
+- megastructures_gateways_minerals_cost_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_minerals_produces_add, Category: Megastructures, AI Economy
+- megastructures_gateways_minerals_produces_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_minerals_upkeep_add, Category: Megastructures, AI Economy
+- megastructures_gateways_minerals_upkeep_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_food_cost_add, Category: Megastructures, AI Economy
+- megastructures_gateways_food_cost_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_food_produces_add, Category: Megastructures, AI Economy
+- megastructures_gateways_food_produces_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_food_upkeep_add, Category: Megastructures, AI Economy
+- megastructures_gateways_food_upkeep_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_physics_research_cost_add, Category: Megastructures, AI Economy
+- megastructures_gateways_physics_research_cost_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_physics_research_produces_add, Category: Megastructures, AI Economy
+- megastructures_gateways_physics_research_produces_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_physics_research_upkeep_add, Category: Megastructures, AI Economy
+- megastructures_gateways_physics_research_upkeep_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_society_research_cost_add, Category: Megastructures, AI Economy
+- megastructures_gateways_society_research_cost_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_society_research_produces_add, Category: Megastructures, AI Economy
+- megastructures_gateways_society_research_produces_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_society_research_upkeep_add, Category: Megastructures, AI Economy
+- megastructures_gateways_society_research_upkeep_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_engineering_research_cost_add, Category: Megastructures, AI Economy
+- megastructures_gateways_engineering_research_cost_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_engineering_research_produces_add, Category: Megastructures, AI Economy
+- megastructures_gateways_engineering_research_produces_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_engineering_research_upkeep_add, Category: Megastructures, AI Economy
+- megastructures_gateways_engineering_research_upkeep_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_influence_cost_add, Category: Megastructures, AI Economy
+- megastructures_gateways_influence_cost_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_influence_produces_add, Category: Megastructures, AI Economy
+- megastructures_gateways_influence_produces_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_influence_upkeep_add, Category: Megastructures, AI Economy
+- megastructures_gateways_influence_upkeep_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_unity_cost_add, Category: Megastructures, AI Economy
+- megastructures_gateways_unity_cost_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_unity_produces_add, Category: Megastructures, AI Economy
+- megastructures_gateways_unity_produces_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_unity_upkeep_add, Category: Megastructures, AI Economy
+- megastructures_gateways_unity_upkeep_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_consumer_goods_cost_add, Category: Megastructures, AI Economy
+- megastructures_gateways_consumer_goods_cost_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_consumer_goods_produces_add, Category: Megastructures, AI Economy
+- megastructures_gateways_consumer_goods_produces_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_consumer_goods_upkeep_add, Category: Megastructures, AI Economy
+- megastructures_gateways_consumer_goods_upkeep_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_alloys_cost_add, Category: Megastructures, AI Economy
+- megastructures_gateways_alloys_cost_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_alloys_produces_add, Category: Megastructures, AI Economy
+- megastructures_gateways_alloys_produces_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_alloys_upkeep_add, Category: Megastructures, AI Economy
+- megastructures_gateways_alloys_upkeep_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_volatile_motes_cost_add, Category: Megastructures, AI Economy
+- megastructures_gateways_volatile_motes_cost_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_volatile_motes_produces_add, Category: Megastructures, AI Economy
+- megastructures_gateways_volatile_motes_produces_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_volatile_motes_upkeep_add, Category: Megastructures, AI Economy
+- megastructures_gateways_volatile_motes_upkeep_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_exotic_gases_cost_add, Category: Megastructures, AI Economy
+- megastructures_gateways_exotic_gases_cost_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_exotic_gases_produces_add, Category: Megastructures, AI Economy
+- megastructures_gateways_exotic_gases_produces_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_exotic_gases_upkeep_add, Category: Megastructures, AI Economy
+- megastructures_gateways_exotic_gases_upkeep_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_rare_crystals_cost_add, Category: Megastructures, AI Economy
+- megastructures_gateways_rare_crystals_cost_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_rare_crystals_produces_add, Category: Megastructures, AI Economy
+- megastructures_gateways_rare_crystals_produces_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_rare_crystals_upkeep_add, Category: Megastructures, AI Economy
+- megastructures_gateways_rare_crystals_upkeep_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_sr_living_metal_cost_add, Category: Megastructures, AI Economy
+- megastructures_gateways_sr_living_metal_cost_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_sr_living_metal_produces_add, Category: Megastructures, AI Economy
+- megastructures_gateways_sr_living_metal_produces_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_sr_living_metal_upkeep_add, Category: Megastructures, AI Economy
+- megastructures_gateways_sr_living_metal_upkeep_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_sr_zro_cost_add, Category: Megastructures, AI Economy
+- megastructures_gateways_sr_zro_cost_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_sr_zro_produces_add, Category: Megastructures, AI Economy
+- megastructures_gateways_sr_zro_produces_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_sr_zro_upkeep_add, Category: Megastructures, AI Economy
+- megastructures_gateways_sr_zro_upkeep_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_sr_dark_matter_cost_add, Category: Megastructures, AI Economy
+- megastructures_gateways_sr_dark_matter_cost_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_sr_dark_matter_produces_add, Category: Megastructures, AI Economy
+- megastructures_gateways_sr_dark_matter_produces_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_sr_dark_matter_upkeep_add, Category: Megastructures, AI Economy
+- megastructures_gateways_sr_dark_matter_upkeep_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_nanites_cost_add, Category: Megastructures, AI Economy
+- megastructures_gateways_nanites_cost_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_nanites_produces_add, Category: Megastructures, AI Economy
+- megastructures_gateways_nanites_produces_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_nanites_upkeep_add, Category: Megastructures, AI Economy
+- megastructures_gateways_nanites_upkeep_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_minor_artifacts_cost_add, Category: Megastructures, AI Economy
+- megastructures_gateways_minor_artifacts_cost_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_minor_artifacts_produces_add, Category: Megastructures, AI Economy
+- megastructures_gateways_minor_artifacts_produces_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_minor_artifacts_upkeep_add, Category: Megastructures, AI Economy
+- megastructures_gateways_minor_artifacts_upkeep_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_astral_threads_cost_add, Category: Megastructures, AI Economy
+- megastructures_gateways_astral_threads_cost_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_astral_threads_produces_add, Category: Megastructures, AI Economy
+- megastructures_gateways_astral_threads_produces_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_astral_threads_upkeep_add, Category: Megastructures, AI Economy
+- megastructures_gateways_astral_threads_upkeep_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_menace_cost_add, Category: Megastructures, AI Economy
+- megastructures_gateways_menace_cost_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_menace_produces_add, Category: Megastructures, AI Economy
+- megastructures_gateways_menace_produces_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_menace_upkeep_add, Category: Megastructures, AI Economy
+- megastructures_gateways_menace_upkeep_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_cost_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_produces_mult, Category: Megastructures, AI Economy
+- megastructures_gateways_upkeep_mult, Category: Megastructures, AI Economy
 - megastructures_hyper_relay_time_cost_add, Category: Megastructures, AI Economy
 - megastructures_hyper_relay_time_cost_mult, Category: Megastructures, AI Economy
 - megastructures_hyper_relay_time_produces_add, Category: Megastructures, AI Economy
@@ -11764,6 +11894,92 @@ Printing Modifier Definitions:
 - planet_squires_menace_upkeep_mult, Category: Pops, AI Economy
 - planet_squires_produces_mult, Category: Pops, AI Economy
 - planet_squires_upkeep_mult, Category: Pops, AI Economy
+- planet_knights_time_produces_add, Category: Pops, AI Economy
+- planet_knights_time_produces_mult, Category: Pops, AI Economy
+- planet_knights_time_upkeep_add, Category: Pops, AI Economy
+- planet_knights_time_upkeep_mult, Category: Pops, AI Economy
+- planet_knights_energy_produces_add, Category: Pops, AI Economy
+- planet_knights_energy_produces_mult, Category: Pops, AI Economy
+- planet_knights_energy_upkeep_add, Category: Pops, AI Economy
+- planet_knights_energy_upkeep_mult, Category: Pops, AI Economy
+- planet_knights_minerals_produces_add, Category: Pops, AI Economy
+- planet_knights_minerals_produces_mult, Category: Pops, AI Economy
+- planet_knights_minerals_upkeep_add, Category: Pops, AI Economy
+- planet_knights_minerals_upkeep_mult, Category: Pops, AI Economy
+- planet_knights_food_produces_add, Category: Pops, AI Economy
+- planet_knights_food_produces_mult, Category: Pops, AI Economy
+- planet_knights_food_upkeep_add, Category: Pops, AI Economy
+- planet_knights_food_upkeep_mult, Category: Pops, AI Economy
+- planet_knights_physics_research_produces_add, Category: Pops, AI Economy
+- planet_knights_physics_research_produces_mult, Category: Pops, AI Economy
+- planet_knights_physics_research_upkeep_add, Category: Pops, AI Economy
+- planet_knights_physics_research_upkeep_mult, Category: Pops, AI Economy
+- planet_knights_society_research_produces_add, Category: Pops, AI Economy
+- planet_knights_society_research_produces_mult, Category: Pops, AI Economy
+- planet_knights_society_research_upkeep_add, Category: Pops, AI Economy
+- planet_knights_society_research_upkeep_mult, Category: Pops, AI Economy
+- planet_knights_engineering_research_produces_add, Category: Pops, AI Economy
+- planet_knights_engineering_research_produces_mult, Category: Pops, AI Economy
+- planet_knights_engineering_research_upkeep_add, Category: Pops, AI Economy
+- planet_knights_engineering_research_upkeep_mult, Category: Pops, AI Economy
+- planet_knights_influence_produces_add, Category: Pops, AI Economy
+- planet_knights_influence_produces_mult, Category: Pops, AI Economy
+- planet_knights_influence_upkeep_add, Category: Pops, AI Economy
+- planet_knights_influence_upkeep_mult, Category: Pops, AI Economy
+- planet_knights_unity_produces_add, Category: Pops, AI Economy
+- planet_knights_unity_produces_mult, Category: Pops, AI Economy
+- planet_knights_unity_upkeep_add, Category: Pops, AI Economy
+- planet_knights_unity_upkeep_mult, Category: Pops, AI Economy
+- planet_knights_consumer_goods_produces_add, Category: Pops, AI Economy
+- planet_knights_consumer_goods_produces_mult, Category: Pops, AI Economy
+- planet_knights_consumer_goods_upkeep_add, Category: Pops, AI Economy
+- planet_knights_consumer_goods_upkeep_mult, Category: Pops, AI Economy
+- planet_knights_alloys_produces_add, Category: Pops, AI Economy
+- planet_knights_alloys_produces_mult, Category: Pops, AI Economy
+- planet_knights_alloys_upkeep_add, Category: Pops, AI Economy
+- planet_knights_alloys_upkeep_mult, Category: Pops, AI Economy
+- planet_knights_volatile_motes_produces_add, Category: Pops, AI Economy
+- planet_knights_volatile_motes_produces_mult, Category: Pops, AI Economy
+- planet_knights_volatile_motes_upkeep_add, Category: Pops, AI Economy
+- planet_knights_volatile_motes_upkeep_mult, Category: Pops, AI Economy
+- planet_knights_exotic_gases_produces_add, Category: Pops, AI Economy
+- planet_knights_exotic_gases_produces_mult, Category: Pops, AI Economy
+- planet_knights_exotic_gases_upkeep_add, Category: Pops, AI Economy
+- planet_knights_exotic_gases_upkeep_mult, Category: Pops, AI Economy
+- planet_knights_rare_crystals_produces_add, Category: Pops, AI Economy
+- planet_knights_rare_crystals_produces_mult, Category: Pops, AI Economy
+- planet_knights_rare_crystals_upkeep_add, Category: Pops, AI Economy
+- planet_knights_rare_crystals_upkeep_mult, Category: Pops, AI Economy
+- planet_knights_sr_living_metal_produces_add, Category: Pops, AI Economy
+- planet_knights_sr_living_metal_produces_mult, Category: Pops, AI Economy
+- planet_knights_sr_living_metal_upkeep_add, Category: Pops, AI Economy
+- planet_knights_sr_living_metal_upkeep_mult, Category: Pops, AI Economy
+- planet_knights_sr_zro_produces_add, Category: Pops, AI Economy
+- planet_knights_sr_zro_produces_mult, Category: Pops, AI Economy
+- planet_knights_sr_zro_upkeep_add, Category: Pops, AI Economy
+- planet_knights_sr_zro_upkeep_mult, Category: Pops, AI Economy
+- planet_knights_sr_dark_matter_produces_add, Category: Pops, AI Economy
+- planet_knights_sr_dark_matter_produces_mult, Category: Pops, AI Economy
+- planet_knights_sr_dark_matter_upkeep_add, Category: Pops, AI Economy
+- planet_knights_sr_dark_matter_upkeep_mult, Category: Pops, AI Economy
+- planet_knights_nanites_produces_add, Category: Pops, AI Economy
+- planet_knights_nanites_produces_mult, Category: Pops, AI Economy
+- planet_knights_nanites_upkeep_add, Category: Pops, AI Economy
+- planet_knights_nanites_upkeep_mult, Category: Pops, AI Economy
+- planet_knights_minor_artifacts_produces_add, Category: Pops, AI Economy
+- planet_knights_minor_artifacts_produces_mult, Category: Pops, AI Economy
+- planet_knights_minor_artifacts_upkeep_add, Category: Pops, AI Economy
+- planet_knights_minor_artifacts_upkeep_mult, Category: Pops, AI Economy
+- planet_knights_astral_threads_produces_add, Category: Pops, AI Economy
+- planet_knights_astral_threads_produces_mult, Category: Pops, AI Economy
+- planet_knights_astral_threads_upkeep_add, Category: Pops, AI Economy
+- planet_knights_astral_threads_upkeep_mult, Category: Pops, AI Economy
+- planet_knights_menace_produces_add, Category: Pops, AI Economy
+- planet_knights_menace_produces_mult, Category: Pops, AI Economy
+- planet_knights_menace_upkeep_add, Category: Pops, AI Economy
+- planet_knights_menace_upkeep_mult, Category: Pops, AI Economy
+- planet_knights_produces_mult, Category: Pops, AI Economy
+- planet_knights_upkeep_mult, Category: Pops, AI Economy
 - planet_priests_time_produces_add, Category: Pops, AI Economy
 - planet_priests_time_produces_mult, Category: Pops, AI Economy
 - planet_priests_time_upkeep_add, Category: Pops, AI Economy
@@ -12882,92 +13098,6 @@ Printing Modifier Definitions:
 - planet_bath_attendants_machine_menace_upkeep_mult, Category: Pops, AI Economy
 - planet_bath_attendants_machine_produces_mult, Category: Pops, AI Economy
 - planet_bath_attendants_machine_upkeep_mult, Category: Pops, AI Economy
-- knights_independent_category_time_produces_add, Category: Economic Units, AI Economy
-- knights_independent_category_time_produces_mult, Category: Economic Units, AI Economy
-- knights_independent_category_time_upkeep_add, Category: Economic Units, AI Economy
-- knights_independent_category_time_upkeep_mult, Category: Economic Units, AI Economy
-- knights_independent_category_energy_produces_add, Category: Economic Units, AI Economy
-- knights_independent_category_energy_produces_mult, Category: Economic Units, AI Economy
-- knights_independent_category_energy_upkeep_add, Category: Economic Units, AI Economy
-- knights_independent_category_energy_upkeep_mult, Category: Economic Units, AI Economy
-- knights_independent_category_minerals_produces_add, Category: Economic Units, AI Economy
-- knights_independent_category_minerals_produces_mult, Category: Economic Units, AI Economy
-- knights_independent_category_minerals_upkeep_add, Category: Economic Units, AI Economy
-- knights_independent_category_minerals_upkeep_mult, Category: Economic Units, AI Economy
-- knights_independent_category_food_produces_add, Category: Economic Units, AI Economy
-- knights_independent_category_food_produces_mult, Category: Economic Units, AI Economy
-- knights_independent_category_food_upkeep_add, Category: Economic Units, AI Economy
-- knights_independent_category_food_upkeep_mult, Category: Economic Units, AI Economy
-- knights_independent_category_physics_research_produces_add, Category: Economic Units, AI Economy
-- knights_independent_category_physics_research_produces_mult, Category: Economic Units, AI Economy
-- knights_independent_category_physics_research_upkeep_add, Category: Economic Units, AI Economy
-- knights_independent_category_physics_research_upkeep_mult, Category: Economic Units, AI Economy
-- knights_independent_category_society_research_produces_add, Category: Economic Units, AI Economy
-- knights_independent_category_society_research_produces_mult, Category: Economic Units, AI Economy
-- knights_independent_category_society_research_upkeep_add, Category: Economic Units, AI Economy
-- knights_independent_category_society_research_upkeep_mult, Category: Economic Units, AI Economy
-- knights_independent_category_engineering_research_produces_add, Category: Economic Units, AI Economy
-- knights_independent_category_engineering_research_produces_mult, Category: Economic Units, AI Economy
-- knights_independent_category_engineering_research_upkeep_add, Category: Economic Units, AI Economy
-- knights_independent_category_engineering_research_upkeep_mult, Category: Economic Units, AI Economy
-- knights_independent_category_influence_produces_add, Category: Economic Units, AI Economy
-- knights_independent_category_influence_produces_mult, Category: Economic Units, AI Economy
-- knights_independent_category_influence_upkeep_add, Category: Economic Units, AI Economy
-- knights_independent_category_influence_upkeep_mult, Category: Economic Units, AI Economy
-- knights_independent_category_unity_produces_add, Category: Economic Units, AI Economy
-- knights_independent_category_unity_produces_mult, Category: Economic Units, AI Economy
-- knights_independent_category_unity_upkeep_add, Category: Economic Units, AI Economy
-- knights_independent_category_unity_upkeep_mult, Category: Economic Units, AI Economy
-- knights_independent_category_consumer_goods_produces_add, Category: Economic Units, AI Economy
-- knights_independent_category_consumer_goods_produces_mult, Category: Economic Units, AI Economy
-- knights_independent_category_consumer_goods_upkeep_add, Category: Economic Units, AI Economy
-- knights_independent_category_consumer_goods_upkeep_mult, Category: Economic Units, AI Economy
-- knights_independent_category_alloys_produces_add, Category: Economic Units, AI Economy
-- knights_independent_category_alloys_produces_mult, Category: Economic Units, AI Economy
-- knights_independent_category_alloys_upkeep_add, Category: Economic Units, AI Economy
-- knights_independent_category_alloys_upkeep_mult, Category: Economic Units, AI Economy
-- knights_independent_category_volatile_motes_produces_add, Category: Economic Units, AI Economy
-- knights_independent_category_volatile_motes_produces_mult, Category: Economic Units, AI Economy
-- knights_independent_category_volatile_motes_upkeep_add, Category: Economic Units, AI Economy
-- knights_independent_category_volatile_motes_upkeep_mult, Category: Economic Units, AI Economy
-- knights_independent_category_exotic_gases_produces_add, Category: Economic Units, AI Economy
-- knights_independent_category_exotic_gases_produces_mult, Category: Economic Units, AI Economy
-- knights_independent_category_exotic_gases_upkeep_add, Category: Economic Units, AI Economy
-- knights_independent_category_exotic_gases_upkeep_mult, Category: Economic Units, AI Economy
-- knights_independent_category_rare_crystals_produces_add, Category: Economic Units, AI Economy
-- knights_independent_category_rare_crystals_produces_mult, Category: Economic Units, AI Economy
-- knights_independent_category_rare_crystals_upkeep_add, Category: Economic Units, AI Economy
-- knights_independent_category_rare_crystals_upkeep_mult, Category: Economic Units, AI Economy
-- knights_independent_category_sr_living_metal_produces_add, Category: Economic Units, AI Economy
-- knights_independent_category_sr_living_metal_produces_mult, Category: Economic Units, AI Economy
-- knights_independent_category_sr_living_metal_upkeep_add, Category: Economic Units, AI Economy
-- knights_independent_category_sr_living_metal_upkeep_mult, Category: Economic Units, AI Economy
-- knights_independent_category_sr_zro_produces_add, Category: Economic Units, AI Economy
-- knights_independent_category_sr_zro_produces_mult, Category: Economic Units, AI Economy
-- knights_independent_category_sr_zro_upkeep_add, Category: Economic Units, AI Economy
-- knights_independent_category_sr_zro_upkeep_mult, Category: Economic Units, AI Economy
-- knights_independent_category_sr_dark_matter_produces_add, Category: Economic Units, AI Economy
-- knights_independent_category_sr_dark_matter_produces_mult, Category: Economic Units, AI Economy
-- knights_independent_category_sr_dark_matter_upkeep_add, Category: Economic Units, AI Economy
-- knights_independent_category_sr_dark_matter_upkeep_mult, Category: Economic Units, AI Economy
-- knights_independent_category_nanites_produces_add, Category: Economic Units, AI Economy
-- knights_independent_category_nanites_produces_mult, Category: Economic Units, AI Economy
-- knights_independent_category_nanites_upkeep_add, Category: Economic Units, AI Economy
-- knights_independent_category_nanites_upkeep_mult, Category: Economic Units, AI Economy
-- knights_independent_category_minor_artifacts_produces_add, Category: Economic Units, AI Economy
-- knights_independent_category_minor_artifacts_produces_mult, Category: Economic Units, AI Economy
-- knights_independent_category_minor_artifacts_upkeep_add, Category: Economic Units, AI Economy
-- knights_independent_category_minor_artifacts_upkeep_mult, Category: Economic Units, AI Economy
-- knights_independent_category_astral_threads_produces_add, Category: Economic Units, AI Economy
-- knights_independent_category_astral_threads_produces_mult, Category: Economic Units, AI Economy
-- knights_independent_category_astral_threads_upkeep_add, Category: Economic Units, AI Economy
-- knights_independent_category_astral_threads_upkeep_mult, Category: Economic Units, AI Economy
-- knights_independent_category_menace_produces_add, Category: Economic Units, AI Economy
-- knights_independent_category_menace_produces_mult, Category: Economic Units, AI Economy
-- knights_independent_category_menace_upkeep_add, Category: Economic Units, AI Economy
-- knights_independent_category_menace_upkeep_mult, Category: Economic Units, AI Economy
-- knights_independent_category_produces_mult, Category: Economic Units, AI Economy
-- knights_independent_category_upkeep_mult, Category: Economic Units, AI Economy
 - planet_pops_robotics_upkeep_mult, Category: Pops, AI Economy
 - planet_pops_robotics_time_upkeep_add, Category: Pops, AI Economy
 - planet_pops_robotics_time_upkeep_mult, Category: Pops, AI Economy
@@ -17851,89 +17981,132 @@ Printing Modifier Definitions:
 - monthly_trades_produces_mult, Category: Countries, AI Economy
 - relics_time_cost_add, Category: Economic Units, AI Economy
 - relics_time_cost_mult, Category: Economic Units, AI Economy
+- relics_time_produces_add, Category: Economic Units, AI Economy
+- relics_time_produces_mult, Category: Economic Units, AI Economy
 - relics_time_upkeep_add, Category: Economic Units, AI Economy
 - relics_time_upkeep_mult, Category: Economic Units, AI Economy
 - relics_energy_cost_add, Category: Economic Units, AI Economy
 - relics_energy_cost_mult, Category: Economic Units, AI Economy
+- relics_energy_produces_add, Category: Economic Units, AI Economy
+- relics_energy_produces_mult, Category: Economic Units, AI Economy
 - relics_energy_upkeep_add, Category: Economic Units, AI Economy
 - relics_energy_upkeep_mult, Category: Economic Units, AI Economy
 - relics_minerals_cost_add, Category: Economic Units, AI Economy
 - relics_minerals_cost_mult, Category: Economic Units, AI Economy
+- relics_minerals_produces_add, Category: Economic Units, AI Economy
+- relics_minerals_produces_mult, Category: Economic Units, AI Economy
 - relics_minerals_upkeep_add, Category: Economic Units, AI Economy
 - relics_minerals_upkeep_mult, Category: Economic Units, AI Economy
 - relics_food_cost_add, Category: Economic Units, AI Economy
 - relics_food_cost_mult, Category: Economic Units, AI Economy
+- relics_food_produces_add, Category: Economic Units, AI Economy
+- relics_food_produces_mult, Category: Economic Units, AI Economy
 - relics_food_upkeep_add, Category: Economic Units, AI Economy
 - relics_food_upkeep_mult, Category: Economic Units, AI Economy
 - relics_physics_research_cost_add, Category: Economic Units, AI Economy
 - relics_physics_research_cost_mult, Category: Economic Units, AI Economy
+- relics_physics_research_produces_add, Category: Economic Units, AI Economy
+- relics_physics_research_produces_mult, Category: Economic Units, AI Economy
 - relics_physics_research_upkeep_add, Category: Economic Units, AI Economy
 - relics_physics_research_upkeep_mult, Category: Economic Units, AI Economy
 - relics_society_research_cost_add, Category: Economic Units, AI Economy
 - relics_society_research_cost_mult, Category: Economic Units, AI Economy
+- relics_society_research_produces_add, Category: Economic Units, AI Economy
+- relics_society_research_produces_mult, Category: Economic Units, AI Economy
 - relics_society_research_upkeep_add, Category: Economic Units, AI Economy
 - relics_society_research_upkeep_mult, Category: Economic Units, AI Economy
 - relics_engineering_research_cost_add, Category: Economic Units, AI Economy
 - relics_engineering_research_cost_mult, Category: Economic Units, AI Economy
+- relics_engineering_research_produces_add, Category: Economic Units, AI Economy
+- relics_engineering_research_produces_mult, Category: Economic Units, AI Economy
 - relics_engineering_research_upkeep_add, Category: Economic Units, AI Economy
 - relics_engineering_research_upkeep_mult, Category: Economic Units, AI Economy
 - relics_influence_cost_add, Category: Economic Units, AI Economy
 - relics_influence_cost_mult, Category: Economic Units, AI Economy
+- relics_influence_produces_add, Category: Economic Units, AI Economy
+- relics_influence_produces_mult, Category: Economic Units, AI Economy
 - relics_influence_upkeep_add, Category: Economic Units, AI Economy
 - relics_influence_upkeep_mult, Category: Economic Units, AI Economy
 - relics_unity_cost_add, Category: Economic Units, AI Economy
 - relics_unity_cost_mult, Category: Economic Units, AI Economy
+- relics_unity_produces_add, Category: Economic Units, AI Economy
+- relics_unity_produces_mult, Category: Economic Units, AI Economy
 - relics_unity_upkeep_add, Category: Economic Units, AI Economy
 - relics_unity_upkeep_mult, Category: Economic Units, AI Economy
 - relics_consumer_goods_cost_add, Category: Economic Units, AI Economy
 - relics_consumer_goods_cost_mult, Category: Economic Units, AI Economy
+- relics_consumer_goods_produces_add, Category: Economic Units, AI Economy
+- relics_consumer_goods_produces_mult, Category: Economic Units, AI Economy
 - relics_consumer_goods_upkeep_add, Category: Economic Units, AI Economy
 - relics_consumer_goods_upkeep_mult, Category: Economic Units, AI Economy
 - relics_alloys_cost_add, Category: Economic Units, AI Economy
 - relics_alloys_cost_mult, Category: Economic Units, AI Economy
+- relics_alloys_produces_add, Category: Economic Units, AI Economy
+- relics_alloys_produces_mult, Category: Economic Units, AI Economy
 - relics_alloys_upkeep_add, Category: Economic Units, AI Economy
 - relics_alloys_upkeep_mult, Category: Economic Units, AI Economy
 - relics_volatile_motes_cost_add, Category: Economic Units, AI Economy
 - relics_volatile_motes_cost_mult, Category: Economic Units, AI Economy
+- relics_volatile_motes_produces_add, Category: Economic Units, AI Economy
+- relics_volatile_motes_produces_mult, Category: Economic Units, AI Economy
 - relics_volatile_motes_upkeep_add, Category: Economic Units, AI Economy
 - relics_volatile_motes_upkeep_mult, Category: Economic Units, AI Economy
 - relics_exotic_gases_cost_add, Category: Economic Units, AI Economy
 - relics_exotic_gases_cost_mult, Category: Economic Units, AI Economy
+- relics_exotic_gases_produces_add, Category: Economic Units, AI Economy
+- relics_exotic_gases_produces_mult, Category: Economic Units, AI Economy
 - relics_exotic_gases_upkeep_add, Category: Economic Units, AI Economy
 - relics_exotic_gases_upkeep_mult, Category: Economic Units, AI Economy
 - relics_rare_crystals_cost_add, Category: Economic Units, AI Economy
 - relics_rare_crystals_cost_mult, Category: Economic Units, AI Economy
+- relics_rare_crystals_produces_add, Category: Economic Units, AI Economy
+- relics_rare_crystals_produces_mult, Category: Economic Units, AI Economy
 - relics_rare_crystals_upkeep_add, Category: Economic Units, AI Economy
 - relics_rare_crystals_upkeep_mult, Category: Economic Units, AI Economy
 - relics_sr_living_metal_cost_add, Category: Economic Units, AI Economy
 - relics_sr_living_metal_cost_mult, Category: Economic Units, AI Economy
+- relics_sr_living_metal_produces_add, Category: Economic Units, AI Economy
+- relics_sr_living_metal_produces_mult, Category: Economic Units, AI Economy
 - relics_sr_living_metal_upkeep_add, Category: Economic Units, AI Economy
 - relics_sr_living_metal_upkeep_mult, Category: Economic Units, AI Economy
 - relics_sr_zro_cost_add, Category: Economic Units, AI Economy
 - relics_sr_zro_cost_mult, Category: Economic Units, AI Economy
+- relics_sr_zro_produces_add, Category: Economic Units, AI Economy
+- relics_sr_zro_produces_mult, Category: Economic Units, AI Economy
 - relics_sr_zro_upkeep_add, Category: Economic Units, AI Economy
 - relics_sr_zro_upkeep_mult, Category: Economic Units, AI Economy
 - relics_sr_dark_matter_cost_add, Category: Economic Units, AI Economy
 - relics_sr_dark_matter_cost_mult, Category: Economic Units, AI Economy
+- relics_sr_dark_matter_produces_add, Category: Economic Units, AI Economy
+- relics_sr_dark_matter_produces_mult, Category: Economic Units, AI Economy
 - relics_sr_dark_matter_upkeep_add, Category: Economic Units, AI Economy
 - relics_sr_dark_matter_upkeep_mult, Category: Economic Units, AI Economy
 - relics_nanites_cost_add, Category: Economic Units, AI Economy
 - relics_nanites_cost_mult, Category: Economic Units, AI Economy
+- relics_nanites_produces_add, Category: Economic Units, AI Economy
+- relics_nanites_produces_mult, Category: Economic Units, AI Economy
 - relics_nanites_upkeep_add, Category: Economic Units, AI Economy
 - relics_nanites_upkeep_mult, Category: Economic Units, AI Economy
 - relics_minor_artifacts_cost_add, Category: Economic Units, AI Economy
 - relics_minor_artifacts_cost_mult, Category: Economic Units, AI Economy
+- relics_minor_artifacts_produces_add, Category: Economic Units, AI Economy
+- relics_minor_artifacts_produces_mult, Category: Economic Units, AI Economy
 - relics_minor_artifacts_upkeep_add, Category: Economic Units, AI Economy
 - relics_minor_artifacts_upkeep_mult, Category: Economic Units, AI Economy
 - relics_astral_threads_cost_add, Category: Economic Units, AI Economy
 - relics_astral_threads_cost_mult, Category: Economic Units, AI Economy
+- relics_astral_threads_produces_add, Category: Economic Units, AI Economy
+- relics_astral_threads_produces_mult, Category: Economic Units, AI Economy
 - relics_astral_threads_upkeep_add, Category: Economic Units, AI Economy
 - relics_astral_threads_upkeep_mult, Category: Economic Units, AI Economy
 - relics_menace_cost_add, Category: Economic Units, AI Economy
 - relics_menace_cost_mult, Category: Economic Units, AI Economy
+- relics_menace_produces_add, Category: Economic Units, AI Economy
+- relics_menace_produces_mult, Category: Economic Units, AI Economy
 - relics_menace_upkeep_add, Category: Economic Units, AI Economy
 - relics_menace_upkeep_mult, Category: Economic Units, AI Economy
 - relics_cost_mult, Category: Economic Units, AI Economy
+- relics_produces_mult, Category: Economic Units, AI Economy
 - relics_upkeep_mult, Category: Economic Units, AI Economy
 - artifact_actions_time_cost_add, Category: Economic Units, AI Economy
 - artifact_actions_time_cost_mult, Category: Economic Units, AI Economy
@@ -19812,6 +19985,7 @@ Printing Modifier Definitions:
 - district_hab_mining_max, Category: Planets
 - planet_district_orders_demesne_build_speed_mult, Category: Planets
 - planet_district_crashed_slaver_ship_build_speed_mult, Category: Planets
+- planet_district_resort_build_speed_mult, Category: Planets
 - planet_district_city_build_speed_mult, Category: Planets
 - planet_district_hive_build_speed_mult, Category: Planets
 - planet_district_nexus_build_speed_mult, Category: Planets
@@ -19926,6 +20100,7 @@ Printing Modifier Definitions:
 - planet_building_energy_nexus_build_speed_mult, Category: Planets
 - planet_building_resource_silo_build_speed_mult, Category: Planets
 - planet_building_bio_reactor_build_speed_mult, Category: Planets
+- planet_building_bio_reactor_2_build_speed_mult, Category: Planets
 - planet_building_foundry_1_build_speed_mult, Category: Planets
 - planet_building_foundry_2_build_speed_mult, Category: Planets
 - planet_building_foundry_3_build_speed_mult, Category: Planets
@@ -20303,6 +20478,9 @@ Printing Modifier Definitions:
 - job_numistic_priest_add, Category: Planets
 - job_numistic_priest_per_pop, Category: Planets
 - job_numistic_priest_per_crime, Category: Planets
+- job_preacher_add, Category: Planets
+- job_preacher_per_pop, Category: Planets
+- job_preacher_per_crime, Category: Planets
 - job_manager_add, Category: Planets
 - job_manager_per_pop, Category: Planets
 - job_manager_per_crime, Category: Planets
@@ -20348,6 +20526,9 @@ Printing Modifier Definitions:
 - job_archaeoengineers_add, Category: Planets
 - job_archaeoengineers_per_pop, Category: Planets
 - job_archaeoengineers_per_crime, Category: Planets
+- job_resort_worker_add, Category: Planets
+- job_resort_worker_per_pop, Category: Planets
+- job_resort_worker_per_crime, Category: Planets
 - job_colonist_add, Category: Planets
 - job_colonist_per_pop, Category: Planets
 - job_colonist_per_crime, Category: Planets
@@ -20375,9 +20556,6 @@ Printing Modifier Definitions:
 - job_soldier_add, Category: Planets
 - job_soldier_per_pop, Category: Planets
 - job_soldier_per_crime, Category: Planets
-- job_preacher_add, Category: Planets
-- job_preacher_per_pop, Category: Planets
-- job_preacher_per_crime, Category: Planets
 - job_mortal_initiate_add, Category: Planets
 - job_mortal_initiate_per_pop, Category: Planets
 - job_mortal_initiate_per_crime, Category: Planets
@@ -21045,7 +21223,6 @@ Printing Modifier Definitions:
 - life_toxic_category_research_speed_mult, Category: Leaders
 - life_frozen_category_research_speed_mult, Category: Leaders
 - life_barren_category_research_speed_mult, Category: Leaders
-- station_uninhabitable_category_research_speed_mult, Category: Leaders
 - battle_uninhabitable_category_research_speed_mult, Category: Leaders
 - shipyard_uninhabitable_category_research_speed_mult, Category: Leaders
 - inhabited_toxic_category_research_speed_mult, Category: Leaders
@@ -21137,6 +21314,7 @@ Printing Modifier Definitions:
 - DATA_DIAMOND_CAT_research_speed_mult, Category: Leaders
 - INTEMPORAL_ORB_CAT_research_speed_mult, Category: Leaders
 - RAPID_DESERTIFICATION_CAT_research_speed_mult, Category: Leaders
+- BREACHSEALER_CAT_research_speed_mult, Category: Leaders
 - paragon_beholder_category_research_speed_mult, Category: Leaders
 - ASTRAL_SCAR_CAT_research_speed_mult, Category: Leaders
 - GREATEST_SHOW_CAT_research_speed_mult, Category: Leaders
@@ -21458,6 +21636,7 @@ Printing Modifier Definitions:
 - job_soldier_or_warrior_add, Category: Planets
 - job_soldier_stability_add, Category: Planets
 - job_researcher_naval_cap_add, Category: Planets
+- job_preacher_trade_value_add, Category: Countries
 - habitat_stability_add, Category: Planets
 - habitat_max_districts_mult, Category: Countries
 - habitat_max_districts_add, Category: Countries
