@@ -946,6 +946,14 @@ alias[effect:ordered_country] = {
 	position = int[0..inf]
 	order_by = value_field
 	##cardinality = 0..1
+	order_by = trigger:fleet_power
+	##cardinality = 0..1
+	order_by = trigger:income
+	##cardinality = 0..1
+	order_by = trigger:max_naval_capacity
+	## cardinality = 0..1
+	order_by = value[variable]
+	##cardinality = 0..1
 	inverse = bool
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
@@ -1011,6 +1019,14 @@ alias[effect:every_playable_country] = {
 alias[effect:ordered_playable_country] = {
 	position = int[0..inf]
 	order_by = value_field
+	##cardinality = 0..1
+	order_by = trigger:fleet_power
+	##cardinality = 0..1
+	order_by = trigger:income
+	##cardinality = 0..1
+	order_by = trigger:max_naval_capacity
+	## cardinality = 0..1
+	order_by = value[variable]
 	##cardinality = 0..1
 	inverse = bool
 	##cardinality = 0..1
@@ -3888,7 +3904,7 @@ alias[effect:every_bypass] = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	# cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
+	alias_name[effect] = alias_match_left[effect]
 }
 
 ## push_scope = bypass
@@ -3907,7 +3923,7 @@ alias[effect:ordered_bypass] = {
 	## cardinality = 0..1
 	inverse = bool
 	# cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
+	alias_name[effect] = alias_match_left[effect]
 }
 
 ## push_scope = bypass
@@ -3922,8 +3938,8 @@ alias[effect:random_bypass] = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	## cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
-	
+	alias_name[effect] = alias_match_left[effect]
+
 }
 
 ## push_scope = astral_rift
@@ -3934,7 +3950,7 @@ alias[effect:every_astral_rift] = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	# cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
+	alias_name[effect] = alias_match_left[effect]
 }
 
 ## push_scope = astral_rift
@@ -3953,7 +3969,7 @@ alias[effect:ordered_astral_rift] = {
 	## cardinality = 0..1
 	inverse = bool
 	# cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
+	alias_name[effect] = alias_match_left[effect]
 }
 
 ## push_scope = astral_rift
@@ -3968,8 +3984,8 @@ alias[effect:random_astral_rift] = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	## cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
-	
+	alias_name[effect] = alias_match_left[effect]
+
 }
 
 ## push_scope = astral_rift
