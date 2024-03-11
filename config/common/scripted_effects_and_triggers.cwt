@@ -19,3 +19,32 @@ scripted_effect = {
 	optimize_memory
 	alias_name[effect] = alias_match_left[effect]
 }
+
+### Force scripted effect to work in event files
+alias[effect:store_galactic_community_leader_backup_data] = {
+	## cardinality = 0..1
+	FLAG = yes
+	## cardinality = 0..1
+	NAME = yes
+	## cardinality = 0..1
+	ETHICS = yes
+	## cardinality = 0..1
+	GOVERNMENT = yes
+	## cardinality = 0..1
+	ROOM = yes
+}
+
+### Force scripted effect to work in event files
+alias[effect:split_astral_scar] = {
+	## cardinality = 0..1
+	ID = microverse
+}
+
+### Force scripted effect to work in event files
+alias[effect:spawn_formless_defense_fleet] = {
+	## cardinality = 0..1
+	FLEET_FLAG = scalar
+	## cardinality = 0..1
+	FLEET_SIZE = int
+}
+
