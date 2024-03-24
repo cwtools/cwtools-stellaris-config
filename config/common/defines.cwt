@@ -3637,7 +3637,11 @@ NAI = {
 	FEDERATION_WEIGHT_COHESION_FACTOR = float
 	## cardinality = 0..1
 	FEDERATION_ALL_AI_LEADER_WEIGHT_FACTOR = float
-	
+	## cardinality = 0..1
+	FEDERATION_DISBAND_THRESHOLD = int 
+	## cardinality = 0..1
+	FEDERATION_DISBAND_PLAYER_THRESHOLD = int
+		
 	## cardinality = 0..1
 	DEFENSIVE_PACT_ACCEPTANCE_OPINION_FACTOR = float
 	## cardinality = 0..1
