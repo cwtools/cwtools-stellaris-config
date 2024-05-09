@@ -36,7 +36,8 @@ megastructure = {
 	rotate_to_center = bool
 	## cardinality = 0..1
 	scale_offset = bool
-
+	## cardinality = 0..1
+	use_planet_resource = bool
 	## cardinality = 0..1
 	construction_entity = scalar #TODO entity suffixes
 	## cardinality = 0..1
@@ -44,7 +45,7 @@ megastructure = {
 	## cardinality = 0..1
 	place_entity_on_planet_plane = bool
 	## cardinality = 0..1
-	entity_offset = { x = int y = int }
+	entity_offset = { x = float y = float }
 	## cardinality = 0..1
 	construction_blocks_others = bool
 	## cardinality = 0..1
@@ -55,6 +56,12 @@ megastructure = {
 	### Default yes, if yes megastructure will be shown in outliner
 	show_in_outliner = bool
 	## cardinality = 0..1
+	## replace_scope = { this = megastructure root = megastructure }
+	###an extra trigger to allow scripted reasons to hide the megastructure. if defined both show_in_outliner and this trigger need to be true for the megastructure to show in the outliner
+	outliner_trigger = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
 	bypass_type = <bypass>
 	## cardinality = 0..1
 	###also possible to use here upgrade_desc = hide, and localisations are not required in that case
@@ -64,7 +71,7 @@ megastructure = {
 	upgrade_desc = hide
 	## cardinality = 0..1
 	upgrade_from = {
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		<megastructure>
 	}
 	## cardinality = 0..1
@@ -108,9 +115,11 @@ megastructure = {
 	## replace_scope = { this = country root = country }
 	country_modifier = {
 		## cardinality = 0..inf
+		custom_tooltip = localization
+		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	
+
 	## cardinality = 0..1
 	## replace_scope = { this = ship root = ship }
 	ship_modifier = {
@@ -177,13 +186,13 @@ megastructure = {
 	## cardinality = 0..1
 	### the type of constructions that block (and are in turn blocked by) this construction, default: multi_stage_type
 	construction_blocks_and_blocked_by = enum[megastructure_block_type]
-	
+
 	## cardinality = 0..1
 	victory_score = int
-	
+
 	## cardinality = 0..1
 	build_megastructure_no_cost_localization_key = localisation
-	
+
 	## cardinality = 0..1
 	hide_name = bool
 }

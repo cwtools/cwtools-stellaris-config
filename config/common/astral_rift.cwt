@@ -5,6 +5,9 @@ types = {
 	type[astral_actions] = {
 		path = "game/common/astral_actions"
 	}
+	type[astral_action] = {
+		path = "game/common/astral_actions"
+	}
 }
 
 astral_rift = {
@@ -27,7 +30,7 @@ astral_rift = {
 	## cardinality = 0..inf
 	event_weight = {
 		weight = float
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		modifier = {
 			## cardinality = 0..1
 			factor = int
@@ -36,8 +39,8 @@ astral_rift = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
-	
-}	
+
+}
 
 astral_actions = {
 
@@ -125,5 +128,61 @@ enums = {
 	enum[astral_actions_upgrade] = {
 		action_flash_forge_hyper_relay
 		action_quantum_catapult_insight_2
+	}
+}
+
+## push_scope = country
+astral_action = {
+	## cardinality = 0..1
+	sound = <sound_effect>
+	## cardinality = 0..1
+	unlock_threshold = int
+	## cardinality = 0..1
+	usages = int
+	## cardinality = 0..1
+	custom_usage_tooltip = localisation
+	## cardinality = 0..1
+	upgrade = <astral_action>
+
+	## cardinality = 0..1
+	activation_cost = {
+		alias_name[economic_template] = alias_match_left[economic_template]
+	}
+
+	## cardinality = 0..1
+	cooldown = int
+	## cardinality = 0..1
+	uses_custom_cooldown = yes
+
+	picture = <sprite>
+
+	## cardinality = 0..1
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## cardinality = 0..1
+	allow = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## cardinality = 0..1
+	allow_unlock = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## cardinality = 0..1
+	is_exhausted = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## cardinality = 0..1
+	effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+
+	## cardinality = 0..1
+	ai_weight = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 }

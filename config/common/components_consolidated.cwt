@@ -419,6 +419,10 @@ component_template = {
 		scripted_action_on_cancel = <on_action>
 		## cardinality = 0..1
 		scripted_action_context_menu_name = localisation
+		## cardinality = 0..1
+		scripted_action_progress_activity_key = localisation
+		## cardinality = 0..1
+		scripted_action_required_progress = int
 	}
 }
 

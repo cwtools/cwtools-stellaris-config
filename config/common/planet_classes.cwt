@@ -162,17 +162,18 @@ planet_class = {
 
 	## cardinality = 0..1
 	fixed_city_level = int
-	
+
 	## cardinality = 0..1
 	is_artificial_planet = bool
 
 	## cardinality = 0..1
 	colonizable = bool
-	
+
 	subtype[habitable_planet] = {
 		## severity = warning
 		district_set = enum[district_sets]
-		
+		## severity = warning
+		building_set = enum[building_sets]
 		## cardinality = 0..1
 		climate = localisation
 		## cardinality = 0..1
@@ -183,7 +184,7 @@ planet_class = {
 		show_city = bool
 		## cardinality = 0..1
 		ideal = bool
-		
+
 		## cardinality = 0..1
 		initial = yes
 		## cardinality = 0..1
@@ -205,6 +206,8 @@ planet_class = {
 	show_city = no
 	## cardinality = 0..1
 	default_planet_selection = bool
+	## cardinality = 0..1
+	inherit_country_building_modifiers = bool
 	## cardinality = 0..1
 	planet_custom_label_offset = int
 	## cardinality = 0..1
@@ -228,6 +231,15 @@ enums = {
 		path = "game/common/planet_classes"
 		name = {
 			district_set = enum_name
+		}
+	}
+}
+
+enums = {
+	complex_enum[building_sets] = {
+		path = "game/common/planet_classes"
+		name = {
+			building_set = enum_name
 		}
 	}
 }

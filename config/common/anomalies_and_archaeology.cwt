@@ -101,10 +101,10 @@ anomaly_category = {
 			max_once_global = bool
 
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
-			
+
 			## cardinality = 0..1
 			anomaly_event = <event.ship>
-			
+
 			## cardinality = 0..1
 			ship_event = <event.ship>
 		}
@@ -121,6 +121,10 @@ relic = {
 		category = <economic_category>
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}
+
+	## cardinality = 0..1
+	### Default = yes: Stops the relic from being stealable
+	can_be_stolen = bool
 
 	## cardinality = 0..1
 	ai_weight = {

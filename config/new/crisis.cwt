@@ -30,7 +30,7 @@ crisis_level = {
 	allow = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	required_menace = int
+	required_crisis_currency = int
 
 	# REWARDS
 	perks = {
