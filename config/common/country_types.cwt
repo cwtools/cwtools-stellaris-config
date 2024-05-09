@@ -381,5 +381,7 @@ enums = {
 		swarm_military_minister_module
 		space_monsters_modules
 		formless_military_minister_module
+		synth_queen_interior_minister_module
+		synth_queen_military_minister_module
 	}
 }

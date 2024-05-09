@@ -3,9 +3,9 @@ types = {
 		path = "game/common/diplomatic_actions"
 		localisation = {
 			## optional
-			Title = "$_TITLE"
+			Name = "$_TITLE"
 			## optional
-			Desc = "$_DESC"
+			Description = "$_DESC"
 			## optional
 			"Long desc" = "$_LONG_DESC"
 			## optional

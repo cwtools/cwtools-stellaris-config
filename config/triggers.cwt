@@ -2042,6 +2042,9 @@ alias[trigger:is_civilian] = bool
 ###Checks if a country has a specific Menace Perk unlocked.
 alias[trigger:has_menace_perk] = <menace_perk>
 
+###Checks if a country has a specific Crisis Perk unlocked.
+alias[trigger:has_crisis_perk] = <menace_perk>
+
 ###Compares the spy power of the network
 alias[trigger:has_spy_power] == value_field
 
@@ -2696,10 +2699,10 @@ alias[trigger:is_councilor] = bool
 ###Checks the scope leader's lifespan
 alias[trigger:leader_lifespan] == int_value_field
 
-###Checks if the specified relic was the last lost one 
+###Checks if the specified relic was the last lost one
 alias[trigger:last_lost_relic] = <relic>
 
-###Checks if the specified relic was the last received one 
+###Checks if the specified relic was the last received one
 alias[trigger:last_received_relic] = <relic>
 
 ###Checks if the planet is an astral scar
@@ -2797,3 +2800,6 @@ alias[trigger:is_on_galaxy_map] = bool
 
 ###Checks if the current player is currently paused
 alias[trigger:is_paused] = bool
+
+###Checks if the scoped pop faction is extorted
+alias[trigger:is_faction_extorted] = bool
