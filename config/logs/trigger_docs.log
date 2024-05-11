@@ -1,4 +1,4 @@
-[21:20:32][game_application.cpp:2106]:
+[18:36:56][game_application.cpp:2134]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -147,7 +147,7 @@ empire_sprawl - Checks the empire's sprawl. Identical to empire_size trigger.
 empire_sprawl < 20
 Supported Scopes: country
 
-empire_sprawl_over_cap - Checks how much the empire sprawl is over its admin capacity
+empire_sprawl_over_cap - Checks how much the empire's sprawl is over its admin capacity
 empire_sprawl_over_cap < 5
 Supported Scopes: country
 
@@ -514,6 +514,15 @@ has_available_jobs - Check that you have available job of a specific type
 has_available_jobs = "miner"
 Supported Scopes: planet
 
+free_jobs_of_type - Check how many free jobs there are of a specific jobtype or pop category on a planet
+free_jobs_of_type = {
+job = <jobtype>
+category = <pop_category>
+include_deprioritized_jobs = <yes/no>: default = no
+value <comparator> <value>
+}
+Supported Scopes: planet
+
 is_galactic_custodian - Checks if an empire is Custodian of the Galactic Council
 is_galactic_custodian = yes/no
 Supported Scopes: country
@@ -876,8 +885,16 @@ has_built_species - Checks if country has a built species defined
 has_built_species = yes/no
 Supported Scopes: country
 
+is_faction_extorted - Checks if the scoped pop faction is extorted
+is_faction_extorted = yes/no
+Supported Scopes: pop_faction
+
+has_extorted_faction - Checks if the the country has an extorted faction
+has_extorted_faction = yes/no
+Supported Scopes: country
+
 num_buildings - Checks the number the planet has of any, or a specific, building
-num_buildings = {  type = <key/any>  value > 2/variable  disabled = <any(default)/yes(only)/no(only)>  in_construction = <any/no(default)/yes(only)>  category = <any(default)/for example unity or resource> }
+num_buildings = {  type = <key/any>  value > 2/variable  disabled = <any(default)/yes(only)/no(only)>  in_construction = <any/no(default)/yes(only)>  category = <any(default)/for example unity or resource> owner_type = <normal/corporate/subject_holding> }
 Supported Scopes: planet country
 
 num_districts - Checks the number the planet has of any, or a specific, district
