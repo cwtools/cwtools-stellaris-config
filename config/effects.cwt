@@ -3284,7 +3284,7 @@ alias[effect:set_origin] = <civic_or_origin.origin>
 
 # 3.0
 
-###Gives the player the reward for the specified crisis objective
+###Gives the player the reward for the specified crisis objective, if the player's selected crisis path includes it. Gives nothing if the player's crisis path doesn't include it.
 alias[effect:complete_crisis_objective] = <crisis_objective>
 
 ###Sets whether the Galactic Emperor can change Imperial Council members or not
@@ -4105,11 +4105,26 @@ alias[effect:set_faction_extorted] = bool
 ###Signals to portrait objects that they need to refresh some of their properties
 alias[effect:refresh_portraits] = enum[portrait_refresh]
 
-enums = {
-	enum[portrait_refresh] = {
-		planet
-		room
-		character
-		all
-	}
-}
+###Can be used to reset a planets decline
+alias[effect:reset_decline] = bool
+
+###Used after an advanced authority swap to make sure things are changed properly
+alias[effect:advanced_authority_refresh] = bool
+
+###Enables or disables the date distortion effect
+alias[effect:date_distortion] = bool
+
+###Signals to portrait objects that they need to refresh some of their properties
+alias[effect:refresh_portraits] = enum[portrait_refresh]
+
+###Creates cloud effect at every star system controlled by the country
+alias[effect:activate_fog_machine] = <cloud_type>
+
+###Deactivates country fog machine
+alias[effect:deactivate_fog_machine] = bool
+
+###Swithces on/off galactic object ownership auto tracking for country fog machine
+alias[effect:fog_machine_auto_tracking] = bool
+
+###Sets the scope faction as extorted and removes extortion from any other ones
+alias[effect:set_faction_extorted] = bool
