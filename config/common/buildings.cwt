@@ -33,6 +33,11 @@ enums = {
 		trade
 		amenity
 	}
+	enum[building_owner_type] = {
+		normal
+		corporate
+		subject_holding
+	}
 }
 
 ## push_scope = planet
