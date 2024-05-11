@@ -384,4 +384,10 @@ enums = {
 		ai_crisis_poi.3
 		ai_crisis_poi.4
 	}
+	enum[portrait_refresh] = {
+		planet
+		room
+		character
+		all
+	}
 }
