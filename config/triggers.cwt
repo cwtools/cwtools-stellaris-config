@@ -2714,10 +2714,10 @@ alias[trigger:is_councilor] = bool
 ###Checks the scope leader's lifespan
 alias[trigger:leader_lifespan] == int_value_field
 
-###Checks if the specified relic was the last lost one
+###Checks if the specified relic was the last lost one 
 alias[trigger:last_lost_relic] = <relic>
 
-###Checks if the specified relic was the last received one
+###Checks if the specified relic was the last received one 
 alias[trigger:last_received_relic] = <relic>
 
 ###Checks if the planet is an astral scar
@@ -2806,3 +2806,27 @@ alias[trigger:free_jobs_of_type] = {
 ###Checks if the the country has an extorted faction
 alias[trigger:has_extorted_faction] = bool
 
+###Only used for the Empire Select View to see if the selected empire matches a specific origin. Any other case should use has_origin as they will have a country to scope to.
+alias[trigger:local_human_origin] = <civic_or_origin.origin>
+
+###Checks the number of unique traits within the set parameters on a species or pop
+alias[trigger:count_traits] = { 
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1		
+	category = enum[species_category type]
+	## cardinality = 0..1
+	cost = int
+	## cardinality = 0..1
+	count = int 
+}
+
+###Checks if the planet has the specified tag for building usage:
+alias[trigger:uses_building_set] = enum[building_sets]
+
+###Checks if a country has a specific Crisis Perk unlocked.
+alias[trigger:has_crisis_perk] = <menace_perk>
+
+###Checks if pop in the scope is being sold on the slave market:
+alias[trigger:is_on_slave_market] = bool
