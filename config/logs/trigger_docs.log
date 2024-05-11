@@ -1276,6 +1276,10 @@ local_human_species_class - Checks if local humans founder species is a specific
 local_human_species_class = MAM
 Supported Scopes: all
 
+local_human_origin - Only used for the Empire Select View to see if the selected empire matches a specific origin. Any other case should use has_origin as they will have a country to scope to.
+local_human_origin = ORIGIN
+Supported Scopes: all
+
 num_envoys_to_federation - Checks the country's number of envoys sent to its federation
 num_envoys_to_federation < 2
 Supported Scopes: country
@@ -1649,6 +1653,10 @@ Supported Scopes: country
 count_deposits - Checks the number of deposits on the planet that meet the specified criteria
 count_deposits = { type = <deposit> category = <category> count < 2 }
 Supported Scopes: planet
+
+count_species_traits - Checks the number of unique traits within the set parameters on a species or pop
+count_traits = { limit = {} category = <category> cost < = > <trait cost> | count < 2 }
+Supported Scopes: pop species
 
 has_tech_option - Checks if the country has a tech research option currently available
 has_tech_option = tech_mining_network_2
@@ -2166,7 +2174,7 @@ is_crises_allowed = yes
 Supported Scopes: all
 
 allowed_crisis_type - Checks which crisis is allowed to spawn in the current game
-allowed_crisis_type = prethoryn/unbidden/contingency/all
+allowed_crisis_type = prethoryn/unbidden/contingency/synth_queen/all
 Supported Scopes: all
 
 is_custom_capital_location - Checks if the spatial object is its owner's custom capital location
@@ -2598,6 +2606,10 @@ uses_district_set - Checks if the planet has the specified tag for district usag
 uses_district_set = standard
 Supported Scopes: planet
 
+uses_building_set - Checks if the planet has the specified tag for building usage:
+uses_building_set = standard
+Supported Scopes: planet
+
 has_climate - Checks if the planet's climate is set to a specified string in planet_classes:
 has_climate = dry
 Supported Scopes: planet
@@ -3002,8 +3014,12 @@ has_espionage_operation_flag - Checks if the espionage operation has a specific 
 has_espionage_operation_flag = <flag> (note: one can use e.g. my_flag@from to track relationships between objects)
 Supported Scopes: espionage_operation
 
+has_crisis_perk - Checks if a country has a specific Crisis Perk unlocked.
+has_crisis_perk = <crisis_perk_name>
+Supported Scopes: country
+
 has_menace_perk - Checks if a country has a specific Menace Perk unlocked.
-has_menace_perk = <menace_perk_name>
+has_menace_perk = <crisis_perk_name>
 Supported Scopes: country
 
 num_organic_pops_per_year - Checks how many organic pops the planet expects to gain in a year on average (through growth and assembly) at the current rate.
@@ -3216,6 +3232,10 @@ Supported Scopes: bypass
 can_go_mia - Checks if the scoped fleet can go MIA.
 can_go_mia = yes / no
 Supported Scopes: fleet
+
+is_on_slave_market - Checks if pop in the scope is being sold on the slave market:
+is_on_slave_market = yes/no
+Supported Scopes: pop
 
 any_agreement - Iterate through each agreement - checks whether the enclosed triggers return true for any of them
 any_agreement = { <triggers> }
