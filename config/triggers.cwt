@@ -2788,3 +2788,19 @@ alias[trigger:is_paused] = bool
 
 ###Checks if the scoped pop faction is extorted
 alias[trigger:is_faction_extorted] = bool
+
+
+###Check how many free jobs there are of a specific jobtype or pop category on a planet
+alias[trigger:free_jobs_of_type] = {
+	## cardinality = 0..1
+	job = <job>
+	## cardinality = 0..1
+	category = <social_strata>
+	## cardinality = 0..1
+	###(default: no)
+	include_deprioritized_jobs = bool
+	value = int
+}
+
+###Checks if the the country has an extorted faction
+alias[trigger:has_extorted_faction] = bool
