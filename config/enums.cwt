@@ -256,6 +256,7 @@ enums = {
 		prethoryn
 		unbidden
 		contingency
+		synth_queen
 		all
 	}
 	enum[ship_owner_types] = {
