@@ -3997,7 +3997,7 @@ Supported Scopes: country
 
 
 =================
-[21:20:32][game_application.cpp:2109]:
+[18:36:56][game_application.cpp:2137]:
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -4091,6 +4091,10 @@ Supported Scopes: planet
 
 remove_holding - Removes a specific holding from the scoped planet
 remove_holding = { holding = <key> owner = <owner> }
+Supported Scopes: planet
+
+reset_decline - Can be used to reset a planets decline
+reset_decline = yes
 Supported Scopes: planet
 
 add_holding - Begins construction of a specific holding on the scoped planet
@@ -6163,6 +6167,10 @@ set_site_progress_locked - Locks or unlocks the progress of a site
 set_site_progress_locked = yes/no
 Supported Scopes: archaeological_site first_contact
 
+advanced_authority_refresh - Used after an advanced authority swap to make sure things are changed properly
+advanced_authority_refresh = yes
+Supported Scopes: country
+
 custom_tooltip_with_params - Displays a specific localization string with parameters in tooltip
 custom_tooltip_with_params = {
 	description = <loc key>
@@ -6420,7 +6428,7 @@ remove_design_flag - Removes a flag from the scoped design
 remove_design_flag = <key> (note: one can use e.g. my_flag@from to track relationships between objects)
 Supported Scopes: design
 
-complete_crisis_objective - Gives the player the reward for the specified crisis objective
+complete_crisis_objective - Gives the player the reward for the specified crisis objective, if the player's selected crisis path includes it. Gives nothing if the player's crisis path doesn't include it. 
 complete_crisis_objective = <objective>
 Supported Scopes: country
 
@@ -6479,7 +6487,7 @@ add_victory_score = { source=<loc_key> score=<value>/<variable> }
 Supported Scopes: country
 
 activate_crisis_progression - Activates crisis progression for the country
-activate_crisis_progression = yes
+activate_crisis_progression = <path_name>
 Supported Scopes: country
 
 room_name_override - Sets the room background of the empire. Provide an empty string to remove the override.
@@ -6624,12 +6632,32 @@ lock_bypass - Lock a Bypass for exclusive access for a given country.
 lock_bypass = { country = owner duration = 360 }
 Supported Scopes: bypass
 
+date_distortion - Enables or disables the date distortion effect
+date_distortion = yes
+Supported Scopes: all
+
+refresh_portraits - Signals to portrait objects that they need to refresh some of their properties
+refresh_portraits = planet/room/character/all
+Supported Scopes: country
+
 start_astral_action_cooldown - Starts the cooldown of an astral action defined with uses_custom_cooldown = yes
 start_astral_action_cooldown=<key>
 Supported Scopes: country
 
 perform_astral_action_unlock_check - Unlocks Astral Actions that have become unlockable since the last time this effect was called.
 perform_astral_action_unlock_check = yes
+Supported Scopes: country
+
+activate_fog_machine - Creates cloud effect at every star system controlled by the country
+activate_fog_machine = <cloud_type>
+Supported Scopes: country
+
+deactivate_fog_machine - Deactivates country fog machine
+deactivate_fog_machine = yes
+Supported Scopes: country
+
+fog_machine_auto_tracking - Swithces on/off galactic object ownership auto tracking for country fog machine
+fog_machine_auto_tracking = yes/no
 Supported Scopes: country
 
 unlock_council_selection - Unlocks council selection
@@ -6758,6 +6786,10 @@ Supported Scopes: country
 pop_remove_ethic - Removes a specific ethic from the scoped pop
 pop_remove_ethic = <key>
 Supported Scopes: pop
+
+set_faction_extorted - Sets the scope faction as extorted and removes extortion from any other ones
+set_faction_extorted = <yes|no>
+Supported Scopes: pop_faction
 
 create_rebels - Creates a rebellion
 create_rebels = {
