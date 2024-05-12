@@ -51,6 +51,11 @@ crisis_level = {
 }
 
 crisis_objective = {
+	## cardinality = 0..1
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
 	reward = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
