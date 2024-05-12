@@ -1,4 +1,4 @@
-[21:20:32][game_application.cpp:2106]:
+[18:36:56][game_application.cpp:2134]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -147,7 +147,7 @@ empire_sprawl - Checks the empire's sprawl. Identical to empire_size trigger.
 empire_sprawl < 20
 Supported Scopes: country
 
-empire_sprawl_over_cap - Checks how much the empire sprawl is over its admin capacity
+empire_sprawl_over_cap - Checks how much the empire's sprawl is over its admin capacity
 empire_sprawl_over_cap < 5
 Supported Scopes: country
 
@@ -514,6 +514,15 @@ has_available_jobs - Check that you have available job of a specific type
 has_available_jobs = "miner"
 Supported Scopes: planet
 
+free_jobs_of_type - Check how many free jobs there are of a specific jobtype or pop category on a planet
+free_jobs_of_type = {
+job = <jobtype>
+category = <pop_category>
+include_deprioritized_jobs = <yes/no>: default = no
+value <comparator> <value>
+}
+Supported Scopes: planet
+
 is_galactic_custodian - Checks if an empire is Custodian of the Galactic Council
 is_galactic_custodian = yes/no
 Supported Scopes: country
@@ -876,8 +885,16 @@ has_built_species - Checks if country has a built species defined
 has_built_species = yes/no
 Supported Scopes: country
 
+is_faction_extorted - Checks if the scoped pop faction is extorted
+is_faction_extorted = yes/no
+Supported Scopes: pop_faction
+
+has_extorted_faction - Checks if the the country has an extorted faction
+has_extorted_faction = yes/no
+Supported Scopes: country
+
 num_buildings - Checks the number the planet has of any, or a specific, building
-num_buildings = {  type = <key/any>  value > 2/variable  disabled = <any(default)/yes(only)/no(only)>  in_construction = <any/no(default)/yes(only)>  category = <any(default)/for example unity or resource> }
+num_buildings = {  type = <key/any>  value > 2/variable  disabled = <any(default)/yes(only)/no(only)>  in_construction = <any/no(default)/yes(only)>  category = <any(default)/for example unity or resource> owner_type = <normal/corporate/subject_holding> }
 Supported Scopes: planet country
 
 num_districts - Checks the number the planet has of any, or a specific, district
@@ -1259,6 +1276,10 @@ local_human_species_class - Checks if local humans founder species is a specific
 local_human_species_class = MAM
 Supported Scopes: all
 
+local_human_origin - Only used for the Empire Select View to see if the selected empire matches a specific origin. Any other case should use has_origin as they will have a country to scope to.
+local_human_origin = ORIGIN
+Supported Scopes: all
+
 num_envoys_to_federation - Checks the country's number of envoys sent to its federation
 num_envoys_to_federation < 2
 Supported Scopes: country
@@ -1632,6 +1653,10 @@ Supported Scopes: country
 count_deposits - Checks the number of deposits on the planet that meet the specified criteria
 count_deposits = { type = <deposit> category = <category> count < 2 }
 Supported Scopes: planet
+
+count_species_traits - Checks the number of unique traits within the set parameters on a species or pop
+count_traits = { limit = {} category = <category> cost < = > <trait cost> | count < 2 }
+Supported Scopes: pop species
 
 has_tech_option - Checks if the country has a tech research option currently available
 has_tech_option = tech_mining_network_2
@@ -2149,7 +2174,7 @@ is_crises_allowed = yes
 Supported Scopes: all
 
 allowed_crisis_type - Checks which crisis is allowed to spawn in the current game
-allowed_crisis_type = prethoryn/unbidden/contingency/all
+allowed_crisis_type = prethoryn/unbidden/contingency/synth_queen/all
 Supported Scopes: all
 
 is_custom_capital_location - Checks if the spatial object is its owner's custom capital location
@@ -2581,6 +2606,10 @@ uses_district_set - Checks if the planet has the specified tag for district usag
 uses_district_set = standard
 Supported Scopes: planet
 
+uses_building_set - Checks if the planet has the specified tag for building usage:
+uses_building_set = standard
+Supported Scopes: planet
+
 has_climate - Checks if the planet's climate is set to a specified string in planet_classes:
 has_climate = dry
 Supported Scopes: planet
@@ -2985,8 +3014,12 @@ has_espionage_operation_flag - Checks if the espionage operation has a specific 
 has_espionage_operation_flag = <flag> (note: one can use e.g. my_flag@from to track relationships between objects)
 Supported Scopes: espionage_operation
 
+has_crisis_perk - Checks if a country has a specific Crisis Perk unlocked.
+has_crisis_perk = <crisis_perk_name>
+Supported Scopes: country
+
 has_menace_perk - Checks if a country has a specific Menace Perk unlocked.
-has_menace_perk = <menace_perk_name>
+has_menace_perk = <crisis_perk_name>
 Supported Scopes: country
 
 num_organic_pops_per_year - Checks how many organic pops the planet expects to gain in a year on average (through growth and assembly) at the current rate.
@@ -3199,6 +3232,10 @@ Supported Scopes: bypass
 can_go_mia - Checks if the scoped fleet can go MIA.
 can_go_mia = yes / no
 Supported Scopes: fleet
+
+is_on_slave_market - Checks if pop in the scope is being sold on the slave market:
+is_on_slave_market = yes/no
+Supported Scopes: pop
 
 any_agreement - Iterate through each agreement - checks whether the enclosed triggers return true for any of them
 any_agreement = { <triggers> }
@@ -3960,7 +3997,7 @@ Supported Scopes: country
 
 
 =================
-[21:20:32][game_application.cpp:2109]:
+[18:36:56][game_application.cpp:2137]:
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -4054,6 +4091,10 @@ Supported Scopes: planet
 
 remove_holding - Removes a specific holding from the scoped planet
 remove_holding = { holding = <key> owner = <owner> }
+Supported Scopes: planet
+
+reset_decline - Can be used to reset a planets decline
+reset_decline = yes
 Supported Scopes: planet
 
 add_holding - Begins construction of a specific holding on the scoped planet
@@ -6126,6 +6167,10 @@ set_site_progress_locked - Locks or unlocks the progress of a site
 set_site_progress_locked = yes/no
 Supported Scopes: archaeological_site first_contact
 
+advanced_authority_refresh - Used after an advanced authority swap to make sure things are changed properly
+advanced_authority_refresh = yes
+Supported Scopes: country
+
 custom_tooltip_with_params - Displays a specific localization string with parameters in tooltip
 custom_tooltip_with_params = {
 	description = <loc key>
@@ -6383,7 +6428,7 @@ remove_design_flag - Removes a flag from the scoped design
 remove_design_flag = <key> (note: one can use e.g. my_flag@from to track relationships between objects)
 Supported Scopes: design
 
-complete_crisis_objective - Gives the player the reward for the specified crisis objective
+complete_crisis_objective - Gives the player the reward for the specified crisis objective, if the player's selected crisis path includes it. Gives nothing if the player's crisis path doesn't include it. 
 complete_crisis_objective = <objective>
 Supported Scopes: country
 
@@ -6442,7 +6487,7 @@ add_victory_score = { source=<loc_key> score=<value>/<variable> }
 Supported Scopes: country
 
 activate_crisis_progression - Activates crisis progression for the country
-activate_crisis_progression = yes
+activate_crisis_progression = <path_name>
 Supported Scopes: country
 
 room_name_override - Sets the room background of the empire. Provide an empty string to remove the override.
@@ -6587,12 +6632,32 @@ lock_bypass - Lock a Bypass for exclusive access for a given country.
 lock_bypass = { country = owner duration = 360 }
 Supported Scopes: bypass
 
+date_distortion - Enables or disables the date distortion effect
+date_distortion = yes
+Supported Scopes: all
+
+refresh_portraits - Signals to portrait objects that they need to refresh some of their properties
+refresh_portraits = planet/room/character/all
+Supported Scopes: country
+
 start_astral_action_cooldown - Starts the cooldown of an astral action defined with uses_custom_cooldown = yes
 start_astral_action_cooldown=<key>
 Supported Scopes: country
 
 perform_astral_action_unlock_check - Unlocks Astral Actions that have become unlockable since the last time this effect was called.
 perform_astral_action_unlock_check = yes
+Supported Scopes: country
+
+activate_fog_machine - Creates cloud effect at every star system controlled by the country
+activate_fog_machine = <cloud_type>
+Supported Scopes: country
+
+deactivate_fog_machine - Deactivates country fog machine
+deactivate_fog_machine = yes
+Supported Scopes: country
+
+fog_machine_auto_tracking - Swithces on/off galactic object ownership auto tracking for country fog machine
+fog_machine_auto_tracking = yes/no
 Supported Scopes: country
 
 unlock_council_selection - Unlocks council selection
@@ -6721,6 +6786,10 @@ Supported Scopes: country
 pop_remove_ethic - Removes a specific ethic from the scoped pop
 pop_remove_ethic = <key>
 Supported Scopes: pop
+
+set_faction_extorted - Sets the scope faction as extorted and removes extortion from any other ones
+set_faction_extorted = <yes|no>
+Supported Scopes: pop_faction
 
 create_rebels - Creates a rebellion
 create_rebels = {

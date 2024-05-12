@@ -22,6 +22,13 @@ types = {
 			Description = "$_desc"
 		}
 	}
+	type[crisis_path] = {
+		path = "game/common/crisis_paths"
+	}
+	
+	type[cloud_type] = {
+		path = "game/common/dust_clouds"
+	}
 }
 
 ## replace_scopes = { this = country root = country }
@@ -44,6 +51,11 @@ crisis_level = {
 }
 
 crisis_objective = {
+	## cardinality = 0..1
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
 	reward = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
@@ -70,6 +82,66 @@ menace_perk = {
 	## cardinality = 0..1
 	## replace_scopes = { this = country root = country }
 	on_unlock = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+}
+
+
+crisis_path = {
+	crisis_currency = <resource>
+
+	levels = {
+		## cardinality = 0..inf
+		<crisis_level>
+	}
+
+	objectives = {
+		## cardinality = 0..inf
+		<crisis_objective>
+	}
+}
+
+cloud_type = {
+	textures = {
+		opacity_texture = filepath
+		diffuse_texture = filepath
+		lightning_texture_atlas = filepath
+		lightning_horisontal_tiles = int
+		lightning_vertical_tiles = int
+	}
+
+	parameters = {
+		min_size = float
+		max_size = float
+		size_change_speed = float
+		rotation_speed = float
+		counter_rotation_speed = float
+		min_opacity = float
+		max_opacity = float
+		opacity_change_speed = float
+		lightning_intencity_min = float
+		lightning_intencity_max = float
+		lightning_duration_min = float
+		lightning_duration_max = float
+		lightning_switch_interval_min = float
+		lightning_switch_interval_max = float
+		size_change_reversion = bool
+		opacity_change_reversion = bool
+	}
+
+	ambient_object = {
+		type = synth_queen_tempest
+		scale = float
+		centric = bool
+	}
+
+	## replace_scope = { this = galacticobject from = country }
+	on_system_added = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+
+	## replace_scope = { this = galacticobject from = country }
+	on_system_removed = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 }

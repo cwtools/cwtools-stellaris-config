@@ -256,6 +256,7 @@ enums = {
 		prethoryn
 		unbidden
 		contingency
+		synth_queen
 		all
 	}
 	enum[ship_owner_types] = {
@@ -382,5 +383,11 @@ enums = {
 		ai_crisis_poi.2
 		ai_crisis_poi.3
 		ai_crisis_poi.4
+	}
+	enum[portrait_refresh] = {
+		planet
+		room
+		character
+		all
 	}
 }

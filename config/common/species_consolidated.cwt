@@ -844,4 +844,12 @@ enums = {
 		colonization_control
 		none
 	}
+	enum[species_category type] = {
+		normal
+		cyborg
+		robotic
+		psionic
+		advanced_genetic
+		overtuned
+	}
 }

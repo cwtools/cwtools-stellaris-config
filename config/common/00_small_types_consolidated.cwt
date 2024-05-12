@@ -137,9 +137,6 @@ types = {
 			Desc = "$_description"
 		}
 	}
-	type[crisis_path] = {
-		path = "game/common/crisis_paths"
-	}
 }
 
 ambient_object = {
