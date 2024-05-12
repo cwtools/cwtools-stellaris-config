@@ -2816,8 +2816,14 @@ alias[effect:spawn_planet] = {
 	## cardinality = 0..1
 	## push_scope = planet
 	init_effect = {
+		## cardinality = 0..1
+		set_name = {
+			key = localisation
+		}
 		alias_name[effect] = alias_match_left[effect]
 	}
+	## cardinality = 0..1
+	plane_offset = float
 }
 
 ### Spawns a new system at a position relative to the scoped system/planet/ship.
