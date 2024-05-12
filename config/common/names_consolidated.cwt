@@ -51,6 +51,8 @@ name_list = {
 	## cardinality = 0..1
 	category = scalar
 	## cardinality = 0..1
+	customize_random_override = localisation
+	## cardinality = 0..1
 	selectable = {
 		## replace_scope = { this = country root = country } #i think, might be no_scope though
 		alias_name[trigger] = alias_match_left[trigger]
@@ -113,6 +115,11 @@ name_list = {
 	}
 	## cardinality = 0..1
 	army_names = {
+		## cardinality = 0..1
+		general = {
+			## cardinality = 0..inf
+			sequential_name = localisation
+		}
 		## cardinality = 0..1
 		generic = {
 			## cardinality = 0..inf
