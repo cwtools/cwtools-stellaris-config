@@ -97,6 +97,7 @@ building = {
 	## cardinality = 0..1
 	### used to match with a planet class' building set, can be assigned to multiple sets. Used to remove from construction lists
 	building_sets = {
+		## cardinality = 1..inf
 		enum[building_sets]
 	}
 
