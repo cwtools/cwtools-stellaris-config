@@ -628,6 +628,8 @@ concept = {
 		## cardinality = 1..inf
 		localisation
 	}
+	## cardinality = 0..1
+	tooltip_override = localisation
 }
 
 leader_class = {
