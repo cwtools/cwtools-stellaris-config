@@ -2158,6 +2158,8 @@ alias[effect:create_fleet] = {
 		is_boss = bool
 		## cardinality = 0..1
 		ai_ignore_strength = bool
+		## cardinality = 0..1
+		is_ultra_boss = bool
 	}
 	## push_scope = fleet
 	## cardinality = 0..1
