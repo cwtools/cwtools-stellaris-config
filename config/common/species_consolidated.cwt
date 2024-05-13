@@ -851,7 +851,7 @@ enums = {
 		colonization_control
 		none
 	}
-	enum[species_category type] = {
+	enum[species_category_type] = {
 		normal
 		cyborg
 		robotic
