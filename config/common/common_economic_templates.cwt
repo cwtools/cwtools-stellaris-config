@@ -496,6 +496,8 @@ alias[triggered_leader_modifier_leader:triggered_self_modifier] = {
 	mult = value_field
 	## cardinality = 0..1
 	multiplier = value_field
+	## cardinality = 0..1
+	custom_tooltip = localisation
 }
 
 ## replace_scope = { this = country root = country }
