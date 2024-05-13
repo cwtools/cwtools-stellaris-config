@@ -309,7 +309,7 @@ links = {
 	}
 	creator = {
 		input_scopes = { leader }
-		output_scope = leader
+		output_scope = country
 	}
 	script_value = {
 		from_data = yes
