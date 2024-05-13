@@ -339,4 +339,8 @@ links = {
 		input_scopes = { bypass }
 		output_scope = Country
 	}
+	founder_species = {
+		input_scopes = { country }
+		output_scope = species
+	}
 }
