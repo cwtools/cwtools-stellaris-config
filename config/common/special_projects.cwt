@@ -116,6 +116,11 @@ special_project = {
 		is_founder_species = bool
 		## cardinality = 0..1
 		has_trait = <trait.leader_trait>
+		## cardinality = 0..1
+		size_requirement = {
+			ship_size = <ship_size>
+			count = int
+		}
 	}
 
 	## push_scope = country
