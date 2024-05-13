@@ -2815,7 +2815,7 @@ alias[trigger:count_species_traits] = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1		
-	category = enum[species_category type]
+	category = enum[species_category_type]
 	## cardinality = 0..1
 	cost = int
 	## cardinality = 0..1
