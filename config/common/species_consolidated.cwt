@@ -754,7 +754,14 @@ purge_type = {
 	allow = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	
+	## cardinality = 0..1
+	## replace_scope = { this = species root = species from = country }
+	hidden = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 
+	## cardinality = 0..1
 	## replace_scope = { this = species root = species from = country }
 	ai_will_do = {
 		factor = float
