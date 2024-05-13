@@ -2810,7 +2810,7 @@ alias[trigger:has_extorted_faction] = bool
 alias[trigger:local_human_origin] = <civic_or_origin.origin>
 
 ###Checks the number of unique traits within the set parameters on a species or pop
-alias[trigger:count_traits] = { 
+alias[trigger:count_species_traits] = { 
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
