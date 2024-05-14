@@ -131,6 +131,11 @@ sound_effect = {
 	#vanilla only uses fail, should check this with mods/people who know this shit
 	## cardinality = 0..1
 	max_audible_behaviour = enum[audible_behaviour]
+	## cardinality = 0..1
+	playbackrate_random_offset = { 
+		## cardinality = 2..2
+		float
+	}
 
 	#none or one of these!
 	## cardinality = 0..1
@@ -174,6 +179,8 @@ sound_effect = {
 	falloff = <sound_falloff>
 	## cardinality = 0..1
 	random_sound_when_looping = bool
+	## cardinality = 0..1
+	prevent_random_repetition = bool
 }
 
 sound = {
@@ -195,5 +202,3 @@ enums = {
 		fail
 	}
 }
-
-
