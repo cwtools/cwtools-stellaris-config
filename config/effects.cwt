@@ -2285,6 +2285,8 @@ alias[effect:create_point_of_interest] = {
 
 ### Creates a new pop on the scoped tile/planet
 alias[effect:create_pop] = {
+	## cardinality = 0..1
+	count = int
 	species = scope_group[target_species]
 	species = scalar	#key
 	## cardinality = 0..1
@@ -2297,8 +2299,6 @@ alias[effect:create_pop] = {
 	ethos = {
 		## cardinality = 1..1
 		ethic = <ethos>
-		## cardinality = 0..1
-		count = int
 	}
 	## cardinality = 0..1
 	## push_scope = pop
@@ -2306,7 +2306,6 @@ alias[effect:create_pop] = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 }
-
 ### Creates a research station in orbit of the scoped planet
 alias[effect:create_research_station] = {
 	owner = scope_group[target_country]
