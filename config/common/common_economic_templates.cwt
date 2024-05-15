@@ -236,6 +236,8 @@ alias[triggered_planet_modifier_planet:triggered_planet_modifier] = {
 	mult = value_field
 	## cardinality = 0..1
 	multiplier = value_field
+	## cardinality = 0..1
+	key = localisation
 }
 
 ## replace_scope = { this = planet root = planet from = species fromfrom = country }
