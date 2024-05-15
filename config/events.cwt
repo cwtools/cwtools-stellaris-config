@@ -546,6 +546,14 @@ event = {
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		}
 	}
+	
+	subtype[country] = {
+		## cardinality = 0..1
+		###Like trigger, but only uses certain simple triggers
+		pre_triggers = {
+			alias_name[country_pre_trigger] = alias_match_left[country_pre_trigger]
+		}
+	}
 
 	subtype[diplomatic] = {
 		## cardinality = 0..1
