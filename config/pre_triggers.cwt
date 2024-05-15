@@ -71,3 +71,7 @@ alias[leader_pre_trigger:is_idle] = bool
 # situation:
 #### whether the situation has a valid owner
 alias[situation_pre_trigger:has_owner] = bool
+
+# country:
+#### whether the situation has a valid owner
+alias[country_pre_trigger:is_ai] = bool
