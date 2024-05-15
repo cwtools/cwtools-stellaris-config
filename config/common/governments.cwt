@@ -727,3 +727,7 @@ alias[government_trigger:species_archetype] = {
 alias[government_trigger:OR] = {
 	alias_name[government_trigger] = alias_match_left[government_trigger]
 }
+
+alias[government_trigger:AND] = {
+    alias_name[government_trigger] = alias_match_left[government_trigger]
+}
