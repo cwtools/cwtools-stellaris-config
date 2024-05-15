@@ -233,4 +233,10 @@ building = {
 
 	## cardinality = 0..1
 	show_in_tech = <technology>
+	
+	## cardinality = 0..1
+	additional_ai_weight = int
+	
+	## cardinality = 0..1
+	ai_weight_coefficient = float
 }
