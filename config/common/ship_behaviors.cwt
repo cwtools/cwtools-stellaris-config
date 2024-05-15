@@ -9,6 +9,9 @@ ship_behavior = {
 	name = scalar
 	## cardinality = 0..1
 	desc = localisation
+	
+	## cardinality = 0..1
+	range_components = enum[range_components_enum]
 
 	## cardinality = 0..1
 	preferred_attack_range = int
@@ -66,5 +69,9 @@ enums = {
 		min
 		max
 		median
+	}
+	enum[range_components_enum] = {
+		weapon
+		strike_craft
 	}
 }
