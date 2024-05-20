@@ -1153,6 +1153,10 @@ Unchecked_NInterface = {
 	PORTRAIT_GUI_NAME_EVENT_STORY = <Paragon_UI_NAME_type>
 	## cardinality = 0..1
 	PORTRAIT_GUI_NAME_EVENT_RECRUIT = <Paragon_UI_NAME_type>
+	## cardinality = 0..1
+	PORTRAIT_GUI_NAME_EVENT_CONVERSATION = <Paragon_UI_NAME_type>
+	## cardinality = 0..1
+	PORTRAIT_GUI_NAME_EVENT_CRISIS_CONVERSATION = <Paragon_UI_NAME_type>
 }
 Checked_NInterface = {
 	

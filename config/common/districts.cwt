@@ -129,4 +129,13 @@ district = {
 	}
 
 	alias_name[ai_resource_production] = alias_match_left[ai_resource_production]
+	
+	## cardinality = 0..1
+	ai_estimate_without_unemployment = bool
+	
+	## cardinality = 0..1
+	additional_ai_weight = int
+	
+	## cardinality = 0..1
+	ai_weight_coefficient = float
 }

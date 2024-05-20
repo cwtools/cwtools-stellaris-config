@@ -8,6 +8,7 @@ advisor_voice = {
 	name = scalar
 	icon = filepath
 
+	## cardinality = 0..1
 	playable = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}

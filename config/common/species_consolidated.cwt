@@ -212,6 +212,10 @@ species_class = {
 	## replace_scope = { root = country this = country }
 	possible = {
 		## cardinality = 0..1
+		authority = {
+			alias_name[government_trigger] = alias_match_left[government_trigger]
+		}
+		## cardinality = 0..1
 		always = bool
 		## cardinality = 0..1
 		text = localisation
@@ -754,7 +758,14 @@ purge_type = {
 	allow = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	
+	## cardinality = 0..1
+	## replace_scope = { this = species root = species from = country }
+	hidden = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 
+	## cardinality = 0..1
 	## replace_scope = { this = species root = species from = country }
 	ai_will_do = {
 		factor = float
@@ -844,7 +855,7 @@ enums = {
 		colonization_control
 		none
 	}
-	enum[species_category type] = {
+	enum[species_category_type] = {
 		normal
 		cyborg
 		robotic

@@ -103,6 +103,7 @@ situation_type = {
 	}
 	###Effects when Situation's progress has reached its completion
 	###You should always call destroy_situation = this from here or from an event fired by here
+	## cardinality = 0..1
 	on_progress_complete = {
 		alias_name[effect] = alias_match_left[effect]
 	}
@@ -179,8 +180,10 @@ situation_type = {
 		###Only for progress_direction = bidirectional - only affects progress towards fail (left)
 		fail_category = enum[situation_category]
 	}
+	## cardinality = 0..inf
 	###Defines icon that will appear on the right side of the bar
 	complete_icon = <sprite>
+	## cardinality = 0..inf
 	complete_icon_frame = <sprite>
 	## cardinality = 0..1
 	###Defines icon that will appear on the left side of the bar
@@ -220,6 +223,13 @@ situation_type = {
 			}
 			alias_name[triggered_target_modifier_situation] = alias_match_left[triggered_target_modifier_situation]
 	    }
+	}
+	## cardinality = 0..1
+	triggered_blocked_desc = {
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		text = localisation
 	}
 }
 

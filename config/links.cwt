@@ -309,7 +309,7 @@ links = {
 	}
 	creator = {
 		input_scopes = { leader }
-		output_scope = leader
+		output_scope = country
 	}
 	script_value = {
 		from_data = yes
@@ -338,5 +338,9 @@ links = {
 	lock_country = {
 		input_scopes = { bypass }
 		output_scope = Country
+	}
+	founder_species = {
+		input_scopes = { country }
+		output_scope = species
 	}
 }

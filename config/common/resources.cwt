@@ -61,6 +61,11 @@ resource = {
 	ai_wants = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
+	
+	## cardinality = 0..1
+	tradable_in_market = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 
 	subtype[max] = {
 		## cardinality = 0..1

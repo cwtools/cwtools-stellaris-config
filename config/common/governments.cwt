@@ -114,6 +114,32 @@ authority = {
 	random_weight = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
+	
+	## cardinality = 0..inf
+	advanced_authority_swap = {
+		name = localisation
+		description = localisation
+		inherit_icon = bool
+		inherit_effects = bool
+		## cardinality = 0..1
+		ruler_council_position = <councilor>
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		modifier = {
+			## cardinality = 0..1
+			custom_tooltip = localisation
+			## cardinality = 0..1
+			show_only_custom_tooltip = bool
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		## cardinality = 0..1
+		tags = {
+			## cardinality = 1..inf
+			localisation
+		}
+	}
+	
 	## cardinality = 0..1
 	traits = {
 		## cardinality = 0..inf
@@ -307,6 +333,8 @@ civic_or_origin = {
 		name = scalar
 		## cardinality = 0..1
 		description = localisation
+		## cardinality = 0..1
+		negative_description = localisation
 		### In empire creation / galaxy setup, this has no scope. During the game, when there are actual countries existing, it is set to country scope.
 		### If you want to use country scope here, you must always check is_scope_valid first (see civic_devouring_swarm), or you will get errors or it won't work as intended.
 		trigger = {
@@ -334,6 +362,9 @@ civic_or_origin = {
 		}
 		## cardinality = 0..1
 		advanced_start = bool
+		## cardinality = 0..1
+		blocks_random_machine_empire_generation	= bool
+				
 		## cardinality = 0..1
 		### default: empty; trait set to enforce on the primary species. They cannot be removed, but more can be added if points/picks permit
 		traits = {
@@ -695,4 +726,8 @@ alias[government_trigger:species_archetype] = {
 }
 alias[government_trigger:OR] = {
 	alias_name[government_trigger] = alias_match_left[government_trigger]
+}
+
+alias[government_trigger:AND] = {
+    alias_name[government_trigger] = alias_match_left[government_trigger]
 }

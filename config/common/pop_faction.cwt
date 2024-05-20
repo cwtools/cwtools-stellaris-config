@@ -52,6 +52,11 @@ pop_faction = {
 
 	## cardinality = 0..1
 	use_guiding_ethic_as_pop_filter = bool
+	
+	## cardinality = 0..1
+	persistent_faction = bool
+	## cardinality = 0..1
+	can_rename = bool
 
 	## cardinality = 0..1
 	### UI color for candidate header
@@ -156,7 +161,7 @@ pop_faction = {
 		## cardinality = 0..1
 		### Negative happiness effect on faction, if demand is not satisfied
 		unfulfilled_effect = float
-
+		
 		## cardinality = 0..1
 		### Council Demand
 		council_demand = bool
@@ -222,5 +227,9 @@ pop_faction = {
 		category = <economic_category>
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}
-
+	
+	extortion_resource = {
+		category = <economic_category>
+		alias_name[economic_template] = alias_match_left[economic_template]
+	}
 }

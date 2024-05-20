@@ -75,6 +75,8 @@ ship_size = {
 	build_block_radius = int
 	## cardinality = 0..1
 	can_disable = bool
+	## cardinality = 0..1
+	never_lost = bool
 	subtype[starbase] = {
 		## cardinality = 0..1
 		## replace_scope = { this = starbase root = starbase }

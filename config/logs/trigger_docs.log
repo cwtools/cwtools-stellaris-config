@@ -1655,7 +1655,7 @@ count_deposits = { type = <deposit> category = <category> count < 2 }
 Supported Scopes: planet
 
 count_species_traits - Checks the number of unique traits within the set parameters on a species or pop
-count_traits = { limit = {} category = <category> cost < = > <trait cost> | count < 2 }
+count_species_traits = { limit = {} category = <category> cost < = > <trait cost> | count < 2 }
 Supported Scopes: pop species
 
 has_tech_option - Checks if the country has a tech research option currently available
