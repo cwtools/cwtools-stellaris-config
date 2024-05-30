@@ -1,4 +1,4 @@
-[18:36:56][game_application.cpp:2134]: 
+[16:48:48][game_application.cpp:2134]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -44,10 +44,6 @@ Supported Scopes: country
 num_ships - Checks the country/fleet's number of ships
 num_ships > 39
 Supported Scopes: country fleet
-
-research_leader - Checks if the country's researcher in a specific field meets the specified criteria
-research_leader = { area = engineering <triggers> }
-Supported Scopes: country
 
 has_fleet_order - Checks if the ship/fleet has a specific fleet order. Fleet orders include: move_to_system_point_order orbit_planet_order build_orbital_station_order build_space_station_order colonize_planet_order survey_planet_order research_discovery_orde research_anomaly_order collect_data_fleet_order upgrade_design_at_starbase_fleet_order upgrade_design_at_orbitable_fleet_order return_fleet_order repair_fleet_order evade_hostiles_order follow_order land_armies_order merge_fleet_order aggressive_stance_fleet_order auto_explore_order auto_patrol_order build_megastructure_fleet_order destroy_planet_order planet_killer_weapon_windup_order planet_killer_weapon_fire_order explore_bypass_order use_bypass_order jumpdrive_order  jumpdrive_windup experimental_subspace_navigation_fleet_order excavate_archaeological_site_fleet_order
 has_fleet_order = survey_planet_order
@@ -1529,10 +1525,6 @@ Supported Scopes: pop_faction
 intel_level - Checks the country's intel level of target system
 intel_level = { level > low system = <target> }
 Supported Scopes: country
-
-is_researching_area - Checks the scientist's field of research
-is_researching_area = society
-Supported Scopes: leader
 
 situation_progress - Checks if the scoped situation's progress is a certain value.
 situation_progress > 15
@@ -3997,7 +3989,7 @@ Supported Scopes: country
 
 
 =================
-[18:36:56][game_application.cpp:2137]:
+[16:48:48][game_application.cpp:2137]: 
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -4248,7 +4240,7 @@ random_owned_ship = {
 }
 Supported Scopes: country fleet
 
-create_species - Creates a new species
+create_species - Creates a new species. The habitability trait is determined by homeworld, traits = random, traits = { ideal_planet_class = <pc_XYZ> }, traits = <trait_pc_XYZ_preference>, or else is assigned randomly.
 create_species = {
 	name = <string>/random/scope
 	plural = <string>/this
