@@ -1740,6 +1740,8 @@ NGameplay = {
 	LEADER_LIFESPAN_HIGH_DEATH_CHANCE_AGE = int
 	## cardinality = 0..1
 	LEADER_LIFESPAN_HIGH_DEATH_CHANCE_INC = float
+	## cardinality = 0..1
+	MAX_LEADERS_PER_TRADE = int
 	
 	## cardinality = 0..1
 	HABITABILITY_IDEAL_PLANET = float
