@@ -78,6 +78,6 @@ modifier_categories = {
 		supported_scopes = { astral_rift }
 	}
 	None = {
-		supported_scopes = {  }
+		supported_scopes = { any  }
 	}		
 }
