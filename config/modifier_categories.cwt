@@ -74,4 +74,10 @@ modifier_categories = {
 	"Ship Design Stats" = {
 		 supported_scopes = { ship starbase fleet country }
 	}
+	"Astral Rift" = {
+		supported_scopes = { astral_rift }
+	}
+	None = {
+		supported_scopes = {  }
+	}		
 }
