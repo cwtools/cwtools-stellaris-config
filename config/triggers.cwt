@@ -97,6 +97,7 @@ alias[trigger:has_global_flag] = value[global_flag]
 ## severity = warning
 ###Checks if the specified variable is set on the current scope. Use to avoid unset variables errors
 alias[trigger:is_variable_set] = value[variable]
+alias[trigger:is_variable_set] = enum[variable_enum]
 ## severity = warning
 ###Checks if the leader has a specific, arbitrarily-named, flag
 alias[trigger:has_leader_flag] = value[leader_flag]
