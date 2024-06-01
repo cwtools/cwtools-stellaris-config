@@ -393,4 +393,20 @@ enums = {
 	enum[variable_enum] = {
 		local_size_option
 	}
+	enum[ethic_leader_creator_ethic_enum] = {
+		authoritarian
+		egalitarian
+		spiritualist
+		materialist
+		militarist
+		pacifist
+		xenophobe
+		xenophile
+		gestalt_consciousness
+	}
+	enum[ethic_leader_creator_species_class_enum] = {
+		random_non_machine
+		random_pre_ftl
+		random
+	}
 }
