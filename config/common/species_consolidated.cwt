@@ -856,6 +856,7 @@ enums = {
 
 # special to get the species class to actually work as impossible with government triggers
 ## scope = country
+###Special code for common\species_classes only!!!!!!
 alias[trigger:authority] = {
 	## cardinality = 0..1
 	NOT = {
@@ -878,6 +879,7 @@ alias[trigger:authority] = {
 
 # special to get the species class to actually work as impossible with government triggers
 ## scope = country
+###Special code for common\species_classes only!!!!!!
 alias[trigger:civics] = {
 	## cardinality = 0..1
 	NOT = {
