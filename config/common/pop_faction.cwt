@@ -233,3 +233,27 @@ pop_faction = {
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}
 }
+
+# # Note every pop faction file in game is in error and Dayshine does not respond.  Had to hard code using enums to work with has_country_flag in triggers file.
+enums = {
+	enum[pop_faction_inline_flag_enum] = {
+		galcom_resolution_passed_anti_imperialist
+		galcom_resolution_passed_pro_imperialist
+		galcom_resolution_passed_anti_isolationist
+		galcom_resolution_passed_pro_isolationist
+		galcom_resolution_passed_anti_traditionalist
+		galcom_resolution_passed_pro_traditionalist
+		galcom_resolution_passed_anti_progressive
+		galcom_resolution_passed_pro_progressive
+		galcom_resolution_passed_anti_prosperity
+		galcom_resolution_passed_pro_prosperity
+		galcom_resolution_passed_anti_supremacist
+		galcom_resolution_passed_pro_supremacist
+		galcom_resolution_passed_anti_technologist
+		galcom_resolution_passed_pro_technologist
+		galcom_resolution_passed_anti_totalitarian
+		galcom_resolution_passed_pro_totalitarian
+		galcom_resolution_passed_anti_xenoist
+		galcom_resolution_passed_pro_xenoist
+	}
+}
