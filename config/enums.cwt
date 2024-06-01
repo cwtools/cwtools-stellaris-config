@@ -390,4 +390,7 @@ enums = {
 		character
 		all
 	}
+	enum[variable_enum] = {
+		local_size_option
+	}
 }
