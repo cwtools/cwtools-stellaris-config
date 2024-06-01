@@ -1154,6 +1154,8 @@ alias[effect:create_species] = {
 	## cardinality = 0..1
 	homeworld = scope_group[target_planet]
 	## cardinality = 0..1
+	homeworld = scope_group[target_country]
+	## cardinality = 0..1
 	homeworld = scope[species]
 	# -> traits can be multiple. You can have traits = this, traits = { trait = xyz } at the same time
 	## cardinality = 0..2
