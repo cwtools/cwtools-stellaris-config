@@ -282,6 +282,8 @@ event = {
 		## cardinality = 0..1
 		location = scope[bypass]
 		## cardinality = 0..1
+		location = scope[astral_rift]
+		## cardinality = 0..1
 		location = value_set[event_target]
 
 		## cardinality = 0..1
