@@ -719,6 +719,7 @@ purge_type = {
 	pop_escape_chance = float
 	### Divide by 100 for monthy reduction, overrides BASE_POP_DECLINE
 	pop_decline_rate = float
+	pop_decline_rate = value:num_chip_slave_purge
 
 	## cardinality = 0..1
 	## replace_scope = { this = army root = army }
