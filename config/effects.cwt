@@ -1312,6 +1312,8 @@ alias[effect:create_country] = {
 	## cardinality = 0..1
 	origin = <civic_or_origin.origin>
 	## cardinality = 0..1
+	origin = scope_group[target_country]
+	## cardinality = 0..1
 	### random includes starting civics
 	civics = random
 	## cardinality = 0..1
