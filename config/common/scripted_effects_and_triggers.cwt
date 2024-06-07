@@ -3,6 +3,7 @@ types = {
 	type[scripted_trigger] = {
 		path = "game/common/scripted_triggers"
 	}
+	## type_key_filter <> { ethic_leader_creator spawn_formless_defense_fleet split_astral_scar store_galactic_community_leader_backup_data }
 	type[scripted_effect] = {
 		path = "game/common/scripted_effects"
 	}
@@ -48,3 +49,34 @@ alias[effect:spawn_formless_defense_fleet] = {
 	FLEET_SIZE = int
 }
 
+### Force scripted effect to work in event files
+alias[effect:ethic_leader_creator] = {
+	## cardinality = 0..1
+	SPECIES_CLASS = <species_class>
+	## cardinality = 0..1
+	SPECIES_CLASS = enum[ethic_leader_creator_species_class_enum]
+	## cardinality = 0..1
+	LEADER_PORTRAIT = <portrait>
+	## cardinality = 0..1
+	NAME_LIST = <country_type>
+	## cardinality = 0..1
+	CLASS = enum[leader_classes]
+	## cardinality = 0..1
+	NAME = localisation
+	## cardinality = 0..1
+	LEVEL = int
+	## cardinality = 0..1
+	GENDER = enum[genders]
+	## cardinality = 0..1
+	IMMORTAL_SPECIES = bool
+	## cardinality = 0..1
+	IMMORTAL = bool
+	## cardinality = 0..1
+	HIDEAGE = bool
+	## cardinality = 0..1
+	ETHIC = enum[ethic_leader_creator_ethic_enum]
+	## cardinality = 0..1
+	DESC = localisation
+	## cardinality = 0..1
+	CATCH_PHRASE = localisation
+}

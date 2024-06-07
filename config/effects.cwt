@@ -1101,7 +1101,7 @@ alias[effect:copy_techs_from] = {
 ###Sets the scoped object's graphical culture
 alias[effect:set_graphical_culture] = <graphical_culture>
 alias[effect:set_graphical_culture] = scope[any]
-###Creates a new species
+###Creates a new species. The habitability trait is determined by homeworld, traits = random, traits = { ideal_planet_class = <pc_XYZ> }, traits = <trait_pc_XYZ_preference>, or else is assigned randomly.
 alias[effect:create_species] = {
 	## cardinality = 0..1
 	name = scope[any]
@@ -1153,6 +1153,8 @@ alias[effect:create_species] = {
 	gender = random
 	## cardinality = 0..1
 	homeworld = scope_group[target_planet]
+	## cardinality = 0..1
+	homeworld = scope_group[target_country]
 	## cardinality = 0..1
 	homeworld = scope[species]
 	# -> traits can be multiple. You can have traits = this, traits = { trait = xyz } at the same time
@@ -1309,6 +1311,8 @@ alias[effect:create_country] = {
 	civics = scope_group[target_country]
 	## cardinality = 0..1
 	origin = <civic_or_origin.origin>
+	## cardinality = 0..1
+	origin = scope_group[target_country]
 	## cardinality = 0..1
 	### random includes starting civics
 	civics = random
@@ -2306,6 +2310,7 @@ alias[effect:create_pop] = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 }
+
 ### Creates a research station in orbit of the scoped planet
 alias[effect:create_research_station] = {
 	owner = scope_group[target_country]

@@ -66,6 +66,7 @@ alias[trigger:has_opinion_modifier] = {
 ## severity = warning
 ###Checks if the empire has a specific, arbitrarily-named, flag
 alias[trigger:has_country_flag] = value[country_flag]
+alias[trigger:has_country_flag] = enum[pop_faction_inline_flag_enum]
 ## severity = warning
 ###Checks if the planet has a specific, arbitrarily-named, flag
 alias[trigger:has_planet_flag] = value[planet_flag]
@@ -96,6 +97,7 @@ alias[trigger:has_global_flag] = value[global_flag]
 ## severity = warning
 ###Checks if the specified variable is set on the current scope. Use to avoid unset variables errors
 alias[trigger:is_variable_set] = value[variable]
+alias[trigger:is_variable_set] = enum[variable_enum]
 ## severity = warning
 ###Checks if the leader has a specific, arbitrarily-named, flag
 alias[trigger:has_leader_flag] = value[leader_flag]
@@ -508,16 +510,6 @@ alias[trigger:is_ship_size] = <ship_size>
 
 ###Checks if the ship/fleet/design is a specific class
 alias[trigger:is_ship_class] = enum[shipsize_classes]
-
-###Checks the scientist's field of research
-alias[trigger:is_researching_area] = enum[research_areas]
-
-## push_scope = leader
-###Checks if the country's researcher in a specific field meets the specified criteria
-alias[trigger:research_leader] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
-
 
 ###Checks the average ethics divergence on the planet. Not used in Vanilla, testing advised. Please inform Dayshine and Caligula on the results of the tests!
 alias[trigger:ethos] == value_field[0.0..1.0]
