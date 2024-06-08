@@ -731,3 +731,5 @@ alias[government_trigger:OR] = {
 alias[government_trigger:AND] = {
     alias_name[government_trigger] = alias_match_left[government_trigger]
 }
+
+alias[government_trigger:host_has_dlc] = enum[DLCs]

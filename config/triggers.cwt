@@ -97,7 +97,7 @@ alias[trigger:has_global_flag] = value[global_flag]
 ## severity = warning
 ###Checks if the specified variable is set on the current scope. Use to avoid unset variables errors
 alias[trigger:is_variable_set] = value[variable]
-alias[trigger:is_variable_set] = enum[variable_enum]
+alias[trigger:is_variable_set] = local_size_option
 ## severity = warning
 ###Checks if the leader has a specific, arbitrarily-named, flag
 alias[trigger:has_leader_flag] = value[leader_flag]
@@ -568,6 +568,7 @@ alias[trigger:has_active_tradition] = enum[tradition_swap]
 ###Checks a variable for the country/leader/planet/system/fleet against a specified value or another variable on the same scope
 alias[trigger:check_variable] = {
 	which = value[variable]
+	which = local_size_option
 	## cardinality = 1..inf
 	value = value_field
 }

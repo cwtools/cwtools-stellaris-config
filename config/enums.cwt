@@ -390,10 +390,6 @@ enums = {
 		character
 		all
 	}
-	enum[variable_enum] = {
-		local_size_option
-		from.number_fleets_spawned
-	}
 	enum[ethic_leader_creator_ethic_enum] = {
 		authoritarian
 		egalitarian

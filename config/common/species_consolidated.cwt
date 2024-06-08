@@ -208,17 +208,35 @@ species_class = {
 		## cardinality = 0..inf
 		<portrait_group>
 	}
-	# had to replace with normal triggers as government triggers would not work.  Had to make a special trigger at bottom for authority.
+	
 	## cardinality = 0..1
 	## replace_scope = { root = country this = country }
 	possible = {
-		alias_name[trigger] = alias_match_left[trigger]
+		## cardinality = 0..1
+		authority = {
+			alias_name[government_trigger] = alias_match_left[government_trigger]
+		}
+		## cardinality = 0..1
+		always = bool
+		## cardinality = 0..1
+		text = localisation
+		## cardinality = 0..1
+		alias_name[government_trigger] = alias_match_left[government_trigger]
 	}
-	# had to replace with normal triggers as government triggers would not work.  Had to make a special trigger at bottom for authority.
+	
 	## cardinality = 0..1
 	## replace_scope = { root = country this = country }
 	possible_secondary = {
-		alias_name[trigger] = alias_match_left[trigger]
+		## cardinality = 0..1
+		authority = {
+			alias_name[government_trigger] = alias_match_left[government_trigger]
+		}
+		## cardinality = 0..1
+		always = bool
+		## cardinality = 0..1
+		text = localisation
+		## cardinality = 0..1
+		alias_name[government_trigger] = alias_match_left[government_trigger]
 	}
 	## cardinality = 0..1
 	portraits = {
@@ -706,8 +724,7 @@ purge_type = {
 	
 	pop_escape_chance = float
 	### Divide by 100 for monthy reduction, overrides BASE_POP_DECLINE
-	pop_decline_rate = float
-	pop_decline_rate = value:num_chip_slave_purge
+	pop_decline_rate = value_field
 
 	## cardinality = 0..1
 	## replace_scope = { this = army root = army }
@@ -851,38 +868,5 @@ enums = {
 		psionic
 		advanced_genetic
 		overtuned
-	}
-}
-
-# special to get the species class to actually work as impossible with government triggers
-## scope = country
-###Special code for common\species_classes only!!!!!!
-alias[trigger:authority] = {
-	## cardinality = 0..1
-	NOT = {
-		value = <authority>
-	}
-	## cardinality = 0..1
-	NOT = { 
-		value = <authority>
-		text = localisation
-	}
-	## cardinality = 0..1
-	value = <authority>
-	## cardinality = 0..1
-	OR = { 
-		value = <authority>
-		text = localisation
-	}
-	
-}
-
-# special to get the species class to actually work as impossible with government triggers
-## scope = country
-###Special code for common\species_classes only!!!!!!
-alias[trigger:civics] = {
-	## cardinality = 0..1
-	NOT = {
-		value = <civic_or_origin.civic>
 	}
 }

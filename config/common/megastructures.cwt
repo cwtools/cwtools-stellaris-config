@@ -216,9 +216,7 @@ megastructure = {
 	
 	## cardinality = 0..1
 	dismantle_possible = {
-		can_dismantle_megastructure = {
-			TECH = <technology>
-		}
+		alias_name[trigger] = alias_match_left[trigger]
 	}
 	
 	## cardinality = 0..1
