@@ -278,6 +278,8 @@ component_template = {
 				shield_penetration = float
 				## cardinality = 0..1
 				armor_penetration = float
+				## cardinality = 0..1
+				size_damage_factor = float
 			}
 		}
 	}
