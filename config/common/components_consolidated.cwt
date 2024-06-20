@@ -362,6 +362,8 @@ component_template = {
 		missile_retarget_range = int
 		## cardinality = 0..1
 		size_damage_factor = float
+		## cardinality = 0..1
+		military_power_multiplier = float
 	}
 	subtype[strike_craft_component_template] = {
 		size = enum[weapon_slot_size]
