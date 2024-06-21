@@ -94,6 +94,7 @@ enums = {
 		agreement
 		situation
 		astral_rift
+		galactic_community
 	}
 	enum[intel_level] = {
 		none

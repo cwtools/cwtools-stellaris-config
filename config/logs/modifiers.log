@@ -1,4 +1,4 @@
-[16:48:48][modifier.cpp:1591]: 
+[17:32:54][modifier.cpp:1591]: 
  == MODIFIER DOCUMENTATION ==
 Note on Modifier Categories:
 -- These are used internally as a tag to suggest where they are intended to be used, but exact behavior depends upon individual implementation.
@@ -5599,6 +5599,12 @@ Printing Modifier Definitions:
 - shipsize_nanite_swarmer_evasion_mult, Category: Ships
 - shipsize_nanite_swarmer_disengage_chance_mult, Category: Ships
 - shipsize_nanite_swarmer_tracking_mult, Category: Ships
+- shipsize_nanite_interdictor_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_nanite_interdictor_hull_mult, Category: Ships
+- shipsize_nanite_interdictor_hull_add, Category: Ships
+- shipsize_nanite_interdictor_evasion_mult, Category: Ships
+- shipsize_nanite_interdictor_disengage_chance_mult, Category: Ships
+- shipsize_nanite_interdictor_tracking_mult, Category: Ships
 - shipsize_large_ship_swarm_build_speed_mult, Category: Planets, Megastructures, Starbases
 - shipsize_large_ship_swarm_hull_mult, Category: Ships
 - shipsize_large_ship_swarm_hull_add, Category: Ships
@@ -8642,6 +8648,7 @@ Printing Modifier Definitions:
 - job_researcher_naval_cap_add, Category: Planets
 - job_preacher_trade_value_add, Category: Countries
 - job_augmentor_trade_value_add, Category: Countries
+- job_roboticist_branch_office_value_mult, Category: Planets
 - habitat_stability_add, Category: Planets
 - habitat_max_districts_mult, Category: Countries
 - habitat_max_districts_add, Category: Countries
