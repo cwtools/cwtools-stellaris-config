@@ -1,4 +1,4 @@
-[18:36:56][game_application.cpp:2149]:  
+[17:45:41][game_application.cpp:2163]: 
 == SCOPE DOCUMENTATION ==
 These work as context switches (links) in triggers and effects (e.g. 'owner = { <triggers/effects> }'), or as targets of triggers and effects (e.g. 'is_owned_by = from'). Dot scoping (e.g. root.owner.capital_scope) is allowed.
 Complete list of scope changes:
@@ -106,6 +106,10 @@ Output Scope: various
 prevprevprevprev - Scopes back to four scope changes ago (the PREV of PREVPREVPREV).
 Supported Scopes: all
 Output Scope: various
+
+target_system - Scopes from a cosmic storm to the galactic object that it is heading torwards.
+Supported Scopes: cosmic_storm
+Output Scope: galactic_object
 
 home_planet - Scopes to a species' home planet (also works from country, pop and leader; scopes to that object's species's home planet).
 Supported Scopes: country pop leader species
@@ -338,5 +342,17 @@ Output Scope: astral_rift
 lock_country - Scopes from a bypass to the country who locked it.
 Supported Scopes: bypass
 Output Scope: country
+
+storm_influence_field - Scopes from a galactic object to an inluence field with the galactic object as center
+Supported Scopes: galactic_object
+Output Scope: cosmic_storm_influence_field
+
+last_created_cosmic_storm - Scopes to the last storm that was created anywhere in the game.
+Supported Scopes: all
+Output Scope: cosmic_storm
+
+last_created_cosmic_storm_influence_field - Scopes to the last storm influence field that was created anywhere in the game.
+Supported Scopes: all
+Output Scope: cosmic_storm_influence_field
 
 =================
