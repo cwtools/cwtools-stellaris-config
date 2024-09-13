@@ -1,4 +1,4 @@
-[18:36:56][game_application.cpp:2169]: 
+[17:45:41][game_application.cpp:2183]: 
 == LOCALIZATION DOCUMENTATION ==
 This is a list of all hardcoded scoped localization commands in the game. It does not include scripted locs (see game/customizable_localization).
 In most cases, it is also possible to get the value of variables with '[Scope.my_variable]' and saved dates with '[Scope.my_date_flag]'.
@@ -207,6 +207,7 @@ Properties
  GetFirstNameFull
  GetSecondName
  GetSecondNamePersistent
+ GetTitledName
  GetAge
  GetBackgroundPlanet
  GetHomeWorldBiome
@@ -382,5 +383,10 @@ Properties
 Promotions:
  System
 Properties
+
+--Cosmic Storm--
+Promotions:
+Properties
+ GetName
 
 =================
