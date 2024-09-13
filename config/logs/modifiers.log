@@ -1,4 +1,4 @@
-[17:32:54][modifier.cpp:1591]: 
+[17:45:41][modifier.cpp:1639]: 
  == MODIFIER DOCUMENTATION ==
 Note on Modifier Categories:
 -- These are used internally as a tag to suggest where they are intended to be used, but exact behavior depends upon individual implementation.
@@ -142,6 +142,7 @@ Printing Modifier Definitions:
 - planet_stability_mult, Category: Planets
 - planet_crime_add, Category: Planets
 - planet_crime_mult, Category: Planets
+- planet_crime_floor_add, Category: Planets
 - planet_crime_no_happiness_add, Category: Planets
 - planet_crime_no_happiness_mult, Category: Planets
 - planet_housing_add, Category: Planets
@@ -421,6 +422,17 @@ Printing Modifier Definitions:
 - habitability_ceil_mult, Category: Habitability
 - auto_mod_monthly_add, Category: Countries, Planets
 - auto_mod_monthly_mult, Category: Countries, Planets
+- country_storm_movement_intel_add, Category: Countries
+- country_storm_location_intel_add, Category: Countries
+- country_storm_protection_tech_level_add, Category: Countries
+- system_storm_influence_add, Category: Planets, Starbases
+- country_storm_influence_mult, Category: Countries
+- country_storm_attraction_influence_add, Category: Countries
+- country_storm_repulsion_influence_add, Category: Countries
+- planet_storm_influence_timed, Category: Planets
+- planet_storm_devastation_mult, Category: Planets
+- storm_ship_hull_breaker_mult, Category: Ships
+- founder_species_growth_mult, Category: Planets
 - shipclass_military_build_cost_mult, Category: Planets, Megastructures, Starbases
 - shipclass_military_build_speed_mult, Category: Planets, Megastructures, Starbases
 - shipclass_military_hull_mult, Category: Ships
@@ -1908,6 +1920,29 @@ Printing Modifier Definitions:
 - planet_districts_advanced_logic_upkeep_mult, Category: Planets, AI Economy
 - planet_districts_cost_mult, Category: Planets, AI Economy
 - planet_districts_upkeep_mult, Category: Planets, AI Economy
+- planet_districts_cities_time_cost_mult, Category: Economic Units, AI Economy
+- planet_districts_cities_energy_cost_mult, Category: Economic Units, AI Economy
+- planet_districts_cities_minerals_cost_mult, Category: Economic Units, AI Economy
+- planet_districts_cities_food_cost_mult, Category: Economic Units, AI Economy
+- planet_districts_cities_physics_research_cost_mult, Category: Economic Units, AI Economy
+- planet_districts_cities_society_research_cost_mult, Category: Economic Units, AI Economy
+- planet_districts_cities_engineering_research_cost_mult, Category: Economic Units, AI Economy
+- planet_districts_cities_influence_cost_mult, Category: Economic Units, AI Economy
+- planet_districts_cities_unity_cost_mult, Category: Economic Units, AI Economy
+- planet_districts_cities_consumer_goods_cost_mult, Category: Economic Units, AI Economy
+- planet_districts_cities_alloys_cost_mult, Category: Economic Units, AI Economy
+- planet_districts_cities_volatile_motes_cost_mult, Category: Economic Units, AI Economy
+- planet_districts_cities_exotic_gases_cost_mult, Category: Economic Units, AI Economy
+- planet_districts_cities_rare_crystals_cost_mult, Category: Economic Units, AI Economy
+- planet_districts_cities_sr_living_metal_cost_mult, Category: Economic Units, AI Economy
+- planet_districts_cities_sr_zro_cost_mult, Category: Economic Units, AI Economy
+- planet_districts_cities_sr_dark_matter_cost_mult, Category: Economic Units, AI Economy
+- planet_districts_cities_nanites_cost_mult, Category: Economic Units, AI Economy
+- planet_districts_cities_minor_artifacts_cost_mult, Category: Economic Units, AI Economy
+- planet_districts_cities_astral_threads_cost_mult, Category: Economic Units, AI Economy
+- planet_districts_cities_menace_cost_mult, Category: Economic Units, AI Economy
+- planet_districts_cities_advanced_logic_cost_mult, Category: Economic Units, AI Economy
+- planet_districts_cities_cost_mult, Category: Economic Units, AI Economy
 - planet_districts_hab_time_upkeep_mult, Category: Economic Units, AI Economy
 - planet_districts_hab_energy_upkeep_mult, Category: Economic Units, AI Economy
 - planet_districts_hab_minerals_upkeep_mult, Category: Economic Units, AI Economy
@@ -2728,73 +2763,73 @@ Printing Modifier Definitions:
 - planet_livestock_astral_threads_produces_add, Category: Pops, AI Economy
 - planet_livestock_menace_produces_add, Category: Pops, AI Economy
 - planet_livestock_advanced_logic_produces_add, Category: Pops, AI Economy
-- planet_technician_produces_mult, Category: Pops, AI Economy
 - planet_technician_time_produces_add, Category: Pops, AI Economy
 - planet_technician_time_produces_mult, Category: Pops, AI Economy
+- planet_technician_time_upkeep_add, Category: Pops, AI Economy
 - planet_technician_energy_produces_add, Category: Pops, AI Economy
 - planet_technician_energy_produces_mult, Category: Pops, AI Economy
+- planet_technician_energy_upkeep_add, Category: Pops, AI Economy
 - planet_technician_minerals_produces_add, Category: Pops, AI Economy
 - planet_technician_minerals_produces_mult, Category: Pops, AI Economy
+- planet_technician_minerals_upkeep_add, Category: Pops, AI Economy
 - planet_technician_food_produces_add, Category: Pops, AI Economy
 - planet_technician_food_produces_mult, Category: Pops, AI Economy
+- planet_technician_food_upkeep_add, Category: Pops, AI Economy
 - planet_technician_physics_research_produces_add, Category: Pops, AI Economy
 - planet_technician_physics_research_produces_mult, Category: Pops, AI Economy
+- planet_technician_physics_research_upkeep_add, Category: Pops, AI Economy
 - planet_technician_society_research_produces_add, Category: Pops, AI Economy
 - planet_technician_society_research_produces_mult, Category: Pops, AI Economy
+- planet_technician_society_research_upkeep_add, Category: Pops, AI Economy
 - planet_technician_engineering_research_produces_add, Category: Pops, AI Economy
 - planet_technician_engineering_research_produces_mult, Category: Pops, AI Economy
+- planet_technician_engineering_research_upkeep_add, Category: Pops, AI Economy
 - planet_technician_influence_produces_add, Category: Pops, AI Economy
 - planet_technician_influence_produces_mult, Category: Pops, AI Economy
+- planet_technician_influence_upkeep_add, Category: Pops, AI Economy
 - planet_technician_unity_produces_add, Category: Pops, AI Economy
 - planet_technician_unity_produces_mult, Category: Pops, AI Economy
+- planet_technician_unity_upkeep_add, Category: Pops, AI Economy
 - planet_technician_consumer_goods_produces_add, Category: Pops, AI Economy
 - planet_technician_consumer_goods_produces_mult, Category: Pops, AI Economy
+- planet_technician_consumer_goods_upkeep_add, Category: Pops, AI Economy
 - planet_technician_alloys_produces_add, Category: Pops, AI Economy
 - planet_technician_alloys_produces_mult, Category: Pops, AI Economy
+- planet_technician_alloys_upkeep_add, Category: Pops, AI Economy
 - planet_technician_volatile_motes_produces_add, Category: Pops, AI Economy
 - planet_technician_volatile_motes_produces_mult, Category: Pops, AI Economy
+- planet_technician_volatile_motes_upkeep_add, Category: Pops, AI Economy
 - planet_technician_exotic_gases_produces_add, Category: Pops, AI Economy
 - planet_technician_exotic_gases_produces_mult, Category: Pops, AI Economy
+- planet_technician_exotic_gases_upkeep_add, Category: Pops, AI Economy
 - planet_technician_rare_crystals_produces_add, Category: Pops, AI Economy
 - planet_technician_rare_crystals_produces_mult, Category: Pops, AI Economy
+- planet_technician_rare_crystals_upkeep_add, Category: Pops, AI Economy
 - planet_technician_sr_living_metal_produces_add, Category: Pops, AI Economy
 - planet_technician_sr_living_metal_produces_mult, Category: Pops, AI Economy
+- planet_technician_sr_living_metal_upkeep_add, Category: Pops, AI Economy
 - planet_technician_sr_zro_produces_add, Category: Pops, AI Economy
 - planet_technician_sr_zro_produces_mult, Category: Pops, AI Economy
+- planet_technician_sr_zro_upkeep_add, Category: Pops, AI Economy
 - planet_technician_sr_dark_matter_produces_add, Category: Pops, AI Economy
 - planet_technician_sr_dark_matter_produces_mult, Category: Pops, AI Economy
+- planet_technician_sr_dark_matter_upkeep_add, Category: Pops, AI Economy
 - planet_technician_nanites_produces_add, Category: Pops, AI Economy
 - planet_technician_nanites_produces_mult, Category: Pops, AI Economy
+- planet_technician_nanites_upkeep_add, Category: Pops, AI Economy
 - planet_technician_minor_artifacts_produces_add, Category: Pops, AI Economy
 - planet_technician_minor_artifacts_produces_mult, Category: Pops, AI Economy
+- planet_technician_minor_artifacts_upkeep_add, Category: Pops, AI Economy
 - planet_technician_astral_threads_produces_add, Category: Pops, AI Economy
 - planet_technician_astral_threads_produces_mult, Category: Pops, AI Economy
+- planet_technician_astral_threads_upkeep_add, Category: Pops, AI Economy
 - planet_technician_menace_produces_add, Category: Pops, AI Economy
 - planet_technician_menace_produces_mult, Category: Pops, AI Economy
+- planet_technician_menace_upkeep_add, Category: Pops, AI Economy
 - planet_technician_advanced_logic_produces_add, Category: Pops, AI Economy
 - planet_technician_advanced_logic_produces_mult, Category: Pops, AI Economy
-- planet_technician_time_upkeep_add, Category: Pops, AI Economy
-- planet_technician_energy_upkeep_add, Category: Pops, AI Economy
-- planet_technician_minerals_upkeep_add, Category: Pops, AI Economy
-- planet_technician_food_upkeep_add, Category: Pops, AI Economy
-- planet_technician_physics_research_upkeep_add, Category: Pops, AI Economy
-- planet_technician_society_research_upkeep_add, Category: Pops, AI Economy
-- planet_technician_engineering_research_upkeep_add, Category: Pops, AI Economy
-- planet_technician_influence_upkeep_add, Category: Pops, AI Economy
-- planet_technician_unity_upkeep_add, Category: Pops, AI Economy
-- planet_technician_consumer_goods_upkeep_add, Category: Pops, AI Economy
-- planet_technician_alloys_upkeep_add, Category: Pops, AI Economy
-- planet_technician_volatile_motes_upkeep_add, Category: Pops, AI Economy
-- planet_technician_exotic_gases_upkeep_add, Category: Pops, AI Economy
-- planet_technician_rare_crystals_upkeep_add, Category: Pops, AI Economy
-- planet_technician_sr_living_metal_upkeep_add, Category: Pops, AI Economy
-- planet_technician_sr_zro_upkeep_add, Category: Pops, AI Economy
-- planet_technician_sr_dark_matter_upkeep_add, Category: Pops, AI Economy
-- planet_technician_nanites_upkeep_add, Category: Pops, AI Economy
-- planet_technician_minor_artifacts_upkeep_add, Category: Pops, AI Economy
-- planet_technician_astral_threads_upkeep_add, Category: Pops, AI Economy
-- planet_technician_menace_upkeep_add, Category: Pops, AI Economy
 - planet_technician_advanced_logic_upkeep_add, Category: Pops, AI Economy
+- planet_technician_produces_mult, Category: Pops, AI Economy
 - planet_administrators_time_produces_add, Category: Pops, AI Economy
 - planet_administrators_time_produces_mult, Category: Pops, AI Economy
 - planet_administrators_time_upkeep_mult, Category: Pops, AI Economy
@@ -3202,27 +3237,73 @@ Printing Modifier Definitions:
 - planet_evaluators_menace_produces_add, Category: Economic Units, AI Economy
 - planet_evaluators_advanced_logic_produces_add, Category: Economic Units, AI Economy
 - planet_entertainers_time_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_time_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_time_upkeep_mult, Category: Economic Units, AI Economy
 - planet_entertainers_energy_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_energy_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_energy_upkeep_mult, Category: Economic Units, AI Economy
 - planet_entertainers_minerals_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_minerals_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_minerals_upkeep_mult, Category: Economic Units, AI Economy
 - planet_entertainers_food_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_food_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_food_upkeep_mult, Category: Economic Units, AI Economy
 - planet_entertainers_physics_research_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_physics_research_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_physics_research_upkeep_mult, Category: Economic Units, AI Economy
 - planet_entertainers_society_research_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_society_research_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_society_research_upkeep_mult, Category: Economic Units, AI Economy
 - planet_entertainers_engineering_research_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_engineering_research_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_engineering_research_upkeep_mult, Category: Economic Units, AI Economy
 - planet_entertainers_influence_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_influence_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_influence_upkeep_mult, Category: Economic Units, AI Economy
 - planet_entertainers_unity_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_unity_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_unity_upkeep_mult, Category: Economic Units, AI Economy
 - planet_entertainers_consumer_goods_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_consumer_goods_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_consumer_goods_upkeep_mult, Category: Economic Units, AI Economy
 - planet_entertainers_alloys_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_alloys_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_alloys_upkeep_mult, Category: Economic Units, AI Economy
 - planet_entertainers_volatile_motes_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_volatile_motes_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_volatile_motes_upkeep_mult, Category: Economic Units, AI Economy
 - planet_entertainers_exotic_gases_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_exotic_gases_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_exotic_gases_upkeep_mult, Category: Economic Units, AI Economy
 - planet_entertainers_rare_crystals_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_rare_crystals_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_rare_crystals_upkeep_mult, Category: Economic Units, AI Economy
 - planet_entertainers_sr_living_metal_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_sr_living_metal_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_sr_living_metal_upkeep_mult, Category: Economic Units, AI Economy
 - planet_entertainers_sr_zro_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_sr_zro_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_sr_zro_upkeep_mult, Category: Economic Units, AI Economy
 - planet_entertainers_sr_dark_matter_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_sr_dark_matter_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_sr_dark_matter_upkeep_mult, Category: Economic Units, AI Economy
 - planet_entertainers_nanites_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_nanites_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_nanites_upkeep_mult, Category: Economic Units, AI Economy
 - planet_entertainers_minor_artifacts_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_minor_artifacts_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_minor_artifacts_upkeep_mult, Category: Economic Units, AI Economy
 - planet_entertainers_astral_threads_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_astral_threads_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_astral_threads_upkeep_mult, Category: Economic Units, AI Economy
 - planet_entertainers_menace_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_menace_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_menace_upkeep_mult, Category: Economic Units, AI Economy
 - planet_entertainers_advanced_logic_produces_add, Category: Economic Units, AI Economy
+- planet_entertainers_advanced_logic_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_advanced_logic_upkeep_mult, Category: Economic Units, AI Economy
+- planet_entertainers_produces_mult, Category: Economic Units, AI Economy
+- planet_entertainers_upkeep_mult, Category: Economic Units, AI Economy
 - planet_soldiers_time_produces_add, Category: Pops, AI Economy
 - planet_soldiers_time_upkeep_add, Category: Pops, AI Economy
 - planet_soldiers_energy_produces_add, Category: Pops, AI Economy
@@ -3381,27 +3462,73 @@ Printing Modifier Definitions:
 - planet_priests_produces_mult, Category: Pops, AI Economy
 - planet_priests_upkeep_mult, Category: Pops, AI Economy
 - planet_enforcers_time_produces_add, Category: Pops, AI Economy
+- planet_enforcers_time_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_time_upkeep_mult, Category: Pops, AI Economy
 - planet_enforcers_energy_produces_add, Category: Pops, AI Economy
+- planet_enforcers_energy_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_energy_upkeep_mult, Category: Pops, AI Economy
 - planet_enforcers_minerals_produces_add, Category: Pops, AI Economy
+- planet_enforcers_minerals_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_minerals_upkeep_mult, Category: Pops, AI Economy
 - planet_enforcers_food_produces_add, Category: Pops, AI Economy
+- planet_enforcers_food_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_food_upkeep_mult, Category: Pops, AI Economy
 - planet_enforcers_physics_research_produces_add, Category: Pops, AI Economy
+- planet_enforcers_physics_research_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_physics_research_upkeep_mult, Category: Pops, AI Economy
 - planet_enforcers_society_research_produces_add, Category: Pops, AI Economy
+- planet_enforcers_society_research_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_society_research_upkeep_mult, Category: Pops, AI Economy
 - planet_enforcers_engineering_research_produces_add, Category: Pops, AI Economy
+- planet_enforcers_engineering_research_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_engineering_research_upkeep_mult, Category: Pops, AI Economy
 - planet_enforcers_influence_produces_add, Category: Pops, AI Economy
+- planet_enforcers_influence_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_influence_upkeep_mult, Category: Pops, AI Economy
 - planet_enforcers_unity_produces_add, Category: Pops, AI Economy
+- planet_enforcers_unity_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_unity_upkeep_mult, Category: Pops, AI Economy
 - planet_enforcers_consumer_goods_produces_add, Category: Pops, AI Economy
+- planet_enforcers_consumer_goods_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_consumer_goods_upkeep_mult, Category: Pops, AI Economy
 - planet_enforcers_alloys_produces_add, Category: Pops, AI Economy
+- planet_enforcers_alloys_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_alloys_upkeep_mult, Category: Pops, AI Economy
 - planet_enforcers_volatile_motes_produces_add, Category: Pops, AI Economy
+- planet_enforcers_volatile_motes_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_volatile_motes_upkeep_mult, Category: Pops, AI Economy
 - planet_enforcers_exotic_gases_produces_add, Category: Pops, AI Economy
+- planet_enforcers_exotic_gases_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_exotic_gases_upkeep_mult, Category: Pops, AI Economy
 - planet_enforcers_rare_crystals_produces_add, Category: Pops, AI Economy
+- planet_enforcers_rare_crystals_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_rare_crystals_upkeep_mult, Category: Pops, AI Economy
 - planet_enforcers_sr_living_metal_produces_add, Category: Pops, AI Economy
+- planet_enforcers_sr_living_metal_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_sr_living_metal_upkeep_mult, Category: Pops, AI Economy
 - planet_enforcers_sr_zro_produces_add, Category: Pops, AI Economy
+- planet_enforcers_sr_zro_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_sr_zro_upkeep_mult, Category: Pops, AI Economy
 - planet_enforcers_sr_dark_matter_produces_add, Category: Pops, AI Economy
+- planet_enforcers_sr_dark_matter_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_sr_dark_matter_upkeep_mult, Category: Pops, AI Economy
 - planet_enforcers_nanites_produces_add, Category: Pops, AI Economy
+- planet_enforcers_nanites_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_nanites_upkeep_mult, Category: Pops, AI Economy
 - planet_enforcers_minor_artifacts_produces_add, Category: Pops, AI Economy
+- planet_enforcers_minor_artifacts_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_minor_artifacts_upkeep_mult, Category: Pops, AI Economy
 - planet_enforcers_astral_threads_produces_add, Category: Pops, AI Economy
+- planet_enforcers_astral_threads_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_astral_threads_upkeep_mult, Category: Pops, AI Economy
 - planet_enforcers_menace_produces_add, Category: Pops, AI Economy
+- planet_enforcers_menace_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_menace_upkeep_mult, Category: Pops, AI Economy
 - planet_enforcers_advanced_logic_produces_add, Category: Pops, AI Economy
+- planet_enforcers_advanced_logic_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_advanced_logic_upkeep_mult, Category: Pops, AI Economy
+- planet_enforcers_produces_mult, Category: Pops, AI Economy
+- planet_enforcers_upkeep_mult, Category: Pops, AI Economy
 - planet_clerks_time_produces_add, Category: Pops, AI Economy
 - planet_clerks_energy_produces_add, Category: Pops, AI Economy
 - planet_clerks_minerals_produces_add, Category: Pops, AI Economy
@@ -3425,27 +3552,50 @@ Printing Modifier Definitions:
 - planet_clerks_menace_produces_add, Category: Pops, AI Economy
 - planet_clerks_advanced_logic_produces_add, Category: Pops, AI Economy
 - planet_telepaths_time_produces_add, Category: Pops, AI Economy
+- planet_telepaths_time_produces_mult, Category: Pops, AI Economy
 - planet_telepaths_energy_produces_add, Category: Pops, AI Economy
+- planet_telepaths_energy_produces_mult, Category: Pops, AI Economy
 - planet_telepaths_minerals_produces_add, Category: Pops, AI Economy
+- planet_telepaths_minerals_produces_mult, Category: Pops, AI Economy
 - planet_telepaths_food_produces_add, Category: Pops, AI Economy
+- planet_telepaths_food_produces_mult, Category: Pops, AI Economy
 - planet_telepaths_physics_research_produces_add, Category: Pops, AI Economy
+- planet_telepaths_physics_research_produces_mult, Category: Pops, AI Economy
 - planet_telepaths_society_research_produces_add, Category: Pops, AI Economy
+- planet_telepaths_society_research_produces_mult, Category: Pops, AI Economy
 - planet_telepaths_engineering_research_produces_add, Category: Pops, AI Economy
+- planet_telepaths_engineering_research_produces_mult, Category: Pops, AI Economy
 - planet_telepaths_influence_produces_add, Category: Pops, AI Economy
+- planet_telepaths_influence_produces_mult, Category: Pops, AI Economy
 - planet_telepaths_unity_produces_add, Category: Pops, AI Economy
+- planet_telepaths_unity_produces_mult, Category: Pops, AI Economy
 - planet_telepaths_consumer_goods_produces_add, Category: Pops, AI Economy
+- planet_telepaths_consumer_goods_produces_mult, Category: Pops, AI Economy
 - planet_telepaths_alloys_produces_add, Category: Pops, AI Economy
+- planet_telepaths_alloys_produces_mult, Category: Pops, AI Economy
 - planet_telepaths_volatile_motes_produces_add, Category: Pops, AI Economy
+- planet_telepaths_volatile_motes_produces_mult, Category: Pops, AI Economy
 - planet_telepaths_exotic_gases_produces_add, Category: Pops, AI Economy
+- planet_telepaths_exotic_gases_produces_mult, Category: Pops, AI Economy
 - planet_telepaths_rare_crystals_produces_add, Category: Pops, AI Economy
+- planet_telepaths_rare_crystals_produces_mult, Category: Pops, AI Economy
 - planet_telepaths_sr_living_metal_produces_add, Category: Pops, AI Economy
+- planet_telepaths_sr_living_metal_produces_mult, Category: Pops, AI Economy
 - planet_telepaths_sr_zro_produces_add, Category: Pops, AI Economy
+- planet_telepaths_sr_zro_produces_mult, Category: Pops, AI Economy
 - planet_telepaths_sr_dark_matter_produces_add, Category: Pops, AI Economy
+- planet_telepaths_sr_dark_matter_produces_mult, Category: Pops, AI Economy
 - planet_telepaths_nanites_produces_add, Category: Pops, AI Economy
+- planet_telepaths_nanites_produces_mult, Category: Pops, AI Economy
 - planet_telepaths_minor_artifacts_produces_add, Category: Pops, AI Economy
+- planet_telepaths_minor_artifacts_produces_mult, Category: Pops, AI Economy
 - planet_telepaths_astral_threads_produces_add, Category: Pops, AI Economy
+- planet_telepaths_astral_threads_produces_mult, Category: Pops, AI Economy
 - planet_telepaths_menace_produces_add, Category: Pops, AI Economy
+- planet_telepaths_menace_produces_mult, Category: Pops, AI Economy
 - planet_telepaths_advanced_logic_produces_add, Category: Pops, AI Economy
+- planet_telepaths_advanced_logic_produces_mult, Category: Pops, AI Economy
+- planet_telepaths_produces_mult, Category: Pops, AI Economy
 - planet_doctors_time_produces_add, Category: Pops, AI Economy
 - planet_doctors_energy_produces_add, Category: Pops, AI Economy
 - planet_doctors_minerals_produces_add, Category: Pops, AI Economy
@@ -5191,6 +5341,74 @@ Printing Modifier Definitions:
 - country_situations_astral_threads_produces_add, Category: Countries, AI Economy
 - country_situations_menace_produces_add, Category: Countries, AI Economy
 - country_situations_advanced_logic_produces_add, Category: Countries, AI Economy
+- country_storms_time_produces_add, Category: Countries, AI Economy
+- country_storms_energy_produces_add, Category: Countries, AI Economy
+- country_storms_minerals_produces_add, Category: Countries, AI Economy
+- country_storms_food_produces_add, Category: Countries, AI Economy
+- country_storms_physics_research_produces_add, Category: Countries, AI Economy
+- country_storms_society_research_produces_add, Category: Countries, AI Economy
+- country_storms_engineering_research_produces_add, Category: Countries, AI Economy
+- country_storms_influence_produces_add, Category: Countries, AI Economy
+- country_storms_unity_produces_add, Category: Countries, AI Economy
+- country_storms_consumer_goods_produces_add, Category: Countries, AI Economy
+- country_storms_alloys_produces_add, Category: Countries, AI Economy
+- country_storms_volatile_motes_produces_add, Category: Countries, AI Economy
+- country_storms_exotic_gases_produces_add, Category: Countries, AI Economy
+- country_storms_rare_crystals_produces_add, Category: Countries, AI Economy
+- country_storms_sr_living_metal_produces_add, Category: Countries, AI Economy
+- country_storms_sr_zro_produces_add, Category: Countries, AI Economy
+- country_storms_sr_dark_matter_produces_add, Category: Countries, AI Economy
+- country_storms_nanites_produces_add, Category: Countries, AI Economy
+- country_storms_minor_artifacts_produces_add, Category: Countries, AI Economy
+- country_storms_astral_threads_produces_add, Category: Countries, AI Economy
+- country_storms_menace_produces_add, Category: Countries, AI Economy
+- country_storms_advanced_logic_produces_add, Category: Countries, AI Economy
+- planet_astrometeorologists_time_produces_mult, Category: Pops, AI Economy
+- planet_astrometeorologists_energy_produces_mult, Category: Pops, AI Economy
+- planet_astrometeorologists_minerals_produces_mult, Category: Pops, AI Economy
+- planet_astrometeorologists_food_produces_mult, Category: Pops, AI Economy
+- planet_astrometeorologists_physics_research_produces_mult, Category: Pops, AI Economy
+- planet_astrometeorologists_society_research_produces_mult, Category: Pops, AI Economy
+- planet_astrometeorologists_engineering_research_produces_mult, Category: Pops, AI Economy
+- planet_astrometeorologists_influence_produces_mult, Category: Pops, AI Economy
+- planet_astrometeorologists_unity_produces_mult, Category: Pops, AI Economy
+- planet_astrometeorologists_consumer_goods_produces_mult, Category: Pops, AI Economy
+- planet_astrometeorologists_alloys_produces_mult, Category: Pops, AI Economy
+- planet_astrometeorologists_volatile_motes_produces_mult, Category: Pops, AI Economy
+- planet_astrometeorologists_exotic_gases_produces_mult, Category: Pops, AI Economy
+- planet_astrometeorologists_rare_crystals_produces_mult, Category: Pops, AI Economy
+- planet_astrometeorologists_sr_living_metal_produces_mult, Category: Pops, AI Economy
+- planet_astrometeorologists_sr_zro_produces_mult, Category: Pops, AI Economy
+- planet_astrometeorologists_sr_dark_matter_produces_mult, Category: Pops, AI Economy
+- planet_astrometeorologists_nanites_produces_mult, Category: Pops, AI Economy
+- planet_astrometeorologists_minor_artifacts_produces_mult, Category: Pops, AI Economy
+- planet_astrometeorologists_astral_threads_produces_mult, Category: Pops, AI Economy
+- planet_astrometeorologists_menace_produces_mult, Category: Pops, AI Economy
+- planet_astrometeorologists_advanced_logic_produces_mult, Category: Pops, AI Economy
+- planet_astrometeorologists_produces_mult, Category: Pops, AI Economy
+- planet_buildings_storm_tech_time_upkeep_mult, Category: Planets, AI Economy
+- planet_buildings_storm_tech_energy_upkeep_mult, Category: Planets, AI Economy
+- planet_buildings_storm_tech_minerals_upkeep_mult, Category: Planets, AI Economy
+- planet_buildings_storm_tech_food_upkeep_mult, Category: Planets, AI Economy
+- planet_buildings_storm_tech_physics_research_upkeep_mult, Category: Planets, AI Economy
+- planet_buildings_storm_tech_society_research_upkeep_mult, Category: Planets, AI Economy
+- planet_buildings_storm_tech_engineering_research_upkeep_mult, Category: Planets, AI Economy
+- planet_buildings_storm_tech_influence_upkeep_mult, Category: Planets, AI Economy
+- planet_buildings_storm_tech_unity_upkeep_mult, Category: Planets, AI Economy
+- planet_buildings_storm_tech_consumer_goods_upkeep_mult, Category: Planets, AI Economy
+- planet_buildings_storm_tech_alloys_upkeep_mult, Category: Planets, AI Economy
+- planet_buildings_storm_tech_volatile_motes_upkeep_mult, Category: Planets, AI Economy
+- planet_buildings_storm_tech_exotic_gases_upkeep_mult, Category: Planets, AI Economy
+- planet_buildings_storm_tech_rare_crystals_upkeep_mult, Category: Planets, AI Economy
+- planet_buildings_storm_tech_sr_living_metal_upkeep_mult, Category: Planets, AI Economy
+- planet_buildings_storm_tech_sr_zro_upkeep_mult, Category: Planets, AI Economy
+- planet_buildings_storm_tech_sr_dark_matter_upkeep_mult, Category: Planets, AI Economy
+- planet_buildings_storm_tech_nanites_upkeep_mult, Category: Planets, AI Economy
+- planet_buildings_storm_tech_minor_artifacts_upkeep_mult, Category: Planets, AI Economy
+- planet_buildings_storm_tech_astral_threads_upkeep_mult, Category: Planets, AI Economy
+- planet_buildings_storm_tech_menace_upkeep_mult, Category: Planets, AI Economy
+- planet_buildings_storm_tech_advanced_logic_upkeep_mult, Category: Planets, AI Economy
+- planet_buildings_storm_tech_upkeep_mult, Category: Planets, AI Economy
 - shipsize_security_system_drone_build_speed_mult, Category: Planets, Megastructures, Starbases
 - shipsize_security_system_drone_hull_mult, Category: Ships
 - shipsize_security_system_drone_hull_add, Category: Ships
@@ -6900,10 +7118,14 @@ Printing Modifier Definitions:
 - planet_district_cosmogenesis_world_logic_build_speed_mult, Category: Planets
 - planet_district_crashed_slaver_ship_build_speed_mult, Category: Planets
 - planet_district_resort_build_speed_mult, Category: Planets
+- planet_district_prison_build_speed_mult, Category: Planets
+- planet_district_slave_build_speed_mult, Category: Planets
 - planet_district_city_build_speed_mult, Category: Planets
 - planet_district_hive_build_speed_mult, Category: Planets
 - planet_district_nexus_build_speed_mult, Category: Planets
 - planet_district_industrial_build_speed_mult, Category: Planets
+- planet_district_prison_industrial_build_speed_mult, Category: Planets
+- planet_district_battle_thrall_build_speed_mult, Category: Planets
 - planet_district_srw_commercial_build_speed_mult, Category: Planets
 - planet_district_machine_coordination_build_speed_mult, Category: Planets
 - planet_district_arcology_housing_build_speed_mult, Category: Planets
@@ -6953,9 +7175,6 @@ Printing Modifier Definitions:
 - strange_wormhole_empire_windup_mult, Category: Countries
 - strange_wormhole_ship_windup_mult, Category: Ships
 - strange_wormhole_megastructure_bypass_windup_mult, Category: Megastructures
-- building_mote_harvesters_max, Category: Planets
-- building_gas_extractors_max, Category: Planets
-- building_crystal_mines_max, Category: Planets
 - building_betharian_power_plant_max, Category: Planets
 - planet_building_colony_shelter_build_speed_mult, Category: Planets
 - planet_building_capital_build_speed_mult, Category: Planets
@@ -7062,7 +7281,6 @@ Printing Modifier Definitions:
 - planet_building_clinic_build_speed_mult, Category: Planets
 - planet_building_hospital_build_speed_mult, Category: Planets
 - planet_building_maintenance_depot_build_speed_mult, Category: Planets
-- planet_building_slave_huts_build_speed_mult, Category: Planets
 - planet_building_overseer_homes_build_speed_mult, Category: Planets
 - planet_building_ranger_lodge_build_speed_mult, Category: Planets
 - planet_building_toxic_bath_build_speed_mult, Category: Planets
@@ -7108,9 +7326,6 @@ Printing Modifier Definitions:
 - planet_building_stronghold_build_speed_mult, Category: Planets
 - planet_building_fortress_build_speed_mult, Category: Planets
 - planet_building_planetary_shield_generator_build_speed_mult, Category: Planets
-- planet_building_mote_harvesters_build_speed_mult, Category: Planets
-- planet_building_gas_extractors_build_speed_mult, Category: Planets
-- planet_building_crystal_mines_build_speed_mult, Category: Planets
 - planet_building_betharian_power_plant_build_speed_mult, Category: Planets
 - planet_building_xeno_zoo_build_speed_mult, Category: Planets
 - planet_building_crude_huts_build_speed_mult, Category: Planets
@@ -7266,6 +7481,17 @@ Printing Modifier Definitions:
 - planet_building_astral_siphon_1_build_speed_mult, Category: Planets
 - planet_building_astral_siphon_2_build_speed_mult, Category: Planets
 - planet_building_astral_siphon_3_build_speed_mult, Category: Planets
+- planet_building_storm_attraction_center_build_speed_mult, Category: Planets
+- planet_building_advanced_storm_attraction_center_build_speed_mult, Category: Planets
+- planet_building_storm_repellent_center_build_speed_mult, Category: Planets
+- planet_building_advanced_storm_repellent_center_build_speed_mult, Category: Planets
+- planet_building_storm_resistant_production_build_speed_mult, Category: Planets
+- planet_building_advanced_storm_resistant_production_build_speed_mult, Category: Planets
+- planet_building_adakkaria_patriotic_institute_build_speed_mult, Category: Planets
+- planet_building_astrometeorology_observation_center_build_speed_mult, Category: Planets
+- planet_building_storm_summoning_theater_build_speed_mult, Category: Planets
+- planet_building_storm_holo_theater_build_speed_mult, Category: Planets
+- planet_building_storm_grand_theater_build_speed_mult, Category: Planets
 - planet_building_augmentation_bazaars_build_speed_mult, Category: Planets
 - planet_building_transcendental_retreat_build_speed_mult, Category: Planets
 - planet_building_hive_transcendental_retreat_build_speed_mult, Category: Planets
@@ -7403,6 +7629,9 @@ Printing Modifier Definitions:
 - job_knight_commander_add, Category: Planets
 - job_knight_commander_per_pop, Category: Planets
 - job_knight_commander_per_crime, Category: Planets
+- job_warden_add, Category: Planets
+- job_warden_per_pop, Category: Planets
+- job_warden_per_crime, Category: Planets
 - job_researcher_add, Category: Planets
 - job_researcher_per_pop, Category: Planets
 - job_researcher_per_crime, Category: Planets
@@ -7538,6 +7767,9 @@ Printing Modifier Definitions:
 - job_soldier_add, Category: Planets
 - job_soldier_per_pop, Category: Planets
 - job_soldier_per_crime, Category: Planets
+- job_battle_thrall_add, Category: Planets
+- job_battle_thrall_per_pop, Category: Planets
+- job_battle_thrall_per_crime, Category: Planets
 - job_mortal_initiate_add, Category: Planets
 - job_mortal_initiate_per_pop, Category: Planets
 - job_mortal_initiate_per_crime, Category: Planets
@@ -7553,6 +7785,18 @@ Printing Modifier Definitions:
 - job_squire_add, Category: Planets
 - job_squire_per_pop, Category: Planets
 - job_squire_per_crime, Category: Planets
+- job_foundry_prison_worker_add, Category: Planets
+- job_foundry_prison_worker_per_pop, Category: Planets
+- job_foundry_prison_worker_per_crime, Category: Planets
+- job_catalytic_technician_prison_worker_add, Category: Planets
+- job_catalytic_technician_prison_worker_per_pop, Category: Planets
+- job_catalytic_technician_prison_worker_per_crime, Category: Planets
+- job_artisan_prison_worker_add, Category: Planets
+- job_artisan_prison_worker_per_pop, Category: Planets
+- job_artisan_prison_worker_per_crime, Category: Planets
+- job_artificer_prison_worker_add, Category: Planets
+- job_artificer_prison_worker_per_pop, Category: Planets
+- job_artificer_prison_worker_per_crime, Category: Planets
 - job_spawning_drone_add, Category: Planets
 - job_spawning_drone_per_pop, Category: Planets
 - job_spawning_drone_per_crime, Category: Planets
@@ -8126,6 +8370,18 @@ Printing Modifier Definitions:
 - job_astral_unit_add, Category: Planets
 - job_astral_unit_per_pop, Category: Planets
 - job_astral_unit_per_crime, Category: Planets
+- job_astrometeorologist_add, Category: Planets
+- job_astrometeorologist_per_pop, Category: Planets
+- job_astrometeorologist_per_crime, Category: Planets
+- job_astrometeorologist_hive_add, Category: Planets
+- job_astrometeorologist_hive_per_pop, Category: Planets
+- job_astrometeorologist_hive_per_crime, Category: Planets
+- job_astrometeorologist_machine_add, Category: Planets
+- job_astrometeorologist_machine_per_pop, Category: Planets
+- job_astrometeorologist_machine_per_crime, Category: Planets
+- job_storm_dancer_add, Category: Planets
+- job_storm_dancer_per_pop, Category: Planets
+- job_storm_dancer_per_crime, Category: Planets
 - job_haruspex_add, Category: Planets
 - job_haruspex_per_pop, Category: Planets
 - job_haruspex_per_crime, Category: Planets
@@ -8209,6 +8465,8 @@ Printing Modifier Definitions:
 - resolution_category_intergalacticdirective_vote_strength_mult, Category: Countries
 - resolution_category_bureaucraticsurveillance_vote_strength_mult, Category: Countries
 - resolution_category_pre_ftl_stances_vote_strength_mult, Category: Countries
+- resolution_category_space_weather_exploitation_stances_vote_strength_mult, Category: Countries
+- resolution_category_storm_environmentalists_stances_vote_strength_mult, Category: Countries
 - crashed_ship_asteroid_category_research_speed_mult, Category: Leaders
 - origin_asteroid_category_research_speed_mult, Category: Leaders
 - debris_asteroid_category_research_speed_mult, Category: Leaders
@@ -8329,6 +8587,22 @@ Printing Modifier Definitions:
 - GREATEST_SHOW_CAT_research_speed_mult, Category: Leaders
 - BLACK_HOLE_INSTABLE_CAT_research_speed_mult, Category: Leaders
 - SPONTANEOUS_EXPLOSIONS_CAT_research_speed_mult, Category: Leaders
+- STORMS_PREC_WM_ONE_research_speed_mult, Category: Leaders
+- STORMS_PREC_ONE_research_speed_mult, Category: Leaders
+- crimson_crawlers_category_research_speed_mult, Category: Leaders
+- STORMS_ANOM_ANTS_research_speed_mult, Category: Leaders
+- STORMS_ANOM_BRAIN_research_speed_mult, Category: Leaders
+- STORMS_ANOM_STAT_research_speed_mult, Category: Leaders
+- but_they_are_cute_category_research_speed_mult, Category: Leaders
+- terrestial_telescope_category_research_speed_mult, Category: Leaders
+- the_imitator_category_research_speed_mult, Category: Leaders
+- STORMS_ANOM_POLYCHROMATIC_research_speed_mult, Category: Leaders
+- STORMS_ANOM_TRIPLETS_research_speed_mult, Category: Leaders
+- STORMS_ANOM_TRAVELLERS_research_speed_mult, Category: Leaders
+- STORMS_COSMIC_SLUDGE_research_speed_mult, Category: Leaders
+- STORMS_SHATTERED_SATTELITE_research_speed_mult, Category: Leaders
+- STORMS_EVISCERATED_FAUNA_research_speed_mult, Category: Leaders
+- STORMS_DISPLACED_TIYANKI_research_speed_mult, Category: Leaders
 - strange_signal_category_research_speed_mult, Category: Leaders
 - SEA_CRYSTAL_CAT_research_speed_mult, Category: Leaders
 - WENKWORT_CAT_research_speed_mult, Category: Leaders
@@ -8679,6 +8953,9 @@ Printing Modifier Definitions:
 - dyson_swarm_limit_add, Category: Countries
 - arc_furnace_limit_add, Category: Countries
 - megastructure_dismantle_refund_mult, Category: Countries
+- pop_non_psionic_happiness, Category: Pops
+- planet_jobs_only_psionic_worker_produces_mult, Category: Pops
+- capital_storm_diplo_weight_mult, Category: Countries
 - mining_district_housing_add, Category: Planets
 - mining_district_buildings_add, Category: Planets
 - councilor_ruler_democratic_exp_gain, Category: Leaders
@@ -8808,3 +9085,9 @@ Printing Modifier Definitions:
 - councilor_individual_machine_predictive_analysis_exp_gain, Category: Leaders
 - councilor_individual_machine_warbots_exp_gain, Category: Leaders
 - councilor_individual_machine_replication_exp_gain, Category: Leaders
+- councilor_astrometeorology_exp_gain, Category: Leaders
+- councilor_astrometeorology_megacorp_exp_gain, Category: Leaders
+- councilor_storm_callers_exp_gain, Category: Leaders
+- councilor_storm_callers_megacorp_exp_gain, Category: Leaders
+- councilor_environmental_architects_exp_gain, Category: Leaders
+- councilor_environmental_architects_megacorp_exp_gain, Category: Leaders
