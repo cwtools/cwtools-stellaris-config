@@ -4009,3 +4009,131 @@ alias[trigger:count_astral_rift] = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 }
+
+## push_scope = cosmic_storm
+###Iterate through all cosmic storms in the galaxy - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_cosmic_storm] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+###Iterate through all cosmic storms in the galaxy - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_cosmic_storm = {
+	count = int_value_field
+	count = all
+	## push_scope = cosmic_storm
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+## push_scope = system
+###Iterate through all systems within the storm - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_system_within_storm = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+###Iterate through all systems within the storm - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_system_within_storm = {
+	count = int_value_field
+	count = all
+	## push_scope = system
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+## push_scope = system
+###Iterate through all systems valid to be a storms start position - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_cosmic_storm_start_position = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+###Iterate through all systems valid to be a storms start position - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_cosmic_storm_start_position = {
+	count = int_value_field
+	count = all
+	## push_scope = system
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+## push_scope = system
+###Iterate through all systems valid to be a storms end position - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_cosmic_storm_end_position = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+###Iterate through all systems valid to be a storms end position - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_cosmic_storm_end_position  = {
+	count = int_value_field
+	count = all
+	## push_scope = system
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+## push_scope = system
+###Iterate through all systems added to the storm - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_system_added_to_storm = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+###Iterate through all systems added to the storm - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_system_added_to_storm = {
+	count = int_value_field
+	count = all
+	## push_scope = system
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+## push_scope = system
+###Iterate through all systems removed from storm - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_system_removed_from_storm = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+###Iterate through all systems removed from storm - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_system_removed_from_storm= {
+	count = int_value_field
+	count = all
+	## push_scope = system
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+## push_scope = cosmic_storm_influence_field
+###Iterate through all influence fields owned by a country - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_owned_storm_influence_field = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+###Iterate through all influence fields owned by a country - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_owned_storm_influence_field= {
+	count = int_value_field
+	count = all
+	## push_scope = cosmic_storm_influence_field
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+## push_scope = system
+###Iterate through all influence fields owned by a country - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_system_in_cosmic_storm_influence_field = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+###Iterate through all influence fields owned by a country - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_system_in_cosmic_storm_influence_field= {
+	count = int_value_field
+	count = all
+	## push_scope = system
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
