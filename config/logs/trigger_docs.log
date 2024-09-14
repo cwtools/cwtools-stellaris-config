@@ -1,4 +1,4 @@
-[16:48:48][game_application.cpp:2134]: 
+[17:45:41][game_application.cpp:2148]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -75,6 +75,10 @@ else_if - Evaluates the enclosed triggers if the display_triggers of the precedi
 if = { limit = { <display_triggers> } <triggers> }
 else_if = { limit = { <display_triggers> } <triggers> }
 Supported Scopes: all
+
+cosmic_storm_influence_value - Returns the amount of influence on a system
+cosmic_storm_influence_value > 0.75
+Supported Scopes: galactic_object
 
 happiness - Checks the pop's happiness percentage
 happiness < 0.5
@@ -636,6 +640,22 @@ can_lock_be_renewed - Returns true if the Bypass Lock can be renewed
 can_lock_be_renewed = yes
 Supported Scopes: bypass
 
+balance - Checks the country's energy credit balance
+balance < 39
+Supported Scopes: country
+
+is_inside_storm - Checks if the system is inside any storm or a specific storm type.
+is_inside_storm = yes/no/<storm_type>
+Supported Scopes: galactic_object
+
+is_on_border - Checks if the system is on a countries border
+is_on_border = yes
+Supported Scopes: galactic_object
+
+is_infertile - Checks if the pop/species has any trait with infertile 
+is_infertile = yes/no
+Supported Scopes: pop species
+
 hidden_trigger - Hides the tooltip for the triggers within
 hidden_trigger = { <triggers> }
 Supported Scopes: all
@@ -1120,6 +1140,10 @@ has_hp - Checks the ship's hull points
 has_hp > 200
 Supported Scopes: ship
 
+has_shield_hp - Checks the ship's shield hit points
+has_shield_hp > 200
+Supported Scopes: ship
+
 is_surveyed - Checks if the planet/astral_rift/system has been survey by target country
 is_surveyed = { who = <target> status = yes }
 Supported Scopes: planet galactic_object astral_rift
@@ -1313,10 +1337,6 @@ Supported Scopes: country
 
 stored_engineering_points - Checks the country's amount of stored engineering research
 stored_engineering_points
-Supported Scopes: country
-
-balance - Checks the country's energy credit balance
-balance < 39
 Supported Scopes: country
 
 running_balance - Checks the country's running energy credit balance
@@ -3229,6 +3249,71 @@ is_on_slave_market - Checks if pop in the scope is being sold on the slave marke
 is_on_slave_market = yes/no
 Supported Scopes: pop
 
+num_cosmic_storms - Checks the amount of currently active cosmic storms.
+num_cosmic_storms < 3
+Supported Scopes: all
+
+is_influence_center - Checks if solar system is an influence center
+is_influence_center = no
+Supported Scopes: galactic_object
+
+has_storm_flag - Checks if the cosmic storm has a specific flag
+has_storm_flag = <flag> (note: one can use e.g. my_flag@from to track relationships between objects)
+Supported Scopes: cosmic_storm
+
+num_asteroid_belts - Checks the system's number of asteroid belts
+num_asteroid_belts > 1
+Supported Scopes: galactic_object
+
+has_environmental_effects - Checks if a star system has any environmental effects
+has_environmental_effects = yes
+Supported Scopes: galactic_object
+
+num_cosmic_storms_encountered - Returns the amount of all storms the country was affected by. Storms that leave stop affecting the country to return to it later are counted as multiple
+num_cosmic_storms_encountered > 3
+Supported Scopes: country
+
+num_unique_cosmic_storms_encountered - Returns the amount of all unique storms the country was affected by. Storms that leave stop affecting the country to return to it later are counted as one
+num_unique_cosmic_storms_encountered > 2
+Supported Scopes: country
+
+num_storm_exploitation_buildings - Checks the number of cosmic storm exploitation buildings with positive effects on a country
+num_storm_exploitation_buildings >= 1
+Supported Scopes: planet country
+
+is_storm_active_in_storm_sector - Checks if there is currently a storm active within the storm sector that this system belongs to. The galaxy is split up in multiple storm sectors, which we use to avoid spawning storms too close to each other.
+is_storm_active_in_storm_sector = yes
+Supported Scopes: galactic_object
+
+num_cosmic_storm_early_game_spawn_chance_scale_setting - Checks the spawn storm chance scale in early game for cosmic storms
+Supported Scopes: all
+
+num_cosmic_storm_mid_game_spawn_chance_scale_setting - Checks the spawn storm chance scale in mid game for cosmic storms
+Supported Scopes: all
+
+num_cosmic_storm_late_game_spawn_chance_scale_setting - Checks the spawn storm chance scale in late game for cosmic storms
+Supported Scopes: all
+
+num_cosmic_storm_early_game_spawn_max_cap_setting - Checks the spawn storm max cap in early game for cosmic storms
+Supported Scopes: all
+
+num_cosmic_storm_mid_game_spawn_max_cap_setting - Checks the spawn storm max cap in mid game for cosmic storms
+Supported Scopes: all
+
+num_cosmic_storm_late_game_spawn_max_cap_setting - Checks the spawn storm max cap in late game for cosmic storms
+Supported Scopes: all
+
+num_cosmic_storm_spawn_cooldown_scale_setting - Checks the spawn storm cooldown scale for cosmic storms
+Supported Scopes: all
+
+is_storm_type - Checks if the scoped Cosmic Storm's type is equal to <type>
+is_storm_type = <type>
+Supported Scopes: cosmic_storm
+
+ship_size_multiplier - Compares ship size multiplier of the scoped design or ship.
+ship_size_multiplier >= <value>
+Supported Scopes: ship design
+
 any_agreement - Iterate through each agreement - checks whether the enclosed triggers return true for any of them
 any_agreement = { <triggers> }
 Supported Scopes: country no_scope
@@ -3330,6 +3415,94 @@ count_bypass = {
 	limit = { <triggers> }
 }
 Supported Scopes: all
+
+any_cosmic_storm - Iterate through all cosmic storms in the galaxy - checks whether the enclosed triggers return true for any of them
+any_cosmic_storm = { <triggers> }
+Supported Scopes: all
+
+count_cosmic_storm - Iterate through all cosmic storms in the galaxy - checks whether the enclosed triggers return true for X/all of them
+count_cosmic_storm = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: all
+
+any_system_within_storm - Iterate through all systems within the storm - checks whether the enclosed triggers return true for any of them
+any_system_within_storm = { <triggers> }
+Supported Scopes: cosmic_storm
+
+count_system_within_storm - Iterate through all systems within the storm - checks whether the enclosed triggers return true for X/all of them
+count_system_within_storm = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: cosmic_storm
+
+any_cosmic_storm_start_position - Iterate through all systems valid to be a storms start position - checks whether the enclosed triggers return true for any of them
+any_cosmic_storm_start_position = { <triggers> }
+Supported Scopes: all
+
+count_cosmic_storm_start_position - Iterate through all systems valid to be a storms start position - checks whether the enclosed triggers return true for X/all of them
+count_cosmic_storm_start_position = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: all
+
+any_cosmic_storm_end_position - Iterate through all systems valid to be a storms end position - checks whether the enclosed triggers return true for any of them
+any_cosmic_storm_end_position = { <triggers> }
+Supported Scopes: all
+
+count_cosmic_storm_end_position - Iterate through all systems valid to be a storms end position - checks whether the enclosed triggers return true for X/all of them
+count_cosmic_storm_end_position = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: all
+
+any_system_added_to_storm - Iterate through all systems added to the storm - checks whether the enclosed triggers return true for any of them
+any_system_added_to_storm = { <triggers> }
+Supported Scopes: cosmic_storm
+
+count_system_added_to_storm - Iterate through all systems added to the storm - checks whether the enclosed triggers return true for X/all of them
+count_system_added_to_storm = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: cosmic_storm
+
+any_system_removed_from_storm - Iterate through all systems removed from storm - checks whether the enclosed triggers return true for any of them
+any_system_removed_from_storm = { <triggers> }
+Supported Scopes: cosmic_storm
+
+count_system_removed_from_storm - Iterate through all systems removed from storm - checks whether the enclosed triggers return true for X/all of them
+count_system_removed_from_storm = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: cosmic_storm
+
+any_owned_storm_influence_field - Iterate through all influence fields owned by a country - checks whether the enclosed triggers return true for any of them
+any_owned_storm_influence_field = { <triggers> }
+Supported Scopes: country
+
+count_owned_storm_influence_field - Iterate through all influence fields owned by a country - checks whether the enclosed triggers return true for X/all of them
+count_owned_storm_influence_field = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: country
+
+any_system_in_cosmic_storm_influence_field - Iterate through all influence fields owned by a country - checks whether the enclosed triggers return true for any of them
+any_system_in_cosmic_storm_influence_field = { <triggers> }
+Supported Scopes: cosmic_storm_influence_field
+
+count_system_in_cosmic_storm_influence_field - Iterate through all influence fields owned by a country - checks whether the enclosed triggers return true for X/all of them
+count_system_in_cosmic_storm_influence_field = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: cosmic_storm_influence_field
 
 count_country - Iterate through all countries - checks whether the enclosed triggers return true for X/all of them
 count_country = {
