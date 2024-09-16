@@ -154,7 +154,7 @@ alias[trigger:reverse_has_relation_flag] = {
 
 ## severity = warning
 ###Checks if the cosmic storm has a specific flag
-alias[trigger:has_storm_flag] = value[has_storm_flag]
+alias[trigger:has_storm_flag] = value[storm_flag]
 
 ###Checks if the country has a specific government type, or any government
 alias[trigger:has_government] = <government>
