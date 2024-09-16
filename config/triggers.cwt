@@ -2869,7 +2869,7 @@ alias[trigger:is_on_border] = bool
 ###Checks if the pop/species has any trait with infertile 
 alias[trigger:is_infertile] = bool
 
-###Checks if solar system is an influence center
+###Checks if the planet is colonized (in planet scope) or the system has an owner (in system scope)
 alias[trigger:is_influence_center] = bool
 
 ###Checks if a star system has any environmental effects
