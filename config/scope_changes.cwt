@@ -4228,3 +4228,176 @@ alias[effect:ordered_cosmic_storm_start_position] = {
 	inverse = bool
 	alias_name[effect] = alias_match_left[effect]
 }
+
+## push_scope = system
+###Iterate through all systems valid to be a storms start position - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_cosmic_storm_start_position] = { 
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = system
+###Iterate through all systems valid to be a storms end position - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_cosmic_storm_end_position] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	##cardinality = 0..1
+	weights = {
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = system
+###Iterate through all systems valid to be a storms end position - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_cosmic_storm_end_position] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	position = int[0..inf]
+	order_by = value_field
+	##cardinality = 0..1
+	inverse = bool
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = system
+###Iterate through all systems valid to be a storms end position - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_cosmic_storm_end_position] = { 
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = system
+###Iterate through all systems added to the storm - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_system_added_to_storm] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	##cardinality = 0..1
+	weights = {
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = system
+###Iterate through all systems added to the storm - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_system_added_to_storm] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	position = int[0..inf]
+	order_by = value_field
+	##cardinality = 0..1
+	inverse = bool
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = system
+###Iterate through all systems added to the storm - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_system_added_to_storm] = { 
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = system
+###Iterate through all systems removed from storm - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_system_removed_from_storm] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	##cardinality = 0..1
+	weights = {
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = system
+###Iterate through all systems removed from storm - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_system_removed_from_storm] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	position = int[0..inf]
+	order_by = value_field
+	##cardinality = 0..1
+	inverse = bool
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = system
+###Iterate through all systems removed from storm - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_system_removed_from_storm] = { 
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = cosmic_storm_influence_field
+###Iterate through all influence fields owned by a country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_owned_storm_influence_field] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	##cardinality = 0..1
+	weights = {
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = cosmic_storm_influence_field
+###Iterate through all influence fields owned by a country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_owned_storm_influence_field] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	position = int[0..inf]
+	order_by = value_field
+	##cardinality = 0..1
+	inverse = bool
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = cosmic_storm_influence_field
+###Iterate through all influence fields owned by a country - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_owned_storm_influence_field] = { 
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = system
+###Iterate through all influence fields owned by a country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_system_in_cosmic_storm_influence_field] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	##cardinality = 0..1
+	weights = {
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = system
+###Iterate through all influence fields owned by a country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_system_in_cosmic_storm_influence_field] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	position = int[0..inf]
+	order_by = value_field
+	##cardinality = 0..1
+	inverse = bool
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = system
+###Iterate through all influence fields owned by a country - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_system_in_cosmic_storm_influence_field] = { 
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
