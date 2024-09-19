@@ -255,6 +255,8 @@ alias[triggered_planet_growth_habitability_modifier:triggered_planet_growth_habi
 	mult = value_field
 	## cardinality = 0..1
 	multiplier = value_field
+	## cardinality = 0..1
+	custom_tooltip = localisation
 }
 
 alias[triggered_planet_modifier_pop:triggered_planet_modifier] = {
@@ -353,6 +355,8 @@ alias[triggered_system_modifier_starbase:triggered_system_modifier] = {
 	## cardinality = 0..1
 	## replace_scope = { this = starbase root = starbase }
 	multiplier = value_field
+	## cardinality = 0..1
+	custom_tooltip = localisation
 }
 
 alias[triggered_country_modifier_starbase:triggered_country_modifier] = {
@@ -374,6 +378,8 @@ alias[triggered_country_modifier_starbase:triggered_country_modifier] = {
 	## cardinality = 0..1
 	## replace_scope = { this = starbase root = starbase }
 	multiplier = value_field
+	## cardinality = 0..1
+	custom_tooltip = localisation
 }
 
 alias[triggered_country_modifier_pop:triggered_country_modifier] = {
@@ -395,6 +401,8 @@ alias[triggered_country_modifier_pop:triggered_country_modifier] = {
 	## cardinality = 0..1
 	## replace_scope = { this = pop root = pop }
 	multiplier = value_field
+	## cardinality = 0..1
+	custom_tooltip = localisation
 }
 
 alias[triggered_country_modifier_planet:triggered_country_modifier] = {
@@ -416,6 +424,8 @@ alias[triggered_country_modifier_planet:triggered_country_modifier] = {
 	## cardinality = 0..1
 	## replace_scope = { this = planet root = planet }
 	multiplier = value_field
+	## cardinality = 0..1
+	custom_tooltip = localisation
 }
 
 ## replace_scope = { this = country root = country }
@@ -481,6 +491,8 @@ alias[triggered_leader_modifier_pop:triggered_leader_modifier] = {
 	## cardinality = 0..1
 	## replace_scope = { this = pop root = pop }
 	multiplier = value_field
+	## cardinality = 0..1
+	custom_tooltip = localisation
 }
 
 ## replace_scope = { this = leader root = leader }
@@ -520,6 +532,8 @@ alias[triggered_modifier_country:triggered_modifier] = {
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
 	multiplier = value_field
+	## cardinality = 0..1
+	custom_tooltip = localisation
 }
 
 alias[triggered_modifier_situation:triggered_modifier] = {
@@ -541,6 +555,8 @@ alias[triggered_modifier_situation:triggered_modifier] = {
 	## cardinality = 0..1
 	## replace_scope = { this = situation root = situation }
 	multiplier = value_field
+	## cardinality = 0..1
+	custom_tooltip = localisation
 }
 
 alias[triggered_target_modifier_situation:triggered_target_modifier] = {
@@ -604,6 +620,35 @@ alias[triggered_ship_modifier:triggered_ship_modifier] = {
 	mult = value_field
 	## cardinality = 0..1
 	multiplier = value_field
+	## cardinality = 0..1
+	custom_tooltip = localisation
+}
+
+## replace_scope = { this = fleet root = fleet }
+alias[triggered_fleet_modifier_fleet:triggered_fleet_modifier] = {
+	## cardinality = 0..1
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	alias_name[modifier] = alias_match_left[modifier]
+	## cardinality = 0..1
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+		## cardinality = 0..1
+		custom_tooltip = localisation
+		## cardinality = 0..1
+		show_only_custom_tooltip = bool
+	}
+	## cardinality = 0..1
+	custom_tooltip = localisation
+	## cardinality = 0..1
+	show_only_custom_tooltip = no
+	## cardinality = 0..1
+	mult = value_field
+	## cardinality = 0..1
+	multiplier = value_field
+	## cardinality = 0..1
+	key = localisation
 }
 
 alias[triggered_desc:triggered_desc] = {
