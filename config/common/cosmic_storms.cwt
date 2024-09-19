@@ -1,9 +1,3 @@
-# to do
-#<cosmic_storm_mission>
-#<cosmic_storm_mission_counter>
-#<event.cosmicstorm>
-#<event.cosmicstorminfluence>
-
 
 types = {
 	type[storm_type] = {
@@ -91,3 +85,64 @@ storm_type = {
 	
 }
 
+cosmic_storm_mission = {
+
+	desc = localisation
+	event_chain = <event_chain>
+	icon = filepath
+	picture = <sprite>
+	
+	## cardinality = 0..1
+	location = yes
+
+	abort_trigger = { 
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	
+	## cardinality = 0..inf
+	counter = {
+		## cardinality = 0..inf
+		localisation = {
+			## cardinality = 0..1
+			max = int
+		}
+	}
+	
+	## cardinality = 0..1
+	on_daily = {
+		## cardinality = 0..inf
+		alias_name[effect] = alias_match_left[effect]
+	}
+	
+	## cardinality = 0..1
+	on_monthly = {
+		## cardinality = 0..inf
+		alias_name[effect] = alias_match_left[effect]
+	}
+	
+	## cardinality = 0..1
+	on_stop = {
+		## cardinality = 0..inf
+		alias_name[effect] = alias_match_left[effect]
+	}
+	
+	## cardinality = 0..1
+	on_success = { 
+		## cardinality = 0..inf
+		alias_name[effect] = alias_match_left[effect]
+	}
+}
+
+enums = {
+	complex_enum[event_chain_counter] = {
+		path = "game/common/missions"
+		name = {
+			counter = {
+				enum_name = {
+
+				}
+			}
+		}
+	}
+}
