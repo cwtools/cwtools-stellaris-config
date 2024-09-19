@@ -2879,4 +2879,4 @@ alias[trigger:has_environmental_effects] = bool
 alias[trigger:is_storm_active_in_storm_sector] = bool
 
 ###Checks if the scoped Cosmic Storm's type is equal to <type>
-is_storm_type = <storm_type>
+alias[trigger:is_storm_type] = <storm_type>
