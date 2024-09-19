@@ -591,6 +591,7 @@ enums = {
 		planets
 		leaders
 		other
+		cosmic_storm
 	}
 }
 
