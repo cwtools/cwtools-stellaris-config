@@ -4165,8 +4165,8 @@ alias[effect:create_cosmic_storm] = {
 alias[effect:destroy_cosmic_storm ] = yes
 
 ###Fires a cosmic storm event for the scoped storm
-alias[effect:storm_event] = {
-	id = <event.storm>
+alias[effect:cosmic_storm_event] = {
+	id = <event.cosmicstorm>
 	id = <event.scopeless>
 	## cardinality = 0..1
 	days = int
@@ -4185,8 +4185,8 @@ alias[effect:storm_event] = {
 }
 
 ###Fires a storm event for the scoped storm influence field
-alias[effect:storm_influence_event] = {
-	id = <event.storminfluence>
+alias[effect:cosmic_storm_influence_field_event] = {
+	id = <event.cosmicstorminfluence>
 	id = <event.scopeless>
 	## cardinality = 0..1
 	days = int
