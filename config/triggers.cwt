@@ -2859,7 +2859,7 @@ alias[trigger:has_crisis_perk] = <menace_perk>
 alias[trigger:is_on_slave_market] = bool
 
 ###Checks if the system is inside any storm or a specific storm type
-alias[is_inside_storm] = bool
+alias[trigger:is_inside_storm] = bool
 ###Checks if the system is inside any storm or a specific storm type
 alias[trigger:is_inside_storm] = <storm_type>
 
