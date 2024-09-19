@@ -4320,7 +4320,10 @@ alias[effect:set_emergency_fund_contribution_rate] = float
 ###Increments (or decrements with negative values) a mission counter for the scoped country by a specific amount
 alias[effect:add_mission_counter] = {
 	mission = <cosmic_storm_mission>
-	counter = <cosmic_storm_mission_counter>
+	## cardinality = 0..1
+	counter = enum[event_chain_counter]
+	## cardinality = 0..1
+	counter = enum[storm_mission_counter]
 	amount = int_value_field
 }
 
@@ -4330,7 +4333,10 @@ alias[effect:set_storm_flag] = value_set[storm_flag]
 ###Sets a mission counter for the scoped country to a specific amount
 alias[effect:set_mission_counter] = { 
 	mission = <cosmic_storm_mission>
-	counter = <cosmic_storm_mission_counter>
+	## cardinality = 0..1
+	counter = enum[event_chain_counter]
+	## cardinality = 0..1
+	counter = enum[storm_mission_counter]
 	amount = int_value_field
 }
 
