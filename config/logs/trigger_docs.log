@@ -6851,7 +6851,7 @@ destroy_cosmic_storm = yes
 Supported Scopes: cosmic_storm
 
 cosmic_storm_event - Fires a storm event for the scoped storm
-storm_event = {
+cosmic_storm_event = {
 	id = <id>
 	days = x (optional: specify delay)
 	random = y (optional: specify random delay from 0 to value, which is added on to the 'days' delay)
@@ -6860,7 +6860,7 @@ storm_event = {
 Supported Scopes: cosmic_storm
 
 cosmic_storm_influence_field_event - Fires a storm event for the scoped storm influence field
-storm_influence_event = {
+cosmic_storm_influence_field_event = {
 	id = <id>
 	days = x (optional: specify delay)
 	random = y (optional: specify random delay from 0 to value, which is added on to the 'days' delay)
