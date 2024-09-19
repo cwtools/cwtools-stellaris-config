@@ -337,11 +337,20 @@ map_mode = {
 	## cardinality = 0..1
 	can_change_point_of_view = bool
 	## cardinality = 0..1
+	display_storms = bool
+	## cardinality = 0..1
+	tutorial = STORM_FORECAST_MAP_MODE
+	## cardinality = 0..1
 	shortcut = scalar
 	## cardinality = 0..1
 	display_claims = bool
 	## cardinality = 0..1
 	display_espionage_operations = bool
+	
+	## cardinality = 0..1
+	visible = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 
 	## cardinality = 1..inf
 	color = {
@@ -356,6 +365,8 @@ map_mode = {
 
 		## cardinality = 1..1
         value = country
+		## cardinality = 1..1
+        value = union
 		## cardinality = 1..1
 		value = {
 			##cardinality = 3..4
