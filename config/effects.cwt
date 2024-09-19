@@ -4321,7 +4321,7 @@ alias[effect:set_emergency_fund_contribution_rate] = float
 alias[effect:add_mission_counter] = {
 	mission = <cosmic_storm_mission>
 	counter = <cosmic_storm_mission_counter>
-	amount = int
+	amount = int_value_field
 }
 
 ###Sets an arbitrarily-named flag on the scoped cosmic storm.
@@ -4331,7 +4331,7 @@ alias[effect:set_storm_flag] = value_set[storm_flag]
 alias[effect:set_mission_counter] = { 
 	mission = <cosmic_storm_mission>
 	counter = <cosmic_storm_mission_counter>
-	amount = int
+	amount = int_value_field
 }
 
 ###Stops the mission with the given status, triggering the relevant effects.
