@@ -673,8 +673,7 @@ alias[government_trigger:origin] = {
 alias[government_trigger:species_class] = {
 	## cardinality = 0..1
 	value = <species_class>
-
-	## cardinality = 0..inf
+	## cardinality = 0..inf	
 	OR = {
 		## cardinality = 0..1
 		text = localisation
@@ -733,3 +732,7 @@ alias[government_trigger:AND] = {
 }
 
 alias[government_trigger:host_has_dlc] = enum[DLCs]
+
+alias[government_trigger:always] = bool
+
+alias[government_trigger:text] = localisation
