@@ -4170,9 +4170,38 @@ alias[effect:damage_ship] = int_value_field
 ###Creates a cosmic storm
 alias[effect:create_cosmic_storm] = {
 	type = <storm_type>
+	## cardinality = 0..1
 	cosmic_storm_start_position = scope[system]
 	## cardinality = 0..1
+	cosmic_storm_start_position = scope[planet]
+	## cardinality = 0..1
 	cosmic_storm_end_position = scope[system]
+	## cardinality = 0..1
+	cosmic_storm_end_position = scope[planet]
+	## cardinality = 0..1
+	storm_min_radius = {
+		base = value_field
+		## cardinality = 0..1
+		modifier = {
+			mult = value_field
+		}
+	}
+	## cardinality = 0..1
+	storm_max_radius = {
+		base = value_field
+		## cardinality = 0..1
+		modifier = {
+			mult = value_field
+		}
+	}
+	## cardinality = 0..1
+	storm_max_range = {
+		base = value_field
+		## cardinality = 0..1
+		modifier = {
+			mult = value_field
+		}
+	}
 	## cardinality = 0..1
 	immediate = yes
 }
@@ -4224,6 +4253,8 @@ alias[effect:cosmic_storm_influence_field_event] = {
 alias[effect:spawn_random_storm] = {
 	## cardinality = 0..1
 	cosmic_storm_start_position = scope[system]
+	## cardinality = 0..1
+	cosmic_storm_start_position = scope[planet]
 	## cardinality = 0..1
 	cosmic_storm_start_position = random
 	## cardinality = 0..1
