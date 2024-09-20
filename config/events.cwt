@@ -597,6 +597,8 @@ event = {
 
 	subtype[fleet] = {
 		## cardinality = 0..1
+		event_chain = <event_chain>
+		## cardinality = 0..1
 		archaeology = bool
 	}
 
