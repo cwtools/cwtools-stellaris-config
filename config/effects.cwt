@@ -4222,7 +4222,10 @@ alias[effect:cosmic_storm_influence_field_event] = {
 
 ###Spawn a random storm type with a random start and end position
 alias[effect:spawn_random_storm] = {
+	## cardinality = 0..1
 	cosmic_storm_start_position = scope[system]
+	## cardinality = 0..1
+	cosmic_storm_start_position = random
 	## cardinality = 0..1
 	type = <storm_type>
 	## cardinality = 0..1
