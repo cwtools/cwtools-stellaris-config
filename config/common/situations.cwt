@@ -160,6 +160,8 @@ situation_type = {
 		active_tooltip = localisation
 	}
 	## cardinality = 0..1
+	title = localisation
+	## cardinality = 0..1
 	title = {
 		trigger = {
 			alias_name[trigger] = alias_match_left[trigger]
