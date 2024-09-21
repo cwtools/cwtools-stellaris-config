@@ -4207,7 +4207,7 @@ alias[effect:create_cosmic_storm] = {
 }
 
 ###Destroy the scoped storm
-alias[effect:destroy_cosmic_storm ] = yes
+alias[effect:destroy_cosmic_storm] = yes
 
 ###Fires a cosmic storm event for the scoped storm
 alias[effect:cosmic_storm_event] = {
