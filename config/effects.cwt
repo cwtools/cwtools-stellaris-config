@@ -4173,36 +4173,6 @@ alias[effect:create_cosmic_storm] = {
 	## cardinality = 0..1
 	cosmic_storm_start_position = scope[system]
 	## cardinality = 0..1
-	cosmic_storm_start_position = scope[planet]
-	## cardinality = 0..1
-	cosmic_storm_end_position = scope[system]
-	## cardinality = 0..1
-	cosmic_storm_end_position = scope[planet]
-	## cardinality = 0..1
-	storm_min_radius = {
-		base = value_field
-		## cardinality = 0..1
-		modifier = {
-			mult = value_field
-		}
-	}
-	## cardinality = 0..1
-	storm_max_radius = {
-		base = value_field
-		## cardinality = 0..1
-		modifier = {
-			mult = value_field
-		}
-	}
-	## cardinality = 0..1
-	storm_max_range = {
-		base = value_field
-		## cardinality = 0..1
-		modifier = {
-			mult = value_field
-		}
-	}
-	## cardinality = 0..1
 	immediate = yes
 }
 
