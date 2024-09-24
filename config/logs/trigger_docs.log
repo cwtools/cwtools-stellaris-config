@@ -7474,12 +7474,12 @@ create_leader = {
 	hide_age = yes / no # Optional, default = no.
 	sub_type = <key> # Optional. Used for scientist subtypes.
 	can_manually_change_location = yes / no # Optional, default = yes.
-	can_assign_to_council = yes /no # Optional, default = yes.
+	can_assign_to_council = yes/no # Optional, default = yes.
 	hide_leader = yes / no # Optional, default = no. Hides the leader from the player's list of leaders, and doesn't count them towards the leader cap.
 	randomize_traits = yes / no # Optional, default = yes.
 	leader_age_min = <int> # Optional, but requires leader_age_max if used. Used to randomize leader age within the age span between this and leader_age_max.
 	leader_age_max = <int> # Optional, but requires leader_age_min if used. Used to randomize leader age within the age span between this and leader_age_min.
-	effect = { <effect> } # Optional. Scripted effect(s) that are run on the leader after it has been created.
+	use_regnal_name = yes/no # Optional, default = no. If generating a random name, use regnal names if the name list has them.	effect = { <effect> } # Optional. Scripted effect(s) that are run on the leader after it has been created.
 
 	custom_description = <key> # Optional.
 	custom_catch_phrase = <string> # Optional.
