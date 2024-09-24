@@ -25,7 +25,10 @@ storm_type = {
 	spawn_weight = {
 		base = float
 		modifier = {
+			## cardinality = 0..1
 			set = int
+			## cardinality = 0..1
+			factor = int
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
