@@ -83,6 +83,45 @@ storm_type = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	
+	
+	# inline script
+	
+	## cardinality = 0..1	
+	storm_min_radius = {
+	   alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	
+	## cardinality = 0..1
+	storm_max_radius = { 
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	## cardinality = 0..1
+	storm_min_steps = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	## cardinality = 0..1
+	storm_max_steps = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	## cardinality = 0..1
+	storm_speed = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	## cardinality = 0..1
+	storm_activation_period_in_months = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	## cardinality = 0..1
+	storm_monthly_added_devastation = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+
+	
 }
 
 cosmic_storm_mission = {
