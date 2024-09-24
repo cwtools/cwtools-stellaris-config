@@ -3253,6 +3253,9 @@ num_cosmic_storms - Checks the amount of currently active cosmic storms.
 num_cosmic_storms < 3
 Supported Scopes: all
 
+cosmic_storm_system_influence - Checks the systems total cosmic storm influence
+Supported Scopes: galactic_object
+
 is_influence_center - Checks if the planet is colonized (in planet scope) or the system has an owner (in system scope)
 is_influence_center = no
 Supported Scopes: galactic_object
