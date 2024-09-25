@@ -73,6 +73,10 @@ links = {
 		input_scopes = { Country Species Pop Leader }
 		output_scope = Planet
 	}
+	target_system = {
+		input_scopes = { cosmic_storm }
+		output_scope = galactic_object
+	}
 	last_created_ship = {
 		input_scopes = { all }
 		output_scope = Ship
@@ -342,5 +346,17 @@ links = {
 	founder_species = {
 		input_scopes = { country }
 		output_scope = species
+	}
+	storm_influence_field = {
+		input_scopes = { galactic_object }
+		output_scope = cosmic_storm_influence_field
+	}
+	last_created_cosmic_storm = {
+		input_scopes = { all }
+		output_scope =  cosmic_storm
+	}
+	last_created_cosmic_storm_influence_field = {
+		input_scopes = { all }
+		output_scope = cosmic_storm_influence_field
 	}
 }

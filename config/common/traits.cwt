@@ -289,7 +289,7 @@ trait = {
 		## cardinality = 0..1
 		destiny_background_icon = <sprite>
 		## cardinality = 0..1
-		ethic_destiny_trait = yes
+		ethic_destiny_trait = bool
 		## cardinality = 0..1
 		###Does the General cause FTL inhibitor effects? Note: unclear if/how this might apply to other leader types
 		ftl_inhibitor = yes

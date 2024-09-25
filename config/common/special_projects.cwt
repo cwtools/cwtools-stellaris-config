@@ -75,6 +75,13 @@ special_project = {
 	AI_wait_days = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
+	
+	## push_scope = country
+	## cardinality = 0..1
+	###this = country (project owner); from = event scope (planet or ship, MIGHT NOT EXIST); fromfrom = project creation scope (usually equals location)
+	fail_trigger = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 
 	## cardinality = 0..1
 	requirements = {

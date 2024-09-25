@@ -77,6 +77,10 @@ megastructure = {
 		<megastructure>
 	}
 	## cardinality = 0..1
+	custom_tooltip_requirements = localisation
+	## cardinality = 0..1
+	build_system_tooltip = localisation
+	## cardinality = 0..1
 	prerequisites = {
 		## cardinality = 1..inf
 		<technology>

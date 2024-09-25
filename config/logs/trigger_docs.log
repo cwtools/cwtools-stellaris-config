@@ -1,4 +1,4 @@
-[16:48:48][game_application.cpp:2134]: 
+[17:45:41][game_application.cpp:2148]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -75,6 +75,10 @@ else_if - Evaluates the enclosed triggers if the display_triggers of the precedi
 if = { limit = { <display_triggers> } <triggers> }
 else_if = { limit = { <display_triggers> } <triggers> }
 Supported Scopes: all
+
+cosmic_storm_influence_value - Returns the amount of influence on a system
+cosmic_storm_influence_value > 0.75
+Supported Scopes: galactic_object
 
 happiness - Checks the pop's happiness percentage
 happiness < 0.5
@@ -636,6 +640,22 @@ can_lock_be_renewed - Returns true if the Bypass Lock can be renewed
 can_lock_be_renewed = yes
 Supported Scopes: bypass
 
+balance - Checks the country's energy credit balance
+balance < 39
+Supported Scopes: country
+
+is_inside_storm - Checks if the system is inside any storm or a specific storm type.
+is_inside_storm = yes/no/<storm_type>
+Supported Scopes: galactic_object
+
+is_on_border - Checks if the system is on a countries border
+is_on_border = yes
+Supported Scopes: galactic_object
+
+is_infertile - Checks if the pop/species has any trait with infertile 
+is_infertile = yes/no
+Supported Scopes: pop species
+
 hidden_trigger - Hides the tooltip for the triggers within
 hidden_trigger = { <triggers> }
 Supported Scopes: all
@@ -1120,6 +1140,10 @@ has_hp - Checks the ship's hull points
 has_hp > 200
 Supported Scopes: ship
 
+has_shield_hp - Checks the ship's shield hit points
+has_shield_hp > 200
+Supported Scopes: ship
+
 is_surveyed - Checks if the planet/astral_rift/system has been survey by target country
 is_surveyed = { who = <target> status = yes }
 Supported Scopes: planet galactic_object astral_rift
@@ -1313,10 +1337,6 @@ Supported Scopes: country
 
 stored_engineering_points - Checks the country's amount of stored engineering research
 stored_engineering_points
-Supported Scopes: country
-
-balance - Checks the country's energy credit balance
-balance < 39
 Supported Scopes: country
 
 running_balance - Checks the country's running energy credit balance
@@ -3229,6 +3249,74 @@ is_on_slave_market - Checks if pop in the scope is being sold on the slave marke
 is_on_slave_market = yes/no
 Supported Scopes: pop
 
+num_cosmic_storms - Checks the amount of currently active cosmic storms.
+num_cosmic_storms < 3
+Supported Scopes: all
+
+cosmic_storm_system_influence - Checks the systems total cosmic storm influence
+Supported Scopes: galactic_object
+
+is_influence_center - Checks if the planet is colonized (in planet scope) or the system has an owner (in system scope)
+is_influence_center = no
+Supported Scopes: galactic_object
+
+has_storm_flag - Checks if the cosmic storm has a specific flag
+has_storm_flag = <flag> (note: one can use e.g. my_flag@from to track relationships between objects)
+Supported Scopes: cosmic_storm
+
+num_asteroid_belts - Checks the system's number of asteroid belts
+num_asteroid_belts > 1
+Supported Scopes: galactic_object
+
+has_environmental_effects - Checks if a star system has any environmental effects
+has_environmental_effects = yes
+Supported Scopes: galactic_object
+
+num_cosmic_storms_encountered - Returns the amount of all storms the country was affected by. Storms that leave stop affecting the country to return to it later are counted as multiple
+num_cosmic_storms_encountered > 3
+Supported Scopes: country
+
+num_unique_cosmic_storms_encountered - Returns the amount of all unique storms the country was affected by. Storms that leave stop affecting the country to return to it later are counted as one
+num_unique_cosmic_storms_encountered > 2
+Supported Scopes: country
+
+num_storm_exploitation_buildings - Checks the number of cosmic storm exploitation buildings with positive effects on a country
+num_storm_exploitation_buildings >= 1
+Supported Scopes: planet country
+
+is_storm_active_in_storm_sector - Checks if there is currently a storm active within the storm sector that this system belongs to. The galaxy is split up in multiple storm sectors, which we use to avoid spawning storms too close to each other.
+is_storm_active_in_storm_sector = yes
+Supported Scopes: galactic_object
+
+num_cosmic_storm_early_game_spawn_chance_scale_setting - Checks the spawn storm chance scale in early game for cosmic storms
+Supported Scopes: all
+
+num_cosmic_storm_mid_game_spawn_chance_scale_setting - Checks the spawn storm chance scale in mid game for cosmic storms
+Supported Scopes: all
+
+num_cosmic_storm_late_game_spawn_chance_scale_setting - Checks the spawn storm chance scale in late game for cosmic storms
+Supported Scopes: all
+
+num_cosmic_storm_early_game_spawn_max_cap_setting - Checks the spawn storm max cap in early game for cosmic storms
+Supported Scopes: all
+
+num_cosmic_storm_mid_game_spawn_max_cap_setting - Checks the spawn storm max cap in mid game for cosmic storms
+Supported Scopes: all
+
+num_cosmic_storm_late_game_spawn_max_cap_setting - Checks the spawn storm max cap in late game for cosmic storms
+Supported Scopes: all
+
+num_cosmic_storm_spawn_cooldown_scale_setting - Checks the spawn storm cooldown scale for cosmic storms
+Supported Scopes: all
+
+is_storm_type - Checks if the scoped Cosmic Storm's type is equal to <type>
+is_storm_type = <type>
+Supported Scopes: cosmic_storm
+
+ship_size_multiplier - Compares ship size multiplier of the scoped design or ship.
+ship_size_multiplier >= <value>
+Supported Scopes: ship design
+
 any_agreement - Iterate through each agreement - checks whether the enclosed triggers return true for any of them
 any_agreement = { <triggers> }
 Supported Scopes: country no_scope
@@ -3330,6 +3418,94 @@ count_bypass = {
 	limit = { <triggers> }
 }
 Supported Scopes: all
+
+any_cosmic_storm - Iterate through all cosmic storms in the galaxy - checks whether the enclosed triggers return true for any of them
+any_cosmic_storm = { <triggers> }
+Supported Scopes: all
+
+count_cosmic_storm - Iterate through all cosmic storms in the galaxy - checks whether the enclosed triggers return true for X/all of them
+count_cosmic_storm = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: all
+
+any_system_within_storm - Iterate through all systems within the storm - checks whether the enclosed triggers return true for any of them
+any_system_within_storm = { <triggers> }
+Supported Scopes: cosmic_storm
+
+count_system_within_storm - Iterate through all systems within the storm - checks whether the enclosed triggers return true for X/all of them
+count_system_within_storm = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: cosmic_storm
+
+any_cosmic_storm_start_position - Iterate through all systems valid to be a storms start position - checks whether the enclosed triggers return true for any of them
+any_cosmic_storm_start_position = { <triggers> }
+Supported Scopes: all
+
+count_cosmic_storm_start_position - Iterate through all systems valid to be a storms start position - checks whether the enclosed triggers return true for X/all of them
+count_cosmic_storm_start_position = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: all
+
+any_cosmic_storm_end_position - Iterate through all systems valid to be a storms end position - checks whether the enclosed triggers return true for any of them
+any_cosmic_storm_end_position = { <triggers> }
+Supported Scopes: all
+
+count_cosmic_storm_end_position - Iterate through all systems valid to be a storms end position - checks whether the enclosed triggers return true for X/all of them
+count_cosmic_storm_end_position = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: all
+
+any_system_added_to_storm - Iterate through all systems added to the storm - checks whether the enclosed triggers return true for any of them
+any_system_added_to_storm = { <triggers> }
+Supported Scopes: cosmic_storm
+
+count_system_added_to_storm - Iterate through all systems added to the storm - checks whether the enclosed triggers return true for X/all of them
+count_system_added_to_storm = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: cosmic_storm
+
+any_system_removed_from_storm - Iterate through all systems removed from storm - checks whether the enclosed triggers return true for any of them
+any_system_removed_from_storm = { <triggers> }
+Supported Scopes: cosmic_storm
+
+count_system_removed_from_storm - Iterate through all systems removed from storm - checks whether the enclosed triggers return true for X/all of them
+count_system_removed_from_storm = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: cosmic_storm
+
+any_owned_storm_influence_field - Iterate through all influence fields owned by a country - checks whether the enclosed triggers return true for any of them
+any_owned_storm_influence_field = { <triggers> }
+Supported Scopes: country
+
+count_owned_storm_influence_field - Iterate through all influence fields owned by a country - checks whether the enclosed triggers return true for X/all of them
+count_owned_storm_influence_field = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: country
+
+any_system_in_cosmic_storm_influence_field - Iterate through all influence fields owned by a country - checks whether the enclosed triggers return true for any of them
+any_system_in_cosmic_storm_influence_field = { <triggers> }
+Supported Scopes: cosmic_storm_influence_field
+
+count_system_in_cosmic_storm_influence_field - Iterate through all influence fields owned by a country - checks whether the enclosed triggers return true for X/all of them
+count_system_in_cosmic_storm_influence_field = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: cosmic_storm_influence_field
 
 count_country - Iterate through all countries - checks whether the enclosed triggers return true for X/all of them
 count_country = {
@@ -3989,7 +4165,7 @@ Supported Scopes: country
 
 
 =================
-[16:48:48][game_application.cpp:2137]: 
+[17:45:41][game_application.cpp:2151]: 
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -4436,7 +4612,7 @@ add_modifier = {
 	time_multiplier = <variable> (optional: days/months/years value is multiplied by the value of this variable)
 	clear_on_owner_change = yes (optional: default no; clears modifier if planet/system/megastructure's owner changes)
 }
-Supported Scopes: megastructure planet country ship pop fleet galactic_object pop_faction federation spy_network espionage_operation astral_rift
+Supported Scopes: megastructure planet country ship pop fleet galactic_object pop_faction federation spy_network espionage_operation astral_rift cosmic_storm_influence_field
 
 reduce_hp - Reduces the hull points of the scoped ship by a specific amount
 reduce_hp = 120
@@ -4444,6 +4620,14 @@ Supported Scopes: ship
 
 reduce_hp_percent - Reduces the hull points of the scoped ship by a relative amount
 reduce_hp_percent = 0.25
+Supported Scopes: ship
+
+reduce_shield - Reduces the shield points of the scoped ship by a specific amount
+reduce_shield = 120
+Supported Scopes: ship
+
+damage_ship - Damages ship by a specific amount
+damage_ship = 120
 Supported Scopes: ship
 
 repair_ship - Restores all hull points to the scoped ship
@@ -4817,7 +5001,7 @@ set_faction_hostility - Sets the aggro state of the scoped faction-type country
 set_faction_hostility = { target = country set_hostile = yes set_neutral = no set_friendly = no }
 Supported Scopes: country
 
-set_market_leader - Set scoped country as the current Galactic Market leader 
+set_market_leader - Set scoped country as the current Galactic Market leader.
 set_market_leader = <yes/no>
 Supported Scopes: country
 
@@ -5111,7 +5295,7 @@ Supported Scopes: all
 
 remove_modifier - Removes a specific modifier from the scope object
 remove_modifier = <key>
-Supported Scopes: megastructure planet country ship pop fleet galactic_object pop_faction federation spy_network espionage_operation astral_rift
+Supported Scopes: megastructure planet country ship pop fleet galactic_object pop_faction federation spy_network espionage_operation astral_rift cosmic_storm_influence_field
 
 add_ship_design - Adds a specific ship design to the scoped country
 add_ship_design = <target/last_created_design>
@@ -5637,7 +5821,8 @@ add_trust - Adds trust on scope country towards target country
 add_trust = { amount = <amount>/<variable> who = <target> }
 Supported Scopes: country
 
-add_tradition - Adds the specified tradition to the scoped country. add_tradition = <tradition_key>
+add_tradition - Adds the specified tradition to the scoped country.
+add_tradition = <tradition_key>
 Supported Scopes: country
 
 join_war - Joins wars on the side of target country
@@ -6093,7 +6278,8 @@ enable_on_market - Enables a resource on the Galactic Market
 enable_on_market = <resource_key>
 Supported Scopes: all
 
-enable_galactic_market - Enables the galactic market. enable_galactic_market = <yes/no>
+enable_galactic_market - Enables the galactic market.
+enable_galactic_market = <yes/no>
 Supported Scopes: country
 
 add_timed_trait - Adds a specific trait to the scoped leader for a specific duration
@@ -6652,6 +6838,110 @@ fog_machine_auto_tracking - Swithces on/off galactic object ownership auto track
 fog_machine_auto_tracking = yes/no
 Supported Scopes: country
 
+create_cosmic_storm - Creates a cosmic storm
+create_cosmic_storm = {
+	cosmic_storm_start_position = <target>
+	cosmic_storm_end_position = <target>
+	storm_min_radius = <value>
+	storm_max_radius = <value>
+	storm_max_range = <value>
+	type = <string>
+}
+Supported Scopes: all
+
+destroy_cosmic_storm - Destroy the scoped storm.
+destroy_cosmic_storm = yes
+Supported Scopes: cosmic_storm
+
+cosmic_storm_event - Fires a storm event for the scoped storm
+cosmic_storm_event = {
+	id = <id>
+	days = x (optional: specify delay)
+	random = y (optional: specify random delay from 0 to value, which is added on to the 'days' delay)
+	scopes = { from = fromfrom } (optional: specify scope overrides)
+}
+Supported Scopes: cosmic_storm
+
+cosmic_storm_influence_field_event - Fires a storm event for the scoped storm influence field
+cosmic_storm_influence_field_event = {
+	id = <id>
+	days = x (optional: specify delay)
+	random = y (optional: specify random delay from 0 to value, which is added on to the 'days' delay)
+	scopes = { from = fromfrom } (optional: specify scope overrides)
+}
+Supported Scopes: cosmic_storm_influence_field
+
+every_cosmic_storm - Iterate through all cosmic storms in the galaxy - executes the enclosed effects on all of them for which the limit triggers return true
+every_cosmic_storm = { limit = { <triggers> } <effects> }
+Supported Scopes: all
+
+spawn_random_storm - Spawn a random storm type with a random start and end position
+Supported Scopes: all
+
+create_cosmic_storm_influence_field - Creates a storm influence field in a certain radius
+radius = <float>
+Supported Scopes: planet starbase
+
+destroy_cosmic_storm_influence_field - Destroys a storm influence field with center
+ center = <target>
+Supported Scopes: planet starbase
+
+recalculate_storm_influence_field - Recalculates the influence for each system in an influence field
+Supported Scopes: cosmic_storm_influence_field
+
+start_storm_area_placing - Starts the storm placing mode with radius 
+radius = <float> 
+Supported Scopes: all
+
+set_emergency_fund_active - Sets whether the emergency fund should be active or not.
+Supported Scopes: all
+
+storm_apply_aftermath_modifier - Applies Cosmic Storm Aftermath Modifiers. You can specify up to a max of 10 Severities and each one will be chosen based on it's chance.
+storm_apply_aftermath_modifier = { severity = { modifier = <key>, days = <ModifierDuration> chance = <WeightedChance> effect  = <OnAppliedOptionalEffect> }}
+Supported Scopes: all
+
+set_cosmic_storm - Sets a storm on a system
+set_cosmic_storm = {
+	cosmic_storm = <target>
+}
+Supported Scopes: galactic_object
+
+unset_cosmic_storm - Unsets a storm on a system
+Supported Scopes: galactic_object
+
+set_emergency_fund_contribution_rate - Sets rate for contributions to the emergency fund.
+Supported Scopes: all
+
+add_mission_counter - Increments (or decrements with negative values) a mission counter for the scoped country by a specific amount
+add_mission_counter = { mission = <key> counter = <key> amount = <int>/<variable> }
+Supported Scopes: country
+
+set_storm_flag - Sets an arbitrarily-named flag on the scoped cosmic storm.
+set_storm_flag = <key> (note: one can use e.g. my_flag@from to track relationships between objects)
+Supported Scopes: cosmic_storm
+
+set_mission_counter - Sets a mission counter for the scoped country to a specific amount
+set_mission_counter = { mission = <key> counter = <key> amount = <int>/<variable> }
+Supported Scopes: country
+
+stop_mission - Stops the mission with the given status, triggering the relevant effects.
+ stop_mission = { mission = <mission_key> status = success }
+Supported Scopes: planet country ship pop
+
+select_decision - Selects a decision on a planet
+Supported Scopes: planet
+
+return_leader_from_exile - Returns the leader from a custom name
+return_leader_from_exile = <key>/<key@scope>
+Supported Scopes: country
+
+kill_exiled_leader - Kills the scoped leader saved with a custom name
+kill_exiled_leader = <key>/<key@scope>
+Supported Scopes: country
+
+lock_storm_in_place - If yes, locks a Cosmic Storm in place. If no, it advances again at its normal speed.
+Supported Scopes: cosmic_storm
+
 unlock_council_selection - Unlocks council selection
 unlock_council_selection = yes
 Supported Scopes: country
@@ -7165,6 +7455,10 @@ set_next_astral_rift_event = {
 }
 Supported Scopes: astral_rift
 
+enable_mission - Enables a mission for target country
+ enable_mission = { name = <mission key> }
+Supported Scopes: all
+
 create_leader - Creates a new leader for the scoped country
 create_leader = {
 	name = random / <string>
@@ -7180,12 +7474,12 @@ create_leader = {
 	hide_age = yes / no # Optional, default = no.
 	sub_type = <key> # Optional. Used for scientist subtypes.
 	can_manually_change_location = yes / no # Optional, default = yes.
-	can_assign_to_council = yes /no # Optional, default = yes.
+	can_assign_to_council = yes/no # Optional, default = yes.
 	hide_leader = yes / no # Optional, default = no. Hides the leader from the player's list of leaders, and doesn't count them towards the leader cap.
 	randomize_traits = yes / no # Optional, default = yes.
 	leader_age_min = <int> # Optional, but requires leader_age_max if used. Used to randomize leader age within the age span between this and leader_age_max.
 	leader_age_max = <int> # Optional, but requires leader_age_min if used. Used to randomize leader age within the age span between this and leader_age_min.
-	effect = { <effect> } # Optional. Scripted effect(s) that are run on the leader after it has been created.
+	use_regnal_name = yes/no # Optional, default = no. If generating a random name, use regnal names if the name list has them.	effect = { <effect> } # Optional. Scripted effect(s) that are run on the leader after it has been created.
 
 	custom_description = <key> # Optional.
 	custom_catch_phrase = <string> # Optional.
@@ -7440,6 +7734,202 @@ Supported Scopes: all
 every_bypass - Iterate through every bypass - executes the enclosed effects on all of them for which the limit triggers return true
 every_bypass = { limit = { <triggers> } <effects> }
 Supported Scopes: all
+
+random_cosmic_storm - Iterate through all cosmic storms in the galaxy - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_cosmic_storm = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: all
+
+ordered_cosmic_storm - Iterate through all cosmic storms in the galaxy - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+ordered_cosmic_storm = {
+	limit = { <triggers> }
+	position = <integer, starting with 0>
+	order_by = <variable>/trigger:<trigger>
+	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
+	<effects>
+}
+Supported Scopes: all
+
+random_system_within_storm - Iterate through all systems within the storm - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_system_within_storm = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: cosmic_storm
+
+ordered_system_within_storm - Iterate through all systems within the storm - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+ordered_system_within_storm = {
+	limit = { <triggers> }
+	position = <integer, starting with 0>
+	order_by = <variable>/trigger:<trigger>
+	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
+	<effects>
+}
+Supported Scopes: cosmic_storm
+
+every_system_within_storm - Iterate through all systems within the storm - executes the enclosed effects on all of them for which the limit triggers return true
+every_system_within_storm = { limit = { <triggers> } <effects> }
+Supported Scopes: cosmic_storm
+
+random_cosmic_storm_start_position - Iterate through all systems valid to be a storms start position - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_cosmic_storm_start_position = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: all
+
+ordered_cosmic_storm_start_position - Iterate through all systems valid to be a storms start position - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+ordered_cosmic_storm_start_position = {
+	limit = { <triggers> }
+	position = <integer, starting with 0>
+	order_by = <variable>/trigger:<trigger>
+	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
+	<effects>
+}
+Supported Scopes: all
+
+every_cosmic_storm_start_position - Iterate through all systems valid to be a storms start position - executes the enclosed effects on all of them for which the limit triggers return true
+every_cosmic_storm_start_position = { limit = { <triggers> } <effects> }
+Supported Scopes: all
+
+random_cosmic_storm_end_position - Iterate through all systems valid to be a storms end position - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_cosmic_storm_end_position = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: all
+
+ordered_cosmic_storm_end_position - Iterate through all systems valid to be a storms end position - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+ordered_cosmic_storm_end_position = {
+	limit = { <triggers> }
+	position = <integer, starting with 0>
+	order_by = <variable>/trigger:<trigger>
+	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
+	<effects>
+}
+Supported Scopes: all
+
+every_cosmic_storm_end_position - Iterate through all systems valid to be a storms end position - executes the enclosed effects on all of them for which the limit triggers return true
+every_cosmic_storm_end_position = { limit = { <triggers> } <effects> }
+Supported Scopes: all
+
+random_system_added_to_storm - Iterate through all systems added to the storm - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_system_added_to_storm = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: cosmic_storm
+
+ordered_system_added_to_storm - Iterate through all systems added to the storm - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+ordered_system_added_to_storm = {
+	limit = { <triggers> }
+	position = <integer, starting with 0>
+	order_by = <variable>/trigger:<trigger>
+	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
+	<effects>
+}
+Supported Scopes: cosmic_storm
+
+every_system_added_to_storm - Iterate through all systems added to the storm - executes the enclosed effects on all of them for which the limit triggers return true
+every_system_added_to_storm = { limit = { <triggers> } <effects> }
+Supported Scopes: cosmic_storm
+
+random_system_removed_from_storm - Iterate through all systems removed from storm - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_system_removed_from_storm = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: cosmic_storm
+
+ordered_system_removed_from_storm - Iterate through all systems removed from storm - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+ordered_system_removed_from_storm = {
+	limit = { <triggers> }
+	position = <integer, starting with 0>
+	order_by = <variable>/trigger:<trigger>
+	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
+	<effects>
+}
+Supported Scopes: cosmic_storm
+
+every_system_removed_from_storm - Iterate through all systems removed from storm - executes the enclosed effects on all of them for which the limit triggers return true
+every_system_removed_from_storm = { limit = { <triggers> } <effects> }
+Supported Scopes: cosmic_storm
+
+random_owned_storm_influence_field - Iterate through all influence fields owned by a country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_owned_storm_influence_field = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: country
+
+ordered_owned_storm_influence_field - Iterate through all influence fields owned by a country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+ordered_owned_storm_influence_field = {
+	limit = { <triggers> }
+	position = <integer, starting with 0>
+	order_by = <variable>/trigger:<trigger>
+	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
+	<effects>
+}
+Supported Scopes: country
+
+every_owned_storm_influence_field - Iterate through all influence fields owned by a country - executes the enclosed effects on all of them for which the limit triggers return true
+every_owned_storm_influence_field = { limit = { <triggers> } <effects> }
+Supported Scopes: country
+
+random_system_in_cosmic_storm_influence_field - Iterate through all influence fields owned by a country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_system_in_cosmic_storm_influence_field = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: cosmic_storm_influence_field
+
+ordered_system_in_cosmic_storm_influence_field - Iterate through all influence fields owned by a country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+ordered_system_in_cosmic_storm_influence_field = {
+	limit = { <triggers> }
+	position = <integer, starting with 0>
+	order_by = <variable>/trigger:<trigger>
+	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
+	<effects>
+}
+Supported Scopes: cosmic_storm_influence_field
+
+every_system_in_cosmic_storm_influence_field - Iterate through all influence fields owned by a country - executes the enclosed effects on all of them for which the limit triggers return true
+every_system_in_cosmic_storm_influence_field = { limit = { <triggers> } <effects> }
+Supported Scopes: cosmic_storm_influence_field
 
 ordered_country - Iterate through all countries - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
 ordered_country = {

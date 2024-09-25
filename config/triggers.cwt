@@ -152,6 +152,10 @@ alias[trigger:reverse_has_relation_flag] = {
 	flag = value[relation_flag]
 }
 
+## severity = warning
+###Checks if the cosmic storm has a specific flag
+alias[trigger:has_storm_flag] = value[storm_flag]
+
 ###Checks if the country has a specific government type, or any government
 alias[trigger:has_government] = <government>
 ###Checks if the country has a specific government type, or any government
@@ -427,6 +431,39 @@ alias[trigger:opinion] = {
 }
 
 #should check <>
+###Returns the amount of influence on a system
+alias[trigger:cosmic_storm_influence_value] == value_field[0.0..1.0]
+###Checks the country's energy credit balance
+alias[trigger:balance] == int_value_field
+###Checks the ship's shield hit points
+alias[trigger:has_shield_hp] == int_value_field
+###Checks the amount of currently active cosmic storms.
+alias[trigger:num_cosmic_storms] == int_value_field
+###Checks the system's number of asteroid belts
+alias[trigger:num_asteroid_belts] == int_value_field
+###Returns the amount of all storms the country was affected by. Storms that leave stop affecting the country to return to it later are counted as multiple
+alias[trigger:num_cosmic_storms_encountered] == int_value_field
+###Returns the amount of all unique storms the country was affected by. Storms that leave stop affecting the country to return to it later are counted as one
+alias[trigger:num_unique_cosmic_storms_encountered] == int_value_field
+###Checks the number of cosmic storm exploitation buildings with positive effects on a country
+alias[trigger:num_storm_exploitation_buildings] == int_value_field
+###Checks the spawn storm chance scale in early game for cosmic storms
+alias[trigger:num_cosmic_storm_early_game_spawn_chance_scale_setting] == value_field
+###Checks the spawn storm chance scale in mid game for cosmic storms
+alias[trigger:num_cosmic_storm_mid_game_spawn_chance_scale_setting] == value_field
+###Checks the spawn storm chance scale in late game for cosmic storms
+alias[trigger:num_cosmic_storm_late_game_spawn_chance_scale_setting] == value_field
+###Checks the spawn storm max cap in early game for cosmic storms
+alias[trigger:num_cosmic_storm_early_game_spawn_max_cap_setting] == value_field 
+###Checks the spawn storm max cap in mid game for cosmic storms
+alias[trigger:num_cosmic_storm_mid_game_spawn_max_cap_setting] == value_field
+###Checks the spawn storm max cap in late game for cosmic storms
+alias[trigger:num_cosmic_storm_late_game_spawn_max_cap_setting] == value_field 
+###Checks the spawn storm cooldown scale for cosmic storms
+alias[trigger:num_cosmic_storm_spawn_cooldown_scale_setting] == value_field 
+###Compares ship size multiplier of the scoped design or ship.
+alias[trigger:ship_size_multiplier] == value_field 
+
 ###Checks the pop's happiness percentage
 alias[trigger:happiness] == value_field[0.0..1.0]
 ###Checks the country's number of subjects with agreement preset 'preset_vassal'
@@ -776,9 +813,6 @@ alias[trigger:army_type] = <army>
 
 ### Checks the war exhaustion of the war's attackers
 alias[trigger:attacker_war_exhaustion] == value_field[0.0..1.0]
-
-### Checks the country's energy credit balance
-alias[trigger:balance] == value_field
 
 ### Returns true if the specified number of sub-triggers return true
 ###calc_true_if = { amount = 2 <trigger> <trigger> <trigger> }
@@ -2823,3 +2857,26 @@ alias[trigger:has_crisis_perk] = <menace_perk>
 
 ###Checks if pop in the scope is being sold on the slave market:
 alias[trigger:is_on_slave_market] = bool
+
+###Checks if the system is inside any storm or a specific storm type
+alias[trigger:is_inside_storm] = bool
+###Checks if the system is inside any storm or a specific storm type
+alias[trigger:is_inside_storm] = <storm_type>
+
+###Checks if the system is on a countries border
+alias[trigger:is_on_border] = bool
+
+###Checks if the pop/species has any trait with infertile 
+alias[trigger:is_infertile] = bool
+
+###Checks if the planet is colonized (in planet scope) or the system has an owner (in system scope)
+alias[trigger:is_influence_center] = bool
+
+###Checks if a star system has any environmental effects
+alias[trigger:has_environmental_effects] = bool
+
+###Checks if there is currently a storm active within the storm sector that this system belongs to. The galaxy is split up in multiple storm sectors, which we use to avoid spawning storms too close to each other.
+alias[trigger:is_storm_active_in_storm_sector] = bool
+
+###Checks if the scoped Cosmic Storm's type is equal to <type>
+alias[trigger:is_storm_type] = <storm_type>

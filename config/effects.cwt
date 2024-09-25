@@ -84,7 +84,11 @@ alias[effect:country_event] = {
 	## cardinality = 0..1
 	days = int
 	## cardinality = 0..1
+	days = value_field
+	## cardinality = 0..1
 	random = int
+	## cardinality = 0..1
+	random = value_field
 	## cardinality = 0..1
 	scopes = {
 		## cardinality = 0..1
@@ -1563,6 +1567,8 @@ alias[effect:create_leader] = {
 		int = <trait.leader_trait>
 	}
 	## cardinality = 0..1
+	use_regnal_name = bool
+	## cardinality = 0..1
 	## push_scope = leader
 	effect = {
 		alias_name[effect] = alias_match_left[effect]
@@ -2785,6 +2791,8 @@ alias[effect:spawn_planet] = {
 	## cardinality = 0..1
 	name = localisation
 	## cardinality = 0..1
+	generate_random_name = bool
+	## cardinality = 0..1
 	class = random
 	## cardinality = 0..1
 	class = random_colonizable
@@ -2798,6 +2806,11 @@ alias[effect:spawn_planet] = {
 	orbit_location = bool
 	## cardinality = 0..1
 	orbit_distance = float
+	## cardinality = 0..1
+	orbit_distance = {
+		min = int
+		max = int
+	}
 	## cardinality = 0..1
 	orbit_distance_offset = float
 	## cardinality = 0..1
@@ -2819,6 +2832,11 @@ alias[effect:spawn_planet] = {
 	orbit_angle = random
 	## cardinality = 0..1
 	orbit_angle = float
+	## cardinality = 0..1
+	orbit_angle = {
+		min = int
+		max = int
+	}
 	## cardinality = 0..1
 	orbit_angle_offset = int
 	## cardinality = 0..1
@@ -4144,3 +4162,227 @@ alias[effect:fog_machine_auto_tracking] = bool
 
 ###Sets the scope faction as extorted and removes extortion from any other ones
 alias[effect:set_faction_extorted] = bool
+
+###Reduces the shield points of the scoped ship by a specific amount
+alias[effect:reduce_shield] = int_value_field
+
+###Damages ship by a specific amount
+alias[effect:damage_ship] = int_value_field
+
+###Creates a cosmic storm
+alias[effect:create_cosmic_storm] = {
+	type = <storm_type>
+	## cardinality = 0..1
+	cosmic_storm_start_position = scope[system]
+	## cardinality = 0..1
+	immediate = yes
+}
+
+###Destroy the scoped storm
+alias[effect:destroy_cosmic_storm] = yes
+
+###Fires a cosmic storm event for the scoped storm
+alias[effect:cosmic_storm_event] = {
+	id = <event.cosmicstorm>
+	id = <event.scopeless>
+	## cardinality = 0..1
+	days = int
+	## cardinality = 0..1
+	random = int
+	scopes = {
+		## cardinality = 0..1
+		from = scope[any]
+		## cardinality = 0..1
+		fromfrom = scope[any]
+		## cardinality = 0..1
+		fromfromfrom = scope[any]
+		## cardinality = 0..1
+		fromfromfromfrom = scope[any]
+	}
+}
+
+###Fires a storm event for the scoped storm influence field
+alias[effect:cosmic_storm_influence_field_event] = {
+	id = <event.cosmicstorminfluence>
+	id = <event.scopeless>
+	## cardinality = 0..1
+	days = int
+	## cardinality = 0..1
+	random = int
+	scopes = {
+		## cardinality = 0..1
+		from = scope[any]
+		## cardinality = 0..1
+		fromfrom = scope[any]
+		## cardinality = 0..1
+		fromfromfrom = scope[any]
+		## cardinality = 0..1
+		fromfromfromfrom = scope[any]
+	}
+}
+
+###Spawn a random storm type with a random start and end position
+alias[effect:spawn_random_storm] = {
+	## cardinality = 0..1
+	cosmic_storm_start_position = scope[system]
+	## cardinality = 0..1
+	cosmic_storm_start_position = scope[planet]
+	## cardinality = 0..1
+	cosmic_storm_start_position = random
+	## cardinality = 0..1
+	type = <storm_type>
+	## cardinality = 0..1
+	immediate = yes
+}
+
+###Creates a storm influence field in a certain radius
+alias[effect:create_cosmic_storm_influence_field] = {
+	center = scope[system]
+	radius = {
+		base = float
+		modifier = {
+			mult = value_field
+		}
+	}
+	## cardinality = 0..1
+	is_timed_influence_field = yes
+}
+
+###Destroys a storm influence field with center
+alias[effect:destroy_cosmic_storm_influence_field] = {
+	center = scope[system]
+}
+
+###Recalculates the influence for each system in an influence field
+alias[effect:recalculate_storm_influence_field] = {
+	center = scope[system]
+}
+
+###Starts the storm placing mode with radius 
+alias[effect:start_storm_area_placing] = {
+	## cardinality = 0..1
+	sacrifice_leader_with_ui = bool
+	## cardinality = 0..1
+	cosmic_storm = <storm_type>
+	## cardinality = 0..1	
+	immediate = yes
+	## cardinality = 0..1	
+	reticle_radius = {
+		base = int
+		modifier = {
+			mult = value_field
+		}
+	}
+	## cardinality = 0..1	
+	max_range = {
+		base = int
+		modifier = {
+			mult = value_field
+		}
+	}
+	## cardinality = 0..1	
+	on_confirm = {
+		## cardinality = 0..inf	
+		alias_name[effect] = alias_match_left[effect]
+		
+		## cardinality = 0..1	
+		custom_tooltip = localisation
+		
+		## cardinality = 0..1
+		hidden_effect = {
+			## cardinality = 0..inf	
+			alias_name[effect] = alias_match_left[effect]
+		}
+	}	
+	
+	## cardinality = 0..1
+	on_cancel = {
+		## cardinality = 0..inf	
+		alias_name[effect] = alias_match_left[effect]
+	}	
+}
+
+###Sets whether the emergency fund should be active or not
+alias[effect:set_emergency_fund_active] = bool
+
+###Applies Cosmic Storm Aftermath Modifiers. You can specify up to a max of 10 Severities and each one will be chosen based on it's chance.
+alias[effect:storm_apply_aftermath_modifier] = {
+	## cardinality = 0..10	
+	severity = { 
+		modifier = <static_modifier>
+		days = int_## cardinality = 0..inf
+		chance = {
+			base = int_value_field[1...99]
+			## cardinality = 0..inf
+			modifier = {
+				factor = value_field
+				## cardinality = 0..inf
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+		}
+		## cardinality = 0..1
+		effect = {
+			## cardinality = 0..inf
+			alias_name[effect] = alias_match_left[effect]
+		}
+	}
+}
+
+###Sets a storm on a system
+alias[effect:set_cosmic_storm] = { 
+	cosmic_storm = scope[system]
+}
+
+###Unsets a storm on a system
+alias[effect:unset_cosmic_storm] = yes
+
+###Sets rate for contributions to the emergency fund
+alias[effect:set_emergency_fund_contribution_rate] = float
+
+###Increments (or decrements with negative values) a mission counter for the scoped country by a specific amount
+alias[effect:add_mission_counter] = {
+	mission = <cosmic_storm_mission>
+	## cardinality = 0..1
+	counter = enum[event_chain_counter]
+	## cardinality = 0..1
+	counter = enum[storm_mission_counter]
+	amount = int_value_field
+}
+
+###Sets an arbitrarily-named flag on the scoped cosmic storm.
+alias[effect:set_storm_flag] = value_set[storm_flag]
+
+###Sets a mission counter for the scoped country to a specific amount
+alias[effect:set_mission_counter] = { 
+	mission = <cosmic_storm_mission>
+	## cardinality = 0..1
+	counter = enum[event_chain_counter]
+	## cardinality = 0..1
+	counter = enum[storm_mission_counter]
+	amount = int_value_field
+}
+
+###Stops the mission with the given status, triggering the relevant effects.
+alias[effect:stop_mission] = { 
+	mission = <cosmic_storm_mission>
+	status = success
+}
+
+###Selects a decision on a planet
+alias[effect:select_decision] = {
+	name = <decision>
+}
+
+###Returns the leader from a custom name
+alias[effect:return_leader_from_exile] = value_set[exiled_leader]
+	
+###Kills the scoped leader saved with a custom name
+alias[effect:kill_exiled_leader] = value_set[exiled_leader]
+
+###If yes, locks a Cosmic Storm in place. If no, it advances again at its normal speed.
+alias[effect:lock_storm_in_place] = bool
+
+###Enables a mission for target country
+alias[effect:enable_mission] = { 
+	name = <cosmic_storm_mission>
+}

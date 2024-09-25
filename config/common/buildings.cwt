@@ -132,6 +132,11 @@ building = {
 	on_built = {
 		alias_name[effect] = alias_match_left[effect]
 	}
+	
+	## cardinality = 0..1
+	on_enabled = {
+		alias_name[effect] = alias_match_left[effect]
+	}
 
 	## cardinality = 0..1
 	on_destroy = {
@@ -196,6 +201,11 @@ building = {
 		## cardinality = 0..inf
 		## incomingReferenceLabel = prereq
 		<technology>
+	}
+	
+	## cardinality = 0..1
+	custom_storm_ai_weight = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 
 	## cardinality = 0..1
