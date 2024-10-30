@@ -1,4 +1,4 @@
-[17:45:41][game_application.cpp:2148]: 
+[16:51:33][game_application.cpp:2163]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -75,6 +75,10 @@ else_if - Evaluates the enclosed triggers if the display_triggers of the precedi
 if = { limit = { <display_triggers> } <triggers> }
 else_if = { limit = { <display_triggers> } <triggers> }
 Supported Scopes: all
+
+is_orbiting_star - Checks if a ship is orbiting a star
+is_orbiting_star = yes
+Supported Scopes: ship fleet
 
 cosmic_storm_influence_value - Returns the amount of influence on a system
 cosmic_storm_influence_value > 0.75
@@ -589,6 +593,10 @@ species_portrait - Checks if the species (or pop/empire's dominant species) uses
 species_portrait = rep13
 Supported Scopes: country pop species
 
+is_reanimated - Checks if the scoped fleet or ship is reanimated (as set in ship sizes).
+is_reanimated = <yes/no>
+Supported Scopes: ship fleet design
+
 is_neutral_to - Checks if the country has a neutral attitude towards target country
 is_neutral_to = <target>
 Supported Scopes: country
@@ -640,6 +648,10 @@ can_lock_be_renewed - Returns true if the Bypass Lock can be renewed
 can_lock_be_renewed = yes
 Supported Scopes: bypass
 
+acquired_specimen_count - Returns the country's acquired specimens count
+acquired_specimen_count > <num>
+Supported Scopes: country
+
 balance - Checks the country's energy credit balance
 balance < 39
 Supported Scopes: country
@@ -655,6 +667,22 @@ Supported Scopes: galactic_object
 is_infertile - Checks if the pop/species has any trait with infertile 
 is_infertile = yes/no
 Supported Scopes: pop species
+
+must_scavenge - Checks if the debris is set as "must scavenge"
+must_scavenge = yes/no
+Supported Scopes: debris
+
+must_research - Checks if the debris is set as "must research"
+must_research = yes/no
+Supported Scopes: debris
+
+voidworms_scaling - Checks Voidworms presence scaling in game setup
+voidworms_scaling > 0
+Supported Scopes: all
+
+cutholoids_scaling - Checks Cutholoids presence scaling in game setup
+cutholoids_scaling > 0
+Supported Scopes: all
 
 hidden_trigger - Hides the tooltip for the triggers within
 hidden_trigger = { <triggers> }
@@ -989,6 +1017,10 @@ has_astral_rift_flag - Checks if the astral rift has a specific flag
 has_astral_rift_flag = <flag> (note: one can use e.g. my_flag@from to track relationships between objects)
 Supported Scopes: astral_rift
 
+has_any_flag - Checks if any Flag has been set to the given scope
+has_any_flag = yes/no
+Supported Scopes: all
+
 is_ship_class - Checks if the ship/fleet/design is a specific class
 is_ship_class = shipclass_colonizer
 Supported Scopes: ship fleet design
@@ -1142,6 +1174,14 @@ Supported Scopes: ship
 
 has_shield_hp - Checks the ship's shield hit points
 has_shield_hp > 200
+Supported Scopes: ship
+
+has_max_hp - Checks the ship's max hull points
+has_max_hp > 200
+Supported Scopes: ship
+
+has_max_armor_hp - Checks the ship's max armor hit points
+has_max_armor_hp > 200
 Supported Scopes: ship
 
 is_surveyed - Checks if the planet/astral_rift/system has been survey by target country
@@ -1484,7 +1524,7 @@ Supported Scopes: country
 
 has_modifier - Checks if the scope object has a certain modifier
 has_modifier = <modifier>
-Supported Scopes: megastructure planet country ship pop fleet galactic_object pop_faction federation spy_network espionage_operation astral_rift
+Supported Scopes: megastructure planet country ship pop fleet galactic_object pop_faction federation starbase spy_network espionage_operation astral_rift
 
 any_ship_in_system - Iterate through each ship in the current system - checks whether the enclosed triggers return true for any of them
 any_ship_in_system = { <triggers> }
@@ -2144,7 +2184,7 @@ Supported Scopes: all
 
 distance_to_capital - Checks the distance of a controlled system to its owner's capital
 distance_to_capital > 5
-Supported Scopes: galactic_object
+Supported Scopes: planet galactic_object
 
 has_non_aggression_pact - Check if the country has a non-aggression pact with target country
 has_non_aggression_pact = <target>
@@ -2438,7 +2478,7 @@ Supported Scopes: country pop leader species
 
 has_component - Checks if a ship has a certain component
 has_component = <component template key>
-Supported Scopes: ship
+Supported Scopes: ship design
 
 has_notification_modifier - Checks if a country has a certain notification modifier
 has_notification_modifier = <key>
@@ -3253,8 +3293,25 @@ num_cosmic_storms - Checks the amount of currently active cosmic storms.
 num_cosmic_storms < 3
 Supported Scopes: all
 
+timed_flag_days_left - Checks the scoped object for the remaining days left of the specified timed flag
+timed_flag_days_left = { flag = <flag> value > 30 }
+(note: one can use e.g. my_flag@from to track relationships between objects)
+Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army ambient_object species pop_faction war federation starbase deposit sector no_scope archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+
+has_asteroid_belt - Returns true if the scoped galactic object has an asteroid belt.
+has_asteroid_belt = yes/no
+Supported Scopes: galactic_object
+
 cosmic_storm_system_influence - Checks the systems total cosmic storm influence
 Supported Scopes: galactic_object
+
+is_last_acquired_specimen - Checks if the specified specimen was the last acquired one 
+is_last_acquired_specimen = <specimen>
+Supported Scopes: country
+
+can_give_specimen - Checks if can give a specific specimen. Checks if specimen is already given and if there is an available exhibit slot
+can_give_specimen = <specimen>
+Supported Scopes: country
 
 is_influence_center - Checks if the planet is colonized (in planet scope) or the system has an owner (in system scope)
 is_influence_center = no
@@ -3316,6 +3373,58 @@ Supported Scopes: cosmic_storm
 ship_size_multiplier - Compares ship size multiplier of the scoped design or ship.
 ship_size_multiplier >= <value>
 Supported Scopes: ship design
+
+is_exhibit_active - Check if the scoped exhibit is active
+is_exhibit_active = <yes/no>
+Supported Scopes: exhibit
+
+num_vivarium_slots - Returns the country's used Vivarium slots
+num_vivarium_slots > 0
+Supported Scopes: country
+
+has_specimen - Checks if the scoped country has the specified specimen
+has_specimen = <specimen_key/exhibit>
+Supported Scopes: country
+
+is_space_fauna - Checks if the scoped fleet or ship is space fauna (as set in ship sizes).
+is_space_fauna = <yes/no>
+Supported Scopes: ship fleet design
+
+can_be_reanimated - Checks if the ship/design can be reanimated.
+can_be_reanimated = yes / no
+Supported Scopes: ship design
+
+is_ship_category - Checks if the ship/fleet/design is a specific ship category
+is_ship_category = <key>
+Supported Scopes: ship fleet design
+
+is_specimen_rarity - Checks if the specified specimen contained by the scoped exhibit is of indicated rarity
+is_specimen_rarity = <rarity>
+Supported Scopes: exhibit
+
+is_specimen_category - Checks if the specified specimen contained by the scoped exhibit is of indicated collection category
+is_specimen_category = <specimen_type>
+Supported Scopes: exhibit
+
+trading_value - Checks the scoped leader trading value.
+trading_value >=< 40
+Supported Scopes: leader
+
+count_used_naval_cap - Checks used naval cap by the scoped country or fleet's controlled ships which fulfill the specified criteria.
+count_used_naval_cap = { limit = { <triggers> } count < 6 }
+Supported Scopes: country fleet
+
+ship_size_cost_resource_percent - Retrieves the percentage of usage of a given resource in the ship size. If the ship size cost is 100 food and 300 minerals, the value when checking for food is 0.25
+ship_size_cost_resource_percent = <resource_key>
+Supported Scopes: ship design
+
+has_dna - Check if dna has been acquired for the given category
+has_dna = { ship_category = <key> rarity=<key> (optional) }
+Supported Scopes: country
+
+is_last_acquired_specimen_rarity - Checks if the last acquired specimen is of the given rarity
+is_last_acquired_specimen_rarity = <rarity>
+Supported Scopes: country
 
 any_agreement - Iterate through each agreement - checks whether the enclosed triggers return true for any of them
 any_agreement = { <triggers> }
@@ -3655,6 +3764,17 @@ count_espionage_asset = {
 	limit = { <triggers> }
 }
 Supported Scopes: no_scope spy_network espionage_operation
+
+any_exhibit - Iterate through every exhibit - checks whether the enclosed triggers return true for any of them
+any_exhibit = { <triggers> }
+Supported Scopes: country
+
+count_exhibit - Iterate through every exhibit - checks whether the enclosed triggers return true for X/all of them
+count_exhibit = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: country
 
 any_federation - Iterate through each federation - checks whether the enclosed triggers return true for any of them
 any_federation = { <triggers> }
