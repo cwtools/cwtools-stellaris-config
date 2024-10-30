@@ -138,6 +138,13 @@ alias[trigger:has_situation_flag] = value[situation_flag]
 ###Checks if the agreement has a specific, arbitrarily-named, flag
 alias[trigger:has_agreement_flag] = value[agreement_flag]
 
+### Checks the scoped object for the remaining days left of the specified timed flag
+alias[trigger:timed_flag_days_left] = {
+	value == int_value_field
+	## severity = warning
+	flag = value[timed_flag]
+}
+
 ###Checks if the country has a specific relation flag towards target country
 alias[trigger:has_relation_flag] = {
 	who = scope_group[target_country]
@@ -1704,6 +1711,29 @@ alias[trigger:num_sectors] == int_value_field
 ###Checks the planet's number of slots available for new constructions
 alias[trigger:free_district_slots] == int_value_field
 
+###Returns the country's acquired specimens count
+alias[trigger:acquired_specimen_count] == int_value_field
+
+###Checks Voidworms presence scaling in game setup
+alias[trigger:voidworms_scaling] == int_value_field
+
+###Checks Cutholoids presence scaling in game setup
+alias[trigger:cutholoids_scaling] == int_value_field
+
+###Checks the ship's max hull points
+alias[trigger:has_max_hp] == int_value_field
+
+###Checks the ship's max armor hit points
+alias[trigger:has_max_armor_hp] == int_value_field
+
+###Returns the country's used Vivarium slots
+alias[trigger:num_vivarium_slots] == int_value_field
+
+###Checks the scoped leader trading value.
+alias[trigger:trading_value] == int_value_field
+
+#steve == place holder
+
 ###Checks if the country AI has any plans to expand
 alias[trigger:has_ai_expansion_plan] = bool
 
@@ -2880,3 +2910,77 @@ alias[trigger:is_storm_active_in_storm_sector] = bool
 
 ###Checks if the scoped Cosmic Storm's type is equal to <type>
 alias[trigger:is_storm_type] = <storm_type>
+
+###Checks if a ship is orbiting a star
+alias[trigger:is_orbiting_star] = bool
+
+###Checks if the scoped fleet or ship is reanimated (as set in ship sizes).
+alias[trigger:is_reanimated] = bool
+
+###Checks if the debris is set as "must scavenge"
+alias[trigger:must_scavenge] = bool
+
+###Checks if the debris is set as "must research"
+alias[trigger:must_research] = bool
+
+###Checks if any Flag has been set to the given scope
+alias[trigger:has_any_flag] = bool
+
+###Returns true if the scoped galactic object has an asteroid belt.
+alias[trigger:has_asteroid_belt] = bool
+
+###Checks if the specified specimen was the last acquired one 
+alias[trigger:is_last_acquired_specimen] = <specimen>
+
+###Checks if can give a specific specimen. Checks if specimen is already given and if there is an available exhibit slot
+alias[trigger:can_give_specimen] = <specimen>
+
+###Check if the scoped exhibit is active
+alias[trigger:is_exhibit_active] = bool
+
+###Checks if the scoped country has the specified specimen
+alias[trigger:has_specimen] = <specimen>
+
+###Checks if the scoped fleet or ship is space fauna (as set in ship sizes).
+alias[trigger:is_space_fauna] = bool
+
+###Checks if the ship/design can be reanimated.
+alias[trigger:can_be_reanimated] = bool
+
+###Checks if the ship/fleet/design is a specific ship category
+alias[trigger:is_ship_category] = enum[grand_archive_ship_category]
+
+###Checks if the specified specimen contained by the scoped exhibit is of indicated rarity
+alias[trigger:is_specimen_rarity] = enum[rarity]
+
+###Checks if the specified specimen contained by the scoped exhibit is of indicated collection category
+alias[trigger:is_specimen_category] = enum[specimen_type]
+
+###Retrieves the percentage of usage of a given resource in the ship size. If the ship size cost is 100 food and 300 minerals, the value when checking for food is 0.25
+alias[trigger:ship_size_cost_resource_percent] = <resource>
+
+###Check if dna has been acquired for the given category
+alias[trigger:has_dna] = { 
+	ship_category = enum[grand_archive_ship_category]
+	## cardinality = 0..1
+	rarity = enum[rarity]
+}
+
+###Checks if the last acquired specimen is of the given rarity
+alias[trigger:is_last_acquired_specimen_rarity] = enum[rarity]
+
+# no scope change so regular trigger 
+###Iterate through every exhibit - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_exhibit] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+# no scope change so regular trigger
+###Iterate through every exhibit - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_exhibit] = {
+	count = int_value_field
+	count = all
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
