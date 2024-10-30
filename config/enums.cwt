@@ -415,4 +415,10 @@ enums = {
 		voidworm
 		cutholoid
 	}
+	enum[specimen_rarity] = {
+		common
+		epic
+		exceptional
+		rare
+	}
 }
