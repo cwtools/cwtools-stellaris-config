@@ -426,4 +426,9 @@ enums = {
 		historical_item
 		xeno_geology
 	}
+	enum{fauna_fleet_growth_stance] = {
+		controlled
+		excessive
+		none
+	}
 }
