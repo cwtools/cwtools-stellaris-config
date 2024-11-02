@@ -840,6 +840,8 @@ alias[effect:add_monthly_resource_mult] = {
 	min = int
 	## cardinality = 0..1
 	max = int
+	## cardinality = 0..1
+	multiplier = value[variable]
 }
 
 ###Adds a specific trait to the scoped leader or a random common/negative trait
@@ -2431,6 +2433,10 @@ alias[effect:create_ship] = {
 	## cardinality = 0..1
 	###Used if the created ship is a colony ship
 	colonizer_species = scope_group[target_species]
+	## cardinality = 0..1
+	age = int
+	## cardinality = 0..1
+	rarity = enum[rarity]
 	## cardinality = 0..1
 	## push_scope = ship
 	effect = {
@@ -4385,4 +4391,181 @@ alias[effect:lock_storm_in_place] = bool
 ###Enables a mission for target country
 alias[effect:enable_mission] = { 
 	name = <cosmic_storm_mission>
+}
+
+###Exports the value of the current country's maximum of the specified resource to a variable.
+alias[effect:export_resource_maximum_to_variable] = {
+	resource = <resource>
+	variable = value_set[variable]
+}
+
+###Restores a certain percentage of armor points to the scoped ship
+alias[effect:repair_armor_percentage] = value_field[0.0..1.0]
+
+###If the scoped fleet is MIA, sets the return date in a given number of days, starting from current date
+alias[effect:set_mia_return_delay] = int
+
+###Sets wether or not the design automatically upgrades its components.
+alias[effect:set_auto_upgrade_components] = bool
+
+###Sets Space Fauna growth stance. Setting to 'none' resets stance to use default country policy.
+alias[effect:set_fauna_fleet_growth_stance] = enum{fauna_fleet_growth_stance]
+
+###Gives a given specimen to the target country.
+alias[effect:give_specimen] = {
+	## cardinality = 0..1
+	key = <specimen>
+	## cardinality = 0..1
+	origin = localisation
+}
+
+###Removes specified specimen from the target country.
+alias[effect:give_specimen] = {
+	remove_specimen = <specimen>
+}
+
+###Tries to finish the current council agenda for the scoped country
+alias[effect:finish_council_agenda] = bool
+
+###Gives associated culling rewards from a space fauna design to the target country.
+alias[effect:give_culling_rewards] = {
+	design = scope[design]
+}
+
+###Gives given space fauna DNA with given rarity to the target country.
+alias[effect:give_dna] = {
+	ship_category = enum[grand_archive_ship_category]
+	## cardinality = 0..1
+	rarity = enum[rarity]
+}
+
+###Gives Space Fauna in the Vivarium using given ship design with given rarity to the target country.
+alias[effect:add_to_vivarium] = {
+	design = scope[design]
+	## cardinality = 0..1
+	rarity = enum[rarity]
+	## cardinality = 0..1
+	amount = int
+}
+
+###Reanimates Space Fauna ship(s) back to life in zombie form.
+alias[effect:reanimate_space_fauna] = {
+	fleet = scope[fleet]
+}
+
+###Spawns a custom debris project with the current fleet.
+alias[effect:spawn_custom_debris] = {
+	for = scope_group[target_country]
+	## cardinality = 0..1
+	must_scavenge = bool
+	## cardinality = 0..1
+	reset_killed_ship_designs = bool
+	## cardinality = 0..1
+	should_add_ship_to_debris = {
+		is_space_fauna = bool
+		can_be_reanimated = bool
+	}
+}
+
+###Set scoped starbase's current construction type
+alias[effect:set_ship_construction_type] = enum[construction_type]
+
+###Link the scoped megastructure bypass to the given target megastructure bypass.
+alias[effect:link_to] = scope[megastructure]
+
+###Steals random specimens from given country.
+alias[effect:steal_specimens] = {
+	who = scope_group[target_country]
+	## cardinality = 0..1
+	category = enum[specimen_type]
+	## cardinality = 0..1
+	category = all
+	## cardinality = 0..1
+	category = any
+	## cardinality = 0..1
+	count = int
+	## cardinality = 0..1
+	show_nofication = bool
+}
+
+###Releases into the wild space fauna contained in the scoped country's Vivarium, from all or given ship category.	Resulting fleet owner can be specified.	Space Fauna can be culled for resources instead by specifying 'cull_vivarium_critter = yes'.
+alias[effect:release_vivarium_fauna] = { 
+	## cardinality = 0..1
+	category = enum[grand_archive_ship_category]
+	## cardinality = 0..1
+	category = all 
+	## cardinality = 0..1
+	location = scope_group[spatial_object]
+	## cardinality = 0..1
+	owner = scope_group[target_country]
+	## cardinality = 0..1
+	cull_vivarium_critter = bool
+}
+
+###Releases into the wild a specific amount of space fauna contained in the scoped country's Vivarium. Rarest fauna is released in priority.	Resulting fleet owners can be specified.	
+alias[effect:release_vivarium_fauna_count] = { 
+	count = int_value_field
+	location = scope_group[spatial_object]
+	owners = { 
+		## cardinality = 0..1
+		enum[specimen_type] = scope_group[target_country]
+	}
+}
+
+###Creates new creatures of the smaller ship size in the same fleet
+alias[effect:create_smaller_size_creature_in_fleet] = { 
+	## cardinality = 0..1
+	count = int_value_field
+	## cardinality = 0..1
+	effect = {
+		## cardinality = 0..inf
+		alias_name[effect] = alias_match_left[effect]
+	}
+}
+
+###Unlocks an exhibit for given category from the target country.
+alias[effect:unlock_exhibit] = enum[specimen_type]
+
+###Refreshes the scoped country's leader pool.
+alias[effect:refresh_leader_pool] = bool
+
+###Adds specific resource to the stockpile for the country scope and creates a debris notification.
+alias[effect:add_resource_from_debris] = {
+	## cardinality = 1..inf
+	<resource> = float
+	## cardinality = 0..1
+	system = scope[system]
+}
+
+# no scope change so normal effect
+###Iterate through every exhibit - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_exhibit] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	##cardinality = 0..1
+	weights = {
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	alias_name[effect] = alias_match_left[effect]
+}
+
+# no scope change so normal effect
+###Iterate through every exhibit - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_exhibit] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	position = int[0..inf]
+	order_by = value_field
+	##cardinality = 0..1
+	inverse = bool
+	alias_name[effect] = alias_match_left[effect]
+}
+
+# no scope change so normal effect
+###Iterate through every exhibit - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_exhibit] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
 }
