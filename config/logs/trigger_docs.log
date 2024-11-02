@@ -4285,7 +4285,7 @@ Supported Scopes: country
 
 
 =================
-[17:45:41][game_application.cpp:2151]: 
+[15:28:37][game_application.cpp:2166]: 
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -4614,9 +4614,10 @@ create_ship = {
 	name = <string/random>
 	design = <ship design key/target/last_created_design, or use random_existing_design>
 	random_existing_design = <ship size key>
-	graphical_culture = <graphical culture key>
+	graphical_culture = <graphical culture key> graphical_culture_fallback = <graphical culture key>
 	prefix = <Y/N, determines if ship name should use owner country prefix>
-	colonizer_species = <species, default: fleet owner founder species>
+	colonizer_species = <species, default: fleet owner founder species> age = <int> (optional)
+	rarity = <common/rare/epic/exceptional, used only if ship is space fauna> (optional, fallbacks to highest owned genetic material if applicable but not set)
 }
 Supported Scopes: fleet starbase
 
@@ -4732,7 +4733,7 @@ add_modifier = {
 	time_multiplier = <variable> (optional: days/months/years value is multiplied by the value of this variable)
 	clear_on_owner_change = yes (optional: default no; clears modifier if planet/system/megastructure's owner changes)
 }
-Supported Scopes: megastructure planet country ship pop fleet galactic_object pop_faction federation spy_network espionage_operation astral_rift cosmic_storm_influence_field
+Supported Scopes: megastructure planet country ship pop fleet galactic_object pop_faction federation starbase spy_network espionage_operation astral_rift cosmic_storm_influence_field
 
 reduce_hp - Reduces the hull points of the scoped ship by a specific amount
 reduce_hp = 120
@@ -4809,6 +4810,10 @@ Supported Scopes: country
 
 export_resource_income_to_variable - Exports the value of the current country's monthly income of the specified resource to a variable.
 export_resource_income_to_variable = { resource = energy variable = <string> }
+Supported Scopes: country
+
+export_resource_maximum_to_variable - Exports the value of the current country's maximum of the specified resource to a variable.
+export_resource_maximum_to_variable = { resource = energy variable = <string> }
 Supported Scopes: country
 
 set_variable_to_random_value - Sets a variable to a random value within the specified bounds.
@@ -5415,7 +5420,7 @@ Supported Scopes: all
 
 remove_modifier - Removes a specific modifier from the scope object
 remove_modifier = <key>
-Supported Scopes: megastructure planet country ship pop fleet galactic_object pop_faction federation spy_network espionage_operation astral_rift cosmic_storm_influence_field
+Supported Scopes: megastructure planet country ship pop fleet galactic_object pop_faction federation starbase spy_network espionage_operation astral_rift cosmic_storm_influence_field
 
 add_ship_design - Adds a specific ship design to the scoped country
 add_ship_design = <target/last_created_design>
@@ -5492,7 +5497,7 @@ establish_communications = <target>
 Supported Scopes: country
 
 add_monthly_resource_mult - Adds a lump sum of a resource to the scoped country, defined as a multiple of the country's monthly income of that resource (clamped to max and min allowed values)
-add_monthly_resource_mult = { resource = <key> value = <multiplier, float> max = <max cap, int> min = <min cap, int> }
+add_monthly_resource_mult = { resource = <key> value = <float> max = <max cap, int> min = <min cap, int> multiplier = <variable> }
 Supported Scopes: country
 
 set_leader_flag - Sets an arbitrarily-named flag on the scoped leader
@@ -5855,6 +5860,10 @@ Supported Scopes: war
 
 repair_percentage - Restores a certain percentage of hull points to the scoped ship
 repair_percentage = 0.1
+Supported Scopes: ship fleet
+
+repair_armor_percentage - Restores a certain percentage of armor points to the scoped ship
+repair_armor_percentage = 0.1
 Supported Scopes: ship fleet
 
 endgame_telemetry - Send endgame telemetry event
@@ -6687,6 +6696,10 @@ set_mia - Sets the current fleet to go missing in action with the MIA type defid
 set_mia = <key>
 Supported Scopes: fleet
 
+set_mia_return_delay - If the scoped fleet is MIA, sets the return date in a given number of days, starting from current date
+set_mia_return_delay = <int>
+Supported Scopes: fleet
+
 create_espionage_asset - Creates espionage asset within a given spy network
 create_espionage_asset = {
 	type = <espionage asset type>
@@ -6995,6 +7008,10 @@ every_cosmic_storm - Iterate through all cosmic storms in the galaxy - executes 
 every_cosmic_storm = { limit = { <triggers> } <effects> }
 Supported Scopes: all
 
+set_auto_upgrade_components - Sets wether or not the design automatically upgrades its components.
+set_auto_upgrade_components = yes
+Supported Scopes: design
+
 spawn_random_storm - Spawn a random storm type with a random start and end position
 Supported Scopes: all
 
@@ -7009,9 +7026,21 @@ Supported Scopes: planet starbase
 recalculate_storm_influence_field - Recalculates the influence for each system in an influence field
 Supported Scopes: cosmic_storm_influence_field
 
+set_fauna_fleet_growth_stance - Sets Space Fauna growth stance. Setting to 'none' resets stance to use default country policy.
+set_fauna_fleet_growth_stance = <value> (controlled/excessive/none)
+Supported Scopes: country fleet
+
 start_storm_area_placing - Starts the storm placing mode with radius 
 radius = <float> 
 Supported Scopes: all
+
+give_specimen - Gives a given specimen to the target country.
+give_specimen = { key = <specimen> origin = <key> }
+Supported Scopes: country
+
+remove_specimen - Removes specified specimen from the target country.
+remove_specimen = <specimen>
+Supported Scopes: country
 
 set_emergency_fund_active - Sets whether the emergency fund should be active or not.
 Supported Scopes: all
@@ -7032,6 +7061,10 @@ Supported Scopes: galactic_object
 set_emergency_fund_contribution_rate - Sets rate for contributions to the emergency fund.
 Supported Scopes: all
 
+finish_council_agenda - Tries to finish the current council agenda for the scoped country
+finish_council_agenda = yes/no
+Supported Scopes: country
+
 add_mission_counter - Increments (or decrements with negative values) a mission counter for the scoped country by a specific amount
 add_mission_counter = { mission = <key> counter = <key> amount = <int>/<variable> }
 Supported Scopes: country
@@ -7048,6 +7081,33 @@ stop_mission - Stops the mission with the given status, triggering the relevant 
  stop_mission = { mission = <mission_key> status = success }
 Supported Scopes: planet country ship pop
 
+give_culling_rewards - Gives associated culling rewards from a space fauna design to the target country.
+give_culling_rewards = { design = <key> }
+Supported Scopes: country
+
+give_dna - Gives given space fauna DNA with given rarity to the target country.
+give_dna = { ship_category = <key> rarity = <key> (optional) }
+Supported Scopes: country
+
+add_to_vivarium - Gives Space Fauna in the Vivarium using given ship design with given rarity to the target country.
+add_to_vivarium = { design = <key> rarity = <key>/highest (optional) amount = <int> (optional) }
+Supported Scopes: country
+
+reanimate_space_fauna - Reanimates Space Fauna ship(s) back to life in zombie form.
+reanimate_space_fauna = {
+	fleet = <fleet>
+}
+Supported Scopes: ship debris
+
+spawn_custom_debris - Spawns a custom debris project with the current fleet.
+spawn_custom_debris = {	
+	for = <country> - country to give the debris project to.
+	should_add_ship_to_debris = trigger (optional) - used to check if the ship must be added to the debris.
+	must_scavenge/must_research = yes/no (default no) - used to specify and override country behaviour towards this debris.
+	reset_killed_ship_designs = yes/no (default no) - used to force the fleet to reset its killed ships designs.
+}
+Supported Scopes: fleet
+
 select_decision - Selects a decision on a planet
 Supported Scopes: planet
 
@@ -7061,6 +7121,34 @@ Supported Scopes: country
 
 lock_storm_in_place - If yes, locks a Cosmic Storm in place. If no, it advances again at its normal speed.
 Supported Scopes: cosmic_storm
+
+set_ship_construction_type - Set scoped starbase's current construction type
+set_ship_construction_type = <starbase_type/none>
+Supported Scopes: starbase
+
+link_to - Link the scoped megastructure bypass to the given target megastructure bypass.
+link_to = from
+Supported Scopes: megastructure
+
+steal_specimens - Steals random specimens from given country.
+steal_specimens = { who = <country> category = <category_key>/all/any count = <int>show_nofication = <yes/no> }
+Supported Scopes: country
+
+release_vivarium_fauna - Releases into the wild space fauna contained in the scoped country's Vivarium, from all or given ship category.	Resulting fleet owner can be specified.	Space Fauna can be culled for resources instead by specifying 'cull_vivarium_critter = yes'.
+release_vivarium_fauna = { category = <ship_category>/all location = <target> owner = <country>cull_vivarium_critter = <yes/no> }
+Supported Scopes: country
+
+release_vivarium_fauna_count - Releases into the wild a specific amount of space fauna contained in the scoped country's Vivarium.Rarest fauna is released in priority.	Resulting fleet owners can be specified.	
+release_vivarium_fauna_count = { 
+	count = <capacity_to_release>
+	location = <target>
+	owners = { <category> = <country> }
+}
+Supported Scopes: country
+
+create_smaller_size_creature_in_fleet - Creates new creatures of the smaller ship size in the same fleet
+create_smaller_size_creature_in_fleet = <value>
+Supported Scopes: ship
 
 unlock_council_selection - Unlocks council selection
 unlock_council_selection = yes
@@ -7575,9 +7663,27 @@ set_next_astral_rift_event = {
 }
 Supported Scopes: astral_rift
 
+unlock_exhibit - Unlocks an exhibit for given category from the target country.
+unlock_exhibit = <category>
+Supported Scopes: country
+
 enable_mission - Enables a mission for target country
- enable_mission = { name = <mission key> }
+enable_mission = { name = <mission key> }
 Supported Scopes: all
+
+refresh_leader_pool - Refreshes the scoped country's leader pool.
+refresh_leader_pool = yes
+Supported Scopes: country
+
+add_resource_from_debris - Adds specific resource to the stockpile for the country scope and creates a debris notification.
+add_resource_from_debris = {
+	<resource_name_1> = <value_1>
+	<resource_name_2> = <value_2>
+	...
+	system = <system>
+	mult = <variable> (optional: multiplies all gained resources by a variable)
+}
+Supported Scopes: country
 
 create_leader - Creates a new leader for the scoped country
 create_leader = {
@@ -8380,6 +8486,31 @@ Supported Scopes: no_scope spy_network espionage_operation
 every_espionage_asset - Iterate through each espionage asset - executes the enclosed effects on all of them for which the limit triggers return true
 every_espionage_asset = { limit = { <triggers> } <effects> }
 Supported Scopes: no_scope spy_network espionage_operation
+
+random_exhibit - Iterate through every exhibit - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_exhibit = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: country
+
+ordered_exhibit - Iterate through every exhibit - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+ordered_exhibit = {
+	limit = { <triggers> }
+	position = <integer, starting with 0>
+	order_by = <variable>/trigger:<trigger>
+	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
+	<effects>
+}
+Supported Scopes: country
+
+every_exhibit - Iterate through every exhibit - executes the enclosed effects on all of them for which the limit triggers return true
+every_exhibit = { limit = { <triggers> } <effects> }
+Supported Scopes: country
 
 random_federation - Iterate through each federation - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
 random_federation = {
