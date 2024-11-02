@@ -104,10 +104,14 @@ enums = {
 		full
 	}
 	enum[construction_type] = {
+		none
 		starbase
 		mining_station
 		research_station
 		observation_post
+		starbase_shipyard
+		spaceport
+		starbase_defenses
 	}
 	enum[tutorial_levels] = {
 		0
