@@ -445,6 +445,7 @@ enums = {
 		point_defence
 		missile
 		planet_killer
+		engulf
 	}
 	enum[weapon_slot_size] = {
 		extra_large
@@ -455,6 +456,7 @@ enums = {
 		point_defence
 		planet_killer
 		titanic
+		engulf
 	}
 	enum[utility_slot_size] = {
 		extra_large
@@ -462,6 +464,7 @@ enums = {
 		medium
 		small
 		aux
+		
 	}
 	enum[aura_types] = {
 		ships
