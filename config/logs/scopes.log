@@ -355,4 +355,8 @@ last_created_cosmic_storm_influence_field - Scopes to the last storm influence f
 Supported Scopes: all
 Output Scope: cosmic_storm_influence_field
 
+exhibit - Scopes from a country to the exhibit owned by it.
+Supported Scopes: country
+Output Scope: exhibit
+
 =================
