@@ -4412,9 +4412,9 @@ alias[trigger:count_used_naval_cap] = {
 	}
 }
 
+## push_scope = exhibit
 ###Iterate through every exhibit - checks whether the enclosed triggers return true for any of them
 alias[trigger:any_exhibit] = {
-	## push_scope = exhibit
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
