@@ -4411,3 +4411,52 @@ alias[trigger:count_used_naval_cap] = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 }
+
+###Iterate through every exhibit - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_exhibit] = {
+	## push_scope = exhibit
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+###Iterate through every exhibit - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_exhibit] = {
+	count = int_value_field
+	count = all
+	## push_scope = exhibit
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+## push_scope = exhibit
+###Iterate through every exhibit - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_exhibit] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	##cardinality = 0..1
+	weights = {
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = exhibit
+###Iterate through every exhibit - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_exhibit] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	position = int[0..inf]
+	order_by = value_field
+	##cardinality = 0..1
+	inverse = bool
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = exhibit
+###Iterate through every exhibit - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_exhibit] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
