@@ -2968,19 +2968,3 @@ alias[trigger:has_dna] = {
 
 ###Checks if the last acquired specimen is of the given rarity
 alias[trigger:is_last_acquired_specimen_rarity] = enum[rarity]
-
-# no scope change so regular trigger 
-###Iterate through every exhibit - checks whether the enclosed triggers return true for any of them
-alias[trigger:any_exhibit] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
-
-# no scope change so regular trigger
-###Iterate through every exhibit - checks whether the enclosed triggers return true for X/all of them
-alias[trigger:count_exhibit] = {
-	count = int_value_field
-	count = all
-	limit = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-}
