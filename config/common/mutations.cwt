@@ -2,6 +2,12 @@ types = {
 	type[mutations_type] = {
 		path = "game/common/mutations"
 	}
+	localisation = {
+		## required
+		Name = "$"
+		## required
+		Description = "$_desc"
+	}
 }
 
 enums = {
