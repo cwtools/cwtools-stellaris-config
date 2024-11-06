@@ -412,17 +412,6 @@ enums = {
 		random_pre_ftl
 		random
 	}
-	enum[rarity] = {
-		common
-		epic
-		exceptional
-		rare
-	}
-	enum[specimen_type] = {
-		aesthetic_wonder
-		historical_item
-		xeno_geology
-	}
 	enum[fauna_fleet_growth_stance] = {
 		controlled
 		excessive
