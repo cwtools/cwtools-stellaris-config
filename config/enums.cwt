@@ -412,13 +412,6 @@ enums = {
 		random_pre_ftl
 		random
 	}
-	enum[grand_archive_ship_category] = {
-		tiyanki
-		space_amoeba
-		crystalline_entity
-		voidworm
-		cutholoid
-	}
 	enum[rarity] = {
 		common
 		epic
