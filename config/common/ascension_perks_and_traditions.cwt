@@ -104,7 +104,10 @@ ascension_perk = {
 		## cardinality = 0..1
 		show_only_custom_tooltip = no
 	}
-
+	
+	## cardinality = 0..1
+	alias_name[triggered_modifier_country] = alias_match_left[triggered_modifier_country]
+	
 	## cardinality = 0..1
 	## replace_scope = { root = country this = country }
 	ai_weight = {
