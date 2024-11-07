@@ -190,6 +190,8 @@ component_template = {
 		## cardinality = 0..1
 		ship_behavior = <ship_behavior>
 		## cardinality = 0..1
+		is_default_component = bool
+		## cardinality = 0..1
 		sensor_range = int
 		## cardinality = 0..1
 		hyperlane_range = int
@@ -370,6 +372,13 @@ component_template = {
 		size_damage_factor = float
 		## cardinality = 0..1
 		military_power_multiplier = float
+		
+		## cardinality = 0..1
+		targetable_ship_sizes = {
+			## cardinality = 0..inf
+			<ship_size>
+		}
+				
 	}
 	subtype[strike_craft_component_template] = {
 		size = enum[weapon_slot_size]
@@ -406,6 +415,10 @@ component_template = {
 		hull_damage = float
 		## cardinality = 0..1
 		attack_range = float
+		## cardinality = 0..1
+		ship_modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
 	}
 	subtype[scripted_action] = {
 		scripted_action_name = <on_action>
