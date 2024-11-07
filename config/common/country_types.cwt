@@ -21,6 +21,8 @@ country_type = {
 	## cardinality = 0..1
 	ownership_limits = <ownership_limit>
 	## cardinality = 0..1
+	do_critters_age = bool
+	## cardinality = 0..1
 	can_own_empty_planets = bool
 	## cardinality = 0..1
 	playable = bool
@@ -136,6 +138,8 @@ country_type = {
 	pre_communications_fleet_name = localisation
 	## cardinality = 0..1
 	observable = bool
+	## cardinality = 0..1
+	has_plural_name = bool
 	## cardinality = 0..1
 	uses_origins = bool
 	## cardinality = 0..1
@@ -279,6 +283,9 @@ country_type = {
 		## cardinality = 0..1
 		standard_species_rights_module = {}
 		## cardinality = 0..1
+		standard_grand_archive_module = {}
+		
+		## cardinality = 0..1
 		exclusive_diplomacy_module = {
 			## cardinality = 0..1
 			contact_rule = enum[contact_rules]
@@ -383,5 +390,7 @@ enums = {
 		formless_military_minister_module
 		synth_queen_interior_minister_module
 		synth_queen_military_minister_module
+		standard_grand_archive_module
+		voidworms_module
 	}
 }
