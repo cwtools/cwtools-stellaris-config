@@ -21,6 +21,7 @@ component_slot_template = {
 	size = enum[weapon_slot_size]
 	component = weapon
 	component = strike_craft
+	component = any
 	## cardinality = 0..1
 	is_fixed = yes
 	## cardinality = 0..1
