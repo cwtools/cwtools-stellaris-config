@@ -801,6 +801,20 @@ NGraphics = {
 	STORM_GALAXY_MAP_ICON_BASE_OFFSET = int
 	## cardinality = 0..1
 	STORM_GALAXY_MAP_ICON_OFFSET_ZOOM_SCALE = float
+	## cardinality = 0..1
+	CUTHOLOID_ENGULF_ANIMATION_DURATION = float
+	## cardinality = 0..1
+	CUTHOLOID_ENGULF_ANIMATION_SCALE_FRACTION_START = float
+	## cardinality = 0..1
+	CUTHOLOID_ENGULF_MIN_SCALE = float
+	## cardinality = 0..1
+	GRAVITY_SNARE_CAPTURE_ANIMATION_TRAJECTORY_CHANGE_DURATION = int
+	## cardinality = 0..1
+	CRITTER_SELECTOR_LIGHT = scalar
+	## cardinality = 0..1
+	DEBRIS_ENTITY = <model_entity>
+	## cardinality = 0..1
+	FAUNA_DEBRIS_ENTITY = <model_entity>
 }
 Unchecked_NInterface = {
 	## cardinality = 0..1
@@ -853,6 +867,8 @@ Unchecked_NInterface = {
 	TOOLTIP_MIDDLE_MOUSE_LOCK_TIME = float
 	## cardinality = 0..1
 	TOOLTIP_TIMER_LOCK_TIME = float
+	## cardinality = 0..1
+	MP_GAMESETUP_PLAYER_COLUMNS = int
 	## cardinality = 0..1
 	PERSISTENT_CHAT_LINE_HEIGHT = int
 	## cardinality = 0..1
@@ -957,6 +973,8 @@ Unchecked_NInterface = {
 	SITUATION_LOG_FIRST_CONTACT_ICON_FILENAME = filepath
 	## cardinality = 0..1
 	SITUATION_LOG_DEBRIS_PICTURE_SPRITE = <sprite>
+	## cardinality = 0..1
+	SITUATION_LOG_FAUNA_DEBRIS_PICTURE_SPRITE = <sprite>
 	## cardinality = 0..1
 	SITUATION_LOG_DEBRIS_ICON_FILENAME = filepath
 	## cardinality = 0..1
@@ -1140,8 +1158,6 @@ Unchecked_NInterface = {
 	## cardinality = 0..1
 	PRE_FTL_ROOM_BACKGROUND_OVERRIDE = scalar
 	## cardinality = 0..1
-	AUTOMATION_SETTINGS_OFFSET = int
-	## cardinality = 0..1
 	COOP_PRESENCE_ICON_FRAME_EMPTY = int
 	## cardinality = 0..1
 	ASTRAL_ACTION_UNLOCK_NOTIFICATION_DURATION = int
@@ -1225,6 +1241,33 @@ Unchecked_NInterface = {
 	COSMIC_STORM_VISIBLE_GUI_CONFIRM_BUTTON_Y_OFFSET = int
 	## cardinality = 0..1
 	LEADER_ASSIGN_TRAIT_MIN_WIDTH = int
+	## cardinality = 0..1
+	SPACE_CRITTER_CAPTURE_NOTIFICATION_DAYS_PENDING = int
+	## cardinality = 0..1
+	HATCHERY_SHIP_ICON_SCALE = float
+	## cardinality = 0..1
+	GRAND_ARCHIVE_COLLECTION_ACTIVE 		= 	<sprite>
+	## cardinality = 0..1
+	GRAND_ARCHIVE_COLLECTION_INACTIVE 		= 	<sprite>
+	## cardinality = 0..1
+	MINOR_ARTIFACT_DEFAULT_CLICK_SOUND		=	<sound>
+	## cardinality = 0..1
+	SHIP_DESIGNER_SHIP_VIEW_RENDER_TARGET = scalar
+	## cardinality = 0..1
+	CREATURE_DESIGNER_SHIP_VIEW_RENDER_TARGET = scalar
+	## cardinality = 0..1
+	CREATURE_DESIGNER_MUTATION_SLOT_ICON = scalar
+	## cardinality = 0..1
+	CREATURE_DESIGNER_MUTATION_SLOT_LOCKED_ICON = <sprite>
+	## cardinality = 0..1
+	EVENT_PRESENCE_ICON_OFFSET_RATIO_EFFECT_REWARD = float
+	## cardinality = 0..1
+	CONCEPT_EDICT_ICON = filepath
+	## cardinality = 0..1
+	AUTHORITY_DEFAULT_COLOR = {
+		## cardinality = 4..4
+		float 
+	}
 }
 Checked_NInterface = {
 	
@@ -1387,6 +1430,28 @@ NGameplay = {
 	## cardinality = 0..1
 	GROWTH_SCALE_SLIDER_INTERVAL = float
 	## cardinality = 0..1
+	VIVARIUM_GROWTH_RATE_MULTIPLIER = float
+	## cardinality = 0..1
+	VIVARIUM_BREEDING_RARITY_COMMON = { 
+		## cardinality = 4..4
+		int
+	}
+	## cardinality = 0..1
+	VIVARIUM_BREEDING_RARITY_RARE = { 
+		## cardinality = 4..4
+		int
+	}
+	## cardinality = 0..1
+	VIVARIUM_BREEDING_RARITY_EPIC = { 
+		## cardinality = 4..4
+		int
+	}
+	## cardinality = 0..1
+	VIVARIUM_BREEDING_RARITY_LEGENDARY = { 
+		## cardinality = 4..4
+		int
+	}
+	## cardinality = 0..1
 	AUTO_MOD_BASE = int
 	
 	## cardinality = 0..1
@@ -1465,14 +1530,16 @@ NGameplay = {
 	## cardinality = 0..1
 	DATE_DISTORTION_COUNT_MAX = int
 	## cardinality = 0..1
-	RESEARCH_DEBRIS_POLICY_FLAG = scalar 
+	GRAVITY_SNARE_CAPTURE_TIME = int
 	## cardinality = 0..1
-	SCAVENGE_DEBRIS_POLICY_FLAG = scalar 
+	GRAVITY_SNARE_CAPTURED_SHIPS_COUNT = int
 	## cardinality = 0..1
-	SCAVENGE_AND_RESEARCH_DEBRIS_POLICY_FLAG = scalar 
+	GRAVITY_SNARE_MAX_MOVEMENT_TIME = int
 	## cardinality = 0..1
 	SCAVENGE_DEBRIS_RESOURCE_MULT = float
-		
+	## cardinality = 0..1
+	REANIMATE_DEBRIS_COST_MULT = float
+	
 	## cardinality = 0..1
 	DECADENCE_START = int
 	## cardinality = 0..1
@@ -1928,6 +1995,15 @@ NGameplay = {
 	## cardinality = 0..1
 	DEBRIS_RESEARCH_TIME = int
 	
+	## cardinality = 0..1
+	DEBRIS_REANIMATE_RESEARCH_MIN = int
+	## cardinality = 0..1
+	DEBRIS_REANIMATE_RESEARCH_MAX = int
+	## cardinality = 0..1
+	DEBRIS_REANIMATE_RESEARCH_FLEET_SIZE_THRESHOLD = int
+	## cardinality = 0..1
+	DEBRIS_REANIMATE_RESEARCH_FLEET_SIZE_INCREASE = int
+		
 	## cardinality = 0..1
 	SPECIAL_PROJECT_BASE_PROGRESS = int
 	## cardinality = 0..1
@@ -2408,6 +2484,9 @@ NGameplay = {
 	## cardinality = 0..1
 	UPGRADED_STARBASE_BASE_LEVEL = <starbase_level>
 	## cardinality = 0..1
+	GRAVITY_SNARE_SHIP_SIZE  = <ship_size>
+	
+	## cardinality = 0..1
 	ASCENSION_PERKS_SLOTS = int
 	## cardinality = 0..1
 	PLANET_ASCENSION_STARTING_POINT	= int
@@ -2641,6 +2720,11 @@ NGameplay = {
 	## cardinality = 0..1
 	FIRST_CONTACT_UNKNOWN_SPECIES_PORTRAITS_AMOUNT = int
 	## cardinality = 0..1
+	SPACE_FAUNA_GROWTH_POLICY_FLAG_CONTROLLED = enum[policy_flag]
+	## cardinality = 0..1
+	SPACE_FAUNA_GROWTH_POLICY_FLAG_EXCESSIVE = enum[policy_flag]
+		
+	## cardinality = 0..1
 	ORBITAL_SURRENDER_POLICY = <policy>
 	## cardinality = 0..1
 	ORBITAL_SURRENDER_POLICY_FLAG_ALLOWED = enum[policy_flag]
@@ -2784,17 +2868,44 @@ NGameplay = {
 	UNLOCK_ASTRAL_JUMP_FLAG = scalar
 	## cardinality = 0..1
 	UNLOCK_PHASE_FLEET_FLAG = scalar
+	
+	## cardinality = 0..1
+	GRAND_ARCHIVE_EXHIBITIONS_COUNT = int
+	## cardinality = 0..1
+	GRAND_ARCHIVE_EXHIBITS_COUNT = int
+	## cardinality = 0..1
+	COLLECTION_STORAGE_SLOTS_COUNT = int
+	## cardinality = 0..1
+	SPECIMEN_TYPES = { 
+		## cardinality = 0..inf
+		enum[specimen_type]
+	}
+	## cardinality = 0..1
+	SPECIMEN_PRODUCTION_MODIFIER = <modifier>
+	## cardinality = 0..1
+	SELL_SPECIMEN_ENERGY_VALUES = {
+		## cardinality = 4..4
+		int
+	}
+	## cardinality = 0..1
+	EXHIBIT_UNLOCK_COSTS = {
+		## cardinality = 1..inf
+		int
+	}
+	## cardinality = 0..1
+	GRAND_ARCHIVE_DESTROYED = scalar
+	## cardinality = 0..1
+	TRADE_VALUE_SPECIMEN_MULT = float
+	## cardinality = 0..1
+	TRADE_VALUE_SPECIMEN_COMPLETE_CATEGORY_MULT = float
+	## cardinality = 0..1
+	TRADE_VALUE_SPECIMEN_EMPTY_CATEGORY_MULT = float
 	## cardinality = 0..1
 	COLONY_TECH = <technology>
 	## cardinality = 0..1
 	RANDOMLY_SPAWNED_OBJECTS_ON_OUTER_BORDER_MINIMUM_DISTANCE = float
 	## cardinality = 0..1
 	ASTRAL_RIFT_RELATIVE_SPAWN_MINIMAL_DISTANCE_FROM_PLANETS = float
-	## cardinality = 0..1
-	DIMENSIONAL_LOCK_ICON_FRAME = int
-	## cardinality = 0..1
-	DIMENSIONAL_LOCK_OPEN_ICON_FRAME = int
-	
 	## cardinality = 0..1
 	STORM_INTEL_MAX_LEVELS = int
 	## cardinality = 0..1
@@ -2892,6 +3003,51 @@ NGameplay = {
 	}
 	## cardinality = 0..1
 	INITIATE_COSMIC_STORM_SITUATION_KEY = scalar
+		
+	## cardinality = 0..1
+	WILD_CRITTERS_RARITY_TABLE = { 
+		## cardinality = 4..4
+		int
+	}		
+	## cardinality = 0..1
+	CONTAINMENT_PROTOCOLS_WILD_CRITTERS_RARITY_TABLE = { 
+		## cardinality = 4..4
+		float
+	}		
+	## cardinality = 0..1
+	CONTAINMENT_PROTOCOLS_UNLOCKED = scalar
+	## cardinality = 0..1
+	CRITTER_MAX_AGE = int
+	## cardinality = 0..1
+	MAX_VIVARIUM_CAPACITY = int
+	## cardinality = 0..1
+	GRAVITY_SNARE_COOLDOWN = scalar
+	## cardinality = 0..1
+	GRAVITY_SNARE_IS_FROM_AUTO_EXPLORE = scalar
+	## cardinality = 0..1
+	GRAVITY_SNARE_CAPTURE_CHANCE_PER_SCIENTIST_LEVEL = float
+	## cardinality = 0..1
+	RARITY_UPGRADE_COST_MULT = float
+	## cardinality = 0..1
+	CAN_HAVE_SCRIPTED_BOMBARDMENT = scalar
+	## cardinality = 0..1
+	MUTATION_SECTION_NAME = scalar
+	## cardinality = 0..1	
+	VOIDWORMS_SCALING_DEFAULT = float
+	## cardinality = 0..1
+	VOIDWORMS_SCALING_MIN = float
+	## cardinality = 0..1
+	VOIDWORMS_SCALING_MAX = float
+	## cardinality = 0..1
+	VOIDWORMS_SCALING_SLIDER_INTERVAL = float
+	## cardinality = 0..1
+	CUTHOLOIDS_SCALING_DEFAULT = float
+	## cardinality = 0..1
+	CUTHOLOIDS_SCALING_MIN = float
+	## cardinality = 0..1
+	CUTHOLOIDS_SCALING_MAX = float
+	## cardinality = 0..1
+	CUTHOLOIDS_SCALING_SLIDER_INTERVAL = float
 }
 NSpecies = {
 	## cardinality = 0..1
@@ -3068,7 +3224,15 @@ NShip = {
 	## cardinality = 0..1
 	CAN_TRAVEL_BETWEEN_UNEXPLORED_SYSTEMS = bool
 	## cardinality = 0..1
-	CLOAKING_ANIMATION_SPEED = 0.02
+	CLOAKING_ANIMATION_SPEED = float
+	## cardinality = 0..1
+	SHIP_SIZE_SMALL = int
+	## cardinality = 0..1
+	SHIP_SIZE_MEDIUM = int
+	## cardinality = 0..1
+	SHIP_SIZE_LARGE = int
+	## cardinality = 0..1
+	SHIP_SIZE_EXTRA_LARGE = int
 }
 NEngine = {
 	
@@ -3148,6 +3312,8 @@ NCombat = {
 	SHIP_DISENGAGE_HEALTH_THRESHOLD = float
 	## cardinality = 0..1
 	SHIP_DISENGAGE_FRIENDLY_TERRITORY_MULT = float
+	## cardinality = 0..1
+	SHIP_CURRENT_TARGET_MULTIPLIER = float
 }
 
 NPop = {
@@ -3374,7 +3540,7 @@ NEconomy = {
 	COMMERCIAL_PACT_VALUE_MULT = float
 	## cardinality = 0..1
 	TRADE_AMOUNT_MULTIPLIER	= {
-		## cardinality = 4..4
+		## cardinality = 5..5
 		int
 	}
 	## cardinality = 0..1
@@ -3448,6 +3614,16 @@ NEconomy = {
 	## cardinality = 0..1
 	SECTOR_AUTOMATION_BASE_FOCUS = scalar
 	## cardinality = 0..1
+	SPACE_FAUNA_PREFERRED_PLANET_ORBIT_UPKEEP_MULT = float
+	## cardinality = 0..1
+	RARITY_MODIFIER_COMMON = int
+	## cardinality = 0..1
+	RARITY_MODIFIER_RARE = int
+	## cardinality = 0..1
+	RARITY_MODIFIER_EPIC = int
+	## cardinality = 0..1
+	RARITY_MODIFIER_EXCEPTIONAL = int
+	## cardinality = 0..1
 	MONTHLY_SUBJECT_TAX_ECONOMIC_CATEGORY = <economic_category>
 	## cardinality = 0..1
 	MONTHLY_OVERLORD_SUBSIDY_ECONOMIC_CATEGORY = <economic_category>
@@ -3498,6 +3674,8 @@ NAI = {
 	AI_MIN_CURRENCY_INCOME_TO_BUILD_STARBASE_MODULES = int
 	## cardinality = 0..1
 	AI_MIN_NAVAL_CAP_USAGE_TO_BUILD_DEFENSE_PLATFORMS  = float
+	## cardinality = 0..1
+	AI_FRUITFUL_SCORE_MULT = int
 	## cardinality = 0..1
 	AI_UPPER_AMENITIES_LIMIT  = int
 	## cardinality = 0..1
@@ -4026,7 +4204,8 @@ NAI = {
 	TRADE_RESOURCE_FRACTION_MAX = float
 	## cardinality = 0..1
 	MIN_WILLINGNESS_TO_OFFER_TRADE = float
-	
+	## cardinality = 0..1
+	MIN_RELATION_TO_TRADE_SPECIMENS = int
 	## cardinality = 0..1
 	TRADE_VALUE_RESOURCE_INCOME_BASE = int
 	## cardinality = 0..1
@@ -4460,6 +4639,10 @@ NAI = {
 	## cardinality = 0..1
 	NEGOTIATE_AGREEMENT_ACCEPTANCE_LOYALTY_SPECIALIST = int
 	## cardinality = 0..1
+	SPECIMEN_TRADE = scalar
+	## cardinality = 0..1
+	SPECIMEN_TRADE_FLAG_DAYS = int
+	## cardinality = 0..1
 	SECRET_FEALTY_PLEDGE_TERMS_MULTIPLIER = int
 	## cardinality = 0..1
 	SECRET_FEALTY_PLEDGE_TERMS_BONUS = int
@@ -4490,12 +4673,6 @@ NAI = {
 	## cardinality = 0..1
 	DIMENSIONAL_LOCK_AI_WEIGHT_NO_OWNER = int
 	## cardinality = 0..1
-	AFFECTED_BY_SHROUD_STORM_FLAG = scalar
-	## cardinality = 0..1
-	AFFECTED_BY_GRAVITY_STORM_FLAG = scalar
-	## cardinality = 0..1
-	AFFECTED_BY_SOLAR_STORM_FLAG = scalar
-	## cardinality = 0..1
 	LOCATION_WEIGHT_PLANET_MULTIPLIER = float
 	## cardinality = 0..1
 	LOCATION_WEIGHT_FLEET_MULTIPLIER = float
@@ -4509,6 +4686,58 @@ NAI = {
 	AFFECTED_BY_GRAVITY_STORM_FLAG = scalar
 	## cardinality = 0..1
 	AFFECTED_BY_SOLAR_STORM_FLAG = scalar
+	## cardinality = 0..1
+	VOIDWORMS_NEWBORNS_SHIP_SIZE = <ship_size>
+	## cardinality = 0..1
+	VOIDWORMS_EXPLORER_SHIP_SIZE = <ship_size>
+	## cardinality = 0..1
+	VOIDWORMS_ADULTS_SHIP_SIZE = <ship_size>
+	## cardinality = 0..1
+	VOIDWORMS_AGRESSIVE_SHIP_SIZE = <ship_size>
+	## cardinality = 0..1
+	VOIDWORMS_HOME_SYSTEM_FLAG = scalar		
+	## cardinality = 0..1
+	VOIDWORMS_STARBASE = scalar
+	## cardinality = 0..1
+	VOIDWORMS_NEW_FLEET_NAME = scalar
+	## cardinality = 0..1
+	VOIDWORMS_MINIMUM_POPS_TO_TARGET = int
+	## cardinality = 0..1
+	VOIDWORMS_MAXIMUM_POPS_TO_KILL = int
+	## cardinality = 0..1
+	VOIDWORMS_MAXIMUM_POPS_TO_KILL_CIVILIAN = int
+	## cardinality = 0..1
+	VOIDWORMS_NAVAL_CAP_PER_FLEET = { 
+		## cardinality = 2..2
+		int
+	}
+	## cardinality = 0..1	
+	VOIDWORM_KILLED_POPULATION_COUNT = scalar
+	## cardinality = 0..1
+	VOIDWORM_ATTACK_AGAINST_PLAYER_COOLDOWN_DAYS = int
+	## cardinality = 0..1
+	VOIDWORM_RECENTLY_TARGETED_FLAG = scalar
+	## cardinality = 0..1
+	VOIDWORM_EXPLORING_FACTOR = int													
+	## cardinality = 0..1
+	VOIDWORM_WANDERING_FACTOR = int	
+	## cardinality = 0..1
+	VOIDWORM_EXPLORATION_MAX_JUMPS = int
+	## cardinality = 0..1
+	VOIDWORM_CRISIS_ACTIVE = scalar
+	## cardinality = 0..1
+	VOIDWORM_AGGRESSIVE_FLEETS_MAX_SHIPS = int	
+	## cardinality = 0..1
+	VOIDWORM_CRISIS_AGGRESSIVE_FLEETS_MAX_SHIPS = int
+	## cardinality = 0..1
+	VOIDWORM_BOMBARDMENT_IMMUNITY_FLAG = scalar
+	## cardinality = 0..1
+	VOIDWORM_ACTIVELY_BOMBARDING_FLAG = scalar
+	## cardinality = 0..1
+	CREATURE_DESIGNER_MUTATION_TYPE_PREFERENCES = {
+		## cardinality = 3..3
+		int
+	}
 }
 NAdditionalContent = {
 	## cardinality = 0..1
