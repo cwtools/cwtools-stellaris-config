@@ -272,6 +272,49 @@ ship_size = {
 		## replace_scope = { this = country root = country }
 		fraction = float
 	}
+	## cardinality = 0..1
+	construction_type = { 
+		## cardinality = 0..inf
+		enum[construction_type] 
+	}
+	## cardinality = 0..1
+	is_space_fauna_ship = bool
+	## cardinality = 0..1
+	icon_cloned = scalar
+	## cardinality = 0..1
+	space_fauna_values = {
+		age_threshold = { 
+			## cardinality = 0..1
+			min = int
+			## cardinality = 0..1
+			max = int
+		}
+		culling_value = {
+			category = vivarium
+			produces = {
+				<resource> = value_field
+			}
+		}
+		icon_frame = int
+		## cardinality = 0..1
+		monthly_initial_breeding_chance = int
+		## cardinality = 0..1
+		monthly_increased_breeding_chance = int
+		## cardinality = 0..1
+		breeding_cooldown_months = int
+		## cardinality = 0..1
+		reanimated_ship_design = localisation
+		## cardinality = 0..1
+		merge_with_individuals_amount_to_upgrade = int
+		## cardinality = 0..1
+		can_breed_alone = bool
+	}
+	## cardinality = 0..1
+	ship_category = enum[grand_archive_ship_category]
+	## cardinality = 0..1
+	mutation_components_size = enum[mutation_components_size]
+	## cardinality = 0..1
+	is_reanimated = bool
 }
 
 enums = {
@@ -305,5 +348,11 @@ enums = {
 		gunship_stealth
 		screen
 		screen_stealth
+	}
+	enum[mutation_components_size] = {
+		small
+		medium
+		large
+		extra_large
 	}
 }
