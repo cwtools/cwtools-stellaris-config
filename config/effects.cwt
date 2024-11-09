@@ -2299,6 +2299,8 @@ alias[effect:create_point_of_interest] = {
 	location = scope[army]
 	## cardinality = 0..1
 	category = scalar
+	## cardinality = 0..1
+	picture = <sprite>
 }
 
 ### Creates a new pop on the scoped tile/planet
