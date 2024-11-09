@@ -33,6 +33,12 @@ special_project = {
 	location = bool
 	## cardinality = 0..1
 	icon = filepath
+	## cardinality = 0..1
+	remove_when_completed = bool
+	## cardinality = 0..1
+	project_type = project_type_research
+	## cardinality = 0..1
+	project_type = project_type_bombardment
 
 	## cardinality = 0..inf
 	desc = {
@@ -128,6 +134,10 @@ special_project = {
 			ship_size = <ship_size>
 			count = int
 		}
+		## cardinality = 0..1
+		has_technology = <technology>
+		## cardinality = 0..1
+		handled_by_event_tooltip = localisation
 	}
 
 	## push_scope = country
@@ -137,6 +147,7 @@ special_project = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
+	## cardinality = 0..1
 	###this = event scope (ship or planet); from = project creation scope (usually equals location)
 	on_success = {
 		alias_name[effect] = alias_match_left[effect]
