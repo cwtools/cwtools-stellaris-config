@@ -389,6 +389,11 @@ enums = {
 		ai_crisis_poi.2
 		ai_crisis_poi.3
 		ai_crisis_poi.4
+		voidworm_system_tiny_poi
+		voidworm_system_small_poi
+		voidworm_system_medium_poi
+		voidworm_system_large_poi
+		voidworm_system_huge_poi
 	}
 	enum[portrait_refresh] = {
 		planet
