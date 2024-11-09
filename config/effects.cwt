@@ -4428,7 +4428,7 @@ alias[effect:give_specimen] = {
 }
 
 ###Removes specified specimen from the target country.
-alias[effect:give_specimen] = {
+alias[effect:remove_specimen] = {
 	remove_specimen = <specimen>
 }
 
