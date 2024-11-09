@@ -49,6 +49,8 @@ megastructure = {
 	## cardinality = 0..1
 	entity_offset = { x = float y = float }
 	## cardinality = 0..1
+	is_grand_archive = bool
+	## cardinality = 0..1
 	construction_blocks_others = bool
 	## cardinality = 0..1
 	build_outside_gravity_well = bool
