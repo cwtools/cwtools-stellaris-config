@@ -543,7 +543,6 @@ council_agenda = {
 	}
 }
 
-
 #aliases - used in species_classes and perhaps other places.
 
 alias[government_trigger:authority] = {
