@@ -1,5 +1,5 @@
 types = {
-	type[specimens_type] = {
+	type[specimen] = {
 		path = "game/common/specimens"
 	}
 	localisation = {
@@ -24,7 +24,7 @@ enums = {
 	}
 }
 
-specimens_type = {
+specimen = {
 	icon = <sprite>
 	type = enum[specimen_type]
 	
