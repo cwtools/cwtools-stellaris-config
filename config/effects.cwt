@@ -4445,7 +4445,7 @@ alias[effect:give_dna] = {
 
 ###Gives Space Fauna in the Vivarium using given ship design with given rarity to the target country.
 alias[effect:add_to_vivarium] = {
-	design = scope[design]
+	design = localisation
 	## cardinality = 0..1
 	rarity = enum[rarity]
 	## cardinality = 0..1
