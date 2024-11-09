@@ -192,6 +192,11 @@ authority = {
 	localization_postfix = scalar
 	## cardinality = 0..1
 	uses_mandates = bool
+	## cardinality = 0..1
+	color = {
+		## cardinality = 4..4
+		int
+	}
 
 	## cardinality = 0..1
 	tags = {
@@ -246,6 +251,11 @@ civic_or_origin = {
 	### AND trigger, no scope; use this to prevent the civic from being selectable by the player (UI). Possibly only works with DLC checks.
 	playable = {
 		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	flags = {
+		## cardinality = 0..inf
+		localisation
 	}
 	## cardinality = 0..1
 	### AND trigger, no scope; use this to prevent the civic from being selectable by the AI. Possibly only works with DLC checks.
