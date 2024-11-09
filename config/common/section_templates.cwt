@@ -46,6 +46,10 @@ section_template = {
 
   ## cardinality = 0..1
   icon_frame = int
+  
+  ## cardinality = 0..1
+  compatible_with_all_ship_sizes = bool
+
   ## cardinality = 0..1
   ai_tags = {
 		## cardinality = 0..inf
@@ -68,9 +72,13 @@ section_template = {
   component_slot = {
     name = scalar
 	template = <component_slot_template>
+
+	## cardinality = 0..1
     locatorname = enum[locators]
+	## cardinality = 0..1
     locatorname = scalar #TODO: Some locators are in .mesh files, so are missed by the enum
-    ## cardinality = 0..1
+   
+   ## cardinality = 0..1
 	is_side_slot = bool
     ## cardinality = 0..1
 	rotation = int
