@@ -112,6 +112,7 @@ enums = {
 		starbase_shipyard
 		spaceport
 		starbase_defenses
+		starbase_beastport
 	}
 	enum[tutorial_levels] = {
 		0
