@@ -32,6 +32,7 @@ prescripted_country = {
 		name = localisation
 		## cardinality = 0..1
 		plural = localisation
+		## cardinality = 0..1
 		adjective = localisation
 		## cardinality = 0..1
 		gender = enum[genders_not_set]
@@ -40,6 +41,12 @@ prescripted_country = {
 		species_bio = scalar
 		## cardinality = 0..inf
     	trait = <trait.species_trait>
+		## cardinality = 0..1
+		species_name = localisation
+		## cardinality = 0..1
+		species_plural = localisation
+		## cardinality = 0..1
+		species_adjective = localisation
 	}
 
 	## cardinality = 0..1
