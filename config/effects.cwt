@@ -675,6 +675,8 @@ alias[effect:kill_leader] = {
 	##cardinality = 0..1
 	###default: no; if yes, fires on_leader_fired instead of on_leader_death
 	fire = yes
+	##cardinality = 0..1
+	executed = bool
 }
 
 ###Shifts an empire towards a specific ethic, adjusting aferwards to keep number of ethics points consistent
@@ -2052,6 +2054,8 @@ alias[effect:create_ambient_object] = {
 	## cardinality = 0..1
 	scale = float
 	## cardinality = 0..1
+	appear_state = scalar
+	## cardinality = 0..1
 	use_3d_location = bool
 	## cardinality = 0..1
 	entity_offset = int
@@ -2197,6 +2201,7 @@ alias[effect:create_fleet] = {
 ### Creates a message, can take multiple variables
 alias[effect:create_message] = {
 	type = <message_type>
+	## cardinality = 0..1
 	localization = localisation
 	days = int #no variables here atm
 	## cardinality = 0..1
@@ -2439,6 +2444,10 @@ alias[effect:create_ship] = {
 	## cardinality = 0..1
 	graphical_culture = scope_group[target_country]
 	## cardinality = 0..1
+	graphical_culture_fallback = <graphical_culture>
+	## cardinality = 0..1
+	graphical_culture_fallback = scope_group[target_country]
+	## cardinality = 0..1
 	upgradable = bool
 	## cardinality = 0..1
 	###Used if the created ship is a colony ship
@@ -2558,7 +2567,10 @@ alias[effect:mutate_species] = yes
 ### Forces scoped fleet to retreat to friendly territory
 alias[effect:order_forced_return] = yes
 ### Play the defined sound effect
-alias[effect:play_sound] = <sound_effect>
+alias[effect:play_sound] = {
+	sound = <sound_effect>
+	location = scope_group[spatial_object]
+}
 ### Adds a specific ethic to the scoped pop regardless if pop-species allows ethic divergence or not.
 alias[effect:pop_force_add_ethic] = <ethos>
 ### Removes a specific ethic from the scoped pop
@@ -4467,11 +4479,17 @@ alias[effect:spawn_custom_debris] = {
 	## cardinality = 0..1
 	must_scavenge = bool
 	## cardinality = 0..1
+	must_reanimate = bool
+	## cardinality = 0..1
 	reset_killed_ship_designs = bool
 	## cardinality = 0..1
 	should_add_ship_to_debris = {
+		## cardinality = 0..1
 		is_space_fauna = bool
+		## cardinality = 0..1
 		can_be_reanimated = bool
+		## cardinality = 0..1
+		has_catalytic_bladder_mutation = bool
 	}
 }
 
@@ -4483,6 +4501,7 @@ alias[effect:link_to] = scope[megastructure]
 
 ###Steals random specimens from given country.
 alias[effect:steal_specimens] = {
+	## cardinality = 0..1
 	who = scope_group[target_country]
 	## cardinality = 0..1
 	category = enum[specimen_type]
@@ -4491,9 +4510,9 @@ alias[effect:steal_specimens] = {
 	## cardinality = 0..1
 	category = any
 	## cardinality = 0..1
-	count = int
+	show_notification = bool
 	## cardinality = 0..1
-	show_nofication = bool
+	count = int
 }
 
 ###Releases into the wild space fauna contained in the scoped country's Vivarium, from all or given ship category.	Resulting fleet owner can be specified.	Space Fauna can be culled for resources instead by specifying 'cull_vivarium_critter = yes'.
