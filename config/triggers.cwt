@@ -2940,6 +2940,8 @@ alias[trigger:is_exhibit_active] = bool
 
 ###Checks if the scoped country has the specified specimen
 alias[trigger:has_specimen] = <specimen>
+###Checks if the scoped country has the specified specimen
+alias[trigger:has_specimen] = scope[exhibit]
 
 ###Checks if the scoped fleet or ship is space fauna (as set in ship sizes).
 alias[trigger:is_space_fauna] = bool
