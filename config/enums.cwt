@@ -347,6 +347,7 @@ enums = {
 		mia_return_home
 		mia_reinforce
 		mia_forced_to_decloak
+		mia_fleet_eaten
 	}
 	enum[pre_ftl_relationship_types] = {
 		defensive_pact
