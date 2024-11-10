@@ -16,6 +16,7 @@ enums = {
 		epic
 		exceptional
 		rare
+		highest
 	}
 	enum[specimen_type] = {
 		aesthetic_wonder
