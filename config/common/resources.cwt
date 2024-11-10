@@ -37,6 +37,9 @@ resource = {
 	deficit_modifier = <static_modifier>
 	## cardinality = 0..1
 	deficit_situation = <situation_type>
+	
+	## cardinality = 0..1
+	culling_conversion_value = int
 
 	## cardinality = 0..1
 	prerequisites = {
