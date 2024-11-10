@@ -773,6 +773,8 @@ alias[picture_event_data:picture_event_data] = {
 	city_level = scope[species]
 	## cardinality = 0..1
 	city_level = scope[planet]
+	## cardinality = 0..1
+	tooltip = bool
 }
 
 enums = {
@@ -780,6 +782,7 @@ enums = {
 		crisis_leader_conversation
 		leader_recruit
 		leader_story
+		leader_conversation
 	}
 	enum[leader_recruit_tag_type] = {
 		hire_leader
