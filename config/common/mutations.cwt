@@ -1,0 +1,53 @@
+types = {
+	type[mutations_type] = {
+		path = "game/common/mutations"
+	}
+	localisation = {
+		## required
+		Name = "$"
+		## required
+		Description = "$_desc"
+	}
+}
+
+enums = {
+	enum[type_of_mutation] = {
+		offensive
+		defensive
+		aux
+	}
+}
+
+mutations_type = {
+	## cardinality = 0..1
+	type = enum[type_of_mutation]
+		
+	icon = <sprite>
+	
+	## cardinality = 0..1
+	ship_limit = int
+
+	## cardinality = 0..1
+	ship_components = {
+		## cardinality = 0..1
+		small = <component_template>
+		## cardinality = 0..1
+		medium = <component_template>
+		## cardinality = 0..1
+		large = <component_template>
+		## cardinality = 0..1
+		extra_large = <component_template>
+	}
+	
+	## cardinality = 0..1
+	is_unique = bool
+	
+	## cardinality = 0..1
+	upgrades_to  = <mutations_type>
+	
+	## cardinality = 0..1
+	component_slot_size_to_disable = enum[weapon_slot_size]
+	
+	## cardinality = 0..1
+	custom_tooltip = localisation
+}

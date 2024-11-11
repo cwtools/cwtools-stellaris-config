@@ -63,6 +63,8 @@ alias[effect:ship_event] = {
 	## cardinality = 0..1
 	days = int
 	## cardinality = 0..1
+	months = int
+	## cardinality = 0..1
 	random = int
 	## cardinality = 0..1
 	scopes = {
@@ -85,6 +87,10 @@ alias[effect:country_event] = {
 	days = int
 	## cardinality = 0..1
 	days = value_field
+	## cardinality = 0..1
+	years = int
+	## cardinality = 0..1
+	years = value_field
 	## cardinality = 0..1
 	random = int
 	## cardinality = 0..1
@@ -671,6 +677,8 @@ alias[effect:kill_leader] = {
 	##cardinality = 0..1
 	###default: no; if yes, fires on_leader_fired instead of on_leader_death
 	fire = yes
+	##cardinality = 0..1
+	executed = bool
 }
 
 ###Shifts an empire towards a specific ethic, adjusting aferwards to keep number of ethics points consistent
@@ -840,6 +848,8 @@ alias[effect:add_monthly_resource_mult] = {
 	min = int
 	## cardinality = 0..1
 	max = int
+	## cardinality = 0..1
+	multiplier = value[variable]
 }
 
 ###Adds a specific trait to the scoped leader or a random common/negative trait
@@ -1633,6 +1643,8 @@ alias[effect:clone_leader] = {
 	###Default = yes
 	can_assign_to_council = bool
 	## cardinality = 0..1
+	background_planet = scope[planet]
+	## cardinality = 0..1
 	traits = {
 		## cardinality = 0..5
 		add_trait = <trait.leader_trait>
@@ -2044,6 +2056,8 @@ alias[effect:create_ambient_object] = {
 	## cardinality = 0..1
 	scale = float
 	## cardinality = 0..1
+	appear_state = scalar
+	## cardinality = 0..1
 	use_3d_location = bool
 	## cardinality = 0..1
 	entity_offset = int
@@ -2153,6 +2167,8 @@ alias[effect:create_fleet] = {
 	## cardinality = 0..1
 	set_take_point = bool
 	## cardinality = 0..1
+	parent = scalar
+	## cardinality = 0..1
 	settings = {
 		## cardinality = 0..1
 		spawn_debris = bool
@@ -2187,6 +2203,7 @@ alias[effect:create_fleet] = {
 ### Creates a message, can take multiple variables
 alias[effect:create_message] = {
 	type = <message_type>
+	## cardinality = 0..1
 	localization = localisation
 	days = int #no variables here atm
 	## cardinality = 0..1
@@ -2291,6 +2308,8 @@ alias[effect:create_point_of_interest] = {
 	location = scope[army]
 	## cardinality = 0..1
 	category = scalar
+	## cardinality = 0..1
+	picture = <sprite>
 }
 
 ### Creates a new pop on the scoped tile/planet
@@ -2427,10 +2446,18 @@ alias[effect:create_ship] = {
 	## cardinality = 0..1
 	graphical_culture = scope_group[target_country]
 	## cardinality = 0..1
+	graphical_culture_fallback = <graphical_culture>
+	## cardinality = 0..1
+	graphical_culture_fallback = scope_group[target_country]
+	## cardinality = 0..1
 	upgradable = bool
 	## cardinality = 0..1
 	###Used if the created ship is a colony ship
 	colonizer_species = scope_group[target_species]
+	## cardinality = 0..1
+	age = int
+	## cardinality = 0..1
+	rarity = enum[rarity]
 	## cardinality = 0..1
 	## push_scope = ship
 	effect = {
@@ -2542,7 +2569,10 @@ alias[effect:mutate_species] = yes
 ### Forces scoped fleet to retreat to friendly territory
 alias[effect:order_forced_return] = yes
 ### Play the defined sound effect
-alias[effect:play_sound] = <sound_effect>
+alias[effect:play_sound] = {
+	sound = <sound_effect>
+	location = scope_group[spatial_object]
+}
 ### Adds a specific ethic to the scoped pop regardless if pop-species allows ethic divergence or not.
 alias[effect:pop_force_add_ethic] = <ethos>
 ### Removes a specific ethic from the scoped pop
@@ -3284,6 +3314,8 @@ alias[effect:remove_starbase_module] = {
 	slot = int #no variables here atm
 	## cardinality = 0..1
 	module = <starbase_module>
+	## cardinality = 0..1
+	module = all
 }
 
 ###Remove a building from a certain slot or all slots on a starbase
@@ -3295,6 +3327,8 @@ alias[effect:remove_starbase_building] = {
 	slot = all
 	## cardinality = 0..1
 	building = <starbase_building>
+	## cardinality = 0..1
+	building = all
 }
 
 ###Changes the colony foundation date (affecting on_colony_X_years pulses) by a specific number of days. Use with care, you can probably break things with this!
@@ -4385,4 +4419,153 @@ alias[effect:lock_storm_in_place] = bool
 ###Enables a mission for target country
 alias[effect:enable_mission] = { 
 	name = <cosmic_storm_mission>
+}
+
+###Exports the value of the current country's maximum of the specified resource to a variable.
+alias[effect:export_resource_maximum_to_variable] = {
+	resource = <resource>
+	variable = value_set[variable]
+}
+
+###Restores a certain percentage of armor points to the scoped ship
+alias[effect:repair_armor_percentage] = value_field[0.0..1.0]
+
+###If the scoped fleet is MIA, sets the return date in a given number of days, starting from current date
+alias[effect:set_mia_return_delay] = int
+
+###Sets wether or not the design automatically upgrades its components.
+alias[effect:set_auto_upgrade_components] = bool
+
+###Sets Space Fauna growth stance. Setting to 'none' resets stance to use default country policy.
+alias[effect:set_fauna_fleet_growth_stance] = enum[fauna_fleet_growth_stance]
+
+###Gives a given specimen to the target country.
+alias[effect:give_specimen] = {
+	## cardinality = 0..1
+	key = <specimen>
+	## cardinality = 0..1
+	origin = localisation
+}
+
+###Removes specified specimen from the target country.
+alias[effect:remove_specimen] = <specimen>
+
+###Tries to finish the current council agenda for the scoped country
+alias[effect:finish_council_agenda] = bool
+
+###Gives associated culling rewards from a space fauna design to the target country.
+alias[effect:give_culling_rewards] = {
+	design = scope[design]
+}
+
+###Gives given space fauna DNA with given rarity to the target country.
+alias[effect:give_dna] = {
+	ship_category = enum[grand_archive_ship_category]
+	## cardinality = 0..1
+	rarity = enum[rarity]
+}
+
+###Gives Space Fauna in the Vivarium using given ship design with given rarity to the target country.
+alias[effect:add_to_vivarium] = {
+	design = localisation
+	## cardinality = 0..1
+	rarity = enum[rarity]
+	## cardinality = 0..1
+	amount = int
+}
+
+###Reanimates Space Fauna ship(s) back to life in zombie form.
+alias[effect:reanimate_space_fauna] = {
+	fleet = scope[fleet]
+}
+
+###Spawns a custom debris project with the current fleet.
+alias[effect:spawn_custom_debris] = {
+	for = scope_group[target_country]
+	## cardinality = 0..1
+	must_scavenge = bool
+	## cardinality = 0..1
+	must_reanimate = bool
+	## cardinality = 0..1
+	reset_killed_ship_designs = bool
+	## cardinality = 0..1
+	should_add_ship_to_debris = {
+		## cardinality = 0..1
+		is_space_fauna = bool
+		## cardinality = 0..1
+		can_be_reanimated = bool
+		## cardinality = 0..1
+		has_catalytic_bladder_mutation = bool
+	}
+}
+
+###Set scoped starbase's current construction type
+alias[effect:set_ship_construction_type] = enum[construction_type]
+
+###Link the scoped megastructure bypass to the given target megastructure bypass.
+alias[effect:link_to] = scope[megastructure]
+
+###Steals random specimens from given country.
+alias[effect:steal_specimens] = {
+	## cardinality = 0..1
+	who = scope_group[target_country]
+	## cardinality = 0..1
+	category = enum[specimen_type]
+	## cardinality = 0..1
+	category = all
+	## cardinality = 0..1
+	category = any
+	## cardinality = 0..1
+	show_notification = bool
+	## cardinality = 0..1
+	count = int
+}
+
+###Releases into the wild space fauna contained in the scoped country's Vivarium, from all or given ship category.	Resulting fleet owner can be specified.	Space Fauna can be culled for resources instead by specifying 'cull_vivarium_critter = yes'.
+alias[effect:release_vivarium_fauna] = { 
+	## cardinality = 0..1
+	category = enum[grand_archive_ship_category]
+	## cardinality = 0..1
+	category = all 
+	## cardinality = 0..1
+	location = scope_group[spatial_object]
+	## cardinality = 0..1
+	owner = scope_group[target_country]
+	## cardinality = 0..1
+	cull_vivarium_critter = bool
+}
+
+###Releases into the wild a specific amount of space fauna contained in the scoped country's Vivarium. Rarest fauna is released in priority.	Resulting fleet owners can be specified.	
+alias[effect:release_vivarium_fauna_count] = { 
+	count = int_value_field
+	location = scope_group[spatial_object]
+	owners = { 
+		## cardinality = 0..1
+		enum[specimen_type] = scope_group[target_country]
+	}
+}
+
+###Creates new creatures of the smaller ship size in the same fleet
+alias[effect:create_smaller_size_creature_in_fleet] = { 
+	## cardinality = 0..1
+	count = int_value_field
+	## cardinality = 0..1
+	effect = {
+		## cardinality = 0..inf
+		alias_name[effect] = alias_match_left[effect]
+	}
+}
+
+###Unlocks an exhibit for given category from the target country.
+alias[effect:unlock_exhibit] = enum[specimen_type]
+
+###Refreshes the scoped country's leader pool.
+alias[effect:refresh_leader_pool] = bool
+
+###Adds specific resource to the stockpile for the country scope and creates a debris notification.
+alias[effect:add_resource_from_debris] = {
+	## cardinality = 1..inf
+	<resource> = float
+	## cardinality = 0..1
+	system = scope[system]
 }

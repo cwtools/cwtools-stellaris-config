@@ -285,7 +285,7 @@ event = {
 		location = scope[astral_rift]
 		## cardinality = 0..1
 		location = value_set[event_target]
-
+		
 		## cardinality = 0..1
 		event_chain = <event_chain>
 
@@ -561,6 +561,8 @@ event = {
 		pre_triggers = {
 			alias_name[country_pre_trigger] = alias_match_left[country_pre_trigger]
 		}
+		## cardinality = 0..1
+		specimen = <specimen>
 	}
 
 	subtype[diplomatic] = {
@@ -593,6 +595,8 @@ event = {
 			alias_name[planet_pre_trigger] = alias_match_left[planet_pre_trigger]
 		}
 		alias_name[picture_event_data] = alias_match_left[picture_event_data]
+		## cardinality = 0..1
+		specimen = <specimen>
 	}
 
 	subtype[fleet] = {
@@ -600,6 +604,13 @@ event = {
 		event_chain = <event_chain>
 		## cardinality = 0..1
 		archaeology = bool
+		## cardinality = 0..1
+		specimen = <specimen>
+	}
+	
+	subtype[ship] = {
+		## cardinality = 0..1
+		specimen = <specimen>
 	}
 
 	subtype[first_contact] = {
@@ -612,6 +623,8 @@ event = {
 		difficulty = value[variable]
 		## cardinality = 0..1
 		astral_rift = yes
+		## cardinality = 0..1
+		specimen = <specimen>
 	}
 
 	subtype[situation] = {
@@ -622,6 +635,8 @@ event = {
 		pre_triggers = {
 			alias_name[situation_pre_trigger] = alias_match_left[situation_pre_trigger]
 		}
+		## cardinality = 0..1
+		specimen = <specimen>
 	}
 
 	subtype[espionage_operation] = {
@@ -758,6 +773,8 @@ alias[picture_event_data:picture_event_data] = {
 	city_level = scope[species]
 	## cardinality = 0..1
 	city_level = scope[planet]
+	## cardinality = 0..1
+	tooltip = bool
 }
 
 enums = {
@@ -765,6 +782,7 @@ enums = {
 		crisis_leader_conversation
 		leader_recruit
 		leader_story
+		leader_conversation
 	}
 	enum[leader_recruit_tag_type] = {
 		hire_leader

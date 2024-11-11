@@ -349,6 +349,33 @@ name_list = {
 			}
 		}
 	}
+	
+	## cardinality = 0..1
+	by_rarity_names = {
+		common = {
+			## cardinality = 0..inf
+				localisation
+		}
+		rare = {
+			## cardinality = 0..inf
+				localisation
+		}
+		epic = {
+			## cardinality = 0..inf
+				localisation
+		}
+		exceptional = {
+			## cardinality = 0..inf
+				localisation
+		}
+	}
+	
+	## cardinality = 0..1
+	design_names = {
+		## cardinality = 0..inf
+			localisation
+	}
+	
 }
 
 species_name = {

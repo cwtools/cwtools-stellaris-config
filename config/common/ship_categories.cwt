@@ -1,0 +1,39 @@
+types = {
+	type[grand_archive_ship_category_type] = {
+		path = "game/common/ship_categories"
+	}
+	localisation = {
+		## required
+		Name = "$"
+		## required
+		Description = "$_desc"
+	}
+}
+
+enums = {
+	enum[grand_archive_ship_category] = {
+		tiyanki
+		space_amoeba
+		crystalline_entity
+		voidworm
+		cutholoid
+	}
+}
+
+grand_archive_ship_category_type = {
+	rarity_icons = <sprite>
+	namelist = <name_list>
+	desc = localisation
+	
+	## cardinality = 0..1
+	prefers_nebula = bool
+	
+	## cardinality = 0..1
+	preferred_planet_class = <planet_class>
+	
+	## cardinality = 0..1
+	sexual_breeding = bool
+	
+	## cardinality = 0..1
+	growth_tooltip = localisation
+}

@@ -1,8 +1,9 @@
-Update the log files whenever new effects/triggers/modifiers are added.
+Update the log files whenever new effects/triggers/modifiers/scopes are added.
 
-Just copy-paste from logs/scripting_documentation, and then combine effects.log and triggers.log into trigger_docs.log
-Warning - for the effects and triggers Paradox default logs have had errors.  It is best not to simply copy and paste but win merge the new items after making sure they make sense.
+winmerge the existing log files in cwtools against the game logs/scripting_documentation.  Note that the game logs for effects.log and triggers.log are combined into the cwtools trigger_docs.log.  While doing the winmerge to find changes also update the non log files for triggers, effects, and scopes in cwtools.  Make sure to place new triggers or effects that change scopes into the scope change file instead of the trigger or effects file.
+
+Warning - The game logs since patch 3.13 have large numbers of errors and typos and missing items.  When using winmerge it is best to check each difference to see if it makes sense.  Try to have the cwtools copy be correct by fixing the Paradox mistakes when possible.  Note in the game logs for triggers and effects the first line for each item should always be correct and the scope line should also be correct ( except situations which cwtools has different) but the second line can be missing or have spelling errors in the name or have bad information or just plain made up information.  The scopes file can also be missing items so if the trigger or effects log mention a scope that is not in the scope log then it needs to be added.  Do not simply copy and paste the game logs into cwtools!
 
 Be sure there is an empty newline at the end of the *.log files
 
-IMPORTANT: after updating please make sure to test by running cwtools and do view menu, output, then in the drop down select paradox language server.  Make sure there is no error about the logs or the logs not found.   If there is an error bring it to Dayshine's attention.
+IMPORTANT: after updating the logs please make sure to test by running cwtools and do view menu, output, then in the drop down select paradox language server.  Make sure there is no error about the logs or logs not found or unexpected items. Try to see if there is a typo in the log files and fix it otherwise.  Otherwise bring the error to Dayshine's attention as an item name may not be in the format expected by cwtools like some unexpected symbol etc.

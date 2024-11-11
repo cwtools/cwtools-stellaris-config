@@ -20,6 +20,8 @@ solar_system_initializer = {
 	class = <star_class> #this also includes random lists of stars, as defined in the star_classes files
 	class = enum[star_class_random_list]
 	## cardinality = 0..1
+	namelist = scalar
+	## cardinality = 0..1
 	flags = { #star_flag
 		## cardinality = 0..inf
 		value_set[star_flag]
@@ -121,6 +123,11 @@ solar_system_initializer = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
+	
+	# For inline script
+	## cardinality = 0..1
+	SIZE = enum[voidworms_spawn_system_size]
+	
 }
 
 alias[planet_initializer:planet] = {
@@ -151,7 +158,6 @@ alias[planet_initializer:planet] = {
 	class = enum[solar_sys_init_planet_class]
 	## cardinality = 0..1
 	class = ideal_design_class
-
 	## cardinality = 0..1
 	orbit_distance = float
 	## cardinality = 0..1
@@ -360,5 +366,12 @@ enums = {
 		ideal_planet_class
 		random_asteroid
 		none
+	}
+	enum[voidworms_spawn_system_size] = {
+		tiny
+		small
+		medium
+		large
+		huge
 	}
 }

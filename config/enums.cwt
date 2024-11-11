@@ -104,10 +104,16 @@ enums = {
 		full
 	}
 	enum[construction_type] = {
+		none
 		starbase
 		mining_station
 		research_station
 		observation_post
+		starbase_shipyard
+		spaceport
+		starbase_defenses
+		starbase_beastport
+		starbase_hatchery
 	}
 	enum[tutorial_levels] = {
 		0
@@ -341,6 +347,7 @@ enums = {
 		mia_return_home
 		mia_reinforce
 		mia_forced_to_decloak
+		mia_fleet_eaten
 	}
 	enum[pre_ftl_relationship_types] = {
 		defensive_pact
@@ -385,6 +392,11 @@ enums = {
 		ai_crisis_poi.2
 		ai_crisis_poi.3
 		ai_crisis_poi.4
+		voidworm_system_tiny_poi
+		voidworm_system_small_poi
+		voidworm_system_medium_poi
+		voidworm_system_large_poi
+		voidworm_system_huge_poi
 	}
 	enum[portrait_refresh] = {
 		planet
@@ -407,5 +419,10 @@ enums = {
 		random_non_machine
 		random_pre_ftl
 		random
+	}
+	enum[fauna_fleet_growth_stance] = {
+		controlled
+		excessive
+		none
 	}
 }

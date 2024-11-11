@@ -62,6 +62,12 @@ enums = {
 component_set = {
 	## cardinality = 0..1
 	required_component_set = bool
+	## cardinality = 0..1
+	is_core_component_set = bool
+	## cardinality = 0..1
+	is_space_fauna_component_set = bool
+	## cardinality = 0..1
+	is_default_space_fauna_component_set = bool
 	subtype[required_component] = {
 		key = scalar
 		## cardinality = 0..1
@@ -183,6 +189,8 @@ component_template = {
 		jumpdrive = bool
 		## cardinality = 0..1
 		ship_behavior = <ship_behavior>
+		## cardinality = 0..1
+		is_default_component = bool
 		## cardinality = 0..1
 		sensor_range = int
 		## cardinality = 0..1
@@ -364,6 +372,13 @@ component_template = {
 		size_damage_factor = float
 		## cardinality = 0..1
 		military_power_multiplier = float
+		
+		## cardinality = 0..1
+		targetable_ship_sizes = {
+			## cardinality = 0..inf
+			<ship_size>
+		}
+				
 	}
 	subtype[strike_craft_component_template] = {
 		size = enum[weapon_slot_size]
@@ -400,6 +415,10 @@ component_template = {
 		hull_damage = float
 		## cardinality = 0..1
 		attack_range = float
+		## cardinality = 0..1
+		ship_modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
 	}
 	subtype[scripted_action] = {
 		scripted_action_name = <on_action>
@@ -445,6 +464,7 @@ enums = {
 		point_defence
 		missile
 		planet_killer
+		engulf
 	}
 	enum[weapon_slot_size] = {
 		extra_large
@@ -455,6 +475,8 @@ enums = {
 		point_defence
 		planet_killer
 		titanic
+		engulf
+		any
 	}
 	enum[utility_slot_size] = {
 		extra_large
@@ -462,6 +484,7 @@ enums = {
 		medium
 		small
 		aux
+		
 	}
 	enum[aura_types] = {
 		ships

@@ -306,6 +306,21 @@ species_class = {
 
 	## cardinality = 0..1
 	trait = <trait>
+	
+	## cardinality = 0..1
+	random_weight = {
+		base = int
+	}
+	
+	## cardinality = 0..1
+	ethics_to_prefer = {
+		<ethos>
+	}
+	
+	## cardinality = 0..1
+	preferred_ethics_weight = {
+		base = float
+	}
 }
 
 citizenship_type = {

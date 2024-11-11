@@ -17,6 +17,17 @@ global_ship_design = {
 	## cardinality = 0..1
 	hide_size = bool
 	## cardinality = 0..1
+	upgrades_to = localisation
+	## cardinality = 0..1
+	upgrades_to = {
+		## cardinality = 0..inf
+		localisation
+	}
+	## cardinality = 0..1
+	creature_designer_template = bool
+	## cardinality = 0..1
+	newborn_ship_design = localisation
+	## cardinality = 0..1
 	is_event_design = bool
 	## cardinality = 0..1
 	use_design_name = bool

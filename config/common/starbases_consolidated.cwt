@@ -31,7 +31,6 @@ types = {
 
 ## replace_scope = { this = starbase root = starbase from = country }
 starbase_building = {
-	icon = <sprite>
 	## cardinality = 0..1
 	construction_days = int
 	## cardinality = 0..1
@@ -166,6 +165,58 @@ starbase_building = {
 	on_destroyed = {
 		alias_name[effect] = alias_match_left[effect]
 	}
+	
+	# for inline script
+	## cardinality = 0..inf
+	name = {
+		## cardinality = 0..1
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		text = localisation
+	}
+	
+	# for inline script
+	## cardinality = 0..inf
+	desc = {
+		## cardinality = 0..1
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		text = localisation
+	}
+	
+	# for regular file
+	## cardinality = 0..inf
+	icon = <sprite>
+	# for inline script
+	## cardinality = 0..inf
+	icon = {
+		## cardinality = 0..1
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		text = <sprite>
+	}
+		
+	# for inline script
+	## cardinality = 0..inf
+	scripted_effect_cooldown = scalar
+	
+	# for inline script
+	## cardinality = 0..inf
+	scripted_effect_cooldown_flag = scalar
+	
+	# for inline script
+	## cardinality = 0..inf
+	scripted_effect_cooldown_flag_desc = {
+		## cardinality = 0..1
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		text = localisation
+	}
+	
 }
 
 #Done based on educated guesswork
@@ -214,6 +265,10 @@ starbase_module = {
 	### ship modifiers, apply on the starbase itself
 	## replace_scope = { this = starbase root = starbase }
 	station_modifier = {
+		## cardinality = 0..1
+		custom_tooltip = localisation
+		## cardinality = 0..1
+		show_only_custom_tooltip = bool
 		## cardinality = 0..inf
 		alias_name[modifier] = alias_match_left[modifier]
 	}
@@ -289,6 +344,11 @@ starbase_module = {
 	## cardinality = 0..1
 	on_destroyed = {
 		alias_name[effect] = alias_match_left[effect]
+	}
+	
+	## cardinality = 0..1
+	abort_construction_trigger = {
+		alias_name[trigger] = alias_match_left[trigger]
 	}
 }
 

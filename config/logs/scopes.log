@@ -1,4 +1,4 @@
-[17:45:41][game_application.cpp:2163]: 
+[16:51:33][game_application.cpp:2178]: 
 == SCOPE DOCUMENTATION ==
 These work as context switches (links) in triggers and effects (e.g. 'owner = { <triggers/effects> }'), or as targets of triggers and effects (e.g. 'is_owned_by = from'). Dot scoping (e.g. root.owner.capital_scope) is allowed.
 Complete list of scope changes:
@@ -354,5 +354,9 @@ Output Scope: cosmic_storm
 last_created_cosmic_storm_influence_field - Scopes to the last storm influence field that was created anywhere in the game.
 Supported Scopes: all
 Output Scope: cosmic_storm_influence_field
+
+exhibit - Scopes from a country to the exhibit owned by it.
+Supported Scopes: country
+Output Scope: exhibit
 
 =================

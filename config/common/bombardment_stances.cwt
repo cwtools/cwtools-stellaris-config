@@ -37,13 +37,22 @@ bombardment_stance = {
 	kill_pop_chance = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
+	## cardinality = 0..1
 	### Will not kill/abduct pops if pops <= this number already, default = 0.
 	### Doesn't work for nations that doesn't have diplomatic wars!
 	min_pops_to_kill_pop = int[0..inf]
+
 #	add_blocker_chance = float
 #	max_blockers = int
 	## replace_scope = { root = fleet this = fleet from = planet }
 	ai_weight = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	
+	## cardinality = 0..1
+	planet_damage = {
+		base = int
+		## cardinality = 1..inf
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 }

@@ -44,6 +44,14 @@ map_galaxy_shape = {
 	}
 	
 	##cardinality = 0..1
+	preview_icon = <sprite>
+	##cardinality = 0..1
+	button_icon = <sprite>
+	##cardinality = 0..1
+	desc = localisation
+	
+	
+	##cardinality = 0..1
     num_arms = int
 	
 	##cardinality = 0..1
