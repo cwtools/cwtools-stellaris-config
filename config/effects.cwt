@@ -4344,7 +4344,10 @@ alias[effect:storm_apply_aftermath_modifier] = {
 	## cardinality = 0..10	
 	severity = { 
 		modifier = <static_modifier>
-		days = int_## cardinality = 0..inf
+		## cardinality = 0..1
+		days = int
+		## cardinality = 0..1
+		days = int_value_field[1...inf]
 		chance = {
 			base = int_value_field[1...99]
 			## cardinality = 0..inf
