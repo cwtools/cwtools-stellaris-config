@@ -4543,8 +4543,8 @@ alias[effect:release_vivarium_fauna_count] = {
 	count = int_value_field
 	location = scope_group[spatial_object]
 	owners = { 
-		## cardinality = 0..1
-		enum[specimen_type] = scope_group[target_country]
+		## cardinality = 0..inf
+		enum[grand_archive_ship_category] = scope_group[target_country]
 	}
 }
 
