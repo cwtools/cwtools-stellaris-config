@@ -102,7 +102,7 @@ ascension_perk = {
 		## cardinality = 0..1
 		custom_tooltip = localisation
 		## cardinality = 0..1
-		show_only_custom_tooltip = no
+		show_only_custom_tooltip = bool
 	}
 	
 	## cardinality = 0..1
@@ -148,7 +148,7 @@ ascension_perk = {
 			## cardinality = 0..1
 			custom_tooltip = localisation
 			## cardinality = 0..1
-			show_only_custom_tooltip = no
+			show_only_custom_tooltip = bool
 		}
 		#Should be only if not inheriting effects
 		## replace_scope = { this = country root = country }
@@ -189,7 +189,7 @@ tradition = {
 		## cardinality = 0..1
 		custom_tooltip = localisation
 		## cardinality = 0..1
-		show_only_custom_tooltip = no
+		show_only_custom_tooltip = bool
 	}
 	## cardinality = 0..inf
 	alias_name[triggered_modifier_country] = alias_match_left[triggered_modifier_country]
@@ -252,7 +252,7 @@ tradition = {
 			## cardinality = 0..1
 			custom_tooltip = localisation
 			## cardinality = 0..1
-			show_only_custom_tooltip = no
+			show_only_custom_tooltip = bool
 		}
 		#Should be only if not inheriting effects
 		## replace_scope = { this = country root = country }
