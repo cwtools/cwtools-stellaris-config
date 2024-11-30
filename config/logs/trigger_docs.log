@@ -1,4 +1,4 @@
-[16:51:33][game_application.cpp:2163]: 
+[17:39:31][game_application.cpp:2163]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -3426,6 +3426,10 @@ is_last_acquired_specimen_rarity - Checks if the last acquired specimen is of th
 is_last_acquired_specimen_rarity = <rarity>
 Supported Scopes: country
 
+is_last_acquired_specimen_from_trade - Checks if the last acquired specimen was acquired through a trade deal
+is_last_acquired_specimen_from_trade = <yes/no>
+Supported Scopes: country
+
 any_agreement - Iterate through each agreement - checks whether the enclosed triggers return true for any of them
 any_agreement = { <triggers> }
 Supported Scopes: country no_scope
@@ -4285,7 +4289,7 @@ Supported Scopes: country
 
 
 =================
-[15:28:37][game_application.cpp:2166]: 
+[17:39:31][game_application.cpp:2166]:
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -6122,7 +6126,6 @@ rename_species = {
 	name = random
 	name_list = "key"
 }
-
 Supported Scopes: species
 
 reset_years_of_peace - Resets years of peace for a country.
@@ -6674,7 +6677,7 @@ Supported Scopes: planet
 log_error - Prints a message to error.log for debugging purposes.
 Supported Scopes: all
 
-add_intel -  Adds the defined amount of intel toward the target empire
+add_intel - Adds the defined amount of intel toward the target empire
 add_intel = { amount = <float>/<variable> who = <target> }
 Supported Scopes: country
 
