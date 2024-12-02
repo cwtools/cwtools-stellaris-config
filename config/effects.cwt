@@ -2844,6 +2844,8 @@ alias[effect:spawn_planet] = {
 	## cardinality = 0..1
 	orbit_distance_offset = float
 	## cardinality = 0..1
+	orbit_distance_offset = value[variable]
+	## cardinality = 0..1
 	flags = { #planet flags
 		## cardinality = 0..inf
 		value_set[planet_flag]
@@ -4344,7 +4346,10 @@ alias[effect:storm_apply_aftermath_modifier] = {
 	## cardinality = 0..10	
 	severity = { 
 		modifier = <static_modifier>
-		days = int_## cardinality = 0..inf
+		## cardinality = 0..1
+		days = int
+		## cardinality = 0..1
+		days = int_value_field[1...inf]
 		chance = {
 			base = int_value_field[1...99]
 			## cardinality = 0..inf
@@ -4540,8 +4545,8 @@ alias[effect:release_vivarium_fauna_count] = {
 	count = int_value_field
 	location = scope_group[spatial_object]
 	owners = { 
-		## cardinality = 0..1
-		enum[specimen_type] = scope_group[target_country]
+		## cardinality = 0..inf
+		enum[grand_archive_ship_category] = scope_group[target_country]
 	}
 }
 

@@ -1,4 +1,4 @@
-[16:51:33][modifier.cpp:1940]: 
+[17:39:31][modifier.cpp:1945]: 
  == MODIFIER DOCUMENTATION ==
 Note on Modifier Categories:
 -- These are used internally as a tag to suggest where they are intended to be used, but exact behavior depends upon individual implementation.
@@ -456,6 +456,7 @@ Printing Modifier Definitions:
 - large_space_fauna_ship_hull_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
 - extra_large_space_fauna_ship_hull_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
 - titanic_space_fauna_ship_hull_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- space_fauna_ship_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
 - small_space_fauna_ship_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
 - medium_space_fauna_ship_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
 - large_space_fauna_ship_cost_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats

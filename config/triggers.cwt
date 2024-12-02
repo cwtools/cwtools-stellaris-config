@@ -2970,3 +2970,6 @@ alias[trigger:has_dna] = {
 
 ###Checks if the last acquired specimen is of the given rarity
 alias[trigger:is_last_acquired_specimen_rarity] = enum[rarity]
+
+###Checks if the last acquired specimen was acquired through a trade deal
+alias[trigger:is_last_acquired_specimen_from_trade] = bool

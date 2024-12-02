@@ -127,7 +127,7 @@ starbase_building = {
 		## cardinality = 0..1
 		custom_tooltip = localisation
 		## cardinality = 0..1
-		show_only_custom_tooltip = no
+		show_only_custom_tooltip = bool
 	}
 	## cardinality = 0..1
 	###country modifiers
@@ -146,7 +146,7 @@ starbase_building = {
 		## cardinality = 0..1
 		custom_tooltip = localisation
 		## cardinality = 0..1
-		show_only_custom_tooltip = no
+		show_only_custom_tooltip = bool
 	}
 	alias_name[triggered_planet_modifier_starbase] = alias_match_left[triggered_planet_modifier_starbase]
 	alias_name[triggered_system_modifier_starbase] = alias_match_left[triggered_system_modifier_starbase]
@@ -302,7 +302,7 @@ starbase_module = {
 		## cardinality = 0..1
 		custom_tooltip = localisation
 		## cardinality = 0..1
-		show_only_custom_tooltip = no
+		show_only_custom_tooltip = bool
 	}
 	## cardinality = 0..1
 	###country modifiers
@@ -321,7 +321,7 @@ starbase_module = {
 		## cardinality = 0..1
 		custom_tooltip = localisation
 		## cardinality = 0..1
-		show_only_custom_tooltip = no
+		show_only_custom_tooltip = bool
 	}
 	alias_name[triggered_planet_modifier_starbase] = alias_match_left[triggered_planet_modifier_starbase]
 	alias_name[triggered_system_modifier_starbase] = alias_match_left[triggered_system_modifier_starbase]

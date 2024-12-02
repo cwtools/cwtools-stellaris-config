@@ -91,6 +91,9 @@ types = {
 	type[economic_plan] = {
 		path = "game/common/economic_plans"
 	}
+	type[artifact_actions] = {
+		path = "game/common/artifact_actions"
+	}
 	type[diplomacy_economy] = {
         path = "game/common/diplomacy_economy"
         type_per_file = yes
@@ -732,4 +735,40 @@ leader_class = {
 	can_rule_empire = bool
 	## cardinality = 0..1
 	paragon_background_selector = scalar
+}
+
+artifact_actions = {
+
+	## cardinality = 0..1
+	sound = <sound_effect>
+
+	## cardinality = 0..1
+	resources = {
+		category = artifact_actions
+		cost = {
+			<resource> = int
+			## cardinality = 0..1
+			multiplier = value_field
+		}
+	}
+	
+	## cardinality = 0..1
+	ai_weight = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+		
+	## cardinality = 0..1
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	
+	## cardinality = 0..1
+	allow = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+		
+	## cardinality = 0..1
+	effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
 }

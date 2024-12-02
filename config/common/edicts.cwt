@@ -48,7 +48,7 @@ edict = {
 		## cardinality = 0..1
 		custom_tooltip = localisation
 		## cardinality = 0..1
-		show_only_custom_tooltip = no
+		show_only_custom_tooltip = bool
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 

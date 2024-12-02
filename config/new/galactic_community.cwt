@@ -82,7 +82,7 @@ resolution = {
 		## cardinality = 0..1
 		custom_tooltip = localisation
 		## cardinality = 0..1
-		show_only_custom_tooltip = no
+		show_only_custom_tooltip = bool
 	}
 	## cardinality = 0..inf
 	###Modifier to be applied to all community members if passed and the potential trigger is true
