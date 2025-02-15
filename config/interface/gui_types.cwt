@@ -436,6 +436,8 @@ alias[gui_button:effectButtonType] = {
 	alias_name[gui_navigation] = alias_match_left[gui_navigation]
 	alias_name[gui_button_element] = alias_match_left[gui_button_element]
 	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
+	## cardinality = 0..1
+	rotation = float
 }
 
 # Icon-like button ?
