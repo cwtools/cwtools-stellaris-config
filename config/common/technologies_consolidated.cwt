@@ -141,6 +141,8 @@ technology = {
 		prereqfor_desc = {
 			custom = {
 				title = localisation
+				## cardinality = 0..1
+				desc = localisation
 			}
 		}
 		## cardinality = 0..1

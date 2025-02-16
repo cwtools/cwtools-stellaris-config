@@ -240,6 +240,8 @@ starbase_module = {
 	ai_build_outside_chokepoint = bool
 	## cardinality = 0..inf
 	show_in_tech = <technology>
+	## cardinality = 0..1
+	component_set =  <component_set>
 
 	resources = {
 		category = <economic_category>
