@@ -18,8 +18,8 @@ types = {
 projectile = {
 	name = scalar #this is where the projectile key is defined, the
 	color = {
-    	## cardinality = 4..4
-		float[0..1]
+		## cardinality = 4..4
+    	float[0..5]
 	}
 	hit_entity = <model_entity>
 	shield_hit_entity = <model_entity>
@@ -80,8 +80,8 @@ projectile = {
 planet_killer_animation = {
  	texture = filepath
 	color = {
-    	## cardinality = 4..4
-		float[0..1]
+		## cardinality = 4..4
+    	float[0..5]
 	}
 	## cardinality = 0..1
 	planet_dissolve_color_mult = {
@@ -102,7 +102,7 @@ planet_killer_animation = {
 		duration = float
 		## cardinality = 0..1
 		width = {
-			## cardinality = 0..4
+			## cardinality = 1..5
 			float float
 		}
 		## cardinality = 0..1
@@ -113,7 +113,7 @@ planet_killer_animation = {
 		texture_tiling = float
 		## cardinality = 0..1
 		alpha = {
-			## cardinality = 0..5
+			## cardinality = 1..5
 			float float
 		}
 	}
@@ -130,7 +130,7 @@ planet_killer_animation = {
  	start = {
  		duration = float
  		width = {
-			## cardinality = 2..8
+			## cardinality = 2..10
 			float
  		}
  		texture_scroll_speed = {
@@ -139,39 +139,40 @@ planet_killer_animation = {
  		}
  		texture_tiling = float
  		alpha = {
-			## cardinality = 4..8
+			## cardinality = 2..10
 			float
  		}
  	}
  	in_progress = {
  		duration = float
  		width = {
-			## cardinality = 2..8
+			## cardinality = 2..10
 			float
  		}
  		texture_scroll_speed = {
-			## cardinality = 2..2
+			## cardinality = 2..6
 			float
  		}
  		texture_tiling = {
 			## cardinality = 2..2
-			float
+			float 
  		}
  		alpha = {
-			## cardinality = 4..8
+			## cardinality = 2..10
 			float
  		}
  	}
  	end = {
  		duration = float
  		width = {
-			## cardinality = 2..8
+			## cardinality = 2..10
 			float
  		}
  		texture_scroll_speed = float
- 		texture_tiling = float
+		texture_tiling = float 
+ 		}
  		alpha = {
-			## cardinality = 4..8
+			## cardinality = 2..10
 			float
  		}
  	}
