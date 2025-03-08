@@ -185,6 +185,8 @@ map_setup_scenario = {
 			## cardinality = 0..1
 			initializer = <solar_system_initializer>
 			## cardinality = 0..1
+			initializer = <solar_system_initializer_random_list>
+			## cardinality = 0..1
 			###Weight for whether an empire should spawn in this system
 			## replace_scope = { this = country root = country }
 			spawn_weight = {
