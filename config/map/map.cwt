@@ -90,18 +90,21 @@ map_setup_scenario = {
 	marauder_empire_default = int
 	marauder_empire_max = int
 	advanced_empire_default = int
+	##cardinality = 0..1
 	colonizable_planet_odds = float
+	##cardinality = 0..1
 	primitive_odds = float
 	crisis_strength = float
+	##cardinality = 0..1
 	extra_crisis_strength = {
 		##cardinality = 1..2
 		int
 	}
 	##cardinality = 0..1
 	default = bool
-
+	##cardinality = 0..1
 	max_hyperlane_distance = float
-
+	##cardinality = 0..1
 	home_system_partitions = {
 		max_systems = int
 		min_systems = int
@@ -111,7 +114,7 @@ map_setup_scenario = {
 
 		method = enum[home_system_method]
 	}
-
+	##cardinality = 0..1
 	open_space_partitions = {
 		max_systems = int
 		min_systems= int
@@ -121,16 +124,19 @@ map_setup_scenario = {
 
 		method = enum[open_space_method]
 	}
-
+	##cardinality = 0..1
 	num_wormhole_pairs = {
 		min = float
 		max = float
 	}
+	##cardinality = 0..1
 	num_wormhole_pairs_default = float
+	##cardinality = 0..1
 	num_gateways = {
 		min = float
 		max = float
 	}
+	##cardinality = 0..1
 	num_gateways_default = float
 	num_hyperlanes = {
 		min = float
@@ -138,7 +144,7 @@ map_setup_scenario = {
 	}
 	num_hyperlanes_default = float
 
-	##cardinality = 1..inf
+	##cardinality = 0..inf
 	supports_shape = <map_galaxy_shape>
 
 	subtype[random] = {
@@ -184,6 +190,8 @@ map_setup_scenario = {
 			}
 			## cardinality = 0..1
 			initializer = <solar_system_initializer>
+			## cardinality = 0..1
+			initializer = <solar_system_initializer_random_list>
 			## cardinality = 0..1
 			###Weight for whether an empire should spawn in this system
 			## replace_scope = { this = country root = country }

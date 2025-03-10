@@ -17,11 +17,13 @@ types = {
 
 projectile = {
 	name = scalar #this is where the projectile key is defined, the
-	color = {
-    	## cardinality = 4..4
-		float[0..1]
+	color = { 
+		## cardinality = 4..4
+		float
 	}
+	## cardinality = 0..1
 	hit_entity = <model_entity>
+	## cardinality = 0..1
 	shield_hit_entity = <model_entity>
 	## cardinality = 0..1
 	muzzle_flash_entity = <model_entity>
@@ -39,7 +41,7 @@ projectile = {
 	## cardinality = 0..1
 	hit = {
 		alpha_curve = {
-			## cardinality = 6..12
+			## cardinality = 4..14
 			float
 		}
 		duration = float
@@ -47,11 +49,21 @@ projectile = {
 	## cardinality = 0..1
 	miss = {
 		alpha_curve = {
-			## cardinality = 6..12
+			## cardinality = 4..14
 			float
 		}
 		duration = float
 	}
+	## cardinality = 0..1
+	set_state = {
+		section = attack
+	}
+	## cardinality = 0..1
+	random_scale_multiplier = {
+		min = float
+		max = float
+	}
+	## cardinality = 0..1
 	shield_impact = {
 		size = enum[projectile_impact_size]
 		## cardinality = 0..1
@@ -79,9 +91,9 @@ projectile = {
 
 planet_killer_animation = {
  	texture = filepath
-	color = {
-    	## cardinality = 4..4
-		float[0..1]
+	color = { 
+		## cardinality = 4..4
+		float
 	}
 	## cardinality = 0..1
 	planet_dissolve_color_mult = {
@@ -102,19 +114,20 @@ planet_killer_animation = {
 		duration = float
 		## cardinality = 0..1
 		width = {
-			## cardinality = 0..4
-			float float
+			## cardinality = 2..8
+			float 
 		}
 		## cardinality = 0..1
 		texture_scroll_speed = {
-			float float
+			## cardinality = 2..6
+			float
 		}
 		## cardinality = 0..1
 		texture_tiling = float
 		## cardinality = 0..1
 		alpha = {
-			## cardinality = 0..5
-			float float
+			## cardinality = 2..10
+			float
 		}
 	}
 	### If the ship's entity has a state called "kill_planet"
@@ -130,7 +143,7 @@ planet_killer_animation = {
  	start = {
  		duration = float
  		width = {
-			## cardinality = 2..8
+			## cardinality = 2..10
 			float
  		}
  		texture_scroll_speed = {
@@ -139,39 +152,39 @@ planet_killer_animation = {
  		}
  		texture_tiling = float
  		alpha = {
-			## cardinality = 4..8
+			## cardinality = 2..10
 			float
  		}
  	}
  	in_progress = {
  		duration = float
  		width = {
-			## cardinality = 2..8
+			## cardinality = 2..10
 			float
  		}
  		texture_scroll_speed = {
-			## cardinality = 2..2
+			## cardinality = 2..6
 			float
  		}
  		texture_tiling = {
 			## cardinality = 2..2
-			float
+			float 
  		}
  		alpha = {
-			## cardinality = 4..8
+			## cardinality = 2..10
 			float
  		}
  	}
  	end = {
  		duration = float
  		width = {
-			## cardinality = 2..8
+			## cardinality = 2..10
 			float
  		}
  		texture_scroll_speed = float
- 		texture_tiling = float
+		texture_tiling = float 
  		alpha = {
-			## cardinality = 4..8
+			## cardinality = 2..10
 			float
  		}
  	}
