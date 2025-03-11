@@ -4156,11 +4156,13 @@ alias[effect:set_council_position_title_female] = {
 ### Changes which design a ship uses/all ships in a fleet use, to the target design
 alias[effect:set_ship_design] = {
 	## cardinality = 0..1
+	design = <global_ship_design>
+	## cardinality = 0..1
+	design = scope[design]
+	## cardinality = 0..1
+	design = last_created_design
+	## cardinality = 0..1
 	random_existing_design = <ship_size>
-	## cardinality = 0..1
-	last_created_design
-	## cardinality = 0..1
-	scope[design]
 }
 
 ### Gives percentage progress (-1.0-1.0) in the current agenda to the scoped country
