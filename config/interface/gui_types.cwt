@@ -27,6 +27,7 @@ enums = {
 	enum[direction] = {
 	    UPPER_LEFT #can be lower case as well! Vanilla has a mix of the two for no reason.
 	    UPPER_RIGHT
+		UPPER_CENTER
 		LEFT_UP
 	    CENTER_DOWN
 		CENTER_UP
@@ -35,6 +36,7 @@ enums = {
 		CENTERUP
 		CENTER_LEFT
 		CENTER_RIGHT
+		CENTERED_LEFT
 	    LOWER_LEFT
 	    LOWER_RIGHT
 	    LEFT
@@ -123,7 +125,8 @@ alias[gui:instantTextboxType] = {
 	textureFile = ""
 	## cardinality = 0..1
 	textureFile = filepath
-
+	## cardinality = 0..1
+	concepts_show_missing_dlc = bool
 	## cardinality = 0..1
 	fixedSize = bool
 	## cardinality = 0..1
@@ -145,6 +148,8 @@ alias[gui:editBoxType] = {
 	name = scalar
 	## cardinality = 0..1
 	textureFile = filepath
+	## cardinality = 0..1
+	textureFile = scalar
 	## cardinality = 0..1
 	cursor = {
 		x = int
@@ -171,12 +176,16 @@ alias[gui:editBoxType] = {
 # Container for listed items, usually option entries in event/diplo windows.
 alias[gui:smoothListboxType] = {
 	name = scalar
-
+	## cardinality = 0..1
+	background = scalar
 	## cardinality = 0..1
 	offset = {
 		x = int
 		y = int
 	}
+	
+	## cardinality = 0..1
+	dynamic_extra_height = float
 	## cardinality = 0..1
 	scrollbarType = enum[scrollbar_types] #this is tied to instances defind as <scrollbarType> with a unique key.
 
@@ -232,9 +241,12 @@ alias[gui:smoothListboxType] = {
 # General graphical block
 alias[gui:containerWindowType] = {
 	name = scalar
-
 	## cardinality = 0..1
 	upsound = click
+	## cardinality = 0..1
+	smooth_scrolling = bool
+	## cardinality = 0..1
+	horizontalScrollbar = scalar
 	## cardinality = 0..1
 	click_to_front = bool
 	## cardinality = 0..inf
@@ -265,6 +277,8 @@ alias[gui:containerWindowType] = {
 		alias_name[gui_background] = alias_match_left[gui_background]
 		alias_name[gui] = alias_match_left[gui]
 	}
+	## cardinality = 0..1
+	dynamic_extra_height = float
 	## cardinality = 0..1
 	origo = enum[direction]
 	## cardinality = 0..1
@@ -373,13 +387,16 @@ alias[gui:iconType] = {
 # Default game button. In some cases could be replaced by effectButtonType without CTD
 alias[gui_button:buttonType] = {
 	name = scalar
-
+	## cardinality = 0..1
+	text_offset = { x = int y = int }
 	## cardinality = 0..1
 	hitbox_margin = {
 	  x = int
 	  y = int
 	}
-
+	## cardinality = 0..inf
+	centerPosition = yes
+	
 	## cardinality = 0..inf
 	if_resolution = {
 		## cardinality = 0..1
@@ -494,12 +511,17 @@ alias[gui:scrollbarType] = {
 	track = scalar
 	leftbutton = scalar
 	rightbutton = scalar
+	## cardinality = 0..1
 	priority = int
 
-	maxValue = int
-	minValue = int
+	maxValue = float
+	minValue = float
 	stepSize = float
 	startValue = int
+	## cardinality = 0..1
+	snappoint_center = scalar
+	## cardinality = 0..1
+	snappoint = scalar
 
 	alias_name[gui_button] = alias_match_left[gui_button]
 	alias_name[overlay] = alias_match_left[overlay]
@@ -580,7 +602,8 @@ alias[gui:OverlappingElementsBoxType] = {
 }
 alias[gui:listBoxType] = {
 	name = scalar
-
+	## cardinality = 0..1
+	background = scalar
 	## cardinality = 0..1
 	priority = int
 	## cardinality = 0..1
@@ -601,8 +624,14 @@ alias[gui:gridBoxType] = {
 	name = scalar
 
 	slotSize = {
+		## cardinality = 0..1
 		width = int
+		## cardinality = 0..1
+		width = percentage_field
+		## cardinality = 0..1
 		height = int
+		## cardinality = 0..1
+		height = percentage_field
 	}
 	## cardinality = 0..1
 	max_slots_horizontal = int
@@ -612,6 +641,8 @@ alias[gui:gridBoxType] = {
 	add_horizontal = bool
 	## cardinality = 0..1
 	wraparound = bool
+	## cardinality = 0..1
+	resizeparent = bool
 
 	## cardinality = 0..1
 	padding = {
@@ -638,6 +669,8 @@ alias[gui:windowType] = {
 	moveable = int
 	## cardinality = 0..1
 	dontRender = scalar
+	## cardinality = 0..1
+	background = scalar
 	## cardinality = 0..1
 	horizontalBorder = scalar
 	## cardinality = 0..1
@@ -700,6 +733,8 @@ alias[gui:dropDownBoxType] = {
 		animation_time = float
 		## cardinality = 0..1
 		verticalScrollbar = scalar
+		## cardinality = 0..1
+		dynamic_extra_height = float
 
 		alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
 		alias_name[gui_background] = alias_match_left[gui_background]
@@ -736,9 +771,13 @@ y = int
 y = percentage_field
 }
 alias[gui_standard_element:size] = {
+## cardinality = 0..1
 width = int
+## cardinality = 0..1
 width = percentage_field
+## cardinality = 0..1
 height = int
+## cardinality = 0..1
 height = percentage_field
 }
 
@@ -764,6 +803,7 @@ alias[gui_standard_element:scale] = float
 alias[gui_standard_element:alwaysTransparent] = bool
 
 alias[gui_sprite:spriteType] = <sprite>
+alias[gui_sprite:spriteType] = <progressbartype>
 alias[gui_sprite:quadTextureSprite] = <sprite>
 
 alias[gui_sound:clicksound] = <sound_effect>
@@ -804,4 +844,6 @@ alias[gui_background:background] = {
 	alias_name[gui_sound] = alias_match_left[gui_sound]
 	alias_name[gui_localisation] = alias_match_left[gui_localisation]
 	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
+	## cardinality = 0..1
+	frame = int
 }
