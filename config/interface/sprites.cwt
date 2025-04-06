@@ -48,7 +48,9 @@ progressbartype = {
 	textureFile1 = filepath
 	## cardinality = 0..1
 	textureFile2 = filepath
-
+	## cardinality = 0..1
+	flipdirection = bool
+	
 	effectFile = filepath #shader file
 
 	color = {
@@ -77,7 +79,7 @@ sprite = {
 	## cardinality = 0..1
 	transParencecheck = bool
 	## cardinality = 0..1
-	borderSize = { x = int y = int }
+	borderSize = { x = float y = float }
 	## cardinality = 0..1
 	hitbox_margin = { x = int y = int }
 	## cardinality = 0..1
@@ -124,16 +126,20 @@ sprite = {
 	}
 	#flag_sprite only!
 	## cardinality = 0..1
-	bg_position = { x = int y = int }
+	bg_position = { x = float y = float }
 	## cardinality = 0..1
 	bg_size = { width = int height = int }
 	## cardinality = 0..1
-	symbol_position = { x = int y = int }
+	symbol_position = { x = float y = float }
 	## cardinality = 0..1
-	symbol_size = { width = int height = int }
+	symbol_size = { width = float height = float }
 	## cardinality = 0..1
 	texture_size = enum[texture_size]
-
+	## cardinality = 0..1
+	mask_offset = { x = float y = float }
+	## cardinality = 0..1
+	mask_size = { width = int height = int }
+	
 	#framed_animated_sprite only!
 	## cardinality = 0..1
 	play_on_show = bool
