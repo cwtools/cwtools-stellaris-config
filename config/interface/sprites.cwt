@@ -61,7 +61,8 @@ progressbartype = {
 		## cardinality = 3..3
 		float
 	}
-	size = { x = int y = int }
+	## cardinality = 0..1
+	size = { x = float y = float }
 	## cardinality = 0..1
 	horizontal = bool
 }
@@ -94,8 +95,16 @@ sprite = {
 	clicksound = <sound_effect>
 	## cardinality = 0..1
 	loadType = scalar
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	legacy_lazy_load = bool
+	## cardinality = 0..inf
+	alternate_configurations = {
+			holographic
+	}
+	## cardinality = 0..1
+	close_up = bool
+	## cardinality = 0..1
+	mid_close_up = yes
 	## cardinality = 0..inf
 	animation = {
 		## cardinality = 0..1
@@ -180,9 +189,12 @@ enums = {
 	rotating_cw
   }
   enum[sprite_type] = {
-  	planet
-	room
 	character
+	character_large
+	character_without_room
+	empty_room
+	room
+  	planet
   }
   enum[texture_size] = {
   	small
