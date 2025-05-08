@@ -162,7 +162,6 @@ enums = {
 		merge_fleet_order
 		aggressive_stance_fleet_order
 		auto_explore_order
-		auto_patrol_order
 		build_megastructure_fleet_order
 		destroy_planet_order
 		planet_killer_weapon_windup_order
