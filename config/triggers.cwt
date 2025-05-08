@@ -404,7 +404,7 @@ alias[trigger:num_moons] == int_value_field
 ###Checks if the planet can theoretically be colonized
 alias[trigger:is_colonizable] = bool
 
-###Checks if the planet is of the ideal class for target country
+###Checks if the pop group, species or country's ideal planet class is a specific class
 alias[trigger:is_ideal_planet_class] = {
 	who = scope_group[target_species]
 	status = bool
@@ -471,7 +471,7 @@ alias[trigger:num_cosmic_storm_spawn_cooldown_scale_setting] == value_field
 ###Compares ship size multiplier of the scoped design or ship.
 alias[trigger:ship_size_multiplier] == value_field 
 
-###Checks the pop's happiness percentage
+###Checks the pop group's happiness percentage
 alias[trigger:happiness] == value_field[0.0..1.0]
 ###Checks the country's number of subjects with agreement preset 'preset_vassal'
 alias[trigger:vassals] == int_value_field
@@ -617,7 +617,7 @@ alias[trigger:check_variable] = {
 	value = value_field
 }
 
-###Checks the ship/fleet/planet/leader/pop/system's galaxy map distance to target in absolute units
+###Checks the ship/fleet/planet/leader/pop group/system's galaxy map distance to target in absolute units
 alias[trigger:distance] = {
 	## cardinality = 0..1
 	source = scope_group[celestial_coordinate]
@@ -651,8 +651,11 @@ alias[trigger:is_species_class] = <species_class>
 ###Checks if a pop/leader/species/country's dominant species has a certain trait
 alias[trigger:has_trait] = <trait>
 
-###Checks if the pop has a specific trait
-alias[trigger:pop_has_trait] = <trait.species_trait>
+###Checks if the pop group has a specific trait
+alias[trigger:pop_group_has_trait] = <trait.species_trait>
+
+###Checks if the pop group has a specific ethos
+alias[trigger:pop_group_has_ethic] = <ethos>
 
 ###Checks if a species/pop/leader has a particular citizenship type in their country
 alias[trigger:has_citizenship_type] = {
@@ -1492,12 +1495,6 @@ alias[trigger:is_researching_special_project] = <special_project>
 
 ###Checks the pop_faction's approval level. Is a float (0.0-1.0).
 alias[trigger:faction_approval] == value_field[0.0..1.0]
-
-###Check if scoped species is half species of specific/any species
-alias[trigger:is_half_species] = scope_group[target_species]
-
-###Check if scoped species is half species of specific/any species
-alias[trigger:is_half_species] = any
 
 ###Checks if the last building queued/unqueued/built/demolished/upgraded was the specified building
 alias[trigger:last_building_changed] = <building>
