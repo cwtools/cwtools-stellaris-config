@@ -424,4 +424,9 @@ enums = {
 		excessive
 		none
 	}
+	enum[custom_progress_mode] = {
+		normal
+		simplified
+		clamped
+	}
 }
