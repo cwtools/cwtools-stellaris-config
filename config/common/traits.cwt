@@ -208,6 +208,13 @@ trait = {
 		species_possible_merge_add = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
+		
+		## cardinality = 0..1
+		tags = {
+			## cardinality = 0..inf
+			scalar
+		}
+			
 		## replace_scope = { this = species root = species from = country }
 		## cardinality = 0..1
 		species_possible_merge_remove = {
