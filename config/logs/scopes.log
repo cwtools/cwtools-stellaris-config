@@ -1,4 +1,4 @@
-[15:13:39][game_application.cpp:2220]: 
+[21:22:43][game_application.cpp:2220]: 
 == SCOPE DOCUMENTATION ==
 These work as context switches (links) in triggers and effects (e.g. 'owner = { <triggers/effects> }'), or as targets of triggers and effects (e.g. 'is_owned_by = from'). Dot scoping (e.g. root.owner.capital_scope) is allowed.
 Complete list of scope changes:
@@ -151,10 +151,6 @@ mining_station - Scopes from a planet to the mining station in orbit of it.
 Supported Scopes: planet
 Output Scope: fleet
 
-last_created_pop - Scopes to the last pop that was created anywhere in the game.
-Supported Scopes: all
-Output Scope: pop
-
 last_created_system - Scopes to the last fleet that was created anywhere in the game.
 Supported Scopes: all
 Output Scope: galactic_object
@@ -254,10 +250,6 @@ Output Scope: various
 founder_species - Scopes from a country to its founding species.
 Supported Scopes: country
 Output Scope: species
-
-last_refugee_country - Scopes to the last country from which a pop fled to escape purge (via on_pop_displaced).
-Supported Scopes: all
-Output Scope: country
 
 starbase - Scopes from a solar system or planet to that system's starbase. Alternatively, scopes from a fleet or ship that is a starbase to its matching starbase scope.
 Supported Scopes: planet ship fleet galactic_object starbase
