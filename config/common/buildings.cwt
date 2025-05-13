@@ -39,12 +39,14 @@ enums = {
 		subject_holding
 	}
 	enum[building_sets] = {
+		automation
 		betharian
 		cosmogenesis_world
 		engineering
 		entertainment
 		factory
 		fallen_empire
+		fallen_empire_generator
 		farming
 		fortress
 		foundry
@@ -53,7 +55,9 @@ enums = {
 		hunting_zone
 		hydroponics
 		industrial
+		knights
 		mining
+		origin
 		physics
 		pre_ftl
 		research
