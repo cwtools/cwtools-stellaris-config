@@ -10,16 +10,6 @@ types = {
 	}
 }
 
-enums = {
-	enum[grand_archive_ship_category] = {
-		tiyanki
-		space_amoeba
-		crystalline_entity
-		voidworm
-		cutholoid
-	}
-}
-
 grand_archive_ship_category_type = {
 	rarity_icons = <sprite>
 	namelist = <name_list>
