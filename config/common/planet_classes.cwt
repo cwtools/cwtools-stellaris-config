@@ -172,8 +172,6 @@ planet_class = {
 	subtype[habitable_planet] = {
 		## severity = warning
 		district_set = enum[district_sets]
-		## severity = warning
-		building_set = enum[building_sets]
 		## cardinality = 0..1
 		climate = localisation
 		## cardinality = 0..1
@@ -231,15 +229,6 @@ enums = {
 		path = "game/common/planet_classes"
 		name = {
 			district_set = enum_name
-		}
-	}
-}
-
-enums = {
-	complex_enum[building_sets] = {
-		path = "game/common/planet_classes"
-		name = {
-			building_set = enum_name
 		}
 	}
 }
