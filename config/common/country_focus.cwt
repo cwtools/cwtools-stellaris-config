@@ -49,15 +49,14 @@ card_categories = {
 	
 	## cardinality = 0..1
 	weights = {
-		## cardinality = 0..inf
-		modifier = {
+		## cardinality = 1..inf
+		{
 			category = enum[card_categories_focus]
 			value = {
 				base = int
 			}
 		}
 	}
-	
 }
 
 focus_card_key = {
