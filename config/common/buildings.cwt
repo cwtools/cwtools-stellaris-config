@@ -38,6 +38,32 @@ enums = {
 		corporate
 		subject_holding
 	}
+	enum[building_sets] = {
+		betharian
+		cosmogenesis_world
+		engineering
+		entertainment
+		factory
+		fallen_empire
+		farming
+		fortress
+		foundry
+		generator
+		government
+		hunting_zone
+		hydroponics
+		industrial
+		mining
+		physics
+		pre_ftl
+		research
+		resort
+		society
+		trade
+		unity
+		urban
+		zoo
+	}
 }
 
 ## push_scope = planet
