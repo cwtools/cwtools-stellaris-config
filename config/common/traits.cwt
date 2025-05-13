@@ -42,6 +42,10 @@ types = {
 			}
 		}
 	}
+	type[trait_tags] = {
+		path = "game/common/trait_tags"
+		type_per_file = yes
+	}
 }
 
 trait = {
@@ -212,7 +216,7 @@ trait = {
 		## cardinality = 0..1
 		tags = {
 			## cardinality = 0..inf
-			scalar
+			<trait_tags>
 		}
 			
 		## replace_scope = { this = species root = species from = country }
