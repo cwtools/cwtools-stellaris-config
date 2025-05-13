@@ -1,0 +1,64 @@
+
+types = {
+	type[card_categories] = {
+		path = "game/common/country_focus/card_categories"
+	}
+	type[focus_card_key] = {
+		path = "game/common/country_focus/focus_cards"
+	}
+	type[focus_rewards] = {
+		path = "game/common/country_focus/focus_rewards"
+	}
+}
+
+card_categories = {
+	name = localisation
+	desc = localisation
+	## cardinality = 0..1
+	selectable = bool
+	
+	## cardinality = 0..1
+	background = <sprite>
+	## cardinality = 0..1
+	background_expanded = <sprite>
+	## cardinality = 0..1
+	icon = <sprite>
+	
+	## cardinality = 0..1
+	resources = {
+		category = country_focus
+
+		cost = {
+			trigger = {
+				## cardinality = 0..inf
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			unity = int
+		}
+	}
+	
+	## cardinality = 0..1
+	starting_weight = {
+		base = int
+		## cardinality = 0..inf
+		modifier = {
+			add = int
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
+	
+	## cardinality = 0..1
+	weights = {
+		## cardinality = 0..inf
+		scalar
+	}
+	
+}
+
+focus_card_key = {
+	
+}
+
+focus_rewards = {
+	
+}
