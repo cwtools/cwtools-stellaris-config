@@ -34,10 +34,6 @@ links = {
 		input_scopes = { all }
 		output_scope = Country
 	}
-	last_refugee_country = {
-		input_scopes = { all }
-		output_scope = Country
-	}
 	leader = {
 		input_scopes = { planet country ship fleet leader army pop_faction federation archaeological_site first_contact spy_network espionage_operation astral_rift }
 		output_scope = leader
@@ -105,9 +101,9 @@ links = {
 		input_scopes = { Planet Country }
 		output_scope = pop_group
 	}
-	last_created_pop = {
+	last_created_pop_faction = {
 		input_scopes = { all }
-		output_scope = Pop
+		output_scope = pop_faction
 	}
 	last_created_ambient_object = {
 		input_scopes = { all }
