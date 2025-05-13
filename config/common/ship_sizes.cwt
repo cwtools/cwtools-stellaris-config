@@ -310,7 +310,7 @@ ship_size = {
 		can_breed_alone = bool
 	}
 	## cardinality = 0..1
-	ship_category = enum[grand_archive_ship_category]
+	ship_category = <grand_archive_ship_category_type>
 	## cardinality = 0..1
 	mutation_components_size = enum[mutation_components_size]
 	## cardinality = 0..1
