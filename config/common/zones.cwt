@@ -1,0 +1,81 @@
+
+types = {
+	type[zones] = {
+		path = "game/common/zones"
+	}
+	type[zone_slots] = {
+		path = "game/common/zones_slots"
+	}
+}
+
+zones = {
+	icon = <sprite>
+	base_buildtime = int
+	
+	## replace_scope = { root = planet this = planet }
+	potential = { 
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## replace_scope = { root = planet this = planet }
+	unlock = { 
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	resources = {
+		category = planet_zones
+		cost = {
+			<resource> = int
+		}
+	}
+	
+	## cardinality = 0..1
+	## replace_scope = { root = planet this = planet }
+	triggered_district_planet_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	
+	## cardinality = 0..1
+	## replace_scope = { root = planet this = planet }
+	planet_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	## cardinality = 0..1
+	triggered_desc = {
+		trigger = {
+			## cardinality = 0..inf
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		text = localisation
+	}
+
+	## cardinality = 0..1
+	max_buildings = int
+	
+	## cardinality = 0..1
+	include = {
+		## cardinality = 0..1
+		all
+		## cardinality = 0..inf
+		<building>
+	}
+	
+	## cardinality = 0..1
+	included_building_sets = {
+		## cardinality = 0..inf
+		enum[building_sets]
+	}
+	
+	## cardinality = 0..1
+	excluded_building_sets = {
+		## cardinality = 0..inf
+		enum[building_sets]
+	}
+}
+
+zone_slots = {
+	
+}
+
