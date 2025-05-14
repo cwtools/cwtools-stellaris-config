@@ -1,4 +1,4 @@
-[15:13:38][modifier.cpp:1980]: 
+[18:34:27][modifier.cpp:1979]: 
  == MODIFIER DOCUMENTATION ==
 Note on Modifier Categories:
 -- These are used internally as a tag to suggest where they are intended to be used, but exact behavior depends upon individual implementation.
@@ -244,7 +244,6 @@ Printing Modifier Definitions:
 - pop_resettlement_cost_mult, Category: Pops
 - pop_organic_resettlement_cost_mult, Category: Pops
 - planet_defense_armies_add, Category: Planets
-- defense_armies_add, Category: Planets
 - pop_demotion_time_mult, Category: Pops
 - pop_promotion_time_mult, Category: Pops
 - faction_approval, Category: Countries, Pop Factions
