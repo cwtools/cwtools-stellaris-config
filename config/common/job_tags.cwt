@@ -1,0 +1,7 @@
+types = {
+	type[job_tags] = {
+		path = "game/common/job_tags"
+		type_per_file = yes
+	}
+}
+
