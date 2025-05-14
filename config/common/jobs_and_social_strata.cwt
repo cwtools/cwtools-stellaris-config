@@ -56,6 +56,10 @@ types = {
 			Desc = "pop_cat_$_desc"
 		}
 	}
+	type[job_tags] = {
+		path = "game/common/job_tags"
+		type_per_file = yes
+	}
 }
 
 enums = {
