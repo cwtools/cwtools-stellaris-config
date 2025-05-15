@@ -875,9 +875,9 @@ alias[effect:random_pop_faction] = {
 	}
 }
 
-## push_scope = pop
-###Iterate through all owned pops
-alias[effect:every_owned_pop] = {
+## push_scope = pop_group
+###Iterate through all owned pop groups - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_owned_pop_group] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
@@ -907,14 +907,6 @@ alias[effect:random_owned_pop] = {
 		## cardinality = 0..inf
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
-}
-
-## push_scope = pop
-###Executes enclosed effects for every pop in the game that meet the limit criteria
-alias[effect:every_galaxy_pop] = {
-	##cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-	alias_name[effect] = alias_match_left[effect]
 }
 
 ## push_scope = country
