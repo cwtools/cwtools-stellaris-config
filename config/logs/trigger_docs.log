@@ -1,4 +1,4 @@
-[21:22:42][game_application.cpp:2205]: 
+[18:49:13][game_application.cpp:2206]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -656,7 +656,7 @@ Supported Scopes: all
 
 has_picked_auto_mod_habitability - Checks if a pop has already picked an auto modded habitability trait.
 has_picked_auto_mod_habitability = <yes/no>
-Supported Scopes: pop group
+Supported Scopes: pop_group
 
 has_highest_technology_score - Checks if the country has the highest technology score
 has_highest_technology_score = yes/no
@@ -709,7 +709,7 @@ Supported Scopes: country pop pop_group leader pop_faction dlc_recommendation
 
 is_owned_by - Checks if the planet/system/army/ship is owned by the target country
 is_owned_by = <target>
-Supported Scopes: megastructure planet ship pop pop group fleet galactic_object leader army pop_faction starbase deposit sector archaeological_site first_contact spy_network espionage_operation agreement situation
+Supported Scopes: megastructure planet ship pop pop_group fleet galactic_object leader army pop_faction starbase deposit sector archaeological_site first_contact spy_network espionage_operation agreement situation
 
 is_immortal - Checks if the leader is immortal (either by script effect or species characteristics)
 is_immortal = yes/no
@@ -1420,9 +1420,13 @@ num_moons - Checks the planet's number of moons
 num_moons < 4
 Supported Scopes: planet
 
-is_sapient - Checks if the pop_group is sapient
+is_sapient - Checks if the pop group or species is sapient
 is_sapient = no
-Supported Scopes: pop pop_group species
+Supported Scopes: pop_group species
+
+inherits_parent_rights - Checks if the pop group or species inherits the base species' rights. Returns false if there is no parent species.
+inherits_parent_rights = no
+Supported Scopes: pop_group species
 
 is_preventing_anomaly - Checks if the planet is prevented from generating anomalies
 is_preventing_anomaly = yes
@@ -2890,11 +2894,11 @@ Supported Scopes: pop pop_group
 
 pop_group_has_happiness - Checks if the current pop group has happiness or not.
 pop_group_has_happiness = yes/no
-Supported Scopes: pop group
+Supported Scopes: pop_group
 
 pop_group_size - Checks if the size of the pop group is according to the argument.
 pop_group_size > 8
-Supported Scopes: pop group
+Supported Scopes: pop_group
 
 has_current_purge - Checks if any pops are being purged on the current planet.
 has_current_purge = yes/no
@@ -4230,7 +4234,7 @@ Supported Scopes: no_scope
 any_trait_of_species - Iterate through each trait that the scoped species has
 any_trait_of_species = { trait_has_all_tags = { positive } } - checks whether the enclosed triggers return true for any of them
 any_trait_of_species = { <triggers> }
-Supported Scopes: pop pop group leader species
+Supported Scopes: pop pop_group leader species
 
 count_trait_of_species - Iterate through each trait that the scoped species has
 count_trait_of_species = { trait_has_all_tags = { positive } } - checks whether the enclosed triggers return true for X/all of them
@@ -4238,12 +4242,12 @@ count_trait_of_species = {
 	count = <num/all/variable>
 	limit = { <triggers> }
 }
-Supported Scopes: pop pop group leader species
+Supported Scopes: pop pop_group leader species
 
 any_trait_available_for_species - Iterate through all species traits and check if scope species doesn't have this trait 
 any_traits_available_for_species = { trait_has_all_tags = { organic positive } } - checks whether the enclosed triggers return true for any of them
 any_trait_available_for_species = { <triggers> }
-Supported Scopes: pop pop group leader species
+Supported Scopes: pop pop_group leader species
 
 count_trait_available_for_species - Iterate through all species traits and check if scope species doesn't have this trait.
 count_traits_available_for_species = { trait_has_all_tags = { organic positive } } - checks whether the enclosed triggers return true for X/all of them
@@ -4251,7 +4255,7 @@ count_trait_available_for_species = {
 	count = <num/all/variable>
 	limit = { <triggers> }
 }
-Supported Scopes: pop pop group leader species
+Supported Scopes: pop pop_group leader species
 
 any_owned_starbase - Iterate through every owned primary starbase - checks whether the enclosed triggers return true for any of them
 any_owned_starbase = { <triggers> }
@@ -4390,7 +4394,7 @@ is_unemployed = yes
 Supported Scopes: pop_group
 
 =================
-[17:39:31][game_application.cpp:2166]:
+[18:34:29][game_application.cpp:2209]: 
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -4450,16 +4454,12 @@ change_species_portrait - Changes the portrait of the species in scope.
 change_species_portrait = <key or species event target>
 Supported Scopes: species
 
-clear_pop_category - Resets category of a pop
-clear_pop_category = yes
-Supported Scopes: pop
-
 add_random_non_blocker_deposit - Adds random non-blocker resource deposit to the scoped planet
 add_random_non_blocker_deposit = yes
 Supported Scopes: planet
 
-remove_last_built_building - Removes last built building from the scoped planet
-remove_last_built_building = yes
+remove_random_building - Removes last built building from the scoped planet
+remove_random_building = yes
 Supported Scopes: planet
 
 remove_all_buildings - Removes all buildings from the scoped planet
@@ -4486,10 +4486,6 @@ remove_holding - Removes a specific holding from the scoped planet
 remove_holding = { holding = <key> owner = <owner> }
 Supported Scopes: planet
 
-reset_decline - Can be used to reset a planets decline
-reset_decline = yes
-Supported Scopes: planet
-
 add_holding - Begins construction of a specific holding on the scoped planet
 add_holding = { holding = <key> owner = <owner> }
 Supported Scopes: planet
@@ -4499,15 +4495,21 @@ give_technology = { tech = tech_desert_colonization message = yes }
 Supported Scopes: country
 
 add_building - Begins construction of a specific building on the scoped planet
-add_building = <key>
+	add_building = <key>
+or
+	add_building = {
+		district = <district_type_key>
+		zone = <zone_type_key>
+		building = <building_type_key>
+	}
 Supported Scopes: planet
 
 ruin_building - Ruins a single instance of a specific building on the scoped planet
-ruin_building = <key>/random_no_capital
+ruin_building = <building_type_key>/random_no_capital
 Supported Scopes: planet
 
 disable_building - Disables a single instance of a specific building on the scoped planet
-disable_building = <key>
+disable_building = <building_type_key>
 Supported Scopes: planet
 
 change_background_ethic - Changes the background ethic of a leader
@@ -4521,10 +4523,6 @@ Supported Scopes: all
 add_planet_devastation - Instantly adds devastation to scoped planet
 add_planet_devastation = 5
 Supported Scopes: planet
-
-create_half_species - Creates a new pop from a half-species on the planet
-create_half_species = { species_one = <target> species_two = <target> country = <target> (used for triggered costs) }
-Supported Scopes: all
 
 set_immortal - Sets the scoped leader immortal. The 'no' case will not override immortality granted by species characteristics (but will disable immortality granted by this effect).
 set_immortal = yes
@@ -4626,21 +4624,6 @@ remove_astral_rift_flag - Removes a flag from the scoped astral rift
 remove_astral_rift_flag = <key> (note: one can use e.g. my_flag@from to track relationships between objects)
 Supported Scopes: astral_rift
 
-every_owned_ship - Iterate through each ship in the fleet or controlled by the country - executes the enclosed effects on all of them for which the limit triggers return true
-every_owned_ship = { limit = { <triggers> } <effects> }
-Supported Scopes: country fleet
-
-random_owned_ship - Iterate through each ship in the fleet or controlled by the country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
-random_owned_ship = {
-	limit = { <triggers> }
-	weights = { (optional - adds weights to affect the chance a specific object is selected)
-		base = float
-		modifier = { <add/factor = float> <triggers> }
-	}
-	<effects>
-}
-Supported Scopes: country fleet
-
 create_species - Creates a new species. The habitability trait is determined by homeworld, traits = random, traits = { ideal_planet_class = <pc_XYZ> }, traits = <trait_pc_XYZ_preference>, or else is assigned randomly.
 create_species = {
 	name = <string>/random/scope
@@ -4679,6 +4662,10 @@ create_country = {
 	restrictions = { <restrictions, see "common\governments\readme_requirements.txt"> }
 	set_capital_from_species = yes/no
 	effect = { <effects executed on country> }
+	graphical_culture = <culture_key>
+	city_graphical_culture = <culture_key>
+	ship_kinds = { <ship_category_keys> }
+	room = <room_texture_key>
 }
 Supported Scopes: all
 
@@ -4723,6 +4710,7 @@ create_ship = {
 	prefix = <Y/N, determines if ship name should use owner country prefix>
 	colonizer_species = <species, default: fleet owner founder species> age = <int> (optional)
 	rarity = <common/rare/epic/exceptional, used only if ship is space fauna> (optional, fallbacks to highest owned genetic material if applicable but not set)
+	growth_stage = <integer value between 1 and the amount of growth stages in the design> (optional, use the first growth stage by default)
 }
 Supported Scopes: fleet starbase
 
@@ -4734,10 +4722,21 @@ add_awareness - Adds awareness to the scoped (pre-FTL) country
 add_awareness = 12.3
 Supported Scopes: country
 
-create_pop - Creates a new pop on the scoped planet
+create_pop - Adds pop size on the scoped planet
 create_pop = {
 	species = <target / key>
-ethos = <random / target / { ethic = <key> ethic = <key> count = <number> (optional) }>
+	ethos = <random / <target country> / { ethic = <key> ethic = <key> size = <number> (optional, default: POP_BULK_UNIT_SIZE) }>
+}
+Supported Scopes: planet
+
+create_pop_group - Creates a new pop group based on an existing one with overrides. If no existing pop group is passed, species is mandatory.
+create_pop_group = {
+	pop_group = <base pop group> (optional; if omitted, species is required)
+	species = last_created / <key> / <target> / random (optional; if omitted, base pop group is required)
+	ethos = { ethic = <key> } / random (optional; if no base group and no ethic is provided, ethos will be randomized)
+	category = <pop category> (optional; if omitted and no base group is defined, use category from first assigned job)
+	size = <number> (optional, default: POP_BULK_UNIT_SIZE)
+	effect = <init effect> (optional)
 }
 Supported Scopes: planet
 
@@ -4767,24 +4766,9 @@ set_star_class - Sets the star's star class, affecting system and galactic map g
 set_star_class = <star class>
 Supported Scopes: galactic_object
 
-random_country - Iterate through all countries - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
-random_country = {
-	limit = { <triggers> }
-	weights = { (optional - adds weights to affect the chance a specific object is selected)
-		base = float
-		modifier = { <add/factor = float> <triggers> }
-	}
-	<effects>
-}
+kill_pop_group - Instantly destroys part of a pop group
+kill_pop_group = { pop_group = <target pop group> amount = <amount killed> OR percentage = <percentage killed> }
 Supported Scopes: all
-
-random_pop - Executes enclosed effects on a random pop that meets the limit criteria. Warning: deprecated, use random_owned_pop
-random_pop = { limit = { <triggers> } <effects> }
-Supported Scopes: planet
-
-kill_pop - Instantly destroys the scoped pop
-kill_pop = yes
-Supported Scopes: pop
 
 destroy_colony - Destroys the colony on the scoped planet
 destroy_colony = yes
@@ -4814,9 +4798,13 @@ remove_pop_flag - Removes a flag from the scoped pop
 remove_pop_flag = <key> (note: one can use e.g. my_flag@from to track relationships between objects)
 Supported Scopes: pop
 
-every_owned_pop - Iterate through all owned pops - executes the enclosed effects on all of them for which the limit triggers return true
-every_owned_pop = { limit = { <triggers> } <effects> }
-Supported Scopes: planet country pop_faction sector
+set_pop_group_flag - Sets an arbitrarily-named flag on the scoped pop group
+set_pop_group_flag = <key> (note: one can use e.g. my_flag@from to track relationships between objects)
+Supported Scopes: pop group
+
+remove_pop_group_flag - Removes a flag from the scoped pop group
+remove_pop_group_flag = <key> (note: one can use e.g. my_flag@from to track relationships between objects)
+Supported Scopes: pop group
 
 set_name - Sets the name of the scoped country/planet/ship/fleet/leader/army/system/pop faction
 set_name = <string>/<target>
@@ -4838,7 +4826,7 @@ add_modifier = {
 	time_multiplier = <variable> (optional: days/months/years value is multiplied by the value of this variable)
 	clear_on_owner_change = yes (optional: default no; clears modifier if planet/system/megastructure's owner changes)
 }
-Supported Scopes: megastructure planet country ship pop fleet galactic_object pop_faction federation starbase spy_network espionage_operation astral_rift cosmic_storm_influence_field
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object pop_faction federation starbase spy_network espionage_operation astral_rift cosmic_storm_influence_field
 
 reduce_hp - Reduces the hull points of the scoped ship by a specific amount
 reduce_hp = 120
@@ -4855,6 +4843,10 @@ Supported Scopes: ship
 damage_ship - Damages ship by a specific amount
 damage_ship = 120
 Supported Scopes: ship
+
+damage_army - Damages scoped army by a specific amount
+damage_army = 250
+Supported Scopes: army
 
 repair_ship - Restores all hull points to the scoped ship
 repair_ship = yes
@@ -4874,40 +4866,40 @@ Supported Scopes: country
 
 set_variable - Sets or creates an arbitrarily-named variable with a specific value in the current scope
 set_variable = { which = <string> value = <float>/<variable>/<scope.variable>/trigger:<trigger> }
-Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
 
 clear_variable - Clears a previously-set variable from the game.
 clear_variable = <string>
-Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
 
 round_variable - Rounds a previously-set variable to the closest integer.
 round_variable = <string>
-Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
 
 floor_variable - Rounds a previously-set variable down to the previous integer.
 floor_variable = <string>
-Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
 
 ceiling_variable - Rounds a previously-set variable up to the next integer.
 ceiling_variable = <string>
-Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
 
 export_modifier_to_variable - Exports the value of a specified modifier in the current scope to a specified variable.
-export_modifier_to_variable = { modifier = pop_growth_speed_reduction variable = <string> }
-Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army species pop_faction
+export_modifier_to_variable = { modifier = logistic_growth_mult variable = <string> }
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army species pop_faction
 
 export_modifier_duration_to_variable - Exports the remaining duration of a specified modifier in the current scope to a specified variable.
 export_modifier_duration_to_variable = { modifier = modifier_name variable = <string> }
-Supported Scopes: planet country pop fleet
+Supported Scopes: planet country pop pop_group fleet
 
 export_trigger_value_to_variable - Exports the value of a trigger to a specified variable (so for num_pops, it'll export the number of pops).
 export_trigger_value_to_variable = {
-	trigger = pop_produces_resource
+	trigger = has_resource
 	parameters = { resource = energy } (optional: specify extra parameters for triggers with { }
-	variable = <string> (this example will print the amount of energy the pop produces to a variable)
+	variable = <string> (this example will print the amount of energy the scoped object has to a variable)
 	rounded = yes (default: no)
 }
-Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
 
 export_resource_stockpile_to_variable - Exports the value of the current country's stockpile of the specified resource to a variable.
 export_resource_stockpile_to_variable = { resource = energy variable = <string> }
@@ -4923,7 +4915,7 @@ Supported Scopes: country
 
 set_variable_to_random_value - Sets a variable to a random value within the specified bounds.
 set_variable_to_random_value = { which = <some_variable> min = -100 max = 100 rounded = yes/no }
-Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
 
 remove_global_flag - Removes a global flag
 remove_global_flag = <key> (note: one can use e.g. my_flag@from to track relationships between objects)
@@ -4935,30 +4927,7 @@ Supported Scopes: all
 
 change_variable - Increments a previously-set variable by a specific amount
 change_variable = { which = <string> value = <float>/<variable>/<scope.variable>/trigger:<trigger> }
-Supported Scopes: megastructure planet country ship pop fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
-
-every_galaxy_pop - Executes enclosed effects for every pop in the game that meet the limit criteria
-every_galaxy_pop = { limit = { <triggers> } <effects> }
-Supported Scopes: all
-
-every_country - Iterate through all countries - executes the enclosed effects on all of them for which the limit triggers return true
-every_country = { limit = { <triggers> } <effects> }
-Supported Scopes: all
-
-every_playable_country - Iterate through all playable countries - executes the enclosed effects on all of them for which the limit triggers return true
-every_playable_country = { limit = { <triggers> } <effects> }
-Supported Scopes: all
-
-random_playable_country - Iterate through all playable countries - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
-random_playable_country = {
-	limit = { <triggers> }
-	weights = { (optional - adds weights to affect the chance a specific object is selected)
-		base = float
-		modifier = { <add/factor = float> <triggers> }
-	}
-	<effects>
-}
-Supported Scopes: all
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
 
 set_event_locked - Silently disables the scoped fleet to prevent player action, remember to unlock at the end of the event
 set_event_locked = no
@@ -5209,11 +5178,14 @@ modify_species = {
 	remove_trait = <key> # optional, can specify multiple
 	add_traits_at_start_of_list = yes # optional, pushes out other traits if needed
 	ideal_planet_class = <target or pc_name> # optional
-	change_scoped_species = yes/no # modify scoped pops/planet/leader/country; default: yes
+	change_scoped_species = yes/no # modify scoped pop group/planet/leader/country; default: yes
 	portrait = <target or portrait name> # optional
+	add_random_species_trait = { <trigger> } adds a random trait filtered by the given trigger, the Scope is the trait token, and the original scope is in Prev 
+	on_random_trait_added = { <effect> } effect is fired for randomly selected trait, the Scope is the trait, the original scope is in Prev, and From contains Species 
+	sapient = <Y/N, determines if species is pre-sapient>
 	effect = { SCOPE_SPECIES } # optional effect to run on the resulting new species, is executed after any handling of change_scoped_species
 }
-Supported Scopes: planet country pop leader species
+Supported Scopes: planet country pop pop_group leader species
 
 add_opinion_modifier - Adds a specific opinion modifier for the scoped country towards target country
 add_opinion_modifier = { modifier = <key> who = <target> }
@@ -5232,19 +5204,8 @@ set_faction_hostility = { target = country set_hostile = yes set_neutral = no se
 Supported Scopes: country
 
 set_market_leader - Set scoped country as the current Galactic Market leader.
-set_market_leader = <yes/no>
+set_market_leader = <yes/no> 
 Supported Scopes: country
-
-random_system_planet - Iterate through each planet (colony or not) in the current system - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
-random_system_planet = {
-	limit = { <triggers> }
-	weights = { (optional - adds weights to affect the chance a specific object is selected)
-		base = float
-		modifier = { <add/factor = float> <triggers> }
-	}
-	<effects>
-}
-Supported Scopes: galactic_object
 
 add_event_chain_counter - Increments (or decrements with negative values) an event chain counter for the scoped country by a specific amount
 add_event_chain_counter = { event_chain = <key> counter = <key> amount = <int>/<variable> }
@@ -5258,11 +5219,20 @@ add_anomaly = {
 Supported Scopes: all
 
 set_disable_at_health - Sets the scoped ship to become disabled at a certain hull point percentage
-set_disable_at_health = <0-1 float>
-Supported Scopes: ship
+set_disable_at_health = <0-1 float> | no
+Supported Scopes: ship fleet
 
 remove_building - Removes a single instance of a specific building from the scoped planet
-remove_building = <key>
+	remove_building = <building_type_key>
+Supported Scopes: planet
+
+add_zone - Adds zone to the district of the planet
+add_zone = {
+	district = <district_type_key/district_slot_index>
+	zone = <zone_type_key>
+	zone_slot = <zone_slot_index>
+	replace = <yes/no>
+}
 Supported Scopes: planet
 
 change_planet_size - Increases or reduces the size of the scoped planet by a specified amount
@@ -8261,6 +8231,17 @@ every_system_in_cosmic_storm_influence_field - Iterate through all influence fie
 every_system_in_cosmic_storm_influence_field = { limit = { <triggers> } <effects> }
 Supported Scopes: cosmic_storm_influence_field
 
+random_country - Iterate through all countries - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_country = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: all
+
 ordered_country - Iterate through all countries - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
 ordered_country = {
 	limit = { <triggers> }
@@ -8269,6 +8250,10 @@ ordered_country = {
 	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
 	<effects>
 }
+Supported Scopes: all
+
+every_country - Iterate through all countries - executes the enclosed effects on all of them for which the limit triggers return true
+every_country = { limit = { <triggers> } <effects> }
 Supported Scopes: all
 
 random_relation - Iterate through all relations - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
@@ -8396,6 +8381,17 @@ every_federation_ally - Iterate through all countries in a federation with the s
 every_federation_ally = { limit = { <triggers> } <effects> }
 Supported Scopes: country
 
+random_playable_country - Iterate through all playable countries - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_playable_country = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: all
+
 ordered_playable_country - Iterate through all playable countries - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
 ordered_playable_country = {
 	limit = { <triggers> }
@@ -8404,6 +8400,10 @@ ordered_playable_country = {
 	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
 	<effects>
 }
+Supported Scopes: all
+
+every_playable_country - Iterate through all playable countries - executes the enclosed effects on all of them for which the limit triggers return true
+every_playable_country = { limit = { <triggers> } <effects> }
 Supported Scopes: all
 
 ordered_subject - Iterate through all subjects of the scoped country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
@@ -9071,6 +9071,17 @@ every_associate - Iterate through each associate member of the federation - exec
 every_associate = { limit = { <triggers> } <effects> }
 Supported Scopes: federation
 
+random_system_planet - Iterate through each planet (colony or not) in the current system - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_system_planet = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: galactic_object
+
 ordered_system_planet - Iterate through each planet (colony or not) in the current system - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
 ordered_system_planet = {
 	limit = { <triggers> }
@@ -9221,6 +9232,10 @@ ordered_owned_pop = {
 }
 Supported Scopes: planet country pop_faction sector
 
+every_owned_pop_group - Iterate through all owned pop groups - executes the enclosed effects on all of them for which the limit triggers return true
+every_owned_pop_group = { limit = { <triggers> } <effects> }
+Supported Scopes: planet country pop_faction sector
+
 random_species_pop - Iterate through each pop that belongs to this species; warning: resource-intensive! - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
 random_species_pop = {
 	limit = { <triggers> }
@@ -9306,6 +9321,17 @@ every_owned_sector - Iterate through every owned sector - executes the enclosed 
 every_owned_sector = { limit = { <triggers> } <effects> }
 Supported Scopes: country
 
+random_owned_ship - Iterate through each ship in the fleet or controlled by the country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_owned_ship = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: country fleet
+
 ordered_owned_ship - Iterate through each ship in the fleet or controlled by the country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
 ordered_owned_ship = {
 	limit = { <triggers> }
@@ -9314,6 +9340,10 @@ ordered_owned_ship = {
 	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
 	<effects>
 }
+Supported Scopes: country fleet
+
+every_owned_ship - Iterate through each ship in the fleet or controlled by the country - executes the enclosed effects on all of them for which the limit triggers return true
+every_owned_ship = { limit = { <triggers> } <effects> }
 Supported Scopes: country fleet
 
 random_controlled_ship - Iterate through each ship in the fleet or controlled by the country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
