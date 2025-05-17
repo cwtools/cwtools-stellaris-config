@@ -14,6 +14,8 @@ alias[effect:create_starbase] = {
 	owner = scope_group[target_country]
 	## cardinality = 1..1
 	size = <ship_size.starbase>
+	## cardinality = 1..1
+	design = <global_starbase_design>
 	## cardinality = 0..100
 	module = <starbase_module>
 	## cardinality = 0..100
@@ -392,11 +394,27 @@ alias[effect:remove_opinion_modifier] = {
 ###Removes a specific modifier from the scopes planet/country/pop/system
 alias[effect:remove_modifier] = <static_modifier>
 #flags
+###Sets an arbitrarily-named flag on the scoped pop group for a set duration
+alias[effect:set_timed_pop_group_flag] = {
+	flag = value_set[pop_group_flag]
+	## cardinality = 0..1
+	days = int
+	## cardinality = 0..1
+	days = value_set[variable]
+	## cardinality = 0..1
+	months = int
+	## cardinality = 0..1
+	months = value_set[variable]
+	## cardinality = 0..1
+	years = int
+	## cardinality = 0..1
+	years = value_set[variable]
+}
 ###Sets an arbitrarily-named flag on the scoped country
 alias[effect:set_country_flag] = value_set[country_flag]
 ###Sets an arbitrarily-named flag on the scoped planet
 alias[effect:set_planet_flag] = value_set[planet_flag]
-###Sets an arbitrarily-named flag on the scoped pop's faction/pop faction
+###Sets an arbitrarily-named flag on the scoped pop group's faction/pop faction
 alias[effect:set_pop_faction_flag] = value_set[pop_faction_flag]
 ###Sets an arbitrarily-named flag on the scoped system
 alias[effect:set_star_flag] = value_set[star_flag]
@@ -436,7 +454,10 @@ alias[effect:set_army_flag] = value_set[army_flag]
 alias[effect:set_situation_flag] = value_set[situation_flag]
 ###Sets an arbitrarily-named flag on the scoped agreement
 alias[effect:set_agreement_flag] = value_set[agreement_flag]
-
+###Sets an arbitrarily-named flag on the scoped pop group
+alias[effect:set_pop_group_flag] = value_set[pop_group_flag]
+###Removes a flag from the scoped pop group
+alias[effect:remove_pop_group_flag] = value_set[pop_group_flag]
 ## severity = warning
 ###Removes a flag from the scoped country
 alias[effect:remove_country_flag] = value[country_flag]
@@ -444,7 +465,7 @@ alias[effect:remove_country_flag] = value[country_flag]
 ###Removes a flag from the scoped planet
 alias[effect:remove_planet_flag] = value[planet_flag]
 ## severity = warning
-###Removes a flag from the scoped pop's faction/pop faction
+###Removes a flag from the scoped pop group's faction/pop faction
 alias[effect:remove_pop_faction_flag] = value[pop_faction_flag]
 ## severity = warning
 ###Removes a flag from the scoped system
@@ -761,7 +782,7 @@ alias[effect:add_claims] = {
 
 ###Instantly sets the owner of the scoped planet/fleet/army/starbase to target country
 alias[effect:set_owner] = scope_group[target_country]
-###Instantly sets the planet/fleet's controller to target country
+###Instantly sets the planet/fleet's controller to target country. If the fleet is a starbase, starts occupation, otherwise the fleet is leased out.
 alias[effect:set_controller] = scope_group[target_country]
 ###Sets the fleet/ambient object's location, can be fine-tuned
 alias[effect:set_location] = scope_group[spatial_object]
@@ -849,7 +870,7 @@ alias[effect:add_monthly_resource_mult] = {
 	## cardinality = 0..1
 	max = int
 	## cardinality = 0..1
-	multiplier = value[variable]
+	mult = value[variable]
 }
 
 ###Adds a specific trait to the scoped leader or a random common/negative trait
@@ -881,7 +902,7 @@ alias[effect:resettle_pop] = {
 }
 
 #also, most of these are not used in Vanilla (the first is, I did the cardinality based on it)
-###Set citizenship type for scoped species/pop/leader
+###Set citizenship type for scoped species/pop group/leader
 alias[effect:set_citizenship_type] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
@@ -890,7 +911,7 @@ alias[effect:set_citizenship_type] = {
 	cooldown = bool
 }
 
-###Set military service type for scoped species/pop/leader
+###Set military service type for scoped species/pop group/leader
 alias[effect:set_military_service_type] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
@@ -899,7 +920,7 @@ alias[effect:set_military_service_type] = {
 	cooldown = bool
 }
 
-###Set purge type for scoped species/pop/leader
+###Set purge type for scoped species/pop group/leader
 alias[effect:set_purge_type] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
@@ -908,7 +929,7 @@ alias[effect:set_purge_type] = {
 	cooldown = bool
 }
 
-###Set slavery type for scoped species/pop/leader
+###Set slavery type for scoped species/pop group/leader
 alias[effect:set_slavery_type] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
@@ -917,7 +938,7 @@ alias[effect:set_slavery_type] = {
 	cooldown = bool
 }
 
-###Set population control for scoped species/pop/leader
+###Set population control for scoped species/pop group/leader
 alias[effect:set_population_controls] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
@@ -927,7 +948,7 @@ alias[effect:set_population_controls] = {
 	cooldown = bool
 }
 
-###Set colonization control for scoped species/pop/leader
+###Set colonization control for scoped species/pop group/leader
 alias[effect:set_colonization_controls] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
@@ -937,7 +958,7 @@ alias[effect:set_colonization_controls] = {
 	cooldown = bool
 }
 
-###Set migration control for scoped species/pop/leader
+###Set migration control for scoped species/pop group/leader
 alias[effect:set_migration_controls] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
@@ -947,7 +968,7 @@ alias[effect:set_migration_controls] = {
 	cooldown = bool
 }
 
-###Set living standard for scoped species/pop/leader
+###Set living standard for scoped species/pop group/leader
 alias[effect:set_living_standard] = {
 	## cardinality = 0..1
 	country = scope_group[target_country]
@@ -1093,8 +1114,17 @@ alias[effect:destroy_ambient_object] = scope[ambient_object]
 alias[effect:remove_planet] = yes
 ###Removes a single instance of a building from the scoped planet, this will also cancel construction and clear the queue
 alias[effect:remove_building] = <building>
+
 ###Begins construction of a specific building
 alias[effect:add_building] = <building>
+alias[effect:add_building] = {
+	building = <building>
+	## cardinality = 0..1
+	zone = <zone>
+	## cardinality = 0..1
+	district = <district>
+}
+
 ###Instantly gives a specific tech to the scoped country
 alias[effect:give_technology] = {
 	tech = <technology>
@@ -1338,6 +1368,14 @@ alias[effect:create_country] = {
 		## cardinality = 0..4
 		civic = random
 	}
+	## cardinality = 0..1
+	graphical_culture = <graphical_culture>
+	## cardinality = 0..1
+	city_graphical_culture = <graphical_culture>
+	## cardinality = 0..1
+	ship_kinds = { <ship_category_keys> }
+	## cardinality = 0..1
+	room = icon[gfx/portraits/city_sets]
 	## cardinality = 0..1
 	species = random
 	## cardinality = 0..1
@@ -1681,6 +1719,15 @@ alias[effect:modify_species] = {
 	base = none
 	## cardinality = 0..inf
 	add_trait = <trait>
+	## cardinality = 0..inf
+	add_random_species_trait = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	on_random_trait_added = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+	## cardinality = 0..1
+	sapient = bool
 	## cardinality = 0..1
 	add_traits_at_start_of_list = bool
 	## cardinality = 0..inf
@@ -2031,7 +2078,7 @@ alias[effect:check_casus_belli_valid] = {
 	type = <casus_belli>
 }
 
-### Clears all ethics of specified pop or country
+### Clears all ethics of specified pop group or country
 alias[effect:clear_ethos] = yes
 ### Clears all queued fleet actions for target fleet
 alias[effect:clear_fleet_actions] = scope[fleet]
@@ -2314,10 +2361,10 @@ alias[effect:create_point_of_interest] = {
 	picture = <sprite>
 }
 
-### Creates a new pop on the scoped tile/planet
+### Adds pop size on the scoped planet
 alias[effect:create_pop] = {
 	## cardinality = 0..1
-	count = int
+	size = int
 	species = scope_group[target_species]
 	species = scalar	#key
 	## cardinality = 0..1
@@ -2461,6 +2508,8 @@ alias[effect:create_ship] = {
 	## cardinality = 0..1
 	rarity = enum[rarity]
 	## cardinality = 0..1
+	growth_stage = int
+	## cardinality = 0..1
 	## push_scope = ship
 	effect = {
 		alias_name[effect] = alias_match_left[effect]
@@ -2496,7 +2545,7 @@ alias[effect:fleet_action_research_special_project] = {
 	target = scope_group[spatial_object]
 }
 
-### Forces target pop to immediately evaluate their attraction to various pop factions
+### Forces target pop group to immediately evaluate their attraction to various pop factions
 alias[effect:force_faction_evaluation] = yes
 ### Copies a value from the galaxy setup into a variable, optionally scaling it by an int value
 ###get_galaxy_setup_value = { which = <string> setting = <string> [ scale = <int> ] }
@@ -2622,7 +2671,7 @@ alias[effect:rename_species] = {
 	name_list = <species_named_list>
 }
 
-### Restores the hull points of the scoped ship by a relative amount
+### Restores a certain percentage of hull points to the scoped ship or fleet
 alias[effect:repair_percentage] = value_field[0.0..1.0]
 
 ### Restores all hull points to the scoped ship
@@ -2665,6 +2714,7 @@ alias[effect:set_crisis_sound] = <sound_effect>
 alias[effect:set_custom_capital_location] = scope_group[spatial_object]
 ### Sets the scoped ship to become disabled at a certain hull point percentage
 alias[effect:set_disable_at_health] = value_field[0.0..1.0]
+alias[effect:set_disable_at_health] = no
 ### Enables or disables the scoped ship
 alias[effect:set_disabled] = bool
 ### Sets the flag of the current Empire.
@@ -2738,7 +2788,7 @@ alias[effect:set_policy] = {
 	cooldown = bool
 }
 
-### Sets the scoped pop to belong to a specific pop faction
+### Sets the scoped pop group to belong to a specific pop faction
 alias[effect:set_pop_faction] = <pop_faction>
 
 ### Adds or removes a planetary ring around the scoped planet
@@ -2983,12 +3033,10 @@ alias[effect:remove_deposit] = <deposit>
 alias[effect:unemploy_pop] = yes
 ###Immediately runs a job evaluation on the planet, firing and employing pops as needed
 alias[effect:check_planet_employment] = yes
-###Resets category of a pop
-alias[effect:clear_pop_category] = yes
 ###Adds random non-blocker resource deposit to the scoped planet
 alias[effect:add_random_non_blocker_deposit] = yes
 ###Removes last built building from the scoped planet
-alias[effect:remove_last_built_building] = yes
+alias[effect:remove_random_building] = yes
 ###Removes all buildings from the scoped planet
 alias[effect:remove_all_buildings] = yes
 ###Downgrades all non-capital buildings on the scoped planet/country. Leaves tier 1 buildings untouched.
@@ -2997,19 +3045,6 @@ alias[effect:downgrade_all_buildings] = yes
 alias[effect:downgrade_buildings_of_type] = <building>
 ###Instantly adds devastation to scoped planet
 alias[effect:add_planet_devastation] = value_field[-100..100]
-###Creates a new pop from a half-species on the planet
-alias[effect:create_half_species] = {
-	species_one = scope_group[target_species]
-	species_two = scope_group[target_species]
-	## cardinality = 0..1
-	###used for triggered costs
-	country = scope_group[target_country]
-	## cardinality = 0..1
-	## push_scope = species
-	effect = {
-		alias_name[effect] = alias_match_left[effect]
-	}
-}
 
 ###Forces target planet or country to calculate its internal modifier
 alias[effect:calculate_modifier] = yes
@@ -3021,8 +3056,8 @@ alias[effect:close_branch_office] = yes
 alias[effect:clear_blockers] = yes
 ###Changes the built species of the scoped object
 alias[effect:set_built_species] = scope_group[target_species]
-###Removes last built district from the scoped planet
-alias[effect:remove_last_built_district] = yes
+###Removes a random district from the scoped planet. Bigger district is more likely to be removed.
+alias[effect:remove_random_district] = yes
 ###Removes all district from the scoped planet
 alias[effect:remove_all_districts] = yes
 ###Removes a specific district from the scoped planet
@@ -3033,6 +3068,8 @@ alias[effect:add_district] = <district>
 alias[effect:add_district] = {
 	district_type = <district>
 	ignore_cap = yes
+	## cardinality = 0..1
+	type_conversion = bool
 }
 
 ###Enables a resource on the Galactic Market
@@ -4179,9 +4216,6 @@ alias[effect:set_faction_extorted] = bool
 ###Signals to portrait objects that they need to refresh some of their properties
 alias[effect:refresh_portraits] = enum[portrait_refresh]
 
-###Can be used to reset a planets decline
-alias[effect:reset_decline] = bool
-
 ###Used after an advanced authority swap to make sure things are changed properly
 alias[effect:advanced_authority_refresh] = bool
 
@@ -4197,7 +4231,7 @@ alias[effect:activate_fog_machine] = <cloud_type>
 ###Deactivates country fog machine
 alias[effect:deactivate_fog_machine] = bool
 
-###Swithces on/off galactic object ownership auto tracking for country fog machine
+###Switches on/off galactic object ownership auto tracking for country fog machine
 alias[effect:fog_machine_auto_tracking] = bool
 
 ###Sets the scope faction as extorted and removes extortion from any other ones
@@ -4436,7 +4470,7 @@ alias[effect:export_resource_maximum_to_variable] = {
 	variable = value_set[variable]
 }
 
-###Restores a certain percentage of armor points to the scoped ship
+###Restores a certain percentage of armor points to the scoped ship or fleet
 alias[effect:repair_armor_percentage] = value_field[0.0..1.0]
 
 ###If the scoped fleet is MIA, sets the return date in a given number of days, starting from current date
@@ -4469,7 +4503,7 @@ alias[effect:give_culling_rewards] = {
 
 ###Gives given space fauna DNA with given rarity to the target country.
 alias[effect:give_dna] = {
-	ship_category = enum[grand_archive_ship_category]
+	ship_category = <grand_archive_ship_category_type>
 	## cardinality = 0..1
 	rarity = enum[rarity]
 }
@@ -4533,7 +4567,7 @@ alias[effect:steal_specimens] = {
 ###Releases into the wild space fauna contained in the scoped country's Vivarium, from all or given ship category.	Resulting fleet owner can be specified.	Space Fauna can be culled for resources instead by specifying 'cull_vivarium_critter = yes'.
 alias[effect:release_vivarium_fauna] = { 
 	## cardinality = 0..1
-	category = enum[grand_archive_ship_category]
+	category = <grand_archive_ship_category_type>
 	## cardinality = 0..1
 	category = all 
 	## cardinality = 0..1
@@ -4550,7 +4584,7 @@ alias[effect:release_vivarium_fauna_count] = {
 	location = scope_group[spatial_object]
 	owners = { 
 		## cardinality = 0..inf
-		enum[grand_archive_ship_category] = scope_group[target_country]
+		<grand_archive_ship_category_type> = scope_group[target_country]
 	}
 }
 
@@ -4578,3 +4612,195 @@ alias[effect:add_resource_from_debris] = {
 	## cardinality = 0..1
 	system = scope[system]
 }
+
+###Instantly destroys part of a pop group
+alias[effect:kill_pop_group] = { 
+	pop_group = scope_group[target_pop_group]
+	amount =  int_value_field
+	percentage = value_field
+}
+
+###Damages scoped army by a specific amount
+alias[effect:damage_army] = int_value_field
+
+###Adds zone to the district of the planet
+alias[effect:add_zone] = {
+		district = <district>
+		zone = <zone>
+		zone_slot = <zone_slots>
+		replace = bool
+}
+
+###Triggers the sub-species integration step for a country.
+alias[effect:integrate_species] = bool
+	
+###Restores a certain percentage of shield points to the scoped ship or fleet
+alias[effect:repair_shield_percentage] = float
+
+###Restores a certain amount of hull points to the scoped ship or fleet
+alias[effect:repair_amount] = float
+
+###Restores a certain amount of armor points to the scoped ship or fleet
+alias[effect:repair_armor_amount] = float
+
+###Restores a certain amount of shield points to the scoped ship or fleet
+alias[effect:repair_shield_amount] = float
+
+###Sets if a country needs a colony (or a colony ship) to be considered alive
+alias[effect:set_faction_needs_colony] = bool
+
+###Sets if country will be automatically deleted when considered dead
+alias[effect:set_faction_auto_delete] = bool
+
+###Copies the traditions of the target country into the scoped country. Traditions are added to the existing traditions, and the potential/possible triggers are respected.the traditions listed in the exceptions list are not copied.
+alias[effect:copy_traditions_from] = {
+    target = scope_group[target_country]
+    exceptions = { 
+		## cardinality = 0..inf
+		<tradition>
+	}
+}
+
+###Copies the Ascension Perks of the target country into the scoped country. Perks are added to the existing perks, and the potential/possible triggers are respected.the perkss listed in the exceptions list are not copied.
+alias[effect:copy_ascension_perks_from] = {
+    target = scope_group[target_country]
+    exceptions = { 
+		## cardinality = 0..inf
+		<ascension_perk>
+	}
+}
+
+###Remove the target tradition from the scoped Country.
+alias[effect:remove_tradition] = <tradition>
+
+###Remove the target tradition tree from the scoped Country.
+alias[effect:remove_tradition_tree] = <tradition_category>
+
+###Adds the specified ascension perk to the scoped country.
+alias[effect:add_ascension_perk] = <ascension_perk>
+
+###Remove the target ascension perk from the scoped Country.
+alias[effect:remove_ascension_perk] = <ascension_perk>
+
+###Adds the defined amount of focus progress in the defined focus category
+alias[effect:add_focus_progress] = {
+	category = <card_categories>
+	## cardinality = 0..1
+	amount = float
+	## cardinality = 0..1
+	amount = value_set[variable]
+}
+
+###Adds the amount of pops to the scope pop group.
+alias[effect:add_pop_amount] = int
+
+###Removes the amount of pops from the scope pop group.
+alias[effect:remove_pop_amount] = int
+
+###Scales the amount of pops in the scope pop group
+alias[effect:scale_pop_amount] = float
+
+###Transfer the amount OR percentage of pops from the source pop group to the target pop group
+alias[effect:transfer_pop_amount] = {
+	source = scope_group[pop_group]
+	target = scope_group[pop_group]
+	## cardinality = 0..1
+	amount = int
+	## cardinality = 0..1
+	percentage = value_field[0.0..1.0]
+}
+
+###Set planet preference trait for scoped species (removing the current one, if any).
+alias[effect:set_habitability_trait] = {
+	trait = <trait>
+}
+
+###Sets the confusion state on the target ship/fleet (all ships). Clears at the end of combat.
+alias[effect:set_confused] = bool
+
+###Adds a specific amount of growth (non-fauna ships)
+alias[effect:add_growth] = int
+
+###Resets growth to zero (non-fauna ships)
+alias[effect:reset_growth] = {}
+
+###Removes a zone from the district of the planet
+alias[effect:remove_zone] = {
+	## cardinality = 0..1
+	district = <district>
+	## cardinality = 0..1
+	zone = <zones>
+	## cardinality = 0..1
+	zone_slot = <zone_slots>
+	## cardinality = 0..1
+	all = bool
+}
+
+###Instantly destroys part of the assigned pops to this job
+alias[effect:kill_assigned_pop_amount] = {
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	amount = int
+	## cardinality = 0..1
+	percentage = float
+}
+
+###Fires a pop group event for the scoped pop group, with optional DAYS and RANDOM delay
+alias[effect:pop_group_event] = {
+	id = <event.pop_group>
+	id = <event.scopeless>
+	## cardinality = 0..1
+	days = int
+	## cardinality = 0..1
+	days = value_field
+	## cardinality = 0..1
+	random = int
+	## cardinality = 0..1
+	random = value_field
+	## cardinality = 0..1
+	## cardinality = 0..1
+	scopes = {
+		## cardinality = 0..1
+		from = scope[any]
+		## cardinality = 0..1
+		fromfrom = scope[any]
+		## cardinality = 0..1
+		fromfromfrom = scope[any]
+		## cardinality = 0..1
+		fromfromfromfrom = scope[any]
+	}
+}
+
+###Adds a percentage to the total time of the current terraforminog process on the planet
+alias[effect:add_terraformation_total_time_mult] = float
+
+###Adds a new timeline event for the scope country.
+alias[effect:add_timeline_event] = {
+  type = <timeline_events_type>
+  ## cardinality = 0..1
+  date = value_field
+  ## cardinality = 0..1
+  targets = { 
+	## cardinality = 0..inf
+	localisation
+  } 
+  ## cardinality = 0..1
+  override_tooltip ={
+	## cardinality = 0..inf
+	localisation
+  }
+  ## cardinality = 0..1
+  override_text = { 
+	## cardinality = 0..inf
+	localisation
+  }  
+  ## cardinality = 0..1
+  override_texture = { 
+	## cardinality = 0..inf
+	scalar
+  }
+  ## cardinality = 0..1
+  override_id = scalar
+ }
