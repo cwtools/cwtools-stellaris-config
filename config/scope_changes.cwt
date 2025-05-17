@@ -895,9 +895,9 @@ alias[effect:ordered_owned_pop] = {
 	alias_name[effect] = alias_match_left[effect]
 }
 
-## push_scope = pop
-###Iterate through all owned pops
-alias[effect:random_owned_pop] = {
+## push_scope = pop_group
+###Iterate through all owned pop groups - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_owned_pop_group] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
