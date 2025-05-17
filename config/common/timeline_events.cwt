@@ -27,6 +27,6 @@ timeline_events_type = {
 	## cardinality = 0..1
 	texture = {
 		## cardinality = 0..inf
-		localisation
+		scalar
 	}
 }
