@@ -883,9 +883,9 @@ alias[effect:every_owned_pop_group] = {
 	alias_name[effect] = alias_match_left[effect]
 }
 
-## push_scope = pop
-###Iterate through all owned pops - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
-alias[effect:ordered_owned_pop] = {
+## push_scope = pop_group
+###Iterate through all owned pop groups - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_owned_pop_group] = {
 	position = int[0..inf]
 	order_by = value_field
 	##cardinality = 0..1
@@ -3072,17 +3072,17 @@ alias[trigger:count_associate] = {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
-## push_scope = pop
-###Iterate through each pop that belongs to this species; warning: resource-intensive!
-alias[effect:every_species_pop] = {
+## push_scope = pop_group
+###Iterate through each pop group that belongs to this species; warning: resource-intensive! - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_species_pop_group] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
 }
 
-## push_scope = pop
-###Iterate through each pop that belongs to this species; warning: resource-intensive! - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
-alias[effect:ordered_species_pop] = {
+## push_scope = pop_group
+###Iterate through each pop group that belongs to this species; warning: resource-intensive! - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_species_pop_group] = {
 	position = int[0..inf]
 	order_by = value_field
 	##cardinality = 0..1
@@ -3092,9 +3092,9 @@ alias[effect:ordered_species_pop] = {
 	alias_name[effect] = alias_match_left[effect]
 }
 
-## push_scope = pop
-###Iterate through each pop that belongs to this species; warning: resource-intensive!
-alias[effect:random_species_pop] = {
+## push_scope = pop_group
+###Iterate through each pop group that belongs to this species; warning: resource-intensive! - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_species_pop_group] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
