@@ -12,4 +12,21 @@ timeline_events_type = {
 		## cardinality = 0..inf
 		<gui_type>
 	}
+	## cardinality = 0..1
+	types = {
+		## cardinality = 0..1
+		country
+		## cardinality = 0..1
+		planet
+	}
+	## cardinality = 0..1
+	text = { 
+		## cardinality = 0..inf
+		localisation
+	}
+	## cardinality = 0..1
+	texture = {
+		## cardinality = 0..inf
+		localisation
+	}
 }
