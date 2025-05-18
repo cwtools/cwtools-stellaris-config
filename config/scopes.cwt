@@ -27,7 +27,10 @@ scopes = {
 	"Pop Job" = {
         aliases = { popjob pop_job }
     }
-    "Ambient Object" = {
+	Trait = {
+		aliases = { trait }
+	}
+	"Ambient Object" = {
         aliases = { ambientobject ambient_object }
     }
     Army = {
