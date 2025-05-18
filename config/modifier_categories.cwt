@@ -2,6 +2,12 @@ modifier_categories = {
     Pops = {
         supported_scopes = { pop planet galacticobject country }
     }
+	"Pop Group" = {
+        supported_scopes = { pop_group popgroup }
+    }
+	Job = {
+       supported_scopes = { pop_job }
+    }
     Countries = {
         supported_scopes = { country }
     }
