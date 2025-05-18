@@ -4804,3 +4804,133 @@ alias[effect:add_timeline_event] = {
   ## cardinality = 0..1
   override_id = scalar
  }
+
+###Proposes the resolution of the given type
+alias[effect:propose_resolution] = {
+	resolution = <resolution>
+	## cardinality = 0..inf
+	target = scope_group[target_country]
+}
+
+###Sets the trade conversions for the scoped Country. If they do not add up to 1.0 any remaining trade the country keeps as income
+alias[effect:set_trade_conversion] = { 
+	## cardinality = 0..inf
+	<resource> = float
+}
+
+###Sets the specific resource to the stockpile for the country scope:
+alias[effect:set_resource] = {
+	resource = <resource>
+	value = value_field
+}
+
+# put here instead of scope changes as no trait scope
+###Iterate through all existing species traits in the game - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_existing_species_traits] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+# put here instead of scope changes as no trait scope
+### Iterate through all existing species traits in the game - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = 
+alias[effect:ordered_existing_species_traits] = {
+	position = int[0..inf]
+	## cardinality = 0..inf
+	order_by = value_field
+	## cardinality = 0..inf
+	order_by = alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	inverse = bool
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+# put here instead of scope changes as no trait scope
+###Iterate through all existing species traits in the game - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_existing_species_traits] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+# put here instead of scope changes as no trait scope
+###Iterate through each trait that the scoped species has trait_of_species = { trait_has_all_tags = { positive } } - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_trait_of_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+# put here instead of scope changes as no trait scope
+### Iterate through each trait that the scoped species has trait_of_species = { trait_has_all_tags = { positive } } - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops) 
+alias[effect:ordered_trait_of_species] = {
+	position = int[0..inf]
+	## cardinality = 0..inf
+	order_by = value_field
+	## cardinality = 0..inf
+	order_by = alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	inverse = bool
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+# put here instead of scope changes as no trait scope
+### Iterate through each trait that the scoped species has trait_of_species = { trait_has_all_tags = { positive } } - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_trait_of_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+# put here instead of scope changes as no trait scope
+### Iterate through all species traits and check if scope species doesn't have this trait traits_available_for_species = { trait_has_all_tags = { organic positive } } - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_trait_available_for_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+# put here instead of scope changes as no trait scope
+### Iterate through all species traits and check if scope species doesn't have this trait traits_available_for_species = { trait_has_all_tags = { organic positive } } - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_trait_available_for_species] = {
+	position = int[0..inf]
+	## cardinality = 0..inf
+	order_by = value_field
+	## cardinality = 0..inf
+	order_by = alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	inverse = bool
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+# put here instead of scope changes as no trait scope
+###Iterate through all species traits and check if scope species doesn't have this trait traits_available_for_species = { trait_has_all_tags = { organic positive } } - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_trait_available_for_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
