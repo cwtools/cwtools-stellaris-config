@@ -7177,7 +7177,7 @@ kill_assigned_pop_amount = {
 	limit = { <triggers> }
 	amount = <amount killed> OR percentage = <percentage killed>
 }
-Supported Scopes: pop job
+Supported Scopes: pop_job
 
 unlock_council_selection - Unlocks council selection
 unlock_council_selection = yes
