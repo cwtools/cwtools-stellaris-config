@@ -4521,3 +4521,123 @@ alias[trigger:count_starbase_in_system] = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 }
+
+## push_scope = pop_group
+###Weighted random on owned popgroups based on the popgroup size. Supports the same scopes as the owned_pop_group script list
+alias[effect:weighted_random_owned_pop_group] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = bypass
+###Iterate through every bypass in the scoped galactic object. - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_bypass_in_system] = {
+	limit = {
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..inf
+	weights = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	## cardinality = 0..inf
+	alias_name[effect] = alias_match_left[effect] 
+}
+
+## push_scope = bypass
+###Iterate through every bypass in the scoped galactic object. - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_bypass_in_system] = {
+	position = int[0..inf]
+	## cardinality = 0..inf
+	order_by = value_field
+	## cardinality = 0..inf
+	order_by = alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	inverse = bool
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+##  push_scope = bypass
+###Iterate through every bypass in the scoped galactic object. - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_bypass_in_system] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = pop_job
+### Iterate through all owned pop jobs - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_owned_pop_job] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+## push_scope = pop_job
+###Iterate through all owned pop jobs - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_owned_pop_job] = {
+	position = int[0..inf]
+	## cardinality = 0..inf
+	order_by = value_field
+	## cardinality = 0..inf
+	order_by = alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	inverse = bool
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+##  push_scope =  pop_job
+###Iterate through every bypass in the scoped galactic object. - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_owned_pop_job] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = starbase
+### Iterate through every starbase in the scoped galactic object. - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_starbase_in_system] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+## push_scope = starbase
+### Iterate through every starbase in the scoped galactic object. - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_starbase_in_system] = {
+	position = int[0..inf]
+	## cardinality = 0..inf
+	order_by = value_field
+	## cardinality = 0..inf
+	order_by = alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	inverse = bool
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+##  push_scope =  starbase
+###Iterate through every starbase in the scoped galactic object. - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_starbase_in_system] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
