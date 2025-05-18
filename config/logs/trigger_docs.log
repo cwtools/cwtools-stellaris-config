@@ -7707,6 +7707,26 @@ add_timeline_event = {
   override_text = { "button:MY_OTHER_LOC_STRING" "button2:ANOTHER_LOC_OVERRIDE" }  override_texture = { "button:GFX_short_button button2:GFX_otherbutton" }  override_tooltip, "loc_tooltip"  override_tooltip_delayed, "loc_delayed_tooltip"}
 Supported Scopes: country
 
+propose_resolution - Proposes the resolution of the given type
+propose_resolution = {
+	resolution = <resolution type>
+	target = <event_target:country> (optional)}
+Supported Scopes: country
+
+weighted_random_owned_pop_group - Weighted random on owned popgroups based on the popgroup size. Supports the same scopes as the owned_pop_group script list
+Supported Scopes: planet country pop_faction sector
+
+set_trade_conversions - Sets the trade conversions for the scoped Country. If they do not add up to 1.0 any remaining trade the country keeps as income
+set_trade_conversion = { energy = 0.5 minerals = 0.2 }
+Supported Scopes: country
+
+set_resource - Sets the specific resource to the stockpile for the country scope:
+set_resource = {
+	resource = <resource_name>
+	value = <variable>
+}
+Supported Scopes: country
+
 create_leader - Creates a new leader for the scoped country
 create_leader = {
 	name = random / <string>
@@ -8012,6 +8032,31 @@ Supported Scopes: all
 every_bypass - Iterate through every bypass - executes the enclosed effects on all of them for which the limit triggers return true
 every_bypass = { limit = { <triggers> } <effects> }
 Supported Scopes: all
+
+random_bypass_in_system - Iterate through every bypass in the scoped galactic object. - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_bypass_in_system = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: galactic_object
+
+ordered_bypass_in_system - Iterate through every bypass in the scoped galactic object. - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+ordered_bypass_in_system = {
+	limit = { <triggers> }
+	position = <integer, starting with 0>
+	order_by = <variable>/trigger:<trigger>
+	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
+	<effects>
+}
+Supported Scopes: galactic_object
+
+every_bypass_in_system - Iterate through every bypass in the scoped galactic object. - executes the enclosed effects on all of them for which the limit triggers return true
+every_bypass_in_system = { limit = { <triggers> } <effects> }
+Supported Scopes: galactic_object
 
 random_cosmic_storm - Iterate through all cosmic storms in the galaxy - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
 random_cosmic_storm = {
@@ -9388,6 +9433,31 @@ every_species_pop_group - Iterate through each pop group that belongs to this sp
 every_species_pop_group = { limit = { <triggers> } <effects> }
 Supported Scopes: species
 
+random_owned_pop_job - Iterate through all owned pop jobs - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_owned_pop_job = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: planet country sector
+
+ordered_owned_pop_job - Iterate through all owned pop jobs - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+ordered_owned_pop_job = {
+	limit = { <triggers> }
+	position = <integer, starting with 0>
+	order_by = <variable>/trigger:<trigger>
+	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
+	<effects>
+}
+Supported Scopes: planet country sector
+
+every_owned_pop_job - Iterate through all owned pop jobs - executes the enclosed effects on all of them for which the limit triggers return true
+every_owned_pop_job = { limit = { <triggers> } <effects> }
+Supported Scopes: planet country sector
+
 random_galaxy_sector - Iterate through all sectors in the game - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
 random_galaxy_sector = {
 	limit = { <triggers> }
@@ -9663,6 +9733,87 @@ every_enslaved_species - Check if any of the species with enslaved pops <on the 
 every_enslaved_species = { limit = { <triggers> } <effects> }
 Supported Scopes: planet country
 
+random_existing_species_traits - Iterate through all existing species traits in the game - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_existing_species_traits = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: no_scope
+
+ordered_existing_species_traits - Iterate through all existing species traits in the game - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+ordered_existing_species_traits = {
+	limit = { <triggers> }
+	position = <integer, starting with 0>
+	order_by = <variable>/trigger:<trigger>
+	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
+	<effects>
+}
+Supported Scopes: no_scope
+
+every_existing_species_traits - Iterate through all existing species traits in the game - executes the enclosed effects on all of them for which the limit triggers return true
+every_existing_species_traits = { limit = { <triggers> } <effects> }
+Supported Scopes: no_scope
+
+random_trait_of_species - Iterate through each trait that the scoped species has
+trait_of_species = { trait_has_all_tags = { positive } } - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_trait_of_species = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: pop pop_group leader species
+
+ordered_trait_of_species - Iterate through each trait that the scoped species has
+trait_of_species = { trait_has_all_tags = { positive } } - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+ordered_trait_of_species = {
+	limit = { <triggers> }
+	position = <integer, starting with 0>
+	order_by = <variable>/trigger:<trigger>
+	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
+	<effects>
+}
+Supported Scopes: pop pop_group leader species
+
+every_trait_of_species - Iterate through each trait that the scoped species has
+trait_of_species = { trait_has_all_tags = { positive } } - executes the enclosed effects on all of them for which the limit triggers return true
+every_trait_of_species = { limit = { <triggers> } <effects> }
+Supported Scopes: pop pop_group leader species
+
+random_trait_available_for_species - Iterate through all species traits and check if scope species doesn't have this trait
+traits_available_for_species = { trait_has_all_tags = { organic positive } } - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_trait_available_for_species = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: pop pop_group leader species
+
+ordered_trait_available_for_species - Iterate through all species traits and check if scope species doesn't have this trait
+traits_available_for_species = { trait_has_all_tags = { organic positive } } - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+ordered_trait_available_for_species = {
+	limit = { <triggers> }
+	position = <integer, starting with 0>
+	order_by = <variable>/trigger:<trigger>
+	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
+	<effects>
+}
+Supported Scopes: pop pop_group leader species
+
+every_trait_available_for_species - Iterate through all species traits and check if scope species doesn't have this trait
+traits_available_for_species = { trait_has_all_tags = { organic positive } } - executes the enclosed effects on all of them for which the limit triggers return true
+every_trait_available_for_species = { limit = { <triggers> } <effects> }
+Supported Scopes: pop pop_group leader species
+
 random_owned_starbase - Iterate through every owned primary starbase - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
 random_owned_starbase = {
 	limit = { <triggers> }
@@ -9712,6 +9863,31 @@ Supported Scopes: country
 every_owned_nonprimary_starbase - Iterate through every owned non-primary starbase (e.g. orbital rings), not including juggernauts - executes the enclosed effects on all of them for which the limit triggers return true
 every_owned_nonprimary_starbase = { limit = { <triggers> } <effects> }
 Supported Scopes: country
+
+random_starbase_in_system - Iterate through every starbase in the scoped galactic object. - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+random_starbase_in_system = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+Supported Scopes: galactic_object
+
+ordered_starbase_in_system - Iterate through every starbase in the scoped galactic object. - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+ordered_starbase_in_system = {
+	limit = { <triggers> }
+	position = <integer, starting with 0>
+	order_by = <variable>/trigger:<trigger>
+	inverse = yes/no (default: no - if yes, then 0 is lowest rather than highest)
+	<effects>
+}
+Supported Scopes: galactic_object
+
+every_starbase_in_system - Iterate through every starbase in the scoped galactic object. - executes the enclosed effects on all of them for which the limit triggers return true
+every_starbase_in_system = { limit = { <triggers> } <effects> }
+Supported Scopes: galactic_object
 
 random_system - Iterate through all systems - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
 random_system = {
