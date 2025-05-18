@@ -4641,3 +4641,114 @@ alias[effect:every_starbase_in_system] = {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
 }
+
+##  push_scope =  trait
+###Iterate through all existing species traits in the game - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_existing_species_traits] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+##  push_scope =  trait
+### Iterate through all existing species traits in the game - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = 
+alias[effect:ordered_existing_species_traits] = {
+	position = int[0..inf]
+	## cardinality = 0..inf
+	order_by = value_field
+	## cardinality = 0..inf
+	order_by = alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	inverse = bool
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+##  push_scope =  trait
+###Iterate through all existing species traits in the game - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_existing_species_traits] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+##  push_scope =  trait
+###Iterate through each trait that the scoped species has trait_of_species = { trait_has_all_tags = { positive } } - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_trait_of_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+##  push_scope =  trait
+### Iterate through each trait that the scoped species has trait_of_species = { trait_has_all_tags = { positive } } - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops) 
+alias[effect:ordered_trait_of_species] = {
+	position = int[0..inf]
+	## cardinality = 0..inf
+	order_by = value_field
+	## cardinality = 0..inf
+	order_by = alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	inverse = bool
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+##  push_scope =  trait
+### Iterate through each trait that the scoped species has trait_of_species = { trait_has_all_tags = { positive } } - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_trait_of_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+##  push_scope =  trait
+### Iterate through all species traits and check if scope species doesn't have this trait traits_available_for_species = { trait_has_all_tags = { organic positive } } - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_trait_available_for_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+##  push_scope =  trait
+### Iterate through all species traits and check if scope species doesn't have this trait traits_available_for_species = { trait_has_all_tags = { organic positive } } - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_trait_available_for_species] = {
+	position = int[0..inf]
+	## cardinality = 0..inf
+	order_by = value_field
+	## cardinality = 0..inf
+	order_by = alias_name[trigger] = alias_match_left[trigger]
+	##cardinality = 0..1
+	inverse = bool
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+##  push_scope =  trait
+###Iterate through all species traits and check if scope species doesn't have this trait traits_available_for_species = { trait_has_all_tags = { organic positive } } - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_trait_available_for_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
