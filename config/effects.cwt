@@ -1723,6 +1723,7 @@ alias[effect:modify_species] = {
 	add_random_species_trait = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## cardinality = 0..1
 	on_random_trait_added = {
 		alias_name[effect] = alias_match_left[effect]
 	}
