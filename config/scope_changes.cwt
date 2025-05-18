@@ -636,8 +636,6 @@ alias[trigger:count_bypass_in_system] =  {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
-# Effect Scopes
-
 alias[effect:scope_field] = { alias_name[effect] = alias_match_left[effect] }
 
 ## push_scope = leader
@@ -2388,9 +2386,6 @@ alias[effect:ordered_federation_ally] = {
 alias[trigger:any_pop_faction] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
-
-
-
 
 # 3.0 "Dick"
 
@@ -4552,7 +4547,9 @@ alias[effect:ordered_bypass_in_system] = {
 	## cardinality = 0..inf
 	order_by = value_field
 	## cardinality = 0..inf
-	order_by = alias_name[trigger] = alias_match_left[trigger]
+	order_by = { 
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 	##cardinality = 0..1
 	inverse = bool
 	##cardinality = 0..1
@@ -4589,7 +4586,9 @@ alias[effect:ordered_owned_pop_job] = {
 	## cardinality = 0..inf
 	order_by = value_field
 	## cardinality = 0..inf
-	order_by = alias_name[trigger] = alias_match_left[trigger]
+	order_by = { 
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 	##cardinality = 0..1
 	inverse = bool
 	##cardinality = 0..1
@@ -4626,7 +4625,9 @@ alias[effect:ordered_starbase_in_system] = {
 	## cardinality = 0..inf
 	order_by = value_field
 	## cardinality = 0..inf
-	order_by = alias_name[trigger] = alias_match_left[trigger]
+	order_by = { 
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 	##cardinality = 0..1
 	inverse = bool
 	##cardinality = 0..1
@@ -4663,7 +4664,9 @@ alias[effect:ordered_existing_species_traits] = {
 	## cardinality = 0..inf
 	order_by = value_field
 	## cardinality = 0..inf
-	order_by = alias_name[trigger] = alias_match_left[trigger]
+	order_by = { 
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 	##cardinality = 0..1
 	inverse = bool
 	##cardinality = 0..1
@@ -4700,7 +4703,9 @@ alias[effect:ordered_trait_of_species] = {
 	## cardinality = 0..inf
 	order_by = value_field
 	## cardinality = 0..inf
-	order_by = alias_name[trigger] = alias_match_left[trigger]
+	order_by = { 
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 	##cardinality = 0..1
 	inverse = bool
 	##cardinality = 0..1
@@ -4737,7 +4742,9 @@ alias[effect:ordered_trait_available_for_species] = {
 	## cardinality = 0..inf
 	order_by = value_field
 	## cardinality = 0..inf
-	order_by = alias_name[trigger] = alias_match_left[trigger]
+	order_by = { 
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 	##cardinality = 0..1
 	inverse = bool
 	##cardinality = 0..1
@@ -4752,3 +4759,4 @@ alias[effect:every_trait_available_for_species] = {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
 }
+
