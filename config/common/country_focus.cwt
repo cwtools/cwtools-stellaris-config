@@ -60,10 +60,46 @@ card_categories = {
 }
 
 focus_card_key = {
+	## cardinality = 0..1
+	category = enum[card_categories_focus]
+	## cardinality = 0..1
+	tier = int
+	## cardinality = 0..1
+	background = <sprite>
 	
+	## cardinality = 0..1
+	base = localisation
+	name = localisation
+	desc = localisation
+	hint = localisation
+	lore = localisation
+	
+	## cardinality = 0..1
+	possible = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	condition_for_achievement = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	
+	## cardinality = 0..1
+	on_success = {
+		alias_name[effect] = alias_match_left[effect]
+	}
 }
 
 focus_rewards = {
+
+	## cardinality = 0..1
+	category = enum[card_categories_focus]
+	cost = int
+	mode = enum[focus_rewards_mode]
+		
+	## cardinality = 0..1
+	on_success = {
+		alias_name[effect] = alias_match_left[effect]
+	}
 	
 }
 
@@ -78,5 +114,10 @@ enums = {
 		research
 		trade
 		amenity
+	}
+	enum[focus_rewards_mode] = {
+		end
+		left
+		right
 	}
 }
