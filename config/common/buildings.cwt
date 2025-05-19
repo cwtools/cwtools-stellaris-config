@@ -209,6 +209,8 @@ building = {
 	alias_name[triggered_planet_modifier_planet] = alias_match_left[triggered_planet_modifier_planet]
 	alias_name[triggered_desc] = alias_match_left[triggered_desc]
 	alias_name[triggered_country_modifier_planet] = alias_match_left[triggered_country_modifier_planet]
+	alias_name[triggered_planet_modifier_pop_group] = alias_match_left[triggered_planet_pop_group_modifier_for_all]
+	alias_name[triggered_planet_pop_group_modifier_species] = alias_match_left[triggered_planet_pop_group_modifier_for_species]
 
 	## cardinality = 0..1
 	resources = {
