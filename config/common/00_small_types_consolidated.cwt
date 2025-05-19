@@ -143,10 +143,10 @@ types = {
 			Desc = "$_description"
 		}
 	}
-	type = [targettype] = {
+	type[targettype] = {
 		path = "game/common/target_types"
 	}
-	type = [tradable_actions] = {
+	type[tradable_actions] = {
 		path = "game/common/tradable_actions" 
 	}
 }
