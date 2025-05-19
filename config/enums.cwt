@@ -429,4 +429,8 @@ enums = {
 		simplified
 		clamped
 	}
+	enum[ambient_object] = {
+		abandoned_weapon_station
+		small_debris_object
+	}
 }
