@@ -218,6 +218,29 @@ alias[resources_template_optional:resources] = {
 # alias[cwt_alias_key:stellaris_object_key]
 
 ## replace_scope = { this = planet root = planet }
+alias[triggered_district_modifier_planet:triggered_district_planet_modifier] = {
+	## cardinality = 0..1
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	alias_name[modifier] = alias_match_left[modifier]
+	## cardinality = 0..1
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	## cardinality = 0..1
+	custom_tooltip = localisation
+	## cardinality = 0..1
+	show_only_custom_tooltip = bool
+	## cardinality = 0..1
+	mult = value_field
+	## cardinality = 0..1
+	multiplier = value_field
+	## cardinality = 0..1
+	key = localisation
+}
+
+## replace_scope = { this = planet root = planet }
 alias[triggered_planet_modifier_planet:triggered_planet_modifier] = {
 	## cardinality = 0..1
 	potential = {
