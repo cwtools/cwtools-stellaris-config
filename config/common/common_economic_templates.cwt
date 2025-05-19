@@ -282,6 +282,60 @@ alias[triggered_planet_growth_habitability_modifier:triggered_planet_growth_habi
 	custom_tooltip = localisation
 }
 
+alias[triggered_planet_pop_group_modifier_species:triggered_planet_pop_group_modifier_for_species] = {
+	## cardinality = 0..1
+	## replace_scope = { this = pop_group root = pop_group }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## replace_scope = { this = planet root = planet }
+	alias_name[modifier] = alias_match_left[modifier]
+	## cardinality = 0..1
+	## replace_scope = { this = planet root = planet }
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	## cardinality = 0..1
+	key = <trait>
+	## cardinality = 0..1
+	custom_tooltip = localisation
+	## cardinality = 0..1
+	show_only_custom_tooltip = bool
+	## cardinality = 0..1
+	## replace_scope = { this = pop_group root = pop_group }
+	mult = value_field
+	## cardinality = 0..1
+	## replace_scope = { this = pop_group root = pop_group }
+	multiplier = value_field
+}
+
+alias[triggered_planet_modifier_pop_group:triggered_planet_pop_group_modifier_for_all] = {
+	## cardinality = 0..1
+	## replace_scope = { this = pop_group root = pop_group }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## replace_scope = { this = planet root = planet }
+	alias_name[modifier] = alias_match_left[modifier]
+	## cardinality = 0..1
+	## replace_scope = { this = planet root = planet }
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	## cardinality = 0..1
+	key = <trait>
+	## cardinality = 0..1
+	custom_tooltip = localisation
+	## cardinality = 0..1
+	show_only_custom_tooltip = bool
+	## cardinality = 0..1
+	## replace_scope = { this = pop_group root = pop_group }
+	mult = value_field
+	## cardinality = 0..1
+	## replace_scope = { this = pop_group root = pop_group }
+	multiplier = value_field
+}
+
 alias[triggered_planet_modifier_pop:triggered_planet_modifier] = {
 	## cardinality = 0..1
 	## replace_scope = { this = pop root = pop }
