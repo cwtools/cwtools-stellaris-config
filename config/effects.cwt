@@ -4621,6 +4621,8 @@ alias[effect:kill_pop_group] = {
 	## cardinality = 0..1
 	amount =  int_value_field
 	## cardinality = 0..1
+	amount =  local_spent_biomass
+	## cardinality = 0..1
 	percentage = value_field
 }
 
