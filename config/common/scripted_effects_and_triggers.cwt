@@ -3,7 +3,7 @@ types = {
 	type[scripted_trigger] = {
 		path = "game/common/scripted_triggers"
 	}
-	## type_key_filter <> { ethic_leader_creator spawn_formless_defense_fleet split_astral_scar store_galactic_community_leader_backup_data }
+	## type_key_filter <> { ethic_leader_creator spawn_formless_defense_fleet split_astral_scar store_galactic_community_leader_backup_data pop_amount }
 	type[scripted_effect] = {
 		path = "game/common/scripted_effects"
 	}
@@ -80,3 +80,6 @@ alias[effect:ethic_leader_creator] = {
 	## cardinality = 0..1
 	CATCH_PHRASE = localisation
 }
+
+### Force scripted trigger to work in common and event files
+alias[trigger:pop_amount] = int_value_field 
