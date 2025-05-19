@@ -22,6 +22,9 @@ types = {
 			Plural = "$_plural"
 		}
 	}
+	type[shipset]
+		path = "game/common/ship_set"
+	}
 }
 
 ship_size = {
@@ -315,6 +318,13 @@ ship_size = {
 	mutation_components_size = enum[mutation_components_size]
 	## cardinality = 0..1
 	is_reanimated = bool
+}
+
+shipset = {
+	name = localisation
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 }
 
 enums = {
