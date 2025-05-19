@@ -143,6 +143,9 @@ types = {
 			Desc = "$_description"
 		}
 	}
+	type = {targettype] = {
+		path = "game/common/target_types"
+	}
 }
 
 ambient_object = {
@@ -599,6 +602,12 @@ enums = {
 		other
 		cosmic_storm
 	}
+	enum[target_type_enum] = {
+		enemy
+		ally
+		controlled
+		owned
+	}
 }
 
 scripted_modifier = {
@@ -790,4 +799,8 @@ artifact_actions = {
 	effect = {
 		alias_name[effect] = alias_match_left[effect]
 	}
+}
+
+targettype = {
+	target_type = enum[target_type_enum]
 }
