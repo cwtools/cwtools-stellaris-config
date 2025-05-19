@@ -1,4 +1,4 @@
-[21:22:43][game_application.cpp:2220]: 
+[18:49:13][game_application.cpp:2221]: 
 == SCOPE DOCUMENTATION ==
 These work as context switches (links) in triggers and effects (e.g. 'owner = { <triggers/effects> }'), or as targets of triggers and effects (e.g. 'is_owned_by = from'). Dot scoping (e.g. root.owner.capital_scope) is allowed.
 Complete list of scope changes:
@@ -231,7 +231,7 @@ last_created_pop_faction - Scopes to the last pop faction that was created anywh
 Supported Scopes: all
 Output Scope: pop_faction
 
-unhappiest_pop - Scopes from a country or planet to its unhappiest pop.
+unhappiest_pop - Scopes from a country or planet to its unhappiest pop group.
 Supported Scopes: planet country
 Output Scope: pop_group
 
