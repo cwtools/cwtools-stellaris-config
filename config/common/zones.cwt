@@ -9,21 +9,27 @@ types = {
 }
 
 zones = {
+	## cardinality = 0..1
 	icon = <sprite>
+	## cardinality = 0..1
 	base_buildtime = int
+	## cardinality = 0..1
+	max_buildings_planet_class = bool
 	
+	## cardinality = 0..1
 	## replace_scope = { root = planet this = planet }
 	potential = { 
 		## cardinality = 0..inf
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
+	## cardinality = 0..1
 	## replace_scope = { root = planet this = planet }
 	unlock = { 
 		## cardinality = 0..inf
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-
+	## cardinality = 0..1
 	resources = {
 		category = planet_zones
 		cost = {
@@ -36,14 +42,14 @@ zones = {
 	triggered_district_planet_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	
 	## cardinality = 0..1
 	## replace_scope = { root = planet this = planet }
 	planet_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	triggered_desc = {
+		## cardinality = 0..1
 		trigger = {
 			## cardinality = 0..inf
 			alias_name[trigger] = alias_match_left[trigger]
@@ -73,9 +79,106 @@ zones = {
 		## cardinality = 0..inf
 		enum[building_sets]
 	}
+	
+	## cardinality = 0..1
+	convert_to = {
+		enum[zone_slot]
+	}
+	
+	## cardinality = 0..1
+	show_in_tech = <technology>
+	
+	# for inline scripts to remove errors
+	## cardinality = 0..inf
+	alias_name[triggered_district_modifier_planet] = alias_match_left[triggered_district_planet_modifier]
+	
+	# for inline scripts to remove errors
+	## cardinality = 0..inf
+	alias_name[triggered_planet_modifier_planet] = alias_match_left[triggered_planet_modifier_planet]	
 }
 
 zone_slots = {
-	
+
+	## cardinality = 0..1
+	start = enum[zone_slot]
+
+	## cardinality = 0..1
+	include = {
+		## cardinality = 0..inf
+		enum[zone_slot]
+	}
+
+	## cardinality = 0..1
+	exclude = {
+		## cardinality = 0..inf
+		enum[zone_slot]
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { root = planet this = planet from = planet }
+    potential = { 
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+
+	## cardinality = 0..1
+	## replace_scope = { root = planet this = planet from = planet }
+	unlock = { 
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 }
 
+enums = {
+	enum[zone_slot] = {
+		all
+		zone_anglers
+		zone_agrarian_urban
+		zone_betharian
+		zone_default
+		zone_energy
+		zone_energy_physics
+		zone_energy_wilderness
+		zone_factory
+		zone_food
+		zone_food_biology
+		zone_food_wilderness
+		zone_fortress
+		zone_fortress_wilderness
+		zone_foundry
+		zone_foundry_wilderness
+		zone_habitat_knights
+		zone_habitat_hydroponics
+		zone_habitat_research
+		zone_habitat_research_unity
+		zone_hive_spawning
+		zone_industrial
+		zone_machine_replication
+		zone_minerals
+		zone_minerals_engineering
+		zone_minerals_wilderness
+		zone_research
+		zone_research_engineering
+		zone_research_physics
+		zone_research_society
+		zone_research_unity
+		zone_research_unity_wilderness
+		zone_research_wilderness
+		zone_resort
+		zone_resort_entertainment
+		zone_resort_grand_museum
+		zone_resort_hunting_ground
+		zone_resort_spiritual_retreat
+		zone_resort_zoo 
+		zone_rw_food
+		zone_rw_energy
+		zone_subterranean_urban
+		zone_trade
+		zone_trade_wilderness
+		zone_unity
+		zone_unity_spiritualist
+		zone_unity_wilderness
+		zone_urban
+		zone_urban_energy
+		zone_urban_food
+		zone_urban_minerals
+	}
+}
