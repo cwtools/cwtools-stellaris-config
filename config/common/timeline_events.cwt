@@ -10,7 +10,7 @@ timeline_events_type = {
 	fire_only_once = bool
 	gui = {
 		## cardinality = 0..inf
-		<gui_type>
+		scalar
 	}
 	## cardinality = 0..1
 	types = {
