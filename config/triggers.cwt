@@ -1099,7 +1099,7 @@ alias[trigger:has_starbase_building] = <starbase_building>
 alias[trigger:has_starbase_module] = <starbase_module>
 
 ### Compares the starbase ship size
-alias[trigger:has_starbase_size] = <ship_size> #TODO starbase ship size
+alias[trigger:has_starbase_size] = <ship_size.starbase>
 
 ### Checks the current status of the scoped ship or fleet.
 alias[trigger:has_status] = enum[colossus_status]
