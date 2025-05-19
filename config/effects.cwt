@@ -4618,7 +4618,9 @@ alias[effect:add_resource_from_debris] = {
 ###Instantly destroys part of a pop group
 alias[effect:kill_pop_group] = { 
 	pop_group = scope_group[target_pop_group]
+	## cardinality = 1..inf
 	amount =  int_value_field
+	## cardinality = 1..inf
 	percentage = value_field
 }
 
