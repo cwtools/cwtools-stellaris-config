@@ -32,6 +32,8 @@ enums = {
 		research
 		trade
 		amenity
+		planet_buildings
+		amenities
 	}
 	enum[building_owner_type] = {
 		normal
@@ -102,6 +104,10 @@ building = {
 	icon = icon[gfx/interface/icons/buildings] #todo: filepath
 	## cardinality = 0..1
 	icon = <building>
+	## cardinality = 0..1
+	ruined_icon = icon[gfx/interface/icons/buildings] #todo: filepath
+	## cardinality = 0..1
+	ruined_icon = <building>
 	## cardinality = 0..1
 	capital = bool
 	## cardinality = 0..1
