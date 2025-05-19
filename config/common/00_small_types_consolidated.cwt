@@ -143,8 +143,11 @@ types = {
 			Desc = "$_description"
 		}
 	}
-	type = {targettype] = {
+	type = [targettype] = {
 		path = "game/common/target_types"
+	}
+	type = [tradable_actions] = {
+		path = "game/common/tradable_actions" 
 	}
 }
 
@@ -803,4 +806,30 @@ artifact_actions = {
 
 targettype = {
 	target_type = enum[target_type_enum]
+}
+
+tradable_actions = {
+	## cardinality = 0..1
+	fire_and_forget = bool
+
+	## cardinality = 0..1
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	active = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	on_traded_effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+	## cardinality = 0..1
+	on_deal_ended_sender_effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+	## cardinality = 0..1
+	ai_weight = {
+		weight = int
+	}
 }
