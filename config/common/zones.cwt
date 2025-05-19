@@ -180,5 +180,6 @@ enums = {
 		zone_urban_energy
 		zone_urban_food
 		zone_urban_minerals
+		zone_urban_wilderness
 	}
 }
