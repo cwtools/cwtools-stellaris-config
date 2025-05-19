@@ -125,6 +125,9 @@ types = {
 			Desc = "$_desc"
 		}
 	}
+	type[concept_categories] = {
+		path = "game/common/game_concept_categories"
+	}
 	type[leader_class] = {
 		path = "game/common/leader_classes"
 		localisation = {
@@ -634,6 +637,7 @@ scripted_modifier = {
 }
 
 concept = {
+	
 	## cardinality = 0..1
 	icon = filepath
 	## cardinality = 0..1
@@ -644,7 +648,22 @@ concept = {
 		localisation
 	}
 	## cardinality = 0..1
+	databank = {
+		category = <concept_categories>
+		icon = <sprite>
+		picture = <sprite>
+	}
+	## cardinality = 0..1
+	wiki = scalar
+	## cardinality = 0..1
+	icon = filepath
+	## cardinality = 0..1
 	tooltip_override = localisation
+}
+
+concept_categories = {
+	name = localisation
+	icon = <sprite>
 }
 
 leader_class = {
