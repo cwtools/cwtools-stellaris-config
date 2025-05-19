@@ -46,7 +46,9 @@ enums = {
 		entertainment
 		factory
 		fallen_empire
+		fallen_empire_farming
 		fallen_empire_generator
+		fallen_empire_mining
 		farming
 		fortress
 		foundry
