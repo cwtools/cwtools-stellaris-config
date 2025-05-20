@@ -4829,3 +4829,29 @@ alias[effect:set_resource] = {
 	resource = <resource>
 	value = value_field
 }
+
+###Creates a new pop group based on an existing one with overrides. If no existing pop group is passed, species is mandatory.
+alias[effect:create_pop_group] = {
+	## cardinality = 0..1
+	pop_group = scope_group[target_pop_group]
+	## cardinality = 0..1
+	species = last_created
+	## cardinality = 0..1
+	species = random
+	## cardinality = 0..1
+	species = scope_group[target_species]
+	## cardinality = 0..1
+	species = <species_class>
+	## cardinality = 0..1
+	ethos =<ethos>
+	## cardinality = 0..1
+	ethos = random
+	## cardinality = 0..1
+	category = <social_strata>
+	## cardinality = 0..1
+	size = int_value_field
+	## cardinality = 0..1
+	size = POP_BULK_UNIT_SIZE
+	## cardinality = 0..1
+	effect = { alias_name[effect] = alias_match_left[effect] }
+}
