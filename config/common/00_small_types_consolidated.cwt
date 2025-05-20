@@ -245,6 +245,10 @@ country_customization = {
 				add = int
 				species_portrait = <portrait>
 			}
+			modifier = {
+				add = int
+				graphical_culture = <graphical_culture>
+			}
 		}
 	}
 	## cardinality = 0..1
