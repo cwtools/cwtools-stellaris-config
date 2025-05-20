@@ -101,7 +101,7 @@ alias[trigger:has_global_flag] = value[global_flag]
 ###Checks if the specified variable is set on the current scope. Use to avoid unset variables errors
 alias[trigger:is_variable_set] = value[variable]
 alias[trigger:is_variable_set] = local_size_option
-alias[trigger:is_variable_set] = local_spent_biomass
+alias[trigger:is_variable_set] = local_spent_<resource>
 ## severity = warning
 ###Checks if the leader has a specific, arbitrarily-named, flag
 alias[trigger:has_leader_flag] = value[leader_flag]
@@ -2954,7 +2954,7 @@ alias[trigger:pop_group_has_happiness] = bool
 
 ###Checks if the size of the pop group is according to the argument.
 alias[trigger:pop_group_size] == value_field
-alias[trigger:pop_group_size] = local_spent_biomass
+alias[trigger:pop_group_size] = local_spent_<resource>
 
 ###Checks if a trait has all tags in the list 
 alias[trigger:trait_has_all_tags] = { 
