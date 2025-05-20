@@ -1,6 +1,6 @@
 modifier_categories = {
     Pops = {
-        supported_scopes = { pop planet galacticobject country }
+        supported_scopes = { pop pop_group planet galacticobject country }
     }
 	"Pop Group" = {
         supported_scopes = { pop_group popgroup }
