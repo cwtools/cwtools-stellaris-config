@@ -4520,9 +4520,16 @@ alias[trigger:count_starbase_in_system] = {
 ## push_scope = pop_group
 ###Weighted random on owned popgroups based on the popgroup size. Supports the same scopes as the owned_pop_group script list
 alias[effect:weighted_random_owned_pop_group] = {
-	##cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-	alias_name[effect] = alias_match_left[effect]
+	limit = {
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..inf
+	weights = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	## cardinality = 0..inf
+	alias_name[effect] = alias_match_left[effect] 
 }
 
 ## push_scope = bypass
