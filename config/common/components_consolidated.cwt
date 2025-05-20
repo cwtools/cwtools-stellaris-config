@@ -65,6 +65,8 @@ component_set = {
 	## cardinality = 0..1
 	is_core_component_set = bool
 	## cardinality = 0..1
+	affects_target_type = bool
+	## cardinality = 0..1
 	is_space_fauna_component_set = bool
 	## cardinality = 0..1
 	is_default_space_fauna_component_set = bool
@@ -93,10 +95,18 @@ component_template = {
 	## cardinality = 0..1
 	icon_frame = int
 	## cardinality = 0..1
+	use_ship_main_target = bool
+	## cardinality = 0..1
 	prerequisites = {
 		## cardinality = 0..inf
 		<technology>
 	}
+	## cardinality = 0..1
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	upgrade_path = enum[bio_upgrade_path]
 	## cardinality = 0..1
 	component_set = <component_set>
 	## cardinality = 0..1
@@ -290,6 +300,52 @@ component_template = {
 				size_damage_factor = float
 			}
 		}
+		## cardinality = 0..1
+		scripted_action = {
+			scope = self
+			scope = planet
+			## cardinality = 0..1
+			finish_anim_state = enum[bio_finish_anim_state]
+			## cardinality = 0..1
+			possible = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			button_clickable = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			button_visible = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			name = localisation
+			tooltip = localisation
+			## cardinality = 0..1
+			icon = <sprite>
+			## cardinality = 0..1
+			icon_selected = <sprite>
+			## cardinality = 0..1
+			activity_key = localisation
+			## cardinality = 0..1
+			context_menu_name = localisation
+			## cardinality = 0..1
+			progress_activity_key = localisation
+			## cardinality = 0..1
+			required_progress = int
+			## cardinality = 0..1
+			on_click_sound = scalar
+			## cardinality = 0..1
+			cooldown = int
+			cost = { 
+				## cardinality = 0..inf
+				<resource> = int
+			}
+			shortcut = scalar
+			## cardinality = 0..1
+			slot = int
+			## cardinality = 0..1
+			wait = bool
+		}
 	}
 	subtype[weapon_component_template] = {
 		size = enum[weapon_slot_size]
@@ -328,7 +384,7 @@ component_template = {
 		## cardinality = 0..1
 		target_weights = {
 			## cardinality = 1..inf
-			scalar = int
+			scalar = float
 		}
 
 		#these are optional, vanilla uses an .csv file to create these
@@ -484,10 +540,25 @@ enums = {
 		medium
 		small
 		aux
-		
 	}
 	enum[aura_types] = {
 		ships
 		fleets
+	}
+	enum[bio_upgrade_path] = {
+		empty
+		growth
+		harbinger_chitin
+		harbinger_incubator
+		mauler_biter
+		mauler_pursuit
+		stinger_fire_rate
+		stinger_range
+		weaver_booster
+		weaver_growth_aura
+	}
+	enum[bio_finish_anim_state] = {
+		rage
+		superweapon
 	}
 }
