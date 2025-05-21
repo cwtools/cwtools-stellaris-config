@@ -1120,7 +1120,7 @@ alias[effect:add_building] = <building>
 alias[effect:add_building] = {
 	building = <building>
 	## cardinality = 0..1
-	zone = <zone>
+	zone = enum[zone_type]
 	## cardinality = 0..1
 	district = <district>
 }
@@ -4632,8 +4632,8 @@ alias[effect:damage_army] = int_value_field
 ###Adds zone to the district of the planet
 alias[effect:add_zone] = {
 		district = <district>
-		zone = <zone>
-		zone_slot = <zone_slots>
+		zone = enum[zone_type]
+		zone_slot = int_value_field
 		replace = bool
 }
 
@@ -4735,9 +4735,9 @@ alias[effect:remove_zone] = {
 	## cardinality = 0..1
 	district = <district>
 	## cardinality = 0..1
-	zone = <zones>
+	zone = enum[zone_type]
 	## cardinality = 0..1
-	zone_slot = <zone_slots>
+	zone_slot = int_value_field
 	## cardinality = 0..1
 	all = bool
 }
