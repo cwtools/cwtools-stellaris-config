@@ -35,7 +35,7 @@ colony_automation = {
 	## cardinality = 0..1
 	prio_zones = {
 		## cardinality = 0..inf
-		enum[zone_slot]
+		enum[zone_type]
 	}
 
 	buildings = {
