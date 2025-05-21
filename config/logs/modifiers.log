@@ -1,4 +1,4 @@
-[18:34:27][modifier.cpp:1979]: 
+[15:26:06][modifier.cpp:1979]: 
  == MODIFIER DOCUMENTATION ==
 Note on Modifier Categories:
 -- These are used internally as a tag to suggest where they are intended to be used, but exact behavior depends upon individual implementation.
@@ -4723,52 +4723,76 @@ Printing Modifier Definitions:
 - planet_metallurgists_upkeep_mult, Category: AI Economy, Job
 - planet_bio_trophies_energy_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_energy_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_energy_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_minerals_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_minerals_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_minerals_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_food_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_food_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_food_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_physics_research_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_physics_research_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_physics_research_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_society_research_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_society_research_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_society_research_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_engineering_research_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_engineering_research_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_engineering_research_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_influence_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_influence_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_influence_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_unity_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_unity_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_unity_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_trade_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_trade_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_trade_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_consumer_goods_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_consumer_goods_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_consumer_goods_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_alloys_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_alloys_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_alloys_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_volatile_motes_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_volatile_motes_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_volatile_motes_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_exotic_gases_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_exotic_gases_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_exotic_gases_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_rare_crystals_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_rare_crystals_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_rare_crystals_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_sr_living_metal_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_sr_living_metal_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_sr_living_metal_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_sr_zro_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_sr_zro_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_sr_zro_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_sr_dark_matter_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_sr_dark_matter_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_sr_dark_matter_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_nanites_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_nanites_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_nanites_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_minor_artifacts_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_minor_artifacts_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_minor_artifacts_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_astral_threads_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_astral_threads_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_astral_threads_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_biomass_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_biomass_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_biomass_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_menace_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_menace_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_menace_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_advanced_logic_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_advanced_logic_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_advanced_logic_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_feral_insight_produces_add, Category: AI Economy, Job
 - planet_bio_trophies_feral_insight_produces_mult, Category: AI Economy, Job
+- planet_bio_trophies_feral_insight_upkeep_add, Category: AI Economy, Job
 - planet_bio_trophies_produces_mult, Category: AI Economy, Job
 - planet_evaluators_energy_produces_add, Category: Economic Units, AI Economy
 - planet_evaluators_minerals_produces_add, Category: Economic Units, AI Economy
@@ -5750,31 +5774,6 @@ Printing Modifier Definitions:
 - planet_treasure_gatherers_advanced_logic_produces_mult, Category: Economic Units, AI Economy
 - planet_treasure_gatherers_feral_insight_produces_mult, Category: Economic Units, AI Economy
 - planet_treasure_gatherers_produces_mult, Category: Economic Units, AI Economy
-- planet_astrometeorologists_energy_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_minerals_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_food_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_physics_research_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_society_research_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_engineering_research_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_influence_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_unity_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_trade_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_consumer_goods_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_alloys_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_volatile_motes_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_exotic_gases_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_rare_crystals_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_sr_living_metal_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_sr_zro_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_sr_dark_matter_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_nanites_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_minor_artifacts_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_astral_threads_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_biomass_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_menace_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_advanced_logic_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_feral_insight_produces_mult, Category: AI Economy, Job
-- planet_astrometeorologists_produces_mult, Category: AI Economy, Job
 - planet_jobs_slave_energy_produces_mult, Category: AI Economy, Job
 - planet_jobs_slave_minerals_produces_mult, Category: AI Economy, Job
 - planet_jobs_slave_food_produces_mult, Category: AI Economy, Job
@@ -6646,7 +6645,6 @@ Printing Modifier Definitions:
 - starlit_wormhole_empire_windup_mult, Category: Countries
 - starlit_wormhole_ship_windup_mult, Category: Ships
 - starlit_wormhole_megastructure_bypass_windup_mult, Category: Megastructures
-- building_clone_vats_max, Category: Planets
 - planet_building_colony_shelter_build_speed_mult, Category: Planets
 - planet_building_capital_build_speed_mult, Category: Planets
 - planet_building_major_capital_build_speed_mult, Category: Planets
@@ -6825,6 +6823,7 @@ Printing Modifier Definitions:
 - planet_building_alpha_hub_build_speed_mult, Category: Planets
 - planet_building_organic_sanctuary_build_speed_mult, Category: Planets
 - planet_building_organic_paradise_build_speed_mult, Category: Planets
+- planet_building_trophy_vault_build_speed_mult, Category: Planets
 - planet_building_league_offices_build_speed_mult, Category: Planets
 - planet_building_military_academy_build_speed_mult, Category: Planets
 - planet_building_dread_encampment_build_speed_mult, Category: Planets
@@ -7119,6 +7118,7 @@ Printing Modifier Definitions:
 - planet_zone_research_engineering_build_speed_mult, Category: Planets
 - planet_zone_unity_build_speed_mult, Category: Planets
 - planet_zone_unity_spiritualist_build_speed_mult, Category: Planets
+- planet_zone_unity_bio_trophy_build_speed_mult, Category: Planets
 - planet_zone_fortress_build_speed_mult, Category: Planets
 - planet_zone_trade_build_speed_mult, Category: Planets
 - planet_zone_resort_build_speed_mult, Category: Planets
@@ -35330,7 +35330,6 @@ Printing Modifier Definitions:
 - pop_astrometeorologist_bonus_workforce_mult, Category: Pops
 - job_astrometeorologist_max_workforce_add, Category: Job
 - job_astrometeorologist_max_workforce_mult, Category: Job
-- pop_astrometeorologist_promotion_time_mult, Category: Pops
 - job_astrometeorologist_hive_add, Category: Planets
 - job_astrometeorologist_hive_per_pop, Category: Planets
 - job_astrometeorologist_hive_per_crime, Category: Planets
@@ -35340,7 +35339,6 @@ Printing Modifier Definitions:
 - pop_astrometeorologist_hive_bonus_workforce_mult, Category: Pops
 - job_astrometeorologist_hive_max_workforce_add, Category: Job
 - job_astrometeorologist_hive_max_workforce_mult, Category: Job
-- pop_astrometeorologist_hive_promotion_time_mult, Category: Pops
 - job_astrometeorologist_machine_add, Category: Planets
 - job_astrometeorologist_machine_per_pop, Category: Planets
 - job_astrometeorologist_machine_per_crime, Category: Planets
@@ -35350,7 +35348,6 @@ Printing Modifier Definitions:
 - pop_astrometeorologist_machine_bonus_workforce_mult, Category: Pops
 - job_astrometeorologist_machine_max_workforce_add, Category: Job
 - job_astrometeorologist_machine_max_workforce_mult, Category: Job
-- pop_astrometeorologist_machine_promotion_time_mult, Category: Pops
 - job_storm_dancer_add, Category: Planets
 - job_storm_dancer_per_pop, Category: Planets
 - job_storm_dancer_per_crime, Category: Planets
@@ -35389,6 +35386,7 @@ Printing Modifier Definitions:
 - pop_neural_chip_bonus_workforce_mult, Category: Pops
 - job_neural_chip_max_workforce_add, Category: Job
 - job_neural_chip_max_workforce_mult, Category: Job
+- pop_neural_chip_demotion_time_mult, Category: Pops
 - job_augmentor_add, Category: Planets
 - job_augmentor_per_pop, Category: Planets
 - job_augmentor_per_crime, Category: Planets
@@ -35813,6 +35811,7 @@ Printing Modifier Definitions:
 - pop_bio_trophy_unemployment_bonus_workforce_mult, Category: Pops
 - job_bio_trophy_unemployment_max_workforce_add, Category: Job
 - job_bio_trophy_unemployment_max_workforce_mult, Category: Job
+- pop_bio_trophy_unemployment_demotion_time_mult, Category: Pops
 - resolution_category_commerce_vote_strength_mult, Category: Countries
 - resolution_category_industry_vote_strength_mult, Category: Countries
 - resolution_category_market_vote_strength_mult, Category: Countries
@@ -36344,6 +36343,7 @@ Printing Modifier Definitions:
 - living_standard_trade_value_criminals_add, Category: Pops
 - job_soldier_or_warrior_add, Category: Planets
 - job_soldier_stability_add, Category: Planets
+- planet_bureaucrats_stability_produces_add, Category: Planets
 - job_researcher_naval_cap_add, Category: Planets
 - job_augmentor_trade_value_add, Category: Countries
 - job_roboticist_branch_office_value_mult, Category: Planets
