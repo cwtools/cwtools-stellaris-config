@@ -133,6 +133,7 @@ enums = {
 		zone_anglers
 		zone_agrarian_urban
 		zone_betharian
+		zone_broken_shackles_memorial
 		zone_default
 		zone_energy
 		zone_energy_physics
