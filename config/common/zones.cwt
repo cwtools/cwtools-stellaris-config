@@ -176,6 +176,7 @@ enums = {
 		zone_trade
 		zone_trade_wilderness
 		zone_unity
+		zone_unity_bio_trophy
 		zone_unity_spiritualist
 		zone_unity_wilderness
 		zone_urban
