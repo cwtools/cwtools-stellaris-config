@@ -4843,15 +4843,18 @@ alias[effect:create_pop_group] = {
 	## cardinality = 0..1
 	species = <species_class>
 	## cardinality = 0..1
-	ethos =<ethos>
+	ethos = {
+		## cardinality = 0..inf
+		ethic = <ethos>
+		## cardinality = 0..1
+		ethic =random
+	}
 	## cardinality = 0..1
 	ethos = random
 	## cardinality = 0..1
 	category = <social_strata>
 	## cardinality = 0..1
 	size = int_value_field
-	## cardinality = 0..1
-	size = POP_BULK_UNIT_SIZE
 	## cardinality = 0..1
 	effect = { alias_name[effect] = alias_match_left[effect] }
 }
