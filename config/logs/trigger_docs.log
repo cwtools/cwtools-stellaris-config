@@ -1,4 +1,4 @@
-[18:49:13][game_application.cpp:2206]: 
+[15:26:08][game_application.cpp:2206]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -4394,7 +4394,7 @@ is_unemployed = yes
 Supported Scopes: pop_group
 
 =================
-[18:34:29][game_application.cpp:2209]: 
+[15:26:08][game_application.cpp:2209]:
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -7179,6 +7179,10 @@ kill_assigned_pop_amount = {
 }
 Supported Scopes: pop_job
 
+merge_species - Triggers the merge of similar sub-species for a country.
+merge_species = yes 
+Supported Scopes: country
+
 unlock_council_selection - Unlocks council selection
 unlock_council_selection = yes
 Supported Scopes: country
@@ -7461,6 +7465,10 @@ Supported Scopes: galactic_object
 remove_megastructure - Removes a mega structure.
 remove_megastructure = <target mega structure>
 Supported Scopes: all
+
+set_planet_purge_type - Sets the purge type for the entire planet
+set_planet_purge_type = <type>
+Supported Scopes: planet
 
 trigger_megastructure_icon - if a planet has trigger_megastructure_icon = yes then the map icon for the star will show a megastructure icon
 Supported Scopes: planet
