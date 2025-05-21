@@ -92,7 +92,18 @@ building = {
 
 	## cardinality = 0..1
 	base_buildtime = int
-
+	## cardinality = 0..1
+	planet_limit = int
+	## cardinality = 0..1
+	planet_limit = {
+		base = int
+		## cardinality = 0..inf
+		modifier = {
+			alias_name[trigger] = alias_match_left[trigger]
+			add = int
+		}
+	}
+		
 	## cardinality = 0..1
 	###whether this building is exempt from being swapped into groups by the AI; default: no
 	exempt_from_ai_planet_specialization = bool
