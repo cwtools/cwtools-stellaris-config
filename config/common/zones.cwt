@@ -155,6 +155,7 @@ enums = {
 		zone_minerals
 		zone_minerals_engineering
 		zone_minerals_wilderness
+		zone_payback_enlightenment
 		zone_research
 		zone_research_engineering
 		zone_research_physics
