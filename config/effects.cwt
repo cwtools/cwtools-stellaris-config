@@ -4045,6 +4045,7 @@ alias[effect:add_deposit_category_effect] = <deposit_category>
 
 ###Stops terraforming process of scoped planet
 alias[effect:stop_terraform_process] = yes
+alias[effect:stop_terraform_process] = scope[planet]
 
 ###Resets n event chain counter for the scoped country
 alias[effect:reset_event_chain_counter] = {
