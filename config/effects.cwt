@@ -4634,6 +4634,7 @@ alias[effect:add_zone] = {
 		district = <district>
 		zone = enum[zone_type]
 		zone_slot = int_value_field
+		## cardinality = 0..1
 		replace = bool
 }
 
