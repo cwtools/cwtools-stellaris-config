@@ -125,6 +125,18 @@ deposit = {
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## cardinality = 0..1
+	habitat_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	
+	## cardinality = 0..inf
+	alias_name[triggered_planet_pop_group_modifier_species] = alias_match_left[triggered_planet_pop_group_modifier_for_species]
+
+	## cardinality = 0..1
+	drop_weight = {
+		factor = int
+	}
 
 	subtype[!not_dropped] = {
 		drop_weight = {
