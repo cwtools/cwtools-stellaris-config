@@ -4389,10 +4389,6 @@ count_war = {
 }
 Supported Scopes: country
 
-is_unemployed - Checks if the pop group is unemployed
-is_unemployed = yes
-Supported Scopes: pop_group
-
 =================
 [15:26:08][game_application.cpp:2209]:
 == EFFECT DOCUMENTATION ==
