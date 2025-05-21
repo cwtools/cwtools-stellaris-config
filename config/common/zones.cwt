@@ -82,7 +82,7 @@ zones = {
 	
 	## cardinality = 0..1
 	convert_to = {
-		enum[zone_slot]
+		enum[zone_type]
 	}
 	
 	## cardinality = 0..1
@@ -97,21 +97,21 @@ zones = {
 	alias_name[triggered_planet_modifier_planet] = alias_match_left[triggered_planet_modifier_planet]	
 }
 
-zone_slots = {
+zone_types = {
 
 	## cardinality = 0..1
-	start = enum[zone_slot]
+	start = enum[zone_type]
 
 	## cardinality = 0..1
 	include = {
 		## cardinality = 0..inf
-		enum[zone_slot]
+		enum[zone_type]
 	}
 
 	## cardinality = 0..1
 	exclude = {
 		## cardinality = 0..inf
-		enum[zone_slot]
+		enum[zone_type]
 	}
 
 	## cardinality = 0..1
@@ -128,7 +128,7 @@ zone_slots = {
 }
 
 enums = {
-	enum[zone_slot] = {
+	enum[zone_type] = {
 		all
 		zone_anglers
 		zone_agrarian_urban
