@@ -4866,7 +4866,7 @@ alias[effect:create_pop_group] = {
 }
 
 ###Triggers the merge of similar sub-species for a country.
-merge_species = bool
+alias[effect:merge_species] = bool
 
 ###Sets the purge type for the entire planet
-set_planet_purge_type = <purge_type>
+alias[effect:set_planet_purge_type] = <purge_type>
