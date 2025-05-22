@@ -1373,7 +1373,10 @@ alias[effect:create_country] = {
 	## cardinality = 0..1
 	city_graphical_culture = <graphical_culture>
 	## cardinality = 0..1
-	ship_kinds = { <ship_category_keys> }
+	ship_kinds = { 
+		## cardinality = 0..inf
+		<grand_archive_ship_category_type>
+	}
 	## cardinality = 0..1
 	room = icon[gfx/portraits/city_sets]
 	## cardinality = 0..1
