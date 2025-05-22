@@ -96,7 +96,7 @@ economic_category = {
 	}
 	## cardinality = 0..2
 	generate_add_modifiers = {
-		## cardinality = 1..3
+		## cardinality = 0..3
 		enum[economic_modifier_categories]
 	}
 	## cardinality = 0..1
