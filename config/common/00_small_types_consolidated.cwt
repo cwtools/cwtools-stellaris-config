@@ -1,4 +1,5 @@
 #I got frustrated at there being SO MANY files, so I have thrown a whole lot together in here -Caligula
+#I like to put separate unless I get worn down by too many then I start putting them here - 17blue17 :)
 
 types = {
 	type[traitcolors] = {
@@ -587,6 +588,16 @@ message_type = {
 	## cardinality = 0..1
 	### Is the message disabled in message settings by default? (default: no)
 	default_disabled = bool
+	## cardinality = 0..1
+	default_notification = bool
+	## cardinality = 0..1
+	default_autopause = bool
+	## cardinality = 0..1
+	default_notification = bool
+	## cardinality = 0..1
+	default_popup = bool
+	## cardinality = 0..1
+	can_disable = bool
 }
 
 enums = {
@@ -608,6 +619,7 @@ enums = {
 		leaders
 		other
 		cosmic_storm
+		focuses
 	}
 	enum[target_type_enum] = {
 		enemy
