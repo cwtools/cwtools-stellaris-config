@@ -4,8 +4,8 @@ types = {
 		path = "game/common/zones"
 	}
 	type[zone_slots] = {
-		path = "game/common/zones_slots"
-	}
+		path = "game/common/zone_slots"
+	}	
 }
 
 zones = {
@@ -134,6 +134,7 @@ enums = {
 		zone_agrarian_urban
 		zone_betharian
 		zone_broken_shackles_memorial
+		zone_cosmogenesis_default
 		zone_default
 		zone_energy
 		zone_energy_physics
