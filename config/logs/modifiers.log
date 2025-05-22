@@ -1,4 +1,4 @@
-[15:26:06][modifier.cpp:1979]: 
+[10:35:28][modifier.cpp:1979]: 
  == MODIFIER DOCUMENTATION ==
 Note on Modifier Categories:
 -- These are used internally as a tag to suggest where they are intended to be used, but exact behavior depends upon individual implementation.
@@ -5231,55 +5231,6 @@ Printing Modifier Definitions:
 - planet_enforcers_feral_insight_upkeep_mult, Category: AI Economy, Job
 - planet_enforcers_produces_mult, Category: AI Economy, Job
 - planet_enforcers_upkeep_mult, Category: AI Economy, Job
-- planet_clerks_energy_produces_add, Category: AI Economy, Job
-- planet_clerks_energy_produces_mult, Category: AI Economy, Job
-- planet_clerks_minerals_produces_add, Category: AI Economy, Job
-- planet_clerks_minerals_produces_mult, Category: AI Economy, Job
-- planet_clerks_food_produces_add, Category: AI Economy, Job
-- planet_clerks_food_produces_mult, Category: AI Economy, Job
-- planet_clerks_physics_research_produces_add, Category: AI Economy, Job
-- planet_clerks_physics_research_produces_mult, Category: AI Economy, Job
-- planet_clerks_society_research_produces_add, Category: AI Economy, Job
-- planet_clerks_society_research_produces_mult, Category: AI Economy, Job
-- planet_clerks_engineering_research_produces_add, Category: AI Economy, Job
-- planet_clerks_engineering_research_produces_mult, Category: AI Economy, Job
-- planet_clerks_influence_produces_add, Category: AI Economy, Job
-- planet_clerks_influence_produces_mult, Category: AI Economy, Job
-- planet_clerks_unity_produces_add, Category: AI Economy, Job
-- planet_clerks_unity_produces_mult, Category: AI Economy, Job
-- planet_clerks_trade_produces_add, Category: AI Economy, Job
-- planet_clerks_trade_produces_mult, Category: AI Economy, Job
-- planet_clerks_consumer_goods_produces_add, Category: AI Economy, Job
-- planet_clerks_consumer_goods_produces_mult, Category: AI Economy, Job
-- planet_clerks_alloys_produces_add, Category: AI Economy, Job
-- planet_clerks_alloys_produces_mult, Category: AI Economy, Job
-- planet_clerks_volatile_motes_produces_add, Category: AI Economy, Job
-- planet_clerks_volatile_motes_produces_mult, Category: AI Economy, Job
-- planet_clerks_exotic_gases_produces_add, Category: AI Economy, Job
-- planet_clerks_exotic_gases_produces_mult, Category: AI Economy, Job
-- planet_clerks_rare_crystals_produces_add, Category: AI Economy, Job
-- planet_clerks_rare_crystals_produces_mult, Category: AI Economy, Job
-- planet_clerks_sr_living_metal_produces_add, Category: AI Economy, Job
-- planet_clerks_sr_living_metal_produces_mult, Category: AI Economy, Job
-- planet_clerks_sr_zro_produces_add, Category: AI Economy, Job
-- planet_clerks_sr_zro_produces_mult, Category: AI Economy, Job
-- planet_clerks_sr_dark_matter_produces_add, Category: AI Economy, Job
-- planet_clerks_sr_dark_matter_produces_mult, Category: AI Economy, Job
-- planet_clerks_nanites_produces_add, Category: AI Economy, Job
-- planet_clerks_nanites_produces_mult, Category: AI Economy, Job
-- planet_clerks_minor_artifacts_produces_add, Category: AI Economy, Job
-- planet_clerks_minor_artifacts_produces_mult, Category: AI Economy, Job
-- planet_clerks_astral_threads_produces_add, Category: AI Economy, Job
-- planet_clerks_astral_threads_produces_mult, Category: AI Economy, Job
-- planet_clerks_biomass_produces_add, Category: AI Economy, Job
-- planet_clerks_biomass_produces_mult, Category: AI Economy, Job
-- planet_clerks_menace_produces_add, Category: AI Economy, Job
-- planet_clerks_menace_produces_mult, Category: AI Economy, Job
-- planet_clerks_advanced_logic_produces_add, Category: AI Economy, Job
-- planet_clerks_advanced_logic_produces_mult, Category: AI Economy, Job
-- planet_clerks_feral_insight_produces_add, Category: AI Economy, Job
-- planet_clerks_feral_insight_produces_mult, Category: AI Economy, Job
-- planet_clerks_produces_mult, Category: AI Economy, Job
 - planet_traders_energy_produces_add, Category: AI Economy, Job
 - planet_traders_energy_produces_mult, Category: AI Economy, Job
 - planet_traders_energy_upkeep_mult, Category: AI Economy, Job
@@ -32411,6 +32362,27 @@ Printing Modifier Definitions:
 - pop_bio_trophy_bonus_workforce_mult, Category: Pops
 - job_bio_trophy_max_workforce_add, Category: Job
 - job_bio_trophy_max_workforce_mult, Category: Job
+- pop_bio_trophy_promotion_time_mult, Category: Pops
+- job_bio_trophy_processing_add, Category: Planets
+- job_bio_trophy_processing_per_pop, Category: Planets
+- job_bio_trophy_processing_per_crime, Category: Planets
+- pop_bio_trophy_processing_workforce_add, Category: Pops
+- pop_bio_trophy_processing_workforce_mult, Category: Pops
+- pop_bio_trophy_processing_bonus_workforce_add, Category: Pops
+- pop_bio_trophy_processing_bonus_workforce_mult, Category: Pops
+- job_bio_trophy_processing_max_workforce_add, Category: Job
+- job_bio_trophy_processing_max_workforce_mult, Category: Job
+- pop_bio_trophy_processing_promotion_time_mult, Category: Pops
+- job_bio_trophy_unprocessing_add, Category: Planets
+- job_bio_trophy_unprocessing_per_pop, Category: Planets
+- job_bio_trophy_unprocessing_per_crime, Category: Planets
+- pop_bio_trophy_unprocessing_workforce_add, Category: Pops
+- pop_bio_trophy_unprocessing_workforce_mult, Category: Pops
+- pop_bio_trophy_unprocessing_bonus_workforce_add, Category: Pops
+- pop_bio_trophy_unprocessing_bonus_workforce_mult, Category: Pops
+- job_bio_trophy_unprocessing_max_workforce_add, Category: Job
+- job_bio_trophy_unprocessing_max_workforce_mult, Category: Job
+- pop_bio_trophy_unprocessing_demotion_time_mult, Category: Pops
 - job_purge_add, Category: Planets
 - job_purge_per_pop, Category: Planets
 - job_purge_per_crime, Category: Planets
@@ -35811,7 +35783,7 @@ Printing Modifier Definitions:
 - pop_bio_trophy_unemployment_bonus_workforce_mult, Category: Pops
 - job_bio_trophy_unemployment_max_workforce_add, Category: Job
 - job_bio_trophy_unemployment_max_workforce_mult, Category: Job
-- pop_bio_trophy_unemployment_demotion_time_mult, Category: Pops
+- pop_bio_trophy_unemployment_promotion_time_mult, Category: Pops
 - resolution_category_commerce_vote_strength_mult, Category: Countries
 - resolution_category_industry_vote_strength_mult, Category: Countries
 - resolution_category_market_vote_strength_mult, Category: Countries
