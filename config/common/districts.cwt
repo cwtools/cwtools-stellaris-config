@@ -26,6 +26,12 @@ types = {
 ## push_scope = planet
 district = {
 	## cardinality = 0..1
+	base_cap_amount = int
+	## cardinality = 0..1
+	default_starting_district = bool
+	## cardinality = 0..1
+	inherits_capped_modifiers_from = <district>
+	## cardinality = 0..1
 	expansion_planner = bool
 	## cardinality = 0..1
 	###Default = 0
@@ -39,6 +45,15 @@ district = {
 		}
 		text = localisation
 	}
+	## cardinality = 0..1
+	triggered_name = {
+		text = localisation
+	}
+	## cardinality = 0..1
+	triggered_flavor_desc = {
+		text = localisation
+	}
+	
 	## cardinality = 0..1
 	min_for_deposits_on_planet = int
 	## cardinality = 0..1
@@ -108,12 +123,16 @@ district = {
 		## cardinality = 0..inf
 		<district>
 	}
-
+	## cardinality = 0..1
 	resources = {
 		category = <economic_category>
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}
-
+	## cardinality = 0..1
+	zone_slots = {
+		<zone_slots>
+	}
+	
 	## cardinality = 0..1
 	## replace_scope = { this = planet root = planet }
 	planet_modifier = {
