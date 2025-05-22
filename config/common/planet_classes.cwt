@@ -186,6 +186,12 @@ planet_class = {
 		## cardinality = 0..1
 		initial = yes
 		## cardinality = 0..1
+		auto_trait_prio = {
+			<trait>
+		}
+		## cardinality = 0..1
+		starting_district = <district>
+		## cardinality = 0..1
 		carry_cap_per_free_district = float
 	}
 	subtype[unhabitable_ringworld] = {
@@ -232,3 +238,4 @@ enums = {
 		}
 	}
 }
+
