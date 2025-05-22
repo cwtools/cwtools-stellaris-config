@@ -1,4 +1,4 @@
-[15:26:08][game_application.cpp:2206]: 
+[10:35:29][game_application.cpp:2206]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -4390,7 +4390,7 @@ count_war = {
 Supported Scopes: country
 
 =================
-[15:26:08][game_application.cpp:2209]:
+[10:35:30][game_application.cpp:2209]:
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -5484,7 +5484,7 @@ Supported Scopes: pop pop_group
 
 set_graphical_culture - Sets the scoped object's graphical culture
 set_graphical_culture = <key>
-Supported Scopes: megastructure country
+Supported Scopes: megastructure country starbase
 
 set_formation_scale - Scales the scoped fleet's formation's ship spacing, above and below 1.0
 set_formation_scale = <float>
