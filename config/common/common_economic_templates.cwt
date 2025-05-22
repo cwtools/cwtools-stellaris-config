@@ -352,6 +352,8 @@ alias[triggered_planet_modifier_pop:triggered_planet_modifier] = {
 	## cardinality = 0..1
 	key = <trait>
 	## cardinality = 0..1
+	key =<concept>
+	## cardinality = 0..1
 	custom_tooltip = localisation
 	## cardinality = 0..1
 	show_only_custom_tooltip = bool
@@ -528,6 +530,29 @@ alias[triggered_country_modifier_country:triggered_country_modifier] = {
 
 ## replace_scope = { this = pop root = pop }
 alias[triggered_pop_modifier:triggered_pop_modifier] = {
+	## cardinality = 0..1
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	alias_name[modifier] = alias_match_left[modifier]
+	## cardinality = 0..1
+	modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	## cardinality = 0..1
+	key = localisation
+	## cardinality = 0..1
+	custom_tooltip = localisation
+	## cardinality = 0..1
+	show_only_custom_tooltip = bool
+	## cardinality = 0..1
+	mult = value_field
+	## cardinality = 0..1
+	multiplier = value_field
+}
+
+## replace_scope = { this = pop_group root = pop_group }
+alias[triggered_pop_group_modifier:triggered_pop_group_modifier] = {
 	## cardinality = 0..1
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
