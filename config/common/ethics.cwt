@@ -87,7 +87,7 @@ ethos = {
 	}
 	## cardinality = 0..1
 	###Root = pop, from = planet
-	## replace_scope = { root = pop this = pop from = planet }
+	## replace_scope = { root = pop_group this = pop_group from = planet }
 	pop_attraction = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
