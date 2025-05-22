@@ -4825,7 +4825,7 @@ alias[effect:propose_resolution] = {
 }
 
 ###Sets the trade conversions for the scoped Country. If they do not add up to 1.0 any remaining trade the country keeps as income
-alias[effect:set_trade_conversion] = { 
+alias[effect:set_trade_conversions] = { 
 	## cardinality = 0..inf
 	<resource> = float
 }
