@@ -866,9 +866,9 @@ alias[effect:add_monthly_resource_mult] = {
 	resource = <resource>
 	value = value_field
 	## cardinality = 0..1
-	min = int
+	min = float
 	## cardinality = 0..1
-	max = int
+	max = float
 	## cardinality = 0..1
 	mult = value[variable]
 }
