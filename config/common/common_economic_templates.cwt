@@ -119,9 +119,7 @@ alias[economic_template:cost] = {
 }
 
 alias[economic_template:produces] = {
-	# pop jobs requires this to be planet scope
 	## cardinality = 0..1
-	## replace_scope = { this = planet root = planet }
 	trigger = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
@@ -134,9 +132,7 @@ alias[economic_template:produces] = {
 }
 
 alias[economic_template:upkeep] = {
-	# pop jobs requires this to be planet scope
 	## cardinality = 0..1
-	## replace_scope = { this = planet root = planet }
 	trigger = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
