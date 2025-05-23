@@ -287,6 +287,8 @@ start_screen_message = {
 # Sets the chance for a system getting a specific precursor and distributes star flags named after the precursor. Or something like that.
 precursors = {
 	size = int
+	## cardinality = 0..1
+	picture = <sprite>
 
 	## cardinality = 0..1
 	possible = {
