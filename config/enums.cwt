@@ -66,35 +66,49 @@ enums = {
 		defenders
 	}
 	enum[scope_type_tokens] = {
-		none
-		megastructure
-		planet
+		agreement
+		alliance
+		ambient_object
+		archaeological_site
+		army
+		astral_rift
+		background_planet
+		bypass
+		cosmic_storm
 		country
-		ship
-		pop
+		debris
+		deposit
+		design
+		dlc_recommendation
+		espionage_asset
+		espionage_operation
+		exhibit
+		explorer
+		federation
+		first_contact
 		fleet
+		galactic_community
 		galactic_object
 		leader
-		army
-		ambient_object
-		species
-		design
-		pop_faction
-		war
-		federation
-		starbase
-		deposit
-		sector
+		lock_country
+		megastructure
 		no_scope
-		archaeological_site
-		first_contact
-		spy_network
-		espionage_operation
-		espionage_asset
-		agreement
+		none
+		planet
+		pop
+		pop_job
+		pop_faction
+		pop_group
+		sector
+		ship
+		ship_growth_stage
 		situation
-		astral_rift
-		galactic_community
+		species
+		spy_network
+		star
+		starbase
+		trait
+		war
 	}
 	enum[intel_level] = {
 		none
