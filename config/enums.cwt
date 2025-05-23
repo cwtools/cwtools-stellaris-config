@@ -304,28 +304,29 @@ enums = {
 	}
 	enum[scripted_modifier_categories] = {
 		all
+		army
+		component
+		country
+		deposit
+		economic_unit
+		espionage
+		federation
+		fleet
+		habitability
+		leader
+		megastructure
+		none
+		planet
 		pop
+		pop_faction
 		pop_group
 		pop_job
 		ship
-		station
-		fleet
-		country
-		army
-		leader
-		planet
-		component
-		pop_faction
-		deposit
-		megastructure
-		habitability
+		species
 		starbase
-		economic_unit
+		station
 		system
 		trade
-		federation
-		espionage
-		species
 	}
 	enum[job_triggers] = {
 		can_fill_drone_job
