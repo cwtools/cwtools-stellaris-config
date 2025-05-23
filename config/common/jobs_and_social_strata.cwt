@@ -150,19 +150,52 @@ job = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
-	# inline script maybe also uses so set to card 0 to inf
+	# pop jobs requires some of these to be planet scope unlike all other files so I had to build separate as I could get the scope change to work in economic template.  It works here as is.  So Caligula PLEASE leave as is.
+	# inline script also uses so set to .inf
 	## cardinality = 0..inf
 	resources = {
 		## cardinality = 0..1
 		category = <economic_category>
-		alias_name[economic_template] = alias_match_left[economic_template]
+				
+		# pop jobs requires this to be planet scope unlike other files.  Caligula PLEASE leave as is.
+		## cardinality = 0..inf
+		produces = {
+			## cardinality = 0..1
+			## replace_scope = { this = planet root = planet }
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..inf
+			<resource> = float
+			## cardinality = 0..inf
+			multiplier = value_field
+			## cardinality = 0..inf
+			mult = value_field
+		}
+		
+		# pop jobs requires this to be planet scope unlike other files.  Caligula PLEASE leave as is.
+		## cardinality = 0..inf
+		upkeep = {
+			## cardinality = 0..1
+			## replace_scope = { this = planet root = planet }
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..inf
+			<resource> = float
+			## cardinality = 0..inf
+			multiplier = value_field
+			## cardinality = 0..inf
+			mult = value_field
+		}
 	}
+
 	## cardinality = 0..1
 	overlord_resources = {
 		category = <economic_category>
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}
-
+	
 	## cardinality = 0..1
 	## replace_scope = { this = pop root = pop }
 	pop_modifier = {
