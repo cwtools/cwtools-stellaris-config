@@ -21,7 +21,7 @@ types = {
 resource = {
 	## cardinality = 0..1
 	tradable = bool
-
+	
 	subtype[tradable] = {
 		### default -1, if non-positive, resource cannot be traded in the Market
 		market_amount = int
@@ -29,6 +29,9 @@ resource = {
 		market_price = int
 		max = int
 	}
+	
+	## cardinality = 0..1
+	hide_gain = bool
 
 	## cardinality = 0..1
 	max = int
@@ -37,6 +40,8 @@ resource = {
 	deficit_modifier = <static_modifier>
 	## cardinality = 0..1
 	deficit_situation = <situation_type>
+	## cardinality = 0..1
+	deficit_trade_conversion_mult = float
 	
 	## cardinality = 0..1
 	culling_conversion_value = int
