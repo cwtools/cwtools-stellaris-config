@@ -49,6 +49,8 @@ technology = {
 	## cardinality = 0..1
 	icon = icon[gfx/interface/icons/technologies]
 	## cardinality = 0..1
+	weight = float
+	## cardinality = 0..1
 	cost = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
@@ -59,6 +61,7 @@ technology = {
 		is_rare = bool
 		## cardinality = 0..1
 		is_dangerous = bool
+		## cardinality = 0..1
 		weight = float
 		#usually in ""
 
@@ -69,12 +72,18 @@ technology = {
 	prerequisites = {
 		## cardinality = 0..100
 		<technology>
+		## cardinality = 0..1
+		OR = {
+			## cardinality = 0..100
+			<technology>
+		}
 	}
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	
 	## cardinality = 0..1
 	gateway = scalar #can be any string
 	subtype[repeatable] = {
@@ -95,6 +104,8 @@ technology = {
 	start_tech = bool
 	## cardinality = 0..1
 	is_reverse_engineerable = bool
+	## cardinality = 0..1
+	is_rare = bool
 	## cardinality = 0..1
 	ai_update_type = enum[tech_ai_type]
 	## cardinality = 0..1
@@ -155,7 +166,13 @@ technology = {
 			description = localisation
 			## cardinality = 0..inf
 			alias_name[modifier] = alias_match_left[modifier]
+			## cardinality = 0..1
+			custom_tooltip = localisation
 		}
+		## cardinality = 0..1
+		area = enum[research_areas]
+		## cardinality = 0..1
+		category = { <technology_category> }
 	}
 		
 	## cardinality = 0..1
