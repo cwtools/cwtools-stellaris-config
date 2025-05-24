@@ -329,10 +329,12 @@ alias[trigger:count_owned_pop_group] =  {
 
 ### Sums all pop amounts - checks whether the enclosed triggers return true for X/all of them
 alias[trigger:count_owned_pop_amount] =  {
+	## cardinality = 0..1
 	count = all
+	## cardinality = 0..1
 	count = int_value_field
 	## cardinality = 0..1
-	## push_scope = pop
+	## push_scope = pop_group
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
@@ -4767,4 +4769,3 @@ alias[effect:every_trait_available_for_species] = {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
 }
-
