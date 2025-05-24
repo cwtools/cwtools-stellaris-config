@@ -122,6 +122,7 @@ alias[modifier_rule_with_loc:complex_trigger_modifier] = {
 #calculation types
 enums = {
 	enum[scaled_modifier_calc] = {
+		pop_amount
 		pop_count
 		pop_happiness
 		planet_distance_empire
