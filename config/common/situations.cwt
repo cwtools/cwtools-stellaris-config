@@ -22,7 +22,8 @@ types = {
 	}
 }
 
-## replace_scope = { this = situation root = situation }
+# nothing seems to change the scopes in this file but the next line.  Push scope Replace Scope - Nothing!!!!!!  I had to override here to get things to work!!!!!!!
+## replace_scope = { this = any root = any }
 situation_type = {
 	## cardinality = 0..inf
 	picture = <sprite>
@@ -43,6 +44,7 @@ situation_type = {
 	## replace_scope = { root = situation this = situation }
 	desc = {
 		trigger = { alias_name[trigger] = alias_match_left[trigger] }
+		## cardinality = 0..1
 		text = localisation
 	}
 	## cardinality = 0..1
@@ -103,7 +105,6 @@ situation_type = {
 	monthly_progress = {
 		## cardinality = 0..1
 		add = int
-		}
 		alias_name[modifier_rule_with_loc] = alias_match_left[modifier_rule_with_loc]
 	}
 	###Effects when Situation's progress has reached its completion
