@@ -113,7 +113,7 @@ army = {
 	}
 	subtype[pop_spawned] = {
 		## cardinality = 0..1
-		## replace_scope { this = pop root = pop }
+		## replace_scope { this = pop_group root = pop_group }
 		###spawn_chance: only works on defensive armies; pop scope check that lets you give weights for what sort of army should be spawned. Calculation is health * spawn_chance (default: 1), and it always picks the best one
 		spawn_chance = {
 			factor = float
