@@ -19,7 +19,7 @@ types = {
 		subtype[species_has_citizenship] = {
 		}
 		## type_key_filter = should_abduct_pop
-		## replace_scope = { this = pop root = country }
+		## replace_scope = { this = pop_group root = country }
 		subtype[should_abduct_pop] = {
 		}
 		## type_key_filter = species_can_live_on_planet
@@ -27,11 +27,11 @@ types = {
 		subtype[species_can_live_on_planet] = {
 		}
 		## type_key_filter = can_vote_in_democratic_election
-		## replace_scope = { this = pop root = country }
+		## replace_scope = { this = pop_group root = country }
 		subtype[can_vote_in_democratic_election] = {
 		}
 		## type_key_filter = can_generate_leader_from_pop
-		## replace_scope = { this = pop root = country }
+		## replace_scope = { this = pop_group root = country }
 		subtype[can_generate_leader_from_pop] = {
 		}
 		## type_key_filter = can_generate_leader_from_species
@@ -43,7 +43,7 @@ types = {
 		subtype[can_create_espionage_asset_from_species] = {
 		}
 		## type_key_filter = can_generate_military_leader_from_pop
-		## replace_scope = { this = pop root = country }
+		## replace_scope = { this = pop_group root = country }
 		subtype[can_generate_military_leader_from_pop] = {
 		}
 		## type_key_filter = can_generate_army_from_planet
@@ -91,7 +91,7 @@ types = {
 		subtype[can_terraform_planet] = {
 		}
 		## type_key_filter = can_colonize_with_pop
-		## replace_scope = { this = pop root = country }
+		## replace_scope = { this = pop_group root = country }
 		subtype[can_colonize_with_pop] = {
 		}
 		## type_key_filter = can_colonize_with_species
@@ -99,7 +99,7 @@ types = {
 		subtype[can_colonize_with_species] = {
 		}
 		## type_key_filter = pop_has_random_ethics
-		## replace_scope = { this = pop root = pop from = country }
+		## replace_scope = { this = pop_group root = pop_group from = country }
 		subtype[pop_has_random_ethics] = {
 		}
 		## type_key_filter = species_has_happiness
@@ -163,11 +163,11 @@ types = {
 		subtype[can_have_robot_pops] = {
 		}
 		## type_key_filter = can_stop_purge_pop_manually
-		## replace_scope = { this = pop root = pop }
+		## replace_scope = { this = pop_group root = pop_group }
 		subtype[can_stop_purge_pop_manually] = {
 		}
 		## type_key_filter = can_purge_pop_manually
-		## replace_scope = { this = pop root = pop }
+		## replace_scope = { this = pop_group root = pop_group }
 		subtype[can_purge_pop_manually] = {
 		}
 		## type_key_filter = fleet_uses_templates
@@ -207,7 +207,7 @@ types = {
 		subtype[can_enter_system_by_jump] = {
 		}
 		## type_key_filter = can_resettle_pop
-		## replace_scope = { this = pop root = pop }
+		## replace_scope = { this = pop_group root = pop_group }
 		subtype[can_resettle_pop] = {
 		}
 		## type_key_filter = can_country_resettle
@@ -231,7 +231,7 @@ types = {
 		subtype[is_new_colony] = {
 		}
 		## type_key_filter = pop_generates_crime
-		## replace_scope = { this = pop }
+		## replace_scope = { this = pop_group }
 		subtype[pop_generates_crime] = {
 		}
 		## type_key_filter = can_pops_grow_on_planet
@@ -295,7 +295,7 @@ types = {
 		subtype[can_use_galactic_market] = {
 		}
 		## type_key_filter = can_be_sold_on_slave_market
-		## replace_scope = { this = pop root = country }
+		## replace_scope = { this = pop_group root = country }
 		subtype[can_be_sold_on_slave_market] = {
 		}
 		## type_key_filter = can_be_part_of_galactic_community
@@ -327,7 +327,7 @@ types = {
 		subtype[has_enough_pops_for_necrophage_on_planet] = {
 		}
 		## type_key_filter = can_pop_auto_migrate
-		## replace_scope = { this = pop root = planet }
+		## replace_scope = { this = pop_group root = planet }
 		subtype[can_pop_auto_migrate] = {
 		}
 		## type_key_filter = can_planet_auto_migrate
@@ -371,19 +371,19 @@ types = {
 		subtype[can_use_envoys_to_lower_imperial_authority] = {
 		}
 		## type_key_filter = can_fill_drone_job
-		## replace_scope = { this = pop root = pop }
+		## replace_scope = { this = pop_group root = pop_group }
 		subtype[can_fill_drone_job] = {
 		}
 		## type_key_filter = can_fill_worker_job
-		## replace_scope = { this = pop root = pop }
+		## replace_scope = { this = pop_group root = pop_group }
 		subtype[can_fill_worker_job] = {
 		}
 		## type_key_filter = can_fill_specialist_job
-		## replace_scope = { this = pop root = pop }
+		## replace_scope = { this = pop_group root = pop_group }
 		subtype[can_fill_specialist_job] = {
 		}
 		## type_key_filter = can_fill_ruler_job
-		## replace_scope = { this = pop root = pop }
+		## replace_scope = { this = pop_group root = pop_group }
 		subtype[can_fill_ruler_job] = {
 		}
 		## type_key_filter = should_planetary_automate
