@@ -144,6 +144,19 @@ alias[economic_template:upkeep] = {
 	mult = value_field
 }
 
+alias[economic_template:logistics] = {
+	## cardinality = 0..1
+	trigger = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..inf
+	<resource> = float
+	## cardinality = 0..inf
+	multiplier = value_field
+	## cardinality = 0..inf
+	mult = value_field
+}
+
 alias[economic_template_only_produces:produces] = {
 	## cardinality = 0..1
 	trigger = {
