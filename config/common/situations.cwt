@@ -26,6 +26,8 @@ types = {
 situation_type = {
 	## cardinality = 0..inf
 	picture = <sprite>
+	## cardinality = 0..1
+	initial_progress = int
 	## cardinality = 0..inf
 	picture = {
 		picture = <sprite>
@@ -99,6 +101,9 @@ situation_type = {
 	}
 	###Every month, progress ticks up or down based on factors defined here
 	monthly_progress = {
+		## cardinality = 0..1
+		add = int
+		}
 		alias_name[modifier_rule_with_loc] = alias_match_left[modifier_rule_with_loc]
 	}
 	###Effects when Situation's progress has reached its completion
@@ -142,6 +147,7 @@ situation_type = {
 		alias_name[triggered_target_modifier_situation] = alias_match_left[triggered_target_modifier_situation]
 		## cardinality = 0..1
 		resources = {
+			## cardinality = 0..1
 			category = <economic_category>
 			alias_name[economic_template] = alias_match_left[economic_template]
 		}
@@ -198,7 +204,15 @@ situation_type = {
 		###Expects the key to be localised. You can also define <key>_desc and it will show on the tooltip, but this is optional.
 	 	scalar = {
 			###Where the stage ends and a new one starts. Determines the end value of the Situation, if it is the final stage.
+			## cardinality = 0..1
 	 		end = int
+			## cardinality = 0..1
+			end = {
+				## cardinality = 0..1
+				base = int
+				## cardinality = 0..1
+				mult = value_field
+			}
 			icon = <sprite>
 			icon_background = <sprite>
 			## cardinality = 0..1
