@@ -348,8 +348,12 @@ enums = {
 		artillery_stealth
 		brawler
 		brawler_stealth
+		buffer_role
+		buffer_role_stealth
 		carrier
 		carrier_stealth
+		debuffer_role
+		debuffer_role_stealth
 		energy_torpedoes
 		energy_torpedoes_stealth
 		explosive
