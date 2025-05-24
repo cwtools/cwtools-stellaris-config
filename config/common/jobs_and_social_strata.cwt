@@ -197,7 +197,7 @@ job = {
 	}
 	
 	## cardinality = 0..1
-	## replace_scope = { this = pop root = pop }
+	## replace_scope = { this = pop_group root = pop_group }
 	pop_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
