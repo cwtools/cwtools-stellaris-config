@@ -2506,7 +2506,7 @@ alias[trigger:has_term_value] = {
 
 ###Check if a trade action is already active in a trade deal with the specified empire (or with any empire if so specified)
 alias[trigger:is_action_active] = {
-	action = <action_key>
+	action = <tradable_actions>
 	with_country = scope_group[target_country]
 	with_country = any
 }
