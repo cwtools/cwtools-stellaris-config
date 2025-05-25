@@ -847,7 +847,20 @@ tradable_actions = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 	## cardinality = 0..1
+	on_deal_ended_recipient_effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+	## cardinality = 0..1
 	ai_weight = {
-		weight = int
+		weight = float
+		## cardinality = 0..1
+		modifier = {
+			## cardinality = 0..1
+			factor = float
+			## cardinality = 0..1
+			weight = float
+			## cardinality = 0..1
+			alias_name[trigger] = alias_match_left[trigger]
+		}
 	}
 }
