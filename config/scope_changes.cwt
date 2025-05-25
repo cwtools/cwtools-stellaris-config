@@ -3111,7 +3111,7 @@ alias[trigger:any_species_pop_group] = {
 ## push_scope = pop_job
 ##Iterate through all owned pop jobs - checks whether the enclosed triggers return true for any of them
 alias[trigger:any_owned_pop_job] = { 
-	alias_match_left[trigger]
+	alias_name[trigger] = alias_match_left[trigger]
 }
 
 ##Iterate through all owned pop jobs - checks whether the enclosed triggers return true for X/all of them
