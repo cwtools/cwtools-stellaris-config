@@ -9,6 +9,30 @@ terraform_link = {
 	from = <planet_class>
 	to = <planet_class>
 	
+	# for inline script
+	## cardinality = 0..1
+	on_queued = {
+		## cardinality = 0..inf
+		if = {
+			limit = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			alias_name[effect] = alias_match_left[effect]
+		}
+	}
+	
+	# for inline script
+	## cardinality = 0..1
+	on_unqueued = {
+		## cardinality = 0..inf
+		if = {
+			limit = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			alias_name[effect] = alias_match_left[effect]
+		}
+	}
+	
 	resources = {
 		category = <economic_category>
 		alias_name[economic_template] = alias_match_left[economic_template]
