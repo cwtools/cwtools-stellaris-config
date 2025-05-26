@@ -4751,6 +4751,7 @@ alias[effect:remove_zone] = {
 
 ###Instantly destroys part of the assigned pops to this job
 alias[effect:kill_assigned_pop_amount] = {
+	## cardinality = 0..1
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
