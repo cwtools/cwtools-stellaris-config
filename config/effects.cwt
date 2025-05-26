@@ -1709,6 +1709,7 @@ alias[effect:clone_leader] = {
 
 ###Sets the age of the scoped leader
 alias[effect:set_age] = int_value_field
+
 ###Creates a new, modified species based on an already-extant species
 alias[effect:modify_species] = {
 	## cardinality = 0..1
@@ -1743,6 +1744,9 @@ alias[effect:modify_species] = {
 	ideal_planet_class = scope_group[target_species]
 	## cardinality = 0..1
 	ideal_planet_class = <planet_class.habitable_planet>
+	#Note Paradox is never going to change distant_stars_events_2.txt so why have users forced to see it as an error
+	## cardinality = 0..1
+	ideal_planet_class = pc_frozen
 	## cardinality = 0..1
 	###modify scoped pops/planet/leader/country; default: yes
 	change_scoped_species = bool
