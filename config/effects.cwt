@@ -1723,6 +1723,7 @@ alias[effect:modify_species] = {
 	## cardinality = 0..inf
 	add_trait = <trait>
 	## cardinality = 0..inf
+	## push_scope = trait
 	add_random_species_trait = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
