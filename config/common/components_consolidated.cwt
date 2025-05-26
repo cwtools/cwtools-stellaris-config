@@ -40,6 +40,11 @@ types = {
 			Name = "$"
 		}
 	}
+	type[component_template_starbase] = {
+		name_field = "key"
+		path = "game/common/component_templates"
+		file_path = "game/common/component_templates/00_starbase_building_auras.txt"
+	}
 }
 
 # a component tag causes the game to autogenerate three modifiers:
