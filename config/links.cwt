@@ -139,11 +139,6 @@ links = {
 		input_scopes = { Country Ship Leader Pop pop_group  Army Species }
 		output_scope = Species
 	}
-	# This is all a guess - needs to be verified
-	trait = {
-		input_scopes = { Country Ship Leader Pop pop_group  Army Species }
-		output_scope = Trait
-	}
 	pop_faction = {
 		input_scopes = { Pop pop_group Leader PopFaction }
 		output_scope = PopFaction
