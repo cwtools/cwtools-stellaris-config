@@ -309,7 +309,10 @@ event = {
 		## cardinality = 0..1
 		###Forces the event to pop-up even if player has supressed pop ups
 		auto_opens = bool
-
+		
+		## cardinality = 0..1
+		notification_event_icon = <sprite>
+		
 		## cardinality = 0..1
 		is_test_event = bool
 
