@@ -1987,6 +1987,7 @@ alias[effect:add_trust] = {
 }
 
 ### Makes a fleet or ship auto-move to target fleet and potentially attack it
+alias[effect:auto_follow_fleet] = scope[fleet]
 alias[effect:auto_follow_fleet] = {
 	target = scope[fleet]
 	## cardinality = 0..1
