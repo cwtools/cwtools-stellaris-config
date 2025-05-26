@@ -3845,7 +3845,7 @@ alias[effect:add_starbase_component] = {
 }
 ###Removes the specified ship component to a starbase. Only works for components that are standalone from any module or building.
 alias[effect:remove_starbase_component] = {
-	component = <component_template.starbase>
+	component = <component_template_starbase>
 }
 ###Add loyalty to subject of an agreement
 alias[effect:add_loyalty] = int_value_field
