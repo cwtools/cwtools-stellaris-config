@@ -4731,7 +4731,7 @@ alias[effect:set_habitability_trait] = {
 alias[effect:set_confused] = bool
 
 ###Adds a specific amount of growth (non-fauna ships)
-alias[effect:add_growth] = int
+alias[effect:add_growth] = int_value_field
 
 ###Resets growth to zero (non-fauna ships)
 alias[effect:reset_growth] = {}
