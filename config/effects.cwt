@@ -2271,47 +2271,33 @@ alias[effect:create_message] = {
 	custom_toast_content_text = localisation
 	## cardinality = 0..1
 	custom_toast_content_icon = <sprite>
-	# note: the variable sections were split apart to help enforce which properties go with which other ones
+	# note: the variable sections were combined as cwtools could not handle them separated in biogenesis_origin_events.txt
 	## cardinality = 0..inf
-	### insert the name (equivalent to[GetName]) of the target scope into the message's localisation
 	variable = {
+		## cardinality = 0..1
 		type = name
-		### the key to replace in the message localisation (not a localisation key)
-		localization = scalar
 		## cardinality = 0..1
-		### Default = this
-		scope = scope[any]
-	}
-	## cardinality = 0..inf
-	### insert the value of a variable from the target scope into the message's localisation
-	variable = {
 		type = variable
-		varname = value[variable]
-		### the key to replace in the message localisation (not a localisation key)
+		## cardinality = 0..1
+		type = key
+		## cardinality = 0..1
 		localization = scalar
 		## cardinality = 0..1
-		### Default = this
 		scope = scope[any]
-	}
-	## cardinality = 0..inf
-	### retrieve a localisation key and format it into the message's localisation
-	variable = {
-		type = key
+		## cardinality = 0..1
+		scope = species
+		## cardinality = 0..1
+		varname = value[variable]
+		## cardinality = 0..1
 		value = localisation
-		### the key to replace in the message localisation (not a localisation key)
-		localization = scalar
-	}
-	## cardinality = 0..inf
-	### supply a trait to display as the icon in the toast
-	variable = {
-		key = TRAIT_KEY
+		## cardinality = 0..1
 		value = <trait>
-	}
-	## cardinality = 0..inf
-	### supply a sprite to use to the border of a toast notification - usually 319x100
-	variable = {
-		key = border
+		## cardinality = 0..1
 		value = <sprite>
+		## cardinality = 0..1
+		key = TRAIT_KEY
+		## cardinality = 0..1
+		key = border
 	}
 	## cardinality = 0..1
 	recipient = scope[country]
