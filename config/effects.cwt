@@ -3841,7 +3841,7 @@ alias[effect:set_agreement_preset] = {
 }
 ###Adds a ship component to a starbase, standalone from any module or building
 alias[effect:add_starbase_component] = {
-	component = <component_template.starbase>
+	component = <component_template_starbase>
 }
 ###Removes the specified ship component to a starbase. Only works for components that are standalone from any module or building.
 alias[effect:remove_starbase_component] = {
