@@ -4862,6 +4862,7 @@ alias[effect:create_pop_group] = {
 	## cardinality = 0..1
 	size = int_value_field
 	## cardinality = 0..1
+	## push_scope = pop_group
 	effect = { alias_name[effect] = alias_match_left[effect] }
 }
 
