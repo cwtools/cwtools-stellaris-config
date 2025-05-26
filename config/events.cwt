@@ -148,7 +148,9 @@ event = {
 	is_test_event = yes
 	## cardinality = 0..1
 	diplomatic_title = localisation
-
+	## cardinality = 0..1
+	event_message_type = localisation
+	
 	subtype[inherited] = {
 		base = <event>
 		## cardinality = 0..1
@@ -372,6 +374,7 @@ event = {
 				icon = <sprite>
 				## cardinality = 0..1
 				icon_background = <sprite>
+				## cardinality = 0..1
 				text = localisation
 			}
 
@@ -726,6 +729,11 @@ event = {
 		}
 		## cardinality = 0..1
 		run_in_ai_mode = bool
+		
+		## cardinality = 0..1
+		ai_chance = {
+			factor = 1
+		}
 	}
 
 	## cardinality = 0..1
