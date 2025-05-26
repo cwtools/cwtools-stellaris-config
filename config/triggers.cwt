@@ -3016,44 +3016,6 @@ alias[trigger:num_country_pops_with_job_tag] = {
 	value == int_value_field
 }
 
-###Iterate through all existing species traits in the game - checks whether the enclosed triggers return true for any of them
-alias[trigger:any_existing_species_traits] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
-
-###Iterate through all existing species traits in the game - checks whether the enclosed triggers return true for X/all of them
-alias[trigger:count_existing_species_traits] = {
-	count = all
-	count = int_value_field
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-###Iterate through each trait that the scoped species has
-alias[trigger:any_trait_of_species] = { 
-	alias_name[trigger] = alias_match_left[trigger]
-}
-
-###Iterate through each trait that the scoped species has
-alias[trigger:count_trait_of_species] = {
-	count = all
-	count = int_value_field
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
-###Iterate through all species traits and check if scope species doesn't have this trait. 
-alias[trigger:any_trait_available_for_species] = { 
-	alias_name[trigger] = alias_match_left[trigger]
-}
-
-###Iterate through all species traits and check if scope species doesn't have this trait. 
-alias[trigger:count_trait_available_for_species] = {
-	count = all
-	count = int_value_field
-	## cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
-
 ###Checks if the pop group or species inherits the base species' rights. Returns false if there is no parent species.
 alias[trigger:inherits_parent_rights] = bool
+
