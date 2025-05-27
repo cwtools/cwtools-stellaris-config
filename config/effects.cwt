@@ -4797,10 +4797,7 @@ alias[effect:add_timeline_event] = {
 	localisation
   } 
   ## cardinality = 0..1
-  override_tooltip ={
-	## cardinality = 0..inf
-	localisation
-  }
+  override_tooltip = localisation
   ## cardinality = 0..1
   override_text = { 
 	## cardinality = 0..inf
@@ -4813,7 +4810,12 @@ alias[effect:add_timeline_event] = {
   }
   ## cardinality = 0..1
   override_id = scalar
- }
+   ## cardinality = 0..1
+  override_types = {
+	 ## cardinality = 0..inf
+	enum[scope_type_tokens]
+  }
+}
 
 ###Proposes the resolution of the given type
 alias[effect:propose_resolution] = {
