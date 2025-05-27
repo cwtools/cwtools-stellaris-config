@@ -4698,10 +4698,12 @@ alias[effect:add_focus_progress] = {
 }
 
 ###Adds the amount of pops to the scope pop group.
-alias[effect:add_pop_amount] = int
+alias[effect:add_pop_amount] = value_field
+alias[effect:add_pop_amount] = value_set[variable]
 
 ###Removes the amount of pops from the scope pop group.
-alias[effect:remove_pop_amount] = int
+alias[effect:remove_pop_amount] = value_field
+alias[effect:remove_pop_amount] = value_set[variable]
 
 ###Scales the amount of pops in the scope pop group
 alias[effect:scale_pop_amount] = float
