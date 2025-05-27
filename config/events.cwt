@@ -26,6 +26,14 @@ types = {
 		## abbreviation = PoE
 		subtype[pop] = {
 		}
+		
+		## type_key_filter = pop_group_event
+		## push_scope = pop_group
+		## display_name = Pop Group Event
+		## abbreviation = PGE
+		subtype[pop_group] = {
+		}
+		
 		## type_key_filter = pop_faction_event
 		## push_scope = pop_faction
 		## display_name = Pop Faction Event
@@ -651,6 +659,14 @@ event = {
 	}
 
 	subtype[pop] = {
+		## cardinality = 0..1
+		###Like trigger, but only uses certain simple triggers
+		pre_triggers = {
+			alias_name[pop_pre_trigger] = alias_match_left[pop_pre_trigger]
+		}
+	}
+	
+	subtype[pop_group] = {
 		## cardinality = 0..1
 		###Like trigger, but only uses certain simple triggers
 		pre_triggers = {
