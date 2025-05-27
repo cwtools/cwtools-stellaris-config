@@ -3066,6 +3066,7 @@ alias[effect:add_district] = <district>
 ###Begins construction of a specific district on the scoped planet
 alias[effect:add_district] = {
 	district_type = <district>
+	## cardinality = 0..1
 	ignore_cap = yes
 	## cardinality = 0..1
 	type_conversion = bool
