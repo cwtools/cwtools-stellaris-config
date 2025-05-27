@@ -54,6 +54,8 @@ section_template = {
   ai_tags = {
 		## cardinality = 0..inf
 		enum[component_tags]
+		## cardinality = 0..1
+		citadel
   }
   ## cardinality = 0..1
   should_draw_components = bool
@@ -65,8 +67,15 @@ section_template = {
 
 	## cardinality = 0..1
   	prerequisites = {
-		## cardinality = 0..inf
-	  	<technology>
+		OR = {
+			## cardinality = 2..inf
+			<technology>
+		}
+	}
+	## cardinality = 0..1
+  	prerequisites = {
+		## cardinality = 0..1
+		<technology>
 	}
   ## cardinality = 0..inf
   component_slot = {

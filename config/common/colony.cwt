@@ -31,16 +31,23 @@ colony_automation = {
 		## cardinality = 0..inf
 		<district>
 	}
+	
+	## cardinality = 0..1
+	prio_zones = {
+		## cardinality = 0..inf
+		enum[zone_type]
+	}
 
 	buildings = {
 		## cardinality = 1..inf
-		int[1..inf] = {
+		scalar = {
 			building = <building>
 			## cardinality = 0..1
 			available = {
 				alias_name[trigger] = alias_match_left[trigger]
 			}
-
+			## cardinality = 0..1
+			planet_limit = int
 		}
 	}
 }

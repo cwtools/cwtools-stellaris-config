@@ -159,6 +159,17 @@ types = {
 			"Delayed tooltip" = "$_tooltip_delayed"
 		}
 	}
+	type[subspecies_integration_type] = {
+		path = "game/common/species_rights/subspecies_integration_types"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Tooltip = "$_tooltip"
+			## required
+			"Delayed tooltip" = "$_tooltip_delayed"
+		}
+	}
 }
 
 #make sure trait points cannot be above max, ideally
@@ -177,6 +188,13 @@ species_archetype = {
 	robotic = bool
 	## cardinality = 0..1
 	uses_modifiers = bool
+	
+	## cardinality = 0..1
+	resources = {
+		category = <economic_category>
+		alias_name[economic_template] = alias_match_left[economic_template]
+	}
+	
 }
 
 #TODO Document
@@ -184,7 +202,9 @@ species_class = {
 	## cardinality = 0..1
 	archetype = <species_archetype>
 	## cardinality = 0..1
-	## replace_scope = { this = pop root = pop }
+	generate_shipset = bool
+	## cardinality = 0..1
+	## replace_scope = { this = pop_group root = pop_group }
 	modifier = {
 		## cardinality = 0..1
 		alias_name[modifier] = alias_match_left[modifier]
@@ -357,15 +377,15 @@ citizenship_type = {
 	}
 
 	## cardinality = 0..1
-	## replace_scope = { this = pop root = pop }
-	pop_modifier = {
+	## replace_scope = { this = pop_group root = pop_group }
+	pop_group_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 		## cardinality = 0..1
 		custom_tooltip = localisation
 	}
 
 	## cardinality = 0..1
-	## replace_scope = { this = pop root = pop }
+	## replace_scope = { this = pop_group root = pop_group }
 	free_pop_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
@@ -423,15 +443,15 @@ colonization_control = {
 	}
 
 	## cardinality = 0..1
-	## replace_scope = { this = pop root = pop }
-	pop_modifier = {
+	## replace_scope = { this = pop_group root = pop_group }
+	pop_group_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 		## cardinality = 0..1
 		custom_tooltip = localisation
 	}
 
 	## cardinality = 0..1
-	## replace_scope = { this = pop root = pop }
+	## replace_scope = { this = pop_group root = pop_group }
 	free_pop_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
@@ -486,15 +506,26 @@ living_standard = {
 	}
 
 	## cardinality = 0..1
-	## replace_scope = { this = pop root = pop }
-	pop_modifier = {
+	## replace_scope = { this = pop_group root = pop_group }
+	pop_group_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 		## cardinality = 0..1
 		custom_tooltip = localisation
 	}
 
 	## cardinality = 0..1
-	## replace_scope = { this = pop root = pop }
+	## replace_scope = { this = pop_group root = pop_group }
+	triggered_pop_group_modifier = {
+		potential = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		alias_name[modifier] = alias_match_left[modifier]
+		## cardinality = 0..1
+		custom_tooltip = localisation
+	}
+
+	## cardinality = 0..1
+	## replace_scope = { this = pop_group root = pop_group }
 	free_pop_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
@@ -552,15 +583,15 @@ migration_control = {
 	}
 
 	## cardinality = 0..1
-	## replace_scope = { this = pop root = pop }
-	pop_modifier = {
+	## replace_scope = { this = pop_group root = pop_group }
+	pop_group_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 		## cardinality = 0..1
 		custom_tooltip = localisation
 	}
 
 	## cardinality = 0..1
-	## replace_scope = { this = pop root = pop }
+	## replace_scope = { this = pop_group root = pop_group }
 	free_pop_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
@@ -615,15 +646,15 @@ military_service_type = {
 	}
 
 	## cardinality = 0..1
-	## replace_scope = { this = pop root = pop }
-	pop_modifier = {
+	## replace_scope = { this = pop_group root = pop_group }
+	pop_group_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 		## cardinality = 0..1
 		custom_tooltip = localisation
 	}
 
 	## cardinality = 0..1
-	## replace_scope = { this = pop root = pop }
+	## replace_scope = { this = pop_group root = pop_group }
 	free_pop_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
@@ -681,15 +712,15 @@ population_control = {
 	}
 
 	## cardinality = 0..1
-	## replace_scope = { this = pop root = pop }
-	pop_modifier = {
+	## replace_scope = { this = pop_group root = pop_group }
+	pop_group_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 		## cardinality = 0..1
 		custom_tooltip = localisation
 	}
 
 	## cardinality = 0..1
-	## replace_scope = { this = pop root = pop }
+	## replace_scope = { this = pop_group root = pop_group }
 	free_pop_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
@@ -748,15 +779,15 @@ purge_type = {
 	}
 
 	## cardinality = 0..1
-	## replace_scope = { this = pop root = pop }
-	pop_modifier = {
+	## replace_scope = { this = pop_group root = pop_group }
+	pop_group_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 		## cardinality = 0..1
 		custom_tooltip = localisation
 	}
 
 	## cardinality = 0..1
-	## replace_scope = { this = pop root = pop }
+	## replace_scope = { this = pop_group root = pop_group }
 	free_pop_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
@@ -822,15 +853,15 @@ slavery_type = {
 	}
 
 	## cardinality = 0..1
-	## replace_scope = { this = pop root = pop }
-	pop_modifier = {
+	## replace_scope = { this = pop_group root = pop_group }
+	pop_group_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 		## cardinality = 0..1
 		custom_tooltip = localisation
 	}
 
 	## cardinality = 0..1
-	## replace_scope = { this = pop root = pop }
+	## replace_scope = { this = pop_group root = pop_group }
 	free_pop_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
@@ -864,6 +895,18 @@ slavery_type = {
 	alias_name[triggered_pop_modifier] = alias_match_left[triggered_pop_modifier]
 }
 
+subspecies_integration_type = {
+	integration = bool
+	## cardinality = 0..1
+	allow = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	
+	ai_will_do = {
+		factor = int
+	}
+}
+
 enums = {
 	enum[species_rights_type] = {
 		citizenship
@@ -883,5 +926,7 @@ enums = {
 		psionic
 		advanced_genetic
 		overtuned
+		malleable
+		mutation
 	}
 }

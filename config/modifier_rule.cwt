@@ -64,6 +64,8 @@ alias[modifier_rule:complex_trigger_modifier] = {
 	## cardinality = 0..1
 	mult = float
 	## cardinality = 0..1
+	divide = int
+	## cardinality = 0..1
 	multiplier = float
 	## cardinality = 0..1
 	desc = localisation
@@ -120,6 +122,7 @@ alias[modifier_rule_with_loc:complex_trigger_modifier] = {
 #calculation types
 enums = {
 	enum[scaled_modifier_calc] = {
+		pop_amount
 		pop_count
 		pop_happiness
 		planet_distance_empire

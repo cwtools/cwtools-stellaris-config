@@ -7,7 +7,11 @@ types = {
 #TODO Confirm
 fallen_empires = {
 	graphical_culture = <graphical_culture>
-	initializer = <solar_system_initializer.fallen_empire_initializer>
+	initializer = <fallen_empire_initializer>
+	
+	## cardinality = 0..1
+	allow_custom_empire_design = bool
+	
 	## cardinality = 0..1
 	## replace_scope = { root = country this = country }
 	possible = {
@@ -27,3 +31,4 @@ fallen_empires = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 }
+

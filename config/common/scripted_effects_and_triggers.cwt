@@ -1,9 +1,10 @@
 
 types = {
+	## type_key_filter <> { pop_amount sapient_pop_amount psionic_pop_amount  }
 	type[scripted_trigger] = {
 		path = "game/common/scripted_triggers"
 	}
-	## type_key_filter <> { ethic_leader_creator spawn_formless_defense_fleet split_astral_scar store_galactic_community_leader_backup_data }
+	## type_key_filter <> { ethic_leader_creator spawn_formless_defense_fleet split_astral_scar store_galactic_community_leader_backup_data add_random_trait_by_tag create_voidworm_fleet spawn_cutholoid_from_asteroid  create_normal_pirate_country cyberize_pops_effect }
 	type[scripted_effect] = {
 		path = "game/common/scripted_effects"
 	}
@@ -80,3 +81,65 @@ alias[effect:ethic_leader_creator] = {
 	## cardinality = 0..1
 	CATCH_PHRASE = localisation
 }
+
+### Force scripted trigger to work in common and event files
+alias[trigger:pop_amount] = int_value_field 
+
+### Force scripted trigger to work in common and event files
+alias[trigger:sapient_pop_amount] = int_value_field 
+
+### Force scripted trigger to work in common and event files
+alias[trigger:psionic_pop_amount] = int_value_field 
+
+### Force scripted trigger or effect to work in common and event files
+alias[trigger:psionic_pop_amount] = int_value_field 
+
+### Force scripted trigger or effect to work in common and event files
+alias[effect:add_random_trait_by_tag] = { 
+	SPECIES = scope_group[target_species]
+	## cardinality = 0..1
+	TAG = <trait_tags>
+	## cardinality = 0..1
+	NOTTAG = special
+}
+	
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:spawn_cutholoid_from_asteroid] = {
+	## cardinality = 0..1
+	LOCATION =  value_set[event_target]
+	## cardinality = 0..1
+	EVENT_NAME = scalar
+}
+
+
+### Force scripted trigger or effect to work in common and event files
+alias[effect:create_voidworm_fleet] = {
+	## cardinality = 0..1
+	DESIGN = localisation
+	## cardinality = 0..1
+	COUNT = value_field
+	## cardinality = 0..1
+	LOCATION =  value_set[event_target]
+	## cardinality = 0..1
+	PARENT = scope_group[target_any]
+	## cardinality = 0..1
+	OWNER = scope_group[target_country]
+	## cardinality = 0..1
+	AGE = value_field
+}
+
+### Force scripted trigger or effect to work in common and event files
+alias[effect:create_normal_pirate_country] = {
+	HOME_PLANET_TRIGGER = scalar
+}
+alias[effect:create_normal_pirate_country] = bool
+	
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:cyberize_pops_effect] = {
+	## cardinality = 0..1
+	SPIRITUALIST = bool
+	## cardinality = 0..1
+	LIMITED = bool
+	
+}
+alias[effect:cyberize_pops_effect] = bool

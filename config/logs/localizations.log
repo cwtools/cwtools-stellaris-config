@@ -1,4 +1,4 @@
-[16:51:33][game_application.cpp:2198]: 
+[15:13:39][game_application.cpp:2240]: 
 == LOCALIZATION DOCUMENTATION ==
 This is a list of all hardcoded scoped localization commands in the game. It does not include scripted locs (see game/customizable_localization).
 In most cases, it is also possible to get the value of variables with '[Scope.my_variable]' and saved dates with '[Scope.my_date_flag]'.
@@ -85,6 +85,10 @@ Properties
  GetCountryType
  GetOriginName
  GetLastAcquiredSpecimenName
+ GetCapitalSystemNameOrRandom
+ GetCapitalPlanetNameOrRandom
+ GetCapitalSystemNameOrRandomPersistent
+ GetCapitalPlanetNameOrRandomPersistent
 
 --Planet--
 Promotions:
@@ -127,6 +131,18 @@ Properties
  GetShipCategoryName
 
 --Pop--
+Promotions:
+ Planet
+ Faction
+ Species
+Properties
+ GetName
+ GetSpeciesName
+ GetSpeciesNamePersistent
+ GetSpeciesNamePlural
+ GetSpeciesAdj
+
+--Pop Group--
 Promotions:
  Planet
  Faction
@@ -388,6 +404,88 @@ Properties
 
 --Cosmic Storm--
 Promotions:
+Properties
+ GetName
+
+--Timeline Event--
+Promotions:
+ EVENT_TARGET_0
+ EVENT_TARGET_1
+ EVENT_TARGET_2
+ EVENT_TARGET_3
+ EVENT_TARGET_4
+ EVENT_TARGET_5
+ EVENT_TARGET_6
+ EVENT_TARGET_7
+ EVENT_TARGET_8
+ EVENT_TARGET_9
+Properties
+ GetDate
+ GetYear
+
+--Dead Arc Site--
+Promotions:
+Properties
+ GetName
+
+--Dead Astral Rift--
+Promotions:
+Properties
+ GetName
+
+--Dead Cosmic Storm--
+Promotions:
+Properties
+ GetName
+ GetType
+
+--Dead Country--
+Promotions:
+Properties
+ GetName
+
+--Dead Federation--
+Promotions:
+Properties
+ GetName
+
+--Dead Fleet--
+Promotions:
+Properties
+ GetName
+
+--Dead Leader--
+Promotions:
+Properties
+ GetName
+
+--Dead Megastructure--
+Promotions:
+ System
+Properties
+ GetName
+
+--Dead Planet--
+Promotions:
+Properties
+ GetName
+
+--Dead Ship--
+Promotions:
+Properties
+ GetName
+
+--Dead Situation--
+Promotions:
+ Target
+ Owner
+Properties
+ GetName
+
+--Dead War--
+Promotions:
+ MainAttacker
+ MainDefender
 Properties
  GetName
 

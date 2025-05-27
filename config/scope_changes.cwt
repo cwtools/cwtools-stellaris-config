@@ -107,9 +107,9 @@ alias[trigger:any_owned_leader] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
-## push_scope = pop
-###Iterate through all owned pops
-alias[trigger:any_owned_pop] = {
+## push_scope = pop_group
+###Iterate through all owned pop groups - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_owned_pop_group] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
@@ -318,12 +318,23 @@ alias[trigger:count_owned_megastructure] =  {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
-### Iterate through all owned pops
-alias[trigger:count_owned_pop] =  {
+### Iterate through all owned pop groups - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_owned_pop_group] =  {
 	count = all
 	count = int_value_field
 	## cardinality = 0..1
-	## push_scope = pop
+	## push_scope = pop_group
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+### Sums all pop amounts - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_owned_pop_amount] =  {
+	## cardinality = 0..1
+	count = all
+	## cardinality = 0..1
+	count = int_value_field
+	## cardinality = 0..1
+	## push_scope = pop_group
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
@@ -617,7 +628,15 @@ alias[trigger:count_controlled_planet] = {
 	}
 }
 
-# Effect Scopes
+### Iterate through every bypass in the scoped galactic object. - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_bypass_in_system] =  {
+	count = all
+	count = int_value_field
+	count = value[variable]
+	## cardinality = 0..1
+	## push_scope = galactic_object
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
 
 alias[effect:scope_field] = { alias_name[effect] = alias_match_left[effect] }
 
@@ -856,17 +875,17 @@ alias[effect:random_pop_faction] = {
 	}
 }
 
-## push_scope = pop
-###Iterate through all owned pops
-alias[effect:every_owned_pop] = {
+## push_scope = pop_group
+###Iterate through all owned pop groups - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_owned_pop_group] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
 }
 
-## push_scope = pop
-###Iterate through all owned pops - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
-alias[effect:ordered_owned_pop] = {
+## push_scope = pop_group
+###Iterate through all owned pop groups - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_owned_pop_group] = {
 	position = int[0..inf]
 	order_by = value_field
 	##cardinality = 0..1
@@ -876,9 +895,9 @@ alias[effect:ordered_owned_pop] = {
 	alias_name[effect] = alias_match_left[effect]
 }
 
-## push_scope = pop
-###Iterate through all owned pops
-alias[effect:random_owned_pop] = {
+## push_scope = pop_group
+###Iterate through all owned pop groups - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_owned_pop_group] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
@@ -888,14 +907,6 @@ alias[effect:random_owned_pop] = {
 		## cardinality = 0..inf
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
-}
-
-## push_scope = pop
-###Executes enclosed effects for every pop in the game that meet the limit criteria
-alias[effect:every_galaxy_pop] = {
-	##cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-	alias_name[effect] = alias_match_left[effect]
 }
 
 ## push_scope = country
@@ -3058,17 +3069,17 @@ alias[trigger:count_associate] = {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
-## push_scope = pop
-###Iterate through each pop that belongs to this species; warning: resource-intensive!
-alias[effect:every_species_pop] = {
+## push_scope = pop_group
+###Iterate through each pop group that belongs to this species; warning: resource-intensive! - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_species_pop_group] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
 }
 
-## push_scope = pop
-###Iterate through each pop that belongs to this species; warning: resource-intensive! - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
-alias[effect:ordered_species_pop] = {
+## push_scope = pop_group
+###Iterate through each pop group that belongs to this species; warning: resource-intensive! - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_species_pop_group] = {
 	position = int[0..inf]
 	order_by = value_field
 	##cardinality = 0..1
@@ -3078,9 +3089,9 @@ alias[effect:ordered_species_pop] = {
 	alias_name[effect] = alias_match_left[effect]
 }
 
-## push_scope = pop
-###Iterate through each pop that belongs to this species; warning: resource-intensive!
-alias[effect:random_species_pop] = {
+## push_scope = pop_group
+###Iterate through each pop group that belongs to this species; warning: resource-intensive! - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_species_pop_group] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
@@ -3091,18 +3102,42 @@ alias[effect:random_species_pop] = {
 	}
 }
 
-## push_scope = pop
-###Iterate through each pop that belongs to this species; warning: resource-intensive!
-alias[trigger:any_species_pop] = {
+## push_scope = pop_group
+###Iterate through each pop group that belongs to this species; warning: resource-intensive! - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_species_pop_group] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
-###Iterate through each pop that belongs to this species; warning: resource-intensive!
-alias[trigger:count_species_pop] = {
+## push_scope = pop_job
+##Iterate through all owned pop jobs - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_owned_pop_job] = { 
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+##Iterate through all owned pop jobs - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_owned_pop_job] = {
 	count = all
 	count = int_value_field
 	## cardinality = 0..1
-	## push_scope = pop
+	## push_scope = pop_job
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+##Sums all workforce - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_owned_workforce] = {
+	count = all
+	count = int_value_field
+	## cardinality = 0..1
+	## push_scope = pop_job
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+###Iterate through each pop group that belongs to this species; warning: resource-intensive! - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_species_pop_group] = {
+	count = all
+	count = int_value_field
+	## cardinality = 0..1
+	## push_scope = pop_group
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
@@ -4461,4 +4496,323 @@ alias[effect:every_exhibit] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = galactic_object
+###Iterate through every bypass in the scoped galactic object. - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_bypass_in_system] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+
+## push_scope = starbase
+##Iterate through every starbase in the scoped galactic object. - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_starbase_in_system] = { 
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+###Iterate through every starbase in the scoped galactic object. - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_starbase_in_system] = {
+	count = int_value_field
+	count = all
+	## push_scope = starbase
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+## push_scope = pop_group
+###Weighted random on owned popgroups based on the popgroup size. Supports the same scopes as the owned_pop_group script list
+alias[effect:weighted_random_owned_pop_group] = {
+	## cardinality = 0..1
+	limit = {
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..inf
+	weights = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	## cardinality = 0..inf
+	alias_name[effect] = alias_match_left[effect] 
+}
+
+## push_scope = bypass
+###Iterate through every bypass in the scoped galactic object. - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_bypass_in_system] = {
+	limit = {
+		## cardinality = 0..inf
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..inf
+	weights = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	## cardinality = 0..inf
+	alias_name[effect] = alias_match_left[effect] 
+}
+
+## push_scope = bypass
+###Iterate through every bypass in the scoped galactic object. - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_bypass_in_system] = {
+	position = int[0..inf]
+	## cardinality = 0..inf
+	order_by = value_field
+	## cardinality = 0..inf
+	order_by = { 
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	##cardinality = 0..1
+	inverse = bool
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+##  push_scope = bypass
+###Iterate through every bypass in the scoped galactic object. - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_bypass_in_system] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = pop_job
+### Iterate through all owned pop jobs - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_owned_pop_job] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+## push_scope = pop_job
+###Iterate through all owned pop jobs - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_owned_pop_job] = {
+	position = int[0..inf]
+	## cardinality = 0..inf
+	order_by = value_field
+	## cardinality = 0..inf
+	order_by = { 
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	##cardinality = 0..1
+	inverse = bool
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+##  push_scope =  pop_job
+###Iterate through every bypass in the scoped galactic object. - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_owned_pop_job] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## push_scope = starbase
+### Iterate through every starbase in the scoped galactic object. - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_starbase_in_system] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+## push_scope = starbase
+### Iterate through every starbase in the scoped galactic object. - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_starbase_in_system] = {
+	position = int[0..inf]
+	## cardinality = 0..inf
+	order_by = value_field
+	## cardinality = 0..inf
+	order_by = { 
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	##cardinality = 0..1
+	inverse = bool
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+##  push_scope =  starbase
+###Iterate through every starbase in the scoped galactic object. - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_starbase_in_system] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+##  push_scope =  trait
+###Iterate through all existing species traits in the game - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_existing_species_traits] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+##  push_scope =  trait
+### Iterate through all existing species traits in the game - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = 
+alias[effect:ordered_existing_species_traits] = {
+	position = int[0..inf]
+	## cardinality = 0..inf
+	order_by = value_field
+	## cardinality = 0..inf
+	order_by = { 
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	##cardinality = 0..1
+	inverse = bool
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+##  push_scope =  trait
+###Iterate through all existing species traits in the game - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_existing_species_traits] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+##  push_scope =  trait
+###Iterate through each trait that the scoped species has trait_of_species = { trait_has_all_tags = { positive } } - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_trait_of_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+##  push_scope =  trait
+### Iterate through each trait that the scoped species has trait_of_species = { trait_has_all_tags = { positive } } - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops) 
+alias[effect:ordered_trait_of_species] = {
+	position = int[0..inf]
+	## cardinality = 0..inf
+	order_by = value_field
+	## cardinality = 0..inf
+	order_by = { 
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	##cardinality = 0..1
+	inverse = bool
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+##  push_scope =  trait
+### Iterate through each trait that the scoped species has trait_of_species = { trait_has_all_tags = { positive } } - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_trait_of_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+##  push_scope =  trait
+### Iterate through all species traits and check if scope species doesn't have this trait traits_available_for_species = { trait_has_all_tags = { organic positive } } - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
+alias[effect:random_trait_available_for_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+
+	##cardinality = 0..1
+	weights = {
+		## cardinality = 0..inf
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+}
+
+##  push_scope =  trait
+### Iterate through all species traits and check if scope species doesn't have this trait traits_available_for_species = { trait_has_all_tags = { organic positive } } - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
+alias[effect:ordered_trait_available_for_species] = {
+	position = int[0..inf]
+	## cardinality = 0..inf
+	order_by = value_field
+	## cardinality = 0..inf
+	order_by = { 
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	##cardinality = 0..1
+	inverse = bool
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+##  push_scope =  trait
+###Iterate through all species traits and check if scope species doesn't have this trait traits_available_for_species = { trait_has_all_tags = { organic positive } } - executes the enclosed effects on all of them for which the limit triggers return true
+alias[effect:every_trait_available_for_species] = {
+	##cardinality = 0..1
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+	alias_name[effect] = alias_match_left[effect]
+}
+
+##  push_scope =  trait
+###Iterate through all species traits and check if scope species doesn't have this trait. 
+alias[trigger:any_trait_available_for_species] = { 
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+###Iterate through each trait that the scoped species has
+alias[trigger:count_trait_of_species] = {
+	count = all
+	count = int_value_field
+	## cardinality = 0..1
+	## push_scope = trait
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+###Iterate through all species traits and check if scope species doesn't have this trait. 
+alias[trigger:count_trait_available_for_species] = {
+	count = all
+	count = int_value_field
+	## cardinality = 0..1
+	## push_scope = trait
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+##  push_scope =  trait
+###Iterate through each trait that the scoped species has
+alias[trigger:any_trait_of_species] = { 
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+###Iterate through all existing species traits in the game - checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_existing_species_traits] = {
+	count = all
+	count = int_value_field
+	## cardinality = 0..1
+	## push_scope = trait
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+##  push_scope =  trait
+###Iterate through all existing species traits in the game - checks whether the enclosed triggers return true for any of them
+alias[trigger:any_existing_species_traits] = {
+	alias_name[trigger] = alias_match_left[trigger]
 }

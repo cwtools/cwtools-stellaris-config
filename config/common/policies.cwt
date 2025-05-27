@@ -57,7 +57,7 @@ policy = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 
-	## cardinality = 2..20
+	## cardinality = 1..20
 	option = {
 		name = localisation
 		## cardinality = 0..1

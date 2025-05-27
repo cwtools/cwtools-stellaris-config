@@ -1,0 +1,32 @@
+
+types = {
+	type[timeline_events_type] = {
+		path = "game/common/timeline_events"
+	}
+}
+
+timeline_events_type = {
+	## cardinality = 0..1
+	fire_only_once = bool
+	gui = {
+		## cardinality = 0..inf
+		scalar
+	}
+	## cardinality = 0..1
+	types = {
+		## cardinality = 0..1
+		country
+		## cardinality = 0..1
+		planet
+	}
+	## cardinality = 0..1
+	text = { 
+		## cardinality = 0..inf
+		localisation
+	}
+	## cardinality = 0..1
+	texture = {
+		## cardinality = 0..inf
+		scalar
+	}
+}

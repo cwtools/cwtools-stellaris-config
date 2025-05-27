@@ -1,0 +1,123 @@
+
+types = {
+	type[card_categories] = {
+		path = "game/common/country_focus/card_categories"
+	}
+	type[focus_card_key] = {
+		path = "game/common/country_focus/focus_cards"
+	}
+	type[focus_rewards] = {
+		path = "game/common/country_focus/focus_rewards"
+	}
+}
+
+card_categories = {
+	name = localisation
+	desc = localisation
+	## cardinality = 0..1
+	selectable = bool
+	
+	## cardinality = 0..1
+	background = <sprite>
+	## cardinality = 0..1
+	background_expanded = <sprite>
+	## cardinality = 0..1
+	icon = <sprite>
+	
+	## cardinality = 0..1
+	resources = {
+		category = enum[card_categories_focus]
+
+		cost = {
+			trigger = {
+				## cardinality = 0..inf
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			unity = int
+		}
+	}
+	
+	## cardinality = 0..1
+	starting_weight = {
+		base = int
+		## cardinality = 0..inf
+		modifier = {
+			add = int
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
+	
+	## cardinality = 0..1
+	weights = {
+		## cardinality = 1..inf
+		{
+			category = enum[card_categories_focus]
+			value = {
+				base = int
+			}
+		}
+	}
+}
+
+focus_card_key = {
+	## cardinality = 0..1
+	category = enum[card_categories_focus]
+	## cardinality = 0..1
+	tier = int
+	## cardinality = 0..1
+	background = <sprite>
+	
+	## cardinality = 0..1
+	base = localisation
+	name = localisation
+	desc = localisation
+	hint = localisation
+	lore = localisation
+	
+	## cardinality = 0..1
+	possible = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	condition_for_achievement = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	
+	## cardinality = 0..1
+	on_success = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+}
+
+focus_rewards = {
+
+	## cardinality = 0..1
+	category = enum[card_categories_focus]
+	cost = int
+	mode = enum[focus_rewards_mode]
+		
+	## cardinality = 0..1
+	on_success = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+	
+}
+
+enums = {
+	enum[card_categories_focus] = {
+		country_focus
+		core_focus
+		exploration
+		conquest
+		development
+		unity
+		research
+		trade
+		amenity
+	}
+	enum[focus_rewards_mode] = {
+		end
+		left
+		right
+	}
+}

@@ -40,6 +40,11 @@ types = {
 			Name = "$"
 		}
 	}
+	type[component_template_starbase] = {
+		name_field = "key"
+		path = "game/common/component_templates"
+		file_path = "game/common/component_templates/00_starbase_building_auras.txt"
+	}
 }
 
 # a component tag causes the game to autogenerate three modifiers:
@@ -64,6 +69,8 @@ component_set = {
 	required_component_set = bool
 	## cardinality = 0..1
 	is_core_component_set = bool
+	## cardinality = 0..1
+	affects_target_type = bool
 	## cardinality = 0..1
 	is_space_fauna_component_set = bool
 	## cardinality = 0..1
@@ -93,10 +100,20 @@ component_template = {
 	## cardinality = 0..1
 	icon_frame = int
 	## cardinality = 0..1
+	use_ship_main_target = bool
+	## cardinality = 0..1
 	prerequisites = {
 		## cardinality = 0..inf
 		<technology>
 	}
+	## cardinality = 0..1
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	upgrade_path = enum[component_upgrade_path]
+	## cardinality = 0..1
+	target_type = enum[component_target_type]
 	## cardinality = 0..1
 	component_set = <component_set>
 	## cardinality = 0..1
@@ -162,7 +179,13 @@ component_template = {
 			category = <economic_category>
 			alias_name[economic_template] = alias_match_left[economic_template]
 		}
+		## cardinality = 0..1
+		show_tech_unlock_if = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
 		size = enum[utility_slot_size]
+		## cardinality = 0..1
+		hide_damage_values_from_tooltip = bool
 		## cardinality = 0..1
 		## replace_scope = { this = ship root = ship }
 		modifier = {
@@ -290,6 +313,60 @@ component_template = {
 				size_damage_factor = float
 			}
 		}
+		## cardinality = 0..1
+		scripted_action = {
+			scope = self
+			scope = planet
+			## cardinality = 0..1
+			finish_anim_state = enum[bio_finish_anim_state]
+			## cardinality = 0..1
+			possible = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			button_clickable = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			button_visible = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			name = scalar
+			tooltip = localisation
+			## cardinality = 0..1
+			icon = <sprite>
+			## cardinality = 0..1
+			icon_selected = <sprite>
+			## cardinality = 0..1
+			activity_key = localisation
+			## cardinality = 0..1
+			context_menu_name = localisation
+			## cardinality = 0..1
+			progress_activity_key = localisation
+			## cardinality = 0..1
+			required_progress = int
+			## cardinality = 0..1
+			on_click_sound = scalar
+			## cardinality = 0..1
+			cooldown = int
+			## cardinality = 0..1
+			cost = { 
+				## cardinality = 0..inf
+				<resource> = int
+			}
+			## cardinality = 0..1
+			shortcut = scalar
+			## cardinality = 0..1
+			slot = int
+			## cardinality = 0..1
+			wait = bool
+			## cardinality = 0..1
+			finished = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			on_cancel = localisation
+		}
 	}
 	subtype[weapon_component_template] = {
 		size = enum[weapon_slot_size]
@@ -301,6 +378,33 @@ component_template = {
 			float
 		}
 		## cardinality = 0..1
+		on_hit = {
+			## cardinality = 0..inf
+			custom_tooltip = localisation
+			## cardinality = 0..1
+			hidden_effect = {
+				alias_name[effect] = alias_match_left[effect]
+			}
+		}
+		## cardinality = 0..1
+		target_focus = enum[component_target_focus]
+		## cardinality = 0..1	
+		modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		## cardinality = 0..1		
+		injected_modifier = {
+			modifier = <static_modifier>
+			## cardinality = 0..1	
+			days = int
+		}
+		## cardinality = 0..1
+		hide_damage_values_from_tooltip = bool
+		## cardinality = 0..1
+		show_tech_unlock_if = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..1
 		ai_tag_weight = int
 		## cardinality = 0..1
 		entity = scalar #TODO: Replace with hardcoded  graphical_culture + <model_entity>
@@ -309,7 +413,7 @@ component_template = {
 		## replace_scope = { root = ship this = ship }
 		resources = {
 			category = <economic_category>
-			alias_name[economic_template_no_produce] = alias_match_left[economic_template_no_produce]
+			alias_name[economic_template] = alias_match_left[economic_template]
 		}
 		## cardinality = 0..1
 		can_destroy_stars = bool
@@ -328,7 +432,7 @@ component_template = {
 		## cardinality = 0..1
 		target_weights = {
 			## cardinality = 1..inf
-			scalar = int
+			scalar = float
 		}
 
 		#these are optional, vanilla uses an .csv file to create these
@@ -391,6 +495,10 @@ component_template = {
 		resources = {
 			category = <economic_category>
 			alias_name[economic_template_no_produce] = alias_match_left[economic_template_no_produce]
+		}
+		## cardinality = 0..1
+		show_tech_unlock_if = {
+			alias_name[trigger] = alias_match_left[trigger]
 		}
 		count = float
 		regeneration_per_day = float
@@ -484,10 +592,44 @@ enums = {
 		medium
 		small
 		aux
-		
 	}
 	enum[aura_types] = {
 		ships
 		fleets
+	}
+	enum[component_upgrade_path] = {
+		artillery
+		buffer
+		carrier
+		debuffer
+		default
+		empty
+		growth
+		harbinger_chitin
+		harbinger_incubator
+		mauler_biter
+		mauler_pursuit
+		picket
+		line
+		stinger_fire_rate
+		stinger_range
+		swarm
+		torpedo
+		weaver_booster
+		weaver_growth_aura
+	}
+	enum[component_target_type] = {
+		target_allies
+		target_controlled
+		target_enemies
+		target_own
+	}
+	enum[component_target_focus] = {
+		single
+		spread
+	}
+	enum[bio_finish_anim_state] = {
+		rage
+		superweapon
 	}
 }

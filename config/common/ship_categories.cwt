@@ -10,30 +10,21 @@ types = {
 	}
 }
 
-enums = {
-	enum[grand_archive_ship_category] = {
-		tiyanki
-		space_amoeba
-		crystalline_entity
-		voidworm
-		cutholoid
-	}
-}
-
 grand_archive_ship_category_type = {
+	## cardinality = 0..1
 	rarity_icons = <sprite>
+	## cardinality = 0..1
+	uses_name_list = bool
+	## cardinality = 0..1
 	namelist = <name_list>
+	## cardinality = 0..1
 	desc = localisation
-	
 	## cardinality = 0..1
 	prefers_nebula = bool
-	
 	## cardinality = 0..1
 	preferred_planet_class = <planet_class>
-	
 	## cardinality = 0..1
 	sexual_breeding = bool
-	
 	## cardinality = 0..1
 	growth_tooltip = localisation
 }

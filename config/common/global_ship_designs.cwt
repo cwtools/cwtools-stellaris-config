@@ -65,6 +65,71 @@ global_ship_design = {
 			template = <component_template>
 		}
 	}
+	
 	## cardinality = 0..inf
 	required_component = <component_template.utility_component_template>
+
+	## cardinality = 0..1
+	growth_stages = {
+		{
+			ship_size = <ship_size>
+			section = {
+				template = <section_template>
+				slot = enum[section_slots]
+
+				## cardinality = 0..inf
+				component = {
+					#one slot, of one type! so one of the these two varients- and these need to match the component template as it is defined!
+					## cardinality = 0..1
+					slot = enum[component_slots]
+					## cardinality = 0..1
+					slot = enum[utility_component_slots]
+					## cardinality = 0..1
+					template = <component_template>
+				}
+			}
+			## cardinality = 0..inf
+			required_component = <component_template.utility_component_template>
+		}
+		{
+			ship_size = <ship_size>
+			section = {
+				template = <component_template>
+				slot = enum[section_slots]
+
+				## cardinality = 0..inf
+				component = {
+					#one slot, of one type! so one of the these two varients- and these need to match the component template as it is defined!
+					## cardinality = 0..1
+					slot = enum[component_slots]
+					## cardinality = 0..1
+					slot = enum[utility_component_slots]
+					## cardinality = 0..1
+					template = <component_template>
+				}
+			}
+			## cardinality = 0..inf
+			required_component = <component_template.utility_component_template>
+		}
+		{
+			ship_size = <ship_size>
+			section = {
+				template = <component_template>
+				slot = enum[section_slots]
+
+				## cardinality = 0..inf
+				component = {
+					#one slot, of one type! so one of the these two varients- and these need to match the component template as it is defined!
+					## cardinality = 0..1
+					slot = enum[component_slots]
+					## cardinality = 0..1
+					slot = enum[utility_component_slots]
+					## cardinality = 0..1
+					template = <component_template>
+				}
+			}
+			## cardinality = 0..inf
+			required_component = <component_template.utility_component_template>
+		}
+	}
 }

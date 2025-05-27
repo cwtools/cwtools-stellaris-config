@@ -56,6 +56,10 @@ types = {
 			Desc = "pop_cat_$_desc"
 		}
 	}
+	type[job_tags] = {
+		path = "game/common/job_tags"
+		type_per_file = yes
+	}
 }
 
 enums = {
@@ -70,7 +74,7 @@ enums = {
 	}
 }
 
-## push_scope = pop
+## push_scope = pop_group
 job = {
 	## cardinality = 0..inf
 	desc = {
@@ -83,6 +87,10 @@ job = {
 
 	## cardinality = 0..1
 	category = <social_strata>
+	## cardinality = 0..1
+	can_be_automated = bool
+	## cardinality = 0..1
+	first_come_first_served = bool
 	## cardinality = 0..1
 	condition_string = localisation
 	## cardinality = 0..1
@@ -101,6 +109,8 @@ job = {
 	exempt_from_ai_amenity_prioritization = bool
 	## cardinality = 0..1
 	is_capped_by_modifier = bool
+	## cardinality = 0..1
+	count_as_available_for_ai = bool
 	## cardinality = 0..1
 	can_set_priority = bool
 	## cardinality = 0..1
@@ -140,22 +150,54 @@ job = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
-	## cardinality = 0..1
+	# pop jobs requires some of these to be planet scope unlike all other files so I had to build separate as I could get the scope change to work in economic template.  It works here as is.  So Caligula PLEASE leave as is.
+	# inline script also uses so set to .inf
+	## cardinality = 0..inf
 	resources = {
-	}
-	## cardinality = 0..1
-	resources = {
+		## cardinality = 0..1
 		category = <economic_category>
-		alias_name[economic_template] = alias_match_left[economic_template]
+				
+		# pop jobs requires this to be planet scope unlike other files.  Caligula PLEASE leave as is.
+		## cardinality = 0..inf
+		produces = {
+			## cardinality = 0..1
+			## replace_scope = { this = planet root = planet }
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..inf
+			<resource> = float
+			## cardinality = 0..inf
+			multiplier = value_field
+			## cardinality = 0..inf
+			mult = value_field
+		}
+		
+		# pop jobs requires this to be planet scope unlike other files.  Caligula PLEASE leave as is.
+		## cardinality = 0..inf
+		upkeep = {
+			## cardinality = 0..1
+			## replace_scope = { this = planet root = planet }
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..inf
+			<resource> = float
+			## cardinality = 0..inf
+			multiplier = value_field
+			## cardinality = 0..inf
+			mult = value_field
+		}
 	}
+
 	## cardinality = 0..1
 	overlord_resources = {
 		category = <economic_category>
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}
-
+	
 	## cardinality = 0..1
-	## replace_scope = { this = pop root = pop }
+	## replace_scope = { this = pop_group root = pop_group }
 	pop_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
@@ -165,9 +207,16 @@ job = {
 	country_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
-	
-	## replace_scope = { this = planet root = planet }
+		
 	## cardinality = 0..1
+	## replace_scope = { this = system root = system }
+	system_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	
+	# inline script maybe also uses so set to card 0 to inf
+	## cardinality = 0..inf
+	## replace_scope = { this = planet root = planet }
 	### Multiple planet_modifiers blocks result in only the last one applying
 	planet_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
@@ -176,9 +225,23 @@ job = {
 	## cardinality = 0..1
 	alias_name[triggered_planet_modifier_pop] = alias_match_left[triggered_planet_modifier_pop]
 	
+	# for inline script
+	## cardinality = 0..1
+	alias_name[triggered_planet_modifier_planet] = alias_match_left[triggered_planet_modifier]
+	
+	# for inline script
+	## cardinality = 0..1
+	alias_name[triggered_country_modifier_planet] = alias_match_left[triggered_country_modifier]
 	
 	## cardinality = 0..1
 	alias_name[triggered_country_modifier_pop] = alias_match_left[triggered_country_modifier_pop]
+	
+	## cardinality = 0..1
+	alias_name[triggered_planet_modifier_pop_group] = alias_match_left[triggered_planet_pop_group_modifier_for_all]
+	
+	## cardinality = 0..1
+	alias_name[triggered_planet_pop_group_modifier_species] = alias_match_left[triggered_planet_pop_group_modifier_for_species]
+
 	
 	## cardinality = 0..1
 	alias_name[triggered_pop_modifier] = alias_match_left[triggered_pop_modifier]
@@ -193,13 +256,88 @@ job = {
 		## cardinality = 0..inf
 		localisation
 	}
+	
+	## replace_scope = { this = pop_group root = pop_group }
+	## cardinality = 0..1
+	swappable_data = {
+		default = {
+			## cardinality = 0..1
+			building_icon = icon[gfx/interface/icons/buildings] #todo: filepath
+			## cardinality = 0..1
+			building_icon = <building>
+			## cardinality = 0..1
+			icon = filepath[gfx/interface/icons/jobs/job_,.dds]
+			## cardinality = 0..1
+			desc = localisation
+			## cardinality = 0..1
+			condition_string = localisation
+		}
+		## cardinality = 0..inf
+		## replace_scope = { this = planet root = planet }
+		swap_type = {
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			name = <job>
+			## cardinality = 0..1
+			name = localisation
+			## cardinality = 0..1
+			desc = localisation
+			## cardinality = 0..1
+			icon = filepath[gfx/interface/icons/jobs/job_,.dds]
+			## cardinality = 0..1
+			building_icon = icon[gfx/interface/icons/buildings] #todo: filepath
+			## cardinality = 0..1
+			building_icon = <building>
+			## cardinality = 0..1
+			condition_string = localisation
+			weight = int
+		}
+	}
+	
+	## cardinality = 0..1
+	promotion = {
+		time = int
+		effect = {
+			alias_name[effect] = alias_match_left[effect]
+		}
+	}
+	
+	# inline script maybe also uses so set to card 0 to inf
+	## cardinality = 0..inf
+	demotion = {
+		time = int
+		effect = {
+			alias_name[effect] = alias_match_left[effect]
+		}
+	}
+	
+	## cardinality = 0..1
+	tags = { 
+		## cardinality = 0..inf
+		<job_tags>
+	}
+	
+	## cardinality = 0..1
+	## replace_scope = { this = planet root = planet }
+	triggered_tags = {
+		trigger = { 
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		tags = { 
+			## cardinality = 0..inf
+			<job_tags>
+		}
+	}
+
 }
 
 
 
 
 
-## push_scope = pop
+## push_scope = pop_group
 social_strata = {
 	rank = int
 
@@ -216,12 +354,22 @@ social_strata = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 
-	## replace_scope = { this = pop root = pop }
-	pop_modifier = {
+	## cardinality = 0..1
+	## replace_scope = { this = pop_group root = pop_group }
+	pop_group_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	
+	## cardinality = 0..1
+	## replace_scope = { this = pop_group root = pop_group }
+	triggered_pop_group_modifier = {
+		potential = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 
-	###scope: pop to be resettled
+	###scope: pop_group to be resettled
 	allow_resettlement = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
@@ -246,7 +394,7 @@ social_strata = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
-
+	
 	## cardinality = 0..1
 	unemployment_resources = {
 		category = <economic_category>
@@ -269,10 +417,17 @@ social_strata = {
 	display_category = <social_strata>
 	## cardinality = 0..1
 	display_unemployment = bool
+	## cardinality = 0..1
+	custom_demotion_loc = scalar
+	## cardinality = 0..1
+	custom_demotion_icon = scalar
 
 	## cardinality = 0..inf
 	alias_name[triggered_planet_modifier_pop] = alias_match_left[triggered_planet_modifier_pop]
 
 	## cardinality = 0..inf
 	alias_name[triggered_pop_modifier] = alias_match_left[triggered_pop_modifier]
+	
+	## cardinality = 0..inf
+	alias_name[triggered_pop_group_modifier] = alias_match_left[triggered_pop_group_modifier]
 }

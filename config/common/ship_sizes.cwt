@@ -22,6 +22,9 @@ types = {
 			Plural = "$_plural"
 		}
 	}
+	type[shipset] = {
+		path = "game/common/ship_set"
+	}
 }
 
 ship_size = {
@@ -77,6 +80,21 @@ ship_size = {
 	can_disable = bool
 	## cardinality = 0..1
 	never_lost = bool
+	## cardinality = 0..1
+	ship_family_name = enum[enum_ship_family_name]
+	## cardinality = 0..1
+	growth_stage_descriptor = localisation
+	## cardinality = 0..1
+	available_to_everyone = bool
+	## cardinality = 0..1
+	on_click_sound = <sound_effect>
+	## cardinality = 0..1
+	is_hero_ship = bool
+	## cardinality = 0..1
+	custom_state_loc_prefix = scalar
+	## cardinality = 0..1
+	hero_ship_fleet_background = <sprite>
+	
 	subtype[starbase] = {
 		## cardinality = 0..1
 		## replace_scope = { this = starbase root = starbase }
@@ -119,6 +137,17 @@ ship_size = {
 	icon = scalar
 	## cardinality = 0..1
 	use_shipnames_from = <ship_size>
+	## cardinality = 0..1
+	evaluation_resource = <resource>
+	## cardinality = 0..1
+	role_background = <sprite>
+	## cardinality = 0..1
+	is_bio_ship = bool
+	## cardinality = 0..1
+	bioship_growth_progress_required =value_field
+	## cardinality = 0..1
+	upgrades_to = <ship_size>
+
 	## cardinality = 0..1
 	combat_size_multiplier = int
 	## cardinality = 0..1
@@ -243,7 +272,9 @@ ship_size = {
 
 	## cardinality = 0..1
 	resources = {
+		## cardinality = 0..1
 		category = <economic_category>
+		## cardinality = 0..inf
 		alias_name[economic_template] = alias_match_left[economic_template]
 	}
 
@@ -310,11 +341,25 @@ ship_size = {
 		can_breed_alone = bool
 	}
 	## cardinality = 0..1
-	ship_category = enum[grand_archive_ship_category]
+	ship_category = <grand_archive_ship_category_type>
 	## cardinality = 0..1
 	mutation_components_size = enum[mutation_components_size]
 	## cardinality = 0..1
 	is_reanimated = bool
+	
+	## cardinality = 0..1
+	map_icon_override = {
+		normal = <sprite>
+		mixed = <sprite>
+		cloaked = <sprite>
+	}
+}
+
+shipset = {
+	name = localisation
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 }
 
 enums = {
@@ -338,8 +383,13 @@ enums = {
 		artillery_stealth
 		brawler
 		brawler_stealth
+		buffer_role
+		buffer_role_stealth
 		carrier
 		carrier_stealth
+		citadel
+		debuffer_role
+		debuffer_role_stealth
 		energy_torpedoes
 		energy_torpedoes_stealth
 		explosive
@@ -354,5 +404,15 @@ enums = {
 		medium
 		large
 		extra_large
+	}
+	enum[enum_ship_family_name] = {
+		harbinger_class
+		mauler_class
+		offspring_harbinger_class
+		offspring_mauler_class
+		offspring_stinger_class
+		offspring_weaver_class
+		stinger_class
+		weaver_class
 	}
 }

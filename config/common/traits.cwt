@@ -42,6 +42,10 @@ types = {
 			}
 		}
 	}
+	type[trait_tags] = {
+		path = "game/common/trait_tags"
+		type_per_file = yes
+	}
 }
 
 trait = {
@@ -122,6 +126,8 @@ trait = {
 		assembly_score = {
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		}
+		## cardinality = 0..1
+		short_name = localisation
 		allowed_archetypes = {
 			## cardinality = 1..inf
 			<species_archetype>
@@ -130,6 +136,10 @@ trait = {
 		allowed_planet_classes = {
 			## cardinality = 1..inf
 			<planet_class>
+		}
+		## cardinality = 0..1
+		allowed_planet_classes_override = {
+			alias_name[trigger] = alias_match_left[trigger]
 		}
 		## cardinality = 0..1
 		ideal_planet_class = <planet_class>
@@ -160,7 +170,7 @@ trait = {
 		}
 		## cardinality = 0..inf
 		###won't show in trait tooltips, use custom_tooltip/custom_tooltip_with_modifiers
-		alias_name[triggered_pop_modifier] = alias_match_left[triggered_pop_modifier]
+		alias_name[triggered_pop_group_modifier] = alias_match_left[triggered_pop_modifier]
 		## cardinality = 0..inf
 		## replace_scope = { this = planet root = planet from = species fromfrom = country }
 		alias_name[triggered_planet_growth_habitability_modifier] = alias_match_left[triggered_planet_growth_habitability_modifier]
@@ -181,6 +191,8 @@ trait = {
 		advanced_trait = bool
 		## cardinality = 0..1
 		leader_age_min = int
+		## cardinality = 0..1
+		auto_mod_habitability = bool
 		## cardinality = 0..1
 		leader_age_max = int
 		## replace_scope = { this = species root = species from = country }
@@ -203,11 +215,38 @@ trait = {
 		species_possible_remove = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
+		## cardinality = 0..1
+		localized_tags = {
+			## cardinality = 0..inf
+			localisation
+		}
+		## cardinality = 0..1
+		species_class_override = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..1
+		portrait_override = {
+			## cardinality = 0..inf
+			<portrait_group> 
+			## cardinality = 0..inf
+			<portrait> 
+		}
+		
+		## cardinality = 0..1
+		alias_name[triggered_planet_pop_group_modifier_species] = alias_match_left[triggered_planet_pop_group_modifier_for_species]
+	
 		## replace_scope = { this = species root = species from = country }
 		## cardinality = 0..1
 		species_possible_merge_add = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
+		
+		## cardinality = 0..1
+		tags = {
+			## cardinality = 0..inf
+			<trait_tags>
+		}
+			
 		## replace_scope = { this = species root = species from = country }
 		## cardinality = 0..1
 		species_possible_merge_remove = {
@@ -215,8 +254,13 @@ trait = {
 		}
 		## cardinality = 0..1
 		prerequisites = {
-			## cardinality = 0..100
+			## cardinality = 0..1
 			<technology>
+			## cardinality = 0..1
+			OR = {
+				## cardinality = 0..inf
+				<technology>
+			}
 		}
 		## cardinality = 0..1
 		opposites = {
@@ -256,6 +300,11 @@ trait = {
 			alias_name[modifier] = alias_match_left[modifier]
 			## cardinality = 0..1
 			mult = value_field
+		}
+		## cardinality = 0..1
+		resources = {
+			category = <economic_category>
+			alias_name[economic_template] = alias_match_left[economic_template]
 		}
 	}
 
@@ -353,8 +402,13 @@ trait = {
 		## cardinality = 0..1
 		### AND - Trait only available if the technology specified has been researched by the Empire.
 		prerequisites = {
-			## cardinality = 0..inf
+			## cardinality = 0..1
 			<technology>
+			## cardinality = 0..1
+			OR = {
+				## cardinality = 0..inf
+				<technology>
+			}
 		}
 		
 		## cardinality = 0..inf
@@ -608,12 +662,28 @@ trait = {
 		## cardinality = 1..4
 		enum[trait_ai_classes]
 	}
+	
+	## cardinality = 0..1
+	triggered_desc = {
+		## cardinality = 0..1
+		### Trigger appends additional localization key to existing text.
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..1
+		### Exclusive trigger replaces all other text in tooltip with localization key.
+		exclusive_trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		text = localisation
+	}
 
 	## cardinality = 0..1
 	initial = bool
 	## cardinality = 0..1
 	randomized = bool
-
+	## cardinality = 0..1
+	hidden = bool
 	## cardinality = 0..1
 	### Replaces auto-generated modifier effect text with localization key.
 	custom_tooltip = localisation

@@ -50,6 +50,21 @@ graphical_culture = {
 		## cardinality = 0..1
 		ambient_far = float
 	}
+	## cardinality = 0..1
+	ship_kinds = { 
+		## cardinality = 0..inf
+		<grand_archive_ship_category_type>
+	}
+	
+	## cardinality = 0..1
+	ship_selection_weight = {
+		base = int
+		## cardinality = 0..inf
+		modifier = {
+			set = int
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
 
 	## cardinality = 0..1
 	randomized = {

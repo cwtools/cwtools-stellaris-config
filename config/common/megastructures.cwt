@@ -47,6 +47,10 @@ megastructure = {
 	## cardinality = 0..1
 	place_entity_on_planet_plane = bool
 	## cardinality = 0..1
+	build_type = enum[meg_build_type]
+	## cardinality = 0..1
+	must_select_ship_design = bool
+	## cardinality = 0..1
 	entity_offset = { x = float y = float }
 	## cardinality = 0..1
 	is_grand_archive = bool
@@ -228,5 +232,13 @@ megastructure = {
 	## cardinality = 0..1
 	on_dismantle_complete = {
 		alias_name[effect] = alias_match_left[effect]
+	}
+}
+
+enums = {
+	enum[meg_build_type] = {
+		inside_gravity_well
+		outside_gravity_well
+		around_planet
 	}
 }

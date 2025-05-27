@@ -32,11 +32,45 @@ enums = {
 		research
 		trade
 		amenity
+		planet_buildings
+		amenities
 	}
 	enum[building_owner_type] = {
 		normal
 		corporate
 		subject_holding
+	}
+	enum[building_sets] = {
+		automation
+		betharian
+		cosmogenesis_world
+		engineering
+		entertainment
+		factory
+		fallen_empire
+		fallen_empire_farming
+		fallen_empire_generator
+		fallen_empire_mining
+		farming
+		fortress
+		foundry
+		generator
+		government
+		hunting_zone
+		hydroponics
+		industrial
+		knights
+		mining
+		origin
+		physics
+		pre_ftl
+		research
+		resort
+		society
+		trade
+		unity
+		urban
+		zoo
 	}
 }
 
@@ -58,7 +92,18 @@ building = {
 
 	## cardinality = 0..1
 	base_buildtime = int
-
+	## cardinality = 0..1
+	planet_limit = int
+	## cardinality = 0..1
+	planet_limit = {
+		base = int
+		## cardinality = 0..inf
+		modifier = {
+			alias_name[trigger] = alias_match_left[trigger]
+			add = int
+		}
+	}
+		
 	## cardinality = 0..1
 	###whether this building is exempt from being swapped into groups by the AI; default: no
 	exempt_from_ai_planet_specialization = bool
@@ -70,6 +115,10 @@ building = {
 	icon = icon[gfx/interface/icons/buildings] #todo: filepath
 	## cardinality = 0..1
 	icon = <building>
+	## cardinality = 0..1
+	ruined_icon = icon[gfx/interface/icons/buildings] #todo: filepath
+	## cardinality = 0..1
+	ruined_icon = <building>
 	## cardinality = 0..1
 	capital = bool
 	## cardinality = 0..1
@@ -177,6 +226,8 @@ building = {
 	alias_name[triggered_planet_modifier_planet] = alias_match_left[triggered_planet_modifier_planet]
 	alias_name[triggered_desc] = alias_match_left[triggered_desc]
 	alias_name[triggered_country_modifier_planet] = alias_match_left[triggered_country_modifier_planet]
+	alias_name[triggered_planet_modifier_pop_group] = alias_match_left[triggered_planet_pop_group_modifier_for_all]
+	alias_name[triggered_planet_pop_group_modifier_species] = alias_match_left[triggered_planet_pop_group_modifier_for_species]
 
 	## cardinality = 0..1
 	resources = {

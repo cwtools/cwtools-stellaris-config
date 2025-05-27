@@ -357,6 +357,13 @@ starbase_module = {
 starbase_level = {
 	ship_size = <ship_size>
 	## cardinality = 0..1
+	picture = {
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		picture = <sprite>
+	}
+	## cardinality = 0..1
 	next_level = <starbase_level>
 	## cardinality = 0..1
 	### Default yes, if yes starbase will be shown in outliner
@@ -379,6 +386,10 @@ starbase_level = {
 	## cardinality = 0..1
 	### Default no, if yes starbase may be used as homebase for fleets
 	potential_home_base = bool
+	## cardinality = 0..1
+	picture = <sprite>
+	## cardinality = 0..1
+	can_always_dismantle = bool
 	## cardinality = 0..1
 	### Default yes, if no then starbase_trade_collection_range_add and starbase_trade_protection_range_add will have no effect on starbases of this level
 	collects_trade = bool
@@ -404,6 +415,7 @@ starbase_type = {
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## cardinality = 0..1
 	## replace_scope = { this = starbase root = starbase from = country }
 	weight_modifier = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]

@@ -21,6 +21,8 @@ bombardment_stance = {
 	### Will this stance continue to bombard planets where all defensive armies are dead? default = no
 	stop_when_armies_dead = bool
 	## cardinality = 0..1
+	stop_when_ground_combat = bool
+	## cardinality = 0..1
 	### Will this stance attempt to abduct pops to your own planets instead of killing them? default = no
 	abduct_pops = bool
 	## cardinality = 0..1
@@ -41,6 +43,8 @@ bombardment_stance = {
 	### Will not kill/abduct pops if pops <= this number already, default = 0.
 	### Doesn't work for nations that doesn't have diplomatic wars!
 	min_pops_to_kill_pop = int[0..inf]
+	## cardinality = 0..1
+	kill_pop_amount = { min = int max = int }
 
 #	add_blocker_chance = float
 #	max_blockers = int

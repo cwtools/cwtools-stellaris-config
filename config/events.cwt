@@ -26,6 +26,14 @@ types = {
 		## abbreviation = PoE
 		subtype[pop] = {
 		}
+		
+		## type_key_filter = pop_group_event
+		## push_scope = pop_group
+		## display_name = Pop Group Event
+		## abbreviation = PGE
+		subtype[pop_group] = {
+		}
+		
 		## type_key_filter = pop_faction_event
 		## push_scope = pop_faction
 		## display_name = Pop Faction Event
@@ -148,7 +156,9 @@ event = {
 	is_test_event = yes
 	## cardinality = 0..1
 	diplomatic_title = localisation
-
+	## cardinality = 0..1
+	event_message_type = localisation
+	
 	subtype[inherited] = {
 		base = <event>
 		## cardinality = 0..1
@@ -307,7 +317,10 @@ event = {
 		## cardinality = 0..1
 		###Forces the event to pop-up even if player has supressed pop ups
 		auto_opens = bool
-
+		
+		## cardinality = 0..1
+		notification_event_icon = <sprite>
+		
 		## cardinality = 0..1
 		is_test_event = bool
 
@@ -372,6 +385,7 @@ event = {
 				icon = <sprite>
 				## cardinality = 0..1
 				icon_background = <sprite>
+				## cardinality = 0..1
 				text = localisation
 			}
 
@@ -652,6 +666,14 @@ event = {
 		}
 	}
 	
+	subtype[pop_group] = {
+		## cardinality = 0..1
+		###Like trigger, but only uses certain simple triggers
+		pre_triggers = {
+			alias_name[pop_pre_trigger] = alias_match_left[pop_pre_trigger]
+		}
+	}
+	
 	subtype[leader] = {
 		## cardinality = 0..1
 		###Like trigger, but only uses certain simple triggers
@@ -726,6 +748,11 @@ event = {
 		}
 		## cardinality = 0..1
 		run_in_ai_mode = bool
+		
+		## cardinality = 0..1
+		ai_chance = {
+			factor = 1
+		}
 	}
 
 	## cardinality = 0..1

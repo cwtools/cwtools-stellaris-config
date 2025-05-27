@@ -44,6 +44,8 @@ alias[pop_pre_trigger:is_sapient] = bool
 
 alias[pop_pre_trigger:is_robot_pop] = bool
 
+alias[pop_pre_trigger:is_robotic] = bool
+
 
 # system:
 #### whether the system belongs to anyone

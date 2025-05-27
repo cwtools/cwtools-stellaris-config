@@ -122,6 +122,8 @@ authority = {
 		inherit_icon = bool
 		inherit_effects = bool
 		## cardinality = 0..1
+		has_heir = bool
+		## cardinality = 0..1
 		ruler_council_position = <councilor>
 		trigger = {
 			alias_name[trigger] = alias_match_left[trigger]
@@ -269,12 +271,12 @@ civic_or_origin = {
 	}
 	## cardinality = 0..1
 	### requirements list, supports country_type, ethics, authority and civics. See ../readme_requirements.txt
-	possible = {
+	possible = {	
 		## cardinality = 0..1
 		text = localisation
 		## cardinality = 0..1
 		always = bool
-
+	
 		alias_name[government_trigger] = alias_match_left[government_trigger]
 	}
 	## cardinality = 0..1
@@ -359,6 +361,10 @@ civic_or_origin = {
 	subtype[origin] = {
 		is_origin = yes
 		picture = <sprite>
+		## cardinality = 0..1
+		room = icon[gfx/portraits/city_sets]
+		## cardinality = 0..1
+		city_graphical_culture = <graphical_culture>
 		## cardinality = 0..1
 		initializers = {
 			## cardinality = 1..inf
@@ -650,6 +656,33 @@ alias[government_trigger:civics] = {
 		## severity = info
 		## cardinality = 2..99
 		value = <civic_or_origin.civic>
+	}
+}
+alias[government_trigger:graphical_culture] = {
+	## cardinality = 0..1
+	value = <civic_or_origin.origin>
+
+	## cardinality = 0..inf
+	OR = {
+		## cardinality = 0..1
+		text = localisation
+		## severity = info
+		## cardinality = 2..99
+		value = <civic_or_origin.origin>
+	}
+	## cardinality = 0..inf
+	NOT = {
+		## cardinality = 0..1
+		text = localisation
+		value = <civic_or_origin.origin>
+	}
+	## cardinality = 0..inf
+	NOR = {
+		## cardinality = 0..1
+		text = localisation
+		## severity = info
+		## cardinality = 2..99
+		value = <civic_or_origin.origin>
 	}
 }
 alias[government_trigger:origin] = {

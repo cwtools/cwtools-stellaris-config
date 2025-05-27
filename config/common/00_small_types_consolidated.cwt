@@ -1,4 +1,5 @@
 #I got frustrated at there being SO MANY files, so I have thrown a whole lot together in here -Caligula
+#I like to put separate unless I get worn down by too many then I start putting them here - 17blue17 :)
 
 types = {
 	type[traitcolors] = {
@@ -125,6 +126,9 @@ types = {
 			Desc = "$_desc"
 		}
 	}
+	type[concept_categories] = {
+		path = "game/common/game_concept_categories"
+	}
 	type[leader_class] = {
 		path = "game/common/leader_classes"
 		localisation = {
@@ -139,6 +143,12 @@ types = {
 			## optional
 			Desc = "$_description"
 		}
+	}
+	type[targettype] = {
+		path = "game/common/target_types"
+	}
+	type[tradable_actions] = {
+		path = "game/common/tradable_actions" 
 	}
 }
 
@@ -236,6 +246,10 @@ country_customization = {
 				add = int
 				species_portrait = <portrait>
 			}
+			modifier = {
+				add = int
+				graphical_culture = <graphical_culture>
+			}
 		}
 	}
 	## cardinality = 0..1
@@ -273,6 +287,8 @@ start_screen_message = {
 # Sets the chance for a system getting a specific precursor and distributes star flags named after the precursor. Or something like that.
 precursors = {
 	size = int
+	## cardinality = 0..1
+	picture = <sprite>
 
 	## cardinality = 0..1
 	possible = {
@@ -574,6 +590,16 @@ message_type = {
 	## cardinality = 0..1
 	### Is the message disabled in message settings by default? (default: no)
 	default_disabled = bool
+	## cardinality = 0..1
+	default_notification = bool
+	## cardinality = 0..1
+	default_autopause = bool
+	## cardinality = 0..1
+	default_notification = bool
+	## cardinality = 0..1
+	default_popup = bool
+	## cardinality = 0..1
+	can_disable = bool
 }
 
 enums = {
@@ -595,6 +621,13 @@ enums = {
 		leaders
 		other
 		cosmic_storm
+		focuses
+	}
+	enum[target_type_enum] = {
+		enemy
+		ally
+		controlled
+		owned
 	}
 }
 
@@ -634,6 +667,7 @@ scripted_modifier = {
 }
 
 concept = {
+	
 	## cardinality = 0..1
 	icon = filepath
 	## cardinality = 0..1
@@ -644,7 +678,22 @@ concept = {
 		localisation
 	}
 	## cardinality = 0..1
+	databank = {
+		category = <concept_categories>
+		icon = <sprite>
+		picture = <sprite>
+	}
+	## cardinality = 0..1
+	wiki = scalar
+	## cardinality = 0..1
+	icon = filepath
+	## cardinality = 0..1
 	tooltip_override = localisation
+}
+
+concept_categories = {
+	name = localisation
+	icon = <sprite>
 }
 
 leader_class = {
@@ -770,5 +819,48 @@ artifact_actions = {
 	## cardinality = 0..1
 	effect = {
 		alias_name[effect] = alias_match_left[effect]
+	}
+}
+
+targettype = {
+	target_type = enum[target_type_enum]
+}
+
+tradable_actions = {
+	## cardinality = 0..1
+	fire_and_forget = bool
+
+	## cardinality = 0..1
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	active = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	on_traded_effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+	## cardinality = 0..1
+	on_deal_ended_sender_effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+	## cardinality = 0..1
+	on_deal_ended_recipient_effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+	## cardinality = 0..1
+	ai_weight = {
+		weight = float
+		## cardinality = 0..1
+		modifier = {
+			## cardinality = 0..1
+			factor = float
+			## cardinality = 0..1
+			weight = float
+			## cardinality = 0..1
+			alias_name[trigger] = alias_match_left[trigger]
+		}
 	}
 }

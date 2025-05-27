@@ -26,11 +26,6 @@ enums = {
 		occupied_only
 		no
 	}
-	enum[peace_offers] = {
-		status_quo
-		surrender
-		demand_surrender
-	}
 }
 
 # TODO Confirm
@@ -128,13 +123,6 @@ war_goal = {
 	possible = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-
-	###Set what peace offers are allowed. Leaving this out means no peace, which is usually a bug, hence making this a necessary field.
-	allowed_peace_offers = {
-		## cardinality = 0..3	
-		enum[peace_offers]
-	}
-
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country from = country }
 	###Run when war ends in status quo. The targeted country, THIS = The acting country
@@ -167,7 +155,32 @@ war_goal = {
 	galactic_empire_joins_defender = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-
+	
+	# CAN NOT USE ENUM DUE TO STUPID = "" HAVE TO LIST EACH OPTION HERE AS CARD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	## cardinality = 0..1
+	forbidden_peace_offers = {
+		demand_surrender = ""
+		surrender = ""
+	}
+	## cardinality = 0..1
+	forbidden_peace_offers = {
+		demand_surrender = ""
+	}
+	## cardinality = 0..1
+	forbidden_peace_offers = {
+		surrender = ""
+	}
+	## cardinality = 0..1
+	forbidden_peace_offers = {
+		demand_surrender = ""
+		status_quo = ""
+		surrender = ""
+	}
+	## cardinality = 0..1
+	forbidden_peace_offers = {
+		status_quo = ""
+	}
+		
 	## cardinality = 0..1
 	###Starbases are destroyed instead of ownership being transferred
 	destroy_starbases = yes

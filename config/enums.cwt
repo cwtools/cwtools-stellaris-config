@@ -66,35 +66,49 @@ enums = {
 		defenders
 	}
 	enum[scope_type_tokens] = {
-		none
-		megastructure
-		planet
+		agreement
+		alliance
+		ambient_object
+		archaeological_site
+		army
+		astral_rift
+		background_planet
+		bypass
+		cosmic_storm
 		country
-		ship
-		pop
+		debris
+		deposit
+		design
+		dlc_recommendation
+		espionage_asset
+		espionage_operation
+		exhibit
+		explorer
+		federation
+		first_contact
 		fleet
+		galactic_community
 		galactic_object
 		leader
-		army
-		ambient_object
-		species
-		design
-		pop_faction
-		war
-		federation
-		starbase
-		deposit
-		sector
+		lock_country
+		megastructure
 		no_scope
-		archaeological_site
-		first_contact
-		spy_network
-		espionage_operation
-		espionage_asset
-		agreement
+		none
+		planet
+		pop
+		pop_job
+		pop_faction
+		pop_group
+		sector
+		ship
+		ship_growth_stage
 		situation
-		astral_rift
-		galactic_community
+		species
+		spy_network
+		star
+		starbase
+		trait
+		war
 	}
 	enum[intel_level] = {
 		none
@@ -162,7 +176,6 @@ enums = {
 		merge_fleet_order
 		aggressive_stance_fleet_order
 		auto_explore_order
-		auto_patrol_order
 		build_megastructure_fleet_order
 		destroy_planet_order
 		planet_killer_weapon_windup_order
@@ -291,26 +304,29 @@ enums = {
 	}
 	enum[scripted_modifier_categories] = {
 		all
-		pop
-		ship
-		station
-		fleet
-		country
 		army
-		leader
-		planet
 		component
-		pop_faction
+		country
 		deposit
-		megastructure
-		habitability
-		starbase
 		economic_unit
+		espionage
+		federation
+		fleet
+		habitability
+		leader
+		megastructure
+		none
+		planet
+		pop
+		pop_faction
+		pop_group
+		pop_job
+		ship
+		species
+		starbase
+		station
 		system
 		trade
-		federation
-		espionage
-		species
 	}
 	enum[job_triggers] = {
 		can_fill_drone_job
@@ -424,5 +440,14 @@ enums = {
 		controlled
 		excessive
 		none
+	}
+	enum[custom_progress_mode] = {
+		normal
+		simplified
+		clamped
+	}
+	enum[ambient_object] = {
+		abandoned_weapon_station
+		small_debris_object
 	}
 }
