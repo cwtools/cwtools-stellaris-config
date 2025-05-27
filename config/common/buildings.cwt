@@ -72,6 +72,12 @@ enums = {
 		urban
 		zoo
 	}
+	complex_enum[fe_building_upgrade_variables] = {
+		path = "game/common/buildings"
+		which =  = {
+			enum_name
+		}
+	}
 }
 
 ## push_scope = planet
@@ -100,7 +106,10 @@ building = {
 		## cardinality = 0..inf
 		modifier = {
 			alias_name[trigger] = alias_match_left[trigger]
+			## cardinality = 0..1
 			add = int
+			## cardinality = 0..1
+			mult = value_field
 		}
 	}
 		
