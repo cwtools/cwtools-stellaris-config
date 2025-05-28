@@ -83,16 +83,13 @@ alias[effect:ethic_leader_creator] = {
 }
 
 ### Force scripted trigger to work in common and event files
-alias[trigger:pop_amount] = int_value_field 
+alias[trigger:pop_amount] == int_value_field 
 
 ### Force scripted trigger to work in common and event files
-alias[trigger:sapient_pop_amount] = int_value_field 
+alias[trigger:sapient_pop_amount] == int_value_field 
 
 ### Force scripted trigger to work in common and event files
-alias[trigger:psionic_pop_amount] = int_value_field 
-
-### Force scripted trigger or effect to work in common and event files
-alias[trigger:psionic_pop_amount] = int_value_field 
+alias[trigger:psionic_pop_amount] == int_value_field
 
 ### Force scripted trigger or effect to work in common and event files
 alias[effect:add_random_trait_by_tag] = { 
