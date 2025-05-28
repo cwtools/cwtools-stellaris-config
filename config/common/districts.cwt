@@ -47,10 +47,20 @@ district = {
 	}
 	## cardinality = 0..1
 	triggered_name = {
+		## cardinality = 0..1
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..1
 		text = localisation
 	}
 	## cardinality = 0..1
 	triggered_flavor_desc = {
+		## cardinality = 0..1
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..1
 		text = localisation
 	}
 	
