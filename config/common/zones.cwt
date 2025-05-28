@@ -95,6 +95,8 @@ zones = {
 	# for inline scripts to remove errors
 	## cardinality = 0..inf
 	alias_name[triggered_planet_modifier_planet] = alias_match_left[triggered_planet_modifier_planet]	
+	## cardinality = 0..1
+	ai_weight_coefficient = float
 }
 
 zone_slots = {
