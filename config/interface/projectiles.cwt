@@ -108,6 +108,7 @@ planet_killer_animation = {
  	planet_hit_entity = <model_entity>
 	## cardinality = 0..1
 	star_hit_entity = <model_entity>
+	## cardinality = 0..1
  	megastructure_hit_entity = <model_entity>
 	## cardinality = 0..1
 	hit_entity_positioning = scalar
