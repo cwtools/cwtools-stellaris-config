@@ -181,6 +181,7 @@ enums = {
 		planet_killer_weapon_windup_order
 		planet_killer_weapon_fire_order
 		explore_bypass_order
+		explore_astral_rift_fleet_order
 		use_bypass_order
 		jumpdrive_order
 		jumpdrive_windup
