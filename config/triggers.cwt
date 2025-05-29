@@ -1943,7 +1943,7 @@ alias[trigger:num_fallen_empires_setting] == int_value_field
 ###Checks the scoped envoy's task.
 alias[trigger:has_envoy_task] = {
 	##cardinality = 0..1
-	target = scope[country]
+	target = scope_group[target_country]
 	task = enum[envoy_tasks]
 }
 
