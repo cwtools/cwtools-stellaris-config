@@ -3860,8 +3860,7 @@ alias[effect:set_timed_design_flag] = {
 }
 ###Destroys a situation in right hand side event target, firing on_abort (use to cancel and fire that effect)
 alias[effect:abort_situation] = scope[situation]
-###Starts the process of converting the subject of the scoped agreement to the given specialist type.
-Can also be used to remove the specialization from a subject, by using 'none' as value.
+###Starts the process of converting the subject of the scoped agreement to the given specialist type.  Can also be used to remove the specialization from a subject, by using 'none' as value.
 alias[effect:convert_to_specialist] = <subject_specialist_type>
 alias[effect:convert_to_specialist] = none
 ###Removes a specific ship design from the scoped country
