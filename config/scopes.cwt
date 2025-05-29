@@ -112,7 +112,7 @@ scopes = {
 		aliases = { bypass }
 	}
 	"Cosmic Storm" = {
-		aliases = { "cosmic_storm" storm }
+		aliases = { "cosmic_storm" storms }
 	}
 	"Cosmic Storm Influence Field" = {
 		aliases = { "cosmic_storm_influence_field" }
