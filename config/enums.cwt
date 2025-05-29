@@ -107,6 +107,7 @@ enums = {
 		spy_network
 		star
 		starbase
+		storms
 		trait
 		war
 	}
