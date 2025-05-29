@@ -62,6 +62,13 @@ enums = {
 		strike_craft
 		missile
 	}
+	enum[scripted_action_activity_key] = {
+		behemoth_burst_activity_key
+		behemoth_drain_activity_key
+		behemoth_reflexes_activity_key
+		behemoth_spike_activity_key
+		behemoth_turbo_activity_key
+	}
 }
 
 component_set = {
@@ -339,6 +346,7 @@ component_template = {
 			icon_selected = <sprite>
 			## cardinality = 0..1
 			activity_key = localisation
+			activity_key = enum[scripted_action_activity_key]
 			## cardinality = 0..1
 			context_menu_name = localisation
 			## cardinality = 0..1
