@@ -72,6 +72,84 @@ enums = {
 		urban
 		zoo
 	}
+	enum[building_upgrade_flags] = {
+		affluence_emporium_can_build
+		nourishment_complex_can_build
+		dimensional_replicator_can_build
+		class_3_singularity_can_build
+		micro_forge_can_build
+		fe_sky_dome_can_build
+		fe_fortress_can_build
+		fe_administration_1_can_build
+		fe_administration_hive_1_can_build
+		fe_administration_machine_1_can_build
+		fe_assembly_1_can_build
+		fe_clinic_1_can_build
+		tech_fe_security_1
+		tech_fe_security_1_can_build
+		tech_fe_market_1
+		tech_fe_market_1
+		fe_silo_1_can_build
+		fe_entertainment_1_can_build
+		fe_lab_1_can_build
+		fe_mine_1_can_build
+	}
+	enum[fe_building_upgrade_variables] = {
+		affluence_emporium_build_count
+		affluence_emporium_build_upgrade_count
+		affluence_emporium_upgrade_count
+		nourishment_complex_build_count
+		nourishment_complex_build_upgrade_count
+		nourishment_complex_upgrade_count
+		dimensional_replicator_build_count
+		dimensional_replicator_build_upgrade_count
+		dimensional_replicator_upgrade_count
+		class_3_singularity_build_count
+		class_3_singularity_build_upgrade_count
+		class_3_singularity_upgrade_count
+		micro_forge_build_count
+		micro_forge_build_upgrade_count
+		micro_forge_upgrade_count
+		fe_sky_dome_build_count
+		fe_sky_dome_build_upgrade_count
+		fe_sky_dome_upgrade_count
+		fe_fortress_build_count
+		fe_fortress_build_upgrade_count
+		fe_fortress_upgrade_count
+		fe_administration_1_build_count
+		fe_administration_1_build_upgrade_count
+		fe_administration_1_upgrade_count
+		fe_administration_hive_1_build_count
+		fe_administration_hive_1_build_upgrade_count
+		fe_administration_hive_1_upgrade_count
+		fe_administration_machine_1_build_count
+		fe_administration_machine_1_build_upgrade_count
+		fe_administration_machine_1_upgrade_count
+		fe_assembly_1_build_count
+		fe_assembly_1_build_upgrade_count
+		fe_assembly_1_upgrade_count
+		fe_clinic_1_build_count
+		fe_clinic_1_build_upgrade_count
+		fe_clinic_1_upgrade_count
+		fe_security_1_build_count
+		fe_security_1_build_upgrade_count
+		fe_security_1_upgrade_count
+		fe_market_1_build_count
+		fe_market_1_build_upgrade_count
+		fe_market_1_upgrade_count
+		fe_silo_1_build_count
+		fe_silo_1_build_upgrade_count
+		fe_silo_1_upgrade_count
+		fe_entertainment_1_build_count
+		fe_entertainment_1_build_upgrade_count
+		fe_entertainment_1_upgrade_count
+		fe_lab_1_build_count
+		fe_lab_1_build_upgrade_count
+		fe_lab_1_upgrade_count
+		fe_mine_1_build_count
+		fe_mine_1_build_upgrade_count
+		fe_mine_1_upgrade_count
+	}
 }
 
 ## push_scope = planet
@@ -100,7 +178,13 @@ building = {
 		## cardinality = 0..inf
 		modifier = {
 			alias_name[trigger] = alias_match_left[trigger]
+			## cardinality = 0..1
 			add = int
+			## cardinality = 0..1
+			mult = value_field
+			# stupid inline script
+			## cardinality = 0..1
+			has_country_flag = scalar
 		}
 	}
 		

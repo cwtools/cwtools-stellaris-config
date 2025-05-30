@@ -273,6 +273,19 @@ tradition = {
 		trigger = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
+		
+		# for inline script
+		## cardinality = 0..inf
+		## replace_scope = { this = country root = country }
+		triggered_modifier = {
+			## cardinality = 0..1
+			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			alias_name[modifier] = alias_match_left[modifier]
+			## cardinality = 0..1
+			mult = value_field
+		}
 	}
 }
 

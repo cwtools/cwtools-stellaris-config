@@ -1,4 +1,4 @@
-[10:35:28][modifier.cpp:1979]: 
+[16:47:05][modifier.cpp:1979]: 
  == MODIFIER DOCUMENTATION ==
 Note on Modifier Categories:
 -- These are used internally as a tag to suggest where they are intended to be used, but exact behavior depends upon individual implementation.
@@ -5231,6 +5231,30 @@ Printing Modifier Definitions:
 - planet_enforcers_feral_insight_upkeep_mult, Category: AI Economy, Job
 - planet_enforcers_produces_mult, Category: AI Economy, Job
 - planet_enforcers_upkeep_mult, Category: AI Economy, Job
+- planet_telepaths_energy_produces_add, Category: AI Economy, Job
+- planet_telepaths_minerals_produces_add, Category: AI Economy, Job
+- planet_telepaths_food_produces_add, Category: AI Economy, Job
+- planet_telepaths_physics_research_produces_add, Category: AI Economy, Job
+- planet_telepaths_society_research_produces_add, Category: AI Economy, Job
+- planet_telepaths_engineering_research_produces_add, Category: AI Economy, Job
+- planet_telepaths_influence_produces_add, Category: AI Economy, Job
+- planet_telepaths_unity_produces_add, Category: AI Economy, Job
+- planet_telepaths_trade_produces_add, Category: AI Economy, Job
+- planet_telepaths_consumer_goods_produces_add, Category: AI Economy, Job
+- planet_telepaths_alloys_produces_add, Category: AI Economy, Job
+- planet_telepaths_volatile_motes_produces_add, Category: AI Economy, Job
+- planet_telepaths_exotic_gases_produces_add, Category: AI Economy, Job
+- planet_telepaths_rare_crystals_produces_add, Category: AI Economy, Job
+- planet_telepaths_sr_living_metal_produces_add, Category: AI Economy, Job
+- planet_telepaths_sr_zro_produces_add, Category: AI Economy, Job
+- planet_telepaths_sr_dark_matter_produces_add, Category: AI Economy, Job
+- planet_telepaths_nanites_produces_add, Category: AI Economy, Job
+- planet_telepaths_minor_artifacts_produces_add, Category: AI Economy, Job
+- planet_telepaths_astral_threads_produces_add, Category: AI Economy, Job
+- planet_telepaths_biomass_produces_add, Category: AI Economy, Job
+- planet_telepaths_menace_produces_add, Category: AI Economy, Job
+- planet_telepaths_advanced_logic_produces_add, Category: AI Economy, Job
+- planet_telepaths_feral_insight_produces_add, Category: AI Economy, Job
 - planet_traders_energy_produces_add, Category: AI Economy, Job
 - planet_traders_energy_produces_mult, Category: AI Economy, Job
 - planet_traders_energy_upkeep_mult, Category: AI Economy, Job
@@ -36356,7 +36380,7 @@ Printing Modifier Definitions:
 - deep_space_citadel_limit_add, Category: Countries
 - megastructure_dismantle_refund_mult, Category: Countries
 - pop_non_psionic_happiness, Category: Pops
-- planet_jobs_only_psionic_worker_produces_mult, Category: Pops
+- psionic_pop_bonus_workforce_mult, Category: Pops
 - capital_storm_diplo_weight_mult, Category: Countries
 - find_arc_site_on_survey_chance_mult, Category: Countries
 - treasure_trove_reward_mult, Category: Countries
@@ -36381,6 +36405,9 @@ Printing Modifier Definitions:
 - trade_from_trait_mult, Category: Countries
 - fake_pop_growth_mod, Category: Planets
 - colony_start_urban_districts_add, Category: Countries
+- robotic_pop_bonus_workforce_mult, Category: Planets
+- cyborg_pop_bonus_workforce_mult, Category: Planets
+- organic_pop_bonus_workforce_mult, Category: Planets
 - mining_district_housing_add, Category: Planets
 - mining_district_buildings_add, Category: Planets
 - councilor_ruler_democratic_exp_gain, Category: Leaders

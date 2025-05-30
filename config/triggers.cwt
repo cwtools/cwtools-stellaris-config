@@ -70,6 +70,7 @@ alias[trigger:has_pop_group_flag] = value[pop_group_flag]
 ###Checks if the empire has a specific, arbitrarily-named, flag
 alias[trigger:has_country_flag] = value[country_flag]
 alias[trigger:has_country_flag] = enum[pop_faction_inline_flag_enum]
+alias[trigger:has_country_flag] = enum[building_upgrade_flags]
 ## severity = warning
 ###Checks if the planet has a specific, arbitrarily-named, flag
 alias[trigger:has_planet_flag] = value[planet_flag]
@@ -101,7 +102,9 @@ alias[trigger:has_global_flag] = value[global_flag]
 ###Checks if the specified variable is set on the current scope. Use to avoid unset variables errors
 alias[trigger:is_variable_set] = value[variable]
 alias[trigger:is_variable_set] = local_size_option
+alias[trigger:is_variable_set] = enum[fe_building_upgrade_variables] 
 alias[trigger:is_variable_set] = local_spent_<resource>
+alias[trigger:is_variable_set] = trophy_hunter_gained_<resource>
 ## severity = warning
 ###Checks if the leader has a specific, arbitrarily-named, flag
 alias[trigger:has_leader_flag] = value[leader_flag]
@@ -620,6 +623,9 @@ alias[trigger:has_active_tradition] = enum[tradition_swap]
 alias[trigger:check_variable] = {
 	which = value[variable]
 	which = local_size_option
+	which = enum[fe_building_upgrade_variables] 
+	which = local_spent_<resource>
+	which = trophy_hunter_gained_<resource>
 	## cardinality = 1..inf
 	value = value_field
 }
@@ -1939,7 +1945,7 @@ alias[trigger:num_fallen_empires_setting] == int_value_field
 ###Checks the scoped envoy's task.
 alias[trigger:has_envoy_task] = {
 	##cardinality = 0..1
-	target = scope[country]
+	target = scope_group[target_country]
 	task = enum[envoy_tasks]
 }
 

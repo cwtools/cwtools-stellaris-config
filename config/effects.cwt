@@ -2293,6 +2293,8 @@ alias[effect:create_message] = {
 		## cardinality = 0..1
 		varname = value[variable]
 		## cardinality = 0..1
+		varname =  this.trophy_hunter_gained_<resource>
+		## cardinality = 0..1
 		value = localisation
 		## cardinality = 0..1
 		value = <trait>
@@ -2302,6 +2304,10 @@ alias[effect:create_message] = {
 		key = TRAIT_KEY
 		## cardinality = 0..1
 		key = border
+		## cardinality = 0..1
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
 	}
 	## cardinality = 0..1
 	recipient = scope[country]
@@ -3860,8 +3866,7 @@ alias[effect:set_timed_design_flag] = {
 }
 ###Destroys a situation in right hand side event target, firing on_abort (use to cancel and fire that effect)
 alias[effect:abort_situation] = scope[situation]
-###Starts the process of converting the subject of the scoped agreement to the given specialist type.
-Can also be used to remove the specialization from a subject, by using 'none' as value.
+###Starts the process of converting the subject of the scoped agreement to the given specialist type.  Can also be used to remove the specialization from a subject, by using 'none' as value.
 alias[effect:convert_to_specialist] = <subject_specialist_type>
 alias[effect:convert_to_specialist] = none
 ###Removes a specific ship design from the scoped country

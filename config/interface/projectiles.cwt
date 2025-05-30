@@ -100,11 +100,15 @@ planet_killer_animation = {
     	## cardinality = 3..3
 		float
 	}
+	## cardinality = 0..1
 	windup_entity = <model_entity>
+	## cardinality = 0..1
  	ship_fire_entity = <model_entity>
+	## cardinality = 0..1
  	planet_hit_entity = <model_entity>
 	## cardinality = 0..1
 	star_hit_entity = <model_entity>
+	## cardinality = 0..1
  	megastructure_hit_entity = <model_entity>
 	## cardinality = 0..1
 	hit_entity_positioning = scalar

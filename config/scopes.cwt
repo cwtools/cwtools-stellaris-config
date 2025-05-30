@@ -22,10 +22,10 @@ scopes = {
         aliases = { pop }
     }
 	"Pop Group" = {
-        aliases = { popgroup pop_group }
+        aliases = { pop_group }
     }
 	"Pop Job" = {
-        aliases = { popjob pop_job }
+        aliases = { job pop_job }
     }
 	Trait = {
 		aliases = { trait }
@@ -40,7 +40,7 @@ scopes = {
         aliases = { species }
     }
     "Pop Faction" = {
-        aliases = { popfaction pop_faction }
+        aliases = { pop_faction }
     }
     Sector = {
         aliases = { sector }
@@ -103,7 +103,7 @@ scopes = {
         aliases = { "backgroundplanet" "background_planet" }
     }
 	"Astral Rift" = {
-		aliases = { "astralrift" "astral_rift" }
+		aliases = { "astral_rift" }
 	}
 	"Lock Country" = {
 		aliases = { "lockcountry"  "lock_country" }
@@ -112,10 +112,10 @@ scopes = {
 		aliases = { bypass }
 	}
 	"Cosmic Storm" = {
-		aliases = { "cosmicstorm" "cosmic_storm" }
+		aliases = { "cosmic_storm" storms }
 	}
 	"Cosmic Storm Influence Field" = {
-		aliases = { "cosmicstorminfluencefield" "cosmic_storm_influence_field" }
+		aliases = { "cosmic_storm_influence_field" }
 	}
 	Exhibit = {
 		aliases = { exhibit }
@@ -137,7 +137,7 @@ scope_groups = {
         country pop pop_group leader planet ship fleet army species first_contact
     }
     target_planet = {
-        pop planet deposit archaeological_site megastructure ship fleet army situation espionage_operation
+        pop pop_group planet deposit archaeological_site megastructure ship fleet army situation espionage_operation
     }
     target_country = {
         planet fleet system ship pop pop_group pop_job army leader pop_faction country megastructure starbase deposit
