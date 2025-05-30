@@ -609,7 +609,7 @@ trait = {
 			<trait.species_trait>
 		}
 		## cardinality = 0..1
-		## OR - Trait only available if the Empire has this type of government form.
+		### OR - Trait only available if the Empire has this type of government form.
 		requires_governments = {
 			## cardinality = 1..inf
 			<government>
