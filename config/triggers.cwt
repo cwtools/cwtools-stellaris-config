@@ -206,7 +206,7 @@ alias[trigger:pop_amount_percentage] = {
 	exclude = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	percentage = = value_field[0.0..1.0]
+	percentage = value_field[0.0..1.0]
 }
 
 #should check for <> too
@@ -1523,7 +1523,7 @@ alias[trigger:resource_stockpile_compare] = {
 	resource = <resource>
 	value = value_field
 	## cardinality = 0..1
-	mult =value_field
+	mult = value_field
 	## cardinality = 0..1
 	multiplier = value_field
 }
@@ -3024,4 +3024,3 @@ alias[trigger:num_country_pops_with_job_tag] = {
 
 ###Checks if the pop group or species inherits the base species' rights. Returns false if there is no parent species.
 alias[trigger:inherits_parent_rights] = bool
-
