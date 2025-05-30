@@ -2302,6 +2302,10 @@ alias[effect:create_message] = {
 		key = TRAIT_KEY
 		## cardinality = 0..1
 		key = border
+		## cardinality = 0..1
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
 	}
 	## cardinality = 0..1
 	recipient = scope[country]
