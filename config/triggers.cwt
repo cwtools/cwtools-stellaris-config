@@ -206,7 +206,7 @@ alias[trigger:pop_amount_percentage] = {
 	exclude = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	percentage = value_field[0.0..1.0]
+	percentage = = value_field[0.0..1.0]
 }
 
 #should check for <> too
@@ -338,7 +338,7 @@ alias[trigger:is_country] = scope_group[target_country]
 ###Checks the planet's habitability (0 to 1) for target pop group/species
 alias[trigger:habitability] = {
 	who = scope_group[target_species]
-	value = value_field[0.0..1.0]
+	value == value_field[0.0..1.0]
 }
 
 #should also check < >
@@ -438,7 +438,7 @@ alias[trigger:is_war_participant] = scope[war]
 ###Checks the country's opinion of the target country against a specific value
 alias[trigger:opinion] = {
 	who = scope_group[target_country]
-	value = int_value_field
+	value == int_value_field
 }
 
 #should check <>
@@ -606,7 +606,7 @@ alias[trigger:can_colonize] = {
 ###Checks the relative amount of already-researched tech between the country and target country
 alias[trigger:tech_unlocked_ratio] = {
 	who = scope_group[target_country]
-	ratio = value_field[0.0..2.0]
+	ratio == value_field[0.0..2.0]
 }
 
 ###Checks if a country has the given ascension perk.
@@ -627,7 +627,7 @@ alias[trigger:check_variable] = {
 	which = local_spent_<resource>
 	which = trophy_hunter_gained_<resource>
 	## cardinality = 1..inf
-	value = value_field
+	value == value_field
 }
 
 ###Checks the ship/fleet/planet/leader/pop group/system's galaxy map distance to target in absolute units
@@ -743,7 +743,7 @@ alias[trigger:custom_tooltip] = {
 alias[trigger:years_of_peace] = {
 	## cardinality = 0..1
 	delay = int #no variables here atm
-	value = int_value_field
+	value == int_value_field
 }
 ###Checks the fleet's fleet size
 alias[trigger:fleet_size] == int_value_field
@@ -773,7 +773,7 @@ alias[trigger:has_ai_personality_behaviour] = enum[ai_personality_behaviours]
 ###Checks the country's amount of a specific stored resource
 alias[trigger:has_country_resource] = {
 	type = <resource>
-	amount = value_field
+	amount == value_field
 }
 ###Checks if the planet has a specific amount of a specific resource
 alias[trigger:has_resource] = <resource>
@@ -791,7 +791,7 @@ alias[trigger:has_strategic_resource] = bool
 ###Checks the country's monthly income of a specific resource
 alias[trigger:has_monthly_income] = {
 	resource = <resource>
-	value = value_field
+	value == value_field
 }
 
 ###Checks if the planet has any, or a specific, deposit
@@ -840,7 +840,7 @@ alias[trigger:attacker_war_exhaustion] == value_field[0.0..1.0]
 ### Returns true if the specified number of sub-triggers return true
 ###calc_true_if = { amount = 2 <trigger> <trigger> <trigger> }
 alias[trigger:calc_true_if] = {
-	amount = int_value_field
+	amount == int_value_field
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
@@ -900,7 +900,7 @@ alias[trigger:distance_to_core_percent] == value_field
 ### Checks the ship/fleet/planet/system's galaxy map distance to target empire
 alias[trigger:distance_to_empire] = {
 	who = scope_group[target_country]
-	distance = int_value_field
+	distance == int_value_field
 	## cardinality = 0..1
 	###(default: yes)
 	use_bypasses = bool
@@ -1046,7 +1046,7 @@ alias[trigger:has_point_of_interest] = {
 
 ### Checks the number of deposits on the planet that meet the specified criteria. Not a scope change, does not call triggers
 alias[trigger:count_deposits] =  {
-	count = int_value_field
+	count == int_value_field
 	## cardinality = 0..1
 	type = <deposit>
 	## cardinality = 0..1
@@ -1055,7 +1055,7 @@ alias[trigger:count_deposits] =  {
 
 ### Checks the number of starbase modules that are of the specified type
 alias[trigger:count_starbase_modules] =  {
-	count = int_value_field
+	count == int_value_field
 	## cardinality = 0..1
 	type = <starbase_module>
 	## cardinality = 0..1
@@ -1064,7 +1064,7 @@ alias[trigger:count_starbase_modules] =  {
 
 ### Checks the number of starbase buildings that are of the specified type or not
 alias[trigger:count_starbase_buildings] =  {
-	count = int_value_field
+	count == int_value_field
 	## cardinality = 0..1
 	type = <starbase_building>
 	## cardinality = 0..1
@@ -1073,14 +1073,14 @@ alias[trigger:count_starbase_buildings] =  {
 
 ### Checks if the scoped country has a specified quantity of a starbase size
 alias[trigger:count_starbase_sizes] =  {
-	count = int_value_field
+	count == int_value_field
 	starbase_size = <ship_size.starbase>
 }
 
 ###Checks the country's number available tech research options in a specific field
 alias[trigger:count_tech_options] = {
 	area = enum[research_areas]
-	count = int_value_field
+	count == int_value_field
 }
 
 
@@ -1359,7 +1359,7 @@ alias[trigger:num_starbases] == int_value_field
 ### Checks how many planets the country has taken from target country
 alias[trigger:num_taken_planets] = {
 	target = scope_group[target_country]
-	value = int_value_field
+	value == int_value_field
 }
 
 ### Checks the country/pop group/leader/species' number of traits
@@ -1388,7 +1388,7 @@ alias[trigger:can_live_on_planet] = scope_group[target_planet]
 ### Checks the maintenance costs of a pop group
 alias[trigger:pop_maintenance_cost] = {
 	resource = <resource>
-	value = value_field
+	value == value_field
 }
 
 ### Checks the country's running energy credit balance
@@ -1445,13 +1445,13 @@ alias[trigger:text] = localisation
 ### Checks target country's opinion value of the current country
 alias[trigger:their_opinion] = {
 	who = scope_group[target_country]
-	value = int_value_field
+	value == int_value_field
 }
 
 ### Checks the country's trust of the target country
 alias[trigger:trust] = {
 	who = scope_group[target_country]
-	value = int_value_field
+	value == int_value_field
 }
 
 ### Checks a mega structure amount of upgrade days left.
@@ -1475,7 +1475,7 @@ alias[trigger:valid_planet_killer_target] = scope_group[target_planet]
 ### Checks amount of target country's fleets that went MIA when the war began
 alias[trigger:war_begun_num_fleets_gone_mia] = {
 	who = scope_group[target_country]
-	value = int_value_field
+	value == int_value_field
 }
 
 ### Checks if the country would join the side of target country in a hypothetical war
@@ -1521,17 +1521,17 @@ alias[trigger:has_commercial_pact] = scope_group[target_country]
 ###Checks specific resource stockpile for the country scope
 alias[trigger:resource_stockpile_compare] = {
 	resource = <resource>
-	value = value_field
+	value == value_field
 	## cardinality = 0..1
-	mult = value_field
+	mult ==value_field
 	## cardinality = 0..1
-	multiplier = value_field
+	multiplier == value_field
 }
 
 ###Checks specific resource income value for the country scope (note: checks profit minus loss, not revenue)
 alias[trigger:resource_income_compare] = {
 	resource = <resource>
-	value = value_field
+	value == value_field
 }
 
 ###Checks specific resource expenses value for the country scope
@@ -1539,13 +1539,13 @@ alias[trigger:resource_expenses_compare] = {
 	resource = <resource>
 	## cardinality = 0..1
 	category = <economic_category>
-	value = value_field
+	value == value_field
 }
 
 ###Checks specific resource revenue value for the country scope
 alias[trigger:resource_revenue_compare] = {
 	resource = <resource>
-	value = value_field
+	value == value_field
 }
 
 ###Checks if the pop group is being assimilated
@@ -1570,7 +1570,7 @@ alias[trigger:free_branch_office_building_slots] == int_value_field
 ###Checks the planet's branch officevalue
 alias[trigger:branch_office_value] = {
 	who = scope_group[target_country]
-	value = value_field
+	value == value_field
 }
 
 ###Checks the number of jobs compared to pops on the planet
@@ -1604,7 +1604,7 @@ alias[trigger:has_built_species] = bool
 alias[trigger:num_buildings] = {
 	type = any
 	type = <building>
-	value = int_value_field
+	value == int_value_field
 	## cardinality = 0..1
 	disabled = any
 	## cardinality = 0..1
@@ -1621,7 +1621,7 @@ alias[trigger:num_buildings] = {
 alias[trigger:num_districts] = {
 	type = any
 	type = <district>
-	value = int_value_field
+	value == int_value_field
 }
 
 ###Checks the number of available slots the planet has of any, or a specific, district
@@ -1629,7 +1629,7 @@ alias[trigger:num_districts] = {
 alias[trigger:num_free_districts] = {
 	type = any
 	type = <district>
-	value = int_value_field
+	value == int_value_field
 }
 
 ###Checks the country's number of controlled systems.
@@ -1903,7 +1903,7 @@ alias[trigger:is_permanent_councillor] = bool
 ###Checks the country's opinion of the target country has been changed by envoys.
 alias[trigger:envoy_opinion_change] = {
 	who = scope_group[target_country]
-	value = value_field
+	value == value_field
 }
 
 ###Checks if the country has an envoy sent to the target country to improve relations.
@@ -1924,7 +1924,7 @@ alias[trigger:is_robotic] = bool
 ###Check amount of favors that scoped country can collect from target country.
 alias[trigger:num_favors] = {
 	target = scope_group[target_country]
-	value = int_value_field
+	value == int_value_field
 }
 
 ###Checks whether the galaxy size is of a certain type
@@ -1983,7 +1983,7 @@ alias[trigger:planet_resource_compare] = {
 	###Default: Balance
 	type = enum[planet_resource_compare_types]
 	resource = <resource>
-	value = value_field
+	value == value_field
 }
 
 ###Checks if given law category has any active law.
@@ -2013,7 +2013,7 @@ alias[trigger:species_has_happiness_with_owner] = scope_group[target_country]
 ###Checks the number of pops the planet or country has that work a specific job.
 alias[trigger:num_assigned_jobs] = {
 	job = <job>
-	value = int_value_field
+	value == int_value_field
 }
 
 ###Checks if the ambient object is a specific type.
@@ -2087,17 +2087,17 @@ alias[trigger:galactic_defense_force_exists] = bool
 
 ###Checks a variable for the scope if a certain amount of arithmetic is done to it (note: the variable's value is not changed by this trigger)
 alias[trigger:check_variable_arithmetic] = {
-	which = value_field
+	which == value_field
 	## cardinality = 0..inf
-	enum[maths] = value_field
+	enum[maths] == value_field
 	###Specify >/< on the value or variable fields
-	value = value_field
+	value == value_field
 }
 
 ###Checks the value of a specified modifier in the current scope against a value.
 alias[trigger:check_modifier_value] = {
 	modifier = alias_keys_field[modifier]
-	value = value_field
+	value == value_field
 }
 
 ###Checks which crisis is allowed to spawn in the current game
@@ -2124,21 +2124,21 @@ alias[trigger:can_copy_random_tech_from] = {
 ###Checks the amount of intel the current country has toward the target empire.
 alias[trigger:intel] = {
 	who = scope_group[target_country]
-	value = value_field
+	value == value_field
 }
 
 ###Checks the amount of intel the current country has toward the target empire.
 alias[trigger:has_intel_level] = {
 	who = scope_group[target_country]
 	category = <intel_category>
-	level = int_value_field
+	level == int_value_field
 }
 
 ###Checks if the country has intel report of at least the specified level on a category for the target country
 alias[trigger:has_intel_report] = {
 	who = scope_group[target_country]
 	category = <intel_category>
-	level = int_value_field
+	level == int_value_field
 }
 
 ###Checks if the specified intel is available for the target country (stale intel will not return true)
@@ -2193,7 +2193,7 @@ alias[trigger:has_espionage_type] = <espionage_operation>
 alias[trigger:relative_encryption_decryption] = {
 	## cardinality = 0..1
 	target = scope_group[target_country]
-	value = value_field
+	value == value_field
 }
 
 ###Compares days to next die roll.
@@ -2274,7 +2274,7 @@ alias[trigger:market_resource_price] = {
 	## cardinality = 0..1
 	###market_buy/market_sell/not_set (i.e. price without market fees)
 	trade_type = enum[trade_types]
-	value = value_field
+	value == value_field
 }
 
 ###Checks number of members in scoped federation
@@ -2292,7 +2292,7 @@ alias[trigger:has_job_category] = <social_strata>
 ###Checks the value for a specific option from the galaxy setup
 alias[trigger:check_galaxy_setup_value] = {
 	setting = enum[galaxy_setup_values]
-	value = value_field
+	value == value_field
 }
 
 ###Checks if the scoped fleet can move.
@@ -2369,7 +2369,7 @@ alias[trigger:is_situation_type] = <situation_type>
 ###Checks specific resource expenses value for the country scope
 alias[trigger:resource_expenses_compare] = {
 	resource = <resource>
-	value = value_field
+	value == value_field
 }
 
 ###Checks specific resource revenue value for the country scope
@@ -2377,13 +2377,13 @@ alias[trigger:resource_revenue_compare] = {
 	resource = <resource>
 	## cardinality = 0..1
 	category = <economic_category>
-	value = value_field
+	value == value_field
 }
 
 ###Checks if the country has a civic in a slot
 alias[trigger:has_civic_in_slot] = {
 	civic = <civic_or_origin.civic>
-	index = int_value_field
+	index == int_value_field
 }
 
 ###Checks the country's number of owned (recruited) non-envoy leaders (includes the ruler)
@@ -2408,7 +2408,7 @@ alias[trigger:check_economic_modifier_for_job] = {
 		## cardinality = 1..inf
 		<resource> = float
 	}
-	value = value_field
+	value == value_field
 	## cardinality = 0..1
 	species_modifiers_only = no
 }
@@ -2421,12 +2421,12 @@ alias[trigger:resource_income_to_expenditure_balance_ratio] = {
 	resource = <resource>
 	## cardinality = 0..1
 	category = <economic_category>
-	value = value_field
+	value == value_field
 }
 
 ###Checks the country's number of researched technologies of a certain tier
 alias[trigger:num_researched_techs_of_tier] = {
-	value = int_value_field
+	value == int_value_field
 	tier = int
 }
 
@@ -2446,7 +2446,7 @@ alias[trigger:check_economic_production_modifier_for_job] = {
 	}
 	## cardinality = 0..1
 	species_modifiers_only = bool
-	value = value_field
+	value == value_field
 }
 
 ###Checks if the planet has any, or a specific, holding
@@ -2559,7 +2559,7 @@ alias[trigger:is_job_of_pop_category] = {
 alias[trigger:num_ships_in_debris] = {
 	## cardinality = 0..1
 	ship_size = <ship_size>
-	value = int_value_field
+	value == int_value_field
 }
 
 ###Checks if the empire has activated as many ascension tiers as specified:
@@ -2631,7 +2631,7 @@ alias[trigger:leader_years_of_service] == int_value_field
 
 ###num_leader_traits - Checks the number of leader traits or total tiers of traits for a specific leader
 alias[trigger:num_leader_traits] = {
-	value = int_value_field
+	value == int_value_field
 	## cardinality = 0..1
 	###(Default = any)
 	is_councilor = any
