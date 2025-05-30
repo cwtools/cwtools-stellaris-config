@@ -104,6 +104,7 @@ alias[trigger:is_variable_set] = value[variable]
 alias[trigger:is_variable_set] = local_size_option
 alias[trigger:is_variable_set] = enum[fe_building_upgrade_variables] 
 alias[trigger:is_variable_set] = local_spent_<resource>
+alias[trigger:is_variable_set] = trophy_hunter_gained_<resource>
 ## severity = warning
 ###Checks if the leader has a specific, arbitrarily-named, flag
 alias[trigger:has_leader_flag] = value[leader_flag]
@@ -624,6 +625,7 @@ alias[trigger:check_variable] = {
 	which = local_size_option
 	which = enum[fe_building_upgrade_variables] 
 	which = local_spent_<resource>
+	which = trophy_hunter_gained_<resource>
 	## cardinality = 1..inf
 	value = value_field
 }
