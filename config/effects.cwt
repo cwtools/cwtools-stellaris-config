@@ -4468,6 +4468,8 @@ alias[effect:lock_storm_in_place] = bool
 ###Enables a mission for target country
 alias[effect:enable_mission] = { 
 	name = <cosmic_storm_mission>
+	## cardinality = 0..1
+	location = scope_group[celestial_coordinate]
 }
 
 ###Exports the value of the current country's maximum of the specified resource to a variable.
