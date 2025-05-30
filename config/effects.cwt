@@ -877,7 +877,7 @@ alias[effect:add_monthly_resource_mult] = {
 alias[effect:add_trait] = <trait.leader_trait>
 alias[effect:add_trait] = random_common
 alias[effect:add_trait] = random_negative
-to the scoped leader. Does not give a notification.
+###to the scoped leader. Does not give a notification.
 alias[effect:add_trait_no_notify] = <trait.leader_trait>
 ###Removes a specific trait from the scoped leader, or removes all negative traits
 alias[effect:remove_trait] = <trait.leader_trait>
