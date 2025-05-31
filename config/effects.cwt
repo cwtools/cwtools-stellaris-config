@@ -3133,6 +3133,10 @@ alias[effect:custom_tooltip_with_params] = {
 
 ###Adds the specified relic to the scoped country.
 alias[effect:add_relic] = <relic>
+alias[effect:add_relic] = {
+	key = <relic>
+	full_description = bool
+}
 ###Removes the specified relic from the scoped country.
 alias[effect:remove_relic] = <relic>
 ###Makes the archaeological site event expire
