@@ -393,28 +393,29 @@ enums = {
 		cancelled
 	}
 	enum[enum_point_of_interest] = {
-		curator_poi_dragon
-		curator_poi_technosphere
-		curator_poi_wraith
-		curator_poi_horror
-		curator_poi_fortress
-		curator_poi_hiver
-		curator_poi_stellarite
-		curator_poi_dreadnought
-		curator_poi_hatchling
-		curator_poi_tiyanki
-		curator_poi_scavenger_bot
-		rubricator_coordinates_poi
-		hidden_planet_poi
 		ai_crisis_poi.1
 		ai_crisis_poi.2
 		ai_crisis_poi.3
 		ai_crisis_poi.4
-		voidworm_system_tiny_poi
-		voidworm_system_small_poi
-		voidworm_system_medium_poi
-		voidworm_system_large_poi
+		behemoth_incubation_poi@root
+		curator_poi_dragon
+		curator_poi_dreadnought
+		curator_poi_fortress
+		curator_poi_hatchling
+		curator_poi_hiver
+		curator_poi_horror
+		curator_poi_scavenger_bot
+		curator_poi_stellarite
+		curator_poi_technosphere
+		curator_poi_tiyanki
+		curator_poi_wraith
+		hidden_planet_poi
+		rubricator_coordinates_poi
 		voidworm_system_huge_poi
+		voidworm_system_large_poi
+		voidworm_system_medium_poi
+		voidworm_system_small_poi
+		voidworm_system_tiny_poi
 	}
 	enum[portrait_refresh] = {
 		planet
@@ -451,5 +452,29 @@ enums = {
 	enum[ambient_object] = {
 		abandoned_weapon_station
 		small_debris_object
+	}
+	enum[exe_set_variable]= {
+		local_size_option
+		number_fleets_spawned
+		aianom_mineral_dep1
+		aianom_mineral_dep2
+		aianom_mineral_dep3
+		aianom_mineral_dep4
+		aianom_energy_dep1
+		aianom_energy_dep2
+		aianom_energy_dep3
+		aianom_energy_dep4
+		aianom_physics_dep1
+		aianom_physics_dep2
+		aianom_physics_dep3
+		aianom_physics_dep4
+		aianom_society_dep1
+		aianom_society_dep2
+		aianom_society_dep3
+		aianom_society_dep4
+		aianom_engineering_dep1
+		aianom_engineering_dep2
+		aianom_engineering_dep3
+		aianom_engineering_dep4
 	}
 }
