@@ -189,7 +189,6 @@ asteroid_belt_type = {
 	density = float
 }
 
-##TODO confirm and refine
 attitude = {
 	type = scalar
 	behaviour = {

@@ -254,7 +254,13 @@ event = {
 		}
 		picture = <sprite>
 		picture = {
+			## cardinality = 0..1
 			picture = <sprite>
+			## cardinality = 0..1
+			picture = {
+				trigger = { alias_name[trigger] = alias_match_left[trigger] }
+				picture = <sprite>
+			}
 			## cardinality = 0..1
 			trigger = { alias_name[trigger] = alias_match_left[trigger] }
 		}

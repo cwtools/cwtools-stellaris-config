@@ -1,5 +1,5 @@
 
-#value_field/int_value_field: use == if the left hand side works in trigger:<trigger>, otherwise use =
+#value_field/int_value_field: use == if the left hand side works in trigger:<trigger>, otherwise use =  NOTE: Not inside a trigger like trigger = { something = value_field  } only trigger == value_field
 
 #scripted triggers
 alias[trigger:<scripted_trigger>] = bool
@@ -147,7 +147,7 @@ alias[trigger:has_agreement_flag] = value[agreement_flag]
 
 ### Checks the scoped object for the remaining days left of the specified timed flag
 alias[trigger:timed_flag_days_left] = {
-	value == int_value_field
+	value = int_value_field
 	## severity = warning
 	flag = value[timed_flag]
 }
@@ -622,10 +622,11 @@ alias[trigger:has_active_tradition] = enum[tradition_swap]
 ###Checks a variable for the country/leader/planet/system/fleet against a specified value or another variable on the same scope
 alias[trigger:check_variable] = {
 	which = value[variable]
-	which = local_size_option
 	which = enum[fe_building_upgrade_variables] 
-	which = local_spent_<resource>
+	which = enum[exe_set_variable]
+	which = scope[any].enum[exe_set_variable]
 	which = trophy_hunter_gained_<resource>
+	which = local_spent_<resource>
 	## cardinality = 1..inf
 	value = value_field
 }
@@ -2949,7 +2950,7 @@ alias[trigger:has_shield_percentage]  == value_field[0.0..1.0]
 ###Checks the number of pops assigned to the job (in total or from a specific pop group)
 alias[trigger:num_pops_assigned_to_job] = {
 	pop_group = scope_group[target_pop_job] 
-	value == int_value_field
+	value = int_value_field
 }
 
 ###Checks how many plans the AI have for terraforming
@@ -3010,7 +3011,7 @@ alias[trigger:num_pops_with_job_tag] = {
 		## cardinality = 0..inf
 		<job_tags>
 	} 
-	value == int_value_field
+	value = int_value_field
 }
 
 ###Checks how many pops that has jobs with all given tags in a country 
@@ -3019,7 +3020,7 @@ alias[trigger:num_country_pops_with_job_tag] = {
 		## cardinality = 0..inf
 		<job_tags>
 	} 
-	value == int_value_field
+	value = int_value_field
 }
 
 ###Checks if the pop group or species inherits the base species' rights. Returns false if there is no parent species.

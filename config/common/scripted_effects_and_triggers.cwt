@@ -1,4 +1,6 @@
 
+#value_field/int_value_field: use == if the left hand side works in trigger:<trigger>, otherwise use =  NOTE: Not inside a trigger like trigger = { something = value_field  } only trigger == value_field
+
 types = {
 	## type_key_filter <> { pop_amount sapient_pop_amount psionic_pop_amount  }
 	type[scripted_trigger] = {
