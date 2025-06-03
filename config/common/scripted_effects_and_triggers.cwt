@@ -2,7 +2,7 @@
 #value_field/int_value_field: use == if the left hand side works in trigger:<trigger>, otherwise use =  NOTE: Not inside a trigger like trigger = { something = value_field  } only trigger == value_field
 
 types = {
-	## type_key_filter <> { pop_amount sapient_pop_amount psionic_pop_amount  }
+	## type_key_filter <> { pop_amount sapient_pop_amount psionic_pop_amount  is_leader_in_storm }
 	type[scripted_trigger] = {
 		path = "game/common/scripted_triggers"
 	}
@@ -150,3 +150,6 @@ alias[effect:cyberize_creed_pops_effect] = {
 	TINY_GROUPS = bool
 }
 alias[effect:cyberize_creed_pops_effect] = bool
+
+### Force scripted trigger to work in common and event files
+alias[trigger:is_leader_in_storm] = bool
