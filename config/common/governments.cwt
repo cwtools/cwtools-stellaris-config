@@ -499,6 +499,10 @@ councilor = {
 	required = bool
 	## cardinality = 0..1
 	ai_hiring_weight = {
+		## cardinality = 0..1
+		base = int
+		## cardinality = 0..1
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	## cardinality = 0..1
 	ai_priority = int
