@@ -23,7 +23,8 @@ card_categories = {
 	background_expanded = <sprite>
 	## cardinality = 0..1
 	icon = <sprite>
-	
+	## cardinality = 0..1
+	small_icon = localisation
 	## cardinality = 0..1
 	resources = {
 		category = enum[card_categories_focus]
