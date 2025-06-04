@@ -248,6 +248,7 @@ component_template = {
 			apply_on = enum[aura_types]
 			stack_info = {
 				id = scalar
+				## cardinality = 0..1
 				priority = int
 			}
 			## cardinality = 0..1
