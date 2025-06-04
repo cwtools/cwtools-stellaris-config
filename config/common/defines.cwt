@@ -1486,7 +1486,7 @@ NGameplay = {
 	
 	## cardinality = 0..1
 	LEADER_JOB_BACKGROUND_STRATA_WEIGHTS = { 
-		## cardinality = 3..3
+		## cardinality = 4..4
 		int
 	}
 	
@@ -2256,8 +2256,6 @@ NGameplay = {
 	## cardinality = 0..1
 	ORBITAL_BOMBARDMENT_OVER_FLEET_FACTOR = float
 	## cardinality = 0..1
-	ORBITAL_BOMBARDMENT_COLONY_DMG_SCALE = float	
-	## cardinality = 0..1
 	ORBITAL_BOMBARDMENT_PLANET_DMG_SCALE = float
 	## cardinality = 0..1
 	ORBITAL_BOMBARDMENT_ARMY_DMG_SCALE = float
@@ -2511,7 +2509,7 @@ NGameplay = {
 	LEADER_CAPACITY_XP_SCALE = float
 	## cardinality = 0..1
 	LEADER_TRAIT_SELECTION_LEVELS = {
-		## cardinality = 5..5
+		## cardinality = 10..10
 		int
 	}
 	
@@ -3432,6 +3430,8 @@ NPop = {
 	## cardinality = 0..1
 	COLONY_POPS_REQUIRED = int
 	## cardinality = 0..1
+	COLONY_BOMBARDMENT_DAMAGE = int
+	## cardinality = 0..1
 	OVERCROWDING_NO_GROWTH_THRESHOLD = float
 	## cardinality = 0..1
 	OVERCROWDING_DECLINE_THRESHOLD = float
@@ -3563,7 +3563,9 @@ NArmy = {
 
 NEconomy = {
 	## cardinality = 0..1
-	MIN_ECONOMIC_MODIFIER_MULT = -0.9 
+	MIN_MODIFIER_MULT = float
+	## cardinality = 0..1
+	MIN_ECONOMIC_MODIFIER_MULT = float
 	## cardinality = 0..1
 	COLONY_MONTHLY_GROWTH = float
 	## cardinality = 0..1
