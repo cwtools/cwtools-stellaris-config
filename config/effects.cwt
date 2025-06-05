@@ -1160,16 +1160,6 @@ alias[effect:create_species] = {
 	name = random
 	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
-	namelist = <name_list>
-	## cardinality = 0..1
-	namelist = scope_group[target_country]
-	## cardinality = 0..1
-	namelist = scope[species]
-	## cardinality = 0..1
-	namelist = random
-	## cardinality = 0..1
-	namelist = random_class
-	## cardinality = 0..1
 	plural = scalar
 	## cardinality = 0..1
 	plural = scope_group[target_species]
@@ -1290,14 +1280,6 @@ alias[effect:create_species] = {
 	## cardinality = 0..1
 	extra_trait_points = int
 	## cardinality = 0..1
-	name_list = <name_list>
-	## cardinality = 0..1
-	name_list = random
-	## cardinality = 0..1
-	name_list = scope_group[target_country]
-	## cardinality = 0..1
-	name_list = scope[species]
-	## cardinality = 0..1
 	pop_ethics = no
 	## cardinality = 0..1
 	pop_ethics = random
@@ -1320,6 +1302,16 @@ alias[effect:create_species] = {
 		## cardinality = 1..inf
 		<species_archetype>
 	}
+	## cardinality = 0..1
+	namelist = <name_list>
+	## cardinality = 0..1
+	namelist = scope_group[target_country]
+	## cardinality = 0..1
+	namelist = scope[species]
+	## cardinality = 0..1
+	namelist = random
+	## cardinality = 0..1
+	namelist = random_class
 }
 
 #if the country is default or anything else that uses them, it really should specify all the details of government, species, etc
@@ -4950,3 +4942,4 @@ alias[effect:add_variable] = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 }
+
