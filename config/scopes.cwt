@@ -40,7 +40,7 @@ scopes = {
         aliases = { species }
     }
     "Pop Faction" = {
-        aliases = { pop_faction }
+        aliases = { popfaction pop_faction }
     }
     Sector = {
         aliases = { sector }
