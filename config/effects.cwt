@@ -2882,7 +2882,7 @@ alias[effect:spawn_megastructure] = {
 		max = int[0..360]
 	}
 	## cardinality = 0..1
-	orbit_distance = float
+	orbit_distance = value_field
 	## cardinality = 0..1
 	owner = scope_group[target_country]
 	## cardinality = 0..1
