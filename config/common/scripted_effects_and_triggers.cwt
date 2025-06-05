@@ -153,3 +153,6 @@ alias[effect:cyberize_creed_pops_effect] = bool
 
 ### Force scripted trigger to work in common and event files
 alias[trigger:is_leader_in_storm] = bool
+
+### Force scripted trigger to work in common and event files
+alias[trigger:can_artifact_analysis_give_$SPECIMEN$] = bool
