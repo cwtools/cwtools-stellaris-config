@@ -7789,13 +7789,12 @@ create_leader = {
 	leader_age_min = <int> # Optional, but requires leader_age_max if used. Used to randomize leader age within the age span between this and leader_age_max.
 	leader_age_max = <int> # Optional, but requires leader_age_min if used. Used to randomize leader age within the age span between this and leader_age_min.
 	use_regnal_name = yes/no # Optional, default = no. If generating a random name, use regnal names if the name list has them.	effect = { <effect> } # Optional. Scripted effect(s) that are run on the leader after it has been created.
-
 	custom_description = <key> # Optional.
 	custom_catch_phrase = <string> # Optional.
 	skip_background_generation = yes / no # Optional, default = no. Disables random generation of a background.
-	background_planet = <target> # Optional. Used as the home planet of the leader.
-	background_job = <key> # Optional.
-	background_ethic = <key> # Optional.
+	background_planet = <target> 
+	background_job = <key>
+	background_ethic = <key>
 }
 Supported Scopes: country
 
