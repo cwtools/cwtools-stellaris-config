@@ -78,7 +78,12 @@ trait = {
 				alias_name[trigger] = alias_match_left[trigger]
 			}
 		}
+		# for inline script
+		## cardinality = 0..1
+		icon = <sprite>
 	}
+	## cardinality = 0..1
+	leader_trait_rarity = enum[leader_trait_rarity]
 	## cardinality = 0..1
 	### This trait costs/gives this amount of points when selected in species/ruler creation.
 	cost = int

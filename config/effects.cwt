@@ -874,11 +874,18 @@ alias[effect:add_monthly_resource_mult] = {
 }
 
 ###Adds a specific trait to the scoped leader or a random common/negative trait
-alias[effect:add_trait] = <trait.leader_trait>
-alias[effect:add_trait] = random_common
-alias[effect:add_trait] = random_negative
-###to the scoped leader. Does not give a notification.
-alias[effect:add_trait_no_notify] = <trait.leader_trait>
+alias[effect:add_trait] = {
+	## cardinality = 0..1
+	trait = <trait.leader_trait>
+	## cardinality = 0..1
+	trait = random_common
+	## cardinality = 0..1
+	trait = random_negative
+	## cardinality = 0..1
+	consume_selection = bool
+	## cardinality = 0..1
+	show_message = bool
+}
 ###Removes a specific trait from the scoped leader, or removes all negative traits
 alias[effect:remove_trait] = <trait.leader_trait>
 alias[effect:remove_trait] = all_negative
@@ -1153,16 +1160,6 @@ alias[effect:create_species] = {
 	name = random
 	alias_name[name] = alias_match_left[name]
 	## cardinality = 0..1
-	namelist = <name_list>
-	## cardinality = 0..1
-	namelist = scope_group[target_country]
-	## cardinality = 0..1
-	namelist = scope[species]
-	## cardinality = 0..1
-	namelist = random
-	## cardinality = 0..1
-	namelist = random_class
-	## cardinality = 0..1
 	plural = scalar
 	## cardinality = 0..1
 	plural = scope_group[target_species]
@@ -1283,14 +1280,6 @@ alias[effect:create_species] = {
 	## cardinality = 0..1
 	extra_trait_points = int
 	## cardinality = 0..1
-	name_list = <name_list>
-	## cardinality = 0..1
-	name_list = random
-	## cardinality = 0..1
-	name_list = scope_group[target_country]
-	## cardinality = 0..1
-	name_list = scope[species]
-	## cardinality = 0..1
 	pop_ethics = no
 	## cardinality = 0..1
 	pop_ethics = random
@@ -1313,6 +1302,16 @@ alias[effect:create_species] = {
 		## cardinality = 1..inf
 		<species_archetype>
 	}
+	## cardinality = 0..1
+	namelist = <name_list>
+	## cardinality = 0..1
+	namelist = scope_group[target_country]
+	## cardinality = 0..1
+	namelist = scope[species]
+	## cardinality = 0..1
+	namelist = random
+	## cardinality = 0..1
+	namelist = random_class
 }
 
 #if the country is default or anything else that uses them, it really should specify all the details of government, species, etc
@@ -1819,7 +1818,17 @@ alias[effect:establish_contact] = {
 }
 
 ###Changes scoped pop to chosen ethic
-alias[effect:pop_change_ethic] = <ethos>
+alias[effect:pop_change_ethic] = {
+	## cardinality = 0..1
+	ethic = <ethos>
+	## cardinality = 0..1
+	amount = int
+	## cardinality = 0..1
+	percentage = value_field[0.0..1.0]
+	## cardinality = 0..1
+	random = int
+}
+
 ### Starts a situation log event chain for target country
 alias[effect:begin_event_chain] = {
 	event_chain = <event_chain>
@@ -2230,7 +2239,7 @@ alias[effect:create_fleet] = {
 	set_take_point = bool
 	## cardinality = 0..1
 	parent = scalar
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	settings = {
 		## cardinality = 0..1
 		spawn_debris = bool
@@ -2383,6 +2392,8 @@ alias[effect:create_pop] = {
 		## cardinality = 1..1
 		ethic = <ethos>
 	}
+	## cardinality = 0..1
+	random = int
 	## cardinality = 0..1
 	## push_scope = pop
 	effect = {
@@ -2630,9 +2641,27 @@ alias[effect:play_sound] = {
 	location = scope_group[spatial_object]
 }
 ### Adds a specific ethic to the scoped pop regardless if pop-species allows ethic divergence or not.
-alias[effect:pop_force_add_ethic] = <ethos>
+alias[effect:pop_force_add_ethic] = {
+	## cardinality = 0..1
+	ethic = <ethos>
+	## cardinality = 0..1
+	amount = int
+	## cardinality = 0..1
+	percentage = value_field[0.0..1.0]
+	## cardinality = 0..1
+	random = int
+}
 ### Removes a specific ethic from the scoped pop
-alias[effect:pop_remove_ethic] = <ethos>
+alias[effect:pop_remove_ethic] = {
+	## cardinality = 0..1
+	ethic = <ethos>
+	## cardinality = 0..1
+	amount = int
+	## cardinality = 0..1
+	percentage = value_field[0.0..1.0]
+	## cardinality = 0..1
+	random = int
+}
 ### Disables or enables anomaly generation for the scoped planet
 alias[effect:prevent_anomaly] = bool
 #randomize_flag_symbol = pirate
@@ -4634,6 +4663,8 @@ alias[effect:kill_pop_group] = {
 	amount =  local_spent_<resource>
 	## cardinality = 0..1
 	percentage = value_field
+	## cardinality = 0..1
+	random = int
 }
 
 ###Damages scoped army by a specific amount
@@ -4712,10 +4743,21 @@ alias[effect:add_focus_progress] = {
 ###Adds the amount of pops to the scope pop group.
 alias[effect:add_pop_amount] = value_field
 alias[effect:add_pop_amount] = value_set[variable]
-
+alias[effect:add_pop_amount] = {
+	## cardinality = 0..1
+	amount = int
+	## cardinality = 0..1
+	random = int
+}
 ###Removes the amount of pops from the scope pop group.
 alias[effect:remove_pop_amount] = value_field
 alias[effect:remove_pop_amount] = value_set[variable]
+alias[effect:remove_pop_amount] = {
+	## cardinality = 0..1
+	amount = int
+	## cardinality = 0..1
+	random = int
+}
 
 ###Scales the amount of pops in the scope pop group
 alias[effect:scale_pop_amount] = float
@@ -4728,6 +4770,8 @@ alias[effect:transfer_pop_amount] = {
 	amount = value_field
 	## cardinality = 0..1
 	percentage = value_field[0.0..1.0]
+	## cardinality = 0..1
+	random = int
 }
 
 ###Set planet preference trait for scoped species (removing the current one, if any).
@@ -4765,7 +4809,9 @@ alias[effect:kill_assigned_pop_amount] = {
 	## cardinality = 0..1
 	amount = int
 	## cardinality = 0..1
-	percentage = float
+	percentage = value_field[0.0..1.0]
+	## cardinality = 0..1
+	random = int
 }
 
 ###Fires a pop group event for the scoped pop group, with optional DAYS and RANDOM delay
@@ -4873,6 +4919,8 @@ alias[effect:create_pop_group] = {
 	## cardinality = 0..1
 	size = int_value_field
 	## cardinality = 0..1
+	random = int
+	## cardinality = 0..1
 	## push_scope = pop_group
 	effect = { alias_name[effect] = alias_match_left[effect] }
 }
@@ -4882,3 +4930,16 @@ alias[effect:merge_species] = bool
 
 ###Sets the purge type for the entire planet
 alias[effect:set_planet_purge_type] = <purge_type>
+
+###Increments a previously-set variable by a specific amount
+alias[effect:add_variable] = {
+	## cardinality = 0..1
+	which = value_set[variable]
+	## cardinality = 0..1
+	value = value_field
+	## cardinality = 0..1
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+

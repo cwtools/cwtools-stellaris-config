@@ -17,6 +17,11 @@ zones = {
 	max_buildings_planet_class = bool
 	
 	## cardinality = 0..1
+	swap_type = <district>
+	## cardinality = 0..1
+	swap_type_weight = int
+	
+	## cardinality = 0..1
 	## replace_scope = { root = planet this = planet }
 	potential = { 
 		## cardinality = 0..inf
@@ -36,8 +41,17 @@ zones = {
 			<resource> = int
 		}
 	}
-	
 	## cardinality = 0..1
+	ai_resource_production = {
+		## cardinality = 0..inf
+   		<resource> = int
+		## cardinality = 0..1
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+	}
+		
+	## cardinality = 0..inf
 	## replace_scope = { root = planet this = planet }
 	triggered_district_planet_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
@@ -82,6 +96,7 @@ zones = {
 	
 	## cardinality = 0..1
 	convert_to = {
+		## cardinality = 0..inf
 		enum[zone_type]
 	}
 	
@@ -95,6 +110,8 @@ zones = {
 	# for inline scripts to remove errors
 	## cardinality = 0..inf
 	alias_name[triggered_planet_modifier_planet] = alias_match_left[triggered_planet_modifier_planet]	
+	## cardinality = 0..1
+	ai_priority = int
 	## cardinality = 0..1
 	ai_weight_coefficient = float
 }

@@ -1,4 +1,4 @@
-[10:35:29][game_application.cpp:2206]: 
+[16:58:24][game_application.cpp:2209]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -4390,7 +4390,7 @@ count_war = {
 Supported Scopes: country
 
 =================
-[10:35:30][game_application.cpp:2209]:
+[16:58:24][game_application.cpp:2212]:
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -4721,7 +4721,9 @@ Supported Scopes: country
 create_pop - Adds pop size on the scoped planet
 create_pop = {
 	species = <target / key>
-	ethos = <random / <target country> / { ethic = <key> ethic = <key> size = <number> (optional, default: POP_BULK_UNIT_SIZE) }>
+	ethos = <random / <target country> / { ethic = <key> ethic = <key> }
+	size = <number> (optional, default: POP_BULK_UNIT_SIZE) }>
+	random = <number> (optional) If set, the amount will be randomized in [size - random, size + random]. The minimum value is 0 if size is 0, and 1 otherwise.
 }
 Supported Scopes: planet
 
@@ -4732,6 +4734,7 @@ create_pop_group = {
 	ethos = { ethic = <key> } / random (optional; if no base group and no ethic is provided, ethos will be randomized)
 	category = <pop category> (optional; if omitted and no base group is defined, use category from first assigned job)
 	size = <number> (optional, default: POP_BULK_UNIT_SIZE)
+	random = <number> (optional) If set, the amount will be randomized in [size - random, size + random]. The minimum value is 0 if size is 0, and 1 otherwise.
 	effect = <init effect> (optional)
 }
 Supported Scopes: planet
@@ -4763,7 +4766,11 @@ set_star_class = <star class>
 Supported Scopes: galactic_object
 
 kill_pop_group - Instantly destroys part of a pop group
-kill_pop_group = { pop_group = <target pop group> amount = <amount killed> OR percentage = <percentage killed> }
+kill_pop_group = {
+	pop_group = <target pop group>
+	amount = <amount killed> OR percentage = <percentage killed>
+	random = <number> (optional) If set, the amount will be randomized in [max(1, size - random), size + random].
+}
 Supported Scopes: all
 
 destroy_colony - Destroys the colony on the scoped planet
@@ -5143,11 +5150,11 @@ destroy_ambient_object = <target>
 Supported Scopes: all
 
 add_trait - Adds a specific trait to the scoped leader or a random common/negative trait 
-add_trait = <trait/random_common/random_negative>
-Supported Scopes: leader
-
-add_trait_no_notify - Adds a specific trait to the scoped leader or a random common/negative trait 
-add_trait_no_notify = <trait/random_common/random_negative>. Does not give a notification.
+add_trait = {
+	trait = <trait>/random_common/random_negative
+	consume_selection = yes/no (if yes and leader has unspent trait selections, consume one of them; default: no)
+	show_message = yes/no (default: yes)
+}
 Supported Scopes: leader
 
 remove_trait - Removes a specific trait from the scoped leader, or removes all negative traits
@@ -5883,7 +5890,11 @@ set_species_identity = new/<target species>
 Supported Scopes: species
 
 pop_force_add_ethic - Adds a specific ethic to the scoped pop regardless if pop-species allows ethic divergence or not. 
-pop_force_add_ethic = <key>
+pop_force_add_ethic = {
+	ethic = <key>
+	amount = <amount> OR percentage = <percentage>
+	random = <number> (optional) If set, the amount will be randomized in [max(1, size - random), size + random].
+}
 Supported Scopes: pop_group
 
 set_empire_name - Sets the name of the current Empire.
@@ -6004,8 +6015,12 @@ shift_ethic - Shifts an empire towards a specific ethic, adjusting afterwards to
 shift_ethic = <key>
 Supported Scopes: country
 
-pop_change_ethic - Changes scoped pop to chosen ethic
-pop_change_ethic = <key>
+pop_change_ethic - Changes scoped pop to chosen ethic. 
+pop_change_ethic = {
+	ethic = <key>
+	amount = <amount> OR percentage = <percentage>
+	random = <number> (optional) If set, the amount will be randomized in [max(1, size - random), size + random].
+}
 Supported Scopes: pop_group
 
 clear_ethos - Clears all ethics of specified pop group or country
@@ -6205,7 +6220,10 @@ Supported Scopes: country
 clone_leader - Clones the last created leader for the scoped country
 clone_leader = {
 	target = <event target>
-	#properties to override, see create_leader
+	#Properties to override, see create_leader
+	#traits is only overridden if the override is not empty
+	#randomize_traits is only used if traits is overridden
+	#If traits is not overridden, trait picks are also copied
 	effect = { ... }
 }
 Supported Scopes: country
@@ -7124,11 +7142,21 @@ add_focus_progress = { category = <focus_category_key> amount = <float>/<variabl
 Supported Scopes: country
 
 add_pop_amount - Adds the amount of pops to the scope pop group.
-add_pop_amount = <num>
+	add_pop_amount = <num>
+OR
+	add_pop_amount = {
+		amount = <number>
+		random = <number> The amount will be randomized in [max(1, size - random), size + random].
+	}
 Supported Scopes: pop_group
 
 remove_pop_amount - Removes the amount of pops from the scope pop group.
-remove_pop_amount = <num>
+	remove_pop_amount = <num>
+OR
+	remove_pop_amount = {
+		amount = <number>
+		random = <number> The amount will be randomized in [max(1, size - random), size + random].
+	}
 Supported Scopes: pop_group
 
 scale_pop_amount - Scales the amount of pops in the scope pop group
@@ -7140,6 +7168,7 @@ transfer_pop_amount = {
 	source = <source pop group>
 	target = <target pop group>
 	amount = <amount> OR percentage = <percentage>
+	random = <number> (optional) If set, the amount will be randomized in [max(1, size - random), size + random].
 }
 Supported Scopes: all
 
@@ -7172,6 +7201,7 @@ kill_assigned_pop_amount - Instantly destroys part of the assigned pops to this 
 kill_assigned_pop_amount = {
 	limit = { <triggers> }
 	amount = <amount killed> OR percentage = <percentage killed>
+	random = <number> (optional)
 }
 Supported Scopes: pop_job
 
@@ -7291,6 +7321,10 @@ add_resource = {
 }
 Supported Scopes: country
 
+add_variable - Increments a previously-set variable by a specific amount
+add_variable = { which = <string> value = <float>/<variable>/<scope.variable>/trigger:<trigger> }
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+
 fleet_event - Fires a fleet event for the scoped fleet, with optional DAYS and RANDOM delay
 fleet_event = {
 	id = <id>
@@ -7301,7 +7335,11 @@ fleet_event = {
 Supported Scopes: fleet
 
 pop_remove_ethic - Removes a specific ethic from the scoped pop
-pop_remove_ethic = <key>
+pop_remove_ethic = {
+	ethic = <key>
+	amount = <amount> OR percentage = <percentage>
+	random = <number> (optional) If set, the amount will be randomized in [max(1, size - random), size + random].
+}
 Supported Scopes: pop_group
 
 set_faction_extorted - Sets the scope faction as extorted and removes extortion from any other ones
@@ -7738,8 +7776,7 @@ create_leader = {
 	class = random_ruler / <key>
 	skill = <int> # The leader skill level, minimum LEADER_SKILL_MIN and maximum LEADER_MAX_SKILL_CAP.
 	set_age = <int>
-	traits = { <level> = <key> <level> = <key> } # The traits of the leader, i.e. "1 = leader_trait_bureaucrat".
-
+	traits = { <level> = <key> <level> = <key> } # The traits of the leader, e.g. "1 = leader_trait_bureaucrat". If <level> is a positive int and randomize_traits = yes, the trait is added if the leader's level is at least <level>.
 	gender = <gender> # Optional, default = random.
 	event_leader = yes / no # Optional, default = no. Sets if this is a event leader or not. Is checked through is_event_leader.
 	immortal = yes / no # Optional, default = no.
@@ -7748,17 +7785,16 @@ create_leader = {
 	can_manually_change_location = yes / no # Optional, default = yes.
 	can_assign_to_council = yes/no # Optional, default = yes.
 	hide_leader = yes / no # Optional, default = no. Hides the leader from the player's list of leaders, and doesn't count them towards the leader cap.
-	randomize_traits = yes / no # Optional, default = yes.
+	randomize_traits = yes / no # Optional, default = yes. Does not randomize for levels that are specified in traits.
 	leader_age_min = <int> # Optional, but requires leader_age_max if used. Used to randomize leader age within the age span between this and leader_age_max.
 	leader_age_max = <int> # Optional, but requires leader_age_min if used. Used to randomize leader age within the age span between this and leader_age_min.
 	use_regnal_name = yes/no # Optional, default = no. If generating a random name, use regnal names if the name list has them.	effect = { <effect> } # Optional. Scripted effect(s) that are run on the leader after it has been created.
-
 	custom_description = <key> # Optional.
 	custom_catch_phrase = <string> # Optional.
 	skip_background_generation = yes / no # Optional, default = no. Disables random generation of a background.
-	background_planet = <target> # Optional. Used as the home planet of the leader.
-	background_job = <key> # Optional.
-	background_ethic = <key> # Optional.
+	background_planet = <target> 
+	background_job = <key>
+	background_ethic = <key>
 }
 Supported Scopes: country
 
