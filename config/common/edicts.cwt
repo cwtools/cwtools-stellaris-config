@@ -42,7 +42,7 @@ edict = {
 	## cardinality = 0..1
 	unity_cost_mult = float
 
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	## replace_scope = { this = country root = country }
 	modifier = {
 		## cardinality = 0..1
@@ -57,7 +57,7 @@ edict = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
