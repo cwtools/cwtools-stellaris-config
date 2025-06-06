@@ -24,7 +24,7 @@ economic_category = {
 		hidden = yes
 	}
 
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	modifier_category = enum[scripted_modifier_categories]
 
 	## cardinality = 0..1
