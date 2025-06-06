@@ -110,7 +110,7 @@ authority = {
 		alias_name[government_trigger] = alias_match_left[government_trigger]
 	}
 	## replace_scope = { this = no_scope root = no_scope } #this can check has_dlc and other likewise triggers, but thats it.
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	random_weight = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
@@ -315,7 +315,7 @@ civic_or_origin = {
 	description = localisation
 	## cardinality = 0..1
 	negative_description = localisation
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	## replace_scope = { root = country this = country }
 	### Scriptable weight for randomizing a civic
 	### Note: If omitted, a default weight of 1 is used
@@ -336,7 +336,7 @@ civic_or_origin = {
 	custom_tooltip_with_modifiers = localisation
 	## cardinality = 0..1
 	starting_colony = <planet_class>
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	swap_type = {
 		subtype[localised] = {
 			name = scalar
