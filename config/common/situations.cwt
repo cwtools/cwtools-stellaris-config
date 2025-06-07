@@ -166,9 +166,9 @@ situation_type = {
 		## cardinality = 0..1
 		active_tooltip = localisation
 	}
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	title = localisation
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	title = {
 		trigger = {
 			alias_name[trigger] = alias_match_left[trigger]
@@ -241,7 +241,7 @@ situation_type = {
 			alias_name[triggered_target_modifier_situation] = alias_match_left[triggered_target_modifier_situation]
 	    }
 	}
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	triggered_blocked_desc = {
 		trigger = {
 			alias_name[trigger] = alias_match_left[trigger]
