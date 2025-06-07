@@ -87,7 +87,7 @@ solar_system_initializer = {
 	subtype[!fallen_empire_initializer_sub] = {
 		###the scope here is galactic_object scope, with prev being set to the previous system that was initialized by this tree ( if any ). Root will point to the first system in the tree or the root of the calling event.
 		## replace_scope = { this = galactic_object root = any }
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		init_effect = {
 			alias_name[effect] = alias_match_left[effect]
 		}
@@ -95,7 +95,7 @@ solar_system_initializer = {
 	subtype[fallen_empire_initializer_sub] = {
 		###the scope here is galactic_object scope, with prev being set to the previous system that was initialized by this tree ( if any ). Root will point to the first system in the tree or the root of the calling event.
 		## replace_scope = { this = galactic_object root = country }
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		init_effect = {
 			alias_name[effect] = alias_match_left[effect]
 		}
@@ -167,9 +167,9 @@ alias[planet_initializer:planet] = {
 	class = enum[solar_sys_init_planet_class]
 	## cardinality = 0..1
 	class = ideal_design_class
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	orbit_distance = float
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	orbit_distance = { min = int max = int }
 
 	## cardinality = 0..inf
@@ -234,7 +234,7 @@ alias[planet_initializer:planet] = {
 
 	## severity = info
 	### The scope will be a planet scope, with prev being the system. prevprev will be the system that triggered this system's initialization ( if any ). Root will be the fallen empire.
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	init_effect = {
 		alias_name[effect] = alias_match_left[effect]
 	}
@@ -275,9 +275,9 @@ alias[moon_initializer:moon] = {
 	## cardinality = 0..1
 	class = ideal_design_class
 
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	orbit_distance = float
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	orbit_distance = { min = int max = int }
 
 	## cardinality = 0..1
@@ -337,7 +337,7 @@ alias[moon_initializer:moon] = {
 	starting_planet = bool
 
 	### The scope will be a planet scope, with prev being the system. prevprev will be the system that triggered this system's initialization ( if any ). Root will be the first system in this initializer tree
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	init_effect = {
 		alias_name[effect] = alias_match_left[effect]
 	}
