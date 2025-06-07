@@ -513,7 +513,7 @@ living_standard = {
 		custom_tooltip = localisation
 	}
 
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	## replace_scope = { this = pop_group root = pop_group }
 	triggered_pop_group_modifier = {
 		potential = {
