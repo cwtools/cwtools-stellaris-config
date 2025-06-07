@@ -670,7 +670,7 @@ trait = {
 		enum[trait_ai_classes]
 	}
 	
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	triggered_desc = {
 		## cardinality = 0..1
 		### Trigger appends additional localization key to existing text.

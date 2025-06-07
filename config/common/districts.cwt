@@ -45,7 +45,7 @@ district = {
 		}
 		text = localisation
 	}
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	triggered_name = {
 		## cardinality = 0..1
 		trigger = {
@@ -54,7 +54,7 @@ district = {
 		## cardinality = 0..1
 		text = localisation
 	}
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	triggered_flavor_desc = {
 		## cardinality = 0..1
 		trigger = {
@@ -140,10 +140,11 @@ district = {
 	}
 	## cardinality = 0..1
 	zone_slots = {
+		## cardinality = 0..inf
 		<zone_slots>
 	}
 	
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	## replace_scope = { this = planet root = planet }
 	planet_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]

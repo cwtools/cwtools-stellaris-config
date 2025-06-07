@@ -42,7 +42,7 @@ diplo_phrase = {
 		localisation = {
 			## replace_scope = { root = country this = country from = country }
 			trigger = { alias_name[trigger] = alias_match_left[trigger] }
-			## cardinality = 0..1
+			## cardinality = 0..inf
 			weight = {
 				alias_name[modifier_rule] = alias_match_left[modifier_rule]
 			}
@@ -55,7 +55,7 @@ diplo_phrase = {
 			localisation = {
 				## replace_scope = { root = country this = country from = country }
 				trigger = { alias_name[trigger] = alias_match_left[trigger] }
-				## cardinality = 0..1
+				## cardinality = 0..inf
 				weight = {
 					alias_name[modifier_rule] = alias_match_left[modifier_rule]
 				}
@@ -75,7 +75,7 @@ diplo_phrase = {
 			localisation = {
 				## replace_scope = { root = country this = country from = country }
 				trigger = { alias_name[trigger] = alias_match_left[trigger] }
-				## cardinality = 0..1
+				## cardinality = 0..inf
 				weight = {
 					alias_name[modifier_rule] = alias_match_left[modifier_rule]
 				}
@@ -98,7 +98,7 @@ diplo_phrase = {
 				## cardinality = 0..1
 				## replace_scope = { root = country this = country from = country }
 				trigger = { alias_name[trigger] = alias_match_left[trigger] }
-				## cardinality = 0..1
+				## cardinality = 0..inf
 				weight = {
 					alias_name[modifier_rule] = alias_match_left[modifier_rule]
 				}
@@ -120,7 +120,7 @@ diplo_phrase = {
 			localisation = {
 				## replace_scope = { root = country this = country from = country }
 				trigger = { alias_name[trigger] = alias_match_left[trigger] }
-				## cardinality = 0..1
+				## cardinality = 0..inf
 				weight = {
 					alias_name[modifier_rule] = alias_match_left[modifier_rule]
 				}
@@ -142,7 +142,7 @@ diplo_phrase = {
 			localisation = {
 				## replace_scope = { root = country this = country from = country }
 				trigger = { alias_name[trigger] = alias_match_left[trigger] }
-				## cardinality = 0..1
+				## cardinality = 0..inf
 				weight = {
 					alias_name[modifier_rule] = alias_match_left[modifier_rule]
 				}

@@ -77,7 +77,7 @@ ascension_perk = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	custom_tooltip = localisation
 
 	## cardinality = 0..1
@@ -99,7 +99,7 @@ ascension_perk = {
 		}
 		## cardinality = 0..1
 		alias_name[modifier] = alias_match_left[modifier]
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		custom_tooltip = localisation
 		## cardinality = 0..1
 		show_only_custom_tooltip = bool
@@ -125,9 +125,9 @@ ascension_perk = {
 		inherit_name = bool
 		## cardinality = 0..1
 		inherit_effects = bool
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		custom_tooltip = localisation
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		custom_tooltip_with_modifiers = localisation
 	
 		#Should be only if not inheriting effects
@@ -145,7 +145,7 @@ ascension_perk = {
 			}
 			## cardinality = 0..1
 			alias_name[modifier] = alias_match_left[modifier]
-			## cardinality = 0..1
+			## cardinality = 0..inf
 			custom_tooltip = localisation
 			## cardinality = 0..1
 			show_only_custom_tooltip = bool
@@ -186,7 +186,7 @@ tradition = {
 		}
 		## cardinality = 0..1
 		alias_name[modifier] = alias_match_left[modifier]
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		custom_tooltip = localisation
 		## cardinality = 0..1
 		show_only_custom_tooltip = bool
@@ -214,9 +214,9 @@ tradition = {
 	}
 	## cardinality = 0..1
 	unlocks_agenda = <council_agenda>
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	custom_tooltip = localisation
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	custom_tooltip_with_modifiers = localisation
 
 	## cardinality = 0..inf
@@ -229,9 +229,9 @@ tradition = {
 		inherit_name = bool
 		## cardinality = 0..1
 		inherit_effects = bool
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		custom_tooltip = localisation
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		custom_tooltip_with_modifiers = localisation
 	
 		#Should be only if not inheriting effects
@@ -249,9 +249,9 @@ tradition = {
 			}
 			## cardinality = 0..1
 			alias_name[modifier] = alias_match_left[modifier]
-			## cardinality = 0..1
+			## cardinality = 0..inf
 			custom_tooltip = localisation
-			## cardinality = 0..1
+			## cardinality = 0..inf
 			show_only_custom_tooltip = bool
 		}
 		#Should be only if not inheriting effects

@@ -133,7 +133,7 @@ technology = {
 		custom_tooltip = localisation
 	}
 	
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	## replace_scope = { this = country root = country }
 	technology_swap = {
 		## cardinality = 0..1
@@ -148,7 +148,7 @@ technology = {
 		trigger = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		prereqfor_desc = {
 			custom = {
 				title = localisation
@@ -175,7 +175,7 @@ technology = {
 		category = { <technology_category> }
 	}
 		
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	prereqfor_desc = {
 		## cardinality = 0..4
 		hide_prereq_for_desc = enum[prereq_for_categories]
@@ -186,7 +186,7 @@ technology = {
 			desc = localisation
 		}
 	}
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	## replace_scope = { this = country root = country }
 	weight_modifier = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
@@ -269,7 +269,7 @@ enums = {
 technology_tier = {
 	## cardinality = 0..1
 	previously_unlocked = int
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	## replace_scope = { this = country root = country }
 	weight_modifier = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
@@ -278,7 +278,7 @@ technology_tier = {
 
 technology_category = {
 	icon = filepath
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	## replace_scope = { this = country root = country }
 	weight_modifier = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]

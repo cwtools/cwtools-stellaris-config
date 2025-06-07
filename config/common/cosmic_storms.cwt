@@ -71,9 +71,7 @@ storm_type = {
 	icon = <sprite>
 
 	cosmic_storm_texture_lightning_paths = {
-		filepath
-		filepath
-		filepath
+		## cardinality = 0..inf
 		filepath
 	}
 

@@ -1974,8 +1974,8 @@ alias[trigger:num_planets_in_system] == int_value_field
 ###Checks if the current planet is the capital of its sector.
 alias[trigger:is_sector_capital] = bool
 
-## severity = warning
 ###Checks if the planet uses the specified district set.
+alias[trigger:uses_district_set] = <district>
 alias[trigger:uses_district_set] = enum[district_sets]
 
 ###Compares the planet's production/upkeep or balance (default: balance) of a given resource with a specified value.
