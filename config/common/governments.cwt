@@ -269,7 +269,7 @@ civic_or_origin = {
 		## cardinality = 1..inf
 		<job> = int
 	}
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	### requirements list, supports country_type, ethics, authority and civics. See ../readme_requirements.txt
 	possible = {	
 		## cardinality = 0..1
@@ -310,7 +310,7 @@ civic_or_origin = {
 	alternate_civic_version = <civic_or_origin.civic>
 	## cardinality = 0..1
 	icon = filepath
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	### localisation of custom effects
 	description = localisation
 	## cardinality = 0..1
