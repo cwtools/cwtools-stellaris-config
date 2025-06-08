@@ -661,7 +661,7 @@ alias[effect:ordered_owned_leader] = {
 }
 
 ## push_scope = leader
-###Executes enclosed effects on a random leader owned by scoped country that meets the limit criteria
+###Iterate through each leader that is owned by the country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.
 alias[effect:random_owned_leader] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
@@ -692,19 +692,6 @@ alias[effect:ordered_pool_leader] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
-}
-
-## push_scope = leader
-###Iterate through each leader that is recruitable for the country
-alias[effect:random_owned_leader] = {
-	##cardinality = 0..1
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-	alias_name[effect] = alias_match_left[effect]
-
-	##cardinality = 0..1
-	weights = {
-		alias_name[modifier_rule] = alias_match_left[modifier_rule]
-	}
 }
 
 ## push_scope = country
