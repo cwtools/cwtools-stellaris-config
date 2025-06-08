@@ -245,6 +245,7 @@ country_customization = {
 				add = int
 				species_portrait = <portrait>
 			}
+			## cardinality = 0..inf
 			modifier = {
 				add = int
 				graphical_culture = <graphical_culture>
