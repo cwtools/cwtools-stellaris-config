@@ -87,6 +87,7 @@ enums = {
 		federation
 		first_contact
 		fleet
+		galcom
 		galactic_community
 		galactic_object
 		leader
@@ -99,6 +100,7 @@ enums = {
 		pop_job
 		pop_faction
 		pop_group
+		self
 		sector
 		ship
 		ship_growth_stage
