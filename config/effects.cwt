@@ -4043,11 +4043,6 @@ alias[effect:start_terraform_process] = {
 	inherit_entity = bool
 }
 
-###Adds a specific trait to the scoped leader or a random common/negative trait Does not give a notification.
-alias[effect:add_trait_no_notify] = <trait.leader_trait>
-alias[effect:add_trait_no_notify] = random_common
-alias[effect:add_trait_no_notify] = random_negative
-
 ###Removes all negative traits from the scoped leader
 alias[effect:remove_all_negative_traits] = yes
 
