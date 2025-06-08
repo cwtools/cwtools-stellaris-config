@@ -47,17 +47,63 @@ alias[modifier_rule:complex_trigger_modifier] = {
 	trigger_scope = scope[any]
 	## cardinality = 0..1
 	parameters = {
-		## cardinality = 0..inf
-		scalar = {
+		## cardinality = 0..1
+		job = <job>
+		## cardinality = 0..1
+		cost = value_field
+		## cardinality = 0..1
+		disabled = bool
+		## cardinality = 0..1
+		species_modifiers_only = bool
+		## cardinality = 0..1
+		tags = {
 			## cardinality = 0..inf
-			scalar = scalar
+			<job_tags>
 		}
-		## cardinality = 0..inf
-		scalar = scalar
+		## cardinality = 0..1
+		contains_modifier = {
+			string = enum[scope_type_tokens]
+		}
+		## cardinality = 0..1
+		resource = <resource>
+		## cardinality = 0..1
+		resource = {
+			## cardinality = 0..inf
+			<resource> = float
+		}
+		## cardinality = 0..1
+		category = scalar
+		## cardinality = 0..1
+		who = scalar
+		## cardinality = 0..1
+		type = scalar
+		## cardinality = 0..1
+		ship_size = <ship_size>
+		## cardinality = 0..1
+		setting =  scalar
+		## cardinality = 0..1
+		flag =  scalar
+		## cardinality = 0..1
+		source =  scalar
+		## cardinality = 0..1
+		tier =  int
+		## cardinality = 0..1
+		same_solar_system = bool
+		## cardinality = 0..1
+		is_subclass = bool
+		## cardinality = 0..1
+		negative = bool
+		## cardinality = 0..1
+		count_tiers = bool
+		## cardinality = 0..1
+		alias_name[trigger] = alias_match_left[trigger]
 		## cardinality = 0..1
 		## push_scope = any
 		limit = {
+			## cardinality = 0..inf		
 			alias_name[trigger] = alias_match_left[trigger]
+			## cardinality = 0..inf
+			scalar = int
 		}
 	}
 	mode = enum[complex_maths_enum]
@@ -117,6 +163,8 @@ alias[modifier_rule_with_loc:complex_trigger_modifier] = {
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## cardinality = 0..1
+	job = <job>
 }
 
 #calculation types
