@@ -192,7 +192,7 @@ building = {
 	###whether this building is exempt from being swapped into groups by the AI; default: no
 	exempt_from_ai_planet_specialization = bool
 
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	category = enum[building_categories]
 
 	## cardinality = 0..1
@@ -325,7 +325,7 @@ building = {
 		<building>
 	}
 
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	## replace_scope = { this = planet root = planet }
 	planet_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
@@ -350,7 +350,7 @@ building = {
 
 	alias_name[ai_resource_production] = alias_match_left[ai_resource_production]
 
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	convert_to = {
 		## cardinality = 1..inf
 		<building>

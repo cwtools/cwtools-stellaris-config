@@ -136,7 +136,7 @@ component_template = {
 	}
 	## cardinality = 0..1
 	upgrades_to = <component_template>
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	tags = {
 		## cardinality = 0..inf
 		enum[component_tags]
