@@ -4047,7 +4047,7 @@ alias[effect:start_terraform_process] = {
 alias[effect:remove_all_negative_traits] = yes
 
 ###Removes all non-negative traits from the scoped leader
-alias[effect:remove_all_non_negative_traits] = yes
+alias[effect:remove_all_positive_traits] = yes
 
 ###Removes all traits from the scoped leader
 alias[effect:remove_all_traits] = yes
