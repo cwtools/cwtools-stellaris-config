@@ -1,12 +1,12 @@
 types = {
 	type[grand_archive_ship_category_type] = {
 		path = "game/common/ship_categories"
-	}
-	localisation = {
-		## required
-		Name = "$"
-		## required
-		Description = "$_desc"
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Description = "$_desc"
+		}
 	}
 }
 
