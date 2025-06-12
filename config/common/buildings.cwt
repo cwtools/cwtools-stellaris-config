@@ -1,4 +1,4 @@
-#Add branch office subtype
+
 types = {
 	## graph_related_types = { technology }
 	type[building] = {
@@ -100,6 +100,11 @@ enums = {
 		received_collection_stage_2_reward_aesthetic_wonder
 		received_collection_stage_2_reward_xeno_geology
 		received_collection_stage_2_reward_historical_item
+		dportal_trade_high
+		dportal_trade_low
+		dportal_trade_crisis
+		dportal_trade_normal
+		has_private_clinics
 	}
 	enum[fe_building_upgrade_variables] = {
 		affluence_emporium_build_count
