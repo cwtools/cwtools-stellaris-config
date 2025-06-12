@@ -73,7 +73,7 @@ resolution = {
 	fire_and_forget = yes
 	## cardinality = 0..1
 	harmful = bool
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	###Modifier to be applied to all community members if passed. Apparently. Not sure about that...
 	modifier = {
 		## cardinality = 0..1

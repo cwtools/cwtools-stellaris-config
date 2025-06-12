@@ -74,6 +74,7 @@ alias[trigger:has_country_flag] = enum[building_upgrade_flags]
 ## severity = warning
 ###Checks if the planet has a specific, arbitrarily-named, flag
 alias[trigger:has_planet_flag] = value[planet_flag]
+alias[trigger:has_planet_flag] = enum[building_upgrade_flags]
 ## severity = warning
 ###Checks if the pop faction has a specific, arbitrarily-named, flag
 alias[trigger:has_pop_faction_flag] = value[pop_faction_flag]

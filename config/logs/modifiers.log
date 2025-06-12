@@ -1,4 +1,4 @@
-[16:58:23][modifier.cpp:1999]: 
+[17:53:57][modifier.cpp:1999]: 
  == MODIFIER DOCUMENTATION ==
 Note on Modifier Categories:
 -- These are used internally as a tag to suggest where they are intended to be used, but exact behavior depends upon individual implementation.
@@ -6857,24 +6857,6 @@ Printing Modifier Definitions:
 - planet_building_master_archive_build_speed_mult, Category: Planets
 - planet_building_empyrean_shrine_build_speed_mult, Category: Planets
 - planet_building_ancient_cryo_chamber_build_speed_mult, Category: Planets
-- planet_building_ancient_fe_stronghold_build_speed_mult, Category: Planets
-- planet_building_ancient_fe_security_2_build_speed_mult, Category: Planets
-- planet_building_ancient_dimensional_fabricator_build_speed_mult, Category: Planets
-- planet_building_ancient_nano_forge_build_speed_mult, Category: Planets
-- planet_building_ancient_affluence_center_build_speed_mult, Category: Planets
-- planet_building_ancient_fe_dome_build_speed_mult, Category: Planets
-- planet_building_ancient_nourishment_center_build_speed_mult, Category: Planets
-- planet_building_ancient_class_4_singularity_build_speed_mult, Category: Planets
-- planet_building_ancient_fe_lab_2_build_speed_mult, Category: Planets
-- planet_building_ancient_fe_administration_2_build_speed_mult, Category: Planets
-- planet_building_ancient_fe_temple_2_build_speed_mult, Category: Planets
-- planet_building_ancient_fe_administration_hive_2_build_speed_mult, Category: Planets
-- planet_building_ancient_fe_administration_machine_2_build_speed_mult, Category: Planets
-- planet_building_ancient_fe_mine_2_build_speed_mult, Category: Planets
-- planet_building_ancient_fe_market_2_build_speed_mult, Category: Planets
-- planet_building_ancient_fe_clinic_2_build_speed_mult, Category: Planets
-- planet_building_ancient_fe_assembly_2_build_speed_mult, Category: Planets
-- planet_building_ancient_fe_silo_2_build_speed_mult, Category: Planets
 - planet_building_affluence_emporium_build_speed_mult, Category: Planets
 - planet_building_affluence_center_build_speed_mult, Category: Planets
 - planet_building_nourishment_complex_build_speed_mult, Category: Planets
@@ -7125,9 +7107,7 @@ Printing Modifier Definitions:
 - planet_zone_energy_build_speed_mult, Category: Planets
 - planet_zone_food_build_speed_mult, Category: Planets
 - planet_zone_anglers_build_speed_mult, Category: Planets
-- planet_zone_rw_food_build_speed_mult, Category: Planets
-- planet_zone_rw_energy_build_speed_mult, Category: Planets
-- planet_zone_hive_spawning_build_speed_mult, Category: Planets
+- planet_zone_spawning_build_speed_mult, Category: Planets
 - planet_zone_machine_replication_build_speed_mult, Category: Planets
 - planet_zone_subterranean_urban_build_speed_mult, Category: Planets
 - planet_zone_agrarian_urban_build_speed_mult, Category: Planets
@@ -7154,6 +7134,60 @@ Printing Modifier Definitions:
 - planet_zone_minerals_wilderness_build_speed_mult, Category: Planets
 - planet_zone_energy_wilderness_build_speed_mult, Category: Planets
 - planet_zone_food_wilderness_build_speed_mult, Category: Planets
+- planet_zone_industrial_arcology_build_speed_mult, Category: Planets
+- planet_zone_foundry_arcology_build_speed_mult, Category: Planets
+- planet_zone_factory_arcology_build_speed_mult, Category: Planets
+- planet_zone_research_arcology_build_speed_mult, Category: Planets
+- planet_zone_research_physics_arcology_build_speed_mult, Category: Planets
+- planet_zone_research_society_arcology_build_speed_mult, Category: Planets
+- planet_zone_research_engineering_arcology_build_speed_mult, Category: Planets
+- planet_zone_unity_arcology_build_speed_mult, Category: Planets
+- planet_zone_unity_spiritualist_arcology_build_speed_mult, Category: Planets
+- planet_zone_unity_bio_trophy_arcology_build_speed_mult, Category: Planets
+- planet_zone_fortress_arcology_build_speed_mult, Category: Planets
+- planet_zone_trade_arcology_build_speed_mult, Category: Planets
+- planet_zone_industrial_ring_world_build_speed_mult, Category: Planets
+- planet_zone_foundry_ring_world_build_speed_mult, Category: Planets
+- planet_zone_factory_ring_world_build_speed_mult, Category: Planets
+- planet_zone_research_ring_world_build_speed_mult, Category: Planets
+- planet_zone_research_physics_ring_world_build_speed_mult, Category: Planets
+- planet_zone_research_society_ring_world_build_speed_mult, Category: Planets
+- planet_zone_research_engineering_ring_world_build_speed_mult, Category: Planets
+- planet_zone_unity_ring_world_build_speed_mult, Category: Planets
+- planet_zone_unity_spiritualist_ring_world_build_speed_mult, Category: Planets
+- planet_zone_unity_bio_trophy_ring_world_build_speed_mult, Category: Planets
+- planet_zone_fortress_ring_world_build_speed_mult, Category: Planets
+- planet_zone_trade_ring_world_build_speed_mult, Category: Planets
+- planet_zone_food_ring_world_build_speed_mult, Category: Planets
+- planet_zone_energy_ring_world_build_speed_mult, Category: Planets
+- planet_zone_industrial_nexus_build_speed_mult, Category: Planets
+- planet_zone_foundry_nexus_build_speed_mult, Category: Planets
+- planet_zone_factory_nexus_build_speed_mult, Category: Planets
+- planet_zone_research_nexus_build_speed_mult, Category: Planets
+- planet_zone_research_physics_nexus_build_speed_mult, Category: Planets
+- planet_zone_research_society_nexus_build_speed_mult, Category: Planets
+- planet_zone_research_engineering_nexus_build_speed_mult, Category: Planets
+- planet_zone_unity_nexus_build_speed_mult, Category: Planets
+- planet_zone_unity_spiritualist_nexus_build_speed_mult, Category: Planets
+- planet_zone_unity_bio_trophy_nexus_build_speed_mult, Category: Planets
+- planet_zone_fortress_nexus_build_speed_mult, Category: Planets
+- planet_zone_trade_nexus_build_speed_mult, Category: Planets
+- planet_zone_minerals_nexus_build_speed_mult, Category: Planets
+- planet_zone_energy_nexus_build_speed_mult, Category: Planets
+- planet_zone_industrial_hive_build_speed_mult, Category: Planets
+- planet_zone_foundry_hive_build_speed_mult, Category: Planets
+- planet_zone_factory_hive_build_speed_mult, Category: Planets
+- planet_zone_research_hive_build_speed_mult, Category: Planets
+- planet_zone_research_physics_hive_build_speed_mult, Category: Planets
+- planet_zone_research_society_hive_build_speed_mult, Category: Planets
+- planet_zone_research_engineering_hive_build_speed_mult, Category: Planets
+- planet_zone_unity_hive_build_speed_mult, Category: Planets
+- planet_zone_fortress_hive_build_speed_mult, Category: Planets
+- planet_zone_trade_hive_build_speed_mult, Category: Planets
+- planet_zone_food_hive_build_speed_mult, Category: Planets
+- planet_zone_minerals_hive_build_speed_mult, Category: Planets
+- planet_zone_energy_hive_build_speed_mult, Category: Planets
+- planet_zone_spawning_hive_build_speed_mult, Category: Planets
 - district_cosmogenesis_goverment_max, Category: Planets
 - district_crashed_slaver_ship_max, Category: Planets
 - district_generator_max, Category: Planets
@@ -7186,12 +7220,7 @@ Printing Modifier Definitions:
 - planet_district_battle_thrall_build_speed_mult, Category: Planets
 - planet_district_srw_commercial_build_speed_mult, Category: Planets
 - planet_district_arcology_housing_build_speed_mult, Category: Planets
-- planet_district_arcology_arms_industry_build_speed_mult, Category: Planets
-- planet_district_arcology_civilian_industry_build_speed_mult, Category: Planets
 - planet_district_arcology_leisure_build_speed_mult, Category: Planets
-- planet_district_arcology_organic_housing_build_speed_mult, Category: Planets
-- planet_district_arcology_administrative_build_speed_mult, Category: Planets
-- planet_district_arcology_religious_build_speed_mult, Category: Planets
 - planet_district_arcology_urban_1_build_speed_mult, Category: Planets
 - planet_district_arcology_urban_2_build_speed_mult, Category: Planets
 - planet_district_arcology_urban_3_build_speed_mult, Category: Planets
@@ -7212,7 +7241,6 @@ Printing Modifier Definitions:
 - planet_district_rw_commercial_build_speed_mult, Category: Planets
 - planet_district_rw_science_build_speed_mult, Category: Planets
 - planet_district_rw_farming_build_speed_mult, Category: Planets
-- planet_district_rw_industrial_build_speed_mult, Category: Planets
 - planet_district_rw_urban_1_build_speed_mult, Category: Planets
 - planet_district_rw_urban_2_build_speed_mult, Category: Planets
 - planet_district_rw_urban_3_build_speed_mult, Category: Planets
@@ -7223,6 +7251,61 @@ Printing Modifier Definitions:
 - planet_district_hollow_mountains_uncapped_build_speed_mult, Category: Planets
 - planet_district_orchard_forests_build_speed_mult, Category: Planets
 - planet_district_orchard_forests_uncapped_build_speed_mult, Category: Planets
+- planet_district_orders_demesne_build_speed_mult, Category: Planets
+- planet_district_arcology_mixed_industry_build_speed_mult, Category: Planets
+- planet_district_arcology_arms_industry_build_speed_mult, Category: Planets
+- planet_district_arcology_civilian_industry_build_speed_mult, Category: Planets
+- planet_district_arcology_research_build_speed_mult, Category: Planets
+- planet_district_arcology_research_physics_build_speed_mult, Category: Planets
+- planet_district_arcology_research_society_build_speed_mult, Category: Planets
+- planet_district_arcology_research_engineering_build_speed_mult, Category: Planets
+- planet_district_arcology_administrative_build_speed_mult, Category: Planets
+- planet_district_arcology_spiritualist_build_speed_mult, Category: Planets
+- planet_district_arcology_organic_housing_build_speed_mult, Category: Planets
+- planet_district_arcology_fortress_build_speed_mult, Category: Planets
+- planet_district_arcology_trade_build_speed_mult, Category: Planets
+- planet_district_ring_world_industrial_build_speed_mult, Category: Planets
+- planet_district_ring_world_foundry_build_speed_mult, Category: Planets
+- planet_district_ring_world_factory_build_speed_mult, Category: Planets
+- planet_district_ring_world_research_build_speed_mult, Category: Planets
+- planet_district_ring_world_research_physics_build_speed_mult, Category: Planets
+- planet_district_ring_world_research_society_build_speed_mult, Category: Planets
+- planet_district_ring_world_research_engineering_build_speed_mult, Category: Planets
+- planet_district_ring_world_administrative_build_speed_mult, Category: Planets
+- planet_district_ring_world_spiritualist_build_speed_mult, Category: Planets
+- planet_district_ring_world_organic_housing_build_speed_mult, Category: Planets
+- planet_district_ring_world_fortress_build_speed_mult, Category: Planets
+- planet_district_ring_world_trade_build_speed_mult, Category: Planets
+- planet_district_ring_world_food_build_speed_mult, Category: Planets
+- planet_district_ring_world_energy_build_speed_mult, Category: Planets
+- planet_district_nexus_industrial_build_speed_mult, Category: Planets
+- planet_district_nexus_foundry_build_speed_mult, Category: Planets
+- planet_district_nexus_factory_build_speed_mult, Category: Planets
+- planet_district_nexus_research_build_speed_mult, Category: Planets
+- planet_district_nexus_research_physics_build_speed_mult, Category: Planets
+- planet_district_nexus_research_society_build_speed_mult, Category: Planets
+- planet_district_nexus_research_engineering_build_speed_mult, Category: Planets
+- planet_district_nexus_administrative_build_speed_mult, Category: Planets
+- planet_district_nexus_spiritualist_build_speed_mult, Category: Planets
+- planet_district_nexus_organic_housing_build_speed_mult, Category: Planets
+- planet_district_nexus_fortress_build_speed_mult, Category: Planets
+- planet_district_nexus_trade_build_speed_mult, Category: Planets
+- planet_district_nexus_mining_build_speed_mult, Category: Planets
+- planet_district_nexus_energy_build_speed_mult, Category: Planets
+- planet_district_hive_industrial_build_speed_mult, Category: Planets
+- planet_district_hive_foundry_build_speed_mult, Category: Planets
+- planet_district_hive_factory_build_speed_mult, Category: Planets
+- planet_district_hive_research_build_speed_mult, Category: Planets
+- planet_district_hive_research_physics_build_speed_mult, Category: Planets
+- planet_district_hive_research_society_build_speed_mult, Category: Planets
+- planet_district_hive_research_engineering_build_speed_mult, Category: Planets
+- planet_district_hive_administrative_build_speed_mult, Category: Planets
+- planet_district_hive_fortress_build_speed_mult, Category: Planets
+- planet_district_hive_trade_build_speed_mult, Category: Planets
+- planet_district_hive_food_build_speed_mult, Category: Planets
+- planet_district_hive_mining_build_speed_mult, Category: Planets
+- planet_district_hive_energy_build_speed_mult, Category: Planets
+- planet_district_hive_spawning_build_speed_mult, Category: Planets
 - pc_desert_habitability, Category: Habitability
 - pc_desert_max_buildings_add, Category: Planets
 - pc_arid_habitability, Category: Habitability
@@ -29880,6 +29963,346 @@ Printing Modifier Definitions:
 - shipsize_monadic_qerr_damage_against_space_fauna_mult, Category: Ships
 - shipsize_monadic_qerr_steal_defeated_ship_chance, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
 - shipsize_monadic_qerr_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_cosmo_crisis_mauler_hull_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_mauler_hull_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_mauler_hull_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_mauler_hull_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_mauler_hull_damage_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_armor_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_mauler_armor_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_mauler_armor_reduction, Category: Ships
+- shipsize_cosmo_crisis_mauler_armor_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_mauler_armor_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_mauler_armor_damage_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_armor_penetration_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_armor_penetration_add, Category: Ships
+- shipsize_cosmo_crisis_mauler_armor_hardening_add, Category: Ships
+- shipsize_cosmo_crisis_mauler_shield_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_mauler_shield_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_mauler_shield_reduction, Category: Ships
+- shipsize_cosmo_crisis_mauler_shield_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_mauler_shield_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_mauler_shield_damage_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_shield_penetration_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_shield_penetration_add, Category: Ships
+- shipsize_cosmo_crisis_mauler_shield_hardening_add, Category: Ships
+- shipsize_cosmo_crisis_mauler_weapon_damage, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_mauler_weapon_range_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_engagement_range_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_orbital_bombardment_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_fire_rate_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_home_territory_fire_rate_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_hyperlane_range_add, Category: Ships
+- shipsize_cosmo_crisis_mauler_ftl_jumpdrive_range_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_emergency_ftl_min_days_add, Category: Ships
+- shipsize_cosmo_crisis_mauler_emergency_ftl_min_days_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_disengage_chance_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_disengage_chance_reduction, Category: Ships
+- shipsize_cosmo_crisis_mauler_disengage_opportunities_add, Category: Ships
+- shipsize_cosmo_crisis_mauler_evasion_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_mauler_evasion_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_mauler_accuracy_add, Category: Ships
+- shipsize_cosmo_crisis_mauler_accuracy_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_tracking_add, Category: Ships
+- shipsize_cosmo_crisis_mauler_tracking_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_base_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_mauler_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_mauler_landing_time_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_sensor_range_add, Category: Ships
+- shipsize_cosmo_crisis_mauler_windup_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_winddown_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_interstellar_speed_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_emergency_ftl, Category: Ships
+- shipsize_cosmo_crisis_mauler_anomaly_fail_risk, Category: Science Ships
+- shipsize_cosmo_crisis_mauler_anomaly_research_speed, Category: Science Ships
+- shipsize_cosmo_crisis_mauler_anomaly_generation_chance, Category: Science Ships
+- shipsize_cosmo_crisis_mauler_science_survey_speed, Category: Science Ships
+- shipsize_cosmo_crisis_mauler_starting_experience_add, Category: Ships
+- shipsize_cosmo_crisis_mauler_experience_gain_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_jumpdrive_cooldown_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_naval_cap_usage_add, Category: Ships
+- shipsize_cosmo_crisis_mauler_naval_cap_usage_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_cloaking_detection_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_mauler_target_weight_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_mauler_federation_territory_speed_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_community_territory_speed_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_military_speed_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_science_speed_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_damage_against_starbases_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_damage_against_boss_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_repair_hull_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_cosmo_crisis_mauler_repair_armor_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_cosmo_crisis_mauler_friendly_territory_armor_add, Category: Ships
+- shipsize_cosmo_crisis_mauler_friendly_territory_armor_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_friendly_territory_shield_add, Category: Ships
+- shipsize_cosmo_crisis_mauler_friendly_territory_shield_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_friendly_territory_evasion_add, Category: Ships
+- shipsize_cosmo_crisis_mauler_friendly_territory_evasion_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_friendly_territory_accuracy_add, Category: Ships
+- shipsize_cosmo_crisis_mauler_friendly_territory_accuracy_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_friendly_territory_tracking_add, Category: Ships
+- shipsize_cosmo_crisis_mauler_friendly_territory_tracking_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_friendly_territory_fire_rate_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_capture_chance_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_mauler_capture_amount_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_mauler_damage_against_space_fauna_mult, Category: Ships
+- shipsize_cosmo_crisis_mauler_steal_defeated_ship_chance, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_cosmo_crisis_mauler_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_cosmo_crisis_weaver_hull_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_weaver_hull_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_weaver_hull_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_weaver_hull_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_weaver_hull_damage_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_armor_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_weaver_armor_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_weaver_armor_reduction, Category: Ships
+- shipsize_cosmo_crisis_weaver_armor_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_weaver_armor_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_weaver_armor_damage_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_armor_penetration_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_armor_penetration_add, Category: Ships
+- shipsize_cosmo_crisis_weaver_armor_hardening_add, Category: Ships
+- shipsize_cosmo_crisis_weaver_shield_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_weaver_shield_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_weaver_shield_reduction, Category: Ships
+- shipsize_cosmo_crisis_weaver_shield_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_weaver_shield_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_weaver_shield_damage_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_shield_penetration_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_shield_penetration_add, Category: Ships
+- shipsize_cosmo_crisis_weaver_shield_hardening_add, Category: Ships
+- shipsize_cosmo_crisis_weaver_weapon_damage, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_weaver_weapon_range_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_engagement_range_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_orbital_bombardment_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_fire_rate_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_home_territory_fire_rate_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_hyperlane_range_add, Category: Ships
+- shipsize_cosmo_crisis_weaver_ftl_jumpdrive_range_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_emergency_ftl_min_days_add, Category: Ships
+- shipsize_cosmo_crisis_weaver_emergency_ftl_min_days_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_disengage_chance_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_disengage_chance_reduction, Category: Ships
+- shipsize_cosmo_crisis_weaver_disengage_opportunities_add, Category: Ships
+- shipsize_cosmo_crisis_weaver_evasion_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_weaver_evasion_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_weaver_accuracy_add, Category: Ships
+- shipsize_cosmo_crisis_weaver_accuracy_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_tracking_add, Category: Ships
+- shipsize_cosmo_crisis_weaver_tracking_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_base_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_weaver_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_weaver_landing_time_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_sensor_range_add, Category: Ships
+- shipsize_cosmo_crisis_weaver_windup_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_winddown_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_interstellar_speed_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_emergency_ftl, Category: Ships
+- shipsize_cosmo_crisis_weaver_anomaly_fail_risk, Category: Science Ships
+- shipsize_cosmo_crisis_weaver_anomaly_research_speed, Category: Science Ships
+- shipsize_cosmo_crisis_weaver_anomaly_generation_chance, Category: Science Ships
+- shipsize_cosmo_crisis_weaver_science_survey_speed, Category: Science Ships
+- shipsize_cosmo_crisis_weaver_starting_experience_add, Category: Ships
+- shipsize_cosmo_crisis_weaver_experience_gain_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_jumpdrive_cooldown_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_naval_cap_usage_add, Category: Ships
+- shipsize_cosmo_crisis_weaver_naval_cap_usage_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_cloaking_detection_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_weaver_target_weight_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_weaver_federation_territory_speed_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_community_territory_speed_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_military_speed_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_science_speed_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_damage_against_starbases_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_damage_against_boss_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_repair_hull_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_cosmo_crisis_weaver_repair_armor_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_cosmo_crisis_weaver_friendly_territory_armor_add, Category: Ships
+- shipsize_cosmo_crisis_weaver_friendly_territory_armor_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_friendly_territory_shield_add, Category: Ships
+- shipsize_cosmo_crisis_weaver_friendly_territory_shield_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_friendly_territory_evasion_add, Category: Ships
+- shipsize_cosmo_crisis_weaver_friendly_territory_evasion_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_friendly_territory_accuracy_add, Category: Ships
+- shipsize_cosmo_crisis_weaver_friendly_territory_accuracy_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_friendly_territory_tracking_add, Category: Ships
+- shipsize_cosmo_crisis_weaver_friendly_territory_tracking_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_friendly_territory_fire_rate_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_capture_chance_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_weaver_capture_amount_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_weaver_damage_against_space_fauna_mult, Category: Ships
+- shipsize_cosmo_crisis_weaver_steal_defeated_ship_chance, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_cosmo_crisis_weaver_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_cosmo_crisis_harbinger_hull_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_harbinger_hull_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_harbinger_hull_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_harbinger_hull_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_harbinger_hull_damage_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_armor_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_harbinger_armor_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_harbinger_armor_reduction, Category: Ships
+- shipsize_cosmo_crisis_harbinger_armor_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_harbinger_armor_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_harbinger_armor_damage_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_armor_penetration_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_armor_penetration_add, Category: Ships
+- shipsize_cosmo_crisis_harbinger_armor_hardening_add, Category: Ships
+- shipsize_cosmo_crisis_harbinger_shield_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_harbinger_shield_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_harbinger_shield_reduction, Category: Ships
+- shipsize_cosmo_crisis_harbinger_shield_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_harbinger_shield_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_harbinger_shield_damage_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_shield_penetration_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_shield_penetration_add, Category: Ships
+- shipsize_cosmo_crisis_harbinger_shield_hardening_add, Category: Ships
+- shipsize_cosmo_crisis_harbinger_weapon_damage, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_harbinger_weapon_range_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_engagement_range_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_orbital_bombardment_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_fire_rate_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_home_territory_fire_rate_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_hyperlane_range_add, Category: Ships
+- shipsize_cosmo_crisis_harbinger_ftl_jumpdrive_range_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_emergency_ftl_min_days_add, Category: Ships
+- shipsize_cosmo_crisis_harbinger_emergency_ftl_min_days_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_disengage_chance_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_disengage_chance_reduction, Category: Ships
+- shipsize_cosmo_crisis_harbinger_disengage_opportunities_add, Category: Ships
+- shipsize_cosmo_crisis_harbinger_evasion_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_harbinger_evasion_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_harbinger_accuracy_add, Category: Ships
+- shipsize_cosmo_crisis_harbinger_accuracy_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_tracking_add, Category: Ships
+- shipsize_cosmo_crisis_harbinger_tracking_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_base_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_harbinger_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_harbinger_landing_time_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_sensor_range_add, Category: Ships
+- shipsize_cosmo_crisis_harbinger_windup_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_winddown_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_interstellar_speed_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_emergency_ftl, Category: Ships
+- shipsize_cosmo_crisis_harbinger_anomaly_fail_risk, Category: Science Ships
+- shipsize_cosmo_crisis_harbinger_anomaly_research_speed, Category: Science Ships
+- shipsize_cosmo_crisis_harbinger_anomaly_generation_chance, Category: Science Ships
+- shipsize_cosmo_crisis_harbinger_science_survey_speed, Category: Science Ships
+- shipsize_cosmo_crisis_harbinger_starting_experience_add, Category: Ships
+- shipsize_cosmo_crisis_harbinger_experience_gain_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_jumpdrive_cooldown_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_naval_cap_usage_add, Category: Ships
+- shipsize_cosmo_crisis_harbinger_naval_cap_usage_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_cloaking_detection_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_harbinger_target_weight_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_harbinger_federation_territory_speed_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_community_territory_speed_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_military_speed_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_science_speed_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_damage_against_starbases_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_damage_against_boss_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_repair_hull_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_cosmo_crisis_harbinger_repair_armor_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_cosmo_crisis_harbinger_friendly_territory_armor_add, Category: Ships
+- shipsize_cosmo_crisis_harbinger_friendly_territory_armor_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_friendly_territory_shield_add, Category: Ships
+- shipsize_cosmo_crisis_harbinger_friendly_territory_shield_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_friendly_territory_evasion_add, Category: Ships
+- shipsize_cosmo_crisis_harbinger_friendly_territory_evasion_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_friendly_territory_accuracy_add, Category: Ships
+- shipsize_cosmo_crisis_harbinger_friendly_territory_accuracy_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_friendly_territory_tracking_add, Category: Ships
+- shipsize_cosmo_crisis_harbinger_friendly_territory_tracking_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_friendly_territory_fire_rate_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_capture_chance_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_harbinger_capture_amount_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_harbinger_damage_against_space_fauna_mult, Category: Ships
+- shipsize_cosmo_crisis_harbinger_steal_defeated_ship_chance, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_cosmo_crisis_harbinger_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_cosmo_crisis_stinger_hull_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_stinger_hull_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_stinger_hull_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_stinger_hull_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_stinger_hull_damage_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_armor_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_stinger_armor_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_stinger_armor_reduction, Category: Ships
+- shipsize_cosmo_crisis_stinger_armor_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_stinger_armor_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_stinger_armor_damage_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_armor_penetration_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_armor_penetration_add, Category: Ships
+- shipsize_cosmo_crisis_stinger_armor_hardening_add, Category: Ships
+- shipsize_cosmo_crisis_stinger_shield_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_stinger_shield_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_stinger_shield_reduction, Category: Ships
+- shipsize_cosmo_crisis_stinger_shield_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_stinger_shield_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_stinger_shield_damage_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_shield_penetration_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_shield_penetration_add, Category: Ships
+- shipsize_cosmo_crisis_stinger_shield_hardening_add, Category: Ships
+- shipsize_cosmo_crisis_stinger_weapon_damage, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_stinger_weapon_range_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_engagement_range_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_orbital_bombardment_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_fire_rate_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_home_territory_fire_rate_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_hyperlane_range_add, Category: Ships
+- shipsize_cosmo_crisis_stinger_ftl_jumpdrive_range_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_emergency_ftl_min_days_add, Category: Ships
+- shipsize_cosmo_crisis_stinger_emergency_ftl_min_days_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_disengage_chance_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_disengage_chance_reduction, Category: Ships
+- shipsize_cosmo_crisis_stinger_disengage_opportunities_add, Category: Ships
+- shipsize_cosmo_crisis_stinger_evasion_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_stinger_evasion_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_stinger_accuracy_add, Category: Ships
+- shipsize_cosmo_crisis_stinger_accuracy_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_tracking_add, Category: Ships
+- shipsize_cosmo_crisis_stinger_tracking_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_base_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_stinger_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_stinger_landing_time_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_sensor_range_add, Category: Ships
+- shipsize_cosmo_crisis_stinger_windup_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_winddown_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_interstellar_speed_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_emergency_ftl, Category: Ships
+- shipsize_cosmo_crisis_stinger_anomaly_fail_risk, Category: Science Ships
+- shipsize_cosmo_crisis_stinger_anomaly_research_speed, Category: Science Ships
+- shipsize_cosmo_crisis_stinger_anomaly_generation_chance, Category: Science Ships
+- shipsize_cosmo_crisis_stinger_science_survey_speed, Category: Science Ships
+- shipsize_cosmo_crisis_stinger_starting_experience_add, Category: Ships
+- shipsize_cosmo_crisis_stinger_experience_gain_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_jumpdrive_cooldown_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_naval_cap_usage_add, Category: Ships
+- shipsize_cosmo_crisis_stinger_naval_cap_usage_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_cloaking_detection_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_stinger_target_weight_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_stinger_federation_territory_speed_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_community_territory_speed_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_military_speed_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_science_speed_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_damage_against_starbases_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_damage_against_boss_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_repair_hull_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_cosmo_crisis_stinger_repair_armor_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_cosmo_crisis_stinger_friendly_territory_armor_add, Category: Ships
+- shipsize_cosmo_crisis_stinger_friendly_territory_armor_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_friendly_territory_shield_add, Category: Ships
+- shipsize_cosmo_crisis_stinger_friendly_territory_shield_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_friendly_territory_evasion_add, Category: Ships
+- shipsize_cosmo_crisis_stinger_friendly_territory_evasion_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_friendly_territory_accuracy_add, Category: Ships
+- shipsize_cosmo_crisis_stinger_friendly_territory_accuracy_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_friendly_territory_tracking_add, Category: Ships
+- shipsize_cosmo_crisis_stinger_friendly_territory_tracking_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_friendly_territory_fire_rate_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_capture_chance_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_stinger_capture_amount_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_cosmo_crisis_stinger_damage_against_space_fauna_mult, Category: Ships
+- shipsize_cosmo_crisis_stinger_steal_defeated_ship_chance, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_cosmo_crisis_stinger_build_speed_mult, Category: Planets, Megastructures, Starbases
 - shipsize_gravity_snare_hull_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
 - shipsize_gravity_snare_hull_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
 - shipsize_gravity_snare_hull_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
@@ -35410,7 +35833,26 @@ Printing Modifier Definitions:
 - pop_neural_chip_bonus_workforce_mult, Category: Pops
 - job_neural_chip_max_workforce_add, Category: Job
 - job_neural_chip_max_workforce_mult, Category: Job
-- pop_neural_chip_demotion_time_mult, Category: Pops
+- job_neural_chip_processing_add, Category: Planets
+- job_neural_chip_processing_per_pop, Category: Planets
+- job_neural_chip_processing_per_crime, Category: Planets
+- pop_neural_chip_processing_workforce_add, Category: Pops
+- pop_neural_chip_processing_workforce_mult, Category: Pops
+- pop_neural_chip_processing_bonus_workforce_add, Category: Pops
+- pop_neural_chip_processing_bonus_workforce_mult, Category: Pops
+- job_neural_chip_processing_max_workforce_add, Category: Job
+- job_neural_chip_processing_max_workforce_mult, Category: Job
+- pop_neural_chip_processing_promotion_time_mult, Category: Pops
+- job_neural_chip_unprocessing_add, Category: Planets
+- job_neural_chip_unprocessing_per_pop, Category: Planets
+- job_neural_chip_unprocessing_per_crime, Category: Planets
+- pop_neural_chip_unprocessing_workforce_add, Category: Pops
+- pop_neural_chip_unprocessing_workforce_mult, Category: Pops
+- pop_neural_chip_unprocessing_bonus_workforce_add, Category: Pops
+- pop_neural_chip_unprocessing_bonus_workforce_mult, Category: Pops
+- job_neural_chip_unprocessing_max_workforce_add, Category: Job
+- job_neural_chip_unprocessing_max_workforce_mult, Category: Job
+- pop_neural_chip_unprocessing_demotion_time_mult, Category: Pops
 - job_augmentor_add, Category: Planets
 - job_augmentor_per_pop, Category: Planets
 - job_augmentor_per_crime, Category: Planets
@@ -36438,22 +36880,6 @@ Printing Modifier Definitions:
 - organic_pop_bonus_workforce_mult, Category: Planets
 - mining_district_housing_add, Category: Planets
 - mining_district_buildings_add, Category: Planets
-- building_affluence_emporium_cap, Category: Countries
-- building_nourishment_complex_cap, Category: Countries
-- building_dimensional_replicator_cap, Category: Countries
-- building_class_3_singularity_cap, Category: Countries
-- building_micro_forge_cap, Category: Countries
-- building_fe_sky_dome_cap, Category: Countries
-- building_fe_fortress_cap, Category: Countries
-- building_fe_administration_1_cap, Category: Countries
-- building_fe_assembly_1_cap, Category: Countries
-- building_fe_clinic_1_cap, Category: Countries
-- building_fe_security_1_cap, Category: Countries
-- building_fe_market_1_cap, Category: Countries
-- building_fe_silo_1_cap, Category: Countries
-- building_fe_entertainment_1_cap, Category: Countries
-- building_fe_lab_1_cap, Category: Countries
-- building_fe_mine_1_cap, Category: Countries
 - councilor_ruler_democratic_exp_gain, Category: Leaders
 - councilor_ruler_oligarchic_exp_gain, Category: Leaders
 - councilor_ruler_dictatorial_exp_gain, Category: Leaders

@@ -1,4 +1,4 @@
-#Add branch office subtype
+
 types = {
 	## graph_related_types = { technology }
 	type[building] = {
@@ -87,12 +87,24 @@ enums = {
 		fe_clinic_1_can_build
 		tech_fe_security_1
 		tech_fe_security_1_can_build
+		fe_security_1_can_build
 		tech_fe_market_1
-		tech_fe_market_1
+		fe_market_1_can_build
 		fe_silo_1_can_build
 		fe_entertainment_1_can_build
 		fe_lab_1_can_build
 		fe_mine_1_can_build
+		reemployment_center_timer
+		beholder_psi_pops_timer
+		necrophage_elevation_timer
+		received_collection_stage_2_reward_aesthetic_wonder
+		received_collection_stage_2_reward_xeno_geology
+		received_collection_stage_2_reward_historical_item
+		dportal_trade_high
+		dportal_trade_low
+		dportal_trade_crisis
+		dportal_trade_normal
+		has_private_clinics
 	}
 	enum[fe_building_upgrade_variables] = {
 		affluence_emporium_build_count

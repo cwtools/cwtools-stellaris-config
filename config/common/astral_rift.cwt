@@ -5,7 +5,7 @@ types = {
 	type[astral_actions] = {
 		path = "game/common/astral_actions"
 	}
-	type[astral_action] = {
+	type[astral_action] = {   
 		path = "game/common/astral_actions"
 	}
 }
@@ -63,6 +63,7 @@ astral_actions = {
 	
 	## cardinality = 0..1
 	activation_cost = {
+		## cardinality = 0..inf
 		cost = {
 			## cardinality = 0..1
 			trigger = {

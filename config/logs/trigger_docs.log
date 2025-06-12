@@ -1,4 +1,4 @@
-[16:58:24][game_application.cpp:2209]: 
+[17:53:58][game_application.cpp:2209]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -4390,7 +4390,7 @@ count_war = {
 Supported Scopes: country
 
 =================
-[16:58:24][game_application.cpp:2212]:
+[17:53:58][game_application.cpp:2212]:
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -4723,7 +4723,7 @@ create_pop = {
 	species = <target / key>
 	ethos = <random / <target country> / { ethic = <key> ethic = <key> }
 	size = <number> (optional, default: POP_BULK_UNIT_SIZE) }>
-	random = <number> (optional) If set, the amount will be randomized in [size - random, size + random]. The minimum value is 0 if size is 0, and 1 otherwise.
+	random = <number> (optional) If set, the amount will be randomized in [max(0, size - random), size + random].
 }
 Supported Scopes: planet
 
@@ -4734,7 +4734,7 @@ create_pop_group = {
 	ethos = { ethic = <key> } / random (optional; if no base group and no ethic is provided, ethos will be randomized)
 	category = <pop category> (optional; if omitted and no base group is defined, use category from first assigned job)
 	size = <number> (optional, default: POP_BULK_UNIT_SIZE)
-	random = <number> (optional) If set, the amount will be randomized in [size - random, size + random]. The minimum value is 0 if size is 0, and 1 otherwise.
+	random = <number> (optional) If set, the amount will be randomized in [max(0, size - random), size + random].
 	effect = <init effect> (optional)
 }
 Supported Scopes: planet
@@ -4769,7 +4769,7 @@ kill_pop_group - Instantly destroys part of a pop group
 kill_pop_group = {
 	pop_group = <target pop group>
 	amount = <amount killed> OR percentage = <percentage killed>
-	random = <number> (optional) If set, the amount will be randomized in [max(1, size - random), size + random].
+	random = <number> (optional) If set, the amount will be randomized in [max(0, size - random), size + random].
 }
 Supported Scopes: all
 
@@ -5893,7 +5893,7 @@ pop_force_add_ethic - Adds a specific ethic to the scoped pop regardless if pop-
 pop_force_add_ethic = {
 	ethic = <key>
 	amount = <amount> OR percentage = <percentage>
-	random = <number> (optional) If set, the amount will be randomized in [max(1, size - random), size + random].
+	random = <number> (optional) If set, the amount will be randomized in [max(0, size - random), size + random].
 }
 Supported Scopes: pop_group
 
@@ -6019,7 +6019,7 @@ pop_change_ethic - Changes scoped pop to chosen ethic.
 pop_change_ethic = {
 	ethic = <key>
 	amount = <amount> OR percentage = <percentage>
-	random = <number> (optional) If set, the amount will be randomized in [max(1, size - random), size + random].
+	random = <number> (optional) If set, the amount will be randomized in [max(0, size - random), size + random].
 }
 Supported Scopes: pop_group
 
@@ -7146,7 +7146,7 @@ add_pop_amount - Adds the amount of pops to the scope pop group.
 OR
 	add_pop_amount = {
 		amount = <number>
-		random = <number> The amount will be randomized in [max(1, size - random), size + random].
+		random = <number> The amount will be randomized in [max(0, size - random), size + random].
 	}
 Supported Scopes: pop_group
 
@@ -7155,7 +7155,7 @@ remove_pop_amount - Removes the amount of pops from the scope pop group.
 OR
 	remove_pop_amount = {
 		amount = <number>
-		random = <number> The amount will be randomized in [max(1, size - random), size + random].
+		random = <number> The amount will be randomized in [max(0, size - random), size + random].
 	}
 Supported Scopes: pop_group
 
@@ -7168,7 +7168,7 @@ transfer_pop_amount = {
 	source = <source pop group>
 	target = <target pop group>
 	amount = <amount> OR percentage = <percentage>
-	random = <number> (optional) If set, the amount will be randomized in [max(1, size - random), size + random].
+	random = <number> (optional) If set, the amount will be randomized in [max(0, size - random), size + random].
 }
 Supported Scopes: all
 
@@ -7338,7 +7338,7 @@ pop_remove_ethic - Removes a specific ethic from the scoped pop
 pop_remove_ethic = {
 	ethic = <key>
 	amount = <amount> OR percentage = <percentage>
-	random = <number> (optional) If set, the amount will be randomized in [max(1, size - random), size + random].
+	random = <number> (optional) If set, the amount will be randomized in [max(0, size - random), size + random].
 }
 Supported Scopes: pop_group
 
