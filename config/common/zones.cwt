@@ -75,6 +75,12 @@ zones = {
 	max_buildings = int
 	
 	## cardinality = 0..1
+	zone_sets = {
+		## cardinality = 0..inf
+		enum[zone_set]
+	}
+	
+	## cardinality = 0..1
 	include = {
 		## cardinality = 0..1
 		all
@@ -120,6 +126,12 @@ zone_slots = {
 
 	## cardinality = 0..1
 	start = enum[zone_type]
+	
+	## cardinality = 0..1
+	included_zone_sets = {
+		## cardinality = 0..inf
+		enum[zone_set]
+	}
 
 	## cardinality = 0..1
 	include = {
@@ -149,25 +161,27 @@ zone_slots = {
 enums = {
 	enum[zone_type] = {
 		all
-		zone_anglers
 		zone_agrarian_urban
+		zone_anglers
 		zone_betharian
 		zone_broken_shackles_memorial
 		zone_cosmogenesis_default
 		zone_default
 		zone_energy
 		zone_energy_physics
+		zone_energy_ring_world
 		zone_energy_wilderness
 		zone_factory
 		zone_food
 		zone_food_biology
+		zone_food_ring_world
 		zone_food_wilderness
 		zone_fortress
 		zone_fortress_wilderness
 		zone_foundry
 		zone_foundry_wilderness
-		zone_habitat_knights
 		zone_habitat_hydroponics
+		zone_habitat_knights
 		zone_habitat_research
 		zone_habitat_research_unity
 		zone_hive_spawning
@@ -190,19 +204,48 @@ enums = {
 		zone_resort_hunting_ground
 		zone_resort_spiritual_retreat
 		zone_resort_zoo 
-		zone_rw_food
 		zone_rw_energy
+		zone_rw_food
 		zone_subterranean_urban
 		zone_trade
 		zone_trade_wilderness
 		zone_unity
+		zone_unity_arcology
 		zone_unity_bio_trophy
+		zone_unity_bio_trophy_arcology
+		zone_unity_bio_trophy_nexus
+		zone_unity_bio_trophy_ring_world
+		zone_unity_nexus
+		zone_unity_ring_world
 		zone_unity_spiritualist
+		zone_unity_spiritualist_arcology
+		zone_unity_spiritualist_nexus
+		zone_unity_spiritualist_ring_world
 		zone_unity_wilderness
 		zone_urban
 		zone_urban_energy
 		zone_urban_food
 		zone_urban_minerals
 		zone_urban_wilderness
+	}
+	enum[zone_set] = {
+		arcology
+		cosmogenesis_default
+		default
+		energy
+		food
+		habitat_energy
+		habitat_minerals
+		habitat_research
+		habitat_urban
+		hive
+		minerals
+		nexus
+		resort
+		resort_attraction
+		ring_world
+		special
+		urban
+		zone_default
 	}
 }
