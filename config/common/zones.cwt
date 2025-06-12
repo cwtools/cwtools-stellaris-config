@@ -195,8 +195,20 @@ enums = {
 		zone_payback_enlightenment
 		zone_research
 		zone_research_engineering
+		zone_research_engineering_arcology
+		zone_research_engineering_hive
+		zone_research_engineering_nexus
+		zone_research_engineering_ring_world
 		zone_research_physics
+		zone_research_physics_arcology
+		zone_research_physics_hive
+		zone_research_physics_nexus
+		zone_research_physics_ring_world
 		zone_research_society
+		zone_research_society_arcology
+		zone_research_society_hive
+		zone_research_society_nexus
+		zone_research_society_ring_world
 		zone_research_unity
 		zone_research_unity_wilderness
 		zone_research_wilderness
