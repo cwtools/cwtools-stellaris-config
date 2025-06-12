@@ -168,6 +168,7 @@ enums = {
 		zone_cosmogenesis_default
 		zone_default
 		zone_energy
+		zone_energy_hive
 		zone_energy_nexus
 		zone_energy_physics
 		zone_energy_ring_world
@@ -175,11 +176,14 @@ enums = {
 		zone_factory
 		zone_food
 		zone_food_biology
+		zone_food_hive
 		zone_food_ring_world
 		zone_food_wilderness
 		zone_fortress
+		zone_fortress_hive
 		zone_fortress_wilderness
 		zone_foundry
+		zone_foundry_hive
 		zone_foundry_wilderness
 		zone_habitat_hydroponics
 		zone_habitat_knights
@@ -190,6 +194,7 @@ enums = {
 		zone_machine_replication
 		zone_minerals
 		zone_minerals_engineering
+		zone_minerals_hive
 		zone_minerals_nexus
 		zone_minerals_wilderness
 		zone_payback_enlightenment
@@ -220,6 +225,8 @@ enums = {
 		zone_resort_zoo 
 		zone_rw_energy
 		zone_rw_food
+		zone_spawning
+		zone_spawning_hive
 		zone_subterranean_urban
 		zone_trade
 		zone_trade_wilderness
