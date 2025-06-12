@@ -340,7 +340,8 @@ job = {
 ## push_scope = pop_group
 social_strata = {
 	rank = int
-
+	## cardinality = 0..1
+	can_change_category = bool
 	## cardinality = 0..1
 	clothes_texture_index = int
 
