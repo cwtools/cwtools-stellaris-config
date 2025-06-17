@@ -11,13 +11,14 @@ localisation_commands = {
     GetRegnalName = leader
     GetRulerName = { country species leader army }
     GetRulerTitle = { country species leader }
-    GetSpeciesAdj = { country pop }
+    GetSpeciesAdj = { country pop pop_group }
     GetSpeciesClass = country
     GetSpeciesClassPlural = country
-    GetSpeciesName = { country pop }
+    GetSpeciesName = { country pop pop_group }
     GetSpeciesNameCompliment = country
     GetSpeciesNameInsult = country
-    GetSpeciesNamePlural = { country pop }
+    GetSpeciesNamePlural = { country pop pop_group }
+	GetSpeciesNamePersistent = { country pop pop_group }
     GetSpeciesNamePluralCompliment = country
     GetSpeciesNamePluralInsult = country
     GetSpeciesOrganName = country
@@ -116,15 +117,19 @@ localisation_commands = {
     GetFocus = sector
     GetType = sector
     GetCountryType = country
+	GetCapitalSystemNameOrRandom = country
+	GetCapitalPlanetNameOrRandom = country
+	GetCapitalSystemNameOrRandomPersistent = country
+	GetCapitalPlanetNameOrRandomPersistent = country
 }
 
 localisation_links = {
     Planet = {
-        input_scopes = { archaeological_site army pop megastructure deposit }
+        input_scopes = { pop_group pop army archaeological_site deposit megastructure }
         output_scope = planet
     }
     Capital = {
-        input_scopes = { country }
+        input_scopes = { country sector }
         output_scope = planet
     }
     MoonOf = {
@@ -136,7 +141,7 @@ localisation_links = {
         output_scope = ambient_object
     }
     Fleet = {
-        input_scopes = { archaeological_site ship starbase }
+        input_scopes = { ship starbase archaeological_site  }
         output_scope = fleet
     }
     Ship = {
@@ -148,11 +153,11 @@ localisation_links = {
         output_scope = system
     }
     System = {
-        input_scopes = { fleet planet first_contact megastructure }
+        input_scopes = { planet fleet first_contact megastructure astral_rift bypass }
         output_scope = system
     }
     Owner = {
-        input_scopes = { army planet system leader pop_faction fleet ship starbase first_contact sector megastructure spy_network espionage_operation }
+        input_scopes = { planet ship starbase system fleet leader army pop_faction first_contact  espionage_operation spy_network megastructure sector agreement situation }
         output_scope = country
     }
     ContactCountry = {
@@ -160,12 +165,8 @@ localisation_links = {
         output_scope = country
     }
     Leader = {
-        input_scopes = { army fleet first_contact spy_network espionage_operation }
+        input_scopes = { army fleet federation first_contact spy_network espionage_operation }
         output_scope = leader
-    }
-    Leader = {
-        input_scopes = { Federation }
-        output_scope = country
     }
     Ruler = {
         input_scopes = { country }
@@ -176,7 +177,7 @@ localisation_links = {
         output_scope = leader
     }
     Species = {
-        input_scopes = { country leader pop }
+        input_scopes = { country leader army pop_group pop }
         output_scope = species
     }
     Federation = {
@@ -184,11 +185,11 @@ localisation_links = {
         output_scope = federation
     }
     Faction = {
-        input_scopes = { pop }
+        input_scopes = { pop_group pop }
         output_scope = pop_faction
     }
     Sector = {
-        input_scopes = { planet system sector }
+        input_scopes = { planet system }
         output_scope = sector
     }
     MainDefender = {
@@ -219,9 +220,10 @@ localisation_links = {
         output_scope = spy_network
     }
     Target = {
-        input_scopes = { espionage_operation spy_network }
+        input_scopes = { espionage_operation spy_network agreement situation }
         output_scope = country #any, but good enough
     }
+	Job = { pop_job planet leader country }
 }
 
 alias[name:name] = localisation
