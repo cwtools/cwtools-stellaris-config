@@ -4938,3 +4938,5 @@ alias[effect:add_variable] = {
 	}
 }
 
+###Refresh ship designs that are aut-generated such as colony ships
+alias[effect:refresh_auto_generated_ship_designs] = bool

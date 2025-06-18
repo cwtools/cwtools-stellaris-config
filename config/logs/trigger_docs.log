@@ -1,4 +1,4 @@
-[17:53:58][game_application.cpp:2209]: 
+[19:20:24][game_application.cpp:2220]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -4390,7 +4390,7 @@ count_war = {
 Supported Scopes: country
 
 =================
-[17:53:58][game_application.cpp:2212]:
+[19:20:24][game_application.cpp:2223]:
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -7760,6 +7760,10 @@ Supported Scopes: planet country pop_faction sector
 
 set_trade_conversions - Sets the trade conversions for the scoped Country. If they do not add up to 1.0 any remaining trade the country keeps as income
 set_trade_conversion = { energy = 0.5 minerals = 0.2 }
+Supported Scopes: country
+
+refresh_auto_generated_ship_designs - Refresh ship designs that are aut-generated such as colony ships
+refresh_auto_generated_ship_designs = yes
 Supported Scopes: country
 
 set_resource - Sets the specific resource to the stockpile for the country scope:
