@@ -69,6 +69,20 @@ enums = {
 		behemoth_spike_activity_key
 		behemoth_turbo_activity_key
 	}
+	enum[component_bio_prereq] = {
+		""
+		"tech_thrusters_2 tech_thrusters_bio_integration"
+		"tech_thrusters_3 tech_thrusters_bio_integration"
+		"tech_thrusters_4 tech_thrusters_bio_integration"
+		"tech_dark_matter_propulsion tech_thrusters_bio_integration"
+	}
+	enum[component_bio_potential] = {
+		"ship_uses_space_fauna_titan_thrusters = yes"
+		"ship_uses_space_fauna_cruiser_thrusters = yes"
+		"ship_uses_space_fauna_destroyer_thrusters = yes"
+		"ship_uses_space_fauna_corvette_thrusters = yes"
+		"ship_uses_space_fauna_battleship_thrusters = yes"
+	}
 }
 
 component_set = {
@@ -108,10 +122,15 @@ component_template = {
 	prerequisites = {
 		## cardinality = 0..inf
 		<technology>
+		## cardinality = 0..inf
+		enum[component_bio_prereq]
 	}
 	## cardinality = 0..1
 	potential = {
+		## cardinality = 0..1
 		alias_name[trigger] = alias_match_left[trigger]
+		## cardinality = 0..1
+		enum[component_bio_potential]
 	}
 	## cardinality = 0..1
 	custom_tooltip = {
