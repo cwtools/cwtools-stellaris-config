@@ -102,10 +102,10 @@ opinion_modifier = {
 
 		## cardinality = 0..1
 		###For use with accumulative if the base is negative
-		min = int[-9999...-1]
+		min = int[-9999..-1]
 		## cardinality = 0..1
 		###For use with accumulative if the base is positive
-		max = int[1...999]
+		max = int[1..999]
 
 		## cardinality = 0..1
 		unique = bool
@@ -122,10 +122,10 @@ opinion_modifier = {
 		block_triggered = yes
 		## cardinality = 0..1
 		###For use with accumulative if the base is negative
-		min = int[-9999...-1]
+		min = int[-9999..-1]
 		## cardinality = 0..1
 		###For use with accumulative if the base is positive
-		max = int[1...999]
+		max = int[1..999]
 	}
 
 
