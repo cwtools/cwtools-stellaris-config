@@ -8,7 +8,7 @@ types = {
 	}
 	type[fallen_empire_initializer] = {
 		path = "game/common/solar_system_initializers"
-		file_path = "game/common/solar_system_initializers/fallen_empire_initializers.txt"
+		path_file = "game/common/solar_system_initializers/fallen_empire_initializers.txt"
 	}
 	## type_key_filter = random_list
 	type[solar_system_initializer_random_list] = {
