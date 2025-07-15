@@ -43,7 +43,7 @@ types = {
 	type[component_template_starbase] = {
 		name_field = "key"
 		path = "game/common/component_templates"
-		path_file = "game/common/component_templates/00_starbase_building_auras.txt"
+		path_file = "00_starbase_building_auras.txt"
 	}
 }
 
