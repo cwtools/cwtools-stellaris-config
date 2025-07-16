@@ -4651,7 +4651,7 @@ alias[effect:add_resource_from_debris] = {
 
 ###Instantly destroys part of a pop group
 alias[effect:kill_pop_group] = { 
-	pop_group = scope_group[target_pop_group]
+	pop_group = scope[pop_group]
 	## cardinality = 0..1
 	amount =  int_value_field
 	## cardinality = 0..1
@@ -4759,8 +4759,8 @@ alias[effect:scale_pop_amount] = float
 
 ###Transfer the amount OR percentage of pops from the source pop group to the target pop group
 alias[effect:transfer_pop_amount] = {
-	source = scope_group[pop_group]
-	target = scope_group[pop_group]
+	source = scope[pop_group]
+	target = scope[pop_group]
 	## cardinality = 0..1
 	amount = value_field
 	## cardinality = 0..1
@@ -4891,7 +4891,7 @@ alias[effect:set_resource] = {
 ###Creates a new pop group based on an existing one with overrides. If no existing pop group is passed, species is mandatory.
 alias[effect:create_pop_group] = {
 	## cardinality = 0..1
-	pop_group = scope_group[target_pop_group]
+	pop_group = scope[pop_group]
 	## cardinality = 0..1
 	species = last_created
 	## cardinality = 0..1
