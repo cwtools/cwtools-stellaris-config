@@ -45,7 +45,7 @@ storm_type = {
 	## cardinality = 0..inf
 	alias_name[triggered_ship_modifier] = alias_match_left[triggered_ship_modifier]
 	## cardinality = 0..inf
-	alias_name[triggered_system_modifier_starbase] = alias_match_left[triggered_system_modifier]
+	alias_name[triggered_system_modifier_starbase] = alias_match_left[triggered_system_modifier_starbase]
 
 	## replace_scope = { this = cosmic_storm root = cosmic_storm }
 	on_start = {

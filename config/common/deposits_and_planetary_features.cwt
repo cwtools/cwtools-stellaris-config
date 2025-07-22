@@ -131,7 +131,7 @@ deposit = {
 	}
 	
 	## cardinality = 0..inf
-	alias_name[triggered_planet_pop_group_modifier_species] = alias_match_left[triggered_planet_pop_group_modifier_for_species]
+	alias_name[triggered_planet_pop_group_modifier_species] = alias_match_left[triggered_planet_pop_group_modifier_species]
 
 	## cardinality = 0..inf
 	drop_weight = {
