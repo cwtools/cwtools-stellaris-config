@@ -115,6 +115,7 @@ trait = {
 		## cardinality = 1..inf
 		<civic_or_origin.origin>
 	}
+	
 	## cardinality = 0..1
 	sorting_priority = int
 	
@@ -177,7 +178,7 @@ trait = {
 		}
 		## cardinality = 0..inf
 		###won't show in trait tooltips, use custom_tooltip/custom_tooltip_with_modifiers
-		alias_name[triggered_pop_group_modifier] = alias_match_left[triggered_pop_modifier]
+		alias_name[triggered_pop_group_modifier] = alias_match_left[triggered_pop_group_modifier]
 		## cardinality = 0..inf
 		## replace_scope = { this = planet root = planet from = species fromfrom = country }
 		alias_name[triggered_planet_growth_habitability_modifier] = alias_match_left[triggered_planet_growth_habitability_modifier]
@@ -240,7 +241,7 @@ trait = {
 		}
 		
 		## cardinality = 0..1
-		alias_name[triggered_planet_pop_group_modifier_species] = alias_match_left[triggered_planet_pop_group_modifier_for_species]
+		alias_name[triggered_planet_pop_group_modifier_species] = alias_match_left[triggered_planet_pop_group_modifier_species]
 	
 		## replace_scope = { this = species root = species from = country }
 		## cardinality = 0..1
