@@ -227,20 +227,20 @@ job = {
 	
 	# for inline script
 	## cardinality = 0..1
-	alias_name[triggered_planet_modifier_planet] = alias_match_left[triggered_planet_modifier]
+	alias_name[triggered_planet_modifier_planet] = alias_match_left[triggered_planet_modifier_planet]
 	
 	# for inline script
 	## cardinality = 0..1
-	alias_name[triggered_country_modifier_planet] = alias_match_left[triggered_country_modifier]
+	alias_name[triggered_country_modifier_planet] = alias_match_left[triggered_country_modifier_planet]
 	
 	## cardinality = 0..1
 	alias_name[triggered_country_modifier_pop] = alias_match_left[triggered_country_modifier_pop]
 	
 	## cardinality = 0..1
-	alias_name[triggered_planet_modifier_pop_group] = alias_match_left[triggered_planet_pop_group_modifier_for_all]
+	alias_name[triggered_planet_modifier_pop_group] = alias_match_left[triggered_planet_modifier_pop_group]
 	
 	## cardinality = 0..1
-	alias_name[triggered_planet_pop_group_modifier_species] = alias_match_left[triggered_planet_pop_group_modifier_for_species]
+	alias_name[triggered_planet_pop_group_modifier_species] = alias_match_left[triggered_planet_pop_group_modifier_species]
 
 	
 	## cardinality = 0..1

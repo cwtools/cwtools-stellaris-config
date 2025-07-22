@@ -111,7 +111,7 @@ zones = {
 	
 	# for inline scripts to remove errors
 	## cardinality = 0..inf
-	alias_name[triggered_district_modifier_planet] = alias_match_left[triggered_district_planet_modifier]
+	alias_name[triggered_district_modifier_planet] = alias_match_left[triggered_district_modifier_planet]
 	
 	# for inline scripts to remove errors
 	## cardinality = 0..inf
