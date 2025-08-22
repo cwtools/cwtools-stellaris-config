@@ -83,6 +83,13 @@ enums = {
 		"ship_uses_space_fauna_corvette_thrusters = yes"
 		"ship_uses_space_fauna_battleship_thrusters = yes"
 	}
+	enum[component_bio_stack_info_id] = {
+		bio_anti_evasion
+		bio_anti_fire_rate
+		bio_evasion
+		bio_fire_rate
+		bio_healing
+	}
 }
 
 component_set = {
@@ -430,6 +437,17 @@ component_template = {
 			modifier = <static_modifier>
 			## cardinality = 0..1	
 			days = int
+			## cardinality = 0..1	
+			modifier = {
+				modifier = <static_modifier>
+				## cardinality = 0..1	
+				days = int
+			}
+			## cardinality = 0..1	
+			stack_info = {
+				id =enum[component_bio_stack_info_id]
+				priority = int
+			}
 		}
 		## cardinality = 0..1
 		hide_damage_values_from_tooltip = bool
