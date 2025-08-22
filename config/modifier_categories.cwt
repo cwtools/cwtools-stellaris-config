@@ -44,7 +44,10 @@ modifier_categories = {
 	"Transport Ships" = {
         supported_scopes = { ship starbase fleet leader country }
     }
-    Ships = {
+	"Owned Ships" ={
+		supported_scopes = { ship starbase fleet leader country }
+    }
+	Ships = {
         supported_scopes = { ship starbase fleet leader country }
     }
 	Fleets = {
