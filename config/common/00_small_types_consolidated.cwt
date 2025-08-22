@@ -243,7 +243,13 @@ country_customization = {
 			## cardinality = 0..inf
 			modifier = {
 				add = int
+				## cardinality = 0..1
 				species_portrait = <portrait>
+				## cardinality = 0..1
+				OR = {
+					## cardinality = 0..inf
+					species_portrait = <portrait>
+				}
 			}
 			## cardinality = 0..inf
 			modifier = {
