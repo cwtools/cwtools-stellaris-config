@@ -165,6 +165,7 @@ enums = {
 		zone_anglers
 		zone_betharian
 		zone_broken_shackles_memorial
+		zone_central_spire
 		zone_cosmogenesis_default
 		zone_default
 		zone_energy
