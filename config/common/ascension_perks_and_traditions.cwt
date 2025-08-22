@@ -67,6 +67,10 @@ enums = {
 ascension_perk = {
 	## cardinality = 0..1
 	## replace_scope = { root = country this = country }
+	
+	## cardinality = 0..1
+	custom_tooltip_with_modifiers = localisation
+	
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
