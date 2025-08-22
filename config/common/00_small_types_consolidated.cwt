@@ -487,6 +487,7 @@ economic_plan = {
 	## cardinality = 1..inf
 	subplan = {
 		## replace_scope = { this = country root = country }
+		## cardinality = 0..1
 		potential = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
