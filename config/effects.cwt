@@ -4671,7 +4671,10 @@ alias[effect:damage_army] = int_value_field
 
 ###Adds zone to the district of the planet
 alias[effect:add_zone] = {
+		## cardinality = 0..1
 		district = <district>
+		## cardinality = 0..1
+		district = 0
 		zone = enum[zone_type]
 		## cardinality = 0..1
 		zone_slot = int_value_field
