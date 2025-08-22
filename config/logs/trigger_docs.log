@@ -1,4 +1,4 @@
-[19:20:24][game_application.cpp:2220]: 
+[18:22:10][game_application.cpp:2223]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -145,6 +145,10 @@ Supported Scopes: country
 
 last_district_changed - Checks if the last district queued/unqueued/built/demolished/upgraded was the specified district
 last_district_changed = district_capitol
+Supported Scopes: planet
+
+capital_tier - Checks the tier of the planet's capital building
+capital_tier > 1
 Supported Scopes: planet
 
 has_ring - Checks if the planet has a planetary ring
@@ -1156,11 +1160,11 @@ Supported Scopes: all
 
 is_variable_set - Checks if the specified variable is set on the current scope. Use to avoid unset variables errors
 is_variable_set = my_var
-Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage
 
 check_variable - Checks a variable for the country/leader/planet/system/fleet
 check_variable = { which = <variable> value >=< <float>/<variable>/<scope.variable>/trigger:<trigger> }
-Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage
 
 check_variable_arithmetic - Checks a variable for the scope if a certain amount of arithmetic is done to it (note: the variable's value is not changed by this trigger)
 check_variable_arithmetic = {
@@ -1168,7 +1172,7 @@ check_variable_arithmetic = {
 	add/subtract/multiply/divide/modulo = <float>/<variable>/<scope.variable>/trigger:<trigger> (note: this line can be repeated as many times as desired)
 	value <=> <float>/<variable>/<scope.variable>/trigger:<trigger> (the value to compare against)
 }
-Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage
 
 check_modifier_value - Checks the value of a specified modifier in the current scope against a value.
 check_modifier_value = { modifier = logistic_growth_mult value > 1.05/variable
@@ -3340,12 +3344,12 @@ bioship_can_grow - Checks if the bioship can get growth progress.
 bioship_can_grow = yes / no
 Supported Scopes: ship
 
-num_pops_with_job_tag - Checks how many pops that has jobs with all given tags in a planet 
-num_pops_with_job_tag = { tags = { farmer trader } value = 1000 }
+total_workforce_with_job_tag - Checks how much workforce that has jobs with all given tags in a planet
+total_workforce_with_job_tag = { tags = { farmer trader } value = 1000 }
 Supported Scopes: planet
 
-num_country_pops_with_job_tag - Checks how many pops that has jobs with all given tags in a country 
-num_country_pops_with_job_tag = { tags = { farmer trader } value = 1000 }
+total_country_workforce_with_job_tag - Checks how much workforce that has jobs with all given tags in a country
+total_country_workforce_with_job_tag = { tags = { farmer trader } value = 1000 }
 Supported Scopes: country
 
 any_agreement - Iterate through each agreement - checks whether the enclosed triggers return true for any of them
@@ -4249,7 +4253,7 @@ any_traits_available_for_species = { trait_has_all_tags = { organic positive } }
 any_trait_available_for_species = { <triggers> }
 Supported Scopes: pop pop_group leader species
 
-count_trait_available_for_species - Iterate through all species traits and check if scope species doesn't have this trait.
+count_trait_available_for_species - Iterate through all species traits and check if scope species doesn't have this trait
 count_traits_available_for_species = { trait_has_all_tags = { organic positive } } - checks whether the enclosed triggers return true for X/all of them
 count_trait_available_for_species = {
 	count = <num/all/variable>
@@ -4390,7 +4394,7 @@ count_war = {
 Supported Scopes: country
 
 =================
-[19:20:24][game_application.cpp:2223]:
+[18:22:11][game_application.cpp:2226]: 
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -4568,6 +4572,10 @@ set_country_flag - Sets an arbitrarily-named flag on the scoped country
 set_country_flag = <key> (note: one can use e.g. my_flag@from to track relationships between objects)
 Supported Scopes: country
 
+set_country_code_flags - Sets flags as used by code, not defined in script:
+set_country_code_flags = { some_flag_1 = yes some_flag_2 = no }
+Supported Scopes: country
+
 set_planet_flag - Sets an arbitrarily-named flag on the scoped planet
 set_planet_flag = <key> (note: one can use e.g. my_flag@from to track relationships between objects)
 Supported Scopes: planet
@@ -4724,6 +4732,7 @@ create_pop = {
 	ethos = <random / <target country> / { ethic = <key> ethic = <key> }
 	size = <number> (optional, default: POP_BULK_UNIT_SIZE) }>
 	random = <number> (optional) If set, the amount will be randomized in [max(0, size - random), size + random].
+	growth_category = <key> (optional, default: 'GROWTH_CAT_OTHER')
 }
 Supported Scopes: planet
 
@@ -4735,6 +4744,7 @@ create_pop_group = {
 	category = <pop category> (optional; if omitted and no base group is defined, use category from first assigned job)
 	size = <number> (optional, default: POP_BULK_UNIT_SIZE)
 	random = <number> (optional) If set, the amount will be randomized in [max(0, size - random), size + random].
+	growth_category = <key> (optional, default: 'GROWTH_CAT_OTHER')
 	effect = <init effect> (optional)
 }
 Supported Scopes: planet
@@ -4770,6 +4780,7 @@ kill_pop_group = {
 	pop_group = <target pop group>
 	amount = <amount killed> OR percentage = <percentage killed>
 	random = <number> (optional) If set, the amount will be randomized in [max(0, size - random), size + random].
+	growth_category = <key> (optional, default: 'GROWTH_CAT_OTHER')
 }
 Supported Scopes: all
 
@@ -4869,23 +4880,23 @@ Supported Scopes: country
 
 set_variable - Sets or creates an arbitrarily-named variable with a specific value in the current scope
 set_variable = { which = <string> value = <float>/<variable>/<scope.variable>/trigger:<trigger> }
-Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage
 
 clear_variable - Clears a previously-set variable from the game.
 clear_variable = <string>
-Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage
 
 round_variable - Rounds a previously-set variable to the closest integer.
 round_variable = <string>
-Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage
 
 floor_variable - Rounds a previously-set variable down to the previous integer.
 floor_variable = <string>
-Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage
 
 ceiling_variable - Rounds a previously-set variable up to the next integer.
 ceiling_variable = <string>
-Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage
 
 export_modifier_to_variable - Exports the value of a specified modifier in the current scope to a specified variable.
 export_modifier_to_variable = { modifier = logistic_growth_mult variable = <string> }
@@ -4902,7 +4913,7 @@ export_trigger_value_to_variable = {
 	variable = <string> (this example will print the amount of energy the scoped object has to a variable)
 	rounded = yes (default: no)
 }
-Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage
 
 export_resource_stockpile_to_variable - Exports the value of the current country's stockpile of the specified resource to a variable.
 export_resource_stockpile_to_variable = { resource = energy variable = <string> }
@@ -4918,7 +4929,7 @@ Supported Scopes: country
 
 set_variable_to_random_value - Sets a variable to a random value within the specified bounds.
 set_variable_to_random_value = { which = <some_variable> min = -100 max = 100 rounded = yes/no }
-Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage
 
 remove_global_flag - Removes a global flag
 remove_global_flag = <key> (note: one can use e.g. my_flag@from to track relationships between objects)
@@ -4930,7 +4941,7 @@ Supported Scopes: all
 
 change_variable - Increments a previously-set variable by a specific amount
 change_variable = { which = <string> value = <float>/<variable>/<scope.variable>/trigger:<trigger> }
-Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage
 
 set_event_locked - Silently disables the scoped fleet to prevent player action, remember to unlock at the end of the event
 set_event_locked = no
@@ -5452,7 +5463,7 @@ set_saved_date = {
 	days_from_present = <int>/<variable> (time until the date you wish to save)
 	expires = <int>/<variable> (time until the saved date is cleared, default is never)
 }
-Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage
 
 remove_modifier - Removes a specific modifier from the scope object
 remove_modifier = <key>
@@ -5655,26 +5666,26 @@ Supported Scopes: planet
 
 subtract_variable - Decrements a previously-set variable by a specific amount
 subtract_variable = { which = <string> value = <float>/<variable>/<scope.variable>/trigger:<trigger> }
-Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage
 
 multiply_variable - Multiplies a previously-set variable by a specific amount
 multiply_variable = { which = <string> value = <float>/<variable>/<scope.variable>/trigger:<trigger> }
-Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage
 
 divide_variable - Divides a previously-set variable by a specific amount
 divide_variable = { which = <string> value = <float>/<variable>/<scope.variable>/trigger:<trigger> }
-Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage
 
 modulo_variable - Modulos a previously-set variable by a specific amount i.e. X % Y
 modulo_variable = { which = <string> value = <float>/<variable>/<scope.variable>/trigger:<trigger> }
-Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage
 
 round_variable_to_closest - Rounds a previously-set variable to the closest X
 round_variable_to_closest = {
 	which = <string>
 	value = <float>/<variable>/<scope.variable>/trigger:<trigger> (variable will be rounded to a multiple of this value)
 }
-Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage
 
 play_sound - Play the defined sound effect
 play_sound = myfirstsoundeffect
@@ -6967,7 +6978,7 @@ give_specimen - Gives a given specimen to the target country.
 give_specimen = { key = <specimen> origin = <key> }
 Supported Scopes: country
 
-remove_specimen - Removes specified specimen from the target country.
+remove_specimen - Removes specified specimen from the target country. This will destroy the specimen
 remove_specimen = <specimen>
 Supported Scopes: country
 
@@ -7147,6 +7158,7 @@ OR
 	add_pop_amount = {
 		amount = <number>
 		random = <number> The amount will be randomized in [max(0, size - random), size + random].
+		growth_category = <key> (optional, default: 'GROWTH_CAT_OTHER')
 	}
 Supported Scopes: pop_group
 
@@ -7156,6 +7168,7 @@ OR
 	remove_pop_amount = {
 		amount = <number>
 		random = <number> The amount will be randomized in [max(0, size - random), size + random].
+		growth_category = <key> (optional, default: 'GROWTH_CAT_OTHER')
 	}
 Supported Scopes: pop_group
 
@@ -7169,6 +7182,7 @@ transfer_pop_amount = {
 	target = <target pop group>
 	amount = <amount> OR percentage = <percentage>
 	random = <number> (optional) If set, the amount will be randomized in [max(0, size - random), size + random].
+	growth_category = <key> (optional, default: 'GROWTH_CAT_OTHER')
 }
 Supported Scopes: all
 
@@ -7202,6 +7216,7 @@ kill_assigned_pop_amount = {
 	limit = { <triggers> }
 	amount = <amount killed> OR percentage = <percentage killed>
 	random = <number> (optional)
+	growth_category = <key> (optional, default: 'GROWTH_CAT_OTHER')
 }
 Supported Scopes: pop_job
 
@@ -7323,7 +7338,7 @@ Supported Scopes: country
 
 add_variable - Increments a previously-set variable by a specific amount
 add_variable = { which = <string> value = <float>/<variable>/<scope.variable>/trigger:<trigger> }
-Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift
+Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage
 
 fleet_event - Fires a fleet event for the scoped fleet, with optional DAYS and RANDOM delay
 fleet_event = {
@@ -7337,6 +7352,13 @@ Supported Scopes: fleet
 pop_remove_ethic - Removes a specific ethic from the scoped pop
 pop_remove_ethic = {
 	ethic = <key>
+	amount = <amount> OR percentage = <percentage>
+	random = <number> (optional) If set, the amount will be randomized in [max(0, size - random), size + random].
+}
+Supported Scopes: pop_group
+
+displace_pop_amount - Raises on_pop_displaced on_action
+displace_pop_amount = {
 	amount = <amount> OR percentage = <percentage>
 	random = <number> (optional) If set, the amount will be randomized in [max(0, size - random), size + random].
 }
@@ -7725,7 +7747,7 @@ refresh_leader_pool - Refreshes the scoped country's leader pool.
 refresh_leader_pool = yes
 Supported Scopes: country
 
-add_resource_from_debris - Adds specific resource to the stockpile for the country scope and creates a debris notification.
+add_resource_from_debris - Adds specific resource to the stockpile for the country scope and creates a debris notification:
 add_resource_from_debris = {
 	<resource_name_1> = <value_1>
 	<resource_name_2> = <value_2>
@@ -7780,7 +7802,11 @@ create_leader = {
 	class = random_ruler / <key>
 	skill = <int> # The leader skill level, minimum LEADER_SKILL_MIN and maximum LEADER_MAX_SKILL_CAP.
 	set_age = <int>
-	traits = { <level> = <key> <level> = <key> } # The traits of the leader, e.g. "1 = leader_trait_bureaucrat". If <level> is a positive int and randomize_traits = yes, the trait is added if the leader's level is at least <level>.
+	traits = { <level> = <key> <level> = <key> } # The traits of the leader, e.g. "1 = leader_trait_bureaucrat".
+		If <level> is a positive int, the trait is added if the leader's level is at least <level>.
+		If the leader would have gained a trait selection on <level>, this trait consumes it (but only once per level).
+		If <level> is 0 or non-int, the trait is added regardless of level and doesn't consume trait selections.
+		Supports the same special keys as add_trait.
 	gender = <gender> # Optional, default = random.
 	event_leader = yes / no # Optional, default = no. Sets if this is a event leader or not. Is checked through is_event_leader.
 	immortal = yes / no # Optional, default = no.
