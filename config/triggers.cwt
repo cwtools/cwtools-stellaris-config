@@ -2726,7 +2726,7 @@ alias[trigger:has_astral_rift_flag] = value[astral_rift_flag]
 
 ## severity = warning
 ###Checks if the country has completed a specific event chain
-alias[trigger:has_completed_event_chain] = value[event_chain_key]
+alias[trigger:has_completed_event_chain] = <event_chain>
 
 ###Checks the distance of a controlled system to its owner's capital
 alias[trigger:distance_to_capital] == value_field
