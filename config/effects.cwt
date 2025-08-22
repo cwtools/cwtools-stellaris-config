@@ -2395,6 +2395,8 @@ alias[effect:create_pop] = {
 	## cardinality = 0..1
 	random = int
 	## cardinality = 0..1
+	growth_category = enum[growth_category]
+	## cardinality = 0..1
 	## push_scope = pop
 	effect = {
 		alias_name[effect] = alias_match_left[effect]
@@ -4526,7 +4528,7 @@ alias[effect:give_specimen] = {
 	origin = localisation
 }
 
-###Removes specified specimen from the target country.
+###Removes specified specimen from the target country. This will destroy the specimen
 alias[effect:remove_specimen] = <specimen>
 
 ###Tries to finish the current council agenda for the scoped country
@@ -4660,6 +4662,8 @@ alias[effect:kill_pop_group] = {
 	percentage = value_field
 	## cardinality = 0..1
 	random = int
+	## cardinality = 0..1
+	growth_category = enum[growth_category]
 }
 
 ###Damages scoped army by a specific amount
@@ -4743,6 +4747,8 @@ alias[effect:add_pop_amount] = {
 	amount = int
 	## cardinality = 0..1
 	random = int
+	## cardinality = 0..1
+	growth_category = enum[growth_category]
 }
 ###Removes the amount of pops from the scope pop group.
 alias[effect:remove_pop_amount] = value_field
@@ -4752,6 +4758,8 @@ alias[effect:remove_pop_amount] = {
 	amount = int
 	## cardinality = 0..1
 	random = int
+	## cardinality = 0..1
+	growth_category = enum[growth_category]
 }
 
 ###Scales the amount of pops in the scope pop group
@@ -4767,6 +4775,8 @@ alias[effect:transfer_pop_amount] = {
 	percentage = value_field[0.0..1.0]
 	## cardinality = 0..1
 	random = int
+	## cardinality = 0..1
+	growth_category = enum[growth_category]
 }
 
 ###Set planet preference trait for scoped species (removing the current one, if any).
@@ -4801,6 +4811,18 @@ alias[effect:kill_assigned_pop_amount] = {
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## cardinality = 0..1
+	amount = int
+	## cardinality = 0..1
+	percentage = value_field[0.0..1.0]
+	## cardinality = 0..1
+	random = int
+	## cardinality = 0..1
+	growth_category = enum[growth_category]
+}
+
+###Raises on_pop_displaced on_action
+alias[effect:displace_pop_amount] = {
 	## cardinality = 0..1
 	amount = int
 	## cardinality = 0..1
@@ -4916,6 +4938,8 @@ alias[effect:create_pop_group] = {
 	## cardinality = 0..1
 	random = int
 	## cardinality = 0..1
+	growth_category = enum[growth_category]
+	## cardinality = 0..1
 	## push_scope = pop_group
 	effect = { alias_name[effect] = alias_match_left[effect] }
 }
@@ -4940,3 +4964,9 @@ alias[effect:add_variable] = {
 
 ###Refresh ship designs that are aut-generated such as colony ships
 alias[effect:refresh_auto_generated_ship_designs] = bool
+
+###Sets flags as used by code, not defined in script:
+alias[effect:set_country_code_flags] = {
+	## cardinality = 0..inf
+	value_set[country_code_flag] = bool
+}
