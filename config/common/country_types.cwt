@@ -105,6 +105,8 @@ country_type = {
 	## cardinality = 0..1
 	is_space_critter = bool #this might be a subtype
 	## cardinality = 0..1
+	ignore_ftl_inhibitors = bool
+	## cardinality = 0..1
 	blocks_pirate = bool
 	## cardinality = 0..1
 	### This is a star flag
