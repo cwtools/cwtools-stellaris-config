@@ -1615,6 +1615,8 @@ alias[effect:create_leader] = {
 		trait = random_trait
 		## cardinality = 0..inf
 		int = <trait.leader_trait>
+		## cardinality = 0..inf
+		int = random_common
 	}
 	## cardinality = 0..1
 	use_regnal_name = bool
