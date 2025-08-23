@@ -253,10 +253,11 @@ event = {
 			show_sound = <sound_effect>
 		}
 		picture = <sprite>
+		## cardinality = 0..inf
 		picture = {
-			## cardinality = 0..1
+			## cardinality = 0..inf
 			picture = <sprite>
-			## cardinality = 0..1
+			## cardinality = 0..inf
 			picture = {
 				trigger = { alias_name[trigger] = alias_match_left[trigger] }
 				picture = <sprite>
