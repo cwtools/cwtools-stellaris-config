@@ -243,7 +243,13 @@ country_customization = {
 			## cardinality = 0..inf
 			modifier = {
 				add = int
+				## cardinality = 0..1
 				species_portrait = <portrait>
+				## cardinality = 0..1
+				OR = {
+					## cardinality = 0..inf
+					species_portrait = <portrait>
+				}
 			}
 			## cardinality = 0..inf
 			modifier = {
@@ -481,6 +487,7 @@ economic_plan = {
 	## cardinality = 1..inf
 	subplan = {
 		## replace_scope = { this = country root = country }
+		## cardinality = 0..1
 		potential = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}

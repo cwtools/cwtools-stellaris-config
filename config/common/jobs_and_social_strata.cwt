@@ -422,7 +422,10 @@ social_strata = {
 	custom_demotion_loc = scalar
 	## cardinality = 0..1
 	custom_demotion_icon = scalar
-
+	## cardinality = 0..1
+	custom_promotion_loc = scalar
+	## cardinality = 0..1
+	custom_promotion_icon = scalar
 	## cardinality = 0..inf
 	alias_name[triggered_planet_modifier_pop] = alias_match_left[triggered_planet_modifier_pop]
 

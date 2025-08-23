@@ -43,6 +43,7 @@ enums = {
 	enum[building_sets] = {
 		automation
 		betharian
+		bio_trophy
 		cosmogenesis_world
 		engineering
 		entertainment
@@ -60,6 +61,7 @@ enums = {
 		hydroponics
 		industrial
 		knights
+		medical
 		mining
 		origin
 		physics
@@ -236,6 +238,10 @@ building = {
 	## cardinality = 0..1
 	position_priority = int
 	## cardinality = 0..1
+	capital_tier = int
+	## cardinality = 0..1
+	district_limit = int
+	## cardinality = 0..1
 	###colony automation will not try to upgrade this
 	skip_automation_upgrading = bool
 
@@ -246,7 +252,7 @@ building = {
 		enum[building_sets]
 	}
 
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	custom_tooltip = localisation
 
 	## cardinality = 0..1

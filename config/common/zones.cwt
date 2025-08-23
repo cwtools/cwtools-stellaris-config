@@ -27,7 +27,10 @@ zones = {
 		## cardinality = 0..inf
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-
+	## cardinality = 0..1
+	planet_limit = {
+		base = int
+	}
 	## cardinality = 0..1
 	## replace_scope = { root = planet this = planet }
 	unlock = { 
@@ -118,7 +121,7 @@ zones = {
 	alias_name[triggered_planet_modifier_planet] = alias_match_left[triggered_planet_modifier_planet]	
 	## cardinality = 0..1
 	ai_priority = int
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	ai_weight_coefficient = float
 }
 
@@ -161,10 +164,12 @@ zone_slots = {
 enums = {
 	enum[zone_type] = {
 		all
+		zone_agrarian_anglers
 		zone_agrarian_urban
 		zone_anglers
 		zone_betharian
 		zone_broken_shackles_memorial
+		zone_central_spire
 		zone_cosmogenesis_default
 		zone_default
 		zone_energy

@@ -479,4 +479,10 @@ enums = {
 		aianom_engineering_dep3
 		aianom_engineering_dep4
 	}
+	enum[growth_category] = {
+		"GROWTH_CAT_PROMOTION"
+		"GROWTH_CAT_GROWTH"
+		"GROWTH_CAT_ASSEMBLY"
+		"GROWTH_CAT_OTHER"
+	}
 }

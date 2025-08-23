@@ -2726,7 +2726,7 @@ alias[trigger:has_astral_rift_flag] = value[astral_rift_flag]
 
 ## severity = warning
 ###Checks if the country has completed a specific event chain
-alias[trigger:has_completed_event_chain] = value[event_chain_key]
+alias[trigger:has_completed_event_chain] = <event_chain>
 
 ###Checks the distance of a controlled system to its owner's capital
 alias[trigger:distance_to_capital] == value_field
@@ -3006,8 +3006,8 @@ alias[trigger:num_zones] = {
 ###Checks if the bioship can get growth progress.
 alias[trigger:bioship_can_grow]= bool
 
-###Checks how many pops that has jobs with all given tags in a planet 
-alias[trigger:num_pops_with_job_tag] = { 
+###Checks how much workforce that has jobs with all given tags in a planet
+alias[trigger:total_workforce_with_job_tag] = { 
 	tags = { 
 		## cardinality = 0..inf
 		<job_tags>
@@ -3015,8 +3015,8 @@ alias[trigger:num_pops_with_job_tag] = {
 	value = int_value_field
 }
 
-###Checks how many pops that has jobs with all given tags in a country 
-alias[trigger:num_country_pops_with_job_tag] = { 
+###Checks how much workforce that has jobs with all given tags in a country
+alias[trigger:total_country_workforce_with_job_tag] = { 
 	tags = { 
 		## cardinality = 0..inf
 		<job_tags>
@@ -3027,3 +3027,5 @@ alias[trigger:num_country_pops_with_job_tag] = {
 ###Checks if the pop group or species inherits the base species' rights. Returns false if there is no parent species.
 alias[trigger:inherits_parent_rights] = bool
 
+###Checks the tier of the planet's capital building
+alias[trigger:capital_tier] == int_value_field

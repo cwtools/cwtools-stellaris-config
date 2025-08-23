@@ -72,6 +72,10 @@ district = {
 	## cardinality = 0..1
 	icon = icon[gfx/interface/icons/districts]
 	## cardinality = 0..1
+	overlay_icon =<sprite>
+	## cardinality = 0..1
+	gridbox = enum[gridbox]
+	## cardinality = 0..1
 	is_capped_by_modifier = bool
 	## cardinality = 0..1
 	###whether this district should be shown in the expansion planner; 
@@ -168,4 +172,14 @@ district = {
 	
 	## cardinality = 0..1
 	ai_weight_coefficient = float
+}
+
+enums = {
+	enum[gridbox] = {
+		district_arcology_mixed_industry	
+		district_arcology_research
+		district_resort
+		district_industrial
+		district_generator
+	}
 }
