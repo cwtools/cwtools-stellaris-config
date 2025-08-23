@@ -709,7 +709,7 @@ event = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	immediate = {
 		## cardinality = 0..1
 		allow = {
