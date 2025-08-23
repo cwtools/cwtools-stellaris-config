@@ -161,6 +161,7 @@ zone_slots = {
 enums = {
 	enum[zone_type] = {
 		all
+		zone_agrarian_anglers
 		zone_agrarian_urban
 		zone_anglers
 		zone_betharian
