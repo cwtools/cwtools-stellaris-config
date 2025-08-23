@@ -570,6 +570,7 @@ alias[government_trigger:authority] = {
 	NOT = {
 		## cardinality = 0..1
 		text = localisation
+		## cardinality = 0..inf
 		value = <authority>
 	}
 	## cardinality = 0..inf
