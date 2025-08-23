@@ -761,7 +761,7 @@ event = {
 		}
 	}
 
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	after = {
 		alias_name[effect] = alias_match_left[effect]
 	}
