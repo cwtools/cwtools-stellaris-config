@@ -27,7 +27,10 @@ zones = {
 		## cardinality = 0..inf
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-
+	## cardinality = 0..1
+	planet_limit = {
+		base = int
+	}
 	## cardinality = 0..1
 	## replace_scope = { root = planet this = planet }
 	unlock = { 
@@ -118,7 +121,7 @@ zones = {
 	alias_name[triggered_planet_modifier_planet] = alias_match_left[triggered_planet_modifier_planet]	
 	## cardinality = 0..1
 	ai_priority = int
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	ai_weight_coefficient = float
 }
 
