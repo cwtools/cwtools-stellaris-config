@@ -178,6 +178,7 @@ enums = {
 		zone_energy_physics
 		zone_energy_ring_world
 		zone_energy_wilderness
+		zone_exotic_gases
 		zone_factory
 		zone_food
 		zone_food_biology
@@ -203,6 +204,7 @@ enums = {
 		zone_minerals_nexus
 		zone_minerals_wilderness
 		zone_payback_enlightenment
+		zone_rare_crystals
 		zone_research
 		zone_research_engineering
 		zone_research_engineering_arcology
@@ -253,6 +255,7 @@ enums = {
 		zone_urban_food
 		zone_urban_minerals
 		zone_urban_wilderness
+		zone_volatile_motes
 	}
 	enum[zone_set] = {
 		arcology
