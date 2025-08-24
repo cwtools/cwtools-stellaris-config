@@ -45,6 +45,33 @@ particle_type = {
 		## cardinality = 0..1
 		hide = bool
 		## cardinality = 0..1
+		mass = scalar
+		## cardinality = 0..1
+		mass = {
+			## cardinality = 0..2
+			float
+		}
+		## cardinality = 0..1
+		duration= {
+			## cardinality = 0..2
+			float
+		}
+		## cardinality = 0..1
+		emission_pulse_duration={
+			## cardinality = 0..2
+			float
+		}
+		## cardinality = 0..1
+		emission_pulse_silence={
+			## cardinality = 0..2
+			float
+		}
+		## cardinality = 0..1
+		spritesheet_animation=bool
+		## cardinality = 0..1
+		spritesheet_animation_loop=float
+		
+		## cardinality = 0..1
 		texture={
 			file = filepath
 			shader = scalar #<shader>
@@ -59,10 +86,26 @@ particle_type = {
 			## cardinality = 0..1
 			x = float
 			## cardinality = 0..1
+			x = {
+				## cardinality = 0..2
+				float
+			}
+			## cardinality = 0..1
 			y = float
 			## cardinality = 0..1
+			y= {
+				## cardinality = 0..2
+				float
+			}
+			## cardinality = 0..1
 			z = float
+			## cardinality = 0..1
+			z= {
+				## cardinality = 0..2
+				float
+			}
 		}
+		## cardinality = 0..1
 		duration = float
 		life = {
 			## cardinality = 1..2
@@ -98,6 +141,16 @@ particle_type = {
 		## cardinality = 0..1
 		rotation_speed = {
 			## cardinality = 2..2
+			float
+		}
+		## cardinality = 0..1
+		rotation_speed_yaw={
+			## cardinality = 1..2
+			float
+		}
+		## cardinality = 0..1
+		rotation_speed_pitch={
+			## cardinality = 1..2
 			float
 		}
 		## cardinality = 0..1
@@ -157,7 +210,7 @@ particle_type = {
 		## cardinality = 0..1
 		box_emitter_z = scalar
 		## cardinality = 0..1
-		velocity = float
+		velocity = scalar
 		## cardinality = 0..1
 		velocity = {
 			## cardinality = 1..2
@@ -255,6 +308,7 @@ particle_type = {
 				## cardinality = 0..1
 				z = float
 			}
+			## cardinality = 0..1
 			duration = float
 			life = {
 				## cardinality = 1..2
@@ -442,7 +496,7 @@ particle_type = {
 		## cardinality = 0..1
 		division = int
 		## cardinality = 0..1
-		amount = float
+		amount = scalar
 	}
 }
 
@@ -474,6 +528,23 @@ alias[subsystem_color:color] = {
 	## cardinality = 0..1
 	alpha = scalar
 	#alpha = float[0.0..255.0] #float,<particle_animation>
+	
+	## cardinality = 0..1
+	x = { 
+		## cardinality = 2..4
+		scalar
+	}
+	## cardinality = 0..1
+	y = { 
+		## cardinality = 2..4
+		scalar
+	}
+	## cardinality = 0..1
+	z = { 
+		## cardinality = 2..4
+		scalar
+	}
+	
 }
 
 #Better to split in two aliases, but it was defaulting to the first as alpha = { scalar ... } was correct
@@ -504,10 +575,12 @@ enums = {
 		point
 		spin
 		turbulence
+		vortex
 	}
 	enum[sort_type] = {
 		depth
 		age
+		distance
 	}
 	complex_enum[particle_force] = {
 		path = "game/gfx/particles"
