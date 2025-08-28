@@ -823,13 +823,19 @@ alias[effect:subtract_variable] = {
 
 ###Multiplies a previously-set variable by a specific amount
 alias[effect:multiply_variable] = {
+	## cardinality = 0..1
 	which = value[variable]
+	## cardinality = 0..1
+	which = enum[exe_set_variable]
 	value = value_field
 }
 
 ###Divides a previously-set variable by a specific amount
 alias[effect:divide_variable] = {
+	## cardinality = 0..1
 	which = value[variable]
+	## cardinality = 0..1
+	which = enum[exe_set_variable]
 	value = value_field
 }
 
@@ -841,7 +847,10 @@ alias[effect:modulo_variable] = {
 
 ###Rounds a previously-set variable to the closest X
 alias[effect:round_variable_to_closest] = {
+	## cardinality = 0..1
 	which = value[variable]
+	## cardinality = 0..1
+	which = enum[exe_set_variable]
 	value = value_field
 }
 
@@ -894,6 +903,8 @@ alias[effect:remove_trait] = all_negative
 alias[effect:while] = {
 	## cardinality = 0..1
 	count = int_value_field
+	## cardinality = 0..1
+	count = enum[exe_set_variable]
 	## cardinality = 0..1
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
@@ -4747,9 +4758,12 @@ alias[effect:add_focus_progress] = {
 ###Adds the amount of pops to the scope pop group.
 alias[effect:add_pop_amount] = value_field
 alias[effect:add_pop_amount] = value_set[variable]
+alias[effect:add_pop_amount] = enum[exe_set_variable]
 alias[effect:add_pop_amount] = {
 	## cardinality = 0..1
 	amount = int
+	## cardinality = 0..1
+	amount =enum[exe_set_variable]
 	## cardinality = 0..1
 	random = int
 	## cardinality = 0..1
@@ -4941,6 +4955,8 @@ alias[effect:create_pop_group] = {
 	## cardinality = 0..1
 	size = int_value_field
 	## cardinality = 0..1
+	size = enum[exe_set_variable]
+	## cardinality = 0..1
 	random = int
 	## cardinality = 0..1
 	growth_category = enum[growth_category]
@@ -4975,3 +4991,6 @@ alias[effect:set_country_code_flags] = {
 	## cardinality = 0..inf
 	value_set[country_code_flag] = bool
 }
+
+###Clears the purge type for the entire planet
+alias[effect:clear_planet_purge_type] = bool

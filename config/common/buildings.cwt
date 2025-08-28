@@ -53,9 +53,11 @@ enums = {
 		fallen_empire_generator
 		fallen_empire_mining
 		farming
+		farming_automation
 		fortress
 		foundry
 		generator
+		generator_automation
 		government
 		hunting_zone
 		hydroponics
@@ -63,6 +65,7 @@ enums = {
 		knights
 		medical
 		mining
+		mining_automation
 		origin
 		physics
 		pre_ftl
@@ -72,6 +75,7 @@ enums = {
 		trade
 		unity
 		urban
+		urban_automation
 		zoo
 	}
 	enum[building_upgrade_flags] = {

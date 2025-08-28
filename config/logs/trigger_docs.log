@@ -1,4 +1,4 @@
-[18:22:10][game_application.cpp:2223]: 
+[14:49:48][game_application.cpp:2223]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -1214,9 +1214,9 @@ has_active_building - Checks if the planet has a specific building, and that tha
 has_active_building = building_capital_3
 Supported Scopes: planet
 
-is_controlled_by - Checks if the planet/ship/fleet/astral rift is controlled by the target country
+is_controlled_by - Checks if the planet/ship/fleet/astral rift/starbase is controlled by the target country
 is_controlled_by = <target>
-Supported Scopes: planet ship fleet astral_rift
+Supported Scopes: planet ship fleet starbase astral_rift
 
 is_terraformed - Checks if the planet has ever been terraformed
 is_terraformed = yes
@@ -4394,7 +4394,7 @@ count_war = {
 Supported Scopes: country
 
 =================
-[18:22:11][game_application.cpp:2226]: 
+[14:49:48][game_application.cpp:2226]: 
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -7524,6 +7524,10 @@ Supported Scopes: all
 
 set_planet_purge_type - Sets the purge type for the entire planet
 set_planet_purge_type = <type>
+Supported Scopes: planet
+
+clear_planet_purge_type - Clears the purge type for the entire planet
+clear_planet_purge_type = yes
 Supported Scopes: planet
 
 trigger_megastructure_icon - if a planet has trigger_megastructure_icon = yes then the map icon for the star will show a megastructure icon

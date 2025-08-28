@@ -289,7 +289,7 @@ alias[trigger:is_at_war_with] = scope_group[target_country]
 alias[trigger:is_within_borders_of] = scope_group[target_country]
 ###Check if the country has a non-aggression pact with target country
 alias[trigger:has_non_aggression_pact] = scope_group[target_country]
-###Checks if the planet/ship/fleet is controlled by the target country
+###Checks if the planet/ship/fleet/astral rift/starbase is controlled by the target country
 alias[trigger:is_controlled_by] = scope_group[target_country]
 ###Checks if the country/planet is neighbors with target country
 alias[trigger:is_neighbor_of] = scope_group[target_country]
