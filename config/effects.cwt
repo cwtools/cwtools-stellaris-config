@@ -4975,3 +4975,6 @@ alias[effect:set_country_code_flags] = {
 	## cardinality = 0..inf
 	value_set[country_code_flag] = bool
 }
+
+###Clears the purge type for the entire planet
+alias[effect:clear_planet_purge_type] = bool
