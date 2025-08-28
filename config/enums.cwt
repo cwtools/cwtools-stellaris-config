@@ -458,6 +458,7 @@ enums = {
 	enum[exe_set_variable]= {
 		local_pop_amount
 		local_size_option
+		root.local_pop_amount
 		number_fleets_spawned
 		aianom_mineral_dep1
 		aianom_mineral_dep2
