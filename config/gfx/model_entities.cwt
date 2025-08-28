@@ -54,7 +54,7 @@ model_entity = {
   ## cardinality = 0..1
   pdxmesh = <model_mesh> #this connects to meshes defined in a *.gfx file!
 
-  ## cardinality = 0..1
+  ## cardinality = 0..inf
   cull_radius = float
   ## cardinality = 0..1
   scale = float
@@ -141,7 +141,7 @@ model_entity = {
 				## cardinality = 3..3
 				float
 			}
-			## cardinality = 0..1
+			
 			scale = float
 		}
 		## cardinality = 0..1
@@ -152,6 +152,8 @@ model_entity = {
 				## cardinality = 2..2
 				float
 			}
+			## cardinality = 0..1
+			flowmap_intensity = float
 		}
 		## cardinality = 0..inf
 		event = {
@@ -252,6 +254,8 @@ model_entity = {
 			## cardinality = 2..3
 			float
 		}
+		## cardinality = 0..1
+		flowmap_intensity = float
 		## cardinality = 0..1
 		bloom_factor = float
 		## cardinality = 0..1
