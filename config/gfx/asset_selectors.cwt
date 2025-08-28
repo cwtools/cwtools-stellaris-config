@@ -36,7 +36,10 @@ asset_selector = {
 		#clothes and hair selectors link directly to a dds files using filepath, room selectors point to textures that end with "_room.dds" but remove the file ending
 		#entity selectors link to a model entity using its key. This is a way to distinguish between them I guess.
 
+		## cardinality = 0..1
 		default = filepath
+		## cardinality = 0..1
+		default = "default_background"
 
 
 		## cardinality = 0..1
@@ -106,6 +109,39 @@ asset_selector = {
 		## replace_scope = { this = leader root = leader }
 		leader = {
 			## cardinality = 0..1
+			legendary_bg_azaryn = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			legendary_bg_beholder = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			legendary_bg_skrand = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			legendary_bg_keides = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			bg_admiral = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			bg_scientist = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			bg_official = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			default_background = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+		
+			## cardinality = 0..1
 			default = filepath #these do not have default in vanilla, but i assume default is supported.
 			## cardinality = 0..inf
 			random = {
@@ -124,6 +160,26 @@ asset_selector = {
 		## replace_scope = { this = leader root = leader }
 		ruler = {
 			## cardinality = 0..1
+			legendary_bg_azaryn = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			legendary_bg_beholder = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			legendary_bg_skrand = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			legendary_bg_keides = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			bg_ruler = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
 			default = filepath
 			## cardinality = 0..inf
 			random = {
@@ -136,6 +192,7 @@ asset_selector = {
 			}
 			## cardinality = 0..inf
 			filepath = { alias_name[trigger] = alias_match_left[trigger] }
+			
 		}
 	}
 	subtype[hair] = {
@@ -250,6 +307,7 @@ asset_selector = {
 			}
 			## cardinality = 0..inf
 			filepath = { alias_name[trigger] = alias_match_left[trigger] }
+		
 		}
 	}
 	subtype[room] = {
@@ -281,6 +339,7 @@ asset_selector = {
 					filepath
 				}
 			}
+					
 			## cardinality = 0..inf
 			scalar = { alias_name[trigger] = alias_match_left[trigger] } #the scalar here is the same kind of file link as in the above!
   		}
@@ -304,8 +363,6 @@ asset_selector = {
 					filepath
 				}
 			}
-			## cardinality = 0..inf
-			<model_entity> = { alias_name[trigger] = alias_match_left[trigger] }
-		}
+			
 	}
 }
