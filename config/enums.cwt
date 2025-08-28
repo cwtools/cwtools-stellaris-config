@@ -456,6 +456,7 @@ enums = {
 		small_debris_object
 	}
 	enum[exe_set_variable]= {
+		local_pop_amount
 		local_size_option
 		number_fleets_spawned
 		aianom_mineral_dep1
