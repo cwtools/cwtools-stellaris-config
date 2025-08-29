@@ -26,6 +26,13 @@ portrait = {
 		y = int
 	}
 	## cardinality = 0..1
+	custom_mid_close_up_position_offset  = {
+		x = int
+		y = int
+	}
+	## cardinality = 0..1
+	custom_mid_close_up_scale = float
+	## cardinality = 0..1
 	custom_close_up_scale = float
 	## cardinality = 0..1
 	greeting_sound = <sound_effect>
@@ -33,6 +40,27 @@ portrait = {
 	character_textures = {
 		## cardinality = 1..inf
 		filepath
+	}
+	## cardinality = 0..1
+	portrait_evolution = {
+		variants = {
+			## cardinality = 0..inf
+			{
+			value = {
+						## cardinality = 0..inf
+						{
+							decal = filepath
+							mask = filepath
+						}
+					}
+					#leader, pop or species scope (when called with species scope, from subscope can contain a country species related to)
+					## replace_scope = { this = leader this = pop this = species }
+					## cardinality = 0..1
+					trigger = {
+						alias_name[trigger] = alias_match_left[trigger]
+					}
+			}
+		}
 	}
 }
 
