@@ -758,7 +758,7 @@ alias[gui:windowType] = {
 	name = scalar
 
 	## cardinality = 0..1
-	moveable = int
+	moveable = bool
 	## cardinality = 0..1
 	dontRender = scalar
 	## cardinality = 0..1
