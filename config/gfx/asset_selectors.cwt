@@ -7,6 +7,7 @@
 #the difference between them appears to be determined by the key!
 
 types = {
+	## type_key_filter <> room_selector
 	type[asset_selector] = {
 		path = "game/gfx/portraits/asset_selectors"
 		severity = warning
@@ -24,6 +25,10 @@ types = {
 		subtype[entity] = {#i'm not sure how these work and why.
 			default = <model_entity>
 		}
+	}
+	type[room_textures] = {
+		path = "game/gfx/portraits/asset_selectors"
+		path_file = "room_textures.txt"
 	}
 }
 
@@ -190,6 +195,7 @@ asset_selector = {
 					filepath
 				}
 			}
+			
 			## cardinality = 0..inf
 			filepath = { alias_name[trigger] = alias_match_left[trigger] }
 			
@@ -307,43 +313,10 @@ asset_selector = {
 			}
 			## cardinality = 0..inf
 			filepath = { alias_name[trigger] = alias_match_left[trigger] }
-		
+			
 		}
 	}
-	subtype[room] = {
-		#room selectors use a special way to link to dds files stored under gfx/portraits/city_sets
-		##by pointingto a file that ends with _room.dds, always.
-		#this needs to be worked out by dayshine!
-
-		default = scalar #the room file link as explained in the above comment!
 		
-		## cardinality = 0..1
-		## replace_scope = { this = country root = country }
-		game_setup = {
-			## cardinality = 0..inf
-			scalar = { 
-				alias_name[trigger] = alias_match_left[trigger] 
-			}
-		}	
-		## cardinality = 0..1
-		## replace_scope = { this = leader root = leader }
-		ruler = {
-			## cardinality = 0..1
-			default = scalar #the room file link as explained in the above comment!
-			## cardinality = 0..inf
-			random = {
-				## cardinality = 0..1
-				trigger = { alias_name[trigger] = alias_match_left[trigger] }
-				list = {
-					## cardinality = 0..inf
-					filepath
-				}
-			}
-					
-			## cardinality = 0..inf
-			scalar = { alias_name[trigger] = alias_match_left[trigger] } #the scalar here is the same kind of file link as in the above!
-  		}
-	}
 	subtype[entity] = {
 		#see entity_selectors.txt
 
@@ -363,6 +336,33 @@ asset_selector = {
 					filepath
 				}
 			}
-			
+			## cardinality = 0..inf
+			<model_entity> = { alias_name[trigger] = alias_match_left[trigger] }
+		}
 	}
+}
+
+room_textures = {
+		#room selectors use a special way to link to dds files stored under gfx/portraits/city_sets
+		##by pointingto a file that ends with _room.dds, always.
+		#this needs to be worked out by dayshine!
+
+		default = scalar #the room file link as explained in the above comment!
+		
+		## cardinality = 0..1
+		## replace_scope = { this = country root = country }
+		game_setup = {
+			## cardinality = 0..inf
+			scalar = { 
+				alias_name[trigger] = alias_match_left[trigger] 
+			}
+		}	
+		## cardinality = 0..1
+		## replace_scope = { this = leader root = leader }
+		ruler = {
+			## cardinality = 0..inf
+			scalar = { 
+				alias_name[trigger] = alias_match_left[trigger] 
+			}
+		}	
 }
