@@ -393,6 +393,8 @@ alias[gui:iconType] = {
 	## cardinality = 0..1
 	alwaystransparent = bool
 	## cardinality = 0..1
+	alpha = float
+	## cardinality = 0..1
 	rotation = float
 	## cardinality = 0..1
 	scale = float
@@ -726,6 +728,8 @@ alias[gui:gridBoxType] = {
 		height = percentage_field
 	}
 	## cardinality = 0..1
+	is_dynamic = bool
+	## cardinality = 0..1
 	max_slots_horizontal = int
 	## cardinality = 0..1
 	max_slots_vertical = int
@@ -758,7 +762,7 @@ alias[gui:windowType] = {
 	name = scalar
 
 	## cardinality = 0..1
-	moveable = int
+	moveable = bool
 	## cardinality = 0..1
 	dontRender = scalar
 	## cardinality = 0..1
@@ -947,4 +951,6 @@ alias[gui_background:background] = {
 	alias_name[gui_standard_element] = alias_match_left[gui_standard_element]
 	## cardinality = 0..1
 	frame = int
+	## cardinality = 0..1
+	alpha = float
 }

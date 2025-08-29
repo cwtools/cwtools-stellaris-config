@@ -78,6 +78,12 @@ sprite = {
 	## cardinality = 0..1
 	alwaysTransparent = bool
 	## cardinality = 0..1
+	parent = <sprite>
+	## cardinality = 0..1
+	upper_left = { x = int y = int }
+	## cardinality = 0..1
+    lower_right = { x = int y = int }
+	## cardinality = 0..1
 	transParencecheck = bool
 	## cardinality = 0..1
 	borderSize = { x = float y = float }

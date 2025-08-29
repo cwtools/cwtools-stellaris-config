@@ -953,9 +953,9 @@ alias[trigger:graphical_culture] = <graphical_culture>
 alias[trigger:graphical_culture] = scope_group[target_country]
 
 ###Checks if the country has a specific graphical culture for its city image or the same graphical culture as the target.  If the target is a country, this trigger will compare its city graphical culture to the scoped country city graphical culture
-alias[trigger:city_graphical_culture ] = <graphical_culture>
+alias[trigger:city_graphical_culture] = <graphical_culture>
 ###Checks if the country has a specific graphical culture for its city image or the same graphical culture as the target.  If the target is a country, this trigger will compare its city graphical culture to the scoped country city graphical culture
-alias[trigger:city_graphical_culture ] = scope_group[target_country]
+alias[trigger:city_graphical_culture] = scope_group[target_country]
 
 ### Checks the average happiness on the planet
 alias[trigger:happiness_planet] == value_field[0.0..1.0]
