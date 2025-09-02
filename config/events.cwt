@@ -252,6 +252,7 @@ event = {
 			## cardinality = 0..1
 			show_sound = <sound_effect>
 		}
+		## cardinality = 0..inf
 		picture = <sprite>
 		## cardinality = 0..inf
 		picture = {
