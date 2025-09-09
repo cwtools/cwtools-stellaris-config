@@ -343,7 +343,7 @@ building = {
 
 	## cardinality = 0..1
 	upgrades = {
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		<building>
 	}
 
