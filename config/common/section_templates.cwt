@@ -74,7 +74,7 @@ section_template = {
 	}
 	## cardinality = 0..1
   	prerequisites = {
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		<technology>
 	}
   ## cardinality = 0..inf
