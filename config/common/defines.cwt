@@ -3773,6 +3773,7 @@ NAI = {
 	AI_DISTRICT_OPPORTUNITY_COST_FALLOFF  = float
 	## cardinality = 0..1
 	AI_DISTRICT_MAX_FREE_SLOTS_FOR_OPPORTUNITY_COST = int
+	## cardinality = 0..1
 	AI_DISTRICT_MIN_HYPOTHETICAL_WEIGHT = int
 	## cardinality = 0..1
 	AI_BUILDING_MAX_OPPORTUNITY_COST_FACTOR  = float
@@ -4842,6 +4843,7 @@ NAI = {
 		## cardinality = 3..3
 		int
 	}
+	## cardinality = 0..1
 	DEEPSPACE_CITADEL_INNER_RADIUS_PERCENTAGE = float
 }
 NAdditionalContent = {
