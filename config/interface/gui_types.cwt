@@ -455,6 +455,8 @@ alias[gui_button:buttonType] = {
 	## cardinality = 0..1
 	text_offset = { x = int y = int }
 	## cardinality = 0..1
+	multiline = bool
+	## cardinality = 0..1
 	hitbox_margin = {
 	  x = int
 	  y = int
