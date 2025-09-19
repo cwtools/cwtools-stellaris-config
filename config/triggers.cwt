@@ -2994,11 +2994,11 @@ alias[trigger:has_active_focus] = <focus_card_key>
 alias[trigger:has_completed_focus] = <focus_card_key>
 
 ###Checks the number the planet has of any, or a specific, zone
-alias[trigger:num_zones] = { 
+alias[trigger:num_zones] = {
+	## cardinality = 0..1
+	type = <zones>
 	## cardinality = 0..1
 	type = enum[zone_type]
-	## cardinality = 0..1
-	type = any
 	## cardinality = 0..1
 	value = int
 	## cardinality = 0..1

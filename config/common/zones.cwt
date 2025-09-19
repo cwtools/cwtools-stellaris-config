@@ -106,6 +106,8 @@ zones = {
 	## cardinality = 0..1
 	convert_to = {
 		## cardinality = 0..inf
+		<zones>
+		## cardinality = 0..inf
 		enum[zone_type]
 	}
 	
@@ -128,6 +130,8 @@ zones = {
 zone_slots = {
 
 	## cardinality = 0..1
+	start = <zones>
+	## cardinality = 0..1
 	start = enum[zone_type]
 	
 	## cardinality = 0..1
@@ -139,11 +143,15 @@ zone_slots = {
 	## cardinality = 0..1
 	include = {
 		## cardinality = 0..inf
+		<zones>
+		## cardinality = 0..inf
 		enum[zone_type]
 	}
 
 	## cardinality = 0..1
 	exclude = {
+		## cardinality = 0..inf
+		<zones>
 		## cardinality = 0..inf
 		enum[zone_type]
 	}
@@ -164,98 +172,7 @@ zone_slots = {
 enums = {
 	enum[zone_type] = {
 		all
-		zone_agrarian_anglers
-		zone_agrarian_urban
-		zone_anglers
-		zone_betharian
-		zone_broken_shackles_memorial
-		zone_central_spire
-		zone_cosmogenesis_default
-		zone_default
-		zone_energy
-		zone_energy_hive
-		zone_energy_nexus
-		zone_energy_physics
-		zone_energy_ring_world
-		zone_energy_wilderness
-		zone_exotic_gases
-		zone_factory
-		zone_food
-		zone_food_biology
-		zone_food_hive
-		zone_food_ring_world
-		zone_food_wilderness
-		zone_fortress
-		zone_fortress_hive
-		zone_fortress_wilderness
-		zone_foundry
-		zone_foundry_hive
-		zone_foundry_wilderness
-		zone_habitat_hydroponics
-		zone_habitat_knights
-		zone_habitat_research
-		zone_habitat_research_unity
-		zone_hive_spawning
-		zone_industrial
-		zone_machine_replication
-		zone_minerals
-		zone_minerals_engineering
-		zone_minerals_hive
-		zone_minerals_nexus
-		zone_minerals_wilderness
-		zone_payback_enlightenment
-		zone_rare_crystals
-		zone_research
-		zone_research_engineering
-		zone_research_engineering_arcology
-		zone_research_engineering_hive
-		zone_research_engineering_nexus
-		zone_research_engineering_ring_world
-		zone_research_physics
-		zone_research_physics_arcology
-		zone_research_physics_hive
-		zone_research_physics_nexus
-		zone_research_physics_ring_world
-		zone_research_society
-		zone_research_society_arcology
-		zone_research_society_hive
-		zone_research_society_nexus
-		zone_research_society_ring_world
-		zone_research_unity
-		zone_research_unity_wilderness
-		zone_research_wilderness
-		zone_resort
-		zone_resort_entertainment
-		zone_resort_grand_museum
-		zone_resort_hunting_ground
-		zone_resort_spiritual_retreat
-		zone_resort_zoo 
-		zone_rw_energy
-		zone_rw_food
-		zone_spawning
-		zone_spawning_hive
-		zone_subterranean_urban
-		zone_trade
-		zone_trade_wilderness
-		zone_unity
-		zone_unity_arcology
-		zone_unity_bio_trophy
-		zone_unity_bio_trophy_arcology
-		zone_unity_bio_trophy_nexus
-		zone_unity_bio_trophy_ring_world
-		zone_unity_nexus
-		zone_unity_ring_world
-		zone_unity_spiritualist
-		zone_unity_spiritualist_arcology
-		zone_unity_spiritualist_nexus
-		zone_unity_spiritualist_ring_world
-		zone_unity_wilderness
-		zone_urban
-		zone_urban_energy
-		zone_urban_food
-		zone_urban_minerals
-		zone_urban_wilderness
-		zone_volatile_motes
+		any
 	}
 	enum[zone_set] = {
 		arcology
