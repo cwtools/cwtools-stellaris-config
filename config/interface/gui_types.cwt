@@ -455,8 +455,6 @@ alias[gui_button:buttonType] = {
 	## cardinality = 0..1
 	text_offset = { x = int y = int }
 	## cardinality = 0..1
-	multiline = bool
-	## cardinality = 0..1
 	hitbox_margin = {
 	  x = int
 	  y = int
@@ -939,6 +937,7 @@ alias[gui_button_element:buttonText] = scalar #since many are not defined anyway
 alias[gui_button_element:buttonFont] = <bitmapfont>
 alias[gui_button_element:actionShortcut] = enum[actionshortcut]
 alias[gui_button_element:web_link] = scalar
+alias[gui_button_element:multiline] = bool
 
 alias[gui_navigation:navUp] = scalar
 alias[gui_navigation:navDown] = scalar
