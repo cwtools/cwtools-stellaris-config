@@ -81,6 +81,8 @@ zones = {
 	zone_sets = {
 		## cardinality = 0..inf
 		enum[zone_set]
+		## cardinality = 0..inf
+		enum[zone_set_additional]
 	}
 	
 	## cardinality = 0..1
@@ -138,6 +140,8 @@ zone_slots = {
 	included_zone_sets = {
 		## cardinality = 0..inf
 		enum[zone_set]
+		## cardinality = 0..inf
+		enum[zone_set_additional]
 	}
 
 	## cardinality = 0..1
@@ -174,24 +178,15 @@ enums = {
 		all
 		any
 	}
-	enum[zone_set] = {
-		arcology
-		cosmogenesis_default
-		default
-		energy
-		food
-		habitat_energy
-		habitat_minerals
-		habitat_research
-		habitat_urban
-		hive
-		minerals
-		nexus
-		resort
-		resort_attraction
-		ring_world
-		special
-		urban
+	complex_enum[zone_set] = {
+		path = "game/common/zones"
+		name = {
+			zone_sets = {
+				enum_name
+			}
+		}
+	}
+	enum[zone_set_additional] = {
 		zone_default
 	}
 }
