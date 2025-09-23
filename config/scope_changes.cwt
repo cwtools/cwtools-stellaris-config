@@ -4946,3 +4946,13 @@ alias[trigger:count_system_with_aura] = {
 	## push_scope = system
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
+
+###Checks the sum of the ship_size's size_multiplier of every ship present in the scoped system. Checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_ship_size_in_system] = {
+	count = all
+	count = int_value_field
+	count = value[variable]
+	## cardinality = 0..1
+	## push_scope = ship
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
