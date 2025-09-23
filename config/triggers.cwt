@@ -3105,7 +3105,6 @@ alias[trigger:planet_happiness_above_threshold] = {
 	value = value_field
 }
 
-
 ###Checks if valid colony governors in the scoped has a specific base experience level
 alias[trigger:governors_skill_in_system] == int_value_field
 
@@ -3199,13 +3198,4 @@ alias[trigger:pop_group_crime] == value_field
 alias[trigger:has_patron_counter] = enum[patrons_deeds_po]
 alias[trigger:has_patron_counter] = enum[patrons_callings_po]
 
-###Checks the sum of the ship_size's size_multiplier of every ship present in the scoped system. Checks whether the enclosed triggers return true for X/all of them
-alias[trigger:count_ship_size_in_system] = {
-	## cardinality = 0..1
-	count = int
-	## cardinality = 0..1
-	count = all
-	## cardinality = 0..1
-	count = value[variable]
-	limit = { alias_name[trigger] = alias_match_left[trigger] }
-}
+
