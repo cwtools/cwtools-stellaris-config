@@ -3031,3 +3031,181 @@ alias[trigger:inherits_parent_rights] = bool
 
 ###Checks the tier of the planet's capital building
 alias[trigger:capital_tier] == int_value_field
+
+###Checks the attunement level with the Shroud
+alias[trigger:attunement] == value_field
+
+###Checks if the current country in the the domain of the given patron
+alias[trigger:is_in_domain] = <patrons>
+
+###Checks if the uplifted version of the species has the specified archetype
+alias[trigger:uplift_is_archetype] = <species_archetype>
+
+###Checks if country has an active sensor link from another empire
+alias[trigger:has_sensor_link_from] = scope_group[target_country]
+
+###Checks if scoped country has an Emissary assigned to the Galactic Community
+alias[trigger:has_galactic_community_emissary] = bool
+
+###Checks if country has passed a Galactic Community resolution in last x days/months/years
+alias[trigger:has_passed_resolution] = { 
+	## cardinality = 0..1
+	days = int_value_field
+	## cardinality = 0..1
+	months = int_value_field
+	## cardinality = 0..1
+	years = int_value_field
+}
+
+###Checks the fleet integrity (shield + hull points) of a fleet.
+alias[trigger:fleet_integrity] == value_field
+
+###Checks if country owns the galactic market:
+alias[trigger:is_market_leader =bool
+
+###Checks scoped country's called in favors used to pass the last resolution
+alias[trigger:used_favors_on_last_resolution] == int_value_field
+
+###Checks if a war was started by a proxy war
+alias[trigger:is_from_proxy_war] = bool
+
+###Checks the number of started proxy wars by the scoped country
+alias[trigger:num_proxy_war] == int_value_field
+
+###Check if the scoped system is affected by any, or a specific type, Psionic Aura.
+alias[trigger:has_psionic_aura] = bool
+
+###Check if the scoped country has a psionic aura from given patron.
+alias[trigger:has_patron_aura] = <patrons>
+
+###Check if the scoped country has established a relation with given patron. The contact state can be specified (completed by default).
+alias[trigger:has_patron_relation] = {
+	## cardinality = 0..1
+	patron = <patrons>
+	## cardinality = 0..1
+	patron = any
+	## cardinality = 0..1
+	contact = completed 
+	## cardinality = 0..1
+	contact = in_progress
+	## cardinality = 0..1
+	contact = none
+	## cardinality = 0..1
+	contact = any
+}
+
+###Checks the Psionic Aura's intensity level inside the scoped system.
+alias[trigger:is_aura_intensity_level] = int
+
+###Checks if a planet's happiness is past a given threshold. Can be used in a scoped system, then it returns the sum of every planets' happiness past the given threshold.
+alias[trigger:planet_happiness_above_threshold] = { 
+	## cardinality = 0..1
+	threshold = value_field
+	## cardinality = 0..1
+	value = value_field
+}
+
+
+###Checks if valid colony governors in the scoped has a specific base experience level
+alias[trigger:governors_skill_in_system] == int_value_field
+
+###Checks the number of neighbor systems within a specific distance
+alias[trigger:num_neighbor_systems] = {
+	max_distance = int
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
+
+###Checks how much workforce that has jobs with all given tags in a system
+alias[trigger:total_system_workforce_with_job_tag] = { 
+	tags = { 	
+		## cardinality = 0..inf
+		<job_tags>
+	}
+	value = int
+}
+
+###Checks if the last building queued/dequeued/built/demolished/upgraded is a capital building. If there is no last building set, returns false.
+alias[trigger:is_last_building_changed_capital] = bool
+
+###Checks if the last picked tradition has the given tradition category. If there is no last picked tradition set, returns false.
+alias[trigger:category_last_picked_tradition] = <tradition_category>
+
+###Checks the amount of pops in the planet that have the exact species.
+alias[trigger:nb_pop_exact_species] = {
+	species = scope_group[target_species]
+	## cardinality = 0..1
+	value = int
+	## cardinality = 0..1
+	value = value[variable]
+}
+
+###Checks if the current country has a covenant with the given patron.
+alias[trigger:has_covenant] = <patrons>
+
+###Checks if the last completed special project by the scoped country has a research cost.
+alias[trigger:last_completed_special_project_has_research_cost] = bool
+
+###Checks if the country is currently researching any technology.
+alias[trigger:is_researching_any_technology] = bool
+
+###Checks if the last increased tech is repeatable
+alias[trigger:is_last_increased_tech_repeatable] = bool
+
+###Checks if the last increased tech is rare
+alias[trigger:is_last_increased_tech_rare] = bool
+
+###Checks if the last increased tech is of the specified category:
+alias[trigger:is_last_increased_tech_category] = enum[research_areas]
+
+###Checks the amount of attunement points earned for a specified patron.
+alias[trigger:get_attunement_points_for] = {
+	patron = <patrons>
+	## cardinality = 0..1
+	value = int
+	## cardinality = 0..1
+	value = value[variable]
+	## cardinality = 0..1
+	negative = bool
+}
+
+###Checks if the given patron is cardinal (if it has its own quadrant in the shroud wheel).
+alias[trigger:is_cardinal_patron] = <patrons>
+
+###Checks the amount of needed systems with the End Cycle psionic aura. Only works if one country is currently the crisis.
+alias[trigger:count_end_cycle_systems] == int_value_field
+
+###Checks the amount of systems covered by the country's aura
+alias[trigger:count_systems_with_aura]  == int_value_field
+
+###Checks the Psionic Aura's monthly intensity increase inside the scoped system.
+alias[trigger:monthly_intensity_increase] == value_field
+
+###Checks the number of active accords unlocked by the country
+alias[trigger:count_unlocked_active_accords}  == int_value_field
+
+###Checks scoped country AI's preferred patron.
+alias[trigger:is_preferred_patron] = <patrons>
+
+###Checks if specified patron is scoped country's most attuned patron.
+alias[trigger:has_most_attunement] = <patrons>
+
+###Checks if specified patron has unlocked every accord and every covenant power.
+alias[trigger:patron_has_all_accords_unlocked] = <patrons>
+
+###Checks the raw crime value of a pop group. When scope is a colony, checks the sum of every pop group's raw crime in the planet.
+alias[trigger:pop_group_crime] == value_field
+
+###Checks if the scoped country can increment towards given counter
+alias[trigger:has_patron_counter] = enum[patrons_deeds_po]
+alias[trigger:has_patron_counter] = enum[patrons_callings_po]
+
+###Checks the sum of the ship_size's size_multiplier of every ship present in the scoped system. Checks whether the enclosed triggers return true for X/all of them
+alias[trigger:count_ship_size_in_system] = {
+	## cardinality = 0..1
+	count = int
+	## cardinality = 0..1
+	count = all
+	## cardinality = 0..1
+	count = value[variable]
+	limit = { alias_name[trigger] = alias_match_left[trigger] }
+}
