@@ -1,0 +1,227 @@
+types = {
+	type[patrons] = {
+		path = "game/common/patrons"
+		path_strict = yes
+		localisation = {
+			## required
+			Name = "$"
+			## required
+			Description = "$_desc"
+		}
+	}
+	type[patrons_callings] = {
+		path = "game/common/patrons/callings"
+		path_strict = yes
+	}
+	type[patrons_deeds] = {
+		path = "game/common/patrons/deeds"
+		path_strict = yes
+	}
+	type[patrons_psionicauras] = {
+		path = "game/common/patrons/psionic_auras"
+		path_strict = yes
+	}
+}
+
+## push_scope = country
+patrons = {
+	# this is a scalar rather than an enum, because the category strings themselves are defined in 00_defines.txt
+	## cardinality = 0..1
+	category = enum[patrons_category] 
+	color = { 
+		## cardinality = 4..4
+		float
+	}
+	## cardinality = 0..1
+	text_color_code = scalar
+	## cardinality = 0..1
+	first_contact_event = <event>
+	## cardinality = 0..1
+	covenant_event = <event>
+	## cardinality = 0..1
+	covenant_confirmation_time = value_field
+	## cardinality = 0..1
+	add_modifier =bool
+	## cardinality = 0..1
+	pre_communications_name_format = scalar
+	## cardinality = 0..1
+	position = { x = int y = int }
+	## cardinality = 0..1
+	callings = {
+		## cardinality = 0..inf	
+		<patrons_callings>
+	
+	}
+	## cardinality = 0..1
+	deeds = {
+		## cardinality = 0..inf	
+		<patrons_deeds>
+	}
+	## cardinality = 0..1
+	covenant = {
+		## cardinality = 0..1
+		name = localisation
+		## cardinality = 0..1
+		icon = <sprite>
+		## cardinality = 0..1
+		desc = localisation
+		## cardinality = 0..inf
+		alias_name[triggered_modifier_country] = alias_match_left[triggered_modifier_country]
+	}
+	## cardinality = 0..inf
+	passive_accord = {
+		## cardinality = 0..1
+		name = localisation
+		## cardinality = 0..1
+		icon = <sprite>
+		## cardinality = 0..inf
+		alias_name[triggered_modifier_country] = alias_match_left[triggered_modifier_country]
+		## cardinality = 0..1
+		on_unlock = {
+			## cardinality = 0..1
+			custom_tooltip = localisation
+			## cardinality = 0..1
+			alias_name[effect] = alias_match_left[effect]
+		}
+		## cardinality = 0..1
+		on_revert = {
+			## cardinality = 0..1
+			custom_tooltip = localisation
+			## cardinality = 0..1
+			alias_name[effect] = alias_match_left[effect]
+		}
+	}
+	## cardinality = 0..inf
+	active_accord = {
+		## cardinality = 0..1
+		name = localisation
+		## cardinality = 0..1
+		icon = <sprite>
+		## cardinality = 0..1
+		sound = <sound_effect>
+		## cardinality = 0..1
+		cooldown = int
+		## cardinality = 0..1
+		first_cooldown = int
+		## cardinality = 0..1
+		activation_cost = {
+			cost = {
+				<resource> = int
+			}
+		}
+		## cardinality = 0..1
+		possible = {
+			## cardinality = 0..1
+			custom_tooltip = localisation
+			## cardinality = 0..1
+			custom_tooltip = {
+				text = localisation
+				## cardinality = 0..1
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+		}
+		## cardinality = 0..1
+		effect = {
+			## cardinality = 0..1
+			custom_tooltip = localisation
+			## cardinality = 0..1
+			alias_name[effect] = alias_match_left[effect]
+		}
+		## cardinality = 0..1
+		on_revert = {
+			## cardinality = 0..1
+			alias_name[effect] = alias_match_left[effect]
+		}
+		## cardinality = 0..1
+		ai_will_do = {
+			## cardinality = 0..1
+			factor = float
+			## cardinality = 0..1
+			alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		}
+	}
+}
+
+## push_scope = country
+patrons_callings = {
+	## cardinality = 0..1
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	first_tier = int
+
+	## cardinality = 0..inf
+	tier = {
+		attunement = value_field
+		## cardinality = 0..1
+		trigger = {
+			## cardinality = 0..1
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..1
+		counter = {
+			enum[patrons_callings_po] = {
+				max = int
+			}
+		}
+	}
+	## cardinality = 0..1
+	on_start = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+	## cardinality = 0..1
+	on_dismissed = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+}
+
+## push_scope = country
+patrons_deeds = {
+	## cardinality = 0..1
+	attunement = value_field
+	## cardinality = 0..1
+	has_desc = bool
+	
+	## cardinality = 0..1
+	counter = {
+		enum[patrons_deeds_po] = {
+			max = int
+		}
+	}
+	## cardinality = 0..1
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+}
+
+enums = {
+	enum[patrons_category] = {
+		minor_patron
+		major_patron
+		great_patron
+	}
+	complex_enum[patrons_deeds_po] = {
+		path = "game/common/patrons/deeds"
+		name = {
+			counter = {
+				enum_name = {
+					max = int
+				}
+			}
+		}
+	}
+	complex_enum[patrons_callings_po] = {
+		path = "game/common/patrons/callings"
+		name = {
+			tier = {
+				counter = {
+					enum_name = {
+						max = int
+					}
+				}
+			}
+		}
+	}
+}
+
