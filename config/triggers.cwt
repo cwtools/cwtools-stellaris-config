@@ -3180,7 +3180,7 @@ alias[trigger:count_systems_with_aura]  == int_value_field
 alias[trigger:monthly_intensity_increase] == value_field
 
 ###Checks the number of active accords unlocked by the country
-alias[trigger:count_unlocked_active_accords}  == int_value_field
+alias[trigger:count_unlocked_active_accords] == int_value_field
 
 ###Checks scoped country AI's preferred patron.
 alias[trigger:is_preferred_patron] = <patrons>
