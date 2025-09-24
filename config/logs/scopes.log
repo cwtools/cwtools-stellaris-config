@@ -1,4 +1,4 @@
-[14:49:48][game_application.cpp:2238]: 
+[18:42:34][game_application.cpp:1420]: 
 == SCOPE DOCUMENTATION ==
 These work as context switches (links) in triggers and effects (e.g. 'owner = { <triggers/effects> }'), or as targets of triggers and effects (e.g. 'is_owned_by = from'). Dot scoping (e.g. root.owner.capital_scope) is allowed.
 Complete list of scope changes:
@@ -323,6 +323,10 @@ space_owner - Scopes from an object to the owner of the space it is in. Works on
 Supported Scopes: megastructure planet country ship fleet galactic_object army ambient_object starbase archaeological_site spy_network debris
 Output Scope: country
 
+owner_or_space_owner - Scopes from an object to its owner if it exists, or to the owner of the space it is in otherwise. Works on all objects visible in star system view that can have an owner
+Supported Scopes: megastructure planet country ship fleet galactic_object army starbase archaeological_site spy_network debris
+Output Scope: country
+
 ruler - Scopes to the ruler of a country (or the ruler of the object's owner).
 Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army bypass pop_faction starbase deposit sector archaeological_site first_contact spy_network espionage_operation agreement situation debris astral_rift
 Output Scope: leader
@@ -346,6 +350,14 @@ Output Scope: cosmic_storm
 last_created_cosmic_storm_influence_field - Scopes to the last storm influence field that was created anywhere in the game.
 Supported Scopes: all
 Output Scope: cosmic_storm_influence_field
+
+instigator - If scoped war was generated from a proxy war, scopes to the country who started the proxy war.
+Supported Scopes: war
+Output Scope: country
+
+aura_owner - If scoped system contains a Psionic Aura, scopes to the country who generated the aura (can be different from the system owner).
+Supported Scopes: galactic_object
+Output Scope: country
 
 ship_growth_stage - Scopes to the ship's current growth stage inside the ship's design
 Supported Scopes: ship
