@@ -2524,6 +2524,8 @@ alias[effect:create_ship] = {
 	## cardinality = 0..1
 	prefix = bool
 	## cardinality = 0..1
+	suffix = bool
+	## cardinality = 0..1
 	graphical_culture = <graphical_culture>
 	## cardinality = 0..1
 	graphical_culture = scope_group[target_country]
@@ -4552,6 +4554,8 @@ alias[effect:finish_council_agenda] = bool
 ###Gives associated culling rewards from a space fauna design to the target country.
 alias[effect:give_culling_rewards] = {
 	design = scope[design]
+	## cardinality = 0..1
+	mult = int
 }
 
 ###Gives given space fauna DNA with given rarity to the target country.
@@ -5001,3 +5005,140 @@ alias[effect:set_country_code_flags] = {
 
 ###Clears the purge type for the entire planet
 alias[effect:clear_planet_purge_type] = bool
+
+###Destroys up to navel_cap worth of ships in the target fleet (with death graphics)
+alias[effect:destroy_fleet_naval_cap] = {
+	## cardinality = 0..1
+	target = scope[fleet]
+	naval_cap= int
+	## cardinality = 0..1
+	kill_leader=bool
+}
+
+###Deletes up to naval_cap worth of ships in the target fleet (no death graphics)
+alias[effect:delete_ship_naval_cap] = {
+	## cardinality = 0..1
+	target = scope[fleet]
+	naval_cap= int
+	## cardinality = 0..1
+	kill_leader=bool
+}
+
+###Manually refresh species rights.
+alias[effect:refresh_species_rights] = bool
+
+###Removes scoped leader from empire council
+alias[effect:remove_from_empire_council] = bool
+
+###Replace a patron with another one, creating the patron relation if it does not yet exist, and setting the new patron to the replaced patron's position in the shroud plane.
+alias[effect:replace_patron] = {
+	new_patron = <patrons>
+	replaced_patron = <patrons>
+}
+
+###Remove a patron from the shroud plane.
+alias[effect:remove_patron] = <patrons>
+
+###Adds attunement towards specified patron(s). This effect can be displayed if necessary, but you'll need to place it at the end of all displayed effects. The displayed text will depend on the contactstate with the patron(s).
+alias[effect:add_attunement] = {
+	## cardinality = 0..inf
+	<patrons> = value_field
+}
+
+###Sets attunement of the specified patron to a specific amount.
+alias[effect:set_attunement] = { 
+	value = value_field
+	patron = <patrons>
+}
+
+###Gives the player the reward for the specified deed, if the player has it in its patron deeds selection.
+alias[effect:complete_deed] = <patrons_deeds>
+
+###Accepts covenant proposition with Shroud Patron.
+alias[effect:accept_covenant] = <patrons>
+
+###Refuses covenant proposition with Shroud Patron.
+alias[effect:refuse_covenant] = <patrons>
+
+###Increments (or decrements with negative values) a patron objective counter for the scoped country by a specific amount. Can multiply the attunement given by the patron objective (if it's a deed).
+alias[effect:add_patron_objective_counter] = {
+	counter = enum[patrons_deeds_po]
+	counter = enum[patrons_callings_po]
+	amount = int
+	amount =  value[variable]
+	## cardinality = 0..1
+	multiplier = float
+	multiplier = value[variable]
+}
+
+###Creates a relation with Shroud patron
+alias[effect:create_patron_relation] = <patrons>
+
+###Enables a specific special research project for the target country at a specific location (should be the same as the current scope where possible). This special project will be the one used for the Patron First Contact. The relation contact state will be set to In Progress if needed.
+alias[effect:enable_patron_first_contact_project] = {
+	name = <special_project>
+	patron = <patrons>
+	owner = scope_group[target_country]
+	## cardinality = 0..1
+	location = scope_group[spatial_object]
+}
+
+###Spawns a Psionic Aura in scoped system, where country is the aura's owner.
+alias[effect:spawn_psionic_aura] = { 
+	owner = scope_group[target_country]
+	## cardinality = 0..1
+	type = <patrons_psionicauras>
+	## cardinality = 0..1
+	update_type = bool
+}
+
+###Sets given intensity to Psionic Aura in scoped system
+alias[effect:set_aura_intensity] = int
+
+###Adds value to Psionic Aura intensity in scoped system
+alias[effect:add_aura_intensity] = int
+
+###Forces an Empire's Psionic Aura to immediately update its type
+alias[effect:refresh_psionic_aura_type] = yes
+
+###Instantly finish current researches for scoped country.
+alias[effect:finish_all_researches] = yes
+
+###Make current researches for scoped country advance by given amount.
+alias[effect:progress_all_researches] = float
+
+###Launches the on_revert effects for all accords of a Shroud Patron.
+alias[effect:revert_accords] = <patrons>
+
+###Manually refresh Patrons accords
+alias[effect:refresh_accords] = yes
+
+###Instantly destroys part of a pop group (prefer to use instead of kill_pop_group when the country intentionally kills it)
+alias[effect:sacrifice_pop_group] = { 
+	pop_group = scope[pop_group]
+	## cardinality = 0..1
+	amount = int
+	## cardinality = 0..1
+	percentage = value_field[0.0..1.0]
+}
+
+###Instantly sacrifices part of the assigned pops to this job
+alias[effect:sacrifice_assigned_pop_amount] = {
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	amount = int
+	## cardinality = 0..1
+	percentage = value_field[0.0..1.0]
+}
+
+###Adds a percentage to the total time of the current terraforming process on the planet
+alias[effect:add_terraformation_total_time_mult] = float
+
+###Finishes the current terraforming process on the planet
+alias[effect:finish_terraformation] = yes
+
+###Opens the Shroud tab
+alias[effect:open_shroud_tab] = yes
+
