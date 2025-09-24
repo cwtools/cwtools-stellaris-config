@@ -5087,7 +5087,7 @@ alias[effect:enable_patron_first_contact_project] = {
 alias[effect:spawn_psionic_aura] = { 
 	owner = scope_group[target_country]
 	## cardinality = 0..1
-	type = <patrons_psionicauras>
+	type = <psionic_auras>
 	## cardinality = 0..1
 	update_type = bool
 }
