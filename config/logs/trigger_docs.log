@@ -1,4 +1,4 @@
-[14:49:48][game_application.cpp:2223]: 
+[18:42:34][game_application.cpp:1405]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -634,6 +634,10 @@ is_inside_storm - Checks if the system is inside any storm or a specific storm t
 is_inside_storm = yes/no/<storm_type>
 Supported Scopes: galactic_object
 
+is_leader_tier - Checks if the tier of the leader is what is provided.
+is_leader_tier = leader_tier_default
+Supported Scopes: leader
+
 is_on_border - Checks if the system is on a countries border
 is_on_border = yes
 Supported Scopes: galactic_object
@@ -658,6 +662,10 @@ cutholoids_scaling - Checks Cutholoids presence scaling in game setup
 cutholoids_scaling > 0
 Supported Scopes: all
 
+attunement - Checks the attunement level with the Shroud
+attunement > 0.5
+Supported Scopes: country
+
 has_picked_auto_mod_habitability - Checks if a pop has already picked an auto modded habitability trait.
 has_picked_auto_mod_habitability = <yes/no>
 Supported Scopes: pop_group
@@ -669,6 +677,10 @@ Supported Scopes: country
 is_growth_complete - Checks if the ship growth progress has maxed out.
 is_growth_complete = yes / no
 Supported Scopes: ship
+
+is_in_domain - Checks if the current country in the the domain of the given patron.
+is_in_domain = the_eater_of_worlds
+Supported Scopes: country
 
 hidden_trigger - Hides the tooltip for the triggers within
 hidden_trigger = { <triggers> }
@@ -917,7 +929,7 @@ Supported Scopes: country
 
 num_buildings - Checks the number the planet has of any, or a specific, building
 num_buildings = {  type = <key/any>  value > 2/variable  disabled = <any(default)/yes(only)/no(only)>  in_construction = <any/no(default)/yes(only)>  category = <any(default)/for example unity or resource> owner_type = <normal/corporate/subject_holding> }
-Supported Scopes: planet country
+Supported Scopes: planet country galactic_object
 
 num_districts - Checks the number the planet has of any, or a specific, district
 num_districts = { type = <key/any> value > 2/variable }
@@ -1056,6 +1068,10 @@ Supported Scopes: country
 
 is_archetype - Checks if species has specified archetype:
 is_archetype = PRESAPIENT
+Supported Scopes: species
+
+uplift_is_archetype - Checks if the uplifted version of the species has the specified archetype:
+uplift_is_archetype = LITHOID
 Supported Scopes: species
 
 is_inside_nebula - checks if the planet/ship/fleet/system is inside a nebula
@@ -1241,6 +1257,10 @@ Supported Scopes: country
 is_in_sensor_range_of_country - Checks if the scoped ship, fleet, planet or system can be seen by the specified country.
 is_in_sensor_range_of_country = root.owner
 Supported Scopes: planet ship fleet galactic_object
+
+has_sensor_link_from - Checks if country has an active sensor link from another empire
+has_sensor_link_from = <target>
+Supported Scopes: country
 
 has_star_flag - Checks if the solar system has a specific flag
 has_star_flag = <flag> (note: one can use e.g. my_flag@from to track relationships between objects)
@@ -2784,6 +2804,14 @@ is_galactic_community_member - Checks if scoped country is part of the Galactic 
 is_galactic_community_member = yes/no
 Supported Scopes: country
 
+has_galactic_community_emissary - Checks if scoped country has an Emissary assigned to the Galactic Community
+has_galactic_community_emissary = yes/no
+Supported Scopes: country
+
+has_passed_resolution - Checks if country has passed a Galactic Community resolution in last x days/months/years
+has_passed_resolution = { days/months/years = <int32> }
+Supported Scopes: country
+
 is_part_of_galactic_council - Checks if scoped country is part of the Galactic Council
 is_part_of_galactic_council = yes/no
 Supported Scopes: country
@@ -2922,7 +2950,7 @@ Supported Scopes: all
 
 num_assigned_jobs - Checks the number of pops the planet or country has that work a specific job.
 num_assigned_jobs = { job = <key> value > 201 }
-Supported Scopes: planet country
+Supported Scopes: planet country galactic_object
 
 has_active_first_contact_with - Checks if the scoped country has an active First Contact site with the target country
 has_active_first_contact_with = <country>
@@ -3290,7 +3318,11 @@ Supported Scopes: exhibit
 
 count_used_naval_cap - Checks used naval cap by the scoped country or fleet's controlled ships which fulfill the specified criteria.
 count_used_naval_cap = { limit = { <triggers> } count < 6 }
-Supported Scopes: country fleet
+Supported Scopes: country ship fleet
+
+fleet_integrity - Checks the fleet integrity (shield + hull points) of a fleet.
+fleet_integrity > 100
+Supported Scopes: fleet
 
 ship_size_cost_resource_percent - Retrieves the percentage of usage of a given resource in the ship size. If the ship size cost is 100 food and 300 minerals, the value when checking for food is 0.25
 ship_size_cost_resource_percent = <resource_key>
@@ -3315,6 +3347,56 @@ Supported Scopes: trait
 uses_ship_category - Checks if the graphical culture used by the scoped country allows for usage of a given ship category
 uses_ship_category = <category>
 Supported Scopes: country
+
+is_market_leader - Checks if country owns the galactic market:
+is_market_leader = yes/no
+Supported Scopes: country
+
+used_favors_on_last_resolution - Checks scoped country's called in favors used to pass the last resolution
+used_favors_on_last_resolution >=< <int32>
+Supported Scopes: country
+
+is_from_proxy_war - Checks if a war was started by a proxy war
+is_from_proxy_war = yes/no
+Supported Scopes: war
+
+num_proxy_war - Checks the number of started proxy wars by the scoped country
+num_proxy_war >=< <value>
+Supported Scopes: country
+
+has_psionic_aura - Check if the scoped system is affected by any, or a specific type, Psionic Aura.
+has_psionic_aura = <yes/no>
+Supported Scopes: galactic_object
+
+has_patron_aura - Check if the scoped country has a psionic aura from given patron.
+has_patron_aura = the_eater_of_worlds
+Supported Scopes: country
+
+has_patron_relation - Check if the scoped country has established a relation with given patron. The contact state can be specified (completed by default).
+has_patron_relation = {
+	patron = <patron_key / any>
+	contact (optional) = <completed (default)/in_progress/none/any>
+}
+Supported Scopes: country
+
+is_aura_intensity_level - Checks the Psionic Aura's intensity level inside the scoped system.
+is_aura_intensity_level = 2
+Supported Scopes: galactic_object
+
+planet_happiness_above_threshold - Checks if a planet's happiness is past a given threshold. Can be used in a scoped system, then it returns the sum of every planets' happiness past the given threshold.
+planet_happiness_above_threshold = { threshold = 0.5 value > 0
+Supported Scopes: planet galactic_object
+
+governors_skill_in_system - Checks if valid colony governors in the scoped has a specific base experience level
+governors_skill_in_system > 2
+Supported Scopes: galactic_object
+
+num_neighbor_systems - Checks the number of neighbor systems within a specific distance
+num_neighbor_systems = {
+	max_distance = 1
+	limit = <triggers>
+}
+Supported Scopes: all
 
 is_last_acquired_specimen_from_trade - Checks if the last acquired specimen was acquired through a trade deal
 is_last_acquired_specimen_from_trade = <yes/no>
@@ -3348,9 +3430,109 @@ total_workforce_with_job_tag - Checks how much workforce that has jobs with all 
 total_workforce_with_job_tag = { tags = { farmer trader } value = 1000 }
 Supported Scopes: planet
 
+total_system_workforce_with_job_tag - Checks how much workforce that has jobs with all given tags in a system
+total_system_workforce_with_job_tag = { tags = { farmer trader } value = 1000 }
+Supported Scopes: galactic_object
+
 total_country_workforce_with_job_tag - Checks how much workforce that has jobs with all given tags in a country
 total_country_workforce_with_job_tag = { tags = { farmer trader } value = 1000 }
 Supported Scopes: country
+
+is_last_building_changed_capital - Checks if the last building queued/dequeued/built/demolished/upgraded is a capital building. If there is no last building set, returns false.
+is_last_building_changed_capital = yes
+Supported Scopes: planet
+
+category_last_picked_tradition - Checks if the last picked tradition has the given tradition category. If there is no last picked tradition set, returns false.
+category_last_picked_tradition = tradition_example
+Supported Scopes: country
+
+nb_pop_exact_species - Checks the amount of pops in the planet that have the exact species.
+nb_pop_exact_species = {
+	species = <target>
+	value = 1/variable
+}
+Supported Scopes: planet
+
+has_covenant - Checks if the current country has a covenant with the given patron.
+has_covenant = the_eater_of_worlds
+Supported Scopes: country
+
+last_completed_special_project_has_research_cost - Checks if the last completed special project by the scoped country has a research cost.
+last_completed_special_project_has_research_cost = yes
+Supported Scopes: country
+
+is_researching_any_technology - Checks if the country is currently researching any technology.
+is_researching_any_technology = <yes/no>
+Supported Scopes: country
+
+is_last_increased_tech_repeatable - Checks if the last increased tech is repeatable
+is_last_increased_tech_repeatable = yes
+Supported Scopes: country
+
+is_last_increased_tech_rare - Checks if the last increased tech is rare
+is_last_increased_tech_rare = yes
+Supported Scopes: country
+
+is_last_increased_tech_category - Checks if the last increased tech is of the specified category:
+is_last_increased_tech_category = psionics
+Supported Scopes: country
+
+get_attunement_points_for - Checks the amount of attunement points earned for a specified patron.
+get_attunement_points_for = {
+	patron = <key>
+	value = <int/variable>
+	negative = <yes/no> (default = no, authorize negative attunement)
+}
+Supported Scopes: country
+
+is_cardinal_patron - Checks if the given patron is cardinal (if it has its own quadrant in the shroud wheel).
+is_cardinal_patron = whisperers_in_the_void
+Supported Scopes: country
+
+count_end_cycle_systems - Checks the amount of needed systems with the End Cycle psionic aura
+count_end_cycle_systems > 50
+Only works if one country is currently the crisis.
+Supported Scopes: all
+
+count_systems_with_aura - Checks the amount of systems covered by the country's aura
+count_systems_with_aura > 50
+Supported Scopes: country
+
+monthly_intensity_increase - Checks the Psionic Aura's monthly intensity increase inside the scoped system.
+monthly_intensity_increase >= 20.5
+Supported Scopes: galactic_object
+
+count_unlocked_active_accords - Checks the number of active accords unlocked by the country
+count_unlocked_active_accords > 2
+Supported Scopes: country
+
+is_preferred_patron - Check scoped country AI's preferred patron.
+is_preferred_patron = the_eater_of_worlds
+Supported Scopes: country
+
+has_most_attunement - Check if specified patron is scoped country's most attuned patron.
+has_most_attunement = the_eater_of_worlds
+Supported Scopes: country
+
+patron_has_all_accords_unlocked - Check if specified patron has unlocked every accord and every covenant power.
+patron_has_all_accords_unlocked = the_eater_of_worlds
+Supported Scopes: country
+
+pop_group_crime - Checks the raw crime value of a pop group. When scope is a colony, checks the sum of every pop group's raw crime in the planet.
+pop_group_crime >= 50
+Supported Scopes: planet pop_group
+
+has_patron_counter - Checks if the scoped country can increment towards given counter
+has_patron_counter = po_grow_pop
+Supported Scopes: country
+
+count_ship_size_in_system - Checks the sum of the ship_size's size_multiplier of every ship present in the scoped system.
+Checks whether the enclosed triggers return true for X/all of them
+count_ship_size_in_system = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: galactic_object
 
 any_agreement - Iterate through each agreement - checks whether the enclosed triggers return true for any of them
 any_agreement = { <triggers> }
@@ -4058,21 +4240,21 @@ Supported Scopes: country
 
 any_owned_pop_group - Iterate through all owned pop groups - checks whether the enclosed triggers return true for any of them
 any_owned_pop_group = { <triggers> }
-Supported Scopes: planet country pop_faction sector
+Supported Scopes: planet country galactic_object pop_faction sector
 
 count_owned_pop_group - Iterate through all owned pop groups - checks whether the enclosed triggers return true for X/all of them
 count_owned_pop_group = {
 	count = <num/all/variable>
 	limit = { <triggers> }
 }
-Supported Scopes: planet country pop_faction sector
+Supported Scopes: planet country galactic_object pop_faction sector
 
 count_owned_pop_amount - Sums all pop amounts - checks whether the enclosed triggers return true for X/all of them
 count_owned_pop_amount = {
 	count = <num/all/variable>
 	limit = { <triggers> }
 }
-Supported Scopes: planet country pop_faction sector
+Supported Scopes: planet country galactic_object pop_faction sector
 
 any_species_pop_group - Iterate through each pop group that belongs to this species; warning: resource-intensive! - checks whether the enclosed triggers return true for any of them
 any_species_pop_group = { <triggers> }
@@ -4085,23 +4267,34 @@ count_species_pop_group = {
 }
 Supported Scopes: species
 
+any_job_pop_group - Iterate through each pop group that contains this job - checks whether the enclosed triggers return true for any of them
+any_job_pop_group = { <triggers> }
+Supported Scopes: pop_job
+
+count_job_pop_group - Iterate through each pop group that contains this job - checks whether the enclosed triggers return true for X/all of them
+count_job_pop_group = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: pop_job
+
 any_owned_pop_job - Iterate through all owned pop jobs - checks whether the enclosed triggers return true for any of them
 any_owned_pop_job = { <triggers> }
-Supported Scopes: planet country sector
+Supported Scopes: planet country galactic_object sector
 
 count_owned_pop_job - Iterate through all owned pop jobs - checks whether the enclosed triggers return true for X/all of them
 count_owned_pop_job = {
 	count = <num/all/variable>
 	limit = { <triggers> }
 }
-Supported Scopes: planet country sector
+Supported Scopes: planet country galactic_object sector
 
 count_owned_workforce - Sums all workforce - checks whether the enclosed triggers return true for X/all of them
 count_owned_workforce = {
 	count = <num/all/variable>
 	limit = { <triggers> }
 }
-Supported Scopes: planet country sector
+Supported Scopes: planet country galactic_object sector
 
 any_galaxy_sector - Iterate through all sectors in the game - checks whether the enclosed triggers return true for any of them
 any_galaxy_sector = { <triggers> }
@@ -4157,6 +4350,17 @@ count_ship_in_system = {
 	limit = { <triggers> }
 }
 Supported Scopes: galactic_object
+
+any_system_with_aura - Iterate through every system with an Aura - checks whether the enclosed triggers return true for any of them
+any_system_with_aura = { <triggers> }
+Supported Scopes: country
+
+count_system_with_aura - Iterate through every system with an Aura - checks whether the enclosed triggers return true for X/all of them
+count_system_with_aura = {
+	count = <num/all/variable>
+	limit = { <triggers> }
+}
+Supported Scopes: country
 
 any_situation - Iterate through each situation a country is experiencing - checks whether the enclosed triggers return true for any of them
 any_situation = { <triggers> }
@@ -4394,7 +4598,7 @@ count_war = {
 Supported Scopes: country
 
 =================
-[14:49:48][game_application.cpp:2226]: 
+[18:42:34][game_application.cpp:1408]: 
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -4711,7 +4915,8 @@ create_ship = {
 	design = <ship design key/target/last_created_design, or use random_existing_design>
 	random_existing_design = <ship size key>
 	graphical_culture = <graphical culture key> graphical_culture_fallback = <graphical culture key>
-	prefix = <Y/N, determines if ship name should use owner country prefix>
+	prefix = <Y(default)/N, determines if ship name should use owner country prefix>
+	suffix = <Y/N(default), determines if ship name should use numericals. If so, name will be added to the owner country's namelist>
 	colonizer_species = <species, default: fleet owner founder species> age = <int> (optional)
 	rarity = <common/rare/epic/exceptional, used only if ship is space fauna> (optional, fallbacks to highest owned genetic material if applicable but not set)
 	growth_stage = <integer value between 1 and the amount of growth stages in the design> (optional, use the first growth stage by default)
@@ -5127,6 +5332,22 @@ Supported Scopes: all
 destroy_and_spawn_debris_for - Sets the current ship or fleet to be destroyed and spawn a debris project for the specified country.
 destroy_and_spawn_debris_for = from
 Supported Scopes: ship fleet
+
+destroy_fleet_naval_cap - Destroys up to navel_cap worth of ships in the target fleet (with death graphics)
+destroy_fleet_naval_cap = {
+	target=<target>
+	naval_cap=<max naval cap> #default 1
+	kill_leader=<yes/no> #default yes
+}
+Supported Scopes: all
+
+delete_fleet_naval_cap - Deletes up to naval_cap worth of ships in the target fleet (no death graphics)
+delete_ship_naval_cap = {
+	target=<target>
+	naval_cap=<max naval cap> #default 1
+	kill_leader=<yes/no> #default yes
+}
+Supported Scopes: all
 
 create_ambient_object - Creates a new ambient object
 create_ambient_object = { type = <key> location = <target> }
@@ -6422,6 +6643,10 @@ advanced_authority_refresh - Used after an advanced authority swap to make sure 
 advanced_authority_refresh = yes
 Supported Scopes: country
 
+refresh_species_rights - Manually refresh species rights.
+refresh_species_rights = yes
+Supported Scopes: country
+
 custom_tooltip_with_params - Displays a specific localization string with parameters in tooltip
 custom_tooltip_with_params = {
 	description = <loc key>
@@ -6454,6 +6679,10 @@ Supported Scopes: country
 remove_from_galactic_council - Tries to remove the scoped country from the Galactic Council
 remove_from_galactic_council = yes/no
 Supported Scopes: country
+
+remove_from_empire_council - Removes scoped leader from empire council
+remove_from_empire_council = yes
+Supported Scopes: leader
 
 steal_relic - Steal all/a random/a specific relic from a target country
 steal_relic = { target = <Target Country> relic = <relic_name/all/random>
@@ -7022,7 +7251,10 @@ stop_mission - Stops the mission with the given status, triggering the relevant 
 Supported Scopes: planet country ship pop pop_group
 
 give_culling_rewards - Gives associated culling rewards from a space fauna design to the target country.
-give_culling_rewards = { design = <key> }
+give_culling_rewards = {
+	design = <key>
+	mult = <value> (optional, default: 1)
+}
 Supported Scopes: country
 
 give_dna - Gives given space fauna DNA with given rarity to the target country.
@@ -7065,6 +7297,29 @@ Supported Scopes: cosmic_storm
 set_ship_construction_type - Set scoped starbase's current construction type
 set_ship_construction_type = <starbase_type/none>
 Supported Scopes: starbase
+
+replace_patron - Replace a patron with another one, creating the patron relation if it does not yet exist, and setting the new patron to the replaced patron's position in the shroud plane.
+replace_patron = { new_patron = <patron_key> replaced_patron = <patron_key> }
+Supported Scopes: country
+
+remove_patron - Remove a patron from the shroud plane.
+remove_patron = <patron_key>
+Supported Scopes: country
+
+add_attunement - Adds attunement towards specified patron(s).
+This effect can be displayed if necessary, but you'll need to place it at the end of all displayed effects.
+The displayed text will depend on the contactstate with the patron(s).
+add_attunement = {
+	<patron 1> = <value 1>
+	<patron 2> = <value 2>
+	<...>
+	}
+}
+Supported Scopes: country
+
+set_attunement - Sets attunement of the specified patron to a specific amount.
+set_attunement = { value = <value> patron = <patron> }
+Supported Scopes: country
 
 link_to - Link the scoped megastructure bypass to the given target megastructure bypass.
 link_to = from
@@ -7110,12 +7365,43 @@ repair_shield_amount - Restores a certain amount of shield points to the scoped 
 repair_shield_amount = 10.0
 Supported Scopes: ship fleet
 
+complete_deed - Gives the player the reward for the specified deed, if the player has it in its patron deeds selection.
+complete_deed = <deed>
+Supported Scopes: country
+
+accept_covenant - Accepts covenant proposition with Shroud Patron.
+accept_covenant = <patron_name>
+Supported Scopes: country
+
+refuse_covenant - Refuses covenant proposition with Shroud Patron.
+refuse_covenant = <patron_name>
+Supported Scopes: country
+
 set_faction_needs_colony - Sets if a country needs a colony (or a colony ship) to be considered alive
 set_faction_needs_colony = yes
 Supported Scopes: country
 
 set_faction_auto_delete - Sets if country will be automatically deleted when considered dead
 set_faction_auto_delete = yes
+Supported Scopes: country
+
+add_patron_objective_counter - Increments (or decrements with negative values) a patron objective counter for the scoped country by a specific amount. Can multiply the attunement given by the patron objective (if it's a deed).
+add_patron_objective_counter = {
+	counter = <key>
+	amount = <int>/<variable>
+	multiplier = <float>/<variable> (optional) (cannot be negative)
+}
+Supported Scopes: country
+
+create_patron_relation - Creates a relation with Shroud patron
+create_patron_relation = <patron_name>
+Supported Scopes: country
+
+enable_patron_first_contact_project - Enables a specific special research project for the target country at a specific location (should be the same as the current scope where possible). This special project will be the one used for the Patron First Contact. The relation contact state will be set to In Progress if needed.
+enable_patron_first_contact_project = {
+	name = <project key>
+	patron = <patron key>
+	owner = <target, default = root> location = <target, ideally THIS (that is default)> }
 Supported Scopes: country
 
 copy_traditions_from - Copies the traditions of the target country into the scoped country. Traditions are added to the existing traditions, and the potential/possible triggers are respected.the traditions listed in the exceptions list are not copied.
@@ -7210,6 +7496,65 @@ remove_zone - Removes a zone from the district of the planet
 		all = <yes/no>
 	}
 Supported Scopes: planet
+
+spawn_psionic_aura - Spawns a Psionic Aura in scoped system, where country is the aura's owner.
+spawn_psionic_aura = { 
+	owner = <country>
+	type = aura
+	update_type = bool
+}
+Supported Scopes: galactic_object
+
+set_aura_intensity - Sets given intensity to Psionic Aura in scoped system
+set_aura_intensity = <int>
+Supported Scopes: galactic_object
+
+add_aura_intensity - Adds value to Psionic Aura intensity in scoped system
+add_aura_intensity = <int>
+Supported Scopes: galactic_object
+
+refresh_psionic_aura_type - Forces an Empire's Psionic Aura to immediately update its type
+refresh_psionic_aura_type = yes
+Supported Scopes: country
+
+finish_all_researches - Instantly finish current researches for scoped country.
+finish_all_researches = yes
+Supported Scopes: country
+
+progress_all_researches - Make current researches for scoped country advance by given amount.
+progress_all_researches = 0.2
+Supported Scopes: country
+
+revert_accords - Launches the on_revert effects for all accords of a Shroud Patron.
+revert_accords = <patron_key>
+Supported Scopes: country
+
+refresh_accords - Manually refresh Patrons accords
+refresh_accords = yes
+Supported Scopes: country
+
+sacrifice_pop_group - Instantly destroys part of a pop group (prefer to use instead of kill_pop_group when the country intentionally kills it)
+sacrifice_pop_group = { pop_group = <target pop group> amount = <amount killed> OR percentage = <percentage killed> }
+Supported Scopes: all
+
+sacrifice_assigned_pop_amount - Instantly sacrifices part of the assigned pops to this job
+sacrifice_assigned_pop_amount = {
+	limit = { <triggers> }
+	amount = <amount sacrificed> OR percentage = <percentage sacrificed>
+}
+Supported Scopes: pop_job
+
+add_terraformation_total_time_mult - Adds a percentage to the total time of the current terraforming process on the planet
+add_terraformation_total_time_mult = <value>
+Supported Scopes: planet
+
+finish_terraformation - Finishes the current terraforming process on the planet
+finish_terraformation = yes
+Supported Scopes: planet
+
+open_shroud_tab - Opens the Shroud tab
+open_shroud_tab = yes
+Supported Scopes: country
 
 kill_assigned_pop_amount - Instantly destroys part of the assigned pops to this job
 kill_assigned_pop_amount = {
