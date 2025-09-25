@@ -651,6 +651,8 @@ alias[triggered_modifier_country:triggered_modifier] = {
 	multiplier = value_field
 	## cardinality = 0..1
 	custom_tooltip = localisation
+	## cardinality = 0..1
+	show_only_custom_tooltip = bool
 }
 
 alias[triggered_modifier_situation:triggered_modifier] = {
