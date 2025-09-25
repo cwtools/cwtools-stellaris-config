@@ -6,7 +6,7 @@ types = {
 	type[scripted_trigger] = {
 		path = "game/common/scripted_triggers"
 	}
-	## type_key_filter <> { ethic_leader_creator spawn_formless_defense_fleet split_astral_scar store_galactic_community_leader_backup_data add_random_trait_by_tag create_voidworm_fleet spawn_cutholoid_from_asteroid  create_normal_pirate_country cyberize_pops_effect cyberize_creed_pops_effect }
+	## type_key_filter <> { ethic_leader_creator spawn_formless_defense_fleet split_astral_scar store_galactic_community_leader_backup_data add_random_trait_by_tag create_voidworm_fleet spawn_cutholoid_from_asteroid  create_normal_pirate_country cyberize_pops_effect cyberize_creed_pops_effect update_eotc_accords add_psionic_trait refresh_endbringers_paranoia_modifier refresh_endbringers_madness_modifier spawn_mindwarden_megastructures  breach_shroud create_megastructure_system add_latent_psionic_trait  turn_main_species_to_psionic update_every_leader_from_psionic_countries reckoning_consume_world update_reckoning_event_chains update_reckoning_event_chain clear_covenant_flags roll_boon roll_boon_high  roll_boon_medium roll_boon_low remove_bestowed_flags break_cycle_of_fortune break_cycle_of_omens clear_cycle_rolled_flags launch_cycle_of_fortune launch_cycle_of_omens launch_cycle_of_growth launch_cycle_of_prosperity }
 	type[scripted_effect] = {
 		path = "game/common/scripted_effects"
 	}
@@ -156,3 +156,96 @@ alias[trigger:is_leader_in_storm] = bool
 
 ### Force scripted trigger to work in common and event files
 alias[trigger:can_artifact_analysis_give_$SPECIMEN$] = bool
+
+
+# The entire shroud_shadows_scripted_effects is considered invalid due to the stupid code - I had to hard code the whole file  !!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:update_eotc_accords] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:create_megastructure_system] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:spawn_mindwarden_megastructures] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:breach_shroud] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:add_latent_psionic_trait] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:turn_main_species_to_psionic] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:add_psionic_trait] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:update_every_leader_from_psionic_countries] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:reckoning_consume_world] = {
+	OWNER = scope{country}
+}
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:update_reckoning_event_chains] = {
+	RECKONING = scope[any]
+}
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:update_reckoning_event_chain] = {
+	EVENT_CHAIN = scalar
+	RECKONING = scalar
+}
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:clear_covenant_flags] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:clear_cycle_rolled_flags] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:roll_boon] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:roll_boon_high] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:roll_boon_medium] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:roll_boon_low] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:remove_bestowed_flags] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:break_cycles] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:break_cycle_of_fortune] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:break_cycle_of_omens] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:launch_cycle_of_fortune] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:launch_cycle_of_omens] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:launch_cycle_of_growth] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:launch_cycle_of_prosperity] = bool
+
+		
+		
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:refresh_endbringers_paranoia_modifier] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:refresh_endbringers_madness_modifier] = bool
