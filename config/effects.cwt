@@ -4887,9 +4887,6 @@ alias[effect:pop_group_event] = {
 	}
 }
 
-###Adds a percentage to the total time of the current terraforminog process on the planet
-alias[effect:add_terraformation_total_time_mult] = float
-
 ###Adds a new timeline event for the scope country.
 alias[effect:add_timeline_event] = {
   type = <timeline_events_type>
@@ -5142,3 +5139,58 @@ alias[effect:finish_terraformation] = yes
 ###Opens the Shroud tab
 alias[effect:open_shroud_tab] = yes
 
+###Sets which ship terrified the target ship/fleet (all ships). Clears at the end of combat.
+alias[effect:set_terrified_by] = scope[ship]
+alias[effect:set_terrified_by] = scope[fleet]
+
+###Removes terrified state on the target ship/fleet (all ships).
+alias[effect:remove_terrified] = yes
+
+###Set the Shroud Patron scoped AI will devote themselves to.
+alias[effect:set_ai_preferred_patron] = <patrons>
+
+###Rolls the major Shroud Patron scoped AI will devote themselves to, by selecting the patron with the highest attunement value.
+alias[effect:roll_ai_preferred_patron] = yes
+
+###Sets the contact state with a Shroud Patron (will create the relation if needed).
+alias[effect:set_patron_first_contact_state] = {
+	patron = <patrons>
+	## cardinality = 0..1
+	state = none
+	## cardinality = 0..1
+	state = in_progress
+	## cardinality = 0..1
+	state = completed
+}
+
+###Adds given edict to scoped country's government
+alias[effect:add_edict] = <edict>
+
+###Moves scoped system to a position relative to the given system/planet/ship.
+alias[effect:move_system] = { 
+	## cardinality = 0..1
+	target = scope[system]
+	## cardinality = 0..1
+	target = scope[planet]
+	## cardinality = 0..1
+	target = scope[ship]
+	## cardinality = 0..1
+	min_jumps = int
+	## cardinality = 0..1
+	max_jumps = int
+	## cardinality = 0..1
+	min_distance = int[0..100]
+	## cardinality = 0..1
+	max_distance =  int[0..100]
+	## cardinality = 0..1
+	direction = corewards
+	## cardinality = 0..1
+	direction = rimwards
+	## cardinality = 0..1
+	hyperlane=	bool
+	## cardinality = 0..1
+	reset_terra_incognita = bool
+}
+
+###Sets the leader's tier.
+alias[effect:set_leader_tier] = <leader_tiers>
