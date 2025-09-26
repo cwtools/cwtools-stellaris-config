@@ -4547,6 +4547,7 @@ alias[effect:give_specimen] = {
 
 ###Removes specified specimen from the target country. This will destroy the specimen
 alias[effect:remove_specimen] = <specimen>
+alias[effect:remove_specimen] = scope[exhibit]
 
 ###Tries to finish the current council agenda for the scoped country
 alias[effect:finish_council_agenda] = bool
