@@ -5065,6 +5065,7 @@ alias[effect:add_patron_objective_counter] = {
 	amount =  value[variable]
 	## cardinality = 0..1
 	multiplier = float
+	## cardinality = 0..1
 	multiplier = value[variable]
 }
 
