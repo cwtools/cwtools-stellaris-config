@@ -241,11 +241,57 @@ alias[effect:launch_cycle_of_growth] = bool
 
 ### Force scripted trigger or effect to work in common and event files	
 alias[effect:launch_cycle_of_prosperity] = bool
-
-		
 		
 ### Force scripted trigger or effect to work in common and event files	
 alias[effect:refresh_endbringers_paranoia_modifier] = bool
 
 ### Force scripted trigger or effect to work in common and event files	
 alias[effect:refresh_endbringers_madness_modifier] = bool
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:accept_end_of_the_cycle] = yes
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:clear_selected_shroud_song] = yes
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:close_mindwarden_diplomacy] = yes
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:create_mindwarden_commander] = yes
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:create_mindwarden_defense_fleet] = yes
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:create_mindwarden_enclave] = yes
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:create_mindwarden_fleet_leader] = yes
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:create_mindwarden_raid_fleet] = yes
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:custom_bestowed_tooltip] = yes
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:force_remove_chosen_civic] = yes
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:gain_supersitious_beliefs_cloaking_tech] = yes
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:give_eotc_psionic_component_tech_insight] = yes
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:launch_cycle_of_conflict] = yes
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:launch_cycle_of_harmony] = yes
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:launch_cycle_of_knowledge] = yes
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:patron_revenge] = yes
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:roll_secret_factions] = yes
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:roll_superstitious_event_high] = yes
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:roll_superstitious_event_low] = yes
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:roll_superstitious_event_medium] = yes
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:select_shroud_song] = yes
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:set_psionic_choir_policy] = yes
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:shroud_forge_your_own_path] = yes
+
