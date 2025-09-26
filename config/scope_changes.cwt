@@ -4554,6 +4554,7 @@ alias[trigger:count_exhibit] = {
 	count = int_value_field
 	count = value[variable]
 	count = all
+	##cardinality = 0..1
 	## push_scope = exhibit
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
