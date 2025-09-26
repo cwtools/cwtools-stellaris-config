@@ -1023,6 +1023,7 @@ alias[effect:every_owned_planet] = {
 ## push_scope = planet
 ###Executes enclosed effects on every planet - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
 alias[effect:ordered_owned_planet] = {
+	##cardinality = 0..1
 	position = int[0..inf]
 	##cardinality = 0..1
 	order_by = value_field
