@@ -5076,6 +5076,8 @@ alias[effect:add_patron_objective_counter] = {
 	multiplier = float
 	## cardinality = 0..1
 	multiplier = value[variable]
+	## cardinality = 0..1
+	multiplier = value_field
 }
 
 ###Creates a relation with Shroud patron
