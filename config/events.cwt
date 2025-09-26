@@ -585,6 +585,20 @@ event = {
 		}
 		## cardinality = 0..1
 		specimen = <specimen>
+		## cardinality = 0..1
+		weight_multiplier = {
+			## cardinality = 0..1
+			factor = int
+			## cardinality = 0..1
+			modifier = {
+				## cardinality = 0..1
+				add = value_field
+				## cardinality = 0..1
+				factor = float
+				## cardinality = 0..1
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+		}
 	}
 
 	subtype[diplomatic] = {
