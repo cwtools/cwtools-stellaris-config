@@ -880,6 +880,8 @@ alias[effect:add_monthly_resource_mult] = {
 	max = value_field
 	## cardinality = 0..1
 	mult = value[variable]
+	## cardinality = 0..1
+	mult = value_field
 }
 
 ###Adds a specific trait to the scoped leader or a random common/negative trait
