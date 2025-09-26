@@ -3199,4 +3199,4 @@ alias[trigger:has_patron_counter] = enum[patrons_deeds_po]
 alias[trigger:has_patron_counter] = enum[patrons_callings_po]
 
 ###Checks if the tier of the leader is what is provided.
-alias[trigger:is_leader_tier] = <leader_tier>
+alias[trigger:is_leader_tier] = <leader_tiers>
