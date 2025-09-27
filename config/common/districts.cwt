@@ -123,6 +123,10 @@ district = {
 	on_built = {
 		alias_name[effect] = alias_match_left[effect]
 	}
+	## cardinality = 0..1
+	on_destroy = {
+		alias_name[effect] = alias_match_left[effect]
+	}
 
 	## cardinality = 0..1
 	prerequisites = {

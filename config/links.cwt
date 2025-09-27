@@ -3,6 +3,10 @@ links = {
 		input_scopes = { megastructure planet country ship fleet galactic_object army ambient_object starbase archaeological_site spy_network debris }
 		output_scope = Country
 	}
+	owner_or_space_owner = {
+		input_scopes = { megastructure planet country ship fleet galactic_object army starbase archaeological_site spy_network debris }
+		output_scope = Country
+	}
 	overlord = {
 		input_scopes = { Country }
 		output_scope = Country
@@ -13,6 +17,14 @@ links = {
 	}
 	attacker = {
 		input_scopes = { War }
+		output_scope = Country
+	}
+	instigator = {
+		input_scopes = { War }
+		output_scope = Country
+	}
+	aura_owner = {
+		input_scopes = { galactic_object }
 		output_scope = Country
 	}
 	owner = {
