@@ -378,3 +378,7 @@ alias[effect:animator_of_clay_create_vessels] = yes
 alias[effect:materiality_engine_on_built_effect] = yes
 ### Force scripted trigger or effect to work in common and event files
 alias[effect:pay_proxy_war_additional_resources] = { VALUE = int }
+### Force scripted trigger or effect to work in common and event files
+alias[effect:try_remove_penal_experimental_mod] = yes
+### Force scripted trigger or effect to work in common and event files
+alias[effect:add_deposit_with_message] = { DEPOSIT = <deposit> }
