@@ -40,44 +40,15 @@ enums = {
 		corporate
 		subject_holding
 	}
-	enum[building_sets] = {
-		automation
-		betharian
-		bio_trophy
-		cosmogenesis_world
-		engineering
-		entertainment
-		factory
-		fallen_empire
-		fallen_empire_farming
-		fallen_empire_generator
-		fallen_empire_mining
-		farming
-		farming_automation
-		fortress
-		foundry
-		generator
-		generator_automation
-		government
-		hunting_zone
-		hydroponics
-		industrial
-		knights
-		medical
-		mining
-		mining_automation
-		origin
-		physics
-		pre_ftl
-		research
-		resort
-		society
-		trade
-		unity
-		urban
-		urban_automation
-		zoo
+	complex_enum[building_sets] = {
+		path = "game/common/buildings"
+			name = {
+				building_sets = {
+					enum_name
+			}
+		}
 	}
+	
 	enum[building_upgrade_flags] = {
 		affluence_emporium_can_build
 		nourishment_complex_can_build
@@ -387,6 +358,12 @@ building = {
 	## cardinality = 0..1
 	## replace_scope = { this = army root = army }
 	army_modifier = {
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+	
+	## cardinality = 0..1
+	## replace_scope = { this = system root = system }
+	system_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 
