@@ -93,4 +93,7 @@ edict = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 	
+	## cardinality = 0..inf
+	alias_name[triggered_country_modifier_country] = alias_match_left[triggered_country_modifier_country]
+	
 }
