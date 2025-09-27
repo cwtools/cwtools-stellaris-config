@@ -3365,7 +3365,7 @@ num_proxy_war >=< <value>
 Supported Scopes: country
 
 has_psionic_aura - Check if the scoped system is affected by any, or a specific type, Psionic Aura.
-has_psionic_aura = <yes/no>
+has_psionic_aura = <yes/no> or aura type
 Supported Scopes: galactic_object
 
 has_patron_aura - Check if the scoped country has a psionic aura from given patron.
