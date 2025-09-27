@@ -28,6 +28,7 @@ enums = {
 		fleet
 		technology
 		economy
+		proxy_war
 	}
 	enum[relative_power_values] = {
 		pathetic
