@@ -376,3 +376,5 @@ alias[effect:drone_conversion_event_effect_2] = {
 alias[effect:animator_of_clay_create_vessels] = yes
 ### Force scripted trigger or effect to work in common and event files
 alias[effect:materiality_engine_on_built_effect] = yes
+### Force scripted trigger or effect to work in common and event files
+alias[effect:pay_proxy_war_additional_resources] = { VALUE = int }
