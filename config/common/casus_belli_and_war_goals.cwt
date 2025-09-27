@@ -46,6 +46,22 @@ casus_belli = {
 	is_valid = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	
+	## cardinality = 0..1
+	## replace_scope = { this = country root = country from = country }
+	proxy_war_resources = {
+		category = enum[relative_power_categories]
+		cost = {
+			<resource> = int
+		}
+	}
+	
+	## cardinality = 0..1
+	## replace_scope = { this = country root = country from = country }
+	on_proxy_war_start = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+
 
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country from = country }
