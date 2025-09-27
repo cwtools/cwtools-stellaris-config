@@ -368,3 +368,9 @@ alias[effect:gain_leader_trait_level_max_2] = {
 alias[effect:give_eotc_psionic_component_tech_insight] = {
 	TECH = <technology>
 }
+### Force scripted trigger or effect to work in common and event files
+alias[effect:drone_conversion_event_effect_2] = {
+	FROM_PLANET = bool
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:animator_of_clay_create_vessels] = yes
