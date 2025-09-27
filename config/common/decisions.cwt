@@ -27,6 +27,13 @@ decision = {
 	## cardinality = 0..1
 	icon = <decision>
     #icon = <sprite>
+	## cardinality = 0..1
+	custom_tooltip = {
+		## cardinality = 0..1
+		success_text = localisation
+		## cardinality = 0..1
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 
 	## cardinality = 0..1
 	resources = {
