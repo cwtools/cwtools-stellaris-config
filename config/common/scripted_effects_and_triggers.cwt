@@ -294,4 +294,77 @@ alias[effect:select_shroud_song] = yes
 alias[effect:set_psionic_choir_policy] = yes
 ### Force scripted trigger or effect to work in common and event files	
 alias[effect:shroud_forge_your_own_path] = yes
-
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:give_mindwarden_dividends_modifiers] = {
+   FLAG = scalar
+}
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:mindwarden_give_logistic_assistance] = {
+	MINDWARDEN_COUNTRY = scope[country]
+}
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:move_towards_advanced_government] = {
+	## cardinality = 0..1
+	TYPE = transcendent
+	## cardinality = 0..1
+	TYPE = corporeal
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:refuse_covenant] ={
+  patron = <patrons>
+  reset_attunement = bool
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:shroud_leader_creator] = {
+	## cardinality = 0..1
+	LEADER_PORTRAIT = scalar
+	## cardinality = 0..1
+	SPECIES_CLASS = <species_class>
+	## cardinality = 0..1
+	CLASS = enum[leader_classes]
+	## cardinality = 0..1
+	NAME = scalar
+	## cardinality = 0..1
+	LEVEL = int
+	## cardinality = 0..1
+	AGE = int
+	## cardinality = 0..1
+	GENDER = enum[genders]
+	## cardinality = 0..1
+	ETHIC = enum[ethic_leader_creator_ethic_enum]
+	## cardinality = 0..1
+	DESC = scalar
+	## cardinality = 0..1
+	CATCH_PHRASE = scalar
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:shroud_leader_hire_effect] = {
+	GLOBAL_EVENT_TARGET = value_set[global_event_target]
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:shroud_touched_option_cost] = {
+	RESOURCE = <resource>
+	VALUE = int
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:whisperers_in_the_void_replace_patron] = {
+	PATRON = <patrons>
+	CHAIN = <event_chain>
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:create_ship_with_random_graphical_culture] = {
+	EFFECT_NAME = scalar
+	IGNORE_COUNTRY_GFX = bool
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:add_percentage_to_all_resources] = {
+	PERCENTAGE = value_field
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:gain_leader_trait_level_max_2] = {
+	LEADER_TRAIT = <trait>
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:give_eotc_psionic_component_tech_insight] = {
+	TECH = <technology>
+}
