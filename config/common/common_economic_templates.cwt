@@ -1,793 +1,693 @@
-
 types = {
-	type[economic_category] = {
-		path = "game/common/economic_categories"
-		subtype[has_parent] = {
-			parent = scalar
+	type[component_set] = {
+		name_field = "key"
+    	path = "game/common/component_sets"
+		subtype[required_component] = {
+			required_component_set = yes
 		}
-		subtype[hidden] = {
-			hidden = yes
+		localisation = {
+			## required
+			Name = "$"
+			## optional
+			Description = "$_DESC"
+			## optional
+			"Ship Description" = "ship_$_DESC"
+			## optional
+			"Station Description" = "station_$_DESC"
 		}
+	}
+	type[component_template] = {
+		name_field = "key"
+		path = "game/common/component_templates"
+		## type_key_filter = utility_component_template
+		subtype[starbase] = {
+			class_restriction = { shipclass_starbase }
+		}
+		## type_key_filter = utility_component_template
+		subtype[utility_component_template] = {
+		}
+		## type_key_filter = weapon_component_template
+		subtype[weapon_component_template] = {
+		}
+		## type_key_filter = strike_craft_component_template
+		subtype[strike_craft_component_template] = {
+		}
+		subtype[scripted_action] = {
+			scripted_action_name = <on_action>
+		}
+		localisation = {
+			## required
+			Name = "$"
+		}
+	}
+	type[component_template_starbase] = {
+		name_field = "key"
+		path = "game/common/component_templates"
+		path_file = "00_starbase_building_auras.txt"
 	}
 }
 
-economic_category = {
+# a component tag causes the game to autogenerate three modifiers:
+# component_tag_energy_weapon_damage_mult, component_tag_energy_weapon_fire_rate_mult and component_tag_energy_speed_mult
+#these modifiers require localisation and a GFX (gfx/interface/icons/modifiers - same name as the component_tag key)
+enums = {
+	complex_enum[component_tags] = {
+		path = "game/common/component_tags"
+		name = {
+			enum_name
+		}
+		start_from_root = yes
+	}
+	enum[component_pd_targets] = {
+		strike_craft
+		missile
+	}
+	enum[scripted_action_activity_key] = {
+		behemoth_burst_activity_key
+		behemoth_drain_activity_key
+		behemoth_reflexes_activity_key
+		behemoth_spike_activity_key
+		behemoth_turbo_activity_key
+	}
+	enum[component_bio_prereq] = {
+		""
+		"tech_thrusters_2 tech_thrusters_bio_integration"
+		"tech_thrusters_3 tech_thrusters_bio_integration"
+		"tech_thrusters_4 tech_thrusters_bio_integration"
+		"tech_dark_matter_propulsion tech_thrusters_bio_integration"
+	}
+	enum[component_bio_potential] = {
+		"ship_uses_space_fauna_titan_thrusters = yes"
+		"ship_uses_space_fauna_cruiser_thrusters = yes"
+		"ship_uses_space_fauna_destroyer_thrusters = yes"
+		"ship_uses_space_fauna_corvette_thrusters = yes"
+		"ship_uses_space_fauna_battleship_thrusters = yes"
+	}
+	enum[component_bio_stack_info_id] = {
+		bio_anti_evasion
+		bio_anti_fire_rate
+		bio_evasion
+		bio_fire_rate
+		bio_healing
+		anti_evasion
+		anti_fire_rate
+		evasion
+		fire_rate
+		healing
+	}
+}
+
+component_set = {
 	## cardinality = 0..1
-    parent = <economic_category>
+	required_component_set = bool
 	## cardinality = 0..1
-	use_for_ai_budget = bool
-	subtype[!hidden] = {
-		# TODO: icons
+	is_core_component_set = bool
+	## cardinality = 0..1
+	affects_target_type = bool
+	## cardinality = 0..1
+	is_space_fauna_component_set = bool
+	## cardinality = 0..1
+	is_default_space_fauna_component_set = bool
+	subtype[required_component] = {
+		key = scalar
+		## cardinality = 0..1
 		icon = scalar
+		## cardinality = 0..1
+		icon_frame = scalar
 	}
-	subtype[hidden] = {
-		hidden = yes
+	subtype[!required_component] = {
+		key = localisation
+		icon = <sprite>
+		icon_frame = int
 	}
+}
 
-	## cardinality = 0..inf
-	modifier_category = enum[scripted_modifier_categories]
+component_template = {
+	key = scalar
 
+	icon = <sprite>
+	## cardinality = 0..1
+	icon_frame = int
+	## cardinality = 0..1
+	use_ship_main_target = bool
+	## cardinality = 0..1
+	prerequisites = {
+		## cardinality = 0..inf
+		<technology>
+		## cardinality = 0..inf
+		enum[component_bio_prereq]
+	}
+	## cardinality = 0..1
+	potential = {
+		## cardinality = 0..1
+		alias_name[trigger] = alias_match_left[trigger]
+		## cardinality = 0..1
+		enum[component_bio_potential]
+	}
+	## cardinality = 0..1
+	custom_tooltip = {
+		## cardinality = 0..1
+		success_text = localisation
+		## cardinality = 0..1
+		is_reanimator = bool
+	}
+	
+	## cardinality = 0..1
+	upgrade_path = enum[component_upgrade_path]
+	## cardinality = 0..1
+	target_type = enum[component_target_type]
+	## cardinality = 0..1
+	component_set = <component_set>
 	## cardinality = 0..1
 	hidden = bool
-
 	## cardinality = 0..1
-	###sets the modifier category, which is sometimes used to determine whether it is applied to a certain object (so make sure this is set to what you want)
-	category = enum[scripted_modifier_categories]
-
-	## cardinality = 0..inf
-	triggered_produces_modifier = {
-		subtype[has_parent] = {
-			## cardinality = 0..1
-			use_parent_icon = yes
-		}
-		key = scalar
-		## cardinality = 0..1
-		use_parent_icon = yes
-		## cardinality = 0..1
-		trigger = {
-			alias_name[trigger] = alias_match_left[trigger]
-		}
-		modifier_types = {
-			## cardinality = 0..2
-			enum[economic_modifier_types]
-		}
-	}
-	## cardinality = 0..inf
-	triggered_cost_modifier = {
-		key = scalar
-		## cardinality = 0..1
-		use_parent_icon = yes
-		## cardinality = 0..1
-		trigger = {
-			alias_name[trigger] = alias_match_left[trigger]
-		}
-		## cardinality = 0..1
-		use_parent_icon = yes
-		modifier_types = {
-			## cardinality = 0..2
-			enum[economic_modifier_types]
-		}
-
-	}
-	## cardinality = 0..inf
-	triggered_upkeep_modifier = {
-		key = scalar
-		## cardinality = 0..1
-		use_parent_icon = yes
-		## cardinality = 0..1
-		trigger = {
-			alias_name[trigger] = alias_match_left[trigger]
-		}
-		modifier_types = {
-			## cardinality = 0..2
-			enum[economic_modifier_types]
-		}
-
-	}
-	## cardinality = 0..1
-	ai_use_parent_for_resources_upkeep = {
+	class_restriction = {
 		## cardinality = 1..inf
-		<resource>
-	}
-	## cardinality = 0..2
-	generate_mult_modifiers = {
-		## cardinality = 0..3
-		enum[economic_modifier_categories]
-	}
-	## cardinality = 0..2
-	generate_add_modifiers = {
-		## cardinality = 0..3
-		enum[economic_modifier_categories]
+		enum[shipsize_classes]
 	}
 	## cardinality = 0..1
-	add_unscaled_value_to_tooltip = bool
-	## cardinality = 0..1
-	scaled_value_key = localisation
-}
-
-alias[economic_template:cost] = {
-	## cardinality = 0..1
-	trigger = {
-		alias_name[trigger] = alias_match_left[trigger]
+	upgrades_to = <component_template>
+	## cardinality = 0..inf
+	tags = {
+		## cardinality = 0..inf
+		enum[component_tags]
 	}
-	## cardinality = 0..inf
-	<resource> = float
-	## cardinality = 0..inf
-	multiplier = value_field
-	## cardinality = 0..inf
-	mult = value_field
-}
-
-alias[economic_template:produces] = {
 	## cardinality = 0..1
-	trigger = {
-		alias_name[trigger] = alias_match_left[trigger]
+	ai_tags = {
+		## cardinality = 0..inf
+		enum[component_tags]
 	}
-	## cardinality = 0..inf
-	<resource> = float
-	## cardinality = 0..inf
-	multiplier = value_field
-	## cardinality = 0..inf
-	mult = value_field
-}
-
-alias[economic_template:upkeep] = {
 	## cardinality = 0..1
-	trigger = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## cardinality = 0..inf
-	<resource> = float
-	## cardinality = 0..inf
-	multiplier = value_field
-	## cardinality = 0..inf
-	mult = value_field
-}
-
-alias[economic_template:logistics] = {
+	ai_tag_weight = int
 	## cardinality = 0..1
-	trigger = {
-		alias_name[trigger] = alias_match_left[trigger]
+	point_defence_targets = {
+		## cardinality = 0..inf
+		enum[component_pd_targets]
 	}
-	## cardinality = 0..inf
-	<resource> = float
-	## cardinality = 0..inf
-	multiplier = value_field
-	## cardinality = 0..inf
-	mult = value_field
-}
-
-alias[economic_template_only_produces:produces] = {
 	## cardinality = 0..1
-	trigger = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## cardinality = 0..inf
-	<resource> = float
-}
-
-alias[economic_template_no_produce:cost] = {
+	ship_limit = int
 	## cardinality = 0..1
-	trigger = {
-		alias_name[trigger] = alias_match_left[trigger]
+	blocked_by = {
+		## cardinality = 0..inf
+		<component_template>
 	}
-	## cardinality = 0..inf
-	<resource> = float
-	## cardinality = 0..inf
-	multiplier = value_field
-	## cardinality = 0..inf
-	mult = value_field
-}
-
-alias[economic_template_no_produce:upkeep] = {
 	## cardinality = 0..1
-	trigger = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## cardinality = 0..inf
-	<resource> = float
-	## cardinality = 0..inf
-	multiplier = value_field
-	## cardinality = 0..inf
-	mult = value_field
-}
+	size_restriction = {
+		## cardinality = 0..inf
+		<ship_size>
 
-alias[ai_resource_production:ai_resource_production] = {
-	## cardinality = 0..1
-	trigger = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## cardinality = 0..inf
-	<resource> = float
-	## cardinality = 0..inf
-	multiplier = value_field
-	## cardinality = 0..inf
-	mult = value_field
-}
-
-## cardinality = 0..1
-alias[resources_template_optional:resources] = {
-	category = <economic_category>
-	alias_name[economic_template] = alias_match_left[economic_template]
-}
-
-## cardinality = 0..1
-alias[resources_template_optional:resources] = {
-	produces = {
 		## cardinality = 0..1
-		trigger = {
+		null
+	}
+	## cardinality = 0..1
+	custom_tooltip = localisation
+	## replace_scope = { root = ship this = ship }
+	alias_name[triggered_ship_modifier] = alias_match_left[triggered_ship_modifier]
+	## cardinality = 0..1
+	should_ai_use = bool
+	## cardinality = 0..1
+	## replace_scope = { root = country this = country }
+ 	valid_for_country = {
+		alias_name[trigger] = alias_match_left[trigger]
+ 	}
+	## cardinality = 0..1
+	ai_weight = {
+		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	}
+	subtype[utility_component_template] = {
+		power = int
+		## replace_scope = { root = ship this = ship }
+		
+		resources = {
+			category = <economic_category>
+			alias_name[economic_template] = alias_match_left[economic_template]
+		}
+		## cardinality = 0..1
+		show_tech_unlock_if = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
-		## cardinality = 0..inf
-		<resource> = float
-		## cardinality = 0..inf
-		multiplier = value_field
-		## cardinality = 0..inf
-		mult = value_field
-	}
-}
-
-### Templated Modifier Blocks ###
-# alias[cwt_alias_key:stellaris_object_key]
-
-## replace_scope = { this = planet root = planet }
-alias[triggered_district_modifier_planet:triggered_district_planet_modifier] = {
-	## cardinality = 0..1
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## cardinality = 0..1
-	custom_tooltip = localisation
-	## cardinality = 0..1
-	show_only_custom_tooltip = bool
-	## cardinality = 0..1
-	mult = value_field
-	## cardinality = 0..1
-	multiplier = value_field
-	## cardinality = 0..1
-	key = localisation
-}
-
-## replace_scope = { this = planet root = planet }
-alias[triggered_planet_modifier_planet:triggered_planet_modifier] = {
-	## cardinality = 0..1
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## cardinality = 0..1
-	custom_tooltip = localisation
-	## cardinality = 0..1
-	show_only_custom_tooltip = bool
-	## cardinality = 0..1
-	mult = value_field
-	## cardinality = 0..1
-	multiplier = value_field
-	## cardinality = 0..1
-	key = localisation
-}
-
-## replace_scope = { this = planet root = planet from = species fromfrom = country }
-alias[triggered_planet_growth_habitability_modifier:triggered_planet_growth_habitability_modifier] = {
-	## cardinality = 0..1
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## cardinality = 0..1
-	mult = value_field
-	## cardinality = 0..1
-	multiplier = value_field
-	## cardinality = 0..1
-	custom_tooltip = localisation
-}
-
-alias[triggered_planet_pop_group_modifier_species:triggered_planet_pop_group_modifier_for_species] = {
-	## cardinality = 0..1
-	## replace_scope = { this = pop_group root = pop_group }
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## cardinality = 0..1
-	divide_over_pop_groups = bool
-	## replace_scope = { this = planet root = planet }
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	## replace_scope = { this = planet root = planet }
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## cardinality = 0..1
-	key = <trait>
-	## cardinality = 0..1
-	custom_tooltip = localisation
-	## cardinality = 0..1
-	show_only_custom_tooltip = bool
-	## cardinality = 0..1
-	## replace_scope = { this = pop_group root = pop_group }
-	mult = value_field
-	## cardinality = 0..1
-	## replace_scope = { this = pop_group root = pop_group }
-	multiplier = value_field
-}
-
-alias[triggered_planet_modifier_pop_group:triggered_planet_pop_group_modifier_for_all] = {
-	## cardinality = 0..1
-	## replace_scope = { this = pop_group root = pop_group }
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## replace_scope = { this = planet root = planet }
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	## replace_scope = { this = planet root = planet }
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## cardinality = 0..1
-	key = <trait>
-	## cardinality = 0..1
-	custom_tooltip = localisation
-	## cardinality = 0..1
-	show_only_custom_tooltip = bool
-	## cardinality = 0..1
-	## replace_scope = { this = pop_group root = pop_group }
-	mult = value_field
-	## cardinality = 0..1
-	## replace_scope = { this = pop_group root = pop_group }
-	multiplier = value_field
-}
-
-alias[triggered_planet_modifier_pop:triggered_planet_modifier] = {
-	## cardinality = 0..1
-	## replace_scope = { this = pop_group root = pop_group }
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## replace_scope = { this = planet root = planet }
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	## replace_scope = { this = planet root = planet }
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## cardinality = 0..1
-	key = <trait>
-	## cardinality = 0..1
-	key = localisation
-	## cardinality = 0..1
-	custom_tooltip = localisation
-	## cardinality = 0..1
-	show_only_custom_tooltip = bool
-	## cardinality = 0..1
-	## replace_scope = { this = pop_group root = pop_group }
-	mult = value_field
-	## cardinality = 0..1
-	## replace_scope = { this = pop_group root = pop_group }
-	multiplier = value_field
-}
-
-alias[triggered_planet_modifier_starbase:triggered_planet_modifier] = {
-	## cardinality = 0..1
-	## replace_scope = { this = starbase root = starbase }
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## replace_scope = { this = planet root = planet }
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	## replace_scope = { this = planet root = planet }
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## cardinality = 0..1
-	custom_tooltip = localisation
-	## cardinality = 0..1
-	show_only_custom_tooltip = bool
-	## cardinality = 0..1
-	## replace_scope = { this = starbase root = starbase }
-	mult = value_field
-	## cardinality = 0..1
-	## replace_scope = { this = starbase root = starbase }
-	multiplier = value_field
-}
-
-alias[triggered_planet_modifier_leader:triggered_planet_modifier] = {
-	## cardinality = 0..1
-	## replace_scope = { this = leader root = leader }
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## replace_scope = { this = planet root = planet }
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	## replace_scope = { this = planet root = planet }
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## cardinality = 0..1
-	custom_tooltip = localisation
-	## cardinality = 0..1
-	show_only_custom_tooltip = bool
-	## cardinality = 0..1
-	## replace_scope = { this = leader root = leader }
-	mult = value_field
-	## cardinality = 0..1
-	## replace_scope = { this = leader root = leader }
-	multiplier = value_field
-}
-
-alias[triggered_system_modifier_starbase:triggered_system_modifier] = {
-	## cardinality = 0..1
-	## replace_scope = { this = starbase root = starbase }
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## replace_scope = { this = system root = system }
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	## replace_scope = { this = system root = system }
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## cardinality = 0..1
-	## replace_scope = { this = starbase root = starbase }
-	mult = value_field
-	## cardinality = 0..1
-	## replace_scope = { this = starbase root = starbase }
-	multiplier = value_field
-	## cardinality = 0..1
-	custom_tooltip = localisation
-}
-
-alias[triggered_country_modifier_starbase:triggered_country_modifier] = {
-	## cardinality = 0..1
-	## replace_scope = { this = starbase root = starbase }
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## replace_scope = { this = country root = country }
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	## replace_scope = { this = country root = country }
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## cardinality = 0..1
-	## replace_scope = { this = starbase root = starbase }
-	mult = value_field
-	## cardinality = 0..1
-	## replace_scope = { this = starbase root = starbase }
-	multiplier = value_field
-	## cardinality = 0..1
-	custom_tooltip = localisation
-}
-
-alias[triggered_country_modifier_pop:triggered_country_modifier] = {
-	## cardinality = 0..1
-	## replace_scope = { this = pop_group root = pop_group }
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## replace_scope = { this = country root = country }
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	## replace_scope = { this = country root = country }
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## cardinality = 0..1
-	## replace_scope = { this = pop_group root = pop_group }
-	mult = value_field
-	## cardinality = 0..1
-	## replace_scope = { this = pop_group root = pop_group }
-	multiplier = value_field
-	## cardinality = 0..1
-	custom_tooltip = localisation
-}
-
-alias[triggered_country_modifier_planet:triggered_country_modifier] = {
-	## cardinality = 0..1
-	## replace_scope = { this = planet root = planet }
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## replace_scope = { this = country root = country }
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	## replace_scope = { this = country root = country }
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## cardinality = 0..1
-	## replace_scope = { this = planet root = planet }
-	mult = value_field
-	## cardinality = 0..1
-	## replace_scope = { this = planet root = planet }
-	multiplier = value_field
-	## cardinality = 0..1
-	custom_tooltip = localisation
-}
-
-## replace_scope = { this = country root = country }
-alias[triggered_country_modifier_country:triggered_country_modifier] = {
-	## cardinality = 0..1
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## cardinality = 0..1
-	custom_tooltip = localisation
-	## cardinality = 0..1
-	show_only_custom_tooltip = bool
-	## cardinality = 0..1
-	mult = value_field
-	## cardinality = 0..1
-	multiplier = value_field
-}
-
-## replace_scope = { this = pop_group root = pop_group }
-alias[triggered_pop_modifier:triggered_pop_modifier] = {
-	## cardinality = 0..1
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## cardinality = 0..1
-	key = localisation
-	## cardinality = 0..1
-	custom_tooltip = localisation
-	## cardinality = 0..1
-	show_only_custom_tooltip = bool
-	## cardinality = 0..1
-	mult = value_field
-	## cardinality = 0..1
-	multiplier = value_field
-}
-
-## replace_scope = { this = pop_group root = pop_group }
-alias[triggered_pop_group_modifier:triggered_pop_group_modifier] = {
-	## cardinality = 0..1
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## cardinality = 0..1
-	key = localisation
-	## cardinality = 0..1
-	custom_tooltip = localisation
-	## cardinality = 0..1
-	show_only_custom_tooltip = bool
-	## cardinality = 0..1
-	mult = value_field
-	## cardinality = 0..1
-	multiplier = value_field
-}
-
-alias[triggered_leader_modifier_pop:triggered_leader_modifier] = {
-	## cardinality = 0..1
-	## replace_scope = { this = pop_group root = pop_group }
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## replace_scope = { this = leader root = leader }
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	## replace_scope = { this = leader root = leader }
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## cardinality = 0..1
-	## replace_scope = { this = pop_group root = pop_group }
-	mult = value_field
-	## cardinality = 0..1
-	## replace_scope = { this = pop_group root = pop_group }
-	multiplier = value_field
-	## cardinality = 0..1
-	custom_tooltip = localisation
-}
-
-## replace_scope = { this = leader root = leader }
-alias[triggered_leader_modifier_leader:triggered_self_modifier] = {
-	## cardinality = 0..1
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## cardinality = 0..1
-	mult = value_field
-	## cardinality = 0..1
-	multiplier = value_field
-	## cardinality = 0..1
-	custom_tooltip = localisation
-}
-
-## replace_scope = { this = country root = country }
-alias[triggered_modifier_country:triggered_modifier] = {
-	## cardinality = 0..1
-	## replace_scope = { this = country root = country }
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## cardinality = 0..1
-	## replace_scope = { this = country root = country }
-	mult = value_field
-	## cardinality = 0..1
-	## replace_scope = { this = country root = country }
-	multiplier = value_field
-	## cardinality = 0..1
-	custom_tooltip = localisation
-	## cardinality = 0..1
-	show_only_custom_tooltip = bool
-}
-
-alias[triggered_modifier_situation:triggered_modifier] = {
-	## cardinality = 0..1
-	## replace_scope = { this = situation root = situation }
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## replace_scope = { this = country root = country }
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	## replace_scope = { this = country root = country }
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## cardinality = 0..1
-	## replace_scope = { this = situation root = situation }
-	mult = value_field
-	## cardinality = 0..1
-	## replace_scope = { this = situation root = situation }
-	multiplier = value_field
-	## cardinality = 0..1
-	custom_tooltip = localisation
-}
-
-alias[triggered_target_modifier_situation:triggered_target_modifier] = {
-	## cardinality = 0..1
-	## replace_scope = { this = situation root = situation }
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	## replace_scope = { this = planet root = planet }
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	## replace_scope = { this = planet root = planet }
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## cardinality = 0..1
-	custom_tooltip = localisation
-	## cardinality = 0..1
-	show_only_custom_tooltip = bool
-	## cardinality = 0..1
-	## replace_scope = { this = situation root = situation }
-	mult = value_field
-	## cardinality = 0..1
-	## replace_scope = { this = situation root = situation }
-	multiplier = value_field
-}
-
-## replace_scope = { this = starbase root = starbase }
-alias[triggered_station_modifier_starbase:triggered_station_modifier] = {
-	## cardinality = 0..1
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## cardinality = 0..1
-	custom_tooltip = localisation
-	## cardinality = 0..1
-	show_only_custom_tooltip = bool
-	## cardinality = 0..1
-	mult = value_field
-	## cardinality = 0..1
-	multiplier = value_field
-}
-
-## replace_scope = { this = ship root = ship }
-alias[triggered_ship_modifier:triggered_ship_modifier] = {
-	## cardinality = 0..1
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
-	}
-	## cardinality = 0..1
-	mult = value_field
-	## cardinality = 0..1
-	multiplier = value_field
-	## cardinality = 0..1
-	custom_tooltip = localisation
-}
-
-## replace_scope = { this = fleet root = fleet }
-alias[triggered_fleet_modifier_fleet:triggered_fleet_modifier] = {
-	## cardinality = 0..1
-	potential = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
-	alias_name[modifier] = alias_match_left[modifier]
-	## cardinality = 0..1
-	modifier = {
-		alias_name[modifier] = alias_match_left[modifier]
+		size = enum[utility_slot_size]
 		## cardinality = 0..1
-		custom_tooltip = localisation
+		hide_damage_values_from_tooltip = bool
 		## cardinality = 0..1
-		show_only_custom_tooltip = bool
-	}
-	## cardinality = 0..1
-	custom_tooltip = localisation
-	## cardinality = 0..1
-	show_only_custom_tooltip = bool
-	## cardinality = 0..1
-	mult = value_field
-	## cardinality = 0..1
-	multiplier = value_field
-	## cardinality = 0..1
-	key = localisation
-}
+		## replace_scope = { this = ship root = ship }
+		modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		## cardinality = 0..1
+		## replace_scope = { this = ship root = ship }
+		ship_modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		## cardinality = 0..1
+		## replace_scope = { this = ship root = ship }
+		triggered_ship_design_modifier = {
+			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		## cardinality = 0..1
+		ftl = bool
+		## cardinality = 0..1
+		ftl_inhibitor = bool
+		## cardinality = 0..1
+		jumpdrive = bool
+		## cardinality = 0..1
+		ship_behavior = <ship_behavior>
+		## cardinality = 0..1
+		is_default_component = bool
+		## cardinality = 0..1
+		sensor_range = int
+		## cardinality = 0..1
+		hyperlane_range = int
+		## cardinality = 0..1
+		friendly_aura = {
+			name = scalar
+			## cardinality = 0..1
+			## push_scope = ship
+			limit = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			system_wide = bool
+			## cardinality = 0..1
+			radius = int
+			## cardinality = 0..1
+			system_wide = bool
+			## cardinality = 0..1
+			apply_on = enum[aura_types]
+			stack_info = {
+				id = scalar
+				## cardinality = 0..1
+				priority = int
+			}
+			## cardinality = 0..1
+			## replace_scope = { this = ship root = ship }
+			modifier = {
+				alias_name[modifier] = alias_match_left[modifier]
+			}
 
-alias[triggered_desc:triggered_desc] = {
-	## cardinality = 0..1
-	trigger = {
-		alias_name[trigger] = alias_match_left[trigger]
+			## cardinality = 0..1
+			graphics = {
+				## cardinality = 0..inf
+				area_effect = {
+					entity = <model_entity>
+					dynamic_scale = bool
+				}
+				## cardinality = 0..inf
+				ship_effect = {
+					entity = <model_entity>
+					dynamic_scale = bool
+				}
+			}
+		}
+		## cardinality = 0..1
+		hostile_aura = {
+			name = scalar
+			## cardinality = 0..1
+			## push_scope = ship
+			limit = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			system_wide = bool
+			## cardinality = 0..1
+			radius = int
+			## cardinality = 0..1
+			system_wide = bool
+			## cardinality = 0..1
+			apply_on = enum[aura_types]
+			stack_info = {
+				id = scalar
+				priority = int
+			}
+			## cardinality = 0..1
+			## replace_scope = { this = ship root = ship }
+			modifier = {
+				alias_name[modifier] = alias_match_left[modifier]
+			}
+
+			## cardinality = 0..1
+			graphics = {
+				## cardinality = 0..inf
+				area_effect = {
+					entity = <model_entity>
+					dynamic_scale = bool
+				}
+				## cardinality = 0..inf
+				ship_effect = {
+					entity = <model_entity>
+					dynamic_scale = bool
+				}
+			}
+			## cardinality = 0..1
+			damage_per_day = {
+				## cardinality = 0..1
+				accuracy = float
+				## cardinality = 0..1
+				damage = { min = int max = int }
+				## cardinality = 0..1
+				shield_damage = float
+				## cardinality = 0..1
+				shield_penetration = float
+				## cardinality = 0..1
+				armor_penetration = float
+				## cardinality = 0..1
+				size_damage_factor = float
+			}
+		}
+		## cardinality = 0..1
+		scripted_action = {
+			scope = self
+			scope = planet
+			## cardinality = 0..1
+			finish_anim_state = enum[bio_finish_anim_state]
+			## cardinality = 0..1
+			possible = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			button_clickable = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			button_visible = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			name = scalar
+			tooltip = localisation
+			## cardinality = 0..1
+			icon = <sprite>
+			## cardinality = 0..1
+			icon_selected = <sprite>
+			## cardinality = 0..1
+			activity_key = localisation
+			activity_key = enum[scripted_action_activity_key]
+			## cardinality = 0..1
+			context_menu_name = localisation
+			## cardinality = 0..1
+			progress_activity_key = localisation
+			## cardinality = 0..1
+			required_progress = int
+			## cardinality = 0..1
+			on_click_sound = scalar
+			## cardinality = 0..1
+			cooldown = int
+			## cardinality = 0..1
+			cost = { 
+				## cardinality = 0..inf
+				<resource> = int
+			}
+			## cardinality = 0..1
+			shortcut = scalar
+			## cardinality = 0..1
+			slot = int
+			## cardinality = 0..1
+			wait = bool
+			## cardinality = 0..1
+			finished = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## cardinality = 0..1
+			on_cancel = localisation
+		}
 	}
-	## cardinality = 0..1
-	text = localisation
+	subtype[weapon_component_template] = {
+		size = enum[weapon_slot_size]
+		type = enum[weapon_type2]
+		projectile_gfx = scalar #tied to defined entites under gfx
+		## cardinality = 0..1
+		color = {
+			## cardinality = 3..4
+			float
+		}
+		## cardinality = 0..1
+		on_hit = {
+			## cardinality = 0..inf
+			custom_tooltip = localisation
+			## cardinality = 0..1
+			hidden_effect = {
+				alias_name[effect] = alias_match_left[effect]
+			}
+		}
+		## cardinality = 0..1
+		target_focus = enum[component_target_focus]
+		## cardinality = 0..1	
+		modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		## cardinality = 0..1		
+		injected_modifier = {
+			modifier = <static_modifier>
+			## cardinality = 0..1	
+			days = int
+			## cardinality = 0..1	
+			modifier = {
+				modifier = <static_modifier>
+				## cardinality = 0..1	
+				days = int
+			}
+			## cardinality = 0..1	
+			stack_info = {
+				id =enum[component_bio_stack_info_id]
+				priority = int
+			}
+		}
+		## cardinality = 0..1
+		hide_damage_values_from_tooltip = bool
+		## cardinality = 0..1
+		show_tech_unlock_if = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..1
+		ai_tag_weight = int
+		## cardinality = 0..1
+		entity = scalar #TODO: Replace with hardcoded  graphical_culture + <model_entity>
+		## cardinality = 0..1
+		power = float
+		## replace_scope = { root = ship this = ship }
+		resources = {
+			category = <economic_category>
+			alias_name[economic_template] = alias_match_left[economic_template]
+		}
+		## cardinality = 0..1
+		can_destroy_stars = bool
+		## cardinality = 0..1
+		use_ship_kill_target = bool
+		## cardinality = 0..1
+		firing_arc = float
+		## cardinality = 0..1
+		min_range = float
+		## cardinality = 0..1
+		prio_projectile = bool
+		## cardinality = 0..1
+		static_rotation = bool #link to a GFX_ link defined under /interface
+		## cardinality = 0..1
+		planet_destruction_gfx = scalar
+		## cardinality = 0..1
+		target_weights = {
+			## cardinality = 1..inf
+			scalar = float
+		}
+
+		#these are optional, vanilla uses an .csv file to create these
+		## cardinality = 0..1
+		damage = { min = float max = float }
+		## cardinality = 0..1
+		shield_damage = float
+		## cardinality = 0..1
+		shield_penetration = float
+		## cardinality = 0..1
+		hull_damage = float
+		## cardinality = 0..1
+		armor_damage = float
+		## cardinality = 0..1
+		armor_penetration = float
+		## cardinality = 0..1
+		windup = { min = float max = float }
+		## cardinality = 0..1
+		total_fire_time = float
+		## cardinality = 0..1
+		range = float
+		## cardinality = 0..1
+		accuracy = float
+		## cardinality = 0..1
+		tracking = float
+		## cardinality = 0..1
+		#missiles only
+		## cardinality = 0..1
+		missile_speed = float
+		## cardinality = 0..1
+		missile_evasion = float
+		## cardinality = 0..1
+		missile_health = float
+		## cardinality = 0..1
+		missile_armor = float
+		## cardinality = 0..1
+		missile_shield = float
+		## cardinality = 0..1
+		missile_retarget_range = int
+		## cardinality = 0..1
+		size_damage_factor = float
+		## cardinality = 0..1
+		military_power_multiplier = float
+		
+		## cardinality = 0..1
+		targetable_ship_sizes = {
+			## cardinality = 0..inf
+			<ship_size>
+		}
+				
+	}
+	subtype[strike_craft_component_template] = {
+		size = enum[weapon_slot_size]
+		entity = scalar #TODO: Replace with hardcoded  graphical_culture + <model_entity>
+		weapon_type = enum[weapon_type2]
+		ship_behavior = <ship_behavior>
+		projectile_gfx = scalar #tied to defined entites under gfx
+		power = float
+		## replace_scope = { root = ship this = ship }
+		resources = {
+			category = <economic_category>
+			alias_name[economic_template_no_produce] = alias_match_left[economic_template_no_produce]
+		}
+		## cardinality = 0..1
+		show_tech_unlock_if = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		count = float
+		regeneration_per_day = float
+		launch_time = float
+		damage = { min = float max = float }
+		cooldown = float
+		range = float
+		engagement_range = float
+		accuracy = float
+		tracking = float
+		health = float
+		armor = float
+		shield = float
+		evasion = float
+		speed = float
+		rotation_speed = float
+		acceleration = float
+		shield_damage = float
+		shield_penetration = float
+		armor_damage = float
+		armor_penetration = float
+		hull_damage = float
+		## cardinality = 0..1
+		size_damage_factor = float
+		## cardinality = 0..1
+		attack_range = float
+		## cardinality = 0..1
+		ship_modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+	}
+	subtype[scripted_action] = {
+		scripted_action_name = <on_action>
+		scripted_action_tooltip = localisation
+		scripted_action_icon = <sprite>
+		scripted_action_activity_key = localisation
+		## cardinality = 0..1
+		## replace_scope = { root = planet this = planet }
+		scripted_action_possible = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..1
+		## replace_scope = { root = planet this = planet }
+		scripted_action_button_possible = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..1
+		## replace_scope = { root = planet this = planet }
+		scripted_action_finished = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..1
+		scripted_action_on_cancel = <on_action>
+		## cardinality = 0..1
+		scripted_action_context_menu_name = localisation
+		## cardinality = 0..1
+		scripted_action_progress_activity_key = localisation
+		## cardinality = 0..1
+		scripted_action_required_progress = int
+	}
 }
 
 enums = {
-	enum[economic_modifier_categories] = {
-		produces
-		cost
-		upkeep
-		logistics
+	enum[weapon_type] = {
+		weapon_type_energy
+		weapon_type_kinetic
+		weapon_type_explosive
+		weapon_type_strike_craft
+		weapon_type_point_defense
 	}
-	enum[economic_modifier_types] = {
-		mult
-		add
+	enum[weapon_type2] = {
+		instant
+		point_defence
+		missile
+		planet_killer
+		engulf
+	}
+	enum[weapon_slot_size] = {
+		extra_large
+		large
+		medium
+		small
+		torpedo
+		point_defence
+		planet_killer
+		titanic
+		engulf
+		any
+	}
+	enum[utility_slot_size] = {
+		extra_large
+		large
+		medium
+		small
+		aux
+	}
+	enum[aura_types] = {
+		ships
+		fleets
+	}
+	enum[component_upgrade_path] = {
+		artillery
+		buffer
+		carrier
+		debuffer
+		default
+		empty
+		growth
+		harbinger_chitin
+		harbinger_incubator
+		mauler_biter
+		mauler_pursuit
+		picket
+		line
+		stinger_fire_rate
+		stinger_range
+		swarm
+		torpedo
+		weaver_booster
+		weaver_growth_aura
+	}
+	enum[component_target_type] = {
+		target_allies
+		target_controlled
+		target_enemies
+		target_own
+	}
+	enum[component_target_focus] = {
+		single
+		spread
+	}
+	enum[bio_finish_anim_state] = {
+		rage
+		superweapon
 	}
 }
