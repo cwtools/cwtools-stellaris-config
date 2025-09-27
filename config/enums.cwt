@@ -37,8 +37,9 @@ enums = {
 		overwhelming
 	}
 	enum[research_areas] = {
-		physics
 		engineering
+		physics
+		psionics
 		society
 	}
 	enum[genders] = {
