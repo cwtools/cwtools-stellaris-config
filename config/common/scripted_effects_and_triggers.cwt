@@ -374,3 +374,5 @@ alias[effect:drone_conversion_event_effect_2] = {
 }
 ### Force scripted trigger or effect to work in common and event files
 alias[effect:animator_of_clay_create_vessels] = yes
+### Force scripted trigger or effect to work in common and event files
+alias[effect:materiality_engine_on_built_effect] = yes
