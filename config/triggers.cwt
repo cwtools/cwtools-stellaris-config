@@ -3074,6 +3074,7 @@ alias[trigger:num_proxy_war] == int_value_field
 
 ###Check if the scoped system is affected by any, or a specific type, Psionic Aura.
 alias[trigger:has_psionic_aura] = bool
+alias[trigger:has_psionic_aura] = <psionic_auras>
 
 ###Check if the scoped country has a psionic aura from given patron.
 alias[trigger:has_patron_aura] = <patrons>
