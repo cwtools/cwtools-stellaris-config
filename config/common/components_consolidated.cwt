@@ -89,6 +89,11 @@ enums = {
 		bio_evasion
 		bio_fire_rate
 		bio_healing
+		anti_evasion
+		anti_fire_rate
+		evasion
+		fire_rate
+		healing
 	}
 }
 
@@ -572,6 +577,8 @@ component_template = {
 		armor_damage = float
 		armor_penetration = float
 		hull_damage = float
+		## cardinality = 0..1
+		size_damage_factor = float
 		## cardinality = 0..1
 		attack_range = float
 		## cardinality = 0..1
