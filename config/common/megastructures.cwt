@@ -97,6 +97,10 @@ megastructure = {
 		## cardinality = 0..1
 		prereq_name = localisation
 	}
+	
+	## cardinality = 0..inf
+	alias_name[triggered_country_modifier_country] = alias_match_left[triggered_country_modifier_country]
+	
 	## cardinality = 0..1
 	## replace_scope = { this = country root = country }
 	potential = {
@@ -223,6 +227,9 @@ megastructure = {
 	dismantle_potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## cardinality = 0..1
+	can_be_dismantled_by_non_owner = bool
+	
 	
 	## cardinality = 0..1
 	dismantle_possible = {
@@ -230,9 +237,16 @@ megastructure = {
 	}
 	
 	## cardinality = 0..1
+	should_ai_dismantle = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+		
+	## cardinality = 0..1
 	on_dismantle_complete = {
 		alias_name[effect] = alias_match_left[effect]
 	}
+	## cardinality = 0..1
+	is_shroud_seal = bool
 }
 
 enums = {
@@ -242,3 +256,4 @@ enums = {
 		around_planet
 	}
 }
+	
