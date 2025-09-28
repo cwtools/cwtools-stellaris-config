@@ -150,6 +150,9 @@ types = {
 	type[tradable_actions] = {
 		path = "game/common/tradable_actions" 
 	}
+	type[leader_tiers] = {
+		path = "game/common/leader_tiers"
+	}
 }
 
 ambient_object = {
@@ -870,4 +873,10 @@ tradable_actions = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
+}
+
+leader_tiers = {
+	tier = int
+	## cardinality = 0..1
+	texture_postfix = scalar
 }

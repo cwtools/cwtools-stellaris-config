@@ -86,6 +86,7 @@ deposit = {
 		}
 
 		## cardinality = 0..1
+		## replace_scope = { this = country root = country }
 		ai_weight = {
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
 		}
@@ -125,6 +126,12 @@ deposit = {
 	potential = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	
+	## cardinality = 0..1
+	can_be_cleared_potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	
 	## cardinality = 0..1
 	habitat_modifier = {
 		alias_name[modifier] = alias_match_left[modifier]

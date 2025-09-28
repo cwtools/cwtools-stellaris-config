@@ -193,6 +193,8 @@ authority = {
 	## cardinality = 0..1
 	localization_postfix = scalar
 	## cardinality = 0..1
+	trait_localization_postfix = scalar
+	## cardinality = 0..1
 	uses_mandates = bool
 	## cardinality = 0..1
 	color = {
@@ -366,6 +368,8 @@ civic_or_origin = {
 		## cardinality = 0..1
 		city_graphical_culture = <graphical_culture>
 		## cardinality = 0..1
+		portrait = <portrait>
+		## cardinality = 0..1
 		initializers = {
 			## cardinality = 1..inf
 			<solar_system_initializer>
@@ -404,6 +408,12 @@ civic_or_origin = {
 		habitability_preference = <planet_class>
 		## cardinality = 0..1
 		preferred_planet_class_neighbor = no
+		
+		## cardinality = 0..1
+		## replace_scope = { this = country root = country }
+		ai_weight = {
+			alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		}
 	}
 	subtype[civic] = {
 		## cardinality = 0..1
@@ -510,6 +520,8 @@ councilor = {
 	optional = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
+	## cardinality = 0..inf
+	alias_name[triggered_country_modifier_country] = alias_match_left[triggered_country_modifier_country]
 }
 
 ## replace_scope = { this = country root = country }
@@ -783,3 +795,7 @@ alias[government_trigger:host_has_dlc] = enum[DLCs]
 alias[government_trigger:always] = bool
 
 alias[government_trigger:text] = localisation
+
+alias[government_trigger:has_synthetic_dawn] = bool
+alias[government_trigger:has_machine_age_dlc] = bool
+alias[government_trigger:has_shroud_dlc] = bool

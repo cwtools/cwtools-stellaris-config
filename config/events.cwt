@@ -166,6 +166,8 @@ event = {
 		## cardinality = 0..1
 		option_clear = yes
 		## cardinality = 0..1
+		trigger_clear = yes
+		## cardinality = 0..1
 		picture_clear = yes
 		## cardinality = 0..1
 		show_sound_clear = yes
@@ -336,6 +338,8 @@ event = {
 		desc_clear = yes
 		## cardinality = 0..1
 		option_clear = yes
+		## cardinality = 0..1
+		trigger_clear = yes
 
 		## cardinality = 0..inf
 		option = {
@@ -585,6 +589,20 @@ event = {
 		}
 		## cardinality = 0..1
 		specimen = <specimen>
+		## cardinality = 0..1
+		weight_multiplier = {
+			## cardinality = 0..1
+			factor = int
+			## cardinality = 0..1
+			modifier = {
+				## cardinality = 0..1
+				add = value_field
+				## cardinality = 0..1
+				factor = float
+				## cardinality = 0..1
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+		}
 	}
 
 	subtype[diplomatic] = {
@@ -810,6 +828,10 @@ alias[picture_event_data:picture_event_data] = {
 	city_level = scope[planet]
 	## cardinality = 0..1
 	tooltip = bool
+	## cardinality = 0..1
+	trigger = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 }
 
 enums = {

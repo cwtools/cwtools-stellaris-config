@@ -28,6 +28,7 @@ enums = {
 		fleet
 		technology
 		economy
+		proxy_war
 	}
 	enum[relative_power_values] = {
 		pathetic
@@ -37,8 +38,9 @@ enums = {
 		overwhelming
 	}
 	enum[research_areas] = {
-		physics
 		engineering
+		physics
+		psionics
 		society
 	}
 	enum[genders] = {
@@ -428,13 +430,20 @@ enums = {
 	enum[ethic_leader_creator_ethic_enum] = {
 		authoritarian
 		egalitarian
-		spiritualist
+		fanatic_authoritarian
+		fanatic_egalitarian
+		fanatic_militarist
+		fanatic_pacifist
+		fanatic_spiritualist
+		fanatic_xenophile
+		fanatic_xenophobe
+		gestalt_consciousness
 		materialist
 		militarist
 		pacifist
-		xenophobe
+		spiritualist
 		xenophile
-		gestalt_consciousness
+		xenophobe
 	}
 	enum[ethic_leader_creator_species_class_enum] = {
 		random_non_machine

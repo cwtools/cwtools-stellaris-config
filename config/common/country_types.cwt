@@ -212,6 +212,8 @@ country_type = {
 		## cardinality = 0..1
 		limited_construction = bool
 		## cardinality = 0..1
+		diplomacy = bool
+		## cardinality = 0..1
 		can_use_market = bool
 		## cardinality = 0..1
 		espionage = bool
@@ -286,7 +288,8 @@ country_type = {
 		standard_species_rights_module = {}
 		## cardinality = 0..1
 		standard_grand_archive_module = {}
-		
+		## cardinality = 0..1
+		standard_shroud_module = {}
 		## cardinality = 0..1
 		exclusive_diplomacy_module = {
 			## cardinality = 0..1
@@ -374,25 +377,25 @@ enums = {
 		enclave_mercenary_military_minister_module
 		enclave_mercenary_seller_minister_module
 		foreign_minister_module
+		formless_military_minister_module
 		galactic_community_patrol_military_minister_module
 		horde_interior_minister_module
 		horde_military_minister_module
 		interior_minister_module
-		invaders_military_minister_module
 		invaders_interior_minister_module
+		invaders_military_minister_module
 		machine_interior_minister_module
 		machine_military_minister_module
 		mercenary_buyer_minister_module
 		military_minister_module
 		space_monsters_module
+		space_monsters_modules
+		standard_grand_archive_module
 		standard_species_rights_module
 		swarm_interior_minister_module
 		swarm_military_minister_module
-		space_monsters_modules
-		formless_military_minister_module
 		synth_queen_interior_minister_module
 		synth_queen_military_minister_module
-		standard_grand_archive_module
 		voidworms_module
 	}
 }

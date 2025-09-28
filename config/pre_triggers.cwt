@@ -1,3 +1,5 @@
+#  Information form game common\pop_jobs\000_pretriggers.txt and game events\000_added_pre_triggers_to_planet_events.txt   May be out of date as appears to be missing some pop job ones we have include below that are used.
+
 #planets:
 
 #### whether the  planet has an owner
@@ -22,7 +24,7 @@ alias[planet_pre_trigger:is_capital] = bool
 alias[planet_pre_trigger:is_occupied_flag] = bool
 
 
-#pops:
+#pops: 
 
 #### whether the pop planet has an owner
 alias[pop_pre_trigger:has_owner] = bool
