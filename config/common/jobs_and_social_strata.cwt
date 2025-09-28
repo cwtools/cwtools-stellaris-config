@@ -341,6 +341,10 @@ job = {
 social_strata = {
 	rank = int
 	## cardinality = 0..1
+	can_change_category = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
 	can_change_category = bool
 	## cardinality = 0..1
 	clothes_texture_index = int
