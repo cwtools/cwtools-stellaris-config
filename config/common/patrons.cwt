@@ -32,6 +32,10 @@ patrons = {
 		float
 	}
 	## cardinality = 0..1
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
 	text_color_code = scalar
 	## cardinality = 0..1
 	first_contact_event = <event>
@@ -44,7 +48,7 @@ patrons = {
 	## cardinality = 0..1
 	pre_communications_name_format = scalar
 	## cardinality = 0..1
-	position = { x = int y = int }
+	position = { x = float y = float }
 	## cardinality = 0..1
 	callings = {
 		## cardinality = 0..inf	
@@ -61,22 +65,41 @@ patrons = {
 		## cardinality = 0..1
 		name = localisation
 		## cardinality = 0..1
-		icon = <sprite>
+		icon = scalar
 		## cardinality = 0..1
 		desc = localisation
 		## cardinality = 0..inf
 		alias_name[triggered_modifier_country] = alias_match_left[triggered_modifier_country]
+		## cardinality = 0..1
+		custom_tooltip = localisation
+		## cardinality = 0..1
+		show_only_custom_tooltip = bool
 	}
 	## cardinality = 0..inf
 	passive_accord = {
 		## cardinality = 0..1
 		name = localisation
 		## cardinality = 0..1
-		icon = <sprite>
+		hide_desc = bool
+		## cardinality = 0..1
+		icon = scalar
 		## cardinality = 0..inf
 		alias_name[triggered_modifier_country] = alias_match_left[triggered_modifier_country]
-		## cardinality = 0..1
+		## cardinality = 0..inf
+		desc = {
+			## cardinality = 0..1
+			text = localisation
+			## cardinality = 0..1
+			trigger = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+		}
+		## cardinality = 0..inf
 		on_unlock = {
+			## cardinality = 0..1
+			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
 			## cardinality = 0..1
 			custom_tooltip = localisation
 			## cardinality = 0..1
@@ -95,7 +118,7 @@ patrons = {
 		## cardinality = 0..1
 		name = localisation
 		## cardinality = 0..1
-		icon = <sprite>
+		icon = scalar
 		## cardinality = 0..1
 		sound = <sound_effect>
 		## cardinality = 0..1
@@ -107,6 +130,7 @@ patrons = {
 		## cardinality = 0..1
 		activation_cost = {
 			cost = {
+				## cardinality = 0..inf
 				<resource> = int
 			}
 		}
@@ -217,7 +241,7 @@ psionic_auras = {
 	  ## cardinality = 0..inf
 	 intensity_level = {
 		end = value_field
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		## replace_scope = { root = ship this = ship }
 		owner_fleet_modifier = {
 			## cardinality = 0..1
@@ -230,7 +254,7 @@ psionic_auras = {
 				alias_name[modifier] = alias_match_left[modifier]
 			}
 		}
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		## replace_scope = { root = planet this = planet }
 		owner_planet_modifier = {
 			## cardinality = 0..1
@@ -243,7 +267,7 @@ psionic_auras = {
 				alias_name[modifier] = alias_match_left[modifier]
 			}
 		}
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		## replace_scope = { root = ship this = ship }
 		neutral_fleet_modifier = {
 			## cardinality = 0..1
@@ -256,7 +280,7 @@ psionic_auras = {
 				alias_name[modifier] = alias_match_left[modifier]
 			}
 		}
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		## replace_scope = { root = planet this = planet }
 		neutral_planet_modifier = {
 			## cardinality = 0..1
@@ -269,7 +293,7 @@ psionic_auras = {
 				alias_name[modifier] = alias_match_left[modifier]
 			}
 		}
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		## replace_scope = { root = fleet this = fleet }
 		rival_fleet_modifier = {
 			## cardinality = 0..1
@@ -283,7 +307,7 @@ psionic_auras = {
 				alias_name[modifier] = alias_match_left[modifier]
 			}
 		}
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		## replace_scope = { root = planet this = planet }
 		rival_planet_modifier = {
 			## cardinality = 0..1
@@ -342,22 +366,38 @@ psionic_auras = {
 	## replace_scope = { root = system this = system }
 	monthly_increase = {
 		base = int
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		modifier = {
 				## cardinality = 0..1
 				custom_tooltip = localisation
 				alias_name[modifier] = alias_match_left[modifier]
+				## cardinality = 0..1
+				alias_name[trigger] = alias_match_left[trigger]
+				## cardinality = 0..1
+				subtract = value_field
+				## cardinality = 0..1
+				add = value_field
+				## cardinality = 0..1
+				desc = localisation
 		}
 	}
 	## cardinality = 0..1
 	## replace_scope = { root = system this = system }
 	monthly_decrease = {
 		base = int
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		modifier = {
 				## cardinality = 0..1
 				custom_tooltip = localisation
 				alias_name[modifier] = alias_match_left[modifier]
+				## cardinality = 0..1
+				alias_name[trigger] = alias_match_left[trigger]
+				## cardinality = 0..1
+				subtract = value_field
+				## cardinality = 0..1
+				add = value_field
+				## cardinality = 0..1
+				desc = localisation
 		}
 	}
 	## cardinality = 0..1
@@ -383,6 +423,19 @@ psionic_auras = {
 		custom_tooltip = localisation
 		## cardinality = 0..1
 		alias_name[effect] = alias_match_left[effect]
+	}
+	## cardinality = 0..inf
+	## replace_scope = { this = system root = system from = system }
+	triggered_system_modifier = {
+		## cardinality = 0..1
+		potential = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		alias_name[modifier] = alias_match_left[modifier]
+		## cardinality = 0..1
+		mult = value_field
+		## cardinality = 0..1
+		custom_tooltip = localisation
 	}
 }
 
