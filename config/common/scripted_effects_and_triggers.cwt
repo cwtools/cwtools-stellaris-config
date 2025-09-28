@@ -382,3 +382,9 @@ alias[effect:pay_proxy_war_additional_resources] = { VALUE = int }
 alias[effect:try_remove_penal_experimental_mod] = yes
 ### Force scripted trigger or effect to work in common and event files
 alias[effect:add_deposit_with_message] = { DEPOSIT = <deposit> }
+### Force scripted trigger or effect to work in common and event files
+alias[effect:on_psionic_aura_spawned] = {
+	TYPE = <psionic_auras>
+	## cardinality = 0..1
+	NO_IMMUNE = bool
+}
