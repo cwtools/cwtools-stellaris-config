@@ -5108,7 +5108,7 @@ alias[effect:spawn_psionic_aura] = {
 }
 
 ###Sets given intensity to Psionic Aura in scoped system
-alias[effect:set_aura_intensity] = int
+alias[effect:set_aura_intensity] = value_field
 
 ###Adds value to Psionic Aura intensity in scoped system
 alias[effect:add_aura_intensity] = int
