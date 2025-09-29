@@ -3029,13 +3029,16 @@ alias[effect:spawn_system] = {
 	## cardinality = 0..1
 	direction = rimwards
 	## cardinality = 0..1
+	direction = right
+	## cardinality = 0..1
+	direction = left
+	## cardinality = 0..1
 	authorize_spawn_on_galactic_core = bool
 	## cardinality = 0..1
 	effect = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 }
-
 ### Starts colonization of the scoped planet
 alias[effect:start_colony] = {
 	owner = scope_group[target_country]
