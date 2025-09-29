@@ -417,6 +417,8 @@ citizenship_type = {
 
 	## cardinality = 0..1
 	alias_name[triggered_pop_modifier] = alias_match_left[triggered_pop_modifier]
+	## cardinality = 0..1
+	alias_name[triggered_pop_group_modifier] = alias_match_left[triggered_pop_group_modifier]
 }
 
 colonization_control = {
