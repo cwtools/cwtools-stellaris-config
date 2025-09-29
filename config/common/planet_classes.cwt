@@ -67,6 +67,7 @@ planet_class = {
 	fixed_entity_scale = bool
 	## cardinality = 0..1
 	icon = <sprite>
+	icon_large = <sprite>
 	subtype[planet] = {
 		icon = <sprite>
 		## cardinality = 0..1

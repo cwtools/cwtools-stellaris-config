@@ -250,15 +250,16 @@ enums = {
 		excellent
 	}
 	enum[envoy_tasks] = {
-		improve_relations
-		harm_relations
 		federation
-		galactic_community
-		spy_network
 		first_contact
+		galactic_community
+		harm_relations
+		improve_relations
+		none
+		patron_attunement
+		spy_network
 		strengthen_imperial_authority
 		undermine_imperial_authority
-		none
 	}
 	enum[planet_resource_compare_types] = {
 		produces
