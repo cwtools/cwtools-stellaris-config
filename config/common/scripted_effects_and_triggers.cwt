@@ -388,3 +388,5 @@ alias[effect:on_psionic_aura_spawned] = {
 	## cardinality = 0..1
 	NO_IMMUNE = bool
 }
+### Force scripted trigger or effect to work in common and event files
+alias[effect:create_exiled_starhold] = yes
