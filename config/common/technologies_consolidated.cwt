@@ -167,6 +167,8 @@ technology = {
 			## cardinality = 0..inf
 			alias_name[modifier] = alias_match_left[modifier]
 			## cardinality = 0..1
+			show_only_custom_tooltip = bool
+			## cardinality = 0..1
 			custom_tooltip = localisation
 		}
 		## cardinality = 0..1
@@ -216,42 +218,45 @@ enums = {
 		resource
 	}
 	enum[feature_flags] = {
-		experimental_subspace_navigation
-		robot_leaders
-		megaengineering
+		active_reconnaissance_unlocked
+		add_advanced_traits
+		advanced_gene_modding
+		alien_cloning_unlocked
+		allow_psionic_aura_intensity_growth
+		allow_psionic_aura_intensity_spread
+		assist_cloaking_detection_unlocked
 		assist_research
-		tech_automated_exploration
-		wormhole_stabilization
+		bliss_standard
+		build_terraform_station
+		campaign_edicts
+		droids
+		experimental_subspace_navigation
 		gateway_activation
 		gateway_construction
-		jump_method
-		planetary_ftl_inhibitor
-		build_terraform_station
-		terraform_inhabited
-		uplifting
-		modify_traits
-		pop_self_modification
 		habitability_gene_modding
-		bliss_standard
-		campaign_edicts
-		unity_ambitions
-		modify_robots
-		advanced_gene_modding
-		add_advanced_traits
-		droids
-		robots
-		synths
-		unlock_arcane_deciphering
-		unlocks_auto_research
 		hyper_relay_construction
-		active_reconnaissance_unlocked
-		assist_cloaking_detection_unlocked
+		jump_method
+		megaengineering
+		modify_robots
+		modify_traits
+		mutations
+		planetary_ftl_inhibitor
+		pop_self_modification
+		robot_leaders
+		robots
+		sustain_cosmic_storm_unlocked
+		synths
+		tech_automated_exploration
+		terraform_inhabited
+		unity_ambitions
+		unlock_arcane_deciphering
 		unlock_astral_rift_exploration
 		unlock_astral_threads_actions
-		sustain_cosmic_storm_unlocked
 		unlock_gravity_snares
-		alien_cloning_unlocked
-		mutations
+		unlock_psionic_aura
+		unlocks_auto_research
+		uplifting
+		wormhole_stabilization
 	}
 	enum[technology_areas] = {
 		engineering
