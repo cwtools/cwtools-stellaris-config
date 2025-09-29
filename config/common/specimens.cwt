@@ -29,6 +29,11 @@ specimen = {
 	icon = <sprite>
 	type = enum[specimen_type]
 	
+	## cardinality = 0..1
+	is_tradable = bool
+	## cardinality = 0..1
+	is_sellable = bool
+	
 	# for inline script
 	## cardinality = 0..1
 	RARITY = enum[rarity]
