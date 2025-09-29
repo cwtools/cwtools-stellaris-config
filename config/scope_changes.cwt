@@ -4537,9 +4537,9 @@ alias[effect:every_system_in_cosmic_storm_influence_field] = {
 
 ###Checks used naval cap by the scoped country or fleet's controlled ships which fulfill the specified criteria.
 alias[trigger:count_used_naval_cap] = {
-	count = int_value_field
-	count = value[variable]
-	count = all
+	value = int_value_field
+	value = value[variable]
+	value = all
 	## push_scope = ship
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
