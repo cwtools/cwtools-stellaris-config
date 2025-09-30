@@ -1573,6 +1573,8 @@ alias[effect:create_leader] = {
 	class = random
 	class = random_ruler
 	## cardinality = 0..1
+	tier = <leader_tiers>
+	## cardinality = 0..1
 	###Other scopes will simply default to this.owner_main_species
 	species = scope_group[target_species]
 	## cardinality = 0..1
