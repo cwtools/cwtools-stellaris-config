@@ -354,6 +354,7 @@ alias[effect:whisperers_in_the_void_replace_patron] = {
 ### Force scripted trigger or effect to work in common and event files
 alias[effect:create_ship_with_random_graphical_culture] = {
 	EFFECT_NAME = scalar
+	## cardinality = 0..1
 	IGNORE_COUNTRY_GFX = bool
 }
 ### Force scripted trigger or effect to work in common and event files
