@@ -5142,6 +5142,7 @@ alias[effect:sacrifice_pop_group] = {
 
 ###Instantly sacrifices part of the assigned pops to this job
 alias[effect:sacrifice_assigned_pop_amount] = {
+	## cardinality = 0..1
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
