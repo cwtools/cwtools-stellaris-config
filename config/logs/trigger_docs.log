@@ -1,4 +1,4 @@
-[18:42:34][game_application.cpp:1405]: 
+[16:47:36][game_application.cpp:1405]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -4598,7 +4598,7 @@ count_war = {
 Supported Scopes: country
 
 =================
-[18:42:34][game_application.cpp:1408]: 
+[16:47:37][game_application.cpp:1408]:
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -5382,6 +5382,8 @@ destroy_ambient_object = <target>
 Supported Scopes: all
 
 add_trait - Adds a specific trait to the scoped leader or a random common/negative trait 
+add_trait = <trait>/random_common/random_negative
+or
 add_trait = {
 	trait = <trait>/random_common/random_negative
 	consume_selection = yes/no (if yes and leader has unspent trait selections, consume one of them; default: no)
@@ -7208,7 +7210,7 @@ give_specimen = { key = <specimen> origin = <key> }
 Supported Scopes: country
 
 remove_specimen - Removes specified specimen from the target country. This will destroy the specimen
-remove_specimen = <specimen>
+remove_specimen = <specimen_key/exhibit_target>
 Supported Scopes: country
 
 set_emergency_fund_active - Sets whether the emergency fund should be active or not.
