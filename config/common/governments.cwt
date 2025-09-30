@@ -790,6 +790,24 @@ alias[government_trigger:AND] = {
     alias_name[government_trigger] = alias_match_left[government_trigger]
 }
 
+alias[government_trigger:limit] = {
+    ## cardinality = 0..1
+	has_machine_age_dlc = bool
+	## cardinality = 0..1
+	has_synthetic_dawn = bool
+	## cardinality = 0..1
+	has_shroud_dlc = bool
+	## cardinality = 0..1
+	OR = {
+		## cardinality = 0..1
+		has_machine_age_dlc = bool
+		## cardinality = 0..1
+		has_synthetic_dawn = bool
+		## cardinality = 0..1
+		has_shroud_dlc = bool
+	}
+}
+
 alias[government_trigger:host_has_dlc] = enum[DLCs]
 
 alias[government_trigger:always] = bool

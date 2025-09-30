@@ -429,6 +429,10 @@ trait = {
 			alias_name[modifier] = alias_match_left[modifier]
 			## cardinality = 0..1
 			mult = value_field
+			## cardinality = 0..1
+			custom_tooltip = localisation
+			## cardinality = 0..1
+			show_only_custom_tooltip = bool
 		}
 		
 		## cardinality = 0..1
@@ -447,6 +451,10 @@ trait = {
 			alias_name[modifier] = alias_match_left[modifier]
 			## cardinality = 0..1
 			mult = value_field
+			## cardinality = 0..1
+			custom_tooltip = localisation
+			## cardinality = 0..1
+			show_only_custom_tooltip = bool
 		}
 		
 		## cardinality = 0..1
@@ -465,6 +473,10 @@ trait = {
 			alias_name[modifier] = alias_match_left[modifier]
 			## cardinality = 0..1
 			mult = value_field
+			## cardinality = 0..1
+			custom_tooltip = localisation
+			## cardinality = 0..1
+			show_only_custom_tooltip = bool
 		}
 		
 		## cardinality = 0..1
@@ -483,6 +495,10 @@ trait = {
 			alias_name[modifier] = alias_match_left[modifier]
 			## cardinality = 0..1
 			mult = value_field
+			## cardinality = 0..1
+			custom_tooltip = localisation
+			## cardinality = 0..1
+			show_only_custom_tooltip = bool
 		}
 				
 		## cardinality = 0..1
@@ -501,6 +517,10 @@ trait = {
 			alias_name[modifier] = alias_match_left[modifier]
 			## cardinality = 0..1
 			mult = value_field
+			## cardinality = 0..1
+			custom_tooltip = localisation
+			## cardinality = 0..1
+			show_only_custom_tooltip = bool
 		}
 		
 		## cardinality = 0..1
@@ -519,6 +539,10 @@ trait = {
 			alias_name[modifier] = alias_match_left[modifier]
 			## cardinality = 0..1
 			mult = value_field
+			## cardinality = 0..1
+			custom_tooltip = localisation
+			## cardinality = 0..1
+			show_only_custom_tooltip = bool
 		}
 		
 		

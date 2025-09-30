@@ -24,9 +24,12 @@ storm_type = {
 	## replace_scope = { this = country root = country }
 	spawn_weight = {
 		base = float
+		## cardinality = 0..inf
 		modifier = {
 			## cardinality = 0..1
 			set = int
+			## cardinality = 0..1
+			mult = value_field
 			## cardinality = 0..1
 			factor = int
 			alias_name[trigger] = alias_match_left[trigger]

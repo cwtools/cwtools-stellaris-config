@@ -15,7 +15,8 @@ zones = {
 	base_buildtime = int
 	## cardinality = 0..1
 	max_buildings_planet_class = bool
-	
+	## cardinality = 0..1
+	planet_limit = int
 	## cardinality = 0..1
 	swap_type = <district>
 	## cardinality = 0..1
