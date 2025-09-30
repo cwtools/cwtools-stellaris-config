@@ -391,3 +391,45 @@ alias[effect:on_psionic_aura_spawned] = {
 }
 ### Force scripted trigger or effect to work in common and event files
 alias[effect:create_exiled_starhold] = yes
+### Force scripted trigger or effect to work in common and event files
+alias[effect:electric_storm_apply_aftermath_modifier] = {
+	FactorSev1 = value_field
+    FactorSev2 = value_field
+    FactorSev3 = value_field
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:particle_storm_apply_aftermath_modifier] = {
+	FactorSev1 = value_field
+    FactorSev2 = value_field
+    FactorSev3 = value_field
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:gravity_storm_apply_aftermath_modifier] = {
+	FactorSev1 = value_field
+    FactorSev2 = value_field
+    FactorSev3 = value_field
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:magnetic_storm_apply_aftermath_modifier] = {
+	FactorSev1 = value_field
+    FactorSev2 = value_field
+    FactorSev3 = value_field
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:solar_storm_apply_aftermath_modifier] = {
+	FactorSev1 = value_field
+    FactorSev2 = value_field
+    FactorSev3 = value_field
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:celestial_storm_apply_aftermath_modifier] = {
+	FactorSev1 = value_field
+    FactorSev2 = value_field
+    FactorSev3 = value_field
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:shroud_storm_apply_aftermath_modifier] = {
+	FactorSev1 = value_field
+    FactorSev2 = value_field
+    FactorSev3 = value_field
+}
