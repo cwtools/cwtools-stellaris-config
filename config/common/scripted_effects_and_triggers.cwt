@@ -65,6 +65,8 @@ alias[effect:ethic_leader_creator] = {
 	## cardinality = 0..1
 	CLASS = enum[leader_classes]
 	## cardinality = 0..1
+	TIER = <leader_tiers>
+	## cardinality = 0..1
 	NAME = localisation
 	## cardinality = 0..1
 	LEVEL = int
@@ -185,8 +187,8 @@ alias[effect:add_psionic_trait] = bool
 alias[effect:update_every_leader_from_psionic_countries] = bool
 
 ### Force scripted trigger or effect to work in common and event files	
-alias[effect:reckoning_consume_world] = {
-	OWNER = scope{country}
+alias[effect:reckoning_consume_world] = {    
+	OWNER = scope{country}  
 }
 
 ### Force scripted trigger or effect to work in common and event files	
@@ -354,6 +356,7 @@ alias[effect:whisperers_in_the_void_replace_patron] = {
 ### Force scripted trigger or effect to work in common and event files
 alias[effect:create_ship_with_random_graphical_culture] = {
 	EFFECT_NAME = scalar
+	## cardinality = 0..1
 	IGNORE_COUNTRY_GFX = bool
 }
 ### Force scripted trigger or effect to work in common and event files
@@ -390,3 +393,57 @@ alias[effect:on_psionic_aura_spawned] = {
 }
 ### Force scripted trigger or effect to work in common and event files
 alias[effect:create_exiled_starhold] = yes
+### Force scripted trigger or effect to work in common and event files
+alias[effect:electric_storm_apply_aftermath_modifier] = {
+	FactorSev1 = value_field
+    FactorSev2 = value_field
+    FactorSev3 = value_field
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:particle_storm_apply_aftermath_modifier] = {
+	FactorSev1 = value_field
+    FactorSev2 = value_field
+    FactorSev3 = value_field
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:gravity_storm_apply_aftermath_modifier] = {
+	FactorSev1 = value_field
+    FactorSev2 = value_field
+    FactorSev3 = value_field
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:magnetic_storm_apply_aftermath_modifier] = {
+	FactorSev1 = value_field
+    FactorSev2 = value_field
+    FactorSev3 = value_field
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:solar_storm_apply_aftermath_modifier] = {
+	FactorSev1 = value_field
+    FactorSev2 = value_field
+    FactorSev3 = value_field
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:celestial_storm_apply_aftermath_modifier] = {
+	FactorSev1 = value_field
+    FactorSev2 = value_field
+    FactorSev3 = value_field
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:shroud_storm_apply_aftermath_modifier] = {
+	FactorSev1 = value_field
+    FactorSev2 = value_field
+    FactorSev3 = value_field
+}
+### Force scripted trigger or effect to work in common and event files
+alias[effect:create_enclave_with_country] = {
+	PREFIX = scalar
+	EFFECT = scalar
+	TRUST = int
+}
+
+### Force scripted trigger or effect to work in common and event files
+alias[effect:mind_over_matter_immediate] = bool
+
+### Force scripted trigger or effect to work in common and event files
+alias[effect:reckoning_spawn] = bool

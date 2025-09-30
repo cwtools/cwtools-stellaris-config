@@ -556,8 +556,11 @@ component_template = {
 		show_tech_unlock_if = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
-		count = float
-		regeneration_per_day = float
+		## cardinality = 0..1
+		count = value_field
+		## cardinality = 0..1
+		regeneration_per_day = value_field
+		
 		launch_time = float
 		damage = { min = float max = float }
 		cooldown = float

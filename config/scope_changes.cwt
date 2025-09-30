@@ -621,8 +621,11 @@ alias[trigger:count_controlled_fleet] = {
 
 ###Iterate through each leader that is owned by the country
 alias[trigger:count_owned_leader] = {
+	## cardinality = 0..1
 	count = int_value_field
+	## cardinality = 0..1
 	count = value[variable]
+	## cardinality = 0..1
 	count = all
 	## cardinality = 0..1
 	## push_scope = leader

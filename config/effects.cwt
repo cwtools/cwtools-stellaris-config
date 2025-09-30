@@ -1171,6 +1171,7 @@ alias[effect:copy_techs_from] = {
 ###Sets the scoped object's graphical culture
 alias[effect:set_graphical_culture] = <graphical_culture>
 alias[effect:set_graphical_culture] = scope[any]
+
 ###Creates a new species. The habitability trait is determined by homeworld, traits = random, traits = { ideal_planet_class = <pc_XYZ> }, traits = <trait_pc_XYZ_preference>, or else is assigned randomly.
 alias[effect:create_species] = {
 	## cardinality = 0..1
@@ -1244,6 +1245,8 @@ alias[effect:create_species] = {
 	## cardinality = 0..1
 	###determines if species is a modification of another
 	is_mod = bool
+	## cardinality = 0..1
+	mod_name_affix = scalar
 	## cardinality = 0..1
 	###determines if species leaders are immortal
 	immortal = bool
@@ -1570,6 +1573,8 @@ alias[effect:create_leader] = {
 	class = random
 	class = random_ruler
 	## cardinality = 0..1
+	tier = <leader_tiers>
+	## cardinality = 0..1
 	###Other scopes will simply default to this.owner_main_species
 	species = scope_group[target_species]
 	## cardinality = 0..1
@@ -1655,6 +1660,8 @@ alias[effect:clone_leader] = {
 	name = random
 	## cardinality = 0..1
 	class = enum[leader_classes]
+	## cardinality = 0..1
+	tier = <leader_tiers>
 	## cardinality = 0..1
 	species = scope_group[target_species]
 	## cardinality = 0..1
@@ -3039,6 +3046,7 @@ alias[effect:spawn_system] = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 }
+
 ### Starts colonization of the scoped planet
 alias[effect:start_colony] = {
 	owner = scope_group[target_country]
@@ -4813,12 +4821,12 @@ alias[effect:scale_pop_amount] = float
 alias[effect:transfer_pop_amount] = {
 	source = scope[pop_group]
 	target = scope[pop_group]
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	amount = value_field
 	## cardinality = 0..1
 	percentage = value_field[0.0..1.0]
-	## cardinality = 0..1
-	random = int
+	## cardinality = 0..inf
+	random = value_field
 	## cardinality = 0..1
 	growth_category = enum[growth_category]
 }
@@ -5142,6 +5150,7 @@ alias[effect:sacrifice_pop_group] = {
 
 ###Instantly sacrifices part of the assigned pops to this job
 alias[effect:sacrifice_assigned_pop_amount] = {
+	## cardinality = 0..1
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
