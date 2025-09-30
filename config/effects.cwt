@@ -4825,7 +4825,7 @@ alias[effect:transfer_pop_amount] = {
 	## cardinality = 0..1
 	percentage = value_field[0.0..1.0]
 	## cardinality = 0..1
-	random = int
+	random = value_field
 	## cardinality = 0..1
 	growth_category = enum[growth_category]
 }
