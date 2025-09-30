@@ -233,6 +233,8 @@ species_class = {
 	## replace_scope = { root = country this = country }
 	possible = {
 		## cardinality = 0..1
+		alias_name[government_trigger] = alias_match_left[government_trigger]
+		## cardinality = 0..1
 		authority = {
 			alias_name[government_trigger] = alias_match_left[government_trigger]
 		}
