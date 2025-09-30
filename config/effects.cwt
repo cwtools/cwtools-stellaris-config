@@ -3046,6 +3046,7 @@ alias[effect:spawn_system] = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 }
+
 ### Starts colonization of the scoped planet
 alias[effect:start_colony] = {
 	owner = scope_group[target_country]
@@ -4820,11 +4821,11 @@ alias[effect:scale_pop_amount] = float
 alias[effect:transfer_pop_amount] = {
 	source = scope[pop_group]
 	target = scope[pop_group]
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	amount = value_field
 	## cardinality = 0..1
 	percentage = value_field[0.0..1.0]
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	random = value_field
 	## cardinality = 0..1
 	growth_category = enum[growth_category]
