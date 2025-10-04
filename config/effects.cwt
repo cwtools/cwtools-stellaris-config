@@ -705,7 +705,7 @@ alias[effect:kill_leader] = {
 	heir = bool
 	##cardinality = 0..1
 	###default: no; if yes, fires on_leader_fired instead of on_leader_death
-	fire = yes
+	fire = bool
 	##cardinality = 0..1
 	executed = bool
 }
