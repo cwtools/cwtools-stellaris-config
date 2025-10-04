@@ -238,6 +238,102 @@ psionic_auras = {
 	 patron = <patrons>
 	 ## cardinality = 0..1
 	 background = <sprite>
+	 
+	 # for inline scripts
+	 ## cardinality = 0..inf
+		## replace_scope = { root = ship this = ship }
+		owner_fleet_modifier = {
+			## cardinality = 0..1
+			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			modifier = {
+				## cardinality = 0..1
+				custom_tooltip = localisation
+				alias_name[modifier] = alias_match_left[modifier]
+			}
+		}
+		## cardinality = 0..inf
+		## replace_scope = { root = planet this = planet }
+		owner_planet_modifier = {
+			## cardinality = 0..1
+			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			modifier = {
+				## cardinality = 0..1
+				custom_tooltip = localisation
+				alias_name[modifier] = alias_match_left[modifier]
+			}
+		}
+		## cardinality = 0..inf
+		## replace_scope = { root = ship this = ship }
+		neutral_fleet_modifier = {
+			## cardinality = 0..1
+			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			modifier = {
+				## cardinality = 0..1
+				custom_tooltip = localisation
+				alias_name[modifier] = alias_match_left[modifier]
+			}
+		}
+		## cardinality = 0..inf
+		## replace_scope = { root = planet this = planet }
+		neutral_planet_modifier = {
+			## cardinality = 0..1
+			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			modifier = {
+				## cardinality = 0..1
+				custom_tooltip = localisation
+				alias_name[modifier] = alias_match_left[modifier]
+			}
+		}
+		## cardinality = 0..inf
+		## replace_scope = { root = fleet this = fleet }
+		rival_fleet_modifier = {
+			## cardinality = 0..1
+			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			## replace_scope = { root = ship this = ship }
+			modifier = {
+				## cardinality = 0..1
+				custom_tooltip = localisation
+				alias_name[modifier] = alias_match_left[modifier]
+			}
+		}
+		## cardinality = 0..inf
+		## replace_scope = { root = planet this = planet }
+		rival_planet_modifier = {
+			## cardinality = 0..1
+			potential = {
+				alias_name[trigger] = alias_match_left[trigger]
+			}
+			modifier = {
+				## cardinality = 0..1
+				custom_tooltip = localisation
+				alias_name[modifier] = alias_match_left[modifier]
+			}
+		}
+		## cardinality = 0..inf
+		## replace_scope = { root = system this = system }
+		daily_decrease = {
+			base = int
+			## cardinality = 0..inf
+			modifier = {
+				## cardinality = 0..1
+				add = value_field
+				## cardinality = 0..1
+				alias_name[trigger] = alias_match_left[trigger]
+				## cardinality = 0..1
+				desc = localisation
+			}
+		}
+	 
 	  ## cardinality = 0..inf
 	 intensity_level = {
 		end = value_field
@@ -468,4 +564,3 @@ enums = {
 		}
 	}
 }
-
