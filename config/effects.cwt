@@ -94,6 +94,10 @@ alias[effect:country_event] = {
 	## cardinality = 0..1
 	days = value_field
 	## cardinality = 0..1
+	months = int
+	## cardinality = 0..1
+	months = value_field
+	## cardinality = 0..1
 	years = int
 	## cardinality = 0..1
 	years = value_field
@@ -701,7 +705,7 @@ alias[effect:kill_leader] = {
 	heir = bool
 	##cardinality = 0..1
 	###default: no; if yes, fires on_leader_fired instead of on_leader_death
-	fire = yes
+	fire = bool
 	##cardinality = 0..1
 	executed = bool
 }
