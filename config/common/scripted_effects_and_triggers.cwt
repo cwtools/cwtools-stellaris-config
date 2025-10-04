@@ -2,11 +2,11 @@
 #value_field/int_value_field: use == if the left hand side works in trigger:<trigger>, otherwise use =  NOTE: Not inside a trigger like trigger = { something = value_field  } only trigger == value_field
 
 types = {
-	## type_key_filter <> { pop_amount sapient_pop_amount psionic_pop_amount  is_leader_in_storm }
+	## type_key_filter <> { pop_amount sapient_pop_amount psionic_pop_amount  is_leader_in_storm  can_artifact_analysis_give_$SPECIMEN$ }
 	type[scripted_trigger] = {
 		path = "game/common/scripted_triggers"
 	}
-	## type_key_filter <> { ethic_leader_creator spawn_formless_defense_fleet split_astral_scar store_galactic_community_leader_backup_data add_random_trait_by_tag create_voidworm_fleet spawn_cutholoid_from_asteroid  create_normal_pirate_country cyberize_pops_effect cyberize_creed_pops_effect update_eotc_accords add_psionic_trait refresh_endbringers_paranoia_modifier refresh_endbringers_madness_modifier spawn_mindwarden_megastructures  breach_shroud create_megastructure_system add_latent_psionic_trait  turn_main_species_to_psionic update_every_leader_from_psionic_countries reckoning_consume_world update_reckoning_event_chains update_reckoning_event_chain clear_covenant_flags roll_boon roll_boon_high  roll_boon_medium roll_boon_low remove_bestowed_flags break_cycle_of_fortune break_cycle_of_omens clear_cycle_rolled_flags launch_cycle_of_fortune launch_cycle_of_omens launch_cycle_of_growth launch_cycle_of_prosperity }
+	## type_key_filter <> { ethic_leader_creator spawn_formless_defense_fleet split_astral_scar store_galactic_community_leader_backup_data add_random_trait_by_tag create_voidworm_fleet spawn_cutholoid_from_asteroid  create_normal_pirate_country cyberize_pops_effect cyberize_creed_pops_effect update_eotc_accords add_psionic_trait refresh_endbringers_paranoia_modifier refresh_endbringers_madness_modifier spawn_mindwarden_megastructures  breach_shroud create_megastructure_system add_latent_psionic_trait  turn_main_species_to_psionic update_every_leader_from_psionic_countries reckoning_consume_world update_reckoning_event_chains update_reckoning_event_chain clear_covenant_flags roll_boon roll_boon_high  roll_boon_medium roll_boon_low remove_bestowed_flags break_cycle_of_fortune break_cycle_of_omens clear_cycle_rolled_flags launch_cycle_of_fortune launch_cycle_of_omens launch_cycle_of_growth launch_cycle_of_prosperity refresh_endbringers_paranoia_modifier	refresh_endbringers_madness_modifier	accept_end_of_the_cycle	clear_selected_shroud_song	close_mindwarden_diplomacy	create_mindwarden_commander	create_mindwarden_defense_fleet create_mindwarden_enclave create_mindwarden_fleet_leader create_mindwarden_raid_fleet custom_bestowed_tooltip	force_remove_chosen_civic gain_supersitious_beliefs_cloaking_tech give_eotc_psionic_component_tech_insight	launch_cycle_of_conflict launch_cycle_of_harmony launch_cycle_of_knowledge patron_revenge roll_secret_factions roll_superstitious_event_high	roll_superstitious_event_low roll_superstitious_event_medium select_shroud_song set_psionic_choir_policy shroud_forge_your_own_path give_mindwarden_dividends_modifiers mindwarden_give_logistic_assistance move_towards_advanced_government refuse_covenant	shroud_leader_creator shroud_leader_hire_effect	shroud_touched_option_cost whisperers_in_the_void_replace_patron	create_ship_with_random_graphical_culture add_percentage_to_all_resources	gain_leader_trait_level_max_2	give_eotc_psionic_component_tech_insight drone_conversion_event_effect_2	animator_of_clay_create_vessels	materiality_engine_on_built_effect	pay_proxy_war_additional_resources	try_remove_penal_experimental_mod	add_deposit_with_message	on_psionic_aura_spawned	create_exiled_starhold	electric_storm_apply_aftermath_modifier particle_storm_apply_aftermath_modifier gravity_storm_apply_aftermath_modifier	magnetic_storm_apply_aftermath_modifier	solar_storm_apply_aftermath_modifier celestial_storm_apply_aftermath_modifier shroud_storm_apply_aftermath_modifier	create_enclave_with_country mind_over_matter_immediate reckoning_spawn }
 	type[scripted_effect] = {
 		path = "game/common/scripted_effects"
 	}
@@ -22,6 +22,14 @@ scripted_effect = {
 	## cardinality = 0..1
 	optimize_memory
 	alias_name[effect] = alias_match_left[effect]
+}
+
+### Force scripted trigger or effect to work in common and event files	
+alias[effect:reckoning_consume_world] = {   
+	## cardinality = 0..1
+	OWNER = scope{country}  
+	## cardinality = 0..1
+	OWNER = value_set[event_target]
 }
 
 ### Force scripted effect to work in event files
@@ -142,6 +150,7 @@ alias[effect:cyberize_pops_effect] = {
 	## cardinality = 0..1
 	LIMITED = bool
 }
+### Force scripted trigger or effect to work in common and event files	
 alias[effect:cyberize_pops_effect] = bool
 
 ### Force scripted trigger or effect to work in common and event files	
@@ -151,6 +160,7 @@ alias[effect:cyberize_creed_pops_effect] = {
 	## cardinality = 0..1
 	TINY_GROUPS = bool
 }
+### Force scripted trigger or effect to work in common and event files	
 alias[effect:cyberize_creed_pops_effect] = bool
 
 ### Force scripted trigger to work in common and event files
@@ -158,9 +168,6 @@ alias[trigger:is_leader_in_storm] = bool
 
 ### Force scripted trigger to work in common and event files
 alias[trigger:can_artifact_analysis_give_$SPECIMEN$] = bool
-
-
-# The entire shroud_shadows_scripted_effects is considered invalid due to the stupid code - I had to hard code the whole file  !!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ### Force scripted trigger or effect to work in common and event files	
 alias[effect:update_eotc_accords] = bool
@@ -185,11 +192,6 @@ alias[effect:add_psionic_trait] = bool
 
 ### Force scripted trigger or effect to work in common and event files	
 alias[effect:update_every_leader_from_psionic_countries] = bool
-
-### Force scripted trigger or effect to work in common and event files	
-alias[effect:reckoning_consume_world] = {    
-	OWNER = scope{country}  
-}
 
 ### Force scripted trigger or effect to work in common and event files	
 alias[effect:update_reckoning_event_chains] = {
