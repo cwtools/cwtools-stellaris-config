@@ -2310,6 +2310,7 @@ alias[effect:create_message] = {
 	type = <message_type>
 	## cardinality = 0..1
 	localization = localisation
+	## cardinality = 0..1
 	days = int #no variables here atm
 	## cardinality = 0..1
 	### Default = this
