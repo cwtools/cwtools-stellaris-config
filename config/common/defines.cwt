@@ -3334,6 +3334,8 @@ NGameplay = {
 	AURA_CLASH_LOSING_INTENSITY = int
 	## cardinality = 0..1
 	AUTOMATED_WORKFORCE_MAX_PERC = float
+	## cardinality = 0..1
+	AURA_EFFECT_FALLEN_EMPIRE_OR_CRISIS_REDUCTION = float
 }
 NSpecies = {
 	## cardinality = 0..1
