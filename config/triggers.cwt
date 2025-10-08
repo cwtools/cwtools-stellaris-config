@@ -1617,6 +1617,11 @@ alias[trigger:num_buildings] = {
 	in_construction = bool
 	## cardinality = 0..1
 	owner_type = enum[building_owner_type]
+	## cardinality = 0..1
+	## replace_scope = { this = planet root = planet }
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 }
 
 ###Checks the number the planet has of any, or a specific, district
