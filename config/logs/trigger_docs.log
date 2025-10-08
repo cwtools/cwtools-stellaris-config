@@ -1,4 +1,4 @@
-[16:47:36][game_application.cpp:1405]: 
+[17:48:20][game_application.cpp:1405]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -928,7 +928,7 @@ has_extorted_faction = yes/no
 Supported Scopes: country
 
 num_buildings - Checks the number the planet has of any, or a specific, building
-num_buildings = {  type = <key/any>  value > 2/variable  disabled = <any(default)/yes(only)/no(only)>  in_construction = <any/no(default)/yes(only)>  category = <any(default)/for example unity or resource> owner_type = <normal/corporate/subject_holding> }
+num_buildings = {  type = <key/any>  value > 2/variable  disabled = <any(default)/yes(only)/no(only)>  in_construction = <any/no(default)/yes(only)>  category = <any(default)/for example unity or resource> owner_type = <normal/corporate/subject_holding> limit = {} (scope = planet) }
 Supported Scopes: planet country galactic_object
 
 num_districts - Checks the number the planet has of any, or a specific, district
@@ -4598,7 +4598,7 @@ count_war = {
 Supported Scopes: country
 
 =================
-[16:47:37][game_application.cpp:1408]:
+[17:48:20][game_application.cpp:1408]:
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -4777,7 +4777,7 @@ set_country_flag = <key> (note: one can use e.g. my_flag@from to track relations
 Supported Scopes: country
 
 set_country_code_flags - Sets flags as used by code, not defined in script:
-set_country_code_flags = { some_flag_1 = yes some_flag_2 = no }
+set_country_code_flag = { some_flag_1 = yes some_flag_2 = no }
 Supported Scopes: country
 
 set_planet_flag - Sets an arbitrarily-named flag on the scoped planet
