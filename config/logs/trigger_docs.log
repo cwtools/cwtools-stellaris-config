@@ -1,4 +1,4 @@
-[17:48:20][game_application.cpp:1405]: 
+[18:52:08][game_application.cpp:1405]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -4598,7 +4598,7 @@ count_war = {
 Supported Scopes: country
 
 =================
-[17:48:20][game_application.cpp:1408]:
+[18:52:08][game_application.cpp:1408]:
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -5490,7 +5490,7 @@ Supported Scopes: planet country ship pop pop_group
 
 remove_point_of_interest - Removes a specific point of interest from the scoped country's situation log
 remove_point_of_interest = <key>
-Supported Scopes: country
+Supported Scopes: planet country
 
 set_relation_flag - Sets a relation flag for the scoped country towards target country
 set_relation_flag = {
@@ -7505,6 +7505,10 @@ spawn_psionic_aura = {
 	type = aura
 	update_type = bool
 }
+Supported Scopes: galactic_object
+
+destroy_psionic_aura - Destroy Psionic Aura in scoped system.
+destroy_psionic_aura = yes
 Supported Scopes: galactic_object
 
 set_aura_intensity - Sets given intensity to Psionic Aura in scoped system
