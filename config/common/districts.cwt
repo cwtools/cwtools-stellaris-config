@@ -26,6 +26,10 @@ types = {
 ## push_scope = planet
 district = {
 	## cardinality = 0..1
+	is_uncapped = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
 	base_cap_amount = int
 	## cardinality = 0..1
 	default_starting_district = bool

@@ -1,4 +1,4 @@
-[17:48:19][modifier.cpp:2163]: 
+[18:52:07][modifier.cpp:2163]: 
  == MODIFIER DOCUMENTATION ==
 Note on Modifier Categories:
 -- These are used internally as a tag to suggest where they are intended to be used, but exact behavior depends upon individual implementation.
@@ -6206,31 +6206,6 @@ Printing Modifier Definitions:
 - planet_treasure_gatherers_advanced_logic_produces_mult, Category: Economic Units, AI Economy
 - planet_treasure_gatherers_feral_insight_produces_mult, Category: Economic Units, AI Economy
 - planet_treasure_gatherers_produces_mult, Category: Economic Units, AI Economy
-- planet_jobs_slave_energy_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_minerals_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_food_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_physics_research_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_society_research_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_engineering_research_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_influence_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_unity_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_trade_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_consumer_goods_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_alloys_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_volatile_motes_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_exotic_gases_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_rare_crystals_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_sr_living_metal_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_sr_zro_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_sr_dark_matter_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_nanites_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_minor_artifacts_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_astral_threads_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_biomass_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_menace_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_advanced_logic_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_feral_insight_produces_mult, Category: AI Economy, Job
-- planet_jobs_slave_produces_mult, Category: AI Economy, Job
 - planet_worker_ownership_jobs_energy_produces_mult, Category: AI Economy, Job
 - planet_worker_ownership_jobs_minerals_produces_mult, Category: AI Economy, Job
 - planet_worker_ownership_jobs_food_produces_mult, Category: AI Economy, Job
@@ -7360,6 +7335,8 @@ Printing Modifier Definitions:
 - planet_building_automation_2_build_speed_mult, Category: Planets
 - planet_building_automation_city_1_build_speed_mult, Category: Planets
 - planet_building_automation_city_2_build_speed_mult, Category: Planets
+- planet_building_automation_urban_1_build_speed_mult, Category: Planets
+- planet_building_automation_urban_2_build_speed_mult, Category: Planets
 - planet_building_automation_generator_1_build_speed_mult, Category: Planets
 - planet_building_automation_generator_2_build_speed_mult, Category: Planets
 - planet_building_automation_mining_1_build_speed_mult, Category: Planets
@@ -7938,20 +7915,260 @@ Printing Modifier Definitions:
 - planet_zone_spawning_hive_build_speed_mult, Category: Planets
 - district_cosmogenesis_goverment_max_add, Category: Planets
 - district_cosmogenesis_goverment_max_mult, Category: Planets
+- district_cosmogenesis_world_science_max_add, Category: Planets
+- district_cosmogenesis_world_science_max_mult, Category: Planets
+- district_cosmogenesis_world_logic_max_add, Category: Planets
+- district_cosmogenesis_world_logic_max_mult, Category: Planets
+- district_mindlink_max_add, Category: Planets
+- district_mindlink_max_mult, Category: Planets
+- district_city_max_add, Category: Planets
+- district_city_max_mult, Category: Planets
 - district_crashed_slaver_ship_max_add, Category: Planets
 - district_crashed_slaver_ship_max_mult, Category: Planets
+- district_resort_max_add, Category: Planets
+- district_resort_max_mult, Category: Planets
+- district_resort_1_max_add, Category: Planets
+- district_resort_1_max_mult, Category: Planets
+- district_resort_2_max_add, Category: Planets
+- district_resort_2_max_mult, Category: Planets
+- district_resort_3_max_add, Category: Planets
+- district_resort_3_max_mult, Category: Planets
+- district_prison_max_add, Category: Planets
+- district_prison_max_mult, Category: Planets
+- district_slave_max_add, Category: Planets
+- district_slave_max_mult, Category: Planets
+- district_hive_max_add, Category: Planets
+- district_hive_max_mult, Category: Planets
+- district_hive_1_max_add, Category: Planets
+- district_hive_1_max_mult, Category: Planets
+- district_hive_2_max_add, Category: Planets
+- district_hive_2_max_mult, Category: Planets
+- district_hive_3_max_add, Category: Planets
+- district_hive_3_max_mult, Category: Planets
+- district_nexus_max_add, Category: Planets
+- district_nexus_max_mult, Category: Planets
+- district_nexus_1_max_add, Category: Planets
+- district_nexus_1_max_mult, Category: Planets
+- district_nexus_2_max_add, Category: Planets
+- district_nexus_2_max_mult, Category: Planets
+- district_nexus_3_max_add, Category: Planets
+- district_nexus_3_max_mult, Category: Planets
+- district_prison_industrial_max_add, Category: Planets
+- district_prison_industrial_max_mult, Category: Planets
+- district_battle_thrall_max_add, Category: Planets
+- district_battle_thrall_max_mult, Category: Planets
+- district_srw_commercial_max_add, Category: Planets
+- district_srw_commercial_max_mult, Category: Planets
+- district_arcology_housing_max_add, Category: Planets
+- district_arcology_housing_max_mult, Category: Planets
+- district_arcology_leisure_max_add, Category: Planets
+- district_arcology_leisure_max_mult, Category: Planets
+- district_arcology_urban_1_max_add, Category: Planets
+- district_arcology_urban_1_max_mult, Category: Planets
+- district_arcology_urban_2_max_add, Category: Planets
+- district_arcology_urban_2_max_mult, Category: Planets
+- district_arcology_urban_3_max_add, Category: Planets
+- district_arcology_urban_3_max_mult, Category: Planets
 - district_generator_max_add, Category: Planets
 - district_generator_max_mult, Category: Planets
+- district_generator_uncapped_max_add, Category: Planets
+- district_generator_uncapped_max_mult, Category: Planets
 - district_mining_max_add, Category: Planets
 - district_mining_max_mult, Category: Planets
+- district_mining_uncapped_max_add, Category: Planets
+- district_mining_uncapped_max_mult, Category: Planets
 - district_farming_max_add, Category: Planets
 - district_farming_max_mult, Category: Planets
+- district_farming_uncapped_max_add, Category: Planets
+- district_farming_uncapped_max_mult, Category: Planets
+- district_hab_housing_max_add, Category: Planets
+- district_hab_housing_max_mult, Category: Planets
 - district_hab_energy_max_add, Category: Planets
 - district_hab_energy_max_mult, Category: Planets
 - district_hab_mining_max_add, Category: Planets
 - district_hab_mining_max_mult, Category: Planets
 - district_hab_science_max_add, Category: Planets
 - district_hab_science_max_mult, Category: Planets
+- district_rw_city_max_add, Category: Planets
+- district_rw_city_max_mult, Category: Planets
+- district_rw_hive_max_add, Category: Planets
+- district_rw_hive_max_mult, Category: Planets
+- district_rw_nexus_max_add, Category: Planets
+- district_rw_nexus_max_mult, Category: Planets
+- district_rw_generator_max_add, Category: Planets
+- district_rw_generator_max_mult, Category: Planets
+- district_rw_commercial_max_add, Category: Planets
+- district_rw_commercial_max_mult, Category: Planets
+- district_rw_science_max_add, Category: Planets
+- district_rw_science_max_mult, Category: Planets
+- district_rw_farming_max_add, Category: Planets
+- district_rw_farming_max_mult, Category: Planets
+- district_rw_urban_1_max_add, Category: Planets
+- district_rw_urban_1_max_mult, Category: Planets
+- district_rw_urban_2_max_add, Category: Planets
+- district_rw_urban_2_max_mult, Category: Planets
+- district_rw_urban_3_max_add, Category: Planets
+- district_rw_urban_3_max_mult, Category: Planets
+- district_craglands_max_add, Category: Planets
+- district_craglands_max_mult, Category: Planets
+- district_photosynthesis_fields_uncapped_max_add, Category: Planets
+- district_photosynthesis_fields_uncapped_max_mult, Category: Planets
+- district_hollow_mountains_uncapped_max_add, Category: Planets
+- district_hollow_mountains_uncapped_max_mult, Category: Planets
+- district_orchard_forests_uncapped_max_add, Category: Planets
+- district_orchard_forests_uncapped_max_mult, Category: Planets
+- district_mining_rare_crystals_max_add, Category: Planets
+- district_mining_rare_crystals_max_mult, Category: Planets
+- district_mining_betharian_max_add, Category: Planets
+- district_mining_betharian_max_mult, Category: Planets
+- district_mining_engineering_max_add, Category: Planets
+- district_mining_engineering_max_mult, Category: Planets
+- district_generator_volatile_motes_max_add, Category: Planets
+- district_generator_volatile_motes_max_mult, Category: Planets
+- district_generator_physics_max_add, Category: Planets
+- district_generator_physics_max_mult, Category: Planets
+- district_farming_exotic_gases_max_add, Category: Planets
+- district_farming_exotic_gases_max_mult, Category: Planets
+- district_farming_society_max_add, Category: Planets
+- district_farming_society_max_mult, Category: Planets
+- district_orders_demesne_max_add, Category: Planets
+- district_orders_demesne_max_mult, Category: Planets
+- district_arcology_mixed_industry_max_add, Category: Planets
+- district_arcology_mixed_industry_max_mult, Category: Planets
+- district_arcology_arms_industry_max_add, Category: Planets
+- district_arcology_arms_industry_max_mult, Category: Planets
+- district_arcology_civilian_industry_max_add, Category: Planets
+- district_arcology_civilian_industry_max_mult, Category: Planets
+- district_arcology_research_max_add, Category: Planets
+- district_arcology_research_max_mult, Category: Planets
+- district_arcology_research_physics_max_add, Category: Planets
+- district_arcology_research_physics_max_mult, Category: Planets
+- district_arcology_research_society_max_add, Category: Planets
+- district_arcology_research_society_max_mult, Category: Planets
+- district_arcology_research_engineering_max_add, Category: Planets
+- district_arcology_research_engineering_max_mult, Category: Planets
+- district_arcology_administrative_max_add, Category: Planets
+- district_arcology_administrative_max_mult, Category: Planets
+- district_arcology_spiritualist_max_add, Category: Planets
+- district_arcology_spiritualist_max_mult, Category: Planets
+- district_arcology_organic_housing_max_add, Category: Planets
+- district_arcology_organic_housing_max_mult, Category: Planets
+- district_arcology_fortress_max_add, Category: Planets
+- district_arcology_fortress_max_mult, Category: Planets
+- district_arcology_trade_max_add, Category: Planets
+- district_arcology_trade_max_mult, Category: Planets
+- district_ring_world_industrial_max_add, Category: Planets
+- district_ring_world_industrial_max_mult, Category: Planets
+- district_ring_world_foundry_max_add, Category: Planets
+- district_ring_world_foundry_max_mult, Category: Planets
+- district_ring_world_factory_max_add, Category: Planets
+- district_ring_world_factory_max_mult, Category: Planets
+- district_ring_world_research_max_add, Category: Planets
+- district_ring_world_research_max_mult, Category: Planets
+- district_ring_world_research_physics_max_add, Category: Planets
+- district_ring_world_research_physics_max_mult, Category: Planets
+- district_ring_world_research_society_max_add, Category: Planets
+- district_ring_world_research_society_max_mult, Category: Planets
+- district_ring_world_research_engineering_max_add, Category: Planets
+- district_ring_world_research_engineering_max_mult, Category: Planets
+- district_ring_world_administrative_max_add, Category: Planets
+- district_ring_world_administrative_max_mult, Category: Planets
+- district_ring_world_spiritualist_max_add, Category: Planets
+- district_ring_world_spiritualist_max_mult, Category: Planets
+- district_ring_world_organic_housing_max_add, Category: Planets
+- district_ring_world_organic_housing_max_mult, Category: Planets
+- district_ring_world_fortress_max_add, Category: Planets
+- district_ring_world_fortress_max_mult, Category: Planets
+- district_ring_world_trade_max_add, Category: Planets
+- district_ring_world_trade_max_mult, Category: Planets
+- district_ring_world_food_max_add, Category: Planets
+- district_ring_world_food_max_mult, Category: Planets
+- district_ring_world_energy_max_add, Category: Planets
+- district_ring_world_energy_max_mult, Category: Planets
+- district_nexus_industrial_max_add, Category: Planets
+- district_nexus_industrial_max_mult, Category: Planets
+- district_nexus_foundry_max_add, Category: Planets
+- district_nexus_foundry_max_mult, Category: Planets
+- district_nexus_factory_max_add, Category: Planets
+- district_nexus_factory_max_mult, Category: Planets
+- district_nexus_research_max_add, Category: Planets
+- district_nexus_research_max_mult, Category: Planets
+- district_nexus_research_physics_max_add, Category: Planets
+- district_nexus_research_physics_max_mult, Category: Planets
+- district_nexus_research_society_max_add, Category: Planets
+- district_nexus_research_society_max_mult, Category: Planets
+- district_nexus_research_engineering_max_add, Category: Planets
+- district_nexus_research_engineering_max_mult, Category: Planets
+- district_nexus_administrative_max_add, Category: Planets
+- district_nexus_administrative_max_mult, Category: Planets
+- district_nexus_spiritualist_max_add, Category: Planets
+- district_nexus_spiritualist_max_mult, Category: Planets
+- district_nexus_organic_housing_max_add, Category: Planets
+- district_nexus_organic_housing_max_mult, Category: Planets
+- district_nexus_fortress_max_add, Category: Planets
+- district_nexus_fortress_max_mult, Category: Planets
+- district_nexus_trade_max_add, Category: Planets
+- district_nexus_trade_max_mult, Category: Planets
+- district_nexus_mining_max_add, Category: Planets
+- district_nexus_mining_max_mult, Category: Planets
+- district_nexus_betharian_max_add, Category: Planets
+- district_nexus_betharian_max_mult, Category: Planets
+- district_nexus_rare_crystals_max_add, Category: Planets
+- district_nexus_rare_crystals_max_mult, Category: Planets
+- district_nexus_energy_max_add, Category: Planets
+- district_nexus_energy_max_mult, Category: Planets
+- district_nexus_volatile_motes_max_add, Category: Planets
+- district_nexus_volatile_motes_max_mult, Category: Planets
+- district_nexus_exotic_gases_max_add, Category: Planets
+- district_nexus_exotic_gases_max_mult, Category: Planets
+- district_hive_industrial_max_add, Category: Planets
+- district_hive_industrial_max_mult, Category: Planets
+- district_hive_foundry_max_add, Category: Planets
+- district_hive_foundry_max_mult, Category: Planets
+- district_hive_factory_max_add, Category: Planets
+- district_hive_factory_max_mult, Category: Planets
+- district_hive_research_max_add, Category: Planets
+- district_hive_research_max_mult, Category: Planets
+- district_hive_research_physics_max_add, Category: Planets
+- district_hive_research_physics_max_mult, Category: Planets
+- district_hive_research_society_max_add, Category: Planets
+- district_hive_research_society_max_mult, Category: Planets
+- district_hive_research_engineering_max_add, Category: Planets
+- district_hive_research_engineering_max_mult, Category: Planets
+- district_hive_administrative_max_add, Category: Planets
+- district_hive_administrative_max_mult, Category: Planets
+- district_hive_fortress_max_add, Category: Planets
+- district_hive_fortress_max_mult, Category: Planets
+- district_hive_trade_max_add, Category: Planets
+- district_hive_trade_max_mult, Category: Planets
+- district_hive_food_max_add, Category: Planets
+- district_hive_food_max_mult, Category: Planets
+- district_hive_exotic_gases_max_add, Category: Planets
+- district_hive_exotic_gases_max_mult, Category: Planets
+- district_hive_mining_max_add, Category: Planets
+- district_hive_mining_max_mult, Category: Planets
+- district_betharian_hive_max_add, Category: Planets
+- district_betharian_hive_max_mult, Category: Planets
+- district_rare_crystals_hive_max_add, Category: Planets
+- district_rare_crystals_hive_max_mult, Category: Planets
+- district_hive_energy_max_add, Category: Planets
+- district_hive_energy_max_mult, Category: Planets
+- district_hive_volatile_motes_max_add, Category: Planets
+- district_hive_volatile_motes_max_mult, Category: Planets
+- district_hive_spawning_max_add, Category: Planets
+- district_hive_spawning_max_mult, Category: Planets
+- district_resort_zoo_max_add, Category: Planets
+- district_resort_zoo_max_mult, Category: Planets
+- district_resort_museum_max_add, Category: Planets
+- district_resort_museum_max_mult, Category: Planets
+- district_resort_hunting_ground_max_add, Category: Planets
+- district_resort_hunting_ground_max_mult, Category: Planets
+- district_resort_spiritual_retreat_max_add, Category: Planets
+- district_resort_spiritual_retreat_max_mult, Category: Planets
+- district_resort_restoration_enclave_max_add, Category: Planets
+- district_resort_restoration_enclave_max_mult, Category: Planets
+- district_resort_proving_grounds_max_add, Category: Planets
+- district_resort_proving_grounds_max_mult, Category: Planets
 - planet_district_cosmogenesis_goverment_build_speed_mult, Category: Planets
 - planet_district_cosmogenesis_world_science_build_speed_mult, Category: Planets
 - planet_district_cosmogenesis_world_logic_build_speed_mult, Category: Planets
@@ -35541,6 +35758,15 @@ Printing Modifier Definitions:
 - job_purge_matrix_max_workforce_mult, Category: Job
 - job_purge_matrix_automated_workforce_mult, Category: Planets, Job
 - pop_purge_matrix_demotion_time_mult, Category: Pops
+- job_purge_sacrifice_add, Category: Planets
+- job_purge_sacrifice_per_pop, Category: Planets
+- job_purge_sacrifice_per_crime, Category: Planets
+- pop_purge_sacrifice_workforce_mult, Category: Pops
+- pop_purge_sacrifice_bonus_workforce_mult, Category: Pops
+- job_purge_sacrifice_max_workforce_add, Category: Job
+- job_purge_sacrifice_max_workforce_mult, Category: Job
+- job_purge_sacrifice_automated_workforce_mult, Category: Planets, Job
+- pop_purge_sacrifice_demotion_time_mult, Category: Pops
 - job_politician_add, Category: Planets
 - job_politician_per_pop, Category: Planets
 - job_politician_per_crime, Category: Planets
@@ -39124,6 +39350,7 @@ Printing Modifier Definitions:
 - pop_psionic_happiness, Category: Pops
 - psionic_pop_bonus_workforce_mult, Category: Pops
 - psionic_specialist_pop_bonus_workforce_mult, Category: Pops
+- pop_slave_bonus_workforce_mult, Category: Pops
 - capital_storm_diplo_weight_mult, Category: Countries
 - find_arc_site_on_survey_chance_mult, Category: Countries
 - treasure_trove_reward_mult, Category: Countries
