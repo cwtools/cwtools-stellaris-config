@@ -460,3 +460,15 @@ alias[effect:roll_secret_faction_internal] = {
 	## cardinality = 0..1
 	GRAND_DANCE = bool
 }
+
+### Force scripted trigger or effect to work in common and event files
+alias[effect:give_breakthrough_tech_option_or_progress_effect] = {
+	## cardinality = 0..1
+	TECH = tech_$AREA$_1
+	## cardinality = 0..1
+	TECH = tech_$AREA$_2
+	## cardinality = 0..1
+	TECH = tech_$AREA$_3
+	## cardinality = 0..1
+	TECH = tech_$AREA$_4
+}
