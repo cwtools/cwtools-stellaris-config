@@ -718,9 +718,6 @@ alias[effect:country_add_ethic] = <ethos>
 alias[effect:country_add_ethic] = random
 ###Removes a specific ethic from the scoped country
 alias[effect:country_remove_ethic] = <ethos>
-###Instantly destroys the scoped pop
-alias[effect:kill_pop] = yes
-# alias[effect:enslave_pop] = bool	#deprecated
 ###Destroys the colony on the scoped planet
 alias[effect:destroy_colony] = yes
 #alias[effect:set_ruined] = bool
