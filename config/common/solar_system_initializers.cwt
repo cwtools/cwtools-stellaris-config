@@ -3,7 +3,7 @@ types = {
 	type[solar_system_initializer] = {
 		path = "game/common/solar_system_initializers"
 		subtype[fallen_empire_initializer_sub] = {
-			usage = fallen_empire_init
+			usage = enum[fallen_empire_usage]
 		}
 	}
 	type[fallen_empire_initializer] = {
@@ -366,6 +366,9 @@ enums = {
 		custom_empire
 		fallen_empire_init
 		origin
+	}
+	enum[fallen_empire_usage]= {
+		fallen_empire_init
 	}
 	enum[satellite_naming_policy] = {
 		upper_case_roman_numerals
