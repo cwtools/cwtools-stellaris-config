@@ -7,7 +7,10 @@ types = {
 #TODO Confirm
 fallen_empires = {
 	graphical_culture = <graphical_culture>
-	initializer = <solar_system_initializer>
+	## cardinality = 0..1
+	initializer = <solar_system_initializer.fallen_empire_initializer_sub>
+	## cardinality = 0..1
+	initializer = "fallen_hive_last_thought"
 	
 	## cardinality = 0..1
 	allow_custom_empire_design = bool
