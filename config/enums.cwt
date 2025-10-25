@@ -497,4 +497,9 @@ enums = {
 		"GROWTH_CAT_ASSEMBLY"
 		"GROWTH_CAT_OTHER"
 	}
+	enum[order_by] = {
+		trigger:pop_amount
+		trigger:sapient_pop_amount
+		trigger:psionic_pop_amount
+	 }
 }
