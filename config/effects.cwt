@@ -3423,7 +3423,10 @@ alias[effect:complete_special_project] = {
 
 ###Force a truce with target country of a specified type, or a war
 alias[effect:set_truce] = {
+	## cardinality = 0..1
 	target = scope_group[target_country]
+	## cardinality = 0..1
+	target = scope[war]
 	type = enum[truce_types]
 }
 
