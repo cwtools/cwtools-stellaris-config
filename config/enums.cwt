@@ -498,8 +498,11 @@ enums = {
 		"GROWTH_CAT_OTHER"
 	}
 	enum[order_by] = {
+		capital_scope.trigger:pop_amount
+		local_pop_amount
+		owner.trigger:disciple_of_the_cradle_councilors_count
 		trigger:pop_amount
-		trigger:sapient_pop_amount
 		trigger:psionic_pop_amount
+		trigger:sapient_pop_amount
 	 }
 }
