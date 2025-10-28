@@ -120,8 +120,6 @@ Properties
  GetNebula
  GetFleetName
  GetFleetNamePersistent
- GetLeaderName
- GetLeaderNamePersistent
  GetStarName
  GetStarNamePersistent
  GetShipSizeName
@@ -176,8 +174,6 @@ Properties
  GetNamePersistent
  GetFleetName
  GetFleetNamePersistent
- GetLeaderName
- GetLeaderNamePersistent
  GetStarName
  GetStarNamePersistent
  GetRulerName
@@ -496,3 +492,4 @@ Properties
  GetPreCommunicationName
 
 =================
+
