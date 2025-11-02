@@ -3407,10 +3407,10 @@ alias[effect:set_sector_capital] = yes
 ###Sets the current planet to have the specified type designation.
 alias[effect:set_colony_type] = <colony_type>
 
-###Adds civic to a goverment without checking the restrictions.
+###Adds civic to a government without checking the restrictions.
 alias[effect:force_add_civic] = <civic_or_origin.civic>
 
-###Removes civic from a goverment without checking the restrictions.
+###Removes civic from a government without checking the restrictions.
 alias[effect:force_remove_civic] = <civic_or_origin.civic>
 alias[effect:force_remove_civic] = int[1..inf]
 
@@ -4561,7 +4561,7 @@ alias[effect:repair_armor_percentage] = value_field[0.0..1.0]
 ###If the scoped fleet is MIA, sets the return date in a given number of days, starting from current date
 alias[effect:set_mia_return_delay] = int
 
-###Sets wether or not the design automatically upgrades its components.
+###Sets whether or not the design automatically upgrades its components.
 alias[effect:set_auto_upgrade_components] = bool
 
 ###Sets Space Fauna growth stance. Setting to 'none' resets stance to use default country policy.
