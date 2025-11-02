@@ -110,7 +110,7 @@ war_goal = {
 	hide_if_no_cb = bool
 
 	## cardinality = 0..1
-	###Will countriews that have sworn secret fealty to the attacker join the war? No by default.
+	###Will countries that have sworn secret fealty to the attacker join the war? No by default.
 	secret_fealties_join_attacker = bool
 
 	## cardinality = 0..1
