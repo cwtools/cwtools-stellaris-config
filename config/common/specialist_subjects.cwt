@@ -86,7 +86,7 @@ subject_specialist_type = {
     on_progress_complete = {
         alias_name[effect] = alias_match_left[effect]
     }
-    ### The levels for this subject specialist type; the order is the order in which subjects will progres through the levels
+    ### The levels for this subject specialist type; the order is the order in which subjects will progress through the levels
     levels = {
         ## cardinality = 1..inf
         ### A level for this subject specialist
