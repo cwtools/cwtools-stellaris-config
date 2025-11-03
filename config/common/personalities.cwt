@@ -127,7 +127,7 @@ ai_personality = {
 		### Will they conquer planets from other empires?
 		conqueror = bool
 		## cardinality = 0..1
-		### Will they vassalise other empires?
+		### Will they vassalize other empires?
 		subjugator = bool
 		## cardinality = 0..1
 		### Will they liberate conquered empires?
