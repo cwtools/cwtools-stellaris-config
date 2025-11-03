@@ -2348,7 +2348,7 @@ alias[effect:random_deposit] = {
 	}
 }
 
-###Iterate throught he planet's deposits
+###Iterate through he planet's deposits
 alias[trigger:count_deposit] = {
 	count = all
 	count = int_value_field
@@ -3516,7 +3516,7 @@ alias[effect:ordered_neighbor_system] = {
 }
 
 ## push_scope = system
-###Executes enclosed effects on a random system neigboring the scoped system by hyperlane - that meets the limit criteria, bypasses not included
+###Executes enclosed effects on a random system neighboring the scoped system by hyperlane - that meets the limit criteria, bypasses not included
 alias[effect:random_neighbor_system] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
@@ -5572,7 +5572,7 @@ alias[trigger:count_starbase_in_system] = {
 }
 
 ## push_scope = pop_group
-###Weighted random on owned popgroups based on the popgroup size. Supports the same scopes as the owned_pop_group script list
+###Weighted random on owned pop_groups based on the pop_group size. Supports the same scopes as the owned_pop_group script list
 alias[effect:weighted_random_owned_pop_group] = {
 	## cardinality = 0..1
 	limit = {
