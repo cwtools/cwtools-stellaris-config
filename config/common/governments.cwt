@@ -325,7 +325,7 @@ civic_or_origin = {
 	random_weight = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	## replace_scope = { this = country root = country }
 	### modifier added to the country if the civic is selected and valid
 	modifier = {
@@ -384,7 +384,12 @@ civic_or_origin = {
 		advanced_start = bool
 		## cardinality = 0..1
 		blocks_random_machine_empire_generation	= bool
-				
+		## cardinality = 0..1
+		### default: empty; trait set to enforce on the primary species
+		soft_traits = {
+			## cardinality = 0..inf
+			trait = <trait.species_trait>
+		}	
 		## cardinality = 0..1
 		### default: empty; trait set to enforce on the primary species. They cannot be removed, but more can be added if points/picks permit
 		traits = {
