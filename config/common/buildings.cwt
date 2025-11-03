@@ -82,6 +82,7 @@ enums = {
 		dportal_trade_crisis
 		dportal_trade_normal
 		has_private_clinics
+		breached_shroud
 	}
 	enum[fe_building_upgrade_variables] = {
 		affluence_emporium_build_count
