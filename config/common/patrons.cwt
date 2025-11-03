@@ -416,6 +416,8 @@ psionic_auras = {
 				alias_name[modifier] = alias_match_left[modifier]
 			}
 		}
+		## cardinality = 0..1
+		ai_weight_coefficient = float
 	}
 	
 	aura_galaxy_texture = filepath
