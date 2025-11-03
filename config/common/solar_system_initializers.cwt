@@ -106,7 +106,7 @@ solar_system_initializer = {
 	neighbor_system = {
 		initializer = <solar_system_initializer>
 
-		#one of these varients is required
+		#one of these variants is required
 		#TODO: exclusive or
 		## cardinality = 0..1
 		distance = int

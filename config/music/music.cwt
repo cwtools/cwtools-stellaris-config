@@ -13,7 +13,7 @@ types = {
 		}
   }
 }
-#TODO: Add check for files existance, currently set to scalar!
+#TODO: Add check for files existence, currently set to scalar!
 
 song = {
 	name = scalar

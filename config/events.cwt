@@ -325,7 +325,7 @@ event = {
 		alias_name[picture_event_data] = alias_match_left[picture_event_data]
 
 		## cardinality = 0..1
-		###Forces the event to pop-up even if player has supressed pop ups
+		###Forces the event to pop-up even if player has suppressed pop ups
 		auto_opens = bool
 		
 		## cardinality = 0..1

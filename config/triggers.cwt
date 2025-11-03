@@ -1089,7 +1089,7 @@ alias[trigger:count_tech_options] = {
 ### Checks if a system contains any fleets, stations, mega structures or colonized planets.
 alias[trigger:has_presence] = bool
 
-### Checks if the planet has an orbital researc station
+### Checks if the planet has an orbital research station
 alias[trigger:has_research_station] = bool
 
 ### Checks if a country has the same ethos (complete set of ethics) as a country or pop group
@@ -2112,7 +2112,7 @@ alias[trigger:check_modifier_value] = {
 ###Checks which crisis is allowed to spawn in the current game
 alias[trigger:allowed_crisis_type] = enum[crisis_types]
 
-###Checks whether the country has the speficied first contact flag
+###Checks whether the country has the specified first contact flag
 alias[trigger:has_first_contact_flag] = value[first_contact_flag]
 
 ###Checks if the scoped first contact is at the specified stage.

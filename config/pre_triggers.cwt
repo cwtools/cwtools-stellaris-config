@@ -41,7 +41,7 @@ alias[pop_pre_trigger:is_being_assimilated] = bool
 #### whether the pop is on a planet or not
 alias[pop_pre_trigger:has_planet] = bool
 
-#### whether the pop is sapients
+#### whether the pop is sapient
 alias[pop_pre_trigger:is_sapient] = bool
 
 alias[pop_pre_trigger:is_robot_pop] = bool

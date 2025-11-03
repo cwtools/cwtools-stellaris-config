@@ -85,7 +85,7 @@ ai_personality = {
 	loyalty_acceptance = float
 
 	## cardinality = 0..1
-	### Likelyhood of this empire being an advanced start (higher = better chance of being one of empires selected for advanced start)
+	### likelihood of this empire being an advanced start (higher = better chance of being one of empires selected for advanced start)
 	advanced_start_chance = int
 
 	## cardinality = 0..1
@@ -127,7 +127,7 @@ ai_personality = {
 		### Will they conquer planets from other empires?
 		conqueror = bool
 		## cardinality = 0..1
-		### Will they vassalise other empires?
+		### Will they vassalize other empires?
 		subjugator = bool
 		## cardinality = 0..1
 		### Will they liberate conquered empires?

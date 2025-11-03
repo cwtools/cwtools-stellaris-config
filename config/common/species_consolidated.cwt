@@ -773,7 +773,7 @@ purge_type = {
 	}
 	
 	pop_escape_chance = float
-	### Divide by 100 for monthy reduction, overrides BASE_POP_DECLINE
+	### Divide by 100 for monthly reduction, overrides BASE_POP_DECLINE
 	pop_decline_rate = value_field
 
 	## cardinality = 0..1
