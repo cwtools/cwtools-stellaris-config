@@ -841,7 +841,10 @@ alias[effect:divide_variable] = {
 	which = value[variable]
 	## cardinality = 0..1
 	which = enum[exe_set_variable]
+	## cardinality = 0..1
 	value = value_field
+	## cardinality = 0..1
+	value = enum[order_by]
 }
 
 ###Modulos a previously-set variable by a specific amount i.e. X % Y
