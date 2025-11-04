@@ -85,7 +85,15 @@ model_entity = {
 		## cardinality = 0..1
 		propagate_state = { outpost = idle }
 		## cardinality = 0..1
+		propagate_state = { effect = death_idle }
+		## cardinality = 0..1
+		propagate_state = { effect = death_open }
+		## cardinality = 0..1
 		propagate_state = { effect = idle }
+		## cardinality = 0..1
+		propagate_state = { effect = idle_closing }
+		## cardinality = 0..1
+		propagate_state = { effect = moving_closing }
 		## cardinality = 0..1
 		propagate_state = { move = idle }
 		## cardinality = 0..1
@@ -148,7 +156,7 @@ model_entity = {
 			
 			scale = float
 		}
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		game_data = {
 			bloom_factor = float
 			uv_animation_speed = float
@@ -229,7 +237,7 @@ model_entity = {
 		## cardinality = 0..1
 		scene_main = <model_entity>
 	}
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	game_data = {
 		## cardinality = 0..1
 		size = float
