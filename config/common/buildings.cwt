@@ -82,6 +82,7 @@ enums = {
 		dportal_trade_crisis
 		dportal_trade_normal
 		has_private_clinics
+		breached_shroud
 	}
 	enum[fe_building_upgrade_variables] = {
 		affluence_emporium_build_count
@@ -166,6 +167,8 @@ building = {
 		base = int
 		## cardinality = 0..inf
 		modifier = {
+			## cardinality = 0..1
+			factor = int
 			alias_name[trigger] = alias_match_left[trigger]
 			## cardinality = 0..1
 			add = int

@@ -109,6 +109,24 @@ asset_selector = {
 			## cardinality = 0..inf
 			filepath = { alias_name[trigger] = alias_match_left[trigger] }
 		}
+		
+		## cardinality = 0..1
+		## replace_scope = { this = pop_group root = pop_group }
+		pop_group = {
+			## cardinality = 0..1
+			default = filepath
+			## cardinality = 0..inf
+			random = {
+				## cardinality = 0..1
+				trigger = { alias_name[trigger] = alias_match_left[trigger] }
+				list = {
+					## cardinality = 0..inf
+					filepath
+				}
+			}
+			## cardinality = 0..inf
+			filepath = { alias_name[trigger] = alias_match_left[trigger] }
+		}
 
 		## cardinality = 0..1
 		## replace_scope = { this = leader root = leader }
@@ -264,6 +282,23 @@ asset_selector = {
 		## cardinality = 0..1
 		## replace_scope = { this = pop root = pop }
 		pop = {
+			## cardinality = 0..1
+			default = filepath
+			## cardinality = 0..inf
+			random = {
+				## cardinality = 0..1
+				trigger = { alias_name[trigger] = alias_match_left[trigger] }
+				list = {
+					## cardinality = 0..inf
+					filepath
+				}
+			}
+			## cardinality = 0..inf
+			filepath = { alias_name[trigger] = alias_match_left[trigger] }
+		}
+		## cardinality = 0..1
+		## replace_scope = { this = pop_group root = pop_group }
+		pop_group = {
 			## cardinality = 0..1
 			default = filepath
 			## cardinality = 0..inf
