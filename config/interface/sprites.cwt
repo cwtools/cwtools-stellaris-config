@@ -184,7 +184,7 @@ piechart = {
 	## cardinality = 0..1
 	colors = {
 		## cardinality = 0..1
-		rgb { 
+		rgb = { 
 			## cardinality = 3..3
 			int 
 		}
