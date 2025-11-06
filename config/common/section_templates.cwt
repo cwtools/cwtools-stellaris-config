@@ -67,17 +67,15 @@ section_template = {
 
 	## cardinality = 0..1
   	prerequisites = {
+		## cardinality = 0..inf
+		<technology>
+		## cardinality = 0..1
 		OR = {
 			## cardinality = 2..inf
 			<technology>
 		}
 	}
-	## cardinality = 0..1
-  	prerequisites = {
-		## cardinality = 0..inf
-		<technology>
-	}
-  ## cardinality = 0..inf
+	## cardinality = 0..inf
   component_slot = {
     name = scalar
 	template = <component_slot_template>
