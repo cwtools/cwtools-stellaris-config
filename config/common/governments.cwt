@@ -705,6 +705,8 @@ alias[government_trigger:graphical_culture] = {
 		## severity = info
 		## cardinality = 2..99
 		value = <civic_or_origin.origin>
+		## cardinality = 2..99
+		value = <graphical_culture>
 	}
 }
 alias[government_trigger:origin] = {
