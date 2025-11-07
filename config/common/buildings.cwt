@@ -50,39 +50,45 @@ enums = {
 	}
 	
 	enum[building_upgrade_flags] = {
+		affluence_center_can_build
 		affluence_emporium_can_build
-		nourishment_complex_can_build
-		dimensional_replicator_can_build
+		beholder_psi_pops_timer
+		breached_shroud
 		class_3_singularity_can_build
-		micro_forge_can_build
-		fe_sky_dome_can_build
-		fe_fortress_can_build
+		class_4_singularity_can_build
+		dimensional_fabricator_can_build
+		dimensional_replicator_can_build
+		dportal_trade_crisis
+		dportal_trade_high
+		dportal_trade_low
+		dportal_trade_normal
 		fe_administration_1_can_build
 		fe_administration_hive_1_can_build
 		fe_administration_machine_1_can_build
 		fe_assembly_1_can_build
 		fe_clinic_1_can_build
+		fe_entertainment_1_can_build
+		fe_fortress_can_build
+		fe_lab_1_can_build
+		fe_market_1_can_build
+		fe_mine_1_can_build
+		fe_security_1_can_build
+		fe_silo_1_can_build
+		fe_sky_dome_can_build
+		has_private_clinics
+		micro_forge_can_build
+		nano_forge_can_build
+		necrophage_elevation_timer
+		nourishment_center_can_build
+		nourishment_complex_can_build
+		received_collection_stage_2_reward_aesthetic_wonder
+		received_collection_stage_2_reward_historical_item
+		received_collection_stage_2_reward_xeno_geology
+		reemployment_center_timer
+		skydome_can_build
+		tech_fe_market_1
 		tech_fe_security_1
 		tech_fe_security_1_can_build
-		fe_security_1_can_build
-		tech_fe_market_1
-		fe_market_1_can_build
-		fe_silo_1_can_build
-		fe_entertainment_1_can_build
-		fe_lab_1_can_build
-		fe_mine_1_can_build
-		reemployment_center_timer
-		beholder_psi_pops_timer
-		necrophage_elevation_timer
-		received_collection_stage_2_reward_aesthetic_wonder
-		received_collection_stage_2_reward_xeno_geology
-		received_collection_stage_2_reward_historical_item
-		dportal_trade_high
-		dportal_trade_low
-		dportal_trade_crisis
-		dportal_trade_normal
-		has_private_clinics
-		breached_shroud
 	}
 	enum[fe_building_upgrade_variables] = {
 		affluence_emporium_build_count
