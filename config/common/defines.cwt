@@ -156,17 +156,17 @@ NCamera = {
 	HIDE_ORBITS_ZOOM = float
 	## cardinality = 0..1
 	ZOOM_STEPS_GALAXY  = {
-		## cardinality = 7..7
+		## cardinality = 1..inf
 		float
 	}
 	## cardinality = 0..1
 	ZOOM_STEPS_SYSTEM_PERCENTAGES = {
-		## cardinality = 7..7
+		## cardinality = 1..inf
 		float
 	}
 	## cardinality = 0..1
 	ZOOM_STEPS_SHOW_FLEET_HEALTH_BARS = {
-		## cardinality = 4..4
+		## cardinality = 1..inf
 		float
 	}
 	## cardinality = 0..1
@@ -274,7 +274,7 @@ NGraphics = {
 	MOON_SCALE = float
 	## cardinality = 0..1
 	PLANET_SCALE_SYSTEM = {
-		## cardinality = 7..7
+		## cardinality = 1..inf
 		float
 	}
 	## cardinality = 0..1
