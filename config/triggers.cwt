@@ -3206,3 +3206,9 @@ alias[trigger:has_patron_counter] = enum[patrons_callings_po]
 
 ###Checks if the tier of the leader is what is provided.
 alias[trigger:is_leader_tier] = <leader_tiers>
+
+###Checks if a system has the can_be_crisis_terraformed flag or not.
+alias[trigger:can_be_crisis_terraformed] = bool
+
+###Checks if the planet is currently being terraformed manually by script
+alias[trigger:is_scripted_terraforming] = bool
