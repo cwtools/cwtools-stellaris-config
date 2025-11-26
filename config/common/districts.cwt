@@ -146,6 +146,8 @@ district = {
 		<district>
 	}
 	## cardinality = 0..1
+	expansion_planner_type = <district>
+	## cardinality = 0..1
 	resources = {
 		category = <economic_category>
 		alias_name[economic_template] = alias_match_left[economic_template]
