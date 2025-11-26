@@ -228,6 +228,8 @@ building = {
 	## cardinality = 0..1
 	###colony automation will not try to upgrade this
 	skip_automation_upgrading = bool
+	## cardinality = 0..1
+	auto_generate_description = bool
 
 	## cardinality = 0..1
 	### used to match with a planet class' building set, can be assigned to multiple sets. Used to remove from construction lists
