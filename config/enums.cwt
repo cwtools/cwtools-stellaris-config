@@ -525,5 +525,12 @@ enums = {
 		"selected_relic_r_vaporous_mega_orchid"
 		"shroud_bestowed_boon"
 		"shroud_bestowed_curse"
+		unlock_accord_annihilation
+		unlock_accord_fractalization
+		unlock_accord_extermination	
+		unlock_accord_distortion
+		unlock_accord_destruction
+		unlock_accord_intensification
+		unlock_accord_eradication
 	}
 }
