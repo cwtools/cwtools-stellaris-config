@@ -533,5 +533,7 @@ enums = {
 		unlock_accord_intensification
 		unlock_accord_eradication
 		released_empire
+		subterranean_nation
+		subterranean_nation_fc
 	}
 }
