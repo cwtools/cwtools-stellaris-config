@@ -421,6 +421,9 @@ enums = {
 		voidworm_system_medium_poi
 		voidworm_system_small_poi
 		voidworm_system_tiny_poi
+		zroni_legacy_poi_1
+		zroni_legacy_poi_2
+		zroni_legacy_poi_3
 	}
 	enum[portrait_refresh] = {
 		planet
