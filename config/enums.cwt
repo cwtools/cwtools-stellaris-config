@@ -505,4 +505,25 @@ enums = {
 		trigger:psionic_pop_amount
 		trigger:sapient_pop_amount
 	 }
+	 enum[inline_script_flags] = {
+		"received_collection_stage_1_reward_aesthetic_wonder"
+		"received_collection_stage_1_reward_historical_item"
+		"received_collection_stage_1_reward_xeno_geology"
+		"selected_relic_r_celestial_resonator"
+		"selected_relic_r_crystallinus_diffuser"
+		"selected_relic_r_entangled_relay"
+		"selected_relic_r_everchanging_stone"
+		"selected_relic_r_executus_compendium"
+		"selected_relic_r_flowmetal_alloy"
+		"selected_relic_r_gavel_of_the_tribunal"
+		"selected_relic_r_propagandosphere"
+		"selected_relic_r_prototype_vir_core"
+		"selected_relic_r_pulsestone"
+		"selected_relic_r_the_modularium"
+		"selected_relic_r_the_pattern_maker"
+		"selected_relic_r_tiyanki_matriarch_nerve_core"
+		"selected_relic_r_vaporous_mega_orchid"
+		"shroud_bestowed_boon"
+		"shroud_bestowed_curse"
+	}
 }
