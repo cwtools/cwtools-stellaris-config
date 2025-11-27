@@ -415,6 +415,27 @@ civic_or_origin = {
 		preferred_planet_class_neighbor = no
 		
 		## cardinality = 0..1
+		removed_climate_labels = { 
+			## cardinality = 0..inf
+			scalar
+		}
+		## cardinality = 0..1
+		added_climate_labels = { 
+			## cardinality = 0..inf
+			scalar
+		}
+		## cardinality = 0..1
+		removed_planet_types = { 
+			## cardinality = 0..inf
+			<planet_class>
+		}
+		## cardinality = 0..1
+		added_planet_types = { 
+			## cardinality = 0..inf
+			<planet_class>
+		}
+		
+		## cardinality = 0..1
 		## replace_scope = { this = country root = country }
 		ai_weight = {
 			alias_name[modifier_rule] = alias_match_left[modifier_rule]
@@ -450,6 +471,31 @@ civic_or_origin = {
 				trait = <trait>
 			}
 		}
+		## cardinality = 0..1
+		removed_climate_labels = { 
+			## cardinality = 0..inf
+			scalar
+		}
+		## cardinality = 0..1
+		added_climate_labels = { 
+			## cardinality = 0..inf
+			scalar
+		}
+		## cardinality = 0..1
+		removed_planet_types = { 
+			## cardinality = 0..inf
+			<planet_class>
+		}
+		## cardinality = 0..1
+		added_planet_types = { 
+			## cardinality = 0..inf
+			<planet_class>
+		}
+		## cardinality = 0..inf
+		multiply_by_habitability_effect_modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		
 		## cardinality = 0..1
 		## replace_scope = { this = country root = country }
 		### Scriptable weight for AI picking civics in-game (when unlocking a new slot)
@@ -680,6 +726,63 @@ alias[government_trigger:civics] = {
 		value = <civic_or_origin.civic>
 	}
 }
+
+alias[government_trigger:traits] = {
+	## cardinality = 0..3
+	value = <civic_or_origin.civic>
+
+	## cardinality = 0..inf
+	OR = {
+		## cardinality = 0..1
+		text = localisation
+		## severity = info
+		## cardinality = 2..99
+		value = <trait>
+	}
+	## cardinality = 0..inf
+	NOT = {
+		## cardinality = 0..1
+		text = localisation
+		value = <trait>
+	}
+	## cardinality = 0..inf
+	NOR = {
+		## cardinality = 0..1
+		text = localisation
+		## severity = info
+		## cardinality = 2..99
+		value = <trait>
+	}
+}
+
+alias[government_trigger:preferred_planet_class] = {
+	## cardinality = 0..3
+	value = <civic_or_origin.civic>
+
+	## cardinality = 0..inf
+	OR = {
+		## cardinality = 0..1
+		text = localisation
+		## severity = info
+		## cardinality = 2..99
+		value = <planet_class>
+	}
+	## cardinality = 0..inf
+	NOT = {
+		## cardinality = 0..1
+		text = localisation
+		value = <planet_class>
+	}
+	## cardinality = 0..inf
+	NOR = {
+		## cardinality = 0..1
+		text = localisation
+		## severity = info
+		## cardinality = 2..99
+		value = <planet_class>
+	}
+}
+
 alias[government_trigger:graphical_culture] = {
 	## cardinality = 0..1
 	value = <civic_or_origin.origin>
