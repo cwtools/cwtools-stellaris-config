@@ -532,5 +532,6 @@ enums = {
 		unlock_accord_destruction
 		unlock_accord_intensification
 		unlock_accord_eradication
+		released_empire
 	}
 }
