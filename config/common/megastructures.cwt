@@ -27,6 +27,9 @@ types = {
 			}
 		}
 	}
+	type[mega_overclock] = {
+		path = "game/common/megastructure_overclock_types"
+	}
 }
 
 megastructure = {
@@ -247,7 +250,49 @@ megastructure = {
 	}
 	## cardinality = 0..1
 	is_shroud_seal = bool
+	
+	## cardinality = 0..1
+	overclock_types = { 
+		## cardinality = 0..inf
+		<mega_overclock>
+	}
+	## cardinality = 0..1
+	cycle_length_in_days = value_field
+	## cardinality = 0..1
+	cycle_title = localisation
+	## cardinality = 0..1
+	cycle_desc = localisation
+	## cardinality = 0..1
+	cycle_icon = <sprite>
+	## cardinality = 0..1
+	on_cycle_complete = {
+		alias_name[effect] = alias_match_left[effect]
+	}
 }
+
+
+mega_overclock = {
+	icon = <sprite>
+	
+	## cardinality = 0..1
+	## replace_scope = { this = system root = system from = country }
+	potential = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	## cardinality = 0..1
+	resources = {
+		alias_name[economic_template] = alias_match_left[economic_template]
+	}
+	## replace_scope = { this = country root = country }
+	modifier = {
+		## cardinality = 0..inf
+		custom_tooltip = localisation
+		## cardinality = 0..inf
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+}
+
+
 
 enums = {
 	enum[meg_build_type] = {
