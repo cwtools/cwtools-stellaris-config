@@ -469,6 +469,7 @@ alias[effect:remove_pop_group_flag] = value_set[pop_group_flag]
 ## severity = warning
 ###Removes a flag from the scoped country
 alias[effect:remove_country_flag] = value[country_flag]
+alias[effect:remove_country_flag] = enum[inline_script_flags]
 ## severity = warning
 ###Removes a flag from the scoped planet
 alias[effect:remove_planet_flag] = value[planet_flag]
