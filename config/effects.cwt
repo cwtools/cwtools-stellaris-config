@@ -811,20 +811,29 @@ alias[effect:set_location] = {
 ###Sets or creates an arbitrarily-named variable with a specific value in the current scope
 alias[effect:set_variable] = {
 	which = value_set[variable]
+	## cardinality = 0..1
 	value = value_field
+	## cardinality = 0..1
+	value = enum[exe_set_variable]
 }
 
 #presumably need to check the variable exists first for these, somehow
 ###Increments a previously-set variable by a specific amount
 alias[effect:change_variable] = {
 	which = value_set[variable] #do not change to `value[variable]`, it does not need to be set for this
+	## cardinality = 0..1
 	value = value_field
+	## cardinality = 0..1
+	value = enum[exe_set_variable]
 }
 
 ###Decrements a previously-set variable by a specific amount
 alias[effect:subtract_variable] = {
 	which = value_set[variable]
+	## cardinality = 0..1
 	value = value_field
+	## cardinality = 0..1
+	value = enum[exe_set_variable]
 }
 
 ###Multiplies a previously-set variable by a specific amount
@@ -833,7 +842,10 @@ alias[effect:multiply_variable] = {
 	which = value[variable]
 	## cardinality = 0..1
 	which = enum[exe_set_variable]
+	## cardinality = 0..1
 	value = value_field
+	## cardinality = 0..1
+	value = enum[exe_set_variable]
 }
 
 ###Divides a previously-set variable by a specific amount
@@ -846,6 +858,8 @@ alias[effect:divide_variable] = {
 	value = value_field
 	## cardinality = 0..1
 	value = enum[order_by]
+	## cardinality = 0..1
+	value = enum[exe_set_variable]
 }
 
 ###Modulos a previously-set variable by a specific amount i.e. X % Y
@@ -877,6 +891,7 @@ alias[effect:set_variable_to_random_value] = {
 ## severity = warning
 ###Removes a previously-set variable from the scope
 alias[effect:clear_variable] = value[variable]
+alias[effect:clear_variable] = enum[exe_set_variable]
 
 #max should not be less than min...
 ###Adds a lump sum of a resource to the scoped country, defined as a multiple of the country's monthly income of that resource (clamped to max and min allowed values)
@@ -1197,6 +1212,8 @@ alias[effect:create_species] = {
 	class = random_non_machine
 	class = random
 	class = scope_group[target_species]
+	## cardinality = 0..1
+	set_pre_ftl = bool
 	## cardinality = 0..1
 	portrait = scope_group[target_species]
 	## cardinality = 0..1
