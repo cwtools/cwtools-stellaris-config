@@ -3880,6 +3880,8 @@ alias[effect:start_situation] = {
 	## cardinality = 0..1
 	target = scope[any]
 	## cardinality = 0..1
+	target = root.capital
+	## cardinality = 0..1
 	## push_scope = situation
 	effect = { alias_name[effect] = alias_match_left[effect] }
 }
