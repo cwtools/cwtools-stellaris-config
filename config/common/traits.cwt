@@ -224,6 +224,17 @@ trait = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 		## cardinality = 0..1
+		allowed_civics = {
+			## cardinality = 0..inf
+			<civic_or_origin.civic>
+		}
+		## cardinality = 0..1
+		## replace_scope = { this = country root = country }
+		country_modifier = {
+			alias_name[modifier] = alias_match_left[modifier]
+		}
+		
+		## cardinality = 0..1
 		localized_tags = {
 			## cardinality = 0..inf
 			localisation
@@ -429,7 +440,7 @@ trait = {
 			alias_name[modifier] = alias_match_left[modifier]
 			## cardinality = 0..1
 			mult = value_field
-			## cardinality = 0..1
+			## cardinality = 0..inf
 			custom_tooltip = localisation
 			## cardinality = 0..1
 			show_only_custom_tooltip = bool
@@ -451,7 +462,7 @@ trait = {
 			alias_name[modifier] = alias_match_left[modifier]
 			## cardinality = 0..1
 			mult = value_field
-			## cardinality = 0..1
+			## cardinality = 0..inf
 			custom_tooltip = localisation
 			## cardinality = 0..1
 			show_only_custom_tooltip = bool
@@ -473,7 +484,7 @@ trait = {
 			alias_name[modifier] = alias_match_left[modifier]
 			## cardinality = 0..1
 			mult = value_field
-			## cardinality = 0..1
+			## cardinality = 0..inf
 			custom_tooltip = localisation
 			## cardinality = 0..1
 			show_only_custom_tooltip = bool
@@ -495,7 +506,7 @@ trait = {
 			alias_name[modifier] = alias_match_left[modifier]
 			## cardinality = 0..1
 			mult = value_field
-			## cardinality = 0..1
+			## cardinality = 0..inf
 			custom_tooltip = localisation
 			## cardinality = 0..1
 			show_only_custom_tooltip = bool
@@ -517,7 +528,7 @@ trait = {
 			alias_name[modifier] = alias_match_left[modifier]
 			## cardinality = 0..1
 			mult = value_field
-			## cardinality = 0..1
+			## cardinality = 0..inf
 			custom_tooltip = localisation
 			## cardinality = 0..1
 			show_only_custom_tooltip = bool
@@ -539,7 +550,7 @@ trait = {
 			alias_name[modifier] = alias_match_left[modifier]
 			## cardinality = 0..1
 			mult = value_field
-			## cardinality = 0..1
+			## cardinality = 0..inf
 			custom_tooltip = localisation
 			## cardinality = 0..1
 			show_only_custom_tooltip = bool

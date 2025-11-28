@@ -129,6 +129,7 @@ cloud_type = {
 		opacity_change_reversion = bool
 	}
 
+	## cardinality = 0..1
 	ambient_object = {
 		type = synth_queen_tempest
 		scale = float
@@ -136,12 +137,17 @@ cloud_type = {
 	}
 
 	## replace_scope = { this = galacticobject from = country }
+	## cardinality = 0..1
 	on_system_added = {
 		alias_name[effect] = alias_match_left[effect]
 	}
 
 	## replace_scope = { this = galacticobject from = country }
+	## cardinality = 0..1
 	on_system_removed = {
 		alias_name[effect] = alias_match_left[effect]
 	}
+	
+	## cardinality = 0..1
+	condition = { alias_name[trigger] = alias_match_left[trigger] }
 }

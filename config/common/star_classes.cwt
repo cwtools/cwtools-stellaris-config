@@ -40,6 +40,10 @@ star_class = {
 	## cardinality = 0..1
 	is_environmental_hazard = bool
 	## cardinality = 0..1
+	can_be_crisis_terraformed = bool
+	## cardinality = 0..1
+	crisis_star_class = <star_class>
+	## cardinality = 0..1
 	## replace_scope = { this = ship root = ship }
 	modifier = {
 		## cardinality = 0..inf

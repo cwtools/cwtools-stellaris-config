@@ -343,6 +343,27 @@ species_class = {
 	preferred_ethics_weight = {
 		base = float
 	}
+	
+	## cardinality = 0..1
+	removed_climate_labels = { 
+		## cardinality = 0..inf
+		scalar
+	}
+	## cardinality = 0..1
+	added_climate_labels = { 
+		## cardinality = 0..inf
+		scalar
+	}
+	## cardinality = 0..1
+	removed_planet_types = { 
+		## cardinality = 0..inf
+		<planet_class>
+	}
+	## cardinality = 0..1
+	added_planet_types = { 
+		## cardinality = 0..inf
+		<planet_class>
+	}
 }
 
 citizenship_type = {

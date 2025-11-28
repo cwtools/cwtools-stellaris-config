@@ -1,4 +1,4 @@
-[18:52:08][game_application.cpp:1405]: 
+[17:14:02][game_application.cpp:1407]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -682,6 +682,10 @@ is_in_domain - Checks if the current country in the the domain of the given patr
 is_in_domain = the_eater_of_worlds
 Supported Scopes: country
 
+can_be_crisis_terraformed - Checks if a system has the can_be_crisis_terraformed flag or not.
+can_be_crisis_terraformed = <yes/no>
+Supported Scopes: galactic_object
+
 hidden_trigger - Hides the tooltip for the triggers within
 hidden_trigger = { <triggers> }
 Supported Scopes: all
@@ -1240,6 +1244,10 @@ Supported Scopes: planet
 
 is_terraforming - Checks if the planet is currently being terraformed
 is_terraforming = yes
+Supported Scopes: planet
+
+is_scripted_terraforming - Checks if the planet is currently being terraformed manually by script
+is_scripted_terraforming = yes
 Supported Scopes: planet
 
 is_federation_leader - Checks if the country is the leader of their federation
@@ -4598,7 +4606,7 @@ count_war = {
 Supported Scopes: country
 
 =================
-[18:52:08][game_application.cpp:1408]:
+[17:14:02][game_application.cpp:1410]:
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -7004,6 +7012,10 @@ add_situation_progress - Adds a sum of progress scoped situation
 add_situation_progress = 5.5
 Supported Scopes: situation
 
+set_situation_progress - Sets the progress of scoped situation
+set_situation_progress = 5.5
+Supported Scopes: situation
+
 set_situation_approach - Sets the approach to the Situation. Respects allow and potential triggers.
 set_situation_approach = <approach> (name field of the approach)
 Supported Scopes: situation
@@ -7140,10 +7152,6 @@ Supported Scopes: country
 
 deactivate_fog_machine - Deactivates country fog machine
 deactivate_fog_machine = yes
-Supported Scopes: country
-
-fog_machine_auto_tracking - Switches on/off galactic object ownership auto tracking for country fog machine
-fog_machine_auto_tracking = yes/no
 Supported Scopes: country
 
 create_cosmic_storm - Creates a cosmic storm
@@ -7590,6 +7598,19 @@ Supported Scopes: country
 roll_ai_preferred_patron - Rolls the major Shroud Patron scoped AI will devote themselves to, by selecting the patron with the highest attunement value.
 roll_ai_preferred_patron = yes
 Supported Scopes: country
+
+start_terraform_progress - Starts terraforming progress of scoped planet
+start_terraform_progress = <class/random list>
+start_terraform_progress = { class = <class/random list> inherit_entity = yes }
+Supported Scopes: planet
+
+add_terraform_progress - Adds terraforming progress to scoped planet, finishes the terraformation, if enough progress is reached
+add_terraform_progress = value/variable
+Supported Scopes: planet
+
+set_terraform_progress - Sets terraforming progress of scoped planet, finishes the terraformation, if enough progress is reached
+set_terraform_progress = value
+Supported Scopes: planet
 
 set_patron_first_contact_state - Sets the contact state with a Shroud Patron (will create the relation if needed).
 set_patron_first_contact_state = {

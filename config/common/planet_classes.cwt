@@ -187,6 +187,10 @@ planet_class = {
 		## cardinality = 0..1
 		initial = yes
 		## cardinality = 0..1
+		potential = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+		## cardinality = 0..1
 		auto_trait_prio = {
 			<trait>
 		}

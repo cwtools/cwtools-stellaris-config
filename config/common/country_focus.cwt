@@ -69,7 +69,7 @@ focus_card_key = {
 	background = <sprite>
 	
 	## cardinality = 0..1
-	base = localisation
+	base = <focus_card_key>
 	name = localisation
 	desc = localisation
 	hint = localisation

@@ -182,6 +182,9 @@ alias[fleet_action:move_to] = scope_group[celestial_coordinate]
 alias[fleet_action:orbit_planet] = scope[planet]
 alias[fleet_action:orbit_planet] = random
 
+alias[fleet_action:terraform_fleet] = scope[planet]
+alias[fleet_action:terraform_fleet] = random
+
 alias[fleet_action:change_stance] = {
     stance = enum[fleet_stance]
     ## cardinality = 0..1

@@ -71,6 +71,7 @@ alias[trigger:has_pop_group_flag] = value[pop_group_flag]
 alias[trigger:has_country_flag] = value[country_flag]
 alias[trigger:has_country_flag] = enum[pop_faction_inline_flag_enum]
 alias[trigger:has_country_flag] = enum[building_upgrade_flags]
+alias[trigger:has_country_flag] = enum[inline_script_flags]
 ## severity = warning
 ###Checks if the planet has a specific, arbitrarily-named, flag
 alias[trigger:has_planet_flag] = value[planet_flag]
@@ -1526,6 +1527,8 @@ alias[trigger:resource_stockpile_compare] = {
 	value = value_field
 	## cardinality = 0..1
 	mult = value_field
+	## cardinality = 0..1
+	mult = enum[exe_set_variable]
 	## cardinality = 0..1
 	multiplier = value_field
 }
@@ -3206,3 +3209,9 @@ alias[trigger:has_patron_counter] = enum[patrons_callings_po]
 
 ###Checks if the tier of the leader is what is provided.
 alias[trigger:is_leader_tier] = <leader_tiers>
+
+###Checks if a system has the can_be_crisis_terraformed flag or not.
+alias[trigger:can_be_crisis_terraformed] = bool
+
+###Checks if the planet is currently being terraformed manually by script
+alias[trigger:is_scripted_terraforming] = bool

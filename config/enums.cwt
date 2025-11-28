@@ -421,6 +421,9 @@ enums = {
 		voidworm_system_medium_poi
 		voidworm_system_small_poi
 		voidworm_system_tiny_poi
+		zroni_legacy_poi_1
+		zroni_legacy_poi_2
+		zroni_legacy_poi_3
 	}
 	enum[portrait_refresh] = {
 		planet
@@ -466,18 +469,19 @@ enums = {
 		small_debris_object
 	}
 	enum[exe_set_variable]= {
-		local_pop_amount
-		local_size_option
-		root.local_pop_amount
-		number_fleets_spawned
-		aianom_mineral_dep1
-		aianom_mineral_dep2
-		aianom_mineral_dep3
-		aianom_mineral_dep4
+		aesthetic_wonder_specimen_count
 		aianom_energy_dep1
 		aianom_energy_dep2
 		aianom_energy_dep3
 		aianom_energy_dep4
+		aianom_engineering_dep1
+		aianom_engineering_dep2
+		aianom_engineering_dep3
+		aianom_engineering_dep4
+		aianom_mineral_dep1
+		aianom_mineral_dep2
+		aianom_mineral_dep3
+		aianom_mineral_dep4
 		aianom_physics_dep1
 		aianom_physics_dep2
 		aianom_physics_dep3
@@ -486,10 +490,21 @@ enums = {
 		aianom_society_dep2
 		aianom_society_dep3
 		aianom_society_dep4
-		aianom_engineering_dep1
-		aianom_engineering_dep2
-		aianom_engineering_dep3
-		aianom_engineering_dep4
+		historical_item_specimen_count
+		local_pop_amount
+		local_size_option
+		local_spent_biomass
+		number_fleets_spawned
+		root.local_pop_amount
+		subjects_minus_one
+		trigger:pop_amount
+		trophy_hunter_gained_energy
+		trophy_hunter_gained_exotic_gases
+		trophy_hunter_gained_food
+		trophy_hunter_gained_minerals
+		trophy_hunter_gained_rare_crystals
+		trophy_hunter_gained_unity
+		xeno_geology_specimen_count
 	}
 	enum[growth_category] = {
 		"GROWTH_CAT_PROMOTION"
@@ -500,9 +515,111 @@ enums = {
 	enum[order_by] = {
 		capital_scope.trigger:pop_amount
 		local_pop_amount
+		local_spent_biomass
 		owner.trigger:disciple_of_the_cradle_councilors_count
 		trigger:pop_amount
 		trigger:psionic_pop_amount
 		trigger:sapient_pop_amount
+		trigger:pop_group_size
 	 }
+	 enum[inline_script_flags] = {
+		"received_collection_stage_1_reward_aesthetic_wonder"
+		"received_collection_stage_1_reward_historical_item"
+		"received_collection_stage_1_reward_xeno_geology"
+		"selected_relic_r_celestial_resonator"
+		"selected_relic_r_crystallinus_diffuser"
+		"selected_relic_r_entangled_relay"
+		"selected_relic_r_everchanging_stone"
+		"selected_relic_r_executus_compendium"
+		"selected_relic_r_flowmetal_alloy"
+		"selected_relic_r_gavel_of_the_tribunal"
+		"selected_relic_r_propagandosphere"
+		"selected_relic_r_prototype_vir_core"
+		"selected_relic_r_pulsestone"
+		"selected_relic_r_the_modularium"
+		"selected_relic_r_the_pattern_maker"
+		"selected_relic_r_tiyanki_matriarch_nerve_core"
+		"selected_relic_r_vaporous_mega_orchid"
+		"shroud_bestowed_boon"
+		"shroud_bestowed_curse"
+		can_create_paperclip_universe
+		consumed_aquatic_dna
+		consumed_arthropoid_dna
+		consumed_avian_dna
+		consumed_fungoid_dna
+		consumed_habitability_dna
+		consumed_humanoid_dna
+		consumed_infernal_dna
+		consumed_leader_dna
+		consumed_lithoid_dna
+		consumed_mammalian_dna
+		consumed_molluscoid_dna
+		consumed_necroid_dna
+		consumed_plantoid_dna
+		consumed_pop_growth_dna
+		consumed_pop_output_dna
+		consumed_psionic_dna
+		consumed_reptilian_dna
+		consumed_toxoid_dna
+		consumed_upkeep_dna
+		crystal_armor_1_weight
+		cycle_of_fortune
+		cycle_of_growth
+		cycle_of_harmony
+		cycle_of_knowledge
+		cycle_of_omens
+		cycle_of_prosperity
+		is_player_crisis
+		orbital_ring_trading_hub_sabotaged
+		paragon_origin_ascension_flag_flipping_all_seeing
+		paragon_origin_ascension_flag_flipping_astropath
+		paragon_origin_ascension_flag_flipping_battle_calculation_systems
+		paragon_origin_ascension_flag_flipping_brain_growth
+		paragon_origin_ascension_flag_flipping_cognitive_analyzers
+		paragon_origin_ascension_flag_flipping_divided_attention
+		paragon_origin_ascension_flag_flipping_focus
+		paragon_origin_ascension_flag_flipping_gene_splicing
+		paragon_origin_ascension_flag_flipping_irresistible_charisma
+		paragon_origin_ascension_flag_flipping_permanent_transmitters
+		paragon_origin_ascension_flag_flipping_psychic_beacon
+		paragon_origin_ascension_flag_flipping_recycling_algorithms
+		paragon_origin_ascension_flag_flipping_shared_learning_network
+		paragon_origin_ascension_flag_flipping_sleep_inhibitors
+		paragon_origin_ascension_flag_flipping_tactical_interface
+		paragon_origin_ascension_flag_flipping_the_voice
+		paragon_origin_ascension_flag_flipping_vast_engineering_database
+		recent_preftl_espionage_academic
+		released_empire
+		selected_relic_r_preservation_chamber
+		smorgasblorg_aquatic
+		smorgasblorg_arthropoid
+		smorgasblorg_avian
+		smorgasblorg_fungoid
+		smorgasblorg_habitability
+		smorgasblorg_humanoid
+		smorgasblorg_infernal
+		smorgasblorg_leader
+		smorgasblorg_lithoid
+		smorgasblorg_mammalian
+		smorgasblorg_molluscoid
+		smorgasblorg_necroid
+		smorgasblorg_plantoid
+		smorgasblorg_pop_growth
+		smorgasblorg_pop_output
+		smorgasblorg_psionic
+		smorgasblorg_reptilian
+		smorgasblorg_toxoid
+		smorgasblorg_upkeep
+		subterranean_nation
+		subterranean_nation_fc
+		unlock_accord_annihilation
+		unlock_accord_destruction
+		unlock_accord_distortion
+		unlock_accord_eradication
+		unlock_accord_extermination	
+		unlock_accord_fractalization
+		unlock_accord_intensification
+		unplugged_prevent_pre_ftl_devastation
+		use_default_ships
+	}
 }

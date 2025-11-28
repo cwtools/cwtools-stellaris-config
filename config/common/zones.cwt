@@ -38,7 +38,7 @@ zones = {
 		## cardinality = 0..inf
 		alias_name[trigger] = alias_match_left[trigger]
 	}
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	resources = {
 		category = planet_zones
 		cost = {
@@ -94,7 +94,7 @@ zones = {
 		<building>
 	}
 	
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	included_building_sets = {
 		## cardinality = 0..inf
 		enum[building_sets]

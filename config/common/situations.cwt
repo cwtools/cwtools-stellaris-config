@@ -27,7 +27,7 @@ types = {
 situation_type = {
 	## cardinality = 0..inf
 	picture = <sprite>
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	desc = localisation
 	## cardinality = 0..1
 	initial_progress = int
@@ -223,6 +223,10 @@ situation_type = {
 			## cardinality = 0..1
 			###Effect for the first time this stage fires (hidden in the UI)
 			on_first_enter = {
+				alias_name[effect] = alias_match_left[effect]
+			}
+			## cardinality = 0..1
+			on_enter  = {
 				alias_name[effect] = alias_match_left[effect]
 			}
 			## cardinality = 0..1

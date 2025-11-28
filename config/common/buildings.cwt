@@ -89,6 +89,8 @@ enums = {
 		tech_fe_market_1
 		tech_fe_security_1
 		tech_fe_security_1_can_build
+		mercenary_enclave_planet
+		uncapped_generator_districts
 	}
 	enum[fe_building_upgrade_variables] = {
 		affluence_emporium_build_count
@@ -228,6 +230,8 @@ building = {
 	## cardinality = 0..1
 	###colony automation will not try to upgrade this
 	skip_automation_upgrading = bool
+	## cardinality = 0..1
+	auto_generate_description = bool
 
 	## cardinality = 0..1
 	### used to match with a planet class' building set, can be assigned to multiple sets. Used to remove from construction lists

@@ -62,6 +62,8 @@ policy = {
 		name = localisation
 		## cardinality = 0..1
 		icon = <sprite>
+		## cardinality = 0..1
+		pre_sapient_purge = <purge_type>
 
 		## cardinality = 0..inf
 		in_breach_of = {
