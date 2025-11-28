@@ -4356,8 +4356,6 @@ alias[effect:create_cosmic_storm] = {
 	## cardinality = 0..1
 	cosmic_storm_start_position = scope[system]
 	## cardinality = 0..1
-	cosmic_storm_start_position = scope[planet]
-	## cardinality = 0..1
 	immediate = yes
 }
 
