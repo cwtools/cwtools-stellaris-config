@@ -561,6 +561,7 @@ enums = {
 		consumed_reptilian_dna
 		consumed_toxoid_dna
 		consumed_upkeep_dna
+		crystal_armor_1_weight
 		cycle_of_fortune
 		cycle_of_growth
 		cycle_of_harmony
