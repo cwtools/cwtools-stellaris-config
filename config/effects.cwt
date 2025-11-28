@@ -2413,6 +2413,7 @@ alias[effect:create_point_of_interest] = {
 	#The last comment does not apply here.
 	## cardinality = 0..1
 	desc = localisation
+	## cardinality = 0..1
 	event_chain = <event_chain>
 	## severity = warning
 	location = scope_group[spatial_object]
