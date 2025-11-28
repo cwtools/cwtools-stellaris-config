@@ -497,6 +497,7 @@ enums = {
 		number_fleets_spawned
 		root.local_pop_amount
 		subjects_minus_one
+		trigger:pop_amount
 		trophy_hunter_gained_energy
 		trophy_hunter_gained_exotic_gases
 		trophy_hunter_gained_food
