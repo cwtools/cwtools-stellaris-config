@@ -90,6 +90,7 @@ enums = {
 		tech_fe_security_1
 		tech_fe_security_1_can_build
 		mercenary_enclave_planet
+		uncapped_generator_districts
 	}
 	enum[fe_building_upgrade_variables] = {
 		affluence_emporium_build_count
