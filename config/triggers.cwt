@@ -1528,6 +1528,8 @@ alias[trigger:resource_stockpile_compare] = {
 	## cardinality = 0..1
 	mult = value_field
 	## cardinality = 0..1
+	mult = enum[exe_set_variable]
+	## cardinality = 0..1
 	multiplier = value_field
 }
 
