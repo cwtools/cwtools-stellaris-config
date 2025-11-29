@@ -161,39 +161,40 @@ enums = {
 		none
 	}
 	enum[fleet_orders] = {
-		move_to_system_point_order
-		orbit_planet_order
-		build_orbital_station_order
-		build_space_station_order
-		colonize_planet_order
-		survey_planet_order
-		research_discovery_order
-		research_anomaly_order
-		collect_data_fleet_order
-		upgrade_design_at_starbase_fleet_order
-		upgrade_design_at_orbitable_fleet_order
-		return_fleet_order
-		repair_fleet_order
-		evade_hostiles_order
-		follow_order
-		assist_research_order
-		land_armies_order
-		merge_fleet_order
 		aggressive_stance_fleet_order
+		assist_research_order
 		auto_explore_order
 		build_megastructure_fleet_order
+		build_orbital_station_order
+		build_space_station_order
+		collect_data_fleet_order
+		colonize_planet_order
 		destroy_planet_order
-		planet_killer_weapon_windup_order
-		planet_killer_weapon_fire_order
-		explore_bypass_order
+		evade_hostiles_order
+		excavate_archaeological_site_fleet_order
+		experimental_subspace_navigation_fleet_order
 		explore_astral_rift_fleet_order
-		use_bypass_order
+		explore_astral_rift_fleet_order
+		explore_bypass_order
+		follow_order
+		initiate_cosmic_storm_order
 		jumpdrive_order
 		jumpdrive_windup
-		experimental_subspace_navigation_fleet_order
-		excavate_archaeological_site_fleet_order
-		explore_astral_rift_fleet_order
-		initiate_cosmic_storm_order
+		land_armies_order
+		merge_fleet_order
+		move_to_system_point_order
+		orbit_planet_order
+		planet_killer_weapon_fire_order
+		planet_killer_weapon_windup_order
+		repair_fleet_order
+		research_anomaly_order
+		research_discovery_order
+		return_fleet_order
+		survey_planet_order
+		terraform_fleet_order
+		upgrade_design_at_orbitable_fleet_order
+		upgrade_design_at_starbase_fleet_order
+		use_bypass_order
 	}
 	enum[galaxy_setup_values] = {
 		num_empires

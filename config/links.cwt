@@ -284,7 +284,7 @@ links = {
 		output_scope = spy_network
 	}
 	target = {
-		input_scopes = { espionage_operation situation agreement spy_network }
+		input_scopes = { espionage_operation situation agreement spy_network system }
 		output_scope = any # agreements and spy_networks always have country as the target, but CWT does _not_ support defining multiple links for scoping (although it appears to for localisation)
 	}
 	growing_species = {

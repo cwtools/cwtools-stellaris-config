@@ -229,6 +229,8 @@ alias[effect:planet_event] = {
 	## cardinality = 0..1
 	days = value_field
 	## cardinality = 0..1
+	months = value_field
+	## cardinality = 0..1
 	random = int
 	## cardinality = 0..1
 	scopes = {
@@ -2411,6 +2413,7 @@ alias[effect:create_point_of_interest] = {
 	#The last comment does not apply here.
 	## cardinality = 0..1
 	desc = localisation
+	## cardinality = 0..1
 	event_chain = <event_chain>
 	## severity = warning
 	location = scope_group[spatial_object]
@@ -3876,6 +3879,8 @@ alias[effect:start_situation] = {
 	type = <situation_type>
 	## cardinality = 0..1
 	target = scope[any]
+	## cardinality = 0..1
+	target = root.capital
 	## cardinality = 0..1
 	## push_scope = situation
 	effect = { alias_name[effect] = alias_match_left[effect] }

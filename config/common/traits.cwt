@@ -750,6 +750,7 @@ enums = {
 		physics
 		society
 		survey
+		subclass_commander_admiral
 	}
 	enum[leader_trait_rarity] = {
 		common
