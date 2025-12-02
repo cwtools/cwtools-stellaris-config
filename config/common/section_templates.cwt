@@ -69,7 +69,7 @@ section_template = {
   	prerequisites = {
 		## cardinality = 0..inf
 		<technology>
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		OR = {
 			## cardinality = 2..inf
 			<technology>
