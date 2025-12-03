@@ -1,4 +1,4 @@
-[17:14:02][game_application.cpp:1407]: 
+[16:41:13][game_application.cpp:1407]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -4606,7 +4606,7 @@ count_war = {
 Supported Scopes: country
 
 =================
-[17:14:02][game_application.cpp:1410]:
+[16:41:14][game_application.cpp:1410]:
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -5389,7 +5389,7 @@ destroy_ambient_object - Destroys target ambient object
 destroy_ambient_object = <target>
 Supported Scopes: all
 
-add_trait - Adds a specific trait to the scoped leader or a random common/negative trait 
+add_trait - Adds a specific trait to the scoped leader or a random common/negative trait
 add_trait = <trait>/random_common/random_negative
 or
 add_trait = {
@@ -7008,7 +7008,7 @@ abort_situation - Destroys a situation in right hand side event target, firing o
 abort_situation = <event target>
 Supported Scopes: all
 
-add_situation_progress - Adds a sum of progress scoped situation
+add_situation_progress - Adds progress to scoped situation
 add_situation_progress = 5.5
 Supported Scopes: situation
 
