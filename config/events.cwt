@@ -637,6 +637,8 @@ event = {
 		alias_name[picture_event_data] = alias_match_left[picture_event_data]
 		## cardinality = 0..1
 		specimen = <specimen>
+		## cardinality = 0..1
+		event_chain = <event_chain>	
 	}
 
 	subtype[fleet] = {
