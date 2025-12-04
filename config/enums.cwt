@@ -492,6 +492,7 @@ enums = {
 		aianom_society_dep3
 		aianom_society_dep4
 		historical_item_specimen_count
+		local_kill_pop_amount
 		local_pop_amount
 		local_size_option
 		local_spent_biomass

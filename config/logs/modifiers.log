@@ -1,4 +1,4 @@
-[17:14:01][modifier.cpp:2174]: 
+[16:41:12][modifier.cpp:2173]: 
  == MODIFIER DOCUMENTATION ==
 Note on Modifier Categories:
 -- These are used internally as a tag to suggest where they are intended to be used, but exact behavior depends upon individual implementation.
@@ -150,7 +150,6 @@ Printing Modifier Definitions:
 - planet_stability_add, Category: Planets
 - planet_stability_mult, Category: Planets
 - planet_stability_add_with_limit, Category: Planets
-- planet_stability_limit, Category: Planets
 - planet_crime_add, Category: Planets
 - planet_crime_mult, Category: Planets
 - planet_crime_floor_add, Category: Planets
@@ -36520,38 +36519,6 @@ Printing Modifier Definitions:
 - job_purge_robot_max_workforce_mult, Category: Job
 - job_purge_robot_automated_workforce_mult, Category: Planets
 - pop_purge_robot_demotion_time_mult, Category: Pops
-- job_assimilation_food_photo_add, Category: Planets
-- job_assimilation_food_photo_per_pop, Category: Planets
-- job_assimilation_food_photo_per_crime, Category: Planets
-- pop_assimilation_food_photo_workforce_mult, Category: Pops
-- pop_assimilation_food_photo_bonus_workforce_mult, Category: Pops
-- job_assimilation_food_photo_max_workforce_add, Category: Job
-- job_assimilation_food_photo_max_workforce_mult, Category: Job
-- job_assimilation_food_photo_automated_workforce_mult, Category: Planets
-- job_assimilation_mineral_add, Category: Planets
-- job_assimilation_mineral_per_pop, Category: Planets
-- job_assimilation_mineral_per_crime, Category: Planets
-- pop_assimilation_mineral_workforce_mult, Category: Pops
-- pop_assimilation_mineral_bonus_workforce_mult, Category: Pops
-- job_assimilation_mineral_max_workforce_add, Category: Job
-- job_assimilation_mineral_max_workforce_mult, Category: Job
-- job_assimilation_mineral_automated_workforce_mult, Category: Planets
-- job_assimilation_mineral_photo_add, Category: Planets
-- job_assimilation_mineral_photo_per_pop, Category: Planets
-- job_assimilation_mineral_photo_per_crime, Category: Planets
-- pop_assimilation_mineral_photo_workforce_mult, Category: Pops
-- pop_assimilation_mineral_photo_bonus_workforce_mult, Category: Pops
-- job_assimilation_mineral_photo_max_workforce_add, Category: Job
-- job_assimilation_mineral_photo_max_workforce_mult, Category: Job
-- job_assimilation_mineral_photo_automated_workforce_mult, Category: Planets
-- job_assimilation_void_add, Category: Planets
-- job_assimilation_void_per_pop, Category: Planets
-- job_assimilation_void_per_crime, Category: Planets
-- pop_assimilation_void_workforce_mult, Category: Pops
-- pop_assimilation_void_bonus_workforce_mult, Category: Pops
-- job_assimilation_void_max_workforce_add, Category: Job
-- job_assimilation_void_max_workforce_mult, Category: Job
-- job_assimilation_void_automated_workforce_mult, Category: Planets
 - job_purge_processing_add, Category: Planets
 - job_purge_processing_per_pop, Category: Planets
 - job_purge_processing_per_crime, Category: Planets
