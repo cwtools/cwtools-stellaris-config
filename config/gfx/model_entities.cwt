@@ -135,6 +135,8 @@ model_entity = {
 		## cardinality = 0..1
 		animation_blend_time = float
 		## cardinality = 0..1
+		time_offset = float
+		## cardinality = 0..1
 		time_offset = {
 			## cardinality = 2..2
 			float
@@ -406,3 +408,4 @@ model_animation = { #the container here is called animation = { for each animati
 	name = scalar #example: "neutron_star_idle_animation"
 	file = scalar ##TODO make it filepath #this connects to *.anim file stored in the same folder as the asset file, it seems. Example: "neutron_star_idle.anim"
 }
+
