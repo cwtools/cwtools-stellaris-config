@@ -95,12 +95,14 @@ zones = {
 	}
 	
 	## cardinality = 0..inf
+	## severity = warning
 	included_building_sets = {
 		## cardinality = 0..inf
 		enum[building_sets]
 	}
 	
 	## cardinality = 0..1
+	## severity = warning
 	excluded_building_sets = {
 		## cardinality = 0..inf
 		enum[building_sets]
