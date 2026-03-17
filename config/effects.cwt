@@ -760,6 +760,8 @@ alias[effect:create_fleet_from_naval_cap] = {
 	ship_owner_type = country
 	ship_owner_type = federation
 	ship_owner_type = galactic_community
+	##cardinality = 0..inf
+	can_overflow = bool
 }
 
 ###Reduces the hull points of the scoped ship by a specific amount
@@ -5294,3 +5296,26 @@ alias[effect:add_terraform_progress] = value_set[variable]
 
 ###Sets terraforming progress of scoped planet, finishes the terraformation, if enough progress is reached
 alias[effect:set_terraform_progress] = value_field
+
+###Creates a new random fleet
+alias[effect:create_random_fleet] = { 
+	alias_name[name] = alias_match_left[name]
+	## cardinality = 0..1
+	name = random
+	## cardinality = 0..1
+	name = scope[fleet]
+	## cardinality = 0..1
+	size = int_value_field
+	## cardinality = 0..1
+	can_overflow = bool
+	## cardinality = 0..1
+	ship_designs = { 
+		## cardinality = 0..inf
+		localisation
+	}
+	## cardinality = 0..1
+	effect = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+}
+
