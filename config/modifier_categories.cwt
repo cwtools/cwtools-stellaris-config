@@ -88,5 +88,8 @@ modifier_categories = {
 	}
 	None = {
 		supported_scopes = { any  }
+	}
+	All = {
+		supported_scopes = { any  }
 	}		
 }
