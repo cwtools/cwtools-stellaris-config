@@ -1,4 +1,4 @@
-[16:41:13][game_application.cpp:1407]: 
+[18:39:18][game_application.cpp:1389]: 
 == TRIGGER DOCUMENTATION ==
 text - For 'desc={trigger={' use. Shows custom text
 text = <text>
@@ -877,7 +877,7 @@ Supported Scopes: planet
 
 is_pop_category - Checks if the pop group has the chosen pop category
 is_pop_category = <key>
-Supported Scopes: pop pop_group
+Supported Scopes: pop_group
 
 won_the_game - Checks if scoped country won the game
 won_the_game = yes
@@ -4606,7 +4606,7 @@ count_war = {
 Supported Scopes: country
 
 =================
-[16:41:14][game_application.cpp:1410]:
+[18:39:19][game_application.cpp:1392]: 
 == EFFECT DOCUMENTATION ==
 tooltip - Just a tooltip
 Supported Scopes: all
@@ -4888,6 +4888,15 @@ Supported Scopes: all
 create_fleet - Creates a new fleet
 create_fleet = { name = <string> effect = { <create_ship, set_owner, set_location etc effects go here> } } 
 Supported Scopes: all
+
+create_random_fleet - Creates a new random fleet
+create_random_fleet = {
+	name = <string>
+	size = <int>
+	can_overflow = yes/no # default yes
+	ship_designs = { NAME_a NAME_b } # Optional, only allow ships among these designs
+	effect = { <set_location etc effects go here> } }
+Supported Scopes: country
 
 create_army - Creates a new army
 create_army = {
@@ -5960,7 +5969,7 @@ Supported Scopes: all
 
 create_fleet_from_naval_cap - Creates a new fleet from empire designs up to specified fraction of naval cap
 create_fleet_from_naval_cap = 0.5
-create_fleet_from_naval_cap = { fraction = 0.5 ship_owner_type = <country/federation/galactic_community>
+create_fleet_from_naval_cap = { fraction = 0.5 can_overflow = yes/no (default yes) ship_owner_type = <country/federation/galactic_community>
 Supported Scopes: country
 
 remove_opinion_modifier - Removes a specific opinion modifier towards target country or any country from the scoped country

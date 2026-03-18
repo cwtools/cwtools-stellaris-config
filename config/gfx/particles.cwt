@@ -269,7 +269,7 @@ particle_type = {
 		}
 		## cardinality = 0..1
 		force = scalar #this keeps bugging out, so scalar for now.
-		## cardinality = 0..1
+		## cardinality = 0..inf
 		childsystem = {
 			## cardinality = 0..1
 			name = scalar #this appear to be non-mandatory!
@@ -283,6 +283,10 @@ particle_type = {
 			invert = bool
 			## cardinality = 0..1
 			trail = bool
+			## cardinality = 0..1
+			spritesheet_animation=bool
+			## cardinality = 0..1
+			spritesheet_animation_loop=float
 			## cardinality = 0..1
 			local_space = bool
 			## cardinality = 0..1
@@ -428,6 +432,11 @@ particle_type = {
 			## cardinality = 0..1
 			emitter_yaw = {
 				## cardinality = 2..2
+				float
+			}
+			## cardinality = 0..1
+			emission_pulse_duration={ 
+				## cardinality = 0..2
 				float
 			}
 			## cardinality = 0..1

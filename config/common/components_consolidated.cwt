@@ -426,7 +426,7 @@ component_template = {
 		on_hit = {
 			## cardinality = 0..inf
 			custom_tooltip = localisation
-			## cardinality = 0..1
+			## cardinality = 0..inf
 			hidden_effect = {
 				alias_name[effect] = alias_match_left[effect]
 			}

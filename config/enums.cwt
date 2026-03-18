@@ -624,4 +624,7 @@ enums = {
 		unplugged_prevent_pre_ftl_devastation
 		use_default_ships
 	}
+	enum[global_flags] = {
+		ghost_signal_1_flag
+	}
 }
