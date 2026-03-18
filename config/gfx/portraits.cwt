@@ -38,8 +38,13 @@ portrait = {
 	greeting_sound = <sound_effect>
 	## cardinality = 0..1
 	character_textures = {
-		## cardinality = 1..inf
+		## cardinality = 0..inf
 		filepath
+		## cardinality = 0..inf
+		tied_texture = {
+			texture = filepath
+			evolution_variants = { int }
+		}
 	}
 	## cardinality = 0..1
 	portrait_evolution = {
