@@ -93,7 +93,7 @@ asset_selector = {
 		}
 
 		## cardinality = 0..1
-		## replace_scope = { this = pop root = pop }
+		## replace_scope = { this = pop_group root = pop }
 		pop = {
 			## cardinality = 0..1
 			default = filepath
@@ -280,7 +280,7 @@ asset_selector = {
 		}
 
 		## cardinality = 0..1
-		## replace_scope = { this = pop root = pop }
+		## replace_scope = { this = pop_group root = pop }
 		pop = {
 			## cardinality = 0..1
 			default = filepath
