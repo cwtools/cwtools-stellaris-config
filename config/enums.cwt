@@ -627,4 +627,12 @@ enums = {
 	enum[global_flags] = {
 		ghost_signal_1_flag
 	}
+	enum[varname_enum] = {
+		this.ascensions_added
+		this.destroyed_colony_pop
+		this.experimental_progress
+		this.research_after
+		this.spawned_shroudstone
+	}
 }
+
