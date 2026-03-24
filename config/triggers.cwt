@@ -104,7 +104,7 @@ alias[trigger:has_global_flag] = enum[global_flags]
 ## severity = warning
 ###Checks if the specified variable is set on the current scope. Use to avoid unset variables errors
 alias[trigger:is_variable_set] = value[variable]
-alias[trigger:is_variable_set] = local_size_option
+alias[trigger:is_variable_set] = enum[exe_set_variable]
 alias[trigger:is_variable_set] = enum[fe_building_upgrade_variables] 
 alias[trigger:is_variable_set] = local_spent_<resource>
 alias[trigger:is_variable_set] = trophy_hunter_gained_<resource>
