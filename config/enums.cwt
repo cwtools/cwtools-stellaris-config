@@ -634,5 +634,65 @@ enums = {
 		this.research_after
 		this.spawned_shroudstone
 	}
+	enum[country_flag_enum] = {
+		affluence_center_can_build
+		affluence_emporium_can_build
+		army_recruited
+		army_recruited_patron
+		beholder_psi_pops_timer
+		breached_shroud
+		buildings_good_energy
+		buildings_good_food
+		buildings_good_minerals
+		class_3_singularity_can_build
+		class_4_singularity_can_build
+		commander_given
+		commander_given_patron
+		dimensional_fabricator_can_build
+		dimensional_replicator_can_build
+		dportal_trade_crisis
+		dportal_trade_high
+		dportal_trade_low
+		dportal_trade_normal
+		fe_administration_1_can_build
+		fe_administration_hive_1_can_build
+		fe_administration_machine_1_can_build
+		fe_assembly_1_can_build
+		fe_clinic_1_can_build
+		fe_entertainment_1_can_build
+		fe_fortress_can_build
+		fe_lab_1_can_build
+		fe_market_1_can_build
+		fe_mine_1_can_build
+		fe_security_1_can_build
+		fe_silo_1_can_build
+		fe_sky_dome_can_build
+		has_private_clinics
+		logistics_assistance
+		logistics_assistance_patron
+		mercenary_enclave_planet
+		micro_forge_can_build
+		nano_forge_can_build
+		necrophage_elevation_timer
+		nourishment_center_can_build
+		nourishment_complex_can_build
+		police_recruited
+		police_recruited_patron
+		raid_target_asked
+		raid_target_asked_patron
+		received_collection_stage_2_reward_aesthetic_wonder
+		received_collection_stage_2_reward_historical_item
+		received_collection_stage_2_reward_xeno_geology
+		reckoning_intel_given
+		reckoning_intel_given_patron
+		reemployment_center_timer
+		skydome_can_build
+		tech_fe_market_1
+		tech_fe_security_1
+		tech_fe_security_1_can_build
+		uncapped_generator_districts
+		zro_bought
+		zro_bought_patron
+	}
 }
 
