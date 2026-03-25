@@ -2347,7 +2347,6 @@ alias[effect:create_message] = {
 	custom_toast_content_icon = <sprite>
 	# note: the variable sections were combined as cwtools could not handle them separated in biogenesis_origin_events.txt
 	## cardinality = 0..inf
-	## cardinality = 0..inf
 	variable = {
 		## cardinality = 0..1
 		type = name
