@@ -66,6 +66,7 @@ alias[trigger:has_opinion_modifier] = {
 ## severity = warning
 ###Checks if the pop group has a specific flag
 alias[trigger:has_pop_group_flag] = value[pop_group_flag]
+alias[trigger:has_pop_group_flag] = enum[pop_group_flag_enum]
 ## severity = warning
 ###Checks if the empire has a specific, arbitrarily-named, flag
 alias[trigger:has_country_flag] = value[country_flag]
