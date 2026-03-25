@@ -655,6 +655,7 @@ enums = {
 		dportal_trade_high
 		dportal_trade_low
 		dportal_trade_normal
+		end_of_the_cycle_reckoning
 		fe_administration_1_can_build
 		fe_administration_hive_1_can_build
 		fe_administration_machine_1_can_build
@@ -679,6 +680,7 @@ enums = {
 		nourishment_complex_can_build
 		police_recruited
 		police_recruited_patron
+		prescripted_blorg
 		raid_target_asked
 		raid_target_asked_patron
 		received_collection_stage_2_reward_aesthetic_wonder
@@ -686,6 +688,7 @@ enums = {
 		received_collection_stage_2_reward_xeno_geology
 		reckoning_intel_given
 		reckoning_intel_given_patron
+		recycled_vir
 		reemployment_center_timer
 		skydome_can_build
 		tech_fe_market_1
@@ -713,5 +716,11 @@ enums = {
 		defeated_toxoid_evopred
 		defeated_infernal_evopred
 		defeated_machine_evopred
+	}
+	enum[pop_group_flag_enum] = {
+		non_purge_pop_group
+	}
+	enum[has_astral_rift_flag_enum] = {
+		split_opened_rift
 	}
 }
