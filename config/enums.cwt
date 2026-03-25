@@ -723,4 +723,7 @@ enums = {
 	enum[has_astral_rift_flag_enum] = {
 		split_opened_rift
 	}
+	enum[fleet_flag_enum] = {
+		formless_defense_fleet
+	}
 }
