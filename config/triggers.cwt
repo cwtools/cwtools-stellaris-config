@@ -95,6 +95,7 @@ alias[trigger:has_pop_flag] = value[pop_flag]
 ## severity = warning
 ###Checks if the fleet has a specific, arbitrarily-named, flag
 alias[trigger:has_fleet_flag] = value[fleet_flag]
+alias[trigger:has_fleet_flag] = enum[fleet_flag_enum]
 ## severity = warning
 ###Checks if the ship has a specific, arbitrarily-named, flag
 alias[trigger:has_ship_flag] = value[ship_flag]
