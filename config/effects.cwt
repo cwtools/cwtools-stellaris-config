@@ -471,6 +471,7 @@ alias[effect:remove_pop_group_flag] = value_set[pop_group_flag]
 ## severity = warning
 ###Removes a flag from the scoped country
 alias[effect:remove_country_flag] = value[country_flag]
+alias[effect:remove_country_flag] = enum[country_flag_enum]
 alias[effect:remove_country_flag] = enum[inline_script_flags]
 ## severity = warning
 ###Removes a flag from the scoped planet
@@ -2364,9 +2365,7 @@ alias[effect:create_message] = {
 		## cardinality = 0..1
 		varname =  this.trophy_hunter_gained_<resource>
 		## cardinality = 0..1
-		varname =  this.experimental_progress
-		## cardinality = 0..1
-		varname =  this.destroyed_colony_pop
+		varname =  enum[varname_enum]
 		## cardinality = 0..1
 		value = localisation
 		## cardinality = 0..1
