@@ -648,6 +648,7 @@ enums = {
 		class_4_singularity_can_build
 		commander_given
 		commander_given_patron
+		devour_war_active
 		dimensional_fabricator_can_build
 		dimensional_replicator_can_build
 		dportal_trade_crisis
