@@ -374,6 +374,7 @@ enums = {
 		mia_fleet_eaten
 	}
 	enum[pre_ftl_relationship_types] = {
+		commercial_pact
 		defensive_pact
 		migration_access
 		is_under_societal_enlightenment
