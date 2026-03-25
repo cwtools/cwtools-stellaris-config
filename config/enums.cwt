@@ -635,10 +635,17 @@ enums = {
 		this.spawned_shroudstone
 	}
 	enum[country_flag_enum] = {
+		affected_by_celestial_storm
+		affected_by_electric_storm
+		affected_by_gravity_storm
+		affected_by_magnetic_storm
+		affected_by_particle_storm
+		affected_by_solar_storm
 		affluence_center_can_build
 		affluence_emporium_can_build
 		army_recruited
 		army_recruited_patron
+		awakening_not_allowed
 		beholder_psi_pops_timer
 		breached_shroud
 		buildings_good_energy
@@ -656,6 +663,7 @@ enums = {
 		dportal_trade_low
 		dportal_trade_normal
 		end_of_the_cycle_reckoning
+		enigmatic_fortress_disabled
 		fe_administration_1_can_build
 		fe_administration_hive_1_can_build
 		fe_administration_machine_1_can_build
@@ -670,14 +678,19 @@ enums = {
 		fe_silo_1_can_build
 		fe_sky_dome_can_build
 		has_private_clinics
+		human_plantoid
 		logistics_assistance
 		logistics_assistance_patron
+		lootboxed_recently
 		mercenary_enclave_planet
 		micro_forge_can_build
 		nano_forge_can_build
 		necrophage_elevation_timer
+		necrophage_start_empire
 		nourishment_center_can_build
 		nourishment_complex_can_build
+		ongoing_preftl_chain
+		only_unbidden_this_time
 		police_recruited
 		police_recruited_patron
 		prescripted_blorg
@@ -694,7 +707,10 @@ enums = {
 		tech_fe_market_1
 		tech_fe_security_1
 		tech_fe_security_1_can_build
+		thesis_insufficient
+		triggered_storm_in_a_box
 		uncapped_generator_districts
+		works_with_formless
 		zro_bought
 		zro_bought_patron
 	}
@@ -716,6 +732,7 @@ enums = {
 		defeated_toxoid_evopred
 		defeated_infernal_evopred
 		defeated_machine_evopred
+		renowned_leader
 	}
 	enum[pop_group_flag_enum] = {
 		non_purge_pop_group
