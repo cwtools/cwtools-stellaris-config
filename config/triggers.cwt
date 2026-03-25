@@ -2736,6 +2736,7 @@ alias[trigger:council_legitimacy] == value_field
 ## severity = warning
 ###Checks if the astral rift has a specific flag
 alias[trigger:has_astral_rift_flag] = value[astral_rift_flag]
+alias[trigger:has_astral_rift_flag] = enum[has_astral_rift_flag_enum]
 
 ## severity = warning
 ###Checks if the country has completed a specific event chain
