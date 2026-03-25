@@ -695,5 +695,23 @@ enums = {
 		zro_bought
 		zro_bought_patron
 	}
+	enum[leader_flag_enum] = {
+		block_homeworld_traits
+		renowned_materialist1
+		legendary_leader_coma
+		defeated_humanoid_evopred
+		defeated_mammalian_evopred
+		defeated_reptilian_evopred
+		defeated_avian_evopred
+		defeated_arthropoid_evopred
+		defeated_molluscoid_evopred
+		defeated_fungoid_evopred
+		defeated_plantoid_evopred
+		defeated_lithoid_evopred
+		defeated_necroid_evopred
+		defeated_aquatic_evopred
+		defeated_toxoid_evopred
+		defeated_infernal_evopred
+		defeated_machine_evopred
+	}
 }
-
