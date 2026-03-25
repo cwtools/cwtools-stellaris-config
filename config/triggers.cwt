@@ -111,6 +111,7 @@ alias[trigger:is_variable_set] = trophy_hunter_gained_<resource>
 ## severity = warning
 ###Checks if the leader has a specific, arbitrarily-named, flag
 alias[trigger:has_leader_flag] = value[leader_flag]
+alias[trigger:has_leader_flag] = enum[leader_flag_enum]
 ## severity = warning
 ###Checks if the ambient object has a specific, arbitrarily-named, flag
 alias[trigger:has_ambient_object_flag] = value[ambient_object_flag]
