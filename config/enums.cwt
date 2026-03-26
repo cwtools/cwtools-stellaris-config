@@ -492,12 +492,16 @@ enums = {
 		aianom_society_dep2
 		aianom_society_dep3
 		aianom_society_dep4
+		event_target:destroyed_colony.trigger:pop_amount
 		historical_item_specimen_count
 		local_kill_pop_amount
+		local_num_attackers
 		local_pop_amount
 		local_size_option
 		local_spent_biomass
 		number_fleets_spawned
+		root.local_country_biomass
+		root.local_devastation
 		root.local_pop_amount
 		subjects_minus_one
 		trigger:pop_amount
@@ -626,7 +630,25 @@ enums = {
 		use_default_ships
 	}
 	enum[global_flags] = {
+		authoritarian_leader_1
+		authoritarian_leader_2
+		egalitarian_leader_1
+		egalitarian_leader_2
+		first_league_system_discovered
 		ghost_signal_1_flag
+		irassian_system_discovered
+		materialist_leader_1
+		materialist_leader_2
+		militarist_leader_1
+		militarist_leader_2
+		pacifist_leader_1
+		pacifist_leader_2
+		spiritualist_leader_1
+		spiritualist_leader_2
+		xenophile_leader_1
+		xenophile_leader_2
+		xenophobe_leader_1
+		xenophobe_leader_2
 	}
 	enum[varname_enum] = {
 		this.ascensions_added
@@ -652,6 +674,7 @@ enums = {
 		buildings_good_energy
 		buildings_good_food
 		buildings_good_minerals
+		chinorr_combine
 		class_3_singularity_can_build
 		class_4_singularity_can_build
 		commander_given
@@ -663,8 +686,10 @@ enums = {
 		dportal_trade_high
 		dportal_trade_low
 		dportal_trade_normal
+		end_of_cycle_lost_planets
 		end_of_the_cycle_reckoning
 		enigmatic_fortress_disabled
+		eotc_destruction_mitigated			
 		fe_administration_1_can_build
 		fe_administration_hive_1_can_build
 		fe_administration_machine_1_can_build
@@ -678,13 +703,17 @@ enums = {
 		fe_security_1_can_build
 		fe_silo_1_can_build
 		fe_sky_dome_can_build
+		grand_archive_8410_end_dialog
 		has_private_clinics
+		has_uplifted_species
 		human_plantoid
+		increase_leader_upkeep
 		logistics_assistance
 		logistics_assistance_patron
 		lootboxed_recently
 		mercenary_enclave_planet
 		micro_forge_can_build
+		mindwarden_logistics_cooldown
 		nano_forge_can_build
 		necrophage_elevation_timer
 		necrophage_start_empire
@@ -692,6 +721,8 @@ enums = {
 		nourishment_complex_can_build
 		ongoing_preftl_chain
 		only_unbidden_this_time
+		paragon_origin_finished_story
+		planet_storm_to_signal_found
 		police_recruited
 		police_recruited_patron
 		prescripted_blorg
@@ -704,16 +735,29 @@ enums = {
 		reckoning_intel_given_patron
 		recycled_vir
 		reemployment_center_timer
+		shroudwalker_attune_patron_cooldown
+		shroudwalker_contact_patron_cooldown
+		shroudwalker_delving_ritual_cooldown
 		skydome_can_build
+		started_zroni_storyline
+		tech_1_researched
+		tech_2_researched
 		tech_fe_market_1
 		tech_fe_security_1
 		tech_fe_security_1_can_build
+		the_composer_of_strands_betrayal
+		the_cradle_of_souls_betrayal
+		the_eater_of_worlds_betrayal
+		the_instrument_of_desire_betrayal
+		the_voor
 		thesis_insufficient
 		triggered_storm_in_a_box
 		uncapped_generator_districts
+		unplugged_pre_ftl_empire_flag
 		works_with_formless
 		zro_bought
 		zro_bought_patron
+		zroni_storyline_completed
 	}
 	enum[leader_flag_enum] = {
 		block_homeworld_traits
@@ -733,15 +777,25 @@ enums = {
 		defeated_toxoid_evopred
 		defeated_infernal_evopred
 		defeated_machine_evopred
+		paragon_origin_genetic_ascension
+		paragon_origin_psionic_ascension
 		renowned_leader
 	}
 	enum[pop_group_flag_enum] = {
 		non_purge_pop_group
+		upl_ethic_colind
+		upl_ethic_pacmil
+		upl_ethic_spimat
+		upl_ethic_xenoph
 	}
 	enum[has_astral_rift_flag_enum] = {
 		split_opened_rift
 	}
 	enum[fleet_flag_enum] = {
 		formless_defense_fleet
+	}
+	enum[relation_flag_enum] = {
+		AbandonedRefugees
+		pirate_relation
 	}
 }
