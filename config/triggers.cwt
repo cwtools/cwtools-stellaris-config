@@ -163,6 +163,7 @@ alias[trigger:has_relation_flag] = {
 	who = scope_group[target_country]
 	## severity = warning
 	flag = value[relation_flag]
+	flag = enum[relation_flag_enum]
 }
 
 ###Checks if the target country has a specific relation flag towards the country
