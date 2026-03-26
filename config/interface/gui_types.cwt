@@ -954,4 +954,6 @@ alias[gui_background:background] = {
 	frame = int
 	## cardinality = 0..1
 	alpha = float
+	## cardinality = 0..1
+	centerPosition = bool
 }
