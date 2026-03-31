@@ -115,6 +115,8 @@ alias[economic_template:cost] = {
 	## cardinality = 0..inf
 	multiplier = value_field
 	## cardinality = 0..inf
+	multiplier = enum[exe_set_variable]
+	## cardinality = 0..inf
 	mult = value_field
 }
 
@@ -127,6 +129,8 @@ alias[economic_template:produces] = {
 	<resource> = float
 	## cardinality = 0..inf
 	multiplier = value_field
+	## cardinality = 0..inf
+	multiplier = enum[exe_set_variable]
 	## cardinality = 0..inf
 	mult = value_field
 }
@@ -141,6 +145,8 @@ alias[economic_template:upkeep] = {
 	## cardinality = 0..inf
 	multiplier = value_field
 	## cardinality = 0..inf
+	multiplier = enum[exe_set_variable]
+	## cardinality = 0..inf
 	mult = value_field
 }
 
@@ -153,6 +159,8 @@ alias[economic_template:logistics] = {
 	<resource> = float
 	## cardinality = 0..inf
 	multiplier = value_field
+	## cardinality = 0..inf
+	multiplier = enum[exe_set_variable]
 	## cardinality = 0..inf
 	mult = value_field
 }
@@ -176,6 +184,8 @@ alias[economic_template_no_produce:cost] = {
 	## cardinality = 0..inf
 	multiplier = value_field
 	## cardinality = 0..inf
+	multiplier = enum[exe_set_variable]
+	## cardinality = 0..inf
 	mult = value_field
 }
 
@@ -189,6 +199,8 @@ alias[economic_template_no_produce:upkeep] = {
 	## cardinality = 0..inf
 	multiplier = value_field
 	## cardinality = 0..inf
+	multiplier = enum[exe_set_variable]
+	## cardinality = 0..inf
 	mult = value_field
 }
 
@@ -201,6 +213,8 @@ alias[ai_resource_production:ai_resource_production] = {
 	<resource> = float
 	## cardinality = 0..inf
 	multiplier = value_field
+	## cardinality = 0..inf
+	multiplier = enum[exe_set_variable]
 	## cardinality = 0..inf
 	mult = value_field
 }
@@ -222,6 +236,8 @@ alias[resources_template_optional:resources] = {
 		<resource> = float
 		## cardinality = 0..inf
 		multiplier = value_field
+		## cardinality = 0..inf
+		multiplier = enum[exe_set_variable]
 		## cardinality = 0..inf
 		mult = value_field
 	}
@@ -247,8 +263,10 @@ alias[triggered_district_modifier_planet:triggered_district_planet_modifier] = {
 	show_only_custom_tooltip = bool
 	## cardinality = 0..1
 	mult = value_field
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	multiplier = value_field
+	## cardinality = 0..inf
+	multiplier = enum[exe_set_variable]
 	## cardinality = 0..1
 	key = localisation
 }
@@ -270,8 +288,10 @@ alias[triggered_planet_modifier_planet:triggered_planet_modifier] = {
 	show_only_custom_tooltip = bool
 	## cardinality = 0..1
 	mult = value_field
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	multiplier = value_field
+	## cardinality = 0..inf
+	multiplier = enum[exe_set_variable]
 	## cardinality = 0..1
 	key = localisation
 }
@@ -289,8 +309,10 @@ alias[triggered_planet_growth_habitability_modifier:triggered_planet_growth_habi
 	}
 	## cardinality = 0..1
 	mult = value_field
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	multiplier = value_field
+	## cardinality = 0..inf
+	multiplier = enum[exe_set_variable]
 	## cardinality = 0..1
 	custom_tooltip = localisation
 }
