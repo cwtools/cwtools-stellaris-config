@@ -5,17 +5,11 @@ types = {
 	}
 }
 
-#TODO Confirm
-#TODO Document
 global_ship_design = {
 	## cardinality = 0..1
 	name = localisation
 	## cardinality = 0..1
-	ship_size = <ship_size>
-	## cardinality = 0..1
-	custom_trade_weight = int
-	## cardinality = 0..1
-	hide_size = bool
+	roles = enum[ship_size_ship_roles]
 	## cardinality = 0..1
 	upgrades_to = localisation
 	## cardinality = 0..1
@@ -28,24 +22,29 @@ global_ship_design = {
 	## cardinality = 0..1
 	newborn_ship_design = localisation
 	## cardinality = 0..1
-	is_event_design = bool
+	country_type = <country_type>
+	## cardinality = 0..1
+	fleet_specialization_tag = enum[component_tags]
 	## cardinality = 0..1
 	use_design_name = bool
 	## cardinality = 0..1
-	regenerates_when_disabled = bool
+	is_event_design = bool
 	## cardinality = 0..1
-	### whether this design should be set to automatically upgrade its components (default: no)
-	upgrade_ship_components = bool
-	## cardinality = 0..1
-	### whether this design should be considered auto-generated, aka "auto-best" (default: no)
-	auto_gen_design = bool
-	## cardinality = 0..1
-	country_type = <country_type>
+	allow_buildable_trigger = <scripted_trigger>
 	#these two triggers are connected. You need to have is_special_builable = yes + a trigger for this to work
 	## cardinality = 0..1
 	is_special_buildable = bool
 	## cardinality = 0..1
-	allow_buildable_trigger = <scripted_trigger>
+	graphical_culture = <graphical_culture>
+	
+	## cardinality = 0..1
+	ship_size = <ship_size>
+	## cardinality = 0..1
+	custom_trade_weight = int
+	## cardinality = 0..1
+	hide_size = bool
+	## cardinality = 0..1
+	regenerates_when_disabled = bool
 
 	## cardinality = 0..inf
 	section = {
@@ -74,6 +73,8 @@ global_ship_design = {
 		## cardinality = 0..inf
 		{
 			ship_size = <ship_size>
+			## cardinality = 0..1
+			custom_military_power =float
 			section = {
 				template = <section_template>
 				slot = enum[section_slots]
