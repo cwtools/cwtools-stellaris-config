@@ -500,10 +500,12 @@ enums = {
 		local_size_option
 		local_spent_biomass
 		number_fleets_spawned
+		owner.trigger:num_ascension_perks
 		root.local_country_biomass
 		root.local_devastation
 		root.local_pop_amount
 		subjects_minus_one
+		trigger:num_moons
 		trigger:pop_amount
 		trigger:years_passed
 		trophy_hunter_gained_energy
