@@ -79,6 +79,10 @@ anomaly_category = {
 	## replace_scope = { root = planet this = planet from = ship }
 	spawn_chance = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		## cardinality = 0..inf
+		modifier = {
+			factor = enum[exe_set_variable]
+		}
 	}
 
 	## cardinality = 0..1
