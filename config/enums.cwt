@@ -494,6 +494,7 @@ enums = {
 		aianom_society_dep4
 		event_target:destroyed_colony.trigger:pop_amount
 		historical_item_specimen_count
+		leader.trigger:has_total_skill
 		local_kill_pop_amount
 		local_num_attackers
 		local_pop_amount
@@ -505,6 +506,7 @@ enums = {
 		root.local_devastation
 		root.local_pop_amount
 		subjects_minus_one
+		trigger:num_galaxy_systems
 		trigger:num_moons
 		trigger:pop_amount
 		trigger:years_passed
@@ -692,7 +694,8 @@ enums = {
 		end_of_cycle_lost_planets
 		end_of_the_cycle_reckoning
 		enigmatic_fortress_disabled
-		eotc_destruction_mitigated			
+		eotc_destruction_mitigated		
+		exploration_focus_230_completed
 		fe_administration_1_can_build
 		fe_administration_hive_1_can_build
 		fe_administration_machine_1_can_build
