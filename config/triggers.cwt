@@ -521,7 +521,7 @@ alias[trigger:def_war_exhaustion_sum] == value_field
 
 ###Checks the scope's total fleet power
 alias[trigger:fleet_power] == value_field
-
+alias[trigger:fleet_power] =enum[exe_set_variable]
 ###is_megastructure_type = <name of type>. Compares the type of scope's mega structure to a type from the database
 alias[trigger:is_megastructure_type] = <megastructure>
 ###is_upgrading = <yes/no>. Checks if the scope's fleet or mega structure is currently upgrading
