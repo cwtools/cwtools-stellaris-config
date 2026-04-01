@@ -117,6 +117,7 @@ alias[trigger:has_leader_flag] = enum[leader_flag_enum]
 ## severity = warning
 ###Checks if the ambient object has a specific, arbitrarily-named, flag
 alias[trigger:has_ambient_object_flag] = value[ambient_object_flag]
+alias[trigger:has_ambient_object_flag] = enum[ambient_object_flag_enum]
 ## severity = warning
 ###Checks if the mega structure has a specific, arbitrarily-named, flag
 alias[trigger:has_megastructure_flag] = value[megastructure_flag]
