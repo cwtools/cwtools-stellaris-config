@@ -117,6 +117,7 @@ alias[trigger:has_leader_flag] = enum[leader_flag_enum]
 ## severity = warning
 ###Checks if the ambient object has a specific, arbitrarily-named, flag
 alias[trigger:has_ambient_object_flag] = value[ambient_object_flag]
+alias[trigger:has_ambient_object_flag] = enum[ambient_object_flag_enum]
 ## severity = warning
 ###Checks if the mega structure has a specific, arbitrarily-named, flag
 alias[trigger:has_megastructure_flag] = value[megastructure_flag]
@@ -520,7 +521,7 @@ alias[trigger:def_war_exhaustion_sum] == value_field
 
 ###Checks the scope's total fleet power
 alias[trigger:fleet_power] == value_field
-
+alias[trigger:fleet_power] =enum[exe_set_variable]
 ###is_megastructure_type = <name of type>. Compares the type of scope's mega structure to a type from the database
 alias[trigger:is_megastructure_type] = <megastructure>
 ###is_upgrading = <yes/no>. Checks if the scope's fleet or mega structure is currently upgrading

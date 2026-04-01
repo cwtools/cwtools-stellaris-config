@@ -470,6 +470,9 @@ enums = {
 		abandoned_weapon_station
 		small_debris_object
 	}
+	enum[ambient_object_flag_enum] = {
+		relic_world_debris
+	}
 	enum[exe_set_variable]= {
 		aesthetic_wonder_specimen_count
 		aianom_energy_dep1
@@ -492,19 +495,57 @@ enums = {
 		aianom_society_dep2
 		aianom_society_dep3
 		aianom_society_dep4
+		empire_size
+		event_target:culled_node.trigger:has_base_skill
 		event_target:destroyed_colony.trigger:pop_amount
+		event_target:rebel_empire.trigger:fleet_power
+		from.trigger:empire_size
+		from.trigger:num_vivarium_slots
 		historical_item_specimen_count
+		leader.trigger:has_total_skill
 		local_kill_pop_amount
 		local_num_attackers
 		local_pop_amount
 		local_size_option
 		local_spent_biomass
 		number_fleets_spawned
+		owner.trigger:fleet_power
+		owner.trigger:num_ascension_perks
 		root.local_country_biomass
 		root.local_devastation
 		root.local_pop_amount
+		root.trigger:fleet_power
+		species.modifier:planet_jobs_specialist_only_produces_mult
+		species.modifier:planet_jobs_worker_only_produces_mult
 		subjects_minus_one
+		trigger:capital_tier
+		trigger:council_agenda_progress_percent
+		trigger:empire_size
+		trigger:empire_sprawl_over_cap
+		trigger:has_base_skill
+		trigger:has_experience
+		trigger:has_total_civic_points
+		trigger:has_total_skill
+		trigger:has_unlocked_council_positions
+		trigger:has_unused_civic_points
+		trigger:is_difficulty
+		trigger:leader_age
+		trigger:leader_lifespan
+		trigger:max_naval_capacity
+		trigger:num_ascension_perks
+		trigger:num_candidate_supported
+		trigger:num_galaxy_systems
+		trigger:num_moons
+		trigger:num_non_aggression_pacts
+		trigger:num_owned_leaders
+		trigger:num_planetary_ascension_tiers
+		trigger:planet_garrison_strength
+		trigger:planet_size
+		trigger:planet_stability
 		trigger:pop_amount
+		trigger:subjects
+		trigger:support
+		trigger:years_passed
 		trophy_hunter_gained_energy
 		trophy_hunter_gained_exotic_gases
 		trophy_hunter_gained_food
@@ -643,8 +684,10 @@ enums = {
 		militarist_leader_2
 		pacifist_leader_1
 		pacifist_leader_2
+		rampaging_kaijus_created
 		spiritualist_leader_1
 		spiritualist_leader_2
+		synth_queen_crisis_5
 		xenophile_leader_1
 		xenophile_leader_2
 		xenophobe_leader_1
@@ -669,8 +712,10 @@ enums = {
 		army_recruited
 		army_recruited_patron
 		awakening_not_allowed
+		beholder_psi_pops_cooldown_timer
 		beholder_psi_pops_timer
 		breached_shroud
+		build_dyson_sphere_swarm
 		buildings_good_energy
 		buildings_good_food
 		buildings_good_minerals
@@ -679,6 +724,8 @@ enums = {
 		class_4_singularity_can_build
 		commander_given
 		commander_given_patron
+		crisis_beacon_timer
+		decision_gh_life_seeding_ongoing
 		devour_war_active
 		dimensional_fabricator_can_build
 		dimensional_replicator_can_build
@@ -689,7 +736,9 @@ enums = {
 		end_of_cycle_lost_planets
 		end_of_the_cycle_reckoning
 		enigmatic_fortress_disabled
-		eotc_destruction_mitigated			
+		eotc_destruction_mitigated		
+		exploration_focus_230_completed
+		failed_fund_contribution
 		fe_administration_1_can_build
 		fe_administration_hive_1_can_build
 		fe_administration_machine_1_can_build
@@ -704,13 +753,16 @@ enums = {
 		fe_silo_1_can_build
 		fe_sky_dome_can_build
 		grand_archive_8410_end_dialog
+		has_already_traded_specimens
 		has_private_clinics
 		has_uplifted_species
+		hostile_to_nomads
 		human_plantoid
 		increase_leader_upkeep
 		logistics_assistance
 		logistics_assistance_patron
 		lootboxed_recently
+		matriarch_horror
 		mercenary_enclave_planet
 		micro_forge_can_build
 		mindwarden_logistics_cooldown
@@ -721,6 +773,7 @@ enums = {
 		nourishment_complex_can_build
 		ongoing_preftl_chain
 		only_unbidden_this_time
+		oracle_completed
 		paragon_origin_finished_story
 		planet_storm_to_signal_found
 		police_recruited
@@ -739,7 +792,9 @@ enums = {
 		shroudwalker_contact_patron_cooldown
 		shroudwalker_delving_ritual_cooldown
 		skydome_can_build
+		slave_revolt
 		started_zroni_storyline
+		target_of_operation_arm_privateers
 		tech_1_researched
 		tech_2_researched
 		tech_fe_market_1

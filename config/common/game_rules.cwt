@@ -500,4 +500,6 @@ types = {
 game_rule = {
 	alias_name[trigger] = alias_match_left[trigger]
 	alias_name[modifier_rule] = alias_match_left[modifier_rule]
+	## cardinality = 0..inf
+	mult = enum[exe_set_variable]
 }
