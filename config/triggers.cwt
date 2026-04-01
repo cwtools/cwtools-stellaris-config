@@ -83,6 +83,7 @@ alias[trigger:has_pop_faction_flag] = value[pop_faction_flag]
 ## severity = warning
 ###Checks if the solar system has a specific, arbitrarily-named, flag
 alias[trigger:has_star_flag] = value[star_flag]
+alias[trigger:has_star_flag] = enum[country_flag_enum]
 ## severity = warning
 ###Checks if the solar system has a specific, arbitrarily-named, flag
 alias[trigger:has_star_flag] = <precursors>
