@@ -73,6 +73,10 @@ opinion_modifier = {
 		###root = country with the opinion, from = country it has the opinion of
 		## cardinality = 0..inf
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		## cardinality = 0..inf
+		modifier = {
+			factor = enum[exe_set_variable]
+		}
 	}
 	opinion = float
 
