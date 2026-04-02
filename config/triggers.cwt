@@ -175,6 +175,7 @@ alias[trigger:reverse_has_relation_flag] = {
 	who = scope_group[target_country]
 	## severity = warning
 	flag = value[relation_flag]
+	flag = enum[relation_flag_enum]
 }
 
 ## severity = warning
