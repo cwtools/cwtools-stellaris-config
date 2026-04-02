@@ -471,6 +471,8 @@ enums = {
 		small_debris_object
 	}
 	enum[ambient_object_flag_enum] = {
+		psionic_aura_level2_entity
+		psionic_aura_level3_entity
 		relic_world_debris
 	}
 	enum[exe_set_variable]= {
@@ -510,6 +512,7 @@ enums = {
 		local_spent_biomass
 		number_fleets_spawned
 		owner.trigger:fleet_power
+		owner.trigger:disciple_of_the_cradle_councilors_count
 		owner.trigger:num_ascension_perks
 		root.local_country_biomass
 		root.local_devastation
@@ -688,6 +691,7 @@ enums = {
 		spiritualist_leader_1
 		spiritualist_leader_2
 		synth_queen_crisis_5
+		synth_queen_crisis_6
 		xenophile_leader_1
 		xenophile_leader_2
 		xenophobe_leader_1
@@ -705,10 +709,25 @@ enums = {
 		affected_by_electric_storm
 		affected_by_gravity_storm
 		affected_by_magnetic_storm
+		affected_by_nexus_storm
 		affected_by_particle_storm
+		affected_by_shroud_storm
 		affected_by_solar_storm
 		affluence_center_can_build
 		affluence_emporium_can_build
+		apex_aquatic
+		apex_arthropoid
+		apex_avian
+		apex_fungoid
+		apex_humanoid
+		apex_lithoid
+		apex_machine
+		apex_mammalian
+		apex_molluscoid
+		apex_necroid
+		apex_plantoid
+		apex_reptilian
+		apex_toxoid
 		army_recruited
 		army_recruited_patron
 		awakening_not_allowed
@@ -725,6 +744,7 @@ enums = {
 		commander_given
 		commander_given_patron
 		crisis_beacon_timer
+		cyber_creed_undercover_leader_hammer
 		decision_gh_life_seeding_ongoing
 		devour_war_active
 		dimensional_fabricator_can_build
@@ -746,12 +766,18 @@ enums = {
 		fe_clinic_1_can_build
 		fe_entertainment_1_can_build
 		fe_fortress_can_build
+		fe_hive_control_second
+		fe_hive_war_third
 		fe_lab_1_can_build
 		fe_market_1_can_build
 		fe_mine_1_can_build
 		fe_security_1_can_build
 		fe_silo_1_can_build
 		fe_sky_dome_can_build
+		georadiation_signal_1_planet
+		georadiation_signal_1_star
+		georadiation_signal_2_planet
+		georadiation_signal_2_star
 		grand_archive_8410_end_dialog
 		has_already_traded_specimens
 		has_private_clinics
@@ -759,6 +785,9 @@ enums = {
 		hostile_to_nomads
 		human_plantoid
 		increase_leader_upkeep
+		kaleidoscope_planet
+		legendary_leader_coma
+		loaning_fleet
 		logistics_assistance
 		logistics_assistance_patron
 		lootboxed_recently
@@ -769,12 +798,21 @@ enums = {
 		nano_forge_can_build
 		necrophage_elevation_timer
 		necrophage_start_empire
+		new_atomic_age
+		new_bronze_age
+		new_iron_age
+		new_late_medieval_age
 		nourishment_center_can_build
 		nourishment_complex_can_build
 		ongoing_preftl_chain
 		only_unbidden_this_time
 		oracle_completed
+		paragon_origin_ascension_flag_flipping__tactical_interface
+		paragon_origin_cybernetic_ascension
 		paragon_origin_finished_story
+		paragon_origin_genetic_ascension
+		paragon_origin_psionic_ascension
+		paragon_origin_synthetic_ascension
 		planet_storm_to_signal_found
 		police_recruited
 		police_recruited_patron
@@ -784,10 +822,45 @@ enums = {
 		received_collection_stage_2_reward_aesthetic_wonder
 		received_collection_stage_2_reward_historical_item
 		received_collection_stage_2_reward_xeno_geology
+		recently_got_affluence_emporium
+		recently_got_affluence_emporium
+		recently_got_class_3_singularity
+		recently_got_class_3_singularity
+		recently_got_dimensional_replicator
+		recently_got_dimensional_replicator
+		recently_got_fe_administration_1
+		recently_got_fe_administration_hive_1
+		recently_got_fe_administration_machine_1
+		recently_got_fe_assembly_1
+		recently_got_fe_clinic_1
+		recently_got_fe_entertainment_1
+		recently_got_fe_fortress
+		recently_got_fe_lab_1
+		recently_got_fe_market_1
+		recently_got_fe_mine_1
+		recently_got_fe_security_1
+		recently_got_fe_silo_1
+		recently_got_fe_sky_dome
+		recently_got_micro_forge
+		recently_got_nourishment_complex
+		recently_got_nourishment_complex
 		reckoning_intel_given
 		reckoning_intel_given_patron
 		recycled_vir
 		reemployment_center_timer
+		shroud_song_10_selected
+		shroud_song_11_selected
+		shroud_song_12_selected
+		shroud_song_13_selected
+		shroud_song_1_selected
+		shroud_song_2_selected
+		shroud_song_3_selected
+		shroud_song_4_selected
+		shroud_song_5_selected
+		shroud_song_6_selected
+		shroud_song_7_selected
+		shroud_song_8_selected
+		shroud_song_9_selected
 		shroudwalker_attune_patron_cooldown
 		shroudwalker_contact_patron_cooldown
 		shroudwalker_delving_ritual_cooldown
@@ -837,6 +910,7 @@ enums = {
 		renowned_leader
 	}
 	enum[pop_group_flag_enum] = {
+		cant_work
 		non_purge_pop_group
 		upl_ethic_colind
 		upl_ethic_pacmil
@@ -852,5 +926,33 @@ enums = {
 	enum[relation_flag_enum] = {
 		AbandonedRefugees
 		pirate_relation
+	}
+	enum[ship_flag_enum] = {
+		behemoth_hatchling
+	}
+	enum[situation_flag_enum] = {
+		celebration_void_spawn
+		cybernetic_creed_cyberization_no_funding
+		shroud_forged_500_negative
+		shroud_forged_500_positive
+		shroud_forged_510_negative_1
+		shroud_forged_510_negative_2
+		shroud_forged_510_positive_1
+		shroud_forged_510_positive_2
+		shroud_forged_520_negative_1
+		shroud_forged_520_negative_2
+		shroud_forged_520_positive_1
+		shroud_forged_530_negative_2
+		shroud_forged_540_positive_2
+		shroud_forged_550_negative_1
+		shroud_forged_550_positive_1
+		shroud_forged_560_negative_2
+		shroud_forged_560_positive_2
+		shroud_forged_570_negative_1
+		shroud_forged_570_positive_1
+		shroud_forged_580_positive_1
+		shroud_forged_590_negative_1
+		shroud_forged_590_positive_1
+		took_pops
 	}
 }
