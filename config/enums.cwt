@@ -500,7 +500,10 @@ enums = {
 		empire_size
 		event_target:culled_node.trigger:has_base_skill
 		event_target:destroyed_colony.trigger:pop_amount
+		event_target:looted_planet.trigger:pop_amount
 		event_target:rebel_empire.trigger:fleet_power
+		event_target:ruler_pop_faction.trigger:pop_amount
+		from.starbase.fleet.trigger:fleet_power
 		from.trigger:empire_size
 		from.trigger:num_vivarium_slots
 		historical_item_specimen_count
@@ -511,8 +514,8 @@ enums = {
 		local_size_option
 		local_spent_biomass
 		number_fleets_spawned
-		owner.trigger:fleet_power
 		owner.trigger:disciple_of_the_cradle_councilors_count
+		owner.trigger:fleet_power
 		owner.trigger:num_ascension_perks
 		root.local_country_biomass
 		root.local_devastation
@@ -568,6 +571,7 @@ enums = {
 		local_pop_amount
 		local_spent_biomass
 		owner.trigger:disciple_of_the_cradle_councilors_count
+		trigger:fleet_power
 		trigger:pop_amount
 		trigger:psionic_pop_amount
 		trigger:sapient_pop_amount
@@ -678,6 +682,7 @@ enums = {
 		authoritarian_leader_2
 		egalitarian_leader_1
 		egalitarian_leader_2
+		FLDrone_doing_global
 		first_league_system_discovered
 		ghost_signal_1_flag
 		irassian_system_discovered
@@ -734,6 +739,7 @@ enums = {
 		beholder_psi_pops_cooldown_timer
 		beholder_psi_pops_timer
 		breached_shroud
+		broken_shackles_homeworld@root
 		build_dyson_sphere_swarm
 		buildings_good_energy
 		buildings_good_food
@@ -755,6 +761,7 @@ enums = {
 		dportal_trade_normal
 		end_of_cycle_lost_planets
 		end_of_the_cycle_reckoning
+		end_violence
 		enigmatic_fortress_disabled
 		eotc_destruction_mitigated		
 		exploration_focus_230_completed
@@ -774,6 +781,7 @@ enums = {
 		fe_security_1_can_build
 		fe_silo_1_can_build
 		fe_sky_dome_can_build
+		fed_origin_system_1
 		georadiation_signal_1_planet
 		georadiation_signal_1_star
 		georadiation_signal_2_planet
@@ -785,7 +793,9 @@ enums = {
 		hostile_to_nomads
 		human_plantoid
 		increase_leader_upkeep
+		intelligent_learners_development
 		kaleidoscope_planet
+		keep_deposit_on_terraform
 		legendary_leader_coma
 		loaning_fleet
 		logistics_assistance
@@ -795,6 +805,7 @@ enums = {
 		mercenary_enclave_planet
 		micro_forge_can_build
 		mindwarden_logistics_cooldown
+		mmat_vs_spir_development
 		nano_forge_can_build
 		necrophage_elevation_timer
 		necrophage_start_empire
@@ -817,6 +828,7 @@ enums = {
 		police_recruited
 		police_recruited_patron
 		prescripted_blorg
+		primitive_cousins_of_@root.owner
 		raid_target_asked
 		raid_target_asked_patron
 		received_collection_stage_2_reward_aesthetic_wonder
@@ -865,6 +877,7 @@ enums = {
 		shroudwalker_contact_patron_cooldown
 		shroudwalker_delving_ritual_cooldown
 		skydome_can_build
+		slave_rebels
 		slave_revolt
 		started_zroni_storyline
 		target_of_operation_arm_privateers
@@ -879,9 +892,11 @@ enums = {
 		the_instrument_of_desire_betrayal
 		the_voor
 		thesis_insufficient
+		traded_planet_x
 		triggered_storm_in_a_box
 		uncapped_generator_districts
 		unplugged_pre_ftl_empire_flag
+		use_on_action_when_establishing_comms
 		works_with_formless
 		zro_bought
 		zro_bought_patron
@@ -908,6 +923,7 @@ enums = {
 		paragon_origin_genetic_ascension
 		paragon_origin_psionic_ascension
 		renowned_leader
+		temp_election_leader
 	}
 	enum[pop_group_flag_enum] = {
 		cant_work
@@ -926,6 +942,7 @@ enums = {
 	enum[relation_flag_enum] = {
 		AbandonedRefugees
 		pirate_relation
+		rebelling_slaves_former_owner
 	}
 	enum[ship_flag_enum] = {
 		behemoth_hatchling
