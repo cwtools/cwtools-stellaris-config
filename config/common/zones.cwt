@@ -58,6 +58,10 @@ zones = {
 	## cardinality = 0..inf
 	## replace_scope = { root = planet this = planet }
 	triggered_district_planet_modifier = {
+		## cardinality = 0..1
+		potential = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
 		alias_name[modifier] = alias_match_left[modifier]
 	}
 	## cardinality = 0..1
