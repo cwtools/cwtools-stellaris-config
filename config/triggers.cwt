@@ -126,6 +126,7 @@ alias[trigger:has_megastructure_flag] = value[megastructure_flag]
 ## severity = warning
 ###Checks if the deposit has a specific, arbitrarily-named, flag
 alias[trigger:has_deposit_flag] = value[deposit_flag]
+alias[trigger:has_deposit_flag] = enum[country_flag_enum] 
 ## severity = warning
 ###Checks if the sector has a specific, arbitrarily-named, flag
 alias[trigger:has_sector_flag] = value[sector_flag]
