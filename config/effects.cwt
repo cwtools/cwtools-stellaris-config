@@ -502,6 +502,7 @@ alias[effect:remove_global_flag] = enum[global_flags]
 ## severity = warning
 ###Removes a flag from the scoped leader
 alias[effect:remove_leader_flag] = value[leader_flag]
+alias[effect:remove_leader_flag] = enum[leader_flag_enum]
 ## severity = warning
 ###Removes a flag from the scoped ambient object
 alias[effect:remove_ambient_object_flag] = value[ambient_object_flag]
@@ -5007,6 +5008,7 @@ alias[effect:set_trade_conversions] = {
 alias[effect:set_resource] = {
 	resource = <resource>
 	value = value_field
+	value = enum[exe_set_variable]
 }
 
 ###Creates a new pop group based on an existing one with overrides. If no existing pop group is passed, species is mandatory.

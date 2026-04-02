@@ -83,6 +83,7 @@ alias[trigger:has_pop_faction_flag] = value[pop_faction_flag]
 ## severity = warning
 ###Checks if the solar system has a specific, arbitrarily-named, flag
 alias[trigger:has_star_flag] = value[star_flag]
+alias[trigger:has_star_flag] = enum[country_flag_enum]
 ## severity = warning
 ###Checks if the solar system has a specific, arbitrarily-named, flag
 alias[trigger:has_star_flag] = <precursors>
@@ -99,6 +100,7 @@ alias[trigger:has_fleet_flag] = enum[fleet_flag_enum]
 ## severity = warning
 ###Checks if the ship has a specific, arbitrarily-named, flag
 alias[trigger:has_ship_flag] = value[ship_flag]
+alias[trigger:has_ship_flag] = enum[ship_flag_enum]
 ## severity = warning
 ###Checks if a Global Flag has been set
 alias[trigger:has_global_flag] = value[global_flag]
@@ -124,6 +126,7 @@ alias[trigger:has_megastructure_flag] = value[megastructure_flag]
 ## severity = warning
 ###Checks if the deposit has a specific, arbitrarily-named, flag
 alias[trigger:has_deposit_flag] = value[deposit_flag]
+alias[trigger:has_deposit_flag] = enum[country_flag_enum] 
 ## severity = warning
 ###Checks if the sector has a specific, arbitrarily-named, flag
 alias[trigger:has_sector_flag] = value[sector_flag]
@@ -148,6 +151,7 @@ alias[trigger:has_army_flag] = value[army_flag]
 ## severity = warning
 ###Checks if the situation has a specific, arbitrarily-named, flag
 alias[trigger:has_situation_flag] = value[situation_flag]
+alias[trigger:has_situation_flag] = enum[situation_flag_enum]
 ## severity = warning
 ###Checks if the agreement has a specific, arbitrarily-named, flag
 alias[trigger:has_agreement_flag] = value[agreement_flag]
@@ -172,6 +176,7 @@ alias[trigger:reverse_has_relation_flag] = {
 	who = scope_group[target_country]
 	## severity = warning
 	flag = value[relation_flag]
+	flag = enum[relation_flag_enum]
 }
 
 ## severity = warning
