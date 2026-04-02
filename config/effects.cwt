@@ -5008,7 +5008,7 @@ alias[effect:set_trade_conversions] = {
 alias[effect:set_resource] = {
 	resource = <resource>
 	value = value_field
-}
+	value = enum[exe_set_variable]
 
 ###Creates a new pop group based on an existing one with overrides. If no existing pop group is passed, species is mandatory.
 alias[effect:create_pop_group] = {
