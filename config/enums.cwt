@@ -497,15 +497,18 @@ enums = {
 		aianom_society_dep2
 		aianom_society_dep3
 		aianom_society_dep4
+		astral_rift_baol_species
 		empire_size
 		event_target:culled_node.trigger:has_base_skill
 		event_target:destroyed_colony.trigger:pop_amount
 		event_target:looted_planet.trigger:pop_amount
+		event_target:patron_revenge_spawn@this
 		event_target:rebel_empire.trigger:fleet_power
 		event_target:ruler_pop_faction.trigger:pop_amount
 		from.starbase.fleet.trigger:fleet_power
 		from.trigger:empire_size
 		from.trigger:num_vivarium_slots
+		genesis_new_species_selected_planet
 		historical_item_specimen_count
 		leader.trigger:has_total_skill
 		local_kill_pop_amount
@@ -751,6 +754,7 @@ enums = {
 		commander_given_patron
 		crisis_beacon_timer
 		cyber_creed_undercover_leader_hammer
+		curator_enclave_diplomacy_engaged
 		decision_gh_life_seeding_ongoing
 		devour_war_active
 		dimensional_fabricator_can_build
@@ -876,6 +880,7 @@ enums = {
 		shroudwalker_attune_patron_cooldown
 		shroudwalker_contact_patron_cooldown
 		shroudwalker_delving_ritual_cooldown
+		situation_red_giant_add_fuel
 		skydome_can_build
 		slave_rebels
 		slave_revolt
@@ -937,6 +942,7 @@ enums = {
 		split_opened_rift
 	}
 	enum[fleet_flag_enum] = {
+		dragon_mission_2
 		formless_defense_fleet
 	}
 	enum[relation_flag_enum] = {
@@ -948,7 +954,9 @@ enums = {
 		behemoth_hatchling
 	}
 	enum[situation_flag_enum] = {
+		breach_shroud_approach_selected
 		celebration_void_spawn
+		cyber_5_stage_1_fire
 		cybernetic_creed_cyberization_no_funding
 		shroud_forged_500_negative
 		shroud_forged_500_positive
@@ -970,6 +978,30 @@ enums = {
 		shroud_forged_580_positive_1
 		shroud_forged_590_negative_1
 		shroud_forged_590_positive_1
+		shroud_forged_600_negative_2
+		shroud_forged_600_positive_2
+		shroud_forged_610_negative_1
+		shroud_forged_610_positive_1
+		shroud_forged_620_negative_1
+		shroud_forged_620_negative_2
+		shroud_forged_620_positive_1
+		shroud_forged_630_negative_1
+		shroud_forged_630_positive_2
+		shroud_forged_640_positive_1
+		shroud_forged_650_negative_1
+		shroud_forged_650_positive_1
+		shroud_forged_660_negative_1
+		shroud_forged_660_positive_2
+		shroud_forged_670_negative_1
+		shroud_forged_670_positive_1
+		shroud_forged_680_positive_1
+		shroud_forged_690_negative_1
+		shroud_forged_690_positive_1
 		took_pops
+		voidspawn_celebration
+	}
+	enum[spynetwork_flag_enum] = {
+		operation_diplomatic_incident_timer
+		recently_stole_technology
 	}
 }
