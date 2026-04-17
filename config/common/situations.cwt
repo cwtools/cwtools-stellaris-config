@@ -201,7 +201,7 @@ situation_type = {
 	fail_icon = <sprite>
 	## cardinality = 0..1
 	fail_icon_frame = <sprite>
-	## cardinality = 0..1
+	## cardinality = 0..inf
 	stages = {
 		## cardinality = 1..inf
 		###Expects the key to be localised. You can also define <key>_desc and it will show on the tooltip, but this is optional.

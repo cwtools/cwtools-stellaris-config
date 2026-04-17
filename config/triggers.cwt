@@ -139,6 +139,7 @@ alias[trigger:has_starbase_flag] = value[starbase_flag]
 ## severity = warning
 ###Checks if the spy network has a specific, arbitrarily-named, flag
 alias[trigger:has_spynetwork_flag] = value[spynetwork_flag]
+alias[trigger:has_spynetwork_flag] = enum[spynetwork_flag_enum]
 ## severity = warning
 ###Checks if the espionage asset has a specific, arbitrarily-named, flag
 alias[trigger:has_espionage_asset_flag] = value[espionage_asset_flag]

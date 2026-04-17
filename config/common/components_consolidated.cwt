@@ -84,13 +84,14 @@ enums = {
 		"ship_uses_space_fauna_battleship_thrusters = yes"
 	}
 	enum[component_bio_stack_info_id] = {
+		anti_evasion
+		anti_fire_rate
 		bio_anti_evasion
 		bio_anti_fire_rate
 		bio_evasion
 		bio_fire_rate
 		bio_healing
-		anti_evasion
-		anti_fire_rate
+		disruptor_regen
 		evasion
 		fire_rate
 		healing
