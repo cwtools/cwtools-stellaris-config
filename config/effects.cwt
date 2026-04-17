@@ -2168,6 +2168,7 @@ alias[effect:clear_fleet_actions] = scope[fleet]
 ## severity = warning
 ### Deletes the specified saved global target reference
 alias[effect:clear_global_event_target] = value[global_event_target]
+alias[effect:clear_global_event_target] = enum[exe_set_variable]
 ### Deletes all saved global target references
 alias[effect:clear_global_event_targets] = yes
 ### Clears all fleet orders from the scoped fleet
