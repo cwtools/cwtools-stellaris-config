@@ -492,6 +492,7 @@ alias[effect:remove_pop_flag] = value[pop_flag]
 ## severity = warning
 ###Removes a flag from the scoped fleet
 alias[effect:remove_fleet_flag] = value[fleet_flag]
+alias[effect:remove_fleet_flag] = enum[fleet_flag_enum]
 ## severity = warning
 ###Removes a flag from the scoped ship
 alias[effect:remove_ship_flag] = value[ship_flag]
