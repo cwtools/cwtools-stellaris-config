@@ -536,6 +536,7 @@ alias[effect:remove_army_flag] = value[army_flag]
 ## severity = warning
 ###Removes a flag from the scoped situation
 alias[effect:remove_situation_flag] = value[situation_flag]
+alias[effect:remove_situation_flag] = enum[situation_flag_enum]
 ## severity = warning
 ###Removes a flag from the scoped agreement
 alias[effect:remove_agreement_flag] = value[agreement_flag]
