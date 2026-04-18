@@ -797,7 +797,12 @@ alias[trigger:has_resource] = bool
 ###Checks if the planet has a specific amount of a specific resource
 alias[trigger:has_resource] = {
 	type = <resource>
-	amount = int #no variables here for some reason atm
+	## cardinality = 0..1
+	amount = int 
+	## cardinality = 0..1
+	amount = value_field
+	## cardinality = 0..1
+	amount = enum[exe_set_variable]
 }
 
 ###Checks if the planet has any strategic resource
