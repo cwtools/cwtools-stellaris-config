@@ -1,4 +1,4 @@
-[18:19:44][modifier.cpp:2200]: 
+[17:00:43][modifier.cpp:2200]: 
  == MODIFIER DOCUMENTATION ==
 Note on Modifier Categories:
 -- These are used internally as a tag to suggest where they are intended to be used, but exact behavior depends upon individual implementation.
@@ -7508,6 +7508,8 @@ Printing Modifier Definitions:
 - planet_building_maintenance_depot_build_speed_mult, Category: Planets
 - planet_building_luxury_residence_build_speed_mult, Category: Planets
 - planet_building_paradise_dome_build_speed_mult, Category: Planets
+- planet_resources_build_speed_mult, Category: Planets
+- planet_prerequisites_build_speed_mult, Category: Planets
 - planet_building_communal_housing_build_speed_mult, Category: Planets
 - planet_building_communal_housing_large_build_speed_mult, Category: Planets
 - planet_building_drone_storage_build_speed_mult, Category: Planets
@@ -8552,6 +8554,9 @@ Printing Modifier Definitions:
 - pc_toxoid_star_habitability, Category: Habitability
 - pc_toxoid_star_max_buildings_add, Category: Planets
 - pc_toxoid_star_max_districts_add, Category: Planets
+- FEE_pc_orbital_ring_habitability, Category: Habitability
+- FEE_pc_orbital_ring_max_buildings_add, Category: Planets
+- FEE_pc_orbital_ring_max_districts_add, Category: Planets
 - pc_rift_star_habitability, Category: Habitability
 - pc_rift_star_max_buildings_add, Category: Planets
 - pc_rift_star_max_districts_add, Category: Planets
@@ -36773,6 +36778,1029 @@ Printing Modifier Definitions:
 - shipsize_habitat_central_complex_psionic_aura_speed_mult, Category: Ships
 - shipsize_habitat_central_complex_psionic_aura_fire_rate_mult, Category: Ships
 - shipsize_habitat_central_complex_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_powerful_massive_ship_fallen_empire_hull_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_hull_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_hull_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_hull_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_hull_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_hull_damage_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_armor_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_armor_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_armor_reduction, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_armor_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_armor_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_armor_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_armor_damage_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_armor_penetration_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_armor_penetration_add, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_armor_hardening_add, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_shield_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_shield_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_shield_reduction, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_shield_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_shield_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_shield_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_shield_damage_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_shield_penetration_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_shield_penetration_add, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_shield_hardening_add, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_weapon_damage, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_weapon_range_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_engagement_range_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_orbital_bombardment_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_fire_rate_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_home_territory_fire_rate_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_hyperlane_range_add, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_ftl_jumpdrive_range_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_emergency_ftl_min_days_add, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_emergency_ftl_min_days_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_disengage_chance_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_disengage_chance_reduction, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_disengage_opportunities_add, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_evasion_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_evasion_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_accuracy_add, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_accuracy_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_tracking_add, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_tracking_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_base_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_landing_time_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_sensor_range_add, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_windup_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_winddown_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_interstellar_speed_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_emergency_ftl, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_anomaly_fail_risk, Category: Science Ships
+- shipsize_powerful_massive_ship_fallen_empire_anomaly_research_speed, Category: Science Ships
+- shipsize_powerful_massive_ship_fallen_empire_anomaly_research_speed_uninhabitable, Category: Science Ships
+- shipsize_powerful_massive_ship_fallen_empire_anomaly_generation_chance, Category: Science Ships
+- shipsize_powerful_massive_ship_fallen_empire_anomaly_generation_chance_uninhabitable, Category: Science Ships
+- shipsize_powerful_massive_ship_fallen_empire_science_survey_speed, Category: Science Ships
+- shipsize_powerful_massive_ship_fallen_empire_science_survey_speed_uninhabitable, Category: Science Ships
+- shipsize_powerful_massive_ship_fallen_empire_starting_experience_add, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_experience_gain_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_jumpdrive_cooldown_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_naval_cap_usage_add, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_naval_cap_usage_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_cloaking_detection_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_target_weight_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_federation_territory_speed_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_community_territory_speed_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_military_speed_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_science_speed_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_damage_against_starbases_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_damage_against_boss_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_repair_hull_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_powerful_massive_ship_fallen_empire_repair_armor_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_powerful_massive_ship_fallen_empire_friendly_territory_armor_add, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_friendly_territory_armor_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_friendly_territory_shield_add, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_friendly_territory_shield_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_friendly_territory_evasion_add, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_friendly_territory_evasion_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_friendly_territory_accuracy_add, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_friendly_territory_accuracy_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_friendly_territory_tracking_add, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_friendly_territory_tracking_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_friendly_territory_fire_rate_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_capture_chance_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_capture_amount_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_massive_ship_fallen_empire_damage_against_space_fauna_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_steal_defeated_ship_chance, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_powerful_massive_ship_fallen_empire_psionic_aura_speed_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_psionic_aura_fire_rate_mult, Category: Ships
+- shipsize_powerful_massive_ship_fallen_empire_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_powerful_large_ship_fallen_empire_hull_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_hull_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_hull_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_hull_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_hull_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_hull_damage_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_armor_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_armor_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_armor_reduction, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_armor_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_armor_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_armor_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_armor_damage_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_armor_penetration_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_armor_penetration_add, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_armor_hardening_add, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_shield_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_shield_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_shield_reduction, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_shield_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_shield_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_shield_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_shield_damage_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_shield_penetration_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_shield_penetration_add, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_shield_hardening_add, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_weapon_damage, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_weapon_range_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_engagement_range_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_orbital_bombardment_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_fire_rate_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_home_territory_fire_rate_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_hyperlane_range_add, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_ftl_jumpdrive_range_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_emergency_ftl_min_days_add, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_emergency_ftl_min_days_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_disengage_chance_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_disengage_chance_reduction, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_disengage_opportunities_add, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_evasion_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_evasion_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_accuracy_add, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_accuracy_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_tracking_add, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_tracking_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_base_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_landing_time_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_sensor_range_add, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_windup_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_winddown_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_interstellar_speed_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_emergency_ftl, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_anomaly_fail_risk, Category: Science Ships
+- shipsize_powerful_large_ship_fallen_empire_anomaly_research_speed, Category: Science Ships
+- shipsize_powerful_large_ship_fallen_empire_anomaly_research_speed_uninhabitable, Category: Science Ships
+- shipsize_powerful_large_ship_fallen_empire_anomaly_generation_chance, Category: Science Ships
+- shipsize_powerful_large_ship_fallen_empire_anomaly_generation_chance_uninhabitable, Category: Science Ships
+- shipsize_powerful_large_ship_fallen_empire_science_survey_speed, Category: Science Ships
+- shipsize_powerful_large_ship_fallen_empire_science_survey_speed_uninhabitable, Category: Science Ships
+- shipsize_powerful_large_ship_fallen_empire_starting_experience_add, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_experience_gain_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_jumpdrive_cooldown_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_naval_cap_usage_add, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_naval_cap_usage_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_cloaking_detection_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_target_weight_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_federation_territory_speed_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_community_territory_speed_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_military_speed_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_science_speed_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_damage_against_starbases_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_damage_against_boss_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_repair_hull_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_powerful_large_ship_fallen_empire_repair_armor_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_powerful_large_ship_fallen_empire_friendly_territory_armor_add, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_friendly_territory_armor_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_friendly_territory_shield_add, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_friendly_territory_shield_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_friendly_territory_evasion_add, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_friendly_territory_evasion_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_friendly_territory_accuracy_add, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_friendly_territory_accuracy_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_friendly_territory_tracking_add, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_friendly_territory_tracking_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_friendly_territory_fire_rate_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_capture_chance_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_capture_amount_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_large_ship_fallen_empire_damage_against_space_fauna_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_steal_defeated_ship_chance, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_powerful_large_ship_fallen_empire_psionic_aura_speed_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_psionic_aura_fire_rate_mult, Category: Ships
+- shipsize_powerful_large_ship_fallen_empire_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_powerful_small_ship_fallen_empire_hull_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_hull_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_hull_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_hull_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_hull_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_hull_damage_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_armor_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_armor_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_armor_reduction, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_armor_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_armor_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_armor_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_armor_damage_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_armor_penetration_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_armor_penetration_add, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_armor_hardening_add, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_shield_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_shield_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_shield_reduction, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_shield_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_shield_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_shield_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_shield_damage_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_shield_penetration_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_shield_penetration_add, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_shield_hardening_add, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_weapon_damage, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_weapon_range_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_engagement_range_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_orbital_bombardment_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_fire_rate_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_home_territory_fire_rate_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_hyperlane_range_add, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_ftl_jumpdrive_range_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_emergency_ftl_min_days_add, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_emergency_ftl_min_days_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_disengage_chance_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_disengage_chance_reduction, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_disengage_opportunities_add, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_evasion_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_evasion_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_accuracy_add, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_accuracy_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_tracking_add, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_tracking_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_base_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_landing_time_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_sensor_range_add, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_windup_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_winddown_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_interstellar_speed_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_emergency_ftl, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_anomaly_fail_risk, Category: Science Ships
+- shipsize_powerful_small_ship_fallen_empire_anomaly_research_speed, Category: Science Ships
+- shipsize_powerful_small_ship_fallen_empire_anomaly_research_speed_uninhabitable, Category: Science Ships
+- shipsize_powerful_small_ship_fallen_empire_anomaly_generation_chance, Category: Science Ships
+- shipsize_powerful_small_ship_fallen_empire_anomaly_generation_chance_uninhabitable, Category: Science Ships
+- shipsize_powerful_small_ship_fallen_empire_science_survey_speed, Category: Science Ships
+- shipsize_powerful_small_ship_fallen_empire_science_survey_speed_uninhabitable, Category: Science Ships
+- shipsize_powerful_small_ship_fallen_empire_starting_experience_add, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_experience_gain_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_jumpdrive_cooldown_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_naval_cap_usage_add, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_naval_cap_usage_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_cloaking_detection_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_target_weight_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_federation_territory_speed_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_community_territory_speed_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_military_speed_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_science_speed_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_damage_against_starbases_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_damage_against_boss_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_repair_hull_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_powerful_small_ship_fallen_empire_repair_armor_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_powerful_small_ship_fallen_empire_friendly_territory_armor_add, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_friendly_territory_armor_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_friendly_territory_shield_add, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_friendly_territory_shield_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_friendly_territory_evasion_add, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_friendly_territory_evasion_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_friendly_territory_accuracy_add, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_friendly_territory_accuracy_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_friendly_territory_tracking_add, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_friendly_territory_tracking_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_friendly_territory_fire_rate_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_capture_chance_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_capture_amount_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_small_ship_fallen_empire_damage_against_space_fauna_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_steal_defeated_ship_chance, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_powerful_small_ship_fallen_empire_psionic_aura_speed_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_psionic_aura_fire_rate_mult, Category: Ships
+- shipsize_powerful_small_ship_fallen_empire_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_powerful_military_station_small_fallen_empire_hull_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_hull_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_hull_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_hull_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_hull_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_hull_damage_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_armor_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_armor_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_armor_reduction, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_armor_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_armor_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_armor_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_armor_damage_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_armor_penetration_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_armor_penetration_add, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_armor_hardening_add, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_shield_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_shield_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_shield_reduction, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_shield_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_shield_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_shield_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_shield_damage_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_shield_penetration_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_shield_penetration_add, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_shield_hardening_add, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_weapon_damage, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_weapon_range_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_engagement_range_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_orbital_bombardment_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_fire_rate_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_home_territory_fire_rate_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_hyperlane_range_add, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_ftl_jumpdrive_range_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_emergency_ftl_min_days_add, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_emergency_ftl_min_days_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_disengage_chance_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_disengage_chance_reduction, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_disengage_opportunities_add, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_evasion_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_evasion_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_accuracy_add, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_accuracy_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_tracking_add, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_tracking_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_base_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_landing_time_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_sensor_range_add, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_windup_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_winddown_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_interstellar_speed_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_emergency_ftl, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_anomaly_fail_risk, Category: Science Ships
+- shipsize_powerful_military_station_small_fallen_empire_anomaly_research_speed, Category: Science Ships
+- shipsize_powerful_military_station_small_fallen_empire_anomaly_research_speed_uninhabitable, Category: Science Ships
+- shipsize_powerful_military_station_small_fallen_empire_anomaly_generation_chance, Category: Science Ships
+- shipsize_powerful_military_station_small_fallen_empire_anomaly_generation_chance_uninhabitable, Category: Science Ships
+- shipsize_powerful_military_station_small_fallen_empire_science_survey_speed, Category: Science Ships
+- shipsize_powerful_military_station_small_fallen_empire_science_survey_speed_uninhabitable, Category: Science Ships
+- shipsize_powerful_military_station_small_fallen_empire_starting_experience_add, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_experience_gain_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_jumpdrive_cooldown_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_naval_cap_usage_add, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_naval_cap_usage_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_cloaking_detection_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_target_weight_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_federation_territory_speed_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_community_territory_speed_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_military_speed_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_science_speed_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_damage_against_starbases_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_damage_against_boss_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_repair_hull_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_powerful_military_station_small_fallen_empire_repair_armor_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_powerful_military_station_small_fallen_empire_friendly_territory_armor_add, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_friendly_territory_armor_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_friendly_territory_shield_add, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_friendly_territory_shield_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_friendly_territory_evasion_add, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_friendly_territory_evasion_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_friendly_territory_accuracy_add, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_friendly_territory_accuracy_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_friendly_territory_tracking_add, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_friendly_territory_tracking_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_friendly_territory_fire_rate_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_capture_chance_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_capture_amount_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_small_fallen_empire_damage_against_space_fauna_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_steal_defeated_ship_chance, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_powerful_military_station_small_fallen_empire_psionic_aura_speed_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_psionic_aura_fire_rate_mult, Category: Ships
+- shipsize_powerful_military_station_small_fallen_empire_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_powerful_military_station_large_fallen_empire_hull_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_hull_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_hull_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_hull_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_hull_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_hull_damage_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_armor_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_armor_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_armor_reduction, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_armor_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_armor_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_armor_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_armor_damage_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_armor_penetration_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_armor_penetration_add, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_armor_hardening_add, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_shield_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_shield_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_shield_reduction, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_shield_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_shield_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_shield_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_shield_damage_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_shield_penetration_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_shield_penetration_add, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_shield_hardening_add, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_weapon_damage, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_weapon_range_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_engagement_range_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_orbital_bombardment_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_fire_rate_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_home_territory_fire_rate_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_hyperlane_range_add, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_ftl_jumpdrive_range_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_emergency_ftl_min_days_add, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_emergency_ftl_min_days_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_disengage_chance_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_disengage_chance_reduction, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_disengage_opportunities_add, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_evasion_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_evasion_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_accuracy_add, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_accuracy_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_tracking_add, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_tracking_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_base_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_landing_time_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_sensor_range_add, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_windup_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_winddown_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_interstellar_speed_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_emergency_ftl, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_anomaly_fail_risk, Category: Science Ships
+- shipsize_powerful_military_station_large_fallen_empire_anomaly_research_speed, Category: Science Ships
+- shipsize_powerful_military_station_large_fallen_empire_anomaly_research_speed_uninhabitable, Category: Science Ships
+- shipsize_powerful_military_station_large_fallen_empire_anomaly_generation_chance, Category: Science Ships
+- shipsize_powerful_military_station_large_fallen_empire_anomaly_generation_chance_uninhabitable, Category: Science Ships
+- shipsize_powerful_military_station_large_fallen_empire_science_survey_speed, Category: Science Ships
+- shipsize_powerful_military_station_large_fallen_empire_science_survey_speed_uninhabitable, Category: Science Ships
+- shipsize_powerful_military_station_large_fallen_empire_starting_experience_add, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_experience_gain_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_jumpdrive_cooldown_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_naval_cap_usage_add, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_naval_cap_usage_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_cloaking_detection_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_target_weight_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_federation_territory_speed_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_community_territory_speed_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_military_speed_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_science_speed_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_damage_against_starbases_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_damage_against_boss_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_repair_hull_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_powerful_military_station_large_fallen_empire_repair_armor_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_powerful_military_station_large_fallen_empire_friendly_territory_armor_add, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_friendly_territory_armor_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_friendly_territory_shield_add, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_friendly_territory_shield_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_friendly_territory_evasion_add, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_friendly_territory_evasion_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_friendly_territory_accuracy_add, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_friendly_territory_accuracy_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_friendly_territory_tracking_add, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_friendly_territory_tracking_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_friendly_territory_fire_rate_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_capture_chance_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_capture_amount_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_military_station_large_fallen_empire_damage_against_space_fauna_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_steal_defeated_ship_chance, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_powerful_military_station_large_fallen_empire_psionic_aura_speed_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_psionic_aura_fire_rate_mult, Category: Ships
+- shipsize_powerful_military_station_large_fallen_empire_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_military_station_small_swarm_hull_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_hull_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_hull_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_hull_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_hull_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_hull_damage_mult, Category: Ships
+- shipsize_military_station_small_swarm_armor_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_armor_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_armor_reduction, Category: Ships
+- shipsize_military_station_small_swarm_armor_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_armor_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_armor_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_armor_damage_mult, Category: Ships
+- shipsize_military_station_small_swarm_armor_penetration_mult, Category: Ships
+- shipsize_military_station_small_swarm_armor_penetration_add, Category: Ships
+- shipsize_military_station_small_swarm_armor_hardening_add, Category: Ships
+- shipsize_military_station_small_swarm_shield_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_shield_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_shield_reduction, Category: Ships
+- shipsize_military_station_small_swarm_shield_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_shield_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_shield_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_shield_damage_mult, Category: Ships
+- shipsize_military_station_small_swarm_shield_penetration_mult, Category: Ships
+- shipsize_military_station_small_swarm_shield_penetration_add, Category: Ships
+- shipsize_military_station_small_swarm_shield_hardening_add, Category: Ships
+- shipsize_military_station_small_swarm_weapon_damage, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_weapon_range_mult, Category: Ships
+- shipsize_military_station_small_swarm_engagement_range_mult, Category: Ships
+- shipsize_military_station_small_swarm_orbital_bombardment_mult, Category: Ships
+- shipsize_military_station_small_swarm_fire_rate_mult, Category: Ships
+- shipsize_military_station_small_swarm_home_territory_fire_rate_mult, Category: Ships
+- shipsize_military_station_small_swarm_hyperlane_range_add, Category: Ships
+- shipsize_military_station_small_swarm_ftl_jumpdrive_range_mult, Category: Ships
+- shipsize_military_station_small_swarm_emergency_ftl_min_days_add, Category: Ships
+- shipsize_military_station_small_swarm_emergency_ftl_min_days_mult, Category: Ships
+- shipsize_military_station_small_swarm_disengage_chance_mult, Category: Ships
+- shipsize_military_station_small_swarm_disengage_chance_reduction, Category: Ships
+- shipsize_military_station_small_swarm_disengage_opportunities_add, Category: Ships
+- shipsize_military_station_small_swarm_evasion_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_evasion_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_accuracy_add, Category: Ships
+- shipsize_military_station_small_swarm_accuracy_mult, Category: Ships
+- shipsize_military_station_small_swarm_tracking_add, Category: Ships
+- shipsize_military_station_small_swarm_tracking_mult, Category: Ships
+- shipsize_military_station_small_swarm_base_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_landing_time_mult, Category: Ships
+- shipsize_military_station_small_swarm_sensor_range_add, Category: Ships
+- shipsize_military_station_small_swarm_windup_mult, Category: Ships
+- shipsize_military_station_small_swarm_winddown_mult, Category: Ships
+- shipsize_military_station_small_swarm_interstellar_speed_mult, Category: Ships
+- shipsize_military_station_small_swarm_emergency_ftl, Category: Ships
+- shipsize_military_station_small_swarm_anomaly_fail_risk, Category: Science Ships
+- shipsize_military_station_small_swarm_anomaly_research_speed, Category: Science Ships
+- shipsize_military_station_small_swarm_anomaly_research_speed_uninhabitable, Category: Science Ships
+- shipsize_military_station_small_swarm_anomaly_generation_chance, Category: Science Ships
+- shipsize_military_station_small_swarm_anomaly_generation_chance_uninhabitable, Category: Science Ships
+- shipsize_military_station_small_swarm_science_survey_speed, Category: Science Ships
+- shipsize_military_station_small_swarm_science_survey_speed_uninhabitable, Category: Science Ships
+- shipsize_military_station_small_swarm_starting_experience_add, Category: Ships
+- shipsize_military_station_small_swarm_experience_gain_mult, Category: Ships
+- shipsize_military_station_small_swarm_jumpdrive_cooldown_mult, Category: Ships
+- shipsize_military_station_small_swarm_naval_cap_usage_add, Category: Ships
+- shipsize_military_station_small_swarm_naval_cap_usage_mult, Category: Ships
+- shipsize_military_station_small_swarm_cloaking_detection_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_target_weight_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_federation_territory_speed_mult, Category: Ships
+- shipsize_military_station_small_swarm_community_territory_speed_mult, Category: Ships
+- shipsize_military_station_small_swarm_military_speed_mult, Category: Ships
+- shipsize_military_station_small_swarm_science_speed_mult, Category: Ships
+- shipsize_military_station_small_swarm_damage_against_starbases_mult, Category: Ships
+- shipsize_military_station_small_swarm_damage_against_boss_mult, Category: Ships
+- shipsize_military_station_small_swarm_repair_hull_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_military_station_small_swarm_repair_armor_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_military_station_small_swarm_friendly_territory_armor_add, Category: Ships
+- shipsize_military_station_small_swarm_friendly_territory_armor_mult, Category: Ships
+- shipsize_military_station_small_swarm_friendly_territory_shield_add, Category: Ships
+- shipsize_military_station_small_swarm_friendly_territory_shield_mult, Category: Ships
+- shipsize_military_station_small_swarm_friendly_territory_evasion_add, Category: Ships
+- shipsize_military_station_small_swarm_friendly_territory_evasion_mult, Category: Ships
+- shipsize_military_station_small_swarm_friendly_territory_accuracy_add, Category: Ships
+- shipsize_military_station_small_swarm_friendly_territory_accuracy_mult, Category: Ships
+- shipsize_military_station_small_swarm_friendly_territory_tracking_add, Category: Ships
+- shipsize_military_station_small_swarm_friendly_territory_tracking_mult, Category: Ships
+- shipsize_military_station_small_swarm_friendly_territory_fire_rate_mult, Category: Ships
+- shipsize_military_station_small_swarm_capture_chance_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_capture_amount_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_military_station_small_swarm_damage_against_space_fauna_mult, Category: Ships
+- shipsize_military_station_small_swarm_steal_defeated_ship_chance, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_military_station_small_swarm_psionic_aura_speed_mult, Category: Ships
+- shipsize_military_station_small_swarm_psionic_aura_fire_rate_mult, Category: Ships
+- shipsize_military_station_small_swarm_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_powerful_fe_colossus_hull_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_hull_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_hull_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_hull_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_hull_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_hull_damage_mult, Category: Ships
+- shipsize_powerful_fe_colossus_armor_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_armor_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_armor_reduction, Category: Ships
+- shipsize_powerful_fe_colossus_armor_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_armor_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_armor_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_armor_damage_mult, Category: Ships
+- shipsize_powerful_fe_colossus_armor_penetration_mult, Category: Ships
+- shipsize_powerful_fe_colossus_armor_penetration_add, Category: Ships
+- shipsize_powerful_fe_colossus_armor_hardening_add, Category: Ships
+- shipsize_powerful_fe_colossus_shield_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_shield_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_shield_reduction, Category: Ships
+- shipsize_powerful_fe_colossus_shield_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_shield_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_shield_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_shield_damage_mult, Category: Ships
+- shipsize_powerful_fe_colossus_shield_penetration_mult, Category: Ships
+- shipsize_powerful_fe_colossus_shield_penetration_add, Category: Ships
+- shipsize_powerful_fe_colossus_shield_hardening_add, Category: Ships
+- shipsize_powerful_fe_colossus_weapon_damage, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_weapon_range_mult, Category: Ships
+- shipsize_powerful_fe_colossus_engagement_range_mult, Category: Ships
+- shipsize_powerful_fe_colossus_orbital_bombardment_mult, Category: Ships
+- shipsize_powerful_fe_colossus_fire_rate_mult, Category: Ships
+- shipsize_powerful_fe_colossus_home_territory_fire_rate_mult, Category: Ships
+- shipsize_powerful_fe_colossus_hyperlane_range_add, Category: Ships
+- shipsize_powerful_fe_colossus_ftl_jumpdrive_range_mult, Category: Ships
+- shipsize_powerful_fe_colossus_emergency_ftl_min_days_add, Category: Ships
+- shipsize_powerful_fe_colossus_emergency_ftl_min_days_mult, Category: Ships
+- shipsize_powerful_fe_colossus_disengage_chance_mult, Category: Ships
+- shipsize_powerful_fe_colossus_disengage_chance_reduction, Category: Ships
+- shipsize_powerful_fe_colossus_disengage_opportunities_add, Category: Ships
+- shipsize_powerful_fe_colossus_evasion_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_evasion_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_accuracy_add, Category: Ships
+- shipsize_powerful_fe_colossus_accuracy_mult, Category: Ships
+- shipsize_powerful_fe_colossus_tracking_add, Category: Ships
+- shipsize_powerful_fe_colossus_tracking_mult, Category: Ships
+- shipsize_powerful_fe_colossus_base_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_landing_time_mult, Category: Ships
+- shipsize_powerful_fe_colossus_sensor_range_add, Category: Ships
+- shipsize_powerful_fe_colossus_windup_mult, Category: Ships
+- shipsize_powerful_fe_colossus_winddown_mult, Category: Ships
+- shipsize_powerful_fe_colossus_interstellar_speed_mult, Category: Ships
+- shipsize_powerful_fe_colossus_emergency_ftl, Category: Ships
+- shipsize_powerful_fe_colossus_anomaly_fail_risk, Category: Science Ships
+- shipsize_powerful_fe_colossus_anomaly_research_speed, Category: Science Ships
+- shipsize_powerful_fe_colossus_anomaly_research_speed_uninhabitable, Category: Science Ships
+- shipsize_powerful_fe_colossus_anomaly_generation_chance, Category: Science Ships
+- shipsize_powerful_fe_colossus_anomaly_generation_chance_uninhabitable, Category: Science Ships
+- shipsize_powerful_fe_colossus_science_survey_speed, Category: Science Ships
+- shipsize_powerful_fe_colossus_science_survey_speed_uninhabitable, Category: Science Ships
+- shipsize_powerful_fe_colossus_starting_experience_add, Category: Ships
+- shipsize_powerful_fe_colossus_experience_gain_mult, Category: Ships
+- shipsize_powerful_fe_colossus_jumpdrive_cooldown_mult, Category: Ships
+- shipsize_powerful_fe_colossus_naval_cap_usage_add, Category: Ships
+- shipsize_powerful_fe_colossus_naval_cap_usage_mult, Category: Ships
+- shipsize_powerful_fe_colossus_cloaking_detection_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_target_weight_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_federation_territory_speed_mult, Category: Ships
+- shipsize_powerful_fe_colossus_community_territory_speed_mult, Category: Ships
+- shipsize_powerful_fe_colossus_military_speed_mult, Category: Ships
+- shipsize_powerful_fe_colossus_science_speed_mult, Category: Ships
+- shipsize_powerful_fe_colossus_damage_against_starbases_mult, Category: Ships
+- shipsize_powerful_fe_colossus_damage_against_boss_mult, Category: Ships
+- shipsize_powerful_fe_colossus_repair_hull_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_powerful_fe_colossus_repair_armor_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_powerful_fe_colossus_friendly_territory_armor_add, Category: Ships
+- shipsize_powerful_fe_colossus_friendly_territory_armor_mult, Category: Ships
+- shipsize_powerful_fe_colossus_friendly_territory_shield_add, Category: Ships
+- shipsize_powerful_fe_colossus_friendly_territory_shield_mult, Category: Ships
+- shipsize_powerful_fe_colossus_friendly_territory_evasion_add, Category: Ships
+- shipsize_powerful_fe_colossus_friendly_territory_evasion_mult, Category: Ships
+- shipsize_powerful_fe_colossus_friendly_territory_accuracy_add, Category: Ships
+- shipsize_powerful_fe_colossus_friendly_territory_accuracy_mult, Category: Ships
+- shipsize_powerful_fe_colossus_friendly_territory_tracking_add, Category: Ships
+- shipsize_powerful_fe_colossus_friendly_territory_tracking_mult, Category: Ships
+- shipsize_powerful_fe_colossus_friendly_territory_fire_rate_mult, Category: Ships
+- shipsize_powerful_fe_colossus_capture_chance_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_capture_amount_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_powerful_fe_colossus_damage_against_space_fauna_mult, Category: Ships
+- shipsize_powerful_fe_colossus_steal_defeated_ship_chance, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_powerful_fe_colossus_psionic_aura_speed_mult, Category: Ships
+- shipsize_powerful_fe_colossus_psionic_aura_fire_rate_mult, Category: Ships
+- shipsize_powerful_fe_colossus_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_FEE_hivemind_FE_titan_hull_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_hull_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_hull_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_hull_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_hull_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_hull_damage_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_armor_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_armor_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_armor_reduction, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_armor_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_armor_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_armor_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_armor_damage_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_armor_penetration_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_armor_penetration_add, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_armor_hardening_add, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_shield_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_shield_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_shield_reduction, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_shield_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_shield_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_shield_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_shield_damage_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_shield_penetration_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_shield_penetration_add, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_shield_hardening_add, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_weapon_damage, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_weapon_range_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_engagement_range_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_orbital_bombardment_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_fire_rate_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_home_territory_fire_rate_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_hyperlane_range_add, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_ftl_jumpdrive_range_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_emergency_ftl_min_days_add, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_emergency_ftl_min_days_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_disengage_chance_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_disengage_chance_reduction, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_disengage_opportunities_add, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_evasion_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_evasion_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_accuracy_add, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_accuracy_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_tracking_add, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_tracking_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_base_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_landing_time_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_sensor_range_add, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_windup_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_winddown_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_interstellar_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_emergency_ftl, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_anomaly_fail_risk, Category: Science Ships
+- shipsize_FEE_hivemind_FE_titan_anomaly_research_speed, Category: Science Ships
+- shipsize_FEE_hivemind_FE_titan_anomaly_research_speed_uninhabitable, Category: Science Ships
+- shipsize_FEE_hivemind_FE_titan_anomaly_generation_chance, Category: Science Ships
+- shipsize_FEE_hivemind_FE_titan_anomaly_generation_chance_uninhabitable, Category: Science Ships
+- shipsize_FEE_hivemind_FE_titan_science_survey_speed, Category: Science Ships
+- shipsize_FEE_hivemind_FE_titan_science_survey_speed_uninhabitable, Category: Science Ships
+- shipsize_FEE_hivemind_FE_titan_starting_experience_add, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_experience_gain_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_jumpdrive_cooldown_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_naval_cap_usage_add, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_naval_cap_usage_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_cloaking_detection_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_target_weight_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_federation_territory_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_community_territory_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_military_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_science_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_damage_against_starbases_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_damage_against_boss_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_repair_hull_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_FEE_hivemind_FE_titan_repair_armor_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_FEE_hivemind_FE_titan_friendly_territory_armor_add, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_friendly_territory_armor_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_friendly_territory_shield_add, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_friendly_territory_shield_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_friendly_territory_evasion_add, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_friendly_territory_evasion_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_friendly_territory_accuracy_add, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_friendly_territory_accuracy_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_friendly_territory_tracking_add, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_friendly_territory_tracking_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_friendly_territory_fire_rate_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_capture_chance_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_capture_amount_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_titan_damage_against_space_fauna_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_steal_defeated_ship_chance, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_FEE_hivemind_FE_titan_psionic_aura_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_psionic_aura_fire_rate_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_titan_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_FEE_hivemind_FE_battlecruiser_hull_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_hull_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_hull_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_hull_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_hull_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_hull_damage_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_armor_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_armor_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_armor_reduction, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_armor_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_armor_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_armor_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_armor_damage_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_armor_penetration_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_armor_penetration_add, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_armor_hardening_add, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_shield_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_shield_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_shield_reduction, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_shield_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_shield_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_shield_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_shield_damage_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_shield_penetration_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_shield_penetration_add, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_shield_hardening_add, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_weapon_damage, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_weapon_range_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_engagement_range_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_orbital_bombardment_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_fire_rate_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_home_territory_fire_rate_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_hyperlane_range_add, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_ftl_jumpdrive_range_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_emergency_ftl_min_days_add, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_emergency_ftl_min_days_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_disengage_chance_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_disengage_chance_reduction, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_disengage_opportunities_add, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_evasion_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_evasion_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_accuracy_add, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_accuracy_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_tracking_add, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_tracking_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_base_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_landing_time_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_sensor_range_add, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_windup_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_winddown_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_interstellar_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_emergency_ftl, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_anomaly_fail_risk, Category: Science Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_anomaly_research_speed, Category: Science Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_anomaly_research_speed_uninhabitable, Category: Science Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_anomaly_generation_chance, Category: Science Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_anomaly_generation_chance_uninhabitable, Category: Science Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_science_survey_speed, Category: Science Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_science_survey_speed_uninhabitable, Category: Science Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_starting_experience_add, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_experience_gain_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_jumpdrive_cooldown_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_naval_cap_usage_add, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_naval_cap_usage_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_cloaking_detection_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_target_weight_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_federation_territory_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_community_territory_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_military_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_science_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_damage_against_starbases_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_damage_against_boss_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_repair_hull_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_repair_armor_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_friendly_territory_armor_add, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_friendly_territory_armor_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_friendly_territory_shield_add, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_friendly_territory_shield_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_friendly_territory_evasion_add, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_friendly_territory_evasion_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_friendly_territory_accuracy_add, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_friendly_territory_accuracy_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_friendly_territory_tracking_add, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_friendly_territory_tracking_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_friendly_territory_fire_rate_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_capture_chance_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_capture_amount_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_battlecruiser_damage_against_space_fauna_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_steal_defeated_ship_chance, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_psionic_aura_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_psionic_aura_fire_rate_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_battlecruiser_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_FEE_hivemind_FE_escort_hull_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_hull_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_hull_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_hull_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_hull_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_hull_damage_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_armor_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_armor_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_armor_reduction, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_armor_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_armor_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_armor_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_armor_damage_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_armor_penetration_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_armor_penetration_add, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_armor_hardening_add, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_shield_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_shield_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_shield_reduction, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_shield_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_shield_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_shield_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_shield_damage_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_shield_penetration_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_shield_penetration_add, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_shield_hardening_add, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_weapon_damage, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_weapon_range_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_engagement_range_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_orbital_bombardment_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_fire_rate_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_home_territory_fire_rate_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_hyperlane_range_add, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_ftl_jumpdrive_range_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_emergency_ftl_min_days_add, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_emergency_ftl_min_days_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_disengage_chance_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_disengage_chance_reduction, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_disengage_opportunities_add, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_evasion_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_evasion_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_accuracy_add, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_accuracy_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_tracking_add, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_tracking_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_base_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_landing_time_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_sensor_range_add, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_windup_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_winddown_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_interstellar_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_emergency_ftl, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_anomaly_fail_risk, Category: Science Ships
+- shipsize_FEE_hivemind_FE_escort_anomaly_research_speed, Category: Science Ships
+- shipsize_FEE_hivemind_FE_escort_anomaly_research_speed_uninhabitable, Category: Science Ships
+- shipsize_FEE_hivemind_FE_escort_anomaly_generation_chance, Category: Science Ships
+- shipsize_FEE_hivemind_FE_escort_anomaly_generation_chance_uninhabitable, Category: Science Ships
+- shipsize_FEE_hivemind_FE_escort_science_survey_speed, Category: Science Ships
+- shipsize_FEE_hivemind_FE_escort_science_survey_speed_uninhabitable, Category: Science Ships
+- shipsize_FEE_hivemind_FE_escort_starting_experience_add, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_experience_gain_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_jumpdrive_cooldown_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_naval_cap_usage_add, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_naval_cap_usage_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_cloaking_detection_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_target_weight_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_federation_territory_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_community_territory_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_military_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_science_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_damage_against_starbases_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_damage_against_boss_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_repair_hull_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_FEE_hivemind_FE_escort_repair_armor_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_FEE_hivemind_FE_escort_friendly_territory_armor_add, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_friendly_territory_armor_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_friendly_territory_shield_add, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_friendly_territory_shield_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_friendly_territory_evasion_add, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_friendly_territory_evasion_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_friendly_territory_accuracy_add, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_friendly_territory_accuracy_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_friendly_territory_tracking_add, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_friendly_territory_tracking_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_friendly_territory_fire_rate_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_capture_chance_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_capture_amount_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_escort_damage_against_space_fauna_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_steal_defeated_ship_chance, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_FEE_hivemind_FE_escort_psionic_aura_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_psionic_aura_fire_rate_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_escort_build_speed_mult, Category: Planets, Megastructures, Starbases
+- shipsize_FEE_hivemind_FE_fortress_hull_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_hull_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_hull_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_hull_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_hull_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_hull_damage_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_armor_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_armor_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_armor_reduction, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_armor_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_armor_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_armor_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_armor_damage_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_armor_penetration_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_armor_penetration_add, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_armor_hardening_add, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_shield_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_shield_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_shield_reduction, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_shield_regen_add_perc, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_shield_regen_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_shield_regen_add_static, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_shield_damage_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_shield_penetration_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_shield_penetration_add, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_shield_hardening_add, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_weapon_damage, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_weapon_range_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_engagement_range_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_orbital_bombardment_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_fire_rate_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_home_territory_fire_rate_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_hyperlane_range_add, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_ftl_jumpdrive_range_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_emergency_ftl_min_days_add, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_emergency_ftl_min_days_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_disengage_chance_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_disengage_chance_reduction, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_disengage_opportunities_add, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_evasion_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_evasion_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_accuracy_add, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_accuracy_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_tracking_add, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_tracking_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_base_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_speed_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_landing_time_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_sensor_range_add, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_windup_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_winddown_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_interstellar_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_emergency_ftl, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_anomaly_fail_risk, Category: Science Ships
+- shipsize_FEE_hivemind_FE_fortress_anomaly_research_speed, Category: Science Ships
+- shipsize_FEE_hivemind_FE_fortress_anomaly_research_speed_uninhabitable, Category: Science Ships
+- shipsize_FEE_hivemind_FE_fortress_anomaly_generation_chance, Category: Science Ships
+- shipsize_FEE_hivemind_FE_fortress_anomaly_generation_chance_uninhabitable, Category: Science Ships
+- shipsize_FEE_hivemind_FE_fortress_science_survey_speed, Category: Science Ships
+- shipsize_FEE_hivemind_FE_fortress_science_survey_speed_uninhabitable, Category: Science Ships
+- shipsize_FEE_hivemind_FE_fortress_starting_experience_add, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_experience_gain_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_jumpdrive_cooldown_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_naval_cap_usage_add, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_naval_cap_usage_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_cloaking_detection_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_target_weight_mult, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_federation_territory_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_community_territory_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_military_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_science_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_damage_against_starbases_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_damage_against_boss_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_repair_hull_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_FEE_hivemind_FE_fortress_repair_armor_mult, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_FEE_hivemind_FE_fortress_friendly_territory_armor_add, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_friendly_territory_armor_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_friendly_territory_shield_add, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_friendly_territory_shield_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_friendly_territory_evasion_add, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_friendly_territory_evasion_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_friendly_territory_accuracy_add, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_friendly_territory_accuracy_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_friendly_territory_tracking_add, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_friendly_territory_tracking_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_friendly_territory_fire_rate_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_capture_chance_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_capture_amount_add, Category: Orbital Stations, Space Stations, Military Ships, Civilian Ships, Science Ships, Transport Ships, Ship Design Stats
+- shipsize_FEE_hivemind_FE_fortress_damage_against_space_fauna_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_steal_defeated_ship_chance, Category: Military Ships, Civilian Ships, Science Ships, Transport Ships
+- shipsize_FEE_hivemind_FE_fortress_psionic_aura_speed_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_psionic_aura_fire_rate_mult, Category: Ships
+- shipsize_FEE_hivemind_FE_fortress_build_speed_mult, Category: Planets, Megastructures, Starbases
 - damage_vs_country_type_default_mult, Category: Ships
 - damage_vs_country_type_global_event_mult, Category: Ships
 - damage_vs_country_type_faction_mult, Category: Ships
@@ -37100,6 +38128,7 @@ Printing Modifier Definitions:
 - job_purge_max_workforce_mult, Category: Job
 - job_purge_automated_workforce_mult, Category: Planets
 - pop_purge_demotion_time_mult, Category: Pops
+- pop_purge_promotion_time_mult, Category: Pops
 - job_purge_unprocessing_add, Category: Planets
 - job_purge_unprocessing_per_pop, Category: Planets
 - job_purge_unprocessing_per_crime, Category: Planets
@@ -37208,6 +38237,7 @@ Printing Modifier Definitions:
 - job_purge_robot_max_workforce_mult, Category: Job
 - job_purge_robot_automated_workforce_mult, Category: Planets
 - pop_purge_robot_demotion_time_mult, Category: Pops
+- pop_purge_robot_promotion_time_mult, Category: Pops
 - job_purge_processing_add, Category: Planets
 - job_purge_processing_per_pop, Category: Planets
 - job_purge_processing_per_crime, Category: Planets
@@ -37226,6 +38256,7 @@ Printing Modifier Definitions:
 - job_purge_processing_lithoid_max_workforce_mult, Category: Job
 - job_purge_processing_lithoid_automated_workforce_mult, Category: Planets
 - pop_purge_processing_lithoid_demotion_time_mult, Category: Pops
+- pop_purge_processing_lithoid_promotion_time_mult, Category: Pops
 - job_purge_processing_infernal_add, Category: Planets
 - job_purge_processing_infernal_per_pop, Category: Planets
 - job_purge_processing_infernal_per_crime, Category: Planets
