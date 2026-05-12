@@ -18,6 +18,7 @@ enums = {
 		"Infernals Species Pack"
 		"Leviathans Story Pack"
 		"Lithoids Species Pack"
+		"Mammalian Species Pack"
 		"Megacorp"
 		"Necroids Species Pack"
 		"Nemesis"
@@ -33,4 +34,3 @@ enums = {
 		"Vipra the Vapor Species Portrait"
 	}
 }
-
