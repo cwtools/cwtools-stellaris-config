@@ -704,7 +704,7 @@ alias[effect:ordered_owned_leader] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -751,7 +751,7 @@ alias[effect:ordered_pool_leader] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -782,7 +782,7 @@ alias[effect:ordered_war_participant] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -827,7 +827,7 @@ alias[effect:ordered_owned_army] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -872,7 +872,7 @@ alias[effect:ordered_system_within_border] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -916,7 +916,7 @@ alias[effect:ordered_owned_starbase] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -960,7 +960,7 @@ alias[effect:ordered_pop_faction] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1005,7 +1005,7 @@ alias[effect:ordered_owned_pop_group] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1050,7 +1050,7 @@ alias[effect:ordered_relation] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1095,7 +1095,7 @@ alias[effect:ordered_country] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1140,7 +1140,7 @@ alias[effect:ordered_owned_planet] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1184,7 +1184,7 @@ alias[effect:ordered_playable_country] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1228,7 +1228,7 @@ alias[effect:ordered_system_in_cluster] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1259,7 +1259,7 @@ alias[effect:ordered_planet_within_border] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1303,7 +1303,7 @@ alias[effect:ordered_subject] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1347,7 +1347,7 @@ alias[effect:ordered_owned_fleet] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1391,7 +1391,7 @@ alias[effect:ordered_controlled_fleet] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1435,7 +1435,7 @@ alias[effect:ordered_neighbor_country] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1479,7 +1479,7 @@ alias[effect:ordered_fleet_in_system] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1549,7 +1549,7 @@ alias[effect:ordered_ambient_object] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1580,7 +1580,7 @@ alias[effect:ordered_system_ambient_object] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1624,7 +1624,7 @@ alias[effect:ordered_owned_sector] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1655,7 +1655,7 @@ alias[effect:ordered_rim_system] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1700,7 +1700,7 @@ alias[effect:ordered_system_planet] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1744,7 +1744,7 @@ alias[effect:ordered_galaxy_planet] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1789,7 +1789,7 @@ alias[effect:ordered_owned_ship] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1833,7 +1833,7 @@ alias[effect:ordered_controlled_ship] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1877,7 +1877,7 @@ alias[effect:ordered_controlled_planet] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1948,7 +1948,7 @@ alias[effect:ordered_megastructure] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -1992,7 +1992,7 @@ alias[effect:ordered_owned_megastructure] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -2036,7 +2036,7 @@ alias[effect:ordered_system_megastructure] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -2080,7 +2080,7 @@ alias[effect:ordered_system] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -2113,7 +2113,7 @@ alias[effect:ordered_country_neighbor_to_system] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
@@ -2146,7 +2146,7 @@ alias[effect:ordered_combatant_fleet] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -2179,7 +2179,7 @@ alias[effect:ordered_owned_pop_species] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -2212,7 +2212,7 @@ alias[effect:ordered_planet_army] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
@@ -2325,7 +2325,7 @@ alias[effect:ordered_deposit] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -2396,7 +2396,7 @@ alias[effect:ordered_member] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -2443,7 +2443,7 @@ alias[effect:ordered_war] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -2532,7 +2532,7 @@ alias[effect:ordered_federation] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -2608,7 +2608,7 @@ alias[effect:ordered_galaxy_species] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -2668,7 +2668,7 @@ alias[effect:ordered_owned_species] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -2728,7 +2728,7 @@ alias[effect:ordered_enslaved_species] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -2790,7 +2790,7 @@ alias[effect:ordered_envoy] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -2860,7 +2860,7 @@ alias[effect:ordered_rival_country] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -2920,7 +2920,7 @@ alias[effect:ordered_federation_ally] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -2988,7 +2988,7 @@ alias[effect:ordered_first_contact] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -3048,7 +3048,7 @@ alias[effect:ordered_active_first_contact] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -3108,7 +3108,7 @@ alias[effect:ordered_spynetwork] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -3168,7 +3168,7 @@ alias[effect:ordered_espionage_operation] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -3228,7 +3228,7 @@ alias[effect:ordered_espionage_asset] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -3290,7 +3290,7 @@ alias[effect:ordered_ship_in_system] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -3352,7 +3352,7 @@ alias[effect:ordered_galaxy_fleet] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -3396,7 +3396,7 @@ alias[effect:ordered_moon] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -3474,7 +3474,7 @@ alias[effect:ordered_galaxy_sector] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -3505,7 +3505,7 @@ alias[effect:ordered_neighbor_system] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -3565,7 +3565,7 @@ alias[effect:ordered_neighbor_system_euclidean] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -3625,7 +3625,7 @@ alias[effect:ordered_defender] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -3669,7 +3669,7 @@ alias[effect:ordered_attacker] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -3745,7 +3745,7 @@ alias[effect:ordered_associate] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -3805,7 +3805,7 @@ alias[effect:ordered_species_pop_group] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -3836,7 +3836,7 @@ alias[trigger:any_species_pop_group] = {
 
 ## push_scope = pop_job
 ##Iterate through all owned pop jobs - checks whether the enclosed triggers return true for any of them
-alias[trigger:any_owned_pop_job] = { 
+alias[trigger:any_owned_pop_job] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
@@ -3891,7 +3891,7 @@ alias[effect:ordered_fleet_in_orbit] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -3987,7 +3987,7 @@ alias[effect:ordered_ground_combat_defender] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
@@ -4031,7 +4031,7 @@ alias[effect:ordered_ground_combat_attacker] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
@@ -4073,7 +4073,7 @@ alias[effect:ordered_orbital_station] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -4133,7 +4133,7 @@ alias[effect:ordered_galcom_member] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -4193,7 +4193,7 @@ alias[effect:ordered_council_member] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -4255,7 +4255,7 @@ alias[effect:ordered_situation] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -4315,7 +4315,7 @@ alias[effect:ordered_targeting_situation] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -4375,7 +4375,7 @@ alias[effect:ordered_agreement] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -4435,7 +4435,7 @@ alias[effect:ordered_available_debris] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -4501,7 +4501,7 @@ alias[effect:ordered_owned_design] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
@@ -4557,7 +4557,7 @@ alias[effect:ordered_owned_nonprimary_starbase] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -4617,7 +4617,7 @@ alias[effect:ordered_system_colony] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
@@ -4685,7 +4685,7 @@ alias[effect:ordered_archaeological_site] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
@@ -4777,7 +4777,7 @@ alias[effect:ordered_pre_ftl_within_border] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
@@ -4821,7 +4821,7 @@ alias[effect:ordered_observed_pre_ftl_within_border] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
@@ -4848,7 +4848,7 @@ alias[effect:every_bypass] = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	# cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
+	alias_name[effect] = alias_match_left[effect]
 }
 
 ## push_scope = bypass
@@ -4869,13 +4869,13 @@ alias[effect:ordered_bypass] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
 	inverse = bool
 	# cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
+	alias_name[effect] = alias_match_left[effect]
 }
 
 ## push_scope = bypass
@@ -4890,8 +4890,8 @@ alias[effect:random_bypass] = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	## cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
-	
+	alias_name[effect] = alias_match_left[effect]
+
 }
 
 ## push_scope = astral_rift
@@ -4902,7 +4902,7 @@ alias[effect:every_astral_rift] = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	# cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
+	alias_name[effect] = alias_match_left[effect]
 }
 
 ## push_scope = astral_rift
@@ -4923,13 +4923,13 @@ alias[effect:ordered_astral_rift] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	## cardinality = 0..1
 	inverse = bool
 	# cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
+	alias_name[effect] = alias_match_left[effect]
 }
 
 ## push_scope = astral_rift
@@ -4944,8 +4944,8 @@ alias[effect:random_astral_rift] = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	## cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
-	
+	alias_name[effect] = alias_match_left[effect]
+
 }
 
 ## push_scope = astral_rift
@@ -5158,7 +5158,7 @@ alias[effect:ordered_cosmic_storm] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -5194,7 +5194,7 @@ alias[effect:ordered_system_within_storm] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -5204,7 +5204,7 @@ alias[effect:ordered_system_within_storm] = {
 
 ## push_scope = system
 ###Iterate through all systems within the storm - executes the enclosed effects on all of them for which the limit triggers return true
-alias[effect:every_system_within_storm] = { 
+alias[effect:every_system_within_storm] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
@@ -5238,7 +5238,7 @@ alias[effect:ordered_cosmic_storm_start_position] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -5248,7 +5248,7 @@ alias[effect:ordered_cosmic_storm_start_position] = {
 
 ## push_scope = system
 ###Iterate through all systems valid to be a storms start position - executes the enclosed effects on all of them for which the limit triggers return true
-alias[effect:every_cosmic_storm_start_position] = { 
+alias[effect:every_cosmic_storm_start_position] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
@@ -5282,7 +5282,7 @@ alias[effect:ordered_cosmic_storm_end_position] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -5292,7 +5292,7 @@ alias[effect:ordered_cosmic_storm_end_position] = {
 
 ## push_scope = system
 ###Iterate through all systems valid to be a storms end position - executes the enclosed effects on all of them for which the limit triggers return true
-alias[effect:every_cosmic_storm_end_position] = { 
+alias[effect:every_cosmic_storm_end_position] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
@@ -5326,7 +5326,7 @@ alias[effect:ordered_system_added_to_storm] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -5336,7 +5336,7 @@ alias[effect:ordered_system_added_to_storm] = {
 
 ## push_scope = system
 ###Iterate through all systems added to the storm - executes the enclosed effects on all of them for which the limit triggers return true
-alias[effect:every_system_added_to_storm] = { 
+alias[effect:every_system_added_to_storm] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
@@ -5370,7 +5370,7 @@ alias[effect:ordered_system_removed_from_storm] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -5380,7 +5380,7 @@ alias[effect:ordered_system_removed_from_storm] = {
 
 ## push_scope = system
 ###Iterate through all systems removed from storm - executes the enclosed effects on all of them for which the limit triggers return true
-alias[effect:every_system_removed_from_storm] = { 
+alias[effect:every_system_removed_from_storm] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
@@ -5414,7 +5414,7 @@ alias[effect:ordered_owned_storm_influence_field] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -5424,7 +5424,7 @@ alias[effect:ordered_owned_storm_influence_field] = {
 
 ## push_scope = cosmic_storm_influence_field
 ###Iterate through all influence fields owned by a country - executes the enclosed effects on all of them for which the limit triggers return true
-alias[effect:every_owned_storm_influence_field] = { 
+alias[effect:every_owned_storm_influence_field] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
@@ -5458,7 +5458,7 @@ alias[effect:ordered_system_in_cosmic_storm_influence_field] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -5468,7 +5468,7 @@ alias[effect:ordered_system_in_cosmic_storm_influence_field] = {
 
 ## push_scope = system
 ###Iterate through all influence fields owned by a country - executes the enclosed effects on all of them for which the limit triggers return true
-alias[effect:every_system_in_cosmic_storm_influence_field] = { 
+alias[effect:every_system_in_cosmic_storm_influence_field] = {
 	##cardinality = 0..1
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
@@ -5531,7 +5531,7 @@ alias[effect:ordered_exhibit] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -5547,16 +5547,15 @@ alias[effect:every_exhibit] = {
 	alias_name[effect] = alias_match_left[effect]
 }
 
-## push_scope = galactic_object
+## push_scope = bypass
 ###Iterate through every bypass in the scoped galactic object. - checks whether the enclosed triggers return true for any of them
 alias[trigger:any_bypass_in_system] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
-
 ## push_scope = starbase
 ##Iterate through every starbase in the scoped galactic object. - checks whether the enclosed triggers return true for any of them
-alias[trigger:any_starbase_in_system] = { 
+alias[trigger:any_starbase_in_system] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
@@ -5584,7 +5583,7 @@ alias[effect:weighted_random_owned_pop_group] = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	## cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
+	alias_name[effect] = alias_match_left[effect]
 }
 
 ## push_scope = bypass
@@ -5599,7 +5598,7 @@ alias[effect:random_bypass_in_system] = {
 		alias_name[modifier_rule] = alias_match_left[modifier_rule]
 	}
 	## cardinality = 0..inf
-	alias_name[effect] = alias_match_left[effect] 
+	alias_name[effect] = alias_match_left[effect]
 }
 
 ## push_scope = bypass
@@ -5615,7 +5614,7 @@ alias[effect:ordered_bypass_in_system] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -5660,7 +5659,7 @@ alias[effect:ordered_owned_pop_job] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -5705,7 +5704,7 @@ alias[effect:ordered_starbase_in_system] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -5738,7 +5737,7 @@ alias[effect:random_existing_species_traits] = {
 }
 
 ##  push_scope =  trait
-### Iterate through all existing species traits in the game - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = 
+### Iterate through all existing species traits in the game - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by =
 alias[effect:ordered_existing_species_traits] = {
 	position = int[0..inf]
 	##cardinality = 0..1
@@ -5750,7 +5749,7 @@ alias[effect:ordered_existing_species_traits] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -5783,7 +5782,7 @@ alias[effect:random_trait_of_species] = {
 }
 
 ##  push_scope =  trait
-### Iterate through each trait that the scoped species has trait_of_species = { trait_has_all_tags = { positive } } - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops) 
+### Iterate through each trait that the scoped species has trait_of_species = { trait_has_all_tags = { positive } } - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)
 alias[effect:ordered_trait_of_species] = {
 	position = int[0..inf]
 	##cardinality = 0..1
@@ -5795,7 +5794,7 @@ alias[effect:ordered_trait_of_species] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -5840,7 +5839,7 @@ alias[effect:ordered_trait_available_for_species] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -5859,8 +5858,8 @@ alias[effect:every_trait_available_for_species] = {
 }
 
 ## push_scope =  trait
-###Iterate through all species traits and check if scope species doesn't have this trait. 
-alias[trigger:any_trait_available_for_species] = { 
+###Iterate through all species traits and check if scope species doesn't have this trait.
+alias[trigger:any_trait_available_for_species] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
@@ -5874,7 +5873,7 @@ alias[trigger:count_trait_of_species] = {
 	limit = { alias_name[trigger] = alias_match_left[trigger] }
 }
 
-###Iterate through all species traits and check if scope species doesn't have this trait. 
+###Iterate through all species traits and check if scope species doesn't have this trait.
 alias[trigger:count_trait_available_for_species] = {
 	count = all
 	count = int_value_field
@@ -5886,7 +5885,7 @@ alias[trigger:count_trait_available_for_species] = {
 
 ## push_scope =  trait
 ###Iterate through each trait that the scoped species has
-alias[trigger:any_trait_of_species] = { 
+alias[trigger:any_trait_of_species] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
@@ -5924,7 +5923,7 @@ alias[trigger:count_job_pop_group] = {
 
 ## push_scope = system
 ###Iterate through every system with an Aura - checks whether the enclosed triggers return true for any of them
-alias[trigger:any_system_with_aura] = { 
+alias[trigger:any_system_with_aura] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
@@ -5975,7 +5974,7 @@ alias[effect:ordered_job_pop_group] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
@@ -6020,7 +6019,7 @@ alias[effect:ordered_system_with_aura] = {
 	##cardinality = 0..1
 	order_by = enum[order_by]
 	## cardinality = 0..inf
-	order_by = { 
+	order_by = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	##cardinality = 0..1
