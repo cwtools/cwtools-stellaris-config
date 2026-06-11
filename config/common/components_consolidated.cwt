@@ -137,6 +137,13 @@ component_template = {
 		<technology>
 		## cardinality = 0..inf
 		enum[component_bio_prereq]
+		## cardinality = 0..inf
+		OR = {
+			## cardinality = 2..inf
+			<technology>
+			## cardinality = 0..inf
+			enum[component_bio_prereq]
+		}
 	}
 	## cardinality = 0..1
 	potential = {
