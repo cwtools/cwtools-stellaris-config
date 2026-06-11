@@ -5547,7 +5547,7 @@ alias[effect:every_exhibit] = {
 	alias_name[effect] = alias_match_left[effect]
 }
 
-## push_scope = galactic_object
+## push_scope = bypass
 ###Iterate through every bypass in the scoped galactic object. - checks whether the enclosed triggers return true for any of them
 alias[trigger:any_bypass_in_system] = {
 	alias_name[trigger] = alias_match_left[trigger]
